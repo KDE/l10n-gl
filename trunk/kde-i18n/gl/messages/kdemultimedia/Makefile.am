@@ -1,0 +1,5 @@
+
+POFILES = AUTO
+
+KDE_LANG = gl
+
