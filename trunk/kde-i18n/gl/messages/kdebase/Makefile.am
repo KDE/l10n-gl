@@ -1,5 +1,4 @@
+KDE_LANG = gl
+SUBDIRS = $(AUTODIRS)
 
 POFILES = AUTO
-
-KDE_LANG = gl
-
