@@ -1,0 +1,5 @@
+
+TOPLEVEL_LANG = gl
+
+SUBDIRS = $(AUTODIRS)
+
