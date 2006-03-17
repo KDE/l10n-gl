@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: digikamimageplugin_despeckle\n"
-"POT-Creation-Date: 2006-02-21 11:04+0100\n"
+"POT-Creation-Date: 2006-03-17 15:14+0100\n"
 "PO-Revision-Date: 2006-01-28 23:37+0100\n"
 "Last-Translator: mvillarino <mvillarino@users.sourceforge.net>\n"
 "Language-Team: Galician <trasno@ceu.fi.udc.es>\n"
@@ -25,78 +25,193 @@ msgid ""
 "Your emails"
 msgstr "mvillarino@users.sourceforge.net"
 
-#: imageeffect_despeckle.cpp:57 imageeffect_despeckle.cpp:62
-#: imageeffect_despeckle.cpp:241
+#: imageeffect_noisereduction.cpp:69 imageeffect_noisereduction.cpp:429
+#: imageplugin_noisereduction.cpp:63
 msgid "Noise Reduction"
 msgstr "Reduzón de Ruído"
 
-#: imageeffect_despeckle.cpp:64
-msgid "A despeckle image filter plugin for digiKam."
+#: imageeffect_noisereduction.cpp:71
+#, fuzzy
+msgid "A noise reduction image filter plugin for digiKam."
 msgstr "Un plugin de digiKam para reducir o ruído da imaxe."
 
-#: imageeffect_despeckle.cpp:70
+#: imageeffect_noisereduction.cpp:77
 msgid "Author and maintainer"
 msgstr "Autoria e mantimento"
 
-#: imageeffect_despeckle.cpp:73
+#: imageeffect_noisereduction.cpp:80
 #, fuzzy
-msgid "Original Despeckle algorithm author"
+msgid "Original Noise Reduction algorithm author"
 msgstr "Autor do algoritmo de reduzón de ruído do Gimp"
 
-#: imageeffect_despeckle.cpp:83
+#: imageeffect_noisereduction.cpp:91
+msgid "Details"
+msgstr ""
+
+#: imageeffect_noisereduction.cpp:93
 msgid "Radius:"
 msgstr "Rádio:"
 
-#: imageeffect_despeckle.cpp:88
+#: imageeffect_noisereduction.cpp:98
 msgid ""
-"<p>A radius of 0 has no effect, 1 and above determine the blur matrix radius "
-"that determines how much to blur the image."
+"<p><b>Radius</b>: this control selects the gliding window size used for the "
+"filter. Larger values increase the amount of time needed to filter each pixel "
+"in the image and can cause blurring. This window moves across the image, and "
+"the color in it is smoothed to remove imperfections. In any case it must be "
+"about the same size as noise granularity or somewhat more. If it is set higher "
+"than necessary, then it can cause unwanted blur."
 msgstr ""
-"<p>Un rádio igual a 0 anula o efeito, mentres que valores iguais ou superiores "
-"a 1 determinan o rádio da matriz do borrón que determina canto é que se "
-"difundirá a imaxe."
 
-#: imageeffect_despeckle.cpp:97
-msgid "Black level:"
-msgstr "Nível de negro:"
+#: imageeffect_noisereduction.cpp:112
+msgid "Texture:"
+msgstr ""
 
-#: imageeffect_despeckle.cpp:102
+#: imageeffect_noisereduction.cpp:117
 msgid ""
-"<p>This value controls the black levels used by the adaptive filter to adjust "
-"the filter radius."
+"<p><b>Texture</b>: this control set the texture accuracy. This value can be "
+"used, to get more or less texture accuracy. When decreased, then noise and "
+"texture are blurred out, when increased then texture is amplified, but also "
+"noise will increase. It has almost no effect to image edges, opposed to filter "
+"<b>Edge</b>, which would blur edges, when increased. If <b>Edge</b> "
+"is adjusted in away so that edges are sharp, and there is still too much area "
+"noise, then texture detail could be used to reduce noise without blurring "
+"edges. Another way would be to decrease <b>Radius</b> and to increase <b>"
+"Edge</b>."
 msgstr ""
-"<p>Este valor controla os níveis de negro utilizados polo filtro adaptativo "
-"para axustar o rádio do filtro."
 
-#: imageeffect_despeckle.cpp:111
-msgid "White level:"
-msgstr "Nível de branco:"
+#: imageeffect_noisereduction.cpp:132
+msgid "Sharpness:"
+msgstr ""
 
-#: imageeffect_despeckle.cpp:116
+#: imageeffect_noisereduction.cpp:137
 msgid ""
-"<p>This value controls the white levels used by the adaptive filter to adjust "
-"the filter radius."
+"<p><b>Sharpness</b>: this control set the sharpness level. This value defines "
+"the pixel distance in which the filter looks ahead for luminance variations. "
+"When this value is increased, then spikenoise is erased. You can eventually "
+"readjust filter <b>Edge</b>, when you changed this setting. When this value is "
+"to high, then the adaptive filter cannot longer accurately track image details, "
+"and noise can reappear or blur can occur."
 msgstr ""
-"<p>Este valor controla os níveis de branco utilizados polo filtro adaptativo "
-"para axustar o rádio do filtro."
 
-#: imageeffect_despeckle.cpp:125
-msgid "Adaptive"
-msgstr "Adaptativo"
+#: imageeffect_noisereduction.cpp:149
+msgid "Edge:"
+msgstr ""
 
-#: imageeffect_despeckle.cpp:126
-msgid "<p>This option use an adaptive median filter type."
-msgstr "<p>Esta opzón utiliza un filtro de tipo adaptativo mediante mediana."
+#: imageeffect_noisereduction.cpp:154
+msgid ""
+"<p><b>Edge</b>: this control set the edge accuracy for sharpness. This value "
+"improves the frequency response for the filter. When it is too strong then not "
+"all noise can be removed, or spike noise may appear. Set it near to maximum, if "
+"you want to remove weak noise or JPEG-artifacts, without loosing detail."
+msgstr ""
 
-#: imageeffect_despeckle.cpp:128
-msgid "Recursive"
-msgstr "Recursivo"
+#: imageeffect_noisereduction.cpp:166
+msgid "Erosion:"
+msgstr ""
 
-#: imageeffect_despeckle.cpp:129
-msgid "<p>This option use a recursive median filter type."
-msgstr "<p>Esta opzón utiliza un filtro de tipo recursivo por mediana."
+#: imageeffect_noisereduction.cpp:171
+msgid ""
+"<p><b>Erosion</b>: this control set the phase shift for edges. This value can "
+"be used to erodes singular spikes and it has a smooth effect to edges, and "
+"sharpens edges by erosion, so noise at edges is eroded. The effect is dependant "
+"from <b>Sharpness</b>, <b>Damping</b>, and <b>Edges</b>"
+". Set it to minimum, if you want to remove weak noise or JPEG-artifacts. When "
+"this value is increased, then also increasing <b>Damping</b> "
+"is often useful. This setting can provides sharpening and antialiasing effect "
+"to edges when spike noise is corrected."
+msgstr ""
 
-#: imageplugin_despeckle.cpp:43
+#: imageeffect_noisereduction.cpp:189
+msgid "Advanced"
+msgstr ""
+
+#: imageeffect_noisereduction.cpp:191
+msgid "Luminance:"
+msgstr ""
+
+#: imageeffect_noisereduction.cpp:196
+msgid ""
+"<p><b>Luminance</b>: this control set the luminance tolerance of image. It's "
+"recommended to use only <b>Color</b> or <b>Luminance</b> "
+"tolerance settings to make an image correction, not the both at the same time. "
+"This settings don't influence the main smoothing process controled by <b>"
+"Details</b> settings."
+msgstr ""
+
+#: imageeffect_noisereduction.cpp:206
+msgid "Threshold:"
+msgstr ""
+
+#: imageeffect_noisereduction.cpp:211
+msgid ""
+"<p><b>Threshold</b>: this control set the 2nd derivative of luminance "
+"adjustment. This value should be set so that edges are clearly visible and "
+"noise is smoothed out. This value is not bound to any intensity value, it is "
+"bound to the second derivative of intensity values. Simply adjust it and watch "
+"the preview. Adjustment must be made carefully, because the gap between "
+"\"noisy\", \"smooth\", and \"blur\" is very small. Adjust it as carefully as "
+"you would adjust the focus of a camera."
+msgstr ""
+
+#: imageeffect_noisereduction.cpp:224
+msgid "Color:"
+msgstr ""
+
+#: imageeffect_noisereduction.cpp:229
+msgid ""
+"<p><b>Color</b>: this control set the color tolerance of image. It's "
+"recommended to use only <b>Color</b> or <b>Luminance</b> "
+"tolerance settings to make an image correction, not the both at the same time. "
+"This settings don't influence the main smoothing process controled by <b>"
+"Details</b> settings."
+msgstr ""
+
+#: imageeffect_noisereduction.cpp:239
+msgid "Gamma:"
+msgstr ""
+
+#: imageeffect_noisereduction.cpp:244
+msgid ""
+"<p><b>Gamma</b>: this control set the gamma tolerance of image. This value can "
+"be used to increase the tolerance values for darker areas (which commonly are "
+"more noisy). This results in more blur for shadow areas."
+msgstr ""
+
+#: imageeffect_noisereduction.cpp:253
+msgid "Damping:"
+msgstr ""
+
+#: imageeffect_noisereduction.cpp:258
+msgid ""
+"<p><b>Damping</b>: this control set the phase jitter damping adjustement. This "
+"value defines how fast the adaptive filter-radius reacts to luminance "
+"variations. If increased, then edges appear smoother, if too high, then blur "
+"may occur. If at minimum then noise and phase jitter at edges can occur. It can "
+"supress spike noise when increased and this is the preferred method to remove "
+"it."
+msgstr ""
+
+#: imageeffect_noisereduction.cpp:436
+msgid "Photograph Noise Reduction Settings File to Load"
+msgstr ""
+
+#: imageeffect_noisereduction.cpp:448
+msgid "\"%1\" is not a Photograph Noise Reduction settings text file."
+msgstr ""
+
+#: imageeffect_noisereduction.cpp:470
+msgid "Cannot load settings from the Photograph Noise Reduction text file."
+msgstr ""
+
+#: imageeffect_noisereduction.cpp:479
+msgid "Photograph Noise Reduction Settings File to Save"
+msgstr ""
+
+#: imageeffect_noisereduction.cpp:503
+msgid "Cannot save settings to the Photograph Noise Reduction text file."
+msgstr ""
+
+#: imageplugin_noisereduction.cpp:43
 msgid "Noise Reduction..."
 msgstr "Reduzón de Ruído..."
 
@@ -105,3 +220,30 @@ msgstr "Reduzón de Ruído..."
 #, no-c-format
 msgid "Fi&x"
 msgstr "Corri&xir"
+
+#~ msgid "<p>A radius of 0 has no effect, 1 and above determine the blur matrix radius that determines how much to blur the image."
+#~ msgstr "<p>Un rádio igual a 0 anula o efeito, mentres que valores iguais ou superiores a 1 determinan o rádio da matriz do borrón que determina canto é que se difundirá a imaxe."
+
+#~ msgid "Black level:"
+#~ msgstr "Nível de negro:"
+
+#~ msgid "<p>This value controls the black levels used by the adaptive filter to adjust the filter radius."
+#~ msgstr "<p>Este valor controla os níveis de negro utilizados polo filtro adaptativo para axustar o rádio do filtro."
+
+#~ msgid "White level:"
+#~ msgstr "Nível de branco:"
+
+#~ msgid "<p>This value controls the white levels used by the adaptive filter to adjust the filter radius."
+#~ msgstr "<p>Este valor controla os níveis de branco utilizados polo filtro adaptativo para axustar o rádio do filtro."
+
+#~ msgid "Adaptive"
+#~ msgstr "Adaptativo"
+
+#~ msgid "<p>This option use an adaptive median filter type."
+#~ msgstr "<p>Esta opzón utiliza un filtro de tipo adaptativo mediante mediana."
+
+#~ msgid "Recursive"
+#~ msgstr "Recursivo"
+
+#~ msgid "<p>This option use a recursive median filter type."
+#~ msgstr "<p>Esta opzón utiliza un filtro de tipo recursivo por mediana."
