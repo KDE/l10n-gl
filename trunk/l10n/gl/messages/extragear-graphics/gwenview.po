@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gwenview\n"
-"POT-Creation-Date: 2006-06-04 11:14+0200\n"
+"POT-Creation-Date: 2006-06-06 11:20+0200\n"
 "PO-Revision-Date: 2006-06-02 14:07+0200\n"
 "Last-Translator: Xabi G. Feal <xabigf@gmx.net>\n"
 "Language-Team: Galician <trasno@ceu.fi.udc.es>\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.10.2\n"
 
-#: app/dirviewcontroller.cpp:95 gvcore/fileviewcontroller.cpp:827
+#: app/dirviewcontroller.cpp:95 app/mainwindow.cpp:479
 msgid "New Folder..."
 msgstr "Novo Cartafol..."
 
@@ -23,46 +23,62 @@ msgstr "Novo Cartafol..."
 msgid "Rename..."
 msgstr "Renomear..."
 
-#: app/dirviewcontroller.cpp:112 gvcore/fileviewcontroller.cpp:1408
+#: app/dirviewcontroller.cpp:112 gvcore/fileopobject.cpp:192
 #, fuzzy
 msgid "Creating Folder"
 msgstr "Un cartafol ou ficheiro de inicio"
 
-#: app/dirviewcontroller.cpp:113 gvcore/fileviewcontroller.cpp:1409
+#: app/dirviewcontroller.cpp:113 gvcore/fileopobject.cpp:193
 msgid "Enter the name of the new folder:"
 msgstr "Introduza o nome do novo cartafol:"
 
 #. i18n: file ./app/configslideshowpage.ui line 40
-#: app/main.cpp:33 rc.cpp:166
+#: app/main.cpp:34 rc.cpp:166
 #, no-c-format
 msgid "Start in fullscreen mode"
 msgstr "Iniciar en modo a pantalla completa"
 
-#: app/main.cpp:34
+#: app/main.cpp:35
+msgid "Filter by file type"
+msgstr ""
+
+#: app/main.cpp:36
+msgid "Filter by file pattern (*.jpg, 01*...)"
+msgstr ""
+
+#: app/main.cpp:37
+msgid "Only show files newer than <date>"
+msgstr ""
+
+#: app/main.cpp:38
+msgid "Only show files older than <date>"
+msgstr ""
+
+#: app/main.cpp:39
 msgid "A starting file or folder"
 msgstr "Un cartafol ou ficheiro de inicio"
 
-#: app/main.cpp:47
+#: app/main.cpp:102
 msgid "Gwenview"
 msgstr "Gwenview"
 
-#: app/main.cpp:48
+#: app/main.cpp:103
 msgid "An image viewer for KDE"
 msgstr "Un visor de imaxes para KDE"
 
-#: app/main.cpp:50
+#: app/main.cpp:105
 msgid "Main developer"
 msgstr ""
 
-#: app/main.cpp:51
+#: app/main.cpp:106
 msgid "Developer"
 msgstr ""
 
-#: app/main.cpp:53
+#: app/main.cpp:108
 msgid "Fast JPEG thumbnail generation (v0.13.0)"
 msgstr "Xeración rápida de miniaturas JPEG (v0.13.0)"
 
-#: app/main.cpp:54
+#: app/main.cpp:109
 msgid ""
 "Address bar (v0.16.0)\n"
 "History support (v1.0.0)"
@@ -70,11 +86,11 @@ msgstr ""
 "Barra de enderezos (v0.16.0)\n"
 "Soporte para historial (v1.0.0)"
 
-#: app/main.cpp:55
+#: app/main.cpp:110
 msgid "File operation patch (v0.9.2)"
 msgstr "Parche de operación con ficheiros (v0.9.2)"
 
-#: app/main.cpp:56
+#: app/main.cpp:111
 msgid ""
 "Fixed crash when trying to generate a thumbnail for a broken JPEG file "
 "(v0.16.0)"
@@ -82,49 +98,49 @@ msgstr ""
 "Corrixido o peche involuntario cando se tentaba xerar unha miniatura dunha "
 "imaxe JPEG corrupta (v0.16.0)"
 
-#: app/main.cpp:57
+#: app/main.cpp:112
 msgid "Fixed compilation on KDE 3.0 (v0.16.1)"
 msgstr "Corrixida o compilación en KDE 3.0 (v0.16.1)"
 
-#: app/main.cpp:58
+#: app/main.cpp:113
 msgid "First RPM spec file"
 msgstr "Primeiro ficheiro de especificación RPM"
 
-#: app/main.cpp:59
+#: app/main.cpp:114
 msgid "Toolbar layout patch for RTL languages (v0.16.0)"
 msgstr ""
 
-#: app/main.cpp:60
+#: app/main.cpp:115
 msgid "Printing support (v1.0.0)"
 msgstr "Soporte para impresión (v1.0.0)"
 
-#: app/main.cpp:61
+#: app/main.cpp:116
 msgid ""
 "File info view (v1.0.0)\n"
 "Patch to toggle auto-zoom on click (v1.0.0)"
 msgstr ""
 
-#: app/main.cpp:62
+#: app/main.cpp:117
 msgid "Configurable mouse wheel behavior (v1.1.1)"
 msgstr ""
 
-#: app/main.cpp:63
+#: app/main.cpp:118
 msgid ""
 "Option to prevent Gwenview from automatically loading the first image of a "
 "folder (v0.15.0)"
 msgstr ""
 
-#: app/main.cpp:64
+#: app/main.cpp:119
 msgid ""
 "Fixed thumbnail generation to share the thumbnail folder of Konqueror v3 "
 "(v0.15.0)"
 msgstr ""
 
-#: app/main.cpp:65
+#: app/main.cpp:120
 msgid "Patch for mouse navigation (v0.7.0)"
 msgstr "Parche para a navegación co rato (v0.7.0)"
 
-#: app/main.cpp:66
+#: app/main.cpp:121
 msgid "Integration in Konqueror folder context menu"
 msgstr "Integración no menú de contexto para os cartafoles de Konqueror"
 
@@ -300,137 +316,141 @@ msgstr "<p>Introduza aquí un comentario para esta imaxe.</i>"
 msgid "No comment available."
 msgstr "<i>Non hai comentario dispoñíbel.</i>"
 
-#: app/mainwindow.cpp:715
+#: app/mainwindow.cpp:474 gvcore/imageviewcontroller.cpp:489
+msgid "External Tools"
+msgstr "Ferramentas Externas"
+
+#: app/mainwindow.cpp:755
 msgid ""
 "You are about to revert the window setup to factory defaults, are you sure?"
 msgstr ""
 
-#: app/mainwindow.cpp:717 app/mainwindow.cpp:944
+#: app/mainwindow.cpp:757 app/mainwindow.cpp:984
 msgid "Reset"
 msgstr ""
 
-#: app/mainwindow.cpp:752
+#: app/mainwindow.cpp:792
 #, fuzzy
 msgid "No Images"
 msgstr "Imaxe"
 
-#: app/mainwindow.cpp:754
+#: app/mainwindow.cpp:794
 msgid "%1/%2 - %3 %4x%5"
 msgstr ""
 
-#: app/mainwindow.cpp:828
+#: app/mainwindow.cpp:868
 #, fuzzy
 msgid "Image"
 msgstr "Imaxe"
 
-#: app/mainwindow.cpp:835 app/mainwindow.cpp:840
+#: app/mainwindow.cpp:875 app/mainwindow.cpp:880
 msgid "Folders"
 msgstr "Cartafoles"
 
-#: app/mainwindow.cpp:854
+#: app/mainwindow.cpp:894
 #, fuzzy
 msgid "Image Comment"
 msgstr "Imprimi-lo comentario da imaxe"
 
-#: app/mainwindow.cpp:878
+#: app/mainwindow.cpp:918
 msgid ""
 "<qt><b>Configuration update</b>"
 "<br>Due to some changes in the dock behavior, your old dock configuration has "
 "been discarded. Please adjust your docks again.</qt>"
 msgstr ""
 
-#: app/mainwindow.cpp:906
+#: app/mainwindow.cpp:946
 #, fuzzy
 msgid "Browse"
 msgstr "Imaxe"
 
-#: app/mainwindow.cpp:909
+#: app/mainwindow.cpp:949
 #, fuzzy
 msgid "View Image"
 msgstr "Imaxe"
 
-#: app/mainwindow.cpp:917 gvcore/fileviewcontroller.cpp:833
+#: app/mainwindow.cpp:957
 msgid "&Rename..."
 msgstr "&Renomear..."
 
-#: app/mainwindow.cpp:918 gvcore/fileviewcontroller.cpp:839
+#: app/mainwindow.cpp:958
 msgid "&Copy To..."
 msgstr "&Copiar A..."
 
-#: app/mainwindow.cpp:919 gvcore/fileviewcontroller.cpp:842
+#: app/mainwindow.cpp:959
 msgid "&Move To..."
 msgstr "&Mover A..."
 
-#: app/mainwindow.cpp:920 gvcore/fileviewcontroller.cpp:845
+#: app/mainwindow.cpp:960
 #, fuzzy
 msgid "&Link To..."
 msgstr "&Mover A..."
 
-#: app/mainwindow.cpp:926
+#: app/mainwindow.cpp:966
 msgid "Rotate &Left"
 msgstr "Rotar á &Esquerda"
 
-#: app/mainwindow.cpp:927 gvdirpart/gvdirpart.cpp:115
+#: app/mainwindow.cpp:967 gvdirpart/gvdirpart.cpp:91
 #: gvimagepart/gvimagepart.cpp:103
 msgid "Rotate &Right"
 msgstr "Rotar á &Dereita"
 
-#: app/mainwindow.cpp:928
+#: app/mainwindow.cpp:968
 msgid "&Mirror"
 msgstr "&Reflectir"
 
-#: app/mainwindow.cpp:929
+#: app/mainwindow.cpp:969
 msgid "&Flip"
 msgstr "&Voltear"
 
-#: app/mainwindow.cpp:936
+#: app/mainwindow.cpp:976
 msgid "Slide Show"
 msgstr ""
 
-#: app/mainwindow.cpp:940
+#: app/mainwindow.cpp:980
 msgid "Up"
 msgstr "Enriba"
 
-#: app/mainwindow.cpp:941
+#: app/mainwindow.cpp:981
 msgid "Home"
 msgstr ""
 
-#: app/mainwindow.cpp:951 gvcore/externaltoolcontext.cpp:74
+#: app/mainwindow.cpp:991 gvcore/externaltoolcontext.cpp:74
 msgid "Configure External Tools..."
 msgstr "Configurar Ferramentas Externas..."
 
-#: app/mainwindow.cpp:1033
+#: app/mainwindow.cpp:1076
 #, c-format
 msgid "Hide %1"
 msgstr "Agochar %1"
 
-#: app/mainwindow.cpp:1035
+#: app/mainwindow.cpp:1078
 #, c-format
 msgid "Show %1"
 msgstr "Amosar %1"
 
-#: app/mainwindow.cpp:1161
+#: app/mainwindow.cpp:1204
 msgid "Location Bar"
 msgstr "Barra de Localización"
 
-#: app/mainwindow.cpp:1167
+#: app/mainwindow.cpp:1210
 #, fuzzy
 msgid "Clear Location Bar"
 msgstr "Limpar barra de localización"
 
-#: app/mainwindow.cpp:1175
+#: app/mainwindow.cpp:1218
 msgid "L&ocation:"
 msgstr "L&ocalización:"
 
-#: app/mainwindow.cpp:1176
+#: app/mainwindow.cpp:1219
 msgid "L&ocation: "
 msgstr "L&ocalización: "
 
-#: app/mainwindow.cpp:1181
+#: app/mainwindow.cpp:1224
 msgid "Go"
 msgstr "Ir"
 
-#: app/mainwindow.cpp:1259
+#: app/mainwindow.cpp:1302
 #, fuzzy
 msgid "No Plugin"
 msgstr "Escalado"
@@ -447,19 +467,19 @@ msgid ""
 "Your emails"
 msgstr "xabigf@gmx.net"
 
-#: gvdirpart/gvdirpart.cpp:132
+#: gvdirpart/gvdirpart.cpp:120
 msgid "Slide Show..."
 msgstr ""
 
-#: gvdirpart/gvdirpart.cpp:133
+#: gvdirpart/gvdirpart.cpp:121
 msgid "Stop Slide Show"
 msgstr ""
 
-#: gvdirpart/gvdirpart.cpp:156
+#: gvdirpart/gvdirpart.cpp:145
 msgid "GVDirPart"
 msgstr ""
 
-#: gvdirpart/gvdirpart.cpp:157
+#: gvdirpart/gvdirpart.cpp:146
 #, fuzzy
 msgid "Image Browser"
 msgstr "Imaxe"
@@ -535,10 +555,6 @@ msgstr "Centímetros"
 #, no-c-format
 msgid "Inches"
 msgstr "Polgas"
-
-#: gvcore/fileviewcontroller.cpp:819 gvcore/imageviewcontroller.cpp:482
-msgid "External Tools"
-msgstr "Ferramentas Externas"
 
 #: gvcore/documentanimatedloadedimpl.cpp:91
 msgid "Sorry, cannot save animated images."
@@ -658,68 +674,68 @@ msgstr "Tódolos ficheiros"
 msgid "Select Folder Where Files Will be Moved"
 msgstr ""
 
-#: gvcore/fileopobject.cpp:202
+#: gvcore/fileopobject.cpp:221
 msgid "Do you really want to trash these files?"
 msgstr "Quere realmente tirar ó lixo estes ficheiros?"
 
-#: gvcore/fileopobject.cpp:202
+#: gvcore/fileopobject.cpp:221
 msgid ""
 "_: Trash used as a verb\n"
 "Trash Files"
 msgstr ""
 
-#: gvcore/fileopobject.cpp:202 gvcore/fileopobject.cpp:206
+#: gvcore/fileopobject.cpp:221 gvcore/fileopobject.cpp:225
 msgid ""
 "_: Trash used as a verb\n"
 "&Trash"
 msgstr ""
 
-#: gvcore/fileopobject.cpp:206
+#: gvcore/fileopobject.cpp:225
 msgid "<p>Do you really want to move <b>%1</b> to the trash?</p>"
 msgstr "<p>Quere realmente mover <b>%1</b> ó lixo?</p>"
 
-#: gvcore/fileopobject.cpp:206
+#: gvcore/fileopobject.cpp:225
 msgid ""
 "_: Trash used as a verb\n"
 "Trash File"
 msgstr ""
 
-#: gvcore/fileopobject.cpp:235
+#: gvcore/fileopobject.cpp:254
 msgid "Do you really want to delete these files?"
 msgstr "Quere realmente borrar estes ficheiros?"
 
-#: gvcore/fileopobject.cpp:236
+#: gvcore/fileopobject.cpp:255
 #, fuzzy
 msgid "Delete Files"
 msgstr "<b>Borrar Ficheiros</b>"
 
-#: gvcore/fileopobject.cpp:242
+#: gvcore/fileopobject.cpp:261
 msgid "<p>Do you really want to delete <b>%1</b>?</p>"
 msgstr "<p>Quere realmente borrar <b>%1</b>?</p>"
 
-#: gvcore/fileopobject.cpp:243
+#: gvcore/fileopobject.cpp:262
 #, fuzzy
 msgid "Delete File"
 msgstr "<b>Borrar Ficheiros</b>"
 
-#: gvcore/fileopobject.cpp:265
+#: gvcore/fileopobject.cpp:284
 #, fuzzy
 msgid "Renaming File"
 msgstr "Renomear este cartafol a:"
 
-#: gvcore/fileopobject.cpp:266
+#: gvcore/fileopobject.cpp:285
 msgid "<p>Rename file <b>%1</b> to:</p>"
 msgstr "<p>Renomear ficheiro <b>%1</b> a:</p>"
 
-#: gvcore/fileoperation.cpp:81
+#: gvcore/fileoperation.cpp:96
 msgid "&Move Here"
 msgstr "&Mover Aquí"
 
-#: gvcore/fileoperation.cpp:83
+#: gvcore/fileoperation.cpp:98
 msgid "&Copy Here"
 msgstr "&Copiar Aquí"
 
-#: gvcore/fileoperation.cpp:85
+#: gvcore/fileoperation.cpp:100
 #, fuzzy
 msgid "&Link Here"
 msgstr "&Mover Aquí"
@@ -799,113 +815,108 @@ msgstr "Formato:"
 msgid "Other..."
 msgstr ""
 
-#: gvcore/fileviewcontroller.cpp:221
+#: gvcore/fileviewcontroller.cpp:218
 msgid "Filter:"
 msgstr "Filtro:"
 
 #. i18n: file ./gvcore/externaltooldialogbase.ui line 283
-#: gvcore/fileviewcontroller.cpp:224 rc.cpp:264
+#: gvcore/fileviewcontroller.cpp:221 rc.cpp:264
 #, no-c-format
 msgid "All files"
 msgstr "Tódolos ficheiros"
 
-#: gvcore/fileviewcontroller.cpp:225
+#: gvcore/fileviewcontroller.cpp:222
 #, fuzzy
 msgid "Images only"
 msgstr "Imaxe"
 
-#: gvcore/fileviewcontroller.cpp:226
+#: gvcore/fileviewcontroller.cpp:223
 msgid "Videos only"
 msgstr ""
 
-#: gvcore/fileviewcontroller.cpp:232
+#: gvcore/fileviewcontroller.cpp:229
 msgid "More"
 msgstr ""
 
-#: gvcore/fileviewcontroller.cpp:272
+#: gvcore/fileviewcontroller.cpp:269
 msgid "&First"
 msgstr "&Primeiro"
 
-#: gvcore/fileviewcontroller.cpp:276
+#: gvcore/fileviewcontroller.cpp:273
 msgid "&Last"
 msgstr "&Derradeiro"
 
-#: gvcore/fileviewcontroller.cpp:284
+#: gvcore/fileviewcontroller.cpp:281
 #, fuzzy
 msgid "&Next"
 msgstr "Imaxe"
 
-#: gvcore/fileviewcontroller.cpp:288
+#: gvcore/fileviewcontroller.cpp:285
 #, fuzzy
 msgid "&Previous Folder"
 msgstr "Cartafol Pai"
 
-#: gvcore/fileviewcontroller.cpp:292
+#: gvcore/fileviewcontroller.cpp:289
 #, fuzzy
 msgid "&Next Folder"
 msgstr "Cartafol Pai"
 
-#: gvcore/fileviewcontroller.cpp:296
+#: gvcore/fileviewcontroller.cpp:293
 #, fuzzy
 msgid "&First Sub Folder"
 msgstr "Cartafol Pai"
 
-#: gvcore/fileviewcontroller.cpp:299
+#: gvcore/fileviewcontroller.cpp:296
 msgid "Details"
 msgstr "Detalles"
 
-#: gvcore/fileviewcontroller.cpp:301
+#: gvcore/fileviewcontroller.cpp:298
 #, fuzzy
 msgid "Thumbnails with Info on Side"
 msgstr "<b>Vista de Miniaturas</b>"
 
-#: gvcore/fileviewcontroller.cpp:303
+#: gvcore/fileviewcontroller.cpp:300
 msgid "Thumbnails with Info on Bottom"
 msgstr ""
 
-#: gvcore/fileviewcontroller.cpp:316
+#: gvcore/fileviewcontroller.cpp:313
 #, fuzzy
 msgid "Thumbnail Size"
 msgstr "<b>Vista de Miniaturas</b>"
 
-#: gvcore/fileviewcontroller.cpp:320
+#: gvcore/fileviewcontroller.cpp:317
 msgid "Show &Hidden Files"
 msgstr "Amosar Ficheiros &Agochados"
 
-#: gvcore/fileviewcontroller.cpp:322
+#: gvcore/fileviewcontroller.cpp:319
 msgid "Sort"
 msgstr "Ordear"
 
-#: gvcore/fileviewcontroller.cpp:324
+#: gvcore/fileviewcontroller.cpp:321
 msgid "By Name"
 msgstr "Por Nome"
 
-#: gvcore/fileviewcontroller.cpp:324
+#: gvcore/fileviewcontroller.cpp:321
 msgid "By Date"
 msgstr "Por Data"
 
-#: gvcore/fileviewcontroller.cpp:324
+#: gvcore/fileviewcontroller.cpp:321
 msgid "By Size"
 msgstr "Por Tamaño"
 
-#: gvcore/fileviewcontroller.cpp:328
+#: gvcore/fileviewcontroller.cpp:325
 msgid "Descending"
 msgstr ""
 
-#: gvcore/fileviewcontroller.cpp:413
+#: gvcore/fileviewcontroller.cpp:410
 #, fuzzy
 msgid "Edit Thumbnail Details..."
 msgstr "Miniaturas Medianas"
 
-#: gvcore/fileviewcontroller.cpp:736
+#: gvcore/fileviewcontroller.cpp:734
 #, fuzzy, c-format
 msgid "Thumbnail size: %1x%2"
 msgstr "<b>Vista de Miniaturas</b>"
-
-#: gvcore/fileviewcontroller.cpp:824
-#, fuzzy
-msgid "Parent Folder"
-msgstr "Cartafol Pai"
 
 #: gvcore/imageviewtools.cpp:128
 msgid ""
@@ -917,10 +928,6 @@ msgstr ""
 msgid ""
 "Drag to move the image, middle-click to toggle auto-zoom. Hold the Control key "
 "to switch to the zoom tool."
-msgstr ""
-
-#: gvcore/batchmanipulator.cpp:57
-msgid "Manipulating images..."
 msgstr ""
 
 #: gvcore/documentjpegloadedimpl.cpp:118
@@ -1566,6 +1573,10 @@ msgstr "&Fiestra"
 #, no-c-format
 msgid "Location Toolbar"
 msgstr "Barra de Ferramentas de Localización"
+
+#, fuzzy
+#~ msgid "Parent Folder"
+#~ msgstr "Cartafol Pai"
 
 #~ msgid "Alt+F"
 #~ msgstr "Alt+F"
