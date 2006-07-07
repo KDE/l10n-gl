@@ -8,7 +8,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: k3b\n"
-"POT-Creation-Date: 2006-07-06 11:36+0200\n"
+"POT-Creation-Date: 2006-07-07 11:30+0200\n"
 "PO-Revision-Date: 2006-06-02 14:08+0200\n"
 "Last-Translator: Xabi G. Feal <xabigf@gmx.net>\n"
 "Language-Team: Galician <trasno@ceu.fi.udc.es>\n"
@@ -45,7 +45,7 @@ msgid "Length"
 msgstr "Lonxitude"
 
 #: projects/k3bvcdlistview.cpp:89 rip/k3baudioprojectconvertingdialog.cpp:104
-#: rip/k3baudiorippingdialog.cpp:128 rip/k3bvideodvdrippingwidget.cpp:56
+#: rip/k3baudiorippingdialog.cpp:128 rip/k3bvideodvdrippingwidget.cpp:62
 msgid "File Size"
 msgstr "Tamaño do ficheiro"
 
@@ -79,12 +79,13 @@ msgstr ""
 "únicos."
 
 #: rip/k3baudioprojectconvertingdialog.cpp:166
-#: rip/k3baudiorippingdialog.cpp:246
+#: rip/k3baudiorippingdialog.cpp:246 rip/k3bvideodvdrippingdialog.cpp:520
 msgid "Do you want to overwrite these files?"
 msgstr "¿Quere sobrescribir estes ficheiros?"
 
 #: rip/k3baudioprojectconvertingdialog.cpp:168
 #: rip/k3baudiorippingdialog.cpp:248 rip/k3bvideocdrippingdialog.cpp:171
+#: rip/k3bvideodvdrippingdialog.cpp:522
 msgid "Files Exist"
 msgstr "O ficheiro existe"
 
@@ -95,7 +96,8 @@ msgstr "O ficheiro existe"
 #: projects/k3bmovixdvdburndialog.cpp:199 projects/k3bvcdburndialog.cpp:583
 #: rip/k3baudioprojectconvertingdialog.cpp:168
 #: rip/k3baudiorippingdialog.cpp:248 rip/k3bdvdrippingprocess.cpp:412
-#: rip/k3bdvdrippingprocess.cpp:433 videoEncoding/k3bdivxview.cpp:132
+#: rip/k3bdvdrippingprocess.cpp:433 rip/k3bvideodvdrippingdialog.cpp:522
+#: videoEncoding/k3bdivxview.cpp:132
 msgid "Overwrite"
 msgstr "Sobrescribir"
 
@@ -104,7 +106,7 @@ msgstr "Sobrescribir"
 #: rip/k3baudioprojectconvertingdialog.cpp:286
 #: rip/k3baudiorippingdialog.cpp:339 rip/k3baudiorippingdialog.cpp:396
 #: rip/k3bpatternparser.cpp:122 rip/k3bpatternparser.cpp:156
-#: rip/k3bpatternparser.cpp:164
+#: rip/k3bpatternparser.cpp:164 rip/k3bvideodvdrippingwidget.cpp:190
 msgid "unknown"
 msgstr "descoñecido"
 
@@ -1010,21 +1012,21 @@ msgstr "Datos"
 #: k3bdiskinfoview.cpp:300 option/k3bpatternoptiontab.cpp:96
 #: option/k3bpatternoptiontab.cpp:101 option/k3bpatternoptiontab.cpp:106
 #: option/k3bpatternoptiontab.cpp:323 projects/k3bvcdlistview.cpp:82
-#: rip/k3baudiocdlistview.cpp:36 rip/k3bvideodvdrippingdialog.cpp:439
-#: rip/k3bvideodvdrippingdialog.cpp:457
+#: rip/k3baudiocdlistview.cpp:36 rip/k3bvideodvdrippingdialog.cpp:467
+#: rip/k3bvideodvdrippingdialog.cpp:485
 #: rip/k3bvideodvdrippingtitlelistview.cpp:256
-#: rip/k3bvideodvdrippingwidget.cpp:54 rip/k3bvideodvdrippingwidget.cpp:63
+#: rip/k3bvideodvdrippingwidget.cpp:60 rip/k3bvideodvdrippingwidget.cpp:69
 msgid "Title"
 msgstr "Título"
 
-#: rip/k3bvideodvdrippingwidget.cpp:55
+#: rip/k3bvideodvdrippingwidget.cpp:61
 #, fuzzy
 msgid "Video Size"
 msgstr "Tamaño do vídeo:"
 
 #: k3baudioplayer.cpp:116 projects/k3baudiotrackview.cpp:136
 #: projects/k3bvcdlistview.cpp:90 projects/k3bvcdtrackdialog.cpp:389
-#: rip/k3bvideodvdrippingwidget.cpp:57
+#: rip/k3bvideodvdrippingwidget.cpp:63
 msgid "Filename"
 msgstr "Nome de ficheiro"
 
@@ -1034,9 +1036,64 @@ msgstr "Nome de ficheiro"
 #: ../plugins/encoder/lame/k3blameencoder.cpp:488
 #: ../plugins/encoder/lame/k3blameencoder.cpp:489
 #: ../plugins/encoder/lame/k3blameencoder.cpp:490
-#: rip/k3bvideodvdrippingwidget.cpp:71
+#: rip/k3bvideodvdrippingwidget.cpp:77
 msgid "%1 kbps"
 msgstr "%1 kps"
+
+#: rip/k3bvideodvdrippingwidget.cpp:198
+msgid ""
+"<p><b>Pattern special strings:</b>"
+"<p>The following strings will be replaced with their respective meaning in "
+"every track name."
+"<br>"
+"<p><table border=\"0\">"
+"<tr>"
+"<td></td>"
+"<td><em>Meaning</em></td>"
+"<td><em>Alternatives</em></td></tr>"
+"<tr>"
+"<td>%t</td>"
+"<td>title number</td>"
+"<td>%{t} or %{title_number}</td></tr>"
+"<tr>"
+"<td>%v</td>"
+"<td>volume id (mostly the name of the Video DVD)</td>"
+"<td>%{v} or %{volume_id}</td></tr>"
+"<tr>"
+"<td>%b</td>"
+"<td>beautified volume id</td>"
+"<td>%{b} or %{beautified_volume_id}</td></tr>"
+"<tr>"
+"<td>%l</td>"
+"<td>two chars language code</td>"
+"<td>%{l} or %{lang_code}</td></tr>"
+"<tr>"
+"<td>%n</td>"
+"<td>language name</td>"
+"<td>%{n} or %{lang_name}</td></tr>"
+"<tr>"
+"<td>%a</td>"
+"<td>audio format (on the Video DVD)</td>"
+"<td>%{a} or %{audio_format}</td></tr>"
+"<tr>"
+"<td>%c</td>"
+"<td>number of audio channels (on the Video DVD)</td>"
+"<td>%{c} or %{channels}</td></tr>"
+"<tr>"
+"<td>%s</td>"
+"<td>size of the original video</td>"
+"<td>%{s} or %{video_size}</td></tr>"
+"<tr>"
+"<td>%r</td>"
+"<td>aspect ration of the original video</td>"
+"<td>%{r} or %{aspect_ratio}</td></tr>"
+"<tr>"
+"<td>%d</td>"
+"<td>current date</td>"
+"<td>%{d} or %{date}</td></tr></table>"
+"<p><em>Hint: K3b also accepts slight variantions of the long special strings. "
+"One can, for example, leave out the underscores.</em>"
+msgstr ""
 
 #: rip/k3bdvdripperwidget.cpp:74
 msgid "Ripping DVD"
@@ -1144,12 +1201,12 @@ msgstr ""
 msgid "(full)"
 msgstr "(cheo)"
 
-#: rip/k3bvideodvdrippingdialog.cpp:121 rip/k3bvideodvdrippingdialog.cpp:145
+#: rip/k3bvideodvdrippingdialog.cpp:122 rip/k3bvideodvdrippingdialog.cpp:146
 #, fuzzy
 msgid "Video DVD Ripping"
 msgstr "Extracción do video CD"
 
-#: rip/k3bvideodvdrippingdialog.cpp:146
+#: rip/k3bvideodvdrippingdialog.cpp:147
 #, fuzzy
 msgid ""
 "_n: 1 title from %1\n"
@@ -1158,23 +1215,23 @@ msgstr ""
 "_n: 1 título\n"
 "%n títulos"
 
-#: rip/k3bvideodvdrippingdialog.cpp:168
+#: rip/k3bvideodvdrippingdialog.cpp:169
 #, fuzzy
 msgid "Title %1 (%2)"
 msgstr "Título %1"
 
-#: rip/k3bvideodvdrippingdialog.cpp:215
+#: rip/k3bvideodvdrippingdialog.cpp:216
 msgid "%1 %2Ch (%3%4)"
 msgstr ""
 
-#: rip/k3bvideodvdrippingdialog.cpp:219
+#: rip/k3bvideodvdrippingdialog.cpp:220
 #: rip/k3bvideodvdrippingtitlelistview.cpp:44
 #: rip/k3bvideodvdrippingtitlelistview.cpp:69
 #, fuzzy
 msgid "unknown language"
 msgstr "Idioma do son:"
 
-#: rip/k3bvideodvdrippingdialog.cpp:390
+#: rip/k3bvideodvdrippingdialog.cpp:409
 #, c-format
 msgid ""
 "_n: %nCh\n"
