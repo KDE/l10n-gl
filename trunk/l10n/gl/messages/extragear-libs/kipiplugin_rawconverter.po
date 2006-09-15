@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kipiplugin_rawconverter\n"
-"POT-Creation-Date: 2006-09-14 08:54+0200\n"
+"POT-Creation-Date: 2006-09-15 08:43+0200\n"
 "PO-Revision-Date: 2006-05-16 20:14+0200\n"
 "Last-Translator: mvillarino <mvillarino@users.sourceforge.net>\n"
 "Language-Team: Galician <trasno@ceu.fi.udc.es>\n"
@@ -88,28 +88,47 @@ msgstr "<p>Cancelar a conversión actual"
 msgid "<p>Exit Raw Converter"
 msgstr "<p>Sair do Convertedor de Imaxes en Bruto"
 
-#: batchdialog.cpp:298
+#: batchdialog.cpp:304
 msgid "There is no Raw file to process in the list!"
 msgstr "Non hai nengunha imaxe RAW para converter para converter!"
 
-#: batchdialog.cpp:504 singledialog.cpp:411
+#: batchdialog.cpp:508 singledialog.cpp:415
 msgid "Save Raw Image converted from '%1' as"
 msgstr "Guardar Imaxe en Bruto convertida desde '%1' como"
 
-#: batchdialog.cpp:513 singledialog.cpp:420
+#: batchdialog.cpp:517 singledialog.cpp:424
 #, c-format
 msgid "Failed to save image %1"
 msgstr "Erro ao guardar imaxe %1"
 
-#: dcrawsettingswidget.cpp:97
-msgid "RAW Decoding Settings"
+#: dcrawiface.cpp:202
+msgid "Cannot open RAW file"
 msgstr ""
 
-#: dcrawsettingswidget.cpp:104
+#: dcrawiface.cpp:208
+#, fuzzy
+msgid "Not a RAW file"
+msgstr "Non é unha imaxe Raw!"
+
+#: dcrawiface.cpp:224
+msgid "Cannot start dcraw instance"
+msgstr ""
+
+#: dcrawiface.cpp:234 dcrawiface.cpp:251
+#, fuzzy
+msgid "Cannot identify RAW file"
+msgstr ""
+"Non foi posíbel identificar a imaxe en bruto\n"
+
+#: dcrawsettingswidget.cpp:98
+msgid "RAW Decoding Settings (dcraw %1)"
+msgstr ""
+
+#: dcrawsettingswidget.cpp:106
 msgid "Interpolate RGB as four colors"
 msgstr ""
 
-#: dcrawsettingswidget.cpp:105
+#: dcrawsettingswidget.cpp:107
 #, fuzzy
 msgid ""
 "<p><b>Interpolate RGB as four colors</b>"
@@ -125,11 +144,11 @@ msgstr ""
 "ultravioleta que os das pares esta diferenza causará un patrón de malla no "
 "resultado; usar esta opzón resolve este problema con perdas mínimas de detalle."
 
-#: dcrawsettingswidget.cpp:119
+#: dcrawsettingswidget.cpp:121
 msgid "Use camera white balance"
 msgstr "Utilizar balanceamento de branco da cámara"
 
-#: dcrawsettingswidget.cpp:120
+#: dcrawsettingswidget.cpp:122
 #, fuzzy
 msgid ""
 "<p><b>Use camera white balance</b>"
@@ -140,11 +159,11 @@ msgstr ""
 "<p>Usar os axustes de balanzo de branco da cámara. Por defeito usarán-se "
 "valores fixos para luz diurna, calculados a partir de imaxes de mostra."
 
-#: dcrawsettingswidget.cpp:129
+#: dcrawsettingswidget.cpp:131
 msgid "Automatic color balance"
 msgstr ""
 
-#: dcrawsettingswidget.cpp:130
+#: dcrawsettingswidget.cpp:132
 msgid ""
 "<p><b>Automatic color balance</b>"
 "<p>The default is to use a fixed color balance based on a white card "
@@ -152,11 +171,11 @@ msgid ""
 "<p>"
 msgstr ""
 
-#: dcrawsettingswidget.cpp:138
+#: dcrawsettingswidget.cpp:140
 msgid "Use Super-CCD secondary sensors"
 msgstr ""
 
-#: dcrawsettingswidget.cpp:139
+#: dcrawsettingswidget.cpp:141
 msgid ""
 "<p><b>Use Super CCD secondary sensors</b>"
 "<p>For Fuji Super CCD SR cameras, use the secondary sensors, in effect "
@@ -165,67 +184,70 @@ msgid ""
 "<p>"
 msgstr ""
 
-#: dcrawsettingswidget.cpp:149
-msgid "Highlights clipping:"
-msgstr ""
-
 #: dcrawsettingswidget.cpp:151
-msgid "Solid white"
-msgstr ""
-
-#: dcrawsettingswidget.cpp:152
-msgid "Unclip"
+msgid "Highlights:"
 msgstr ""
 
 #: dcrawsettingswidget.cpp:153
-msgid "Reconstruct"
+msgid "Solid white"
 msgstr ""
 
 #: dcrawsettingswidget.cpp:154
-msgid ""
-"<p><b>Highlights clipping</b>"
-"<p>Select here the highlight cliping method:<b>Solid white</b>"
-": clip all highlights to solid white"
-"<p><b>Unclip</b>: leave highlights unclipped in various shades of pink"
-"<p><b>Reconstruct</b>: reconstruct highlights using a level. Low value favor "
-"whites and high value favor colors."
+msgid "Unclip"
 msgstr ""
 
-#: dcrawsettingswidget.cpp:164
+#: dcrawsettingswidget.cpp:155
+msgid "Reconstruct"
+msgstr ""
+
+#: dcrawsettingswidget.cpp:156
+msgid ""
+"<p><b>Highlights</b>"
+"<p>Select here the highlight cliping method:"
+"<p><b>Solid white</b>: clip all highlights to solid white"
+"<p><b>Unclip</b>: leave highlights unclipped in various shades of pink"
+"<p><b>Reconstruct</b>: reconstruct highlights using a level value."
+msgstr ""
+
+#: dcrawsettingswidget.cpp:166
 msgid "Level:"
 msgstr ""
 
-#: dcrawsettingswidget.cpp:167
+#: dcrawsettingswidget.cpp:169
 msgid ""
 "<p><b>Level</b>"
-"<p>Specify the reconstruct highlights level of ouput image."
+"<p>Specify the reconstruct highlights level of ouput image. Low value favor "
+"whites and high value favor colors."
 msgstr ""
 
-#: dcrawsettingswidget.cpp:174
+#: dcrawsettingswidget.cpp:177
 msgid "Brightness:"
 msgstr "Brillo:"
 
-#: dcrawsettingswidget.cpp:178
-msgid "<p><b>Brighness</b><p>Specify the brightness level of ouput image."
-msgstr ""
-
-#: dcrawsettingswidget.cpp:185
-msgid "Quality:"
-msgstr ""
-
-#: dcrawsettingswidget.cpp:187
-msgid "Bilinear interpolation"
-msgstr ""
-
-#: dcrawsettingswidget.cpp:188
-msgid "VNG interpolation"
+#: dcrawsettingswidget.cpp:181
+msgid ""
+"<p><b>Brighness</b>"
+"<p>Specify the brightness level of ouput image.The default value is 1.0."
+"<p>"
 msgstr ""
 
 #: dcrawsettingswidget.cpp:189
+msgid "Quality:"
+msgstr ""
+
+#: dcrawsettingswidget.cpp:191
+msgid "Bilinear interpolation"
+msgstr ""
+
+#: dcrawsettingswidget.cpp:192
+msgid "VNG interpolation"
+msgstr ""
+
+#: dcrawsettingswidget.cpp:193
 msgid "AHD interpolation"
 msgstr ""
 
-#: dcrawsettingswidget.cpp:190
+#: dcrawsettingswidget.cpp:194
 msgid ""
 "<p><b>Quality</b>"
 "<p>Select here the demosaicing RAW images decoding interpolation method. A "
@@ -248,11 +270,11 @@ msgid ""
 "<p>"
 msgstr ""
 
-#: dcrawsettingswidget.cpp:213
+#: dcrawsettingswidget.cpp:217
 msgid "Enable noise reduction"
 msgstr ""
 
-#: dcrawsettingswidget.cpp:214
+#: dcrawsettingswidget.cpp:218
 msgid ""
 "<p><b>Enable Noise Reduction</b>"
 "<p>Toggle bilateral filter to smooth noise while preserving edges. This option "
@@ -261,104 +283,90 @@ msgid ""
 "<p>"
 msgstr ""
 
-#: dcrawsettingswidget.cpp:224
-msgid "Sigma domain:"
+#: dcrawsettingswidget.cpp:228
+msgid "Domain:"
 msgstr ""
 
-#: dcrawsettingswidget.cpp:225
+#: dcrawsettingswidget.cpp:229
 msgid ""
-"<p><b>Sigma domain</b>"
-"<p>The noise reduction Sigma Domain in units of pixels. The default value is "
-"2.0."
+"<p><b>Domain</b>"
+"<p>Set here the noise reduction Sigma Domain in units of pixels. The default "
+"value is 2.0."
 "<p>"
 msgstr ""
 
-#: dcrawsettingswidget.cpp:235
-msgid "Sigma range:"
+#: dcrawsettingswidget.cpp:239
+msgid "Range:"
 msgstr ""
 
-#: dcrawsettingswidget.cpp:236
+#: dcrawsettingswidget.cpp:240
 msgid ""
-"<p><b>Sigma range</b>"
-"<p>The noise reduction Sigma Range in units of CIELab colorspace. The default "
-"value is 4.0."
+"<p><b>Range</b>"
+"<p>Set here the noise reduction Sigma Range in units of CIELab colorspace. The "
+"default value is 4.0."
 "<p>"
 msgstr ""
 
-#: dcrawsettingswidget.cpp:244
+#: dcrawsettingswidget.cpp:248
 msgid "Color space:"
 msgstr ""
 
-#: dcrawsettingswidget.cpp:246
+#: dcrawsettingswidget.cpp:250
 #, fuzzy
 msgid "Raw (linear)"
 msgstr "Imaxe Raw"
 
-#: dcrawsettingswidget.cpp:247
+#: dcrawsettingswidget.cpp:251
 msgid "sRGB"
 msgstr ""
 
-#: dcrawsettingswidget.cpp:248
+#: dcrawsettingswidget.cpp:252
 msgid "Adobe RGB"
 msgstr ""
 
-#: dcrawsettingswidget.cpp:249
+#: dcrawsettingswidget.cpp:253
 msgid "Wide Gamut"
 msgstr ""
 
-#: dcrawsettingswidget.cpp:250
+#: dcrawsettingswidget.cpp:254
 msgid "Pro-Photo"
 msgstr ""
 
-#: dcrawsettingswidget.cpp:251
+#: dcrawsettingswidget.cpp:255
 msgid ""
 "<p><b>Color space</b>"
 "<p>Select here the output color space used to decode RAW data."
-"<p>"
+"<p><b>Raw (linear)</b>: in this mode, none output color space is used during "
+"RAW decoding."
+"<p><b>sRGB</b>: this color space is an RGB color space, created cooperatively "
+"by Hewlett-Packard and Microsoft, that is the best choice for images destined "
+"for the Web and portrait photography."
+"<p><b>Adobe RGB</b>: this color space is an RGB color space, developed by "
+"Adobe, that used for photography applications such as advertising and fine art."
+"<p><b>Wide Gamut</b>: this color space is is an expanded version of the Adobe "
+"RGB color space."
+"<p><b>Pro-Photo</b>: this color space is an RGB color space, developed by "
+"Kodak, that offers an especially large gamut designed for use with photographic "
+"output in mind."
 msgstr ""
 
-#: dcrawutils.cpp:195
-msgid "Cannot open RAW file"
-msgstr ""
-
-#: dcrawutils.cpp:201
-#, fuzzy
-msgid "Not a RAW file"
-msgstr "Non é unha imaxe Raw!"
-
-#: dcrawutils.cpp:217
-msgid "Cannot start dcraw instance"
-msgstr ""
-
-#: dcrawutils.cpp:227 dcrawutils.cpp:244
-#, fuzzy
-msgid "Cannot identify RAW file"
-msgstr ""
-"Non foi posíbel identificar a imaxe en bruto\n"
-
-#: plugin_rawconverter.cpp:75
+#: plugin_rawconverter.cpp:76
 msgid "Raw Image Converter (Single)..."
 msgstr "Convertedor de Imaxes en Bruto (Individual)..."
 
-#: plugin_rawconverter.cpp:83
+#: plugin_rawconverter.cpp:84
 msgid "Raw Images Converter (Batch)..."
 msgstr "Convertedor de Imaxes en Bruto (Lote)..."
 
-#: plugin_rawconverter.cpp:133
-msgid ""
-"Failed to start raw converter client.\n"
-"Please check your installation."
-msgstr ""
-"Non foi posíbel iniciar o cliente de conversión en bruto.\n"
-"Por favor verifique a sua instalazón."
-
-#: plugin_rawconverter.cpp:144
+#: plugin_rawconverter.cpp:134
+#, fuzzy
 msgid ""
 "<qt>"
 "<p>Unable to find the dcraw executable:"
-"<br> This program is required to process Raw file formats conversion. Please "
-"install dcraw as a package from your distributor or <a href=\"%2\">"
-"download the source</a>.</p></qt>"
+"<br> This program is required by this plugin to support raw file decoding. "
+"Please install dcraw as a package from your distributor or <a href=\"%1\">"
+"download the source</a>.</p>"
+"<p>Note: at least, dcraw version %2 is required by this plugin.</p></qt>"
 msgstr ""
 "<qt> "
 "<p>Non foi posíbel atopar o executábel dcraw: "
@@ -366,7 +374,17 @@ msgstr ""
 "un pacote para a sua distribuizón ou <a href=\"%2\">através das fontes</a>.</p>"
 "</qt>"
 
-#: plugin_rawconverter.cpp:178
+#: plugin_rawconverter.cpp:151
+msgid ""
+"<qt>"
+"<p>dcraw executable isn't up to date:"
+"<br> The version %1 of dcraw have been found on your computer. This version is "
+"too old to run properlly with this plugin. Please update dcraw as a package "
+"from your distributor or <a href=\"%2\">download the source</a>.</p>"
+"<p>Note: at least, dcraw version %3 is required by this plugin</p></qt>"
+msgstr ""
+
+#: plugin_rawconverter.cpp:193
 msgid "\"%1\" is not a Raw file."
 msgstr "\"%1\" non é unha imaxe Raw."
 
@@ -386,9 +404,11 @@ msgstr ""
 #: savesettingswidget.cpp:81
 msgid ""
 "<p>Set here the ouput file format to use:"
-"<p><b>JPEG</b>: output the processed image in JPEG Format. Warning!!! JPEG is a "
-"lossy format, but will give smaller-sized files. Minimum JPEG compression will "
-"be used during conversion."
+"<p><b>JPEG</b>: output the processed image in JPEG Format. this format will "
+"give smaller-sized files. Minimum JPEG compression level will be used during "
+"RAW conversion."
+"<p><b>Warning!!! duing of destructive compression algorithm, JPEG is a lossy "
+"quality format.</b>"
 "<p><b>TIFF</b>: output the processed image in TIFF Format. This generates "
 "larges, without losing quality. Adobe Deflate compression will be used during "
 "conversion."
@@ -398,16 +418,16 @@ msgid ""
 "without losing quality. Maximum PNG compression will be used during conversion."
 msgstr ""
 
-#: savesettingswidget.cpp:98
+#: savesettingswidget.cpp:99
 #, fuzzy
 msgid "If Target File Exists:"
 msgstr "Se o ficheiro de Destino Existe"
 
-#: savesettingswidget.cpp:100
+#: savesettingswidget.cpp:101
 msgid "Overwrite"
 msgstr "Sobrescreber"
 
-#: savesettingswidget.cpp:101
+#: savesettingswidget.cpp:102
 msgid "Open file dialog"
 msgstr "Diálogo para abrir ficheiros"
 
@@ -456,21 +476,28 @@ msgstr ""
 msgid "<p>Abort the current RAW file conversion"
 msgstr "<p>Cancelar a conversión actual"
 
-#: singledialog.cpp:367
+#: singledialog.cpp:371
 msgid "Failed to generate preview"
 msgstr "Non foi posíbel xerar a antevisión"
 
-#: singledialog.cpp:428
+#: singledialog.cpp:433
 msgid "Failed to convert Raw image"
 msgstr "Non foi posíbel converter a imaxe en bruto"
 
-#: singledialog.cpp:433
+#: singledialog.cpp:438
 msgid "Generating Preview..."
 msgstr "A xerar Antevisión ..."
 
-#: singledialog.cpp:446
+#: singledialog.cpp:451
 msgid "Converting Raw Image..."
 msgstr "A Converter a Imaxe en Bruto..."
+
+#~ msgid ""
+#~ "Failed to start raw converter client.\n"
+#~ "Please check your installation."
+#~ msgstr ""
+#~ "Non foi posíbel iniciar o cliente de conversión en bruto.\n"
+#~ "Por favor verifique a sua instalazón."
 
 #~ msgid "Four color RGBG"
 #~ msgstr "Catro cores RGBG"
