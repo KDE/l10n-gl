@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
-"POT-Creation-Date: 2006-09-20 08:35+0200\n"
+"POT-Creation-Date: 2006-09-21 08:38+0200\n"
 "PO-Revision-Date: 2006-08-05 14:50+0200\n"
 "Last-Translator: Xabi G. Feal <xabigf@gmx.net>\n"
 "Language-Team: Galician <trasno@ceu.fi.udc.es>\n"
@@ -494,6 +494,7 @@ msgid "<p>This is the histogram drawing of the selected image channel"
 msgstr "<p>Este é o gráfico do histograma da canle da imaxe seleccionada"
 
 #: libs/imageproperties/imagepropertiescolorstab.cpp:265
+#: utilities/setup/dcrawsettingswidget.cpp:251
 msgid "Range:"
 msgstr "Rango:"
 
@@ -4039,6 +4040,7 @@ msgid ""
 msgstr "<p> imaxe brillo contraste Ti acesa imaxe acesa."
 
 #: imageplugins/imageeffect_bcg.cpp:144
+#: utilities/setup/dcrawsettingswidget.cpp:189
 #, fuzzy
 msgid "Brightness:"
 msgstr "Brillo:"
@@ -5576,188 +5578,17 @@ msgid ""
 "using \"Tools\" menu."
 msgstr ""
 
-#: utilities/setup/setupiofiles.cpp:111
-#, fuzzy
-msgid "RAW Image Decoding Options"
-msgstr "RAW Imaxe Opcións"
-
-#: utilities/setup/setupiofiles.cpp:115
-#, fuzzy
-msgid "16 bits color depth"
-msgstr "Cor:"
-
-#: utilities/setup/setupiofiles.cpp:116
-msgid ""
-"<p>If enable, all RAW files will be decoded to 16-bit color depth using a "
-"linear gamma curve. To prevent black picture rendering on editor, it's "
-"recommended to use Color Management in this mode."
-"<p>If disable, all RAW files will be decoded to 8-bit color depth with a BT.709 "
-"gamma curve and a 99th-percentile white point. This mode is more faster than "
-"16-bit decoding."
-msgstr ""
-
-#: utilities/setup/setupiofiles.cpp:125
-#, fuzzy
-msgid "Interpolate RGB as four colors"
-msgstr "RGB cores"
-
-#: utilities/setup/setupiofiles.cpp:126
-#, fuzzy
-msgid ""
-"<p>Interpolate RGB as four colors. This blurs the image a little, but it "
-"eliminates false 2x2 mesh patterns."
-"<p>"
-msgstr "<p> RGB cores imaxe a falso<p>"
-
-#: utilities/setup/setupiofiles.cpp:130
-#, fuzzy
-msgid "Automatic color balance"
-msgstr "Automático"
-
-#: utilities/setup/setupiofiles.cpp:131
-#, fuzzy
-msgid ""
-"<p>Automatic color balance. The default is to use a fixed color balance based "
-"on a white card photographed in sunlight."
-"<p>"
-msgstr "<p> Automático por omisión é a fixo acesa a en<p>"
-
-#: utilities/setup/setupiofiles.cpp:136
-#, fuzzy
-msgid "Camera color balance"
-msgstr "Cámara"
-
-#: utilities/setup/setupiofiles.cpp:137
-#, fuzzy
-msgid ""
-"<p>Use the color balance specified by the camera. If this can't be found, "
-"reverts to the default."
-"<p>"
-msgstr "<p> Usar t por omisión<p>"
-
-#: utilities/setup/setupiofiles.cpp:141
-#, fuzzy
-msgid "Unclip colors"
-msgstr "cores"
-
-#: utilities/setup/setupiofiles.cpp:142
-#, fuzzy
-msgid ""
-"<p>Enabled this option to leave the image color completely unclipped else all "
-"colors will be cliped to prevent pink highlights."
-"<p>"
-msgstr "<p> Activo imaxe todas cores<p>"
-
-#: utilities/setup/setupiofiles.cpp:146
-msgid "Using Super CCD secondary sensors (Fuji cameras only)"
-msgstr ""
-
-#: utilities/setup/setupiofiles.cpp:147
-#, fuzzy
-msgid ""
-"<p>For Fuji Super CCD SR cameras, use the secondary sensors, in effect "
-"underexposing the image by four stops to reveal detail in the highlights. For "
-"all other camera types this option is ignored."
-"<p>"
-msgstr "<p> Para en imaxe en Para todas outro é<p>"
-
-#: utilities/setup/setupiofiles.cpp:152
-#, fuzzy
-msgid "Enable RAW decoding quality"
-msgstr "Habilitar RAW"
-
-#: utilities/setup/setupiofiles.cpp:153
-msgid ""
-"<p>Toggle quality decoding option for RAW images using a setting value."
-"<p>Enable this option if you use dcraw version >= 0.8.0 in your system."
-"<p>"
-msgstr ""
-
-#: utilities/setup/setupiofiles.cpp:158
-msgid "Bilinear interpolation"
-msgstr ""
-
-#: utilities/setup/setupiofiles.cpp:159
-msgid "VNG interpolation"
-msgstr ""
-
-#: utilities/setup/setupiofiles.cpp:160
-msgid "AHD interpolation"
-msgstr ""
-
-#: utilities/setup/setupiofiles.cpp:161
-msgid ""
-"<p>Select here the demosaicing RAW images decoding interpolation method. A "
-"demosaicing algorithm is a digital image process used to interpolate a complete "
-"image from the partial raw data received from the color-filtered image sensor "
-"internal to many digital cameras in form of a matrix of colored pixels. Also "
-"known as CFA interpolation or color reconstruction, another common spelling is "
-"demosaicing. There are 3 methods to demosaicing RAW images:"
-"<p><b>Bilinear</b>: use high-speed but low-quality bilinear interpolation "
-"(default - for slow computer). In this method, the red value of a non-red pixel "
-"is computed as the average of the adjacent red pixels, and similar for blue and "
-"green."
-"<p><b>VNG</b>: use Variable Number of Gradients interpolation. This method "
-"computes gradients near the pixel of interest and uses the lower gradients "
-"(representing smoother and more similar parts of the image) to make an "
-"estimate."
-"<p><b>AHD</b>: use Adaptive Homogeneity-Directed interpolation. This method "
-"selects the direction of interpolation so as to maximize a homogeneity metric, "
-"thus typically minimizing color artifacts."
-"<p>"
-msgstr ""
-
-#: utilities/setup/setupiofiles.cpp:181
-msgid "Enable noise reduction during decoding (warning: slow)"
-msgstr ""
-
-#: utilities/setup/setupiofiles.cpp:183
-msgid ""
-"<p>Toggle bilateral filter to smooth noise while preserving edges. This option "
-"can be use to reduce low noise. The pictures edges are preserved because it is "
-"applied in CIELab color space instead of RGB."
-"<p><b>Warnings</b>:"
-"<p>This filter isn't adapted if your RAW picture have been taken using hight "
-"sensitivity (over 1600 ISO). Its recommended to use the noise reduction filter "
-"from image editor instead."
-"<p>This filter can take a while. Do not use if your computer is slow."
-"<p>This option require dcraw version >= 0.8.0."
-"<p>"
-msgstr ""
-
-#: utilities/setup/setupiofiles.cpp:198
-msgid "Sigma domain:"
-msgstr ""
-
-#: utilities/setup/setupiofiles.cpp:199
-msgid ""
-"<p>The noise reduction Sigma Domain in units of pixels. The default value is "
-"2.0."
-"<p>"
-msgstr ""
-
-#: utilities/setup/setupiofiles.cpp:208
-msgid "Sigma range:"
-msgstr ""
-
-#: utilities/setup/setupiofiles.cpp:209
-msgid ""
-"<p>The noise reduction Sigma Range in units of CIELab colorspace. The default "
-"value is 4.0."
-"<p>"
-msgstr ""
-
-#: utilities/setup/setupiofiles.cpp:236
+#: utilities/setup/setupiofiles.cpp:91
 #, fuzzy
 msgid "Saving Images Options"
 msgstr "Imaxes Opcións"
 
-#: utilities/setup/setupiofiles.cpp:242
+#: utilities/setup/setupiofiles.cpp:97
 #, fuzzy
 msgid "JPEG quality:"
 msgstr "&JPEG:"
 
-#: utilities/setup/setupiofiles.cpp:244
+#: utilities/setup/setupiofiles.cpp:99
 #, fuzzy
 msgid ""
 "<p>The quality value for JPEG images:"
@@ -5774,12 +5605,12 @@ msgstr ""
 "<p><b></b> non e longo tamaño"
 "<p><b> Nota JPEG é non a imaxe</b>"
 
-#: utilities/setup/setupiofiles.cpp:258
+#: utilities/setup/setupiofiles.cpp:113
 #, fuzzy
 msgid "PNG compression:"
 msgstr "&PNG:"
 
-#: utilities/setup/setupiofiles.cpp:260
+#: utilities/setup/setupiofiles.cpp:115
 #, fuzzy
 msgid ""
 "<p>The compression value for PNG images:"
@@ -5795,12 +5626,12 @@ msgstr ""
 "<p><b></b> pequeno tamaño durazón"
 "<p><b> Nota PNG é a imaxe</b>"
 
-#: utilities/setup/setupiofiles.cpp:271
+#: utilities/setup/setupiofiles.cpp:126
 #, fuzzy
 msgid "Compress TIFF files"
 msgstr "Comprimir TIFF"
 
-#: utilities/setup/setupiofiles.cpp:274
+#: utilities/setup/setupiofiles.cpp:129
 #, fuzzy
 msgid ""
 "<p>Toggle compression for TIFF images."
@@ -5915,6 +5746,201 @@ msgstr "<p> Habilitar."
 #, fuzzy
 msgid "Sorry; cannot use home directory as albums library."
 msgstr "Desculpe."
+
+#: utilities/setup/dcrawsettingswidget.cpp:100
+msgid "RAW Decoding Settings (dcraw %1)"
+msgstr ""
+
+#: utilities/setup/dcrawsettingswidget.cpp:108
+#, fuzzy
+msgid "16 bits color depth"
+msgstr "Cor:"
+
+#: utilities/setup/dcrawsettingswidget.cpp:109
+msgid ""
+"<p>If enable, all RAW files will be decoded to 16-bit color depth using a "
+"linear gamma curve. To prevent black picture rendering on editor, it's "
+"recommended to use Color Management in this mode."
+"<p>If disable, all RAW files will be decoded to 8-bit color depth with a BT.709 "
+"gamma curve and a 99th-percentile white point. This mode is more faster than "
+"16-bit decoding."
+msgstr ""
+
+#: utilities/setup/dcrawsettingswidget.cpp:118
+#, fuzzy
+msgid "Interpolate RGB as four colors"
+msgstr "RGB cores"
+
+#: utilities/setup/dcrawsettingswidget.cpp:119
+msgid ""
+"<p><b>Interpolate RGB as four colors</b>"
+"<p>The default is to assume that all green pixels are the same. If even-row "
+"green pixels are more sensitive to ultraviolet light than odd-row this "
+"difference causes a mesh pattern in the output; using this option solves this "
+"problem with minimal loss of detail."
+"<p>To resume, this option blurs the image a little, but it eliminates false 2x2 "
+"mesh patterns with VNG quality method or mazes with AHD quality method."
+msgstr ""
+
+#: utilities/setup/dcrawsettingswidget.cpp:133
+#, fuzzy
+msgid "Use camera white balance"
+msgstr "Cámara"
+
+#: utilities/setup/dcrawsettingswidget.cpp:134
+msgid ""
+"<p><b>Use camera white balance</b>"
+"<p>Use the camera's custom white-balance settings. The default is to use fixed "
+"daylight values, calculated from sample images. If this can't be found, reverts "
+"to the default."
+msgstr ""
+
+#: utilities/setup/dcrawsettingswidget.cpp:143
+#, fuzzy
+msgid "Automatic color balance"
+msgstr "Automático"
+
+#: utilities/setup/dcrawsettingswidget.cpp:144
+#, fuzzy
+msgid ""
+"<p><b>Automatic color balance</b>"
+"<p>The default is to use a fixed color balance based on a white card "
+"photographed in sunlight."
+"<p>"
+msgstr "<p> Automático por omisión é a fixo acesa a en<p>"
+
+#: utilities/setup/dcrawsettingswidget.cpp:152
+msgid "Use Super-CCD secondary sensors"
+msgstr ""
+
+#: utilities/setup/dcrawsettingswidget.cpp:153
+#, fuzzy
+msgid ""
+"<p><b>Use Super CCD secondary sensors</b>"
+"<p>For Fuji Super CCD SR cameras, use the secondary sensors, in effect "
+"underexposing the image by four stops to reveal detail in the highlights. For "
+"all other camera types this option is ignored."
+"<p>"
+msgstr "<p> Para en imaxe en Para todas outro é<p>"
+
+#: utilities/setup/dcrawsettingswidget.cpp:163
+#, fuzzy
+msgid "Highlights:"
+msgstr "Alto:"
+
+#: utilities/setup/dcrawsettingswidget.cpp:165
+msgid "Solid white"
+msgstr ""
+
+#: utilities/setup/dcrawsettingswidget.cpp:166
+#, fuzzy
+msgid "Unclip"
+msgstr "cores"
+
+#: utilities/setup/dcrawsettingswidget.cpp:167
+msgid "Reconstruct"
+msgstr ""
+
+#: utilities/setup/dcrawsettingswidget.cpp:168
+msgid ""
+"<p><b>Highlights</b>"
+"<p>Select here the highlight cliping method:"
+"<p><b>Solid white</b>: clip all highlights to solid white"
+"<p><b>Unclip</b>: leave highlights unclipped in various shades of pink"
+"<p><b>Reconstruct</b>: reconstruct highlights using a level value."
+msgstr ""
+
+#: utilities/setup/dcrawsettingswidget.cpp:178
+msgid "Level:"
+msgstr ""
+
+#: utilities/setup/dcrawsettingswidget.cpp:181
+msgid ""
+"<p><b>Level</b>"
+"<p>Specify the reconstruct highlights level of ouput image. Low value favor "
+"whites and high value favor colors."
+msgstr ""
+
+#: utilities/setup/dcrawsettingswidget.cpp:193
+msgid ""
+"<p><b>Brighness</b>"
+"<p>Specify the brightness level of ouput image.The default value is 1.0."
+"<p>"
+msgstr ""
+
+#: utilities/setup/dcrawsettingswidget.cpp:201
+#, fuzzy
+msgid "Quality:"
+msgstr "&JPEG:"
+
+#: utilities/setup/dcrawsettingswidget.cpp:203
+msgid "Bilinear interpolation"
+msgstr ""
+
+#: utilities/setup/dcrawsettingswidget.cpp:204
+msgid "VNG interpolation"
+msgstr ""
+
+#: utilities/setup/dcrawsettingswidget.cpp:205
+msgid "AHD interpolation"
+msgstr ""
+
+#: utilities/setup/dcrawsettingswidget.cpp:206
+msgid ""
+"<p><b>Quality</b>"
+"<p>Select here the demosaicing RAW images decoding interpolation method. A "
+"demosaicing algorithm is a digital image process used to interpolate a complete "
+"image from the partial raw data received from the color-filtered image sensor "
+"internal to many digital cameras in form of a matrix of colored pixels. Also "
+"known as CFA interpolation or color reconstruction, another common spelling is "
+"demosaicing. There are 3 methods to demosaicing RAW images:"
+"<p><b>Bilinear</b>: use high-speed but low-quality bilinear interpolation "
+"(default - for slow computer). In this method, the red value of a non-red pixel "
+"is computed as the average of the adjacent red pixels, and similar for blue and "
+"green."
+"<p><b>VNG</b>: use Variable Number of Gradients interpolation. This method "
+"computes gradients near the pixel of interest and uses the lower gradients "
+"(representing smoother and more similar parts of the image) to make an "
+"estimate."
+"<p><b>AHD</b>: use Adaptive Homogeneity-Directed interpolation. This method "
+"selects the direction of interpolation so as to maximize a homogeneity metric, "
+"thus typically minimizing color artifacts."
+"<p>"
+msgstr ""
+
+#: utilities/setup/dcrawsettingswidget.cpp:229
+msgid "Enable noise reduction"
+msgstr ""
+
+#: utilities/setup/dcrawsettingswidget.cpp:230
+msgid ""
+"<p><b>Enable Noise Reduction</b>"
+"<p>Toggle bilateral filter to smooth noise while preserving edges. This option "
+"can be use to reduce low noise. The pictures edges are preserved because it is "
+"applied in CIELab color space instead of RGB."
+"<p>"
+msgstr ""
+
+#: utilities/setup/dcrawsettingswidget.cpp:240
+#, fuzzy
+msgid "Domain:"
+msgstr "Etiquetas"
+
+#: utilities/setup/dcrawsettingswidget.cpp:241
+msgid ""
+"<p><b>Domain</b>"
+"<p>Set here the noise reduction Sigma Domain in units of pixels. The default "
+"value is 2.0."
+"<p>"
+msgstr ""
+
+#: utilities/setup/dcrawsettingswidget.cpp:252
+msgid ""
+"<p><b>Range</b>"
+"<p>Set here the noise reduction Sigma Range in units of CIELab colorspace. The "
+"default value is 4.0."
+"<p>"
+msgstr ""
 
 #: utilities/setup/setupimgplugins.cpp:84
 #, fuzzy
@@ -6989,117 +7015,181 @@ msgid ""
 "pictures.</p>"
 msgstr ""
 
-#: utilities/cameragui/renamecustomizer.cpp:109
+#: utilities/cameragui/renamecustomizer.cpp:133
 #, fuzzy
 msgid "Renaming Options"
 msgstr "Renomeando Opcións"
 
-#: utilities/cameragui/renamecustomizer.cpp:116
+#: utilities/cameragui/renamecustomizer.cpp:140
 #, fuzzy
 msgid "Camera filenames"
 msgstr "Nome da cámara"
 
-#: utilities/cameragui/renamecustomizer.cpp:117
+#: utilities/cameragui/renamecustomizer.cpp:141
 msgid ""
 "<p>Toogle on this option to use camera provided image filenames without "
 "modifications."
 msgstr ""
 
-#: utilities/cameragui/renamecustomizer.cpp:126
+#: utilities/cameragui/renamecustomizer.cpp:150
 #, fuzzy
 msgid "Change case to:"
 msgstr "Cambiar"
 
-#: utilities/cameragui/renamecustomizer.cpp:130
+#: utilities/cameragui/renamecustomizer.cpp:154
 #, fuzzy
 msgid "Leave as Is"
 msgstr "É"
 
-#: utilities/cameragui/renamecustomizer.cpp:131
+#: utilities/cameragui/renamecustomizer.cpp:155
 #, fuzzy
 msgid "Upper"
 msgstr "Superior"
 
-#: utilities/cameragui/renamecustomizer.cpp:132
+#: utilities/cameragui/renamecustomizer.cpp:156
 #, fuzzy
 msgid "Lower"
 msgstr "Cara atrás"
 
-#: utilities/cameragui/renamecustomizer.cpp:134
+#: utilities/cameragui/renamecustomizer.cpp:158
 #, fuzzy
 msgid "<p>Set here the method to use to change case of image filenames."
 msgstr "<p> Conxunto."
 
-#: utilities/cameragui/renamecustomizer.cpp:146
+#: utilities/cameragui/renamecustomizer.cpp:170
 #, fuzzy
 msgid "Customize"
 msgstr "Personalizado"
 
-#: utilities/cameragui/renamecustomizer.cpp:148
+#: utilities/cameragui/renamecustomizer.cpp:172
 msgid "<p>Toogle on this option to customize image filenames during download."
 msgstr ""
 
-#: utilities/cameragui/renamecustomizer.cpp:160
+#: utilities/cameragui/renamecustomizer.cpp:184
 #, fuzzy
 msgid "Prefix:"
 msgstr "Prefixo:"
 
-#: utilities/cameragui/renamecustomizer.cpp:165
+#: utilities/cameragui/renamecustomizer.cpp:189
 #, fuzzy
 msgid "<p>Set the prefix which will be prepended to image filenames."
 msgstr "<p>Selecciona aquí o axuste da saturación da imaxe."
 
-#: utilities/cameragui/renamecustomizer.cpp:168
+#: utilities/cameragui/renamecustomizer.cpp:192
 msgid "Suffix:"
 msgstr ""
 
-#: utilities/cameragui/renamecustomizer.cpp:172
+#: utilities/cameragui/renamecustomizer.cpp:196
 #, fuzzy
 msgid "<p>Set the suffix which will be added to image filenames."
 msgstr "<p>Selecciona aquí o axuste da saturación da imaxe."
 
-#: utilities/cameragui/renamecustomizer.cpp:175
+#: utilities/cameragui/renamecustomizer.cpp:199
 #, fuzzy
 msgid "Add Date && Time"
 msgstr "&Data && Hora"
 
-#: utilities/cameragui/renamecustomizer.cpp:177
+#: utilities/cameragui/renamecustomizer.cpp:201
 #, fuzzy
 msgid "<p>Set this option to add the camera provided date and time."
 msgstr "<p> Habilitar."
 
-#: utilities/cameragui/renamecustomizer.cpp:179
+#: utilities/cameragui/cameraui.cpp:263
+#: utilities/cameragui/renamecustomizer.cpp:204
+#, fuzzy
+msgid "Date format:"
+msgstr "Información da Imaxe"
+
+#: utilities/cameragui/renamecustomizer.cpp:206
+#, fuzzy
+msgid "Standard"
+msgstr "Etiquetas Exif Estándar"
+
+#: utilities/cameragui/cameraui.cpp:265
+#: utilities/cameragui/renamecustomizer.cpp:207
+#, fuzzy
+msgid "ISO"
+msgstr "%1 ISO"
+
+#: utilities/cameragui/cameraui.cpp:266
+#: utilities/cameragui/renamecustomizer.cpp:208
+msgid "Full Text"
+msgstr ""
+
+#: utilities/cameragui/cameraui.cpp:267
+#: utilities/cameragui/renamecustomizer.cpp:209
+#, fuzzy
+msgid "Local Settings"
+msgstr "Opcións Xerais"
+
+#: utilities/cameragui/renamecustomizer.cpp:210
+#, fuzzy
+msgid "Advanced..."
+msgstr "Avanzado Procurar."
+
+#: utilities/cameragui/renamecustomizer.cpp:211
+msgid ""
+"<p>Select here your preferred date format used to create new albums. The "
+"options available are:</p>"
+"<p><b>Standard</b>: the date format that has been used as a standard by "
+"digiKam.Ex.: <i>20060824T142618</i></p><p/><b>ISO</b>"
+": the date format is in accordance with ISO 8601 (YYYY-MM-DD). Ex.: <i>"
+"2006-08-24T14:26:18</i></p>"
+"<p><b>Full Text</b>: the date format is in a user-readable string. Ex.: <i>"
+"Thu Aug 24 14:26:18 2006</i></p>"
+"<p><b>Local Settings</b>: the date format depending on KDE control panel "
+"settings.</p>"
+"<p><b>Advanced:</b> allows to specify a custom date format.</p>"
+msgstr ""
+
+#: utilities/cameragui/renamecustomizer.cpp:231
 #, fuzzy
 msgid "Add Camera Name"
 msgstr "Engadir Cámara."
 
-#: utilities/cameragui/renamecustomizer.cpp:181
+#: utilities/cameragui/renamecustomizer.cpp:233
 #, fuzzy
 msgid "<p>Set this option to add the camera name."
 msgstr "<p> Habilitar."
 
-#: utilities/cameragui/renamecustomizer.cpp:183
+#: utilities/cameragui/renamecustomizer.cpp:235
 #, fuzzy
 msgid "Add Sequence Number"
 msgstr "Engadir secuencia número"
 
-#: utilities/cameragui/renamecustomizer.cpp:185
+#: utilities/cameragui/renamecustomizer.cpp:237
 #, fuzzy
 msgid ""
 "<p>Set this option to add a sequence number starting with the index set below."
 msgstr "<p> Habilitar."
 
-#: utilities/cameragui/renamecustomizer.cpp:187
+#: utilities/cameragui/renamecustomizer.cpp:239
 msgid "Start Index:"
 msgstr ""
 
-#: utilities/cameragui/renamecustomizer.cpp:190
+#: utilities/cameragui/renamecustomizer.cpp:242
 msgid ""
 "<p>Set here the start index value used to rename picture files with a sequence "
 "number."
 msgstr ""
 
-#: utilities/cameragui/renamecustomizer.cpp:331
+#: utilities/cameragui/renamecustomizer.cpp:433
+#: utilities/cameragui/renamecustomizer.cpp:441
+msgid "Change Date & Time Format"
+msgstr ""
+
+#: utilities/cameragui/renamecustomizer.cpp:434
+#: utilities/cameragui/renamecustomizer.cpp:442
+msgid ""
+"<p>Enter the format for date and time.</p>"
+"<p>Use <i>dd</i> for the day, <i>MM</i> for the month, <i>yyyy</i> "
+"for the year, <i>hh</i> for the hour, <i>mm</i> for the minute, <i>ss</i> "
+"for the second.</p>"
+"<p>Examples: <i>yyyyMMddThhmmss</i> for 20060824T142418,"
+"<br><i>yyyy-MM-dd hh:mm:ss</i> for 2006-08-24 14:24:18.</p>"
+msgstr ""
+
+#: utilities/cameragui/renamecustomizer.cpp:467
 msgid "photo"
 msgstr ""
 
@@ -7293,25 +7383,6 @@ msgstr ""
 #: utilities/cameragui/cameraui.cpp:261
 msgid "Date-based sub-albums"
 msgstr ""
-
-#: utilities/cameragui/cameraui.cpp:263
-#, fuzzy
-msgid "Date format:"
-msgstr "Información da Imaxe"
-
-#: utilities/cameragui/cameraui.cpp:265
-#, fuzzy
-msgid "ISO"
-msgstr "%1 ISO"
-
-#: utilities/cameragui/cameraui.cpp:266
-msgid "Full Text"
-msgstr ""
-
-#: utilities/cameragui/cameraui.cpp:267
-#, fuzzy
-msgid "Local Settings"
-msgstr "Opcións Xerais"
 
 #: utilities/cameragui/cameraui.cpp:269
 #, fuzzy
@@ -7608,6 +7679,26 @@ msgstr "Descargando."
 #, fuzzy
 msgid "&Upload into camera"
 msgstr "Cámara atopada: "
+
+#, fuzzy
+#~ msgid "RAW Image Decoding Options"
+#~ msgstr "RAW Imaxe Opcións"
+
+#, fuzzy
+#~ msgid "<p>Interpolate RGB as four colors. This blurs the image a little, but it eliminates false 2x2 mesh patterns.<p>"
+#~ msgstr "<p> RGB cores imaxe a falso<p>"
+
+#, fuzzy
+#~ msgid "<p>Use the color balance specified by the camera. If this can't be found, reverts to the default.<p>"
+#~ msgstr "<p> Usar t por omisión<p>"
+
+#, fuzzy
+#~ msgid "<p>Enabled this option to leave the image color completely unclipped else all colors will be cliped to prevent pink highlights.<p>"
+#~ msgstr "<p> Activo imaxe todas cores<p>"
+
+#, fuzzy
+#~ msgid "Enable RAW decoding quality"
+#~ msgstr "Habilitar RAW"
 
 #, fuzzy
 #~ msgid "Postfix:"
