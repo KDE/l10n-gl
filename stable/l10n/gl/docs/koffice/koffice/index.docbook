@@ -1,0 +1,919 @@
+<?xml version="1.0" ?>
+<!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.2-Based Variant V1.1//EN" "dtd/kdex.dtd" [
+ <!ENTITY kappname "&koffice;">
+ <!ENTITY package "koffice">
+ <!ENTITY % addindex "IGNORE">
+ <!ENTITY % English "INCLUDE"
+> <!-- change language only here -->
+]>
+
+<!-- maintained by raphael.langerhorst@kdemail.net -->
+
+<book lang="&language;">
+<bookinfo>
+<title
+>&koffice;</title>
+<subtitle
+>Unha Introdución Xeral</subtitle>
+<authorgroup>
+<author
+><firstname
+>Raphael</firstname
+> <surname
+>Langerhorst</surname
+> <affiliation
+><address
+><email
+>raphael.langerhorst@kdemail.net</email
+></address
+></affiliation
+> 
+</author>
+<author
+><firstname
+>Jost</firstname
+> <surname
+>Schenck</surname
+> <affiliation
+><address
+><email
+>jost@schenck.de</email
+></address
+></affiliation
+> 
+</author>
+<othercredit role="translator"
+><firstname
+></firstname
+><surname
+></surname
+><affiliation
+><address
+><email
+>mvillarino@users.sourceforge.net</email
+></address
+></affiliation
+><contrib
+></contrib
+></othercredit
+> 
+</authorgroup>
+
+<date
+>2005-10-27</date>
+<releaseinfo
+>1.5.0</releaseinfo>
+
+<abstract>
+<para
+>&koffice; é unha suite ofimática integrada para o Sistema de Escritorio K  (&kde;). </para>
+</abstract>
+
+<keywordset>
+<keyword
+>KDE</keyword>
+<keyword
+>KOffice</keyword>
+</keywordset>
+
+</bookinfo>
+
+
+<chapter id="introduction">
+<title
+>Introdución</title>
+<sect1>
+<title
+>Componentes de &koffice;</title>
+
+<para
+>&koffice; é unha suite ofimática integrada para o Sistema de Escritorio K  (&kde;). Na actualidade &koffice; consta das seguintes componentes: </para>
+
+<itemizedlist>
+<listitem
+><para
+>&kword; (un procesador de texto baseado en molduras)</para
+></listitem>
+<listitem
+><para
+>&kspread; (un programa de follas de cálculo)</para
+></listitem
+> 
+<listitem
+><para
+>&kpresenter; (un programa de apresentacións)</para
+></listitem>
+<listitem
+><para
+>&kivio; (un programa de diagramas de fluxo)</para
+></listitem>
+<listitem
+><para
+>Karbon14 (un programa de debuxo vectorial)</para
+></listitem>
+<listitem
+><para
+>&krita; (un programa de debuxo baseado en píxels)</para
+></listitem>
+<listitem
+><para
+>&kugar; (unha ferramenta para xerar informes de calidade)</para
+></listitem>
+<listitem
+><para
+>Kexi (un entorno integrado para xestionar dados)</para
+></listitem>
+<listitem
+><para
+>&kchart; (un programa de xeración de diagrámas/gráficas)</para
+></listitem>
+<listitem
+><para
+>&kformula; (un editor de fórmulas matemáticas)</para
+></listitem>
+</itemizedlist>
+
+<para
+>Dado que estas componentes están baseadas no modelo de componentes KParts, as componentes de &koffice; están deseñadas para traballar perfeitamente unhas coas outras. Calquer componente de &koffice; pode ser integrada noutro documento de &koffice;. Por exemplo, pode inserir unha folla de cálculo criada com &kspread; direitamente nun documento de &kword;. Desta maneira, pode criar documentos compostos moi complexos usando &koffice;. </para>
+
+<para
+>Un mecanismo de extensións (plug-ins) simplifica o aumentar a funcionalidade de &koffice;. Atopará moitas extensións nalgunha das componentes e pode aprender como escreber as extensións. Tamén hai unha sección neste manual adicada a desenvolver extensións, coa que poderá iniciarse neste tema. </para>
+
+<para
+>Este manual só trata as características xerais de &koffice;; as que son comúns á maioría das componente da suite. Para atopar información detallada acerca das diferentes componentes, consulte o manual de cada programa. </para>
+
+</sect1>
+
+<sect1 id="features">
+<title
+>Resumo das características de &koffice;</title>
+<sect2 id="featureintegration">
+<title
+>Integración</title>
+<para
+>&koffice; fornece un framework que todos os seus programas usan. Mediante este framework acádase unha grande integración. É posíbel desenvolver a súa propria componente que se integre por igual. A tecnoloxía para isto é descrita con maior detalle no <link linkend="kparts"
+>capítulo acerca das KParts</link
+>. </para>
+</sect2>
+<sect2 id="featureleightweight">
+<title
+>Lixeireza</title>
+<para
+>Apesar de oferecer tantas componentes, &koffice; é moi lixeira, rápida e consume pouca memoria. Isto tamén se obtén porque &koffice; está construído con base en &kde;, que en si é un poderoso framework de desenvolvimento. </para>
+<para
+>Un dos obxectivos de &koffice; é non sobrecargar a interface do usuario con funcionalidades que rara vez son usadas. Isto resulta nunha interface limpa e sinxela que lle permite traballar con eficacia. </para>
+<para
+>Ser lixeiro pode por veces ser sinónimo de que algunha funcionalidade concreta non estexa ahí. Neste caso sempre pode engadir a funcionalidade por si, ampliando &koffice;. &koffice; en realidade non quer estar saturado por engadir grandes cantidades de funcións que só uns poucos usuarios requeren. Tais funcionalidades sempre poden estar disponíbeis mediante extensións adicionais ou guións, mantento deste xeito a &koffice; lixeiro. </para>
+</sect2>
+<sect2 id="featurecompleteness">
+<title
+>Extensión</title>
+<para
+>&koffice; oferece un rango amplo de componentes, cobrindo a maioría das necesidades do fogar e traballo. As funcionalidades adicionais sempre poden ser implementadas mediante guións, extensións, ou mesmo componentes baseadas no framework &koffice;. </para>
+</sect2>
+<sect2 id="featurefileformat">
+<title
+>Formato OASIS OpenDocument</title>
+<para
+>É de importancia crucial para calquer suite ofimática o adherirse a estándares estabelecidos. Especialmente no nível de formato de ficheiro para permitir o intercambio de documentos sen trabas entre diferentes suites ofimáticas. Isto serve para evitar quedar atrapado por un provedor, o que é especialmente importante nas empresar, mais tamén para as persoas. </para>
+<para
+>Por este motivo &koffice; adoptou o formato OASIS OpenDocumento como formato nativo de ficheiro. </para>
+</sect2>
+<sect2 id="featurekde">
+<title
+>Características de KDE</title>
+<para
+>Xa que &koffice; está construido con base en &kde; todas as características que espera dun programa de &kde; tamén está disponíbel en &koffice;. Isto inclui DCOP, KParts, Integración no Escritorio, Configurabilidade, e outras. Todo isto fai que a aparencia e comportamento de &koffice; sexa moi familiar e que &koffice; se integre no sistema de escritorio, permitido traballar sen dificultades. </para>
+</sect2>
+
+</sect1>
+
+</chapter>
+<chapter>
+<title
+>Tecnoloxía de &koffice;</title>
+
+<sect1 id="kparts">
+<title
+>KParts - os tixolos cos que se construi &koffice;</title>
+
+<!-- <sect2 id="kpartsintro"
+> -->
+<!-- <title
+>KParts Introduction</title
+> -->
+
+<para
+>Cada programa de &koffice; está deseñado para satisfacer unhas necesidades específicas. Por exemplo, &kspread; é un programa para manipular follas de cálculo, mentres que &kword; é un programa para procesar textos. Ao focarse só nunha área concreta, cada programa procura ser bon só nesa área. Porén, dependendo do que faga con &koffice;, a miudo ha querer aproveitarse das funcionalidades fornecidas por varios programas, pero no <emphasis
+>mesmo</emphasis
+> documento. </para>
+
+<para
+>Supoña que está a traballar nun documento en &kword; e quer ilustrar algo mediante unha táboa. Aínda que &kword; fornece táboas, estas poden non ser de abondo para as súas necesidades. Por exemplo, pode querer usar certos formatos de divisa ou facer cálculos usando fórmulas de folla de cálculo. Certamente, algún dos desenvolventes de &kword; <emphasis
+>pode</emphasis
+> tentar implementar esta funcionalidade. Porén &kword; nunca ha chegar a ser tan bon como &kspread; neste eido; e se tentase implementar todas as funcionalidades que poida chegar a precisar, acabaría por ser tremendamente complexo e o código fonte sería imposíbel de manter. </para>
+
+<para
+>A alternativa a isto son as KParts. A súa filosofía é simples: deixa que cada programa faga aquelo no que sexa o mellor. </para>
+
+<!-- </sect2
+> -->
+
+<sect2 id="compound-docs">
+<title
+>Documentos compostos con KParts</title>
+
+<para
+>Grazas ás KParts, os seus documentos poden usar <emphasis
+>todas</emphasis
+> as funcionalidades fornecidas por <emphasis
+>todos</emphasis
+> os programas de &koffice;. Pode aproveitarse disto inserindo as autodenominadas <quote
+>componentes</quote
+> non seus documentos. Cada unha destas componentes é en esencia outro documento, isto é, <quote
+>un documento dentro doutro</quote
+>. </para>
+
+<para
+>No exemplo anterior, simplesmente insira unha componente &kspread; no seu documento &kword;. Logo, sempre que edite a súa táboa, &kspread; tomará o control silandeiramente. O control ha voltar para &kword; canto termine de traballar na táboa e volte para o texto. O único cambio que debera notar é que as barras de ferramentas e os menús, ao traballar coa táboa, reflicten as funcionalidades de &kspread; no canto de as de &kword;. Esta habilidade de incluir a funcionalidade dunha aplicación noutra é denominada <quote
+>encaixamento</quote
+>. </para>
+
+</sect2>
+
+
+<sect2 id="kparts-try-it">
+<title
+>Uso de KParts nos seus documentos</title>
+
+<para
+>Se nunca traballou con documentos compostos, pode achá-los extranos ao primeiro. As seguintes instrucións paso-por-paso demostrarán-lle que usar KParts é tan sinxelo como traballar cun único programa. </para>
+
+<procedure>
+<title
+>Inserir unha componente &kspread; en &kword;</title>
+<step>
+<para
+>Inicie &kword;. Pode facé-lo desde o painel ou escrebendo <userinput
+><command
+>kword</command
+></userinput
+> na liña de comandos. </para>
+</step>
+<step>
+<para
+>Abra un novo documento en branco. Se o desexa, escreba algún texto de mostra. </para>
+</step>
+<step>
+<para
+>Escolla <menuchoice
+><guimenu
+>Inserir</guimenu
+><guimenuitem
+>Moldura de Obxecto</guimenuitem
+><guimenuitem
+>Follas de Cálculo</guimenuitem
+></menuchoice
+>. Comprobe que o ponteiro do rato agora é unha cruz. Esta forma do ponteiro indica que debe escoller unha área. </para>
+</step
+> 
+<step>
+<para
+>Prema o &LMB; onde desexe situar o canto de acima á esquerda da súa táboa, manteña-o calcado e arraste-o ao canto de baixo á direita. Solte o botón. Agora aparece un diálogo que lle dá a posibilidade de inserir un documento xa existente ou criar un novo. Crie un en branco. Xa está feito. </para>
+</step>
+</procedure>
+
+<para
+>Facil, non si? Agora debera ver unha moldura cunha táboa no documento de &kword;. Faga duplo-click dentro da táboa para ver o que acontece. Verá que: </para>
+
+<itemizedlist>
+<listitem>
+<para
+>As barras de menú e ferramentas cambian. Agora coinciden coas de &kspread;. </para>
+</listitem
+> 
+<listitem>
+<para
+>A moldura da táboa agora contén os elementos dunha vista de &kspread;, con barras de desprazamento, unha barra de páxinas para escoller a folla, &etc; </para>
+</listitem>
+</itemizedlist>
+
+<para
+>Tente editar a táboa. Verá que non é diferente de usar &kspread;. De feito <emphasis
+>está a usar</emphasis
+> &kspread;. </para>
+
+<para
+>Agora prema no documento de &kword;, fora da táboa. As barras de menú e ferramentas deberan voltar a ser as de &kword;, os elementos da vista de &kspread; deberían ter desaparecido. A táboa segue no sitio e reflicte os cambios que fixese nela. </para>
+
+<para
+>As KParts son fáceis de usar. Probe a inserir outras componentes ou mesmo componentes dentro de componentes. </para>
+
+</sect2>
+
+</sect1>
+
+</chapter>
+
+<chapter id="configuration">
+<title
+>Configuración de &koffice; e O Seu Sistema</title>
+
+<para
+>Aínda de &koffice; debera funcionar correctamente tal como é tras ser instalado, pode haber cousas que optimizar para sacar o mellor del. Este capítulo mostra-lle o que pode facer para obter os mellores resultados e facer que se axuste mellor ás súas necesidades. &koffice; é altamente configurábel, mesmo nos detalles da disposición nas barras de menú e ferramentas. </para>
+
+<sect1 id="the-font-issue">
+<title
+>Optimización dos Tipos de Letra</title>
+<para
+>Os tipos de letra son un asunto complicado no sistema X Windows. Nesta sección tratamos algúns problemas que son informados con frecuencia polo usuarios de &koffice;. Algúns destes problemas non son culpa de &koffice;, senón que dependen da configuración do sistema, polo que deberá alterar os ficheiros de configuración do sistema para resolvé-los. Se non ten aceso á conta de root do seu sistema, póñase en contacto co seu administrador de sistemas para comentar-llo e dirixa-o para este manual. Dado que o asunto dos tipos de letra é complexo de mais para tratá-lo por inteiro aquí, tal vez desexe consultar o <ulink url="http://www.pegasus.rutgers.edu/~elflord/font_howto/Font-HOWTO/"
+>COMO dos Tipos de Letra</ulink
+> do cal foi extraida a seguinte información. Aló ha achar mais detalles. </para>
+
+<sect2>
+<title
+>Como Obter na Pantalla Letras Ampliadas de Xeito Suave</title>
+
+<para
+>STUFF </para>
+
+</sect2>
+
+<sect2
+><title
+>Como Obter un Impreso Correcto</title>
+
+<para
+>Mentres de &koffice; pode xestionar automaticamente todos os tipos de letra de X11 <emphasis
+>na pantalla</emphasis
+>, os impresos poden prantexar un problema: na maioría dos sistemas, a impresión é feita mediante <application
+>ghostscript</application
+>. &koffice; coñece os nomes dos tipos de letra que usa X Windows, pero polo xeral <emphasis
+>non</emphasis
+> coñece os nomes usados por <application
+>ghostscript</application
+>. &koffice; tenta adiviñar estes nomes, o que por desgraza non funciona ben sempre. </para>
+
+<para
+>Este problema pode ser resolto, aínda que non é tan fácil. En realidade, talvez estexa a usar unha distribuición que xa teña feito a maioría do traballo (polo que se non ten motivo de queixa dos impresos pode saltar esta sección). O que ten que facer é indicarlle a <application
+>ghostscript</application
+> como traducir (adiviñando) os nomes dos tipos de letra usados por &koffice; para os seus proprios nomes. Isto pode facerse engadindo liñas nun ficheiro chamado <filename
+>Fontmap</filename
+>. Unha liña de alcume en <filename
+>Fontmap</filename
+> ten un aspeito similar ao seguinte:</para
+> 
+
+<example>
+<title
+>Un alcume en Fontmap de <application
+>ghostscript</application
+></title>
+<screen
+>/Algerian-Roman /Algerian       ;
+</screen>
+</example>
+
+<para
+>Recorde que é obrigatorio o espazo antes do ";". Neste exemplo, Algerian-Roman é o nome que &koffice; usa para o Arxelino. Deberá engadir tais liñas para os tipos de letra que &koffice; non mostre correctamente. Para simplificar esta tarefa, Donovan Rebbechi escrebeu un guión en perl que pode atopar en <ulink url="http://pegasus.rutgers.edu/~elflord/font_howto/kwdfont"
+>http://pegasus.rutgers.edu/~elflord/font_howto/kwdfont</ulink
+>. Se ten un ficheiro de fontes <filename
+>/usr/share/ghostscript/fonts/fontfile.ttf</filename
+> escreba <userinput
+><command
+>kwdfont</command
+> <parameter
+>/usr/share/ghostscript/fonts/fontfile.ttf</parameter
+></userinput
+> para obter os alcumes apropriados. O guión ha funcionar na maioría dos casos. Como se dixo antes, vote unha ollada ao <ulink url="http://pegasus.rutgers.edu/~elflord/font_howto/html/"
+>COMO dos Tipos de Letra</ulink
+> para obter información mais exacta e completa. </para>
+
+</sect2>
+</sect1>
+
+<sect1 id="custom-gui">
+<title
+>Personalización da &GUI; de &koffice;</title>
+
+<para
+>A pesar de que &koffice; trai de serie unha &GUI; (interface gráfica para o usuario) que debería ser axeitada para a maioría das persoas, hai boas razóns polas que pode querer mudar a aparencia do programa. </para>
+
+<para
+>Por exemplo, miña mai asustase cos botóns e entradas de menú que non comprende. Para adaptar &koffice; ás súas necesidades, reducín a &GUI; a un mínimo de funcionalidade. Dado que só precisa escreber cartas e usar algúns modelos, non hai necesidade de moitas mais funcionalidades que guardar, cargar, imprimir, &etc; </para>
+
+<para
+>Grazas ao conceito de <quote
+>acción</quote
+> de &Qt; e &kde;, pode personalizar á súa vontade as barras de menú e ferramentas de &koffice;. Por desgraza, neste momento, non hai diálogos de uso cómodo para facer isto. &koffice; guarda a configuración da &GUI; en ficheiros &XML; que ha ter que editar. Gostaríanos que esta situación cambie no futuro; por agora, ha precisar algúns coñecimentos básicos de como traballa un documento &XML; (ou <acronym
+>HTML</acronym
+>, que é un subconxunto de &XML;). [O conceito de <quote
+>acción</quote
+> precisa de ser afondado nel -- kt.] </para>
+
+<para
+>Normalmente, cada programa de &koffice; ten polo menos dous ficheiros &XML;: un que descrebe a &GUI; da shell (basicamente, o que ve se non hai nengún documento aberto) e un descrebendo a &GUI; da componente respectiva (o que ve normalmente). Por exemplo, para &kword;, estes dous ficheiros &XML; son <filename
+>kword_shell.rc</filename
+> e <filename
+>kword.rc</filename
+>. </para>
+
+<para
+>Este é un exemplo sinxelo dun destes ficheiros de configuración. </para>
+
+<example>
+<title
+>Un exemplo dun ficheiro sinxelo de configuración</title>
+<screen
+>&lt;!DOCTYPE QConfig &gt;&lt;qconfig&gt;
+&lt;menubar&gt;
+&lt;menu name="Edit"&gt;&lt;text&gt;Editar&lt;/text&gt;
+&lt;action name="edit_cut"/&gt;
+&lt;action name="edit_copy"/&gt;
+&lt;action name="edit_paste"/&gt;
+&lt;separator/&gt;
+&lt;action name="edit_find"/&gt;
+&lt;/menu&gt;
+&lt;menu name="Insert"&gt;&lt;text&gt;Inserir&lt;/text&gt;
+&lt;action name="insert_picture"/&gt;
+&lt;action name="insert_clipart"/&gt;
+&lt;menu name="Variable"&gt;&lt;text&gt;Variábel&lt;/text&gt;
+&lt;action name="insert_var_datefix"/&gt;
+&lt;action name="insert_var_datevar"/&gt;
+&lt;/menu&gt;
+&lt;/menu&gt;
+&lt;/menubar&gt;
+&lt;toolbars&gt;
+&lt;toolbar name="edit_toolbar" position="right"&gt;
+&lt;action name="edit_cut"/&gt;
+&lt;action name="edit_copy"/&gt;
+&lt;action name="edit_paste"/&gt;
+&lt;/toolbar&gt;
+&lt;/toolbars&gt;
+&lt;/qconfig&gt;
+</screen>
+</example>
+
+</sect1>
+
+</chapter>
+
+<chapter id="more-info">
+<title
+>Como obter mais información</title>
+
+<sect1 id="other-manuals">
+<title
+>Outros manuais de &koffice;</title>
+
+<para
+>Para obter información detallada acerca dos programas de &koffice;, consulte os seus respectivos manuais. </para>
+
+</sect1>
+
+<sect1 id="links">
+<title
+>Ligazóns</title>
+
+<para
+>As seguintes ligazóns deberían ser úteis se está a procurar mais información acercad de &kde; ou &koffice;. </para>
+
+<itemizedlist>
+<listitem>
+<para
+><ulink url="http://koffice.kde.org"
+>A páxina web de &koffice;</ulink
+>. Aquí poderá atopar información acerca de como obter e instalar &koffice;, novas acerca de &koffice; do desenvolvemento, capturas de pantalla &etc; </para
+></listitem>
+<listitem>
+<para
+><ulink url="http://www.kde.org"
+>A páxina web de KDE</ulink
+>. KDE é o sistema de escritorio mais avanzado e absolutamente libre para sistemas operativos tipo unix. &koffice; usa as bibliotecas de &kde;. </para
+></listitem>
+<listitem>
+<para
+><ulink url="http://www.trolltech.com"
+>Trolltech</ulink
+>. Os creadores do toolkit escrito en C++ &Qt;. &kde; e &koffice; usan &Qt;. </para
+></listitem>
+</itemizedlist>
+
+</sect1>
+
+</chapter>
+
+<chapter id="programmersinfo">
+<title
+>Programación de &koffice;</title>
+
+<sect1 id="programmingintro">
+<title
+>Introdución</title>
+<para
+>Se desexa desenvolver &koffice;, os seguintes recursos poden-lle ser de interese: </para>
+
+<itemizedlist>
+<listitem
+><para
+>En <ulink url="http://developer.kde.org"
+>http://developer.kde.org</ulink
+> atopará múltiplos documentos acerca de programación con &Qt; e &kde;. Aquí ha poder achar a versión en liña da documentación completa das bibliotecas de &kde;. </para
+></listitem
+> 
+<listitem
+><para
+>Nas fontes de &koffice; poderá atoar unha aplicación de exemplo no cartafol <filename class="directory"
+>example</filename
+>. </para
+></listitem>
+</itemizedlist>
+</sect1>
+
+<!--
+<sect1 id="programmingplugin">
+<title
+>Developing &koffice; Plugins</title>
+<para>
+TO BE WRITTEN.
+</para>
+</sect1>
+
+<sect1 id="scripting">
+<title
+>Scripting &koffice;</title>
+<para>
+This section gives you information on how you can automate and
+script &koffice;.
+</para>
+<sect2 id="dcop">
+<title
+>DCOP</title>
+<para>
+TO BE WRITTEN.
+</para>
+</sect2>
+</sect1>
+
+<sect1 id="programmingreport">
+<title
+>Creating Reports with Kugar</title>
+<para>
+TO BE WRITTEN.
+
+Maybe this should go completely into the
+Kugar manual? So we just keep a reference to the kugar manual
+here.
+
+</para>
+</sect1>
+
+<sect1 id="programmingdatabase">
+<title
+>Integrating a Database with Kexi</title>
+<para>
+TO BE WRITTEN.
+
+Again, should this just be a reference to kexi documentation?
+
+</para>
+</sect1>
+
+<sect1 id="programmingcomponents">
+<title
+>Developing &koffice; Components</title>
+<para>
+TO BE WRITTEN.
+</para>
+</sect1>
+
+-->
+
+</chapter>
+
+<chapter id="legal">
+<title
+>Copyright e Licenza</title>
+
+<para
+>&koffice; é o resultado do esforzo conxunto de moitos desenvolventes. Cada ficheiro das fontes de &koffice; ten o copyright das persoas que o escreberon, os nomes dos cais pode atopar ao inicio de cada ficheiro das fontes xunto coa licenza que se aplica a tal ficheiro. Os nomes dos desenvolventes principais poden ser atopados en <ulink url="http://www.koffice.org/people.php"
+>http://www.koffice.org/people.php</ulink
+>. </para>
+
+<para
+>O copyright deste manual é de Jost Schenck. Pode ser distribuido libremente, mentres se inclúa esta nota de copyright. Pode modificar o manual mentres me envíe a min as mudanzas ou as envíe para o <acronym
+>CVS</acronym
+> de &kde;. Non me fago responsábel de nengunha consecuencia derivada do uso deste manual. </para>
+
+<para
+>Os restantes manuais de &koffice; teñen copyright dos seus respectivos autores. </para>
+&underFDL; &underGPL; </chapter>
+  
+<appendix id="installation">
+<title
+>Instalación</title>
+
+<sect1 id="requirements">
+<title
+>Requerimentos do Sistema</title>
+
+<para
+>Para instalar e usar &koffice; debe ter: </para>
+
+<itemizedlist>
+<listitem
+><para
+>Un sistema &UNIX; en funcionamento (por exemplo, &Linux; ou BSD) cun sistema &X-Window; configurado (por exemplo, XFree86 ou X.org). </para
+></listitem>
+<listitem
+><para
+>As bibliotecas &Qt; 3.3 de Trolltech. Consulte <ulink url="http://www.trolltech.com/"
+>www.trolltech.com</ulink
+> para mais información. </para
+></listitem>
+<listitem
+><para
+>O Sistema de Escritorio K 3.3 (&kde; 3.3) ou mais recente. &koffice; non pode ser compilado con versións anteriores de &kde;. Pode obter información acerca da obtención e instalación de &kde; en &kde-http; </para
+></listitem>
+<listitem
+><para
+>Permisos para instalar software no seu ordenador. Se está nun sistema independente, isto non debera ser un problema. Porén, se está nun ordenador dunha rede, verifique este ponto co seu administrador. </para
+></listitem>
+</itemizedlist>
+
+<para
+>Lembre que, aínda que as bibliotecas de &kde; 3.3 (ou mais recentes) son requeridas, poderá usar &koffice; nun sistema de escritorio diferente (por exemplo, XFCE ou GNOME). </para>
+
+<para
+>Se prevé <link linkend="from-source"
+>compilar &koffice; desde as fontes</link
+> tamén ha precisar: </para>
+
+<itemizedlist>
+<listitem
+><para
+><command
+>automake</command
+> 1.6.1 ou mais recente. Isto pode ser obtido desde: <ulink url="ftp://ftp.gnu.org/pub/gnu/automake/"
+>ftp://ftp.gnu.org/pub/gnu/automake/</ulink
+> </para
+></listitem>
+<listitem
+><para
+><command
+>autoconf</command
+> 2.53 ou mais recente. Isto pode ser obtido desde: <ulink url="ftp://ftp.gnu.org/pub/gnu/autoconf/"
+>ftp://ftp.gnu.org/pub/gnu/autoconf/</ulink
+> </para
+></listitem>
+<listitem
+><para
+>Un compilador de C++ que soporte excepcións, preferibelmente unha versión recente de GCC. (Consulte <ulink url="http://gcc.gnu.org"
+>http://gcc.gnu.org</ulink
+> para obter información acerca de como obté-lo e instalá-lo.) </para
+></listitem>
+<listitem
+><para
+>Os paquetes de desenvolvimento de &Qt; 3.3 de Troll Tech. Se estes paquetes non están instalados no seus sistema e non se inclúen na distribuición do seu sistema operativo, talvez teña que compilar &Qt; desde as fontes. Estas fontes poden ser obtidas desde <ulink url="http://www.trolltech.com/download/index.html"
+>http://www.trolltech.com/download/index.html</ulink
+>. </para
+></listitem>
+</itemizedlist>
+
+<para
+>Unha vez que teña determinado se o seu sistema cumpre con estes requerimentos, debe decidir se quer compilar o código fonte ou instalar desde paquetes precompilados. </para>
+
+<para
+>Se quer obter a versión precompilada mais recente de &koffice;, pode achar información na seguinte ligazón:<link linkend="getting-binaries"
+>Obtendo Paquetes Precompilados</link
+>. </para>
+
+<para
+>Se non hai executábeis precompilados para o seu sistema, pode obter o código fonte e compilá-lo por si proprio. Pode achar información acerca de onde obter o código fonte (e que facer con el cando o teña) na seguinte ligazón: <link linkend="getting-source"
+>Obtención do Código Fonte</link
+>. </para
+> 
+
+<note
+><para
+>Consulte a <ulink url="http://koffice.kde.org"
+>páxina web de &koffice;</ulink
+> para mais detalles. Aló é onde sempre pode atopar a información mais actualizada acerca das fontes e de distribuicións precompiladas! </para
+></note>
+
+</sect1>
+
+
+<sect1 id="getting-binaries">
+<title
+>Obtención de Paquetes Precompilados</title>
+
+<para
+>Pode obter os paquetes binarios mais recentes desde: </para>
+
+<para>
+<ulink url="http://koffice.kde.org/releases/1.4.0-release.php"
+>http://koffice.kde.org/releases/1.4.0-release.php</ulink>
+</para>
+
+<para
+>ou dalgún sitio de réplica. A lista actual de réplicas pode ser atopada en: </para>
+
+<para>
+<ulink url="http://www.kde.org/mirrors.html"
+>http://www.kde.org/mirrors.html</ulink>
+</para>
+
+<note
+><para
+>É importante que use un paquete precompilado que sexa compatíbel co seus sistema. Se usa o sistema operativo &Linux; e non é quen de atopar un paquete precompilado no sitio web de &koffice; nen nunha das súas réplicas, pode ser que o atope no sitio web da súa distribuición. </para
+></note>
+
+</sect1>
+
+
+<sect1 id="from-binaries">
+<title
+>Desde Paquetes Precompilados</title>
+
+<para
+>Para instalar &koffice; desde paquetes precompilados, debe: </para>
+
+<procedure>
+<step>
+<para
+>Verificar que o seu ordenador ten instalado e operativo todo o software requerido (excepto &koffice;, claro). Pode atopar os requerimentos do sistema na seguinte ligazón: <link linkend="requirements"
+>Requerimentos do Sistema</link
+>.</para
+></step>
+<step
+><para
+>Obter o binario (ou binarios) de &koffice; para un cartafol temporal.</para
+></step>
+<step
+><para
+>Se o nome do ficheiro remata en <literal role="extension"
+>.rpm</literal
+> (ficheiro &RedHat; Package Management), &koffice; poderá ser instalado co seguinte comando: <screen
+><prompt
+>$</prompt
+><userinput
+><command
+>rpm</command
+><option
+>-U </option
+><replaceable
+>nomeFicheiro</replaceable
+></userinput
+></screen
+> 
+</para>
+<para
+>Se o nome do ficheiro remata en <literal role="extension"
+>.deb</literal
+> (ficheiro de paquete Debian), &koffice; pode ser instalado co seguinte comando: <screen
+><prompt
+>$</prompt
+> <userinput
+><command
+>dpkg</command
+><option
+>-i </option
+><replaceable
+>nomeFicheiro</replaceable
+></userinput
+></screen>
+</para>
+<para
+>Se o nome do ficheiro remata en <literal role="extension"
+>.tar.gz</literal
+> ou <literal role="extension"
+>.tgz</literal
+> (un paquete tarball), &koffice; poderá ser instalado mediante os seguintes comandos:</para>
+<screen
+><prompt
+>$</prompt
+> <userinput
+><command
+>cd</command
+> /</userinput>
+<prompt
+>$</prompt
+> <userinput
+><command
+>tar</command
+> <option
+>-xzvf</option
+> <replaceable
+>nomeFicheiro</replaceable
+></userinput
+>
+</screen>
+<para
+>Neste exemplos <emphasis
+>nomeFicheiro</emphasis
+> debe ser substituido polo nome completo do paquete <emphasis
+>incluindo a rota completa</emphasis
+> se non está no directorio no que o guardou.</para>
+</step>
+<step
+><para
+>Iso é todo. &koffice; debera estar instalado no seu sistema. </para
+></step>
+</procedure>
+
+<note
+><para
+>Se dispuxese dunha interface para o xestor de paquetes, como &kpackage; ou <application
+>GnoRPM</application
+>, instalada no seu sistema, pode resultar-lle mais axeitada de usar que unha liña de comandos. Consulte a documentación do programa para averiguar como instalá-lo. </para
+></note>
+
+</sect1>
+
+
+<sect1 id="getting-source">
+<title
+>Obtención do Código Fonte</title>
+
+<para
+>Pode obter o código fonte actual en: <ulink url="http://koffice.kde.org/"
+>http://koffice.kde.org/</ulink
+> ou nun sitio de réplica. A lista destes sitios pode ser achada en: </para>
+
+<para>
+<ulink url="http://www.kde.org/mirrors.html"
+>http://www.kde.org/mirrors.html</ulink>
+</para>
+
+</sect1>
+
+
+<sect1 id="from-source">
+<title
+>Desde Código Fonte</title>
+
+<para
+>Se quer compilar &koffice; desde as fontes, deberá: </para>
+
+<procedure>
+<step
+><para
+>Verificar que o seu ordenador ten instalado todo o software requerido e que este está operativo (sen contar con &koffice;, claro). Pode atopar esta lista de requerimentos na seguinte ligazón: <link linkend="requirements"
+>Requerimentos do Sistema</link
+>. </para
+></step>
+<step
+><para
+>Obteña o ficheiro coas fontes de &koffice; para un cartafol temporal. </para
+></step>
+<step
+><para
+>Se o nome o ficheiro remata en <literal role="extension"
+>.src.rpm</literal
+> (ficheiro &RedHat; Package Management), o código fonte de &koffice; pode ser instalado con: <screen
+><prompt
+>$</prompt
+> <userinput
+><command
+>rpm</command
+><option
+>-U</option
+> <replaceable
+>nomeFicheiro</replaceable
+></userinput
+></screen
+></para>
+
+<para
+>Se o nome do ficheiro remata en <literal role="extension"
+>.src.tar.gz</literal
+> ou <literal role="extension"
+>.src.tgz</literal
+> (un paquete tarball), o código fonte de &koffice; pode ser instalado mediante: <screen
+><prompt
+>$</prompt
+> <userinput
+><command
+>tar</command
+> <option
+>-xzvf</option
+> <replaceable
+>nomeFicheiro</replaceable
+></userinput
+></screen>
+</para
+></step>
+<step
+><para
+>Tras disto, o código fonte de &koffice; debera estar instalado no seu sistema.</para
+></step>
+</procedure>
+
+</sect1>
+
+</appendix>
+
+&documentation.index; 
+</book>
+

@@ -1,0 +1,789 @@
+<chapter id="dcop">
+	<title
+>Facendo Guións con &kmplot;</title>
+	
+	<para
+>Unha nova funcionalidade aparecida en &kde; 3.4 é que pode escreber guións para &kmplot; con &DCOP;. Por exemplo, se quer definir unha nova función <userinput
+>f(x) = 2sin x+3cos x</userinput
+>, axustar o ancho da liña a 20 e entón representá-la, pode escreber nunha consola:</para>
+	<para
+><command
+>dcop kmplot-PID Parser addFunction "f(x)=2sin x+3cos x"</command
+> Como resultado, o número de identificación da nova función será devolto, ou -1 se non foi posíbel definir a función.</para>
+	<para
+><command
+>
+>dcop kmplot-PID Parser setFunctionFLineWidth 20 ID</command
+> Este comando axusta o ancho da liña da función con número de identificación ID par 20.</para>
+	<para
+><command
+>
+>dcop kmplot-PID View drawPlot</command
+> Este comando redebuxa a xanela para que a función poda facerse visíbel.</para>
+<para
+>Unha lista das funcións disponíbeis: <variablelist>
+		<varlistentry>
+			<term
+>KmPlotShell fileOpen &amp;url </term>
+			<listitem>
+				<para
+>Carga o ficheiro <parameter
+>url</parameter
+>.</para>
+			</listitem>
+		</varlistentry>
+		<varlistentry>
+			<term
+>MainDlg isModified </term>
+			<listitem>
+				<para
+>Devolve verdade se foi feito algunha mudanza.</para>
+			</listitem>
+		</varlistentry>
+		<varlistentry>
+			<term
+>MainDlg editColors </term>
+			<listitem>
+				<para
+>Abre o diálogo de edición de cores.</para>
+			</listitem>
+		</varlistentry>
+		<varlistentry>
+			<term
+>MainDlg editAxes </term>
+			<listitem>
+				<para
+>Abre o diálogo de edición do sistema de coordenadas.</para>
+			</listitem>
+		</varlistentry>
+		<varlistentry>
+			<term
+>MainDlg editScaling </term>
+			<listitem>
+				<para
+>Abre o diálogo de edición de escala.</para>
+			</listitem>
+		</varlistentry>
+		<varlistentry>
+			<term
+>MainDlg editFonts </term>
+			<listitem>
+				<para
+>Abre o diálogo de edición de tipos de letra.</para>
+			</listitem>
+		</varlistentry>
+		<varlistentry>
+			<term
+>MainDlg editConstants </term>
+			<listitem>
+				<para
+>Abre o diálogo de edición de constantes.</para>
+			</listitem>
+		</varlistentry>
+		<varlistentry>
+			<term
+>MainDlg newFunction </term>
+			<listitem>
+				<para
+>Abre o diálogo de representación de nova función.</para>
+			</listitem>
+		</varlistentry>
+		<varlistentry>
+			<term
+>MainDlg newParametric </term>
+			<listitem>
+				<para
+>Abre o diálogo de nova representación paramétrica.</para>
+			</listitem>
+		</varlistentry>
+		<varlistentry>
+			<term
+>MainDlg newPolar </term>
+			<listitem>
+				<para
+>Abre o diálogo de nova representación polar.</para>
+			</listitem>
+		</varlistentry>
+		<varlistentry>
+			<term
+>MainDlg toggleShowSlider0 </term>
+			<listitem>
+				<para
+>Mostra/acocha a xanela de parámetros número 1.</para>
+			</listitem>
+		</varlistentry>
+		<varlistentry>
+			<term
+>MainDlg toggleShowSlider1 </term>
+			<listitem>
+				<para
+>Mostra/acocha a xanela de parámetros número 2.</para>
+			</listitem>
+		</varlistentry>
+		<varlistentry>
+			<term
+>MainDlg toggleShowSlider2 </term>
+			<listitem>
+				<para
+>Mostra/acocha a xanela de parámetros número 3.</para>
+			</listitem>
+		</varlistentry>
+		<varlistentry>
+		  <term
+>MainDlg toggleShowSlider3 </term>
+		  <listitem>
+		    <para
+>Mostra/acocha a xanela de parámetros número 4.</para>
+		  </listitem>
+		</varlistentry>
+		<varlistentry>
+			<term
+>MainDlg slotSave </term>
+			<listitem>
+				<para
+>Guarda a función (abre o diálogo de guardar se é un ficheiro novo).</para>
+			</listitem>
+		</varlistentry>
+		<varlistentry>
+			<term
+>MainDlg slotSaveas </term>
+			<listitem>
+				<para
+>O mesmo que se escolle <menuchoice
+><guimenu
+>Ficheiro</guimenu
+><guimenuitem
+>Guardar Como</guimenuitem
+></menuchoice
+> no menú.</para>
+			</listitem>
+		</varlistentry>
+		<varlistentry>
+			<term
+>MainDlg slotEditPlots </term>
+			<listitem>
+				<para
+>Abre o diálogo de edición de gráficas.</para>
+			</listitem>
+		</varlistentry>
+		<varlistentry>
+			<term
+>MainDlg slotPrint </term>
+			<listitem>
+				<para
+>Abre o diálogo de impresión.</para>
+			</listitem>
+		</varlistentry>
+		<varlistentry>
+			<term
+>MainDlg slotExport </term>
+			<listitem>
+				<para
+>Abre o diálogo de exportación.</para>
+			</listitem>
+		</varlistentry>
+		<varlistentry>
+			<term
+>MainDlg slotSettings </term>
+			<listitem>
+				<para
+>Abre o diálogo de configuración.</para>
+			</listitem>
+		</varlistentry>
+		<varlistentry>
+			<term
+>MainDlg slotNames </term>
+			<listitem>
+				<para
+>Mostra unha lista de funcións matemáticas predefinidas.</para>
+			</listitem>
+		</varlistentry>
+		<varlistentry>
+			<term
+>MainDlg slotCoord1 </term>
+			<listitem>
+				<para
+>Sistema de Coordenadas I.</para>
+			</listitem>
+		</varlistentry>
+		<varlistentry>
+			<term
+>MainDlg slotCoord2 </term>
+			<listitem>
+				<para
+>Sistema de Coordenadas II</para>
+			</listitem>
+		</varlistentry>
+		<varlistentry>
+			<term
+>MainDlg slotCoord3 </term>
+			<listitem>
+				<para
+>Sistema de Coordenadas III</para>
+			</listitem>
+		</varlistentry>
+		<varlistentry>
+			<term
+>MainDlg getYValue </term>
+			<listitem>
+				<para
+>O mesmo que se escolle <menuchoice
+><guimenu
+>Ferramentas</guimenu
+><guimenuitem
+>Obter o valor y...</guimenuitem
+></menuchoice
+> no menú.</para>
+			</listitem>
+		</varlistentry>
+		<varlistentry>
+			<term
+>MainDlg findMinimumValue </term>
+			<listitem>
+				<para
+>O mesmo que escoller <menuchoice
+><guimenu
+>Ferramentas</guimenu
+><guimenuitem
+>Procurar o valor Mínimo...</guimenuitem
+></menuchoice
+> no menú.</para>
+			</listitem>
+		</varlistentry>
+		<varlistentry>
+			<term
+>MainDlg findMaximumValue </term>
+			<listitem>
+				<para
+>O mesmo que escoller <menuchoice
+><guimenu
+>Ferramentas</guimenu
+><guimenuitem
+>Procurar o valor Máximo...</guimenuitem
+></menuchoice
+> no menú.</para>
+			</listitem>
+		</varlistentry>
+		<varlistentry>
+			<term
+>MainDlg graphArea </term>
+			<listitem>
+				<para
+>O mesmo que escoller <menuchoice
+><guimenu
+>Ferramentas</guimenu
+><guimenuitem
+>Calcular Integral</guimenuitem
+></menuchoice
+> no menú.</para>
+			</listitem>
+		</varlistentry>
+		<varlistentry>
+			<term
+>Parser addFunction f_str </term>
+			<listitem>
+				<para
+>Engade unha nova función coa expresión <parameter
+>f_str</parameter
+>. Se a expresión non contén un nome de función, será xerado automaticamentes. O número de identificación da nova función será devolvido, ou -1 se non fose posíbel definir a función.</para>
+			</listitem>
+		</varlistentry>
+		<varlistentry>
+			<term
+>Parser delfkt id </term>
+			<listitem>
+				<para
+>Elimina a función co número de identificación <parameter
+>id</parameter
+>. Se non fose posíbel definir a función, será devolvido falso, en outro caso certo.</para>
+			</listitem>
+		</varlistentry>
+		<varlistentry>
+			<term
+>Parser setFunctionExpression f_str id </term>
+			<listitem>
+				<para
+>Atribui á función co número de identificación <parameter
+>id</parameter
+> a expresión <parameter
+>f_str</parameter
+>. Devolve certo se tivo éxito, falso en outro caso.</para>
+			</listitem>
+		</varlistentry>
+		<varlistentry>
+			<term
+>Parser countFunctions </term>
+			<listitem>
+				<para
+>Devolve o número de funcións (as paramétricas contan como dúas).</para>
+			</listitem>
+		</varlistentry>
+		<varlistentry>
+		  <term
+>Parser listFunctionNames </term>
+		  <listitem>
+		    <para
+>Devolve unha lista con todas as funcións.</para>
+		  </listitem>
+		</varlistentry>
+		<varlistentry>
+		  <term
+>Parser fnameToId f_str </term>
+		  <listitem>
+		    <para
+>Devolve o número de identificación de <parameter
+>f_str</parameter
+> ou -1 se o nome da función <parameter
+>f_str</parameter
+> non fose atopado.</para>
+		  </listitem>
+		</varlistentry>
+		<varlistentry>
+		  <term
+>Parser id x </term>
+		  <listitem>
+		    <para
+>Calcula o valor <parameter
+>x</parameter
+> da función con identificador <parameter
+>id</parameter
+> ou devolve 0.0 se <parameter
+>id</parameter
+> non existir.</para>
+		  </listitem>
+		</varlistentry>
+		<varlistentry>
+		  <term
+>Parser functionFVisible id </term>
+		  <listitem>
+		    <para
+>Devolve certo se a función co identificador <parameter
+>id</parameter
+> está visíbel, falso en outro caso.</para>
+		  </listitem>
+		</varlistentry>
+		<varlistentry>
+		  <term
+>Parser functionF1Visible id </term>
+		  <listitem>
+		    <para
+>Devolve certo se a primeira derivada da función con identificador <parameter
+>id</parameter
+> está visíbel, falso en outro caso.</para>
+		  </listitem>
+		</varlistentry>
+		<varlistentry>
+		  <term
+>Parser functionF2Visible id </term>
+		  <listitem>
+		    <para
+>Devolve certo se a segunda derivada da función con identificador <parameter
+>id</parameter
+> está visíbel, falso en outro caso.</para>
+		  </listitem>
+		</varlistentry>
+		<varlistentry>
+		  <term
+>Parser functionIntVisible id </term>
+		  <listitem>
+		    <para
+>Devolve certo se a integral da función con identificador <parameter
+>id</parameter
+> é visíbel, falso en outro caso.</para>
+		  </listitem>
+		</varlistentry>
+		<varlistentry>
+		  <term
+>Parser setFunctionFVisible visíbel id </term>
+		  <listitem>
+		    <para
+>Mostra a función de identificador <parameter
+>id</parameter
+> se <parameter
+>visíbel</parameter
+> é certo. Se <parameter
+>visíbel</parameter
+> é falso, a función será acochada. Certo é devolvido se a función existe, se non, devolverase falso</para>
+		  </listitem>
+		</varlistentry>
+		<varlistentry>
+		  <term
+>Parser setFunctionF1Visible visíbel id </term>
+		  <listitem>
+		    <para
+>Mostra a primeira derivada da función con identificador <parameter
+>id</parameter
+> se <parameter
+>visíbel</parameter
+> é certo. Se <parameter
+>visíbel</parameter
+> é falso, a función será acochada. Certo é devolvido se a función existe, en outro caso devolverase falso.</para>
+		  </listitem>
+		</varlistentry>
+		<varlistentry>
+		  <term
+>Parser setFunctionF2Visible visíbel id </term>
+		  <listitem>
+		    <para
+>Mostra a segunda derivada da función con identificador <parameter
+>id</parameter
+> se <parameter
+>visíbel</parameter
+> é certo. Se <parameter
+>visíbel</parameter
+> é falso, a función será acochada. Certo é devolto se a función existe, en outro caso, falso.</para>
+		  </listitem>
+		</varlistentry>
+		<varlistentry>
+		  <term
+>Parser setFunctionIntVisible visíbel id </term>
+		  <listitem>
+		    <para
+>Mostra a integral da función con identificador <parameter
+>id</parameter
+> se <parameter
+>visíbel</parameter
+> é certo. Se <parameter
+>visíbel</parameter
+> é falso, a función será acochada. Certo é devolvido se a función existe, en outro caso, devolverase falso.</para>
+		  </listitem>
+		</varlistentry>
+		<varlistentry>
+		  <term
+>Parser functionStr id </term>
+		  <listitem>
+		    <para
+>Devolve a expresión da función con identificador <parameter
+>id</parameter
+>. Se a función non existe, devolverase unha función valeira.</para>
+		  </listitem>
+		</varlistentry>
+		<varlistentry>
+		  <term
+>Parser functionFColor id </term>
+		  <listitem>
+		    <para
+>Devolve a cor da función con identificador <parameter
+>id</parameter
+>.</para>
+		  </listitem>
+		</varlistentry>
+		<varlistentry>
+		  <term
+>Parser functionF1Color id </term>
+		  <listitem>
+		    <para
+>Devolve a cor da primeira derivada da función con identificador <parameter
+>id</parameter
+>.</para>
+		  </listitem>
+		</varlistentry>
+		<varlistentry>
+		  <term
+>Parser functionF2Color id </term>
+		  <listitem>
+		    <para
+>Devolve a cor da segunda derivada da función con identificador <parameter
+>id</parameter
+>.</para>
+		  </listitem>
+		</varlistentry>
+		<varlistentry>
+		  <term
+>Parser functionIntColor id </term>
+		  <listitem>
+		    <para
+>Devolve a cor da integral da función con identificador <parameter
+>id</parameter
+>.</para>
+		  </listitem>
+		</varlistentry>
+		<varlistentry>
+		  <term
+>Parser setFunctionFColor cor id </term>
+		  <listitem>
+		    <para
+>Cambia a cor da función con identificador <parameter
+>id</parameter
+> para ser <parameter
+>cor</parameter
+>. Certo é devolto se a función existe, falso en outro caso.</para>
+		  </listitem>
+		</varlistentry>
+		<varlistentry>
+		  <term
+>Parser setFunctionF1Color cor id </term>
+		  <listitem>
+		    <para
+>Cambia a cor da primeira derivada da función con identificador <parameter
+>id</parameter
+> para <parameter
+>cor</parameter
+>. Certo é devolto se a función existe, falso en outro caso.</para>
+		  </listitem>
+		</varlistentry>
+		<varlistentry>
+		  <term
+>Parser setFunctionF2Color cor id </term>
+		  <listitem>
+		    <para
+>Cambia a cor da segunda derivada da función con identificador <parameter
+>id</parameter
+> para <parameter
+>cor</parameter
+>. Certo é devolto se a función existe, falso en outro caso.</para>
+		  </listitem>
+		</varlistentry>
+		<varlistentry>
+		  <term
+>Parser setFunctionIntColor cor id </term>
+		  <listitem>
+		    <para
+>Cambia a cor da integral da función con identificador <parameter
+>id</parameter
+> para <parameter
+>cor</parameter
+>. Certo é devolto se a función existe, falso en outro caso.</para>
+		  </listitem>
+		</varlistentry>
+		<varlistentry>
+		  <term
+>Parser functionFLineWidth id </term>
+		  <listitem>
+		    <para
+>Devolve o ancho da liña da función con identificador <parameter
+>id</parameter
+>. Se a función non existe devólvese cero.</para>
+		  </listitem>
+		</varlistentry>
+		<varlistentry>
+		  <term
+>Parser functionF1LineWidth id </term>
+		  <listitem>
+		    <para
+>Devolve o ancho da liña da primeira derivada da función con identificador <parameter
+>id</parameter
+>. Se a función non existe devólvese cero.</para>
+		  </listitem>
+		</varlistentry>
+		<varlistentry>
+		  <term
+>Parser functionF2LineWidth id </term>
+		  <listitem>
+		    <para
+>Devolve o ancho da liña da primeira derivada da función con identificador <parameter
+>id</parameter
+>. Se a función non existe devólvese cero.</para>
+		  </listitem>
+		</varlistentry>
+		<varlistentry>
+		  <term
+>Parser functionIntLineWidth id </term>
+		  <listitem>
+		    <para
+>Devolve o ancho da liña da integral da función con identificador <parameter
+>id</parameter
+>. Se a función non existe devólvese cero.</para>
+		  </listitem>
+		</varlistentry>
+		<varlistentry>
+		  <term
+>Parser setFunctionFLineWidth anchoLiña id </term>
+		  <listitem>
+		    <para
+>Cambia o ancho da liña da función con identificador <parameter
+>id</parameter
+> para <parameter
+>anchoLiña</parameter
+>. Devólvese certo se a función existe, falso se non existe.</para>
+		  </listitem>
+		</varlistentry>
+		<varlistentry>
+		  <term
+>Parser setFunctionF1LineWidth anchoLiña id </term>
+		  <listitem>
+		    <para
+>Cambia o ancho da liña da primeira derivada da función con identificador <parameter
+>id</parameter
+> para <parameter
+>anchoLiña</parameter
+>. Devólvese certo se a función existe, falso se non existe.</para>
+		  </listitem>
+		</varlistentry>
+		<varlistentry>
+		  <term
+>Parser setFunctionF2LineWidth anchoLiña id </term>
+		  <listitem>
+		    <para
+>Cambia o ancho da liña da segunda derivada da función con identificador <parameter
+>id</parameter
+> para <parameter
+>anchoLiña</parameter
+>. Devólvese certo se a función existe, falso se non existe.</para>
+		  </listitem>
+		</varlistentry>
+		<varlistentry>
+		  <term
+>Parser setFunctionIntLineWidth anchoLiña id </term>
+		  <listitem>
+		    <para
+>Cambia o ancho da liña da segunda derivada da función con identificador <parameter
+>id</parameter
+> para <parameter
+>anchoLiña</parameter
+>. Devólvese certo se a función existe, falso se non existe.</para>
+		  </listitem>
+		</varlistentry>
+		<varlistentry>
+		  <term
+>Parser functionParameterList id </term>
+		  <listitem>
+		    <para
+>Devolve unha lista con todos os valores dos parámetros da función con identificador <parameter
+>id</parameter
+>.</para>
+		  </listitem>
+		</varlistentry>
+		<varlistentry>
+		  <term
+>Parser functionAddParameter novoParámetro id </term>
+		  <listitem>
+		    <para
+>Engade o valor do parámetro <parameter
+>novoParámetro</parameter
+> á función con identificador <parameter
+>id</parameter
+>. Certo é devolto se a operación ten éxito, falso en outro caso.</para>
+		  </listitem>
+		</varlistentry>
+		<varlistentry>
+		  <term
+>Parser functionRemoveParameter eliminarParámetro id </term>
+		  <listitem>
+		    <para
+>Eliminar o valor do parámetro <parameter
+>eliminarParámetro</parameter
+> da función con identificador <parameter
+>id</parameter
+>. Certo é devolto se a operación ten éxito, falso en outro caso.</para>
+		  </listitem>
+		</varlistentry>
+		<varlistentry>
+		  <term
+>Parser functionMinValue id </term>
+		  <listitem>
+		    <para
+>Devolve o valor mínimo do rango da gráfica da función con identificador <parameter
+>id</parameter
+>. Se a función non existe ou se o valor mínimo non está definido, devólvese unha cadea valeira.</para>
+		  </listitem>
+		</varlistentry>
+		<varlistentry>
+		  <term
+>Parser functionMaxValue id </term>
+		  <listitem>
+		    <para
+>Devolve o valor máximo do rango da gráfica da función con identificador <parameter
+>id</parameter
+>. Se a función non existe ou se o valor máximo non está definido, devólvese unha cadea valeira.</para>
+		  </listitem>
+		</varlistentry>
+		<varlistentry>
+		  <term
+>Parser setFunctionMinValue mín id </term>
+		  <listitem>
+		    <para
+>Cambia o valor mínimo do rango da gráfica da función con identificador <parameter
+>id</parameter
+> para <parameter
+>mín</parameter
+>. Devólvese certo se a función existe e a expresión é válida, falso en outro caso.</para>
+		  </listitem>
+		</varlistentry>
+		<varlistentry>
+		  <term
+>Parser setFunctionMaxValue máx id </term>
+		  <listitem>
+		    <para
+>Cambia o valor máximo do rango da gráfica da función con identificador <parameter
+>id</parameter
+> para <parameter
+>máx</parameter
+>. Devólvese certo se a función existe e a expresión é válida, falso en outro caso.</para>
+		  </listitem>
+		</varlistentry>
+		
+		<varlistentry>
+		  <term
+>Parser functionStartXValue id </term>
+		  <listitem>
+		    <para
+>Devolve o ponto x inicial da integral da función con identificador <parameter
+>id</parameter
+>. Se a función non existe ou se a expresión do ponto x non está definida, devólvese unha cadea valeira.</para>
+		  </listitem>
+		</varlistentry>
+		<varlistentry>
+		  <term
+>Parser functionStartYValue id </term>
+		  <listitem>
+		    <para
+>Devolve o ponto y inicial da integral da función con identificador <parameter
+>id</parameter
+>. Se a función non existe ou se a expresión do ponto y non está definida, devólvese unha cadea valeira.</para>
+		  </listitem>
+		</varlistentry>
+		<varlistentry>
+		  <term
+>Parser setFunctionStartXValue mín id </term>
+		  <listitem>
+		    <para
+>Muda o ponto x inicial da integral da función con identificador <parameter
+>id</parameter
+> para <parameter
+>mín</parameter
+>. Devólvese certo se a función existe e a expresión é válida, falso en outro caso.</para>
+		  </listitem>
+		</varlistentry>
+		<varlistentry>
+		  <term
+>Parser setFunctionStartYValue máx id </term>
+		  <listitem>
+		    <para
+>Muda o ponto y inicial da integral da función con identificador <parameter
+>id</parameter
+> para <parameter
+>máx</parameter
+>. Devólvese certo se a función existe e a expresión é válida, falso en outro caso.</para>
+		  </listitem>
+		</varlistentry>
+		<varlistentry>
+			<term
+>View stopDrawing </term>
+			<listitem>
+				<para
+>Se &kmplot; está a representar unha función, este procedimento ha-o parar.</para>
+			</listitem>
+		</varlistentry>
+		<varlistentry>
+			<term
+>View drawPlot </term>
+			<listitem>
+				<para
+>Debuxa de novo todas as funcións.</para>
+			</listitem>
+		</varlistentry>
+	</variablelist>
+</para>
+</chapter>
+
+<!--
+    Local Variables:
+    mode: sgml
+    sgml-minimize-attributes:nil
+    sgml-general-insert-case:lower
+    sgml-indent-step:0
+    sgml-indent-data:nil
+    sgml-parent-document:("index.docbook" "BOOK" "CHAPTER")
+    End:
+    -->

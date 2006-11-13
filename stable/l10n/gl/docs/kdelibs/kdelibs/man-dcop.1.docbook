@@ -1,0 +1,280 @@
+<?xml version="1.0" ?>
+<!DOCTYPE refentry PUBLIC "-//KDE//DTD DocBook XML V4.2-Based Variant V1.1//EN" "dtd/kdex.dtd" [
+<!ENTITY kdeoptions SYSTEM "kdeoptions.docbook">
+<!ENTITY qtoptions SYSTEM "qtoptions.docbook">
+<!ENTITY % English "INCLUDE">
+]>
+
+<refentry lang="&language;">
+<refentryinfo>
+<author
+><personname
+><firstname
+>Chris</firstname
+><surname
+>Cheney</surname
+></personname
+> <email
+>ccheney@debian.org</email
+></author>
+<date
+>7 de marzo de 2003</date>
+</refentryinfo>
+
+<refmeta>
+<refentrytitle
+><command
+>dcop</command
+></refentrytitle>
+<manvolnum
+>1</manvolnum>
+</refmeta>
+
+<refnamediv>
+<refname
+><command
+>dcop</command
+></refname>
+<refpurpose
+>Cliente de &DCOP; para a terminal</refpurpose>
+</refnamediv>
+
+<refsynopsisdiv>
+<cmdsynopsis
+><command
+>dcop</command
+> <group
+><option
+>--pipe</option
+></group
+> <group
+><option
+>--user</option
+> <replaceable
+> usuario</replaceable
+></group
+> <group
+><option
+>--all-users</option
+></group
+> <group
+><option
+>--session</option
+> <replaceable
+> sesión</replaceable
+></group
+> <group
+><option
+>--all-sessions</option
+></group
+> <group
+><option
+>--list-sessions</option
+></group
+> <group
+><option
+>--no-user-time</option
+></group
+> <group
+> <arg
+><replaceable
+>programa</replaceable
+></arg
+> <group
+> <arg
+><replaceable
+>obxecto</replaceable
+></arg
+> <group
+> <arg choice="opt"
+><replaceable
+>función</replaceable
+></arg
+> <group
+><arg choice="opt" rep="repeat"
+><replaceable
+>argumentos</replaceable
+></arg
+></group
+> </group
+> </group
+> </group
+> </cmdsynopsis>
+
+</refsynopsisdiv>
+
+<refsect1>
+<title
+>Descrición</title>
+<para
+>Cliente de &DCOP; para a terminal</para>
+
+<para
+><!-- Write some stuff here --></para>
+
+</refsect1>
+
+<refsect1>
+<title
+>Opcións</title>
+
+<variablelist>
+<varlistentry>
+<term
+><option
+>--pipe</option
+></term>
+<listitem>
+<para
+>Chama a &DCOP; para cada liña e le de stdin.</para>
+<para
+>Isto é grosso modo equivalente a executar <userinput
+>while read line; do dcop $line; done</userinput
+> pero, dado que non debe ser iniciada unha nova instancia de <command
+>dcop</command
+> para cada liña, polo xeral é moito mais rápido, en especial cos lentos ligadores dinámicos de GNU.</para>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term
+><option
+>--user</option
+> <replaceable
+>usuario</replaceable
+></term>
+<listitem>
+<para
+>Conecta co servidor &DCOP; que se indica. Esta opción ignorará os valores das variábeis de contorno $<envar
+>DCOPSERVER</envar
+> e $<envar
+>ICEAUTHORITY</envar
+>, mesmo se están configuradas.</para>
+<para
+>Se o usuario ten mais dunha sesión aberta, tamén debe usar unha das opcións para a liña de comandos <option
+>--list-sessions</option
+>, <option
+>--session</option
+> ou <option
+>--all-sessions</option
+>.</para>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term
+><option
+>--all-users</option
+></term>
+<listitem>
+<para
+>Envía a mesma chamada &DCOP; para todos os usuarios cur servidor &DCOP; a executarse. Só han xerar mensaxes de erro as mensaxes fallidas a servidores existentes. Se non hai nengún servidor &DCOP; disponíbel, non se xerará nengunha mensaxe de erro.</para>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term
+><option
+>--session</option
+> <replaceable
+>sesión</replaceable
+></term>
+<listitem
+><para
+>Enviar para a sesión de &kde; que se indica. Esta opción só pode ser usada en combinación coa opción <option
+>--user</option
+>.</para>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term
+><option
+>--all-sessions</option
+></term>
+<listitem>
+<para
+>Enviar para todas as sesións achadas. Nó traballa coas opcións <option
+>--user</option
+> e <option
+>--all-users</option
+>.</para>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term
+><option
+>--list-sessions</option
+></term>
+<listitem>
+<para
+>Lista todas as sesións activas de &kde; para un usuario ou para todos os usuarios.</para>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term
+><option
+>--no-user-time</option
+></term>
+<listitem>
+<para
+>Non actualiza a marca de tempo de actividade do usuario no programa chamado (para usar en guións que se executen en segundo plano).</para>
+</listitem
+></varlistentry>
+</variablelist>
+</refsect1>
+
+<refsect1>
+<title
+>Contorno</title>
+
+<variablelist>
+<varlistentry>
+<term
+><envar
+>DCOPSERVER</envar
+></term>
+<listitem>
+<para
+><!-- What does this tell dcop? --></para>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term
+><envar
+>ICEAUTHORITY</envar
+></term>
+<listitem
+><para
+><!-- What does this tell dcop? --></para>
+</listitem>
+</varlistentry>
+</variablelist>
+</refsect1>
+
+<!--
+<refsect1>
+<title
+>Examples</title>
+
+<para
+>Write some examples</para>
+
+</refsect1>
+-->
+<refsect1>
+<title
+>Consulte Tamén</title>
+
+<para
+>dcopclient(1) dcopref(1) dcopfind(1) kdcop(1)</para>
+
+<para
+>Dentro de &kde; pode introducir <userinput
+>help:/kdcop</userinput
+> en &konqueror; para consultar o Manual do Usuario de <application
+>kdcop</application
+>, a ferramenta gráfica de dcop.</para>
+
+<!--
+<para
+> Info on where to find proper dcop docs </para>
+-->
+</refsect1>
+</refentry>
