@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kmyfirewall\n"
-"POT-Creation-Date: 2007-04-03 09:46+0200\n"
+"POT-Creation-Date: 2007-04-04 07:16+0200\n"
 "PO-Revision-Date: 2006-08-21 20:37+0200\n"
 "Last-Translator: mvillarino <mvillarino@users.sourceforge.net>\n"
 "Language-Team: Galician <trasno@ceu.fi.udc.es>\n"
@@ -73,6 +73,37 @@ msgid ""
 msgstr ""
 "O aceso ao ficheiro para escreber fallou.\n"
 "Asegure-se de que se identificou como \"root\"."
+
+#: core/kmfprotocol.cpp:243 kmyfirewall.cpp:593
+msgid ""
+"<qt>"
+"<p>The file <b>%1</b> could not be loaded.</p>"
+"<p>If you are working with files stored on remote computers make sure that the "
+"network is up and the fileserver running.</qt>"
+msgstr ""
+"<qt>"
+"<p>Non foi posíbel carregar o ficheiro <b>%1</b>.</p>"
+"<p>Se estivese a traballar con ficheiros guardados en máquinas remotas, "
+"asegure-se de que a rede está a funcionar e de que o servidor de ficheiros "
+"tamén funciona.</qt>"
+
+#: core/kmfprotocol.cpp:254 kmyfirewall.cpp:603
+msgid "<qt><p>You don't have the permissions to read file: <b>%1</b></p></qt>"
+msgstr ""
+"<qt>"
+"<p>O usuário non ten permisos para ler o ficheiro: <b>%1</b></p></qt>"
+
+#: core/kmfprotocol.cpp:262
+#, fuzzy
+msgid "<qt><p>Could not download file: <b>%1</b></p></qt>"
+msgstr ""
+"<qt>"
+"<p>O usuário non ten permisos para ler o ficheiro: <b>%1</b></p></qt>"
+
+#: core/kmfprotocol.cpp:269
+#, fuzzy
+msgid "<qt><p>No File found at URL: <b>%1</b></p></qt>"
+msgstr "<qt><p>O guardado do ficheiro: <b>%1</b> fallou!</p></qt>"
 
 #: core/kmferrorhandler.cpp:43
 msgid "Hint"
@@ -221,7 +252,7 @@ msgstr ""
 msgid "New Zone"
 msgstr "Nova Zona"
 
-#: core/kmfnetzone.cpp:417
+#: core/kmfnetzone.cpp:385
 msgid "Zone %1 already exists, please try again with another name"
 msgstr "A zona %1 xa existe, tente-o de novo con outro nome"
 
@@ -234,25 +265,25 @@ msgid "Outgoing Connections"
 msgstr "Conexóns Saíntes"
 
 #. i18n: file kmyfirewallwizard.ui line 2063
-#: core/kmfgenericdoc.cpp:147 rc.cpp:541
+#: core/kmfgenericdoc.cpp:147 rc.cpp:538
 #, no-c-format
 msgid "Trusted Hosts"
 msgstr "Máquinas de Confianza"
 
 #. i18n: file kmyfirewallwizard.ui line 1898
-#: core/kmfgenericdoc.cpp:148 rc.cpp:514
+#: core/kmfgenericdoc.cpp:148 rc.cpp:511
 #, no-c-format
 msgid "Malicious Hosts"
 msgstr "Máquinas Maliciosas"
 
 #. i18n: file kmyfirewallwizard.ui line 2412
-#: core/kmfgenericdoc.cpp:149 rc.cpp:596
+#: core/kmfgenericdoc.cpp:149 rc.cpp:593
 #, no-c-format
 msgid "Forbidden Clients"
 msgstr "Clientes Proibidos"
 
 #. i18n: file kmyfirewallwizard.ui line 2245
-#: core/kmfgenericdoc.cpp:150 rc.cpp:572
+#: core/kmfgenericdoc.cpp:150 rc.cpp:569
 #, no-c-format
 msgid "Forbidden Servers"
 msgstr "Servidores Proibidos"
@@ -361,8 +392,8 @@ msgstr "Secuéncia: %1 Destino por Omisión"
 #: core/kmfnethost.cpp:44 genericinterface/kmfgenericinterfacehost.cpp:145
 #: genericinterface/kmfgenericinterfacehost.cpp:148
 #: genericinterface/kmfgenericinterfaceprotocol.cpp:686
-#: kmfwidgets/kmfmynetworkwidget.cpp:279 rc.cpp:520 rc.cpp:548 rc.cpp:578
-#: rc.cpp:602
+#: kmfwidgets/kmfmynetworkwidget.cpp:279 rc.cpp:517 rc.cpp:545 rc.cpp:575
+#: rc.cpp:599
 #, no-c-format
 msgid "New Host"
 msgstr "Nova Máquina"
@@ -1051,7 +1082,7 @@ msgid "Configure NAT (Network Address Translation) here."
 msgstr "Configure aqui a NAT (Traduzón de Enderezos de Rede)."
 
 #. i18n: file kmyfirewallwizard.ui line 264
-#: genericinterface/kmfgenericinterface.cpp:90 rc.cpp:177
+#: genericinterface/kmfgenericinterface.cpp:90 rc.cpp:174
 #, no-c-format
 msgid "Logging"
 msgstr "Rexisto"
@@ -1059,6 +1090,15 @@ msgstr "Rexisto"
 #: genericinterface/kmfgenericinterface.cpp:90
 msgid "Configure your firewall's logging behavior here."
 msgstr "Configure aqui os rexistos da devasa."
+
+#: genericinterface/kmfgenericinterface.cpp:98
+#, fuzzy
+msgid "Custom Protocols"
+msgstr "Regras Personalizadas"
+
+#: genericinterface/kmfgenericinterface.cpp:98
+msgid "Define your Custom Protocols here"
+msgstr ""
 
 #: genericinterface/kmfgenericinterfacehost.cpp:165
 msgid ""
@@ -1086,13 +1126,43 @@ msgid "Special Host: %1"
 msgstr "Máquina Especial: %1"
 
 #. i18n: file kmyfirewallwizard.ui line 1994
-#: genericinterface/kmfgenericinterfacehost.cpp:320 rc.cpp:526 rc.cpp:529
-#: rc.cpp:554 rc.cpp:557 rc.cpp:584 rc.cpp:587 rc.cpp:608 rc.cpp:611
+#: genericinterface/kmfgenericinterfacehost.cpp:320 rc.cpp:523 rc.cpp:526
+#: rc.cpp:551 rc.cpp:554 rc.cpp:581 rc.cpp:584 rc.cpp:605 rc.cpp:608
 #, no-c-format
 msgid "Delete Host"
 msgstr "Borrar a Máquina"
 
-#: genericinterface/kmfgenericinterface_part.cpp:182
+#: genericinterface/kmfgenericinterface_part.cpp:62
+#, fuzzy
+msgid "&My Network"
+msgstr "A Miña Rede"
+
+#: genericinterface/kmfgenericinterface_part.cpp:65
+#, fuzzy
+msgid "&Access Control"
+msgstr "Controlo de Aceso"
+
+#: genericinterface/kmfgenericinterface_part.cpp:69
+#, fuzzy
+msgid "&Special Hosts Control"
+msgstr "Máquinas Especiais"
+
+#: genericinterface/kmfgenericinterface_part.cpp:73
+#, fuzzy
+msgid "&ICMP Options"
+msgstr "Opzóns ICMP"
+
+#: genericinterface/kmfgenericinterface_part.cpp:77
+#, fuzzy
+msgid "&NAT Configuration"
+msgstr "Configurazón da NAT"
+
+#: genericinterface/kmfgenericinterface_part.cpp:80
+#, fuzzy
+msgid "&Logging"
+msgstr "Rexisto"
+
+#: genericinterface/kmfgenericinterface_part.cpp:236
 msgid "kmfgenericinterfacepartPart"
 msgstr "kmfgenericinterfacepartPart"
 
@@ -1331,41 +1401,35 @@ msgstr "&Exportar.."
 #. i18n: file kmyfirewallui.rc line 22
 #: rc.cpp:9
 #, no-c-format
-msgid "&IPTables"
-msgstr "&IPTables"
-
-#. i18n: file kmyfirewallui.rc line 25
-#: rc.cpp:12
-#, no-c-format
 msgid "&Run"
 msgstr "Executa&r"
 
-#. i18n: file kmyfirewallui.rc line 30
-#: rc.cpp:15
+#. i18n: file kmyfirewallui.rc line 27
+#: rc.cpp:12
 #, no-c-format
 msgid "Main"
 msgstr "Principal"
 
 #. i18n: file kmyfirewallconfigdialog.ui line 75
-#: rc.cpp:24
+#: rc.cpp:21
 #, no-c-format
 msgid "&Try Automatic Configuration"
 msgstr "&Tentar a Configurazón Automática"
 
 #. i18n: file kmyfirewallconfigdialog.ui line 100
-#: rc.cpp:27
+#: rc.cpp:24
 #, no-c-format
 msgid "&Save Configuration"
 msgstr "&Guardar a Configurazón"
 
 #. i18n: file kmyfirewallconfigdialog.ui line 110
-#: rc.cpp:30
+#: rc.cpp:27
 #, no-c-format
 msgid "Are you a Gentoo user?"
 msgstr "É un usuário de Gentoo?"
 
 #. i18n: file kmyfirewallconfigdialog.ui line 128
-#: rc.cpp:33
+#: rc.cpp:30
 #, no-c-format
 msgid ""
 "If yes, please enable this option to be able to install the firewall correctly "
@@ -1379,194 +1443,194 @@ msgstr ""
 "por iso é necesario se estivese a correr Gentoo."
 
 #. i18n: file kmyfirewallconfigdialog.ui line 139
-#: rc.cpp:37
+#: rc.cpp:34
 #, no-c-format
 msgid "Yes, I am using Gentoo"
 msgstr "Si, estou a usar Gentoo"
 
 #. i18n: file kmyfirewallconfigdialog.ui line 166
-#: kmfwidgets/kmfmynetworkwidget.cpp:96 rc.cpp:40
+#: kmfwidgets/kmfmynetworkwidget.cpp:96 rc.cpp:37
 #, no-c-format
 msgid "Interfaces"
 msgstr "Interfaces"
 
 #. i18n: file kmyfirewallconfigdialog.ui line 183
-#: rc.cpp:43
+#: rc.cpp:40
 #, no-c-format
 msgid "Add Interface"
 msgstr "Engadir unha Interface"
 
 #. i18n: file kmyfirewallconfigdialog.ui line 207
-#: rc.cpp:46
+#: rc.cpp:43
 #, no-c-format
 msgid "Remove Interface"
 msgstr "Borrar a Interface"
 
 #. i18n: file kmyfirewallconfigdialog.ui line 213
-#: rc.cpp:49
+#: rc.cpp:46
 #, no-c-format
 msgid "eth"
 msgstr "eth"
 
 #. i18n: file kmyfirewallconfigdialog.ui line 218
-#: rc.cpp:52
+#: rc.cpp:49
 #, no-c-format
 msgid "ippp"
 msgstr "ippp"
 
 #. i18n: file kmyfirewallconfigdialog.ui line 223
-#: rc.cpp:55
+#: rc.cpp:52
 #, no-c-format
 msgid "ppp"
 msgstr "ppp"
 
 #. i18n: file kmyfirewallconfigdialog.ui line 228
-#: rc.cpp:58
+#: rc.cpp:55
 #, no-c-format
 msgid "ppoe"
 msgstr "ppoe"
 
 #. i18n: file kmyfirewallconfigdialog.ui line 233
-#: rc.cpp:61
+#: rc.cpp:58
 #, no-c-format
 msgid "lo"
 msgstr "lo"
 
 #. i18n: file kmyfirewallconfigdialog.ui line 267
-#: rc.cpp:64
+#: rc.cpp:61
 #, no-c-format
 msgid "Here you can see the currently entered network interfaces"
 msgstr "Aqui poderá ver as interfaces de rede introducidas de momento"
 
 #. i18n: file kmyfirewallconfigdialog.ui line 283
-#: rc.cpp:67
+#: rc.cpp:64
 #, no-c-format
 msgid "Please add your available network Interfaces here:"
 msgstr "Engada aqui as súas interfaces de rede disponíbeis:"
 
 #. i18n: file kmyfirewallconfigdialog.ui line 333
-#: rc.cpp:70
+#: rc.cpp:67
 #, no-c-format
 msgid "KMyFirewall - Configuration"
 msgstr "KMyDevasa - Configurazón"
 
 #. i18n: file kmyfirewallconfigdialog.ui line 348
-#: rc.cpp:73
+#: rc.cpp:70
 #, no-c-format
 msgid "Paths"
 msgstr "Rotas"
 
 #. i18n: file kmyfirewallconfigdialog.ui line 365
-#: rc.cpp:76
+#: rc.cpp:73
 #, no-c-format
 msgid "Path to the <b>init</b> scripts:"
 msgstr "Rota aos guións de <b>init</b>:"
 
 #. i18n: file kmyfirewallconfigdialog.ui line 373
-#: rc.cpp:79
+#: rc.cpp:76
 #, no-c-format
 msgid "Path to the <b>modprobe</b> program:"
 msgstr "Rota ao programa <b>modprobe</b>:"
 
 #. i18n: file kmyfirewallconfigdialog.ui line 394
-#: rc.cpp:82
+#: rc.cpp:79
 #, no-c-format
 msgid " Path to the <b>iptables</b> program:"
 msgstr "Rota ao programa <b>iptables</b>:"
 
 #. i18n: file kmyfirewallconfigdialog.ui line 417
-#: rc.cpp:85
+#: rc.cpp:82
 #, no-c-format
 msgid "Path to the runlevel directory of your <b>default runlevel</b>:"
 msgstr "Rota do directorio do <b>nível de execuzón por omisión</b>:"
 
 #. i18n: file kmyfirewallconfignewhost.ui line 16
-#: rc.cpp:88
+#: rc.cpp:85
 #, no-c-format
 msgid "Add Remote Hosts"
 msgstr "Engadir Máquinas Remotas"
 
 #. i18n: file kmyfirewallconfignewhost.ui line 53
-#: rc.cpp:91
+#: rc.cpp:88
 #, no-c-format
 msgid "Host Settings"
 msgstr "Configurazón da Máquina"
 
 #. i18n: file kmyfirewallconfignewhost.ui line 70
-#: rc.cpp:94
+#: rc.cpp:91
 #, no-c-format
 msgid "Yes, it's a Gentoo box"
 msgstr "Si, é unha máquina Gentoo"
 
 #. i18n: file kmyfirewallconfignewhost.ui line 78
-#: rc.cpp:97
+#: rc.cpp:94
 #, no-c-format
 msgid "/etc/init.d/"
 msgstr "/etc/init.d/"
 
 #. i18n: file kmyfirewallconfignewhost.ui line 97
-#: rc.cpp:100
+#: rc.cpp:97
 #, no-c-format
 msgid "/etc/init.d/rc5.d/"
 msgstr "/etc/init.d/rc5.d/"
 
 #. i18n: file kmyfirewallconfignewhost.ui line 111
-#: rc.cpp:103
+#: rc.cpp:100
 #, no-c-format
 msgid "/usr/sbin/iptables"
 msgstr "/usr/sbin/iptables"
 
 #. i18n: file kmyfirewallconfignewhost.ui line 122
-#: rc.cpp:106
+#: rc.cpp:103
 #, no-c-format
 msgid "Path to the IPTables program:"
 msgstr "Rota ao programa IPTables:"
 
 #. i18n: file kmyfirewallconfignewhost.ui line 130
-#: rc.cpp:109
+#: rc.cpp:106
 #, no-c-format
 msgid "Path to the init scripts:"
 msgstr "Rota aos guións de início:"
 
 #. i18n: file kmyfirewallconfignewhost.ui line 138
-#: rc.cpp:112
+#: rc.cpp:109
 #, no-c-format
 msgid "Path to the runlevel directory of your default runlevel:"
 msgstr "Rota ao directório do nível de execuzón por omisión:"
 
 #. i18n: file kmyfirewallconfignewhost.ui line 149
-#: rc.cpp:115
+#: rc.cpp:112
 #, no-c-format
 msgid "Please set the IP address or the hostname:"
 msgstr "Indique o enderezo IP ou o nome da máquina:"
 
 #. i18n: file kmyfirewallconfignewhost.ui line 193
-#: rc.cpp:118
+#: rc.cpp:115
 #, no-c-format
 msgid "Please enable this if the host is using the Gentoo Linux distribution."
 msgstr ""
 "Active isto se máquina estivese a executar a distribuizón de Linux Gentoo."
 
 #. i18n: file kmyfirewallconfignewhost.ui line 245
-#: rc.cpp:124
+#: rc.cpp:121
 #, no-c-format
 msgid "Save Host"
 msgstr "Guardar a Máquina"
 
 #. i18n: file kmyfirewallwizard.ui line 16
-#: rc.cpp:127 rc.cpp:133
+#: rc.cpp:124 rc.cpp:130
 #, no-c-format
 msgid "KMyFirewall - Wizard"
 msgstr "KMyDevasa - Asistente"
 
 #. i18n: file kmyfirewallwizard.ui line 26
-#: rc.cpp:130
+#: rc.cpp:127
 #, no-c-format
 msgid "Welcome"
 msgstr "Benvido"
 
 #. i18n: file kmyfirewallwizard.ui line 93
-#: rc.cpp:136
+#: rc.cpp:133
 #, no-c-format
 msgid ""
 "<html><head><meta name=\"qrichtext\" content=\"1\" /></head>"
@@ -1641,25 +1705,25 @@ msgstr ""
 " </body></html>\n"
 
 #. i18n: file kmyfirewallwizard.ui line 106
-#: rc.cpp:148
+#: rc.cpp:145
 #, no-c-format
 msgid "General Options"
 msgstr "Opzóns Xerais"
 
 #. i18n: file kmyfirewallwizard.ui line 123
-#: rc.cpp:151
+#: rc.cpp:148
 #, no-c-format
 msgid "Kernel Parameters"
 msgstr "Parámetro do Núcleo"
 
 #. i18n: file kmyfirewallwizard.ui line 148
-#: rc.cpp:154
+#: rc.cpp:151
 #, no-c-format
 msgid "Load iptables as module "
 msgstr "Carregar iptables como módulo"
 
 #. i18n: file kmyfirewallwizard.ui line 161
-#: rc.cpp:157
+#: rc.cpp:154
 #, no-c-format
 msgid ""
 "<p><b>The iptables/netfilter architecture is provided by the Linux kernel; "
@@ -1684,7 +1748,7 @@ msgstr ""
 "iptables como un módulo\".</p>"
 
 #. i18n: file kmyfirewallwizard.ui line 180
-#: rc.cpp:162
+#: rc.cpp:159
 #, no-c-format
 msgid ""
 "If iptables is not directly compiled into the kernel check here to load all "
@@ -1694,19 +1758,19 @@ msgstr ""
 "opzón para carregar todos os módulos necesarios para a sua devasa."
 
 #. i18n: file kmyfirewallwizard.ui line 191
-#: rc.cpp:165
+#: rc.cpp:162
 #, no-c-format
 msgid "<p>You may enable the \"Reverse Path Filter\" kernel option here.</p>"
 msgstr "<p>Pode activar a opzón do núcleo \"Filtro de Rota Inversa\" aqui.</p>"
 
 #. i18n: file kmyfirewallwizard.ui line 207
-#: rc.cpp:168
+#: rc.cpp:165
 #, no-c-format
 msgid "Use reverse path filter"
 msgstr "Usar o filtro de rota inversa"
 
 #. i18n: file kmyfirewallwizard.ui line 218
-#: rc.cpp:171
+#: rc.cpp:168
 #, no-c-format
 msgid ""
 "<p>The <b>Reverse Path Filter</b> is a feature provided by the kernel that "
@@ -1720,13 +1784,13 @@ msgstr ""
 "entrou.</p>"
 
 #. i18n: file kmyfirewallwizard.ui line 247
-#: rc.cpp:174
+#: rc.cpp:171
 #, no-c-format
 msgid "Logging & Ping"
 msgstr "Rexisto e Ping"
 
 #. i18n: file kmyfirewallwizard.ui line 281
-#: rc.cpp:180
+#: rc.cpp:177
 #, no-c-format
 msgid ""
 "<p>Logging dropped packets will allow you to have a look at the packets "
@@ -1740,7 +1804,7 @@ msgstr ""
 "<p>"
 
 #. i18n: file kmyfirewallwizard.ui line 304
-#: rc.cpp:183
+#: rc.cpp:180
 #, no-c-format
 msgid ""
 "<p>This is very useful if any damage has been caused by an attack and you want "
@@ -1756,43 +1820,43 @@ msgstr ""
 "(normalmente /var/log/mesaxes).</p>"
 
 #. i18n: file kmyfirewallwizard.ui line 319
-#: rc.cpp:187 rc.cpp:199
+#: rc.cpp:184 rc.cpp:196
 #, no-c-format
 msgid "Log dropped packets"
 msgstr "Rexistar os pacotes descartados"
 
 #. i18n: file kmyfirewallwizard.ui line 338
-#: rc.cpp:190
+#: rc.cpp:187
 #, no-c-format
 msgid "<p>Avoid \"Denial of Service\" attacks by limiting logging.</p>"
 msgstr "<p>Evitar ataques de \"Denegazón de Servizo\" limitando o rexisto.</p>"
 
 #. i18n: file kmyfirewallwizard.ui line 351
-#: rc.cpp:193
+#: rc.cpp:190
 #, no-c-format
 msgid "Limit logged packets"
 msgstr "Limitar os pacotes rexistados"
 
 #. i18n: file kmyfirewallwizard.ui line 365
-#: rc.cpp:196
+#: rc.cpp:193
 #, no-c-format
 msgid "Log packets dropped by the Reverse Path Filter"
 msgstr "Rexistar os pacotes descartados polo Filtro de Rota Inversa"
 
 #. i18n: file kmyfirewallwizard.ui line 400
-#: rc.cpp:202
+#: rc.cpp:199
 #, no-c-format
 msgid "KMF: "
 msgstr "KMF: "
 
 #. i18n: file kmyfirewallwizard.ui line 416
-#: rc.cpp:205
+#: rc.cpp:202
 #, no-c-format
 msgid "Use a log prefix"
 msgstr "Usar un prefixo de rexisto"
 
 #. i18n: file kmyfirewallwizard.ui line 435
-#: rc.cpp:208
+#: rc.cpp:205
 #, no-c-format
 msgid ""
 "<p>The logprefix is a string that is prepended to the lines written to your log "
@@ -1802,19 +1866,19 @@ msgstr ""
 "de rexisto para o axudar a atopar as liñas que necesita.</p>"
 
 #. i18n: file kmyfirewallwizard.ui line 452
-#: rc.cpp:211
+#: rc.cpp:208
 #, no-c-format
 msgid "Ping"
 msgstr "Ping"
 
 #. i18n: file kmyfirewallwizard.ui line 477
-#: rc.cpp:214
+#: rc.cpp:211
 #, no-c-format
 msgid "Reply to echo-requests"
 msgstr "Responder aos pedidos de eco"
 
 #. i18n: file kmyfirewallwizard.ui line 490
-#: rc.cpp:217
+#: rc.cpp:214
 #, no-c-format
 msgid ""
 "<p>The so-called <b>Ping</b> is an ICMP packet that is sent to a host to check "
@@ -1838,13 +1902,13 @@ msgstr ""
 "cliente/servidor.</p>"
 
 #. i18n: file kmyfirewallwizard.ui line 506
-#: rc.cpp:222
+#: rc.cpp:219
 #, no-c-format
 msgid "Limit replies "
 msgstr "Limitar as respostas"
 
 #. i18n: file kmyfirewallwizard.ui line 519
-#: rc.cpp:225
+#: rc.cpp:222
 #, no-c-format
 msgid ""
 "<p><b>By limiting the ping requests you allow past your firewall, you can avoid "
@@ -1864,49 +1928,49 @@ msgstr ""
 "a conectar-se coa máquina-vítima até que esta desiste.</p>"
 
 #. i18n: file kmyfirewallwizard.ui line 536
-#: rc.cpp:230
+#: rc.cpp:227
 #, no-c-format
 msgid "Allow Incoming Connections 1v2"
 msgstr "Permitir as Conexóns de Entrada 1v2"
 
 #. i18n: file kmyfirewallwizard.ui line 556
-#: rc.cpp:233
+#: rc.cpp:230
 #, no-c-format
 msgid "Common Services"
 msgstr "Servizos Comuns"
 
 #. i18n: file kmyfirewallwizard.ui line 573
-#: rc.cpp:236 rc.cpp:372
+#: rc.cpp:233 rc.cpp:369
 #, no-c-format
 msgid "Common web browsing"
 msgstr "Navegazón web comun"
 
 #. i18n: file kmyfirewallwizard.ui line 581
-#: rc.cpp:239 rc.cpp:375
+#: rc.cpp:236 rc.cpp:372
 #, no-c-format
 msgid "DNS"
 msgstr "DNS"
 
 #. i18n: file kmyfirewallwizard.ui line 600
-#: rc.cpp:242
+#: rc.cpp:239
 #, no-c-format
 msgid "If you act as a name server you need to allow DNS."
 msgstr "Se actua como un servidor de nomes necesita de permitir o DNS."
 
 #. i18n: file kmyfirewallwizard.ui line 621
-#: rc.cpp:245
+#: rc.cpp:242
 #, no-c-format
 msgid "HTTP"
 msgstr "HTTP"
 
 #. i18n: file kmyfirewallwizard.ui line 629
-#: rc.cpp:248 rc.cpp:378
+#: rc.cpp:245 rc.cpp:375
 #, no-c-format
 msgid "FTP"
 msgstr "FTP"
 
 #. i18n: file kmyfirewallwizard.ui line 637
-#: rc.cpp:251
+#: rc.cpp:248
 #, no-c-format
 msgid ""
 "The \"File Transfer Protocol\" is the most common protocol used to transfer "
@@ -1916,49 +1980,49 @@ msgstr ""
 "por Internet"
 
 #. i18n: file kmyfirewallwizard.ui line 655
-#: rc.cpp:254
+#: rc.cpp:251
 #, no-c-format
 msgid "Email Servers"
 msgstr "Servidores de Correo"
 
 #. i18n: file kmyfirewallwizard.ui line 672
-#: rc.cpp:257 rc.cpp:408
+#: rc.cpp:254 rc.cpp:405
 #, no-c-format
 msgid "SMTP"
 msgstr "SMTP"
 
 #. i18n: file kmyfirewallwizard.ui line 680
-#: rc.cpp:260 rc.cpp:423
+#: rc.cpp:257 rc.cpp:420
 #, no-c-format
 msgid "Secure IMAP"
 msgstr "IMAP Seguro"
 
 #. i18n: file kmyfirewallwizard.ui line 688
-#: rc.cpp:263 rc.cpp:399
+#: rc.cpp:260 rc.cpp:396
 #, no-c-format
 msgid "POP3"
 msgstr "POP3"
 
 #. i18n: file kmyfirewallwizard.ui line 696
-#: rc.cpp:266 rc.cpp:396
+#: rc.cpp:263 rc.cpp:393
 #, no-c-format
 msgid "IMAP"
 msgstr "IMAP"
 
 #. i18n: file kmyfirewallwizard.ui line 704
-#: rc.cpp:269
+#: rc.cpp:266
 #, no-c-format
 msgid "Enable the needed email related services here."
 msgstr "Active aqui os servizos necesários para o correo."
 
 #. i18n: file kmyfirewallwizard.ui line 732
-#: rc.cpp:272 rc.cpp:429
+#: rc.cpp:269 rc.cpp:426
 #, no-c-format
 msgid "Remote Login"
 msgstr "Conexón Remota"
 
 #. i18n: file kmyfirewallwizard.ui line 749
-#: rc.cpp:275 rc.cpp:438
+#: rc.cpp:272 rc.cpp:435
 #, no-c-format
 msgid ""
 "Insecure remote login program (Passwords sent over the network in plain text)."
@@ -1967,13 +2031,13 @@ msgstr ""
 "como texto simples)."
 
 #. i18n: file kmyfirewallwizard.ui line 762
-#: rc.cpp:278 rc.cpp:441
+#: rc.cpp:275 rc.cpp:438
 #, no-c-format
 msgid "TELNET"
 msgstr "TELNET"
 
 #. i18n: file kmyfirewallwizard.ui line 772
-#: rc.cpp:281
+#: rc.cpp:278
 #, no-c-format
 msgid ""
 "Secure version of TELNET. Uses strong encryption for communication. Generally "
@@ -1983,13 +2047,13 @@ msgstr ""
 "Xeralmente é unha boa idea usar SSH en vez de TELNET."
 
 #. i18n: file kmyfirewallwizard.ui line 785
-#: rc.cpp:284 rc.cpp:432
+#: rc.cpp:281 rc.cpp:429
 #, no-c-format
 msgid "SSH"
 msgstr "SSH"
 
 #. i18n: file kmyfirewallwizard.ui line 809
-#: rc.cpp:287
+#: rc.cpp:284
 #, no-c-format
 msgid ""
 "<p>If you provide any kind of service on your computer (if your computer is a "
@@ -2005,25 +2069,25 @@ msgstr ""
 "necesita.</p>"
 
 #. i18n: file kmyfirewallwizard.ui line 830
-#: rc.cpp:290
+#: rc.cpp:287
 #, no-c-format
 msgid "Allow Incoming Connections"
 msgstr "Permitir as Conexóns Entrantes"
 
 #. i18n: file kmyfirewallwizard.ui line 842
-#: rc.cpp:293
+#: rc.cpp:290
 #, no-c-format
 msgid "Allow Incoming Connections 2v2"
 msgstr "Permitir as Conexóns Entrantes 2v2"
 
 #. i18n: file kmyfirewallwizard.ui line 862
-#: rc.cpp:296 rc.cpp:456
+#: rc.cpp:293 rc.cpp:453
 #, no-c-format
 msgid "File Sharing"
 msgstr "Intercámbio de Ficheiros"
 
 #. i18n: file kmyfirewallwizard.ui line 879
-#: rc.cpp:299
+#: rc.cpp:296
 #, no-c-format
 msgid ""
 "This file sharing protocol is used by various versions of UNIX to mount file "
@@ -2033,13 +2097,13 @@ msgstr ""
 "para montar os sistemas de ficheiros en rede."
 
 #. i18n: file kmyfirewallwizard.ui line 892
-#: rc.cpp:302 rc.cpp:465
+#: rc.cpp:299 rc.cpp:462
 #, no-c-format
 msgid "NFS"
 msgstr "NFS"
 
 #. i18n: file kmyfirewallwizard.ui line 900
-#: rc.cpp:305
+#: rc.cpp:302
 #, no-c-format
 msgid ""
 "The Microsoft version of NFS; actually the only way to mount Windows shares, "
@@ -2049,19 +2113,19 @@ msgstr ""
 "compartizóns de Windows oferecidas polos servidores normais de NT."
 
 #. i18n: file kmyfirewallwizard.ui line 913
-#: rc.cpp:308 rc.cpp:468
+#: rc.cpp:305 rc.cpp:465
 #, no-c-format
 msgid "SMB"
 msgstr "SMB"
 
 #. i18n: file kmyfirewallwizard.ui line 926
-#: rc.cpp:311 rc.cpp:471
+#: rc.cpp:308 rc.cpp:468
 #, no-c-format
 msgid "Custom Rules"
 msgstr "Regras Personalizadas"
 
 #. i18n: file kmyfirewallwizard.ui line 944
-#: rc.cpp:314
+#: rc.cpp:311
 #, no-c-format
 msgid ""
 "Here you can enable services which are not directly implemented yet.\n"
@@ -2073,67 +2137,67 @@ msgstr ""
 "está definido en \"/etc/services\"."
 
 #. i18n: file kmyfirewallwizard.ui line 992
-#: rc.cpp:318
+#: rc.cpp:315
 #, no-c-format
 msgid "&New"
 msgstr "&Novo"
 
 #. i18n: file kmyfirewallwizard.ui line 998
-#: rc.cpp:321 rc.cpp:489
+#: rc.cpp:318 rc.cpp:486
 #, no-c-format
 msgid "New Service"
 msgstr "Novo Servizo"
 
 #. i18n: file kmyfirewallwizard.ui line 1006
-#: rc.cpp:324 rc.cpp:492
+#: rc.cpp:321 rc.cpp:489
 #, no-c-format
 msgid "TCP"
 msgstr "TCP"
 
 #. i18n: file kmyfirewallwizard.ui line 1017
-#: rc.cpp:327
+#: rc.cpp:324
 #, no-c-format
 msgid "Protocol:"
 msgstr "Protocolo:"
 
 #. i18n: file kmyfirewallwizard.ui line 1025
-#: rc.cpp:330 rc.cpp:504
+#: rc.cpp:327 rc.cpp:501
 #, no-c-format
 msgid "Give your service a unique name:"
 msgstr "Dé ao seu servizo un nome único:"
 
 #. i18n: file kmyfirewallwizard.ui line 1038
-#: rc.cpp:333 rc.cpp:495
+#: rc.cpp:330 rc.cpp:492
 #, no-c-format
 msgid "UDP"
 msgstr "UDP"
 
 #. i18n: file kmyfirewallwizard.ui line 1046
-#: rc.cpp:336 rc.cpp:474
+#: rc.cpp:333 rc.cpp:471
 #, no-c-format
 msgid "&Add"
 msgstr "&Engadir"
 
 #. i18n: file kmyfirewallwizard.ui line 1065
-#: rc.cpp:342 rc.cpp:483
+#: rc.cpp:339 rc.cpp:480
 #, no-c-format
 msgid "Please define the used Port/Portrange:"
 msgstr "Defina o porto/rango de portos usado:"
 
 #. i18n: file kmyfirewallwizard.ui line 1084
-#: rc.cpp:348 rc.cpp:501
+#: rc.cpp:345 rc.cpp:498
 #, no-c-format
 msgid "Delete Service"
 msgstr "Borrar o Servizo"
 
 #. i18n: file kmyfirewallwizard.ui line 1098
-#: rc.cpp:351
+#: rc.cpp:348
 #, no-c-format
 msgid "Restrict Outgoing 1v2"
 msgstr "Restrinxir as Saídas 1v2"
 
 #. i18n: file kmyfirewallwizard.ui line 1137
-#: rc.cpp:354
+#: rc.cpp:351
 #, no-c-format
 msgid ""
 "By allowing only a few services you can prevent users from using services you "
@@ -2143,19 +2207,19 @@ msgstr ""
 "que non quer que eles usen (como p.ex., FTP)."
 
 #. i18n: file kmyfirewallwizard.ui line 1158
-#: rc.cpp:357
+#: rc.cpp:354
 #, no-c-format
 msgid "Restrict Outgoing Traffic"
 msgstr "Restrinxir o Tránsito de Saída"
 
 #. i18n: file kmyfirewallwizard.ui line 1171
-#: rc.cpp:360
+#: rc.cpp:357
 #, no-c-format
 msgid "DNS, Web Browsing && Chat"
 msgstr "DNS, Navegazón Web e Chat"
 
 #. i18n: file kmyfirewallwizard.ui line 1188
-#: rc.cpp:363
+#: rc.cpp:360
 #, no-c-format
 msgid ""
 "This service is needed for resolving an IP address from its hostname. Just "
@@ -2165,20 +2229,20 @@ msgstr ""
 "máquina. Active-o, xa que todo necesita diso."
 
 #. i18n: file kmyfirewallwizard.ui line 1204
-#: rc.cpp:366
+#: rc.cpp:363
 #, no-c-format
 msgid "\"Internet Relay Chat\" is a widely used chat protocol."
 msgstr ""
 "O \"Internet Relay Chat\" é un protocolo de conversazón bastante usado."
 
 #. i18n: file kmyfirewallwizard.ui line 1220
-#: rc.cpp:369
+#: rc.cpp:366
 #, no-c-format
 msgid "IRC"
 msgstr "IRC"
 
 #. i18n: file kmyfirewallwizard.ui line 1255
-#: rc.cpp:381
+#: rc.cpp:378
 #, no-c-format
 msgid ""
 "The \"File Transfer Protocol\" is the most common protocol used to transfer "
@@ -2188,56 +2252,56 @@ msgstr ""
 "por Internet."
 
 #. i18n: file kmyfirewallwizard.ui line 1271
-#: rc.cpp:384
+#: rc.cpp:381
 #, no-c-format
 msgid "Newsgroup access"
 msgstr "Aceso a grupos de Novas"
 
 #. i18n: file kmyfirewallwizard.ui line 1287
-#: rc.cpp:387
+#: rc.cpp:384
 #, no-c-format
 msgid "WWW "
 msgstr "WWW "
 
 #. i18n: file kmyfirewallwizard.ui line 1298
-#: rc.cpp:390
+#: rc.cpp:387
 #, no-c-format
 msgid "NNTP"
 msgstr "NNTP"
 
 #. i18n: file kmyfirewallwizard.ui line 1319
-#: rc.cpp:393
+#: rc.cpp:390
 #, no-c-format
 msgid "Email"
 msgstr "Correo"
 
 #. i18n: file kmyfirewallwizard.ui line 1352
-#: rc.cpp:402
+#: rc.cpp:399
 #, no-c-format
 msgid "POP3 is the most common protocol used to receive email."
 msgstr ""
 "POP3 é o protocolo máis comun dos usados para receber correo electrónico."
 
 #. i18n: file kmyfirewallwizard.ui line 1365
-#: rc.cpp:405
+#: rc.cpp:402
 #, no-c-format
 msgid "SMTP is the service used to send emails."
 msgstr "SMTP é o servizo usado para enviar os correos."
 
 #. i18n: file kmyfirewallwizard.ui line 1394
-#: rc.cpp:411
+#: rc.cpp:408
 #, no-c-format
 msgid "POP3 over a SSL/TSL connection"
 msgstr "POP3 sobre unha conexón SSL/TSL"
 
 #. i18n: file kmyfirewallwizard.ui line 1407
-#: rc.cpp:414
+#: rc.cpp:411
 #, no-c-format
 msgid "Secure POP3"
 msgstr "POP3 Seguro"
 
 #. i18n: file kmyfirewallwizard.ui line 1415
-#: rc.cpp:417
+#: rc.cpp:414
 #, no-c-format
 msgid ""
 "IMAP is an advanced email protocol used to store mails on a central server."
@@ -2246,49 +2310,49 @@ msgstr ""
 "servidor central."
 
 #. i18n: file kmyfirewallwizard.ui line 1428
-#: rc.cpp:420
+#: rc.cpp:417
 #, no-c-format
 msgid "IMAP over a SSL/TSL connection"
 msgstr "IMAP sobre unha conexón SSL/TSL"
 
 #. i18n: file kmyfirewallwizard.ui line 1453
-#: rc.cpp:426
+#: rc.cpp:423
 #, no-c-format
 msgid "Restrict Outgoing 2v2"
 msgstr "Restrinxir as Saídas 2v2"
 
 #. i18n: file kmyfirewallwizard.ui line 1498
-#: rc.cpp:435
+#: rc.cpp:432
 #, no-c-format
 msgid "Secure version of TELNET. Uses strong encryption for communication."
 msgstr "A versión segura de TELNET. Usa unha cifraxe forte para a comunicazón."
 
 #. i18n: file kmyfirewallwizard.ui line 1545
-#: rc.cpp:444
+#: rc.cpp:441
 #, no-c-format
 msgid "Other Common Services"
 msgstr "Outros Servizos Comuns"
 
 #. i18n: file kmyfirewallwizard.ui line 1562
-#: rc.cpp:447
+#: rc.cpp:444
 #, no-c-format
 msgid "LDAP"
 msgstr "LDAP"
 
 #. i18n: file kmyfirewallwizard.ui line 1581
-#: rc.cpp:450
+#: rc.cpp:447
 #, no-c-format
 msgid "FINGER"
 msgstr "FINGER"
 
 #. i18n: file kmyfirewallwizard.ui line 1592
-#: rc.cpp:453
+#: rc.cpp:450
 #, no-c-format
 msgid "TIME"
 msgstr "TIME"
 
 #. i18n: file kmyfirewallwizard.ui line 1622
-#: rc.cpp:459
+#: rc.cpp:456
 #, no-c-format
 msgid ""
 "<p>The Microsoft version of NFS; actually the only way to mount Windows shares, "
@@ -2298,7 +2362,7 @@ msgstr ""
 "compartizóns de Windows oferecidas polos servidores normais de NT.</p>"
 
 #. i18n: file kmyfirewallwizard.ui line 1635
-#: rc.cpp:462
+#: rc.cpp:459
 #, no-c-format
 msgid ""
 "<p>This file sharing protocol is used by various versions of UNIX to mount file "
@@ -2308,19 +2372,19 @@ msgstr ""
 "UNIX para montar os sistemas de ficheiros na rede.</p>"
 
 #. i18n: file kmyfirewallwizard.ui line 1741
-#: rc.cpp:480
+#: rc.cpp:477
 #, no-c-format
 msgid "Used protocol(s):"
 msgstr "Protocolo(s) usado(s):"
 
 #. i18n: file kmyfirewallwizard.ui line 1770
-#: rc.cpp:486
+#: rc.cpp:483
 #, no-c-format
 msgid "&New "
 msgstr "&Novo"
 
 #. i18n: file kmyfirewallwizard.ui line 1862
-#: rc.cpp:507
+#: rc.cpp:504
 #, no-c-format
 msgid ""
 "<p>Here you can enable services which are not directly implemented yet."
@@ -2335,13 +2399,13 @@ msgstr ""
 "está definido en \"/etc/services\".</p>"
 
 #. i18n: file kmyfirewallwizard.ui line 1881
-#: rc.cpp:511
+#: rc.cpp:508
 #, no-c-format
 msgid "Special Hosts 1v2"
 msgstr "Máquinas Especiais 1v2"
 
 #. i18n: file kmyfirewallwizard.ui line 1929
-#: rc.cpp:517
+#: rc.cpp:514
 #, no-c-format
 msgid ""
 "<p>Add the IP addresses or hostnames of the hosts that should be blocked "
@@ -2352,32 +2416,32 @@ msgstr ""
 "completo. Non ha poder conectar-se nen receber conexóns destas máquinas.</p>"
 
 #. i18n: file kmyfirewallwizard.ui line 1969
-#: rc.cpp:523 rc.cpp:551 rc.cpp:581 rc.cpp:605
+#: rc.cpp:520 rc.cpp:548 rc.cpp:578 rc.cpp:602
 #, no-c-format
 msgid "Add Host"
 msgstr "Engadir unha Máquina"
 
 #. i18n: file kmyfirewallwizard.ui line 2030
-#: rc.cpp:532 rc.cpp:560
+#: rc.cpp:529 rc.cpp:557
 #, no-c-format
 msgid "Log outgoing packets"
 msgstr "Rexistar os pacotes saíntes"
 
 #. i18n: file kmyfirewallwizard.ui line 2041
-#: rc.cpp:535 rc.cpp:563
+#: rc.cpp:532 rc.cpp:560
 #, no-c-format
 msgid "Log incoming packets"
 msgstr "Rexistar os pacotes entrades"
 
 #. i18n: file kmyfirewallwizard.ui line 2049
-#: kmfwidgets/kmflistview.cpp:832 kmfwidgets/kmflistview.cpp:838 rc.cpp:538
-#: rc.cpp:566 rc.cpp:593 rc.cpp:617
+#: kmfwidgets/kmflistview.cpp:832 kmfwidgets/kmflistview.cpp:838 rc.cpp:535
+#: rc.cpp:563 rc.cpp:590 rc.cpp:614
 #, no-c-format
 msgid "Logging:"
 msgstr "Rexisto:"
 
 #. i18n: file kmyfirewallwizard.ui line 2095
-#: rc.cpp:544
+#: rc.cpp:541
 #, no-c-format
 msgid ""
 "<p>Add the IP addresses or hostnames of the hosts that should not be able to "
@@ -2391,13 +2455,13 @@ msgstr ""
 "<b>Importante: engada só as máquinas de confianza.</b></p>"
 
 #. i18n: file kmyfirewallwizard.ui line 2228
-#: rc.cpp:569
+#: rc.cpp:566
 #, no-c-format
 msgid "Special Hosts 2v2"
 msgstr "Máquinas Especiais 2v2"
 
 #. i18n: file kmyfirewallwizard.ui line 2276
-#: rc.cpp:575
+#: rc.cpp:572
 #, no-c-format
 msgid ""
 "<p>Add the IP addresses or hostnames of the web servers you do not want your "
@@ -2407,13 +2471,13 @@ msgstr ""
 "quer que os seus usuários visiten.</p>"
 
 #. i18n: file kmyfirewallwizard.ui line 2382
-#: rc.cpp:590 rc.cpp:614
+#: rc.cpp:587 rc.cpp:611
 #, no-c-format
 msgid "Log attempts"
 msgstr "Rexistar tentativas"
 
 #. i18n: file kmyfirewallwizard.ui line 2443
-#: rc.cpp:599
+#: rc.cpp:596
 #, no-c-format
 msgid ""
 "<p>Add the IP addresses or hostnames of servers on the net which are not "
@@ -2423,13 +2487,13 @@ msgstr ""
 "permiso para utilizar os seus servizos públicos.</p>"
 
 #. i18n: file kmyfirewallwizard.ui line 2581
-#: rc.cpp:620
+#: rc.cpp:617
 #, no-c-format
 msgid "Install"
 msgstr "Instalar"
 
 #. i18n: file kmyfirewallwizard.ui line 2603
-#: rc.cpp:623
+#: rc.cpp:620
 #, no-c-format
 msgid ""
 "<p>Here you can have a look at the script before you install it. To be able to "
@@ -2439,25 +2503,25 @@ msgstr ""
 "no botón \"Finalizar\", sinale a opzón  \"Revisado\".</p>"
 
 #. i18n: file kmyfirewallwizard.ui line 2616
-#: rc.cpp:626
+#: rc.cpp:623
 #, no-c-format
 msgid "Script Preview"
 msgstr "Antevisión do Guión"
 
 #. i18n: file kmyfirewallwizard.ui line 2624
-#: rc.cpp:629
+#: rc.cpp:626
 #, no-c-format
 msgid "All done (enables the \"Finish\" button)"
 msgstr "Revisado (activa o botón \"Finalizar\") "
 
 #. i18n: file kmyfirewallwizard.ui line 2632
-#: rc.cpp:632
+#: rc.cpp:629
 #, no-c-format
 msgid "Install firewall"
 msgstr "Instalar a devasa"
 
 #. i18n: file kmyfirewallwizard.ui line 2643
-#: rc.cpp:635
+#: rc.cpp:632
 #, no-c-format
 msgid "Start firewall"
 msgstr "Iniciar a devasa"
@@ -2594,25 +2658,6 @@ msgstr ""
 "Esta configurazón da devasa foi modificada.\n"
 "\n"
 "Que desexa facer con estes cámbios? \n"
-
-#: kmyfirewall.cpp:593
-msgid ""
-"<qt>"
-"<p>The file <b>%1</b> could not be loaded.</p>"
-"<p>If you are working with files stored on remote computers make sure that the "
-"network is up and the fileserver running.</qt>"
-msgstr ""
-"<qt>"
-"<p>Non foi posíbel carregar o ficheiro <b>%1</b>.</p>"
-"<p>Se estivese a traballar con ficheiros guardados en máquinas remotas, "
-"asegure-se de que a rede está a funcionar e de que o servidor de ficheiros "
-"tamén funciona.</qt>"
-
-#: kmyfirewall.cpp:603
-msgid "<qt><p>You don't have the permissions to read file: <b>%1</b></p></qt>"
-msgstr ""
-"<qt>"
-"<p>O usuário non ten permisos para ler o ficheiro: <b>%1</b></p></qt>"
 
 #: kmyfirewall.cpp:625
 #, c-format
@@ -3558,6 +3603,9 @@ msgstr "Documentazón do Obxecto"
 #: kmfwidgets/kmfobjectinfo.cpp:66
 msgid "Firewall Documentation"
 msgstr "Documentazón da Devasa"
+
+#~ msgid "&IPTables"
+#~ msgstr "&IPTables"
 
 #~ msgid "Platform/Backend"
 #~ msgstr "Plataforma/Infra-Estrutura"

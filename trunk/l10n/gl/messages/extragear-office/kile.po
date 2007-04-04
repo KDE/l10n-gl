@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kile\n"
-"POT-Creation-Date: 2007-03-31 07:04+0200\n"
+"POT-Creation-Date: 2007-04-04 07:17+0200\n"
 "PO-Revision-Date: 2006-08-31 23:05+0200\n"
 "Last-Translator: mvillarino <mvillarino@users.sourceforge.net>\n"
 "Language-Team: Galician <trasno@ceu.fi.udc.es>\n"
@@ -584,7 +584,7 @@ msgstr "Descrizón"
 msgid "Scripting Support"
 msgstr ""
 
-#: kileconfigdialog.cpp:196
+#: configcodecompletion.cpp:474 kileconfigdialog.cpp:196
 msgid "Complete"
 msgstr "Completo"
 
@@ -677,8 +677,8 @@ msgstr "&Etiqueta:"
 msgid "All Files"
 msgstr "Todos os ficheiros"
 
-#: configcodecompletion.cpp:390 includegraphicsdialog.cpp:373
-#: kileactions.cpp:324 kiledocmanager.cpp:1741 userhelpdialog.cpp:407
+#: includegraphicsdialog.cpp:373 kileactions.cpp:324 kiledocmanager.cpp:1741
+#: userhelpdialog.cpp:407
 msgid "Select File"
 msgstr "Escoller ficheiro"
 
@@ -1250,7 +1250,7 @@ msgstr ""
 "Prema nas imaxes para inserir o comando, se ademais preme MAIÚSCULAS inserirá "
 "no modo matemático, e con CTRL en corchetes."
 
-#: configcodecompletion.cpp:78 kile.cpp:390 kile.cpp:549
+#: configcodecompletion.cpp:57 kile.cpp:390 kile.cpp:549
 msgid "Abbreviation"
 msgstr "Abreviatura"
 
@@ -2424,89 +2424,77 @@ msgstr ""
 msgid "Archive Project"
 msgstr "Arquivar Proxecto"
 
-#: configcodecompletion.cpp:45
+#: configcodecompletion.cpp:47
 msgid "Complete Modes"
 msgstr "Modos completos"
 
-#: configcodecompletion.cpp:56
-msgid "Complete Files for TeX/LaTeX Mode"
-msgstr "Ficheiros Completos para o Modo TeX/LaTeX"
-
-#: configcodecompletion.cpp:64
-msgid "Complete Files for Dictionary Mode"
-msgstr "Ficheiros Completos para o Modo Dicionário"
-
-#: configcodecompletion.cpp:72
-msgid "Complete Files for Abbreviation Mode"
-msgstr "Ficheiros Completos para o Modo Abreviazón"
-
-#: configcodecompletion.cpp:76
+#: configcodecompletion.cpp:55
 msgid "TeX/LaTeX"
 msgstr "TeX/LaTeX"
 
-#: configcodecompletion.cpp:77
+#: configcodecompletion.cpp:56
 msgid "Dictionary"
 msgstr "Dicionário"
 
-#: configcodecompletion.cpp:81
+#: configcodecompletion.cpp:60
 msgid "Add..."
 msgstr "Engadir..."
 
-#: configcodecompletion.cpp:96
+#: configcodecompletion.cpp:75
 msgid "Place cursor"
 msgstr "Situar cursor"
 
-#: configcodecompletion.cpp:97
+#: configcodecompletion.cpp:76
 msgid "Insert bullets"
 msgstr "Inserir pontos"
 
-#: configcodecompletion.cpp:98
+#: configcodecompletion.cpp:77
 msgid "Close environments"
 msgstr "Pechar entornos"
 
-#: configcodecompletion.cpp:99
+#: configcodecompletion.cpp:78
 msgid "Use complete"
 msgstr "Usar completo"
 
-#: configcodecompletion.cpp:100
+#: configcodecompletion.cpp:79
 msgid "Auto completion (LaTeX)"
 msgstr "Auto-completazón (LaTeX)"
 
-#: configcodecompletion.cpp:104
+#: configcodecompletion.cpp:83
 msgid "Auto completion (text)"
 msgstr "Auto-completazón (text)"
 
-#: configcodecompletion.cpp:108
+#: configcodecompletion.cpp:87
 #, fuzzy
 msgid "Show abbreviations"
 msgstr "Abreviatura"
 
-#: configcodecompletion.cpp:109
+#: configcodecompletion.cpp:88
 #, fuzzy
 msgid "Auto completion (abbrev.)"
 msgstr "Auto-completazón (LaTeX)"
 
-#: configcodecompletion.cpp:110
+#: configcodecompletion.cpp:89
 msgid "Move out of braces (citation keylists)"
 msgstr ""
 
-#: configcodecompletion.cpp:134
+#: configcodecompletion.cpp:113
 msgid "Try to place the cursor."
 msgstr "Tentar situar o cursor."
 
-#: configcodecompletion.cpp:135
+#: configcodecompletion.cpp:114
 msgid "Insert bullets, where the user must input data."
 msgstr "Inserir pontos, onde o usuário debe introducir dados ."
 
-#: configcodecompletion.cpp:136
+#: configcodecompletion.cpp:115
 msgid "Also close an environment, when an opening command is inserted."
 msgstr "Tamén pecha un entorno, cando se insire un comando de apertura."
 
-#: configcodecompletion.cpp:137
+#: configcodecompletion.cpp:116
 msgid "Enable components of word completion."
 msgstr "Activar os componentes de auto-completazón."
 
-#: configcodecompletion.cpp:138
+#: configcodecompletion.cpp:117
 msgid ""
 "Directional or popup-based completion with TeX/LaTeX commands, which are given "
 "in all selected word completion lists. This mode can only be selected, if no "
@@ -2516,7 +2504,7 @@ msgstr ""
 "que son dados nas listas de completazón escollidas. Este modo só pode ser "
 "escollido, se non hai nengun plugin de auto-completazón activo."
 
-#: configcodecompletion.cpp:139
+#: configcodecompletion.cpp:118
 msgid ""
 "Directional or popup-based completion from words in the current document. This "
 "mode can only be selected, if no other plugin for autocompletion is active."
@@ -2525,7 +2513,7 @@ msgstr ""
 "documento actual. Este modo só pode ser escollido, se non hai nengun plugin de "
 "auto-completazón activo."
 
-#: configcodecompletion.cpp:140
+#: configcodecompletion.cpp:119
 msgid ""
 "Automatically show a completion list of TeX/LaTeX commands, when the word has "
 "this length."
@@ -2533,15 +2521,25 @@ msgstr ""
 "Mostra automaticamente unha lista de completazón de comandos TeX/LaTeX, cando a "
 "palabra ten esta lonxitude."
 
-#: configcodecompletion.cpp:141
+#: configcodecompletion.cpp:120
 msgid "Automatically show a completion list, when the word has this length."
 msgstr ""
 "Mostra automaticamente unha lista de completazón, cando a palabra ten esta "
 "lonxitude."
 
-#: configcodecompletion.cpp:142
+#: configcodecompletion.cpp:121
 msgid "Move cursor out of braces after selecting from a citation keylist."
 msgstr ""
+
+#: configcodecompletion.cpp:156 configcodecompletion.cpp:455
+#, fuzzy
+msgid "Complete Files"
+msgstr "*.cwl|Ficheiros completos"
+
+#: configcodecompletion.cpp:157
+#, fuzzy
+msgid "Local File"
+msgstr "Duplicar Ficheiros"
 
 #: configcodecompletion.cpp:240
 msgid ""
@@ -2557,25 +2555,19 @@ msgstr ""
 msgid "Autocomplete warning"
 msgstr "Aviso de Auto-completazón"
 
-#: configcodecompletion.cpp:390
-msgid "*.cwl|Complete Files"
-msgstr "*.cwl|Ficheiros completos"
+#: configcodecompletion.cpp:303
+#, fuzzy
+msgid "File not found"
+msgstr "Non se Atopou o Ficheiro"
 
-#: configcodecompletion.cpp:410
+#: configcodecompletion.cpp:455
+#, fuzzy
+msgid "Select Files"
+msgstr "Escoller ficheiro"
+
+#: configcodecompletion.cpp:474
 msgid "Wordlist '%1' is already used."
 msgstr "A lista de palabras \"%1\" xa está a ser usada."
-
-#: configcodecompletion.cpp:410
-msgid "Duplicate Files"
-msgstr "Duplicar Ficheiros"
-
-#: configcodecompletion.cpp:410
-msgid "&Skip"
-msgstr "&Saltar"
-
-#: configcodecompletion.cpp:421
-msgid "Maybe you have changed the directory?"
-msgstr "Talvez cambiou o cartafol?"
 
 #: usermenudialog.cpp:46
 msgid "Menu item:"
@@ -8044,6 +8036,24 @@ msgstr "Configurazón da &construzón rápida:"
 #: kileprojectdlgs.cpp:532
 msgid "&MakeIndex options"
 msgstr "Opzóns de &MakeIndex"
+
+#~ msgid "Complete Files for TeX/LaTeX Mode"
+#~ msgstr "Ficheiros Completos para o Modo TeX/LaTeX"
+
+#~ msgid "Complete Files for Dictionary Mode"
+#~ msgstr "Ficheiros Completos para o Modo Dicionário"
+
+#~ msgid "Complete Files for Abbreviation Mode"
+#~ msgstr "Ficheiros Completos para o Modo Abreviazón"
+
+#~ msgid "Duplicate Files"
+#~ msgstr "Duplicar Ficheiros"
+
+#~ msgid "&Skip"
+#~ msgstr "&Saltar"
+
+#~ msgid "Maybe you have changed the directory?"
+#~ msgstr "Talvez cambiou o cartafol?"
 
 #~ msgid "TeX Files"
 #~ msgstr "Ficheiros TeX"
