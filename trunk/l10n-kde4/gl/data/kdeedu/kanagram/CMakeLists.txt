@@ -1,0 +1,1 @@
+install( FILES  animals.kvtml capitaisdomundo.kvtml deportes.kvtml espazo.kvtml froita.kvtml informatica.kvtml invencions.kvtml moedas.kvtml obxectos.kvtml profesions.kvtml roupa.kvtml transporte.kvtml verduras.kvtml xente.kvtml DESTINATION ${DATA_INSTALL_DIR}/kanagram/data/gl )
