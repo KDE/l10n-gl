@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: okular\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2008-04-04 16:39+0200\n"
+"POT-Creation-Date: 2008-04-08 21:35+0200\n"
 "PO-Revision-Date: 2007-12-29 12:58+0100\n"
 "Last-Translator: mvillarino <mvillarino@users.sourceforge.net>\n"
 "Language-Team: galician <proxecto@trasno.net>\n"
@@ -79,13 +79,27 @@ msgstr "Opcións para o Modo de Presentación"
 
 #. i18n: tag string
 #. i18n: file conf/dlgidentitybase.ui line 31
-#: conf/preferencesdialog.cpp:40 rc.cpp:212
+#: conf/preferencesdialog.cpp:40 rc.cpp:215
 msgid "Identity"
 msgstr "Identidade"
 
 #: conf/preferencesdialog.cpp:41
 msgid "Identity Settings"
 msgstr "Configuración da identidade"
+
+#: conf/dlgpresentation.cpp:28
+#, fuzzy
+#| msgid "Default transition:"
+msgctxt "@label:listbox The default screen for the presentation mode"
+msgid "Default Screen"
+msgstr "Transición por omisión:"
+
+#: conf/dlgpresentation.cpp:32
+#, fuzzy, kde-format
+#| msgid "Created: %1"
+msgctxt "@label:listbox %1 is the screen number (0, 1, ...)"
+msgid "Screen %1"
+msgstr "Creado: %1"
 
 #: core/action.cpp:79
 #, kde-format
@@ -105,11 +119,11 @@ msgstr "Executar \"%1\"..."
 msgid "First Page"
 msgstr "Primeira páxina"
 
-#: core/action.cpp:227 ui/presentationwidget.cpp:434
+#: core/action.cpp:227 ui/presentationwidget.cpp:113
 msgid "Previous Page"
 msgstr "Páxina anterior"
 
-#: core/action.cpp:229 ui/presentationwidget.cpp:450
+#: core/action.cpp:229 ui/presentationwidget.cpp:129
 msgid "Next Page"
 msgstr "Páxina seguinte"
 
@@ -381,38 +395,38 @@ msgstr "Modificar o comportamento de procura"
 msgid "Case sensitive"
 msgstr "Distinguir as maiúsculas"
 
-#: ui/presentationwidget.cpp:205
+#: ui/presentationwidget.cpp:131
+msgid "Toggle Drawing Mode"
+msgstr "Comuta o modo de debuxo"
+
+#: ui/presentationwidget.cpp:134
+msgid "Erase Drawings"
+msgstr "Borrar os debuxos"
+
+#: ui/presentationwidget.cpp:139
+msgid "Exit Presentation Mode"
+msgstr "Sair do modo de presentación"
+
+#: ui/presentationwidget.cpp:242
 #, kde-format
 msgid "Title: %1"
 msgstr "Título: %1"
 
-#: ui/presentationwidget.cpp:207 ui/guiutils.cpp:116
+#: ui/presentationwidget.cpp:244 ui/guiutils.cpp:116
 #, kde-format
 msgid "Author: %1"
 msgstr "Autor: %1"
 
-#: ui/presentationwidget.cpp:209
+#: ui/presentationwidget.cpp:246
 #, kde-format
 msgid "Pages: %1"
 msgstr "Páxinas: %1"
 
-#: ui/presentationwidget.cpp:210
+#: ui/presentationwidget.cpp:247
 msgid "Click to begin"
 msgstr "Premer para comezar"
 
-#: ui/presentationwidget.cpp:452
-msgid "Toggle Drawing Mode"
-msgstr "Comuta o modo de debuxo"
-
-#: ui/presentationwidget.cpp:455
-msgid "Erase Drawings"
-msgstr "Borrar os debuxos"
-
-#: ui/presentationwidget.cpp:460
-msgid "Exit Presentation Mode"
-msgstr "Sair do modo de presentación"
-
-#: ui/presentationwidget.cpp:1054
+#: ui/presentationwidget.cpp:1084
 msgid ""
 "There are two ways of exiting presentation mode, you can press either ESC "
 "key or click with the quit button that appears when placing the mouse in the "
@@ -459,7 +473,7 @@ msgstr "&Xeral"
 
 #. i18n: tag string
 #. i18n: file conf/dlgidentitybase.ui line 55
-#: ui/annotationpropertiesdialog.cpp:96 rc.cpp:215
+#: ui/annotationpropertiesdialog.cpp:96 rc.cpp:218
 msgid "&Author:"
 msgstr "&Autor:"
 
@@ -507,13 +521,13 @@ msgstr "Propiedades da anotación"
 
 #. i18n: tag tool attribute name
 #. i18n: file ui/data/tools.xml line 20
-#: ui/guiutils.cpp:44 ui/annotationwidgets.cpp:188 rc.cpp:302
+#: ui/guiutils.cpp:44 ui/annotationwidgets.cpp:188 rc.cpp:305
 msgid "Note"
 msgstr "Nota"
 
 #. i18n: tag tool attribute name
 #. i18n: file ui/data/tools.xml line 27
-#: ui/guiutils.cpp:46 rc.cpp:305
+#: ui/guiutils.cpp:46 rc.cpp:308
 msgid "Inline Note"
 msgstr "Nota incluída"
 
@@ -531,7 +545,7 @@ msgstr "Realzar"
 
 #. i18n: tag tool attribute name
 #. i18n: file ui/data/tools.xml line 62
-#: ui/guiutils.cpp:58 rc.cpp:320
+#: ui/guiutils.cpp:58 rc.cpp:323
 msgid "Stamp"
 msgstr "Cuño"
 
@@ -975,7 +989,7 @@ msgstr "Lonxitude das extensión da liña directriz:"
 msgid "Style"
 msgstr "Estílo"
 
-#: ui/annotationwidgets.cpp:319
+#: ui/annotationwidgets.cpp:319 ui/annotationwidgets.cpp:420
 msgid "&Size:"
 msgstr "Dimen&sións:"
 
@@ -999,11 +1013,11 @@ msgstr "Riscado"
 msgid "Inner color:"
 msgstr "Cor interna:"
 
-#: ui/annotationwidgets.cpp:421
+#: ui/annotationwidgets.cpp:426
 msgid "Rectangle"
 msgstr "Rectángulo"
 
-#: ui/annotationwidgets.cpp:422
+#: ui/annotationwidgets.cpp:427
 msgid "Ellipse"
 msgstr "Elipse"
 
@@ -1800,216 +1814,222 @@ msgid "Contrast:"
 msgstr "Contraste:"
 
 #. i18n: tag string
-#. i18n: file conf/dlgpresentationbase.ui line 22
+#. i18n: file conf/dlgpresentationbase.ui line 19
 #: rc.cpp:110
 msgid "Navigation"
 msgstr "Navegación"
 
 #. i18n: tag string
-#. i18n: file conf/dlgpresentationbase.ui line 42
+#. i18n: file conf/dlgpresentationbase.ui line 39
 #: rc.cpp:113
 msgid "Advance every:"
 msgstr "Avanzar cada:"
 
 #. i18n: tag string
-#. i18n: file conf/dlgpresentationbase.ui line 52
+#. i18n: file conf/dlgpresentationbase.ui line 49
 #: rc.cpp:116
 msgid " sec."
 msgstr " seg."
 
 #. i18n: tag string
-#. i18n: file conf/dlgpresentationbase.ui line 64
+#. i18n: file conf/dlgpresentationbase.ui line 61
 #: rc.cpp:119
 msgid "Loop after last page"
 msgstr "Recomezar despois da última páxina"
 
 #. i18n: tag string
-#. i18n: file conf/dlgpresentationbase.ui line 74
+#. i18n: file conf/dlgpresentationbase.ui line 71
 #. i18n: tag string
 #. i18n: file conf/dlggeneralbase.ui line 28
-#: rc.cpp:122 rc.cpp:221
+#: rc.cpp:122 rc.cpp:224
 msgid "Appearance"
 msgstr "Aparencia"
 
 #. i18n: tag string
-#. i18n: file conf/dlgpresentationbase.ui line 94
+#. i18n: file conf/dlgpresentationbase.ui line 79
 #: rc.cpp:125
 msgid "Background color:"
 msgstr "Cor do fondo:"
 
 #. i18n: tag string
-#. i18n: file conf/dlgpresentationbase.ui line 107
+#. i18n: file conf/dlgpresentationbase.ui line 92
 #: rc.cpp:128
+msgid "Pencil color:"
+msgstr "Cor do lapis:"
+
+#. i18n: tag string
+#. i18n: file conf/dlgpresentationbase.ui line 105
+#: rc.cpp:131
 msgid "Mouse cursor:"
 msgstr "Cursor do rato:"
 
 #. i18n: tag string
-#. i18n: file conf/dlgpresentationbase.ui line 118
-#: rc.cpp:131
+#. i18n: file conf/dlgpresentationbase.ui line 116
+#: rc.cpp:134
 msgid "Hidden After Delay"
 msgstr "Acochar despois do retardo"
 
 #. i18n: tag string
-#. i18n: file conf/dlgpresentationbase.ui line 123
-#: rc.cpp:134
+#. i18n: file conf/dlgpresentationbase.ui line 121
+#: rc.cpp:137
 msgid "Always Visible"
 msgstr "Sempre visíbel"
 
 #. i18n: tag string
-#. i18n: file conf/dlgpresentationbase.ui line 128
-#: rc.cpp:137
+#. i18n: file conf/dlgpresentationbase.ui line 126
+#: rc.cpp:140
 msgid "Always Hidden"
 msgstr "Sempre oculto"
 
 #. i18n: tag string
-#. i18n: file conf/dlgpresentationbase.ui line 138
-#: rc.cpp:140
+#. i18n: file conf/dlgpresentationbase.ui line 136
+#: rc.cpp:143
 msgid "Show &progress indicator"
 msgstr "Mostrar o indicador de &progreso"
 
 #. i18n: tag string
-#. i18n: file conf/dlgpresentationbase.ui line 145
-#: rc.cpp:143
+#. i18n: file conf/dlgpresentationbase.ui line 143
+#: rc.cpp:146
 msgid "Show s&ummary page"
 msgstr "Mostrar a páxina de re&sumo"
 
 #. i18n: tag string
-#. i18n: file conf/dlgpresentationbase.ui line 155
-#: rc.cpp:146
+#. i18n: file conf/dlgpresentationbase.ui line 153
+#: rc.cpp:149
 #, fuzzy
 #| msgid "Default transition:"
 msgid "Enable transitions"
 msgstr "Transición por omisión:"
 
 #. i18n: tag string
-#. i18n: file conf/dlgpresentationbase.ui line 167
-#: rc.cpp:149
+#. i18n: file conf/dlgpresentationbase.ui line 165
+#: rc.cpp:152
 msgid "Default transition:"
 msgstr "Transición por omisión:"
 
 #. i18n: tag string
-#. i18n: file conf/dlgpresentationbase.ui line 178
-#: rc.cpp:152
+#. i18n: file conf/dlgpresentationbase.ui line 176
+#: rc.cpp:155
 msgid "Blinds Vertical"
 msgstr "Rexas verticais"
 
 #. i18n: tag string
-#. i18n: file conf/dlgpresentationbase.ui line 183
-#: rc.cpp:155
+#. i18n: file conf/dlgpresentationbase.ui line 181
+#: rc.cpp:158
 msgid "Blinds Horizontal"
 msgstr "Rexas horizontais"
 
 #. i18n: tag string
-#. i18n: file conf/dlgpresentationbase.ui line 188
-#: rc.cpp:158
+#. i18n: file conf/dlgpresentationbase.ui line 186
+#: rc.cpp:161
 msgid "Box In"
 msgstr "Caixa cara adentro"
 
 #. i18n: tag string
-#. i18n: file conf/dlgpresentationbase.ui line 193
-#: rc.cpp:161
+#. i18n: file conf/dlgpresentationbase.ui line 191
+#: rc.cpp:164
 msgid "Box Out"
 msgstr "Caixa cara afóra"
 
 #. i18n: tag string
-#. i18n: file conf/dlgpresentationbase.ui line 198
-#: rc.cpp:164
+#. i18n: file conf/dlgpresentationbase.ui line 196
+#: rc.cpp:167
 msgid "Dissolve"
 msgstr "Esvaecerse"
 
 #. i18n: tag string
-#. i18n: file conf/dlgpresentationbase.ui line 203
-#: rc.cpp:167
+#. i18n: file conf/dlgpresentationbase.ui line 201
+#: rc.cpp:170
 msgid "Glitter Down"
 msgstr "Cortina baixando"
 
 #. i18n: tag string
-#. i18n: file conf/dlgpresentationbase.ui line 208
-#: rc.cpp:170
+#. i18n: file conf/dlgpresentationbase.ui line 206
+#: rc.cpp:173
 msgid "Glitter Right"
 msgstr "Cortina cara á dereita"
 
 #. i18n: tag string
-#. i18n: file conf/dlgpresentationbase.ui line 213
-#: rc.cpp:173
+#. i18n: file conf/dlgpresentationbase.ui line 211
+#: rc.cpp:176
 msgid "Glitter Right-Down"
 msgstr "Cortina dereita e baixando"
 
 #. i18n: tag string
-#. i18n: file conf/dlgpresentationbase.ui line 218
-#: rc.cpp:176
+#. i18n: file conf/dlgpresentationbase.ui line 216
+#: rc.cpp:179
 msgid "Random Transition"
 msgstr "Transición aleatoria"
 
 #. i18n: tag string
-#. i18n: file conf/dlgpresentationbase.ui line 223
-#: rc.cpp:179
+#. i18n: file conf/dlgpresentationbase.ui line 221
+#: rc.cpp:182
 msgid "Replace"
 msgstr "Substituír"
 
 #. i18n: tag string
-#. i18n: file conf/dlgpresentationbase.ui line 228
-#: rc.cpp:182
+#. i18n: file conf/dlgpresentationbase.ui line 226
+#: rc.cpp:185
 msgid "Split Horizontal In"
 msgstr "Dividir horizontalmente"
 
 #. i18n: tag string
-#. i18n: file conf/dlgpresentationbase.ui line 233
-#: rc.cpp:185
+#. i18n: file conf/dlgpresentationbase.ui line 231
+#: rc.cpp:188
 msgid "Split Horizontal Out"
 msgstr "Sair da división horizontal"
 
 #. i18n: tag string
-#. i18n: file conf/dlgpresentationbase.ui line 238
-#: rc.cpp:188
+#. i18n: file conf/dlgpresentationbase.ui line 236
+#: rc.cpp:191
 msgid "Split Vertical In"
 msgstr "Dividir verticalmente"
 
 #. i18n: tag string
-#. i18n: file conf/dlgpresentationbase.ui line 243
-#: rc.cpp:191
+#. i18n: file conf/dlgpresentationbase.ui line 241
+#: rc.cpp:194
 msgid "Split Vertical Out"
 msgstr "Sair da división vertical"
 
 #. i18n: tag string
-#. i18n: file conf/dlgpresentationbase.ui line 248
-#: rc.cpp:194
+#. i18n: file conf/dlgpresentationbase.ui line 246
+#: rc.cpp:197
 msgid "Wipe Down"
 msgstr "Limpar embaixo"
 
 #. i18n: tag string
-#. i18n: file conf/dlgpresentationbase.ui line 253
-#: rc.cpp:197
+#. i18n: file conf/dlgpresentationbase.ui line 251
+#: rc.cpp:200
 msgid "Wipe Right"
 msgstr "Limpar a dereita"
 
 #. i18n: tag string
-#. i18n: file conf/dlgpresentationbase.ui line 258
-#: rc.cpp:200
+#. i18n: file conf/dlgpresentationbase.ui line 256
+#: rc.cpp:203
 msgid "Wipe Left"
 msgstr "Limpar a esquerda"
 
 #. i18n: tag string
-#. i18n: file conf/dlgpresentationbase.ui line 263
-#: rc.cpp:203
+#. i18n: file conf/dlgpresentationbase.ui line 261
+#: rc.cpp:206
 msgid "Wipe Up"
 msgstr "Limpar enriba"
 
 #. i18n: tag string
-#. i18n: file conf/dlgpresentationbase.ui line 274
-#: rc.cpp:206
-msgid "Drawing"
-msgstr "Debuxando"
+#. i18n: file conf/dlgpresentationbase.ui line 272
+#: rc.cpp:209
+msgid "Placement"
+msgstr ""
 
 #. i18n: tag string
-#. i18n: file conf/dlgpresentationbase.ui line 294
-#: rc.cpp:209
-msgid "Pencil color:"
-msgstr "Cor do lapis:"
+#. i18n: file conf/dlgpresentationbase.ui line 278
+#: rc.cpp:212
+msgid "Screen:"
+msgstr ""
 
 #. i18n: tag string
 #. i18n: file conf/dlgidentitybase.ui line 71
-#: rc.cpp:218
+#: rc.cpp:221
 msgid ""
 "<b>Note</b>: the information here is used only for comments and reviews. "
 "Information inserted here will not be transmitted without your knowledge."
@@ -2019,202 +2039,202 @@ msgstr ""
 
 #. i18n: tag string
 #. i18n: file conf/dlggeneralbase.ui line 66
-#: rc.cpp:224
+#: rc.cpp:227
 msgid "Show scroll&bars"
 msgstr "Mostrar barras de &desprazamento"
 
 #. i18n: tag string
 #. i18n: file conf/dlggeneralbase.ui line 76
-#: rc.cpp:227
+#: rc.cpp:230
 msgid "Link the &thumbnails with the page"
 msgstr "Ligar as &miniaturras coa páxina"
 
 #. i18n: tag string
 #. i18n: file conf/dlggeneralbase.ui line 83
-#: rc.cpp:230
+#: rc.cpp:233
 msgid "Show &hints and info messages"
 msgstr "Mostrar os &consellos e mensaxes de información"
 
 #. i18n: tag string
 #. i18n: file conf/dlggeneralbase.ui line 143
-#: rc.cpp:233
+#: rc.cpp:236
 msgid "Program Features"
 msgstr "Funcionalidades do programa"
 
 #. i18n: tag string
 #. i18n: file conf/dlggeneralbase.ui line 181
-#: rc.cpp:236
+#: rc.cpp:239
 msgid "&Obey DRM limitations"
 msgstr "&Obedecer as limitacións DRM"
 
 #. i18n: tag string
 #. i18n: file conf/dlggeneralbase.ui line 188
-#: rc.cpp:239
+#: rc.cpp:242
 msgid "&Reload document on file change"
 msgstr "&Cargar de novo o documento ao cambiar de ficheiro"
 
 #. i18n: tag string
 #. i18n: file conf/dlggeneralbase.ui line 195
-#: rc.cpp:242
+#: rc.cpp:245
 msgid "Show backend selection dialog"
 msgstr "Mostrar o diálogo de escolla de infraestrutura"
 
 #. i18n: tag string
 #. i18n: file conf/dlggeneralbase.ui line 255
-#: rc.cpp:245
+#: rc.cpp:248
 msgid "View Options"
 msgstr "Opcións da vista"
 
 #. i18n: tag string
 #. i18n: file conf/dlggeneralbase.ui line 261
-#: rc.cpp:248
+#: rc.cpp:251
 msgid "Center &first page"
 msgstr "Centrar a &primeira páxina"
 
 #. i18n: tag string
 #. i18n: file conf/dlggeneralbase.ui line 276
-#: rc.cpp:251
+#: rc.cpp:254
 msgid "Overview columns:"
 msgstr "Colunas de resumo:"
 
 #. i18n: tag string
 #. i18n: file conf/dlgperformancebase.ui line 25
-#: rc.cpp:254
+#: rc.cpp:257
 msgid "CPU Usage"
 msgstr "Uso da CPU"
 
 #. i18n: tag string
 #. i18n: file conf/dlgperformancebase.ui line 53
-#: rc.cpp:257
+#: rc.cpp:260
 msgid "Enable &transparency effects"
 msgstr "Habilitar os efectos de &transparencia"
 
 #. i18n: tag string
 #. i18n: file conf/dlgperformancebase.ui line 60
-#: rc.cpp:260
+#: rc.cpp:263
 msgid "Enable &background generation"
 msgstr "Habilitar a &xeración de fondo"
 
 #. i18n: tag string
 #. i18n: file conf/dlgperformancebase.ui line 115
-#: rc.cpp:263
+#: rc.cpp:266
 msgid "Memory Usage"
 msgstr "Uso da memoria"
 
 #. i18n: tag string
 #. i18n: file conf/dlgperformancebase.ui line 143
-#: rc.cpp:266
+#: rc.cpp:269
 msgid "&Low"
 msgstr "&Baixo"
 
 #. i18n: tag string
 #. i18n: file conf/dlgperformancebase.ui line 150
-#: rc.cpp:269
+#: rc.cpp:272
 msgid "&Normal (default)"
 msgstr "&Normal (por omisión)"
 
 #. i18n: tag string
 #. i18n: file conf/dlgperformancebase.ui line 157
-#: rc.cpp:272
+#: rc.cpp:275
 msgid "&Aggressive"
 msgstr "&Agresivo"
 
 #. i18n: tag tooltip
 #. i18n: file ui/data/tools.xml line 21
-#: rc.cpp:275
+#: rc.cpp:278
 msgctxt "Annotation tool"
 msgid "Text Annotation"
 msgstr "Anotación de texto"
 
 #. i18n: tag tooltip
 #. i18n: file ui/data/tools.xml line 28
-#: rc.cpp:278
+#: rc.cpp:281
 msgctxt "Annotation tool"
 msgid "Inline Text Annotation (drag to select a zone)"
 msgstr "Anotación de texto na liña (arraste para escoller unha zona)"
 
 #. i18n: tag tooltip
 #. i18n: file ui/data/tools.xml line 35
-#: rc.cpp:281
+#: rc.cpp:284
 msgctxt "Annotation tool"
 msgid "Green Ink"
 msgstr "Tinta verde"
 
 #. i18n: tag tooltip
 #. i18n: file ui/data/tools.xml line 42
-#: rc.cpp:284
+#: rc.cpp:287
 msgctxt "Annotation tool"
 msgid "Yellow Highlight"
 msgstr "Realzado amarelo"
 
 #. i18n: tag tooltip
 #. i18n: file ui/data/tools.xml line 49
-#: rc.cpp:287
+#: rc.cpp:290
 msgctxt "Annotation tool"
 msgid "Straight Yellow Line"
 msgstr "Liña recta amarela "
 
 #. i18n: tag tooltip
 #. i18n: file ui/data/tools.xml line 56
-#: rc.cpp:290
+#: rc.cpp:293
 msgctxt "Annotation tool"
 msgid "Draw a polygon (click on the first point to close it)"
 msgstr "Debuxar un polígono (prema no primeiro ponto para pechalo)"
 
 #. i18n: tag tooltip
 #. i18n: file ui/data/tools.xml line 63
-#: rc.cpp:293
+#: rc.cpp:296
 msgctxt "Annotation tool"
 msgid "Put a stamp symbol"
 msgstr "Cuñar"
 
 #. i18n: tag tooltip
 #. i18n: file ui/data/tools.xml line 70
-#: rc.cpp:296
+#: rc.cpp:299
 msgctxt "Annotation tool"
 msgid "Underline the text with a black line"
 msgstr "Subraiar o texto cunha liña negra"
 
 #. i18n: tag tooltip
 #. i18n: file ui/data/tools.xml line 77
-#: rc.cpp:299
+#: rc.cpp:302
 msgctxt "Annotation tool"
 msgid "A cyan ellipse"
 msgstr "Unha elipse cián"
 
 #. i18n: tag tool attribute name
 #. i18n: file ui/data/tools.xml line 34
-#: rc.cpp:308
+#: rc.cpp:311
 msgid "Green Highlighter"
 msgstr "Realzador verde"
 
 #. i18n: tag tool attribute name
 #. i18n: file ui/data/tools.xml line 41
-#: rc.cpp:311
+#: rc.cpp:314
 msgid "Yellow Highlighter"
 msgstr "Realzador amarelo"
 
 #. i18n: tag tool attribute name
 #. i18n: file ui/data/tools.xml line 48
-#: rc.cpp:314
+#: rc.cpp:317
 msgid "Straight Yellow Line"
 msgstr "Liña recta amarela "
 
 #. i18n: tag tool attribute name
 #. i18n: file ui/data/tools.xml line 55
-#: rc.cpp:317
+#: rc.cpp:320
 msgid "Blue Polygon"
 msgstr "Polígono azul"
 
 #. i18n: tag tool attribute name
 #. i18n: file ui/data/tools.xml line 69
-#: rc.cpp:323
+#: rc.cpp:326
 msgid "Black Underlining"
 msgstr "Subraiado en negro"
 
 #. i18n: tag tool attribute name
 #. i18n: file ui/data/tools.xml line 76
-#: rc.cpp:326
+#: rc.cpp:329
 msgid "Cyan Ellipse"
 msgstr "Elipse cián"
 
@@ -2282,6 +2302,9 @@ msgstr "Enrico Ros"
 #: aboutdata.h:39
 msgid "KPDF developer"
 msgstr "Desenvolvente de KPDF"
+
+#~ msgid "Drawing"
+#~ msgstr "Debuxando"
 
 #~ msgid "okular"
 #~ msgstr "okular"
