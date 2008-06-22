@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktorrent\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2008-06-10 18:23+0200\n"
+"POT-Creation-Date: 2008-06-22 03:21+0200\n"
 "PO-Revision-Date: 2008-06-03 23:05+0200\n"
 "Last-Translator: mvillarino <mvillarino@users.sourceforge.net>\n"
 "Language-Team: galician <proxecto@trasno.net>\n"
@@ -281,7 +281,8 @@ msgstr "Escolla o ficheiro onde gardar"
 msgid "Torrent files"
 msgstr "Ficheiros torrente"
 
-#: ktorrent/importdialog.cpp:52 plugins/bwscheduler/scheduleeditor.cpp:115
+#: ktorrent/importdialog.cpp:52 plugins/scripting/scriptingplugin.cpp:126
+#: plugins/bwscheduler/scheduleeditor.cpp:115
 msgid "All files"
 msgstr "Todos os ficheiros"
 
@@ -296,8 +297,8 @@ msgid "Cannot load the torrent file : %1"
 msgstr "Non foi posíbel cargar o ficheiro torrent: %1"
 
 #: ktorrent/importdialog.cpp:276 plugins/ipfilter/convertthread.cpp:93
-#: plugins/ipfilter/convertthread.cpp:197 libbtcore/util/fileops.cpp:284
-#: libbtcore/util/fileops.cpp:313 libbtcore/util/fileops.cpp:372
+#: plugins/ipfilter/convertthread.cpp:197 libbtcore/util/fileops.cpp:314
+#: libbtcore/util/fileops.cpp:343 libbtcore/util/fileops.cpp:402
 #: libbtcore/diskio/cachefile.cpp:96
 #, kde-format
 msgid "Cannot open %1 : %2"
@@ -329,7 +330,7 @@ msgstr "Comezar"
 msgid "Stop"
 msgstr "Deter"
 
-#: ktorrent/viewmanager.cpp:399 ktorrent/view.cpp:254
+#: ktorrent/viewmanager.cpp:399 ktorrent/view.cpp:245
 msgid "Remove Torrent"
 msgstr "Eliminar o torrente"
 
@@ -362,7 +363,7 @@ msgstr "Engadir parceiros"
 #. i18n: tag string
 #. i18n: file ./plugins/stats/Settings.ui line 234
 #: ktorrent/viewmanager.cpp:415 rc.cpp:298 rc.cpp:1605 rc.cpp:1692 rc.cpp:1755
-#: plugins/infowidget/peerviewmodel.cpp:265
+#: plugins/infowidget/peerviewmodel.cpp:273
 msgid "DHT"
 msgstr "DHT"
 
@@ -773,7 +774,7 @@ msgstr ""
 msgid "The data file is not present in the location you selected !"
 msgstr "O ficheiro de dados non está presente onde indicou !"
 
-#: ktorrent/torrentcreatordlg.cpp:102 ktorrent/fileselectdlg.cpp:251
+#: ktorrent/torrentcreatordlg.cpp:102 ktorrent/fileselectdlg.cpp:269
 #: libktcore/groups/allgroup.cpp:26
 msgid "All Torrents"
 msgstr "Todos os torrentes"
@@ -833,7 +834,7 @@ msgstr "Nome"
 msgid "Status"
 msgstr "Estado"
 
-#: ktorrent/viewmodel.cpp:370 plugins/infowidget/peerviewmodel.cpp:269
+#: ktorrent/viewmodel.cpp:370 plugins/infowidget/peerviewmodel.cpp:277
 #: plugins/infowidget/webseedsmodel.cpp:126
 msgid "Downloaded"
 msgstr "Recebido"
@@ -843,16 +844,16 @@ msgstr "Recebido"
 msgid "Size"
 msgstr "Tamaño"
 
-#: ktorrent/viewmodel.cpp:372 plugins/infowidget/peerviewmodel.cpp:270
+#: ktorrent/viewmodel.cpp:372 plugins/infowidget/peerviewmodel.cpp:278
 msgid "Uploaded"
 msgstr "Enviado"
 
-#: ktorrent/viewmodel.cpp:373 plugins/infowidget/peerviewmodel.cpp:260
+#: ktorrent/viewmodel.cpp:373 plugins/infowidget/peerviewmodel.cpp:268
 #: plugins/infowidget/chunkdownloadmodel.cpp:195
 msgid "Down Speed"
 msgstr "Veloc. recepción"
 
-#: ktorrent/viewmodel.cpp:374 plugins/infowidget/peerviewmodel.cpp:261
+#: ktorrent/viewmodel.cpp:374 plugins/infowidget/peerviewmodel.cpp:269
 msgid "Up Speed"
 msgstr "Veloc. envío"
 
@@ -1009,7 +1010,13 @@ msgstr "Todas as interfaces"
 msgid "Advanced"
 msgstr "Avanzado"
 
-#: ktorrent/fileselectdlg.cpp:156
+#: ktorrent/fileselectdlg.cpp:137
+#, fuzzy, kde-format
+#| msgid "The directory %1 does not exist"
+msgid "The directory %1 does not exist, do you want to create it ?"
+msgstr "O cartafol %1 non existe"
+
+#: ktorrent/fileselectdlg.cpp:174
 msgid ""
 "You have deselected the following existing files. You will lose all data in "
 "these files, are you sure you want to do this ?"
@@ -1017,15 +1024,15 @@ msgstr ""
 "Anulou a escolla dos seguintes ficheiros existentes. Perderanse todos os "
 "dados destes ficheiros; desexa realmente facer isto?"
 
-#: ktorrent/fileselectdlg.cpp:160
+#: ktorrent/fileselectdlg.cpp:178
 msgid "Yes, delete the files"
 msgstr "Si, borrar os ficheiros"
 
-#: ktorrent/fileselectdlg.cpp:161
+#: ktorrent/fileselectdlg.cpp:179
 msgid "No, keep the files"
 msgstr "Non, manter os ficheiros"
 
-#: ktorrent/fileselectdlg.cpp:316
+#: ktorrent/fileselectdlg.cpp:334
 #, kde-format
 msgid "%1 short!"
 msgstr "Falta %1 !"
@@ -1311,11 +1318,11 @@ msgstr "%1 KB/s"
 
 #. i18n: tag title
 #. i18n: file ./ktorrent/ktorrentui.rc line 80
-#: ktorrent/view.cpp:68 rc.cpp:582
+#: ktorrent/view.cpp:69 rc.cpp:582
 msgid "Columns"
 msgstr "Colunas"
 
-#: ktorrent/view.cpp:227
+#: ktorrent/view.cpp:218
 #, kde-format
 msgid ""
 "The torrent <b>%1</b> has not finished downloading, do you want to delete "
@@ -1324,24 +1331,24 @@ msgstr ""
 "Aínda non se completou a recepción do torrente <b>%1</b>, desexa eliminar "
 "tamén os dados incompletos?"
 
-#: ktorrent/view.cpp:232
+#: ktorrent/view.cpp:223
 msgid "Remove Download"
 msgstr "Eliminar a transferencia"
 
-#: ktorrent/view.cpp:233
+#: ktorrent/view.cpp:224
 msgid "Delete Data"
 msgstr "Borrar os dados"
 
-#: ktorrent/view.cpp:234
+#: ktorrent/view.cpp:225
 msgid "Keep Data"
 msgstr "Manter os dados"
 
-#: ktorrent/view.cpp:253
+#: ktorrent/view.cpp:244
 msgid ""
 "You will lose all the downloaded data. Are you sure you want to do this?"
 msgstr "Perderá todos os dados obtidos. Desexa realmente facer isto?"
 
-#: ktorrent/view.cpp:370 plugins/infowidget/fileview.cpp:268
+#: ktorrent/view.cpp:361 plugins/infowidget/fileview.cpp:268
 #: plugins/infowidget/fileview.cpp:289
 msgid "Select a directory to move the data to."
 msgstr "Escolla un cartafol aonde enviar os dados."
@@ -1526,7 +1533,7 @@ msgstr ""
 "Fallou o reenvío: \n"
 "O dispositivo non ten nen WANIPConnection nen WANPPPConnection!"
 
-#: libktupnp/upnprouter.cpp:434 libktupnp/upnprouter.cpp:447
+#: libktupnp/upnprouter.cpp:433 libktupnp/upnprouter.cpp:446
 msgid "Cannot find port forwarding service in the device's description!"
 msgstr ""
 "Non foi posíbel achar o servizo de encamiñamento na descrición do "
@@ -6803,59 +6810,59 @@ msgid ""
 "You will lose all data in these files, are you sure you want to do this ?"
 msgstr "Perderá todos os dados nestes ficheiros, desexa realmente facer isto?"
 
-#: plugins/infowidget/peerviewmodel.cpp:125
+#: plugins/infowidget/peerviewmodel.cpp:133
 msgctxt "Choked"
 msgid "Yes"
 msgstr "Si"
 
-#: plugins/infowidget/peerviewmodel.cpp:125
+#: plugins/infowidget/peerviewmodel.cpp:133
 msgctxt "Not choked"
 msgid "No"
 msgstr "Non"
 
-#: plugins/infowidget/peerviewmodel.cpp:126
+#: plugins/infowidget/peerviewmodel.cpp:134
 msgctxt "Snubbed"
 msgid "Yes"
 msgstr "Si"
 
-#: plugins/infowidget/peerviewmodel.cpp:126
+#: plugins/infowidget/peerviewmodel.cpp:134
 msgctxt "Not snubbed"
 msgid "No"
 msgstr "Non"
 
-#: plugins/infowidget/peerviewmodel.cpp:257
+#: plugins/infowidget/peerviewmodel.cpp:265
 msgid "IP Address"
 msgstr "Enderezo IP"
 
-#: plugins/infowidget/peerviewmodel.cpp:258
+#: plugins/infowidget/peerviewmodel.cpp:266
 msgid "Country"
 msgstr "País"
 
-#: plugins/infowidget/peerviewmodel.cpp:259
+#: plugins/infowidget/peerviewmodel.cpp:267
 msgid "Client"
 msgstr "Cliente"
 
-#: plugins/infowidget/peerviewmodel.cpp:262
+#: plugins/infowidget/peerviewmodel.cpp:270
 msgid "Choked"
 msgstr "Atascado"
 
-#: plugins/infowidget/peerviewmodel.cpp:263
+#: plugins/infowidget/peerviewmodel.cpp:271
 msgid "Snubbed"
 msgstr "Ignorado"
 
-#: plugins/infowidget/peerviewmodel.cpp:264
+#: plugins/infowidget/peerviewmodel.cpp:272
 msgid "Availability"
 msgstr "Disponibilidade"
 
-#: plugins/infowidget/peerviewmodel.cpp:266
+#: plugins/infowidget/peerviewmodel.cpp:274
 msgid "Score"
 msgstr "Pontuación"
 
-#: plugins/infowidget/peerviewmodel.cpp:267
+#: plugins/infowidget/peerviewmodel.cpp:275
 msgid "Upload Slot"
 msgstr "Rañura de envío"
 
-#: plugins/infowidget/peerviewmodel.cpp:268
+#: plugins/infowidget/peerviewmodel.cpp:276
 msgid "Requests"
 msgstr "Pedidos"
 
@@ -7230,6 +7237,25 @@ msgstr "Desexa transferir ou gardar o torrente?"
 msgid "Download Torrent"
 msgstr "Obter o torrente"
 
+#: plugins/scripting/scriptingplugin.cpp:64
+#, fuzzy
+#| msgid "Add Source"
+msgid "Add Script"
+msgstr "Engadir unha fonte"
+
+#: plugins/scripting/scriptingplugin.cpp:68
+#, fuzzy
+#| msgid "Remove Group"
+msgid "Remove Script"
+msgstr "Borrar o grupo"
+
+#: plugins/scripting/scriptingplugin.cpp:86
+#: plugins/scripting/scriptingplugin.cpp:126
+#, fuzzy
+#| msgid "Scrape"
+msgid "Scripts"
+msgstr "Rañar"
+
 #: plugins/bitfinder/filter/capturecheckerdetails.cpp:43
 msgid "Add Capture"
 msgstr "Engadir unha captura"
@@ -7269,6 +7295,12 @@ msgstr "Engadir unha variábel nova"
 #: plugins/bitfinder/filter/capturecheckerdetails.cpp:184
 msgid "Please enter the new variable name."
 msgstr "Introduza o nome da nova variábel."
+
+#: plugins/bitfinder/filter/capturecheckerdetails.cpp:388
+#, fuzzy
+#| msgid "Captures"
+msgid "No Capture"
+msgstr "Capturas"
 
 #: plugins/bitfinder/filter/filterdetails.cpp:77
 #: plugins/bitfinder/filter/filterdetails.cpp:361
@@ -7501,58 +7533,58 @@ msgstr "Non foi posíbel escreber en %1 : %2"
 msgid "Cannot read from %1"
 msgstr "Non foi posíbel ler de %1"
 
-#: libbtcore/util/fileops.cpp:77
+#: libbtcore/util/fileops.cpp:78
 #, kde-format
 msgid "Cannot create directory %1: %2"
 msgstr "Non foi posíbel criar o cartafol %1: %2"
 
-#: libbtcore/util/fileops.cpp:94
+#: libbtcore/util/fileops.cpp:124
 #, kde-format
 msgid "Cannot symlink %1 to %2: %3"
 msgstr "Non foi posíbel criar unha ligazón simbólica de %1 para %2: %3"
 
-#: libbtcore/util/fileops.cpp:111
+#: libbtcore/util/fileops.cpp:141
 #, kde-format
 msgid "Cannot move %1 to %2: %3"
 msgstr "Non foi posíbel mover de %1 para %2: %3"
 
-#: libbtcore/util/fileops.cpp:127 libbtcore/util/fileops.cpp:143
+#: libbtcore/util/fileops.cpp:157 libbtcore/util/fileops.cpp:173
 #, kde-format
 msgid "Cannot copy %1 to %2: %3"
 msgstr "Non foi posíbel copiar de %1 para %2: %3"
 
-#: libbtcore/util/fileops.cpp:204
+#: libbtcore/util/fileops.cpp:234
 #, kde-format
 msgid "Cannot delete %1: %2"
 msgstr "Non foi posíbel borrar %1: %2"
 
-#: libbtcore/util/fileops.cpp:221
+#: libbtcore/util/fileops.cpp:251
 #, kde-format
 msgid "Cannot create %1: %2"
 msgstr "Non foi posíbel criar %1: %2"
 
-#: libbtcore/util/fileops.cpp:240
+#: libbtcore/util/fileops.cpp:270
 #, kde-format
 msgid "Cannot calculate the filesize of %1: %2"
 msgstr "Non foi posíbel calcular o tamaño do ficheiro %1: %2"
 
-#: libbtcore/util/fileops.cpp:256
+#: libbtcore/util/fileops.cpp:286
 #, kde-format
 msgid "Cannot calculate the filesize : %1"
 msgstr "Non foi posíbel calcular o tamaño do ficheiro : %1"
 
-#: libbtcore/util/fileops.cpp:334 libbtcore/util/fileops.cpp:340
-#: libbtcore/util/fileops.cpp:343
+#: libbtcore/util/fileops.cpp:364 libbtcore/util/fileops.cpp:370
+#: libbtcore/util/fileops.cpp:373
 #, kde-format
 msgid "Cannot expand file : %1"
 msgstr "Non foi posíbel expandir o ficheiro : %1"
 
-#: libbtcore/util/fileops.cpp:358 libbtcore/util/fileops.cpp:360
+#: libbtcore/util/fileops.cpp:388 libbtcore/util/fileops.cpp:390
 #, kde-format
 msgid "Cannot expand file: %1"
 msgstr "Non foi posíbel expandir o ficheiro: %1"
 
-#: libbtcore/util/fileops.cpp:393
+#: libbtcore/util/fileops.cpp:423
 #, kde-format
 msgid "Cannot seek in file : %1"
 msgstr "Non foi posíbel procurar no ficheiro : %1"
@@ -7656,7 +7688,7 @@ msgstr "O torrente está incompleto!"
 msgid "Failed to open %1 : %2"
 msgstr "Non foi posíbel abrir %1 : %2"
 
-#: libbtcore/diskio/chunkmanager.cpp:218 libbtcore/diskio/chunkmanager.cpp:444
+#: libbtcore/diskio/chunkmanager.cpp:218 libbtcore/diskio/chunkmanager.cpp:449
 #, kde-format
 msgid "Cannot open index file %1 : %2"
 msgstr "Non foi posíbel abrir o ficheiro do índice %1 : %2"
