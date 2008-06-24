@@ -1,0 +1,77 @@
+<article lang="&language;" id="mac">
+<title
+>mac</title>
+<articleinfo>
+<authorgroup>
+<author
+><personname
+><firstname
+>Johnathan</firstname
+><surname
+>Riddell</surname
+></personname
+><email
+>jr@jriddell.org</email
+> </author>
+<othercredit role="translator"
+><firstname
+>Marce</firstname
+><surname
+>Villarino</surname
+><affiliation
+><address
+><email
+>mvillarino@users.sourceforge.net</email
+></address
+></affiliation
+><contrib
+>Tradutor do proxecto Trasno</contrib
+></othercredit
+> 
+</authorgroup>
+</articleinfo>
+
+<para
+>O ioslave permítelle ler unha partición HFS+ desde &konqueror; ou desde calquera outro diálogo de ficheiro de &kde;. Emprega as <ulink url="http://www.google.com/search?hl=en&amp;q=hfsplus+utils"
+>hfsplus tools</ulink
+>, que deberá ter instaladas para que funcione.</para>
+
+<para
+>Escreba <userinput
+>mac:/</userinput
+> en &konqueror; e verá os contidos da partición de &MacOS;. Se non empregou kio-man antes, probabelmente obteña unha mensaxe de erro que di que non indicou a partición correcta. Escreba algo do estilo <userinput
+>mac:/<option
+>?dev=/dev/hda2</option
+></userinput
+> para especificar a partición (se non sabe en cal partición está &MacOS;, posibelmente poda averigualo mudando hda2 por hda3 ou así, ou empregando o comando print de <command
+>mac-fdisk</command
+>). Esta partición será empregada a seguinte vez, polo que non a ten que especificar sempre.</para>
+
+<para
+><application
+>As ferramentas Hfsplus</application
+> permítenlle ver o ficheiro e copiar dados desde a partición HFS+, pero non copiar datos para ela nen mudar os nomes dos ficheiros.</para>
+
+<para
+>En realidade HFS+ mantén dous ficheiros por cada un que ve (chamados forks), un fork de recurso e un fork de datos. O modo de copia por omisión cando está a copiar ficheiros ao disco nativo é o de datos en bruto, o que significa que só copia o fork de datos. Os ficheiros de texto son copiados non modo texto (o mesmo que o formato en bruto pero troca as fins de liña ao estilo &UNIX; e elimina algúns caracteres adicionais, moi recomendado para ficheiros de texto), a non se que indique outra cousa. Tamén pode copiar os ficheiros no formato Mac Binary II ou especificar o formato texto ou en bruto con outra pesquisa: <userinput
+>mac:/<option
+>ficheiro?mode=b</option
+></userinput
+> ou <userinput
+>mac:/<option
+>ficheiro?mode=t</option
+></userinput
+>. Consulte a páxima de manual de <command
+>hpcopy</command
+> para máis información.</para>
+
+<para
+>Lembre que precisa dos permisos para ler a partición HFS+. Como obtelos depende da distribución. </para>
+
+<para
+>Por motivos descoñecidos algúns cartafoles de &MacOS; teñen o nome rematado por un caracter <quote
+>f</quote
+>. Isto confunde a hfstools.</para>
+
+</article>
+
