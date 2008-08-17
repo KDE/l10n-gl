@@ -1,15 +1,15 @@
 # translation of kig.po to Galician
 #
-# mvillarino <mvillarino@users.sourceforge.net>, 2006.
+# mvillarino <mvillarino@users.sourceforge.net>, 2006, 2008.
 # Xabi G. Feal <xabigf@gmx.net>, 2006.
 msgid ""
 msgstr ""
 "Project-Id-Version: kig\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2008-08-06 05:41+0200\n"
-"PO-Revision-Date: 2006-12-30 13:48+0100\n"
-"Last-Translator: Xabi G. Feal <xabigf@gmx.net>\n"
-"Language-Team: Galician <trasno@ceu.fi.udc.es>\n"
+"POT-Creation-Date: 2008-08-09 09:55+0200\n"
+"PO-Revision-Date: 2008-08-16 14:24+0200\n"
+"Last-Translator: mvillarino <mvillarino@users.sourceforge.net>\n"
+"Language-Team: Galician <proxecto@trasno.net>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -40,6 +40,27 @@ msgid ""
 "hexagons (Point(0,0), Point(1,0), 5)\n"
 "</pre></code>\n"
 msgstr ""
+"<p>Pode controlar as construcións en kig mediante un script de python \n"
+"chamado \"pykig\", que se pode executar mediante o comando \n"
+"<code>pykig.py</code>. Aquí vai un exemplo (<code>hexagonos.kpy</code>) \n"
+"que pode probar:\n"
+"<code><pre>\n"
+"kigdocument.hideobjects()\n"
+"def hexagonos (c, v, n):\n"
+"  hexagono = PolygonBCV (c, v, 6)\n"
+"  if n &lt;= 0:\n"
+"    hexagono.show()\n"
+"    for i in range(6): \n"
+"      PolygonSide (hexagono, i, True)\n"
+"    return\n"
+"  cnew = MidPoints (c, v)\n"
+"  hexagonos (cnew, v, n-1)\n"
+"  for k in [2,4]:\n"
+"    v1 = PolygonVertex (hexagono, k)\n"
+"    cnew = MidPoints (c, v1)\n"
+"    hexagonos (cnew, v1, n-1)\n"
+"hexagonos (Point(0,0), Point(1,0), 5)\n"
+"</pre></code>\n"
 
 #: tips.cpp:28
 msgid ""
@@ -48,6 +69,9 @@ msgid ""
 "of objects with the same construction, especially if there is\n"
 "no shortcut for that construction.</p>\n"
 msgstr ""
+"<p>Pode repetir a última construción premendo a tecla \"Z\", isto é\n"
+"moi útil se ten que construir unha secuencia de obxectos coa mesma\n"
+"construción, especialmente se non hai un atallo para ela.</p>\n"
 
 #: tips.cpp:36
 msgid ""
@@ -57,9 +81,9 @@ msgid ""
 "and line styles, and lots of other interesting things.</p>\n"
 msgstr ""
 "<p>Unha das ferramentas máis poderosas de Kig son os menús, aos que pode\n"
-"aceder se preme co botón direito nun obxecto ou nun espazo en branco\n"
-"do documento. Poderáos usar para dar nomes aos obxectos, trocar as\n"
-"súas cores e estilos de liña, e moitas outras cousas interesantes.</p>\n"
+"aceder se preme co botón dereito nun obxecto ou nun espazo en branco\n"
+"do documento. Poderaos utilizar para dar nomes aos obxectos, trocarlles as\n"
+"cores e estilos de liña, e moitas outras cousas interesantes.</p>\n"
 
 #: tips.cpp:44
 msgid ""
@@ -70,7 +94,7 @@ msgid ""
 msgstr ""
 "<p>Pode criar puntos novos sen usar o menú nen a barra de ferramentas,\n"
 "abonda para tal premer nalgún sitio do documento de Kig\n"
-"co <em>botón do medio do rato</em>.</p>\n"
+"co <em>botón central do rato</em>.</p>\n"
 
 #: tips.cpp:51
 msgid ""
@@ -84,15 +108,14 @@ msgstr ""
 "ficheiros de <em>Dr. Geo</em> e de <em>Cabri&#8482;</em>.</p>\n"
 
 #: tips.cpp:58
-#, fuzzy
 msgid ""
 "<p>Kig has more than 20 objects and 10 transformations with more than 80 \n"
 "constructions you can use in your documents: open the <em>Objects</em> \n"
 "menu to see them all.</p>\n"
 msgstr ""
-"<p>Kig ten máis de 40 obxectos e 10 transformacións que pode Construír\n"
-"e usar nos seus documentos: abra o menú <em>Obxectos</em> para velos todos.</"
-"p>\n"
+"<p>Kig ten máis de 20 obxectos e 10 transformacións con máis de 80 construcións \n"
+"que pode empregar nos seus documentos: abra o menú <em>Obxectos</em> para velos\n"
+"todos.</p>\n"
 
 #: tips.cpp:65
 msgid ""
@@ -106,11 +129,10 @@ msgstr ""
 "<p>Pode utilizar os obxectos escollidos para iniciar a construción dun\n"
 "obxecto que necesita dos obxectos escollidos como argumentos. Por\n"
 "exemplo, se tivese dous puntos escollidos, pode escoller\n"
-"<em>Iniciar ->Círculo por Tres Puntos</em>\n"
+"<em>Iniciar -> Círculo por tres puntos</em>\n"
 "no menú para comezar a construír un círculo por tres puntos.</p>\n"
 
 #: tips.cpp:73
-#, fuzzy
 #| msgid ""
 #| "<p>Kig can extends its object set using external macros. You can find "
 #| "some\n"
@@ -121,8 +143,8 @@ msgid ""
 "interesting macros on the Kig website:\n"
 "<a href=\"http://edu.kde.org/kig\">http://edu.kde.org/kig</a>.</p>\n"
 msgstr ""
-"<p>Kig pode extender o seu conxunto de obxectos utilizando macros externas.\n"
-"Pode encontrar algunhas macros interesantes do sitio Web de Kig:\n"
+"<p>Kig pode extender o conxunto de obxectos utilizando macros externas.\n"
+"Pode encontrar algunhas macros interesantes do sitio web de Kig:\n"
 "<a href=\"http://edu.kde.org/kig\">http://edu.kde.org/kig</a>.</p>\n"
 
 #: tips.cpp:80
@@ -137,14 +159,26 @@ msgid ""
 msgstr ""
 "<p>Se ten máis dun obxecto baixo o rato e quer escoller algún\n"
 "deles, poderá premer co <em>botón esquerdo do rato</em>, mentres\n"
-"mantén a tecla <em>Maiúsculas</em> calcada para obter unha lista dos "
+"mantén a tecla <em>Maiúsculas</em> premida para obter unha lista dos "
 "obxectos\n"
 "baixo o cursor do rato, de onde os pode escoller.</p>\n"
+
+#: tips.cpp:88
+msgid ""
+"<p>When you construct a locus, you can click on it with the <em>right</em> "
+"mouse\n"
+"botton and select <em>cartesian equation</em> to see its cartesian "
+"equation, \n"
+"whenever it is an algebraic curve of low degree.</p>\n"
+msgstr ""
+"<p>Cando constrúa un locus, pode premer nel co botón <em>dereito</em> do rato \n"
+"e escoller <em>ecuación cartesiana</em> para ver esta, sempre que sexa unha \n"
+"curva alxebraica de grau baixo.</p>\n"
 
 #: rc.cpp:1
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "mvillarino"
+msgstr "Xabi G. Feal, mvillarino"
 
 #: rc.cpp:2
 msgctxt "EMAIL OF TRANSLATORS"
@@ -156,23 +190,20 @@ msgstr "mvillarino@users.sourceforge.net"
 #. i18n: tag text
 #. i18n: file kig/kigui.rc line 4
 #: rc.cpp:5 rc.cpp:95
-#, fuzzy
 msgid "&File"
-msgstr "A&cochar"
+msgstr "&Ficheiro"
 
 #. i18n: tag text
 #. i18n: file kig/kigpartui.rc line 16
 #: rc.cpp:8
-#, fuzzy
 msgid "&Edit"
-msgstr "&Editar..."
+msgstr "&Editar"
 
 #. i18n: tag text
 #. i18n: file kig/kigpartui.rc line 27
 #: rc.cpp:11
-#, fuzzy
 msgid "&View"
-msgstr "A&cochar"
+msgstr "&Vista"
 
 #. i18n: tag text
 #. i18n: file kig/kigpartui.rc line 35
@@ -196,7 +227,7 @@ msgstr "&Liñas"
 #. i18n: file kig/kigpartui.rc line 59
 #: rc.cpp:23
 msgid "&Circles && Arcs"
-msgstr "&Círculos e Arcos"
+msgstr "&Círculos e arcos"
 
 #. i18n: tag text
 #. i18n: file kig/kigpartui.rc line 70
@@ -208,19 +239,19 @@ msgstr "Polí&gonos"
 #. i18n: file kig/kigpartui.rc line 81
 #: rc.cpp:29
 msgid "&Vectors && Segments"
-msgstr "&Vectores e Segmentos"
+msgstr "&Vectores e segmentos"
 
 #. i18n: tag text
 #. i18n: file kig/kigpartui.rc line 90
 #: rc.cpp:32
 msgid "Co&nics && Cubics"
-msgstr "Có&nicas e Cúbicas"
+msgstr "Có&nicas e cúbicas"
 
 #. i18n: tag text
 #. i18n: file kig/kigpartui.rc line 97
 #: rc.cpp:35
 msgid "More Conics"
-msgstr "Máis Cónicas"
+msgstr "Máis cónicas"
 
 #. i18n: tag text
 #. i18n: file kig/kigpartui.rc line 112
@@ -268,7 +299,7 @@ msgstr "&Tipos"
 #. i18n: file kig/kigpartui.rc line 180
 #: rc.cpp:59
 msgid "&Tools"
-msgstr ""
+msgstr "&Utilidades"
 
 #. i18n: tag text
 #. i18n: file kig/kigpartui.rc line 192
@@ -276,7 +307,7 @@ msgstr ""
 #. i18n: file kig/kigui.rc line 34
 #: rc.cpp:62 rc.cpp:104
 msgid "Main Toolbar"
-msgstr ""
+msgstr "Barra de ferramentas Principal"
 
 #. i18n: tag text
 #. i18n: file kig/kigpartui.rc line 206
@@ -294,13 +325,13 @@ msgstr "Liñas"
 #. i18n: file kig/kigpartui.rc line 227
 #: rc.cpp:71
 msgid "Vectors && Segments"
-msgstr "Vectores e Segmentos"
+msgstr "Vectores e segmentos"
 
 #. i18n: tag text
 #. i18n: file kig/kigpartui.rc line 235
 #: rc.cpp:74
 msgid "Circles && Arcs"
-msgstr "Círculos e Arcos"
+msgstr "Círculos e arcos"
 
 #. i18n: tag text
 #. i18n: file kig/kigpartui.rc line 243
@@ -330,26 +361,25 @@ msgstr "Probas"
 #. i18n: file kig/kigpartui.rc line 283
 #: rc.cpp:89
 msgid "Other Objects"
-msgstr "Outros Obxectos"
+msgstr "Outros obxectos"
 
 #. i18n: tag text
 #. i18n: file kig/kigpartui.rc line 291
 #: rc.cpp:92
 msgid "View"
-msgstr ""
+msgstr "Vista"
 
 #. i18n: tag text
 #. i18n: file kig/kigui.rc line 13
 #: rc.cpp:98
 msgid "&Settings"
-msgstr ""
+msgstr "&Configuración"
 
 #. i18n: tag text
 #. i18n: file kig/kigui.rc line 22
 #: rc.cpp:101
-#, fuzzy
 msgid "&Help"
-msgstr "A&cochar"
+msgstr "&Axuda"
 
 #. i18n: tag string
 #. i18n: file filters/imageexporteroptionswidget.ui line 25
@@ -360,7 +390,6 @@ msgstr "Resolución"
 #. i18n: tag string
 #. i18n: file filters/imageexporteroptionswidget.ui line 40
 #: rc.cpp:110
-#, fuzzy
 msgid "&Keep Aspect Ratio"
 msgstr "Man&ter as proporcións"
 
@@ -383,9 +412,8 @@ msgstr "Ancho:"
 #. i18n: tag string
 #. i18n: file filters/svgexporteroptionswidget.ui line 25
 #: rc.cpp:119 rc.cpp:128 rc.cpp:140 misc/kigfiledialog.cc:34
-#, fuzzy
 msgid "Options"
-msgstr "Opcións de SVG"
+msgstr "Opcións"
 
 #. i18n: tag string
 #. i18n: file filters/imageexporteroptionswidget.ui line 143
@@ -394,9 +422,8 @@ msgstr "Opcións de SVG"
 #. i18n: tag string
 #. i18n: file filters/svgexporteroptionswidget.ui line 45
 #: rc.cpp:122 rc.cpp:134 rc.cpp:143
-#, fuzzy
 msgid "Show Axes"
-msgstr "Mostr&ar os Eixos"
+msgstr "Mostrar os eixos"
 
 #. i18n: tag string
 #. i18n: file filters/imageexporteroptionswidget.ui line 150
@@ -405,14 +432,12 @@ msgstr "Mostr&ar os Eixos"
 #. i18n: tag string
 #. i18n: file filters/svgexporteroptionswidget.ui line 52
 #: rc.cpp:125 rc.cpp:137 rc.cpp:146
-#, fuzzy
 msgid "Show Grid"
-msgstr "Mostrar a &Grella"
+msgstr "Mostrar a grella"
 
 #. i18n: tag string
 #. i18n: file filters/latexexporteroptionswidget.ui line 45
 #: rc.cpp:131
-#, fuzzy
 msgid "Show Extra Frame"
 msgstr "Mostrar un contorno extra"
 
@@ -422,8 +447,7 @@ msgstr "Mostrar un contorno extra"
 msgid ""
 "Here you can modify the name, the description and the icon of this macro "
 "type."
-msgstr ""
-"Aquí  pode modificar o nome, a descrición e o ícone deste tipo de macro."
+msgstr "Aquí pode modificar o nome, a descrición e o ícone deste tipo de macro."
 
 #. i18n: tag string
 #. i18n: file modes/edittypewidget.ui line 76
@@ -441,44 +465,43 @@ msgstr "Descrición:"
 #. i18n: file modes/historywidget.ui line 25
 #: rc.cpp:158
 msgid "Description of the current step:"
-msgstr ""
+msgstr "Descrición desta etapa:"
 
 #. i18n: tag string
 #. i18n: file modes/historywidget.ui line 56
 #: rc.cpp:161
-#, fuzzy
 msgid "First step"
-msgstr "Primeiro Foco"
+msgstr "Primeiro paso"
 
 #. i18n: tag string
 #. i18n: file modes/historywidget.ui line 69
 #: rc.cpp:164
 msgid "One step back"
-msgstr ""
+msgstr "Un paso atrás"
 
 #. i18n: tag string
 #. i18n: file modes/historywidget.ui line 85
 #: rc.cpp:167
 msgid "/"
-msgstr ""
+msgstr "/"
 
 #. i18n: tag string
 #. i18n: file modes/historywidget.ui line 99
 #: rc.cpp:170
 msgid "One step forward"
-msgstr ""
+msgstr "Un paso adiante"
 
 #. i18n: tag string
 #. i18n: file modes/historywidget.ui line 112
 #: rc.cpp:173
 msgid "Last step"
-msgstr ""
+msgstr "Derradeiro paso"
 
 #. i18n: tag string
 #. i18n: file modes/typeswidget.ui line 37
 #: rc.cpp:176
 msgid "Select types here..."
-msgstr "Escolla tipos aquí..."
+msgstr "Escolla os tipos aquí..."
 
 #. i18n: tag string
 #. i18n: file modes/typeswidget.ui line 40
@@ -511,15 +534,14 @@ msgstr "Elimina todos os tipos escollidos na lista."
 #. i18n: tag string
 #. i18n: file modes/typeswidget.ui line 112
 #: rc.cpp:191 modes/popup.cc:374 modes/typesdialog.cpp:368
-#, fuzzy
 msgid "&Delete"
-msgstr "&Eliminar os Obxectos"
+msgstr "&Eliminar"
 
 #. i18n: tag string
 #. i18n: file modes/typeswidget.ui line 151
 #: rc.cpp:194
 msgid "Export all the selected types to a file."
-msgstr "Exportar todos os tipos escollidos para un ficheiro."
+msgstr "Exporta todos os tipos escollidos para un ficheiro."
 
 #. i18n: tag string
 #. i18n: file modes/typeswidget.ui line 154
@@ -531,18 +553,17 @@ msgstr "E&xportar..."
 #. i18n: file modes/typeswidget.ui line 161
 #: rc.cpp:200
 msgid "Import macros that are contained in one or more files."
-msgstr "Importar macros contidas nun ou máis ficheiros."
+msgstr "Importa as macros contidas nun ou máis ficheiros."
 
 #. i18n: tag string
 #. i18n: file modes/typeswidget.ui line 164
 #: rc.cpp:203
-#, fuzzy
 msgid "&Import..."
-msgstr "Importar..."
+msgstr "&Importar..."
 
 #: rc.cpp:204
 msgid "Circle by Center && Line"
-msgstr "Círculo dado o Centro e unha Liña"
+msgstr "Círculo dado o centro e unha liña"
 
 #: rc.cpp:205
 msgid "A circle constructed by its center and tangent to a given line"
@@ -550,15 +571,15 @@ msgstr "Un círculo construido polo centro e tanxente a unha liña dada"
 
 #: rc.cpp:206
 msgid "Construct a circle tangent to this line"
-msgstr "Construír un círculo tanxente a esta liña"
+msgstr "Construir un círculo tanxente a esta liña"
 
 #: rc.cpp:207 rc.cpp:212 objects/circle_type.cc:34
 msgid "Construct a circle with this center"
-msgstr "Construír un círculo con este centro"
+msgstr "Construir un círculo con este centro"
 
 #: rc.cpp:208
 msgid "Select the line that the new circle should be tangent to..."
-msgstr "Escolla a liña á cal o novo círculo debe ser tanxente..."
+msgstr "Escolla a liña tanxente ao novo círculo..."
 
 #: rc.cpp:209 rc.cpp:214 objects/circle_type.cc:39 objects/circle_type.cc:194
 msgid "Select the center of the new circle..."
@@ -566,17 +587,14 @@ msgstr "Escolla o centro do novo círculo..."
 
 #: rc.cpp:210
 msgid "Circle by Point && Segment (as the Diameter)"
-msgstr "Círculo por Punto e Segmento (como Diámetro)"
+msgstr "Círculo por punto e segmento (como diámetro)"
 
 #: rc.cpp:211
-msgid ""
-"A circle defined by its center and the length of a segment as the diameter"
-msgstr ""
-"Un círculo construido polo centro e coa lonxitude dun segmento como diámetro"
+msgid "A circle defined by its center and the length of a segment as the diameter"
+msgstr "Un círculo construido polo centro e coa lonxitude dun segmento como diámetro"
 
 #: rc.cpp:213
-msgid ""
-"Construct a circle with the diameter given by the length of this segment"
+msgid "Construct a circle with the diameter given by the length of this segment"
 msgstr "Construi un círculo co diámetro dado pola lonxitude deste segmento"
 
 #: rc.cpp:215
@@ -585,7 +603,7 @@ msgstr "Escolla o segmento cuxa lonxitude dá o diámetro do novo círculo..."
 
 #: rc.cpp:216
 msgid "Equilateral Triangle"
-msgstr "Triángulo Equilátero"
+msgstr "Triángulo equilátero"
 
 #: rc.cpp:217
 msgid "Equilateral triangle with given two vertices"
@@ -610,7 +628,7 @@ msgstr "Escolla a curva..."
 
 #: rc.cpp:222
 msgid "Osculating Circle"
-msgstr "Círculo Osculante"
+msgstr "Círculo osculante"
 
 #: rc.cpp:223
 msgid "Osculating circle of a curve at a point"
@@ -630,7 +648,7 @@ msgstr "Escolla o punto..."
 
 #: rc.cpp:228
 msgid "Segment Axis"
-msgstr "Eixo de Segmento"
+msgstr "Eixo de segmento"
 
 #: rc.cpp:229
 msgid "The perpendicular line through a given segment's mid point."
@@ -650,41 +668,39 @@ msgstr "Cadrado"
 
 #: rc.cpp:233
 msgid "Square with two given adjacent vertices"
-msgstr "Cadrado cos dous vértices adxacentes"
+msgstr "Cadrado con dous vértices adxacentes"
 
 #: rc.cpp:234
 msgid "Vector Difference"
-msgstr "Diferenza de Vectores"
+msgstr "Diferenza de vectores"
 
 #: rc.cpp:235
 msgid "Construct the vector difference of two vectors."
-msgstr "Construír a diferenza de dous vectores."
+msgstr "Construir o vector diferenza de dous vectores."
 
 #: rc.cpp:236
 msgid "Construct the vector difference of this vector and another one."
-msgstr "Construír a diferenza de vectores deste vector e de outro."
+msgstr "Construe o vector diferenza deste vector e de outro."
 
 #: rc.cpp:237
 msgid "Construct the vector difference of the other vector and this one."
-msgstr "Construír a diferenza de vectores do outro vector e deste."
+msgstr "Construe a diferenza de vectores do outro vector e deste."
 
 #: rc.cpp:238
 msgid "Construct the vector difference starting at this point."
-msgstr "Construír a diferenza de vectores con inicio neste punto."
+msgstr "Construir a diferenza de vectores con inicio neste punto."
 
 #: rc.cpp:239
 msgid ""
 "Select the first of the two vectors of which you want to construct the "
 "difference..."
-msgstr ""
-"Escolla o primeiro dos dous vectores cos cais desexa construír a diferenza..."
+msgstr "Escolla o primeiro dos dous vectores cos cais desexa construir a diferenza..."
 
 #: rc.cpp:240
 msgid ""
 "Select the other of the two vectors of which you want to construct the "
 "difference..."
-msgstr ""
-"Escolla o segundo dos dous vectores cos cais desexa construír a diferenza..."
+msgstr "Escolla o segundo dos dous vectores cos cais desexa construir a diferenza..."
 
 #: rc.cpp:241
 msgid "Select the point to construct the difference vector in..."
@@ -692,57 +708,55 @@ msgstr "Escolla o punto no cal criar a diferenza dos dous vectores..."
 
 #: filters/filter.h:55 filters/cabri-utils.cc:33 misc/object_hierarchy.cc:486
 #: objects/object_imp_factory.cc:294
-#, fuzzy, kde-format
+#, kde-format
 msgid "An error was encountered at line %1 in file %2."
-msgstr ""
-"Foi encontrado un erro ao procesar o ficheiro \"%1\". Non pode ser aberto."
+msgstr "Atopouse un erro no ficheiro \"%2\", na liña %1."
 
-#: kig/aboutdata.h:26
+#: kig/aboutdata.h:29
 msgid "KDE Interactive Geometry"
-msgstr "Xeometría Interactiva de KDE"
-
-#: kig/aboutdata.h:30
-msgid "(C) 2002-2005, The Kig developers"
-msgstr "(C) 2002-2005, A equipa de desenvolvemento de Kig"
-
-#: kig/aboutdata.h:32
-msgid "Dominique Devriese"
-msgstr ""
+msgstr "Xeometría interactiva de KDE"
 
 #: kig/aboutdata.h:33
-msgid "Original author, long time maintainer, design and lots of code."
-msgstr ""
-"Autor orixinal, mantedor durante bastante tempo, deseño e moito código."
+msgid "(C) 2002-2005, The Kig developers"
+msgstr "(C) 2002-2005, Os desenvolventes de Kig"
+
+#: kig/aboutdata.h:35
+msgid "Dominique Devriese"
+msgstr "Dominique Devriese"
 
 #: kig/aboutdata.h:36
-msgid "Maurizio Paolini"
-msgstr ""
+msgid "Original author, long time maintainer, design and lots of code."
+msgstr "Autor orixinal, mantenedor durante bastante tempo, deseño e moito código."
 
-#: kig/aboutdata.h:37
+#: kig/aboutdata.h:39
+msgid "Maurizio Paolini"
+msgstr "Maurizio Paolini"
+
+#: kig/aboutdata.h:40
 msgid ""
 "Did a lot of important work all around Kig, including, but not limited to "
 "conics, cubics, transformations and property tests support."
 msgstr ""
-"Fixo moito traballo importante en Kig incluíndo, entre outros, cónicas, "
+"Fixo moito traballo importante en Kig incluindo, entre outros, cónicas, "
 "cúbicas, transformacións e soporte de probas de propiedades."
 
-#: kig/aboutdata.h:42
+#: kig/aboutdata.h:45
 msgid "Pino Toscano"
-msgstr ""
+msgstr "Pino Toscano"
 
-#: kig/aboutdata.h:43
+#: kig/aboutdata.h:46
 msgid ""
 "Actual maintainer, Dr. Geo import filter, point and line styles, Italian "
 "translation, miscellaneous stuff here and there."
 msgstr ""
-"Mantedor actual, filtro de importación de Dr. Geo, estilos dos puntos e das "
+"Mantenedor actual, filtro de importación de Dr. Geo, estilos dos puntos e das "
 "liñas, traducións para Italiano e diversas outras cousas."
 
-#: kig/aboutdata.h:48
+#: kig/aboutdata.h:51
 msgid "Franco Pasquarelli"
-msgstr ""
+msgstr "Franco Pasquarelli"
 
-#: kig/aboutdata.h:49
+#: kig/aboutdata.h:52
 msgid ""
 "Helped a lot with the implementation of the Locus object, there's quite some "
 "math involved in doing it right, and Franco wrote the most difficult parts."
@@ -750,11 +764,11 @@ msgstr ""
 "Axudou na implementación do obxecto Locus, onde é precisa algunha matemática "
 "para facelo correctamente, e Franco fixo as partes máis complicadas."
 
-#: kig/aboutdata.h:54
+#: kig/aboutdata.h:57
 msgid "Eric Depagne"
-msgstr ""
+msgstr "Eric Depagne"
 
-#: kig/aboutdata.h:55
+#: kig/aboutdata.h:58
 msgid ""
 "The French translator, who also sent me some useful feedback, like feature "
 "requests and bug reports."
@@ -762,11 +776,11 @@ msgstr ""
 "O tradutor para Francés, que me deu bastante axuda útil, como por exemplo "
 "solicitudes de funcionalidades e informes de erros."
 
-#: kig/aboutdata.h:59
+#: kig/aboutdata.h:62
 msgid "Marc Bartsch"
-msgstr ""
+msgstr "Marc Bartsch"
 
-#: kig/aboutdata.h:60
+#: kig/aboutdata.h:63
 msgid ""
 "Author of KGeo, where I got inspiration, some source, and most of the "
 "artwork from."
@@ -774,11 +788,11 @@ msgstr ""
 "Autor de KGeo, de onde obtiven inspiración, algún código e a maioría das "
 "imaxes."
 
-#: kig/aboutdata.h:64
+#: kig/aboutdata.h:67
 msgid "Christophe Devriese"
-msgstr ""
+msgstr "Christophe Devriese"
 
-#: kig/aboutdata.h:65
+#: kig/aboutdata.h:68
 msgid ""
 "Domi's brother, who he got to write the algorithm for calculating the center "
 "of the circle with three points given."
@@ -786,45 +800,44 @@ msgstr ""
 "O irmán de Domi, a quen el pediu axuda para facer o algoritmo que calcula o "
 "centro do círculo, dados tres puntos."
 
-#: kig/aboutdata.h:70
+#: kig/aboutdata.h:73
 msgid "Christophe Prud'homme"
-msgstr ""
-
-#: kig/aboutdata.h:71
-msgid "Sent me a patch for some bugs."
-msgstr "Envioume a corrección de alguns erros."
+msgstr "Christophe Prud'homme"
 
 #: kig/aboutdata.h:74
-msgid "Robert Gogolok"
-msgstr ""
+msgid "Sent me a patch for some bugs."
+msgstr "Envioume a corrección de algúns erros."
 
-#: kig/aboutdata.h:75
+#: kig/aboutdata.h:77
+msgid "Robert Gogolok"
+msgstr "Robert Gogolok"
+
+#: kig/aboutdata.h:78
 msgid ""
 "Gave me some good feedback on Kig, some feature requests, cleanups and style "
 "fixes, and someone to chat with on irc :)"
 msgstr ""
 "Deume algunhas boas ideas sobre Kig: algunhas solicitudes de "
 "funcionalidades, algunhas limpezas e correccións de estilo, e foi alguén con "
-"quen falar noIRC :)"
+"quen falar no IRC :)"
 
-#: kig/aboutdata.h:80
+#: kig/aboutdata.h:83
 msgid "David Vignoni"
-msgstr ""
-
-#: kig/aboutdata.h:81
-msgid "Responsible for the nice application SVG Icon."
-msgstr "Responsábel do ícone SVG da aplicación."
+msgstr "David Vignoni"
 
 #: kig/aboutdata.h:84
-msgid "Danny Allen"
-msgstr ""
+msgid "Responsible for the nice application SVG Icon."
+msgstr "Responsábel do ícone SVG do programa."
 
-#: kig/aboutdata.h:85
+#: kig/aboutdata.h:87
+msgid "Danny Allen"
+msgstr "Danny Allen"
+
+#: kig/aboutdata.h:88
 msgid "Responsible for the new object action icons."
 msgstr "Responsábel dos novos ícones de accións dos obxectos."
 
 #: filters/cabri-filter.cc:155
-#, fuzzy
 msgid "This is an XFig file, not a Cabri figure."
 msgstr "Este é un ficheiro de XFig, non unha figura de Cabri."
 
@@ -834,6 +847,8 @@ msgid ""
 "This Cabri version (%1) is not supported yet.\n"
 "Please contact the Kig authors to help supporting this Cabri version."
 msgstr ""
+"Esta versión do Cabri (%1) aínda non está soportada.\n"
+"Por favor, contacte cos autores de Kig para axudar a dar soporte a esta versión."
 
 #: filters/cabri-filter.cc:657
 #, kde-format
@@ -900,11 +915,11 @@ msgstr "&Imaxe..."
 
 #: filters/exporter.cc:88
 msgid "Export as Image"
-msgstr "Exportar como Imaxe"
+msgstr "Exportar como imaxe"
 
 #: filters/exporter.cc:89
 msgid "Image Options"
-msgstr "Opcións da Imaxe"
+msgstr "Opcións da imaxe"
 
 #: filters/exporter.cc:110
 msgid "Sorry, this file format is not supported."
@@ -927,7 +942,7 @@ msgstr "Fallou algo ao guardar a imaxe \"%1\""
 
 #: filters/exporter.cc:157
 msgid "&Export To"
-msgstr "&Exportar Para"
+msgstr "&Exportar para"
 
 #: filters/filter.cc:73
 #, kde-format
@@ -940,14 +955,12 @@ msgstr ""
 
 #: filters/filter.cc:82
 #, kde-format
-msgid ""
-"An error was encountered while parsing the file \"%1\".  It cannot be opened."
-msgstr ""
-"Foi encontrado un erro ao procesar o ficheiro \"%1\". Non pode ser aberto."
+msgid "An error was encountered while parsing the file \"%1\".  It cannot be opened."
+msgstr "Atopouse un erro ao procesar o ficheiro \"%1\". Non pode ser aberto."
 
 #: filters/filter.cc:84
 msgid "Parse Error"
-msgstr "Erro de Procesamento"
+msgstr "Erro de procesamento"
 
 #: filters/filter.cc:95
 #, kde-format
@@ -956,7 +969,7 @@ msgstr "Kig non foi quen de abrir o ficheiro \"%1\"."
 
 #: filters/filter.cc:96 misc/lists.cc:324
 msgid "Not Supported"
-msgstr "Non Soportado"
+msgstr "Non soportado"
 
 #: filters/kseg-filter.cc:182
 msgid ""
@@ -975,15 +988,13 @@ msgstr ""
 "actualidade."
 
 #: filters/kseg-filter.cc:567
-msgid ""
-"This KSeg file contains an arc sector, which Kig does not currently support."
+msgid "This KSeg file contains an arc sector, which Kig does not currently support."
 msgstr ""
 "Este ficheiro de KSeg contén unha sección de arco, a cal Kig non soporta na "
 "actualidade."
 
 #: filters/kseg-filter.cc:573
-msgid ""
-"This KSeg file contains an arc segment, which Kig does not currently support."
+msgid "This KSeg file contains an arc segment, which Kig does not currently support."
 msgstr ""
 "Este ficheiro de KSeg contén un segmento de arco, o cal Kig non soporta na "
 "actualidade."
@@ -1010,10 +1021,9 @@ msgstr "Opcións de Latex"
 
 #: filters/native-filter.cc:194
 #, kde-format
-msgid ""
-"This file was created by Kig version \"%1\", which this version cannot open."
+msgid "This file was created by Kig version \"%1\", which this version cannot open."
 msgstr ""
-"Este ficheiro foi criado por Kig versión \"%1\", esta versión non o pode "
+"Este ficheiro foi criado pola versión \"%1\" de Kig, esta versión non o pode "
 "abrir."
 
 #: filters/native-filter.cc:200
@@ -1027,7 +1037,7 @@ msgstr ""
 "Este ficheiro foi criado pola versión \"%1\" de Kig.\n"
 "O soporte para os formatos antigos de Kig (antes do 0.4) foi suprimido.\n"
 "Pode tentar aceder a este ficheiro cunha versión máis antiga\n"
-"de Kig (da 0.4 á 0.6) e despois guardala de novo, o que o fará no novo\n"
+"de Kig (da 0.4 á 0.6) e despois gardala de novo, o que o fará no novo\n"
 "formato."
 
 #: filters/native-filter.cc:231 filters/native-filter.cc:425
@@ -1048,8 +1058,8 @@ msgid ""
 "support.Perhaps you have compiled Kig without support for this object type,"
 "or perhaps you are using an older Kig version."
 msgstr ""
-"Este ficheiro de Kig usa un obxecto do tipo \"%1\", o cal esta versión do  "
-"Kig non soporta. Talvez o usuario teña compilade Kig sen o soporte para este "
+"Este ficheiro de Kig usa un obxecto do tipo \"%1\", non soportado por esta "
+"versión. Talvez o usuario teña compilado Kig sen o soporte para este "
 "tipo de obxecto, ou estexa a usar unha versión máis antiga de Kig."
 
 #: filters/native-filter.cc:389
@@ -1059,6 +1069,9 @@ msgid ""
 "save the construction with a different name and check that it works as "
 "expected."
 msgstr ""
+"Este ficheiro de Kig usa un obxecto do tipo \"%1\", que está obsoleto, debería "
+"gardar a construción cun nome diferente e comprobar que funciona como é de "
+"desexar."
 
 #: filters/svgexporter.cc:45
 msgid "&Export to SVG..."
@@ -1083,7 +1096,7 @@ msgstr "Opcións de SVG"
 #: filters/svgexporter.cc:110
 #, kde-format
 msgid "Sorry, something went wrong while saving to SVG file \"%1\""
-msgstr "Algo fallou ao guardar no ficheiro SVG \"%1\""
+msgstr "Algo fallou ao gardar no ficheiro SVG \"%1\""
 
 #: filters/xfigexporter.cc:59
 msgid "Export to &XFig file"
@@ -1099,16 +1112,15 @@ msgstr "*.fig|Documentos XFig (*.fig)"
 
 #: filters/xfigexporter.cc:481
 msgid "Export as XFig File"
-msgstr "Exportar como Ficheiro XFig"
+msgstr "Exportar como ficheiro XFig"
 
 #: misc/builtin_stuff.cc:59
-#, fuzzy
 msgid "Point by Numeric Labels"
-msgstr "Punto por Coordenadas"
+msgstr "Punto por etiquetas numéricas"
 
 #: misc/builtin_stuff.cc:60
 msgid "A point whose coordinates are given by two numeric labels"
-msgstr ""
+msgstr "Un punto que ten as coordenadas dadas por dúas etiquetas numéricas"
 
 #: misc/builtin_stuff.cc:67
 msgid "Segment"
@@ -1120,7 +1132,7 @@ msgstr "Un segmento construido polos seus puntos inicial e final"
 
 #: misc/builtin_stuff.cc:75
 msgid "Line by Two Points"
-msgstr "Liña por Dous Puntos"
+msgstr "Liña por dous puntos"
 
 #: misc/builtin_stuff.cc:76
 msgid "A line constructed through two points"
@@ -1132,15 +1144,14 @@ msgstr "Semi-recta"
 
 #: misc/builtin_stuff.cc:83
 msgid "A half-line by its start point, and another point somewhere on it."
-msgstr "Unha semi-recta con base no seu punto inicial e noutro sobre a mesma."
+msgstr "Unha semi-recta con base no punto inicial e noutro sobre a mesma."
 
 #: misc/builtin_stuff.cc:90
 msgid "Perpendicular"
 msgstr "Perpendicular"
 
 #: misc/builtin_stuff.cc:91
-msgid ""
-"A line constructed through a point, perpendicular to another line or segment."
+msgid "A line constructed through a point, perpendicular to another line or segment."
 msgstr ""
 "Unha liña construida através dun punto, perpendicular a outra liña ou "
 "segmento."
@@ -1150,57 +1161,52 @@ msgid "Parallel"
 msgstr "Paralela"
 
 #: misc/builtin_stuff.cc:99
-msgid ""
-"A line constructed through a point, and parallel to another line or segment"
-msgstr ""
-"Unha liña construida através dun punto, paralela a outra liña ou segmento"
+msgid "A line constructed through a point, and parallel to another line or segment"
+msgstr "Unha liña construida através dun punto, paralela a outra liña ou segmento"
 
 #: misc/builtin_stuff.cc:106
 msgid "Circle by Center && Point"
-msgstr "Círculo polo Centro e por un Punto"
+msgstr "Círculo polo centro e por un punto"
 
 #: misc/builtin_stuff.cc:107
 msgid "A circle constructed by its center and a point that pertains to it"
-msgstr "Un círculo construido polo centro e por un punto na súa circunferencia"
+msgstr "Un círculo construido polo centro e por un punto na circunerencia"
 
 #: misc/builtin_stuff.cc:113
 msgid "Circle by Three Points"
-msgstr "Círculo por Tres Puntos"
+msgstr "Círculo por tres puntos"
 
 #: misc/builtin_stuff.cc:114
 msgid "A circle constructed through three points"
 msgstr "Un círculo construido utilizando tres puntos"
 
 #: misc/builtin_stuff.cc:120
-#, fuzzy
 msgid "Circle by Point && Radius"
-msgstr "Círculo por Punto e Segmento (como Raio)"
+msgstr "Círculo por punto e raio"
 
 #: misc/builtin_stuff.cc:121
-#, fuzzy
 msgid "A circle defined by its center and the length of the radius"
-msgstr ""
-"Un círculo construido polo centro e coa lonxitude dun segmento como raio"
+msgstr "Un círculo construido polo centro e a lonxitude do raio"
 
 #: misc/builtin_stuff.cc:136
 msgid "Construct Bisector of This Angle"
-msgstr "Criar a Bisectriz deste Ángulo"
+msgstr "Criar a bisectriz deste ángulo"
 
 #: misc/builtin_stuff.cc:137
 msgid "Select the angle you want to construct the bisector of..."
-msgstr "Escolla o ángulo do cal desexa construír a bisectriz..."
+msgstr "Escolla o ángulo do cal desexa construir a bisectriz..."
 
 #: misc/builtin_stuff.cc:138 objects/other_imp.cc:107
 msgid "Angle Bisector"
-msgstr "Bisector do Ángulo"
+msgstr "Bisectriz do ángulo"
 
 #: misc/builtin_stuff.cc:139
 msgid "The bisector of an angle"
-msgstr "O bisector dun ángulo"
+msgstr "A bisectriz dun ángulo"
 
 #: misc/builtin_stuff.cc:146
 msgid "Conic by Five Points"
-msgstr "Cónica por Cinco Puntos"
+msgstr "Cónica por cinco puntos"
 
 #: misc/builtin_stuff.cc:147
 msgid "A conic constructed through five points"
@@ -1208,7 +1214,7 @@ msgstr "Unha cónica construida através de cinco puntos"
 
 #: misc/builtin_stuff.cc:154
 msgid "Hyperbola by Asymptotes && Point"
-msgstr "Hipérbole polas Asimptotas e por un Punto"
+msgstr "Hipérbole polas asimptotas e por un punto"
 
 #: misc/builtin_stuff.cc:155
 msgid "A hyperbola with given asymptotes through a point"
@@ -1216,7 +1222,7 @@ msgstr "Unha hipérbole dadas as asímptotas a cruzárense nun punto"
 
 #: misc/builtin_stuff.cc:162
 msgid "Ellipse by Focuses && Point"
-msgstr "Elipse polos Focos e por un Punto"
+msgstr "Elipse polos focos e por un punto"
 
 #: misc/builtin_stuff.cc:163
 msgid "An ellipse constructed by its focuses and a point that pertains to it"
@@ -1224,7 +1230,7 @@ msgstr "Unha elipse construida polos seus focos e por un punto dela"
 
 #: misc/builtin_stuff.cc:170
 msgid "Hyperbola by Focuses && Point"
-msgstr "Hipérbole polos Focos e por un Punto"
+msgstr "Hipérbole polos focos e por un punto"
 
 #: misc/builtin_stuff.cc:171
 msgid "A hyperbola constructed by its focuses and a point that pertains to it"
@@ -1232,15 +1238,15 @@ msgstr "Unha hipérbole construida polos seus focos e por un punto dela"
 
 #: misc/builtin_stuff.cc:178
 msgid "Conic by Directrix, Focus && Point"
-msgstr "Cónica pola Directriz, Foco e un Punto"
+msgstr "Cónica pola directriz, foco e un punto"
 
 #: misc/builtin_stuff.cc:179
 msgid "A conic with given directrix and focus, through a point"
-msgstr "Unha cónica cunha dada directriz e un foco através dun punto"
+msgstr "Unha cónica cunha directriz dada e un foco através dun punto"
 
 #: misc/builtin_stuff.cc:186
 msgid "Vertical Parabola by Three Points"
-msgstr "Parábola Vertical por Tres Puntos"
+msgstr "Parábola vertical por tres puntos"
 
 #: misc/builtin_stuff.cc:187
 msgid "A vertical parabola constructed through three points"
@@ -1248,7 +1254,7 @@ msgstr "Un parábola vertical construida através de tres puntos"
 
 #: misc/builtin_stuff.cc:194
 msgid "Cubic Curve by Nine Points"
-msgstr "Curva Cúbica por Nove Puntos"
+msgstr "Curva cúbica por nove puntos"
 
 #: misc/builtin_stuff.cc:195
 msgid "A cubic curve constructed through nine points"
@@ -1256,7 +1262,7 @@ msgstr "Unha curva cúbica criada a partir de nove puntos"
 
 #: misc/builtin_stuff.cc:202
 msgid "Polar Point of a Line"
-msgstr "Punto Polar dunha Liña"
+msgstr "Punto polar dunha liña"
 
 #: misc/builtin_stuff.cc:203
 msgid "The polar point of a line with respect to a conic."
@@ -1264,7 +1270,7 @@ msgstr "O punto polar dunha liña en relación a unha cónica."
 
 #: misc/builtin_stuff.cc:210
 msgid "Polar Line of a Point"
-msgstr "Liña Polar dun Punto"
+msgstr "Liña polar dun punto"
 
 #: misc/builtin_stuff.cc:211
 msgid "The polar line of a point with respect to a conic."
@@ -1272,7 +1278,7 @@ msgstr "A liña polar dun punto en relación a unha cónica."
 
 #: misc/builtin_stuff.cc:218
 msgid "Cubic Curve with Node by Six Points"
-msgstr "Curva Cúbica con Nó por Seis Puntos"
+msgstr "Curva cúbica con nó por seis puntos"
 
 #: misc/builtin_stuff.cc:219
 msgid "A cubic curve with a nodal point at the origin through six points"
@@ -1280,7 +1286,7 @@ msgstr "Unha curva cúbica cun nó na orixe através de seis puntos"
 
 #: misc/builtin_stuff.cc:226
 msgid "Cubic Curve with Cusp by Four Points"
-msgstr "Curva Cúbica con Intersección por catro Puntos"
+msgstr "Curva cúbica con intersección por catro puntos"
 
 #: misc/builtin_stuff.cc:227
 msgid "A cubic curve with a horizontal cusp at the origin through four points"
@@ -1289,18 +1295,16 @@ msgstr ""
 "puntos"
 
 #: misc/builtin_stuff.cc:234
-#, fuzzy
 msgid "Cubic Function by Four Points"
-msgstr "Curva Cúbica con Intersección por catro Puntos"
+msgstr "Curva cúbica con intersección por catro puntos"
 
 #: misc/builtin_stuff.cc:235
-#, fuzzy
 msgid "A cubic function through four points"
-msgstr "Unha cónica construida através de cinco puntos"
+msgstr "Unha función cúbica construida através catro puntos"
 
 #: misc/builtin_stuff.cc:242
 msgid "Directrix of a Conic"
-msgstr "Directriz dunha Cónica"
+msgstr "Directriz dunha cónica"
 
 #: misc/builtin_stuff.cc:243
 msgid "The directrix line of a conic."
@@ -1308,7 +1312,7 @@ msgstr "A liña directriz dunha cónica."
 
 #: misc/builtin_stuff.cc:250
 msgid "Angle by Three Points"
-msgstr "Arco por Tres Puntos"
+msgstr "Angulo por tres puntos"
 
 #: misc/builtin_stuff.cc:251
 msgid "An angle defined by three points"
@@ -1316,7 +1320,7 @@ msgstr "Un ángulo definido por tres puntos"
 
 #: misc/builtin_stuff.cc:258
 msgid "Equilateral Hyperbola by Four Points"
-msgstr "Hipérbole Equilateral por catro Puntos"
+msgstr "Hipérbole equilateral por catro puntos"
 
 #: misc/builtin_stuff.cc:259
 msgid "An equilateral hyperbola constructed through four points"
@@ -1328,7 +1332,7 @@ msgstr "Construír o punto central deste segmento"
 
 #: misc/builtin_stuff.cc:282 objects/line_imp.cc:124
 msgid "Mid Point"
-msgstr "Punto Central"
+msgstr "Punto central"
 
 #: misc/builtin_stuff.cc:283
 msgid "The midpoint of a segment or two other points"
@@ -1340,79 +1344,73 @@ msgstr "Vector"
 
 #: misc/builtin_stuff.cc:293
 msgid "Construct a vector from two given points."
-msgstr "Construír un vector a partir de dous puntos."
+msgstr "Constrúe un vector a partir de dous puntos."
 
 #: misc/builtin_stuff.cc:300
 msgid "Vector Sum"
-msgstr "Suma de Vectores"
+msgstr "Suma de vectores"
 
 #: misc/builtin_stuff.cc:301
 msgid "Construct the vector sum of two vectors."
-msgstr "Construír a suma de dous vectores."
+msgstr "Constrúe a suma de dous vectores."
 
 #: misc/builtin_stuff.cc:308
 msgid "Line by Vector"
-msgstr "Liña A Partir de Vector"
+msgstr "Liña a partir de vector"
 
 #: misc/builtin_stuff.cc:309
 msgid "Construct the line by a given vector though a given point."
-msgstr ""
-"Construír a liña coa dirección dun vector dado e que pasa por un ponto dado."
+msgstr "Constrúe a liña coa dirección dun vector dado e que pasa por un ponto dado."
 
 #: misc/builtin_stuff.cc:316
 msgid "Half-Line by Vector"
-msgstr "Semi-Recta a Partir de Vector"
+msgstr "Semi-recta a partir dun vector"
 
 #: misc/builtin_stuff.cc:317
 msgid "Construct the half-line by a given vector starting at given point."
-msgstr "Construír unha semi-recta por un vector dado a comezar nun punto dado."
+msgstr "Constrúe unha semi-recta por un vector dado a comezar nun punto dado."
 
 #: misc/builtin_stuff.cc:324
 msgid "Arc by Three Points"
-msgstr "Arco por Tres Puntos"
+msgstr "Arco por tres puntos"
 
 #: misc/builtin_stuff.cc:325
 msgid "Construct an arc through three points."
-msgstr "Construír un arco a partir de tres puntos."
+msgstr "Constrúe un arco que pasa por tres puntos."
 
 #: misc/builtin_stuff.cc:332
-#, fuzzy
 msgid "Conic Arc by Center and Three Points"
-msgstr "Arco por Tres Puntos"
+msgstr "Arco cónico polo centro e tres puntos"
 
 #: misc/builtin_stuff.cc:333
-#, fuzzy
 msgid "Construct a conic arc with given center through three points."
-msgstr "Construír un arco a partir de tres puntos."
+msgstr "Constrúe un arco de cónica cun centro dado e que pasa por tres puntos."
 
 #: misc/builtin_stuff.cc:340
-#, fuzzy
 msgid "Conic Arc by Five Points"
-msgstr "Cónica por Cinco Puntos"
+msgstr "Arco cónico por cinco puntos"
 
 #: misc/builtin_stuff.cc:341
-#, fuzzy
 msgid "Construct a conic arc through five points."
-msgstr "Construír un arco a partir de tres puntos."
+msgstr "Constrúe un arco cónico a partir de cinco puntos."
 
 #: misc/builtin_stuff.cc:348
 msgid "Arc by Center, Angle && Point"
-msgstr "Arco polo Centro, Ángulo e por un Punto"
+msgstr "Arco polo centro, ángulo e por un punto"
 
 #: misc/builtin_stuff.cc:349
-msgid ""
-"Construct an arc by its center and a given angle, starting at a given point"
+msgid "Construct an arc by its center and a given angle, starting at a given point"
 msgstr ""
-"Construír un arco con base no seu centro e nun ángulo dado, a iniciar nun "
+"Constrúe un arco con base no seu centro e nun ángulo dado, a iniciar nun "
 "punto dado"
 
 #: misc/builtin_stuff.cc:357
 msgid "Parabola by Directrix && Focus"
-msgstr "Parábola por Directriz e Foco"
+msgstr "Parábola pola directriz e o foco"
 
 #: misc/builtin_stuff.cc:358
 msgid "A parabola defined by its directrix and focus"
-msgstr "Unha parábola defina pola súa directriz e foco"
+msgstr "Unha parábola definida pola directriz e o foco"
 
 #: misc/builtin_stuff.cc:378
 msgid "Translate"
@@ -1424,7 +1422,7 @@ msgstr "A translación dun obxecto por un vector"
 
 #: misc/builtin_stuff.cc:386
 msgid "Reflect in Point"
-msgstr "Reflectir nun Punto"
+msgstr "Reflectir nun punto"
 
 #: misc/builtin_stuff.cc:387
 msgid "An object reflected in a point"
@@ -1432,7 +1430,7 @@ msgstr "Un obxecto reflectido nun punto"
 
 #: misc/builtin_stuff.cc:394
 msgid "Reflect in Line"
-msgstr "Reflectir nunha Liña"
+msgstr "Reflectir nunha liña"
 
 #: misc/builtin_stuff.cc:395
 msgid "An object reflected in a line"
@@ -1448,29 +1446,27 @@ msgstr "Un obxecto rodado un determinado ángulo arredor dun punto"
 
 #: misc/builtin_stuff.cc:410
 msgid "Scale"
-msgstr "Escala"
+msgstr "Escalar"
 
 #: misc/builtin_stuff.cc:411
-msgid ""
-"Scale an object over a point, by the ratio given by the length of a segment"
+msgid "Scale an object over a point, by the ratio given by the length of a segment"
 msgstr ""
 "Escala un obxecto através dun punto, usando a relación dada pola lonxitude "
 "dun segmento"
 
 #: misc/builtin_stuff.cc:418
 msgid "Scale over Line"
-msgstr "Escala Sobre unha Liña"
+msgstr "Escalar sobre unha liña"
 
 #: misc/builtin_stuff.cc:419
-msgid ""
-"An object scaled over a line, by the ratio given by the length of a segment"
+msgid "An object scaled over a line, by the ratio given by the length of a segment"
 msgstr ""
 "Un obxecto escalado através dunha liña, usando a relación dada pola "
 "lonxitude dun segmento"
 
 #: misc/builtin_stuff.cc:426
 msgid "Scale (ratio given by two segments)"
-msgstr "Escala (relación dada por dous segmentos)"
+msgstr "Escalar (relación dada por dous segmentos)"
 
 #: misc/builtin_stuff.cc:427
 msgid ""
@@ -1482,7 +1478,7 @@ msgstr ""
 
 #: misc/builtin_stuff.cc:434
 msgid "Scale over Line (ratio given by two segments)"
-msgstr "Escala através de Liña (relación dato por dous segmentos)"
+msgstr "Escalar sobre unha liña (relación dada por dous segmentos)"
 
 #: misc/builtin_stuff.cc:435
 msgid ""
@@ -1494,20 +1490,19 @@ msgstr ""
 
 #: misc/builtin_stuff.cc:442
 msgid "Apply Similitude"
-msgstr "Aplicar unha Semellanza"
+msgstr "Aplicar unha semellanza"
 
 #: misc/builtin_stuff.cc:443
-#, fuzzy
 msgid ""
 "Apply a similitude to an object (the sequence of a scaling and rotation "
 "around a center)"
 msgstr ""
-"Aplica unha semellanza a un obxecto (un redimensionamento do obxecto "
-"acompañado dunha rotación en torno dun centro)"
+"Aplica unha semellanza a un obxecto (unha secuencia de escalado e rotación "
+"en torno dun centro)"
 
 #: misc/builtin_stuff.cc:450
 msgid "Harmonic Homology"
-msgstr "Homoloxía Harmónica"
+msgstr "Homoloxía harmónica"
 
 #: misc/builtin_stuff.cc:451
 msgid ""
@@ -1519,7 +1514,7 @@ msgstr ""
 
 #: misc/builtin_stuff.cc:466
 msgid "Draw Projective Shadow"
-msgstr "Deseñar a Sombra Proxectada"
+msgstr "Debuxar a sombra proxectada"
 
 #: misc/builtin_stuff.cc:467
 msgid ""
@@ -1531,7 +1526,7 @@ msgstr ""
 
 #: misc/builtin_stuff.cc:482
 msgid "Asymptotes of a Hyperbola"
-msgstr "Asímptotas dunha Hipérbole"
+msgstr "Asímptotas dunha hipérbole"
 
 #: misc/builtin_stuff.cc:483
 msgid "The two asymptotes of a hyperbola."
@@ -1539,15 +1534,15 @@ msgstr "As dúas asímptotas dunha hipérbole."
 
 #: misc/builtin_stuff.cc:496
 msgid "Triangle by Its Vertices"
-msgstr "Triángulo polos Seus Vértices"
+msgstr "Triángulo polos seus vértices"
 
 #: misc/builtin_stuff.cc:497
 msgid "Construct a triangle given its three vertices."
-msgstr "Construír unha triángulo dados os seus tres vértices."
+msgstr "Constrúe unha triángulo dados os seus tres vértices."
 
 #: misc/builtin_stuff.cc:519
 msgid "Convex Hull"
-msgstr "Corpo Convexo"
+msgstr "Corpo convexo"
 
 #: misc/builtin_stuff.cc:520
 msgid "A polygon that corresponds to the convex hull of another polygon"
@@ -1555,23 +1550,23 @@ msgstr "Un polígono que corresponde ao corpo convexo de outro polígono"
 
 #: misc/builtin_stuff.cc:534
 msgid "Parallel Test"
-msgstr "Proba de Paralelismo"
+msgstr "Proba de paralelismo"
 
 #: misc/builtin_stuff.cc:535
 msgid "Test whether two given lines are parallel"
-msgstr "Verifica se dúas liñas dada son paralelas"
+msgstr "Comproba see dúas liñas dada son paralelas"
 
 #: misc/builtin_stuff.cc:542
 msgid "Orthogonal Test"
-msgstr "Probas de Ortogonalidade"
+msgstr "Proba de ortogonalidade"
 
 #: misc/builtin_stuff.cc:543
 msgid "Test whether two given lines are orthogonal"
-msgstr "Proba se dúas liñas indicadas son ortogonais"
+msgstr "Comproba se dúas liñas indicadas son ortogonais"
 
 #: misc/builtin_stuff.cc:550
 msgid "Collinear Test"
-msgstr "Probas de Colinearidade"
+msgstr "Proba de colinearidade"
 
 #: misc/builtin_stuff.cc:551
 msgid "Test whether three given points are collinear"
@@ -1579,7 +1574,7 @@ msgstr "Comproba se tres puntos indicados son colineares"
 
 #: misc/builtin_stuff.cc:558
 msgid "Contains Test"
-msgstr "Probas de Pertenza"
+msgstr "Proba de pertenza"
 
 #: misc/builtin_stuff.cc:559
 msgid "Test whether a given curve contains a given point"
@@ -1587,7 +1582,7 @@ msgstr "Comproba se unha curva dada contén un punto determinado"
 
 #: misc/builtin_stuff.cc:566
 msgid "In Polygon Test"
-msgstr "Probas de No Polígono"
+msgstr "Proba de no polígono"
 
 #: misc/builtin_stuff.cc:567
 msgid "Test whether a given polygon contains a given point"
@@ -1595,36 +1590,33 @@ msgstr "Comproba se un polígono contén un punto dado"
 
 #: misc/builtin_stuff.cc:574
 msgid "Convex Polygon Test"
-msgstr "Probas de Polígono Convexo"
+msgstr "Proba de polígono convexo"
 
 #: misc/builtin_stuff.cc:575
 msgid "Test whether a given polygon is convex"
 msgstr "Comproba se un polígono dado é convexo"
 
 #: misc/builtin_stuff.cc:582
-#, fuzzy
 msgid "Existence Test"
-msgstr "Probas de Distancia"
+msgstr "Proba de existencia"
 
 #: misc/builtin_stuff.cc:583
-#, fuzzy
 msgid "Test whether a given object is constructible"
-msgstr "Comproba se un polígono dado é convexo"
+msgstr "Comproba se un polígono dado é construíbel"
 
 #: misc/builtin_stuff.cc:590
 msgid "Distance Test"
-msgstr "Probas de Distancia"
+msgstr "Probas de distancia"
 
 #: misc/builtin_stuff.cc:591
 msgid ""
 "Test whether a given point have the same distance from a given point and "
 "from another given point"
-msgstr ""
-"Comproba se un punto dado ten a mesma distancia a outro punto e a máis outro"
+msgstr "Comproba se un punto dado ten a mesma distancia a outro punto e a máis outro"
 
 #: misc/builtin_stuff.cc:599
 msgid "Vector Equality Test"
-msgstr "Probas de Igualdade de Vectores"
+msgstr "Proba de igualdade de vectores"
 
 #: misc/builtin_stuff.cc:600
 msgid "Test whether two vectors are equal"
@@ -1632,11 +1624,11 @@ msgstr "Comproba se dous vectores son iguais"
 
 #: misc/builtin_stuff.cc:641 modes/popup.cc:1009
 msgid "Python Script"
-msgstr "Guión de Python"
+msgstr "Script en Python"
 
 #: misc/builtin_stuff.cc:642
 msgid "Construct a new Python script."
-msgstr "Construír un novo guión de Python."
+msgstr "Constrúe un novo script de Python."
 
 #: misc/goniometry.cc:122
 msgctxt "Translators: Degrees"
@@ -1667,36 +1659,35 @@ msgstr "Punto"
 
 #: misc/guiaction.cc:174
 msgid "Construct a text label."
-msgstr "Construír unha etiqueta de texto."
+msgstr "Constrúe unha etiqueta de texto."
 
 #: misc/guiaction.cc:184
 msgid "Text Label"
-msgstr "Etiqueta de Texto"
+msgstr "Etiqueta de texto"
 
 #: misc/guiaction.cc:205
 msgid "Construct a Point by its Coordinates"
-msgstr "Construír un Punto dadas as Súas Coordenadas"
+msgstr "Constrúe un punto dadas as súas coordenadas"
 
 #: misc/guiaction.cc:215
 msgid "Point by Coordinates"
-msgstr "Punto por Coordenadas"
+msgstr "Punto dadas as coordenadas"
 
 #: misc/guiaction.cc:228
 msgid "Fixed Point"
-msgstr "Punto Fixo"
+msgstr "Punto fixo"
 
 #: misc/guiaction.cc:229
 msgid "Enter the coordinates for the new point."
 msgstr "Indique as coordenadas do novo punto."
 
 #: misc/guiaction.cc:250
-#, fuzzy
 msgid "Construct a Numeric Value"
-msgstr "Construír unha etiqueta de texto."
+msgstr "Constrúe unha valor numérico."
 
 #: misc/guiaction.cc:260
 msgid "Numeric Value"
-msgstr ""
+msgstr "Valor numérico"
 
 #: misc/kigfiledialog.cc:54 kig/kig_part.cpp:656 modes/typesdialog.cpp:455
 #, kde-format
@@ -1705,11 +1696,11 @@ msgstr "O ficheiro \"%1\" xa existe. Desexa sobrescrebelo?"
 
 #: misc/kigfiledialog.cc:55 kig/kig_part.cpp:657 modes/typesdialog.cpp:457
 msgid "Overwrite File?"
-msgstr "Sobrescreber o Ficheiro?"
+msgstr "Desexa sobrescreber o ficheiro?"
 
 #: misc/kiginputdialog.cc:130
 msgid "Set Angle Size"
-msgstr "Cambiar o Tamaño do Ángulo"
+msgstr "Mudar o tamaño do ángulo"
 
 #: misc/kiginputdialog.cc:144
 msgid "Insert the new size of this angle:"
@@ -1720,16 +1711,15 @@ msgid "Use this edit field to modify the size of this angle."
 msgstr "Utilice este campo de edición para modificar o tamaño deste ángulo."
 
 #: misc/kiginputdialog.cc:162
-#, fuzzy
 msgid ""
 "Choose from this list the goniometric unit you want to use to modify the "
 "size of this angle.<br />\n"
 "If you switch to another unit, the value in the edit field on the left will "
 "be converted to the new selected unit."
 msgstr ""
-"Escolla da lista a unidade goniométrica que desexa utilizar para modificar o "
-"tamaño do ángulo.<br>\n"
-"Se cambia para outra unidade, o valor no campo de edición á esquerda é "
+"Escolla na lista a unidade goniométrica que desexa utilizar para modificar o "
+"tamaño do ángulo.<br/>\n"
+"Se troca para outra unidade, o valor no campo de edición á esquerda é "
 "convertido para a nova unidade escollida."
 
 #: misc/lists.cc:302 misc/lists.cc:308
@@ -1752,27 +1742,27 @@ msgstr ""
 "Este ficheiro foi criado por unha versión moi antiga de Kig (antes da 0.4). "
 "O soporte para este formato foi quitado das versións recentes de Kig. Pode "
 "tentar aceder a este ficheiro cunha versión máis antiga de Kig (da 0.4 á "
-"0.6) e despois guardala no novo formato."
+"0.6) e despois gardala no novo formato."
 
 #: misc/lists.cc:376
 #, kde-format
 msgid "Unnamed Macro #%1"
-msgstr "Macro Sen Nome #%1"
+msgstr "Macro sen nome nº%1"
 
 #: misc/object_hierarchy.cc:551
-#, fuzzy, kde-format
+#, kde-format
 msgid ""
 "This Kig file uses an object of type \"%1\", which this Kig version does not "
 "support. Perhaps you have compiled Kig without support for this object type, "
 "or perhaps you are using an older Kig version."
 msgstr ""
-"Este ficheiro de Kig usa un obxecto do tipo \"%1\", o cal esta versión do  "
-"Kig non soporta. Talvez o usuario teña compilade Kig sen o soporte para este "
+"Este ficheiro de Kig utiliza un obxecto do tipo \"%1\", que non está soportado "
+"nesta versión do Kig. Talvez o usuario teña compilado Kig sen o soporte para este "
 "tipo de obxecto, ou estexa a usar unha versión máis antiga de Kig."
 
 #: misc/special_constructors.cc:322
 msgid "Radical Lines for Conics"
-msgstr "Liñas Radicais das Cónicas"
+msgstr "Liñas radicais das cónicas"
 
 #: misc/special_constructors.cc:323
 msgid ""
@@ -1784,19 +1774,17 @@ msgstr ""
 
 #: misc/special_constructors.cc:381 misc/special_constructors.cc:477
 msgid "Moving Point"
-msgstr "Punto en Movemento"
+msgstr "Punto en movemento"
 
 #: misc/special_constructors.cc:382
 msgid ""
 "Select the moving point, which will be moved around while drawing the "
 "locus..."
-msgstr ""
-"Escolla o punto en movemento, que desexa que sexa movido mentres se debuxa o "
-"locus..."
+msgstr "Escolla o punto en movemento, que se moverá mentres se debuxa o locus..."
 
 #: misc/special_constructors.cc:383
 msgid "Following Point"
-msgstr "Punto a Seguir"
+msgstr "Punto a seguir"
 
 #: misc/special_constructors.cc:384
 msgid ""
@@ -1812,29 +1800,27 @@ msgstr "Locus"
 
 #: misc/special_constructors.cc:388
 msgid "A locus"
-msgstr "Un Locus"
+msgstr "Un locus"
 
 #: misc/special_constructors.cc:478
 msgid "Dependent Point"
-msgstr "Punto Dependente"
+msgstr "Punto dependente"
 
 #: misc/special_constructors.cc:514
 msgid "Polygon by Its Vertices"
-msgstr "Polígono polos Seus Vértices"
+msgstr "Polígono polos seus vértices"
 
 #: misc/special_constructors.cc:519
 msgid "Construct a polygon by giving its vertices"
-msgstr "Construír un polígono, indicando os seus vértices"
+msgstr "Constrúe un polígono, indicando os seus vértices"
 
 #: misc/special_constructors.cc:591
-msgid ""
-"... with this vertex (click on the first vertex to terminate construction)"
-msgstr ""
-"... con este vértice (prema no primeiro vértice para terminar a construción)"
+msgid "... with this vertex (click on the first vertex to terminate construction)"
+msgstr "... con este vértice (prema no primeiro vértice para terminar a construción)"
 
 #: misc/special_constructors.cc:592
 msgid "Construct a polygon with this vertex"
-msgstr "Construír un polígono con este vértice"
+msgstr "Constrúe un polígono con este vértice"
 
 #: misc/special_constructors.cc:599 misc/special_constructors.cc:1477
 msgid "Select a point to be a vertex of the new polygon..."
@@ -1846,11 +1832,11 @@ msgstr "Polígono"
 
 #: misc/special_constructors.cc:655
 msgid "Construct the vertices of this polygon..."
-msgstr "Construír os vértices deste polígono..."
+msgstr "Constrúe os vértices deste polígono..."
 
 #: misc/special_constructors.cc:659
 msgid "Vertices of a Polygon"
-msgstr "Vértices dun Polígono"
+msgstr "Vértices dun polígono"
 
 #: misc/special_constructors.cc:660
 msgid "The vertices of a polygon."
@@ -1858,11 +1844,11 @@ msgstr "Os vértices dun polígono."
 
 #: misc/special_constructors.cc:722
 msgid "Construct the sides of this polygon..."
-msgstr "Construír os lados deste polígono..."
+msgstr "Constrúe os lados deste polígono..."
 
 #: misc/special_constructors.cc:726
 msgid "Sides of a Polygon"
-msgstr "Lados dun Polígono"
+msgstr "Lados dun polígono"
 
 #: misc/special_constructors.cc:727
 msgid "The sides of a polygon."
@@ -1870,19 +1856,19 @@ msgstr "Os lados dun polígono."
 
 #: misc/special_constructors.cc:798
 msgid "Regular Polygon with Given Center"
-msgstr "Polígono Regular co Centro Dato"
+msgstr "Polígono regular co centro dado"
 
 #: misc/special_constructors.cc:803
 msgid "Construct a regular polygon with a given center and vertex"
-msgstr "Construír un polígono regular dados un centro e un vértice"
+msgstr "Constrúe un polígono regular dados un centro e un vértice"
 
 #: misc/special_constructors.cc:962
 msgid "Construct a regular polygon with this center"
-msgstr "Construír un polígono regular con este centro"
+msgstr "Constrúe un polígono regular con este centro"
 
 #: misc/special_constructors.cc:966
 msgid "Construct a regular polygon with this vertex"
-msgstr "Construír un polígono regular con este vértice"
+msgstr "Constrúe un polígono regular con este vértice"
 
 #: misc/special_constructors.cc:978
 #, kde-format
@@ -1908,39 +1894,39 @@ msgstr "Mova o cursor para obter o número desexado de lados..."
 
 #: misc/special_constructors.cc:1198
 msgid "Construct the Radical Lines of This Circle"
-msgstr "Construír as Liñas Radicais deste Círculo"
+msgstr "Constrúe as liñas radicais deste círculo"
 
 #: misc/special_constructors.cc:1200
 msgid "Construct the Radical Lines of This Conic"
-msgstr "Construír as Liñas Radicais desta Cónica"
+msgstr "Constrúe as liñas radicais desta cónica"
 
 #: misc/special_constructors.cc:1215
 msgid "Generic Affinity"
-msgstr "Afinidade Xenérica"
+msgstr "Afinidade xenérica"
 
 #: misc/special_constructors.cc:1216
 msgid ""
 "The unique affinity that maps three points (or a triangle) onto three other "
 "points (or a triangle)"
 msgstr ""
-"A afinidade única que mapea 3 puntos (ou un triángulo) noutros 3 puntos (ou "
+"A afinidade única que aplica 3 puntos (ou un triángulo) noutros 3 puntos (ou "
 "un triángulo)"
 
 #: misc/special_constructors.cc:1239
 msgid "Generic Projective Transformation"
-msgstr "Transformación por Proxección xenérica"
+msgstr "Transformación por proxección xenérica"
 
 #: misc/special_constructors.cc:1240
 msgid ""
 "The unique projective transformation that maps four points (or a "
 "quadrilateral) onto four other points (or a quadrilateral)"
 msgstr ""
-"A transformación por proxección que mapea 4 puntos (un cuadrilátero) noutros "
+"A transformación por proxección que aplica 4 puntos (un cuadrilátero) noutros "
 "4 puntos (ou un cuadrilátero) "
 
 #: misc/special_constructors.cc:1267
 msgid "Inversion of Point, Line or Circle"
-msgstr "Inversión dun Punto, Liña ou Círculo"
+msgstr "Inversión dun punto, liña ou círculo"
 
 #: misc/special_constructors.cc:1268
 msgid "The inversion of a point, line or circle with respect to a circle"
@@ -1948,12 +1934,11 @@ msgstr "A inversión dun punto, liña ou círculo en relación a un círculo"
 
 #: misc/special_constructors.cc:1332
 msgid "Measure Transport"
-msgstr "Transporte de Medida"
+msgstr "Transporte de medida"
 
 #: misc/special_constructors.cc:1337
 msgid "Transport the measure of a segment or arc over a line or circle."
-msgstr ""
-"Transporta a medida dun segmento ou arco por unha liña ou circunferencia."
+msgstr "Transporta a medida dun segmento ou arco por unha liña ou circunferencia."
 
 #: misc/special_constructors.cc:1450 objects/special_calcers.cc:24
 msgid "Segment to transport"
@@ -1964,9 +1949,8 @@ msgid "Arc to transport"
 msgstr "Arco a transportar"
 
 #: misc/special_constructors.cc:1454
-#, fuzzy
 msgid "Value to transport"
-msgstr "Arco a transportar"
+msgstr "Valor a transportar"
 
 #: misc/special_constructors.cc:1456
 msgid "Transport a measure on this line"
@@ -1990,28 +1974,27 @@ msgstr "Iniciar o transporte neste punto da curva"
 
 #: misc/special_constructors.cc:1514 objects/intersection_types.cc:36
 msgid "Intersect with this conic"
-msgstr "Intersección con esta cónica"
+msgstr "Intersecar con esta cónica"
 
 #: misc/special_constructors.cc:1516 misc/special_constructors.cc:1525
 #: objects/intersection_types.cc:32
 msgid "Intersect with this line"
-msgstr "Intersección con esta liña"
+msgstr "Intersecar con esta liña"
 
 #: misc/special_constructors.cc:1523 objects/intersection_types.cc:155
 #: objects/intersection_types.cc:223
-#, fuzzy
 #| msgid "Intersect with this conic"
 msgid "Intersect with this cubic"
-msgstr "Intersección con esta cónica"
+msgstr "Intersectar con esta cúbica"
 
 #: misc/special_constructors.cc:1532 misc/special_constructors.cc:1534
 #: objects/intersection_types.cc:471 objects/intersection_types.cc:473
 msgid "Intersect with this circle"
-msgstr "Intersección con este círculo"
+msgstr "Intersectar con este círculo"
 
 #: misc/special_constructors.cc:1540
 msgid "Intersect"
-msgstr "Intersección"
+msgstr "Intersectar"
 
 #: misc/special_constructors.cc:1541
 msgid "The intersection of two objects"
@@ -2019,61 +2002,59 @@ msgstr "A intersección de dous obxectos"
 
 #: misc/special_constructors.cc:1628
 msgid "Intersect this Circle"
-msgstr "Intersectar este Círculo"
+msgstr "Intersectar este círculo"
 
 #: misc/special_constructors.cc:1630
 msgid "Intersect this Conic"
-msgstr "Intersectar esta Cónica"
+msgstr "Intersectar esta cónica"
 
 #: misc/special_constructors.cc:1632
 msgid "Intersect this Line"
-msgstr "Intersectar esta Liña"
+msgstr "Intersectar esta liña"
 
 #: misc/special_constructors.cc:1634
 msgid "Intersect this Cubic Curve"
-msgstr "Intersectar esta Curva Cúbica"
+msgstr "Intersectar esta curva cúbica"
 
 #: misc/special_constructors.cc:1636
 msgid "Intersect this Arc"
-msgstr "Intersectar este Arco"
+msgstr "Intersectar este arco"
 
 #: misc/special_constructors.cc:1638
 msgid "Intersect this Polygon"
-msgstr "Intersectar este Polígono"
+msgstr "Intersectar este polígono"
 
 #: misc/special_constructors.cc:1643
 msgid "with this Circle"
-msgstr "con este Círculo"
+msgstr "con este círculo"
 
 #: misc/special_constructors.cc:1645
 msgid "with this Conic"
-msgstr "con esta Cónica"
+msgstr "con esta cónica"
 
 #: misc/special_constructors.cc:1647
 msgid "with this Line"
-msgstr "con esta Liña"
+msgstr "con esta liña"
 
 #: misc/special_constructors.cc:1649
 msgid "with this Cubic Curve"
-msgstr "con esta Curva Cúbica"
+msgstr "con esta curva cúbica"
 
 #: misc/special_constructors.cc:1651
 msgid "with this Arc"
-msgstr "con este Arco"
+msgstr "con este arco"
 
 #: misc/special_constructors.cc:1653
 msgid "with this Polygon"
-msgstr "con este Polígono"
+msgstr "con este polígono"
 
 #: misc/special_constructors.cc:1663
 msgid "Construct Midpoint of This Point and Another One"
-msgstr "Construír o Punto Medio deste Punto e Outro"
+msgstr "Construír o punto medio deste punto e outro"
 
 #: misc/special_constructors.cc:1664
-msgid ""
-"Select the first of the points of which you want to construct the midpoint..."
-msgstr ""
-"Escolla o primeiro dos puntos dos cais desexa construír o punto medio..."
+msgid "Select the first of the points of which you want to construct the midpoint..."
+msgstr "Escolla o primeiro dos puntos dos cais desexa construír o punto medio..."
 
 #: misc/special_constructors.cc:1665
 msgid "Construct the midpoint of this point and another one"
@@ -2101,31 +2082,31 @@ msgstr "A liña tanxente a unha curva"
 
 #: misc/special_constructors.cc:1826
 msgid "Tangent to This Circle"
-msgstr "Tanxente a Este Círculo"
+msgstr "Tanxente a este círculo"
 
 #: misc/special_constructors.cc:1828
 msgid "Tangent to This Conic"
-msgstr "Tanxente a Esta Cónica"
+msgstr "Tanxente a esta cónica"
 
 #: misc/special_constructors.cc:1830
 msgid "Tangent to This Arc"
-msgstr "Tanxente a Este Arco"
+msgstr "Tanxente a este arco"
 
 #: misc/special_constructors.cc:1832
 msgid "Tangent to This Cubic Curve"
-msgstr "Tanxente a Esta Curva Cúbica"
+msgstr "Tanxente a esta curva cúbica"
 
 #: misc/special_constructors.cc:1834
 msgid "Tangent to This Curve"
-msgstr "Tanxente a Esta Curva"
+msgstr "Tanxente a esta curva"
 
 #: misc/special_constructors.cc:1836
 msgid "Tangent at This Point"
-msgstr "Tanxente a Este Punto"
+msgstr "Tanxente a este punto"
 
 #: misc/special_constructors.cc:1857
 msgid "Center Of Curvature"
-msgstr "Centro da Curvatura"
+msgstr "Centro da curvatura"
 
 #: misc/special_constructors.cc:1858
 msgid "The center of the osculating circle to a curve"
@@ -2133,36 +2114,34 @@ msgstr "O centro do círculo osculante a unha curva"
 
 #: misc/special_constructors.cc:1893
 msgid "Center of Curvature of This Conic"
-msgstr "Centro da Curvatura desta Cónica"
+msgstr "Centro da curvatura desta cónica"
 
 #: misc/special_constructors.cc:1895
 msgid "Center of Curvature of This Cubic Curve"
-msgstr "Centro da Curvatura desta Curva Cúbica"
+msgstr "Centro da curvatura desta curva cúbica"
 
 #: misc/special_constructors.cc:1897
 msgid "Center of Curvature of This Curve"
-msgstr "Centro da Curvatura desta Curva"
+msgstr "Centro da curvatura desta curva"
 
 #: misc/special_constructors.cc:1899
 msgid "Center of Curvature at This Point"
-msgstr "Centro da Curvatura deste Punto"
+msgstr "Centro da curvatura deste punto"
 
 #: misc/unit.cc:121
-#, fuzzy
 msgctxt "Translators: Pixel"
 msgid "pixel"
-msgstr " pixels"
+msgstr "píxel"
 
 #: misc/unit.cc:122
 msgctxt "Translators: Centimeter"
 msgid "cm"
-msgstr ""
+msgstr "cm"
 
 #: misc/unit.cc:123
-#, fuzzy
 msgctxt "Translators: Inch"
 msgid "in"
-msgstr "liña"
+msgstr "polg"
 
 #: modes/construct_mode.cc:264 modes/normal.cc:279
 msgid "Which object?"
@@ -2172,8 +2151,7 @@ msgstr "Cal obxecto?"
 msgid ""
 "Click the location where you want to place the new point, or the curve that "
 "you want to attach it to..."
-msgstr ""
-"Prema onde desexe colocar o novo punto ou na curva á que o quer anexar..."
+msgstr "Prema onde desexe colocar o novo punto ou na curva á que o quer anexar..."
 
 #: modes/construct_mode.cc:477
 msgid "Now select the location for the result label."
@@ -2181,11 +2159,11 @@ msgstr "Agora escolla onde pór a etiqueta do resultado."
 
 #: modes/edittype.cc:38
 msgid "Edit Type"
-msgstr "Editar o Tipo"
+msgstr "Editar o tipo"
 
 #: modes/edittype.cc:49
 msgid "Here you can edit the name of the current macro type."
-msgstr "Aquí  pode modificar o nome da macro actual."
+msgstr "Aquí pode modificar o nome do tipo da macro actual."
 
 #: modes/edittype.cc:52
 msgid ""
@@ -2193,13 +2171,13 @@ msgid ""
 "optional, so you can also leave this empty: if you do so, then your macro "
 "type will have no description."
 msgstr ""
-"Aquí pode editar a descrición do tipo de macro actual. Esta campo é "
-"opcional, polo que pode deixalo vacío: se o fixese, entón o seu tipo de "
+"Aquí pode editar a descrición do tipo da macro actual. Esta campo é "
+"opcional, polo que pode deixalo vacío: se o fixese, entón o tipo de "
 "macro non terá descrición."
 
 #: modes/edittype.cc:57
 msgid "Use this button to change the icon of the current macro type."
-msgstr "Utilice este botón para modificar o ícone do tipo de macro actual."
+msgstr "Utilice este botón para modificar o ícone do tipo da macro actual."
 
 #: modes/edittype.cc:81
 msgid "The name of the macro can not be empty."
@@ -2207,12 +2185,11 @@ msgstr "O nome da macro non pode estar valeiro."
 
 #: modes/historydialog.cc:41
 msgid "History Browser"
-msgstr ""
+msgstr "Navegador do historial"
 
 #: modes/historydialog.cc:125
-#, fuzzy
 msgid "Start of the construction"
-msgstr "Cancelar a Construción"
+msgstr "Inicio  da construción"
 
 #: modes/label.cc:167 modes/macrowizard.cc:130 modes/typesdialog.cpp:313
 msgid "Name"
@@ -2243,22 +2220,19 @@ msgstr "A escoller o argumento %1"
 
 #: modes/label.cc:550
 msgid "Change Label"
-msgstr "Modificar a Etiqueta"
+msgstr "Modificar a etiqueta"
 
 #: modes/label.cc:649 objects/text_type.cc:324
-#, fuzzy
 msgid "Set Value"
-msgstr "Trocar o Esti&lo"
+msgstr "Indicar o valor"
 
 #: modes/label.cc:649
-#, fuzzy
 msgid "Enter value:"
-msgstr "Indique a Etiqueta do Texto"
+msgstr "Indique o valor:"
 
 #: modes/label.cc:680
-#, fuzzy
 msgid "Select the position for the new numeric value..."
-msgstr "Escolla o punto final do novo arco..."
+msgstr "Escolla a posició do novo valor numérico..."
 
 #: modes/macro.cc:91
 msgid ""
@@ -2268,7 +2242,7 @@ msgid ""
 msgstr ""
 "Un dos obxectos do resultado que escolleu non pode ser calculado a partir "
 "dos obxectos indicados. Kig non pode calcular esta macro debido a isto. Por "
-"favor prema en Anterior e constrúa os obxectos na orde correcta..."
+"favor prema en Anterior e constrúa os obxectos na orden correcta..."
 
 #: modes/macro.cc:101
 msgid ""
@@ -2282,52 +2256,48 @@ msgstr ""
 
 #: modes/macrowizard.cc:50
 msgid "Given Objects"
-msgstr "Obxectos Dados"
+msgstr "Obxectos dados"
 
 #: modes/macrowizard.cc:57
 msgid "Select the \"given\" objects for your new macro and press \"Next\"."
-msgstr ""
-"Escolla os obxectos \"dados\" para a súa nova macro e prema en \"Seguinte\"."
+msgstr "Escolla os obxectos \"dados\" para a nova macro e prema en \"Seguinte\"."
 
 #: modes/macrowizard.cc:90
 msgid "Final Object"
-msgstr "Obxectos Finais"
+msgstr "Obxectos finais"
 
 #: modes/macrowizard.cc:97
 msgid "Select the final object(s) for your new macro."
-msgstr "Escolla os obxectos finais para a súa nova macro."
+msgstr "Escolla os obxectos finais da nova macro."
 
 #: modes/macrowizard.cc:131
 msgid "Enter a name and description for your new type."
-msgstr "Indique un nome e unha descrición para o seu novo tipo."
+msgstr "Indique un nome e unha descrición para o novo tipo."
 
 #: modes/macrowizard.cc:139
-#, fuzzy
 msgid "&Name:"
-msgstr "Nome:"
+msgstr "&Nome:"
 
 #: modes/macrowizard.cc:146
-#, fuzzy
 msgid "&Description:"
-msgstr "Descrición:"
+msgstr "&Descrición:"
 
 #: modes/macrowizard.cc:152
-#, fuzzy
 msgid "&Icon:"
-msgstr "Ícone"
+msgstr "Í&cone:"
 
 #: modes/macrowizard.cc:174
 msgid "Define New Macro"
-msgstr "Definir unha Macro Nova"
+msgstr "Definir unha macro nova"
 
 #: modes/moving.cc:157
 #, kde-format
 msgid "Move %1 Objects"
-msgstr "Mover %1 Obxectos"
+msgstr "Mover %1 obxectos"
 
 #: modes/moving.cc:240
 msgid "Redefine Point"
-msgstr "Redefinir Punto"
+msgstr "Redefinir o punto"
 
 #: modes/popup.cc:194
 msgid "Kig Document"
@@ -2336,7 +2306,7 @@ msgstr "Documento Kig"
 #: modes/popup.cc:203
 #, kde-format
 msgid "%1 Objects"
-msgstr "%1 Obxectos"
+msgstr "%1 obxectos"
 
 #: modes/popup.cc:245
 msgid "&Transform"
@@ -2348,61 +2318,59 @@ msgstr "Compro&bar"
 
 #: modes/popup.cc:247
 msgid "Const&ruct"
-msgstr "Const&ruír o"
+msgstr "Const&ruír"
 
 #: modes/popup.cc:248
 msgid "&Start"
-msgstr ""
+msgstr "&Comezar"
 
 #: modes/popup.cc:249
 msgid "Add Te&xt Label"
-msgstr "Engadir Etiqueta de Te&xto"
+msgstr "Engadir unha etiqueta de te&xto"
 
 #: modes/popup.cc:250
 msgid "Set Co&lor"
-msgstr "Tro&car a Cor"
+msgstr "Tro&car a cor"
 
 #: modes/popup.cc:251
 msgid "Set &Pen Width"
-msgstr "Trocar o &Ancho da Liña"
+msgstr "Trocar o &ancho da liña"
 
 #: modes/popup.cc:252
 msgid "Set St&yle"
-msgstr "Trocar o Esti&lo"
+msgstr "Trocar o esti&lo"
 
 #: modes/popup.cc:254
 msgid "Set Coordinate S&ystem"
-msgstr "Trocar o S&istema de Coordenadas"
+msgstr "Trocar o s&istema de coordenadas"
 
 #: modes/popup.cc:336
 msgid "Black"
-msgstr ""
+msgstr "Negro"
 
 #: modes/popup.cc:337
-#, fuzzy
 msgid "Gray"
-msgstr "Grad"
+msgstr "Gris"
 
 #: modes/popup.cc:338
-#, fuzzy
 msgid "Red"
-msgstr "Rad"
+msgstr "Vermello"
 
 #: modes/popup.cc:339
 msgid "Green"
-msgstr ""
+msgstr "Verde"
 
 #: modes/popup.cc:340
 msgid "Cyan"
-msgstr ""
+msgstr "Azul celeste"
 
 #: modes/popup.cc:341
 msgid "Yellow"
-msgstr ""
+msgstr "Amarelo"
 
 #: modes/popup.cc:342
 msgid "Dark Red"
-msgstr ""
+msgstr "Roxo"
 
 #: modes/popup.cc:366
 msgid "&Hide"
@@ -2418,11 +2386,11 @@ msgstr "&Mover"
 
 #: modes/popup.cc:384
 msgid "&Custom Color"
-msgstr "&Cor Personalizada"
+msgstr "&Cor personalizada"
 
 #: modes/popup.cc:473
 msgid "Set &Name..."
-msgstr "Re&nomear..."
+msgstr "Mudar no &nome..."
 
 #: modes/popup.cc:477
 msgid "&Name"
@@ -2430,42 +2398,42 @@ msgstr "&Nome"
 
 #: modes/popup.cc:513 modes/popup.cc:530
 msgid "Set Object Name"
-msgstr "Escoller o Nome do Obxecto"
+msgstr "Escoller o nome do obxecto"
 
 #: modes/popup.cc:513
 msgid "Set Name of this Object:"
-msgstr "Indique o Nome do Obxecto:"
+msgstr "Indique o nome do obxecto:"
 
 #: modes/popup.cc:628
 msgid "Change Object Color"
-msgstr "Trocar a Cor do Obxecto"
+msgstr "Trocar a cor do obxecto"
 
 #: modes/popup.cc:644
 msgid "Change Object Width"
-msgstr "Trocar o Ancho do Obxecto"
+msgstr "Trocar o ancho do obxecto"
 
 #: modes/popup.cc:672
 msgid "Change Point Style"
-msgstr "Trocar o Estilo do Punto"
+msgstr "Trocar o estilo do punto"
 
 #: modes/popup.cc:685
 msgid "Change Object Style"
-msgstr "Trocar o Estilo do Obxecto"
+msgstr "Trocar o estilo do obxecto"
 
 #: modes/popup.cc:921 kig/kig_part.cpp:254
 msgid "U&nhide All"
 msgstr "&Mostrar todo"
 
 #: modes/popup.cc:1134
-#, fuzzy, kde-format
+#, kde-format
 msgid "%1 Object"
 msgid_plural "%1 Objects"
-msgstr[0] "%1 Obxectos"
-msgstr[1] "%1 Obxectos"
+msgstr[0] "%1 obxecto"
+msgstr[1] "%1 obxectos"
 
 #: modes/textlabelwizard.cc:50
 msgid "Enter Label Text"
-msgstr "Indique a Etiqueta do Texto"
+msgstr "Indique a etiqueta do texto"
 
 #: modes/textlabelwizard.cc:59
 #, kde-format
@@ -2474,17 +2442,17 @@ msgid ""
 "If you want to show variable parts, then put %1, %2, ... at the appropriate "
 "places (e.g. \"This segment is %1 units long.\")."
 msgstr ""
-"Indique aquí o texto para a súa etiqueta e prema en \"Seguinte\".\n"
+"Indique aquí o texto para a etiqueta e prema en \"Seguinte\".\n"
 "Se quer mostrar partes variábeis, poña entón %1, %2, ... nos lugares "
 "indicados (p.ex. \"Este segmento ten %1 unidades de tamaño.\")."
 
 #: modes/textlabelwizard.cc:69
 msgid "Show text in a frame"
-msgstr "Mostrar texto nunha moldura"
+msgstr "Mostrar o texto nunha moldura"
 
 #: modes/textlabelwizard.cc:93 scripting/newscriptwizard.cc:67
 msgid "Select Arguments"
-msgstr "Escoller os Argumentos"
+msgstr "Escoller os argumentos"
 
 #: modes/textlabelwizard.cc:102
 msgid ""
@@ -2498,39 +2466,35 @@ msgstr ""
 
 #: modes/textlabelwizard.cc:123
 msgid "Construct Label"
-msgstr "Construír Etiqueta"
+msgstr "Construír a etiqueta"
 
 #: objects/angle_type.cc:40
 msgid "Construct an angle through this point"
-msgstr "Construír un ángulo através deste punto"
+msgstr "Construir un ángulo através deste punto"
 
 #: objects/angle_type.cc:45
-msgid ""
-"Select a point that the first half-line of the angle should go through..."
-msgstr ""
-"Escolla un punto polo cal deberá pasar a primeira semi-recta do ángulo..."
+msgid "Select a point that the first half-line of the angle should go through..."
+msgstr "Escolla un punto polo cal deberá pasar a primeira semi-recta do ángulo..."
 
 #: objects/angle_type.cc:46
 msgid "Construct an angle at this point"
-msgstr "Construír un ángulo neste punto"
+msgstr "Construir un ángulo neste punto"
 
 #: objects/angle_type.cc:47
 msgid "Select the point to construct the angle in..."
 msgstr "Escolla o punto co cal criar o ángulo..."
 
 #: objects/angle_type.cc:49
-msgid ""
-"Select a point that the second half-line of the angle should go through..."
-msgstr ""
-"Escolla un punto polo cal deberá pasar a segunda semi-recta do ángulo..."
+msgid "Select a point that the second half-line of the angle should go through..."
+msgstr "Escolla un punto polo cal deberá pasar a segunda semi-recta do ángulo..."
 
 #: objects/angle_type.cc:104
 msgid "Set Si&ze"
-msgstr "Trocar o Tama&ño"
+msgstr "Trocar o tama&ño"
 
 #: objects/angle_type.cc:148
 msgid "Resize Angle"
-msgstr "Trocar o Tamaño do Ángulo"
+msgstr "Mudar o tamaño do ángulo"
 
 #: objects/arc_type.cc:47
 msgid "Construct an arc starting at this point"
@@ -2573,48 +2537,40 @@ msgid "Select the angle of the new arc..."
 msgstr "Escolla o ángulo do novo arco..."
 
 #: objects/arc_type.cc:225
-#, fuzzy
 msgid "Construct a conic arc starting at this point"
-msgstr "Construír un arco con inicio neste punto"
+msgstr "Construír un arco cónico con inicio neste punto"
 
 #: objects/arc_type.cc:226
-#, fuzzy
 msgid "Select the start point of the new conic arc..."
-msgstr "Escolla o punto inicial do novo arco..."
+msgstr "Escolla o punto inicial do novo arco cónico..."
 
 #: objects/arc_type.cc:227
-#, fuzzy
 msgid "Construct a conic arc through this point"
-msgstr "Construír unha cónica através deste punto"
+msgstr "Construír un arco cónico através deste punto"
 
 #: objects/arc_type.cc:228
-#, fuzzy
 msgid "Select a point for the new conic arc to go through..."
-msgstr "Escolla un punto polo cal pasa a nova cónica..."
+msgstr "Escolla un punto polo cal pasa o novo arco cónico..."
 
 #: objects/arc_type.cc:229
-#, fuzzy
 msgid "Construct a conic arc ending at this point"
-msgstr "Construír un arco rematado neste punto"
+msgstr "Construír un arco cónico rematado neste punto"
 
 #: objects/arc_type.cc:230
-#, fuzzy
 msgid "Select the end point of the new conic arc..."
-msgstr "Escolla o punto final do novo arco..."
+msgstr "Escolla o punto final do novo arco cónico..."
 
 #: objects/arc_type.cc:234
-#, fuzzy
 msgid "Construct an conic arc with this center"
-msgstr "Construír un arco con este centro"
+msgstr "Construír un arco cónico con este centro"
 
 #: objects/arc_type.cc:235
-#, fuzzy
 msgid "Select the center of the new conic arc..."
-msgstr "Escolla o centro do novo arco..."
+msgstr "Escolla o centro do novo arco cónico..."
 
 #: objects/bogus_imp.cc:338
 msgid "Test Result"
-msgstr "Resultado das Probas"
+msgstr "Resultado das probas"
 
 #: objects/centerofcurvature_type.cc:36
 msgid "Select a point on the curve..."
@@ -2634,19 +2590,20 @@ msgstr "Raio"
 
 #: objects/circle_imp.cc:149 objects/conic_imp.cc:85 objects/other_imp.cc:377
 msgid "Center"
-msgstr ""
+msgstr "Centro"
 
 #: objects/circle_imp.cc:150
 msgid "Expanded Cartesian Equation"
-msgstr "Ecuación Cartesiana Expandida"
+msgstr "Ecuación cartesiana expandida"
 
 #: objects/circle_imp.cc:151 objects/conic_imp.cc:88 objects/cubic_imp.cc:293
+#: objects/locus_imp.cc:108
 msgid "Cartesian Equation"
-msgstr "Ecuación Cartesiana"
+msgstr "Ecuación cartesiana"
 
 #: objects/circle_imp.cc:152 objects/conic_imp.cc:89
 msgid "Polar Equation"
-msgstr "Ecuación Polar"
+msgstr "Ecuación polar"
 
 #: objects/circle_imp.cc:238
 #, kde-format
@@ -2668,15 +2625,15 @@ msgstr "Escoller o círculo %1"
 
 #: objects/circle_imp.cc:349
 msgid "Remove a Circle"
-msgstr "Borrar un Círculo"
+msgstr "Borrar un círculo"
 
 #: objects/circle_imp.cc:350
 msgid "Add a Circle"
-msgstr "Engadir un Círculo"
+msgstr "Engadir un círculo"
 
 #: objects/circle_imp.cc:351
 msgid "Move a Circle"
-msgstr "Mover un Círculo"
+msgstr "Mover un círculo"
 
 #: objects/circle_imp.cc:352
 msgid "Attach to this circle"
@@ -2684,11 +2641,11 @@ msgstr "Anexar a este círculo"
 
 #: objects/circle_imp.cc:353
 msgid "Show a Circle"
-msgstr "Mostrar un Círculo"
+msgstr "Mostrar un círculo"
 
 #: objects/circle_imp.cc:354
 msgid "Hide a Circle"
-msgstr "Acochar un Círculo"
+msgstr "Acochar un círculo"
 
 #: objects/circle_type.cc:32
 msgid "Construct a circle through this point"
@@ -2700,26 +2657,24 @@ msgid "Select a point for the new circle to go through..."
 msgstr "Escolla un punto polo cal pasar o novo círculo..."
 
 #: objects/circle_type.cc:195
-#, fuzzy
 msgid "With this radius"
-msgstr "con este Arco"
+msgstr "Con este raio"
 
 #: objects/circle_type.cc:196
-#, fuzzy
 msgid "Select the length of the radius..."
-msgstr "Escolla o ángulo de rotación..."
+msgstr "Escolla a lonxitude do raio..."
 
 #: objects/conic_imp.cc:84
 msgid "Conic Type"
-msgstr "Tipo de Cónica"
+msgstr "Tipo de cónica"
 
 #: objects/conic_imp.cc:86
 msgid "First Focus"
-msgstr "Primeiro Foco"
+msgstr "Primeiro foco"
 
 #: objects/conic_imp.cc:87
 msgid "Second Focus"
-msgstr "Segundo Foco"
+msgstr "Segundo foco"
 
 #: objects/conic_imp.cc:210
 msgid "Ellipse"
@@ -2735,20 +2690,20 @@ msgstr "Parábola"
 
 #: objects/conic_imp.cc:264
 msgid "rho"
-msgstr ""
+msgstr "ro"
 
 #: objects/conic_imp.cc:271
 msgid "cos theta"
-msgstr ""
+msgstr "cos teta"
 
 #: objects/conic_imp.cc:272
 msgid "sin theta"
-msgstr ""
+msgstr "seno teta"
 
 #: objects/conic_imp.cc:274
-#, fuzzy, kde-format
+#, kde-format
 msgid "[centered at %1]"
-msgstr "ro = %1 [centrado en %2]"
+msgstr "[centrada en %1]"
 
 #: objects/conic_imp.cc:384
 msgid "conic"
@@ -2765,15 +2720,15 @@ msgstr "Escoller a cónica %1"
 
 #: objects/conic_imp.cc:387
 msgid "Remove a Conic"
-msgstr "Borrar unha Cónica"
+msgstr "Borrar unha cónica"
 
 #: objects/conic_imp.cc:388
 msgid "Add a Conic"
-msgstr "Engadir unha Cónica"
+msgstr "Engadir unha cónica"
 
 #: objects/conic_imp.cc:389
 msgid "Move a Conic"
-msgstr "Mover unha Cónica"
+msgstr "Mover unha cónica"
 
 #: objects/conic_imp.cc:390
 msgid "Attach to this conic"
@@ -2781,68 +2736,60 @@ msgstr "Anexar a esta cónica"
 
 #: objects/conic_imp.cc:391
 msgid "Show a Conic"
-msgstr "Mostrar unha Cónica"
+msgstr "Mostrar unha cónica"
 
 #: objects/conic_imp.cc:392
 msgid "Hide a Conic"
-msgstr "Acochar unha Cónica"
+msgstr "Acochar unha cónica"
 
 #: objects/conic_imp.cc:534
 msgid "Supporting Conic"
-msgstr ""
+msgstr "Cónica de apoio"
 
 #: objects/conic_imp.cc:535 objects/line_imp.cc:126 objects/other_imp.cc:385
 msgid "First End Point"
-msgstr "Primeiro Punto Final"
+msgstr "Primeiro punto final"
 
 #: objects/conic_imp.cc:536 objects/line_imp.cc:127 objects/other_imp.cc:386
 msgid "Second End Point"
-msgstr "Segundo Punto Final"
+msgstr "Segundo punto final"
 
 #: objects/conic_imp.cc:610
-#, fuzzy
 msgid "conic arc"
-msgstr "cónica"
+msgstr "arco cónico"
 
 #: objects/conic_imp.cc:611
-#, fuzzy
 msgid "Select this conic arc"
-msgstr "Escoller esta cónica"
+msgstr "Escoller este arco cónico"
 
 #: objects/conic_imp.cc:612
-#, fuzzy, kde-format
+#, kde-format
 msgid "Select conic arc %1"
-msgstr "Escoller a cónica %1"
+msgstr "Escoller o arco cónico %1"
 
 #: objects/conic_imp.cc:613
-#, fuzzy
 msgid "Remove a Conic Arc"
-msgstr "Borrar unha Cónica"
+msgstr "Borrar un arco cónico"
 
 #: objects/conic_imp.cc:614
-#, fuzzy
 msgid "Add a Conic Arc"
-msgstr "Engadir unha Cónica"
+msgstr "Engadir un arco cónico"
 
 #: objects/conic_imp.cc:615
-#, fuzzy
 msgid "Move a Conic Arc"
-msgstr "Mover unha Cónica"
+msgstr "Mover un arco cónico"
 
 #: objects/conic_imp.cc:616
-#, fuzzy
 msgid "Attach to this conic arc"
-msgstr "Anexar a esta cónica"
+msgstr "Anexar a este arco cónico"
 
 #: objects/conic_imp.cc:617
-#, fuzzy
 msgid "Show a Conic Arc"
-msgstr "Mostrar unha Cónica"
+msgstr "Mostrar un arco cónico"
 
 #: objects/conic_imp.cc:618
-#, fuzzy
 msgid "Hide a Conic Arc"
-msgstr "Acochar unha Cónica"
+msgstr "Acochar un arco cónico"
 
 #: objects/conic_types.cc:33 objects/conic_types.cc:87
 #: objects/conic_types.cc:221
@@ -2874,11 +2821,11 @@ msgstr "Construír unha elipse con este foco"
 
 #: objects/conic_types.cc:145
 msgid "Select the first focus of the new ellipse..."
-msgstr "Escolla o primeiro foco da elipse nova..."
+msgstr "Escolla o primeiro foco da nova elipse..."
 
 #: objects/conic_types.cc:147
 msgid "Select the second focus of the new ellipse..."
-msgstr "Escolla o segundo foco da elipse nova..."
+msgstr "Escolla o segundo foco da nova elipse..."
 
 #: objects/conic_types.cc:148
 msgid "Construct an ellipse through this point"
@@ -2886,7 +2833,7 @@ msgstr "Construír unha elipse através deste punto"
 
 #: objects/conic_types.cc:149
 msgid "Select a point for the new ellipse to go through..."
-msgstr "Escolla un punto polo cal pasará a elipse nova..."
+msgstr "Escolla un punto polo cal pasará a nova elipse..."
 
 #: objects/conic_types.cc:175
 msgid "Construct a hyperbola with this focus"
@@ -3013,7 +2960,7 @@ msgstr ""
 
 #: objects/conic_types.cc:669
 msgid "Switch Radical Lines"
-msgstr "Trocar Liñas Radicais"
+msgstr "Trocar as liñas radicais"
 
 #: objects/cubic_imp.cc:356
 msgid "cubic curve"
@@ -3030,15 +2977,15 @@ msgstr "Escoller a curva cúbica %1"
 
 #: objects/cubic_imp.cc:359
 msgid "Remove a Cubic Curve"
-msgstr "Borrar unha Curva Cúbica"
+msgstr "Borrar unha curva cúbica"
 
 #: objects/cubic_imp.cc:360
 msgid "Add a Cubic Curve"
-msgstr "Engadir unha Curva Cúbica"
+msgstr "Engadir unha curva cúbica"
 
 #: objects/cubic_imp.cc:361
 msgid "Move a Cubic Curve"
-msgstr "Mover unha Curva Cúbica"
+msgstr "Mover unha curva cúbica"
 
 #: objects/cubic_imp.cc:362
 msgid "Attach to this cubic curve"
@@ -3046,11 +2993,11 @@ msgstr "Anexar a esta curva cúbica"
 
 #: objects/cubic_imp.cc:363
 msgid "Show a Cubic Curve"
-msgstr "Mostrar unha Curva Cúbica"
+msgstr "Mostrar unha curva cúbica"
 
 #: objects/cubic_imp.cc:364
 msgid "Hide a Cubic Curve"
-msgstr "Acochar unha Curva Cúbica"
+msgstr "Acochar unha curva cúbica"
 
 #: objects/cubic_type.cc:26
 msgid "Construct a cubic curve through this point"
@@ -3075,15 +3022,15 @@ msgstr "Escoller a curva %1"
 
 #: objects/curve_imp.cc:28
 msgid "Remove a Curve"
-msgstr "Borrar unha Curva"
+msgstr "Borrar unha curva"
 
 #: objects/curve_imp.cc:29
 msgid "Add a Curve"
-msgstr "Engadir unha Curva"
+msgstr "Engadir unha curva"
 
 #: objects/curve_imp.cc:30
 msgid "Move a Curve"
-msgstr "Mover unha Curva"
+msgstr "Mover unha curva"
 
 #: objects/curve_imp.cc:31
 msgid "Attach to this curve"
@@ -3091,11 +3038,11 @@ msgstr "Anexar a esta curva"
 
 #: objects/curve_imp.cc:32
 msgid "Show a Curve"
-msgstr "Mostrar unha Curva"
+msgstr "Mostrar unha curva"
 
 #: objects/curve_imp.cc:33
 msgid "Hide a Curve"
-msgstr "Acochar unha Curva"
+msgstr "Acochar unha curva"
 
 #: objects/intersection_types.cc:157 objects/intersection_types.cc:158
 #: objects/intersection_types.cc:225
@@ -3119,14 +3066,12 @@ msgid "Select the circle we want to invert against..."
 msgstr "Escolla o círculo en relación ao cal é feita a inversión..."
 
 #: objects/inversion_type.cc:40
-#, fuzzy
 msgid "Compute the inversion of this object"
-msgstr "Calcular a inversión deste punto"
+msgstr "Calcular a inversión deste obxecto"
 
 #: objects/inversion_type.cc:41
-#, fuzzy
 msgid "Select the object to invert..."
-msgstr "Escolla o punto a inverter..."
+msgstr "Escolla o obxecto a inverter..."
 
 #: objects/inversion_type.cc:292
 msgid "Compute the inversion of this point"
@@ -3170,7 +3115,7 @@ msgstr "Escolla o arco a inverter..."
 
 #: objects/line_imp.cc:97
 msgid "Slope"
-msgstr "Barga"
+msgstr "Valga"
 
 #: objects/line_imp.cc:98
 msgid "Equation"
@@ -3181,14 +3126,12 @@ msgid "Length"
 msgstr "Lonxitude"
 
 #: objects/line_imp.cc:125 objects/line_imp.cc:195
-#, fuzzy
 msgid "Support Line"
-msgstr "Non Soportado"
+msgstr "Liña auxiliar"
 
 #: objects/line_imp.cc:196
-#, fuzzy
 msgid "End Point"
-msgstr "Punto Central"
+msgstr "Punto final"
 
 #: objects/line_imp.cc:523 objects/line_imp.cc:532
 msgid "line"
@@ -3196,7 +3139,7 @@ msgstr "liña"
 
 #: objects/line_imp.cc:524
 msgid "Select a Line"
-msgstr "Escoller unha Liña"
+msgstr "Escoller unha liña"
 
 #: objects/line_imp.cc:533
 msgid "Select this line"
@@ -3209,11 +3152,11 @@ msgstr "Escoller a liña %1"
 
 #: objects/line_imp.cc:535
 msgid "Remove a Line"
-msgstr "Borrar unha Liña"
+msgstr "Borrar unha liña"
 
 #: objects/line_imp.cc:536
 msgid "Add a Line"
-msgstr "Engadir unha Liña"
+msgstr "Engadir unha liña"
 
 #: objects/line_imp.cc:537
 msgid "Move a Line"
@@ -3225,11 +3168,11 @@ msgstr "Anexar a esta liña"
 
 #: objects/line_imp.cc:539
 msgid "Show a Line"
-msgstr "Mostrar a Liña"
+msgstr "Mostrar unha liña"
 
 #: objects/line_imp.cc:540
 msgid "Hide a Line"
-msgstr "Acochar a Liña"
+msgstr "Acochar unha liña"
 
 #: objects/line_imp.cc:549
 msgid "segment"
@@ -3246,15 +3189,15 @@ msgstr "Escoller o segmento %1"
 
 #: objects/line_imp.cc:552
 msgid "Remove a Segment"
-msgstr "Borrar un Segmento"
+msgstr "Borrar un segmento"
 
 #: objects/line_imp.cc:553
 msgid "Add a Segment"
-msgstr "Engadir un Segmento"
+msgstr "Engadir un segmento"
 
 #: objects/line_imp.cc:554
 msgid "Move a Segment"
-msgstr "Mover un Segmento"
+msgstr "Mover un segmento"
 
 #: objects/line_imp.cc:555
 msgid "Attach to this segment"
@@ -3262,11 +3205,11 @@ msgstr "Anexar a este segmento"
 
 #: objects/line_imp.cc:556
 msgid "Show a Segment"
-msgstr "Mostrar un Segmento"
+msgstr "Mostrar un segmento"
 
 #: objects/line_imp.cc:557
 msgid "Hide a Segment"
-msgstr "Acochar un Segmento"
+msgstr "Acochar un segmento"
 
 #: objects/line_imp.cc:566
 msgid "half-line"
@@ -3283,27 +3226,27 @@ msgstr "Escoller a semi-recta %1"
 
 #: objects/line_imp.cc:569
 msgid "Remove a Half-Line"
-msgstr "Borrar a Semi-Recta"
+msgstr "Borrar unha semi-recta"
 
 #: objects/line_imp.cc:570
 msgid "Add a Half-Line"
-msgstr "Engadir unha Semi-Recta"
+msgstr "Engadir unha semi-recta"
 
 #: objects/line_imp.cc:571
 msgid "Move a Half-Line"
-msgstr "Mover unha Semi-Recta"
+msgstr "Mover unha semi-recta"
 
 #: objects/line_imp.cc:572
 msgid "Attach to this half-line"
-msgstr "Anexar a esta Semi-Recta"
+msgstr "Anexar a esta semi-recta"
 
 #: objects/line_imp.cc:573
 msgid "Show a Half-Line"
-msgstr "Mostrar unha Semi-Recta"
+msgstr "Mostrar unha semi-recta"
 
 #: objects/line_imp.cc:574
 msgid "Hide a Half-Line"
-msgstr "Acochar unha Semi-Recta"
+msgstr "Acochar unha semi-recta"
 
 #: objects/line_type.cc:38
 msgid "Construct a segment starting at this point"
@@ -3339,7 +3282,7 @@ msgstr "Construír unha semi-recta con inicio neste punto"
 
 #: objects/line_type.cc:103 objects/line_type.cc:301
 msgid "Select the start point of the new half-line..."
-msgstr "Escolla o punto inicial da nova Semi-Recta..."
+msgstr "Escolla o punto inicial da nova semi-recta..."
 
 #: objects/line_type.cc:104
 msgid "Construct a half-line through this point"
@@ -3347,7 +3290,7 @@ msgstr "Construír unha semi-recta através deste punto"
 
 #: objects/line_type.cc:105
 msgid "Select a point for the half-line to go through..."
-msgstr "Escolla un punto onde a Semi-Recta pasa..."
+msgstr "Escolla un punto onde a semi-recta pasa..."
 
 #: objects/line_type.cc:146
 msgid "Construct a line parallel to this line"
@@ -3379,11 +3322,11 @@ msgstr "Construír unha liña perpendicular através deste punto "
 
 #: objects/line_type.cc:224
 msgid "Set &Length..."
-msgstr "Axustar a &Lonxitude..."
+msgstr "Axustar a &lonxitude..."
 
 #: objects/line_type.cc:243
 msgid "Set Segment Length"
-msgstr "Trocar a Lonxitude do Segmento"
+msgstr "Mudar a lonxitude do segmento"
 
 #: objects/line_type.cc:243
 msgid "Choose the new length: "
@@ -3391,7 +3334,7 @@ msgstr "Escolla a nova lonxitude: "
 
 #: objects/line_type.cc:251
 msgid "Resize Segment"
-msgstr "Trocar o Tamaño do Segmento"
+msgstr "Mudar o tamaño do segmento"
 
 #: objects/line_type.cc:258
 msgid "Construct a line by this vector"
@@ -3399,7 +3342,7 @@ msgstr "Construír unha liña por este vector"
 
 #: objects/line_type.cc:259
 msgid "Select a vector in the direction of the new line..."
-msgstr "Escolla un vector coa dirección da liña nova..."
+msgstr "Escolla un vector coa dirección da nova liña..."
 
 #: objects/line_type.cc:298
 msgid "Construct a half-line by this vector"
@@ -3409,46 +3352,50 @@ msgstr "Construír unha semi-recta por este vector"
 msgid "Select a vector in the direction of the new half-line..."
 msgstr "Escolla un vector coa dirección da nova semi-recta..."
 
-#: objects/locus_imp.cc:357
+#: objects/locus_imp.cc:379
 msgid "locus"
 msgstr "locus"
 
-#: objects/locus_imp.cc:358
+#: objects/locus_imp.cc:380
 msgid "Select this locus"
 msgstr "Escoller este locus"
 
-#: objects/locus_imp.cc:359
+#: objects/locus_imp.cc:381
 #, kde-format
 msgid "Select locus %1"
 msgstr "Escoller o locus %1"
 
-#: objects/locus_imp.cc:360
+#: objects/locus_imp.cc:382
 msgid "Remove a Locus"
-msgstr "Borrar un Locus"
+msgstr "Borrar un locus"
 
-#: objects/locus_imp.cc:361
+#: objects/locus_imp.cc:383
 msgid "Add a Locus"
-msgstr "Engadir un Locus"
+msgstr "Engadir un locus"
 
-#: objects/locus_imp.cc:362
+#: objects/locus_imp.cc:384
 msgid "Move a Locus"
-msgstr "Mover un Locus"
+msgstr "Mover un locus"
 
-#: objects/locus_imp.cc:363
+#: objects/locus_imp.cc:385
 msgid "Attach to this locus"
 msgstr "Anexar a este locus"
 
-#: objects/locus_imp.cc:364
+#: objects/locus_imp.cc:386
 msgid "Show a Locus"
-msgstr "Mostrar un Locus"
+msgstr "Mostrar un locus"
 
-#: objects/locus_imp.cc:365
+#: objects/locus_imp.cc:387
 msgid "Hide a Locus"
-msgstr "Acochar un Locus"
+msgstr "Acochar un locus"
+
+#: objects/locus_imp.cc:570
+msgid "Possibly trascendental curve"
+msgstr "Posibelmente a curva sexa transcendental"
 
 #: objects/object_imp.cc:54
 msgid "Object Type"
-msgstr "Tipo de Obxecto"
+msgstr "Tipo do obxecto"
 
 #: objects/object_imp.cc:272
 msgid "Object"
@@ -3469,7 +3416,7 @@ msgstr "Borrar un obxecto"
 
 #: objects/object_imp.cc:276
 msgid "Add an object"
-msgstr "Engadir un Obxecto"
+msgstr "Engadir un obxecto"
 
 #: objects/object_imp.cc:277
 msgid "Move an object"
@@ -3485,19 +3432,19 @@ msgstr "Mostrar un obxecto"
 
 #: objects/object_imp.cc:280
 msgid "Hide an object"
-msgstr "Acochar un Obxecto"
+msgstr "Acochar un obxecto"
 
 #: objects/other_imp.cc:105 objects/other_imp.cc:381
 msgid "Angle in Radians"
-msgstr "Ángulo en Radiáns"
+msgstr "Ángulo en radiáns"
 
 #: objects/other_imp.cc:106 objects/other_imp.cc:380
 msgid "Angle in Degrees"
-msgstr "Ángulo en Graus"
+msgstr "Ángulo en graus"
 
 #: objects/other_imp.cc:216
 msgid "Midpoint"
-msgstr "Punto Medio"
+msgstr "Punto medio"
 
 #: objects/other_imp.cc:217
 msgid "X length"
@@ -3509,7 +3456,7 @@ msgstr "Lonxitude y"
 
 #: objects/other_imp.cc:219
 msgid "Opposite Vector"
-msgstr "Vector Oposto"
+msgstr "Vector oposto"
 
 #: objects/other_imp.cc:379
 msgid "Angle"
@@ -3517,16 +3464,15 @@ msgstr "Ángulo"
 
 #: objects/other_imp.cc:382
 msgid "Sector Surface"
-msgstr "Superficie do Sector"
+msgstr "Superficie do sector"
 
 #: objects/other_imp.cc:383
 msgid "Arc Length"
-msgstr "Lonxitude do Arco"
+msgstr "Lonxitude do arco"
 
 #: objects/other_imp.cc:384
-#, fuzzy
 msgid "Support Circle"
-msgstr "Mostrar un Círculo"
+msgstr "Círculo auxiliar"
 
 #: objects/other_imp.cc:573
 msgid "angle"
@@ -3543,15 +3489,15 @@ msgstr "Escoller o ángulo %1"
 
 #: objects/other_imp.cc:576
 msgid "Remove an Angle"
-msgstr "Borrar un Ángulo"
+msgstr "Borrar un ángulo"
 
 #: objects/other_imp.cc:577
 msgid "Add an Angle"
-msgstr "Engadir un Ángulo"
+msgstr "Engadir un ángulo"
 
 #: objects/other_imp.cc:578
 msgid "Move an Angle"
-msgstr "Mover un Ángulo"
+msgstr "Mover un ángulo"
 
 #: objects/other_imp.cc:579
 msgid "Attach to this angle"
@@ -3559,11 +3505,11 @@ msgstr "Anexar a este ángulo"
 
 #: objects/other_imp.cc:580
 msgid "Show an Angle"
-msgstr "Mostrar un Ángulo"
+msgstr "Mostrar un ángulo"
 
 #: objects/other_imp.cc:581
 msgid "Hide an Angle"
-msgstr "Acochar un Ángulo"
+msgstr "Acochar un ángulo"
 
 #: objects/other_imp.cc:589
 msgid "vector"
@@ -3580,15 +3526,15 @@ msgstr "Escoller o vector %1"
 
 #: objects/other_imp.cc:592
 msgid "Remove a Vector"
-msgstr "Borrar un Vector"
+msgstr "Borrar un vector"
 
 #: objects/other_imp.cc:593
 msgid "Add a Vector"
-msgstr "Engadir un Vector"
+msgstr "Engadir un vector"
 
 #: objects/other_imp.cc:594
 msgid "Move a Vector"
-msgstr "Mover un Vector"
+msgstr "Mover un vector"
 
 #: objects/other_imp.cc:595
 msgid "Attach to this vector"
@@ -3596,11 +3542,11 @@ msgstr "Anexar a este vector"
 
 #: objects/other_imp.cc:596
 msgid "Show a Vector"
-msgstr "Mostrar un Vector"
+msgstr "Mostrar un vector"
 
 #: objects/other_imp.cc:597
 msgid "Hide a Vector"
-msgstr "Acochar un Vector"
+msgstr "Acochar un vector"
 
 #: objects/other_imp.cc:605
 msgid "arc"
@@ -3617,15 +3563,15 @@ msgstr "Escoller o arco %1"
 
 #: objects/other_imp.cc:608
 msgid "Remove an Arc"
-msgstr "Borrar un Arco"
+msgstr "Borrar un arco"
 
 #: objects/other_imp.cc:609
 msgid "Add an Arc"
-msgstr "Engadir un Arco"
+msgstr "Engadir un arco"
 
 #: objects/other_imp.cc:610
 msgid "Move an Arc"
-msgstr "Move un Arco"
+msgstr "Move un arco"
 
 #: objects/other_imp.cc:611
 msgid "Attach to this arc"
@@ -3633,11 +3579,11 @@ msgstr "Anexar a este arco"
 
 #: objects/other_imp.cc:612
 msgid "Show an Arc"
-msgstr "Mostrar un Arco"
+msgstr "Mostrar un arco"
 
 #: objects/other_imp.cc:613
 msgid "Hide an Arc"
-msgstr "Acochar un Arco"
+msgstr "Acochar un arco"
 
 #: objects/point_imp.cc:75
 msgid "Coordinate"
@@ -3666,15 +3612,15 @@ msgstr "Escoller o punto %1"
 
 #: objects/point_imp.cc:166
 msgid "Remove a Point"
-msgstr "Borrar un Punto"
+msgstr "Borrar un punto"
 
 #: objects/point_imp.cc:167
 msgid "Add a Point"
-msgstr "Engadir un Punto"
+msgstr "Engadir un punto"
 
 #: objects/point_imp.cc:168
 msgid "Move a Point"
-msgstr "Mover un Punto"
+msgstr "Mover un punto"
 
 #: objects/point_imp.cc:169
 msgid "Attach to this point"
@@ -3682,22 +3628,21 @@ msgstr "Anexar a este punto"
 
 #: objects/point_imp.cc:170
 msgid "Show a Point"
-msgstr "Mostrar un Punto"
+msgstr "Mostrar un punto"
 
 #: objects/point_imp.cc:171
 msgid "Hide a Point"
-msgstr "Acochar un Punto"
+msgstr "Acochar un punto"
 
 #: objects/point_type.cc:264 objects/point_type.cc:266
 msgid "Construct the midpoint of this point and another point"
-msgstr "Construír o punto medio  a este punto e a outro punto"
+msgstr "Construír o punto medio a este punto e a outro punto"
 
 #: objects/point_type.cc:265
 msgid ""
 "Select the first of the two points of which you want to construct the "
 "midpoint..."
-msgstr ""
-"Escolla o primeiro dos dous puntos dos cais quer criar o punto medio..."
+msgstr "Escolla o primeiro dos dous puntos dos cais quer criar o punto medio..."
 
 #: objects/point_type.cc:267
 msgid ""
@@ -3707,7 +3652,7 @@ msgstr "Escolla o segundo dos dous puntos dos cais quer criar o punto medio..."
 
 #: objects/point_type.cc:369
 msgid "Set &Coordinate..."
-msgstr "Trocar a &Coordenada..."
+msgstr "Axustar a &coordenada..."
 
 #: objects/point_type.cc:370 objects/point_type.cc:378
 msgid "Redefine"
@@ -3715,11 +3660,11 @@ msgstr "Redefinir"
 
 #: objects/point_type.cc:377
 msgid "Set &Parameter..."
-msgstr "Axustar &Parámetro..."
+msgstr "Axustar o &parámetro..."
 
 #: objects/point_type.cc:400
 msgid "Set Coordinate"
-msgstr "Axustar Coordenada"
+msgstr "Axustar a coordenada"
 
 #: objects/point_type.cc:401
 msgid "Enter the new coordinate."
@@ -3727,7 +3672,7 @@ msgstr "Indique a nova coordenada."
 
 #: objects/point_type.cc:442
 msgid "Set Point Parameter"
-msgstr "Trocar Parámetro do Punto"
+msgstr "Axustar o parámetro do punto"
 
 #: objects/point_type.cc:442
 msgid "Choose the new parameter: "
@@ -3735,7 +3680,7 @@ msgstr "Escolla o novo parámetro: "
 
 #: objects/point_type.cc:448
 msgid "Change Parameter of Constrained Point"
-msgstr "Trocar o Parámetro do Punto Restrito"
+msgstr "Axustar o parámetro do punto restrito"
 
 #: objects/point_type.cc:635
 msgid "Select the circle on which to transport a measure..."
@@ -3750,14 +3695,12 @@ msgid "Select the segment to transport on the circle..."
 msgstr "Escolla o segmento a transportar no círculo..."
 
 #: objects/point_type.cc:686
-#, fuzzy
 msgid "Select a number/length as x coordinate of the point..."
-msgstr "Escolla un segmento cuxa lonxitude é o factor de escala..."
+msgstr "Escolla un número/lonxitude como coordenada X do punto..."
 
 #: objects/point_type.cc:688
-#, fuzzy
 msgid "Select a number/length as y coordinate of the point..."
-msgstr "Escolla un segmento cuxa lonxitude é o factor de escala..."
+msgstr "Escolla un número/lonxitude como coordenada Y do punto..."
 
 #: objects/polygon_imp.cc:227
 msgid "Number of sides"
@@ -3769,7 +3712,7 @@ msgstr "Perímetro"
 
 #: objects/polygon_imp.cc:230
 msgid "Center of Mass of the Vertices"
-msgstr "Centro de Masa dos Vértices"
+msgstr "Centro de masa dos vértices"
 
 #: objects/polygon_imp.cc:231
 msgid "Winding Number"
@@ -3790,15 +3733,15 @@ msgstr "Escoller o polígono %1"
 
 #: objects/polygon_imp.cc:363
 msgid "Remove a Polygon"
-msgstr "Borrar un Polígono"
+msgstr "Borrar un polígono"
 
 #: objects/polygon_imp.cc:364
 msgid "Add a Polygon"
-msgstr "Engadir un Polígono"
+msgstr "Engadir un polígono"
 
 #: objects/polygon_imp.cc:365
 msgid "Move a Polygon"
-msgstr "Mover un Polígono"
+msgstr "Mover un polígono"
 
 #: objects/polygon_imp.cc:366
 msgid "Attach to this polygon"
@@ -3806,11 +3749,11 @@ msgstr "Anexar a este polígono"
 
 #: objects/polygon_imp.cc:367
 msgid "Show a Polygon"
-msgstr "Mostrar un Polígono"
+msgstr "Mostrar un polígono"
 
 #: objects/polygon_imp.cc:368
 msgid "Hide a Polygon"
-msgstr "Acochar un Polígono"
+msgstr "Acochar un polígono"
 
 #: objects/polygon_imp.cc:378
 msgid "triangle"
@@ -3827,15 +3770,15 @@ msgstr "Escoller o triángulo %1"
 
 #: objects/polygon_imp.cc:381
 msgid "Remove a Triangle"
-msgstr "Borrar un Triángulo"
+msgstr "Borrar un triángulo"
 
 #: objects/polygon_imp.cc:382
 msgid "Add a Triangle"
-msgstr "Engadir un Triángulo"
+msgstr "Engadir un triángulo"
 
 #: objects/polygon_imp.cc:383
 msgid "Move a Triangle"
-msgstr "Mover un Triángulo"
+msgstr "Mover un triángulo"
 
 #: objects/polygon_imp.cc:384
 msgid "Attach to this triangle"
@@ -3843,11 +3786,11 @@ msgstr "Anexar a este triángulo"
 
 #: objects/polygon_imp.cc:385
 msgid "Show a Triangle"
-msgstr "Mostrar un Triángulo"
+msgstr "Mostrar un triángulo"
 
 #: objects/polygon_imp.cc:386
 msgid "Hide a Triangle"
-msgstr "Acochar un Triángulo"
+msgstr "Acochar un triángulo"
 
 #: objects/polygon_imp.cc:396
 msgid "quadrilateral"
@@ -3864,15 +3807,15 @@ msgstr "Escoller o cuadrilátero %1"
 
 #: objects/polygon_imp.cc:399
 msgid "Remove a Quadrilateral"
-msgstr "Borrar un Cuadrilátero"
+msgstr "Borrar un cuadrilátero"
 
 #: objects/polygon_imp.cc:400
 msgid "Add a Quadrilateral"
-msgstr "Engadir un Cuadrilátero"
+msgstr "Engadir un cuadrilátero"
 
 #: objects/polygon_imp.cc:401
 msgid "Move a Quadrilateral"
-msgstr "Mover un Cuadrilátero"
+msgstr "Mover un cuadrilátero"
 
 #: objects/polygon_imp.cc:402
 msgid "Attach to this quadrilateral"
@@ -3880,11 +3823,11 @@ msgstr "Anexar a este cuadrilátero"
 
 #: objects/polygon_imp.cc:403
 msgid "Show a Quadrilateral"
-msgstr "Mostrar un Cuadrilátero"
+msgstr "Mostrar un cuadrilátero"
 
 #: objects/polygon_imp.cc:404
 msgid "Hide a Quadrilateral"
-msgstr "Acochar un Cuadrilátero"
+msgstr "Acochar un cuadrilátero"
 
 #: objects/polygon_type.cc:38
 msgid "Construct a triangle with this vertex"
@@ -3896,42 +3839,35 @@ msgstr "Escolla un punto para ser un vértice do novo triángulo..."
 
 #: objects/polygon_type.cc:392
 msgid "Intersect this polygon with a line"
-msgstr "Intersecar este polígono cunha liña"
+msgstr "Intersectar este polígono cunha liña"
 
 #: objects/polygon_type.cc:393
 msgid "Select the polygon of which you want the intersection with a line..."
 msgstr "Escolla o polígono do cal desexa a intersección cunha liña..."
 
 #: objects/polygon_type.cc:395
-#, fuzzy
 msgid "Intersect this line with a polygon"
-msgstr "Intersecar este polígono cunha liña"
+msgstr "Intersectar esta liña cun polígono"
 
 #: objects/polygon_type.cc:396
-#, fuzzy
 msgid "Select the line of which you want the intersection with a polygon..."
-msgstr "Escolla o polígono do cal desexa a intersección cunha liña..."
+msgstr "Escolla a liña da cal desexe a intersección cun polígono..."
 
 #: objects/polygon_type.cc:605
-#, fuzzy
 msgid "Intersect this polygon with another polygon"
-msgstr "Intersecar este polígono cunha liña"
+msgstr "Intersectar este polígono con outro polígono"
 
 #: objects/polygon_type.cc:606
-#, fuzzy
-msgid ""
-"Select the polygon of which you want the intersection with another polygon..."
-msgstr "Escolla o polígono do cal desexa a intersección cunha liña..."
+msgid "Select the polygon of which you want the intersection with another polygon..."
+msgstr "Escolla o polígono do cal desexa a intersección con outro polígono..."
 
 #: objects/polygon_type.cc:607
-#, fuzzy
 msgid "Intersect with this polygon"
-msgstr "Intersección con esta liña"
+msgstr "Intersección con este polígono"
 
 #: objects/polygon_type.cc:608
-#, fuzzy
 msgid "Select the second polygon for the intersection..."
-msgstr "Escolla o segundo obxecto a intersectar..."
+msgstr "Escolla o segundo polígono a intersectar..."
 
 #: objects/polygon_type.cc:754
 msgid "Construct the vertices of this polygon"
@@ -3967,7 +3903,7 @@ msgstr "Escolla o punto polo cal vai pasar tanxente..."
 
 #: objects/tests_type.cc:32
 msgid "Is this line parallel?"
-msgstr "Esta liña é paralela?"
+msgstr "É paralela esta liña?"
 
 #: objects/tests_type.cc:33
 msgid "Select the first of the two possibly parallel lines..."
@@ -4015,7 +3951,7 @@ msgstr "Estas liñas non son ortogonais."
 
 #: objects/tests_type.cc:120
 msgid "Check collinearity of this point"
-msgstr "Verificar a colinearidade deste punto"
+msgstr "Comprobar a colinearidade deste punto"
 
 #: objects/tests_type.cc:121
 msgid "Select the first of the three possibly collinear points..."
@@ -4023,7 +3959,7 @@ msgstr "Escolla o primeiro dos tres puntos supostamente colineares..."
 
 #: objects/tests_type.cc:122
 msgid "and this second point"
-msgstr "e deste segundo punto"
+msgstr "con este segundo punto"
 
 #: objects/tests_type.cc:123
 msgid "Select the second of the three possibly collinear points..."
@@ -4047,15 +3983,15 @@ msgstr "Estes puntos non son colineares."
 
 #: objects/tests_type.cc:166
 msgid "Check whether this point is on a curve"
-msgstr "Verificar se este punto está nunha curva"
+msgstr "Comprobar se este punto está nunha curva"
 
 #: objects/tests_type.cc:167 objects/tests_type.cc:213
 msgid "Select the point you want to test..."
-msgstr "Escolla o punto que desexa verificar..."
+msgstr "Escolla o punto que desexa comprobar..."
 
 #: objects/tests_type.cc:168
 msgid "Check whether the point is on this curve"
-msgstr "Verificar se o punto está nesta curva"
+msgstr "Comprobar se o punto está nesta curva"
 
 #: objects/tests_type.cc:169
 msgid "Select the curve that the point might be on..."
@@ -4071,11 +4007,11 @@ msgstr "Esta curva non contén o punto."
 
 #: objects/tests_type.cc:212
 msgid "Check whether this point is in a polygon"
-msgstr "Verificar se este punto está nun polígono"
+msgstr "Comprobarar se este punto está nun polígono"
 
 #: objects/tests_type.cc:214
 msgid "Check whether the point is in this polygon"
-msgstr "Verificar se o punto está neste polígono"
+msgstr "Comprobar se o punto está neste polígono"
 
 #: objects/tests_type.cc:215
 msgid "Select the polygon that the point might be in..."
@@ -4091,7 +4027,7 @@ msgstr "Este polígono non contén o punto."
 
 #: objects/tests_type.cc:258
 msgid "Check whether this polygon is convex"
-msgstr "Verificar se este polígono é convexo"
+msgstr "Comprobar se este polígono é convexo"
 
 #: objects/tests_type.cc:259
 msgid "Select the polygon you want to test for convexity..."
@@ -4107,13 +4043,11 @@ msgstr "Este polígono non é convexo."
 
 #: objects/tests_type.cc:301
 msgid "Check if this point has the same distance"
-msgstr "Verificar se este punto ten a mesma distancia"
+msgstr "Comprobar se este punto está á mesma distancia"
 
 #: objects/tests_type.cc:302
-msgid ""
-"Select the point which might have the same distance from two other points..."
-msgstr ""
-"Escolle o punto que pode ter a mesma distancia de outros dous puntos..."
+msgid "Select the point which might have the same distance from two other points..."
+msgstr "Escolle o punto que pode estar á mesma distancia de outros dous puntos..."
 
 #: objects/tests_type.cc:303
 msgid "from this point"
@@ -4129,11 +4063,11 @@ msgstr "e desde segundo punto"
 
 #: objects/tests_type.cc:306
 msgid "Select the other of the two other points..."
-msgstr "Escolla o outro dos dous puntos..."
+msgstr "Escolla o segundo dos dous puntos..."
 
 #: objects/tests_type.cc:334
 msgid "The two distances are the same."
-msgstr "As dúas distancias son as mesmas."
+msgstr "As dúas distancias son iguais."
 
 #: objects/tests_type.cc:336
 msgid "The two distances are not the same."
@@ -4141,7 +4075,7 @@ msgstr "As dúas distancias non son as mesmas."
 
 #: objects/tests_type.cc:346
 msgid "Check whether this vector is equal to another vector"
-msgstr "Verificar se este vector é igual a outro vector"
+msgstr "Comprobar se este vector é igual a outro vector"
 
 #: objects/tests_type.cc:347
 msgid "Select the first of the two possibly equal vectors..."
@@ -4149,7 +4083,7 @@ msgstr "Escolla o primeiro dos dous vectores supostamente iguais..."
 
 #: objects/tests_type.cc:348
 msgid "Check whether this vector is equal to the other vector"
-msgstr "Verificar se este vector é igual ao outro vector"
+msgstr "Comprobar se este vector é igual ao outro vector"
 
 #: objects/tests_type.cc:349
 msgid "Select the other of the two possibly equal vectors..."
@@ -4164,24 +4098,20 @@ msgid "The two vectors are not the same."
 msgstr "Os dous vectores non son iguais."
 
 #: objects/tests_type.cc:388
-#, fuzzy
 msgid "Check whether this object exists"
-msgstr "Verificar se este punto está nunha curva"
+msgstr "Comprobar se existe este obxecto"
 
 #: objects/tests_type.cc:389
-#, fuzzy
 msgid "Select the object for the existence check..."
-msgstr "Escoller o obxecto a escalar..."
+msgstr "Escoller o obxecto do que comprobar a existencia..."
 
 #: objects/tests_type.cc:413
-#, fuzzy
 msgid "The object exists."
-msgstr "Tipo de Obxecto"
+msgstr "O obxecto existe."
 
 #: objects/tests_type.cc:415
-#, fuzzy
 msgid "The object does not exist."
-msgstr "Os dous vectores non son iguais."
+msgstr "O obxecto non existe."
 
 #: objects/text_imp.cc:84
 msgid "Text"
@@ -4202,15 +4132,15 @@ msgstr "Escoller a etiqueta %1"
 
 #: objects/text_imp.cc:150
 msgid "Remove a Label"
-msgstr "Borrar unha Etiqueta"
+msgstr "Borrar unha etiqueta"
 
 #: objects/text_imp.cc:151
 msgid "Add a Label"
-msgstr "Engadir unha Etiqueta"
+msgstr "Engadir unha etiqueta"
 
 #: objects/text_imp.cc:152
 msgid "Move a Label"
-msgstr "Mover unha Etiqueta"
+msgstr "Mover unha etiqueta"
 
 #: objects/text_imp.cc:153
 msgid "Attach to this label"
@@ -4218,148 +4148,129 @@ msgstr "Anexar a esta etiqueta"
 
 #: objects/text_imp.cc:154
 msgid "Show a Label"
-msgstr "Mostrar unha Etiqueta"
+msgstr "Mostrar unha etiqueta"
 
 #: objects/text_imp.cc:155
 msgid "Hide a Label"
-msgstr "Acochar unha Etiqueta"
+msgstr "Acochar unha etiqueta"
 
 #: objects/text_imp.cc:193
 msgid "numeric label"
-msgstr ""
+msgstr "etiqueta numérica"
 
 #: objects/text_imp.cc:194
-#, fuzzy
 msgid "Select this numeric label"
-msgstr "Escoller esta etiqueta"
+msgstr "Escoller esta etiqueta numérica"
 
 #: objects/text_imp.cc:195
-#, fuzzy, kde-format
+#, kde-format
 msgid "Select numeric label %1"
-msgstr "Escoller a etiqueta %1"
+msgstr "Escoller a etiqueta numérica %1"
 
 #: objects/text_imp.cc:196
-#, fuzzy
 msgid "Remove a Numeric Label"
-msgstr "Borrar unha Etiqueta"
+msgstr "Borrar unha etiqueta numérica"
 
 #: objects/text_imp.cc:197
-#, fuzzy
 msgid "Add a Numeric Label"
-msgstr "Engadir unha Etiqueta"
+msgstr "Engadir unha etiqueta numérica"
 
 #: objects/text_imp.cc:198
-#, fuzzy
 msgid "Move a Numeric Label"
-msgstr "Mover unha Etiqueta"
+msgstr "Mover unha etiqueta numérica"
 
 #: objects/text_imp.cc:199
-#, fuzzy
 msgid "Attach to this numeric label"
-msgstr "Anexar a esta etiqueta"
+msgstr "Anexar a esta etiqueta numérica"
 
 #: objects/text_imp.cc:200
-#, fuzzy
 msgid "Show a Numeric Label"
-msgstr "Mostrar unha Etiqueta"
+msgstr "Mostrar unha etiqueta numérica"
 
 #: objects/text_imp.cc:201
-#, fuzzy
 msgid "Hide a Numeric Label"
-msgstr "Acochar unha Etiqueta"
+msgstr "Acochar unha etiqueta numérica"
 
 #: objects/text_imp.cc:231 objects/text_imp.cc:323
 msgid "Numeric value"
-msgstr ""
+msgstr "Valor numérico"
 
 #: objects/text_imp.cc:285
-#, fuzzy
 msgid "boolean label"
-msgstr "Mover unha Etiqueta"
+msgstr "etiqueta booleana"
 
 #: objects/text_imp.cc:286
-#, fuzzy
 msgid "Select this boolean label"
-msgstr "Escoller esta etiqueta"
+msgstr "Escoller esta etiqueta booleana"
 
 #: objects/text_imp.cc:287
-#, fuzzy, kde-format
+#, kde-format
 msgid "Select boolean label %1"
-msgstr "Escoller a etiqueta %1"
+msgstr "Escoller a etiqueta booleana %1"
 
 #: objects/text_imp.cc:288
-#, fuzzy
 msgid "Remove a Boolean Label"
-msgstr "Borrar unha Etiqueta"
+msgstr "Borrar unha etiqueta booleana"
 
 #: objects/text_imp.cc:289
-#, fuzzy
 msgid "Add a Boolean Label"
-msgstr "Engadir unha Etiqueta"
+msgstr "Engadir unha etiqueta booleana"
 
 #: objects/text_imp.cc:290
-#, fuzzy
 msgid "Move a Boolean Label"
-msgstr "Mover unha Etiqueta"
+msgstr "Mover unha etiqueta booleana"
 
 #: objects/text_imp.cc:291
-#, fuzzy
 msgid "Attach to this boolean label"
-msgstr "Anexar a esta etiqueta"
+msgstr "Anexar a esta etiqueta booleana"
 
 #: objects/text_imp.cc:292
-#, fuzzy
 msgid "Show a Boolean Label"
-msgstr "Mostrar unha Etiqueta"
+msgstr "Mostrar unha etiqueta booleana"
 
 #: objects/text_imp.cc:293
-#, fuzzy
 msgid "Hide a Boolean Label"
-msgstr "Acochar unha Etiqueta"
+msgstr "Acochar unha etiqueta booleana"
 
 #: objects/text_type.cc:175
 msgid "&Copy Text"
-msgstr "&Copiar o Texto"
+msgstr "&Copiar o texto"
 
 #: objects/text_type.cc:176
 msgid "&Toggle Frame"
-msgstr "Comu&tar a Área"
+msgstr "Comu&tar a moldura"
 
 #: objects/text_type.cc:177
-#, fuzzy
 msgid "Set &Font..."
-msgstr "Axustar a &Lonxitude..."
+msgstr "Axustar o tipo de &letra..."
 
 #: objects/text_type.cc:206
 msgid "Toggle Label Frame"
-msgstr "Comutar a Área da Etiqueta"
+msgstr "Comutar a moldura da etiqueta"
 
 #: objects/text_type.cc:218
-#, fuzzy
 msgid "Change Label Font"
-msgstr "Modificar a Etiqueta"
+msgstr "Mudar o tipo de letra da etiqueta"
 
 #: objects/text_type.cc:245
 msgid "&Redefine..."
 msgstr "&Redefinir..."
 
 #: objects/text_type.cc:296
-#, fuzzy
 msgid "Change &Value..."
-msgstr "Modificar a Etiqueta"
+msgstr "Modificar o &valor..."
 
 #: objects/text_type.cc:324
-#, fuzzy
 msgid "Enter the new value:"
-msgstr "Indique a nova coordenada."
+msgstr "Indique o novo valor:"
 
 #: objects/text_type.cc:329
 msgid "Change Displayed Value"
-msgstr ""
+msgstr "Modificar o valor mostrado"
 
 #: objects/transform_types.cc:35
 msgid "Translate this object"
-msgstr "Transladar deste obxecto"
+msgstr "Transladar este obxecto"
 
 #: objects/transform_types.cc:36
 msgid "Select the object to translate..."
@@ -4439,43 +4350,32 @@ msgid "Select the center point of the scaling..."
 msgstr "Escolla o punto central do escalamento..."
 
 #: objects/transform_types.cc:188 objects/transform_types.cc:275
-#, fuzzy
 msgid "Scale by this length"
-msgstr "Escalar con este centro"
+msgstr "Escalar segundo esta lonxitude"
 
 #: objects/transform_types.cc:189 objects/transform_types.cc:276
-#, fuzzy
-msgid ""
-"Select a length or a segment whose length is the factor of the scaling..."
-msgstr "Escolla un segmento cuxa lonxitude é o factor de escala..."
+msgid "Select a length or a segment whose length is the factor of the scaling..."
+msgstr "Escolla unha lonxitude ou segmento que teña unha lonxitude que será o factor de escala..."
 
 #: objects/transform_types.cc:231 objects/transform_types.cc:314
-#, fuzzy
 msgid "Scale this length..."
-msgstr "Axustar a &Lonxitude..."
+msgstr "Escalar segundo esta lonxitude..."
 
 #: objects/transform_types.cc:232 objects/transform_types.cc:315
-#, fuzzy
-msgid ""
-"Select the first of two lengths whose ratio is the factor of the scaling..."
-msgstr ""
-"Escolla o primeiro de dous segmentos cuxa relación é o factor de escala..."
+msgid "Select the first of two lengths whose ratio is the factor of the scaling..."
+msgstr "Escolla a primeira de dúas lonxitudes cuxa proporción será é o factor de escala..."
 
 #: objects/transform_types.cc:233 objects/transform_types.cc:316
-#, fuzzy
 msgid "...to this other length"
-msgstr "nestoutro triángulo"
+msgstr "...a esta outra lonxitude"
 
 #: objects/transform_types.cc:234 objects/transform_types.cc:317
-#, fuzzy
-msgid ""
-"Select the second of two lengths whose ratio is the factor of the scaling..."
-msgstr ""
-"Escolla o segundo de dous segmentos cuxa relación é o factor de escala..."
+msgid "Select the second of two lengths whose ratio is the factor of the scaling..."
+msgstr "Escolla a segunda das dúas lonxitudes cuxa relación é o factor de escala..."
 
 #: objects/transform_types.cc:272 objects/transform_types.cc:310
 msgid "Select the object to scale"
-msgstr "Escoller o obxecto a redimensionar"
+msgstr "Escoller o obxecto a escalar"
 
 #: objects/transform_types.cc:273 objects/transform_types.cc:311
 msgid "Scale over this line"
@@ -4483,7 +4383,7 @@ msgstr "Escalar sobre esta liña"
 
 #: objects/transform_types.cc:273 objects/transform_types.cc:311
 msgid "Select the line to scale over"
-msgstr "Escoller a liña sobre a cal redimensionar"
+msgstr "Escoller a liña sobre a cal escalar"
 
 #: objects/transform_types.cc:355
 msgid "Projectively rotate this object"
@@ -4501,8 +4401,7 @@ msgstr "Rodar por proxección con esta semi-recta"
 msgid ""
 "Select the half line of the projective rotation that you want to apply to "
 "the object"
-msgstr ""
-"Escolla a semi-recta da rotación por proxección que desexa aplicar ao obxecto"
+msgstr "Escolla a semi-recta da rotación por proxección que desexa aplicar ao obxecto"
 
 #: objects/transform_types.cc:357
 msgid "Projectively rotate by this angle"
@@ -4512,8 +4411,7 @@ msgstr "Rodar por proxección por este ángulo"
 msgid ""
 "Select the angle of the projective rotation that you want to apply to the "
 "object"
-msgstr ""
-"Escolla o ángulo da rotación por proxección que desexa aplicar ao obxecto"
+msgstr "Escolla o ángulo da rotación por proxección que desexa aplicar ao obxecto"
 
 #: objects/transform_types.cc:392
 msgid "Harmonic Homology of this object"
@@ -4547,7 +4445,7 @@ msgstr "Afinidade xenérica deste obxecto"
 
 #: objects/transform_types.cc:431
 msgid "Map this triangle"
-msgstr "Mapear este triángulo"
+msgstr "Aplicar este triángulo"
 
 #: objects/transform_types.cc:432
 msgid "Select the triangle that has to be transformed onto a given triangle..."
@@ -4561,16 +4459,14 @@ msgstr "nestoutro triángulo"
 msgid ""
 "Select the triangle that is the image by the affinity of the first "
 "triangle..."
-msgstr ""
-"Escolla o triángulo que é a imaxe por afinidade do primeiro triángulo..."
+msgstr "Escolla o triángulo que é a imaxe por afinidade do primeiro triángulo..."
 
 #: objects/transform_types.cc:473
 msgid "First of 3 starting points"
 msgstr "O primeiro dos 3 puntos iniciais"
 
 #: objects/transform_types.cc:474
-msgid ""
-"Select the first of the three starting points of the generic affinity..."
+msgid "Select the first of the three starting points of the generic affinity..."
 msgstr "Escolla o primeiro dos tres puntos iniciais da afinidade xenérica..."
 
 #: objects/transform_types.cc:475
@@ -4578,8 +4474,7 @@ msgid "Second of 3 starting points"
 msgstr "O segundo dos 3 puntos iniciais"
 
 #: objects/transform_types.cc:476
-msgid ""
-"Select the second of the three starting points of the generic affinity..."
+msgid "Select the second of the three starting points of the generic affinity..."
 msgstr "Escolla o segundo dos tres puntos iniciais da afinidade xenérica..."
 
 #: objects/transform_types.cc:477
@@ -4587,8 +4482,7 @@ msgid "Third of 3 starting points"
 msgstr "O terceiro dos 3 puntos iniciais"
 
 #: objects/transform_types.cc:478
-msgid ""
-"Select the third of the three starting points of the generic affinity..."
+msgid "Select the third of the three starting points of the generic affinity..."
 msgstr "Escolla o terceiro dos tres puntos iniciais da afinidade xenérica..."
 
 #: objects/transform_types.cc:479 objects/transform_types.cc:580
@@ -4621,14 +4515,13 @@ msgstr "Transformación por proxección xenérica deste obxecto"
 
 #: objects/transform_types.cc:530
 msgid "Map this quadrilateral"
-msgstr "Mapear este cuadrilátero"
+msgstr "Aplicar este cuadrilátero"
 
 #: objects/transform_types.cc:531
 msgid ""
 "Select the quadrilateral that has to be transformed onto a given "
 "quadrilateral..."
-msgstr ""
-"Escolla o cuadrilátero que vai ser transformado nun cuadrilátero dado..."
+msgstr "Escolla o cuadrilátero que vai ser transformado nun cuadrilátero dado..."
 
 #: objects/transform_types.cc:532
 msgid "onto this other quadrilateral"
@@ -4647,8 +4540,7 @@ msgid "First of 4 starting points"
 msgstr "Primeiro dos 4 puntos iniciais"
 
 #: objects/transform_types.cc:573
-msgid ""
-"Select the first of the four starting points of the generic projectivity..."
+msgid "Select the first of the four starting points of the generic projectivity..."
 msgstr "Escolla o primeiro dos catro puntos iniciais da proxección xenérica..."
 
 #: objects/transform_types.cc:574
@@ -4656,8 +4548,7 @@ msgid "Second of 4 starting points"
 msgstr "Segundo dos 4 puntos iniciais"
 
 #: objects/transform_types.cc:575
-msgid ""
-"Select the second of the four starting points of the generic projectivity..."
+msgid "Select the second of the four starting points of the generic projectivity..."
 msgstr "Escolla o segundo dos catro puntos iniciais da proxección xenérica..."
 
 #: objects/transform_types.cc:576
@@ -4665,8 +4556,7 @@ msgid "Third of 4 starting points"
 msgstr "Terceiro dos 4 puntos iniciais"
 
 #: objects/transform_types.cc:577
-msgid ""
-"Select the third of the four starting points of the generic projectivity..."
+msgid "Select the third of the four starting points of the generic projectivity..."
 msgstr "Escolla o terceiro dos catro puntos iniciais da proxección xenérica..."
 
 #: objects/transform_types.cc:578
@@ -4674,8 +4564,7 @@ msgid "Fourth of 4 starting points"
 msgstr "cuarto dos 4 puntos iniciais"
 
 #: objects/transform_types.cc:579
-msgid ""
-"Select the fourth of the four starting points of the generic projectivity..."
+msgid "Select the fourth of the four starting points of the generic projectivity..."
 msgstr "Escolla o cuarto dos catro puntos iniciais da proxección xenérica..."
 
 #: objects/transform_types.cc:581
@@ -4744,21 +4633,19 @@ msgstr "Escolla o centro da semellanza..."
 
 #: objects/transform_types.cc:897
 msgid "Apply a similitude mapping this point onto another point"
-msgstr "Aplicar un mapeamento de semellanza deste punto sobre outro"
+msgstr "Aplicar unha transformación de semellanza deste punto sobre outro"
 
 #: objects/transform_types.cc:898
 msgid "Select the point which the similitude should map onto another point..."
-msgstr "Escolla o punto co cal a semellanza se mapeará noutro punto..."
+msgstr "Escolla o punto que debe ser transformado pola semellanza en outro punto..."
 
 #: objects/transform_types.cc:899
 msgid "Apply a similitude mapping a point onto this point"
-msgstr "Aplicar un mapeamento de semellanza dun punto neste punto"
+msgstr "Aplicar unha transformación de semellanza dun punto neste punto"
 
 #: objects/transform_types.cc:900
-msgid ""
-"Select the point onto which the similitude should map the first point..."
-msgstr ""
-"Escolla o punto sobre o cal a semellanza deberá mapear o primeiro punto..."
+msgid "Select the point onto which the similitude should map the first point..."
+msgstr "Escolla o punto sobre o cal a semellanza deberá transformar o primeiro punto..."
 
 #: objects/vector_type.cc:26
 msgid "Construct a vector from this point"
@@ -4781,20 +4668,16 @@ msgid "Construct the vector sum of this vector and another one."
 msgstr "Construír a suma de vectores de este vector e de outro."
 
 #: objects/vector_type.cc:62
-msgid ""
-"Select the first of the two vectors of which you want to construct the sum..."
-msgstr ""
-"Escolla o primeiro dos dous vectores cos cais desexa construír a suma..."
+msgid "Select the first of the two vectors of which you want to construct the sum..."
+msgstr "Escolla o primeiro dos dous vectores cos cais desexa construír a suma..."
 
 #: objects/vector_type.cc:63
 msgid "Construct the vector sum of this vector and the other one."
 msgstr "Construír a suma de vectores de este vector e do outro."
 
 #: objects/vector_type.cc:64
-msgid ""
-"Select the other of the two vectors of which you want to construct the sum..."
-msgstr ""
-"Escolla o segundo dos dous vectores cos cais desexa construír a suma..."
+msgid "Select the other of the two vectors of which you want to construct the sum..."
+msgstr "Escolla o segundo dos dous vectores cos cais desexa construír a suma..."
 
 #: objects/vector_type.cc:65
 msgid "Construct the vector sum starting at this point."
@@ -4806,28 +4689,27 @@ msgstr "Escolla o punto no cal criar a suma dos dous vectores..."
 
 #: scripting/newscriptwizard.cc:63
 msgid "New Script"
-msgstr "Novo Guión"
+msgstr "Novo script"
 
 #: scripting/newscriptwizard.cc:73
-#, fuzzy
 msgid ""
 "Select the argument objects (if any)\n"
 "in the Kig window and press \"Next\"."
 msgstr ""
-"Escolla os obxectos dos argumentos (de haber)\n"
+"Escolla os obxectos argumentos (de haber)\n"
 "na fiestra de Kig e prema en \"Seguinte\"."
 
 #: scripting/newscriptwizard.cc:79
 msgid "Enter Code"
-msgstr "Indique o Código"
+msgstr "Introduza o código"
 
 #: scripting/script-common.cc:35
 msgid "Now fill in the code:"
-msgstr "Agora insira o código:"
+msgstr "Agora escreba o código:"
 
 #: scripting/script-common.cc:36
 msgid "Now fill in the Python code:"
-msgstr "Agora insira o código Python:"
+msgstr "Agora escreba o código Python:"
 
 #: scripting/script-common.cc:54
 #, kde-format
@@ -4843,8 +4725,8 @@ msgid ""
 "The Python interpreter caught an error during the execution of your script. "
 "Please fix the script and click the Finish button again."
 msgstr ""
-"O interprete de Python obtivo un erro durante a execución do seu programa. "
-"Corrixa o programa e prema o botón Terminar de novo."
+"O interprete de Python obtivo un erro durante a execución do script. "
+"Corrixa o script e prema de novo o botón Terminar."
 
 #: scripting/script_mode.cc:209 scripting/script_mode.cc:351
 #, kde-format
@@ -4852,7 +4734,7 @@ msgid ""
 "The Python Interpreter generated the following error output:\n"
 "%1"
 msgstr ""
-"O Intérprete de Python xerou o seguinte resultado de erro:\n"
+"O intérprete de Python xerou o seguinte resultado de erro:\n"
 "%1"
 
 #: scripting/script_mode.cc:214
@@ -4861,57 +4743,50 @@ msgid ""
 "no errors, but the script does not generate a valid object. Please fix the "
 "script, and click the Finish button again."
 msgstr ""
-"Parece haber algún erro no seu programa. O Intérprete de Python non indicou "
-"nengún erro, pero o gión non xerou un obxecto válido. Corrixa o programa e e "
-"prema no botón Terminar de novo."
+"Parece haber algún erro no script. O intérprete de Python non indicou "
+"nengún erro, pero o script non xerou un obxecto válido. Corrixa o programa e "
+"prema de novo no botón Terminar."
 
 #: scripting/script_mode.cc:317
 msgctxt "'Edit' is a verb"
 msgid "Edit Script"
-msgstr ""
+msgstr "Editar o script"
 
 #: scripting/script_mode.cc:339
-#, fuzzy
 msgid "Edit Python Script"
-msgstr "Guión de Python"
+msgstr "Editar o script de Python"
 
 #: scripting/script_mode.cc:349
-#, fuzzy
 msgid ""
 "The Python interpreter caught an error during the execution of your script. "
 "Please fix the script."
 msgstr ""
-"O interprete de Python obtivo un erro durante a execución do seu programa. "
-"Corrixa o programa e prema o botón Terminar de novo."
+"O interprete de Python obtivo un erro durante a execución do script. "
+"Corrixa o script."
 
 #: scripting/script_mode.cc:356
-#, fuzzy
 msgid ""
 "There seems to be an error in your script. The Python interpreter reported "
 "no errors, but the script does not generate a valid object. Please fix the "
 "script."
 msgstr ""
-"Parece haber algún erro no seu programa. O Intérprete de Python non indicou "
-"nengún erro, pero o gión non xerou un obxecto válido. Corrixa o programa e e "
-"prema no botón Terminar de novo."
+"Parece haber algún erro no script. O intérprete de Python non indicou "
+"nengún erro, pero o script non xerou un obxecto válido. Corrixa o script."
 
 #: kig/kig.cpp:90
 msgid "Could not find the necessary Kig library, check your installation."
-msgstr ""
-"Non foi posíbel encontrar a biblioteca de Kig necesaria, verifique a súa "
-"instalación."
+msgstr "Non foi posíbel achar a biblioteca de Kig necesaria, verifique a instalación."
 
 #: kig/kig.cpp:203
 #, kde-format
 msgid "Save changes to document %1?"
-msgstr "Guardar os cambios do documento %1?"
+msgstr "Desexa gardar os modificación do documento %1?"
 
 #: kig/kig.cpp:204
 msgid "Save Changes?"
-msgstr "Guardar os Cambios?"
+msgstr "Gardar as modificacións?"
 
 #: kig/kig.cpp:239
-#, fuzzy
 msgid ""
 "*.kig *.kigz *.seg *.fgeo *.fig *.FIG|All Supported Files (*.kig *.kigz *."
 "seg *.fgeo *.fig)\n"
@@ -4922,10 +4797,10 @@ msgid ""
 "*.fgeo|Dr. Geo Documents (*.fgeo)\n"
 "*.fig *.FIG|Cabri Documents (*.fig *.FIG)"
 msgstr ""
-"*.kig **.kigz .kgeo *.seg|Todos os Ficheiros Soportados (*.kig *.kigz *.kgeo "
-"*.seg)\n"
+"*.kig *.kigz *.seg *.fgeo *.fig *.FIG|Todos os ficheiros soportados (*.kig *.kigz *."
+"seg *.fgeo *.fig)\n"
 "*.kig|Documentos de Kig (*.kig)\n"
-"*.kigz|Documentos Comprimidos de Kig (*.kigz)\n"
+"*.kigz|Documentos de Kig comprimidos (*.kigz)\n"
 "*.kgeo|Documentos de KGeo (*.kgeo)\n"
 "*.seg|Documentos de KSeg (*.seg)\n"
 "*.fgeo|Documentos de Dr. Geo (*.fgeo)\n"
@@ -4934,12 +4809,12 @@ msgstr ""
 #: kig/kig_commands.cpp:99
 #, kde-format
 msgid "Remove %1 Objects"
-msgstr "Borrar os %1 Obxectos"
+msgstr "Borrar os %1 obxectos"
 
 #: kig/kig_commands.cpp:111
 #, kde-format
 msgid "Add %1 Objects"
-msgstr "Engadir os %1 Obxectos"
+msgstr "Engadir os %1 obxectos"
 
 #: kig/kig_part.cpp:84
 msgid "KigPart"
@@ -4947,7 +4822,7 @@ msgstr "KigPart"
 
 #: kig/kig_part.cpp:88
 msgid "&Set Coordinate System"
-msgstr "Trocar o &Sistema de Coordenadas"
+msgstr "Modificar o &sistema de coordenadas"
 
 #: kig/kig_part.cpp:129
 msgid "Kig Options"
@@ -4963,11 +4838,11 @@ msgstr "Mostrar os eixos"
 
 #: kig/kig_part.cpp:225
 msgid "Invert Selection"
-msgstr "Inverter a Selección"
+msgstr "Inverter a selección"
 
 #: kig/kig_part.cpp:232
 msgid "&Delete Objects"
-msgstr "&Eliminar os Obxectos"
+msgstr "&Eliminar os obxectos"
 
 #: kig/kig_part.cpp:236
 msgid "Delete the selected objects"
@@ -4975,20 +4850,19 @@ msgstr "Elimina os obxectos escollidos"
 
 #: kig/kig_part.cpp:238
 msgid "Cancel Construction"
-msgstr "Cancelar a Construción"
+msgstr "Cancelar a construción"
 
 #: kig/kig_part.cpp:243
 msgid "Cancel the construction of the object being constructed"
-msgstr "Cancelar a construción do obxecto a criar"
+msgstr "Cancelar a construción do obxecto que se está a construir"
 
 #: kig/kig_part.cpp:246
-#, fuzzy
 msgid "Repeat Construction"
-msgstr "Cancelar a Construción"
+msgstr "Repetir a construción"
 
 #: kig/kig_part.cpp:251
 msgid "Repeat the last construction (with new data)"
-msgstr ""
+msgstr "Repite a última construción (con datos novos)"
 
 #: kig/kig_part.cpp:257
 msgid "Show all hidden objects"
@@ -4996,7 +4870,7 @@ msgstr "Mostrar todos os obxectos acochados"
 
 #: kig/kig_part.cpp:260
 msgid "&New Macro..."
-msgstr "&Nova Macro..."
+msgstr "&Nova macro..."
 
 #: kig/kig_part.cpp:263
 msgid "Define a new macro"
@@ -5004,20 +4878,19 @@ msgstr "Definir unha nova macro"
 
 #: kig/kig_part.cpp:265
 msgid "Manage &Types..."
-msgstr "Xestionar os &Tipos..."
+msgstr "Xestionar os &tipos..."
 
 #: kig/kig_part.cpp:268
 msgid "Manage macro types."
-msgstr "Xestionar os tipos de macros."
+msgstr "Xestiona os tipos de macros."
 
 #: kig/kig_part.cpp:270
 msgid "&Browse History..."
-msgstr ""
+msgstr "Historial de &navegación..."
 
 #: kig/kig_part.cpp:273
-#, fuzzy
 msgid "Browse the history of the current construction."
-msgstr "Cancelar a Construción"
+msgstr "Examina o historial da construción actual."
 
 #: kig/kig_part.cpp:280 kig/kig_part.cpp:281
 msgid "Zoom in on the document"
@@ -5033,11 +4906,11 @@ msgstr "Centrar o documento na pantalla"
 
 #: kig/kig_part.cpp:296 kig/kig_part.cpp:297
 msgid "View this document full-screen."
-msgstr "Ver este documento na pantalla completa."
+msgstr "Ver este documento a pantalla completa."
 
 #: kig/kig_part.cpp:300
 msgid "&Select Shown Area"
-msgstr "&Escoller a Área Visíbel"
+msgstr "&Escoller a área visíbel"
 
 #: kig/kig_part.cpp:303 kig/kig_part.cpp:304
 msgid "Select the area that you want to be shown in the window."
@@ -5045,11 +4918,11 @@ msgstr "Escolla a área que desexa mostrar na fiestra."
 
 #: kig/kig_part.cpp:306
 msgid "S&elect Zoom Area"
-msgstr "&Escoller a Área a Ampliar"
+msgstr "&Escoller a área a ampliar"
 
 #: kig/kig_part.cpp:312
 msgid "Show &Grid"
-msgstr "Mostrar a &Grella"
+msgstr "Mostrar a &grella"
 
 #: kig/kig_part.cpp:314
 msgid "Show or hide the grid."
@@ -5057,7 +4930,7 @@ msgstr "Mostra ou acocha a grella."
 
 #: kig/kig_part.cpp:318
 msgid "Show &Axes"
-msgstr "Mostr&ar os Eixos"
+msgstr "Mostr&ar os eixos"
 
 #: kig/kig_part.cpp:320
 msgid "Show or hide the axes."
@@ -5065,22 +4938,21 @@ msgstr "Mostra ou acocha os eixos."
 
 #: kig/kig_part.cpp:324
 msgid "Wear Infrared Glasses"
-msgstr "Usar Lentes de Infra-vermellos"
+msgstr "Usar lentes de infravermellos"
 
 #: kig/kig_part.cpp:326
-#, fuzzy
 msgid "Enable/disable hidden objects visibility."
-msgstr "Comuta a visibilidade dos7 obxectos acochados."
+msgstr "Comuta a visibilidade dos obxectos acochados."
 
 #: kig/kig_part.cpp:358
-#, fuzzy, kde-format
+#, kde-format
 msgid "Repeat Construction (%1)"
-msgstr "Cancelar a Construción"
+msgstr "Repetir a construción (%1)"
 
 #: kig/kig_part.cpp:360
 #, kde-format
 msgid "Repeat %1 (with new data)"
-msgstr ""
+msgstr "Repetir %1 (con novos datos)"
 
 #: kig/kig_part.cpp:389
 #, kde-format
@@ -5093,36 +4965,35 @@ msgstr ""
 
 #: kig/kig_part.cpp:391
 msgid "File Not Found"
-msgstr "Ficheiro Non Encontrado"
+msgstr "Non se atopou o ficheiro"
 
 #: kig/kig_part.cpp:409
-#, fuzzy, kde-format
+#, kde-format
 msgid ""
 "You tried to open a document of type \"%1\"; unfortunately, Kig does not "
 "support this format. If you think the format in question would be worth "
 "implementing support for, you can always ask us nicely on mailto:pino@kde."
 "org or do the work yourself and send me a patch."
 msgstr ""
-"Tentou abrir un documento do tipo \"%1\";  Kig non soporta este formato. Se "
-"acha que o formato en cuestión debería estar soportado por Kig, pode pedilo "
-"en mailto:toscano.pino@tiscali.it ou implementalo por si e enviarmo como "
-"parche."
+"Tentou abrir un documento do tipo \"%1\",  Kig non soporta este formato. Se "
+"pensa que o formato en cuestión debería estar soportado por Kig, pode pedilo "
+"en mailto:pino@kde.org ou implementalo por si e envialo como un parche."
 
 #: kig/kig_part.cpp:415 kig/kig_part.cpp:458
 msgid "Format Not Supported"
-msgstr "Formato Non Suportado"
+msgstr "Formato non soportado"
 
 #: kig/kig_part.cpp:456
 msgid ""
 "Kig does not support saving to any other file format than its own. Save to "
 "Kig's format instead?"
 msgstr ""
-"Kig non permite guardar nun formato de ficheiro diferente do seu. Desexa "
-"guardar no formato de Kig?"
+"Kig non permite gardar nun formato de ficheiro diferente do seu. Desexa "
+"gardar no formato de Kig?"
 
 #: kig/kig_part.cpp:458
 msgid "Save Kig Format"
-msgstr "Guardar no formato de Kig"
+msgstr "Gardar no formato de Kig"
 
 #: kig/kig_part.cpp:645
 msgid ""
@@ -5130,25 +5001,25 @@ msgid ""
 "*.kigz|Compressed Kig Documents (*.kigz)"
 msgstr ""
 "*.kig|Documentos de Kig (*.kig)\n"
-"*.kigz|Documentos Comprimidos de Kig (*.kigz) "
+"*.kigz|Documentos de Kig comprimidos (*.kigz) "
 
 #: kig/kig_part.cpp:814
 msgid "Print Geometry"
-msgstr "Imprimir a Xeometría"
+msgstr "Imprimir a xeometría"
 
 #: kig/kig_part.cpp:881
 #, kde-format
 msgid "Hide %1 Object"
 msgid_plural "Hide %1 Objects"
-msgstr[0] "Acochar %1 Obxecto"
-msgstr[1] "Acochar %1 Obxectos"
+msgstr[0] "Acochar %1 obxecto"
+msgstr[1] "Acochar %1 obxectos"
 
 #: kig/kig_part.cpp:900
 #, kde-format
 msgid "Show %1 Object"
 msgid_plural "Show %1 Objects"
-msgstr[0] "Mostrar %1 Obxecto"
-msgstr[1] "Mostrar %1 Obxectos"
+msgstr[0] "Mostrar %1 obxecto"
+msgstr[1] "Mostrar %1 obxectos"
 
 #: kig/kig_view.cpp:219
 msgid "Zoom In"
@@ -5160,27 +5031,26 @@ msgstr "Reducir"
 
 #: kig/kig_view.cpp:519
 msgid "Recenter View"
-msgstr "Centrar de Novo a Vista"
+msgstr "Centrar de novo a vista"
 
 #: kig/kig_view.cpp:541
 msgid "Select the rectangle that should be shown."
-msgstr "Escolla a área que debe ser mostrado."
+msgstr "Escolla a área que debe ser mostrada."
 
 #: kig/kig_view.cpp:549 kig/kig_view.cpp:597
 msgid "Change Shown Part of Screen"
-msgstr "Modificar a Parte Visíbel da Pantalla"
+msgstr "Trocar a parte visíbel da pantalla"
 
 #: kig/kig_view.cpp:586
 msgid "Select Zoom Area"
-msgstr "Escoller a Área Ampliada"
+msgstr "Escoller a área ampliada"
 
 #: kig/kig_view.cpp:587
-#, fuzzy
 msgid ""
 "Select the zoom area by entering the coordinates<br />of the upper left "
 "corner and the lower right corner."
 msgstr ""
-"Escolla a área de ampliación, indicando as coordenadas do canto superior "
+"Escolla a área de ampliación, indicando as coordenadas<br />do canto superior "
 "esquerdo e do inferior dereito."
 
 #: kig/main.cpp:98
@@ -5217,12 +5087,11 @@ msgstr ""
 "onde x é a coordenada en \"x\" e y é a coordenada en \"y\"."
 
 #: misc/coordinate_system.cpp:333
-#, fuzzy
 msgid ""
 "Enter coordinates in the following format: <b>\"x;y\"</b>,<br />where x is "
 "the x coordinate, and y is the y coordinate."
 msgstr ""
-"Indique as coordenadas no formato: <b>\"x;y\" </b>, onde x é a coordenada en "
+"Indique as coordenadas no formato: <b>\"x;y\" </b>,<br />onde x é a coordenada en "
 "\"x\" e y é a coordenada en \"y\"."
 
 #: misc/coordinate_system.cpp:375
@@ -5234,12 +5103,11 @@ msgstr ""
 "onde r e θ son as coordenadas polares."
 
 #: misc/coordinate_system.cpp:382
-#, fuzzy
 msgid ""
 "Enter coordinates in the following format: <b>\"r; θ°\"</b>,<br />where r "
 "and θ are the polar coordinates."
 msgstr ""
-"Indique as coordenadas no seguinte formato: <b>\"r; θ°\"</b>, onde r e θ son "
+"Indique as coordenadas no seguinte formato: <b>\"r; θ°\"</b>,<br />onde r e θ son "
 "as coordenadas polares."
 
 #: misc/coordinate_system.cpp:534
@@ -5252,20 +5120,19 @@ msgstr "&Polares"
 
 #: misc/coordinate_system.cpp:585
 msgid "Set Euclidean Coordinate System"
-msgstr "Usar Coordenadas Euclidianas"
+msgstr "Empregar sistema de coordenadas euclidianas"
 
 #: misc/coordinate_system.cpp:587
 msgid "Set Polar Coordinate System"
-msgstr "Usar Coordenadas Polares"
+msgstr "Empregar o sistema de coordenadas polares"
 
 #: modes/typesdialog.cpp:129
 msgid "Macro"
-msgstr ""
+msgstr "Macro"
 
 #: modes/typesdialog.cpp:312
-#, fuzzy
 msgid "Type"
-msgstr "&Tipos"
+msgstr "Tipo"
 
 #: modes/typesdialog.cpp:314
 msgid "Description"
@@ -5273,34 +5140,34 @@ msgstr "Descrición"
 
 #: modes/typesdialog.cpp:338
 msgid "Manage Types"
-msgstr "Xestionar Tipos"
+msgstr "Xestionar os tipos"
 
 #: modes/typesdialog.cpp:425
-#, fuzzy, kde-format
+#, kde-format
 msgid "Are you sure you want to delete this type?"
 msgid_plural "Are you sure you want to delete these %1 types?"
-msgstr[0] "Está seguro de que quer borrar este tipo?"
-msgstr[1] "Está seguro de que quer borrar estes %1 tipos?"
+msgstr[0] "Desexa realmente eliminar este tipo?"
+msgstr[1] "Desexa realmente eliminar estes %1 tipos?"
 
 #: modes/typesdialog.cpp:427
 msgid "Are You Sure?"
-msgstr "Está Seguro?"
+msgstr "Está seguro?"
 
 #: modes/typesdialog.cpp:450 modes/typesdialog.cpp:465
 msgid ""
 "*.kigt|Kig Types Files\n"
 "*|All Files"
 msgstr ""
-"*.kigt|Ficheiros de Tipos de Kig\n"
-"*|Todos os Ficheiros"
+"*.kigt|Ficheiros de tipos de Kig\n"
+"*|Todos os ficheiros"
 
 #: modes/typesdialog.cpp:450
 msgid "Export Types"
-msgstr "Exportar Tipos"
+msgstr "Exportar os tipos"
 
 #: modes/typesdialog.cpp:465
 msgid "Import Types"
-msgstr "Importar Tipos"
+msgstr "Importar tipos"
 
 #: modes/typesdialog.cpp:493
 msgid ""
@@ -5312,91 +5179,5 @@ msgstr ""
 
 #: modes/typesdialog.cpp:496
 msgid "More Than One Type Selected"
-msgstr "Máis dun Tipo Escollido"
+msgstr "Ten máis dun tipo escollido"
 
-#~ msgid "Icon"
-#~ msgstr "Ícone"
-
-#~ msgid ""
-#~ "Here you can manage types; you can remove them, and load and save them "
-#~ "from and to files..."
-#~ msgstr ""
-#~ "Aquí  pode xestionar os tipos; pode borralos, cargalos e guardalos de e "
-#~ "para ficheiros..."
-
-#~ msgid "Edit..."
-#~ msgstr "Editar..."
-
-#~ msgid "Export..."
-#~ msgstr "Exportar..."
-
-#~ msgid ""
-#~ "Construct a circle with the radius given by the length of this segment"
-#~ msgstr "Construi un círculo co raio dado pola lonxitude deste segmento"
-
-#~ msgid ""
-#~ "Select the segment whose length gives the radius of the new circle..."
-#~ msgstr "Escolla o segmento cua lonxitude dá o raio do novo círculo..."
-
-#~ msgid "Please select a figure."
-#~ msgstr "Por favor escolla unha figura."
-
-#~ msgid "Overwrite"
-#~ msgstr "Sobrescreber"
-
-#, fuzzy
-#~ msgid "Edit Script..."
-#~ msgstr "Editar..."
-
-#~ msgid "x² + y² + %1 x + %2 y + %3 = 0"
-#~ msgstr "x² + y² + %1 x + %2 y + %3 = 0"
-
-#~ msgid "( x - %1 )² + ( y - %2 )² = %3"
-#~ msgstr "(x - %1) ² + (y - %2) ² = %3"
-
-#~ msgid "%1 x² + %2 y² + %3 xy + %4 x + %5 y + %6 = 0"
-#~ msgstr "%1 x² + %2 y² + %3 xy + %4 x + %5 y + %6 = 0"
-
-#~ msgid ""
-#~ "rho = %1/(1 + %2 cos theta + %3 sin theta)\n"
-#~ "    [centered at %4]"
-#~ msgstr ""
-#~ "ro = %1/(1 + %2 cos teta + %3 sen teta)\n"
-#~ " [centrado en %4]"
-
-#~ msgid ""
-#~ "%6 x³ + %9 y³ + %7 x²y + %8 xy² + %5 y² + %3 x² + %4 xy + %1 x + %2 y"
-#~ msgstr ""
-#~ "%6 x³ + %9 y³ + %7 x²y + %8 xy² + %5 y² + %3 x² + %4 xy + %1 x + %2 y"
-
-#~ msgid " + %1 = 0"
-#~ msgstr " + %1 = 0"
-
-#~ msgid "Scale by the length of this segment"
-#~ msgstr "Escala polo lonxitude deste segmento"
-
-#~ msgid "Scale the length of this segment..."
-#~ msgstr "Escalar a lonxitude deste segmento..."
-
-#~ msgid "...to the length of this other segment"
-#~ msgstr "...pola lonxitude destoutro segmento"
-
-#~ msgid "Select a segment whose length is the factor for the scaling"
-#~ msgstr "Escolla un segmento cuxa lonxitude é o factor de escala"
-
-#~ msgid ""
-#~ "Select the first of two segments whose ratio is the factor for the scaling"
-#~ msgstr ""
-#~ "Escolla o primeiro de dous segmentos cuxa relación é o factor de escala"
-
-#~ msgid "...to the length of this segment"
-#~ msgstr "...á lonxitude deste segmento"
-
-#~ msgid ""
-#~ "Select the second of two segments whose ratio is the factor for the "
-#~ "scaling"
-#~ msgstr ""
-#~ "Escolla o segundo de dous segmentos cuxa relación é o factor de escala"
-
-#~ msgid "Full Screen"
-#~ msgstr "Toda a Pantalla"
