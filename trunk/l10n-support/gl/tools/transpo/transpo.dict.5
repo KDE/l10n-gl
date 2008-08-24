@@ -1,0 +1,135 @@
+.\" transpo dictionary syntax manpage 0.1
+.\" $Id: transpo.dict.5,v 1.2 2006/01/22 16:55:05 zero_dogg Exp $
+.\" Copyright (C) Eskild Hustvedt 2005
+.\"
+.\" This document is free; you can redistribute it and/or
+.\" modify it under the terms of the GNU General Public License
+.\" as published by the Free Software Foundation; either version 2
+.\" of the License, or (at your option) any later version.
+.\"
+.\" This document is distributed in the hope that it will be useful,
+.\" but WITHOUT ANY WARRANTY; without even the implied warranty of
+.\" MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+.\" GNU General Public License for more details.
+.\"
+.\" You should have received a copy of the GNU General Public License
+.\" along with this program; if not, write to the Free Software Foundation, Inc.,
+.\" 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
+.TH transpo.dict 5 "October 2005" "TransPO dictionary syntax (0.2)" "User Manuals"
+.SH NAME
+transpo.dict - Dictionary for use with TransPO
+.SH DESCRIPTION
+This is the file transpo reads to find out which words to replace with what.
+The syntax is as follows:
+
+from = to
+.SH CASE SENSITIVITY
+Search expressions (the text before \fI=\fR) are case insensitive.
+For instance "no = yes" will match both No and no. However, the
+replacement string will have to begin with an uppercase first character if the search expression
+has it, if not it will be replaced with lowercase.
+
+.SH PRECEDENCE
+To avoid small, unprecise expressions replacing words where a larger more precise
+expression would have done a better job transpo uses a system of points.
+Each letter of a word gives one point. Then extra points are given:
+.br
+	- Expressions without any "*" or "+" gets ten extra points
+.br
+	- Expressions with "+" gets one point for each "+"
+.br
+	- Expressions using "*" doesn't get any extra points
+.br
+.br
+Example: deactivate should match before activate, it is longer and thus
+gets two extra points and transpo matches deactivate before it matches
+activate.
+
+.SH SPECIAL CHARACTERS
+.TP
+*
+"*" at the beginning of a word indicates that the word can also be part of another
+word. For instance "*no = yes" will replace "no" with "yes", but also
+"domino" with "domiyes". When placed at the end the phrase may be at the beginning of a word,
+and when placed both at the end and beginning it indicates that the word
+can either be alone, in the beginning, in the end, or in the middle of a word.
+.TP
++
+"+" at the beginning  (or end) of a word indicates that at \fIleast\fR one alphanumerical
+character must follow (or preceed) the word. For instance "no+ = yes" will not match "no",
+but will match "none" (IE. none becomes yesne).
+.TP
+[]
+Letters inside "[]" indicates that both letters inside "[]" can be at that place
+in the word. For instance "[tw]here = dark" will replace both where and there
+with dark (a useless replace, but it's an example).
+.TP
+?
+A questionmark indicates that the preceeding letter \fBcan\fR be included,
+but that it doesn't need to. For instance "w?here = there" will replace
+both where and here with there.
+.TP
+#
+A "#" in the beginning of a line indicates that the line is a comment,
+transpo will skip the line completely.
+.SH SYNTAX EXAMPLES
+.TP
+\fIopen \fR=\fI free\fR
+Will replace the word "open" with the word "free".
+.br
+.TP
+\fIopen source \fR=\fI free software\fR
+Will replace the phrase "open source" with the phrase "free software".
+.TP
+\fI*open \fR=\fI free\fR
+Will replace the word "open" with the word "free", the "*" in the beginning indicates
+that "open" can also be the end of a word, so it will for instance also replace
+"not-open" with "not-free".
+.TP
+\fIopen* \fR=\fI free\fR
+Will replace the word "open" with the word "free", the * at the end indicates
+that "open" can also be the beginning of a word, so it will for instance also
+replace "open-source" with "free-source".
+.TP
+\fI*open* \fR=\fI free\fR
+Will replace the word "open" with the word "free", the "*" at the beginning and end
+indicates that it can also be in the middle, beginning, or end of a word,
+so it will for instance repleace "not-open-source" with "not-free-source".
+.TP
+\fIopen+\fR = \fIfree\fR
+Will replace the phrase "open-source" with the phrase "free-source", but will not
+replace the word "open" with "free". The reverse is true if the "+" is at the beginning.
+.TP
+\fI[tw]here\fR = \fIthat\fR
+Will replace both the "where" and "there" with "that".
+.TP
+\fIw?here\fR = \fIthere\fR
+Will replace both "where" and "here" with "there".
+.TP
+\fI# Free software \fR=\fI Open Source\fR
+The "#" in the beginning of a line indicates that it is a comment, transpo will
+skip all lines beginning with "#".
+.SH AUTHORS
+\fBtranspo\fR was originally written by Harald Thingelstad, but it is currently
+maintained (version 0.2 and newer) by Eskild Hustvedt.
+.SH FILES
+.TP
+\fItranspo.dict\fR
+The first dictionary transpo tries to use.
+.TP
+\fItranspo-nn2nb.dict\fR
+The Norwegian Nynorsk to Norwegian Bokmaal dictionary.
+.TP
+\fItranspo-da2nb.dict\fR
+The Danish to Norwegian Bokmaal dictionary.
+.SH COPYRIGHT
+Copyright (C) 2003, 2004 Harald Thingelstad
+.br
+Copyright (C) 2005 Eskild Hustvedt
+.br
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+.SH SEE ALSO
+transpo(1) - Main transpo manpage
+.SH BUGS
+Possibly :). Report to http://savannah.nongnu.org/projects/transpo if you find any.

@@ -1,0 +1,23 @@
+Olá,
+
+Este cartafol contén ferramentas para a liña de comando que foron utilizadas para a tradución de KDE ao galego, e para as que non se coñece equivalente integrado nas ferramentas de CAT máis comúns (Lokalize).
+
+Os contidos son:
+
+extrairmsgid.perl
+    Este é un script escrito en perl, adaptado de outro contido en port2gal, que permite obter os textos orixe contidos nun ficheiro po/pot, cada un nunha só liña, sen marcas de atallos, nen entidades xml, e tamén con boa parte das etiquetas html/xml retiradas (serían todas se funcionase correctamente).
+    Foi utilizado para extrair unha listaxe de nomes de cidade/rexións/estados do ficheiro de kdeedu/kstars.po
+
+port2gal
+    Este cartafol contén unha serie de scripts precisos para realizar a transliteración dun ficheiro po de portugués a galego.
+    Esta é unha versión reducida, contendo só os elementos precisos para a normativa oficial. Hai versións disponíbeis para outras versións.
+    Foi empregado masivamente por mvillarino durante a tradución de KDE3.5, aínda que na de KDE4 xa se deixou de empregar.
+    A versión que se fornece aquí está modificada para dar conta da adición dos campos "msgctxt" e "#| msgid", mais non ten sido probada, polo que non se pode garantir ao 100% que funcione correctamente.
+
+transpo
+    Este script é orixinario da equipa Norueguesa. O que fai é realizar substitucións no texto termo, baseadas nun dicionario.
+    Foi empregado co dicionario "transpo_gl_utf.dict" para a tradución de KDE3.5, por mvillarino.
+    Existe un script cun propósito semellante, escrito por Xabier García Feal, sendo este coordinador da traducion de KDE, que foi empregado para realizar a adaptación dos textos termo á normativa RAGL 2003. Está disponíbel no sitio web do proxecto Trasno.
+
+O procedimento de traballo con estes dous scripts era o seguinte:
+   -Obtención do modelo programa.pot e do ficheiro.po en portugués -> trans_ofic.x ficheiro.po -> transpo ficheiro_gal.po -> msgmerge -o ficheiro.po ficheiro_gal.po programa.pot -> Revisión do ficheiro resultante -> Entrega

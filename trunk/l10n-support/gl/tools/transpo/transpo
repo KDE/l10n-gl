@@ -1,0 +1,397 @@
+#!/usr/bin/perl
+# transpo 0.2
+# $Id: transpo,v 1.26 2006/06/20 14:21:49 zero_dogg Exp $
+# Replaces substrings in msgid of .po files.
+# Copyright (C) 2003, 2004 Harald Thingelstad
+# Copyright (C) 2005, 2006 Eskild Hustvedt
+#
+# This program is free software; you can redistribute it and/or
+# modify it under the terms of the GNU General Public License
+# as published by the Free Software Foundation; either version 2
+# of the License, or (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, write to the Free Software Foundation, Inc.,
+# 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
+
+require 5.6.0;          # Use of proper utf8 requires perl 5.6 or better.
+use strict;		# Sick and tired of the ways perl can help you blow a hole in your foot.
+use warnings;		# ditto
+use Getopt::Long;	# Commandline parsing
+use File::Basename;	# Needed to find out our directory and name
+use File::Copy;		# We need to copy files
+use utf8;		# Allow the use of utf8 in the source code
+use locale;		# Use POSIX locales for things like sorting
+use Cwd;		# We need realpath();
+use POSIX qw(locale_h);	# We need setlocale();
+# See to that correct locale is set, manually (use encoding 'utf8' is broken).
+setlocale(LC_CTYPE, "nb_NO.UTF8");
+
+# Allow bundling of commandline parameters and 
+Getopt::Long::Configure ("bundling", 'prefix_pattern=(--|-)');
+
+my $Version = "0.2 RC3";			# Version number
+my $RCSRev = '$Id: transpo,v 1.26 2006/06/20 14:21:49 zero_dogg Exp $'; # CVS Revision
+my (
+	$Dictionary,	$BaseDictionary,	$Verbose,
+	$WriteBackup,	$RemoveBROnly,		$DebugMode
+);	# Declare variables
+
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+# Various smaller functions
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+# Purpose: Display debugging information in debugging mode
+# Usage: printd("Information");
+sub printd ($) {
+	print "DEBUG: $_[0]" if $DebugMode;
+}
+
+# Purpose: Display a verbose status message
+# Usage: vprint("Current status");
+sub vprint ($) {
+	$| = 1;	# Set $| for filehandle STDOUT to 1 to make perl not buffer it
+	print "\r                                                               " if $Verbose;	# Hack to remove old lines
+	print "\rStatus: $_[0]" if $Verbose;	# Print status
+}
+
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+# PO processing functions
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+# Purpose: Replace dictionary tags with regex characters
+# Usage: reaplceTag($Scalar);
+sub replaceTag($) {
+	if($_[0] eq '*') { return ('(.)', 0); }	# Can have any character. Priority value 0 (lowest). 
+	if($_[0] eq '+') { return ('(\w)', 4); }# Must be an alphanumeric. Priority value 4 (middle).
+	return ('(\W)', 10);			# Must not be an alphanumeric. Priority value 10 (highest).
+}
+
+# Purpose: Read and parse a transpo dictionary
+# Usage: readdict(/path/to/dictionary);
+sub readdict($) {
+	my ($filename) = @_;	# Filename.
+	my @dict;		# Array of hashes to fill with dictionary data, sorted on priority. $dict[$pri]{$from} = $to.
+	my $line;		# A line in the file we want to read.
+	my ($from1, $from3);	# Helps splitting and concatenating the "from" part of a line.
+	my ($pri, $pri1, $pri3);	# Cost of substitution, index for priority sorting (bucketsort).
+	open(FILE,$filename) or die "Couldn't find dictionary file $filename";
+	while($line = <FILE>) {		  # While lines are left FILE:
+		chomp $line;		  # Cut off newline character(s).
+		next if $line =~ /^\s*#/; # Skip comments
+		# If possible grab contents of line.
+		if($line =~ /^\s*(\*?)(.*?)(\*?)\s*\=\s*\*?(.*?)\*?\s*$/) { 
+			# Collect and reformat "from" part of the line.
+			($from1, $pri1) = replaceTag($1);
+			($from3, $pri3) = replaceTag($3);
+			$pri = length($2) + $pri1 + $pri3;
+			# Every string can have first letter in upper an lower case. 
+			# If strings from dict line already start in upper case,
+			# it stays that way.
+			$dict[$pri]{$from1.ucfirst($2).$from3} = ucfirst($4);
+			$dict[$pri]{$from1.$2.$from3} = $4;
+		}
+		elsif($line)  {	# Not possible to grab contents of line. And not just an empty string.
+			print "The line \"$line\" in the dictionary file \"$filename\" can not be used.\n";
+		}
+	}
+	close FILE;
+	return @dict;		# Return our valuables.
+}
+
+# Purpose: Replace contents of one single string.
+# Usage: replaceString(\$String, \%HashRef);
+sub replaceString($$) {
+	my $string = " $_[0] ";	# String to be replaced. Padded with spaces fore and aft, 
+	# to let the first and last words be recognized properly. Padding will be 
+	# removed later.
+	my @dict = @{$_[1]};		# List with hashes of dictionary data. $dict[pri]{$from} = $to
+	my %dicth;			# Hash of dictionary data. $dicth{from} = $to
+	my ($from,$to);
+	my $NewString;
+	study $string;	# Prepare for exhaustive regexping on $string.
+	for(my $i = scalar(@dict) - 1; $i >= 0; $i--) {
+		next unless defined $dict[$i];
+		%dicth = %{$dict[$i]};
+		while(($from,$to) = each %dicth) {		# Go through all possible replacements.
+			# All hail obscurity! This regexp makes sure we don't substitute inside <>'s
+			# but substitutes everything else.
+			if($string =~ s/$from/$1$to$2/g) {
+				study $string;			# Study new string if changed.
+			}
+		}
+	}
+	$string =~ s/^.(.*).$/$1/;	# Remove padded spaces fore and aft.
+	return $string;			# Return massaged string.
+}
+
+# Purpose: Merge lines in strings so that an msgstr is only on one line
+# Usage: mergeLines(\@BlockOfData, \@NewBlockOfData);
+sub mergeLines($$) {
+	my $block = $_[0];		# Reference to an array of data
+	my $NewBlock = $_[1];		# Reference to a new array of data
+	my $CurrentLine;		# The current line we're working on
+	my $CurrentType;		# The current type of data
+	foreach my $line (@{$block}) {
+		chomp($line);
+		if ($line =~ /^\s*(msgid|msgstr|#)/) {
+			# New something, dump $CurrentLine if it is set.
+			if ($CurrentLine) {
+				#		$CurrentLine =~ s/ ?$//g;
+				$CurrentLine = "$CurrentLine\"";
+				push(@{$NewBlock},$CurrentLine);
+				push(@{$NewBlock},"");
+				$CurrentLine = undef;
+			}
+		}
+		if ($line =~ /^msgid/) {
+			# New msgid?
+			$CurrentType = 'msgid';
+			push(@{$NewBlock},$line);
+			next;
+		} elsif ($line =~ /^msgstr/) {
+			# New msgstr?
+			$CurrentType = 'msgstr';
+			$line =~ s/"\s*$//;
+			$CurrentLine = "$line";
+			next;
+		} elsif ($line =~ /^\s*#/) {
+			# Comment?
+			push(@{$NewBlock},$line);
+			next;
+		} elsif (defined($CurrentType) and $CurrentType eq 'msgid') {
+			push(@{$NewBlock},$line);
+			next;
+		}
+		$line =~ s/^\s*"//;
+		$line =~ s/"\s*$//;
+		$CurrentLine = "$CurrentLine$line";
+	}
+	#$CurrentLine =~ s/\s?$//g;
+	$CurrentLine = "$CurrentLine\"";
+	push(@{$NewBlock},$CurrentLine);
+	push(@{$NewBlock},"\n");
+}
+
+# Purpose: Replace a block of data.
+# Usage: replaceBlock(\@DataArray, \@Dictionary);
+sub replaceBlock($$) {
+	my ($rblock,$rdict) = @_;	# Reference to block of data (array) 
+								# and list of replacements (hash).
+	my $msgstrCount = 0;		# Counts msgstr appearances in block. First msgstr
+								# contains metadata and should be left in peace.
+	my $msgType = '';		# Type of strings currently read. $msgType = id|str
+	my $dots = ".";
+	my $run = "30";
+	my ($line,$msg,$string);
+	# Walks through each line in block and replaces the lines.
+	for(my $lineNr = 0; defined($line = $$rblock[$lineNr]); $lineNr++) {
+		$string = undef;
+		if($line =~ /^msgid/) { 	# If line says we've got a new msgid.
+			$msgType = 'id';
+		}
+		elsif($line =~ /^msgstr/) { 	# If line says we've got a new msgstr.
+			$msgType = 'str';
+			$msgstrCount++;
+		}
+		if($line =~ /^\s*#/) {	# Skip comments
+			$$rblock[$lineNr] = "$line";
+			next;
+		}
+		if($line =~ /\"(.+)\"\s*$/	# If we've got a string.
+		  and $msgType eq 'str'		# and it's part of a msgstr.
+		  and $msgstrCount > 1) { 	# and not the first one
+	  					# then we want to start doing voodoo magic on the string
+	  		# Split it up, add one newline at each instance of < and >, so that <*> are on
+			# lines by themselves.
+			my $LineStringIs = $1;
+	  		$LineStringIs =~ s/>/>\n/g;
+			$LineStringIs =~ s/</\n</g;
+			my @NewString = undef;	# The array containing our new string
+			foreach my $TemporaryString (split(/\n/,$LineStringIs)) {	# For each newline in $LineStringIs
+				next unless defined($TemporaryString);	# Don't do anything if it's undef
+				chomp($TemporaryString);		# Remove newlines
+				unless ($TemporaryString =~ /^</) {					# If the line does NOT start with <
+					push(@NewString, replaceString($TemporaryString,$rdict));	# then we perform voodoo!
+				} else {
+					push(@NewString, $TemporaryString);				# If it starts with < then it's immune to our voodoo
+				}
+			}
+			foreach (@NewString) {			# For every entry in the array
+				next unless defined($_);	# Don't do anything if it's undef
+				chomp($_);			# remove newlines
+				$string = "$string$_";		# and add it to the main string.
+			}
+			# Put quotes and eventual msgstr header on again and put the newly
+			# made line back into the text block.
+			if ($line =~ /^msgstr/ ) {
+				$$rblock[$lineNr] = "msgstr \"$string\"";
+			} else {
+				$$rblock[$lineNr] = "\"$string\"";
+			}
+		}
+	}
+}
+
+# Purpose: Replace the contents of a file
+# Usage: replaceFile(FILENAME, \@ReferenceToDictionary);
+sub replaceFile($$) {
+	my ($filename,$rdict) = @_; 			# Get filename and reference to dict file.
+
+	if(open(FILE,$filename)) { 			# If file could be opened:
+		my @block = <FILE>;			# Slurp its contents into the @block array.
+		my @MergedBlock;			# The new one we'll use after merge.
+		close FILE;
+		chomp @block;				# Remove newline character(s) from all lines.
+		unless (scalar(@block)) {
+			print "The file \"$filename\" is empty - skipping.\n";
+			return 0;
+		}
+		vprint("Merging lines of $filename");
+		mergeLines(\@block,\@MergedBlock);	# Call mergeLines on @block to get each string to be on a single line (see the mergeLines subroutine)
+		unless ($RemoveBROnly) {
+			vprint("Replacing lines in $filename");
+			replaceBlock(\@MergedBlock,$rdict);	# Replace contents of the block.
+		}
+		if ($WriteBackup) {
+			vprint("Backing up the old version to $filename.orig");
+			copy($filename, "$filename.orig") or die "FATAL: Unable to backup $filename to $filename.orig: $!\n";
+		}
+		if(open(FILE,">$filename")) {		# If FILE can be opened for writing:
+			vprint("Writing $filename to disk");
+			foreach(@MergedBlock) {		# Print each line with a new newline character,
+				print FILE "$_\n";	# thus writing our pretty transpoified po file back to the disk
+			}
+			close FILE;
+			vprint("Done with $filename :)\n");
+		}
+		else {
+			print "Could not write to the file $filename\n";
+		}
+	}
+	else {
+		print "Couldn't find the file $filename\n";
+	}
+}
+
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+# Initialization functions
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+# Purpose: Start replacing files
+# Usage: StartReplacement();
+sub StartReplacement () {
+	my @dict;
+	my $filename;
+	unless ($RemoveBROnly) {
+		vprint("Reading dictionary $Dictionary");
+		@dict = readdict($Dictionary); 	# Read the dictionary file.
+	}
+	foreach $filename(@ARGV) { 		# For each file to be processed
+		replaceFile($filename,\@dict) 	# replace strings.
+	}
+}
+
+# Purpose: Detect the dictionary file we want to use (sets $Dictionary or dies)
+# Usage: DetectDictionary();
+sub DetectDictionary () {
+	# Get the directory containing transpo
+	my $basedir = Cwd::realpath($0);
+	$basedir = dirname($basedir);
+	# An array of dictionaries.
+	my @Dicts;
+	# If $BaseDictionary is set, use that dictionary.
+	if ($BaseDictionary) {
+		@Dicts = ("$BaseDictionary", "$ENV{HOME}/$BaseDictionary", "$basedir/$BaseDictionary");
+	} else {
+		# If it isn't set, try all known ones.
+		my @DictionaryFiles = ("transpo.dict", "transpo-nn2nb.dict", "transpo-da2nb.dict");
+		foreach (@DictionaryFiles) {
+			push(@Dicts, "$_");
+			push(@Dicts, "$ENV{HOME}/$_");
+			push(@Dicts, "$basedir/$_");
+		}
+	}
+	# Detect the dictionary
+	foreach (@Dicts) {
+		if ( -e $_ ) {
+			$Dictionary = $_;
+			last;
+		}
+	}
+	# Die if the dictionary couldn't be found.
+	unless ($BaseDictionary) {
+		die "\nUnable to detect any dictionary! Use --dict to select one.\n" unless $Dictionary;
+	} else {
+		die "\nUnable to find the dictionary file \"$BaseDictionary\"\n" unless $Dictionary;
+	}
+}
+
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+# Help and version functions
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+# Purpose: Print formatted --help output
+# Usage: PrintHelp("-shortoption", "--longoption", "description");
+sub PrintHelp ($$$) {
+	printf "%-4s %-15s %s\n", "$_[0]", "$_[1]", "$_[2]";
+}
+
+# Purpose: Print the transpo version number
+# Usage: Version();
+sub Version () {
+	print "\ntranspo version $Version\n";
+}
+
+# Purpose: Print our help
+# Usage: Help();
+sub Help (){
+	my $Command = basename($0);
+	Version;
+	print "\n";
+	print "Usage: $Command file1 file2 ...\n";
+	print "  or : $Command [Options] file1 file2 ...\n\n";
+	PrintHelp("-h", "--help", "Display this help screen");
+	PrintHelp("-n", "--nn2nb", "Use Nynorsk to Bokmaal dictionary (transpo-nn2nb.dict)");
+	PrintHelp("-a", "--da2nb", "Use Danish to Norwegian Bokmaal dictionary (transpo-da2nb.dict)");
+	PrintHelp("-d", "--dict X", "Use the dictionary file X");
+	PrintHelp("-b", "--backup", "Write a backup to file.orig (overwrites file.orig if it already exists");
+	PrintHelp("-r", "--removebr", "Don't actually replace anything, just remove linebreaks from msgstr");
+	PrintHelp("-v", "--verbose", "Use verbose mode");
+	print "\nBy default transpo will try, in this order:\ntranspo.dict -> transpo-nn2nb.dict -> transpo-da2nb.dict\n\n"
+}
+
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+# Commandline processing
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+# Display help and exit if we got no commandline options
+Help() and exit 0 unless @ARGV;
+
+# Parse commandline arguments
+GetOptions (
+	'version' => sub { Version(); print "CVS Revision: $RCSRev\n"; exit 0; },
+	'b|backup' => \$WriteBackup,
+	'help|h' => sub { &Help; exit 0 },
+	'nn2nb|n' => sub { $BaseDictionary = "transpo-nn2nb.dict"; },
+	'da2nb|a' => sub { $BaseDictionary = "transpo-da2nb.dict"; },
+	'dict|d=s' => \$BaseDictionary,
+	'verbose|v' => \$Verbose,
+	'r|removebr' => \$RemoveBROnly,
+	'debug|D' => \$DebugMode
+) or die "See --help for more information\n";
+
+die "I need to know which file to run on\n" unless @ARGV;
+
+unless ($RemoveBROnly) {
+	# Detect the location of the dictionary
+	DetectDictionary();
+}
+
+# Okay, if we got this far then start replacing stuff :)
+StartReplacement();
