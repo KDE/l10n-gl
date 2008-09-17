@@ -1,0 +1,91 @@
+O propósito é facer uns scripts que automaticen as labouras máis habituais:
+
+No que segue, <lang> é o código da lingua, que no caso do galego é "gl", e
+$BASE_REPO é o cartafol onde están os repositorios, que se recomenda sexa
+/home/usuario/Traducion/KDE/
+
+0.- Estrutura do proxecto:
+   Supónse que o proxecto segue a seguinte estrutura de directorios:
+      $BASE_REPO/
+         trunk/
+            l10n-support/
+               scripts/
+               pology/
+               templates/
+               <lang>/
+            l10n-kde4/
+               scripts/
+               documentation/
+               templates/
+               <lang>/
+         branches/
+            stable/
+               scripts/
+               templates/
+               <lang>/
+   O coordinador debe ter todos eles. Os tradutores normais abonda con teren
+   o que está en trunk/, aínda que poden non ter l10n-kde4/documentation e
+   l10n-support/templates, l10n-support/scripts nen l10n-support/pology.
+
+1.- Modificación da $PATH:
+   O usuario debe modificar a súa $PATH para engadir os directorios onde residen
+   o pology e os scripts auxiliares.
+   Esta modificación consiste na adición das seguintes liñas no ficheiro
+   ~/.bashrc:
+      export BASE_REPO=/home/usuario/Traducion/KDE
+      export PATH=$BASE_REPO/trunk/l10n-support/pology/scripts:\
+      $BASE_REPO/trunk/l10n-support/<lang>/coordinator_helper_scripts:$PATH
+
+2.- Tarefa 0: Obter as copias locais
+   Unha vez definidas as variabeis anteriores, hai que obter unha copia das
+   versións dos ficheiros que están en anonsvn.kde.org.
+   Os comandos a executar son:
+   cd $BASE_REPO
+   prefixo=svn://anonsvn.kde.org/home/KDE
+   svn co $prefixo/{branches/stable,trunk}/l10n-kde4/{scripts,templates,gl}
+   svn checkout $prefixo/trunk/l10n-support/{scripts,pology,templates,gl}
+   e finalmente svn co $prefixo/trunk/l10n-kde4/documentation
+
+3.- Tarefa 1ª: Actualizar as copias locais
+   A primeira das tarefas rutinarias de mantimento é a actualización das copias
+   locais. Isto debería facerse antes de cada xornada de tradución.
+   Hai varios xeitos de facelo, sendo o máis básico a actualización manual
+   mediante a liña de comandos ou cun programa auxiliar como "kdesvn".
+   No caso da liña de comandos, habería que trocar os "checkout" por "update"
+   nos comandos do punto anterior e despois facer o seguinte:
+   a) Procesamos os ficheiros orfos:
+         cd $BASE_REPO/trunk/l10n-kde4; ./scripts/process_orphans.sh
+   b) Arranxar os conflitos, para o que se recomenta empregar o script
+      trad_colisions.sh, dos coordinator_helper_scripts:
+         trad_colisions.sh trunk gl
+
+   O máis sinxelo é empregar o script "anovar.sh". Este script pode empregarse
+   tanto polos tradutores como polo coordinador.
+
+4.- Tarefa 2ª: Traducir
+   Aquí o único que paga a pena é comentar que nos casos que se crea algún
+   ficheiro po novo, é preciso engadilo ao repositorio.
+   Isto, mediante comandos, faise co seguinte:
+   svn add $BASE_REPO/<versión>/<lang>/<area>/<modulo>/<ficheiro>
+   onde:
+      <versión> é ou trunk/l10n-kde4 ou branches/stable/l10n-kde4
+      <lang> é gl
+      <area> é ou messages (gui) ou docmessages (documentación)
+      <modulo> é a área temática, por exemplo kdepim, koffice, kdenetwork ...
+      e <ficheiro> é o nome do ficheiro po, por exemplo kdelibs4.po
+   do resto de cuestións, debería facerse cargo un script de kde, que é
+   executado desde anovar.sh
+
+5.- Tarefa 3ª: Entregar o traballo feito
+   Recoméndase empregar o script "empaquetar.sh". Este xera un paquete tar.bz2 
+   que contén todos os ficheiros que foron modificados localmente, incluidos  
+   todos aqueles nos que houbo conflitos.
+   Este paquete debe ser enviado ao coordinador por correo electrónico.
+   
+6.- Tarefa 4ª: (Só para o COORDINADOR) Xuntar todo e entregar
+   Os ficheiros que veñan dos tradutores convén desempaquetalos nun cartafol
+   temporal, facerlles as comprobacións de sintaxe (msgfmt), etiquetas
+   (posieve.py check-xml-kde4 e posieve.py check-xml_docbook4) e outras, antes
+   de copialos no lugar correspondente da árbore de cartafoles.
+   Se hai que xuntar modificacións simultáneas de varias persoas... kdiff3
+   Pero esa é outra historia.
