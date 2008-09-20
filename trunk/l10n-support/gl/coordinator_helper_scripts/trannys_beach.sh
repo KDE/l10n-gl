@@ -1,5 +1,8 @@
 #! /usr/bin/env bash
 # TRanslation Not Yet Satisfied Built Employing A Chain of Hacks
+# This file is merely an adaptation of the standard KDE's scripty's command "update.xml", done by
+# mvillarino, an amateur volunteer translator member of the project Trasno (http://www.trasno.net)
+# This script is free software, you can use and redistribute it under the same license as the original update.xml
 
 function check_xml() 
 {
@@ -27,7 +30,7 @@ function check_xml()
 
 function complete_po_conversion()
 {
-    docbookFile=$1
+    docbookFile=$1 #note: $1 $2 and $3 are full pathed
     poFile=$2
     moduleDocsDir=$3
     echo po2xml $docbookFile $poFile
@@ -43,8 +46,35 @@ function complete_po_conversion()
 }
 
 function uncomplete_po_conversion()
+{ #note: $1 $1 and $3 are fullpathed
+  #expected return value: a file called temp.xml placed at $home/Traducion/KDE/<branch>/l10n-kde4/ ($prefix)
+  #expected side-effects: no environment variabel affected. No other file affected
+    docbookFile=$1
+    poFile=$2
+    moduleDocsDir=$3
+    potFile=$4
+
+    intermediate=${prefix}/fleshed.$$.po
+    #build a pot file with target texts in "en_US"
+    msgen -o $intermediate $potFile
+    #merge if with existant translation
+    msgmerge -o $intermediate $poFile $intermediate
+    #unfuzzy messages
+    sed -e "s/^#, fuzzy$//" -i $intermediate
+    #replace "ROLES OF TRANSLATORS" by some valid data
+# problema coas aspas !!!
+   sed -e 's,^msgstr "ROLES_OF_TRANSLATORS",msgstr "<othercredit role=\\"translator\\"><contrib>Proxecto Trasno</contrib></othercredit>",' -i $intermediate
+    #replace "CREDITS
+   sed -e "s#^msgstr \"CREDIT_FOR_TRANSLATORS\"#msgstr \"<para>Trasno</para>\"#" -i $intermediate
+    #now, we can use the process with a full po file
+    complete_po_conversion $docbookFile $intermediate $moduleDocsDir
+
+    rm $intermediate
+}
+
+function usage()
 {
-exit;
+echo "trannybeach.sh [--nodelete] <branch> <lang_lang> [selection [single_catalog]]"
 }
 
 LANG=C
@@ -64,7 +94,7 @@ TRANSXX=`which transxx 2>/dev/null`
 test -z "${TRANSXX}" -o ! -x"${TRANSXX}" && echo "No suitable version of transxx was found. Exiting..." && exit 1
 
 if test $# -eq 0 || test "$1" = "--help" ; then
-  echo "trannybeach.sh [--nodelete] <branch> <lang_lang> [selection [single_catalog]]"
+  usage
   exit
 fi
 
@@ -76,7 +106,7 @@ fi
 
 
 if test "$1" != "trunk" -a "$1" != "branches"; then
-  echo "trannybeach.sh [--nodelete] <branch> <lang_lang> [selection [single_catalog]]"
+  usage
   echo "<branch> must be either \"trunk\" or \"branches\""
   exit
 fi
@@ -125,6 +155,7 @@ for m in $modules; do
             dir=`dirname $trans_doc`
             mbase=`dirname $dir`
 #marce
+
             result=`msgfmt -o /dev/null --statistics $t 2>&1`
                 ret=$?
                 if test $delete -eq 0 && test "$ret" -ne 0; then
@@ -133,24 +164,12 @@ for m in $modules; do
                 fi
                 if test "$ret" -ne 0 || echo $result | grep -q untranslated || echo $result | grep -q fuzzy; then
                     echo "${m}/${j}.po: $result"
-#ei-lo, se hai non traducidas, ou dubidosas non segue: redirixir ao novo
-                    continue
+#                     continue
+                    uncomplete_po_conversion $i $t $bd ${prefix}/templates/docmessages/${m}/${j}.pot
+                else
+                    complete_po_conversion $i $t $bd
                 fi
-# #esta é a maneira estandar de procesar
-#             echo po2xml $i $t
-#             if ! po2xml $i $t > temp.xml; then
-#                         echo "ERROR: po2xml $i $t failed! Exiting!"
-#                         exit 1
-#             fi
-#             language=`cat $bd/../language `
-#             if test -n "$language"; then 
-#                 sed -e "s,<!ENTITY % English,<!ENTITY % $language," temp.xml > temp.xml.new
-#                 mv temp.xml.new temp.xml
-#             fi
-            complete_po_conversion $i $t $bd
-exit
-            lang=$lang
-        
+#             lang=$lang
             # call external postfilter if it exists
             postfilter="$bd/../post-po2xml"
             if test -x $postfilter; then
