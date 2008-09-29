@@ -31,7 +31,9 @@
 >a barra de menú</link
 > (1) onde pode achar todas as accións, <link linkend="the-toolbar"
 >a barra de ferramentas</link
-> (2) que lle permite aceder rapidamente ás accións máis empregadas e <link linkend="the-statusbar"
+> (2) que lle permite aceder rapidamente ás accións máis empregadas, a <guilabel
+>Consola</guilabel
+> que lle permite escreber unha liña de comandos para probala, e <link linkend="the-statusbar"
 >a barra de estado</link
 > (6) onde atopará información referente ao estado de &kturtle;.</para>
 
@@ -196,6 +198,29 @@
     </varlistentry>
   </variablelist>
   <variablelist>
+    <anchor id="file-open-examples"/>
+    <varlistentry>
+      <term
+><menuchoice
+><guimenu
+>Ficheiro</guimenu
+> <guisubmenu
+>Exemplos</guisubmenu
+> </menuchoice
+></term>
+      <listitem
+><para
+>Abre programas de exemplo de &turtlelang;. Os exemplos están na súa linguaxe segundo a escollese en <menuchoice
+><guimenu
+>Configuración</guimenu
+><guisubmenu
+>Linguaxe do script</guisubmenu
+></menuchoice
+>.</para
+></listitem>
+    </varlistentry>
+  </variablelist>
+  <variablelist>
     <anchor id="file-save"/>
     <varlistentry>
       <term
@@ -236,62 +261,19 @@
     </varlistentry>
   </variablelist>
   <variablelist>
-    <anchor id="file-open-examples"/>
+    <anchor id="file-save-as-picture"/>
     <varlistentry>
       <term
 ><menuchoice
 ><guimenu
 >Ficheiro</guimenu
-> <guisubmenu
->Exemplos</guisubmenu
+> <guimenuitem
+>Gardar como imaxe...</guimenuitem
 > </menuchoice
 ></term>
       <listitem
 ><para
->Abre programas de exemplo de &turtlelang;. Os exemplos están na súa linguaxe segundo a escollese en <menuchoice
-><guimenu
->Configuración</guimenu
-><guimenuitem
->Linguaxe do script</guimenuitem
-></menuchoice
->.</para
-></listitem>
-    </varlistentry>
-  </variablelist>
-  <variablelist>
-    <anchor id="file-speed"/>
-    <varlistentry>
-      <term
-><menuchoice
-><guimenu
->Ficheiro</guimenu
-> <guisubmenu
->Velocidade</guisubmenu
-> </menuchoice
-></term>
-      <listitem
-><para
->Presenta unha lista coas velocidades de execución, que son: <guimenuitem
->Velocidade total</guimenuitem
->, <guimenuitem
->Despacio</guimenuitem
->, <guimenuitem
->Lento</guimenuitem
->, <guimenuitem
->Moi lento</guimenuitem
-> e <guimenuitem
->Paso por paso</guimenuitem
->. Se a velocidade de execución é <guimenuitem
->Velocidade total</guimenuitem
-> (a predeterminada) será moi difícil seguir o que está a acontecer. Por veces deséxase este comportamento, pero outras veces quererá saber que está a pasar. Neste caso escollerá as velocidades <guimenuitem
->Despacio</guimenuitem
->, <guimenuitem
->Lento</guimenuitem
-> ou <guimenuitem
->Moi lento</guimenuitem
->. Se escolle un dos modos de vagar mostrarase a posición actual en execución no editor. <guimenuitem
->Paso por paso</guimenuitem
-> executará un comando de cada vez.</para
+>Garda unha imaxe do lenzo actual.</para
 ></listitem>
     </varlistentry>
   </variablelist>
@@ -361,6 +343,43 @@
       <listitem
 ><para
 >Detén a execución. Esta acción só está habilitada cando se están a executar comandos.</para
+></listitem>
+    </varlistentry>
+  </variablelist>
+  <variablelist>
+    <anchor id="file-speed"/>
+    <varlistentry>
+      <term
+><menuchoice
+><guimenu
+>Ficheiro</guimenu
+> <guisubmenu
+>Velocidade de execución</guisubmenu
+> </menuchoice
+></term>
+      <listitem
+><para
+>Presenta unha lista coas velocidades de execución, que son: <guimenuitem
+>Velocidade total</guimenuitem
+>, <guimenuitem
+>Despacio</guimenuitem
+>, <guimenuitem
+>Lento</guimenuitem
+>, <guimenuitem
+>Moi lento</guimenuitem
+> e <guimenuitem
+>Paso por paso</guimenuitem
+>. Se a velocidade de execución é <guimenuitem
+>Velocidade total</guimenuitem
+> (a predeterminada) será moi difícil seguir o que está a acontecer. Por veces deséxase este comportamento, pero outras veces quererá saber que está a pasar. Neste caso escollerá as velocidades <guimenuitem
+>Despacio</guimenuitem
+>, <guimenuitem
+>Lento</guimenuitem
+> ou <guimenuitem
+>Moi lento</guimenuitem
+>. Se escolle un dos modos de vagar mostrarase a posición actual en execución no editor. <guimenuitem
+>Paso por paso</guimenuitem
+> executará un comando de cada vez.</para
 ></listitem>
     </varlistentry>
   </variablelist>
@@ -663,7 +682,7 @@
 > <guimenu
 >Editar</guimenu
 > <guimenuitem
->Comutar a inserción</guimenuitem
+>Modo de sobrescritura</guimenuitem
 > </menuchoice
 ></term>
       <listitem
@@ -684,16 +703,66 @@
     <varlistentry>
       <term
 ><menuchoice
-><guimenu
+><shortcut
+> <keycombo
+>&Ctrl;<keycap
+>E</keycap
+></keycombo
+> </shortcut
+> <guimenu
 >Vista</guimenu
 > <guimenuitem
->Mostrar o editor do código</guimenuitem
+>Mostrar o editor</guimenuitem
 > </menuchoice
 ></term>
       <listitem
 ><para
 >Mostra ou acocha o Editor do código.</para>
 </listitem>
+    </varlistentry>
+  </variablelist>
+  <variablelist>
+    <anchor id="view-inspector"/>
+    <varlistentry>
+      <term
+><menuchoice
+><shortcut
+> <keycombo
+>&Ctrl;<keycap
+>I</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Vista</guimenu
+> <guimenuitem
+>Mostrar o inspector</guimenuitem
+> </menuchoice
+></term>
+      <listitem
+><para
+>Mostra ou agocha o Inspector.</para>
+</listitem>
+    </varlistentry>
+  </variablelist>
+  <variablelist>
+    <anchor id="view-error"/>
+    <varlistentry>
+      <term
+><menuchoice
+><guimenu
+>Vista</guimenu
+> <guimenuitem
+>Mostrar os erros</guimenuitem
+> </menuchoice
+></term>
+      <listitem
+><para
+>Indica se debe mostrar a lingüeta dos <guilabel
+>Erros</guilabel
+> cunha lista de erros que xurden ao executar o código. Se sinala esta opción, prema no <guilabel
+>Lenzo</guilabel
+> para ver de novo o sapoconcho.</para>
+      </listitem>
     </varlistentry>
   </variablelist>
   <variablelist>
@@ -719,23 +788,6 @@
 ></listitem>
     </varlistentry>
   </variablelist>
-  <variablelist>
-    <anchor id="view-inspector"/>
-    <varlistentry>
-      <term
-><menuchoice
-><guimenu
->Vista</guimenu
-> <guimenuitem
->Mostrar o inspector</guimenuitem
-> </menuchoice
-></term>
-      <listitem
-><para
->Mostra ou agocha o Inspector.</para>
-</listitem>
-    </varlistentry>
-  </variablelist>
 </sect2>
 
 <sect2 id="the-tools-menu">
@@ -751,12 +803,29 @@
 ><guimenu
 >Utilidades</guimenu
 > <guimenuitem
->Selector de dirección</guimenuitem
+>Selector de dirección...</guimenuitem
 > </menuchoice
 ></term>
       <listitem
 ><para
 >Esta acción abre o diálogo de selección de dirección.</para
+></listitem>
+    </varlistentry>
+  </variablelist>
+  <variablelist>
+    <anchor id="tools-color-chooser"/>
+    <varlistentry>
+      <term
+><menuchoice
+><guimenu
+>Utilidades</guimenu
+> <guimenuitem
+>Selector de cor...</guimenuitem
+> </menuchoice
+></term>
+      <listitem
+><para
+>Esta acción abre o diálogo de selección de cor.</para
 ></listitem>
     </varlistentry>
   </variablelist>
@@ -867,141 +936,7 @@
 >O menú <guimenu
 >Axuda</guimenu
 ></title>
-  <variablelist>
-    <anchor id="help-handbook"/>
-    <varlistentry>
-      <term
-><menuchoice
-><shortcut
-> <keycombo
-><keysym
->F1</keysym
-></keycombo
-> </shortcut
-> <guimenu
->Axuda</guimenu
-> <guimenuitem
->Manual de &kturtle;</guimenuitem
-> </menuchoice
-></term>
-      <listitem
-><para
->Esta acción mostra o manual que está a ler.</para
-></listitem>
-    </varlistentry>
-  </variablelist>
-  <variablelist>
-    <anchor id="help-whats-this"/>
-    <varlistentry>
-      <term
-><menuchoice
-><shortcut
-> <keycombo
->&Shift;<keysym
->F1</keysym
-></keycombo
-> </shortcut
-> <guimenu
->Axuda</guimenu
-> <guimenuitem
->Que é isto?</guimenuitem
-> </menuchoice
-></term>
-      <listitem
-><para
->Logo de activar esta acción o rato mostrará un <quote
->sinal de interrogación</quote
->.  Cando prema nas partes da fiestra principal de &kturtle;, mostrarase unha descricion desa parte en concreto.</para
-></listitem>
-    </varlistentry>
-  </variablelist>
-<!-->
-  <variablelist>
-    <anchor id="help-context-help"/>
-    <varlistentry>
-      <term
-><menuchoice>
-        <shortcut>
-          <keycombo
-><keysym
->F2</keysym
-></keycombo>
-        </shortcut>
-        <guimenu
->Help</guimenu>
-        <guimenuitem
->Help on: ...</guimenuitem>
-      </menuchoice
-></term>
-      <listitem
-><para
->This is a very useful function: it provides help on the code where the cursor in the code editor is at. So, &eg;, you have used the <userinput
->print</userinput
-> command in your code, and you want to read and to know what the handbook says on this command. You just move your cursor so it is in the <userinput
->print</userinput
-> command and you press <keysym
->F2</keysym
->. The handbook will then show all info on the <userinput
->print</userinput
-> command.</para>
-      <para
->This function is very important while learning programming.</para
-></listitem>
-    </varlistentry>
-  </variablelist>
-<-->
-  <variablelist>
-    <anchor id="help-report-bug"/>
-    <varlistentry>
-      <term
-><menuchoice
-><guimenu
->Axuda</guimenu
-> <guimenuitem
->Informar dun erro...</guimenuitem
-> </menuchoice
-></term>
-      <listitem
-><para
->Empregue isto para informar aos desenvolventes dun problema en &kturtle;. Estes informes serán empregrados para mellorar aínda máis as versións futuras de &kturtle;.</para
-></listitem>
-    </varlistentry>
-  </variablelist>
-  <variablelist>
-    <anchor id="help-about-kturtle"/>
-    <varlistentry>
-      <term
-><menuchoice
-><guimenu
->Axuda</guimenu
-> <guimenuitem
->Acerca de &kturtle;</guimenuitem
-> </menuchoice
-></term>
-      <listitem
-><para
->Aquí terá información acerca de &kturtle;, como os autores e a licenza.</para
-></listitem>
-    </varlistentry>
-  </variablelist>
-  <variablelist>
-    <anchor id="help-about-kde"/>
-    <varlistentry>
-      <term
-><menuchoice
-><guimenu
->Axuda</guimenu
-> <guimenuitem
->Acerce de &kde;</guimenuitem
-> </menuchoice
-></term>
-      <listitem
-><para
->Aquí terá información acerca de &kde;. Se non sabe o que é &kde; non debe perderse este información.</para
-></listitem>
-    </varlistentry>
-  </variablelist>
-</sect2>
+&help.menu.documentation; </sect2>
 
 </sect1>
 
@@ -1015,7 +950,9 @@
 >Pausar</guiicon
 > e <guiicon
 >Abortar</guiicon
->.</para>
+>. O último ítem da barra de ferramentas é a <guilabel
+>Consola</guilabel
+>, que pode empregar para escreber unha liña de comandos e probala.</para>
 <para
 >Pode configurar a barra de ferramentas mediante <menuchoice
 ><guimenu
