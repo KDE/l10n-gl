@@ -1,11 +1,20 @@
 #!/usr/bin/perl -w
 
 $found=0;
+$buffer="";
 while ($line = <STDIN>) {
   chomp $line;
 
   if ( ($line =~ /msgid/) || ($line=~ /msgctxt/) || ($line eq "") || ($line =~ /^\#/) )   {
-     if ($found==1) {print "\n"; $found=0; } else { $found=0; }
+     if ($found==1) {
+       $buffer =~ s/(<[^>]+>)+//g;
+       $buffer =~ s/(&[A-Za-z_:][A-Za-z0-9_\\.:-]*;)+/""/eg;
+       $buffer =~ s/&&/and/g;
+       $buffer =~ s/&//g;
+       print $buffer . "\n";
+       $buffer = "";
+       $found=0; }
+     else { $found=0; }
   }
 
   if ($line =~ /^msgstr/) {
@@ -18,10 +27,6 @@ while ($line = <STDIN>) {
     $inversa = reverse $line;
     chop $inversa;
     $line = reverse $inversa;
-    while ($line =~ /<[\/\w\\=,.;:"'\-\ #]*>/) { $line =~ s/<[\/\w\\=,.;:"'\-\ #]*>//g; }
-    $line =~ s/&&/and/g;
-    $line =~ s/&\w+;/""/eg;
-    $line =~ s/&//g;
-    print "$line";
+    $buffer = $buffer . $line;
   }
 }

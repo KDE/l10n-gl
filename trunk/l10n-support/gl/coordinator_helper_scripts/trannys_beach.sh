@@ -127,7 +127,6 @@ for m in $modules; do
    test -d ${prefix}/documentation/$m || continue
 
    files=`find -H ${prefix}/documentation/$m -name "*.docbook"`
-
    if test -n "$files"; then
     for i in $files; do
         case $i in   #do nothing if the filename is not in the selection
@@ -154,8 +153,6 @@ for m in $modules; do
             trans_doc="$bd/../../docs/$m/$p"
             dir=`dirname $trans_doc`
             mbase=`dirname $dir`
-#marce
-
             result=`msgfmt -o /dev/null --statistics $t 2>&1`
                 ret=$?
                 if test $delete -eq 0 && test "$ret" -ne 0; then

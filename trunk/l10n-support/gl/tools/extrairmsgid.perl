@@ -1,17 +1,27 @@
 #!/usr/bin/perl -w
 #Este script serve para extrair os textos orixe dun ficheiro po/pot.
-#Pon cada msgid nunha só liña. Adicionalmente, elimina os atallos de teclado (&) e entidades xml (&algo;) e tamén os ampersand (&&).
+#Pon cada msgid nunha só liña. Adicionalmente, elimina os atallos de teclado (&) e entidades xml (&algo;) e tamén os et (&&).
 #De xeito incompleto, retira as etiquetas html.
 #Utilización: cat ficheiro.po | [rota ao script]/extrairmsgid.perl > ficheirosaida.txt
 #Este script é distribuido sob os termos da licenza GPL v2 ou posterior.
+#Este script é unha adaptación dun ficheiro de script que formaba parte do paquete port2gal.
 
 
 $found=0;
+$buffer="";
 while ($line = <STDIN>) {
   chomp $line;
 
   if ( ($line =~ /msgstr/) || ($line=~ /msgctxt/) || ($line eq "") || ($line =~ /^\#/) )   {
-     if ($found==1) {print "\n"; $found=0; } else { $found=0; }
+     if ($found==1) {
+       $buffer =~ s/(<[^>]+>)+//g;
+       $buffer =~ s/(&[A-Za-z_:][A-Za-z0-9_\\.:-]*;)+/""/eg;
+       $buffer =~ s/&&/and/g;
+       $buffer =~ s/&//g;
+       print $buffer . "\n";
+       $buffer = "";
+       $found=0; }
+     else { $found=0; }
   }
 
   if ($line =~ /^msgid/) {
@@ -24,10 +34,6 @@ while ($line = <STDIN>) {
     $inversa = reverse $line;
     chop $inversa;
     $line = reverse $inversa;
-    while ($line =~ /<[\/\w\\=,.;:"'\-\ #]*>/) { $line =~ s/<[\/\w\\=,.;:"'\-\ #]*>//g; }
-    $line =~ s/&&/and/g;
-    $line =~ s/&\w+;/""/eg;
-    $line =~ s/&//g;
-    print "$line";
+    $buffer = $buffer . $line;
   }
 }
