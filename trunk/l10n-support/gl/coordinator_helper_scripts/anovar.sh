@@ -12,20 +12,19 @@ if [ $# -lt 1 -o $# -gt 2 ]; then
    echo "Usage: anovar.sh lang_code [cache_ssh]" >&2
    exit 1
 fi
+
 code=$1
 ssh_key=$2
+
 if [ ! -f "${HOME}/.ssh/${ssh_key}" ]; then
     echo "There is no ${HOME}/.ssh/${ssh_key}, exiting"
     exit 1
+elif [ "$ssh_key" ]; then
+    ssh-add ${HOME}/.ssh/${ssh_key}
 fi
 
 # antes que nada, facemos unha copia de seguranza da bbdd de traduzón
 tar cvf $BASE_REPO/db_backup`date +%F`.tar $HOME/.kde/share/apps/kbabeldict/dbsearchengine/
-
-#en probas, para non ter que meter seguido o contrasinal da chave ssh.
-if [ "$ssh_key" ]; then
-   ssh-add ${HOME}/.ssh/${ssh_key}
-fi
 
 for lugar in {trunk/l10n-kde4,branches/stable/l10n-kde4,trunk/l10n-support}/{scripts,templates,$code,documentation,pology}; do #anovamos a galla
     if [ -d $BASE_REPO/$lugar/.svn ]; then
