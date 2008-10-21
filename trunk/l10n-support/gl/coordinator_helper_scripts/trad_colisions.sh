@@ -49,7 +49,7 @@ for ficheiro in `find $prefix/$lang -name *."$marca"`
   do
     directorio=`dirname $ficheiro`
     nome=`basename $ficheiro ."$marca"`
-    echo $nome
+    echo "PRESENTABA CONFLITOS: $nome"
     cp $ficheiro $directorio/$nome
     svn resolved $directorio/$nome
     postpath=`echo $directorio | sed "s:$prefix/$lang::"` #cut --delimiter="/" --fields=2- -`
