@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ksystemlog\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2008-08-25 09:08+0200\n"
+"POT-Creation-Date: 2008-10-30 10:07+0100\n"
 "PO-Revision-Date: 2008-08-03 21:53+0200\n"
 "Last-Translator: mvillarino <mvillarino@users.sourceforge.net>\n"
 "Language-Team: galician <proxecto@trasno.net>\n"
@@ -186,22 +186,41 @@ msgid "Reloading <b>%1</b>...<br /><i>%2</i>"
 msgstr "A cargar de novo <b>%1</b>...<br /><i>%2</i>"
 
 #: src/lib/logModeItemBuilder.cpp:68 src/lib/logModeItemBuilder.cpp:85
+#: src/modes/cron/cronItemBuilder.h:55
+#: src/modes/cups/cupsAccessItemBuilder.h:55
+#: src/modes/cups/cupsPdfItemBuilder.h:55
+#: src/modes/cups/cupsPageItemBuilder.h:55 src/modes/cups/cupsItemBuilder.h:53
+#: src/modes/acpid/acpidItemBuilder.h:57 src/modes/samba/sambaItemBuilder.h:55
+#: src/modes/apache/apacheItemBuilder.h:55
+#: src/modes/apache/apacheAccessItemBuilder.h:55
+#: src/modes/kernel/kernelItemBuilder.h:57
 msgid "Date:"
 msgstr "Data:"
 
-#: src/lib/logModeItemBuilder.cpp:69
+#: src/lib/logModeItemBuilder.cpp:69 src/modes/cron/cronItemBuilder.h:56
+#: src/modes/cups/cupsAccessItemBuilder.h:57
 msgid "Hostname:"
 msgstr "Servidor:"
 
-#: src/lib/logModeItemBuilder.cpp:70
+#: src/lib/logModeItemBuilder.cpp:70 src/modes/cron/cronItemBuilder.h:57
 msgid "Process:"
 msgstr "Proceso:"
 
 #: src/lib/logModeItemBuilder.cpp:71 src/lib/logModeItemBuilder.cpp:86
+#: src/modes/cron/cronItemBuilder.h:59
+#: src/modes/cups/cupsAccessItemBuilder.h:56
+#: src/modes/cups/cupsPdfItemBuilder.h:56
+#: src/modes/cups/cupsPageItemBuilder.h:56 src/modes/cups/cupsItemBuilder.h:54
+#: src/modes/acpid/acpidItemBuilder.h:58 src/modes/samba/sambaItemBuilder.h:56
+#: src/modes/apache/apacheItemBuilder.h:56
+#: src/modes/apache/apacheAccessItemBuilder.h:56
+#: src/modes/kernel/kernelItemBuilder.h:58
 msgid "Level:"
 msgstr "Nível:"
 
 #: src/lib/logModeItemBuilder.cpp:72 src/lib/logModeItemBuilder.cpp:87
+#: src/modes/cron/cronItemBuilder.h:60 src/modes/xorg/xorgItemBuilder.h:78
+#: src/modes/xsession/xsessionItemBuilder.h:78
 msgid "Original file:"
 msgstr "Ficheiro orixinal:"
 
@@ -294,15 +313,22 @@ msgctxt "Newly created tab"
 msgid "Empty Log"
 msgstr "Rexisto vacío"
 
-#: src/modes/base/syslogAnalyzer.cpp:58
+#: src/modes/base/syslogAnalyzer.cpp:58 src/modes/cron/cronAnalyzer.h:51
+#: src/modes/cups/cupsPageAnalyzer.h:53 src/modes/cups/cupsAccessAnalyzer.h:53
+#: src/modes/cups/cupsPdfAnalyzer.h:54 src/modes/cups/cupsAnalyzer.h:55
+#: src/modes/acpid/acpidAnalyzer.h:49 src/modes/samba/sambaAnalyzer.h:54
+#: src/modes/apache/apacheAnalyzer.h:53
+#: src/modes/apache/apacheAccessAnalyzer.h:53
+#: src/modes/kernel/kernelAnalyzer.h:58
 msgid "Date"
 msgstr "Data"
 
-#: src/modes/base/syslogAnalyzer.cpp:59
+#: src/modes/base/syslogAnalyzer.cpp:59 src/modes/cron/cronAnalyzer.h:52
+#: src/modes/cups/cupsAccessAnalyzer.h:54
 msgid "Host"
 msgstr "Máquina"
 
-#: src/modes/base/syslogAnalyzer.cpp:60
+#: src/modes/base/syslogAnalyzer.cpp:60 src/modes/cron/cronAnalyzer.h:53
 msgid "Process"
 msgstr "Proceso"
 
@@ -310,7 +336,11 @@ msgstr "Proceso"
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_3)
 #. i18n: file: src/detailDialogBase.ui:28
 #. i18n: ectx: property (text), widget (KTextEdit, message)
-#: src/modes/base/syslogAnalyzer.cpp:61 rc.cpp:351 rc.cpp:399
+#: src/modes/base/syslogAnalyzer.cpp:61 src/modes/cups/cupsPdfAnalyzer.h:55
+#: src/modes/cups/cupsAnalyzer.h:56 src/modes/xorg/xorgAnalyzer.h:61
+#: src/modes/acpid/acpidAnalyzer.h:51 src/modes/samba/sambaAnalyzer.h:58
+#: src/modes/apache/apacheAnalyzer.h:55 src/modes/kernel/kernelAnalyzer.h:60
+#: src/modes/xsession/xsessionAnalyzer.h:55 rc.cpp:351 rc.cpp:399
 msgid "Message"
 msgstr "Mensaxe"
 
@@ -390,9 +420,41 @@ msgid "The two arrays size are different, skipping the reading of log files."
 msgstr ""
 "O tamaño das dúas listas é diferente, non se lerán os ficheiros de rexisto."
 
+#: src/modes/cron/cronAnalyzer.h:54 src/modes/cups/cupsPageAnalyzer.h:55
+#: src/modes/cups/cupsAccessAnalyzer.h:56
+#: src/modes/apache/apacheAccessAnalyzer.h:56 src/loggerDialog.cpp:91
+#: src/loggerDialog.cpp:123
+msgid "User"
+msgstr "Usuario"
+
+#: src/modes/cron/cronAnalyzer.h:55
+msgid "Command"
+msgstr ""
+
+#: src/modes/cron/cronItemBuilder.h:58
+#, fuzzy
+#| msgid "User"
+msgid "User:"
+msgstr "Usuario"
+
+#: src/modes/cron/cronConfigurationWidget.h:49
 #: src/modes/cron/cronLogMode.cpp:38
 msgid "Cron Log"
 msgstr "Rexistro de Cron"
+
+#: src/modes/cron/cronConfigurationWidget.h:55
+msgid ""
+"<p>These files will be analyzed to show the <b>Cron Logs</b> (i.e. planned "
+"tasks logs). <a href='man:/cron'>More information...</a></p>"
+msgstr ""
+
+#: src/modes/cron/cronConfigurationWidget.h:63
+msgid "Enable Process Filtering"
+msgstr ""
+
+#: src/modes/cron/cronConfigurationWidget.h:75
+msgid "Only keeps lines which matches this process :"
+msgstr ""
 
 #: src/modes/cron/cronLogMode.cpp:47
 msgid "Display the planned tasks log (Cron log)."
@@ -410,9 +472,174 @@ msgstr ""
 "comprobacións de seguridade, ou reinicios automáticos de algúns servizos. "
 "Use este menú para ver os procesos iniciados recentemente."
 
+#: src/modes/cups/cupsAccessItemBuilder.h:58
+#: src/modes/apache/apacheAccessItemBuilder.h:58
+#, fuzzy
+#| msgid "Authentication"
+msgid "Identification:"
+msgstr "Autenticación"
+
+#: src/modes/cups/cupsAccessItemBuilder.h:59
+#: src/modes/cups/cupsPageItemBuilder.h:58
+#: src/modes/apache/apacheAccessItemBuilder.h:59
+#, fuzzy
+#| msgid "Hostname:"
+msgid "Username:"
+msgstr "Servidor:"
+
+#: src/modes/cups/cupsAccessItemBuilder.h:60
+#: src/modes/apache/apacheAccessItemBuilder.h:60
+msgid "HTTP Response:"
+msgstr ""
+
+#: src/modes/cups/cupsAccessItemBuilder.h:61
+#: src/modes/apache/apacheAccessItemBuilder.h:61
+msgid "Bytes Sent:"
+msgstr ""
+
+#: src/modes/cups/cupsConfigurationWidget.h:45
+#: src/modes/cups/cupsLogMode.cpp:39
+msgid "Cups Log"
+msgstr "Rexisto de CUPS"
+
+#: src/modes/cups/cupsConfigurationWidget.h:45
+msgid "Cups &amp; Cups Web Server Log"
+msgstr ""
+
+#: src/modes/cups/cupsConfigurationWidget.h:51
+msgid ""
+"<p>These files will be analyzed to show the <b>Cups log</b> and the <b>Cups "
+"Web Access log</b>.</p>"
+msgstr ""
+
+#: src/modes/cups/cupsConfigurationWidget.h:53
+#, fuzzy
+#| msgid "Log Files"
+msgid "Cups Log Files"
+msgstr "Ficheiros de rexisto"
+
+#: src/modes/cups/cupsConfigurationWidget.h:53
+#, fuzzy
+#| msgid "&Add File..."
+msgid "Add Cups File..."
+msgstr "&Engadir un ficheiro..."
+
+#: src/modes/cups/cupsConfigurationWidget.h:54
+#, fuzzy
+#| msgid "Choose Log File"
+msgid "Cups Access Log Files"
+msgstr "Escolla un ficheiro de rexisto"
+
+#: src/modes/cups/cupsConfigurationWidget.h:54
+#, fuzzy
+#| msgid "&Add File..."
+msgid "Add Cups Access File..."
+msgstr "&Engadir un ficheiro..."
+
+#: src/modes/cups/cupsConfigurationWidget.h:55
+#, fuzzy
+#| msgid "Cups Page Log"
+msgid "Cups Page Log Files"
+msgstr "Rexisto de páxinas de CUPS"
+
+#: src/modes/cups/cupsConfigurationWidget.h:55
+#, fuzzy
+#| msgid "&Add File..."
+msgid "Add Cups Page File..."
+msgstr "&Engadir un ficheiro..."
+
+#: src/modes/cups/cupsConfigurationWidget.h:56
+#, fuzzy
+#| msgid "Cups PDF Log"
+msgid "Cups PDF Log Files"
+msgstr "Rexisto PDF de Cups"
+
+#: src/modes/cups/cupsConfigurationWidget.h:56
+#, fuzzy
+#| msgid "&Add File..."
+msgid "Add Cups PDF File..."
+msgstr "&Engadir un ficheiro..."
+
+#: src/modes/cups/cupsPdfItemBuilder.h:57
+#, fuzzy
+#| msgid "&Message:"
+msgid "Message:"
+msgstr "&Mensaxe:"
+
+#: src/modes/cups/cupsPageItemBuilder.h:57
+#, fuzzy
+#| msgid "Filter:"
+msgid "Printer:"
+msgstr "Filtro:"
+
+#: src/modes/cups/cupsPageItemBuilder.h:59
+msgid "Job Id:"
+msgstr ""
+
+#: src/modes/cups/cupsPageItemBuilder.h:60
+msgid "Page Number:"
+msgstr ""
+
+#: src/modes/cups/cupsPageItemBuilder.h:61
+msgid "Num Copies:"
+msgstr ""
+
+#: src/modes/cups/cupsPageItemBuilder.h:62
+msgid "Job Billing:"
+msgstr ""
+
 #: src/modes/cups/cupsFactory.cpp:58
 msgid "Cups"
 msgstr "Cups"
+
+#: src/modes/cups/cupsPageAnalyzer.h:54
+msgid "Printer"
+msgstr ""
+
+#: src/modes/cups/cupsPageAnalyzer.h:56
+msgid "Job Id"
+msgstr ""
+
+#: src/modes/cups/cupsPageAnalyzer.h:57
+msgid "Page Number"
+msgstr ""
+
+#: src/modes/cups/cupsPageAnalyzer.h:58
+msgid "Num Copies"
+msgstr ""
+
+#: src/modes/cups/cupsPageAnalyzer.h:59
+msgid "Job Billing"
+msgstr ""
+
+#: src/modes/cups/cupsAccessAnalyzer.h:55
+msgid "Group"
+msgstr ""
+
+#: src/modes/cups/cupsAccessAnalyzer.h:57
+#: src/modes/apache/apacheAccessAnalyzer.h:60
+msgid "HTTP Request"
+msgstr ""
+
+#: src/modes/cups/cupsAccessAnalyzer.h:58
+#, fuzzy
+#| msgid "Startup"
+msgid "Status"
+msgstr "Inicio"
+
+#: src/modes/cups/cupsAccessAnalyzer.h:59
+msgid "Bytes"
+msgstr ""
+
+#: src/modes/cups/cupsAccessAnalyzer.h:60
+#, fuzzy
+#| msgid "Open Location"
+msgid "IPP Operation"
+msgstr "Abrir a Localización"
+
+#: src/modes/cups/cupsAccessAnalyzer.h:61
+msgid "IPP Status"
+msgstr ""
 
 #: src/modes/cups/cupsPdfLogMode.cpp:39
 msgid "Cups PDF Log"
@@ -453,10 +680,6 @@ msgstr ""
 "os pedidos efectuados ao servidor web incorporado en CUPS (por omisión: "
 "<i>http://localhost:631</i>)."
 
-#: src/modes/cups/cupsLogMode.cpp:39
-msgid "Cups Log"
-msgstr "Rexisto de CUPS"
-
 #: src/modes/cups/cupsLogMode.cpp:48
 msgid "Display the Cups log."
 msgstr "Mostrar o rexisto de CUPS."
@@ -468,6 +691,18 @@ msgid ""
 msgstr ""
 "Mostra o rexisto de CUPS na páxina actual. CUPS é o programa que xestiona a "
 "impresión no ordenador."
+
+#: src/modes/cups/cupsAnalyzer.h:119
+#, fuzzy
+#| msgid "Debug"
+msgid "debug 2"
+msgstr "Depuración"
+
+#: src/modes/cups/cupsAnalyzer.h:139
+msgid ""
+"New Log Level detected: Please send this log file to the KSystemLog "
+"developer to add it."
+msgstr ""
 
 #: src/modes/cups/cupsPageLogMode.cpp:39
 msgid "Cups Page Log"
@@ -504,7 +739,20 @@ msgstr "O URL non é válido. Non foi posíbel abrir este ficheiro."
 msgid "Unable to open this file."
 msgstr "Non foi posíbel abrir este ficheiro."
 
+#: src/modes/xorg/xorgItemBuilder.h:74 src/modes/xorg/xorgItemBuilder.h:76
+#: src/modes/acpid/acpidItemBuilder.h:59
+msgid "Type:"
+msgstr ""
+
+#: src/modes/xorg/xorgItemBuilder.h:74
+#: src/modes/xsession/xsessionItemBuilder.h:74
+#, fuzzy
+#| msgid "None"
+msgid "none"
+msgstr "Nengún"
+
 #: src/modes/xorg/xorgLogMode.cpp:38
+#: src/modes/xorg/xorgConfigurationWidget.h:46
 msgid "X.org Log"
 msgstr "Rexisto de X.org"
 
@@ -524,6 +772,43 @@ msgstr ""
 "rexisto se quer saber por que non ten aceleración 3D ou por que non se "
 "recoñece o seu dispositivo de entrada."
 
+#: src/modes/xorg/xorgAnalyzer.h:59 src/modes/samba/sambaAnalyzer.h:57
+#: src/modes/xsession/xsessionAnalyzer.h:53
+msgid "Line"
+msgstr ""
+
+#: src/modes/xorg/xorgAnalyzer.h:60 src/modes/acpid/acpidAnalyzer.h:50
+msgid "Type"
+msgstr ""
+
+#: src/modes/xorg/xorgAnalyzer.h:116
+#, fuzzy
+#| msgid "Process"
+msgid "Probed"
+msgstr "Proceso"
+
+#: src/modes/xorg/xorgAnalyzer.h:117
+#, fuzzy
+#| msgid "No log file..."
+msgid "From config file"
+msgstr "Non hai ficheiro de rexistro..."
+
+#: src/modes/xorg/xorgAnalyzer.h:118
+msgid "Default setting"
+msgstr ""
+
+#: src/modes/xorg/xorgAnalyzer.h:119
+msgid "From command Line"
+msgstr ""
+
+#: src/modes/xorg/xorgAnalyzer.h:124
+msgid "Not implemented"
+msgstr ""
+
+#: src/modes/xorg/xorgConfigurationWidget.h:52
+msgid "<p>These files will be analyzed to show the <b>X.org log</b>.</p>"
+msgstr ""
+
 #: src/modes/acpid/acpidLogMode.cpp:38
 msgid "ACPI Log"
 msgstr "Rexisto de ACPI"
@@ -542,6 +827,34 @@ msgstr ""
 "componentes de hardware do ordenador, como a batería do portátil, os botóns "
 "de reseteo..."
 
+#: src/modes/acpid/acpidConfigurationWidget.h:47
+#, fuzzy
+#| msgid "Apache Log"
+msgid "Acpid Log"
+msgstr "Rexisto de Apache"
+
+#: src/modes/acpid/acpidConfigurationWidget.h:53
+msgid "<p>These files will be analyzed to show the <b>Acpid log</b>.</p>"
+msgstr ""
+
+#: src/modes/samba/sambaItemBuilder.h:57
+#, fuzzy
+#| msgid "Log File:"
+msgid "Source File:"
+msgstr "Ficheiro de rexisto:"
+
+#: src/modes/samba/sambaItemBuilder.h:58
+#, fuzzy
+#| msgid "Authentication"
+msgid "Function:"
+msgstr "Autenticación"
+
+#: src/modes/samba/sambaItemBuilder.h:59
+#, fuzzy
+#| msgid "Find:"
+msgid "Line:"
+msgstr "Procurar:"
+
 #: src/modes/samba/sambaAccessLogMode.cpp:39
 msgid "Samba Access Log"
 msgstr "Rexisto de aceso de Samba"
@@ -559,6 +872,7 @@ msgstr ""
 "permítelle ver as conexóns entre as súas comparticións e servidores remotos."
 
 #: src/modes/samba/sambaLogMode.cpp:39
+#: src/modes/samba/sambaConfigurationWidget.h:45
 msgid "Samba Log"
 msgstr "Rexisto de Samba"
 
@@ -573,6 +887,48 @@ msgid ""
 msgstr ""
 "Mostra o rexisto de Samba na páxina actual. Samba é o servidor de "
 "comparticións de ficheiros que interactúa con redes de Microsoft Windows."
+
+#: src/modes/samba/sambaConfigurationWidget.h:51
+msgid ""
+"<p>These files will be analyzed to show <b>Samba log</b>, <b>Samba Access "
+"log</b> and <b>Netbios log</b>.</p>"
+msgstr ""
+
+#: src/modes/samba/sambaConfigurationWidget.h:53
+#, fuzzy
+#| msgid "Samba Log"
+msgid "Samba Log Files"
+msgstr "Rexisto de Samba"
+
+#: src/modes/samba/sambaConfigurationWidget.h:53
+#, fuzzy
+#| msgid "&Add File..."
+msgid "Add Samba File..."
+msgstr "&Engadir un ficheiro..."
+
+#: src/modes/samba/sambaConfigurationWidget.h:54
+#, fuzzy
+#| msgid "Samba Access Log"
+msgid "Samba Access Log Files"
+msgstr "Rexisto de aceso de Samba"
+
+#: src/modes/samba/sambaConfigurationWidget.h:54
+#, fuzzy
+#| msgid "Samba Access Log"
+msgid "Add Samba Access File..."
+msgstr "Rexisto de aceso de Samba"
+
+#: src/modes/samba/sambaConfigurationWidget.h:55
+#, fuzzy
+#| msgid "Netbios Log"
+msgid "Netbios Log Files"
+msgstr "Rexisto de Netbios"
+
+#: src/modes/samba/sambaConfigurationWidget.h:55
+#, fuzzy
+#| msgid "&Add File..."
+msgid "Add Netbios File..."
+msgstr "&Engadir un ficheiro..."
 
 #: src/modes/samba/netbiosLogMode.cpp:39
 msgid "Netbios Log"
@@ -594,9 +950,82 @@ msgstr ""
 msgid "Samba"
 msgstr "Samba"
 
+#: src/modes/samba/sambaAnalyzer.h:55
+#, fuzzy
+#| msgid "Log File"
+msgid "Source File"
+msgstr "Ficheiro de rexisto"
+
+#: src/modes/samba/sambaAnalyzer.h:56
+#, fuzzy
+#| msgid "Authentication"
+msgid "Function"
+msgstr "Autenticación"
+
+#: src/modes/apache/apacheConfigurationWidget.h:45
 #: src/modes/apache/apacheLogMode.cpp:39
 msgid "Apache Log"
 msgstr "Rexisto de Apache"
+
+#: src/modes/apache/apacheConfigurationWidget.h:51
+msgid ""
+"<p>These files will be analyzed to show the <b>Apache log</b> and the "
+"<b>Apache Access log</b>.</p>"
+msgstr ""
+
+#: src/modes/apache/apacheConfigurationWidget.h:53
+#, fuzzy
+#| msgid "Apache Log"
+msgid "Apache Log Files"
+msgstr "Rexisto de Apache"
+
+#: src/modes/apache/apacheConfigurationWidget.h:53
+#, fuzzy
+#| msgid "&Add File..."
+msgid "Add Apache File..."
+msgstr "&Engadir un ficheiro..."
+
+#: src/modes/apache/apacheConfigurationWidget.h:54
+#, fuzzy
+#| msgid "Apache Access Log"
+msgid "Apache Access Log Files"
+msgstr "Rexisto de aceso de Apache"
+
+#: src/modes/apache/apacheConfigurationWidget.h:54
+#, fuzzy
+#| msgid "Apache Access Log"
+msgid "Add Apache Access File..."
+msgstr "Rexisto de aceso de Apache"
+
+#: src/modes/apache/apacheAnalyzer.h:54
+msgid "Client"
+msgstr ""
+
+#: src/modes/apache/apacheAccessAnalyzer.h:54
+#, fuzzy
+#| msgid "Hostname:"
+msgid "Host Name"
+msgstr "Servidor:"
+
+#: src/modes/apache/apacheAccessAnalyzer.h:55
+msgid "Id."
+msgstr ""
+
+#: src/modes/apache/apacheAccessAnalyzer.h:57
+msgid "Response"
+msgstr ""
+
+#: src/modes/apache/apacheAccessAnalyzer.h:58
+msgid "Bytes Sent"
+msgstr ""
+
+#: src/modes/apache/apacheAccessAnalyzer.h:59
+msgid "Agent Identity"
+msgstr ""
+
+#: src/modes/apache/apacheAccessAnalyzer.h:61
+msgid "URL"
+msgstr ""
 
 #: src/modes/apache/apacheLogMode.cpp:48
 msgid "Display the Apache log."
@@ -609,6 +1038,24 @@ msgid ""
 msgstr ""
 "Mostra o rexisto de Apache na páxina actual. Apache é o servidor Web máis "
 "usado no mundo."
+
+#: src/modes/apache/apacheItemBuilder.h:57
+msgid "Client:"
+msgstr ""
+
+#: src/modes/apache/apacheAccessItemBuilder.h:57
+#, fuzzy
+#| msgid "Hostname:"
+msgid "Host Name:"
+msgstr "Servidor:"
+
+#: src/modes/apache/apacheAccessItemBuilder.h:62
+msgid "Agent Identity:"
+msgstr ""
+
+#: src/modes/apache/apacheAccessItemBuilder.h:63
+msgid "HTTP Request:"
+msgstr ""
 
 #: src/modes/apache/apacheFactory.cpp:54
 msgid "Apache"
@@ -633,6 +1080,7 @@ msgstr ""
 "servidor Web Apache."
 
 #: src/modes/daemon/daemonLogMode.cpp:39
+#: src/modes/daemon/daemonConfigurationWidget.h:47
 msgid "Daemons Log"
 msgstr "Rexisto dos Daemons"
 
@@ -649,6 +1097,18 @@ msgstr ""
 "Mostra o rexisto dos daemons na páxina actual. Os daemons son os procesos "
 "iniciados no fondo do sistema. Consulte este rexisto se quer saber o que "
 "acontece no fondo do seu sistema."
+
+#: src/modes/daemon/daemonConfigurationWidget.h:53
+msgid "<p>These files will be analyzed to show the <b>Daemons Logs</b>.</p>"
+msgstr ""
+
+#: src/modes/kernel/kernelAnalyzer.h:59
+msgid "Component"
+msgstr ""
+
+#: src/modes/kernel/kernelItemBuilder.h:59
+msgid "Component:"
+msgstr ""
 
 #: src/modes/kernel/kernelLogMode.cpp:38
 msgid "Kernel Log"
@@ -668,9 +1128,38 @@ msgstr ""
 "usuarios que quixesen saber por que o núcleo non detecta o hardware ou cal é "
 "a causa do último <i>kernel panic/oops</i> (erro grave do núcleo)."
 
+#: src/modes/xsession/xsessionConfigurationWidget.h:51
 #: src/modes/xsession/xsessionLogMode.cpp:38
 msgid "X Session Log"
 msgstr "Rexisto da sesión das X"
+
+#: src/modes/xsession/xsessionConfigurationWidget.h:79
+msgid ""
+"You can type or choose the X Session log file (example: <i>~/.xsession-"
+"errors</i>)."
+msgstr ""
+
+#: src/modes/xsession/xsessionConfigurationWidget.h:80
+msgid ""
+"You can type or choose here the authentication log file. This file will be "
+"analyzed when you select the <b>X Session log</b> menu. Generally, its name "
+"is <i>~/.xsession-errors</i>"
+msgstr ""
+
+#: src/modes/xsession/xsessionConfigurationWidget.h:140
+#, fuzzy, kde-format
+#| msgid "Reloading <b>%1</b>...<br /><i>%2</i>"
+msgid "<li><b>%1</b>: ...</li>"
+msgstr "A cargar de novo <b>%1</b>...<br /><i>%2</i>"
+
+#: src/modes/xsession/xsessionItemBuilder.h:74
+#: src/modes/xsession/xsessionItemBuilder.h:76
+msgid "Program:"
+msgstr ""
+
+#: src/modes/xsession/xsessionAnalyzer.h:54
+msgid "Program"
+msgstr ""
 
 #: src/modes/xsession/xsessionLogMode.cpp:47
 msgid "Display the X Session log."
@@ -688,9 +1177,35 @@ msgstr ""
 "rexisto se quer saber porque se pechou inesperadamente un programa, ou "
 "porque o seu xestor de fiestras (KDE, Gnome,...) non se iniciou."
 
+#: src/modes/authentication/authenticationConfigurationWidget.h:49
 #: src/modes/authentication/authenticationLogMode.cpp:38
 msgid "Authentication Log"
 msgstr "Rexisto de autenticación"
+
+#: src/modes/authentication/authenticationConfigurationWidget.h:56
+#, fuzzy
+#| msgid "Authentication Log"
+msgid "Authentication Log File"
+msgstr "Rexisto de autenticación"
+
+#: src/modes/authentication/authenticationConfigurationWidget.h:62
+#, fuzzy
+#| msgid "Authentication Log"
+msgid "Authentication Log File:"
+msgstr "Rexisto de autenticación"
+
+#: src/modes/authentication/authenticationConfigurationWidget.h:67
+msgid ""
+"You can type or choose the authentication log file (example: <i>/var/log/"
+"auth.log</i>)."
+msgstr ""
+
+#: src/modes/authentication/authenticationConfigurationWidget.h:68
+msgid ""
+"You can type or choose here the authentication log file. This file will be "
+"analyzed when you select the <b>Authentication log</b> menu. Generally, its "
+"name is <i>/var/log/auth.log</i>"
+msgstr ""
 
 #: src/modes/authentication/authenticationLogMode.cpp:47
 msgid "Display the authentication log."
@@ -706,9 +1221,14 @@ msgstr ""
 "aceso feito por cada usuario do sistema, e pode axudalo a saber se alguén "
 "tentou craquear o seu sistema."
 
+#: src/modes/system/systemConfigurationWidget.h:48
 #: src/modes/system/systemLogMode.cpp:39
 msgid "System Log"
 msgstr "Rexisto do sistema"
+
+#: src/modes/system/systemConfigurationWidget.h:54
+msgid "<p>These files will be analyzed to show the <b>System logs</b>.</p>"
+msgstr ""
 
 #: src/modes/system/systemLogMode.cpp:48
 msgid "Display the system log."
@@ -723,9 +1243,14 @@ msgstr ""
 "usado  polos procesos non especializados (como os comandos \"sudo\" ou \"fsck"
 "\")"
 
+#: src/modes/postfix/postfixConfigurationWidget.h:48
 #: src/modes/postfix/postfixLogMode.cpp:39
 msgid "Postfix Log"
 msgstr "Rexisto de Postfix"
+
+#: src/modes/postfix/postfixConfigurationWidget.h:54
+msgid "<p>These files will be analyzed to show the <b>Postfix Logs</b>.</p>"
+msgstr ""
 
 #: src/modes/postfix/postfixLogMode.cpp:48
 msgid "Display the Postfix log."
@@ -798,10 +1323,6 @@ msgstr "Configuración"
 #: src/configurationDialog.cpp:108
 msgid "General"
 msgstr "Xeral"
-
-#: src/loggerDialog.cpp:91 src/loggerDialog.cpp:123
-msgid "User"
-msgstr "Usuario"
 
 #: src/loggerDialog.cpp:113
 msgid "Authentication"
