@@ -45,6 +45,7 @@ fi
 marca="mine"
 cd $BASE_REPO
 
+echo "...solving conflicts on $1 ..."
 for ficheiro in `find $prefix/$lang -name *."$marca"`
   do
     directorio=`dirname $ficheiro`
@@ -55,3 +56,4 @@ for ficheiro in `find $prefix/$lang -name *."$marca"`
     postpath=`echo $directorio | sed "s:$prefix/$lang::"` #cut --delimiter="/" --fields=2- -`
     $BASE_REPO/$prefix/scripts/merge.sh $BASE_REPO/$directorio/$nome $BASE_REPO/$prefix/"templates"$postpath/$nome"t"
   done
+echo "...done $1"

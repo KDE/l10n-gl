@@ -32,6 +32,7 @@ for lugar in {trunk/l10n-kde4,branches/stable/l10n-kde4,trunk/l10n-support}/{scr
         svn update --quiet $BASE_REPO/$lugar
     fi
 done
+echo "END OF REPOSITORIES UPDATES, going to second stage"
 
 for galla in trunk branches/stable; do #arranxamos os conflitos (mediante trad_colisions.sh)
     if [ -d $BASE_REPO/$galla/l10n-kde4/$code ] ; then
@@ -41,9 +42,11 @@ for galla in trunk branches/stable; do #arranxamos os conflitos (mediante trad_c
     fi
 
     if [ -x $BASE_REPO/$galla/l10n-kde4/scripts/process_orphans.sh ]; then #procésanse os orfos e vese cais po non teñen pot
+        echo "...will now process orphans of $galla"
         cd $BASE_REPO/$galla/l10n-kde4/
         $BASE_REPO/$galla/l10n-kde4/scripts/process_orphans.sh &> /dev/null
         if [ -x $BASE_REPO/$galla/l10n-kde4/scripts/find_po_without_pot.sh ]; then
+            echo "...checking for po files without associated po file on $galla"
             $BASE_REPO/$galla/l10n-kde4/scripts/find_po_without_pot.sh $code
         fi
     fi
