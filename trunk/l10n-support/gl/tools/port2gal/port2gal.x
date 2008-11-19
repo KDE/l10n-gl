@@ -1,3 +1,0 @@
-#!/bin/bash
-
-./port2gal.perl |  ./regrasVerbos.perl ./verbos23.txt

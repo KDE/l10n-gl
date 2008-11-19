@@ -35,7 +35,7 @@ mkdir -p $BASE_REPO/trunk/l10n-support/templates
 for place in trunk/{l10n-kde4,l10n-support}/{scripts,templates,$code,pology,documentation}; do
     if [ -d $BASE_REPO/$place -a ! -d $BASE_REPO/$place/.svn ]; then
         echo $BASE_REPO/$place
-#         svn checkout svn://anonsvn.kde.org/home/KDE/$place $BASE_REPO/$place
+         svn checkout svn://anonsvn.kde.org/home/kde/$place $BASE_REPO/$place
     else
         echo "non: " $BASE_REPO/$place
     fi

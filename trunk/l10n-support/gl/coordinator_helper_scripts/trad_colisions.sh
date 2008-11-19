@@ -54,6 +54,6 @@ for ficheiro in `find $prefix/$lang -name *."$marca"`
     cp $ficheiro $directorio/$nome
     svn resolved $directorio/$nome
     postpath=`echo $directorio | sed "s:$prefix/$lang::"` #cut --delimiter="/" --fields=2- -`
-    $BASE_REPO/$prefix/scripts/merge.sh $BASE_REPO/$directorio/$nome $BASE_REPO/$prefix/"templates"$postpath/$nome"t"
+    $BASE_REPO/$prefix/scripts/merge.sh $BASE_REPO/$directorio/$nome $BASE_REPO/$prefix/"templates/"$postpath/$nome"t"
   done
 echo "...done $1"
