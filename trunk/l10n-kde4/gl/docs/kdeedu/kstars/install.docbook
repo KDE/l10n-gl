@@ -1,0 +1,137 @@
+<appendix id="installation">
+<title
+>Instalación</title>
+
+<sect1 id="getting-kstars">
+<title
+>Como obter o &kstars;</title>
+<para
+>O &kstars; distribúese co &kde; como parte do módulo "Edutainment" do kdeedu. </para>
+<para
+>En ocasións facemos unha publicación independente. Estas publicacións independentes están disponíbeis como arquivo tar comprimido co gzip no seguinte sitio web: <ulink url="http://prdownloads.sourceforge.net/kstars/"
+>http://prdownloads.sourceforge.net/kstars/</ulink
+>. </para>
+<para
+>As publicacións independentes anúncianse na lista de correo <email
+>kstars-announce@lists.sourceforge.net</email
+>. Tamén se publican na <ulink url="http://edu.kde.org/kstars"
+>páxina web do &kstars;</ulink
+>, en <ulink url="http://www.kde-apps.org/content/show.php?content=9862"
+>kde-apps.org</ulink
+> e en <ulink url="http://freshmeat.net/projects/kstars"
+>freshmeat.net</ulink
+>. </para>
+<para
+>O &kstars; inclúese como paquete en moitas distribucións de Linux/BSD, incluídas Redhat, Suse e Mandrake. Algunhas distribucións inclúen paquetes co &kstars; como aplicación separada e outras simplemente fornecen un paquete kdeedu que inclúe o &kstars;. </para
+><para
+>Para obter a versión en desenvolvemento máis recente do &kstars; sigue <ulink url="http://edu.kde.org/kstars/svn.php"
+>estas instrucións</ulink
+>. </para>
+</sect1>
+
+<sect1 id="requirements">
+<title
+>Requisitos</title>
+<para
+>Para executar con éxito o &kstars; precísase &kde; 
+>=4.0 e &Qt;
+>=4.3. </para>
+<para
+>Para compilar o &kstars; tamén hai que ter instalados os paquetes seguintes: <itemizedlist>
+<listitem
+><para
+>kdelibs-devel</para
+></listitem>
+<listitem
+><para
+>qt-devel</para
+></listitem>
+<listitem
+><para
+>zlib-devel</para
+></listitem>
+<listitem
+><para
+>fam-devel</para
+></listitem>
+<listitem
+><para
+>png-devel</para
+></listitem>
+<listitem
+><para
+>jpeg-devel</para
+></listitem>
+<listitem
+><para
+>cmake</para
+></listitem>
+</itemizedlist
+></para>
+
+<para
+>No meu sistema, o &kstars; utiliza uns 60 MB de memoria do sistema coa configuración por omisión. A maior parte deste uso débese ás bases de datos de obxectos cargadas. Pódese reducir enormemente a ocupación da memoria reducindo o límite de visibilidade das estrelas na xanela de configuración ou eliminando catálogos de obxectos (NGC, IC, cometas, asteroides, &etc;). Se o &kstars; non está a facer nada emprega moi pouca <acronym
+>CPU</acronym
+>, mais utiliza toda a disponíbel cando se despraza ou amplía a visualización. </para>
+</sect1>
+
+<sect1 id="compilation">
+<title
+>Compilación e instalación</title>
+
+<para
+>Para poder compilar e instalar o &kstars; escribe o seguinte no cartafol base da distribución de &kstars; sen desempaquetar: <screen width="40"
+><prompt
+>%</prompt
+> <userinput
+>./configure --prefix=$KDEDIR</userinput>
+<prompt
+>%</prompt
+> <userinput
+>make</userinput>
+<prompt
+>%</prompt
+> <userinput
+>make install</userinput
+>
+</screen>
+</para
+><para
+>Non esquezas o argumento do prefixo para configurar. Se non se asigna unha variábel <envar
+>KDEDIR</envar
+> hai que asignarlle ao prefixo o cartafol no que está instalado o &kde;: normalmente é <filename class="directory"
+>/usr</filename
+>, <filename class="directory"
+>/opt/kde</filename
+> ou <filename class="directory"
+>/opt/kde3</filename
+>. Asegúrate tamén de facer o último paso como <systemitem class="username"
+>root</systemitem
+>. </para
+><para
+>O &kstars; emprega <command
+>autoconf</command
+> e <command
+>automake</command
+>, polo que non debería dar problemas ao compilar. Se aparecen problemas, informa na lista de correo do &kstars;, <email
+>kstars-devel@kde.org</email
+> </para>
+</sect1>
+
+<sect1 id="configuration">
+<title
+>Configuración</title>
+<para
+>Nesta altura non hai opcións ou requisitos de configuración especiais. Se o &kstars; se queixa de que lle faltan ficheiros de datos, entra como <systemitem class="username"
+>root</systemitem
+> e copia manualmente todos os ficheiros que haxa en <filename class="directory"
+>kstars/data</filename
+> para <filename class="directory"
+>$(KDEDIR)/apps/kstars</filename
+> (se non tes privilexios de <systemitem class="username"
+>root</systemitem
+> cópiaos para <filename class="directory"
+>~/.kde/share/apps/kstars/.</filename
+>) </para>
+</sect1>
+</appendix>
