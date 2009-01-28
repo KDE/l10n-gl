@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gwenview\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2009-01-23 10:14+0100\n"
+"POT-Creation-Date: 2009-01-28 09:14+0100\n"
 "PO-Revision-Date: 2008-11-27 22:40+0100\n"
 "Last-Translator: Xosé <xosecalvo@gmail.com>\n"
 "Language-Team: Galician <proxecto@trasno.org>\n"
@@ -224,16 +224,27 @@ msgctxt "@action:inmenu"
 msgid "Filter by Tag"
 msgstr "Filtrar pola etiqueta"
 
-#: app/gvcore.cpp:134
+#: app/gvcore.cpp:77
+msgctxt "@info"
+msgid "No image format selected."
+msgstr "Non escolleu nengún formato de imaxe."
+
+#: app/gvcore.cpp:90
+#, kde-format
+msgctxt "@info"
+msgid "Gwenview cannot save images as %1."
+msgstr "Gwenview non pode gardar as imaxes como %1."
+
+#: app/gvcore.cpp:174
 msgctxt "@info:progress saving all image changes"
 msgid "Saving..."
 msgstr "A gardar..."
 
-#: app/gvcore.cpp:135
+#: app/gvcore.cpp:175
 msgid "&Stop"
 msgstr "&Deter"
 
-#: app/gvcore.cpp:168
+#: app/gvcore.cpp:208
 #, kde-format
 msgctxt "@info"
 msgid "One document could not be saved:"
@@ -241,7 +252,7 @@ msgid_plural "%1 documents could not be saved:"
 msgstr[0] "Non foi posíbel gardar un documento:"
 msgstr[1] "Non foi posíbel gardar %1 documentos:"
 
-#: app/gvcore.cpp:175
+#: app/gvcore.cpp:215
 #, kde-format
 msgctxt ""
 "@info %1 is the name of the document which failed to save, %2 is the reason "
@@ -249,33 +260,22 @@ msgctxt ""
 msgid "<filename>%1</filename>: %2"
 msgstr "<filename>%1</filename>: %2"
 
-#: app/gvcore.cpp:193
+#: app/gvcore.cpp:233
 #, kde-format
 msgctxt "@info"
 msgid "<b>Saving <filename>%1</filename> failed:</b><br>%2"
 msgstr "<b>Non foi posíbel gardar <filename>%1</filename>:</b><br>%2"
 
-#: app/gvcore.cpp:203
+#: app/gvcore.cpp:243
 msgid "Save using another format"
 msgstr "Gardar usando outro formato"
 
-#: app/gvcore.cpp:206
+#: app/gvcore.cpp:246
 #, kde-format
 msgid "Gwenview cannot save images in '%1' format."
 msgstr "Gwenview non pode gardar as imaxes no formato \"%1\"."
 
-#: app/gvcore.cpp:236
-msgctxt "@info"
-msgid "No image format selected."
-msgstr "Non escolleu nengún formato de imaxe."
-
-#: app/gvcore.cpp:249
-#, kde-format
-msgctxt "@info"
-msgid "Gwenview cannot save images as %1."
-msgstr "Gwenview non pode gardar as imaxes como %1."
-
-#: app/gvcore.cpp:259
+#: app/gvcore.cpp:268
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -285,7 +285,7 @@ msgstr ""
 "Xa existe un ficheiro chamado <filename>%1</filename>.\n"
 "Desexa realmente sobrescrebelo?"
 
-#: app/gvcore.cpp:316
+#: app/gvcore.cpp:325
 msgctxt "@info"
 msgid "Gwenview cannot edit this kind of image."
 msgstr "Gwenview non pode modificar este tipo de imaxe."
@@ -340,23 +340,49 @@ msgid "Meta Information"
 msgstr "Metainformación"
 
 #: app/infocontextmanageritem.cpp:218
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@label"
+#| msgid "%1 files selected"
 msgctxt "@label"
-msgid "%1 files selected"
-msgstr "Hai %1 ficheiros escollidos"
+msgid "%1 file selected"
+msgid_plural "%1 files selected"
+msgstr[0] "Hai %1 ficheiros escollidos"
+msgstr[1] "Hai %1 ficheiros escollidos"
 
 #: app/infocontextmanageritem.cpp:220
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@label"
+#| msgid "One folder selected"
+#| msgid_plural "%1 folders selected"
 msgctxt "@label"
-msgid "One folder selected"
+msgid "%1 folder selected"
 msgid_plural "%1 folders selected"
 msgstr[0] "Hai un cartafol escollido"
 msgstr[1] "Hai %1 cartafoles escollidos"
 
-#: app/infocontextmanageritem.cpp:222
+#: app/infocontextmanageritem.cpp:223
 #, kde-format
-msgctxt "@label"
-msgid "%1 folders and %2 files selected"
+msgid "%1 folder"
+msgid_plural "%1 folders"
+msgstr[0] ""
+msgstr[1] ""
+
+#: app/infocontextmanageritem.cpp:223
+#, fuzzy, kde-format
+#| msgctxt "Slideshow interval in seconds"
+#| msgid "%1 sec"
+#| msgid_plural "%1 secs"
+msgid "%1 file"
+msgid_plural "%1 files"
+msgstr[0] "%1 segundo"
+msgstr[1] "%1 segundos"
+
+#: app/infocontextmanageritem.cpp:223
+#, fuzzy, kde-format
+#| msgctxt "@label"
+#| msgid "%1 folders and %2 files selected"
+msgctxt "@label. The two parameters are strings like '2 folders' and '1 file'."
+msgid "%1 and %2 selected"
 msgstr "Hai %1 cartafoles e %2 ficheiros escollidos"
 
 #: app/imagemetainfodialog.cpp:75
@@ -748,12 +774,12 @@ msgctxt "@info"
 msgid "Gwenview cannot display documents of type %1."
 msgstr "Gwenview non pode mostrar documentos do tipo %1."
 
-#: lib/document/loadingdocumentimpl.cpp:331
+#: lib/document/loadingdocumentimpl.cpp:333
 msgctxt "@info"
 msgid "Loading meta information failed."
 msgstr "Fallou a carga da meta-información."
 
-#: lib/document/loadingdocumentimpl.cpp:358
+#: lib/document/loadingdocumentimpl.cpp:360
 msgctxt "@info"
 msgid "Loading image failed."
 msgstr "Fallou a carga da imaxe."
