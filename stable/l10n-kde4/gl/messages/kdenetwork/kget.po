@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kget\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2009-01-29 07:21+0100\n"
+"POT-Creation-Date: 2009-02-02 07:11+0100\n"
 "PO-Revision-Date: 2009-01-05 21:06+0100\n"
 "Last-Translator: Miguel Branco <mgl.branco@gmail.com>\n"
 "Language-Team: Galician <proxecto@trasno.net>\n"
@@ -251,12 +251,13 @@ msgid "n/a"
 msgstr "n/d"
 
 #: core/transferhandler.cpp:151
-#: transfer-plugins/bittorrent/libbtcore/torrent/torrentcontrol.cpp:1468
+#: transfer-plugins/bittorrent/libbtcore/torrent/torrentcontrol.cpp:1478
 #: ui/transferdetails.cpp:89
 msgid "Stalled"
 msgstr "Atrancado"
 
 #: core/transferhandler.cpp:156 core/transfergrouphandler.cpp:130
+#: transfer-plugins/bittorrent/libbtcore/util/functions.cpp:263
 #: ui/transferdetails.cpp:94
 #, kde-format
 msgid "%1/s"
@@ -572,6 +573,7 @@ msgid "Availability"
 msgstr "Dispoñibilidade"
 
 #: transfer-plugins/bittorrent/advanceddetails/peerviewmodel.cpp:207
+#: transfer-plugins/bittorrent/libbtcore/util/logsystemmanager.cpp:36
 msgid "DHT"
 msgstr "DHT"
 
@@ -807,39 +809,14 @@ msgstr "Escoller un cartafol para ficheiros Temporais"
 msgid "Unknown client"
 msgstr "Cliente descoñecido"
 
-#: transfer-plugins/bittorrent/libbtcore/util/functions.cpp:258
-#, kde-format
-msgid "%1 GB"
-msgstr "%1 GB"
-
-#: transfer-plugins/bittorrent/libbtcore/util/functions.cpp:260
-#, kde-format
-msgid "%1 MB"
-msgstr "%1 MB"
-
-#: transfer-plugins/bittorrent/libbtcore/util/functions.cpp:262
-#, kde-format
-msgid "%1 KB"
-msgstr "%1 KB"
-
-#: transfer-plugins/bittorrent/libbtcore/util/functions.cpp:264
-#, kde-format
-msgid "%1 B"
-msgstr "%1 B"
-
-#: transfer-plugins/bittorrent/libbtcore/util/functions.cpp:270
-#, kde-format
-msgid "%1 KB/s"
-msgstr "%1 KB/s "
-
-#: transfer-plugins/bittorrent/libbtcore/util/functions.cpp:281
+#: transfer-plugins/bittorrent/libbtcore/util/functions.cpp:274
 #, kde-format
 msgid "1 day "
 msgid_plural "%1 days "
 msgstr[0] "1 día"
 msgstr[1] "%1 días"
 
-#: transfer-plugins/bittorrent/libbtcore/util/log.cpp:124
+#: transfer-plugins/bittorrent/libbtcore/util/log.cpp:119
 #, kde-format
 msgid "Cannot open log file %1 : %2"
 msgstr "Non foi posíbel abrir o ficheiro de rexisto %1 : %2"
@@ -854,140 +831,160 @@ msgstr "Non foi posíbel escribir en %1 : %2"
 msgid "Cannot read from %1"
 msgstr "Non foi posíbel ler de %1"
 
-#: transfer-plugins/bittorrent/libbtcore/util/fileops.cpp:77
-#, kde-format
-msgid "Cannot create directory %1: %2"
+#: transfer-plugins/bittorrent/libbtcore/util/fileops.cpp:88
+#, fuzzy, kde-format
+#| msgid "Cannot create directory %1: %2"
+msgid "Cannot create directory %1"
 msgstr "Non foi posíbel criar o cartafol %1: %2"
 
-#: transfer-plugins/bittorrent/libbtcore/util/fileops.cpp:94
+#: transfer-plugins/bittorrent/libbtcore/util/fileops.cpp:129
 #, kde-format
 msgid "Cannot symlink %1 to %2: %3"
 msgstr "Non foi posíbel criar unha ligazón simbólica de %1 para %2: %3"
 
-#: transfer-plugins/bittorrent/libbtcore/util/fileops.cpp:111
+#: transfer-plugins/bittorrent/libbtcore/util/fileops.cpp:146
 #, kde-format
 msgid "Cannot move %1 to %2: %3"
 msgstr "Non foi posíbel mover de %1 para %2: %3"
 
-#: transfer-plugins/bittorrent/libbtcore/util/fileops.cpp:127
-#: transfer-plugins/bittorrent/libbtcore/util/fileops.cpp:143
+#: transfer-plugins/bittorrent/libbtcore/util/fileops.cpp:162
+#: transfer-plugins/bittorrent/libbtcore/util/fileops.cpp:178
 #, kde-format
 msgid "Cannot copy %1 to %2: %3"
 msgstr "Non foi posíbel copiar de %1 para %2: %3"
 
-#: transfer-plugins/bittorrent/libbtcore/util/fileops.cpp:204
+#: transfer-plugins/bittorrent/libbtcore/util/fileops.cpp:239
 #, kde-format
 msgid "Cannot delete %1: %2"
 msgstr "Non foi posíbel borrar %1: %2"
 
-#: transfer-plugins/bittorrent/libbtcore/util/fileops.cpp:221
+#: transfer-plugins/bittorrent/libbtcore/util/fileops.cpp:256
 #, kde-format
 msgid "Cannot create %1: %2"
 msgstr "Non foi posíbel criar %1: %2"
 
-#: transfer-plugins/bittorrent/libbtcore/util/fileops.cpp:240
+#: transfer-plugins/bittorrent/libbtcore/util/fileops.cpp:274
 #, kde-format
 msgid "Cannot calculate the filesize of %1: %2"
 msgstr "Non foi posíbel calcular o tamaño do ficheiro %1: %2"
 
-#: transfer-plugins/bittorrent/libbtcore/util/fileops.cpp:256
+#: transfer-plugins/bittorrent/libbtcore/util/fileops.cpp:290
 #, kde-format
 msgid "Cannot calculate the filesize : %1"
 msgstr "Non foi posíbel calcular o tamaño do ficheiro : %1"
 
-#: transfer-plugins/bittorrent/libbtcore/util/fileops.cpp:284
-#: transfer-plugins/bittorrent/libbtcore/util/fileops.cpp:313
-#: transfer-plugins/bittorrent/libbtcore/util/fileops.cpp:372
-#: transfer-plugins/bittorrent/libbtcore/diskio/cachefile.cpp:96
+#: transfer-plugins/bittorrent/libbtcore/util/fileops.cpp:318
+#: transfer-plugins/bittorrent/libbtcore/util/fileops.cpp:347
+#: transfer-plugins/bittorrent/libbtcore/util/fileops.cpp:406
+#: transfer-plugins/bittorrent/libbtcore/diskio/cachefile.cpp:94
 #, kde-format
 msgid "Cannot open %1 : %2"
 msgstr "Non foi posíbel acceder a %1 : %2"
 
-#: transfer-plugins/bittorrent/libbtcore/util/fileops.cpp:334
-#: transfer-plugins/bittorrent/libbtcore/util/fileops.cpp:340
-#: transfer-plugins/bittorrent/libbtcore/util/fileops.cpp:343
+#: transfer-plugins/bittorrent/libbtcore/util/fileops.cpp:368
+#: transfer-plugins/bittorrent/libbtcore/util/fileops.cpp:374
+#: transfer-plugins/bittorrent/libbtcore/util/fileops.cpp:377
 #, kde-format
 msgid "Cannot expand file : %1"
 msgstr "Non foi posíbel expandir o ficheiro : %1"
 
-#: transfer-plugins/bittorrent/libbtcore/util/fileops.cpp:358
-#: transfer-plugins/bittorrent/libbtcore/util/fileops.cpp:360
+#: transfer-plugins/bittorrent/libbtcore/util/fileops.cpp:392
+#: transfer-plugins/bittorrent/libbtcore/util/fileops.cpp:394
 #, kde-format
 msgid "Cannot expand file: %1"
 msgstr "Non foi posíbel expandir o ficheiro: %1"
 
-#: transfer-plugins/bittorrent/libbtcore/util/fileops.cpp:393
+#: transfer-plugins/bittorrent/libbtcore/util/fileops.cpp:427
 #, kde-format
 msgid "Cannot seek in file : %1"
 msgstr "Non foi posíbel procurar no ficheiro : %1"
 
-#: transfer-plugins/bittorrent/libbtcore/download/webseed.cpp:74
-#: transfer-plugins/bittorrent/libbtcore/download/webseed.cpp:114
+#: transfer-plugins/bittorrent/libbtcore/util/logsystemmanager.cpp:33
+msgid "General"
+msgstr ""
+
+#: transfer-plugins/bittorrent/libbtcore/util/logsystemmanager.cpp:34
+#, fuzzy
+#| msgid "Connecting"
+msgid "Connections"
+msgstr "Conectando"
+
+#: transfer-plugins/bittorrent/libbtcore/util/logsystemmanager.cpp:35
+#, fuzzy
+#| msgid "Trackers"
+msgid "Tracker"
+msgstr "Localizadores"
+
+#: transfer-plugins/bittorrent/libbtcore/util/logsystemmanager.cpp:37
+msgid "Disk Input/Output"
+msgstr ""
+
+#: transfer-plugins/bittorrent/libbtcore/download/webseed.cpp:48
+#: transfer-plugins/bittorrent/libbtcore/download/webseed.cpp:91
 #: transfer-plugins/bittorrent/libbtcore/download/httpconnection.cpp:37
 msgid "Not connected"
 msgstr "Non conectado "
 
-#: transfer-plugins/bittorrent/libbtcore/download/webseed.cpp:262
-#: transfer-plugins/bittorrent/libbtcore/download/httpconnection.cpp:118
+#: transfer-plugins/bittorrent/libbtcore/download/webseed.cpp:251
+#: transfer-plugins/bittorrent/libbtcore/download/httpconnection.cpp:125
 msgid "Connection closed"
 msgstr "Conexión Pechada"
 
-#: transfer-plugins/bittorrent/libbtcore/download/httpconnection.cpp:96
+#: transfer-plugins/bittorrent/libbtcore/download/httpconnection.cpp:103
 #, kde-format
 msgid "Resolving proxy %1:%2"
 msgstr "A resolver o proxy %1:%2"
 
-#: transfer-plugins/bittorrent/libbtcore/download/httpconnection.cpp:105
+#: transfer-plugins/bittorrent/libbtcore/download/httpconnection.cpp:112
 #, kde-format
 msgid "Resolving hostname %1"
 msgstr "A resolver o nome de servidor %1"
 
-#: transfer-plugins/bittorrent/libbtcore/download/httpconnection.cpp:126
+#: transfer-plugins/bittorrent/libbtcore/download/httpconnection.cpp:132
 #, kde-format
 msgid "Error: request failed: %1"
 msgstr "Aconteceu un erro: fallou o pedido: %1"
 
-#: transfer-plugins/bittorrent/libbtcore/download/httpconnection.cpp:143
-#: transfer-plugins/bittorrent/libbtcore/download/httpconnection.cpp:205
+#: transfer-plugins/bittorrent/libbtcore/download/httpconnection.cpp:149
+#: transfer-plugins/bittorrent/libbtcore/download/httpconnection.cpp:214
 msgid "Connected"
 msgstr "Conectando"
 
-#: transfer-plugins/bittorrent/libbtcore/download/httpconnection.cpp:149
+#: transfer-plugins/bittorrent/libbtcore/download/httpconnection.cpp:155
 msgid "Error: Failed to connect to webseed"
 msgstr "Aconteceu un erro: Non foi posíbel conectar coa fonte web"
 
-#: transfer-plugins/bittorrent/libbtcore/download/httpconnection.cpp:212
+#: transfer-plugins/bittorrent/libbtcore/download/httpconnection.cpp:220
 msgid "Connecting"
 msgstr "Conectando"
 
-#: transfer-plugins/bittorrent/libbtcore/download/httpconnection.cpp:223
+#: transfer-plugins/bittorrent/libbtcore/download/httpconnection.cpp:230
 msgid "Failed to connect to webseed"
 msgstr "Non foi posíbel conectar coa fonte web"
 
-#: transfer-plugins/bittorrent/libbtcore/download/httpconnection.cpp:230
+#: transfer-plugins/bittorrent/libbtcore/download/httpconnection.cpp:237
 msgid "Failed to resolve hostname of webseed"
 msgstr "Non foi posíbel resolver o nome da fonte web"
 
-#: transfer-plugins/bittorrent/libbtcore/download/httpconnection.cpp:293
+#: transfer-plugins/bittorrent/libbtcore/download/httpconnection.cpp:317
 msgid "Error: failed to connect, server not responding"
 msgstr "Aconteceu un erro: fallou a conexión, o servidor non responde"
 
-#: transfer-plugins/bittorrent/libbtcore/download/httpconnection.cpp:302
+#: transfer-plugins/bittorrent/libbtcore/download/httpconnection.cpp:326
 msgid "Error: request timed out"
 msgstr "Aconteceu un erro: o pedido esgotou o tempo límite"
 
-#: transfer-plugins/bittorrent/libbtcore/download/chunkdownload.cpp:323
-#, kde-format
-msgid "%1 peers"
-msgstr "%1 parceiros"
+#: transfer-plugins/bittorrent/libbtcore/download/httpconnection.cpp:417
+msgid "Redirected without a new location !"
+msgstr ""
 
-#: transfer-plugins/bittorrent/libbtcore/migrate/ccmigrate.cpp:119
-#: transfer-plugins/bittorrent/libbtcore/migrate/ccmigrate.cpp:125
-#: transfer-plugins/bittorrent/libbtcore/diskio/multifilecache.cpp:665
-#: transfer-plugins/bittorrent/libbtcore/diskio/multifilecache.cpp:745
-#, kde-format
-msgid "Cannot open file %1 : %2"
-msgstr "Non foi posíbel acceder ao ficheiro %1 : %2"
+#: transfer-plugins/bittorrent/libbtcore/download/chunkdownload.cpp:384
+#, fuzzy, kde-format
+#| msgid "%1 peers"
+msgid "1 peer"
+msgid_plural "%1 peers"
+msgstr[0] "%1 parceiros"
+msgstr[1] "%1 parceiros"
 
 #: transfer-plugins/bittorrent/libbtcore/migrate/migrate.cpp:45
 #, kde-format
@@ -1018,142 +1015,154 @@ msgstr "Non foi posíbel converter %1 nun enteiro"
 msgid "Torrent is incomplete!"
 msgstr "O torrente está incompleto!"
 
-#: transfer-plugins/bittorrent/libbtcore/diskio/singlefilecache.cpp:66
+#: transfer-plugins/bittorrent/libbtcore/diskio/singlefilecache.cpp:71
 #: transfer-plugins/bittorrent/libbtcore/diskio/multifilecache.cpp:106
 #, kde-format
 msgid "Failed to open %1 : %2"
 msgstr "Non foi posíbel abrir %1 : %2"
 
-#: transfer-plugins/bittorrent/libbtcore/diskio/singlefilecache.cpp:76
-#: transfer-plugins/bittorrent/libbtcore/diskio/multifilecache.cpp:89
-#: transfer-plugins/bittorrent/libbtcore/diskio/multifilecache.cpp:123
+#: transfer-plugins/bittorrent/libbtcore/diskio/singlefilecache.cpp:82
+#: transfer-plugins/bittorrent/libbtcore/diskio/multifilecache.cpp:133
 #, kde-format
 msgid "Failed to create %1 : %2"
 msgstr "Non foi posíbel criar %1: %2"
 
-#: transfer-plugins/bittorrent/libbtcore/diskio/chunkmanager.cpp:220
-#: transfer-plugins/bittorrent/libbtcore/diskio/chunkmanager.cpp:451
+#: transfer-plugins/bittorrent/libbtcore/diskio/chunkmanager.cpp:209
+#: transfer-plugins/bittorrent/libbtcore/diskio/chunkmanager.cpp:324
 #, kde-format
 msgid "Cannot open index file %1 : %2"
 msgstr "Non foi posíbel abrir o ficheiro do índice %1 : %2"
 
-#: transfer-plugins/bittorrent/libbtcore/diskio/dndfile.cpp:108
+#: transfer-plugins/bittorrent/libbtcore/diskio/dndfile.cpp:89
 #, kde-format
 msgid "Cannot create file %1 : %2"
 msgstr "Non foi posíbel criar o ficheiro %1 : %2"
 
-#: transfer-plugins/bittorrent/libbtcore/diskio/dndfile.cpp:175
+#: transfer-plugins/bittorrent/libbtcore/diskio/dndfile.cpp:137
 #, kde-format
 msgid "Failed to write first chunk to DND file : %1"
 msgstr "Non foi posíbel gardar o primeiro anaco no ficheiro DND : %1"
 
-#: transfer-plugins/bittorrent/libbtcore/diskio/dndfile.cpp:233
+#: transfer-plugins/bittorrent/libbtcore/diskio/dndfile.cpp:155
 #, kde-format
 msgid "Failed to write last chunk to DND file : %1"
 msgstr "Non foi posíbel gardar o último anaco no ficheiro DND : %1"
 
-#: transfer-plugins/bittorrent/libbtcore/diskio/cachefile.cpp:122
-#: transfer-plugins/bittorrent/libbtcore/diskio/cachefile.cpp:245
-#: transfer-plugins/bittorrent/libbtcore/diskio/cachefile.cpp:432
-#: transfer-plugins/bittorrent/libbtcore/diskio/cachefile.cpp:499
+#: transfer-plugins/bittorrent/libbtcore/diskio/cachefile.cpp:120
+#: transfer-plugins/bittorrent/libbtcore/diskio/cachefile.cpp:243
+#: transfer-plugins/bittorrent/libbtcore/diskio/cachefile.cpp:429
+#: transfer-plugins/bittorrent/libbtcore/diskio/cachefile.cpp:496
 #, kde-format
 msgid "Cannot open %1 for writing : readonly filesystem"
 msgstr ""
 "Non foi posíbel abrir %1 para escribir: sistema de ficheiros só para lectura"
 
-#: transfer-plugins/bittorrent/libbtcore/diskio/cachefile.cpp:255
+#: transfer-plugins/bittorrent/libbtcore/diskio/cachefile.cpp:253
 #, kde-format
 msgid "Cannot expand file %1 : %2"
 msgstr "Non foi posíbel expandir o ficheiro %1 : %2"
 
-#: transfer-plugins/bittorrent/libbtcore/diskio/cachefile.cpp:398
+#: transfer-plugins/bittorrent/libbtcore/diskio/cachefile.cpp:395
 #, kde-format
 msgid "Error : Reading past the end of the file %1"
 msgstr "Erro : A ler após a fin do ficheiro %1"
 
-#: transfer-plugins/bittorrent/libbtcore/diskio/cachefile.cpp:403
-#: transfer-plugins/bittorrent/libbtcore/diskio/cachefile.cpp:449
+#: transfer-plugins/bittorrent/libbtcore/diskio/cachefile.cpp:400
+#: transfer-plugins/bittorrent/libbtcore/diskio/cachefile.cpp:446
 #, kde-format
 msgid "Failed to seek file %1 : %2"
 msgstr "Non se atopa o ficheiro %1: %2"
 
-#: transfer-plugins/bittorrent/libbtcore/diskio/cachefile.cpp:411
+#: transfer-plugins/bittorrent/libbtcore/diskio/cachefile.cpp:408
 #, kde-format
 msgid "Error reading from %1"
 msgstr "Aconteceu un erro ao ler de %1"
 
-#: transfer-plugins/bittorrent/libbtcore/diskio/cachefile.cpp:453
+#: transfer-plugins/bittorrent/libbtcore/diskio/cachefile.cpp:450
 #, kde-format
 msgid "Failed to write to file %1 : %2"
 msgstr "Non foi posíbel gardar en %1 : %2"
 
-#: transfer-plugins/bittorrent/libbtcore/diskio/cachefile.cpp:526
-#: transfer-plugins/bittorrent/libbtcore/diskio/multifilecache.cpp:729
+#: transfer-plugins/bittorrent/libbtcore/diskio/cachefile.cpp:523
+#: transfer-plugins/bittorrent/libbtcore/diskio/multifilecache.cpp:833
 #, kde-format
 msgid "Cannot preallocate diskspace : %1"
 msgstr "Non foi posíbel reservar espazo no disco : %1"
 
-#: transfer-plugins/bittorrent/libbtcore/torrent/torrent.cpp:63
-#: transfer-plugins/bittorrent/libbtcore/torrent/torrent.cpp:125
-#: transfer-plugins/bittorrent/libbtcore/torrent/torrent.cpp:148
-#: transfer-plugins/bittorrent/libbtcore/torrent/torrent.cpp:156
-#: transfer-plugins/bittorrent/libbtcore/torrent/torrent.cpp:163
-#: transfer-plugins/bittorrent/libbtcore/torrent/torrent.cpp:167
-#: transfer-plugins/bittorrent/libbtcore/torrent/torrent.cpp:175
-#: transfer-plugins/bittorrent/libbtcore/torrent/torrent.cpp:189
-#: transfer-plugins/bittorrent/libbtcore/torrent/torrent.cpp:193
-#: transfer-plugins/bittorrent/libbtcore/torrent/torrent.cpp:207
-#: transfer-plugins/bittorrent/libbtcore/torrent/torrent.cpp:216
-#: transfer-plugins/bittorrent/libbtcore/torrent/torrent.cpp:230
-#: transfer-plugins/bittorrent/libbtcore/torrent/torrent.cpp:237
-#: transfer-plugins/bittorrent/libbtcore/torrent/torrent.cpp:243
-#: transfer-plugins/bittorrent/libbtcore/torrent/torrent.cpp:250
-#: transfer-plugins/bittorrent/libbtcore/torrent/torrent.cpp:256
-#: transfer-plugins/bittorrent/libbtcore/torrent/torrent.cpp:272
-#: transfer-plugins/bittorrent/libbtcore/torrent/torrent.cpp:319
-#: transfer-plugins/bittorrent/libbtcore/torrent/torrent.cpp:325
-#: transfer-plugins/bittorrent/libbtcore/torrent/torrent.cpp:328
-#: transfer-plugins/bittorrent/libbtcore/torrent/torrent.cpp:331
+#: transfer-plugins/bittorrent/libbtcore/diskio/multifilecache.cpp:769
+#: transfer-plugins/bittorrent/libbtcore/diskio/multifilecache.cpp:849
+#, kde-format
+msgid "Cannot open file %1 : %2"
+msgstr "Non foi posíbel acceder ao ficheiro %1 : %2"
+
+#: transfer-plugins/bittorrent/libbtcore/torrent/torrent.cpp:65
+#: transfer-plugins/bittorrent/libbtcore/torrent/torrent.cpp:127
+#: transfer-plugins/bittorrent/libbtcore/torrent/torrent.cpp:150
+#: transfer-plugins/bittorrent/libbtcore/torrent/torrent.cpp:158
+#: transfer-plugins/bittorrent/libbtcore/torrent/torrent.cpp:165
+#: transfer-plugins/bittorrent/libbtcore/torrent/torrent.cpp:169
+#: transfer-plugins/bittorrent/libbtcore/torrent/torrent.cpp:177
+#: transfer-plugins/bittorrent/libbtcore/torrent/torrent.cpp:191
+#: transfer-plugins/bittorrent/libbtcore/torrent/torrent.cpp:195
+#: transfer-plugins/bittorrent/libbtcore/torrent/torrent.cpp:209
+#: transfer-plugins/bittorrent/libbtcore/torrent/torrent.cpp:218
+#: transfer-plugins/bittorrent/libbtcore/torrent/torrent.cpp:232
+#: transfer-plugins/bittorrent/libbtcore/torrent/torrent.cpp:239
+#: transfer-plugins/bittorrent/libbtcore/torrent/torrent.cpp:245
+#: transfer-plugins/bittorrent/libbtcore/torrent/torrent.cpp:252
+#: transfer-plugins/bittorrent/libbtcore/torrent/torrent.cpp:258
+#: transfer-plugins/bittorrent/libbtcore/torrent/torrent.cpp:274
+#: transfer-plugins/bittorrent/libbtcore/torrent/torrent.cpp:321
+#: transfer-plugins/bittorrent/libbtcore/torrent/torrent.cpp:327
+#: transfer-plugins/bittorrent/libbtcore/torrent/torrent.cpp:330
+#: transfer-plugins/bittorrent/libbtcore/torrent/torrent.cpp:333
 msgid "Corrupted torrent!"
 msgstr "Torrente corrompido!"
 
-#: transfer-plugins/bittorrent/libbtcore/torrent/torrent.cpp:80
+#: transfer-plugins/bittorrent/libbtcore/torrent/torrent.cpp:82
 msgid "Torrent has no announce or nodes field"
 msgstr "O torrente non ten un campo de anuncio ou de nodos"
 
-#: transfer-plugins/bittorrent/libbtcore/torrent/torrent.cpp:116
+#: transfer-plugins/bittorrent/libbtcore/torrent/torrent.cpp:118
 #, kde-format
 msgid " Unable to open torrent file %1 : %2"
 msgstr "Non foi posíbel acceder ao ficheiro de torrente %1: %2"
 
-#: transfer-plugins/bittorrent/libbtcore/torrent/torrent.cpp:296
-#: transfer-plugins/bittorrent/libbtcore/torrent/torrent.cpp:302
+#: transfer-plugins/bittorrent/libbtcore/torrent/torrent.cpp:298
+#: transfer-plugins/bittorrent/libbtcore/torrent/torrent.cpp:304
 msgid "Parse Error"
 msgstr "Erro de Procesado"
 
-#: transfer-plugins/bittorrent/libbtcore/torrent/torrentcontrol.cpp:536
-#, kde-format
+#: transfer-plugins/bittorrent/libbtcore/torrent/torrentcontrol.cpp:525
+#, fuzzy, kde-format
+#| msgid ""
+#| "An error occurred while loading the torrent <b>%1</b>.<br/>The torrent is "
+#| "probably corrupt or is not a torrent file."
 msgid ""
-"An error occurred while loading the torrent <b>%1</b>.<br/>The torrent is "
-"probably corrupt or is not a torrent file."
+"An error occurred while loading the torrent <b>%1</b>\n"
+"The torrent is probably corrupt or is not a torrent file."
 msgstr ""
 "Aconteceu un erro ao cargar o torrent <b>%1</b>.<br/>Probablemente o torrent "
 "estea corrompido ou mesmo non sexa un ficheiro torrent."
 
-#: transfer-plugins/bittorrent/libbtcore/torrent/torrentcontrol.cpp:565
+#: transfer-plugins/bittorrent/libbtcore/torrent/torrentcontrol.cpp:553
+#, fuzzy
+#| msgid ""
+#| "An error occurred while loading the torrent.<br/>The torrent is probably "
+#| "corrupt or is not a torrent file."
 msgid ""
-"An error occurred while loading the torrent.<br/>The torrent is probably "
-"corrupt or is not a torrent file."
+"An error occurred while loading the torrent.\n"
+"The torrent is probably corrupt or is not a torrent file."
 msgstr ""
 "Aconteceu un erro ao cargar o torrent.<br/>Probablemente o torrent estea "
 "corrompido ou mesmo non sexa un ficheiro torrent."
 
-#: transfer-plugins/bittorrent/libbtcore/torrent/torrentcontrol.cpp:574
+#: transfer-plugins/bittorrent/libbtcore/torrent/torrentcontrol.cpp:562
 #, kde-format
 msgid "Unable to create %1 : %2"
 msgstr "Non foi posíbel crear  %1 : %2"
 
-#: transfer-plugins/bittorrent/libbtcore/torrent/torrentcontrol.cpp:589
+#: transfer-plugins/bittorrent/libbtcore/torrent/torrentcontrol.cpp:577
 #, kde-format
 msgid ""
 "You are already downloading this torrent %1, the list of trackers of both "
@@ -1162,17 +1171,17 @@ msgstr ""
 "Xa está a descargar o torrent %1, reunificouse a lista de localizadores de "
 "ámbolos dous torrents."
 
-#: transfer-plugins/bittorrent/libbtcore/torrent/torrentcontrol.cpp:593
+#: transfer-plugins/bittorrent/libbtcore/torrent/torrentcontrol.cpp:581
 #, kde-format
 msgid "You are already downloading the torrent %1"
 msgstr "Xa está a descargar o torrent %1"
 
-#: transfer-plugins/bittorrent/libbtcore/torrent/torrentcontrol.cpp:694
+#: transfer-plugins/bittorrent/libbtcore/torrent/torrentcontrol.cpp:680
 #, kde-format
 msgid "Cannot migrate %1 : %2"
 msgstr "Non é posíbel migrar %1 : %2"
 
-#: transfer-plugins/bittorrent/libbtcore/torrent/torrentcontrol.cpp:1365
+#: transfer-plugins/bittorrent/libbtcore/torrent/torrentcontrol.cpp:1376
 #, kde-format
 msgid ""
 "The torrent %1 was started with a previous version of KTorrent. To make sure "
@@ -1186,52 +1195,52 @@ msgstr ""
 "Se preme cancelar escollerase o seu cartafol de lar coma o directorio onde "
 "descargalo. "
 
-#: transfer-plugins/bittorrent/libbtcore/torrent/torrentcontrol.cpp:1370
+#: transfer-plugins/bittorrent/libbtcore/torrent/torrentcontrol.cpp:1381
 msgid "Select Folder to Save To"
 msgstr "Escoller o cartafol onde gardar"
 
-#: transfer-plugins/bittorrent/libbtcore/torrent/torrentcontrol.cpp:1458
+#: transfer-plugins/bittorrent/libbtcore/torrent/torrentcontrol.cpp:1468
 msgid "Not started"
 msgstr "Non comezado"
 
-#: transfer-plugins/bittorrent/libbtcore/torrent/torrentcontrol.cpp:1460
+#: transfer-plugins/bittorrent/libbtcore/torrent/torrentcontrol.cpp:1470
 msgid "Download completed"
 msgstr "Descarga completa "
 
-#: transfer-plugins/bittorrent/libbtcore/torrent/torrentcontrol.cpp:1462
+#: transfer-plugins/bittorrent/libbtcore/torrent/torrentcontrol.cpp:1472
 msgid "Seeding completed"
 msgstr "Sementeira completa"
 
-#: transfer-plugins/bittorrent/libbtcore/torrent/torrentcontrol.cpp:1464
+#: transfer-plugins/bittorrent/libbtcore/torrent/torrentcontrol.cpp:1474
 msgid "Seeding"
 msgstr "Sementando"
 
-#: transfer-plugins/bittorrent/libbtcore/torrent/torrentcontrol.cpp:1466
+#: transfer-plugins/bittorrent/libbtcore/torrent/torrentcontrol.cpp:1476
 msgid "Downloading"
 msgstr "Descargando... "
 
-#: transfer-plugins/bittorrent/libbtcore/torrent/torrentcontrol.cpp:1470
+#: transfer-plugins/bittorrent/libbtcore/torrent/torrentcontrol.cpp:1480
 #: transfer-plugins/bittorrent/libbtcore/torrent/peersourcemanager.cpp:162
 msgid "Stopped"
 msgstr "Detido"
 
-#: transfer-plugins/bittorrent/libbtcore/torrent/torrentcontrol.cpp:1472
+#: transfer-plugins/bittorrent/libbtcore/torrent/torrentcontrol.cpp:1482
 msgid "Error: "
 msgstr "Erro:"
 
-#: transfer-plugins/bittorrent/libbtcore/torrent/torrentcontrol.cpp:1474
+#: transfer-plugins/bittorrent/libbtcore/torrent/torrentcontrol.cpp:1484
 msgid "Allocating diskspace"
 msgstr "A reservar o espazo en disco"
 
-#: transfer-plugins/bittorrent/libbtcore/torrent/torrentcontrol.cpp:1476
+#: transfer-plugins/bittorrent/libbtcore/torrent/torrentcontrol.cpp:1486
 msgid "Queued"
 msgstr "Na fila"
 
-#: transfer-plugins/bittorrent/libbtcore/torrent/torrentcontrol.cpp:1478
+#: transfer-plugins/bittorrent/libbtcore/torrent/torrentcontrol.cpp:1488
 msgid "Checking data"
 msgstr "Comprobando datos"
 
-#: transfer-plugins/bittorrent/libbtcore/torrent/torrentcontrol.cpp:1480
+#: transfer-plugins/bittorrent/libbtcore/torrent/torrentcontrol.cpp:1490
 msgid "Stopped. No space left on device."
 msgstr "Detido. Non hai espazo no dispositivo."
 
@@ -1254,6 +1263,12 @@ msgstr "Non foi posíbel acceder ao ficheiro %1 : %2"
 #, kde-format
 msgid "Cannot create index file: %1"
 msgstr "Non foi posíbel crear o ficheiro índice : %1"
+
+#: transfer-plugins/bittorrent/libbtcore/tracker/udptracker.cpp:305
+#, fuzzy, kde-format
+#| msgid "Failed to resolve hostname of webseed"
+msgid "Unable to resolve hostname %1"
+msgstr "Non foi posíbel resolver o nome da fonte web"
 
 #: transfer-plugins/bittorrent/libbtcore/tracker/udptrackersocket.cpp:66
 #, kde-format
@@ -2904,6 +2919,21 @@ msgstr "Barra de ferramentas Principal"
 #: rc.cpp:501
 msgid "&Tools"
 msgstr "&Ferramentas"
+
+#~ msgid "%1 GB"
+#~ msgstr "%1 GB"
+
+#~ msgid "%1 MB"
+#~ msgstr "%1 MB"
+
+#~ msgid "%1 KB"
+#~ msgstr "%1 KB"
+
+#~ msgid "%1 B"
+#~ msgstr "%1 B"
+
+#~ msgid "%1 KB/s"
+#~ msgstr "%1 KB/s "
 
 #, fuzzy
 #~| msgid "Delete"
