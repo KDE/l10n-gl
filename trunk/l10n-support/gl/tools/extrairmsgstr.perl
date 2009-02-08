@@ -17,11 +17,11 @@ while ($line = <STDIN>) {
 
   if ( ($line =~ /^msgid/) || ($line=~ /^msgctxt/) || ($line eq "") || ($line =~ /^\#/) )   {
      if ($found == 1) {
-       $buffer =~ s/(<[^>]+>)+//g;
-       $buffer =~ s/(&[A-Za-z_:][A-Za-z0-9_\\.:-]*;)+/""/eg;
-       $buffer =~ s/&&/and/g;
-       $buffer =~ s/&//g;
-       if ($utnr > 1) { print $utnr . ": " . $buffer . "\n";}
+#       $buffer =~ s/(<[^>]+>)+//g;
+#       $buffer =~ s/(&[A-Za-z_:][A-Za-z0-9_\\.:-]*;)+/""/eg;
+#       $buffer =~ s/&&/and/g;
+#       $buffer =~ s/&//g;
+       if ($utnr > 1) { print $buffer . "\n";}
        $buffer = "";
        $found=0; }
      else { $found=0; }

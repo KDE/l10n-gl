@@ -30,7 +30,7 @@ elif [ "$ssh_key" ]; then
 fi
 
 # antes que nada, facemos unha copia de seguranza da bbdd de traduzón
-tar cvf $BASE_REPO/db_backup`date +%F`.tar $HOME/.kde/share/apps/kbabeldict/dbsearchengine/
+#tar cvf $BASE_REPO/db_backup`date +%F`.tar $HOME/.kde/share/apps/kbabeldict/dbsearchengine/
 
 for lugar in {trunk/l10n-kde4,branches/stable/l10n-kde4,trunk/l10n-support}/{scripts,templates,$code,documentation,pology}; do #anovamos a galla
     if [ -d $BASE_REPO/$lugar/.svn ]; then
