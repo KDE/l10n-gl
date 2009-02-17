@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kpackagekit\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2009-02-14 11:52+0100\n"
+"POT-Creation-Date: 2009-02-17 09:18+0100\n"
 "PO-Revision-Date: 2009-02-02 22:17+0100\n"
 "Last-Translator: mvillarino <mvillarino@users.sourceforge.net>\n"
 "Language-Team: galician <proxecto@trasno.net>\n"
@@ -20,7 +20,7 @@ msgstr ""
 
 #: Updater/KpkUpdate.cpp:116 Updater/KpkUpdate.cpp:128
 #: Updater/KpkUpdate.cpp:143 AddRm/KpkReviewChanges.cpp:162
-#: AddRm/KpkReviewChanges.cpp:199 SmartIcon/KpkTransactionTrayIcon.cpp:80
+#: AddRm/KpkReviewChanges.cpp:199 SmartIcon/KpkTransactionTrayIcon.cpp:88
 #: Settings/KpkSettings.cpp:163 KPackageKit/KpkInstallFiles.cpp:114
 msgid "You don't have the necessary privileges to perform this action."
 msgstr ""
@@ -37,7 +37,7 @@ msgstr "Non foi posíbel criar un fío"
 msgid "Failed to update package lists"
 msgstr "A obter as listas de paquetes"
 
-#: Updater/KpkUpdate.cpp:144 SmartIcon/KpkTransactionTrayIcon.cpp:81
+#: Updater/KpkUpdate.cpp:144 SmartIcon/KpkTransactionTrayIcon.cpp:89
 #, fuzzy
 #| msgid "Refresh Packages List"
 msgid "Failed to refresh package lists"
@@ -53,7 +53,7 @@ msgstr "Historial"
 msgid "KPackageKit Update"
 msgstr "Actualización de KPackageKit"
 
-#: Updater/KpkDistroUpgrade.cpp:45
+#: Updater/KpkDistroUpgrade.cpp:45 SmartIcon/KpkDistroUpgrade.cpp:62
 #, fuzzy
 #| msgid "Getting distribution upgrade information"
 msgid "Distribution upgrade available"
@@ -92,24 +92,24 @@ msgstr ""
 msgid "Distribution upgrade complete."
 msgstr "A obter a información de actualización da distribución"
 
-#: Updater/KpkDistroUpgrade.cpp:104
+#: Updater/KpkDistroUpgrade.cpp:104 SmartIcon/KpkDistroUpgrade.cpp:120
 #, kde-format
 msgid "Distribution upgrade process exited with code %1."
 msgstr ""
 
-#: Updater/KpkDistroUpgrade.cpp:119
+#: Updater/KpkDistroUpgrade.cpp:119 SmartIcon/KpkDistroUpgrade.cpp:137
 #, fuzzy
 #| msgid "Getting distribution upgrade information"
 msgid "The distribution upgrade process failed to start."
 msgstr "A obter a información de actualización da distribución"
 
-#: Updater/KpkDistroUpgrade.cpp:123
+#: Updater/KpkDistroUpgrade.cpp:123 SmartIcon/KpkDistroUpgrade.cpp:140
 msgid ""
 "The distribution upgrade process crashed some time after starting "
 "successfully."
 msgstr ""
 
-#: Updater/KpkDistroUpgrade.cpp:127
+#: Updater/KpkDistroUpgrade.cpp:127 SmartIcon/KpkDistroUpgrade.cpp:143
 msgid "The distribution upgrade process failed with an unknown error."
 msgstr ""
 
@@ -210,7 +210,7 @@ msgid "Sorry, your backend does not support installing packages"
 msgstr "A infraestrutura que está a empregar non permite instalar paquetes"
 
 #: AddRm/KpkReviewChanges.cpp:122 SmartIcon/main.cpp:33
-#: KPackageKit/main.cpp:33 KPackageKit/KpkInstallFiles.cpp:147
+#: KPackageKit/main.cpp:34 KPackageKit/KpkInstallFiles.cpp:147
 msgid "KPackageKit"
 msgstr "KPackageKit"
 
@@ -1466,61 +1466,69 @@ msgstr "Probas"
 
 #: SmartIcon/KpkUpdateIcon.cpp:170
 #, kde-format
-msgid "<br><i>And another update</i>"
-msgid_plural "<br><i>And %1 more updates</i>"
+msgid "You have %1"
+msgstr ""
+
+#: SmartIcon/KpkUpdateIcon.cpp:179
+#, fuzzy, kde-format
+#| msgid "<br><i>And another update</i>"
+#| msgid_plural "<br><i>And %1 more updates</i>"
+msgid "<br /><i>And another update</i>"
+msgid_plural "<br /><i>And %1 more updates</i>"
 msgstr[0] "<br><i>E outra actualización</i>"
 msgstr[1] "<br><i>E %1 actualizacións máis</i>"
 
-#: SmartIcon/KpkUpdateIcon.cpp:174
-#, kde-format
-msgid "%1 update available"
-msgid_plural "%1 updates available"
-msgstr[0] "Hai %1 actualización dispoñíbel"
-msgstr[1] "Hai %1 actualizacións dispoñíbeiss"
-
-#: SmartIcon/KpkUpdateIcon.cpp:176
+#. i18np("%1 update available", "%1 updates available", m_updateList.size()));
+#. m_icon->show();
+#: SmartIcon/KpkUpdateIcon.cpp:187
 msgid "Review and update"
 msgstr "Examinar e actualizar"
 
-#: SmartIcon/KpkUpdateIcon.cpp:177
-msgid "Remind me later"
-msgstr "Lembrarmo máis tarde"
+#: SmartIcon/KpkUpdateIcon.cpp:188
+msgid "Not now"
+msgstr ""
 
-#: SmartIcon/KpkUpdateIcon.cpp:178
-msgid "Don't ask anymore."
+#: SmartIcon/KpkUpdateIcon.cpp:189
+#, fuzzy
+#| msgid "Don't ask anymore."
+msgid "Don't ask anymore"
 msgstr "Non voltar a perguntar."
 
-#: SmartIcon/KpkUpdateIcon.cpp:214
+#: SmartIcon/KpkUpdateIcon.cpp:228
 msgid "Updates are being automatically installed."
 msgstr "Estanse a instalar automaticamente as actualizacións."
 
-#: SmartIcon/KpkUpdateIcon.cpp:238
+#: SmartIcon/KpkUpdateIcon.cpp:254
 msgid "Security updates are being automatically installed."
 msgstr "Estanse a instalar automaticamente as actualizacións de seguridade."
 
-#: SmartIcon/KpkUpdateIcon.cpp:266
+#: SmartIcon/KpkUpdateIcon.cpp:284
 msgid "System update was successful!"
 msgstr "A actualización do sistema tivo éxito!"
 
-#: SmartIcon/KpkUpdateIcon.cpp:276
+#: SmartIcon/KpkUpdateIcon.cpp:293
 msgid "The software update failed."
 msgstr "Fallou a actualización do software."
 
-#: SmartIcon/KpkUpdateIcon.cpp:315
+#: SmartIcon/KpkDistroUpgrade.cpp:68
+msgid "Start upgrade now"
+msgstr ""
+
+#: SmartIcon/KpkDistroUpgrade.cpp:117
 #, fuzzy
-#| msgid "Installing signature"
-msgid "Installing updates."
-msgstr "A instalar a sinatura"
+#| msgid "Getting distribution upgrade information"
+msgid "Distribution upgrade finished. "
+msgstr "A obter a información de actualización da distribución"
 
 #: SmartIcon/main.cpp:34
 msgid "KPackageKit Tray Icon"
 msgstr "Ícona de KPackageKit na bandexa"
 
-#: SmartIcon/main.cpp:35 KPackageKit/main.cpp:35
+#: SmartIcon/main.cpp:35
 msgid "(C) 2008 Daniel Nicoletti"
 msgstr "(C) 2008 Daniel Nicoletti"
 
-#: SmartIcon/main.cpp:38 KPackageKit/main.cpp:38
+#: SmartIcon/main.cpp:38 KPackageKit/main.cpp:40
 msgid "Daniel Nicoletti"
 msgstr "Daniel Nicoletti"
 
@@ -1528,11 +1536,11 @@ msgstr "Daniel Nicoletti"
 msgid "Trever Fischer"
 msgstr "Trever Fischer"
 
-#: SmartIcon/main.cpp:41 KPackageKit/main.cpp:40
+#: SmartIcon/main.cpp:41 KPackageKit/main.cpp:42
 msgid "Adrien Bustany"
 msgstr "Adrien Bustany"
 
-#: SmartIcon/main.cpp:41 KPackageKit/main.cpp:40
+#: SmartIcon/main.cpp:41 KPackageKit/main.cpp:42
 msgid "libpackagekit-qt and other stuff"
 msgstr "libpackagekit-qt e outras cousas"
 
@@ -1546,22 +1554,19 @@ msgstr ""
 msgid "Transactions"
 msgstr "Transaccións"
 
-#: SmartIcon/KpkTransactionTrayIcon.cpp:109
-msgid "Restart the application for system changes to take effect."
+#: SmartIcon/KpkTransactionTrayIcon.cpp:176
+#: SmartIcon/KpkTransactionTrayIcon.cpp:190
+#, kde-format
+msgid "%1% - %2"
 msgstr ""
-"Reinicia o programa para que se fagan efectivas as modificacións no sistema."
 
-#: SmartIcon/KpkTransactionTrayIcon.cpp:114
-msgid "You must logout and log back in for system changes to take effect."
+#: SmartIcon/KpkTransactionTrayIcon.cpp:178
+#: SmartIcon/KpkTransactionTrayIcon.cpp:192
+#, kde-format
+msgid "%1"
 msgstr ""
-"Debe sair e entrar de novo no sistema para que as modificacións se fagan "
-"efectivas."
 
-#: SmartIcon/KpkTransactionTrayIcon.cpp:118
-msgid "Please restart your computer for system changes to take effect."
-msgstr "Reinicie o ordenador para que as modificacións se fagan efectivas."
-
-#: SmartIcon/KpkTransactionTrayIcon.cpp:180
+#: SmartIcon/KpkTransactionTrayIcon.cpp:226
 msgid "Refresh Packages List"
 msgstr "Refrescar a lista de paquetes"
 
@@ -1609,11 +1614,31 @@ msgstr "Ningunha"
 msgid "Failed set origin data"
 msgstr "Fallou a inicialización"
 
-#: KPackageKit/main.cpp:34
-msgid "KPackageKit user interface and notification"
+#: KPackageKit/main.cpp:36
+#, fuzzy
+#| msgid "KPackageKit user interface and notification"
+msgid "KPackageKit user interface"
 msgstr "Interface de usuario de KPackageKit e notificación"
 
-#: KPackageKit/main.cpp:45
+#: KPackageKit/main.cpp:37
+#, fuzzy
+#| msgid "(C) 2008 Daniel Nicoletti"
+msgid "(C) 2008-2009 Daniel Nicoletti"
+msgstr "(C) 2008 Daniel Nicoletti"
+
+#: KPackageKit/main.cpp:47
+#, fuzzy
+#| msgid "Updates"
+msgid "Shows Updates"
+msgstr "Actualizacións"
+
+#: KPackageKit/main.cpp:48
+#, fuzzy
+#| msgid "Settings"
+msgid "Shows Settings"
+msgstr "Configuración"
+
+#: KPackageKit/main.cpp:49
 msgid "Package file to install"
 msgstr "O paquete a instalar"
 
@@ -1885,6 +1910,32 @@ msgstr "Orixe dos paquetes"
 msgid "&Show origins of debug and development packages"
 msgstr "&Mostrar as fontes dos paquetes de depuración e desenvolvimento"
 
+#~ msgid "%1 update available"
+#~ msgid_plural "%1 updates available"
+#~ msgstr[0] "Hai %1 actualización dispoñíbel"
+#~ msgstr[1] "Hai %1 actualizacións dispoñíbeiss"
+
+#~ msgid "Remind me later"
+#~ msgstr "Lembrarmo máis tarde"
+
+#, fuzzy
+#~| msgid "Installing signature"
+#~ msgid "Installing updates."
+#~ msgstr "A instalar a sinatura"
+
+#~ msgid "Restart the application for system changes to take effect."
+#~ msgstr ""
+#~ "Reinicia o programa para que se fagan efectivas as modificacións no "
+#~ "sistema."
+
+#~ msgid "You must logout and log back in for system changes to take effect."
+#~ msgstr ""
+#~ "Debe sair e entrar de novo no sistema para que as modificacións se fagan "
+#~ "efectivas."
+
+#~ msgid "Please restart your computer for system changes to take effect."
+#~ msgstr "Reinicie o ordenador para que as modificacións se fagan efectivas."
+
 #~ msgid "Vendor Home Page"
 #~ msgstr "Páxina web do provedor"
 
@@ -1899,11 +1950,6 @@ msgstr "&Mostrar as fontes dos paquetes de depuración e desenvolvimento"
 
 #~ msgid "Authentication failed"
 #~ msgstr "Fallou a autenticación"
-
-#, fuzzy
-#~| msgid "Getting distribution upgrade information"
-#~ msgid "Distribution upgrade finished. "
-#~ msgstr "A obter a información de actualización da distribución"
 
 #~ msgid "4 minutes"
 #~ msgstr "4 minutos"
