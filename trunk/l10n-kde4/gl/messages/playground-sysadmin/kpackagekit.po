@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kpackagekit\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2009-02-18 09:08+0100\n"
+"POT-Creation-Date: 2009-02-19 09:43+0100\n"
 "PO-Revision-Date: 2009-02-02 22:17+0100\n"
 "Last-Translator: mvillarino <mvillarino@users.sourceforge.net>\n"
 "Language-Team: galician <proxecto@trasno.net>\n"
@@ -19,9 +19,10 @@ msgstr ""
 "X-Generator: KBabel 1.11.4\n"
 
 #: Updater/KpkUpdate.cpp:117 Updater/KpkUpdate.cpp:129
-#: Updater/KpkUpdate.cpp:144 AddRm/KpkReviewChanges.cpp:162
-#: AddRm/KpkReviewChanges.cpp:199 SmartIcon/KpkTransactionTrayIcon.cpp:88
-#: Settings/KpkSettings.cpp:163 KPackageKit/KpkInstallFiles.cpp:114
+#: Updater/KpkUpdate.cpp:144 libkpackagekit/KpkReviewChanges.cpp:211
+#: libkpackagekit/KpkReviewChanges.cpp:248
+#: SmartIcon/KpkTransactionTrayIcon.cpp:88 Settings/KpkSettings.cpp:163
+#: KPackageKit/KpkInstallFiles.cpp:114
 msgid "You don't have the necessary privileges to perform this action."
 msgstr ""
 
@@ -57,10 +58,10 @@ msgstr "Educación"
 
 #. i18n: file: Updater/KpkUpdateDetails.ui:22
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
-#. i18n: file: libkpackagekit/KpkTransaction.ui:87
+#. i18n: file: libkpackagekit/KpkTransaction.ui:90
 #. i18n: ectx: property (title), widget (QGroupBox, detailGroup)
 #: Updater/KpkSimpleTransactionModel.cpp:48 AddRm/KpkPackageDetails.cpp:128
-#: rc.cpp:24 rc.cpp:84
+#: rc.cpp:24 rc.cpp:75
 msgid "Details"
 msgstr "Detalles"
 
@@ -208,74 +209,22 @@ msgstr "Notificar"
 msgid "Sorry, no update description was found."
 msgstr ""
 
-#: Updater/KpkHistory.cpp:44
+#: Updater/KpkHistory.cpp:48
 #, fuzzy
 #| msgid "Rolling back"
 msgid "Rollback"
 msgstr "A voltar atrás"
 
-#: Updater/KpkHistory.cpp:49
+#: Updater/KpkHistory.cpp:53
 #, fuzzy
 #| msgid "Refresh Packages List"
 msgid "Refresh transactions list"
 msgstr "Refrescar a lista de paquetes"
 
-#: Updater/KpkHistory.cpp:92
+#: Updater/KpkHistory.cpp:96
 #, kde-format
 msgid "Time since last cache refresh: %1"
 msgstr ""
-
-#. i18n: file: AddRm/KpkReviewChanges.ui:13
-#. i18n: ectx: property (windowTitle), widget (QWidget, KpkReviewChanges)
-#: AddRm/KpkReviewChanges.cpp:43 rc.cpp:66
-msgid "Review Changes - KPackageKit"
-msgstr "Revisión das modificacións - KPackageKit"
-
-#: AddRm/KpkReviewChanges.cpp:47
-msgid "Apply Now"
-msgstr "Aplicar agora"
-
-#: AddRm/KpkReviewChanges.cpp:50
-msgid "The following packages will be INSTALLED/REMOVED:"
-msgstr "INSTALARANSE/ELIMINARANSE os seguintes paquetes:"
-
-#: AddRm/KpkReviewChanges.cpp:99
-msgid "Sorry, your backend does not support removing packages"
-msgstr "A infraestrutura que está a empregar non permite eliminar paquetes"
-
-#: AddRm/KpkReviewChanges.cpp:99
-msgid "Error KPackageKit"
-msgstr "Erro de KPackageKit"
-
-#: AddRm/KpkReviewChanges.cpp:122
-msgid "Sorry, your backend does not support installing packages"
-msgstr "A infraestrutura que está a empregar non permite instalar paquetes"
-
-#: AddRm/KpkReviewChanges.cpp:122 SmartIcon/main.cpp:33
-#: KPackageKit/main.cpp:34 KPackageKit/KpkInstallFiles.cpp:147
-msgid "KPackageKit"
-msgstr "KPackageKit"
-
-#: AddRm/KpkReviewChanges.cpp:135
-msgid "The following packages will also be removed for dependencies"
-msgstr "Tamén se eliminarán estes paquetes por mor das súas dependencias"
-
-#: AddRm/KpkReviewChanges.cpp:163
-#, fuzzy
-#| msgid "Failed to create a thread"
-msgid "Failed to remove package"
-msgstr "Non foi posíbel criar un fío"
-
-#: AddRm/KpkReviewChanges.cpp:173
-msgid "The following packages will also be installed as dependencies"
-msgstr "Tamén se instalarán estes paquetes por mor das súas dependencias"
-
-#: AddRm/KpkReviewChanges.cpp:200
-#, fuzzy
-#| msgid "1 installed package"
-#| msgid_plural "%1 installed packages"
-msgid "Failed to install package"
-msgstr "Instalouse 1 paquete"
 
 #: AddRm/KpkPackageDetails.cpp:118
 msgid "Package Name"
@@ -323,123 +272,203 @@ msgstr "Procurar polo nome do &ficheiro"
 msgid "Find by &description"
 msgstr "Procurar pola &descrición"
 
-#: AddRm/KpkAddRm.cpp:353
+#: AddRm/KpkAddRm.cpp:321
+#, fuzzy
+#| msgid "Change Log"
+msgid "Review Changes"
+msgstr "Rexisto de cambios"
+
+#: AddRm/KpkAddRm.cpp:354
 msgid "Collections"
 msgstr "Coleccións"
 
-#: AddRm/KpkAddRm.cpp:358
+#: AddRm/KpkAddRm.cpp:359
 msgid "Only collections"
 msgstr "Só coleccións"
 
-#: AddRm/KpkAddRm.cpp:365
+#: AddRm/KpkAddRm.cpp:366
 msgid "Exclude collections"
 msgstr "Excluir as coleccións"
 
-#: AddRm/KpkAddRm.cpp:374 libkpackagekit/KpkStrings.cpp:115
+#: AddRm/KpkAddRm.cpp:375 libkpackagekit/KpkStrings.cpp:115
 #: libkpackagekit/KpkStrings.cpp:579
 msgid "Installed"
 msgstr "Instalado"
 
-#: AddRm/KpkAddRm.cpp:380
+#: AddRm/KpkAddRm.cpp:381
 msgid "Only installed"
 msgstr "Só os instalados"
 
-#: AddRm/KpkAddRm.cpp:389
+#: AddRm/KpkAddRm.cpp:390
 msgid "Only available"
 msgstr "Só os dispoñíbeis"
 
-#: AddRm/KpkAddRm.cpp:397 AddRm/KpkAddRm.cpp:429 AddRm/KpkAddRm.cpp:461
-#: AddRm/KpkAddRm.cpp:493 AddRm/KpkAddRm.cpp:525 AddRm/KpkAddRm.cpp:557
+#: AddRm/KpkAddRm.cpp:398 AddRm/KpkAddRm.cpp:430 AddRm/KpkAddRm.cpp:462
+#: AddRm/KpkAddRm.cpp:494 AddRm/KpkAddRm.cpp:526 AddRm/KpkAddRm.cpp:558
 msgid "No filter"
 msgstr "Sen filtro"
 
-#: AddRm/KpkAddRm.cpp:406 libkpackagekit/KpkStrings.cpp:532
+#: AddRm/KpkAddRm.cpp:407 libkpackagekit/KpkStrings.cpp:532
 msgid "Development"
 msgstr "Desenvolvimento"
 
-#: AddRm/KpkAddRm.cpp:412
+#: AddRm/KpkAddRm.cpp:413
 msgid "Only development"
 msgstr "Só para desenvolvimento"
 
-#: AddRm/KpkAddRm.cpp:421
+#: AddRm/KpkAddRm.cpp:422
 msgid "Only end user files"
 msgstr "Só os ficheiros para usuarios finais"
 
-#: AddRm/KpkAddRm.cpp:438
+#: AddRm/KpkAddRm.cpp:439
 msgid "Graphical"
 msgstr "Gráfico"
 
-#: AddRm/KpkAddRm.cpp:444
+#: AddRm/KpkAddRm.cpp:445
 msgid "Only graphical"
 msgstr "Só para entorno gráfico"
 
-#: AddRm/KpkAddRm.cpp:453
+#: AddRm/KpkAddRm.cpp:454
 msgid "Only text"
 msgstr "Só para modo texto"
 
-#: AddRm/KpkAddRm.cpp:470
+#: AddRm/KpkAddRm.cpp:471
 msgid "Free"
 msgstr "Libre"
 
-#: AddRm/KpkAddRm.cpp:476
+#: AddRm/KpkAddRm.cpp:477
 msgid "Only free software"
 msgstr "Só software libre"
 
-#: AddRm/KpkAddRm.cpp:485
+#: AddRm/KpkAddRm.cpp:486
 msgid "Only non-free software"
 msgstr "Só sofware privativo"
 
-#: AddRm/KpkAddRm.cpp:502
+#: AddRm/KpkAddRm.cpp:503
 msgid "Architectures"
 msgstr "Arquitecturas"
 
-#: AddRm/KpkAddRm.cpp:508
+#: AddRm/KpkAddRm.cpp:509
 msgid "Only native architectures"
 msgstr "Só as arquitecturas nativas"
 
-#: AddRm/KpkAddRm.cpp:517
+#: AddRm/KpkAddRm.cpp:518
 msgid "Only non-native architectures"
 msgstr "Só as arquitecturas non nativas"
 
-#: AddRm/KpkAddRm.cpp:534
+#: AddRm/KpkAddRm.cpp:535
 msgid "Source"
 msgstr "Fontes"
 
-#: AddRm/KpkAddRm.cpp:540
+#: AddRm/KpkAddRm.cpp:541
 msgid "Only sourcecode"
 msgstr "Só código fonte"
 
-#: AddRm/KpkAddRm.cpp:549
+#: AddRm/KpkAddRm.cpp:550
 msgid "Only non-sourcecode"
 msgstr "Só os que non sexan código fonte"
 
-#: AddRm/KpkAddRm.cpp:566
+#: AddRm/KpkAddRm.cpp:567
 msgid "Hide subpackages"
 msgstr "Acochar os subpaquetes"
 
-#: AddRm/KpkAddRm.cpp:568
+#: AddRm/KpkAddRm.cpp:569
 msgid "Only show one package, not subpackages"
 msgstr "Só mostra un paquete, non os subpaquetes"
 
-#: AddRm/KpkAddRm.cpp:576
+#: AddRm/KpkAddRm.cpp:577
 msgid "Only newest packages"
 msgstr "Só os paquetes máis novos"
 
-#: AddRm/KpkAddRm.cpp:578
+#: AddRm/KpkAddRm.cpp:579
 msgid "Only show the newest available package"
 msgstr "Mostrar só o paquete máis recente dispoñíbel"
 
-#: AddRm/KpkAddRm.cpp:588
+#: AddRm/KpkAddRm.cpp:589
 msgid "View in groups"
 msgstr "Ver por grupos"
 
-#: AddRm/KpkAddRm.cpp:591
+#: AddRm/KpkAddRm.cpp:592
 msgid "Display packages in groups according to status"
 msgstr "Mostra os paquetes por grupos segundo o estado"
 
-#: AddRm/KpkRequirements.cpp:30
-msgid "Confirm"
-msgstr "Confirmar"
+#: libkpackagekit/KpkReviewChanges.cpp:67
+#, fuzzy
+#| msgid "The following packages will also be installed as dependencies"
+msgid "The following package will be installed:"
+msgid_plural "The following packages will be installed:"
+msgstr[0] "Tamén se instalarán estes paquetes por mor das súas dependencias"
+msgstr[1] "Tamén se instalarán estes paquetes por mor das súas dependencias"
+
+#: libkpackagekit/KpkReviewChanges.cpp:69
+#, fuzzy
+#| msgid "Install"
+msgid "Install Now"
+msgstr "Instalar"
+
+#: libkpackagekit/KpkReviewChanges.cpp:71
+#, fuzzy
+#| msgid "The following packages will also be removed for dependencies"
+msgid "The following package will be removed:"
+msgid_plural "The following packages will be removed:"
+msgstr[0] "Tamén se eliminarán estes paquetes por mor das súas dependencias"
+msgstr[1] "Tamén se eliminarán estes paquetes por mor das súas dependencias"
+
+#: libkpackagekit/KpkReviewChanges.cpp:73
+#, fuzzy
+#| msgid "Removing"
+msgid "Remove Now"
+msgstr "A eliminar"
+
+#: libkpackagekit/KpkReviewChanges.cpp:75
+#, fuzzy
+#| msgid "The following packages also have to be removed/installed:"
+msgid "The following package will be removed and installed:"
+msgid_plural "The following packages will be removed and installed:"
+msgstr[0] "Tamén debe eliminar/instalar os seguintes paquetes:"
+msgstr[1] "Tamén debe eliminar/instalar os seguintes paquetes:"
+
+#: libkpackagekit/KpkReviewChanges.cpp:77
+msgid "Apply Now"
+msgstr "Aplicar agora"
+
+#: libkpackagekit/KpkReviewChanges.cpp:148
+msgid "Sorry, your backend does not support removing packages"
+msgstr "A infraestrutura que está a empregar non permite eliminar paquetes"
+
+#: libkpackagekit/KpkReviewChanges.cpp:148
+msgid "Error KPackageKit"
+msgstr "Erro de KPackageKit"
+
+#: libkpackagekit/KpkReviewChanges.cpp:171
+msgid "Sorry, your backend does not support installing packages"
+msgstr "A infraestrutura que está a empregar non permite instalar paquetes"
+
+#: libkpackagekit/KpkReviewChanges.cpp:171 SmartIcon/main.cpp:33
+#: KPackageKit/main.cpp:34 KPackageKit/KpkInstallFiles.cpp:147
+msgid "KPackageKit"
+msgstr "KPackageKit"
+
+#: libkpackagekit/KpkReviewChanges.cpp:184
+msgid "The following packages will also be removed for dependencies"
+msgstr "Tamén se eliminarán estes paquetes por mor das súas dependencias"
+
+#: libkpackagekit/KpkReviewChanges.cpp:212
+#, fuzzy
+#| msgid "Failed to create a thread"
+msgid "Failed to remove package"
+msgstr "Non foi posíbel criar un fío"
+
+#: libkpackagekit/KpkReviewChanges.cpp:222
+msgid "The following packages will also be installed as dependencies"
+msgstr "Tamén se instalarán estes paquetes por mor das súas dependencias"
+
+#: libkpackagekit/KpkReviewChanges.cpp:249
+#, fuzzy
+#| msgid "1 installed package"
+#| msgid_plural "%1 installed packages"
+msgid "Failed to install package"
+msgstr "Instalouse 1 paquete"
 
 #: libkpackagekit/KpkTransaction.cpp:55
 msgid "Hide"
@@ -449,7 +478,7 @@ msgstr "Agochar"
 msgid "Allows you to hide the window but keeps running transaction task"
 msgstr "Permítelle acochar a fiestra e á vez manter a executar as transaccións"
 
-#: libkpackagekit/KpkTransaction.cpp:189
+#: libkpackagekit/KpkTransaction.cpp:201
 msgid ""
 "<br />Installing unsigned packages can compromise your system, as it is "
 "impossible to verify if the software came from a trusted source. Are you "
@@ -459,7 +488,7 @@ msgstr ""
 "é posíbel verificar se o software veu dunha fonte de confianza. Desexa "
 "realmente continuar coa instalación?"
 
-#: libkpackagekit/KpkTransaction.cpp:192
+#: libkpackagekit/KpkTransaction.cpp:204
 msgid "Installing unsigned software"
 msgstr "A instalar software non asinado"
 
@@ -474,7 +503,7 @@ msgstr "Aceitar a licenza"
 
 #. i18n: file: libkpackagekit/KpkLicenseAgreement.ui:13
 #. i18n: ectx: property (windowTitle), widget (QWidget, KpkLicenseAgreement)
-#: libkpackagekit/KpkLicenseAgreement.cpp:34 rc.cpp:108
+#: libkpackagekit/KpkLicenseAgreement.cpp:34 rc.cpp:105
 msgid "License Agreement Required"
 msgstr "Requérese que se aceite a licenza"
 
@@ -495,9 +524,13 @@ msgstr "&Cancelar"
 msgid "Finished in %1."
 msgstr "Rematou a procura en %1"
 
+#: libkpackagekit/KpkRequirements.cpp:30
+msgid "Confirm"
+msgstr "Confirmar"
+
 #. i18n: file: libkpackagekit/KpkRepoSig.ui:25
 #. i18n: ectx: property (windowTitle), widget (QWidget, KpkRepoSig)
-#: libkpackagekit/KpkRepoSig.cpp:35 rc.cpp:87
+#: libkpackagekit/KpkRepoSig.cpp:35 rc.cpp:84
 msgid "Software signature is required"
 msgstr "Requérese a sinatura do software"
 
@@ -1798,7 +1831,7 @@ msgstr "Refrescar a lista de paquetes"
 
 #. i18n: file: Settings/KpkSettings.ui:28
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
-#: Settings/KcmKpkSettings.cpp:33 rc.cpp:117
+#: Settings/KcmKpkSettings.cpp:33 rc.cpp:114
 msgid "KPackageKit Settings"
 msgstr "Configuración de KPackageKit"
 
@@ -1855,16 +1888,20 @@ msgstr "(C) 2008 Daniel Nicoletti"
 #: KPackageKit/main.cpp:47
 #, fuzzy
 #| msgid "Updates"
-msgid "Shows Updates"
+msgid "Show Updates"
 msgstr "Actualizacións"
 
 #: KPackageKit/main.cpp:48
 #, fuzzy
 #| msgid "Settings"
-msgid "Shows Settings"
+msgid "Show Settings"
 msgstr "Configuración"
 
 #: KPackageKit/main.cpp:49
+msgid "Mime Type Installer"
+msgstr ""
+
+#: KPackageKit/main.cpp:50
 msgid "Package file to install"
 msgstr "O paquete a instalar"
 
@@ -1923,6 +1960,54 @@ msgstr[1] "Fallou a inicialización"
 #| msgid "Sorry an error occurred"
 msgid "Sorry, an error occurred"
 msgstr "Aconteceu un erro"
+
+#: KPackageKit/KpkInstallMimeType.cpp:42
+#, kde-format
+msgid ""
+"An additional program is required to open this type of file:<br />%1<br/>Do "
+"you want to search for a program to open this file type now?"
+msgstr ""
+
+#: KPackageKit/KpkInstallMimeType.cpp:49
+msgid "A program requires a new mime type"
+msgid_plural "A program requires new mime types"
+msgstr[0] ""
+msgstr[1] ""
+
+#: KPackageKit/KpkInstallMimeType.cpp:53
+#, kde-format
+msgid "%1 requires a new mime type"
+msgid_plural "%1 requires new mime types"
+msgstr[0] ""
+msgstr[1] ""
+
+#: KPackageKit/KpkInstallMimeType.cpp:60
+#, fuzzy
+#| msgid "Search failed"
+msgid "Search"
+msgstr "A procurar fallou"
+
+#: KPackageKit/KpkInstallMimeType.cpp:81 KPackageKit/KpkInstallMimeType.cpp:82
+#, fuzzy
+#| msgid "Failed to initialize"
+msgid "Failed to search for provides"
+msgstr "Fallou a inicialización"
+
+#: KPackageKit/KpkInstallMimeType.cpp:95
+msgid "Application that can open this type of file"
+msgid_plural "Applications that can open this type of file"
+msgstr[0] ""
+msgstr[1] ""
+
+#: KPackageKit/KpkInstallMimeType.cpp:102
+msgid "No new applications can be found to handle this type of file"
+msgstr ""
+
+#: KPackageKit/KpkInstallMimeType.cpp:103
+#, fuzzy
+#| msgid "Failed to finalize"
+msgid "Failed to find software"
+msgstr "Fallou a finalización"
 
 #. i18n: file: Updater/KpkUpdate.ui:70
 #. i18n: ectx: property (text), widget (KPushButton, updatePB)
@@ -2028,135 +2113,144 @@ msgstr "Procurar pola &descrición"
 msgid "Find by file name"
 msgstr "Procurar polo nome do &ficheiro"
 
-#. i18n: file: AddRm/KpkRequirements.ui:22
-#. i18n: ectx: property (text), widget (QLabel, label)
-#: rc.cpp:63
-msgid "The following packages also have to be removed/installed:"
-msgstr "Tamén debe eliminar/instalar os seguintes paquetes:"
-
-#. i18n: file: AddRm/KpkReviewChanges.ui:26
-#. i18n: ectx: property (text), widget (QLabel, label)
-#: rc.cpp:69
-msgid ""
-"You selected the following packages to be INSTALLED/REMOVED, press ok to "
-"proceed:"
-msgstr ""
-"Escolleu INSTALAR/ELIMINAR os seguintes paquetes, prema en Aceitar para "
-"continuar:"
-
 #. i18n: file: libkpackagekit/KpkTransaction.ui:28
 #. i18n: ectx: property (windowTitle), widget (QWidget, KpkTransaction)
-#: rc.cpp:72
+#: rc.cpp:63
 msgid "KPackageKit - Transaction"
 msgstr "Transacción de KPackageKit"
 
-#. i18n: file: libkpackagekit/KpkTransaction.ui:47
+#. i18n: file: libkpackagekit/KpkTransaction.ui:50
 #. i18n: ectx: property (text), widget (QLabel, currentL)
-#: rc.cpp:75
+#: rc.cpp:66
 msgid "Downloading Packages"
 msgstr "A obter os paquetes"
 
-#. i18n: file: libkpackagekit/KpkTransaction.ui:73
+#. i18n: file: libkpackagekit/KpkTransaction.ui:76
 #. i18n: ectx: property (text), widget (QLabel, descriptionL)
-#: rc.cpp:78
+#: rc.cpp:69
 msgid "A library to do foo"
 msgstr "Unha biblioteca para facer nada"
 
-#. i18n: file: libkpackagekit/KpkTransaction.ui:80
+#. i18n: file: libkpackagekit/KpkTransaction.ui:83
 #. i18n: ectx: property (text), widget (QLabel, packageL)
-#: rc.cpp:81
+#: rc.cpp:72
 msgid "libfoo"
 msgstr "libfoo"
 
+#. i18n: file: libkpackagekit/KpkRequirements.ui:22
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: rc.cpp:78
+msgid "The following packages also have to be removed/installed:"
+msgstr "Tamén debe eliminar/instalar os seguintes paquetes:"
+
+#. i18n: file: libkpackagekit/KpkReviewChanges.ui:25
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: rc.cpp:81
+msgid "TextLabel"
+msgstr ""
+
 #. i18n: file: libkpackagekit/KpkRepoSig.ui:39
 #. i18n: ectx: property (text), widget (QLabel, label_2)
-#: rc.cpp:90
+#: rc.cpp:87
 msgid "Repository name:"
 msgstr "Nome do repositorio:"
 
 #. i18n: file: libkpackagekit/KpkRepoSig.ui:65
 #. i18n: ectx: property (text), widget (QLabel, label_3)
-#: rc.cpp:93
+#: rc.cpp:90
 msgid "Signature URL:"
 msgstr "URL da sinatura:"
 
 #. i18n: file: libkpackagekit/KpkRepoSig.ui:91
 #. i18n: ectx: property (text), widget (QLabel, label_4)
-#: rc.cpp:96
+#: rc.cpp:93
 msgid "Signature user identifier:"
 msgstr "Identificación do usuario da sinatura:"
 
 #. i18n: file: libkpackagekit/KpkRepoSig.ui:117
 #. i18n: ectx: property (text), widget (QLabel, label_5)
-#: rc.cpp:99
+#: rc.cpp:96
 msgid "Signature identifier:"
 msgstr "Identificación da sinatura:"
 
 #. i18n: file: libkpackagekit/KpkRepoSig.ui:144
 #. i18n: ectx: property (text), widget (QLabel, label_10)
-#: rc.cpp:102
+#: rc.cpp:99
 msgid "Do you recognise the user and trust this key?"
 msgstr "Recoñece ao usuario e confiar nesta chave?"
 
 #. i18n: file: libkpackagekit/KpkRepoSig.ui:161
 #. i18n: ectx: property (text), widget (QLabel, label)
-#: rc.cpp:105
+#: rc.cpp:102
 msgid "Do you trust the origin of packages?"
 msgstr "Confía na orixe dos paquetes?"
 
 #. i18n: file: libkpackagekit/KpkLicenseAgreement.ui:33
 #. i18n: ectx: property (text), widget (QLabel, label_2)
-#: rc.cpp:111
+#: rc.cpp:108
 msgid "Please read the following important information before continuing:"
 msgstr "Lea esta importante información antes de continuar:"
 
 #. i18n: file: Settings/KpkSettings.ui:13
 #. i18n: ectx: property (windowTitle), widget (QWidget, KpkSettings)
-#: rc.cpp:114
+#: rc.cpp:111
 msgid "Settings"
 msgstr "Configuración"
 
 #. i18n: file: Settings/KpkSettings.ui:34
 #. i18n: ectx: property (text), widget (QLabel, intervalL)
-#: rc.cpp:120
+#: rc.cpp:117
 msgid "Check for Updates:"
 msgstr "Comprobar as actualizacións:"
 
 #. i18n: file: Settings/KpkSettings.ui:51
 #. i18n: ectx: property (text), widget (QLabel, label_3)
-#: rc.cpp:123
+#: rc.cpp:120
 msgid "Automatically Install:"
 msgstr "Instalar automaticamente:"
 
 #. i18n: file: Settings/KpkSettings.ui:74
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
-#: rc.cpp:126
+#: rc.cpp:123
 msgid "Smart Tray Icon"
 msgstr "Ícone intelixente na bandexa"
 
 #. i18n: file: Settings/KpkSettings.ui:83
 #. i18n: ectx: property (text), widget (QCheckBox, notifyUpdatesCB)
-#: rc.cpp:129
+#: rc.cpp:126
 msgid "Notify when updates are available"
 msgstr "Notificar cando haxa dispoñíbeis actualizacións"
 
 #. i18n: file: Settings/KpkSettings.ui:99
 #. i18n: ectx: property (text), widget (QCheckBox, notifyLongTasksCB)
-#: rc.cpp:132
+#: rc.cpp:129
 msgid "Notify when long tasks have been completed"
 msgstr "Notificar cando se rematen tarefas longas"
 
 #. i18n: file: Settings/KpkSettings.ui:118
 #. i18n: ectx: property (title), widget (QGroupBox, originGB)
-#: rc.cpp:135
+#: rc.cpp:132
 msgid "Origin of Packages"
 msgstr "Orixe dos paquetes"
 
 #. i18n: file: Settings/KpkSettings.ui:127
 #. i18n: ectx: property (text), widget (QCheckBox, showOriginsCB)
-#: rc.cpp:138
+#: rc.cpp:135
 msgid "&Show origins of debug and development packages"
 msgstr "&Mostrar as fontes dos paquetes de depuración e desenvolvimento"
+
+#~ msgid "Review Changes - KPackageKit"
+#~ msgstr "Revisión das modificacións - KPackageKit"
+
+#~ msgid "The following packages will be INSTALLED/REMOVED:"
+#~ msgstr "INSTALARANSE/ELIMINARANSE os seguintes paquetes:"
+
+#~ msgid ""
+#~ "You selected the following packages to be INSTALLED/REMOVED, press ok to "
+#~ "proceed:"
+#~ msgstr ""
+#~ "Escolleu INSTALAR/ELIMINAR os seguintes paquetes, prema en Aceitar para "
+#~ "continuar:"
 
 #~ msgid "Applying service pack"
 #~ msgstr "A aplicar o paquete de actualizacións"
@@ -2219,9 +2313,6 @@ msgstr "&Mostrar as fontes dos paquetes de depuración e desenvolvimento"
 
 #~ msgid "Find File"
 #~ msgstr "Procurar un ficheiro"
-
-#~ msgid "Search failed"
-#~ msgstr "A procurar fallou"
 
 #~ msgid "Search canceled"
 #~ msgstr "Cancelouse a procura"
