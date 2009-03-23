@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: kdevdebugger\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2009-03-12 10:30+0100\n"
-"PO-Revision-Date: 2009-03-21 21:58+0100\n"
+"PO-Revision-Date: 2009-03-23 21:26+0100\n"
 "Last-Translator: marce villarino <mvillarino@users.sourceforge.net>\n"
 "Language-Team: Galician <proxecto@trasno.ent>\n"
 "MIME-Version: 1.0\n"
@@ -627,7 +627,7 @@ msgid ""
 "actually only a script and libtool is needed to get it to run inside gdb."
 msgstr ""
 "Se quere executar gdb mediante unha shell ou  outra ferramenta especial "
-"indíquea aquí. O caso de utilización princial é en proxectos baseados en "
+"indíquea aquí. O caso de utilización principal é en proxectos baseados en "
 "Automake onde o programa en realidade só é un script e precísase de libtool "
 "para chegar a executalo en gdb."
 
@@ -647,7 +647,7 @@ msgid ""
 "gdb."
 msgstr ""
 "Se quere executar gdb mediante unha shell ou  outra ferramenta especial "
-"indíquea aquí. O caso de utilización princial é en proxectos baseados en "
+"indíquea aquí. O caso de utilización principal é en proxectos baseados en "
 "Automake onde o programa en realidade só é un script e precísase de "
 "<b>libtool</b> para chegar a executalo en gdb."
 
@@ -689,12 +689,15 @@ msgid ""
 "can select to see the methods' mangled names.\n"
 "However, non-mangled names are easier to read."
 msgstr ""
+"Cando se mostra o código desensamblado pode\n"
+"escoller ver os nomes pranchados dos métodos.\n"
+"Porén, os non pranchados son máis fáciles de ler."
 
 #. i18n: file: debuggerconfigwidget.ui:128
 #. i18n: ectx: property (text), widget (QCheckBox, kcfg_asmDemangle)
 #: rc.cpp:53 rc.cpp:295
 msgid "Display &demangled names"
-msgstr ""
+msgstr "Mostrar os &nomes non pranchados"
 
 #. i18n: file: debuggerconfigwidget.ui:141
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, kcfg_breakOnLoadingLibrary)
@@ -708,12 +711,20 @@ msgid ""
 "\n"
 "If you are not \"dlopen\"ing libs then leave this unchecked."
 msgstr ""
+"Se GDB non viu unha biblioteca que vaia cargarse mediante\n"
+"«dlopen» entón rexeitará pór un punto de parada nese código.\n"
+"Podemos facer que GDB se deteña nunha carga de biblioteca e\n"
+"polo tanto tentar definir os puntos de parada pendentes. Consulte\n"
+"a documentación para coñecer máis detalles en relación a\n"
+"este comportamento.\n"
+"\n"
+"Se non está a aplicar «dlopen» nas bibliotecas deixe esta opción sen marcar."
 
 #. i18n: file: debuggerconfigwidget.ui:144
 #. i18n: ectx: property (text), widget (QCheckBox, kcfg_breakOnLoadingLibrary)
 #: rc.cpp:65 rc.cpp:307
 msgid "Try setting &breakpoints on library loading"
-msgstr ""
+msgstr "Tentar pór puntos de parada na &carga de bibliotecas"
 
 #. i18n: file: debuggerconfigwidget.ui:156
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, kcfg_enableFloatingToolBar)
@@ -726,12 +737,18 @@ msgid ""
 "\n"
 "This toolbar is in addition to the toolbar in KDevelop."
 msgstr ""
+"Emprega a barra de ferramentas flutuante. Esta barra sempre fica\n"
+"sobre todas as fiestras de tal maneira que se o programa cobre a\n"
+"KDevelop poderá ter control sobre o programa mediante esta barra\n"
+"de ferramentas. Tamén se pode acoplar no panel.\n"
+"\n"
+"Esta barra é a maiores da barra de ferramentas en KDevelop."
 
 #. i18n: file: debuggerconfigwidget.ui:159
 #. i18n: ectx: property (text), widget (QCheckBox, kcfg_enableFloatingToolBar)
 #: rc.cpp:76 rc.cpp:318
 msgid "E&nable floating toolbar"
-msgstr ""
+msgstr "Activar a barra de ferramentas &flutuante"
 
 #. i18n: file: debuggerconfigwidget.ui:169
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, kcfg_dbgTerminal)
@@ -742,24 +759,28 @@ msgid ""
 "If you use terminal input in your application then check this option.\n"
 "Otherwise leave it unchecked."
 msgstr ""
+"Isto permítelle introducir entradas de terminal se o programa\n"
+"contén código de entrada a través da terminal (por ex. cin, fgets etc.).\n"
+"Se emprega entradas pola terminal no programa escolla esta opción.\n"
+"Caso contrario déixea sen sinalar."
 
 #. i18n: file: debuggerconfigwidget.ui:172
 #. i18n: ectx: property (text), widget (QCheckBox, kcfg_dbgTerminal)
 #: rc.cpp:85 rc.cpp:327
 msgid "Enable separate terminal for application &IO"
-msgstr ""
+msgstr "Activar unha &terminal para a E/S do programa"
 
 #. i18n: file: debuggerconfigwidget.ui:195
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_4)
 #: rc.cpp:88 rc.cpp:330
 msgid "Start Debugger With"
-msgstr ""
+msgstr "Iniciar o depurador con"
 
 #. i18n: file: debuggerconfigwidget.ui:201
 #. i18n: ectx: property (text), widget (QRadioButton, startWithFramestack)
 #: rc.cpp:91 rc.cpp:333
 msgid "Framestack"
-msgstr ""
+msgstr "Pila de chamadas"
 
 #. i18n: file: debuggerconfigwidget.ui:236
 #. i18n: ectx: property (whatsThis), widget (QGroupBox, groupBox)
@@ -771,43 +792,48 @@ msgid ""
 "\ttarget remote ...\tconnect to the remote debugger\n"
 "\tcontinue\t[optional] run debugging to the first breakpoint"
 msgstr ""
+"Este script está destinado ás ordes actuais precisas para conectar cun "
+"executábel a executarse de xeito remoto.\n"
+"\tshell sleep 5\tagarda a que o programa remoto se inicie\n"
+"\ttarget remote ...\tconecta co depurador remoto\n"
+"\tcontinue\t[opcional] executa a depuración até o primeiro punto de parada"
 
 #. i18n: file: debuggerconfigwidget.ui:239
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
 #: rc.cpp:103 rc.cpp:345
 msgid "Remote Debugging"
-msgstr ""
+msgstr "Depuración remota"
 
 #. i18n: file: debuggerconfigwidget.ui:245
 #. i18n: ectx: property (text), widget (QLabel, configGdbScript_label)
 #: rc.cpp:106 rc.cpp:348
 msgid "&Config gdb script:"
-msgstr ""
+msgstr "Script de &configuración de gdb:"
 
 #. i18n: file: debuggerconfigwidget.ui:258
 #. i18n: ectx: property (toolTip), widget (KUrlRequester, kcfg_configGdbScript)
 #: rc.cpp:109 rc.cpp:351
 msgid "Gdb configure script"
-msgstr ""
+msgstr "O script de configuración de gdb"
 
 #. i18n: file: debuggerconfigwidget.ui:261
 #. i18n: ectx: property (whatsThis), widget (KUrlRequester, kcfg_configGdbScript)
 #: rc.cpp:112 rc.cpp:354
 msgid "This script is sourced by gdb when the debugging starts."
-msgstr ""
+msgstr "Este script emprégase como fonte por gdb cando comeza a depuración."
 
 #. i18n: file: debuggerconfigwidget.ui:271
 #. i18n: ectx: property (text), widget (QLabel, runShellScript_label)
 #: rc.cpp:115 rc.cpp:357
 msgctxt "Shell script to be executed at run time"
 msgid "R&un shell script:"
-msgstr ""
+msgstr "E&xecutar o script da shell:"
 
 #. i18n: file: debuggerconfigwidget.ui:284
 #. i18n: ectx: property (toolTip), widget (KUrlRequester, kcfg_runShellScript)
 #: rc.cpp:118 rc.cpp:360
 msgid "Script to start remote application"
-msgstr ""
+msgstr "O script para iniciar o programa remoto"
 
 #. i18n: file: debuggerconfigwidget.ui:293
 #. i18n: ectx: property (whatsThis), widget (KUrlRequester, kcfg_runShellScript)
@@ -824,19 +850,31 @@ msgid ""
 "or if your executable contains the gdb stub\n"
 "2b) Execute \"application\" on target."
 msgstr ""
+"Este script da shell execútase despois de que o script de configuración de gdb "
+"teña "
+"sido tomado como fonte por gdb.\n"
+"Cando se fai depuración remota o propósito deste script é iniciar o proceso "
+"remoto.\n"
+"[Agárdase que o executábel de depuración poda acadarse no destino, tal vez "
+"transferíndoo no paso final da construción]\n"
+"1) Procure algún xeito de executar unha orde remota, por ex. con rsh, ssh, "
+"telnet ...\n"
+"2a) Execute «gdbserver ... programa» no destino.\n"
+"ou se o executábel contén o iniciador de gdb\n"
+"2b) Execute «programa» no destino."
 
 #. i18n: file: debuggerconfigwidget.ui:300
 #. i18n: ectx: property (text), widget (QLabel, runGdbScript_label)
 #: rc.cpp:130 rc.cpp:372
 msgctxt "Gdb script to be executed at run time."
 msgid "Run &gdb script:"
-msgstr ""
+msgstr "Executar o script de &gdb:"
 
 #. i18n: file: debuggerconfigwidget.ui:313
 #. i18n: ectx: property (toolTip), widget (KUrlRequester, kcfg_runGdbScript)
 #: rc.cpp:133 rc.cpp:375
 msgid "Script to connect with remote application"
-msgstr ""
+msgstr "O script mediante o cal conectar co programa remoto"
 
 #. i18n: file: debuggerconfigwidget.ui:320
 #. i18n: ectx: property (whatsThis), widget (KUrlRequester, kcfg_runGdbScript)
@@ -850,12 +888,19 @@ msgid ""
 "\ttarget remote ...\tconnect to the remote debugger\n"
 "\tcontinue\t[optional] run debugging to the first breakpoint."
 msgstr ""
+"Este script tómao gdb como fonte despois de que se teñan executado os dous "
+"anteriores.\n"
+"O propósito do script é ter as ordes precisas para conectar cun executábel a "
+"executarse remotamente.\n"
+"\tshell sleep 5\tagarda a que o programa remoto comece\n"
+"\ttarget remote ...\tconecta co depurador remoto\n"
+"\tcontinue\t[opcional] depura até o primeiro punto de parada."
 
 #. i18n: file: debuggertracingdialog.ui:13
 #. i18n: ectx: property (windowTitle), widget (QDialog, DebuggerTracingDialog)
 #: rc.cpp:143 rc.cpp:201
 msgid "Tracing Configuration"
-msgstr ""
+msgstr "Configuración do trazado"
 
 #. i18n: file: debuggertracingdialog.ui:20
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, enable)
@@ -866,17 +911,21 @@ msgid ""
 "expressions and continue execution when breakpoint is hit. You can think of "
 "it as printf debugging that does not require modifying the source.</p>"
 msgstr ""
+"<b>Activar o trazado</b>\n"
+"<p>O trazado é un mecanismo para imprimir automaticamente os valores "
+"das expresións escollidas cando se acade un punto de parada e continuar "
+"coa execución. Pode consideralo como depurar mediante printf sen ter "
+"que modificar as fontes.</p>"
 
 #. i18n: file: debuggertracingdialog.ui:23
 #. i18n: ectx: property (text), widget (QCheckBox, enable)
 #: rc.cpp:150 rc.cpp:208
 msgid "Enable tracing"
-msgstr ""
+msgstr "Activar o trazado"
 
 #. i18n: file: debuggertracingdialog.ui:30
 #. i18n: ectx: property (text), widget (QPushButton, cancelButton)
 #: rc.cpp:153 rc.cpp:211 memviewdlg.cpp:116
-#, fuzzy
 msgid "Cancel"
 msgstr "Cancelar"
 
@@ -884,12 +933,11 @@ msgstr "Cancelar"
 #. i18n: ectx: property (text), widget (QCheckBox, enableCustomFormat)
 #: rc.cpp:156 rc.cpp:214
 msgid "Custom format string"
-msgstr ""
+msgstr "Cadea de formato personalizada"
 
 #. i18n: file: debuggertracingdialog.ui:47
 #. i18n: ectx: property (text), widget (QPushButton, okButton)
 #: rc.cpp:159 rc.cpp:217 memviewdlg.cpp:113
-#, fuzzy
 msgid "OK"
 msgstr "Aceptar"
 
@@ -905,17 +953,23 @@ msgid ""
 "If custom format string is not enabled, names and values of all expressions "
 "will be printed, using \"%d\" as format specifier for all expressions."
 msgstr ""
+"<b>Cadea de formato personalizada</b>\n"
+"<p>Especifica unha cadea de formato co estilo das de C que ha empregarse cando "
+"se imprima a expresión escollida. Por exemplo:\n"
+"<p align=\"center\"> <tt>Punto de trazado 1: g= %d</tt> </p>\n"
+"Se non activa as cadeas de formato personalizadas os nomes e valores de todas "
+"as expresións mostraranse empregando «%d» como especificador de formato en todos "
+"os casos."
 
 #. i18n: file: debuggertracingdialog.ui:99
 #. i18n: ectx: property (text), widget (QLabel, expressionsLabel)
 #: rc.cpp:169 rc.cpp:227
 msgid "Expressions to print:"
-msgstr ""
+msgstr "A expresión a imprimir:"
 
 #. i18n: file: kdevcppdebuggerui.rc:5
 #. i18n: ectx: Menu (run)
 #: rc.cpp:172 rc.cpp:195
-#, fuzzy
 msgctxt "@title:menu"
 msgid "Run"
 msgstr "Executar"
@@ -924,191 +978,174 @@ msgstr "Executar"
 #. i18n: ectx: ToolBar (debugToolBar)
 #: rc.cpp:175 rc.cpp:198
 msgid "Debugger Toolbar"
-msgstr ""
+msgstr "Barra de ferramentas de Depurador"
 
 #. i18n: file: processselection.ui:20
 #. i18n: ectx: property (text), widget (QTreeWidget, pids)
 #: rc.cpp:178 rc.cpp:230
 msgid "Pid"
-msgstr ""
+msgstr "Pid"
 
 #. i18n: file: processselection.ui:25
 #. i18n: ectx: property (text), widget (QTreeWidget, pids)
 #: rc.cpp:181 rc.cpp:233
 msgid "TTY"
-msgstr ""
+msgstr "TTY"
 
 #. i18n: file: processselection.ui:30
 #. i18n: ectx: property (text), widget (QTreeWidget, pids)
 #: rc.cpp:184 rc.cpp:236
 msgid "Stat"
-msgstr ""
+msgstr "Estado"
 
 #. i18n: file: processselection.ui:35
 #. i18n: ectx: property (text), widget (QTreeWidget, pids)
 #: rc.cpp:187 rc.cpp:239
 msgid "Time"
-msgstr ""
+msgstr "Hora"
 
 #. i18n: file: processselection.ui:40
 #. i18n: ectx: property (text), widget (QTreeWidget, pids)
 #: rc.cpp:190 rc.cpp:242
-#, fuzzy
 msgid "Command"
-msgstr "Orden"
+msgstr "Orde"
 
 #: rc.cpp:191
-#, fuzzy
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr "Marce Villarino"
 
 #: rc.cpp:192
-#, fuzzy
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "mvillarino@users.sourceforge.net"
 
 #: framestackitem.cpp:40
 msgid "<Loading...>"
-msgstr ""
+msgstr "<A cargar...>"
 
 #: framestackitem.cpp:44
 msgid "Click to fetch more frames"
-msgstr ""
+msgstr "Prema para obter máis chamadas"
 
 #: memviewdlg.cpp:95
-#, fuzzy
 msgid "Start"
 msgstr "Comezar"
 
 #: memviewdlg.cpp:101
-#, fuzzy
 msgid "Amount"
 msgstr "Cantidade"
 
 #: memviewdlg.cpp:142
 msgid "Memory view"
-msgstr ""
+msgstr "Vista da memoria"
 
 #: memviewdlg.cpp:290
-#, fuzzy, kde-format
+#, kde-format
 msgid "%2 (1 byte)"
 msgid_plural "%2 (%1 bytes)"
-msgstr[0] "0 Bytes"
+msgstr[0] "%2 (1 byte)"
 msgstr[1] "%2 (%1 bytes)"
 
 #: memviewdlg.cpp:353
 msgid "Change memory range"
-msgstr ""
+msgstr "Mudar o rango da memoria"
 
 #: memviewdlg.cpp:358
-#, fuzzy
 msgid "Reload"
 msgstr "Cargar de novo"
 
 #: memviewdlg.cpp:363
 msgid "Close this view"
-msgstr ""
+msgstr "Pechar esta vista"
 
 #: memviewdlg.cpp:422
 msgid "Special debugger views"
-msgstr ""
+msgstr "Vistas especiais do depurador"
 
 #: breakpointcontroller.cpp:145
-#, fuzzy
 msgid "Breakpoint"
 msgstr "Punto de parada"
 
 #: breakpointcontroller.cpp:337
 msgid " temporary"
-msgstr ""
+msgstr " temporal"
 
 #: breakpointcontroller.cpp:339
 msgid " hw"
-msgstr ""
+msgstr " hw"
 
 #: breakpointcontroller.cpp:386
-#, fuzzy
 msgid "Enabled"
-msgstr "Habilitado"
+msgstr "Activado"
 
 #: breakpointcontroller.cpp:415 variablecollection.cpp:192
-#, fuzzy
 msgid "Type"
 msgstr "Tipo"
 
 #: breakpointcontroller.cpp:417
-#, fuzzy
 msgid "Status"
 msgstr "Estado"
 
 #: breakpointcontroller.cpp:419
-#, fuzzy
 msgid "Location"
 msgstr "Lugar "
 
 #: breakpointcontroller.cpp:421
-#, fuzzy
 msgid "Condition"
 msgstr "Condición"
 
 #: breakpointcontroller.cpp:423
-#, fuzzy
 msgid "Ignore Count"
 msgstr "Ignorar a cantidade"
 
 #: breakpointcontroller.cpp:425
 msgid "Hits"
-msgstr ""
+msgstr "Alcances"
 
 #: breakpointcontroller.cpp:427
 msgid "Tracing"
-msgstr ""
+msgstr "Trazado"
 
 #: frameitem.cpp:296
-#, fuzzy
 msgid "Frame"
-msgstr "Marco"
+msgstr "Chamada"
 
 #: debuggerplugin.cpp:90
 msgid "C++ Debugger"
-msgstr ""
+msgstr "Depurador de C++"
 
 #: debuggerplugin.cpp:90
 msgid "Support for running C++ apps in GDB"
-msgstr ""
+msgstr "soporte para executar programas de C++ en GDB"
 
 #: debuggerplugin.cpp:149
-#, fuzzy
 msgid "Breakpoints"
 msgstr "Puntos de parada"
 
 #: debuggerplugin.cpp:155
-#, fuzzy
 msgid "Variables"
 msgstr "Variábeis"
 
 #: debuggerplugin.cpp:161
 msgid "Frame Stack"
-msgstr ""
+msgstr "Pila de chamadas"
 
 #: debuggerplugin.cpp:167
 msgid "Disassemble"
-msgstr ""
+msgstr "Desensamblar"
 
 #: debuggerplugin.cpp:173 debuggerplugin.cpp:611
 msgid "GDB"
-msgstr ""
+msgstr "GDB"
 
 #: debuggerplugin.cpp:204 debuggerplugin.cpp:679
-#, fuzzy
 msgid "&Start"
-msgstr "comezar"
+msgstr "&Comezar"
 
 #: debuggerplugin.cpp:206
 msgid "Start in debugger"
-msgstr ""
+msgstr "Iniciar no depurador"
 
 #: debuggerplugin.cpp:207
 msgid ""
@@ -1117,55 +1154,57 @@ msgid ""
 "the program while it is running, in order to get information about "
 "variables, frame stack, and so on."
 msgstr ""
+"<b>Iniciar no depurador</b><p>Inicia o depurador co executábel principal "
+"do proxecto. Pode definir algúns puntos de parada antes disto ou pode "
+"interromper "
+"o programa mentres está en execución, para obter información acerca das "
+"variábeis, pila de chamadas e semellantes."
 
 #: debuggerplugin.cpp:216
-#, fuzzy
 msgid "&Restart"
-msgstr "Reiniciar"
+msgstr "&Reiniciar"
 
 #: debuggerplugin.cpp:217
 msgid "Restart program"
-msgstr ""
+msgstr "Reiniciar o programa"
 
 #: debuggerplugin.cpp:218
 msgid "<b>Restarts application</b><p>Restarts applications from the beginning."
-msgstr ""
+msgstr "<b>Reinicia o programa</b><p>Reinicia o programa desde o principio."
 
 #: debuggerplugin.cpp:226
-#, fuzzy
 msgid "Sto&p"
-msgstr "Deter"
+msgstr "&Deter"
 
 #: debuggerplugin.cpp:227
 msgid "Stop debugger"
-msgstr ""
+msgstr "Detén o depurador"
 
 #: debuggerplugin.cpp:228
 msgid "<b>Stop debugger</b><p>Kills the executable and exits the debugger."
-msgstr ""
+msgstr "<b>Deter o depurador</b><p>Mata o executábel e sae do depurador."
 
 #: debuggerplugin.cpp:232
-#, fuzzy
 msgid "Interrupt"
 msgstr "Interromper"
 
 #: debuggerplugin.cpp:233
 msgid "Interrupt application"
-msgstr ""
+msgstr "Interrompe o programa"
 
 #: debuggerplugin.cpp:234
 msgid ""
 "<b>Interrupt application</b><p>Interrupts the debugged process or current "
 "GDB command."
 msgstr ""
+"<b>Interromper o programa</b><p>Interrompe o proceso do depurador ou a "
+"orden actual de GDB."
 
 #: debuggerplugin.cpp:238
-#, fuzzy
 msgid "Run to &Cursor"
-msgstr "Executar até o cursor"
+msgstr "Executar até o &cursor"
 
 #: debuggerplugin.cpp:239
-#, fuzzy
 msgid "Run to cursor"
 msgstr "Executar até o cursor"
 
@@ -1174,29 +1213,32 @@ msgid ""
 "<b>Run to cursor</b><p>Continues execution until the cursor position is "
 "reached."
 msgstr ""
+"<b>Executar até o cursor</b><p>Continúa a execución até que se acade a "
+"posición do cursor."
 
 #: debuggerplugin.cpp:245
 msgid "Set E&xecution Position to Cursor"
-msgstr ""
+msgstr "Definir a posición de e&xecución no cursor"
 
 #: debuggerplugin.cpp:246
 msgid "Jump to cursor"
-msgstr ""
+msgstr "Salta até o cursor"
 
 #: debuggerplugin.cpp:247
 msgid ""
 "<b>Set Execution Position </b><p>Set the execution pointer to the current "
 "cursor position."
 msgstr ""
+"<b>Definir a posición de execución</b><p>Pon o punteiro de execución na "
+"posición actual do cursor."
 
 #: debuggerplugin.cpp:251
-#, fuzzy
 msgid "Step &Over"
-msgstr "Pasar por riba"
+msgstr "Pasar por &riba"
 
 #: debuggerplugin.cpp:253
 msgid "Step over the next line"
-msgstr ""
+msgstr "Salta a seguinte liña"
 
 #: debuggerplugin.cpp:254
 msgid ""
@@ -1204,28 +1246,29 @@ msgid ""
 "If the source line is a call to a function the whole function is executed "
 "and the app will stop at the line following the function call."
 msgstr ""
+"<b>Saltar sobre</b><p>Executa unha liña de fontes no ficheiro de fontes actual. "
+"Se a liña das fontes é unha chamada a unha función executarase toda a función "
+"e o programa deterase na liña que siga á chamada á función."
 
 #: debuggerplugin.cpp:263
 msgid "Step over Ins&truction"
-msgstr ""
+msgstr "Saltar a &instrución"
 
 #: debuggerplugin.cpp:264
 msgid "Step over instruction"
-msgstr ""
+msgstr "Saltar a instrución"
 
 #: debuggerplugin.cpp:265
-msgid ""
-"<b>Step over instruction</b><p>Steps over the next assembly instruction."
-msgstr ""
+msgid "<b>Step over instruction</b><p>Steps over the next assembly instruction."
+msgstr "<b>Saltar á instrución</b><p>Salta á seguinte instrución en ensamblador."
 
 #: debuggerplugin.cpp:270
-#, fuzzy
 msgid "Step &Into"
-msgstr "Entrar"
+msgstr "&Entrar"
 
 #: debuggerplugin.cpp:272
 msgid "Step into the next statement"
-msgstr ""
+msgstr "Entra na seguinte sentenza"
 
 #: debuggerplugin.cpp:273
 msgid ""
@@ -1233,28 +1276,29 @@ msgid ""
 "is a call to a function then execution will stop after the function has been "
 "entered."
 msgstr ""
+"<b>Entrar</b><p>Executa exactamente unha liña de fontes. Se a liña de fontes "
+"é unha chamada a unha función entón deterase a execución despois de que se "
+"entre na función."
 
 #: debuggerplugin.cpp:281
 msgid "Step into I&nstruction"
-msgstr ""
+msgstr "Entrar na &instrución"
 
 #: debuggerplugin.cpp:282
 msgid "Step into instruction"
-msgstr ""
+msgstr "Entrar na instrución"
 
 #: debuggerplugin.cpp:283
-msgid ""
-"<b>Step into instruction</b><p>Steps into the next assembly instruction."
-msgstr ""
+msgid "<b>Step into instruction</b><p>Steps into the next assembly instruction."
+msgstr "<b>Entrar na instrución</b><p>Entra na seguinte instrución en ensamblador."
 
 #: debuggerplugin.cpp:288
-#, fuzzy
 msgid "Step O&ut"
-msgstr "Saír"
+msgstr "&Saír"
 
 #: debuggerplugin.cpp:290
 msgid "Steps out of the current function"
-msgstr ""
+msgstr "Sae da función actual"
 
 #: debuggerplugin.cpp:291
 msgid ""
@@ -1263,14 +1307,18 @@ msgid ""
 "original call to that function. If program execution is in the outermost "
 "frame (i.e. in main()) then this operation has no effect."
 msgstr ""
+"<b>Saír</b><p>Executa o programa até que se completa a función que se "
+"está a executar. Entón o depurador mostrará a liña tras a chamada orixinal "
+"á función. Se a execución do programa está na chamada máis externa (i.e. en "
+"main()) entón esta operación non ten ningún efecto."
 
 #: debuggerplugin.cpp:301
 msgid "Viewers"
-msgstr ""
+msgstr "Visores"
 
 #: debuggerplugin.cpp:302
 msgid "Debugger viewers"
-msgstr ""
+msgstr "Visores do depurador"
 
 #: debuggerplugin.cpp:303
 msgid ""
@@ -1278,14 +1326,17 @@ msgid ""
 "executed. There are 4 views available:<br><b>Memory</b><br><b>Disassemble</"
 "b><br><b>Registers</b><br><b>Libraries</b>"
 msgstr ""
+"<b>Visores do depurador</b><p>Distintas informacións acerca do programa que "
+"se está a executar. Hai 4 vistas dispoñíbeis:<br><b>Memoria</b><br>"
+"<b>Desemsamblar</b><br><b>Rexistros</b><br><b>Bibliotecas</b>"
 
 #: debuggerplugin.cpp:312
 msgid "Examine Core File..."
-msgstr ""
+msgstr "Examinar o ficheiro core..."
 
 #: debuggerplugin.cpp:313
 msgid "Examine core file"
-msgstr ""
+msgstr "Examinar o ficheiro core"
 
 #: debuggerplugin.cpp:314
 msgid ""
@@ -1294,23 +1345,25 @@ msgid ""
 "The core file contains an image of the program memory at the time it "
 "crashed, allowing you to do a post-mortem analysis."
 msgstr ""
+"<b>Examinar o ficheiro core</b><p>Isto carga un ficheiro core, dos que "
+"se crean tipicamente despois dun peche inesperado do programa, por ex. "
+"cun fallo de segmentación. Este ficheiro contén unha imaxe da memoria "
+"do programa no momento que se pechou, o que lle permite facer unha "
+"autopsia."
 
 #: debuggerplugin.cpp:325
-#, fuzzy
 msgid "Attach to process"
 msgstr "Xuntar ao proceso"
 
 #: debuggerplugin.cpp:326
 msgid "<b>Attach to process</b><p>Attaches the debugger to a running process."
-msgstr ""
+msgstr "<b>Xuntar ao proceso</b><p>Xunta o depurador a un proceso en execución."
 
 #: debuggerplugin.cpp:330
-#, fuzzy
 msgid "Toggle Breakpoint"
 msgstr "Conmutar o punto de parada"
 
 #: debuggerplugin.cpp:331
-#, fuzzy
 msgid "Toggle breakpoint"
 msgstr "Conmutar o punto de parada"
 
@@ -1319,72 +1372,79 @@ msgid ""
 "<b>Toggle breakpoint</b><p>Toggles the breakpoint at the current line in "
 "editor."
 msgstr ""
+"<b>Conmutar o punto de parada</b><p>Conmuta o punto de parada na liña "
+"actual no editor."
 
 #: debuggerplugin.cpp:366
 msgid "Debug in &KDevelop"
-msgstr ""
+msgstr "Depurar en &KDevelop"
 
 #: debuggerplugin.cpp:440
 #, kde-format
 msgid "Evaluate: %1"
-msgstr ""
+msgstr "Avaliar: %1"
 
 #: debuggerplugin.cpp:442
 msgid ""
 "<b>Evaluate expression</b><p>Shows the value of the expression under the "
 "cursor."
 msgstr ""
+"<b>Avaliar a expresión</b><p>Mostra o valor da expresión que está baixo o cursor."
 
 #: debuggerplugin.cpp:445
-#, fuzzy, kde-format
+#, kde-format
 msgid "Watch: %1"
-msgstr "Vixiar a %1"
+msgstr "Vixiar: %1"
 
 #: debuggerplugin.cpp:447
 msgid ""
 "<b>Watch expression</b><p>Adds an expression under the cursor to the "
 "Variables/Watch list."
 msgstr ""
+"<b>Vixiar a expresión</b><p>Engade a expresión que está baixo o cursor "
+"á lista de Variábeis/Vixías."
 
 #: debuggerplugin.cpp:527
 msgid ""
 "<b>GDB exited abnormally</b><p>This is likely a bug in GDB. Examine the gdb "
 "output window and then stop the debugger"
 msgstr ""
+"<b>GDB saiu anormalmente</b><p>Iso semella un erro en GDB. Examine a fiestra "
+"de saída de gdb e despois deteña o depurador."
 
 #: debuggerplugin.cpp:530
 msgid "GDB exited abnormally"
-msgstr ""
+msgstr "GDB saíu anormalmente"
 
 #: debuggerplugin.cpp:544
 msgid "Choose a core file to examine..."
-msgstr ""
+msgstr "Escolla un ficheiro core para examinalo..."
 
 #: debuggerplugin.cpp:550
 #, kde-format
 msgid "Examining core file %1"
-msgstr ""
+msgstr "A examinar o ficheiro core %1"
 
 #: debuggerplugin.cpp:558
 msgid "Choose a process to attach to..."
-msgstr ""
+msgstr "Escolla un proceso ao que xuntalo..."
 
 #: debuggerplugin.cpp:570
 #, kde-format
 msgid "Attaching to process %1"
-msgstr ""
+msgstr "A xuntarse co proceso %1"
 
 #: debuggerplugin.cpp:627
 msgid "Debugger"
-msgstr ""
+msgstr "Depurador"
 
 #: debuggerplugin.cpp:650
 msgid "Debugger stopped"
-msgstr ""
+msgstr "Detívose o depurador"
 
 #: debuggerplugin.cpp:680
 msgid "Runs the program in the debugger"
-msgstr ""
+msgstr "Executa o programa no depurador"
 
 #: debuggerplugin.cpp:681
 msgid ""
@@ -1394,15 +1454,21 @@ msgid ""
 "breakpoints before this, or you can interrupt the program while it is "
 "running, in order to get information about variables, frame stack, and so on."
 msgstr ""
+"Iniciar no depurador\n"
+"\n"
+"Inicia o depurador co executábel principal "
+"do proxecto. Pode definir algúns puntos de parada antes disto ou pode "
+"interromper "
+"o programa mentres está en execución, para obter información acerca das "
+"variábeis, pila de chamadas e semellantes."
 
 #: debuggerplugin.cpp:695
-#, fuzzy
 msgid "&Continue"
 msgstr "&Continuar"
 
 #: debuggerplugin.cpp:696
 msgid "Continues the application execution"
-msgstr ""
+msgstr "Continúa coa execución do programa"
 
 #: debuggerplugin.cpp:697
 msgid ""
@@ -1412,17 +1478,21 @@ msgid ""
 "effect when the application has been halted by the debugger (i.e. a "
 "breakpoint has been activated or the interrupt was pressed)."
 msgstr ""
+"Continuar a execución do programa\n"
+"\n"
+"Continúa coa execución do programa do depurador. Só ten efecto se o programa "
+"foi parado polo depurador (i.e. de activarse un punto de parada ou de premerse "
+"en interromper)."
 
 #: variablecollection.cpp:186
-#, fuzzy
 msgid "Variable"
 msgstr "Variábel"
 
 #: variablecollection.cpp:189
-#, fuzzy
 msgid "Value"
 msgstr "Valor"
 
 #: stty.cpp:333
 msgid "kdevelop: Debug application console"
-msgstr ""
+msgstr "kdevelop: Consola de depuración do programa"
+
