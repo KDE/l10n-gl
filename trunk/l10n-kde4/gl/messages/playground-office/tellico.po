@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tellico\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2009-03-25 11:33+0100\n"
+"POT-Creation-Date: 2009-03-26 10:58+0100\n"
 "PO-Revision-Date: 2009-03-23 21:28+0100\n"
 "Last-Translator: marce villarino <mvillarino@users.sourceforge.net>\n"
 "Language-Team: Galician <proxecto@trasno.ent>\n"
@@ -113,7 +113,7 @@ msgid "&Set"
 msgstr "&Configurar"
 
 #: src/gui/stringmapdialog.cpp:58 src/configdialog.cpp:576
-#: src/controller.cpp:431 src/controller.cpp:447
+#: src/controller.cpp:433 src/controller.cpp:449
 msgid "&Delete"
 msgstr "&Borrar"
 
@@ -148,14 +148,14 @@ msgid "<qt>Tellico is unable to write to the server pipe at <b>%1</b>.</qt>"
 msgstr ""
 "<qt>Tellico non é quen de escribir no «pipe» do servidor en <b>%1</b>.</qt>"
 
-#: src/core/filehandler.cpp:129 src/translators/xmlimporter.cpp:43
-#: src/translators/xmlimporter.cpp:60
+#: src/core/filehandler.cpp:129 src/translators/tellicoimporter.cpp:109
+#: src/translators/xmlimporter.cpp:43 src/translators/xmlimporter.cpp:60
 #, kde-format
 msgid "There is an XML parsing error in line %1, column %2."
 msgstr "Aconteceu un erro d procesado de XML na liña %1, coluna %2."
 
-#: src/core/filehandler.cpp:131 src/translators/xmlimporter.cpp:45
-#: src/translators/xmlimporter.cpp:62
+#: src/core/filehandler.cpp:131 src/translators/tellicoimporter.cpp:111
+#: src/translators/xmlimporter.cpp:45 src/translators/xmlimporter.cpp:62
 msgid "The error message from Qt is:"
 msgstr "A mensaxe de erro de Qt foi:"
 
@@ -231,7 +231,7 @@ msgstr ""
 msgid "*.html|HTML Files (*.html)"
 msgstr "*.html|Ficheiros HTML (*.html)"
 
-#: src/reportdialog.cpp:205 src/importdialog.cpp:322 src/configdialog.cpp:1020
+#: src/reportdialog.cpp:205 src/importdialog.cpp:322 src/configdialog.cpp:1002
 #: src/translators/gcfilmsexporter.cpp:44
 #: src/translators/pilotdbexporter.cpp:46
 #: src/translators/tellicoxmlexporter.cpp:58
@@ -371,7 +371,7 @@ msgstr ""
 msgid "Save Entry"
 msgstr "Gardar a entrada"
 
-#: src/entryeditdialog.cpp:652 src/document.cpp:165
+#: src/entryeditdialog.cpp:652 src/document.cpp:171
 msgid "Unsaved Changes"
 msgstr "Hai modificacións sen gardar"
 
@@ -463,7 +463,8 @@ msgstr "Erro de conexión %1: %2"
 #: src/collections/stampcollection.cpp:38
 #: src/collections/bookcollection.cpp:40 src/entryupdater.cpp:236
 #: src/translators/xmlstatehandler.cpp:342
-#: src/translators/audiofileimporter.cpp:163 src/collectionfactory.cpp:82
+#: src/translators/audiofileimporter.cpp:163
+#: src/translators/tellicoimporter.cpp:434 src/collectionfactory.cpp:82
 #: src/fetchdialog.cpp:191
 msgid "Title"
 msgstr "Título"
@@ -653,6 +654,7 @@ msgid "Amazon.com Web Services"
 msgstr "Servizos web de Amazon.com"
 
 #: src/fetch/amazonfetcher.cpp:819 src/collections/videocollection.cpp:167
+#: src/translators/tellicoimporter.cpp:969
 msgid "Widescreen"
 msgstr "Pantalla panorámica"
 
@@ -1556,12 +1558,12 @@ msgstr "&Gardar o filtro"
 msgid "(Empty)"
 msgstr "(Baleiro)"
 
-#: src/document.cpp:66 src/document.cpp:99 src/document.cpp:342
+#: src/document.cpp:67 src/document.cpp:100 src/document.cpp:348
 #: src/translators/htmlexporter.cpp:284 src/mainwindow.cpp:1964
 msgid "Untitled"
 msgstr "Sen título"
 
-#: src/document.cpp:163
+#: src/document.cpp:169
 msgid ""
 "The current file has been modified.\n"
 "Do you want to save it?"
@@ -1569,11 +1571,11 @@ msgstr ""
 "Este documento foi modificado.\n"
 "Desexa gardalo?"
 
-#: src/document.cpp:197 src/mainwindow.cpp:1087
+#: src/document.cpp:203 src/mainwindow.cpp:1087
 msgid "Saving file..."
 msgstr "A gardar o ficheiro..."
 
-#: src/document.cpp:472 src/collections/videocollection.cpp:203
+#: src/document.cpp:478 src/collections/videocollection.cpp:203
 #: src/collections/comicbookcollection.cpp:142
 #: src/collections/musiccollection.cpp:100
 #: src/collections/gamecollection.cpp:111
@@ -1582,7 +1584,7 @@ msgstr "A gardar o ficheiro..."
 msgid "Loaned"
 msgstr "Emprestado"
 
-#: src/document.cpp:474 src/collections/videocollection.cpp:23
+#: src/document.cpp:480 src/collections/videocollection.cpp:23
 #: src/collections/comicbookcollection.cpp:22
 #: src/collections/musiccollection.cpp:21
 #: src/collections/gamecollection.cpp:20 src/collections/coincollection.cpp:20
@@ -1974,11 +1976,13 @@ msgstr "Reparto"
 
 #: src/collections/videocollection.cpp:102
 #: src/translators/xmlstatehandler.cpp:346
+#: src/translators/tellicoimporter.cpp:438
 msgid "Actor/Actress"
 msgstr "Actor/Actriz"
 
 #: src/collections/videocollection.cpp:103
 #: src/translators/xmlstatehandler.cpp:347
+#: src/translators/tellicoimporter.cpp:439
 msgid "Role"
 msgstr "Papel"
 
@@ -2359,6 +2363,7 @@ msgstr "Disco"
 #: src/collections/musiccollection.cpp:78
 #: src/translators/xmlstatehandler.cpp:343
 #: src/translators/audiofileimporter.cpp:164
+#: src/translators/tellicoimporter.cpp:435
 msgid "Artist"
 msgstr "Artista"
 
@@ -2373,6 +2378,7 @@ msgstr "Pistas"
 #: src/collections/musiccollection.cpp:79
 #: src/translators/xmlstatehandler.cpp:344
 #: src/translators/audiofileimporter.cpp:165
+#: src/translators/tellicoimporter.cpp:436
 msgid "Length"
 msgstr "Lonxitude"
 
@@ -3062,20 +3068,20 @@ msgstr "Prema aquí para borrar a fonte de datos seleccionada."
 msgid "Click to download additional data sources via the Internet."
 msgstr "Prema para obter fontes de datos adicionais mediante internet."
 
-#: src/configdialog.cpp:1018 src/translators/xsltimporter.cpp:105
+#: src/configdialog.cpp:1000 src/translators/xsltimporter.cpp:105
 #: src/translators/xsltexporter.cpp:85
 msgid "*.xsl|XSL Files (*.xsl)"
 msgstr "*.xsl|Ficheiros XSL (*.xsl)"
 
-#: src/configdialog.cpp:1019
+#: src/configdialog.cpp:1001
 msgid "*.tar.gz *.tgz|Template Packages (*.tar.gz)"
 msgstr "*.tar.gz *.tgz|Paquetes de modelos (*.tar.gz)"
 
-#: src/configdialog.cpp:1044
+#: src/configdialog.cpp:1026
 msgid "Delete Template"
 msgstr "Borrar o modelo"
 
-#: src/configdialog.cpp:1045
+#: src/configdialog.cpp:1027
 msgid "Select template to delete:"
 msgstr "Escolla o modelo a borrar:"
 
@@ -3083,7 +3089,7 @@ msgstr "Escolla o modelo a borrar:"
 msgid "Cancel"
 msgstr "Cancelar"
 
-#: src/statusbar.cpp:84 src/controller.cpp:133 src/fetchdialog.cpp:250
+#: src/statusbar.cpp:84 src/controller.cpp:134 src/fetchdialog.cpp:250
 #: src/fetchdialog.cpp:361 src/fetchdialog.cpp:459 src/fetchdialog.cpp:514
 msgid "Ready."
 msgstr "Listo."
@@ -3301,7 +3307,7 @@ msgstr "PilotDB"
 msgid "*.pdb|Pilot Database Files (*.pdb)"
 msgstr "*.pdb|Ficheiros de base de datos Pilot (*.pdb)"
 
-#: src/translators/pilotdbexporter.cpp:141 src/detailedlistview.cpp:434
+#: src/translators/pilotdbexporter.cpp:141 src/detailedlistview.cpp:454
 msgid "View Columns"
 msgstr "Ver as columnas"
 
@@ -3512,10 +3518,12 @@ msgid "Loading %1..."
 msgstr "A cargar %1..."
 
 #: src/translators/xmlstatehandler.cpp:108
+#: src/translators/tellicoimporter.cpp:148
 msgid "It is from a future version of Tellico."
 msgstr "É dunha versión de Tellico máis actual."
 
 #: src/translators/xmlstatehandler.cpp:112
+#: src/translators/tellicoimporter.cpp:158
 msgid ""
 "Tellico is converting the file to a more recent document format. Information "
 "loss may occur if an older version of Tellico is used to read this file in "
@@ -3526,6 +3534,7 @@ msgstr ""
 "Tellico para ler este ficheiro."
 
 #: src/translators/xmlstatehandler.cpp:244
+#: src/translators/tellicoimporter.cpp:363
 #: src/translators/bibtexhandler.cpp:257
 msgid "Unknown"
 msgstr "Descoñecido"
@@ -3627,13 +3636,31 @@ msgstr "Ficheiro zip de Tellico"
 msgid "<qt>The file is not a valid GCstar data file.</qt>"
 msgstr "<qt>Este non é un ficheiro válido de GCStar.</qt>"
 
-#: src/translators/tellicoimporter.cpp:172
+#: src/translators/tellicoimporter.cpp:788
+#: src/translators/tellicosaximporter.cpp:172
 msgid "The file is empty."
 msgstr "O ficheiro está baleiro."
 
-#: src/translators/tellicoimporter.cpp:190
+#: src/translators/tellicoimporter.cpp:806
+#: src/translators/tellicosaximporter.cpp:190
 msgid "The file contains no collection data."
 msgstr "Este ficheiro non contén ningunha colección de datos."
+
+#: src/translators/tellicoimporter.cpp:951
+msgid "Unread Books"
+msgstr "Libros non lidos."
+
+#: src/translators/tellicoimporter.cpp:961
+msgid "Old Movies"
+msgstr "Filmes vellos"
+
+#: src/translators/tellicoimporter.cpp:979
+msgid "80's Music"
+msgstr "Música dos anos 80"
+
+#: src/translators/tellicoimporter.cpp:991
+msgid "Favorites"
+msgstr "Favoritos"
 
 #: src/translators/filelistingimporter.cpp:57
 msgid "Scanning files..."
@@ -3899,57 +3926,57 @@ msgstr "Colección de xogos de mesa"
 msgid "Custom Collection"
 msgstr "Colección personalizada"
 
-#: src/controller.cpp:428
+#: src/controller.cpp:430
 msgid "Do you really want to delete this entry?"
 msgstr "Desexa realmente eliminar esta entrada?"
 
-#: src/controller.cpp:430
+#: src/controller.cpp:432
 msgid "Delete Entry"
 msgstr "Borrar a entrada"
 
-#: src/controller.cpp:442
+#: src/controller.cpp:444
 msgid "Do you really want to delete these entries?"
 msgstr "Desexa realmente eliminar estas entradas?"
 
-#: src/controller.cpp:446
+#: src/controller.cpp:448
 msgid "Delete Multiple Entries"
 msgstr "Borrar varias entradas"
 
-#: src/controller.cpp:622 src/mainwindow.cpp:469
+#: src/controller.cpp:632 src/mainwindow.cpp:469
 msgid "&Edit Entry..."
 msgstr "&Editar a entrada..."
 
-#: src/controller.cpp:623 src/mainwindow.cpp:476
+#: src/controller.cpp:633 src/mainwindow.cpp:476
 msgid "D&uplicate Entry"
 msgstr "D&uplicar a entrada"
 
 #. i18n: file: src/tellicoui.rc:78
 #. i18n: ectx: Menu (coll_update_entry)
-#: src/controller.cpp:624 src/mainwindow.cpp:561 rc.cpp:215
+#: src/controller.cpp:634 src/mainwindow.cpp:561 rc.cpp:215
 msgid "&Update Entry"
 msgstr "&Actualizar a entrada"
 
-#: src/controller.cpp:625 src/mainwindow.cpp:483
+#: src/controller.cpp:635 src/mainwindow.cpp:483
 msgid "&Delete Entry"
 msgstr "&Borrar a entrada"
 
-#: src/controller.cpp:628
+#: src/controller.cpp:638
 msgid "&Edit Entries..."
 msgstr "&Editar as entradas..."
 
-#: src/controller.cpp:629
+#: src/controller.cpp:639
 msgid "D&uplicate Entries"
 msgstr "&Duplicar as entradas"
 
-#: src/controller.cpp:630
+#: src/controller.cpp:640
 msgid "&Update Entries"
 msgstr "Actualizar as entradas"
 
-#: src/controller.cpp:631
+#: src/controller.cpp:641
 msgid "&Delete Entries"
 msgstr "&Borrar as entradas"
 
-#: src/controller.cpp:684
+#: src/controller.cpp:694
 msgid ""
 "The following items are already loaned, but Tellico does not currently "
 "support lending an item multiple times. They will be removed from the list "
@@ -5454,18 +5481,6 @@ msgstr ""
 "respectando\n"
 "á vez a orden correcta. Pense por exemplo nun campo numérico seguido por un\n"
 "subcampo de texto coas entradas 3b 14a.</p>\n"
-
-#~ msgid "Unread Books"
-#~ msgstr "Libros non lidos."
-
-#~ msgid "Old Movies"
-#~ msgstr "Filmes vellos"
-
-#~ msgid "80's Music"
-#~ msgstr "Música dos anos 80"
-
-#~ msgid "Favorites"
-#~ msgstr "Favoritos"
 
 #~ msgid "Image open in %1..."
 #~ msgstr "Abrir a imaxe con %1..."
