@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktorrent\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2009-03-26 10:56+0100\n"
+"POT-Creation-Date: 2009-03-27 11:03+0100\n"
 "PO-Revision-Date: 2009-02-06 00:02+0100\n"
 "Last-Translator: mvillarino <mvillarino@users.sourceforge.net>\n"
 "Language-Team: galician <proxecto@trasno.net>\n"
@@ -291,7 +291,7 @@ msgstr "Escolla o ficheiro onde gardar"
 msgid "Torrent files"
 msgstr "Ficheiros torrente"
 
-#: ktorrent/importdialog.cpp:52 plugins/scripting/scriptingplugin.cpp:197
+#: ktorrent/importdialog.cpp:52 plugins/scripting/scriptingplugin.cpp:218
 #: plugins/bwscheduler/scheduleeditor.cpp:117
 msgid "All files"
 msgstr "Todos os ficheiros"
@@ -5145,7 +5145,7 @@ msgstr "A velocidade máxima de recepción en KiB/s."
 #: rc.cpp:1237
 #, fuzzy
 #| msgid "Maximum share ratio limit reached."
-msgid "Maximum share ratio(0 = no limit)"
+msgid "Maximum share ratio (0 = no limit)"
 msgstr "A taxa máxima de compartición foi atinxida."
 
 #. i18n: file: libktcore/ktorrent.kcfg:62
@@ -5299,8 +5299,8 @@ msgstr "O cartafol aonde mover os dados cando se remate unha obtención."
 #. i18n: ectx: label, entry (minDiskSpace), group (downloads)
 #: rc.cpp:1312
 msgid ""
-"When there's no space left to complete download and free diskspace is less "
-"than minDiskSpace, torrent will be stopped."
+"When there is no space left to complete download, and the available disk "
+"space is less than this value, the torrent will be stopped."
 msgstr ""
 
 #. i18n: file: libktcore/ktorrent.kcfg:259
@@ -7718,7 +7718,7 @@ msgstr "Engadir un BCC:"
 
 #. i18n: file: plugins/scripting/scriptproperties.ui:13
 #. i18n: ectx: property (windowTitle), widget (QWidget, ScriptProperties)
-#: rc.cpp:2439 plugins/scripting/scriptingplugin.cpp:298
+#: rc.cpp:2439 plugins/scripting/scriptingplugin.cpp:340
 msgid "Script Properties"
 msgstr "Propriedades do script"
 
@@ -8929,7 +8929,7 @@ msgstr[1] ""
 "%2\n"
 "%1 filtros activos"
 
-#: plugins/syndication/feedlist.cpp:186 plugins/scripting/scriptmodel.cpp:95
+#: plugins/syndication/feedlist.cpp:186 plugins/scripting/scriptmodel.cpp:178
 #, kde-format
 msgid "<b>%1</b><br/><br/>%2"
 msgstr "<b>%1</b><br/><br/>%2"
@@ -8962,7 +8962,7 @@ msgstr ""
 #: plugins/search/searchprefpage.cpp:150
 #, fuzzy, kde-format
 #| msgid "The URL %s, does not contain {searchTerms} !"
-msgid "The URL %1, does not contain {searchTerms}."
+msgid "The URL %1 does not contain {searchTerms}."
 msgstr "O URL %s non contén {seachTerms} !"
 
 #: plugins/search/searchenginelist.cpp:209
@@ -9029,47 +9029,88 @@ msgstr "Desexa transferir ou gardar o torrente?"
 msgid "Download Torrent"
 msgstr "Obter o torrente"
 
-#: plugins/scripting/scriptingplugin.cpp:71
+#: plugins/scripting/scriptingplugin.cpp:72
 msgid "Add Script"
 msgstr "Engadir un script"
 
-#: plugins/scripting/scriptingplugin.cpp:75
+#: plugins/scripting/scriptingplugin.cpp:76
 msgid "Remove Script"
 msgstr "Eliminar o script"
 
-#: plugins/scripting/scriptingplugin.cpp:79
+#: plugins/scripting/scriptingplugin.cpp:80
 msgid "Run Script"
 msgstr "Executar o script"
 
-#: plugins/scripting/scriptingplugin.cpp:83
+#: plugins/scripting/scriptingplugin.cpp:84
 msgid "Stop Script"
 msgstr "Deter o script"
 
-#: plugins/scripting/scriptingplugin.cpp:87
+#: plugins/scripting/scriptingplugin.cpp:88
 msgid "Edit Script"
 msgstr "Editar o script"
 
-#: plugins/scripting/scriptingplugin.cpp:91
+#: plugins/scripting/scriptingplugin.cpp:92
 msgid "Properties"
 msgstr "Propriedades"
 
-#: plugins/scripting/scriptingplugin.cpp:95
+#: plugins/scripting/scriptingplugin.cpp:96
 msgid "Configure"
 msgstr "Configurar"
 
-#: plugins/scripting/scriptingplugin.cpp:102
-#: plugins/scripting/scriptingplugin.cpp:122
+#: plugins/scripting/scriptingplugin.cpp:108
+#: plugins/scripting/scriptingplugin.cpp:128
 msgid "Scripting"
 msgstr "Scripting"
 
-#: plugins/scripting/scriptingplugin.cpp:197
+#: plugins/scripting/scriptingplugin.cpp:216
+#, fuzzy
+#| msgid "KTorrent Blacklisted Peers"
+msgid "KTorrent Script Packages"
+msgstr "Parceiros na lista negra de KTorrent"
+
+#: plugins/scripting/scriptingplugin.cpp:217
 #: plugins/scripting/scriptmanager.cpp:41
 msgid "Scripts"
 msgstr "Scripts"
 
+#: plugins/scripting/scriptingplugin.cpp:277
+#, fuzzy
+#| msgid ""
+#| "You will lose all the downloaded data. Are you sure you want to do this?"
+msgid ""
+"Removing these scripts will fully delete them from your disk. Are you sure "
+"you want to do this ?"
+msgstr "Perderá todos os dados obtidos. Desexa realmente facer isto?"
+
 #: plugins/scripting/scriptmanager.cpp:43
 msgid "Widget to start, stop and manage scripts"
 msgstr "Un widget para iniciar, deter e xestionar os scripts"
+
+#: plugins/scripting/scriptmodel.cpp:112
+msgid "Cannot open archive for reading !"
+msgstr ""
+
+#: plugins/scripting/scriptmodel.cpp:116
+#, fuzzy
+#| msgid "Invalid tracker URL"
+msgid "Invalid archive !"
+msgstr "URL do localizador non válido"
+
+#: plugins/scripting/scriptmodel.cpp:143
+#, fuzzy, kde-format
+#| msgid "There already is a tracker named <b>%1</b> !"
+msgid "There is already a script package named %1 installed."
+msgstr "Xa hai un localizador chamado <b>%1</b>!"
+
+#: plugins/scripting/scriptmodel.cpp:149
+msgid ""
+"Failed to load script from archive. There is something wrong with the "
+"desktop file."
+msgstr ""
+
+#: plugins/scripting/scriptmodel.cpp:154
+msgid "No script found in archive !"
+msgstr ""
 
 #: plugins/zeroconf/zeroconfplugin.cpp:51
 #: plugins/zeroconf/zeroconfplugin.cpp:68
