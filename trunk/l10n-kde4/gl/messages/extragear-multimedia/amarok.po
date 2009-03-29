@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: amarok\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2009-03-28 11:16+0100\n"
+"POT-Creation-Date: 2009-03-29 11:44+0200\n"
 "PO-Revision-Date: 2009-02-06 00:00+0100\n"
 "Last-Translator: mvillarino <mvillarino@users.sourceforge.net>\n"
 "Language-Team: galician <proxecto@trasno.net>\n"
@@ -21,7 +21,7 @@ msgstr ""
 "X-Generator: KBabel 1.11.4\n"
 
 #: mac/GrowlInterface.cpp:34 context/engines/current/CurrentEngine.cpp:112
-#: context/applets/currenttrack/CurrentTrack.cpp:129 widgets/Osd.cpp:558
+#: context/applets/currenttrack/CurrentTrack.cpp:91 widgets/Osd.cpp:558
 msgid "No track playing"
 msgstr "Non se está a reproducir ningunha pista"
 
@@ -428,44 +428,50 @@ msgstr "Engadir unha applet..."
 msgid "Lyrics data could not be parsed"
 msgstr "Non foi posíbel procesar as letras das cancións"
 
-#. i18n: file: dialogs/TagDialogBase.ui:502
-#. i18n: ectx: property (text), widget (QLabel, scoreLabel)
-#: context/applets/currenttrack/CurrentTrack.cpp:86
-#: context/applets/currenttrack/CurrentTrack.cpp:90
-#: context/applets/currenttrack/CurrentTrack.cpp:400
-#: context/applets/currenttrack/CurrentTrack.cpp:404 dialogs/TagDialog.cpp:901
-#: rc.cpp:828
-msgid "Score:"
-msgstr "Relevancia:"
+#: context/applets/currenttrack/CurrentTrack.cpp:70
+#, fuzzy
+#| msgid "Modify"
+msgctxt "What artist is this track by"
+msgid "By"
+msgstr "Modificar"
 
-#: context/applets/currenttrack/CurrentTrack.cpp:87
-#: context/applets/currenttrack/CurrentTrack.cpp:91 dialogs/TagDialog.cpp:905
-msgid "Play Count:"
-msgstr "Nº de audicións:"
+#: context/applets/currenttrack/CurrentTrack.cpp:71
+#, fuzzy
+#| msgid "On"
+msgctxt "What album is this track on"
+msgid "On"
+msgstr "Acender"
 
-#: context/applets/currenttrack/CurrentTrack.cpp:88
-#: context/applets/currenttrack/CurrentTrack.cpp:92
-#: context/applets/currenttrack/CurrentTrack.cpp:402
-#: context/applets/currenttrack/CurrentTrack.cpp:406 dialogs/TagDialog.cpp:910
-msgctxt "a single item (singular)"
-msgid "Last Played:"
-msgstr "Última reprodución:"
+#: context/applets/currenttrack/CurrentTrack.cpp:98
+#: playlist/PlaylistDefines.h:88
+msgid "Play count"
+msgstr "Nº de audicións"
 
-#: context/applets/currenttrack/CurrentTrack.cpp:139
+#: context/applets/currenttrack/CurrentTrack.cpp:99
+#: context/widgets/TrackWidget.cpp:38 Systray.cpp:147
+#: browsers/playlistbrowser/DynamicBiasWidgets.cpp:253
+#: browsers/playlistbrowser/DynamicBiasWidgets.cpp:697
+#: playlist/PlaylistDefines.h:91 playlist/PlaylistModel.cpp:702
+#: widgets/SmartPlaylistEditor.cpp:186
+msgid "Score"
+msgstr "Relevancia"
+
+#: context/applets/currenttrack/CurrentTrack.cpp:100 Systray.cpp:177
+#: browsers/playlistbrowser/DynamicBiasWidgets.cpp:258
+#: browsers/playlistbrowser/DynamicBiasWidgets.cpp:702
+msgid "Last Played"
+msgstr "Última reprodución"
+
+#: context/applets/currenttrack/CurrentTrack.cpp:106
 #: playlist/PlaylistDefines.h:85
 msgid "Last played"
 msgstr "Última reprodución"
 
-#: context/applets/currenttrack/CurrentTrack.cpp:140
+#: context/applets/currenttrack/CurrentTrack.cpp:107
 #, fuzzy
 #| msgid "&Submit tracks"
 msgid "Favorite tracks"
 msgstr "&Enviar as pistas"
-
-#: context/applets/currenttrack/CurrentTrack.cpp:401
-#: context/applets/currenttrack/CurrentTrack.cpp:405
-msgid "Playcount:"
-msgstr "Nº de audicións:"
 
 #: context/applets/albums/AlbumsView.cpp:109 Systray.cpp:219
 #: browsers/CollectionTreeView.cpp:589
@@ -477,7 +483,6 @@ msgid "&Append to Playlist"
 msgstr "&Engadir á lista de temas"
 
 #: context/applets/albums/AlbumsView.cpp:110
-#: browsers/CollectionTreeView.cpp:597
 #: browsers/filebrowser/MyDirOperator.cpp:274
 #: browsers/playlistbrowser/UserPlaylistModel.cpp:388
 #: browsers/playlistbrowser/PodcastModel.cpp:705
@@ -596,14 +601,6 @@ msgstr "Agochar o menú"
 #| msgid "&Install Script"
 msgid "Install Applets"
 msgstr "&Instalar o script"
-
-#: context/widgets/TrackWidget.cpp:38 Systray.cpp:147
-#: browsers/playlistbrowser/DynamicBiasWidgets.cpp:253
-#: browsers/playlistbrowser/DynamicBiasWidgets.cpp:697
-#: playlist/PlaylistDefines.h:91 playlist/PlaylistModel.cpp:702
-#: widgets/SmartPlaylistEditor.cpp:186
-msgid "Score"
-msgstr "Relevancia"
 
 #: context/widgets/TrackWidget.cpp:117
 #, kde-format
@@ -1417,11 +1414,21 @@ msgstr "Tamaño:"
 msgid "Format:"
 msgstr "Formato:"
 
+#. i18n: file: dialogs/TagDialogBase.ui:502
+#. i18n: ectx: property (text), widget (QLabel, scoreLabel)
+#: dialogs/TagDialog.cpp:901 rc.cpp:828
+msgid "Score:"
+msgstr "Relevancia:"
+
 #. i18n: file: dialogs/TagDialogBase.ui:531
 #. i18n: ectx: property (text), widget (QLabel, ratingLabel)
 #: dialogs/TagDialog.cpp:903 rc.cpp:831
 msgid "Rating:"
 msgstr "Calificación:"
+
+#: dialogs/TagDialog.cpp:905
+msgid "Play Count:"
+msgstr "Nº de audicións:"
 
 #: dialogs/TagDialog.cpp:908
 msgid "First Played:"
@@ -1431,6 +1438,11 @@ msgstr "Primeira reprodución:"
 msgctxt "When this track was first played"
 msgid "Never"
 msgstr "Nunca"
+
+#: dialogs/TagDialog.cpp:910
+msgctxt "a single item (singular)"
+msgid "Last Played:"
+msgstr "Última reprodución:"
 
 #: dialogs/TagDialog.cpp:911
 msgctxt "When this track was last played"
@@ -2047,11 +2059,6 @@ msgstr "Calificación"
 msgid "Play Count"
 msgstr "Nº de audicións"
 
-#: Systray.cpp:177 browsers/playlistbrowser/DynamicBiasWidgets.cpp:258
-#: browsers/playlistbrowser/DynamicBiasWidgets.cpp:702
-msgid "Last Played"
-msgstr "Última reprodución"
-
 #: Systray.cpp:182 browsers/playlistbrowser/DynamicBiasWidgets.cpp:254
 #: browsers/playlistbrowser/DynamicBiasWidgets.cpp:698
 #: playlist/PlaylistDefines.h:86 playlist/PlaylistHeader.cpp:42
@@ -2513,6 +2520,13 @@ msgstr "Mover á colección"
 #: browsers/CollectionTreeView.cpp:375 services/lastfm/LastFmTreeView.cpp:204
 msgid "More..."
 msgstr "Máis..."
+
+#: browsers/CollectionTreeView.cpp:597
+#, fuzzy
+#| msgid "&Save Playlist"
+msgctxt "Replace the currently loaded tracks with these"
+msgid "&Overwrite Playlist"
+msgstr "&Gardar a lista de temas"
 
 #: browsers/CollectionTreeView.cpp:623
 msgid "&Edit Track Details"
@@ -7498,10 +7512,6 @@ msgstr "pistas"
 msgid "Mood"
 msgstr "Humor"
 
-#: playlist/PlaylistDefines.h:88
-msgid "Play count"
-msgstr "Nº de audicións"
-
 #: playlist/PlaylistDefines.h:90
 msgid "Sample rate"
 msgstr "Taxa de mostraxe"
@@ -8492,6 +8502,9 @@ msgstr "Carátula"
 #: covermanager/CoverManager.cpp:873
 msgid "No Artist"
 msgstr "Ningún artista"
+
+#~ msgid "Playcount:"
+#~ msgstr "Nº de audicións:"
 
 #, fuzzy
 #~| msgctxt "The amount of tracks being edited"
