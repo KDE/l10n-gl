@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdevcppdebugger\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2009-04-06 11:13+0200\n"
+"POT-Creation-Date: 2009-04-14 11:12+0200\n"
 "PO-Revision-Date: 2009-02-05 23:33+0100\n"
 "Last-Translator: mvillarino <mvillarino@users.sourceforge.net>\n"
 "Language-Team: galician <proxecto@trasno.net>\n"
@@ -23,15 +23,53 @@ msgstr ""
 msgid "<%1 items>"
 msgstr "<%1 itens>"
 
-#: tooltipwidget.cpp:74
+#: debugsession.cpp:139
+msgid "Debugger stopped"
+msgstr "Depurador detido"
+
+#: debugsession.cpp:189
+#, fuzzy
+#| msgid "Application does not exist"
+msgid "Application interrupted"
+msgstr "O programa non existe"
+
+#: debugsession.cpp:193
+msgid "Process exited"
+msgstr "O proceso saiu"
+
+#: debugsession.cpp:200
+#, fuzzy
+#| msgid "Application does not exist"
+msgid "Application is running"
+msgstr "O programa non existe"
+
+#: debugsession.cpp:206
+#, fuzzy
+#| msgid "Application does not exist"
+msgid "Application is paused"
+msgstr "O programa non existe"
+
+#: debugsession.cpp:332
+msgid ""
+"<b>GDB exited abnormally</b><p>This is likely a bug in GDB. Examine the gdb "
+"output window and then stop the debugger"
+msgstr ""
+"<b>GDB saíu anormalmente</b><p>Isto posibelmente sexa un erro en GDB. "
+"Examine a fiestra da saída de GDB e logo pare o depurador"
+
+#: debugsession.cpp:335
+msgid "GDB exited abnormally"
+msgstr "GDB saíu anormalmente"
+
+#: tooltipwidget.cpp:75
 msgid "<a href=add_watch>Watch this</a>"
 msgstr "<a href=add_watch>Vixiar isto</a>"
 
-#: tooltipwidget.cpp:76
+#: tooltipwidget.cpp:77
 msgid "<a href=watchpoint>Stop on change</a>"
 msgstr "<a href=watchpoint>Deter en caso de modificación</a>"
 
-#: gdbcontroller.cpp:249
+#: gdbcontroller.cpp:246
 #, kde-format
 msgid ""
 "<b>Gdb command sent when debugger is not running</b><br>The command was:<br> "
@@ -40,20 +78,20 @@ msgstr ""
 "<b>Enviouse o comando gdb cando o depurador non se estaba a executar</b> "
 "<br>O comando era:<br>%1"
 
-#: gdbcontroller.cpp:251 frameitem.cpp:165
+#: gdbcontroller.cpp:248 frameitem.cpp:165
 msgid "Internal error"
 msgstr "Aconteceu un erro interno"
 
-#: gdbcontroller.cpp:332
+#: gdbcontroller.cpp:329
 #, kde-format
 msgid "<b>Invalid debugger command</b><br>%1"
 msgstr "<b>Comando non valido do depurador</b><br>%1"
 
-#: gdbcontroller.cpp:333
+#: gdbcontroller.cpp:330
 msgid "Invalid debugger command"
 msgstr "Comando non válido do depurador"
 
-#: gdbcontroller.cpp:373
+#: gdbcontroller.cpp:370
 msgid ""
 "<b>Invalid gdb reply</b><p>The 'stopped' packet does not include the "
 "'reason' field."
@@ -61,29 +99,29 @@ msgstr ""
 "<b>Resposta non válida de gdb</b><p>O paquete «parado» non inclúe o campo "
 "«motivo»."
 
-#: gdbcontroller.cpp:375
+#: gdbcontroller.cpp:372
 msgid "The gdb reply is: invalid"
 msgstr "A reposta de gdb é: non válido"
 
-#: gdbcontroller.cpp:376
+#: gdbcontroller.cpp:373
 msgid "Invalid gdb reply"
 msgstr "Resposta de gdb non válida"
 
-#: gdbcontroller.cpp:391
+#: gdbcontroller.cpp:389
 #, kde-format
 msgid "Exited on signal %1"
 msgstr "Saíuse co sinal %1"
 
-#: gdbcontroller.cpp:444
+#: gdbcontroller.cpp:442
 #, kde-format
 msgid "Program received signal %1 (%2)"
 msgstr "O programa recibeu o sinal %1 (%2)"
 
-#: gdbcontroller.cpp:445
+#: gdbcontroller.cpp:443
 msgid "Received signal"
 msgstr "Recibeuse un sinal"
 
-#: gdbcontroller.cpp:559
+#: gdbcontroller.cpp:557
 #, kde-format
 msgid ""
 "gdb message:\n"
@@ -92,15 +130,15 @@ msgstr ""
 "mensaxe de gdb:\n"
 "%1"
 
-#: gdbcontroller.cpp:559 gdbcontroller.cpp:718
+#: gdbcontroller.cpp:557 gdbcontroller.cpp:716
 msgid "Warning"
 msgstr "Aviso"
 
-#: gdbcontroller.cpp:686
+#: gdbcontroller.cpp:684
 msgid "Running program"
 msgstr "A executar o programa"
 
-#: gdbcontroller.cpp:714
+#: gdbcontroller.cpp:712
 msgid ""
 "GDB cannot use the tty* or pty* devices.\n"
 "Check the settings on /dev/tty* and /dev/pty*\n"
@@ -112,7 +150,7 @@ msgstr ""
 "Como root pode precisar «chmod ug+rw» os dispositivos tty* e pty* e/ou "
 "engadir ao usuario no grupo tty mediante «usermod -G tty usuario»."
 
-#: gdbcontroller.cpp:794
+#: gdbcontroller.cpp:792
 #, fuzzy, kde-format
 #| msgid ""
 #| "<b>Application does not exist</b><p>The application you're trying to "
@@ -130,11 +168,11 @@ msgstr ""
 "<br>non existe. Verifique que indicou o programa correcto na configuración "
 "do depurador."
 
-#: gdbcontroller.cpp:800
+#: gdbcontroller.cpp:798
 msgid "Application does not exist"
 msgstr "O programa non existe"
 
-#: gdbcontroller.cpp:813
+#: gdbcontroller.cpp:811
 #, kde-format
 msgid ""
 "<b>Could not run application '%1'.</b><p>The application does not have the "
@@ -145,28 +183,28 @@ msgstr ""
 "activado o bit de executábel. Probe a reconstruir o proxecto, ou a mudar "
 "manualmente os permisos."
 
-#: gdbcontroller.cpp:818
+#: gdbcontroller.cpp:816
 msgid "Could not run application"
 msgstr "Non foi posíbel executar o programa"
 
-#: gdbcontroller.cpp:1075
+#: gdbcontroller.cpp:1071
 #, kde-format
 msgid "<b>Debugger error</b><p>Debugger reported the following error:<p><tt>%1"
 msgstr ""
 "<b>Erro do depurador</b><p>O depurador informou do seguinte erro:<p><tt>%1"
 
-#: gdbcontroller.cpp:1078
+#: gdbcontroller.cpp:1074
 msgid "Debugger error"
 msgstr "Erro do depurador"
 
-#: gdbcontroller.cpp:1190
+#: gdbcontroller.cpp:1186
 #, kde-format
 msgid "1 command in queue\n"
 msgid_plural "%1 commands in queue\n"
 msgstr[0] ""
 msgstr[1] ""
 
-#: gdbcontroller.cpp:1191
+#: gdbcontroller.cpp:1187
 #, fuzzy, kde-format
 #| msgid ""
 #| "%1 commands in queue\n"
@@ -184,13 +222,13 @@ msgstr[1] ""
 "%2 comandos a ser procesador por gdb\n"
 "Estado do depurador: %3\n"
 
-#: gdbcontroller.cpp:1192
+#: gdbcontroller.cpp:1188
 #, fuzzy, kde-format
 #| msgid "Debugger status"
 msgid "Debugger state: %1\n"
 msgstr "Estado do depurador"
 
-#: gdbcontroller.cpp:1196
+#: gdbcontroller.cpp:1192
 #, kde-format
 msgid ""
 "Current command class: '%1'\n"
@@ -201,7 +239,7 @@ msgstr ""
 "Texto do comando actual: «%2»\n"
 "Texto orixinal do comando actual: «%3»\n"
 
-#: gdbcontroller.cpp:1207
+#: gdbcontroller.cpp:1203
 msgid "Debugger status"
 msgstr "Estado do depurador"
 
@@ -236,23 +274,6 @@ msgstr "Desprazamento"
 #: disassemblewidget.cpp:70
 msgid "Instruction"
 msgstr "Instrución"
-
-#: framestackwidget.cpp:49
-#, fuzzy
-#| msgid ""
-#| "<b>Frame stack</b><p>Often referred to as the \"call stack\", this is a "
-#| "list showing what function is currently active and who called each "
-#| "function to get to this point in your program. By clicking on an item you "
-#| "can see the values in any of the previous calling functions."
-msgid ""
-"<b>Frame stack</b><p>Often referred to as the \"call stack\", this is a list "
-"showing which function is currently active, and what called each function to "
-"get to this point in your program. By clicking on an item you can see the "
-"values in any of the previous calling functions."
-msgstr ""
-"<b>Pila de chamadas</b><p>Esta é unha lista que mostra a función que está "
-"activa e quen chamou a cada función para acadar este ponto do programa. Se "
-"preme nun ítem poderá ver os valores en calquera das funcións chamadoras."
 
 #: gdb.cpp:92
 #, kde-format
@@ -298,10 +319,6 @@ msgstr ""
 msgid "Could not start debugger"
 msgstr "Non foi posíbel iniciar o depurador"
 
-#: inewbreakpoint.cpp:121
-msgid "Double-click to create new code breakpoint"
-msgstr "Faga un duplo-clic para pór un novo ponto de parada no código"
-
 #. i18n: file: debuggerconfigwidget.ui:208
 #. i18n: ectx: property (text), widget (QRadioButton, kcfg_startWithGdb)
 #: gdboutputwidget.cpp:63 rc.cpp:94 rc.cpp:336
@@ -342,129 +359,6 @@ msgstr ""
 msgid "Copy All"
 msgstr "Copiar todo"
 
-#: breakpointwidget.h:61
-msgid "Breakpoint is active"
-msgstr "O punto de parada está activo"
-
-#: breakpointwidget.h:70 breakpointwidget.h:114
-msgid "Not hit yet"
-msgstr "Aínda non acadado"
-
-#: breakpointwidget.h:77
-msgid "Ignore"
-msgstr "Ignorar"
-
-#: breakpointwidget.h:83
-msgid "next hits"
-msgstr "seguintes pasadas"
-
-#: breakpointwidget.h:105 breakpointwidget.h:107
-#, kde-format
-msgid "Breakpoint is %1"
-msgstr "O punto de parada está %1"
-
-#: breakpointwidget.h:112
-#, kde-format
-msgid "Hit %1 time"
-msgid_plural "Hit %1 times"
-msgstr[0] "Atinxiuse %1 vez"
-msgstr[1] "Atinxiuse %1 veces"
-
-#: breakpointwidget.h:127
-#, fuzzy
-#| msgid ""
-#| "<b>Breakpoint is pending</b><p>Pending breakpoints are those that are "
-#| "communucated to GDB, but which are not yet installed in the target, "
-#| "because GDB cannot find the function or the file the breakpoint refers "
-#| "too. Most common case is a breakpoint in a shared library.  GDB will "
-#| "insert this breakpoint only when the library is loaded."
-msgid ""
-"<b>Breakpoint is pending</b><p>Pending breakpoints are those that are "
-"communucated to GDB, but which are not yet installed in the target, because "
-"GDB cannot find the function or the file the breakpoint refers to. The most "
-"common case is a breakpoint in a shared library: GDB will insert this "
-"breakpoint only when the library is loaded."
-msgstr ""
-"<b>O punto de parada está pendente</b><p>Os puntos de parada pendentes son "
-"aqueles que foron comunicados a GDB, pero que aínda non están instalados no "
-"obxectivo, porque GDB non é capaz de achar a función ou o ficheiro ao que se "
-"refire o punto de parada. O caso máis frecuente é que o punto de parada "
-"estexa nunha biblioteca compartida. GDB inserirá este punto de parada só "
-"cando se cargue a biblioteca."
-
-#: breakpointwidget.h:140
-msgid ""
-"<b>Breakpoint is dirty</b><p>The breakpoint is not yet communicated to GDB."
-msgstr ""
-"<b>O punto de parada está suxo</b><p>O punto de parada non foi comunicado "
-"aínda a GDB."
-
-#: breakpointwidget.h:162
-msgid "Debugger Breakpoints"
-msgstr "Pontos de parada do depurador"
-
-#: breakpointwidget.h:163
-msgid ""
-"<b>Breakpoint list</b><p>Displays a list of breakpoints with their current "
-"status. Clicking on a breakpoint item allows you to change the breakpoint "
-"and will take you to the source in the editor window."
-msgstr ""
-"<b>Lista de pontos de parada</b><p>Mostra unha lista dos pontos de parada co "
-"estado actual. Se preme nun ponto poderá mudar o ponto de parada e levaráo á "
-"fonte na fiestra de edición."
-
-#: breakpointwidget.h:215
-msgctxt "New breakpoint"
-msgid "New"
-msgstr "Novo"
-
-#: breakpointwidget.h:218
-msgctxt "Code breakpoint"
-msgid "Code"
-msgstr "Código"
-
-#: breakpointwidget.h:227
-msgctxt "Data breakpoint"
-msgid "Data write"
-msgstr "Escrita de datos"
-
-#: breakpointwidget.h:230
-msgctxt "Data read breakpoint"
-msgid "Data read"
-msgstr "Leitura de datos"
-
-#: breakpointwidget.h:234
-msgid "Show text"
-msgstr "Mostrar o texto"
-
-#: breakpointwidget.h:237
-msgid "Edit"
-msgstr "Editar"
-
-#: breakpointwidget.h:240 breakpointwidget.h:281
-msgid "Disable"
-msgstr "Deshabilitar"
-
-#: breakpointwidget.h:245
-msgid "Delete"
-msgstr "Borrar"
-
-#: breakpointwidget.h:254
-msgid "Disable all"
-msgstr "Deshabilitar todos"
-
-#: breakpointwidget.h:255
-msgid "Enable all"
-msgstr "Habilitar todos"
-
-#: breakpointwidget.h:256
-msgid "Delete all"
-msgstr "Borrar todos"
-
-#: breakpointwidget.h:285
-msgid "Enable"
-msgstr "Habilitar"
-
 #: watchitem.cpp:41
 msgid "Watches"
 msgstr "Vixías"
@@ -473,7 +367,7 @@ msgstr "Vixías"
 msgid "Recent"
 msgstr "Recente"
 
-#: processselection.cpp:62 debuggerplugin.cpp:333
+#: processselection.cpp:62 debuggerplugin.cpp:232
 msgid "Attach to Process"
 msgstr "Anexar ao proceso"
 
@@ -991,7 +885,7 @@ msgctxt "@title:menu"
 msgid "Run"
 msgstr "Executar"
 
-#. i18n: file: kdevgdbui.rc:35
+#. i18n: file: kdevgdbui.rc:17
 #. i18n: ectx: ToolBar (debugToolBar)
 #: rc.cpp:175 rc.cpp:198
 msgid "Debugger Toolbar"
@@ -1077,51 +971,47 @@ msgstr "Vistas especiais do depurador"
 msgid "Frame"
 msgstr "Marco"
 
-#: debuggerplugin.cpp:89
+#: debuggerplugin.cpp:91
 #, fuzzy
 #| msgid "GDB Output"
 msgid "GDB Support"
 msgstr "Saída de GBD"
 
-#: debuggerplugin.cpp:89
+#: debuggerplugin.cpp:91
 #, fuzzy
 #| msgid "Support for running C++ apps in GDB"
 msgid "Support for running apps in GDB"
 msgstr "Soporte para executar programas C++ en GDB"
 
-#: debuggerplugin.cpp:152
+#: debuggerplugin.cpp:151
 msgid "Breakpoints"
 msgstr "Pontos de parada"
 
-#: debuggerplugin.cpp:158
-msgid "Variables"
-msgstr "Variábeis"
-
-#: debuggerplugin.cpp:164
-msgid "Frame Stack"
-msgstr "Pila de chamadas"
-
-#: debuggerplugin.cpp:170
+#: debuggerplugin.cpp:157
 msgid "Disassemble"
 msgstr "Desensamblar"
 
-#: debuggerplugin.cpp:176 debuggerplugin.cpp:624
+#: debuggerplugin.cpp:163 debuggerplugin.cpp:432
 msgid "GDB"
 msgstr "GDB"
 
-#: debuggerplugin.cpp:182
+#: debuggerplugin.cpp:169
 msgid "Debug views"
 msgstr "Vistas de depuración"
 
-#: debuggerplugin.cpp:213 debuggerplugin.cpp:692
-msgid "&Start"
-msgstr "&Iniciar"
+#: debuggerplugin.cpp:175
+msgid "Variables"
+msgstr "Variábeis"
 
-#: debuggerplugin.cpp:215
+#: debuggerplugin.cpp:197
+msgid "&Start with GDB"
+msgstr ""
+
+#: debuggerplugin.cpp:199
 msgid "Start in debugger"
 msgstr "Iniciar no depurador"
 
-#: debuggerplugin.cpp:216
+#: debuggerplugin.cpp:200
 msgid ""
 "<b>Start in debugger</b><p>Starts the debugger with the project's main "
 "executable. You may set some breakpoints before this, or you can interrupt "
@@ -1133,174 +1023,15 @@ msgstr ""
 "interromper o programa mentres está a executarse, para obter información "
 "acerca das variábeis, pila de chamadas e cousas así."
 
-#: debuggerplugin.cpp:225
-msgid "&Restart"
-msgstr "&Reiniciar"
-
-#: debuggerplugin.cpp:226
-msgid "Restart program"
-msgstr "Reinicia o programa"
-
-#: debuggerplugin.cpp:227
-msgid "<b>Restarts application</b><p>Restarts applications from the beginning."
-msgstr ""
-"<b>Reiniciar o programa</b><p>Comeza o programa de novo desde o principio."
-
-#: debuggerplugin.cpp:235
-msgid "Sto&p"
-msgstr "&Deter"
-
-#: debuggerplugin.cpp:236
-msgid "Stop debugger"
-msgstr "Detén o depurador"
-
-#: debuggerplugin.cpp:237
-msgid "<b>Stop debugger</b><p>Kills the executable and exits the debugger."
-msgstr "<b>Deter o depurador</b><p>Mata o executábel e sae do depurador."
-
-#: debuggerplugin.cpp:241
-msgid "Interrupt"
-msgstr "Interromper"
-
-#: debuggerplugin.cpp:242
-msgid "Interrupt application"
-msgstr "Interrompe o programa"
-
-#: debuggerplugin.cpp:243
-msgid ""
-"<b>Interrupt application</b><p>Interrupts the debugged process or current "
-"GDB command."
-msgstr ""
-"<b>Interromper o programa</b><p>Interrompe o proceso de depurado ou o "
-"comando actual de GDB."
-
-#: debuggerplugin.cpp:247
-msgid "Run to &Cursor"
-msgstr "Executar até o &cursor"
-
-#: debuggerplugin.cpp:248
-msgid "Run to cursor"
-msgstr "Executar até o cursor"
-
-#: debuggerplugin.cpp:249
-msgid ""
-"<b>Run to cursor</b><p>Continues execution until the cursor position is "
-"reached."
-msgstr ""
-"<b>Executar até o cursor</b><p>Continúa a execución até acadar a posición do "
-"cursor."
-
-#: debuggerplugin.cpp:254
-msgid "Set E&xecution Position to Cursor"
-msgstr "Pór o &ponto de execución no cursor"
-
-#: debuggerplugin.cpp:255
-msgid "Jump to cursor"
-msgstr "Salta até o cursor"
-
-#: debuggerplugin.cpp:256
-msgid ""
-"<b>Set Execution Position </b><p>Set the execution pointer to the current "
-"cursor position."
-msgstr ""
-"<b>Pór o ponto de execución</b><p>Leva o ponteiro de execución á posición "
-"actual do cursor."
-
-#: debuggerplugin.cpp:260
-msgid "Step &Over"
-msgstr "Executar a &seguinte"
-
-#: debuggerplugin.cpp:262
-msgid "Step over the next line"
-msgstr "Salta á seguinte liña"
-
-#: debuggerplugin.cpp:263
-msgid ""
-"<b>Step over</b><p>Executes one line of source in the current source file. "
-"If the source line is a call to a function the whole function is executed "
-"and the app will stop at the line following the function call."
-msgstr ""
-"<b>Executar a seguinte</b><p>Executa unha liña do ficheiro de fontes actual. "
-"Se a liña de fonte é unha chamada a unha función execútase toda a función e "
-"o programa deterase na liña que segue á chamada."
-
-#: debuggerplugin.cpp:272
-msgid "Step over Ins&truction"
-msgstr "Executar a seguinte &instrución"
-
-#: debuggerplugin.cpp:273
-msgid "Step over instruction"
-msgstr "Executa a seguinte instrución"
-
-#: debuggerplugin.cpp:274
-msgid ""
-"<b>Step over instruction</b><p>Steps over the next assembly instruction."
-msgstr ""
-"<b>Executar a seguinte instrución</b><p>Executa a seguinte instrución do "
-"ensamblador."
-
-#: debuggerplugin.cpp:279
-msgid "Step &Into"
-msgstr "Executar &unha liña"
-
-#: debuggerplugin.cpp:281
-msgid "Step into the next statement"
-msgstr "Executa a seguinte sentenza"
-
-#: debuggerplugin.cpp:282
-msgid ""
-"<b>Step into</b><p>Executes exactly one line of source. If the source line "
-"is a call to a function then execution will stop after the function has been "
-"entered."
-msgstr ""
-"<b>Executar unha liña</b><p>Executa exactamente unha liña de fontes. Se a "
-"liña é unha chamada a unha función entón a execución deterase xusto tras "
-"entrar na función."
-
-#: debuggerplugin.cpp:290
-msgid "Step into I&nstruction"
-msgstr "Executar unha ins&trución"
-
-#: debuggerplugin.cpp:291
-msgid "Step into instruction"
-msgstr "Executa unha instrución"
-
-#: debuggerplugin.cpp:292
-msgid ""
-"<b>Step into instruction</b><p>Steps into the next assembly instruction."
-msgstr ""
-"<b>Executar unha instrución</b><p>Executa a seguinte instrución de "
-"ensamblador."
-
-#: debuggerplugin.cpp:297
-msgid "Step O&ut"
-msgstr "Executar até &sair"
-
-#: debuggerplugin.cpp:299
-msgid "Steps out of the current function"
-msgstr "Executa até sair da función actual"
-
-#: debuggerplugin.cpp:300
-msgid ""
-"<b>Step out</b><p>Executes the application until the currently executing "
-"function is completed. The debugger will then display the line after the "
-"original call to that function. If program execution is in the outermost "
-"frame (i.e. in main()) then this operation has no effect."
-msgstr ""
-"<b>Executar até saír</b><p>Executa o programa até que se complete a función "
-"que se está a executar. Entón o depurador mostrará a liña tras da chamada "
-"orixinal á función. Se a execución do programa está na pila máis externa (i."
-"e. en main()) entón esta operación non ten efeito nengún."
-
-#: debuggerplugin.cpp:310
+#: debuggerplugin.cpp:209
 msgid "Viewers"
 msgstr "Visores"
 
-#: debuggerplugin.cpp:311
+#: debuggerplugin.cpp:210
 msgid "Debugger viewers"
 msgstr "Visores do depurador"
 
-#: debuggerplugin.cpp:312
+#: debuggerplugin.cpp:211
 msgid ""
 "<b>Debugger viewers</b><p>Various information about application being "
 "executed. There are 4 views available:<br><b>Memory</b><br><b>Disassemble</"
@@ -1310,15 +1041,15 @@ msgstr ""
 "se está a executar. Hai 4 vistas dispoñíbeis:<br><b>Memoria</"
 "b><br><b>Desemsamblado</b><br><b>Rexistos</b><br><b>Bibliotecas</b>"
 
-#: debuggerplugin.cpp:321
+#: debuggerplugin.cpp:220
 msgid "Examine Core File..."
 msgstr "Examinar un ficheiro Core..."
 
-#: debuggerplugin.cpp:322
+#: debuggerplugin.cpp:221
 msgid "Examine core file"
 msgstr "Examina un ficheiro core"
 
-#: debuggerplugin.cpp:323
+#: debuggerplugin.cpp:222
 msgid ""
 "<b>Examine core file</b><p>This loads a core file, which is typically "
 "created after the application has crashed, e.g. with a segmentation fault. "
@@ -1331,53 +1062,37 @@ msgstr ""
 "momento que se pechou inesperadamente, permitíndolle facer unha análise post-"
 "mortem."
 
-#: debuggerplugin.cpp:334
+#: debuggerplugin.cpp:233
 msgid "Attach to process"
 msgstr "Adxuntar ao proceso"
 
-#: debuggerplugin.cpp:335
+#: debuggerplugin.cpp:234
 msgid "<b>Attach to process</b><p>Attaches the debugger to a running process."
 msgstr ""
 "<b>Adxuntar ao proceso</b><p>Anexa o depurador a un proceso en execución."
 
-#: debuggerplugin.cpp:339
-msgid "Toggle Breakpoint"
-msgstr "Comutar o ponto de parada"
-
-#: debuggerplugin.cpp:340
-msgid "Toggle breakpoint"
-msgstr "Comutar o ponto de parada"
-
-#: debuggerplugin.cpp:341
-msgid ""
-"<b>Toggle breakpoint</b><p>Toggles the breakpoint at the current line in "
-"editor."
-msgstr ""
-"<b>Comutar o ponto de parada</b><p>Comuta o ponto de parada na liña actual "
-"do editor."
-
-#: debuggerplugin.cpp:375
+#: debuggerplugin.cpp:268
 msgid "Debug in &KDevelop"
 msgstr "Depurar en &KDevelop"
 
-#: debuggerplugin.cpp:449
+#: debuggerplugin.cpp:332
 #, kde-format
 msgid "Evaluate: %1"
 msgstr "Avaliar: %1"
 
-#: debuggerplugin.cpp:451
+#: debuggerplugin.cpp:334
 msgid ""
 "<b>Evaluate expression</b><p>Shows the value of the expression under the "
 "cursor."
 msgstr ""
 "<b>Avaliar unha expresión</b><p>Mostra o valor da expresión baixo o cursor."
 
-#: debuggerplugin.cpp:454
+#: debuggerplugin.cpp:337
 #, kde-format
 msgid "Watch: %1"
 msgstr "Vixiar: %1"
 
-#: debuggerplugin.cpp:456
+#: debuggerplugin.cpp:339
 msgid ""
 "<b>Watch expression</b><p>Adds an expression under the cursor to the "
 "Variables/Watch list."
@@ -1385,88 +1100,27 @@ msgstr ""
 "<b>Vixiar unha expresión</b><p>Engade a expresión baixo o cursor á lista de "
 "Variábeis/Vixías."
 
-#: debuggerplugin.cpp:540
-msgid ""
-"<b>GDB exited abnormally</b><p>This is likely a bug in GDB. Examine the gdb "
-"output window and then stop the debugger"
-msgstr ""
-"<b>GDB saíu anormalmente</b><p>Isto posibelmente sexa un erro en GDB. "
-"Examine a fiestra da saída de GDB e logo pare o depurador"
-
-#: debuggerplugin.cpp:543
-msgid "GDB exited abnormally"
-msgstr "GDB saíu anormalmente"
-
-#: debuggerplugin.cpp:557
+#: debuggerplugin.cpp:390
 msgid "Choose a core file to examine..."
 msgstr "Escoller un ficheiro core a examinar..."
 
-#: debuggerplugin.cpp:563
+#: debuggerplugin.cpp:396
 #, kde-format
 msgid "Examining core file %1"
 msgstr "A examinar o ficheiro core %1"
 
-#: debuggerplugin.cpp:571
+#: debuggerplugin.cpp:404
 msgid "Choose a process to attach to..."
 msgstr "Escolla un proceso co que adxuntar..."
 
-#: debuggerplugin.cpp:583
+#: debuggerplugin.cpp:416
 #, kde-format
 msgid "Attaching to process %1"
 msgstr "A xuntar co proceso %1"
 
-#: debuggerplugin.cpp:640
+#: debuggerplugin.cpp:448
 msgid "Debugger"
 msgstr "Depurador"
-
-#: debuggerplugin.cpp:663
-msgid "Debugger stopped"
-msgstr "Depurador detido"
-
-#: debuggerplugin.cpp:693
-msgid "Runs the program in the debugger"
-msgstr "Executa o programa no depurador"
-
-#: debuggerplugin.cpp:694
-msgid ""
-"Start in debugger\n"
-"\n"
-"Starts the debugger with the project's main executable. You may set some "
-"breakpoints before this, or you can interrupt the program while it is "
-"running, in order to get information about variables, frame stack, and so on."
-msgstr ""
-"Iniciar no depurador\n"
-"\n"
-"Inicia o depurador co executábel principal do programa. Pode estabelecer "
-"algúns pontos de parada antes disto, ou pode interromper o programa mentres "
-"está a executarse, para obter información acerca de variábeis, pila de "
-"chamada, etc."
-
-#: debuggerplugin.cpp:708
-msgid "&Continue"
-msgstr "&Continuar"
-
-#: debuggerplugin.cpp:709
-msgid "Continues the application execution"
-msgstr "Continúa coa execución do programa"
-
-#: debuggerplugin.cpp:710
-msgid ""
-"Continue application execution\n"
-"\n"
-"Continues the execution of your application in the debugger. This only takes "
-"effect when the application has been halted by the debugger (i.e. a "
-"breakpoint has been activated or the interrupt was pressed)."
-msgstr ""
-"Continuar a execución do programa\n"
-"\n"
-"Continúa a execución do programa no depurador. Isto só ten efeito cando o "
-"programa fose detido polo depurador (i.e. un ponto de parada foi activado ou "
-"premeuse en interromper)."
-
-#: debuggerplugin.cpp:754
-msgid "Process exited"
-msgstr "O proceso saiu"
 
 #: variablecollection.cpp:666
 msgid "Variable"
@@ -1476,57 +1130,352 @@ msgstr "Variábel"
 msgid "Value"
 msgstr "Valor"
 
-#: variablecollection.cpp:672 ibreakpointcontroller.cpp:340
+#: variablecollection.cpp:672
 msgid "Type"
 msgstr "Tipo"
-
-#: ibreakpointcontroller.cpp:75
-msgid "Breakpoint"
-msgstr "Ponto de parada"
-
-#: ibreakpointcontroller.cpp:262
-msgid " temporary"
-msgstr " temporal"
-
-#: ibreakpointcontroller.cpp:264
-msgid " hw"
-msgstr " hw"
-
-#: ibreakpointcontroller.cpp:311
-msgid "Enabled"
-msgstr "Habilitado"
-
-#: ibreakpointcontroller.cpp:311
-msgid "Disabled"
-msgstr "Deshabilitado"
-
-#: ibreakpointcontroller.cpp:342
-msgid "Status"
-msgstr "Estado"
-
-#: ibreakpointcontroller.cpp:344
-msgid "Location"
-msgstr "Lugar"
-
-#: ibreakpointcontroller.cpp:346
-msgid "Condition"
-msgstr "Condición"
-
-#: ibreakpointcontroller.cpp:348
-msgid "Ignore Count"
-msgstr "Ignorar a cantidade"
-
-#: ibreakpointcontroller.cpp:350
-msgid "Hits"
-msgstr "Acesos"
-
-#: ibreakpointcontroller.cpp:352
-msgid "Tracing"
-msgstr "Trazado"
 
 #: stty.cpp:333
 msgid "kdevelop: Debug application console"
 msgstr "kdevelop: Consola de depuración de programa"
+
+#, fuzzy
+#~| msgid ""
+#~| "<b>Frame stack</b><p>Often referred to as the \"call stack\", this is a "
+#~| "list showing what function is currently active and who called each "
+#~| "function to get to this point in your program. By clicking on an item "
+#~| "you can see the values in any of the previous calling functions."
+#~ msgid ""
+#~ "<b>Frame stack</b><p>Often referred to as the \"call stack\", this is a "
+#~ "list showing which function is currently active, and what called each "
+#~ "function to get to this point in your program. By clicking on an item you "
+#~ "can see the values in any of the previous calling functions."
+#~ msgstr ""
+#~ "<b>Pila de chamadas</b><p>Esta é unha lista que mostra a función que está "
+#~ "activa e quen chamou a cada función para acadar este ponto do programa. "
+#~ "Se preme nun ítem poderá ver os valores en calquera das funcións "
+#~ "chamadoras."
+
+#~ msgid "Double-click to create new code breakpoint"
+#~ msgstr "Faga un duplo-clic para pór un novo ponto de parada no código"
+
+#~ msgid "Breakpoint is active"
+#~ msgstr "O punto de parada está activo"
+
+#~ msgid "Not hit yet"
+#~ msgstr "Aínda non acadado"
+
+#~ msgid "Ignore"
+#~ msgstr "Ignorar"
+
+#~ msgid "next hits"
+#~ msgstr "seguintes pasadas"
+
+#~ msgid "Breakpoint is %1"
+#~ msgstr "O punto de parada está %1"
+
+#~ msgid "Hit %1 time"
+#~ msgid_plural "Hit %1 times"
+#~ msgstr[0] "Atinxiuse %1 vez"
+#~ msgstr[1] "Atinxiuse %1 veces"
+
+#, fuzzy
+#~| msgid ""
+#~| "<b>Breakpoint is pending</b><p>Pending breakpoints are those that are "
+#~| "communucated to GDB, but which are not yet installed in the target, "
+#~| "because GDB cannot find the function or the file the breakpoint refers "
+#~| "too. Most common case is a breakpoint in a shared library.  GDB will "
+#~| "insert this breakpoint only when the library is loaded."
+#~ msgid ""
+#~ "<b>Breakpoint is pending</b><p>Pending breakpoints are those that are "
+#~ "communucated to GDB, but which are not yet installed in the target, "
+#~ "because GDB cannot find the function or the file the breakpoint refers "
+#~ "to. The most common case is a breakpoint in a shared library: GDB will "
+#~ "insert this breakpoint only when the library is loaded."
+#~ msgstr ""
+#~ "<b>O punto de parada está pendente</b><p>Os puntos de parada pendentes "
+#~ "son aqueles que foron comunicados a GDB, pero que aínda non están "
+#~ "instalados no obxectivo, porque GDB non é capaz de achar a función ou o "
+#~ "ficheiro ao que se refire o punto de parada. O caso máis frecuente é que "
+#~ "o punto de parada estexa nunha biblioteca compartida. GDB inserirá este "
+#~ "punto de parada só cando se cargue a biblioteca."
+
+#~ msgid ""
+#~ "<b>Breakpoint is dirty</b><p>The breakpoint is not yet communicated to "
+#~ "GDB."
+#~ msgstr ""
+#~ "<b>O punto de parada está suxo</b><p>O punto de parada non foi comunicado "
+#~ "aínda a GDB."
+
+#~ msgid "Debugger Breakpoints"
+#~ msgstr "Pontos de parada do depurador"
+
+#~ msgid ""
+#~ "<b>Breakpoint list</b><p>Displays a list of breakpoints with their "
+#~ "current status. Clicking on a breakpoint item allows you to change the "
+#~ "breakpoint and will take you to the source in the editor window."
+#~ msgstr ""
+#~ "<b>Lista de pontos de parada</b><p>Mostra unha lista dos pontos de parada "
+#~ "co estado actual. Se preme nun ponto poderá mudar o ponto de parada e "
+#~ "levaráo á fonte na fiestra de edición."
+
+#~ msgctxt "New breakpoint"
+#~ msgid "New"
+#~ msgstr "Novo"
+
+#~ msgctxt "Code breakpoint"
+#~ msgid "Code"
+#~ msgstr "Código"
+
+#~ msgctxt "Data breakpoint"
+#~ msgid "Data write"
+#~ msgstr "Escrita de datos"
+
+#~ msgctxt "Data read breakpoint"
+#~ msgid "Data read"
+#~ msgstr "Leitura de datos"
+
+#~ msgid "Show text"
+#~ msgstr "Mostrar o texto"
+
+#~ msgid "Edit"
+#~ msgstr "Editar"
+
+#~ msgid "Disable"
+#~ msgstr "Deshabilitar"
+
+#~ msgid "Delete"
+#~ msgstr "Borrar"
+
+#~ msgid "Disable all"
+#~ msgstr "Deshabilitar todos"
+
+#~ msgid "Enable all"
+#~ msgstr "Habilitar todos"
+
+#~ msgid "Delete all"
+#~ msgstr "Borrar todos"
+
+#~ msgid "Enable"
+#~ msgstr "Habilitar"
+
+#~ msgid "Frame Stack"
+#~ msgstr "Pila de chamadas"
+
+#~ msgid "&Start"
+#~ msgstr "&Iniciar"
+
+#~ msgid "&Restart"
+#~ msgstr "&Reiniciar"
+
+#~ msgid "Restart program"
+#~ msgstr "Reinicia o programa"
+
+#~ msgid ""
+#~ "<b>Restarts application</b><p>Restarts applications from the beginning."
+#~ msgstr ""
+#~ "<b>Reiniciar o programa</b><p>Comeza o programa de novo desde o principio."
+
+#~ msgid "Sto&p"
+#~ msgstr "&Deter"
+
+#~ msgid "Stop debugger"
+#~ msgstr "Detén o depurador"
+
+#~ msgid "<b>Stop debugger</b><p>Kills the executable and exits the debugger."
+#~ msgstr "<b>Deter o depurador</b><p>Mata o executábel e sae do depurador."
+
+#~ msgid "Interrupt"
+#~ msgstr "Interromper"
+
+#~ msgid "Interrupt application"
+#~ msgstr "Interrompe o programa"
+
+#~ msgid ""
+#~ "<b>Interrupt application</b><p>Interrupts the debugged process or current "
+#~ "GDB command."
+#~ msgstr ""
+#~ "<b>Interromper o programa</b><p>Interrompe o proceso de depurado ou o "
+#~ "comando actual de GDB."
+
+#~ msgid "Run to &Cursor"
+#~ msgstr "Executar até o &cursor"
+
+#~ msgid "Run to cursor"
+#~ msgstr "Executar até o cursor"
+
+#~ msgid ""
+#~ "<b>Run to cursor</b><p>Continues execution until the cursor position is "
+#~ "reached."
+#~ msgstr ""
+#~ "<b>Executar até o cursor</b><p>Continúa a execución até acadar a posición "
+#~ "do cursor."
+
+#~ msgid "Set E&xecution Position to Cursor"
+#~ msgstr "Pór o &ponto de execución no cursor"
+
+#~ msgid "Jump to cursor"
+#~ msgstr "Salta até o cursor"
+
+#~ msgid ""
+#~ "<b>Set Execution Position </b><p>Set the execution pointer to the current "
+#~ "cursor position."
+#~ msgstr ""
+#~ "<b>Pór o ponto de execución</b><p>Leva o ponteiro de execución á posición "
+#~ "actual do cursor."
+
+#~ msgid "Step &Over"
+#~ msgstr "Executar a &seguinte"
+
+#~ msgid "Step over the next line"
+#~ msgstr "Salta á seguinte liña"
+
+#~ msgid ""
+#~ "<b>Step over</b><p>Executes one line of source in the current source "
+#~ "file. If the source line is a call to a function the whole function is "
+#~ "executed and the app will stop at the line following the function call."
+#~ msgstr ""
+#~ "<b>Executar a seguinte</b><p>Executa unha liña do ficheiro de fontes "
+#~ "actual. Se a liña de fonte é unha chamada a unha función execútase toda a "
+#~ "función e o programa deterase na liña que segue á chamada."
+
+#~ msgid "Step over Ins&truction"
+#~ msgstr "Executar a seguinte &instrución"
+
+#~ msgid "Step over instruction"
+#~ msgstr "Executa a seguinte instrución"
+
+#~ msgid ""
+#~ "<b>Step over instruction</b><p>Steps over the next assembly instruction."
+#~ msgstr ""
+#~ "<b>Executar a seguinte instrución</b><p>Executa a seguinte instrución do "
+#~ "ensamblador."
+
+#~ msgid "Step &Into"
+#~ msgstr "Executar &unha liña"
+
+#~ msgid "Step into the next statement"
+#~ msgstr "Executa a seguinte sentenza"
+
+#~ msgid ""
+#~ "<b>Step into</b><p>Executes exactly one line of source. If the source "
+#~ "line is a call to a function then execution will stop after the function "
+#~ "has been entered."
+#~ msgstr ""
+#~ "<b>Executar unha liña</b><p>Executa exactamente unha liña de fontes. Se a "
+#~ "liña é unha chamada a unha función entón a execución deterase xusto tras "
+#~ "entrar na función."
+
+#~ msgid "Step into I&nstruction"
+#~ msgstr "Executar unha ins&trución"
+
+#~ msgid "Step into instruction"
+#~ msgstr "Executa unha instrución"
+
+#~ msgid ""
+#~ "<b>Step into instruction</b><p>Steps into the next assembly instruction."
+#~ msgstr ""
+#~ "<b>Executar unha instrución</b><p>Executa a seguinte instrución de "
+#~ "ensamblador."
+
+#~ msgid "Step O&ut"
+#~ msgstr "Executar até &sair"
+
+#~ msgid "Steps out of the current function"
+#~ msgstr "Executa até sair da función actual"
+
+#~ msgid ""
+#~ "<b>Step out</b><p>Executes the application until the currently executing "
+#~ "function is completed. The debugger will then display the line after the "
+#~ "original call to that function. If program execution is in the outermost "
+#~ "frame (i.e. in main()) then this operation has no effect."
+#~ msgstr ""
+#~ "<b>Executar até saír</b><p>Executa o programa até que se complete a "
+#~ "función que se está a executar. Entón o depurador mostrará a liña tras da "
+#~ "chamada orixinal á función. Se a execución do programa está na pila máis "
+#~ "externa (i.e. en main()) entón esta operación non ten efeito nengún."
+
+#~ msgid "Toggle Breakpoint"
+#~ msgstr "Comutar o ponto de parada"
+
+#~ msgid "Toggle breakpoint"
+#~ msgstr "Comutar o ponto de parada"
+
+#~ msgid ""
+#~ "<b>Toggle breakpoint</b><p>Toggles the breakpoint at the current line in "
+#~ "editor."
+#~ msgstr ""
+#~ "<b>Comutar o ponto de parada</b><p>Comuta o ponto de parada na liña "
+#~ "actual do editor."
+
+#~ msgid "Runs the program in the debugger"
+#~ msgstr "Executa o programa no depurador"
+
+#~ msgid ""
+#~ "Start in debugger\n"
+#~ "\n"
+#~ "Starts the debugger with the project's main executable. You may set some "
+#~ "breakpoints before this, or you can interrupt the program while it is "
+#~ "running, in order to get information about variables, frame stack, and so "
+#~ "on."
+#~ msgstr ""
+#~ "Iniciar no depurador\n"
+#~ "\n"
+#~ "Inicia o depurador co executábel principal do programa. Pode estabelecer "
+#~ "algúns pontos de parada antes disto, ou pode interromper o programa "
+#~ "mentres está a executarse, para obter información acerca de variábeis, "
+#~ "pila de chamada, etc."
+
+#~ msgid "&Continue"
+#~ msgstr "&Continuar"
+
+#~ msgid "Continues the application execution"
+#~ msgstr "Continúa coa execución do programa"
+
+#~ msgid ""
+#~ "Continue application execution\n"
+#~ "\n"
+#~ "Continues the execution of your application in the debugger. This only "
+#~ "takes effect when the application has been halted by the debugger (i.e. a "
+#~ "breakpoint has been activated or the interrupt was pressed)."
+#~ msgstr ""
+#~ "Continuar a execución do programa\n"
+#~ "\n"
+#~ "Continúa a execución do programa no depurador. Isto só ten efeito cando o "
+#~ "programa fose detido polo depurador (i.e. un ponto de parada foi activado "
+#~ "ou premeuse en interromper)."
+
+#~ msgid "Breakpoint"
+#~ msgstr "Ponto de parada"
+
+#~ msgid " temporary"
+#~ msgstr " temporal"
+
+#~ msgid " hw"
+#~ msgstr " hw"
+
+#~ msgid "Enabled"
+#~ msgstr "Habilitado"
+
+#~ msgid "Disabled"
+#~ msgstr "Deshabilitado"
+
+#~ msgid "Status"
+#~ msgstr "Estado"
+
+#~ msgid "Location"
+#~ msgstr "Lugar"
+
+#~ msgid "Condition"
+#~ msgstr "Condición"
+
+#~ msgid "Ignore Count"
+#~ msgstr "Ignorar a cantidade"
+
+#~ msgid "Hits"
+#~ msgstr "Acesos"
+
+#~ msgid "Tracing"
+#~ msgstr "Trazado"
 
 #~ msgid "Pending (add)"
 #~ msgstr "Pendentes (engadir)"
