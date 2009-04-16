@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: k3b\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2009-04-15 12:08+0200\n"
+"POT-Creation-Date: 2009-04-16 11:25+0200\n"
 "PO-Revision-Date: 2009-02-06 00:01+0100\n"
 "Last-Translator: mvillarino <mvillarino@users.sourceforge.net>\n"
 "Language-Team: galician <proxecto@trasno.net>\n"
@@ -55,9 +55,9 @@ msgstr "Tamaño do ficheiro"
 #. i18n: ectx: attribute (title), widget (QWidget, tab)
 #: rip/k3baudioprojectconvertingdialog.cpp:137
 #: rip/k3bvideocdrippingdialog.cpp:103 rip/k3baudiorippingdialog.cpp:141
-#: misc/k3bmediacopydialog.cpp:120 misc/k3bimagewritingdialog.cpp:286
-#: misc/k3bimagewritingdialog.cpp:302 misc/k3bmediaformattingdialog.cpp:71
-#: option/k3boptiondialog.cpp:48 rc.cpp:767 rc.cpp:1185
+#: misc/k3bmediacopydialog.cpp:120 misc/k3bimagewritingdialog.cpp:284
+#: misc/k3bimagewritingdialog.cpp:300 misc/k3bmediaformattingdialog.cpp:71
+#: option/k3boptiondialog.cpp:48 rc.cpp:767 rc.cpp:1187
 #: projects/k3bvcdburndialog.cpp:415 projects/k3bvcdburndialog.cpp:447
 #: projects/k3bvcdtrackdialog.cpp:433 projects/k3bdatapropertiesdialog.cpp:147
 #: projects/k3baudioburndialog.cpp:80 projects/k3bprojectburndialog.cpp:276
@@ -88,8 +88,8 @@ msgid "Files Exist"
 msgstr "O ficheiro xa existe"
 
 #: rip/k3baudioprojectconvertingdialog.cpp:196
-#: rip/k3baudiorippingdialog.cpp:244 k3b.cpp:924 k3bemptydiscwaiter.cpp:330
-#: k3bemptydiscwaiter.cpp:412 k3bemptydiscwaiter.cpp:482
+#: rip/k3baudiorippingdialog.cpp:244 k3b.cpp:924 k3bemptydiscwaiter.cpp:271
+#: k3bemptydiscwaiter.cpp:353 k3bemptydiscwaiter.cpp:423
 #: k3bdebuggingoutputdialog.cpp:82 option/k3bthemeoptiontab.cpp:188
 #: projects/k3bmovixburndialog.cpp:217 projects/k3bvideodvdburndialog.cpp:171
 #: projects/k3bdataburndialog.cpp:183 projects/k3bvcdburndialog.cpp:551
@@ -609,9 +609,9 @@ msgstr "Extracción do CD"
 #. i18n: ectx: attribute (title), widget (QWidget)
 #. i18n: file: ../plugins/encoder/lame/base_k3blameencodersettingswidget.ui:267
 #. i18n: ectx: attribute (title), widget (QWidget, tab)
-#: rip/k3baudiorippingdialog.cpp:155 misc/k3bimagewritingdialog.cpp:332
-#: misc/k3bimagewritingdialog.cpp:834 option/k3boptiondialog.cpp:202
-#: rc.cpp:461 rc.cpp:1212 projects/k3bvcdburndialog.cpp:386
+#: rip/k3baudiorippingdialog.cpp:155 misc/k3bimagewritingdialog.cpp:330
+#: misc/k3bimagewritingdialog.cpp:859 option/k3boptiondialog.cpp:202
+#: rc.cpp:461 rc.cpp:1214 projects/k3bvcdburndialog.cpp:386
 #: projects/k3bdatapropertiesdialog.cpp:148
 #: projects/k3baudioburndialog.cpp:108
 msgid "Advanced"
@@ -1330,12 +1330,12 @@ msgstr "Copia normal"
 msgid "Clone Copy"
 msgstr "Copia de clonación"
 
-#: misc/k3bmediacopydialog.cpp:105 misc/k3bimagewritingdialog.cpp:268
+#: misc/k3bmediacopydialog.cpp:105 misc/k3bimagewritingdialog.cpp:266
 #: misc/k3bmediaformattingdialog.cpp:64 projects/k3bprojectburndialog.cpp:271
 msgid "Writing Mode"
 msgstr "Modo de gravación"
 
-#: misc/k3bmediacopydialog.cpp:110 misc/k3bimagewritingdialog.cpp:274
+#: misc/k3bmediacopydialog.cpp:110 misc/k3bimagewritingdialog.cpp:272
 #: projects/k3bprojectburndialog.cpp:290
 msgid "Copies"
 msgstr "Copias"
@@ -1346,8 +1346,8 @@ msgstr "Copias"
 msgid "&Options"
 msgstr "&Opcións"
 
-#: misc/k3bmediacopydialog.cpp:154 misc/k3bimagewritingdialog.cpp:313
-#: misc/k3bimagewritingdialog.cpp:856
+#: misc/k3bmediacopydialog.cpp:154 misc/k3bimagewritingdialog.cpp:311
+#: misc/k3bimagewritingdialog.cpp:881
 msgid "&Image"
 msgstr "&Imaxe"
 
@@ -1453,11 +1453,11 @@ msgstr "Desexa sobrescribir %1?"
 msgid "File Exists"
 msgstr "O ficheiro xa existe"
 
-#: misc/k3bmediacopydialog.cpp:551
+#: misc/k3bmediacopydialog.cpp:555
 msgid "Use the same device for burning"
 msgstr "Usar o mesmo dispositivo para gravar"
 
-#: misc/k3bmediacopydialog.cpp:552
+#: misc/k3bmediacopydialog.cpp:556
 msgid "<qt>Use the same device for burning <i>(Or insert another medium)</i>"
 msgstr "<qt>Usa o mesmo dispositivo para gravar <i>(Ou insira outro disco)</i>"
 
@@ -1493,43 +1493,65 @@ msgstr "*.toc *.TOC|Ficheiros TOC de cdrdao e imaxes clonadas de cdrecord"
 msgid "*|All Files"
 msgstr "*|Todos os ficheiros"
 
-#: misc/k3bimagewritingdialog.cpp:216
+#: misc/k3bimagewritingdialog.cpp:215
 msgid "Image Type"
 msgstr "Tipo de imaxe"
 
-#: misc/k3bimagewritingdialog.cpp:222
+#: misc/k3bimagewritingdialog.cpp:220
 msgid "Auto Detection"
 msgstr "Detección automática"
 
+#: misc/k3bimagewritingdialog.cpp:221
+msgid "Plain data image"
+msgstr ""
+
+#: misc/k3bimagewritingdialog.cpp:222 misc/k3bimagewritingdialog.cpp:736
+msgid "Cue/bin image"
+msgstr "Imaxe Cue/bin"
+
 #: misc/k3bimagewritingdialog.cpp:223
-msgid "ISO9660 Image"
-msgstr "Imaxe ISO9660"
-
-#: misc/k3bimagewritingdialog.cpp:224
-msgid "Cue/Bin Image"
-msgstr "Imaxe Cue/Bin"
-
-#: misc/k3bimagewritingdialog.cpp:225
-msgid "Audio Cue File"
+#, fuzzy
+#| msgid "Audio Cue File"
+msgid "Audio cue file"
 msgstr "Ficheiro Cue de son"
 
-#: misc/k3bimagewritingdialog.cpp:226
-msgid "Cdrdao TOC File"
+#: misc/k3bimagewritingdialog.cpp:224
+#, fuzzy
+#| msgid "Cdrdao TOC File"
+msgid "Cdrdao TOC file"
 msgstr "Ficheiro TOC de cdrdao"
 
-#: misc/k3bimagewritingdialog.cpp:227
-msgid "Cdrecord Clone Image"
+#: misc/k3bimagewritingdialog.cpp:225 misc/k3bimagewritingdialog.cpp:706
+msgid "Cdrecord clone image"
 msgstr "Imaxe clónica de cdrecord"
 
-#: misc/k3bimagewritingdialog.cpp:246
+#: misc/k3bimagewritingdialog.cpp:244
 msgid "No image file selected"
 msgstr "Non escolleu ningunha imaxe"
 
-#: misc/k3bimagewritingdialog.cpp:326
+#: misc/k3bimagewritingdialog.cpp:324
 msgid "Data mode:"
 msgstr "Modo de datos:"
 
-#: misc/k3bimagewritingdialog.cpp:426
+#: misc/k3bimagewritingdialog.cpp:350
+msgid ""
+"<p><b>Image types supported by K3b:</p><p><b>Plain image</b><br/>Plain "
+"images are written as is to the medium using a single data track. Typical "
+"plain images are iso images as created by K3b's data project.<p><b>Cue/bin "
+"images</b><br/>Cue/bin images consist of a cue file describing the table of "
+"contents of the medium and an image file which contains the actual data. The "
+"data will be written to the medium according to the cue file.<p><b>Audio Cue "
+"image</b><br/>Audio cue images are a special kind of cue/bin image "
+"containing an image of an audio CD. The actual audio data can be encoded "
+"using any audio format supported by K3b. Audio cue files can also be "
+"imported into K3b audio projects which allows to change the order and add or "
+"remove tracks.<p><b>Cdrecord clone images</b><br/>K3b creates a cdrecord "
+"clone image of a single-session CD when copying a CD in clone mode. These "
+"images can be reused here.<p><b>Cdrdao TOC files</b><br/>K3b supports "
+"writing cdrdao's own image format, the toc files."
+msgstr ""
+
+#: misc/k3bimagewritingdialog.cpp:450
 msgid ""
 "<p>This image has an invalid file size. If it has been downloaded make sure "
 "the download is complete.<p>Only continue if you know what you are doing."
@@ -1538,147 +1560,139 @@ msgstr ""
 "verifique que a transferencia se completase.<p>Continúe só se sabe o que "
 "está a facer."
 
-#: misc/k3bimagewritingdialog.cpp:429 option/k3bmiscoptiontab.cpp:134
+#: misc/k3bimagewritingdialog.cpp:453 option/k3bmiscoptiontab.cpp:134
 msgid "Warning"
 msgstr "Aviso"
 
-#: misc/k3bimagewritingdialog.cpp:430 k3bdirview.cpp:176
+#: misc/k3bimagewritingdialog.cpp:454 k3bdirview.cpp:176
 #: k3blsofwrapperdialog.cpp:52
 msgid "Continue"
 msgstr "Continuar"
 
-#: misc/k3bimagewritingdialog.cpp:431 projects/k3bprojectburndialog.cpp:87
+#: misc/k3bimagewritingdialog.cpp:455 projects/k3bprojectburndialog.cpp:87
 msgid "Cancel"
 msgstr "Cancelar"
 
-#: misc/k3bimagewritingdialog.cpp:585
+#: misc/k3bimagewritingdialog.cpp:609
 msgid "Seems not to be a usable image"
 msgstr "Semella non ser unha imaxe usábel"
 
-#: misc/k3bimagewritingdialog.cpp:600
+#: misc/k3bimagewritingdialog.cpp:624
 msgid "File not found"
 msgstr "Non se atopou o ficheiro"
 
-#: misc/k3bimagewritingdialog.cpp:614 misc/k3bimagewritingdialog.cpp:681
-#: misc/k3bimagewritingdialog.cpp:711 misc/k3bimagewritingdialog.cpp:741
+#: misc/k3bimagewritingdialog.cpp:638 misc/k3bimagewritingdialog.cpp:705
+#: misc/k3bimagewritingdialog.cpp:735 misc/k3bimagewritingdialog.cpp:765
 msgid "Detected:"
 msgstr "Detectado:"
 
-#: misc/k3bimagewritingdialog.cpp:615
+#: misc/k3bimagewritingdialog.cpp:639
 msgid "Iso9660 image"
 msgstr "Imaxe Iso9660"
 
-#: misc/k3bimagewritingdialog.cpp:621 misc/k3bimagewritingdialog.cpp:687
-#: misc/k3bimagewritingdialog.cpp:717
+#: misc/k3bimagewritingdialog.cpp:645 misc/k3bimagewritingdialog.cpp:711
+#: misc/k3bimagewritingdialog.cpp:741
 msgid "Filesize:"
 msgstr "Tamaño do ficheiro:"
 
-#: misc/k3bimagewritingdialog.cpp:627 k3bdiskinfoview.cpp:363
+#: misc/k3bimagewritingdialog.cpp:651 k3bdiskinfoview.cpp:363
 msgid "System Id:"
 msgstr "Id do sistema:"
 
-#: misc/k3bimagewritingdialog.cpp:635 k3bdiskinfoview.cpp:364
+#: misc/k3bimagewritingdialog.cpp:659 k3bdiskinfoview.cpp:364
 msgid "Volume Id:"
 msgstr "Id do volume:"
 
-#: misc/k3bimagewritingdialog.cpp:643 k3bdiskinfoview.cpp:365
+#: misc/k3bimagewritingdialog.cpp:667 k3bdiskinfoview.cpp:365
 msgid "Volume Set Id:"
 msgstr "Id do conxunto de volumes:"
 
-#: misc/k3bimagewritingdialog.cpp:651 k3bdiskinfoview.cpp:366
+#: misc/k3bimagewritingdialog.cpp:675 k3bdiskinfoview.cpp:366
 msgid "Publisher Id:"
 msgstr "Id do publicador:"
 
-#: misc/k3bimagewritingdialog.cpp:659 k3bdiskinfoview.cpp:367
+#: misc/k3bimagewritingdialog.cpp:683 k3bdiskinfoview.cpp:367
 msgid "Preparer Id:"
 msgstr "Id do preparador:"
 
-#: misc/k3bimagewritingdialog.cpp:666 k3bdiskinfoview.cpp:368
+#: misc/k3bimagewritingdialog.cpp:690 k3bdiskinfoview.cpp:368
 msgid "Application Id:"
 msgstr "Id do programa:"
 
-#: misc/k3bimagewritingdialog.cpp:682
-msgid "Cdrecord clone image"
-msgstr "Imaxe clónica de cdrecord"
-
-#: misc/k3bimagewritingdialog.cpp:692 misc/k3bimagewritingdialog.cpp:722
+#: misc/k3bimagewritingdialog.cpp:716 misc/k3bimagewritingdialog.cpp:746
 msgid "Image file:"
 msgstr "Ficheiro de imaxe:"
 
-#: misc/k3bimagewritingdialog.cpp:698
+#: misc/k3bimagewritingdialog.cpp:722
 msgid "TOC file:"
 msgstr "Ficheiro TOC:"
 
-#: misc/k3bimagewritingdialog.cpp:712
-msgid "Cue/bin image"
-msgstr "Imaxe Cue/bin"
-
-#: misc/k3bimagewritingdialog.cpp:728
+#: misc/k3bimagewritingdialog.cpp:752
 msgid "Cue file:"
 msgstr "Ficheiro Cue:"
 
-#: misc/k3bimagewritingdialog.cpp:742
+#: misc/k3bimagewritingdialog.cpp:766
 msgid "Audio Cue Image"
 msgstr "Imaxe Cue de son"
 
-#: misc/k3bimagewritingdialog.cpp:747
+#: misc/k3bimagewritingdialog.cpp:771
 #, kde-format
 msgid "%1 track"
 msgid_plural "%1 tracks"
 msgstr[0] "%1 pista"
 msgstr[1] "%1 pistas"
 
-#: misc/k3bimagewritingdialog.cpp:761
+#: misc/k3bimagewritingdialog.cpp:785
 msgid "Track"
 msgstr "Pista"
 
-#: misc/k3bimagewritingdialog.cpp:894
+#: misc/k3bimagewritingdialog.cpp:919
 msgid "Md5 Sum:"
 msgstr "Suma Md5:"
 
-#: misc/k3bimagewritingdialog.cpp:925
+#: misc/k3bimagewritingdialog.cpp:950
 #, fuzzy
 #| msgid "Calculation cancelled"
 msgid "Calculation canceled"
 msgstr "Cancelouse o cálculo"
 
-#: misc/k3bimagewritingdialog.cpp:927
+#: misc/k3bimagewritingdialog.cpp:952
 msgid "Calculation failed"
 msgstr "Fallou o cálculo"
 
-#: misc/k3bimagewritingdialog.cpp:942
+#: misc/k3bimagewritingdialog.cpp:967
 msgid "Copy checksum to clipboard"
 msgstr "Copiar a suma de verificación ao portarretallos"
 
-#: misc/k3bimagewritingdialog.cpp:943
+#: misc/k3bimagewritingdialog.cpp:968
 msgid "Compare checksum..."
 msgstr "Comparar a suma de verificación..."
 
-#: misc/k3bimagewritingdialog.cpp:949
+#: misc/k3bimagewritingdialog.cpp:974
 msgid "MD5 Sum Check"
 msgstr "Comprobación da Suma MD5"
 
-#: misc/k3bimagewritingdialog.cpp:950
+#: misc/k3bimagewritingdialog.cpp:975
 msgid "Please insert the MD5 Sum to compare:"
 msgstr "Por favor, insira a suma MD5 para comparar:"
 
-#: misc/k3bimagewritingdialog.cpp:956
+#: misc/k3bimagewritingdialog.cpp:981
 #, fuzzy, kde-format
 #| msgid "The MD5 Sum of %1 equals the specified."
 msgid "The MD5 Sum of %1 equals that specified."
 msgstr "A suma MD5 de %1 coincide coa especificada."
 
-#: misc/k3bimagewritingdialog.cpp:957
+#: misc/k3bimagewritingdialog.cpp:982
 msgid "MD5 Sums Equal"
 msgstr "MD5 dá a mesma suma"
 
-#: misc/k3bimagewritingdialog.cpp:959
+#: misc/k3bimagewritingdialog.cpp:984
 #, fuzzy, kde-format
 #| msgid "The MD5 Sum of %1 differs from the specified."
 msgid "The MD5 Sum of %1 differs from that specified."
 msgstr "A suma MD5 de %1 difere da especificada."
 
-#: misc/k3bimagewritingdialog.cpp:960
+#: misc/k3bimagewritingdialog.cpp:985
 msgid "MD5 Sums Differ"
 msgstr "A suma MD5 é diferente"
 
@@ -1699,7 +1713,7 @@ msgstr "DVD%1RW"
 msgid "BD-RW"
 msgstr "BD-RW"
 
-#: misc/k3bmediaformattingdialog.cpp:72 k3bemptydiscwaiter.cpp:98
+#: misc/k3bmediaformattingdialog.cpp:72 k3bemptydiscwaiter.cpp:96
 msgid "Force"
 msgstr "Forzar"
 
@@ -2040,8 +2054,8 @@ msgid "Capacity:"
 msgstr "Capacidade:"
 
 #: k3bdiskinfoview.cpp:295 k3bdiskinfoview.cpp:297 k3bdiskinfoview.cpp:299
-#: projects/k3bfillstatusdisplay.cpp:203 projects/k3bfillstatusdisplay.cpp:206
-#: projects/k3bfillstatusdisplay.cpp:211
+#: projects/k3bfillstatusdisplay.cpp:192 projects/k3bfillstatusdisplay.cpp:195
+#: projects/k3bfillstatusdisplay.cpp:200
 #, kde-format
 msgid "%1 min"
 msgstr "%1 min"
@@ -2333,124 +2347,131 @@ msgid "Remaining"
 msgstr "Restante"
 
 #: main.cpp:39
-msgid "A CD and DVD burning application"
-msgstr "Un programa de gravación de CD e DVD"
+msgid ""
+"<p>K3b is a full-featured <b>CD/DVD/Blu-Ray burning and ripping application</"
+"b>.<br/>It supports a variety of project types as well as <i>copying</i> of "
+"optical media, burning if different types of <i>images</i>, and <i>ripping</"
+"i> Audio CDs, Video CDs, and Video DVDs.<br/>Its <i>convenient user "
+"interface</i> is targetted at all audiences, trying to be <i>as simple as "
+"possible</i> for novice users while also providing all features and "
+"<i>advanced user</i> might need."
+msgstr ""
 
-#: main.cpp:44
+#: main.cpp:50
 msgid "K3b"
 msgstr "K3b"
 
-#: main.cpp:46
+#: main.cpp:52
 #, fuzzy
 #| msgid "(c) 1998 - 2008, Sebastian Trüg"
-msgid "(c) 1998 - 2009, Sebastian Trüg"
+msgid "(C) 1998 - 2009 Sebastian Trüg"
 msgstr "(c) 1998 - 2008, Sebastian Trüg"
 
-#: main.cpp:46
+#: main.cpp:52
 msgid "http://www.k3b.org"
 msgstr "http://www.k3b.org"
 
-#: main.cpp:48
+#: main.cpp:54
 msgid "Sebastian Trüg"
 msgstr "Sebastian Trüg"
 
-#: main.cpp:48
+#: main.cpp:54
 msgid "Maintainer and Lead Developer"
 msgstr "Mantenedor e Desenvolvente principal"
 
-#: main.cpp:49
+#: main.cpp:55
 msgid "Christian Kvasny"
 msgstr "Christian Kvasny"
 
-#: main.cpp:49
+#: main.cpp:55
 msgid "VideoCD Project and VideoCD ripping"
 msgstr "Proxecto de VídeoCD e extracción de VídeoCD"
 
-#: main.cpp:50
+#: main.cpp:56
 msgid "Montel Laurent"
 msgstr "Montel Laurent"
 
-#: main.cpp:50
+#: main.cpp:56
 msgid "Initial port to KDE 4"
 msgstr ""
 
-#: main.cpp:51
+#: main.cpp:57
 msgid "Ralf Habacker"
 msgstr ""
 
-#: main.cpp:51
+#: main.cpp:57
 msgid "Windows port"
 msgstr ""
 
-#: main.cpp:53
+#: main.cpp:59
 msgid "Klaus-Dieter Krannich"
 msgstr "Klaus-Dieter Krannich"
 
-#: main.cpp:53
+#: main.cpp:59
 msgid "Advanced Cdrdao integration"
 msgstr "Integración avanzada con Cdrdao"
 
-#: main.cpp:54
+#: main.cpp:60
 msgid "Thomas Froescher"
 msgstr "Thomas Froescher"
 
-#: main.cpp:55
+#: main.cpp:61
 msgid "VideoDVD ripping and video encoding in pre-1.0 versions."
 msgstr "Extracción de VídeoDVD e codificación de vídeo nas versións pre-1.0."
 
-#: main.cpp:57
+#: main.cpp:63
 msgid "Alexis Younes aka Ayo"
 msgstr "Alexis Younes aka Ayo"
 
-#: main.cpp:58
+#: main.cpp:64
 msgid "For his bombastic artwork."
 msgstr "Polo seu fántastico traballo artístico."
 
-#: main.cpp:60
+#: main.cpp:66
 msgid "Christoph Thielecke"
 msgstr "Christoph Thielecke"
 
-#: main.cpp:61
+#: main.cpp:67
 msgid "For extensive testing and the first German translation."
 msgstr "Por unhas probas extensas e a primeira tradución ao alemán."
 
-#: main.cpp:63
+#: main.cpp:69
 msgid "Andy Polyakov"
 msgstr "Andy Polyakov"
 
-#: main.cpp:64
+#: main.cpp:70
 msgid "For the great dvd+rw-tools and the nice cooperation."
 msgstr "Polas fantásticas ferramentas dvd+rw e por unha boa cooperación."
 
-#: main.cpp:66
+#: main.cpp:72
 msgid "Roberto De Leo"
 msgstr "Roberto De Leo"
 
-#: main.cpp:67
+#: main.cpp:73
 msgid "For the very cool eMovix package and his accommodating work."
 msgstr "Polo excelente paquete eMovix e polo seu traballo de integración."
 
-#: main.cpp:69
+#: main.cpp:75
 msgid "John Steele Scott"
 msgstr "John Steele Scott"
 
-#: main.cpp:70
+#: main.cpp:76
 msgid "For the flac decoding plugin."
 msgstr "Pola extensión de decodificación de flac."
 
-#: main.cpp:72
+#: main.cpp:78
 msgid "György Szombathelyi"
 msgstr "György Szombathelyi"
 
-#: main.cpp:73
+#: main.cpp:79
 msgid "For the very useful isofslib."
 msgstr "Polo moi útil isofslib."
 
-#: main.cpp:75
+#: main.cpp:81
 msgid "Erik de Castro Lopo"
 msgstr "Erik de Castro Lopo"
 
-#: main.cpp:76
+#: main.cpp:82
 msgid ""
 "For libsamplerate which is used for generic resampling in the audio decoder "
 "framework."
@@ -2458,117 +2479,117 @@ msgstr ""
 "Por libsamplerate, que se emprega para a remostraxe xenérica no framework "
 "decodificador de son."
 
-#: main.cpp:78
+#: main.cpp:84
 msgid "Jakob Petsovits"
 msgstr "Jakob Petsovits"
 
-#: main.cpp:79
+#: main.cpp:85
 msgid "For the very cool conditional audio ripping pattern."
 msgstr "Polo excelente padrón de extracción condicional de son."
 
-#: main.cpp:81
+#: main.cpp:87
 msgid "Heiner Eichmann"
 msgstr "Heiner Eichmann"
 
-#: main.cpp:82
+#: main.cpp:88
 msgid "For his work on the BSD port and some great patches."
 msgstr "Polo seu traballo no porte a BSD e algúns parches excelentes."
 
-#: main.cpp:84
+#: main.cpp:90
 msgid "Adriaan De Groot"
 msgstr "Adriaan De Groot"
 
-#: main.cpp:85
+#: main.cpp:91
 msgid "For his work on the BSD port."
 msgstr "Polo seu traballo no porte a BSD."
 
-#: main.cpp:87
+#: main.cpp:93
 msgid "Thiago Macieira"
 msgstr "Thiago Macieira"
 
-#: main.cpp:88
+#: main.cpp:94
 msgid "For his help with the many invalid k3b entries on bugs.kde.org."
 msgstr ""
 "Pola súa axuda coas entradas non válidas en bugs.kde.org acerca de k3b."
 
-#: main.cpp:90
+#: main.cpp:96
 msgid "Marcel Dierkes"
 msgstr "Marcel Dierkes"
 
-#: main.cpp:91
+#: main.cpp:97
 msgid "For the great K3b icon eyecandy."
 msgstr "Polo excelente traballo nos ícones de K3b."
 
-#: main.cpp:93
+#: main.cpp:99
 msgid "Christoph Burger-Scheidlin"
 msgstr "Christoph Burger-Scheidlin"
 
-#: main.cpp:94
+#: main.cpp:100
 msgid "For his neverending help cleaning out the K3b bug database."
 msgstr "Pola súa incansábel axuda limpando a base de datos de erros de K3b."
 
-#: main.cpp:96
+#: main.cpp:102
 msgid "Robert Wadley"
 msgstr "Robert Wadley"
 
-#: main.cpp:97
+#: main.cpp:103
 msgid ""
 "Rob created a great theme and came up with the idea for transparent themes."
 msgstr "Rob criou un grandioso tema e veu coa idea para temas transparentes."
 
-#: main.cpp:99
+#: main.cpp:105
 msgid "Dmitry Novikov"
 msgstr "Dmitry Novikov"
 
-#: main.cpp:100
+#: main.cpp:106
 msgid "For the amazing K3b 1.0 theme."
 msgstr "Polo extraordinario tema de K3b 1.0."
 
-#: main.cpp:102
+#: main.cpp:108
 msgid "Jeremy C. Andrus"
 msgstr ""
 
-#: main.cpp:103
+#: main.cpp:109
 msgid "First Windows port of libk3bdevice."
 msgstr ""
 
-#: main.cpp:107
+#: main.cpp:113
 msgid "file(s) to open"
 msgstr "ficheiro(s) a abrir"
 
-#: main.cpp:108
+#: main.cpp:114
 msgid "Create a new data CD project and add all given files"
 msgstr ""
 "Crear un novo proxecto de CD de datos e engadir todos os ficheiros fornecidos"
 
-#: main.cpp:109
+#: main.cpp:115
 msgid ""
 "Create a new data CD project and add all given files (DEPRECATED. Use --data)"
 msgstr ""
 "Crear un novo proxecto de CD de datos e engadir todos os ficheiros "
 "fornecidos (OBSOLETO. Use --data)"
 
-#: main.cpp:110
+#: main.cpp:116
 msgid "Create a new audio CD project and add all given files"
 msgstr ""
 "Crear un novo proxecto de CD de son e engadir todos os ficheiros fornecidos"
 
-#: main.cpp:111
+#: main.cpp:117
 msgid "Create a new video CD project and add all given files"
 msgstr ""
 "Crear un novo proxecto de vídeo CD e engadir todos os ficheiros fornecidos"
 
-#: main.cpp:112
+#: main.cpp:118
 msgid "Create a new mixed mode CD project and add all given files"
 msgstr ""
 "Crear un novo proxecto de CD mixto e engadir todos os ficheiros fornecidos"
 
-#: main.cpp:113
+#: main.cpp:119
 msgid "Create a new eMovix CD project and add all given files"
 msgstr ""
 "Crear un novo proxecto de CD eMovix e engadir todos os ficheiros fornecidos"
 
-#: main.cpp:114
+#: main.cpp:120
 msgid ""
 "Create a new eMovix CD project and add all given files (DEPRECATED. Use --"
 "emovix)"
@@ -2576,7 +2597,7 @@ msgstr ""
 "Crear un novo proxecto de CD eMovix e engadir todos os ficheiros fornecidos "
 "(OBSOLETO. Use --emovix)"
 
-#: main.cpp:115
+#: main.cpp:121
 msgid ""
 "Create a new data DVD project and add all given files (DEPRECATED. Use --"
 "data)"
@@ -2584,7 +2605,7 @@ msgstr ""
 "Crear un novo proxecto de DVD de datos e engadir todos os ficheiros "
 "fornecidos (OBSOLETO. Use --data)"
 
-#: main.cpp:116
+#: main.cpp:122
 msgid ""
 "Create a new eMovix DVD project and add all given files (DEPRECATED. Use --"
 "emovix)"
@@ -2592,21 +2613,21 @@ msgstr ""
 "Crear un novo proxecto de DVD eMovix e engadir todos os ficheiros fornecidos "
 "(OBSOLETO. Use --emovix)"
 
-#: main.cpp:117
+#: main.cpp:123
 msgid "Create a new Video DVD project and add all given files"
 msgstr ""
 "Crear un novo proxecto de Vídeo DVD e engadir todos os ficheiros fornecidos"
 
-#: main.cpp:118
+#: main.cpp:124
 msgid "Open the project burn dialog for the current project"
 msgstr "Abrir o diálogo de gravación de proxecto para o proxecto actual"
 
-#: main.cpp:119
+#: main.cpp:125
 msgid "Open the copy dialog, optionally specify the source device"
 msgstr ""
 "Abrir o diálogo de copia, opcionalmente especifica o dispositivo de orixe"
 
-#: main.cpp:120
+#: main.cpp:126
 msgid ""
 "Open the CD copy dialog, optionally specify the source device (DEPRECATED: "
 "Use --copy)"
@@ -2614,61 +2635,61 @@ msgstr ""
 "Abrir o diálogo de copia de CD, opcionalmente especifica o dispositivo de "
 "orixe (OBSOLETO: Use --copy)"
 
-#: main.cpp:121
+#: main.cpp:127
 msgid "Open the DVD copy dialog (DEPRECATED: Use --copy)"
 msgstr "Abrir o diálogo de copiado de DVD (OBSOLETO: Use --copy)"
 
-#: main.cpp:122
+#: main.cpp:128
 #, fuzzy
 #| msgid "Write a CD image to a CD-R(W)"
 msgid "Write an image to a CD or DVD"
 msgstr "Gravar unha imaxe de CD nun CD-R(W)"
 
-#: main.cpp:123
+#: main.cpp:129
 #, fuzzy
 #| msgid "Erase a CDRW (DEPRECATED: Use --format)"
 msgid "Write a CD image to a CD (DEPRECATED: Use --image)"
 msgstr "Borrar un CDRW (OBSOLETO: Use --format)"
 
-#: main.cpp:124
+#: main.cpp:130
 #, fuzzy
 #| msgid "Write a DVD ISO9660 image to a DVD"
 msgid "Write a DVD ISO9660 image to a DVD (DEPRECATED: Use --image)"
 msgstr "Gravar unha imaxe de DVD ISO9660 nun DVD"
 
-#: main.cpp:125
+#: main.cpp:131
 msgid "Format a rewritable medium"
 msgstr "Formatar un disco regravábel"
 
-#: main.cpp:126
+#: main.cpp:132
 msgid "Erase a CDRW (DEPRECATED: Use --format)"
 msgstr "Borrar un CDRW (OBSOLETO: Use --format)"
 
-#: main.cpp:127
+#: main.cpp:133
 msgid "Format a DVD-RW or DVD+RW (DEPRECATED: Use --format)"
 msgstr "Formatar un DVD-RW ou DVD+RW (OBSOLETO: Use --format)"
 
-#: main.cpp:128
+#: main.cpp:134
 msgid "Extract Audio tracks digitally (+encoding)"
 msgstr "Extrair dixitalmente as pistas de son (+codificalas)"
 
-#: main.cpp:129
+#: main.cpp:135
 msgid "Rip Video DVD Titles (+transcoding)"
 msgstr "Extrair os títulos do Vídeo DVD (+transcodificar)"
 
-#: main.cpp:130
+#: main.cpp:136
 msgid "Rip Video CD Tracks"
 msgstr "Extrair as pistas do Vídeo CD"
 
-#: main.cpp:131
+#: main.cpp:137
 msgid "Set the GUI language"
 msgstr "Estabelecer a lingua da GUI"
 
-#: main.cpp:132
+#: main.cpp:138
 msgid "Disable the splash screen"
 msgstr "Deshabilitar a pantalla de benvida"
 
-#: main.cpp:133
+#: main.cpp:139
 #, fuzzy
 #| msgid ""
 #| "Set the device to be used for new projects (This option has no effect. "
@@ -2744,7 +2765,7 @@ msgstr "&Limpar o proxecto"
 msgid "Show Document Header"
 msgstr "Mostrar o cabezallo do documento"
 
-#: k3b.cpp:262 k3bemptydiscwaiter.cpp:539
+#: k3b.cpp:262 k3bemptydiscwaiter.cpp:480
 msgid "Format"
 msgstr "Formato"
 
@@ -3468,141 +3489,82 @@ msgstr "Non se atoparon problemas na configuración do sistema."
 msgid "System configured properly"
 msgstr "O sistema foi configurado adecuadamente"
 
-#: k3bemptydiscwaiter.cpp:90
+#: k3bemptydiscwaiter.cpp:88
 msgid "Waiting for Disk"
 msgstr "Á espera do disco"
 
-#: k3bemptydiscwaiter.cpp:101
+#: k3bemptydiscwaiter.cpp:99
 msgid "Eject"
 msgstr "Expulsar"
 
-#: k3bemptydiscwaiter.cpp:103
+#: k3bemptydiscwaiter.cpp:101
 msgid "Load"
 msgstr "Cargar"
 
-#: k3bemptydiscwaiter.cpp:125
-msgid "Found media:"
+#: k3bemptydiscwaiter.cpp:123
+#, fuzzy
+#| msgid "Found media:"
+msgid "Found medium:"
 msgstr "Disco atopado:"
 
-#: k3bemptydiscwaiter.cpp:136
+#: k3bemptydiscwaiter.cpp:134
 msgid "Force K3b to continue if it seems not to detect your empty CD/DVD."
 msgstr "Forzar a K3b a continuar se semella non detectar o CD/DVD baleiro."
 
-#: k3bemptydiscwaiter.cpp:171 k3bmediaselectioncombobox.cpp:457
-#, kde-format
-msgid "CD-R(W) or DVD%1R(W)"
-msgstr "CD-R(W) ou DVD%1R(W)"
-
-#: k3bemptydiscwaiter.cpp:173 k3bmediaselectioncombobox.cpp:461
-#, kde-format
-msgid "DVD%1R(W)"
-msgstr "DVD%1R(W)"
-
-#: k3bemptydiscwaiter.cpp:175 k3bmediaselectioncombobox.cpp:463
-#, kde-format
-msgid "Double Layer DVD%1R"
-msgstr "DVD%1R de capa dupla"
-
-#: k3bemptydiscwaiter.cpp:177 k3bmediaselectioncombobox.cpp:465
-msgid "Blu-ray BD-R(E)"
-msgstr "Blu-ray BD-R(E)"
-
-#: k3bemptydiscwaiter.cpp:179 k3bmediaselectioncombobox.cpp:467
-msgid "CD-R(W)"
-msgstr "CD-R(W)"
-
-#: k3bemptydiscwaiter.cpp:183
-#, kde-format
-msgid ""
-"Please insert a complete or appendable %4 medium into drive<p><b>%1 %2 (%3)</"
-"b>."
-msgstr ""
-"Por favor insira un disco %4 en branco ou gravábel no dispositivo<p><b>%1 %2 "
-"(%3)</b>."
-
-#: k3bemptydiscwaiter.cpp:190
-#, kde-format
-msgid "Please insert a complete %4 medium into drive<p><b>%1 %2 (%3)</b>."
-msgstr ""
-"Por favor, insira un disco %4 en branco no dispositivo<p><b>%1 %2 (%3)</b>."
-
-#: k3bemptydiscwaiter.cpp:197
-#, kde-format
-msgid ""
-"Please insert an empty or appendable %4 medium into drive<p><b>%1 %2 (%3)</"
-"b>."
-msgstr ""
-"Por favor insira un disco %4 completo ou gravábel no dispositivo<p><b>%1 %2 "
-"(%3)</b>."
-
-#: k3bemptydiscwaiter.cpp:204
-#, kde-format
-msgid "Please insert an appendable %4 medium into drive<p><b>%1 %2 (%3)</b>."
-msgstr ""
-"Por favor insera un disco %4 gravábel no dispositivo<p><b>%1 %2 (%3)</b>."
-
-#: k3bemptydiscwaiter.cpp:211
-#, kde-format
-msgid "Please insert an empty %4 medium into drive<p><b>%1 %2 (%3)</b>."
-msgstr ""
-"Por favor, insira un disco %4 vacío no dispositivo<p><b>%1 %2 (%3)</b>."
-
-#: k3bemptydiscwaiter.cpp:218
-#, kde-format
-msgid "Please insert a suitable medium into drive<p><b>%1 %2 (%3)</b>."
-msgstr "Por favor, insira disco apropriado no dispositivo<p><b>%1 %2 (%3)</b>."
-
-#: k3bemptydiscwaiter.cpp:325 k3bemptydiscwaiter.cpp:407
-#: k3bemptydiscwaiter.cpp:477
-#, kde-format
-msgid "Found %1 media in %2 - %3. Should it be overwritten?"
+#: k3bemptydiscwaiter.cpp:266 k3bemptydiscwaiter.cpp:348
+#: k3bemptydiscwaiter.cpp:418
+#, fuzzy, kde-format
+#| msgid "Found %1 media in %2 - %3. Should it be overwritten?"
+msgid "Found %1 medium in %2 - %3. Should it be overwritten?"
 msgstr "Atopouse un disco %1 en %2 - %3. Debe sobrescribirse?"
 
-#: k3bemptydiscwaiter.cpp:330 k3bemptydiscwaiter.cpp:412
-#: k3bemptydiscwaiter.cpp:482 k3bemptydiscwaiter.cpp:539
+#: k3bemptydiscwaiter.cpp:271 k3bemptydiscwaiter.cpp:353
+#: k3bemptydiscwaiter.cpp:423 k3bemptydiscwaiter.cpp:480
 #, kde-format
 msgid "Found %1"
 msgstr "Atopouse %1"
 
-#: k3bemptydiscwaiter.cpp:382
+#: k3bemptydiscwaiter.cpp:323
 msgid "Preformatting DVD+RW"
 msgstr "Preformatando o DVD+RW"
 
-#: k3bemptydiscwaiter.cpp:534
-#, kde-format
-msgid "Found %1 media in %2 - %3. Should it be formatted?"
+#: k3bemptydiscwaiter.cpp:475
+#, fuzzy, kde-format
+#| msgid "Found %1 media in %2 - %3. Should it be formatted?"
+msgid "Found %1 medium in %2 - %3. Should it be formatted?"
 msgstr "Atopado un disco %1 en %2 - %3. Debe formatarse?"
 
-#: k3bemptydiscwaiter.cpp:560
+#: k3bemptydiscwaiter.cpp:501
 msgid "Formatting DVD-RW"
 msgstr "A formatar o DVD-RW"
 
-#: k3bemptydiscwaiter.cpp:610
-#, kde-format
-msgid "Found rewritable media in %1 - %2. Should it be erased?"
+#: k3bemptydiscwaiter.cpp:551
+#, fuzzy, kde-format
+#| msgid "Found rewritable media in %1 - %2. Should it be erased?"
+msgid "Found rewritable medium in %1 - %2. Should it be erased?"
 msgstr "Atopouse un medio regravábel en %1 - %2. Debe borrarse?"
 
-#: k3bemptydiscwaiter.cpp:612
+#: k3bemptydiscwaiter.cpp:553
 msgid "Found Rewritable Disk"
 msgstr "Atopouse un disco regravábel"
 
-#: k3bemptydiscwaiter.cpp:613
+#: k3bemptydiscwaiter.cpp:554
 msgid "&Erase"
 msgstr "&Borrar"
 
-#: k3bemptydiscwaiter.cpp:614
+#: k3bemptydiscwaiter.cpp:555
 msgid "E&ject"
 msgstr "&Expulsar"
 
-#: k3bemptydiscwaiter.cpp:620
+#: k3bemptydiscwaiter.cpp:561
 msgid "Erasing CD-RW"
 msgstr "A baleirar o CD-RW"
 
-#: k3bemptydiscwaiter.cpp:666
+#: k3bemptydiscwaiter.cpp:607
 msgid "Waiting for Medium"
 msgstr "Á espera do medio"
 
-#: k3bemptydiscwaiter.cpp:738
+#: k3bemptydiscwaiter.cpp:679
 msgid "Erasing failed."
 msgstr "Fallou o esvaciado."
 
@@ -3622,114 +3584,6 @@ msgstr "Copiar no portarretallos"
 #, kde-format
 msgid "Could not open file %1"
 msgstr "Non foi posíbel abrir o ficheiro %1"
-
-#: k3bmediaselectioncombobox.cpp:398
-#, kde-format
-msgid "an empty %1 medium"
-msgstr "un disco %1 vacío"
-
-#: k3bmediaselectioncombobox.cpp:400
-#, kde-format
-msgid "an appendable %1 medium"
-msgstr "un disco %1 aínda gravábel"
-
-#: k3bmediaselectioncombobox.cpp:402
-#, kde-format
-msgid "a complete %1 medium"
-msgstr "un disco %1 completo"
-
-#: k3bmediaselectioncombobox.cpp:405
-#, kde-format
-msgid "an empty or appendable %1 medium"
-msgstr "un disco %1 vacío ou aínda gravábel"
-
-#: k3bmediaselectioncombobox.cpp:407
-#, kde-format
-msgid "a complete or appendable %1 medium"
-msgstr "un disco %1 completo ou aínda gravábel"
-
-#: k3bmediaselectioncombobox.cpp:409
-#, kde-format
-msgid "a %1 medium"
-msgstr "un disco %1"
-
-#: k3bmediaselectioncombobox.cpp:418
-msgid "a Video CD medium"
-msgstr "un disco de Vídeo CD"
-
-#: k3bmediaselectioncombobox.cpp:420
-msgid "a Video DVD medium"
-msgstr "un disco de Vídeo DVD"
-
-#: k3bmediaselectioncombobox.cpp:423
-msgid "a Mixed Mode CD medium"
-msgstr "un CD en modo mixto"
-
-#: k3bmediaselectioncombobox.cpp:425
-msgid "an Audio CD medium"
-msgstr "un CD de son"
-
-#: k3bmediaselectioncombobox.cpp:428
-msgid "a Data medium"
-msgstr "un disco de datos"
-
-#: k3bmediaselectioncombobox.cpp:430
-msgid "a Data CD or DVD medium"
-msgstr "un CD de datos ou disco DVD"
-
-#: k3bmediaselectioncombobox.cpp:432
-msgid "a Data CD medium"
-msgstr "un CD de datos"
-
-#: k3bmediaselectioncombobox.cpp:434
-msgid "a Data DVD medium"
-msgstr "un DVD de datos"
-
-#: k3bmediaselectioncombobox.cpp:436
-msgid "a Data Blu-ray medium"
-msgstr "un disco Blu-ray de datos"
-
-#: k3bmediaselectioncombobox.cpp:439
-msgid "an empty medium"
-msgstr "un disco vacío"
-
-#: k3bmediaselectioncombobox.cpp:447
-msgid "writable"
-msgstr "gravábel"
-
-#: k3bmediaselectioncombobox.cpp:449
-msgid "CD or DVD"
-msgstr "CD ou DVD"
-
-#: k3bmediaselectioncombobox.cpp:451
-msgid "CD"
-msgstr "CD"
-
-#: k3bmediaselectioncombobox.cpp:453
-msgid "DVD"
-msgstr "DVD"
-
-#: k3bmediaselectioncombobox.cpp:455
-msgid "Blu-ray"
-msgstr "Blu-ray"
-
-#: k3bmediaselectioncombobox.cpp:459
-#, kde-format
-msgid "DVD%1R(W) or BD-R(E)"
-msgstr "DVD%1R(W) ou BD-R(E)"
-
-#: k3bmediaselectioncombobox.cpp:469
-msgid "DVD-ROM"
-msgstr "DVD-ROM"
-
-#: k3bmediaselectioncombobox.cpp:471
-msgid "CD-ROM"
-msgstr "CD-ROM"
-
-#: k3bmediaselectioncombobox.cpp:474 k3bmediaselectioncombobox.cpp:476
-#, kde-format
-msgid "Please insert %1..."
-msgstr "Por favor, insira un %1..."
 
 #: k3bwriterselectionwidget.cpp:93
 msgid "Medium will be overwritten."
@@ -3800,8 +3654,8 @@ msgstr ""
 "dos programas non traballe como se pensa con certas gravadoras. Neste caso "
 "pode escoller a aplicación manualmente."
 
-#: k3bwriterselectionwidget.cpp:274 projects/k3bdataurladdingdialog.cpp:435
-#: projects/k3bdataurladdingdialog.cpp:662
+#: k3bwriterselectionwidget.cpp:274 projects/k3bdataurladdingdialog.cpp:430
+#: projects/k3bdataurladdingdialog.cpp:657
 msgid "Ignore"
 msgstr "Ignorar"
 
@@ -4077,7 +3931,7 @@ msgstr ""
 "de que isto non inclúe as <em>extensións da KPart</em> que se engaden a si "
 "mesmos á estructura dos menús de K3b.</p>"
 
-#: option/k3bcddboptiontab.cpp:45
+#: option/k3bcddboptiontab.cpp:46
 msgid "Unable to load KCDDB configuration module."
 msgstr "Non foi posíbel cargar o módulo de configuración de KCDDB."
 
@@ -4542,8 +4396,8 @@ msgstr "Tipo de ficheiro"
 #. i18n: ectx: property (text), widget (QToolButton, m_buttonCopyPerformer)
 #. i18n: file: projects/base_k3baudiocdtextwidget.ui:83
 #. i18n: ectx: property (text), widget (QToolButton, m_buttonCopyTitle)
-#: rc.cpp:32 rc.cpp:538 rc.cpp:547 rc.cpp:562 rc.cpp:574 rc.cpp:583 rc.cpp:976
-#: rc.cpp:982 rc.cpp:988 rc.cpp:1016 rc.cpp:1022
+#: rc.cpp:32 rc.cpp:538 rc.cpp:547 rc.cpp:562 rc.cpp:574 rc.cpp:583 rc.cpp:978
+#: rc.cpp:984 rc.cpp:990 rc.cpp:1018 rc.cpp:1024
 msgid "..."
 msgstr "..."
 
@@ -4559,7 +4413,7 @@ msgstr "Configurar a extensión"
 #. i18n: ectx: property (title), widget (Q3GroupBox, groupBox3)
 #. i18n: file: ../plugins/encoder/external/base_k3bexternalencodereditwidget.ui:97
 #. i18n: ectx: property (title), widget (Q3GroupBox, groupBox4)
-#: rc.cpp:38 rc.cpp:1235 rc.cpp:1322
+#: rc.cpp:38 rc.cpp:1237 rc.cpp:1324
 msgid "Options"
 msgstr "Opcións"
 
@@ -4715,7 +4569,7 @@ msgstr "Substituír todos os &espazos con:"
 #. i18n: ectx: property (text), widget (KLineEdit, m_editBlankReplace)
 #. i18n: file: projects/base_k3bdataimagesettings.ui:203
 #. i18n: ectx: property (text), widget (QLineEdit, m_editReplace)
-#: rc.cpp:107 rc.cpp:206 rc.cpp:883
+#: rc.cpp:107 rc.cpp:206 rc.cpp:885
 msgid "_"
 msgstr "_"
 
@@ -4783,7 +4637,7 @@ msgstr "Tamaño do vídeo:"
 #. i18n: ectx: property (text), widget (QPushButton, m_buttonCustomPictureSize)
 #. i18n: file: projects/base_k3bdataimagesettings.ui:64
 #. i18n: ectx: property (text), widget (QPushButton, m_buttonCustomFilesystems)
-#: rc.cpp:137 rc.cpp:813
+#: rc.cpp:137 rc.cpp:815
 msgid "&Custom..."
 msgstr "&Personalizar..."
 
@@ -4799,7 +4653,7 @@ msgstr "Taxa de bits do vídeo:"
 #. i18n: ectx: property (suffix), widget (QSpinBox, m_spinAudioBitrate)
 #. i18n: file: ../plugins/encoder/lame/base_k3bmanualbitratesettingswidget.ui:144
 #. i18n: ectx: property (suffix), widget (QSpinBox, m_spinAverageBitrate)
-#: rc.cpp:143 rc.cpp:176 rc.cpp:1158
+#: rc.cpp:143 rc.cpp:176 rc.cpp:1160
 msgid " kbps"
 msgstr " kbps"
 
@@ -5439,7 +5293,7 @@ msgstr "&ISRC:"
 #. i18n: ectx: property (text), widget (QLabel, textLabel1)
 #. i18n: file: projects/base_k3baudiocdtextwidget.ui:95
 #. i18n: ectx: property (text), widget (QLabel, textLabel1)
-#: rc.cpp:503 rc.cpp:577 rc.cpp:1028
+#: rc.cpp:503 rc.cpp:577 rc.cpp:1030
 msgid "&Title:"
 msgstr "&Título:"
 
@@ -5554,8 +5408,8 @@ msgstr "&Mensaxe:"
 #. i18n: ectx: property (toolTip), widget (QToolButton, m_buttonCopyPerformer)
 #. i18n: file: projects/base_k3baudiocdtextwidget.ui:86
 #. i18n: ectx: property (toolTip), widget (QToolButton, m_buttonCopyTitle)
-#: rc.cpp:535 rc.cpp:544 rc.cpp:559 rc.cpp:571 rc.cpp:580 rc.cpp:1019
-#: rc.cpp:1025
+#: rc.cpp:535 rc.cpp:544 rc.cpp:559 rc.cpp:571 rc.cpp:580 rc.cpp:1021
+#: rc.cpp:1027
 msgid "Copy to all tracks"
 msgstr "Copiar en todas as pistas"
 
@@ -6039,81 +5893,85 @@ msgstr "Táboa de información de arranque"
 #. i18n: ectx: property (text), widget (QLineEdit, m_editLoadSegment)
 #. i18n: file: projects/base_k3bbootimageview.ui:184
 #. i18n: ectx: property (text), widget (QLineEdit, m_editLoadSize)
+#: rc.cpp:779 rc.cpp:782
+msgid "0"
+msgstr "0"
+
 #. i18n: file: projects/base_k3bbootimageview.ui:194
 #. i18n: ectx: property (text), widget (QLabel, textLabel2_2)
-#: rc.cpp:783
+#: rc.cpp:785
 msgid "Boot load segment:"
 msgstr "Segmento da carga do arranque:"
 
 #. i18n: file: projects/base_k3bbootimageview.ui:207
 #. i18n: ectx: property (text), widget (QLabel, textLabel3)
-#: rc.cpp:786
+#: rc.cpp:788
 msgid "Boot load size:"
 msgstr "Tamaño da carga de arranque:"
 
 #. i18n: file: projects/base_k3bbootimageview.ui:224
 #. i18n: ectx: property (text), widget (QPushButton, m_buttonToggleOptions)
-#: rc.cpp:789
+#: rc.cpp:791
 msgid "Show Advanced Op&tions"
 msgstr "Mostrar as op&cións avanzadas"
 
 #. i18n: file: projects/base_k3bbootimageview.ui:251
 #. i18n: ectx: property (text), widget (QLabel, textLabel2)
-#: rc.cpp:792
+#: rc.cpp:794
 msgid "Boot catalog:"
 msgstr "Catálogo de arranque:"
 
 #. i18n: file: projects/base_k3bbootimageview.ui:261
 #. i18n: ectx: property (text), widget (QLineEdit, m_editBootCataloge)
-#: rc.cpp:795
+#: rc.cpp:797
 msgid "boot/boot.catalog"
 msgstr "boot/boot.catalog"
 
 #. i18n: file: projects/base_k3bdataimagesettings.ui:8
 #. i18n: ectx: property (windowTitle), widget (QWidget, base_K3bDataImageSetings)
-#: rc.cpp:798
+#: rc.cpp:800
 msgid "Data Image Settings"
 msgstr "Configuración da imaxe de datos"
 
 #. i18n: file: projects/base_k3bdataimagesettings.ui:14
 #. i18n: ectx: property (title), widget (Q3GroupBox, m_groupVolumeName)
-#: rc.cpp:801
+#: rc.cpp:803
 msgid "Volume Name"
 msgstr "Nome do volume"
 
 #. i18n: file: projects/base_k3bdataimagesettings.ui:27
 #. i18n: ectx: property (text), widget (QPushButton, m_buttonMoreVolDescFields)
-#: rc.cpp:804
+#: rc.cpp:806
 msgid "&More fields..."
 msgstr "&Máis campos..."
 
 #. i18n: file: projects/base_k3bdataimagesettings.ui:37
 #. i18n: ectx: property (title), widget (Q3GroupBox, m_groupFileSystem)
-#: rc.cpp:807
+#: rc.cpp:809
 msgid "File System"
 msgstr "Sistema de ficheiros"
 
 #. i18n: file: projects/base_k3bdataimagesettings.ui:57
 #. i18n: ectx: property (toolTip), widget (QComboBox, m_comboFilesystems)
-#: rc.cpp:810
+#: rc.cpp:812
 msgid "File system presets"
 msgstr "Preconfiguración do sistema de ficheiros"
 
 #. i18n: file: projects/base_k3bdataimagesettings.ui:76
 #. i18n: ectx: property (title), widget (Q3GroupBox, m_groupSymlinks)
-#: rc.cpp:816
+#: rc.cpp:818
 msgid "Symbolic Links"
 msgstr "Ligazóns simbólicas"
 
 #. i18n: file: projects/base_k3bdataimagesettings.ui:90
 #. i18n: ectx: property (toolTip), widget (QComboBox, m_comboSymlinkHandling)
-#: rc.cpp:819
+#: rc.cpp:821
 msgid "Symbolic link handling in the project"
 msgstr "Xestión das ligazóns simbólicas no proxecto"
 
 #. i18n: file: projects/base_k3bdataimagesettings.ui:108
 #. i18n: ectx: property (whatsThis), widget (QComboBox, m_comboSymlinkHandling)
-#: rc.cpp:822
+#: rc.cpp:824
 msgid ""
 "<p>K3b can create ISO9660 filesystems that contain symlinks if the Rock "
 "Ridge extensions are enabled (they are by default). You can change the way "
@@ -6172,43 +6030,43 @@ msgstr ""
 #. i18n: ectx: property (text), item, widget (QComboBox, m_comboSymlinkHandling)
 #. i18n: file: projects/base_k3bdataimagesettings.ui:169
 #. i18n: ectx: property (text), item, widget (QComboBox, m_comboSpaceHandling)
-#: rc.cpp:840 rc.cpp:871
+#: rc.cpp:842 rc.cpp:873
 msgid "No Change"
 msgstr "Sen modificación"
 
 #. i18n: file: projects/base_k3bdataimagesettings.ui:117
 #. i18n: ectx: property (text), item, widget (QComboBox, m_comboSymlinkHandling)
-#: rc.cpp:843
+#: rc.cpp:845
 msgid "Discard broken symlinks"
 msgstr "Descartar as ligazóns simbólicas rotas"
 
 #. i18n: file: projects/base_k3bdataimagesettings.ui:122
 #. i18n: ectx: property (text), item, widget (QComboBox, m_comboSymlinkHandling)
-#: rc.cpp:846
+#: rc.cpp:848
 msgid "Discard all symlinks"
 msgstr "Descartar todas as ligazóns simbólicas"
 
 #. i18n: file: projects/base_k3bdataimagesettings.ui:127
 #. i18n: ectx: property (text), item, widget (QComboBox, m_comboSymlinkHandling)
-#: rc.cpp:849
+#: rc.cpp:851
 msgid "Follow symlinks"
 msgstr "Seguir as ligazóns simbólicas"
 
 #. i18n: file: projects/base_k3bdataimagesettings.ui:138
 #. i18n: ectx: property (title), widget (Q3GroupBox, m_groupWhitespace)
-#: rc.cpp:852
+#: rc.cpp:854
 msgid "White space handling"
 msgstr "Tratamento do espazo en branco"
 
 #. i18n: file: projects/base_k3bdataimagesettings.ui:152
 #. i18n: ectx: property (toolTip), widget (QComboBox, m_comboSpaceHandling)
-#: rc.cpp:855
+#: rc.cpp:857
 msgid "Handling of spaces in filenames"
 msgstr "Non tocar os espazos nos nomes de ficheiros"
 
 #. i18n: file: projects/base_k3bdataimagesettings.ui:165
 #. i18n: ectx: property (whatsThis), widget (QComboBox, m_comboSpaceHandling)
-#: rc.cpp:858
+#: rc.cpp:860
 msgid ""
 "<p><b>No Change</b><br>\n"
 "If this option is checked, K3b will leave all spaces in filenames as they "
@@ -6244,68 +6102,68 @@ msgstr ""
 
 #. i18n: file: projects/base_k3bdataimagesettings.ui:174
 #. i18n: ectx: property (text), item, widget (QComboBox, m_comboSpaceHandling)
-#: rc.cpp:874
+#: rc.cpp:876
 msgid "Strip"
 msgstr "Eliminar"
 
 #. i18n: file: projects/base_k3bdataimagesettings.ui:179
 #. i18n: ectx: property (text), item, widget (QComboBox, m_comboSpaceHandling)
-#: rc.cpp:877
+#: rc.cpp:879
 msgid "Extended Strip"
 msgstr "Eliminación mellorada"
 
 #. i18n: file: projects/base_k3bdataimagesettings.ui:184
 #. i18n: ectx: property (text), item, widget (QComboBox, m_comboSpaceHandling)
-#: rc.cpp:880 projects/k3bdataurladdingdialog.cpp:429
-#: projects/k3bdataurladdingdialog.cpp:656
+#: rc.cpp:882 projects/k3bdataurladdingdialog.cpp:424
+#: projects/k3bdataurladdingdialog.cpp:651
 msgid "Replace"
 msgstr "Substituír"
 
 #. i18n: file: projects/base_k3bdataimagesettings.ui:206
 #. i18n: ectx: property (toolTip), widget (QLineEdit, m_editReplace)
-#: rc.cpp:886
+#: rc.cpp:888
 msgid "The string to replace spaces with"
 msgstr "A cadea substituta dos espazos"
 
 #. i18n: file: projects/base_k3badvanceddataimagesettings.ui:16
 #. i18n: ectx: property (windowTitle), widget (QWidget, base_K3bDataCustomFilesystemsWidget)
-#: rc.cpp:889
+#: rc.cpp:891
 msgid "Custom Data Filesystems"
 msgstr "Sistemas de ficheiros de datos personalizados"
 
 #. i18n: file: projects/base_k3badvanceddataimagesettings.ui:28
 #. i18n: ectx: property (title), widget (Q3GroupBox, groupIsoSettings)
-#: rc.cpp:892
+#: rc.cpp:894
 msgid "File System Settings"
 msgstr "Configuración dos sistemas de ficheiros"
 
 #. i18n: file: projects/base_k3badvanceddataimagesettings.ui:38
 #. i18n: ectx: property (text), widget (K3ListView, m_viewIsoSettings)
-#: rc.cpp:895
+#: rc.cpp:897
 msgid "ISO9660 Filesystem"
 msgstr "Sistema de ficheiros ISO9660"
 
 #. i18n: file: projects/base_k3badvanceddataimagesettings.ui:55
 #. i18n: ectx: property (title), widget (Q3GroupBox, groupBox3)
-#: rc.cpp:898
+#: rc.cpp:900
 msgid "File Systems"
 msgstr "Sistemas de ficheiros"
 
 #. i18n: file: projects/base_k3badvanceddataimagesettings.ui:61
 #. i18n: ectx: property (text), widget (QCheckBox, m_checkRockRidge)
-#: rc.cpp:901
+#: rc.cpp:903
 msgid "&Generate Rock Ridge extensions"
 msgstr "&Xerar extensións Rock Ridge"
 
 #. i18n: file: projects/base_k3badvanceddataimagesettings.ui:67
 #. i18n: ectx: property (toolTip), widget (QCheckBox, m_checkRockRidge)
-#: rc.cpp:904
+#: rc.cpp:906
 msgid "Add Rock Ridge extensions to the file system"
 msgstr "Engade extensións Rock Ridge ao sistema de ficheiros"
 
 #. i18n: file: projects/base_k3badvanceddataimagesettings.ui:73
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, m_checkRockRidge)
-#: rc.cpp:907
+#: rc.cpp:909
 msgid ""
 "<p>If this option is checked, K3b will generate the System Use Sharing "
 "Protocol records (SUSP) specified by the Rock Ridge Interchange Protocol "
@@ -6334,19 +6192,19 @@ msgstr ""
 
 #. i18n: file: projects/base_k3badvanceddataimagesettings.ui:80
 #. i18n: ectx: property (text), widget (QCheckBox, m_checkJoliet)
-#: rc.cpp:913
+#: rc.cpp:915
 msgid "Generate &Joliet extensions"
 msgstr "Xerar extensións &Joliet"
 
 #. i18n: file: projects/base_k3badvanceddataimagesettings.ui:83
 #. i18n: ectx: property (toolTip), widget (QCheckBox, m_checkJoliet)
-#: rc.cpp:916
+#: rc.cpp:918
 msgid "Add Joliet extensions to the file system"
 msgstr "Engadir as extensións Joliet ao sistema de ficheiros"
 
 #. i18n: file: projects/base_k3badvanceddataimagesettings.ui:90
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, m_checkJoliet)
-#: rc.cpp:919
+#: rc.cpp:921
 #, fuzzy
 #| msgid ""
 #| "<p>If this option is checked, K3b will add additional Joliet extensions "
@@ -6393,19 +6251,19 @@ msgstr ""
 
 #. i18n: file: projects/base_k3badvanceddataimagesettings.ui:97
 #. i18n: ectx: property (text), widget (QCheckBox, m_checkUdf)
-#: rc.cpp:926
+#: rc.cpp:928
 msgid "Generate &UDF structures"
 msgstr "Xerar estruturas &UDF"
 
 #. i18n: file: projects/base_k3badvanceddataimagesettings.ui:100
 #. i18n: ectx: property (toolTip), widget (QCheckBox, m_checkUdf)
-#: rc.cpp:929
+#: rc.cpp:931
 msgid "Add UDF structures to the file system"
 msgstr "Engade estruturas UDF ao sistema de ficheiros"
 
 #. i18n: file: projects/base_k3badvanceddataimagesettings.ui:104
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, m_checkUdf)
-#: rc.cpp:932
+#: rc.cpp:934
 msgid ""
 "<p>If this option is checked K3b will create UDF filesystem structures in "
 "addition to the ISO9660 filesystem.\n"
@@ -6419,19 +6277,19 @@ msgstr ""
 
 #. i18n: file: projects/base_k3badvanceddataimagesettings.ui:114
 #. i18n: ectx: property (title), widget (Q3GroupBox, groupBox5)
-#: rc.cpp:936
+#: rc.cpp:938
 msgid "Other Settings"
 msgstr "Outros parámetros"
 
 #. i18n: file: projects/base_k3badvanceddataimagesettings.ui:120
 #. i18n: ectx: property (text), widget (QCheckBox, m_checkPreservePermissions)
-#: rc.cpp:939
+#: rc.cpp:941
 msgid "Preserve file permissions (bac&kup)"
 msgstr "Conservar os &permisos dos ficheiros (copia de seguridade)"
 
 #. i18n: file: projects/base_k3badvanceddataimagesettings.ui:124
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, m_checkPreservePermissions)
-#: rc.cpp:942
+#: rc.cpp:944
 msgid ""
 "<p>If this option is checked, all files in the resulting file system will "
 "have exactly the same permissions as the source files. (Otherwise, all files "
@@ -6450,110 +6308,110 @@ msgstr ""
 
 #. i18n: file: projects/base_k3bdatavolumedescwidget.ui:15
 #. i18n: ectx: property (windowTitle), widget (QWidget, base_K3bDataVolumeDescWidget)
-#: rc.cpp:946 projects/k3bvcdburndialog.cpp:543
+#: rc.cpp:948 projects/k3bvcdburndialog.cpp:543
 #: projects/k3bdatavolumedescdialog.cpp:33
 msgid "Volume Descriptor"
 msgstr "Descritor de volume"
 
 #. i18n: file: projects/base_k3bdatavolumedescwidget.ui:41
 #. i18n: ectx: property (text), widget (QLabel, TextLabel2)
-#: rc.cpp:949
+#: rc.cpp:951
 msgid "V&olume set name:"
 msgstr "Nome do &conxunto de volumes:"
 
 #. i18n: file: projects/base_k3bdatavolumedescwidget.ui:54
 #. i18n: ectx: property (text), widget (QLabel, TextLabel1)
-#: rc.cpp:952 projects/k3bvcdburndialog.cpp:470
+#: rc.cpp:954 projects/k3bvcdburndialog.cpp:470
 msgid "&Volume name:"
 msgstr "Nome do &volume:"
 
 #. i18n: file: projects/base_k3bdatavolumedescwidget.ui:81
 #. i18n: ectx: property (text), widget (QLabel, TextLabel4)
-#: rc.cpp:955
+#: rc.cpp:957
 msgid "P&reparer:"
 msgstr "P&reparador:"
 
 #. i18n: file: projects/base_k3bdatavolumedescwidget.ui:94
 #. i18n: ectx: property (text), widget (QLabel, TextLabel3)
-#: rc.cpp:958
+#: rc.cpp:960
 msgid "P&ublisher:"
 msgstr "&Editor:"
 
 #. i18n: file: projects/base_k3bdatavolumedescwidget.ui:107
 #. i18n: ectx: property (text), widget (QLabel, textLabel1)
-#: rc.cpp:961
+#: rc.cpp:963
 msgid "Volu&me set size:"
 msgstr "Tama&ño do conxunto de volumes:"
 
 #. i18n: file: projects/base_k3bdatavolumedescwidget.ui:135
 #. i18n: ectx: property (text), widget (QLabel, textLabel2)
-#: rc.cpp:964 projects/k3bvcdburndialog.cpp:473
+#: rc.cpp:966 projects/k3bvcdburndialog.cpp:473
 msgid "Volume set &number:"
 msgstr "&Número do conxunto de volumes:"
 
 #. i18n: file: projects/base_k3bdatavolumedescwidget.ui:169
 #. i18n: ectx: property (text), widget (QLabel, TextLabel5)
-#: rc.cpp:967
+#: rc.cpp:969
 msgid "S&ystem:"
 msgstr "S&istema:"
 
 #. i18n: file: projects/base_k3bdatavolumedescwidget.ui:189
 #. i18n: ectx: property (text), widget (QLabel, TextLabel6)
-#: rc.cpp:970
+#: rc.cpp:972
 msgid "&Application:"
 msgstr "&Programa:"
 
 #. i18n: file: projects/base_k3bdatavolumedescwidget.ui:244
 #. i18n: ectx: property (toolTip), widget (QToolButton, m_buttonFindBiblio)
-#: rc.cpp:973
+#: rc.cpp:975
 msgid "Select a bibliographic file from the project"
 msgstr "Escolla un ficheiro de bibliografía no proxecto"
 
 #. i18n: file: projects/base_k3bdatavolumedescwidget.ui:265
 #. i18n: ectx: property (toolTip), widget (QToolButton, m_buttonFindAbstract)
-#: rc.cpp:979
+#: rc.cpp:981
 msgid "Select an abstract file from the project"
 msgstr "Escolla un ficheiro de resumo no proxecto"
 
 #. i18n: file: projects/base_k3bdatavolumedescwidget.ui:286
 #. i18n: ectx: property (toolTip), widget (QToolButton, m_buttonFindCopyright)
-#: rc.cpp:985
+#: rc.cpp:987
 msgid "Select a copyright file from the project"
 msgstr "Escolla un ficheiro de copyright no proxecto"
 
 #. i18n: file: projects/base_k3bdatavolumedescwidget.ui:298
 #. i18n: ectx: property (text), widget (QLabel, textLabel1_2)
-#: rc.cpp:991
+#: rc.cpp:993
 msgid "Abstract file:"
 msgstr "Ficheiro de resumo:"
 
 #. i18n: file: projects/base_k3bdatavolumedescwidget.ui:308
 #. i18n: ectx: property (text), widget (QLabel, textLabel2_2)
-#: rc.cpp:994
+#: rc.cpp:996
 msgid "Copyright file:"
 msgstr "Ficheiro de dereitos de copia:"
 
 #. i18n: file: projects/base_k3bdatavolumedescwidget.ui:318
 #. i18n: ectx: property (text), widget (QLabel, textLabel3)
-#: rc.cpp:997
+#: rc.cpp:999
 msgid "Bibliographic file:"
 msgstr "Ficheiro de bibliografía:"
 
 #. i18n: file: projects/base_k3baudiocdtextwidget.ui:8
 #. i18n: ectx: property (windowTitle), widget (QWidget, K3bAudioCDTextWidget)
-#: rc.cpp:1000
+#: rc.cpp:1002
 msgid "K3bAudioCDTextWidget"
 msgstr "K3bAudioCDTextWidget"
 
 #. i18n: file: projects/base_k3baudiocdtextwidget.ui:14
 #. i18n: ectx: property (title), widget (Q3GroupBox, m_groupCdText)
-#: rc.cpp:1003
+#: rc.cpp:1005
 msgid "Write CD-Text"
 msgstr "Gravar un CD-Text"
 
 #. i18n: file: projects/base_k3baudiocdtextwidget.ui:30
 #. i18n: ectx: property (whatsThis), widget (Q3GroupBox, m_groupCdText)
-#: rc.cpp:1006
+#: rc.cpp:1008
 #, fuzzy
 #| msgid ""
 #| "<p><b>CD-Text</b>\n"
@@ -6589,37 +6447,37 @@ msgstr ""
 
 #. i18n: file: projects/base_k3baudiocdtextwidget.ui:48
 #. i18n: ectx: property (text), widget (QLabel, textLabel2)
-#: rc.cpp:1013
+#: rc.cpp:1015
 msgid "Perf&ormer:"
 msgstr "&Intérprete:"
 
 #. i18n: file: projects/base_k3baudiocdtextwidget.ui:129
 #. i18n: ectx: property (text), widget (QPushButton, m_buttonMoreFields)
-#: rc.cpp:1031
+#: rc.cpp:1033
 msgid "More Fiel&ds..."
 msgstr "Máis ca&mpos..."
 
 #. i18n: file: ../plugins/encoder/ogg/base_k3boggvorbisencodersettingswidget.ui:22
 #. i18n: ectx: property (title), widget (Q3ButtonGroup, buttonGroup1)
-#: rc.cpp:1034
+#: rc.cpp:1036
 msgid "File Quality"
 msgstr "Calidade do ficheiro"
 
 #. i18n: file: ../plugins/encoder/ogg/base_k3boggvorbisencodersettingswidget.ui:30
 #. i18n: ectx: property (text), widget (QRadioButton, m_radioQualityLevel)
-#: rc.cpp:1037
+#: rc.cpp:1039
 msgid "&Quality level:"
 msgstr "&Nivel de calidade:"
 
 #. i18n: file: ../plugins/encoder/ogg/base_k3boggvorbisencodersettingswidget.ui:36
 #. i18n: ectx: property (toolTip), widget (QRadioButton, m_radioQualityLevel)
-#: rc.cpp:1040
+#: rc.cpp:1042
 msgid "Controls the quality of the encoded files"
 msgstr "Controla a calidade dos ficheiros codificados"
 
 #. i18n: file: ../plugins/encoder/ogg/base_k3boggvorbisencodersettingswidget.ui:39
 #. i18n: ectx: property (whatsThis), widget (QRadioButton, m_radioQualityLevel)
-#: rc.cpp:1043
+#: rc.cpp:1045
 msgid ""
 "<p>Vorbis' audio quality is not best measured in kilobits per second, but on "
 "a scale from -1 to 10 called \"quality\". <p>For now, quality -1 is roughly "
@@ -6643,7 +6501,7 @@ msgstr ""
 #. i18n: ectx: property (text), widget (QLabel, m_labelQualityLevel)
 #. i18n: file: ../plugins/encoder/lame/base_k3blameencodersettingswidget.ui:55
 #. i18n: ectx: property (text), widget (QLabel, m_labelQualityLevel)
-#: rc.cpp:1046 rc.cpp:1194
+#: rc.cpp:1048 rc.cpp:1196
 msgid "textLabel1"
 msgstr "textLabel1"
 
@@ -6653,7 +6511,7 @@ msgstr "textLabel1"
 #. i18n: ectx: property (text), widget (QLabel, textLabel4)
 #. i18n: file: ../plugins/encoder/lame/base_k3blameencodersettingswidget.ui:331
 #. i18n: ectx: property (text), widget (QLabel, textLabel2)
-#: rc.cpp:1049 rc.cpp:1197 rc.cpp:1232
+#: rc.cpp:1051 rc.cpp:1199 rc.cpp:1234
 msgid "high quality"
 msgstr "alta calidade"
 
@@ -6661,25 +6519,25 @@ msgstr "alta calidade"
 #. i18n: ectx: property (text), widget (QLabel, textLabel3_2)
 #. i18n: file: ../plugins/encoder/lame/base_k3blameencodersettingswidget.ui:138
 #. i18n: ectx: property (text), widget (QLabel, textLabel3)
-#: rc.cpp:1052 rc.cpp:1200
+#: rc.cpp:1054 rc.cpp:1202
 msgid "small file"
 msgstr "ficheiro pequeno"
 
 #. i18n: file: ../plugins/encoder/ogg/base_k3boggvorbisencodersettingswidget.ui:169
 #. i18n: ectx: property (text), widget (QRadioButton, m_radioManual)
-#: rc.cpp:1055
+#: rc.cpp:1057
 msgid "M&anual settings:"
 msgstr "Configuración &manual:"
 
 #. i18n: file: ../plugins/encoder/ogg/base_k3boggvorbisencodersettingswidget.ui:209
 #. i18n: ectx: property (text), widget (QCheckBox, m_checkBitrateUpper)
-#: rc.cpp:1058
+#: rc.cpp:1060
 msgid "&Upper bitrate:"
 msgstr "Taxa de bits &superior:"
 
 #. i18n: file: ../plugins/encoder/ogg/base_k3boggvorbisencodersettingswidget.ui:216
 #. i18n: ectx: property (text), widget (QCheckBox, m_checkBitrateLower)
-#: rc.cpp:1061
+#: rc.cpp:1063
 msgid "Lower &bitrate:"
 msgstr "Taxa de bits &inferior:"
 
@@ -6689,31 +6547,31 @@ msgstr "Taxa de bits &inferior:"
 #. i18n: ectx: property (text), widget (QLabel, textLabel3)
 #. i18n: file: ../plugins/encoder/ogg/base_k3boggvorbisencodersettingswidget.ui:280
 #. i18n: ectx: property (text), widget (QLabel, textLabel1)
-#: rc.cpp:1064 rc.cpp:1067 rc.cpp:1070
+#: rc.cpp:1066 rc.cpp:1069 rc.cpp:1072
 msgid "kbps"
 msgstr "kbps"
 
 #. i18n: file: ../plugins/encoder/ogg/base_k3boggvorbisencodersettingswidget.ui:298
 #. i18n: ectx: property (text), widget (QCheckBox, m_checkBitrateNominal)
-#: rc.cpp:1073
+#: rc.cpp:1075
 msgid "&Nominal bitrate:"
 msgstr "Taxa de bits &nominal:"
 
 #. i18n: file: ../plugins/encoder/sox/base_k3bsoxencoderconfigwidget.ui:22
 #. i18n: ectx: property (text), widget (QCheckBox, m_checkManual)
-#: rc.cpp:1076
+#: rc.cpp:1078
 msgid "Manual settings (used for all file types)"
 msgstr "Configuración manual (empregada para todos tipo de ficheiros)"
 
 #. i18n: file: ../plugins/encoder/sox/base_k3bsoxencoderconfigwidget.ui:49
 #. i18n: ectx: property (text), widget (QLabel, textLabel2)
-#: rc.cpp:1079
+#: rc.cpp:1081
 msgid "Sample rate:"
 msgstr "Taxa de mostraxe:"
 
 #. i18n: file: ../plugins/encoder/sox/base_k3bsoxencoderconfigwidget.ui:63
 #. i18n: ectx: property (whatsThis), widget (QComboBox, m_comboEncoding)
-#: rc.cpp:1082
+#: rc.cpp:1084
 msgid ""
 "<p>The sample data encoding is signed linear (2's complement), unsigned "
 "linear, u-law (logarithmic), A-law (logarithmic), ADPCM, IMA_ADPCM, GSM, or "
@@ -6763,163 +6621,163 @@ msgstr ""
 
 #. i18n: file: ../plugins/encoder/sox/base_k3bsoxencoderconfigwidget.ui:67
 #. i18n: ectx: property (text), item, widget (QComboBox, m_comboEncoding)
-#: rc.cpp:1086
+#: rc.cpp:1088
 msgid "Signed Linear"
 msgstr "Linear con signo"
 
 #. i18n: file: ../plugins/encoder/sox/base_k3bsoxencoderconfigwidget.ui:72
 #. i18n: ectx: property (text), item, widget (QComboBox, m_comboEncoding)
-#: rc.cpp:1089
+#: rc.cpp:1091
 msgid "Unsigned Linear"
 msgstr "Linear sen signo"
 
 #. i18n: file: ../plugins/encoder/sox/base_k3bsoxencoderconfigwidget.ui:77
 #. i18n: ectx: property (text), item, widget (QComboBox, m_comboEncoding)
-#: rc.cpp:1092
+#: rc.cpp:1094
 msgid "u-law (logarithmic)"
 msgstr "u-law (logarítmico)"
 
 #. i18n: file: ../plugins/encoder/sox/base_k3bsoxencoderconfigwidget.ui:82
 #. i18n: ectx: property (text), item, widget (QComboBox, m_comboEncoding)
-#: rc.cpp:1095
+#: rc.cpp:1097
 msgid "A-law (logarithmic)"
 msgstr "A-law (logarítmico)"
 
 #. i18n: file: ../plugins/encoder/sox/base_k3bsoxencoderconfigwidget.ui:87
 #. i18n: ectx: property (text), item, widget (QComboBox, m_comboEncoding)
-#: rc.cpp:1098
+#: rc.cpp:1100
 msgid "ADPCM"
 msgstr "ADPCM"
 
 #. i18n: file: ../plugins/encoder/sox/base_k3bsoxencoderconfigwidget.ui:92
 #. i18n: ectx: property (text), item, widget (QComboBox, m_comboEncoding)
-#: rc.cpp:1101
+#: rc.cpp:1103
 msgid "IMA_ADPCM"
 msgstr "IMA_ADPCM"
 
 #. i18n: file: ../plugins/encoder/sox/base_k3bsoxencoderconfigwidget.ui:97
 #. i18n: ectx: property (text), item, widget (QComboBox, m_comboEncoding)
-#: rc.cpp:1104
+#: rc.cpp:1106
 msgid "GSM"
 msgstr "GSM"
 
 #. i18n: file: ../plugins/encoder/sox/base_k3bsoxencoderconfigwidget.ui:102
 #. i18n: ectx: property (text), item, widget (QComboBox, m_comboEncoding)
-#: rc.cpp:1107
+#: rc.cpp:1109
 msgid "Floating-Point"
 msgstr "Punto flutuante"
 
 #. i18n: file: ../plugins/encoder/sox/base_k3bsoxencoderconfigwidget.ui:113
 #. i18n: ectx: property (text), widget (QLineEdit, m_editSamplerate)
-#: rc.cpp:1110
+#: rc.cpp:1112
 msgid "14400"
 msgstr "14400"
 
 #. i18n: file: ../plugins/encoder/sox/base_k3bsoxencoderconfigwidget.ui:123
 #. i18n: ectx: property (text), widget (QLabel, textLabel4)
-#: rc.cpp:1113
+#: rc.cpp:1115
 msgid "Data size:"
 msgstr "Tamaño dos datos:"
 
 #. i18n: file: ../plugins/encoder/sox/base_k3bsoxencoderconfigwidget.ui:133
 #. i18n: ectx: property (text), widget (QLabel, textLabel3)
-#: rc.cpp:1116
+#: rc.cpp:1118
 msgid "Data encoding:"
 msgstr "Codificación dos datos:"
 
 #. i18n: file: ../plugins/encoder/sox/base_k3bsoxencoderconfigwidget.ui:143
 #. i18n: ectx: property (text), widget (QLabel, textLabel1)
-#: rc.cpp:1119
+#: rc.cpp:1121
 msgid "Channels:"
 msgstr "Canles:"
 
 #. i18n: file: ../plugins/encoder/sox/base_k3bsoxencoderconfigwidget.ui:157
 #. i18n: ectx: property (text), item, widget (QComboBox, m_comboChannels)
-#: rc.cpp:1122
+#: rc.cpp:1124
 msgid "1 (mono)"
 msgstr "1 (mono)"
 
 #. i18n: file: ../plugins/encoder/sox/base_k3bsoxencoderconfigwidget.ui:162
 #. i18n: ectx: property (text), item, widget (QComboBox, m_comboChannels)
-#: rc.cpp:1125
+#: rc.cpp:1127
 msgid "2 (stereo)"
 msgstr "2 (estéreo)"
 
 #. i18n: file: ../plugins/encoder/sox/base_k3bsoxencoderconfigwidget.ui:167
 #. i18n: ectx: property (text), item, widget (QComboBox, m_comboChannels)
-#: rc.cpp:1128
+#: rc.cpp:1130
 msgid "4 (quad sound)"
 msgstr "4 (son cuádruplo)"
 
 #. i18n: file: ../plugins/encoder/sox/base_k3bsoxencoderconfigwidget.ui:179
 #. i18n: ectx: property (text), item, widget (QComboBox, m_comboSize)
-#: rc.cpp:1131
+#: rc.cpp:1133
 msgid "Bytes"
 msgstr "Bytes"
 
 #. i18n: file: ../plugins/encoder/sox/base_k3bsoxencoderconfigwidget.ui:184
 #. i18n: ectx: property (text), item, widget (QComboBox, m_comboSize)
-#: rc.cpp:1134
+#: rc.cpp:1136
 msgid "16-bit Words"
 msgstr "Palabras de 16 bits"
 
 #. i18n: file: ../plugins/encoder/sox/base_k3bsoxencoderconfigwidget.ui:189
 #. i18n: ectx: property (text), item, widget (QComboBox, m_comboSize)
-#: rc.cpp:1137
+#: rc.cpp:1139
 msgid "32-bit Words"
 msgstr "Palabras de 32 bits"
 
 #. i18n: file: ../plugins/encoder/lame/base_k3bmanualbitratesettingswidget.ui:8
 #. i18n: ectx: property (title), widget (Q3ButtonGroup, buttonGroup2)
-#: rc.cpp:1140
+#: rc.cpp:1142
 msgid "Quality"
 msgstr "Calidade"
 
 #. i18n: file: ../plugins/encoder/lame/base_k3bmanualbitratesettingswidget.ui:17
 #. i18n: ectx: property (text), widget (QRadioButton, m_radioConstantBitrate)
-#: rc.cpp:1143
+#: rc.cpp:1145
 msgid "Constant Bitrate"
 msgstr "Taxa de bits constante"
 
 #. i18n: file: ../plugins/encoder/lame/base_k3bmanualbitratesettingswidget.ui:50
 #. i18n: ectx: property (text), widget (QRadioButton, m_radioVariableBitrate)
-#: rc.cpp:1146
+#: rc.cpp:1148
 msgid "Variable Bitrate"
 msgstr "Taxa de bits variábel"
 
 #. i18n: file: ../plugins/encoder/lame/base_k3bmanualbitratesettingswidget.ui:111
 #. i18n: ectx: property (text), widget (QCheckBox, m_checkBitrateMaximum)
-#: rc.cpp:1149
+#: rc.cpp:1151
 msgid "Maximum bitrate:"
 msgstr "Taxa de bits máxima:"
 
 #. i18n: file: ../plugins/encoder/lame/base_k3bmanualbitratesettingswidget.ui:118
 #. i18n: ectx: property (text), widget (QCheckBox, m_checkBitrateMinimum)
-#: rc.cpp:1152
+#: rc.cpp:1154
 msgid "Minimum bitrate:"
 msgstr "Taxa de bits mínima:"
 
 #. i18n: file: ../plugins/encoder/lame/base_k3bmanualbitratesettingswidget.ui:131
 #. i18n: ectx: property (text), widget (QCheckBox, m_checkBitrateAverage)
-#: rc.cpp:1155
+#: rc.cpp:1157
 msgid "Average bitrate:"
 msgstr "Taxa de bits media:"
 
 #. i18n: file: ../plugins/encoder/lame/base_k3bmanualbitratesettingswidget.ui:163
 #. i18n: ectx: property (title), widget (Q3GroupBox, groupBox2)
-#: rc.cpp:1161
+#: rc.cpp:1163
 msgid "Channel Mode"
 msgstr "Modo da canle"
 
 #. i18n: file: ../plugins/encoder/lame/base_k3bmanualbitratesettingswidget.ui:169
 #. i18n: ectx: property (toolTip), widget (KComboBox, m_comboMode)
-#: rc.cpp:1164
+#: rc.cpp:1166
 msgid "Select the channel mode."
 msgstr "Escolla o modo da canle."
 
 #. i18n: file: ../plugins/encoder/lame/base_k3bmanualbitratesettingswidget.ui:178
 #. i18n: ectx: property (whatsThis), widget (KComboBox, m_comboMode)
-#: rc.cpp:1167
+#: rc.cpp:1169
 msgid ""
 "<p>Select the channel mode of the resulting Mp3 file:\n"
 "<p><b>Stereo</b><br>\n"
@@ -6959,70 +6817,70 @@ msgstr ""
 
 #. i18n: file: ../plugins/encoder/lame/base_k3bmanualbitratesettingswidget.ui:182
 #. i18n: ectx: property (text), item, widget (KComboBox, m_comboMode)
-#: rc.cpp:1176 ../plugins/decoder/mp3/k3bmaddecoder.cpp:404
+#: rc.cpp:1178 ../plugins/decoder/mp3/k3bmaddecoder.cpp:404
 #: ../plugins/encoder/lame/k3blametyes.h:92
 msgid "Stereo"
 msgstr "Estéreo"
 
 #. i18n: file: ../plugins/encoder/lame/base_k3bmanualbitratesettingswidget.ui:187
 #. i18n: ectx: property (text), item, widget (KComboBox, m_comboMode)
-#: rc.cpp:1179 ../plugins/decoder/mp3/k3bmaddecoder.cpp:402
+#: rc.cpp:1181 ../plugins/decoder/mp3/k3bmaddecoder.cpp:402
 #: ../plugins/encoder/lame/k3blametyes.h:93
 msgid "Joint Stereo"
 msgstr "Estéreo acoplado"
 
 #. i18n: file: ../plugins/encoder/lame/base_k3bmanualbitratesettingswidget.ui:192
 #. i18n: ectx: property (text), item, widget (KComboBox, m_comboMode)
-#: rc.cpp:1182 ../plugins/decoder/mp3/k3bmaddecoder.cpp:398
+#: rc.cpp:1184 ../plugins/decoder/mp3/k3bmaddecoder.cpp:398
 #: ../plugins/encoder/lame/k3blametyes.h:94
 msgid "Mono"
 msgstr "Mono"
 
 #. i18n: file: ../plugins/encoder/lame/base_k3blameencodersettingswidget.ui:31
 #. i18n: ectx: property (title), widget (Q3ButtonGroup, m_groupVariableBitrate)
-#: rc.cpp:1188
+#: rc.cpp:1190
 msgid "Quality Settings"
 msgstr "Configuración da calidade"
 
 #. i18n: file: ../plugins/encoder/lame/base_k3blameencodersettingswidget.ui:39
 #. i18n: ectx: property (text), widget (QRadioButton, m_radioQualityLevel)
-#: rc.cpp:1191
+#: rc.cpp:1193
 msgid "Preset:"
 msgstr "Predefinición:"
 
 #. i18n: file: ../plugins/encoder/lame/base_k3blameencodersettingswidget.ui:187
 #. i18n: ectx: property (text), widget (QRadioButton, m_radioManual)
-#: rc.cpp:1203
+#: rc.cpp:1205
 msgid "Manual settings:"
 msgstr "Configuración manual:"
 
 #. i18n: file: ../plugins/encoder/lame/base_k3blameencodersettingswidget.ui:203
 #. i18n: ectx: property (text), widget (QLabel, m_labelManualSettings)
-#: rc.cpp:1206
+#: rc.cpp:1208
 msgid "textLabel2"
 msgstr "textLabel2"
 
 #. i18n: file: ../plugins/encoder/lame/base_k3blameencodersettingswidget.ui:254
 #. i18n: ectx: property (text), widget (QPushButton, m_buttonManualSettings)
-#: rc.cpp:1209
+#: rc.cpp:1211
 msgid "Change Settings..."
 msgstr "Mudar a configuración..."
 
 #. i18n: file: ../plugins/encoder/lame/base_k3blameencodersettingswidget.ui:273
 #. i18n: ectx: property (title), widget (Q3GroupBox, groupBox1)
-#: rc.cpp:1215
+#: rc.cpp:1217
 msgid "Encoder Quality"
 msgstr "Calidade do codificador"
 
 #. i18n: file: ../plugins/encoder/lame/base_k3blameencodersettingswidget.ui:282
 #. i18n: ectx: property (toolTip), widget (KIntNumInput, m_spinEncoderQuality)
-#: rc.cpp:1218
+#: rc.cpp:1220
 msgid "Choose the noise shaping & psycho acoustic algorithm."
 msgstr "Escolle o algoritmo de forma do ruido e psicoacústico."
 
 #. i18n: file: ../plugins/encoder/lame/base_k3blameencodersettingswidget.ui:290
 #. i18n: ectx: property (whatsThis), widget (KIntNumInput, m_spinEncoderQuality)
-#: rc.cpp:1221
+#: rc.cpp:1223
 msgid ""
 "<p>Bitrate is of course the main influence on quality. The higher the "
 "bitrate, the higher the quality. But for a given bitrate, we have a choice "
@@ -7051,43 +6909,43 @@ msgstr ""
 
 #. i18n: file: ../plugins/encoder/lame/base_k3blameencodersettingswidget.ui:316
 #. i18n: ectx: property (text), widget (QLabel, textLabel1)
-#: rc.cpp:1229
+#: rc.cpp:1231
 msgid "fast encoding"
 msgstr "codificación rápida"
 
 #. i18n: file: ../plugins/encoder/lame/base_k3blameencodersettingswidget.ui:361
 #. i18n: ectx: property (toolTip), widget (QCheckBox, m_checkCopyright)
-#: rc.cpp:1238
+#: rc.cpp:1240
 msgid "Mark the encoded file as being copyrighted."
 msgstr "Marcar o ficheiro codificado como con dereitos de autor."
 
 #. i18n: file: ../plugins/encoder/lame/base_k3blameencodersettingswidget.ui:364
 #. i18n: ectx: property (text), widget (QCheckBox, m_checkCopyright)
-#: rc.cpp:1241
+#: rc.cpp:1243
 msgid "Mark copyrighted"
 msgstr "Marcar con copyright"
 
 #. i18n: file: ../plugins/encoder/lame/base_k3blameencodersettingswidget.ui:371
 #. i18n: ectx: property (toolTip), widget (QCheckBox, m_checkOriginal)
-#: rc.cpp:1244
+#: rc.cpp:1246
 msgid "Mark the encoded file as being a copy."
 msgstr "Marcar o ficheiro codificado como se fora unha copia."
 
 #. i18n: file: ../plugins/encoder/lame/base_k3blameencodersettingswidget.ui:374
 #. i18n: ectx: property (text), widget (QCheckBox, m_checkOriginal)
-#: rc.cpp:1247
+#: rc.cpp:1249
 msgid "Mark as original"
 msgstr "Marcar como orixinal"
 
 #. i18n: file: ../plugins/encoder/lame/base_k3blameencodersettingswidget.ui:381
 #. i18n: ectx: property (toolTip), widget (QCheckBox, m_checkISO)
-#: rc.cpp:1250
+#: rc.cpp:1252
 msgid "Enforce strict ISO compliance"
 msgstr "Forzar a compatibilidade estrita con ISO"
 
 #. i18n: file: ../plugins/encoder/lame/base_k3blameencodersettingswidget.ui:385
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, m_checkISO)
-#: rc.cpp:1253
+#: rc.cpp:1255
 #, fuzzy
 #| msgid ""
 #| "<p>If this option is checked LAME will enforce the 7680 bit limitation on "
@@ -7110,19 +6968,19 @@ msgstr ""
 
 #. i18n: file: ../plugins/encoder/lame/base_k3blameencodersettingswidget.ui:388
 #. i18n: ectx: property (text), widget (QCheckBox, m_checkISO)
-#: rc.cpp:1257
+#: rc.cpp:1259
 msgid "Strict ISO compliance"
 msgstr "Compatibilidade estrita con ISO"
 
 #. i18n: file: ../plugins/encoder/lame/base_k3blameencodersettingswidget.ui:395
 #. i18n: ectx: property (toolTip), widget (QCheckBox, m_checkError)
-#: rc.cpp:1260
+#: rc.cpp:1262
 msgid "Turn on CRC error protection."
 msgstr "Habilitar a protección de erros CRC."
 
 #. i18n: file: ../plugins/encoder/lame/base_k3blameencodersettingswidget.ui:398
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, m_checkError)
-#: rc.cpp:1263
+#: rc.cpp:1265
 msgid ""
 "<p>If this option is checked a cyclic redundancy check (CRC) code will be "
 "added to each frame, allowing transmission errors that could occur on the "
@@ -7137,13 +6995,13 @@ msgstr ""
 
 #. i18n: file: ../plugins/encoder/lame/base_k3blameencodersettingswidget.ui:401
 #. i18n: ectx: property (text), widget (QCheckBox, m_checkError)
-#: rc.cpp:1266
+#: rc.cpp:1268
 msgid "Error protection"
 msgstr "Erro de protección"
 
 #. i18n: file: ../plugins/encoder/external/base_k3bexternalencoderconfigwidget.ui:23
 #. i18n: ectx: property (text), widget (K3ActiveLabel, kActiveLabel1)
-#: rc.cpp:1269
+#: rc.cpp:1271
 msgid ""
 "<p>This dialog can be used to setup external command line applications as "
 "audio encoders. These can then be used by K3b to encode audio data (Tracks "
@@ -7162,19 +7020,19 @@ msgstr ""
 
 #. i18n: file: ../plugins/encoder/external/base_k3bexternalencoderconfigwidget.ui:38
 #. i18n: ectx: property (title), widget (Q3GroupBox, groupBox1)
-#: rc.cpp:1273
+#: rc.cpp:1275
 msgid "Configured Encoders"
 msgstr "Codificadores configurados"
 
 #. i18n: file: ../plugins/encoder/external/base_k3bexternalencoderconfigwidget.ui:45
 #. i18n: ectx: property (text), widget (Q3ListView, m_viewEncoders)
-#: rc.cpp:1276
+#: rc.cpp:1278
 msgid "Name"
 msgstr "Nome"
 
 #. i18n: file: ../plugins/encoder/external/base_k3bexternalencoderconfigwidget.ui:56
 #. i18n: ectx: property (text), widget (Q3ListView, m_viewEncoders)
-#: rc.cpp:1279
+#: rc.cpp:1281
 msgid "Extension"
 msgstr "Extensión"
 
@@ -7182,13 +7040,13 @@ msgstr "Extensión"
 #. i18n: ectx: property (text), widget (Q3ListView, m_viewEncoders)
 #. i18n: file: ../plugins/encoder/external/base_k3bexternalencodereditwidget.ui:57
 #. i18n: ectx: property (title), widget (Q3GroupBox, groupBox2)
-#: rc.cpp:1282 rc.cpp:1303
+#: rc.cpp:1284 rc.cpp:1305
 msgid "Command"
 msgstr "Comando"
 
 #. i18n: file: ../plugins/encoder/external/base_k3bexternalencoderconfigwidget.ui:99
 #. i18n: ectx: property (text), widget (QPushButton, m_buttonRemove)
-#: rc.cpp:1285 k3baudioplayer.cpp:229 projects/k3bmovixview.cpp:60
+#: rc.cpp:1287 k3baudioplayer.cpp:229 projects/k3bmovixview.cpp:60
 #: projects/k3bvcdlistview.cpp:101 projects/k3bdataview.cpp:202
 #: projects/k3bvcdview.cpp:66 projects/k3baudiotrackview.cpp:187
 #: projects/k3baudioview.cpp:154
@@ -7197,37 +7055,37 @@ msgstr "Eliminar"
 
 #. i18n: file: ../plugins/encoder/external/base_k3bexternalencoderconfigwidget.ui:106
 #. i18n: ectx: property (text), widget (QPushButton, m_buttonEdit)
-#: rc.cpp:1288
+#: rc.cpp:1290
 msgid "Edit..."
 msgstr "Editar..."
 
 #. i18n: file: ../plugins/encoder/external/base_k3bexternalencoderconfigwidget.ui:113
 #. i18n: ectx: property (text), widget (QPushButton, m_buttonAdd)
-#: rc.cpp:1291
+#: rc.cpp:1293
 msgid "Add..."
 msgstr "Engadir..."
 
 #. i18n: file: ../plugins/encoder/external/base_k3bexternalencodereditwidget.ui:22
 #. i18n: ectx: property (title), widget (Q3GroupBox, groupBox3)
-#: rc.cpp:1294
+#: rc.cpp:1296
 msgid "General"
 msgstr "Xeral"
 
 #. i18n: file: ../plugins/encoder/external/base_k3bexternalencodereditwidget.ui:34
 #. i18n: ectx: property (text), widget (QLabel, textLabel1)
-#: rc.cpp:1297
+#: rc.cpp:1299
 msgid "Name:"
 msgstr "Nome:"
 
 #. i18n: file: ../plugins/encoder/external/base_k3bexternalencodereditwidget.ui:44
 #. i18n: ectx: property (text), widget (QLabel, textLabel3)
-#: rc.cpp:1300
+#: rc.cpp:1302
 msgid "Filename extension:"
 msgstr "Extensión do nome do ficheiro:"
 
 #. i18n: file: ../plugins/encoder/external/base_k3bexternalencodereditwidget.ui:75
 #. i18n: ectx: property (text), widget (K3ActiveLabel, kActiveLabel2)
-#: rc.cpp:1307
+#: rc.cpp:1309
 #, fuzzy, no-c-format
 #| msgid ""
 #| "<p><b>Command</b><br>\n"
@@ -7287,19 +7145,19 @@ msgstr ""
 
 #. i18n: file: ../plugins/encoder/external/base_k3bexternalencodereditwidget.ui:103
 #. i18n: ectx: property (text), widget (QCheckBox, m_checkSwapByteOrder)
-#: rc.cpp:1325
+#: rc.cpp:1327
 msgid "Swap &Byte Order"
 msgstr "Trocar a orden dos b&ytes"
 
 #. i18n: file: ../plugins/encoder/external/base_k3bexternalencodereditwidget.ui:106
 #. i18n: ectx: property (toolTip), widget (QCheckBox, m_checkSwapByteOrder)
-#: rc.cpp:1328
+#: rc.cpp:1330
 msgid "Swap the byte order of the input data"
 msgstr "Troca a orden dos bytes dos datos de entrada"
 
 #. i18n: file: ../plugins/encoder/external/base_k3bexternalencodereditwidget.ui:110
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, m_checkSwapByteOrder)
-#: rc.cpp:1331
+#: rc.cpp:1333
 msgid ""
 "<p> If this option is checked K3b will swap the byte order of the input "
 "data. Thus, the command has to read big endian audio frames.\n"
@@ -7313,19 +7171,19 @@ msgstr ""
 
 #. i18n: file: ../plugins/encoder/external/base_k3bexternalencodereditwidget.ui:117
 #. i18n: ectx: property (text), widget (QCheckBox, m_checkWriteWaveHeader)
-#: rc.cpp:1335
+#: rc.cpp:1337
 msgid "Write W&ave Header"
 msgstr "Escreber un cabezallo de &wave"
 
 #. i18n: file: ../plugins/encoder/external/base_k3bexternalencodereditwidget.ui:120
 #. i18n: ectx: property (toolTip), widget (QCheckBox, m_checkWriteWaveHeader)
-#: rc.cpp:1338
+#: rc.cpp:1340
 msgid "Create a wave header for the input data"
 msgstr "Engade un cabezallo de wave aos datos de entrada"
 
 #. i18n: file: ../plugins/encoder/external/base_k3bexternalencodereditwidget.ui:123
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, m_checkWriteWaveHeader)
-#: rc.cpp:1341
+#: rc.cpp:1343
 msgid ""
 "<p>If this option is checked K3b will write a wave header. This is useful in "
 "case the encoder application cannot read plain raw audio data."
@@ -8668,8 +8526,8 @@ msgstr "Editar as imaxes de arrinque"
 msgid "New Directory..."
 msgstr "Novo cartafol..."
 
-#: projects/k3bdataview.cpp:204 projects/k3bdataurladdingdialog.cpp:441
-#: projects/k3bdataurladdingdialog.cpp:668
+#: projects/k3bdataview.cpp:204 projects/k3bdataurladdingdialog.cpp:436
+#: projects/k3bdataurladdingdialog.cpp:663
 msgid "Rename"
 msgstr "Mudar o nome"
 
@@ -9115,57 +8973,57 @@ msgstr ""
 msgid "Moving files to project \"%1\"..."
 msgstr "A mover os ficheiros para o proxecto «%1»..."
 
-#: projects/k3bdataurladdingdialog.cpp:421
-#: projects/k3bdataurladdingdialog.cpp:648
+#: projects/k3bdataurladdingdialog.cpp:416
+#: projects/k3bdataurladdingdialog.cpp:643
 msgid "File already exists"
 msgstr "O ficheiro xa existe"
 
-#: projects/k3bdataurladdingdialog.cpp:422
-#: projects/k3bdataurladdingdialog.cpp:649
+#: projects/k3bdataurladdingdialog.cpp:417
+#: projects/k3bdataurladdingdialog.cpp:644
 #, kde-format
 msgid "<p>File <em>%1</em> already exists in project folder <em>%2</em>."
 msgstr "<p>O ficheiro <em>%1</em> xa está no cartafol do proxecto <em>%2</em>."
 
-#: projects/k3bdataurladdingdialog.cpp:431
-#: projects/k3bdataurladdingdialog.cpp:658
+#: projects/k3bdataurladdingdialog.cpp:426
+#: projects/k3bdataurladdingdialog.cpp:653
 msgid "Replace the existing file"
 msgstr "Substituír o ficheiro xa existente"
 
-#: projects/k3bdataurladdingdialog.cpp:432
-#: projects/k3bdataurladdingdialog.cpp:659
+#: projects/k3bdataurladdingdialog.cpp:427
+#: projects/k3bdataurladdingdialog.cpp:654
 msgid "Replace All"
 msgstr "Substituír todos"
 
-#: projects/k3bdataurladdingdialog.cpp:434
-#: projects/k3bdataurladdingdialog.cpp:661
+#: projects/k3bdataurladdingdialog.cpp:429
+#: projects/k3bdataurladdingdialog.cpp:656
 msgid "Always replace existing files"
 msgstr "Substituír sempre os ficheiros xa existentes"
 
-#: projects/k3bdataurladdingdialog.cpp:437
-#: projects/k3bdataurladdingdialog.cpp:664
+#: projects/k3bdataurladdingdialog.cpp:432
+#: projects/k3bdataurladdingdialog.cpp:659
 msgid "Keep the existing file"
 msgstr "Convervar o ficheiro existente"
 
-#: projects/k3bdataurladdingdialog.cpp:438
-#: projects/k3bdataurladdingdialog.cpp:665
+#: projects/k3bdataurladdingdialog.cpp:433
+#: projects/k3bdataurladdingdialog.cpp:660
 msgid "Ignore All"
 msgstr "Ignorar todos"
 
-#: projects/k3bdataurladdingdialog.cpp:440
-#: projects/k3bdataurladdingdialog.cpp:667
+#: projects/k3bdataurladdingdialog.cpp:435
+#: projects/k3bdataurladdingdialog.cpp:662
 msgid "Always keep the existing file"
 msgstr "Conserva sempre o ficheiro existente"
 
-#: projects/k3bdataurladdingdialog.cpp:443
-#: projects/k3bdataurladdingdialog.cpp:670
+#: projects/k3bdataurladdingdialog.cpp:438
+#: projects/k3bdataurladdingdialog.cpp:665
 msgid "Rename the new file"
 msgstr "Mudar o nome do novo ficheiro"
 
-#: projects/k3bdataurladdingdialog.cpp:484
+#: projects/k3bdataurladdingdialog.cpp:479
 msgid "Adding link to folder"
 msgstr "A engadir unha ligazón a un cartafol"
 
-#: projects/k3bdataurladdingdialog.cpp:485
+#: projects/k3bdataurladdingdialog.cpp:480
 #, kde-format
 msgid ""
 "<p>'%1' is a symbolic link to folder '%2'.<p>If you intend to make K3b "
@@ -9182,49 +9040,49 @@ msgstr ""
 "habilitar a opcion <em>seguir as ligazóns simbólicas</em> pode ignorar este "
 "aviso e escoller engadir a ligazón ao proxecto.</b>"
 
-#: projects/k3bdataurladdingdialog.cpp:496
+#: projects/k3bdataurladdingdialog.cpp:491
 msgid "Follow link now"
 msgstr "Seguir agora a ligazón"
 
-#: projects/k3bdataurladdingdialog.cpp:497
+#: projects/k3bdataurladdingdialog.cpp:492
 msgid "Always follow links"
 msgstr "Seguir sempre as ligazóns"
 
-#: projects/k3bdataurladdingdialog.cpp:498
+#: projects/k3bdataurladdingdialog.cpp:493
 msgid "Add link to project"
 msgstr "Engadir a ligazón ao proxecto"
 
-#: projects/k3bdataurladdingdialog.cpp:499
+#: projects/k3bdataurladdingdialog.cpp:494
 msgid "Always add links"
 msgstr "Engadir as ligazóns sempre"
 
-#: projects/k3bdataurladdingdialog.cpp:736
+#: projects/k3bdataurladdingdialog.cpp:731
 msgid "Enter New Filename"
 msgstr "Introduza un novo nome de ficheiro"
 
-#: projects/k3bdataurladdingdialog.cpp:737
+#: projects/k3bdataurladdingdialog.cpp:732
 msgid "A file with that name already exists. Please enter a new name:"
 msgstr "Xa existe un ficheiro con ese nome. Por favor, escreba un novo nome:"
 
-#: projects/k3bdataurladdingdialog.cpp:753
+#: projects/k3bdataurladdingdialog.cpp:748
 msgid "Do you also want to add hidden files?"
 msgstr "Desexa engadir tamén os ficheiros ocultos?"
 
-#: projects/k3bdataurladdingdialog.cpp:754
+#: projects/k3bdataurladdingdialog.cpp:749
 msgid "Hidden Files"
 msgstr "Ficheiros ocultos"
 
-#: projects/k3bdataurladdingdialog.cpp:754
-#: projects/k3bdataurladdingdialog.cpp:770
+#: projects/k3bdataurladdingdialog.cpp:749
+#: projects/k3bdataurladdingdialog.cpp:765
 msgid "Add"
 msgstr "Engadir"
 
-#: projects/k3bdataurladdingdialog.cpp:754
-#: projects/k3bdataurladdingdialog.cpp:770
+#: projects/k3bdataurladdingdialog.cpp:749
+#: projects/k3bdataurladdingdialog.cpp:765
 msgid "Do Not Add"
 msgstr "Non engadir"
 
-#: projects/k3bdataurladdingdialog.cpp:768
+#: projects/k3bdataurladdingdialog.cpp:763
 msgid ""
 "Do you also want to add system files (FIFOs, sockets, device files, and "
 "broken symlinks)?"
@@ -9232,7 +9090,7 @@ msgstr ""
 "Desexa engadir os ficheiros do sistema (FIFOs, sockets, ficheiros de "
 "dispositivo e ligazóns simbólicas estragadas)?"
 
-#: projects/k3bdataurladdingdialog.cpp:770
+#: projects/k3bdataurladdingdialog.cpp:765
 msgid "System Files"
 msgstr "Ficheiros do sistema"
 
@@ -9767,19 +9625,19 @@ msgstr "Procura en MusicBrainz"
 msgid "Try to determine meta information over the Internet"
 msgstr "Tenta determinar a metainformación en internet"
 
-#: projects/k3baudiotrackview.cpp:505 projects/k3baudioview.cpp:339
+#: projects/k3baudiotrackview.cpp:505 projects/k3baudioview.cpp:337
 msgid "Add Silence"
 msgstr "Engadir silencio"
 
-#: projects/k3baudiotrackview.cpp:509 projects/k3baudioview.cpp:343
+#: projects/k3baudiotrackview.cpp:509 projects/k3baudioview.cpp:341
 msgid "Length of silence:"
 msgstr "Duración do silencio:"
 
-#: projects/k3baudiotrackview.cpp:598 projects/k3baudioview.cpp:432
+#: projects/k3baudiotrackview.cpp:598 projects/k3baudioview.cpp:430
 msgid "Edit Audio Track Source"
 msgstr "Editar a fonte da pista de son"
 
-#: projects/k3baudiotrackview.cpp:739 projects/k3baudioview.cpp:453
+#: projects/k3baudiotrackview.cpp:739 projects/k3baudioview.cpp:451
 msgid "Please select an audio track."
 msgstr "Por favor, escolla unha pista de son."
 
@@ -9843,85 +9701,85 @@ msgstr ""
 "Ténteo, é bastante curioso.<p><b>Esta funcionalidade só está dispoñíbel no "
 "modo DAO cando se grava con cdrao."
 
-#: projects/k3bfillstatusdisplay.cpp:195 projects/k3bfillstatusdisplay.cpp:540
-#: projects/k3bfillstatusdisplay.cpp:803
+#: projects/k3bfillstatusdisplay.cpp:184 projects/k3bfillstatusdisplay.cpp:529
+#: projects/k3bfillstatusdisplay.cpp:792
 msgid "min"
 msgstr "min"
 
-#: projects/k3bfillstatusdisplay.cpp:201
+#: projects/k3bfillstatusdisplay.cpp:190
 #, kde-format
 msgid "Available: %1 of %2"
 msgstr "Disponíbel: %1 de %2"
 
-#: projects/k3bfillstatusdisplay.cpp:209
+#: projects/k3bfillstatusdisplay.cpp:198
 #, kde-format
 msgid "Capacity exceeded by %1"
 msgstr "Superouse a capacidade en %1"
 
-#: projects/k3bfillstatusdisplay.cpp:355
+#: projects/k3bfillstatusdisplay.cpp:344
 msgid "Minutes"
 msgstr "Minutos"
 
-#: projects/k3bfillstatusdisplay.cpp:357
+#: projects/k3bfillstatusdisplay.cpp:346
 msgid "Megabytes"
 msgstr "Megabytes"
 
-#: projects/k3bfillstatusdisplay.cpp:360
+#: projects/k3bfillstatusdisplay.cpp:349
 msgid "Automatic Size"
 msgstr "Tamaño automático"
 
-#: projects/k3bfillstatusdisplay.cpp:362 projects/k3bfillstatusdisplay.cpp:364
-#: projects/k3bfillstatusdisplay.cpp:366 projects/k3bfillstatusdisplay.cpp:453
-#: projects/k3bfillstatusdisplay.cpp:454 projects/k3bfillstatusdisplay.cpp:455
+#: projects/k3bfillstatusdisplay.cpp:351 projects/k3bfillstatusdisplay.cpp:353
+#: projects/k3bfillstatusdisplay.cpp:355 projects/k3bfillstatusdisplay.cpp:442
+#: projects/k3bfillstatusdisplay.cpp:443 projects/k3bfillstatusdisplay.cpp:444
 #, kde-format
 msgid "%1 MB"
 msgstr "%1 MB"
 
-#: projects/k3bfillstatusdisplay.cpp:378
+#: projects/k3bfillstatusdisplay.cpp:367
 msgid "Custom..."
 msgstr "Personalizado..."
 
-#: projects/k3bfillstatusdisplay.cpp:384
+#: projects/k3bfillstatusdisplay.cpp:373
 msgid "From Medium..."
 msgstr "Desde o disco..."
 
-#: projects/k3bfillstatusdisplay.cpp:405
+#: projects/k3bfillstatusdisplay.cpp:394
 msgid "User Defaults"
 msgstr "Predeterminado do usuario"
 
-#: projects/k3bfillstatusdisplay.cpp:408
+#: projects/k3bfillstatusdisplay.cpp:397
 msgid "Save User Defaults"
 msgstr "Gardar os valores por omisión do usuario"
 
-#: projects/k3bfillstatusdisplay.cpp:412
+#: projects/k3bfillstatusdisplay.cpp:401
 msgid "Why 4.4 instead of 4.7?"
 msgstr "Por que 4.4 no canto de 4.7?"
 
-#: projects/k3bfillstatusdisplay.cpp:416
+#: projects/k3bfillstatusdisplay.cpp:405
 msgid "Show Size In"
 msgstr "Mostrar o tamaño en"
 
-#: projects/k3bfillstatusdisplay.cpp:422
+#: projects/k3bfillstatusdisplay.cpp:411
 msgid "CD Size"
 msgstr "Tamaño do CD"
 
-#: projects/k3bfillstatusdisplay.cpp:428
+#: projects/k3bfillstatusdisplay.cpp:417
 msgid "DVD Size"
 msgstr "Tamaño do DVD"
 
-#: projects/k3bfillstatusdisplay.cpp:434
+#: projects/k3bfillstatusdisplay.cpp:423
 msgid "Blu-Ray Size"
 msgstr "Tamaño do Blu-ray"
 
-#: projects/k3bfillstatusdisplay.cpp:465 projects/k3bfillstatusdisplay.cpp:466
-#: projects/k3bfillstatusdisplay.cpp:467
+#: projects/k3bfillstatusdisplay.cpp:454 projects/k3bfillstatusdisplay.cpp:455
+#: projects/k3bfillstatusdisplay.cpp:456
 #, kde-format
 msgid "unused"
 msgid_plural "%1 minutes"
 msgstr[0] "non empregado"
 msgstr[1] "%1 minutos"
 
-#: projects/k3bfillstatusdisplay.cpp:525
+#: projects/k3bfillstatusdisplay.cpp:514
 msgid ""
 "<p><b>Why does K3b offer 4.4 GB and 8.0 GB instead of 4.7 and 8.5 like it "
 "says on the media?</b><p>A single layer DVD media has a capacity of "
@@ -9936,19 +9794,19 @@ msgstr ""
 "motivos publicitarios.<br>Isto dá como resultado 4,4*1024<sup>3</"
 "sup>/1000<sup>3</sup> = 4,7 GB."
 
-#: projects/k3bfillstatusdisplay.cpp:538
+#: projects/k3bfillstatusdisplay.cpp:527
 msgid "gb"
 msgstr "gb"
 
-#: projects/k3bfillstatusdisplay.cpp:539
+#: projects/k3bfillstatusdisplay.cpp:528
 msgid "mb"
 msgstr "mb"
 
-#: projects/k3bfillstatusdisplay.cpp:553
+#: projects/k3bfillstatusdisplay.cpp:542
 msgid "Custom Size"
 msgstr "Tamaño personalizado"
 
-#: projects/k3bfillstatusdisplay.cpp:554
+#: projects/k3bfillstatusdisplay.cpp:543
 msgid ""
 "<p>Please specify the size of the media. Use suffixes <b>gb</b>,<b>mb</b>, "
 "and <b>min</b> for <em>gigabytes</em>, <em>megabytes</em>, and <em>minutes</"
@@ -9958,15 +9816,15 @@ msgstr ""
 "<b>min</b> para <em>xigabytes</em>, <em>megabytes</em> e <em>minutos</em>, "
 "respectivamente."
 
-#: projects/k3bfillstatusdisplay.cpp:615
+#: projects/k3bfillstatusdisplay.cpp:604
 msgid "Medium is not empty."
 msgstr "O medio non está baleiro."
 
-#: projects/k3bfillstatusdisplay.cpp:618
+#: projects/k3bfillstatusdisplay.cpp:607
 msgid "No usable medium found."
 msgstr "Non se atopou un medio usábel."
 
-#: projects/k3bfillstatusdisplay.cpp:804
+#: projects/k3bfillstatusdisplay.cpp:793
 msgid "Right click for media sizes"
 msgstr "Prema co botón secundario para ver os tamaños dos medios"
 
@@ -10732,8 +10590,139 @@ msgstr "Escolla un proxecto de son non vacío para unha pesquisa en cddb."
 msgid "Cddb error"
 msgstr "Erro de cddb"
 
-#~ msgid "0"
-#~ msgstr "0"
+#~ msgid "ISO9660 Image"
+#~ msgstr "Imaxe ISO9660"
+
+#~ msgid "Cue/Bin Image"
+#~ msgstr "Imaxe Cue/Bin"
+
+#~ msgid "Cdrecord Clone Image"
+#~ msgstr "Imaxe clónica de cdrecord"
+
+#~ msgid "A CD and DVD burning application"
+#~ msgstr "Un programa de gravación de CD e DVD"
+
+#~ msgid "CD-R(W) or DVD%1R(W)"
+#~ msgstr "CD-R(W) ou DVD%1R(W)"
+
+#~ msgid "DVD%1R(W)"
+#~ msgstr "DVD%1R(W)"
+
+#~ msgid "Double Layer DVD%1R"
+#~ msgstr "DVD%1R de capa dupla"
+
+#~ msgid "Blu-ray BD-R(E)"
+#~ msgstr "Blu-ray BD-R(E)"
+
+#~ msgid "CD-R(W)"
+#~ msgstr "CD-R(W)"
+
+#~ msgid ""
+#~ "Please insert a complete or appendable %4 medium into drive<p><b>%1 %2 (%"
+#~ "3)</b>."
+#~ msgstr ""
+#~ "Por favor insira un disco %4 en branco ou gravábel no dispositivo<p><b>%1 "
+#~ "%2 (%3)</b>."
+
+#~ msgid "Please insert a complete %4 medium into drive<p><b>%1 %2 (%3)</b>."
+#~ msgstr ""
+#~ "Por favor, insira un disco %4 en branco no dispositivo<p><b>%1 %2 (%3)</"
+#~ "b>."
+
+#~ msgid ""
+#~ "Please insert an empty or appendable %4 medium into drive<p><b>%1 %2 (%3)"
+#~ "</b>."
+#~ msgstr ""
+#~ "Por favor insira un disco %4 completo ou gravábel no dispositivo<p><b>%1 %"
+#~ "2 (%3)</b>."
+
+#~ msgid ""
+#~ "Please insert an appendable %4 medium into drive<p><b>%1 %2 (%3)</b>."
+#~ msgstr ""
+#~ "Por favor insera un disco %4 gravábel no dispositivo<p><b>%1 %2 (%3)</b>."
+
+#~ msgid "Please insert an empty %4 medium into drive<p><b>%1 %2 (%3)</b>."
+#~ msgstr ""
+#~ "Por favor, insira un disco %4 vacío no dispositivo<p><b>%1 %2 (%3)</b>."
+
+#~ msgid "Please insert a suitable medium into drive<p><b>%1 %2 (%3)</b>."
+#~ msgstr ""
+#~ "Por favor, insira disco apropriado no dispositivo<p><b>%1 %2 (%3)</b>."
+
+#~ msgid "an empty %1 medium"
+#~ msgstr "un disco %1 vacío"
+
+#~ msgid "an appendable %1 medium"
+#~ msgstr "un disco %1 aínda gravábel"
+
+#~ msgid "a complete %1 medium"
+#~ msgstr "un disco %1 completo"
+
+#~ msgid "an empty or appendable %1 medium"
+#~ msgstr "un disco %1 vacío ou aínda gravábel"
+
+#~ msgid "a complete or appendable %1 medium"
+#~ msgstr "un disco %1 completo ou aínda gravábel"
+
+#~ msgid "a %1 medium"
+#~ msgstr "un disco %1"
+
+#~ msgid "a Video CD medium"
+#~ msgstr "un disco de Vídeo CD"
+
+#~ msgid "a Video DVD medium"
+#~ msgstr "un disco de Vídeo DVD"
+
+#~ msgid "a Mixed Mode CD medium"
+#~ msgstr "un CD en modo mixto"
+
+#~ msgid "an Audio CD medium"
+#~ msgstr "un CD de son"
+
+#~ msgid "a Data medium"
+#~ msgstr "un disco de datos"
+
+#~ msgid "a Data CD or DVD medium"
+#~ msgstr "un CD de datos ou disco DVD"
+
+#~ msgid "a Data CD medium"
+#~ msgstr "un CD de datos"
+
+#~ msgid "a Data DVD medium"
+#~ msgstr "un DVD de datos"
+
+#~ msgid "a Data Blu-ray medium"
+#~ msgstr "un disco Blu-ray de datos"
+
+#~ msgid "an empty medium"
+#~ msgstr "un disco vacío"
+
+#~ msgid "writable"
+#~ msgstr "gravábel"
+
+#~ msgid "CD or DVD"
+#~ msgstr "CD ou DVD"
+
+#~ msgid "CD"
+#~ msgstr "CD"
+
+#~ msgid "DVD"
+#~ msgstr "DVD"
+
+#~ msgid "Blu-ray"
+#~ msgstr "Blu-ray"
+
+#~ msgid "DVD%1R(W) or BD-R(E)"
+#~ msgstr "DVD%1R(W) ou BD-R(E)"
+
+#~ msgid "DVD-ROM"
+#~ msgstr "DVD-ROM"
+
+#~ msgid "CD-ROM"
+#~ msgstr "CD-ROM"
+
+#~ msgid "Please insert %1..."
+#~ msgstr "Por favor, insira un %1..."
 
 #, fuzzy
 #~| msgid ""
