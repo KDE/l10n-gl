@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: konversation\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2009-05-16 11:59+0200\n"
+"POT-Creation-Date: 2009-05-17 11:19+0200\n"
 "PO-Revision-Date: 2006-09-02 11:52+0200\n"
 "Last-Translator: mvillarino <mvillarino@users.sourceforge.net>\n"
 "Language-Team: Galician <trasno@ceu.fi.udc.es>\n"
@@ -159,14 +159,14 @@ msgid "Established DCC Chat connection to %1."
 msgstr "Estabeleceu-se a conexón de conversa DCC con %1."
 
 #: src/dcc/chat.cpp:197 src/dcc/chat.cpp:314 src/irc/outputfilter.cpp:1403
-#: src/irc/outputfilter.cpp:1409 src/irc/outputfilter.cpp:1490
-#: src/irc/inputfilter.cpp:1096 src/irc/inputfilter.cpp:1100
-#: src/irc/inputfilter.cpp:1113 src/irc/inputfilter.cpp:1184
-#: src/irc/inputfilter.cpp:1353 src/irc/inputfilter.cpp:1917
-#: src/irc/inputfilter.cpp:1938 src/irc/inputfilter.cpp:1946
-#: src/irc/inputfilter.cpp:1954 src/irc/server.cpp:617 src/irc/server.cpp:1891
-#: src/irc/server.cpp:1937 src/irc/server.cpp:2001
-#: src/connectionmanager.cpp:222 src/linkaddressbook/addressbook.cpp:116
+#: src/irc/outputfilter.cpp:1484 src/irc/inputfilter.cpp:1096
+#: src/irc/inputfilter.cpp:1100 src/irc/inputfilter.cpp:1113
+#: src/irc/inputfilter.cpp:1184 src/irc/inputfilter.cpp:1353
+#: src/irc/inputfilter.cpp:1917 src/irc/inputfilter.cpp:1938
+#: src/irc/inputfilter.cpp:1946 src/irc/inputfilter.cpp:1954
+#: src/irc/server.cpp:617 src/irc/server.cpp:1891 src/irc/server.cpp:1937
+#: src/irc/server.cpp:2001 src/connectionmanager.cpp:226
+#: src/linkaddressbook/addressbook.cpp:116
 msgid "Error"
 msgstr ""
 
@@ -241,7 +241,7 @@ msgid "No filename was given"
 msgstr "Non se indicou o nome do ficheiro"
 
 #: src/dcc/transfersend.cpp:214
-msgid "Unabled to send 0 byte file"
+msgid "Unable to send a 0 byte file."
 msgstr ""
 
 #: src/dcc/transfersend.cpp:242
@@ -249,19 +249,23 @@ msgid "Could not send a DCC SEND request to the partner via the IRC server."
 msgstr ""
 
 #: src/dcc/transfersend.cpp:293
-msgid "Waiting remote user's acceptance"
+#, fuzzy
+#| msgid "Waiting remote user's acceptance"
+msgid "Awaiting remote user's acceptance"
 msgstr "Á espera da aceitazón do usuário remoto"
 
-#: src/dcc/transfersend.cpp:342 src/dcc/transferrecv.cpp:581
-msgid "Could not accept the connection. (Socket Error)"
+#: src/dcc/transfersend.cpp:342 src/dcc/transferrecv.cpp:585
+#, fuzzy
+#| msgid "Could not accept the connection. (Socket Error)"
+msgid "Could not accept the connection (socket error.)"
 msgstr "Non foi posíbel aceitar a conexón. (Erro no Socket)"
 
-#: src/dcc/transfersend.cpp:438 src/dcc/transferrecv.cpp:595
+#: src/dcc/transfersend.cpp:438 src/dcc/transferrecv.cpp:599
 #, kde-format
 msgid "Socket error: %1"
 msgstr "Erro no socket: %1"
 
-#: src/dcc/transfersend.cpp:460 src/dcc/transferrecv.cpp:700
+#: src/dcc/transfersend.cpp:460 src/dcc/transferrecv.cpp:704
 msgid "Timed out"
 msgstr "Tempo-limite expirado"
 
@@ -314,7 +318,7 @@ msgstr "Ocorreu un erro non especificado ao pechar."
 msgid "Unknown error. Code %1"
 msgstr "Erro descoñecido. Código %1"
 
-#: src/dcc/transferpanelitem.cpp:86 src/irc/channel.cpp:1564
+#: src/dcc/transferpanelitem.cpp:86 src/irc/channel.cpp:1574
 msgid "unknown"
 msgstr "descoñecido"
 
@@ -408,62 +412,70 @@ msgstr "Non foi posíbel criar unha instancia KIO"
 msgid "<b>The file is used by another transfer.</b><br>%1<br>"
 msgstr "<b>O ficheiro está a ser usado noutra transferéncia.</b><br>%1<br>"
 
-#: src/dcc/transferrecv.cpp:397
+#: src/dcc/transferrecv.cpp:398
 #, fuzzy, kde-format
 #| msgid ""
 #| "<b>A partial file exists.</b><br>%1<br>Size of the partial file: %2 "
 #| "bytes<br>"
 msgid ""
-"<b>A partial file exists.</b><br/>%1<br/>Size of the partial file: %2 "
-"bytes<br/>"
-msgstr ""
+"<b>A partial file exists:</b><br/>%2<br/>Size of the partial file: 1 byte."
+"<br/>"
+msgid_plural ""
+"<b>A partial file exists:</b><br/>%2<br/>Size of the partial file: %1 bytes."
+"<br/>"
+msgstr[0] ""
+"<b>Existe un ficheiro parcial.</b><br>%1<br>Tamaño do ficheiro parcial: %2  "
+"bytes<br>"
+msgstr[1] ""
 "<b>Existe un ficheiro parcial.</b><br>%1<br>Tamaño do ficheiro parcial: %2  "
 "bytes<br>"
 
-#: src/dcc/transferrecv.cpp:425
+#: src/dcc/transferrecv.cpp:429
 #, kde-format
 msgid "<b>The file already exists.</b><br>%1<br>"
 msgstr "<b>O ficheiro xa existe.</b><br>%1<br>"
 
-#: src/dcc/transferrecv.cpp:432
+#: src/dcc/transferrecv.cpp:436
 #, kde-format
 msgid "<b>Could not open the file.<br>Error: %1</b><br>%2<br>"
 msgstr "<b>Non foi posíbel abrir o ficheiro.<br>Erro: %1</b><br>%2<br>"
 
-#: src/dcc/transferrecv.cpp:473
+#: src/dcc/transferrecv.cpp:477
 msgid ""
 "Could not send Reverse DCC SEND acknowledgement to the partner via the IRC "
 "server."
 msgstr ""
 
-#: src/dcc/transferrecv.cpp:480
+#: src/dcc/transferrecv.cpp:484
 #, fuzzy
 msgid "Waiting for connection"
 msgstr "Contrasinal da conexón"
 
-#: src/dcc/transferrecv.cpp:494
+#: src/dcc/transferrecv.cpp:498
 msgid "Waiting for remote host's acceptance"
 msgstr "Á espera da aceitazón do ordenador remoto"
 
-#: src/dcc/transferrecv.cpp:504
+#: src/dcc/transferrecv.cpp:508
 msgid ""
 "Could not send DCC RECV resume request to the partner via the IRC server."
 msgstr ""
 
-#: src/dcc/transferrecv.cpp:526
+#: src/dcc/transferrecv.cpp:530
 msgid "Unexpected response from remote host"
 msgstr "Resposta inesperada da máquina remota"
 
-#: src/dcc/transferrecv.cpp:663
-msgid "Transferring error"
+#: src/dcc/transferrecv.cpp:667
+#, fuzzy
+#| msgid "Transferring error"
+msgid "Transfer error"
 msgstr "Erro de transferéncia"
 
-#: src/dcc/transferrecv.cpp:679
+#: src/dcc/transferrecv.cpp:683
 #, kde-format
 msgid "KIO error: %1"
 msgstr "Erro do KIO: %1"
 
-#: src/dcc/transferpanel.cpp:46 src/viewer/viewcontainer.cpp:2044
+#: src/dcc/transferpanel.cpp:46 src/viewer/viewcontainer.cpp:2048
 msgid "DCC Status"
 msgstr "Estado de DCC"
 
@@ -587,27 +599,27 @@ msgstr "Abrir o Ficheir&o"
 msgid "File &Information"
 msgstr "&Informazón do Ficheiro"
 
-#: src/dcc/resumedialog.cpp:46
+#: src/dcc/resumedialog.cpp:47
 msgid "DCC Receive Question"
 msgstr "Pregunta de Recepzón DCC"
 
-#: src/dcc/resumedialog.cpp:69
+#: src/dcc/resumedialog.cpp:72
 msgid "&Resume"
 msgstr "Continua&r"
 
-#: src/dcc/resumedialog.cpp:89
+#: src/dcc/resumedialog.cpp:92
 msgid "O&riginal Filename"
 msgstr "Nome o&rixinal do ficheiro"
 
-#: src/dcc/resumedialog.cpp:90
+#: src/dcc/resumedialog.cpp:93
 msgid "Suggest &New Filename"
 msgstr "Suxerir un nome &novo"
 
-#: src/dcc/resumedialog.cpp:135
+#: src/dcc/resumedialog.cpp:138
 msgid "&Overwrite"
 msgstr "S&obrescreber"
 
-#: src/dcc/resumedialog.cpp:141
+#: src/dcc/resumedialog.cpp:144
 msgid "R&ename"
 msgstr "Mudar o Nom&e"
 
@@ -621,7 +633,7 @@ msgstr "Opzóns do Canal para %1"
 #: src/irc/channeloptionsdialog.cpp:47 src/irc/inputfilter.cpp:915
 #: src/irc/inputfilter.cpp:919 src/irc/inputfilter.cpp:2010
 #: src/irc/inputfilter.cpp:2059 src/irc/channelnick.cpp:221
-#: src/irc/channel.cpp:2035 rc.cpp:461
+#: src/irc/channel.cpp:2045 rc.cpp:461
 msgid "Mode"
 msgstr "Modo"
 
@@ -665,10 +677,9 @@ msgstr ""
 #| "see.  Almost all channels have this set to prevent nuisance messages.</qt>"
 msgid ""
 "<qt><p>These control the <em>mode</em> of the channel.  Only an operator can "
-"change these.</p><p><b>N</b>o messages from outside means that users that "
-"are not in the channel cannot send messages that everybody in the channel "
-"can see.  Almost all channels have this set to prevent nuisance messages.</"
-"p></qt>"
+"change these.</p><p><b>N</b>o messages from outside means users who are not "
+"in the channel cannot send messages for everybody in the channel to see.  "
+"Almost all channels have this set to prevent nuisance messages.</p></qt>"
 msgstr ""
 "<qt>Isto controla o <em>modo</em> do canal. Só un operador pode alterá-lo."
 "<p>Sen Me<b>N</b>saxes do exterior significa que os usuários que non estexan "
@@ -830,10 +841,10 @@ msgstr "Retirar Voz"
 msgid "Modes"
 msgstr "Modos"
 
-#: src/irc/nicklistview.cpp:102 src/irc/channel.cpp:1424
-#: src/irc/channel.cpp:1426 src/irc/channel.cpp:1433 src/irc/channel.cpp:1438
-#: src/irc/channel.cpp:1459 src/irc/channel.cpp:1461 src/irc/channel.cpp:1468
-#: src/irc/channel.cpp:1473
+#: src/irc/nicklistview.cpp:102 src/irc/channel.cpp:1434
+#: src/irc/channel.cpp:1436 src/irc/channel.cpp:1443 src/irc/channel.cpp:1448
+#: src/irc/channel.cpp:1469 src/irc/channel.cpp:1471 src/irc/channel.cpp:1478
+#: src/irc/channel.cpp:1483
 msgid "Kick"
 msgstr "Expulsar"
 
@@ -940,7 +951,9 @@ msgid "&Send Email..."
 msgstr "&Enviar un correo electrónico..."
 
 #: src/irc/nicklistview.cpp:141
-msgid "Addressbook Associations"
+#, fuzzy
+#| msgid "Addressbook Associations"
+msgid "Address Book Associations"
 msgstr "Asociazóns co Libro de Enderezos"
 
 #: src/irc/nicklistview.cpp:146 src/irc/query.cpp:103
@@ -1058,7 +1071,7 @@ msgstr " (identificado)"
 #. i18n: file: src/linkaddressbook/linkaddressbookui_base.ui:99
 #. i18n: ectx: property (text), widget (K3ListView, addresseeListView)
 #: src/irc/nickinfo.cpp:411 src/linkaddressbook/linkaddressbookui.cpp:81
-#: rc.cpp:1735
+#: rc.cpp:1700
 msgid "Email"
 msgstr "Correo electrónico"
 
@@ -1099,11 +1112,11 @@ msgstr "Prema aqui para conectar coa rede e canal de IRC escollidos."
 msgid "New Network"
 msgstr "Nova Rede"
 
-#: src/irc/serverlistdialog.cpp:200
+#: src/irc/serverlistdialog.cpp:201
 msgid "Edit Network"
 msgstr "Editar a Rede"
 
-#: src/irc/serverlistdialog.cpp:257
+#: src/irc/serverlistdialog.cpp:259
 #, kde-format
 msgid ""
 "You cannot delete %1.\n"
@@ -1114,22 +1127,34 @@ msgstr ""
 "\n"
 "A rede %2 necesita de polo menos un servidor."
 
-#: src/irc/serverlistdialog.cpp:262
-#, kde-format
+#: src/irc/serverlistdialog.cpp:264
+#, fuzzy, kde-format
+#| msgid ""
+#| "You cannot delete the selected servers.\n"
+#| "\n"
+#| "The network %1 needs to have at least one server."
 msgid ""
+"You cannot delete the selected server.\n"
+"\n"
+"The network %2 needs to have at least one server."
+msgid_plural ""
 "You cannot delete the selected servers.\n"
 "\n"
-"The network %1 needs to have at least one server."
-msgstr ""
+"The network %2 needs to have at least one server."
+msgstr[0] ""
+"Non pode borrar os servidores escollidos.\n"
+"\n"
+"A rede %1 necesita de polo menos un servidor."
+msgstr[1] ""
 "Non pode borrar os servidores escollidos.\n"
 "\n"
 "A rede %1 necesita de polo menos un servidor."
 
-#: src/irc/serverlistdialog.cpp:271
+#: src/irc/serverlistdialog.cpp:276
 msgid "Do you really want to delete the selected entries?"
 msgstr "Desexa realmente borrar os ítens escollidos?"
 
-#: src/irc/serverlistdialog.cpp:273
+#: src/irc/serverlistdialog.cpp:278
 #, kde-format
 msgid "Do you really want to delete %1?"
 msgstr "Desexa realmente borrar \"%1\"?"
@@ -1205,7 +1230,7 @@ msgstr "Utilizazón: %1NOTICE <destinatário> <mensaxe>"
 
 #. i18n: file: src/preferences/ignore_preferencesui.ui:104
 #. i18n: ectx: property (text), widget (QCheckBox, chkNotice)
-#: src/irc/outputfilter.cpp:608 src/irc/outputfilter.cpp:1569
+#: src/irc/outputfilter.cpp:608 src/irc/outputfilter.cpp:1563
 #: src/irc/inputfilter.cpp:487 src/irc/inputfilter.cpp:546
 #: src/irc/inputfilter.cpp:711 src/irc/inputfilter.cpp:1235
 #: src/viewer/ignorelistviewitem.cpp:45 rc.cpp:413
@@ -1271,7 +1296,9 @@ msgid "Usage: %1EXEC <script> [parameter list]"
 msgstr "Utilizazón: %1EXEC <guión> [lista de parámetros]"
 
 #: src/irc/outputfilter.cpp:1037
-msgid "Script name may not contain \"../\"!"
+#, fuzzy
+#| msgid "Script name may not contain \"../\"!"
+msgid "Script name may not contain \"../\"."
 msgstr "O nome do guión non pode conter \"../\"!"
 
 #: src/irc/outputfilter.cpp:1058
@@ -1294,7 +1321,9 @@ msgid "Current notify list: %1"
 msgstr "Lista de notificazóns actual: %1"
 
 #: src/irc/outputfilter.cpp:1125
-msgid "Enter user name and password for IRC operator privileges:"
+#, fuzzy
+#| msgid "Enter user name and password for IRC operator privileges:"
+msgid "Enter username and password for IRC operator privileges:"
 msgstr ""
 "Indique o nome de usuário e o contrasinal para obter priviléxios de operador "
 "de IRC:"
@@ -1359,77 +1388,75 @@ msgid "Removed %1 from your ignore list."
 msgstr "%1 foi retirado da sua lista de ignorados."
 
 #: src/irc/outputfilter.cpp:1403
-#, kde-format
-msgid "No such ignore: %1"
-msgstr "Non existe o elemento ignorado: %1"
+#, fuzzy, kde-format
+#| msgid "No such ignore: %1"
+msgid "No such ignore: %2"
+msgid_plural "No such ignores: %2"
+msgstr[0] "Non existe o elemento ignorado: %1"
+msgstr[1] "Non existe o elemento ignorado: %1"
 
-#: src/irc/outputfilter.cpp:1409
-#, kde-format
-msgid "No such ignores: %1"
-msgstr "Non existen os elementosignorados: %1"
-
-#: src/irc/outputfilter.cpp:1422
+#: src/irc/outputfilter.cpp:1416
 #, kde-format
 msgid "Usage: %1QUOTE command list"
 msgstr "Utilizazón: %1QUOTE lista de comandos"
 
-#: src/irc/outputfilter.cpp:1438
+#: src/irc/outputfilter.cpp:1432
 #, c-format, kde-format
 msgid "Usage: %1SAY text"
 msgstr "Utilizazón: %1SAY texto"
 
-#: src/irc/outputfilter.cpp:1472
+#: src/irc/outputfilter.cpp:1466
 msgid "Usage"
 msgstr "Utilizazón"
 
-#: src/irc/outputfilter.cpp:1481 src/irc/server.cpp:205 src/irc/server.cpp:368
+#: src/irc/outputfilter.cpp:1475 src/irc/server.cpp:205 src/irc/server.cpp:368
 #: src/irc/server.cpp:420 src/irc/server.cpp:551 src/irc/server.cpp:562
 #: src/irc/server.cpp:744 src/connectionmanager.cpp:204
-#: src/connectionmanager.cpp:211
+#: src/connectionmanager.cpp:213
 msgid "Info"
 msgstr "Informazón"
 
-#: src/irc/outputfilter.cpp:1502
+#: src/irc/outputfilter.cpp:1496
 #, c-format, kde-format
 msgid "Usage: %1AME text"
 msgstr "Utilizazón: %1AME texto"
 
-#: src/irc/outputfilter.cpp:1515
+#: src/irc/outputfilter.cpp:1509
 #, c-format, kde-format
 msgid "Usage: %1AMSG text"
 msgstr "Utilizazón: %1AMSG texto"
 
-#: src/irc/outputfilter.cpp:1556
+#: src/irc/outputfilter.cpp:1550
 #, kde-format
 msgid "Usage: %1OMSG text"
 msgstr "Utilizazón: %1OMSG texto"
 
-#: src/irc/outputfilter.cpp:1571
+#: src/irc/outputfilter.cpp:1565
 #, fuzzy, kde-format
 msgid "Sending notice \"%1\" to %2."
 msgstr "A enviar un pedido de CTCP-%1 a %2."
 
-#: src/irc/outputfilter.cpp:1575
+#: src/irc/outputfilter.cpp:1569
 #, kde-format
 msgid "Usage: %1ONOTICE text"
 msgstr "Utilizazón: %1ONOTICE texto"
 
-#: src/irc/outputfilter.cpp:1587
+#: src/irc/outputfilter.cpp:1581
 #, fuzzy, kde-format
 msgid "Current encoding is: %1"
 msgstr "Lista de notificazóns actual: %1"
 
-#: src/irc/outputfilter.cpp:1598
+#: src/irc/outputfilter.cpp:1592
 #, fuzzy, kde-format
 msgid "Switched to %1 encoding."
 msgstr "Escoller a Codificazón"
 
-#: src/irc/outputfilter.cpp:1602
+#: src/irc/outputfilter.cpp:1596
 #, fuzzy, kde-format
 msgid "%1 is not a valid encoding."
 msgstr "%1 non é un canal."
 
-#: src/irc/outputfilter.cpp:1616
+#: src/irc/outputfilter.cpp:1610
 #, fuzzy, c-format, kde-format
 msgid ""
 "Usage: %1setkey [<nick|channel>] <key> sets the encryption key for nick or "
@@ -1438,12 +1465,12 @@ msgstr ""
 "Utilizazón: %1setkey <alcume> ou <canal> <chave> Muda a chave de cifraxe do "
 "alcume ou do canal"
 
-#: src/irc/outputfilter.cpp:1625
+#: src/irc/outputfilter.cpp:1619
 #, fuzzy, kde-format
 msgid "The key for %1 has been set."
 msgstr "A chave de %1 foi borrada."
 
-#: src/irc/outputfilter.cpp:1633
+#: src/irc/outputfilter.cpp:1627
 #, fuzzy, c-format, kde-format
 msgid ""
 "Usage: %1delkey <nick> or <channel> deletes the encryption key for nick or "
@@ -1452,46 +1479,46 @@ msgstr ""
 "Utilizazón: %1delkey <alcume> ou <canal> Borra a chave de cifraxe do alcume "
 "ou do canal"
 
-#: src/irc/outputfilter.cpp:1642
+#: src/irc/outputfilter.cpp:1636
 #, fuzzy, kde-format
 msgid "The key for %1 has been deleted."
 msgstr "A chave de %1 foi borrada."
 
-#: src/irc/outputfilter.cpp:1651
+#: src/irc/outputfilter.cpp:1645
 #, fuzzy, kde-format
 msgid "The key for %1 is \"%2\"."
 msgstr "A chave de %1 foi borrada."
 
-#: src/irc/outputfilter.cpp:1651
+#: src/irc/outputfilter.cpp:1645
 msgid "Blowfish"
 msgstr ""
 
-#: src/irc/outputfilter.cpp:1653
+#: src/irc/outputfilter.cpp:1647
 #, kde-format
 msgid "No key has been set for %1."
 msgstr ""
 
-#: src/irc/outputfilter.cpp:1673
+#: src/irc/outputfilter.cpp:1667
 #, kde-format
 msgid "Usage: %1DNS <nick>"
 msgstr "Utilizazón: %1DNS <alcume>"
 
-#: src/irc/outputfilter.cpp:1688 src/irc/outputfilter.cpp:1707
+#: src/irc/outputfilter.cpp:1682 src/irc/outputfilter.cpp:1701
 #: src/irc/inputfilter.cpp:1344
 msgid "DNS"
 msgstr "DNS"
 
-#: src/irc/outputfilter.cpp:1689 src/irc/outputfilter.cpp:1708
+#: src/irc/outputfilter.cpp:1683 src/irc/outputfilter.cpp:1702
 #, kde-format
 msgid "Resolved %1 to: %2"
 msgstr "Resolveu a %1 como: %2"
 
-#: src/irc/outputfilter.cpp:1694 src/irc/outputfilter.cpp:1713
+#: src/irc/outputfilter.cpp:1688 src/irc/outputfilter.cpp:1707
 #, kde-format
 msgid "Unable to resolve %1"
 msgstr "Non é posíbel resolver a %1"
 
-#: src/irc/outputfilter.cpp:1757
+#: src/irc/outputfilter.cpp:1751
 #, fuzzy, kde-format
 msgid "Usage: %1KILL <nick> [comment]"
 msgstr "Utilizazón: %1KICK <alcume> [razón]"
@@ -1707,7 +1734,7 @@ msgstr "O canal %1 non ten tema definido."
 #. i18n: ectx: property (text), widget (QTreeWidget, topicHistoryList)
 #: src/irc/inputfilter.cpp:1042 src/irc/inputfilter.cpp:1058
 #: src/irc/inputfilter.cpp:1065 src/irc/channellistpanel.cpp:104
-#: src/irc/channel.cpp:1554 src/irc/channel.cpp:1573 src/irc/channel.cpp:1577
+#: src/irc/channel.cpp:1564 src/irc/channel.cpp:1583 src/irc/channel.cpp:1587
 #: rc.cpp:122
 msgid "Topic"
 msgstr "Tema"
@@ -1749,7 +1776,7 @@ msgstr "%1: Non existe ese canal."
 
 #: src/irc/inputfilter.cpp:1126 src/irc/inputfilter.cpp:1144
 #: src/irc/inputfilter.cpp:1158 src/irc/inputfilter.cpp:1173
-#: src/irc/channel.cpp:1282 src/irc/channel.cpp:1287 src/urlcatcher.cpp:41
+#: src/irc/channel.cpp:1292 src/irc/channel.cpp:1297 src/urlcatcher.cpp:41
 msgid "Nick"
 msgstr "Alcume"
 
@@ -1804,11 +1831,11 @@ msgstr "Usuários actualmente na rede: %1"
 msgid "Current users on %1: %2."
 msgstr "Usuários actualmente en %1: %2."
 
-#. i18n: file: src/identitydialog.ui:265
+#. i18n: file: src/identitydialog.ui:262
 #. i18n: ectx: attribute (title), widget (QWidget, awayWidget)
 #: src/irc/inputfilter.cpp:1285 src/irc/server.cpp:3281
 #: src/irc/server.cpp:3306 src/irc/server.cpp:3315 src/irc/nicksonline.cpp:270
-#: src/linkaddressbook/addressbook.cpp:112 rc.cpp:1302
+#: src/linkaddressbook/addressbook.cpp:112 rc.cpp:1267
 msgid "Away"
 msgstr "Ausente"
 
@@ -1968,8 +1995,8 @@ msgstr "%1  está inactivo desde hai %2 e %3."
 #, fuzzy, kde-format
 #| msgid "%2 has been idle for 1 second."
 #| msgid_plural "%2 has been idle for %1 seconds."
-msgid "%1 has been idle for 1 second."
-msgid_plural "%1 has been idle for %2 seconds."
+msgid "%2 has been idle for 1 second."
+msgid_plural "%2 has been idle for %1 seconds."
 msgstr[0] "%2 está inactivo desde hai 1 segundo."
 msgstr[1] "%2 está inactivo desde hai %1 segundos."
 
@@ -2063,16 +2090,19 @@ msgid "%1: This command requires more parameters."
 msgstr " %1: Este comando precisa máis parámetros."
 
 #: src/irc/inputfilter.cpp:2002
-#, fuzzy
-msgid "You have set personal modes: "
+#, fuzzy, kde-format
+msgid "You have set personal modes: %1"
 msgstr "Mudou o modo do canal para -%1"
 
 #: src/irc/inputfilter.cpp:2006
-msgid "has changed your personal modes:"
-msgstr ""
+#, fuzzy, kde-format
+msgid "%1 has changed your personal modes: %2"
+msgstr "Mudou o modo do canal para -%1"
 
 #: src/irc/inputfilter.cpp:2020
-msgid " sets mode: "
+#, fuzzy, kde-format
+#| msgid " sets mode: "
+msgid "%1 sets mode: %2"
 msgstr " troca o modo: "
 
 #: src/irc/serverdialog.cpp:38
@@ -2105,12 +2135,19 @@ msgid "S&ecure connection (SSL)"
 msgstr "Conexón s&egura (SSL)"
 
 #: src/irc/serverdialog.cpp:58
+#, fuzzy
+#| msgid ""
+#| "Check if you want to use Secure Socket Layer (SSL) protocol to "
+#| "communicate with the server. This protects the privacy of your "
+#| "communications between your computer and the IRC server. The server must "
+#| "support SSL protocol for this to work. In most cases, if the server does "
+#| "not support SSL, the connection will fail."
 msgid ""
-"Check if you want to use Secure Socket Layer (SSL) protocol to communicate "
-"with the server. This protects the privacy of your communications between "
-"your computer and the IRC server. The server must support SSL protocol for "
-"this to work. In most cases, if the server does not support SSL, the "
-"connection will fail."
+"Check if you want to use the Secure Socket Layer (SSL) protocol to "
+"communicate with the server. This protects the privacy of your "
+"communications between your computer and the IRC server. The server must "
+"support SSL protocol for this to work. In most cases, if the server does not "
+"support SSL, the connection will fail."
 msgstr ""
 "Sinale isto se quer usar o protocolo SSL para comunicar-se co servidor. Isto "
 "garante a privacidade da comunicazón entre o seu ordenador e o servidor de "
@@ -2313,7 +2350,7 @@ msgstr "Foi convidado por %1 a unir-se ao canal %2. Desexa aceitar o convite?"
 msgid "Invitation"
 msgstr "Convite"
 
-#: src/irc/server.cpp:3007 src/irc/channel.cpp:1300 src/irc/channel.cpp:1317
+#: src/irc/server.cpp:3007 src/irc/channel.cpp:1310 src/irc/channel.cpp:1327
 #: src/viewer/ircview.cpp:383
 msgid "Join"
 msgstr "Entrar"
@@ -2347,7 +2384,7 @@ msgstr "Xa deixou de estar marcado como ausente."
 msgid "You are not marked as being away."
 msgstr "Non está marcado como ausente."
 
-#: src/irc/nicksonline.cpp:49 src/viewer/viewcontainer.cpp:2412
+#: src/irc/nicksonline.cpp:49 src/viewer/viewcontainer.cpp:2419
 msgid "Watched Nicks Online"
 msgstr "Alcumes vixiados en liña"
 
@@ -2481,8 +2518,8 @@ msgstr "Es&coller a Asociazón..."
 msgid "&Join Channel"
 msgstr "&Unir-se ao Canal"
 
-#: src/irc/channellistpanel.cpp:46 src/viewer/viewcontainer.cpp:2349
-#: src/viewer/viewcontainer.cpp:2402
+#: src/irc/channellistpanel.cpp:46 src/viewer/viewcontainer.cpp:2356
+#: src/viewer/viewcontainer.cpp:2409
 msgid "Channel List"
 msgstr "Lista de Canais"
 
@@ -2652,23 +2689,23 @@ msgstr "Esquecer todos os cámbios feitos"
 msgid "Add Server"
 msgstr "Engadir un Servidor"
 
-#: src/irc/servergroupdialog.cpp:187
+#: src/irc/servergroupdialog.cpp:188
 msgid "Edit Server"
 msgstr "Editar o Servidor"
 
-#: src/irc/servergroupdialog.cpp:280
+#: src/irc/servergroupdialog.cpp:282
 msgid "Add Channel"
 msgstr "Engadir un Canal"
 
-#: src/irc/servergroupdialog.cpp:297
+#: src/irc/servergroupdialog.cpp:300
 msgid "Edit Channel"
 msgstr "Editar o Canal"
 
-#: src/irc/servergroupdialog.cpp:395
+#: src/irc/servergroupdialog.cpp:404
 msgid "The network name is required."
 msgstr "O nome da rede é obrigatório."
 
-#: src/irc/servergroupdialog.cpp:399
+#: src/irc/servergroupdialog.cpp:408
 msgid "You need to add at least one server to the network."
 msgstr "Debe engadir polo menos un servidor á rede."
 
@@ -2684,10 +2721,10 @@ msgstr "Debe engadir polo menos un servidor á rede."
 msgid ""
 "<qt><p>Some details of the person you are talking to in this query is shown "
 "in this bar.  The full name and hostmask is shown, along with any image or "
-"logo this person has associated with them in the KDE Addressbook.</p><p>See "
+"logo this person has associated with them in the KDE Address Book.</p><p>See "
 "the <i>Konversation Handbook</i> for information on associating a nick with "
-"a contact in the Addressbook, and for an explanation of what the hostmask is."
-"</p></qt>"
+"a contact in the address book, and for an explanation of what the hostmask "
+"is.</p></qt>"
 msgstr ""
 "<qt>Alguns detalles da persoa coa que está a falar son mostrados nesta "
 "barra. Mostran-se o nome completo e a máscara de servidor, xunto con calquer "
@@ -2717,7 +2754,7 @@ msgstr "Pechar Esta Conversa Privada"
 #. i18n: ectx: property (toolTip), widget (QToolButton, m_closeButton)
 #. i18n: file: src/viewer/searchbarbase.ui:21
 #. i18n: ectx: property (toolTip), widget (QToolButton, m_closeButton)
-#: src/irc/query.cpp:405 rc.cpp:212 rc.cpp:1741
+#: src/irc/query.cpp:405 rc.cpp:212 rc.cpp:1706
 #, fuzzy
 #| msgid "Colors"
 msgid "Close"
@@ -2732,7 +2769,7 @@ msgstr "Manter Aberto"
 msgid "Do you want to stop ignoring %1?"
 msgstr "Desexa parar de ignorar a %1?"
 
-#: src/irc/query.cpp:606 src/irc/channel.cpp:2700 src/statuspanel.cpp:360
+#: src/irc/query.cpp:606 src/irc/channel.cpp:2710 src/statuspanel.cpp:360
 #, kde-format
 msgid "Identity Default ( %1 )"
 msgstr "Identidade Predefinida (%1)"
@@ -2750,13 +2787,13 @@ msgstr "Pechar a Conversa Privada"
 msgid "Talking to yourself"
 msgstr "A falar para si"
 
-#: src/irc/query.cpp:678 src/irc/query.cpp:685 src/irc/channel.cpp:1340
-#: src/irc/channel.cpp:1342 src/irc/channel.cpp:1361 src/irc/channel.cpp:1363
+#: src/irc/query.cpp:678 src/irc/query.cpp:685 src/irc/channel.cpp:1350
+#: src/irc/channel.cpp:1352 src/irc/channel.cpp:1371 src/irc/channel.cpp:1373
 #: src/viewer/ircview.cpp:388
 msgid "Quit"
 msgstr ""
 
-#: src/irc/query.cpp:678 src/irc/channel.cpp:1361
+#: src/irc/query.cpp:678 src/irc/channel.cpp:1371
 #, kde-format
 msgid "%1 has left this server."
 msgstr "%1 abandonou este servidor."
@@ -2866,655 +2903,661 @@ msgstr "Desexa ignorar aos usuários escollidos?"
 msgid "Do you want to stop ignoring the selected users?"
 msgstr "Desexa parar de ignorar os usuários escollidos?"
 
-#: src/irc/channel.cpp:825
+#: src/irc/channel.cpp:832
 msgid "Completion"
 msgstr "Completazón"
 
-#: src/irc/channel.cpp:825
+#: src/irc/channel.cpp:832
 #, kde-format
 msgid "Possible completions: %1."
 msgstr "Completazóns posíbeis: %1."
 
-#: src/irc/channel.cpp:1189
+#: src/irc/channel.cpp:1196
 msgid "Channel Password"
 msgstr "Contrasinal do Canal"
 
-#: src/irc/channel.cpp:1201
+#: src/irc/channel.cpp:1211
 msgid "Nick Limit"
 msgstr "Limite de Alcumes"
 
-#: src/irc/channel.cpp:1202
+#: src/irc/channel.cpp:1212
 msgid "Enter the new nick limit:"
 msgstr "Indique o limite dos alcumes:"
 
-#: src/irc/channel.cpp:1282
+#: src/irc/channel.cpp:1292
 #, kde-format
 msgid "You are now known as %1."
 msgstr "Agora é coñecido como \"%1\"."
 
-#: src/irc/channel.cpp:1287
+#: src/irc/channel.cpp:1297
 #, kde-format
 msgid "%1 is now known as %2."
 msgstr "\"%1\" mudou o alcume para \"%2\"."
 
-#: src/irc/channel.cpp:1301
+#: src/irc/channel.cpp:1311
 #, kde-format
 msgctxt "%1 is the channel and %2 is our hostmask"
 msgid "You have joined the channel %1 (%2)."
 msgstr "Uniu-se ao canal %1 (%2)."
 
-#: src/irc/channel.cpp:1318
+#: src/irc/channel.cpp:1328
 #, kde-format
 msgctxt "%1 is the nick joining and %2 the hostmask of that nick"
 msgid "%1 has joined this channel (%2)."
 msgstr "%1 uniu-se a este canal (%2)."
 
-#: src/irc/channel.cpp:1340
+#: src/irc/channel.cpp:1350
 msgid "You have left this server."
 msgstr "Abandonou este servidor."
 
-#: src/irc/channel.cpp:1342
+#: src/irc/channel.cpp:1352
 #, kde-format
 msgctxt "%1 adds the reason"
 msgid "You have left this server (%1)."
 msgstr "Abandonou este servidor (%1)."
 
-#: src/irc/channel.cpp:1347 src/irc/channel.cpp:1349 src/irc/channel.cpp:1369
-#: src/irc/channel.cpp:1371 src/viewer/ircview.cpp:388
+#: src/irc/channel.cpp:1357 src/irc/channel.cpp:1359 src/irc/channel.cpp:1379
+#: src/irc/channel.cpp:1381 src/viewer/ircview.cpp:388
 msgid "Part"
 msgstr "Abandonar"
 
-#: src/irc/channel.cpp:1347
+#: src/irc/channel.cpp:1357
 #, kde-format
 msgid "You have left channel %1."
 msgstr "Deixou o canal %1."
 
-#: src/irc/channel.cpp:1350
+#: src/irc/channel.cpp:1360
 #, kde-format
 msgctxt "%1 adds the channel and %2 the reason"
 msgid "You have left channel %1 (%2)."
 msgstr "Deixou o canal %1 (%2)."
 
-#: src/irc/channel.cpp:1364
+#: src/irc/channel.cpp:1374
 #, kde-format
 msgctxt "%1 adds the nick and %2 the reason"
 msgid "%1 has left this server (%2)."
 msgstr "%1 abandonou este servidor (%2)."
 
-#: src/irc/channel.cpp:1369
+#: src/irc/channel.cpp:1379
 #, kde-format
 msgid "%1 has left this channel."
 msgstr "%1 deixou este canal."
 
-#: src/irc/channel.cpp:1372
+#: src/irc/channel.cpp:1382
 #, kde-format
 msgctxt "%1 adds the nick and %2 the reason"
 msgid "%1 has left this channel (%2)."
 msgstr "%1 deixou este canal (%2)."
 
-#: src/irc/channel.cpp:1424
+#: src/irc/channel.cpp:1434
 #, kde-format
 msgid "You have kicked yourself from channel %1."
 msgstr "Expulsou-se a si mesmo do canal %1."
 
-#: src/irc/channel.cpp:1427
+#: src/irc/channel.cpp:1437
 #, kde-format
 msgctxt "%1 adds the channel and %2 the reason"
 msgid "You have kicked yourself from channel %1 (%2)."
 msgstr "Expulsou-se a si mesmo do canal %1 (%2)."
 
-#: src/irc/channel.cpp:1434
+#: src/irc/channel.cpp:1444
 #, kde-format
 msgctxt "%1 adds the channel, %2 adds the kicker"
 msgid "You have been kicked from channel %1 by %2."
 msgstr "Foi expulsado do canal %1 por %2."
 
-#: src/irc/channel.cpp:1439
+#: src/irc/channel.cpp:1449
 #, kde-format
 msgctxt "%1 adds the channel, %2 the kicker and %3 the reason"
 msgid "You have been kicked from channel %1 by %2 (%3)."
 msgstr "Foi expulsado do canal %1 por %2 (%3)."
 
-#: src/irc/channel.cpp:1459
+#: src/irc/channel.cpp:1469
 #, kde-format
 msgid "You have kicked %1 from the channel."
 msgstr "Expulsou a %1 do canal."
 
-#: src/irc/channel.cpp:1462
+#: src/irc/channel.cpp:1472
 #, kde-format
 msgctxt "%1 adds the kicked nick and %2 the reason"
 msgid "You have kicked %1 from the channel (%2)."
 msgstr "Expulsou a %1 do canal (%2)."
 
-#: src/irc/channel.cpp:1469
+#: src/irc/channel.cpp:1479
 #, kde-format
 msgctxt "%1 adds the kicked nick, %2 adds the kicker"
 msgid "%1 has been kicked from the channel by %2."
 msgstr "%1 foi expulsado do canal por %2."
 
-#: src/irc/channel.cpp:1474
+#: src/irc/channel.cpp:1484
 #, kde-format
 msgctxt "%1 adds the kicked nick, %2 the kicker and %3 the reason"
 msgid "%1 has been kicked from the channel by %2 (%3)."
 msgstr "%1 foi expulsado do canal por %2 (%3)."
 
-#: src/irc/channel.cpp:1546
+#: src/irc/channel.cpp:1556
 #, kde-format
 msgid "%1 nick"
 msgid_plural "%1 nicks"
 msgstr[0] "%1 alcume"
 msgstr[1] "%1 alcumes"
 
-#: src/irc/channel.cpp:1547
+#: src/irc/channel.cpp:1557
 #, kde-format
 msgid " (%1 op)"
 msgid_plural " (%1 ops)"
 msgstr[0] " (%1 operador)"
 msgstr[1] " (%1 operadores)"
 
-#: src/irc/channel.cpp:1554
+#: src/irc/channel.cpp:1564
 #, kde-format
 msgid "The channel topic is \"%1\"."
 msgstr "O tema do canal é \"%1\"."
 
-#: src/irc/channel.cpp:1573
+#: src/irc/channel.cpp:1583
 #, kde-format
 msgid "You set the channel topic to \"%1\"."
 msgstr "Mudou o tema do canal para \"%1\"."
 
-#: src/irc/channel.cpp:1577
+#: src/irc/channel.cpp:1587
 #, kde-format
 msgid "%1 sets the channel topic to \"%2\"."
 msgstr "%1 mudou o tema do canal para \"%2\"."
 
-#: src/irc/channel.cpp:1640
+#: src/irc/channel.cpp:1650
 msgid "You give channel owner privileges to yourself."
 msgstr "Deu priviléxios de dono de canal a si mesmo."
 
-#: src/irc/channel.cpp:1642
+#: src/irc/channel.cpp:1652
 #, kde-format
 msgid "You give channel owner privileges to %1."
 msgstr "Deu priviléxios de dono do canal a %1."
 
-#: src/irc/channel.cpp:1647
+#: src/irc/channel.cpp:1657
 #, kde-format
 msgid "%1 gives channel owner privileges to you."
 msgstr "%1 deu-lle priviléxios de dono do canal."
 
-#: src/irc/channel.cpp:1649
+#: src/irc/channel.cpp:1659
 #, kde-format
 msgid "%1 gives channel owner privileges to %2."
 msgstr "%1 deu priviléxios de dono do canal a %2."
 
-#: src/irc/channel.cpp:1657
+#: src/irc/channel.cpp:1667
 msgid "You take channel owner privileges from yourself."
 msgstr "Retirou-se os priviléxios de dono do canal."
 
-#: src/irc/channel.cpp:1659
+#: src/irc/channel.cpp:1669
 #, kde-format
 msgid "You take channel owner privileges from %1."
 msgstr "Retirou os priviléxios de dono do canal a %1."
 
-#: src/irc/channel.cpp:1664
+#: src/irc/channel.cpp:1674
 #, kde-format
 msgid "%1 takes channel owner privileges from you."
 msgstr "%1 retirou-lle os priviléxios de dono do canal."
 
-#: src/irc/channel.cpp:1666
+#: src/irc/channel.cpp:1676
 #, kde-format
 msgid "%1 takes channel owner privileges from %2."
 msgstr "%1 retirou-lle os priviléxios de dono do canal a %2."
 
-#: src/irc/channel.cpp:1683
+#: src/irc/channel.cpp:1693
 msgid "You give channel admin privileges to yourself."
 msgstr "Deu priviléxios de administrador de canal a si mesmo."
 
-#: src/irc/channel.cpp:1685
+#: src/irc/channel.cpp:1695
 #, kde-format
 msgid "You give channel admin privileges to %1."
 msgstr "Deu priviléxios de administrador de canal a %1."
 
-#: src/irc/channel.cpp:1690
+#: src/irc/channel.cpp:1700
 #, kde-format
 msgid "%1 gives channel admin privileges to you."
 msgstr "%1 deu-lle priviléxios de administrador de canal."
 
-#: src/irc/channel.cpp:1692
+#: src/irc/channel.cpp:1702
 #, kde-format
 msgid "%1 gives channel admin privileges to %2."
 msgstr "%1 deu priviléxios de administrador de canal a %2."
 
-#: src/irc/channel.cpp:1700
+#: src/irc/channel.cpp:1710
 msgid "You take channel admin privileges from yourself."
 msgstr "Retirou-se os priviléxios de administrador do canal."
 
-#: src/irc/channel.cpp:1702
+#: src/irc/channel.cpp:1712
 #, kde-format
 msgid "You take channel admin privileges from %1."
 msgstr "Retirou-lle os priviléxios de administrador do canal a %1."
 
-#: src/irc/channel.cpp:1707
+#: src/irc/channel.cpp:1717
 #, kde-format
 msgid "%1 takes channel admin privileges from you."
 msgstr "%1 retirou-lle os priviléxios de administrador do canal."
 
-#: src/irc/channel.cpp:1709
+#: src/irc/channel.cpp:1719
 #, kde-format
 msgid "%1 takes channel admin privileges from %2."
 msgstr "%1 retirou-lle os priviléxios de administrador do canal a %2."
 
-#: src/irc/channel.cpp:1726
+#: src/irc/channel.cpp:1736
 msgid "You give channel operator privileges to yourself."
 msgstr "Deu-se priviléxios de operador do canal a si mesmo."
 
-#: src/irc/channel.cpp:1728
+#: src/irc/channel.cpp:1738
 #, kde-format
 msgid "You give channel operator privileges to %1."
 msgstr "Deu priviléxios de operador de canal a %1."
 
-#: src/irc/channel.cpp:1733
+#: src/irc/channel.cpp:1743
 #, kde-format
 msgid "%1 gives channel operator privileges to you."
 msgstr "%1 deu-lle priviléxios de operador do canal."
 
-#: src/irc/channel.cpp:1735
+#: src/irc/channel.cpp:1745
 #, kde-format
 msgid "%1 gives channel operator privileges to %2."
 msgstr "%1 deu priviléxios de operador do canal a %2."
 
-#: src/irc/channel.cpp:1743
+#: src/irc/channel.cpp:1753
 msgid "You take channel operator privileges from yourself."
 msgstr "Retirou-se os priviléxios de operador do canal a si mesmo."
 
-#: src/irc/channel.cpp:1745
+#: src/irc/channel.cpp:1755
 #, kde-format
 msgid "You take channel operator privileges from %1."
 msgstr "Retirou-lle os priviléxios de operador do canal a %1."
 
-#: src/irc/channel.cpp:1750
+#: src/irc/channel.cpp:1760
 #, kde-format
 msgid "%1 takes channel operator privileges from you."
 msgstr "%1 retirou-lle os priviléxios de operador do canal."
 
-#: src/irc/channel.cpp:1752
+#: src/irc/channel.cpp:1762
 #, kde-format
 msgid "%1 takes channel operator privileges from %2."
 msgstr "%1 retirou-lle os priviléxios de operador do canal a %2."
 
-#: src/irc/channel.cpp:1769
+#: src/irc/channel.cpp:1779
 msgid "You give channel halfop privileges to yourself."
 msgstr "Deu-se priviléxios de sub-operador do canal a si mesmo."
 
-#: src/irc/channel.cpp:1771
+#: src/irc/channel.cpp:1781
 #, kde-format
 msgid "You give channel halfop privileges to %1."
 msgstr "Deu priviléxios de sub-operador do canal a %1."
 
-#: src/irc/channel.cpp:1776
+#: src/irc/channel.cpp:1786
 #, kde-format
 msgid "%1 gives channel halfop privileges to you."
 msgstr "%1 deu-lle priviléxios de operador do canal."
 
-#: src/irc/channel.cpp:1778
+#: src/irc/channel.cpp:1788
 #, kde-format
 msgid "%1 gives channel halfop privileges to %2."
 msgstr "%1 deu priviléxios de operador do canal a %2."
 
-#: src/irc/channel.cpp:1786
+#: src/irc/channel.cpp:1796
 msgid "You take channel halfop privileges from yourself."
 msgstr "Retirou-se os priviléxios de sub-operador do canal a si próprio."
 
-#: src/irc/channel.cpp:1788
+#: src/irc/channel.cpp:1798
 #, kde-format
 msgid "You take channel halfop privileges from %1."
 msgstr "Retirou-lle os priviléxios de sub-operador do canal a %1."
 
-#: src/irc/channel.cpp:1793
+#: src/irc/channel.cpp:1803
 #, kde-format
 msgid "%1 takes channel halfop privileges from you."
 msgstr "%1 retirou-lle os priviléxios de sub-operador do canal."
 
-#: src/irc/channel.cpp:1795
+#: src/irc/channel.cpp:1805
 #, kde-format
 msgid "%1 takes channel halfop privileges from %2."
 msgstr "%1 retirou-lle os priviléxios de sub-operador do canal a %2."
 
-#: src/irc/channel.cpp:1813
+#: src/irc/channel.cpp:1823
 #, fuzzy
 msgid "You give yourself permission to talk."
 msgstr "Deu-se a si próprio permiso para falar."
 
-#: src/irc/channel.cpp:1814
+#: src/irc/channel.cpp:1824
 #, fuzzy, kde-format
-msgid "You give %1  permission to talk."
+msgid "You give %1 permission to talk."
 msgstr "Deu-lle a %1 permiso para falar."
 
-#: src/irc/channel.cpp:1818
+#: src/irc/channel.cpp:1828
 #, fuzzy, kde-format
 msgid "%1 gives you permission to talk."
 msgstr "%1 deu-lle permiso para falar."
 
-#: src/irc/channel.cpp:1819
+#: src/irc/channel.cpp:1829
 #, fuzzy, kde-format
 msgid "%1 gives %2 permission to talk."
 msgstr "%1 deu-lle o permiso para falar a %2."
 
-#: src/irc/channel.cpp:1826
+#: src/irc/channel.cpp:1836
 msgid "You take the permission to talk from yourself."
 msgstr "Retirou-se o permiso para falar a si próprio."
 
-#: src/irc/channel.cpp:1827
+#: src/irc/channel.cpp:1837
 #, kde-format
 msgid "You take the permission to talk from %1."
 msgstr "Retirou-lle o permiso para falar a %1."
 
-#: src/irc/channel.cpp:1831
+#: src/irc/channel.cpp:1841
 #, kde-format
 msgid "%1 takes the permission to talk from you."
 msgstr "%1 retirou-lle o permiso para falar."
 
-#: src/irc/channel.cpp:1832
+#: src/irc/channel.cpp:1842
 #, kde-format
 msgid "%1 takes the permission to talk from %2."
 msgstr "%1 retirou-lle o permiso para falar a %2."
 
-#: src/irc/channel.cpp:1845
+#: src/irc/channel.cpp:1855
 msgid "You set the channel mode to 'no colors allowed'."
 msgstr "Cambiou o modo do canal para \"non se permiten cores\"."
 
-#: src/irc/channel.cpp:1846
+#: src/irc/channel.cpp:1856
 #, kde-format
 msgid "%1 sets the channel mode to 'no colors allowed'."
 msgstr "%1 cambiou o modo do canal para \"non se permiten cores\"."
 
-#: src/irc/channel.cpp:1850
+#: src/irc/channel.cpp:1860
 msgid "You set the channel mode to 'allow color codes'."
 msgstr "Cambiou o modo do canal para \"permiten-se códigos de cores\"."
 
-#: src/irc/channel.cpp:1851
+#: src/irc/channel.cpp:1861
 #, kde-format
 msgid "%1 sets the channel mode to 'allow color codes'."
 msgstr "%1 cambiou o modo do canal para \"permiten-se códigos de cores\"."
 
-#: src/irc/channel.cpp:1858
+#: src/irc/channel.cpp:1868
 msgid "You set the channel mode to 'invite only'."
 msgstr "Cambiou o modo do canal para \"Só convidados\"."
 
-#: src/irc/channel.cpp:1859
+#: src/irc/channel.cpp:1869
 #, kde-format
 msgid "%1 sets the channel mode to 'invite only'."
 msgstr "%1 cambiou o modo do canal para \"Só convidados\"."
 
-#: src/irc/channel.cpp:1863
+#: src/irc/channel.cpp:1873
 msgid "You remove the 'invite only' mode from the channel."
 msgstr "Retira o modo de \"só convidados\" do canal."
 
-#: src/irc/channel.cpp:1864
+#: src/irc/channel.cpp:1874
 #, kde-format
 msgid "%1 removes the 'invite only' mode from the channel."
 msgstr "%1 retira o modo de \"só convidados\" do canal."
 
-#: src/irc/channel.cpp:1872
+#: src/irc/channel.cpp:1882
 msgid "You set the channel mode to 'moderated'."
 msgstr "Cámbiou o modo do canal para \"moderado\"."
 
-#: src/irc/channel.cpp:1873
+#: src/irc/channel.cpp:1883
 #, kde-format
 msgid "%1 sets the channel mode to 'moderated'."
 msgstr "%1 cambiou o modo do canal para \"moderado\"."
 
-#: src/irc/channel.cpp:1877
+#: src/irc/channel.cpp:1887
 msgid "You set the channel mode to 'unmoderated'."
 msgstr "Cambiou o modo do canal para \"non moderado\"."
 
-#: src/irc/channel.cpp:1878
+#: src/irc/channel.cpp:1888
 #, kde-format
 msgid "%1 sets the channel mode to 'unmoderated'."
 msgstr "%1 cambiou o modo do canal para \"non moderado\"."
 
-#: src/irc/channel.cpp:1886
+#: src/irc/channel.cpp:1896
 msgid "You set the channel mode to 'no messages from outside'."
 msgstr "Cambiou o modo do canal para \"sen mensaxes do exterior\"."
 
-#: src/irc/channel.cpp:1887
+#: src/irc/channel.cpp:1897
 #, kde-format
 msgid "%1 sets the channel mode to 'no messages from outside'."
 msgstr "%1 cambiou o modo do canal para \"sen mensaxes do exterior\"."
 
-#: src/irc/channel.cpp:1891
+#: src/irc/channel.cpp:1901
 msgid "You set the channel mode to 'allow messages from outside'."
 msgstr "Cambiou o modo do canal para \"permitir mensaxes do exterior\"."
 
-#: src/irc/channel.cpp:1892
+#: src/irc/channel.cpp:1902
 #, kde-format
 msgid "%1 sets the channel mode to 'allow messages from outside'."
 msgstr "%1 cambiou o modo do canal para \"permitir mensaxes do exterior\"."
 
-#: src/irc/channel.cpp:1900
+#: src/irc/channel.cpp:1910
 msgid "You set the channel mode to 'private'."
 msgstr "Cambiou o modo do canal para \"privado\"."
 
-#: src/irc/channel.cpp:1901
+#: src/irc/channel.cpp:1911
 #, kde-format
 msgid "%1 sets the channel mode to 'private'."
 msgstr "%1 cambiou o modo do canal para \"privado\"."
 
-#: src/irc/channel.cpp:1905
+#: src/irc/channel.cpp:1915
 msgid "You set the channel mode to 'public'."
 msgstr "Cambiou o modo do canal para \"público\"."
 
-#: src/irc/channel.cpp:1906
+#: src/irc/channel.cpp:1916
 #, kde-format
 msgid "%1 sets the channel mode to 'public'."
 msgstr "%1 cambiou o modo do canal para \"público\"."
 
-#: src/irc/channel.cpp:1915
+#: src/irc/channel.cpp:1925
 msgid "You set the channel mode to 'secret'."
 msgstr "Cambiou o modo do canal para \"segredo\"."
 
-#: src/irc/channel.cpp:1916
+#: src/irc/channel.cpp:1926
 #, kde-format
 msgid "%1 sets the channel mode to 'secret'."
 msgstr "%1 cambiou o modo do canal para \"segredo\"."
 
-#: src/irc/channel.cpp:1920
+#: src/irc/channel.cpp:1930
 msgid "You set the channel mode to 'visible'."
 msgstr "Cambiou o modo do canal para \"visíbel\"."
 
-#: src/irc/channel.cpp:1921
+#: src/irc/channel.cpp:1931
 #, kde-format
 msgid "%1 sets the channel mode to 'visible'."
 msgstr "%1 cambiou o modo do canal para \"visíbel\"."
 
-#: src/irc/channel.cpp:1932
+#: src/irc/channel.cpp:1942
 msgid "You switch on 'topic protection'."
 msgstr "Activou a \"proteczón do tema\"."
 
-#: src/irc/channel.cpp:1933
+#: src/irc/channel.cpp:1943
 #, kde-format
 msgid "%1 switches on 'topic protection'."
 msgstr "%1 activou a \"proteczón do tema\"."
 
-#: src/irc/channel.cpp:1937
+#: src/irc/channel.cpp:1947
 msgid "You switch off 'topic protection'."
 msgstr "Desactivou a \"proteczón do tema\"."
 
-#: src/irc/channel.cpp:1938
+#: src/irc/channel.cpp:1948
 #, kde-format
 msgid "%1 switches off 'topic protection'."
 msgstr "%1 desactivou a \"proteczón do tema\"."
 
-#: src/irc/channel.cpp:1946
+#: src/irc/channel.cpp:1956
 #, fuzzy, kde-format
 msgid "You set the channel key to '%1'."
 msgstr "Mudou o tema do canal para \"%1\"."
 
-#: src/irc/channel.cpp:1947
+#: src/irc/channel.cpp:1957
 #, fuzzy, kde-format
 msgid "%1 sets the channel key to '%2'."
 msgstr "%1 mudou o tema do canal para \"%2\"."
 
-#: src/irc/channel.cpp:1951
+#: src/irc/channel.cpp:1961
 #, fuzzy
 msgid "You remove the channel key."
 msgstr "Retirou o limite do canal."
 
-#: src/irc/channel.cpp:1952
+#: src/irc/channel.cpp:1962
 #, fuzzy, kde-format
 msgid "%1 removes the channel key."
 msgstr "%1 retirou o limite do canal."
 
-#: src/irc/channel.cpp:1960
-#, kde-format
-msgid "You set the channel limit to %1 nicks."
-msgstr "Axustou o limite do canal en %1 usuários."
+#: src/irc/channel.cpp:1970
+#, fuzzy, kde-format
+#| msgid "You set the channel limit to %1 nicks."
+msgid "You set the channel limit to 1 nick."
+msgid_plural "You set the channel limit to %1 nicks."
+msgstr[0] "Axustou o limite do canal en %1 usuários."
+msgstr[1] "Axustou o limite do canal en %1 usuários."
 
-#: src/irc/channel.cpp:1961
-#, kde-format
-msgid "%1 sets the channel limit to %2 nicks."
-msgstr "%1 axustou o limite do canal en %2 usuários."
+#: src/irc/channel.cpp:1971
+#, fuzzy, kde-format
+#| msgid "%1 sets the channel limit to %2 nicks."
+msgid "%2 sets the channel limit to 1 nick."
+msgid_plural "%2 sets the channel limit to %1 nicks."
+msgstr[0] "%1 axustou o limite do canal en %2 usuários."
+msgstr[1] "%1 axustou o limite do canal en %2 usuários."
 
-#: src/irc/channel.cpp:1965
+#: src/irc/channel.cpp:1975
 msgid "You remove the channel limit."
 msgstr "Retirou o limite do canal."
 
-#: src/irc/channel.cpp:1966
+#: src/irc/channel.cpp:1976
 #, kde-format
 msgid "%1 removes the channel limit."
 msgstr "%1 retirou o limite do canal."
 
-#: src/irc/channel.cpp:1976
+#: src/irc/channel.cpp:1986
 #, kde-format
 msgid "You set a ban on %1."
 msgstr "Estabeleceu unha proibizón sobre %1."
 
-#: src/irc/channel.cpp:1977
+#: src/irc/channel.cpp:1987
 #, kde-format
 msgid "%1 sets a ban on %2."
 msgstr "%1 estabeleceu unha proibizón sobre %2."
 
-#: src/irc/channel.cpp:1981
+#: src/irc/channel.cpp:1991
 #, kde-format
 msgid "You remove the ban on %1."
 msgstr "Retirou a proibizón sobre \"%1\"."
 
-#: src/irc/channel.cpp:1982
+#: src/irc/channel.cpp:1992
 #, kde-format
 msgid "%1 removes the ban on %2."
 msgstr "%1 retirou a proibizón sobre %2."
 
-#: src/irc/channel.cpp:1989
+#: src/irc/channel.cpp:1999
 #, kde-format
 msgid "You set a ban exception on %1."
 msgstr "Definiu unha excepzón á proibizón sobre %1."
 
-#: src/irc/channel.cpp:1990
+#: src/irc/channel.cpp:2000
 #, kde-format
 msgid "%1 sets a ban exception on %2."
 msgstr "%1 definiu unha excepzón á proibizón sobre %2."
 
-#: src/irc/channel.cpp:1994
+#: src/irc/channel.cpp:2004
 #, kde-format
 msgid "You remove the ban exception on %1."
 msgstr "Retirou a excepzón á proibizón sobre %1."
 
-#: src/irc/channel.cpp:1995
+#: src/irc/channel.cpp:2005
 #, kde-format
 msgid "%1 removes the ban exception on %2."
 msgstr "%1 retirou a excepzón á proibizón sobre %2."
 
-#: src/irc/channel.cpp:2002
+#: src/irc/channel.cpp:2012
 #, kde-format
 msgid "You set invitation mask %1."
 msgstr "Definiu a máscara de convite %1."
 
-#: src/irc/channel.cpp:2003
+#: src/irc/channel.cpp:2013
 #, kde-format
 msgid "%1 sets invitation mask %2."
 msgstr "%1 definiu a máscara de convite %2."
 
-#: src/irc/channel.cpp:2007
+#: src/irc/channel.cpp:2017
 #, kde-format
 msgid "You remove the invitation mask %1."
 msgstr "Borrou a máscara de convite %1."
 
-#: src/irc/channel.cpp:2008
+#: src/irc/channel.cpp:2018
 #, kde-format
 msgid "%1 removes the invitation mask %2."
 msgstr "%1 borrou a máscara de convite %2."
 
-#: src/irc/channel.cpp:2014
+#: src/irc/channel.cpp:2024
 #, kde-format
 msgid "You set channel mode +%1"
 msgstr "Mudou o modo do canal para +%1"
 
-#: src/irc/channel.cpp:2015
+#: src/irc/channel.cpp:2025
 #, kde-format
 msgid "%1 sets channel mode +%2"
 msgstr "%1 mudou o modo do canal para +%2"
 
-#: src/irc/channel.cpp:2019
+#: src/irc/channel.cpp:2029
 #, kde-format
 msgid "You set channel mode -%1"
 msgstr "Mudou o modo do canal para -%1"
 
-#: src/irc/channel.cpp:2020
+#: src/irc/channel.cpp:2030
 #, kde-format
 msgid "%1 sets channel mode -%2"
 msgstr " %1 mudou o modo do canal para -%2"
 
-#: src/irc/channel.cpp:2434
+#: src/irc/channel.cpp:2444
 msgid "You have to be an operator to change this."
 msgstr "Ten que ser un operador para modificar isto."
 
-#: src/irc/channel.cpp:2436
+#: src/irc/channel.cpp:2446
 #, kde-format
 msgid "Topic can be changed by channel operator only.  %1"
 msgstr "O tema só pode ser alterado polo operador do canal. %1"
 
-#: src/irc/channel.cpp:2437
+#: src/irc/channel.cpp:2447
 #, kde-format
 msgid "No messages to channel from clients on the outside.  %1"
 msgstr "Non se admiten mensaxes para o canal desde clientes exteriores. %1"
 
-#: src/irc/channel.cpp:2438
+#: src/irc/channel.cpp:2448
 #, kde-format
 msgid "Secret channel.  %1"
 msgstr "Canal segredo. %1"
 
-#: src/irc/channel.cpp:2439
+#: src/irc/channel.cpp:2449
 #, kde-format
 msgid "Invite only channel.  %1"
 msgstr "Canal só por convite. %1"
 
-#: src/irc/channel.cpp:2440
+#: src/irc/channel.cpp:2450
 #, kde-format
 msgid "Private channel.  %1"
 msgstr "Canal privado. %1"
 
-#: src/irc/channel.cpp:2441
+#: src/irc/channel.cpp:2451
 #, kde-format
 msgid "Moderated channel.  %1"
 msgstr "Canal moderado. %1"
 
-#: src/irc/channel.cpp:2442
+#: src/irc/channel.cpp:2452
 msgid "Protect channel with a password."
 msgstr "Protexer canal cun contrasinal."
 
-#: src/irc/channel.cpp:2443
+#: src/irc/channel.cpp:2453
 msgid "Set user limit to channel."
 msgstr "Definir o limite de usuários do canal."
 
-#: src/irc/channel.cpp:2575
+#: src/irc/channel.cpp:2585
 #, kde-format
 msgid "Do you want to leave %1?"
 msgstr "Desexa sair de %1?"
 
-#: src/irc/channel.cpp:2576
+#: src/irc/channel.cpp:2586
 msgid "Leave Channel"
 msgstr "Sair do Canal"
 
-#: src/irc/channel.cpp:2577
+#: src/irc/channel.cpp:2587
 msgid "Leave"
 msgstr "Sair"
 
@@ -3558,22 +3601,26 @@ msgstr ""
 msgid "&Use SSL"
 msgstr "&Utilizar SSL"
 
-#: src/connectionmanager.cpp:205
+#: src/connectionmanager.cpp:206
 #, fuzzy, kde-format
-msgid "Trying to connect to %1 in %2 seconds."
-msgstr "A oferecer conexón de Conversa DCC a %1 no porto %2..."
+msgid "Trying to connect to %2 in 1 second."
+msgid_plural "Trying to connect to %2 in %1 seconds."
+msgstr[0] "A oferecer conexón de Conversa DCC a %1 no porto %2..."
+msgstr[1] "A oferecer conexón de Conversa DCC a %1 no porto %2..."
 
-#: src/connectionmanager.cpp:212
-#, kde-format
-msgid "Trying to reconnect to %1 in %2 seconds."
-msgstr ""
+#: src/connectionmanager.cpp:215
+#, fuzzy, kde-format
+msgid "Trying to reconnect to %2 in 1 second."
+msgid_plural "Trying to reconnect to %2 in %1 seconds."
+msgstr[0] "A oferecer conexón de Conversa DCC a %1 no porto %2..."
+msgstr[1] "A oferecer conexón de Conversa DCC a %1 no porto %2..."
 
-#: src/connectionmanager.cpp:222
+#: src/connectionmanager.cpp:226
 #, fuzzy
 msgid "Reconnection attempts exceeded."
 msgstr "Tentativas de nova conexón:"
 
-#: src/connectionmanager.cpp:439
+#: src/connectionmanager.cpp:443
 #, fuzzy, kde-format
 msgid ""
 "You are already connected to %1. Do you want to open another connection?"
@@ -3581,17 +3628,17 @@ msgstr ""
 "Xa está conectado con %1. Desexa desconectar-se de \"%2\" e conectar a \"%3"
 "\"?"
 
-#: src/connectionmanager.cpp:440 src/connectionmanager.cpp:462
+#: src/connectionmanager.cpp:444 src/connectionmanager.cpp:466
 #, kde-format
 msgid "Already connected to %1"
 msgstr "Xa está conectado a %1"
 
-#: src/connectionmanager.cpp:441
+#: src/connectionmanager.cpp:445
 #, fuzzy
 msgid "Create connection"
 msgstr "Conexón"
 
-#: src/connectionmanager.cpp:456
+#: src/connectionmanager.cpp:460
 #, fuzzy, kde-format
 msgid ""
 "You are presently connected to %1 via '%2' (port %3). Do you want to switch "
@@ -3600,41 +3647,41 @@ msgstr ""
 "Xa está conectado con %1. Desexa desconectar-se de \"%2\" e conectar a \"%3"
 "\"?"
 
-#: src/connectionmanager.cpp:463
+#: src/connectionmanager.cpp:467
 #, fuzzy
 msgid "Switch Server"
 msgstr "Editar o Servidor"
 
-#: src/connectionmanager.cpp:504
+#: src/connectionmanager.cpp:508
 #, fuzzy
 #| msgid "Please fill in your <b>Ident</b>.<br>"
 msgid "Please fill in your <b>Ident</b>.<br/>"
 msgstr "Por favor preeencha o seu <b>ident</b>.<br>"
 
-#: src/connectionmanager.cpp:507
+#: src/connectionmanager.cpp:511
 #, fuzzy
 #| msgid "Please fill in your <b>Real name</b>.<br>"
 msgid "Please fill in your <b>Real name</b>.<br/>"
 msgstr "Por favor preeencha o seu <b>Nome real</b>.<br>"
 
-#: src/connectionmanager.cpp:510
+#: src/connectionmanager.cpp:514
 #, fuzzy
 #| msgid "Please provide at least one <b>Nickname</b>.<br>"
 msgid "Please provide at least one <b>Nickname</b>.<br/>"
 msgstr "Por favor indique polo menos un <b>Alcume</b>.<br>"
 
-#: src/connectionmanager.cpp:518
+#: src/connectionmanager.cpp:522
 #, fuzzy, kde-format
 #| msgid "<qt>Your identity \"%1\" is not set up correctly:<br>%2</qt>"
 msgid "<qt>Your identity \"%1\" is not set up correctly:<br/>%2</qt>"
 msgstr ""
 "<qt>A súa identidade \"%1\" non está correctamente configurada:<br>%2</qt>"
 
-#: src/connectionmanager.cpp:519
+#: src/connectionmanager.cpp:523
 msgid "Identity Settings"
 msgstr "Configurazón da Identidade"
 
-#: src/connectionmanager.cpp:520
+#: src/connectionmanager.cpp:524
 msgid "Edit Identity..."
 msgstr "Editar a Identidade..."
 
@@ -3716,7 +3763,7 @@ msgstr "Debe engadir polo menos un alcume á identidade."
 msgid "Please enter a real name."
 msgstr ""
 
-#: src/dbus.cpp:158
+#: src/dbus.cpp:145
 #, kde-format
 msgid "getNickname: Server %1 is not found."
 msgstr "getNickname: O servidor %1 non foi atopado."
@@ -4210,8 +4257,9 @@ msgid "Cannot Install Theme"
 msgstr "Non Foi Posíbel Instalar o Tema"
 
 #: src/preferences/theme_preferences.cpp:251
-#, kde-format
-msgid "Do you want to remove %1 ?"
+#, fuzzy, kde-format
+#| msgid "Do you want to remove %1 ?"
+msgid "Do you want to remove %1?"
 msgstr "Desexa realmente borrar %1?"
 
 #: src/preferences/theme_preferences.cpp:252
@@ -4261,9 +4309,9 @@ msgstr "Páxinas"
 
 #. i18n: file: src/preferences/chatwindowbehaviour_preferences.ui:19
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox3)
-#. i18n: file: src/identitydialog.ui:182
+#. i18n: file: src/identitydialog.ui:179
 #. i18n: ectx: attribute (title), widget (QWidget, generalWidget)
-#: src/settingsdialog.cpp:103 rc.cpp:900 rc.cpp:1273
+#: src/settingsdialog.cpp:103 rc.cpp:900 rc.cpp:1238
 msgid "General"
 msgstr "Xeral"
 
@@ -4488,15 +4536,15 @@ msgstr "Non houbo nengunha resposta do servidor %1 desde hai mais de %2 e %3."
 #, fuzzy, kde-format
 #| msgid "No answer from server %2 for more than 1 second."
 #| msgid_plural "No answer from server %2 for more than %1 seconds."
-msgid "No answer from server %1 for more than 1 second."
-msgid_plural "No answer from server %1 for more than %2 seconds."
+msgid "No answer from server %2 for more than 1 second."
+msgid_plural "No answer from server %2 for more than %1 seconds."
 msgstr[0] ""
 "Non houbo nengunha resposta do servidor %2 desde hai mais de 1 segundo."
 msgstr[1] ""
 "Non houbo nengunha resposta do servidor %2 desde hai mais de %1 segundos."
 
-#: src/konsolepanel.cpp:26 src/viewer/viewcontainer.cpp:1988
-#: src/viewer/viewcontainer.cpp:1989
+#: src/konsolepanel.cpp:26 src/viewer/viewcontainer.cpp:1992
+#: src/viewer/viewcontainer.cpp:1993
 msgid "Konsole"
 msgstr "Konsole"
 
@@ -4577,8 +4625,12 @@ msgstr ""
 "Konversation soporta isto."
 
 #: src/linkaddressbook/addressbook_base.cpp:394
+#, fuzzy
+#| msgid ""
+#| "Could not run your addressbook program (kaddressbook).  This is most "
+#| "likely because it is not installed.  Please install the 'kdepim' packages."
 msgid ""
-"Could not run your addressbook program (kaddressbook).  This is most likely "
+"Could not run the address book program (kaddressbook) - this is most likely "
 "because it is not installed.  Please install the 'kdepim' packages."
 msgstr ""
 "Non foi posíbel executar o programa de caderno de enderezos (kaddresbook). "
@@ -4586,7 +4638,6 @@ msgstr ""
 "\"."
 
 #: src/linkaddressbook/addressbook_base.cpp:404
-#: src/linkaddressbook/addressbook_base.cpp:480
 msgid ""
 "The contact that you have selected does not have an email address associated "
 "with them. "
@@ -4609,60 +4660,90 @@ msgstr ""
 "pacotes de \"kdepim\"."
 
 #: src/linkaddressbook/addressbook_base.cpp:460
+#, fuzzy
+#| msgid ""
+#| "None of the contacts that you have selected were associated with an "
+#| "addressbook contacts. "
 msgid ""
-"None of the contacts that you have selected were associated with an "
-"addressbook contacts. "
+"None of the selected contacts are associated with address book entries. "
 msgstr ""
 "Nengun dos contactos que escolleu están asociados con contactos do caderno "
 "de enderezos. "
 
 #: src/linkaddressbook/addressbook_base.cpp:462
-msgid ""
-"The contact that you have selected is not associated with an addressbook "
-"contact. "
+#, fuzzy
+#| msgid ""
+#| "The contact that you have selected is not associated with an addressbook "
+#| "contact. "
+msgid "The selected contact is not associated with an address book entry. "
 msgstr ""
 "O contacto que escolleu non está asociados cun contacto do caderno de "
 "enderezos. "
 
 #: src/linkaddressbook/addressbook_base.cpp:467
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "Some of the contacts (%1) that you have selected are not associated with "
+#| "addressbook contacts. "
 msgid ""
 "Some of the contacts (%1) that you have selected are not associated with "
-"addressbook contacts. "
+"address book entries. "
 msgstr ""
 "Alguns dos contactos (%1) que escolleu non están asociados con contactos do "
 "caderno de enderezos. "
 
 #: src/linkaddressbook/addressbook_base.cpp:469
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "One of the contacts (%1) that you have selected is not associated with an "
+#| "addressbook contact. "
 msgid ""
 "One of the contacts (%1) that you have selected is not associated with an "
-"addressbook contact. "
+"address book entry. "
 msgstr ""
 "Un dos contactos (%1) que escolleu non está asociado cun contacto do caderno "
 "de enderezos. "
 
 #: src/linkaddressbook/addressbook_base.cpp:471
+#, fuzzy
+#| msgid ""
+#| "You can right click on a contact, and choose to edit the Addressbook "
+#| "Associations to link them to a contact in your addressbook."
 msgid ""
-"You can right click on a contact, and choose to edit the Addressbook "
-"Associations to link them to a contact in your addressbook."
+"You can right click on a contact and choose to edit the Address Book "
+"Associations to link them to a contact in your address book."
 msgstr ""
 "Pode premer o botón direito nun contacto e escoller editar as Asociazóns co "
 "Caderno de Enderezos para vinculá-lo cun contacto no seu caderno de "
 "enderezos."
 
 #: src/linkaddressbook/addressbook_base.cpp:478
+#, fuzzy
+#| msgid ""
+#| "The contact that you have selected does not have an email address "
+#| "associated with them. "
 msgid ""
-"None of the contacts that you have selected have an email address associated "
-"with them. "
+"None of the selected contacts have an email address associated with them. "
 msgstr ""
-"Nengun dos contactos que escolleu ten un enderezo de correo asociado con el. "
+"O contacto que escolleu non ten un enderezo de correo asociado con el. "
+
+#: src/linkaddressbook/addressbook_base.cpp:480
+#, fuzzy
+#| msgid ""
+#| "The contact that you have selected does not have an email address "
+#| "associated with them. "
+msgid "The selected contact does not have an associated email address. "
+msgstr ""
+"O contacto que escolleu non ten un enderezo de correo asociado con el. "
 
 #: src/linkaddressbook/addressbook_base.cpp:485
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "Some of the contacts (%1) that you have selected do not have an email "
+#| "address associated with them. "
 msgid ""
-"Some of the contacts (%1) that you have selected do not have an email "
-"address associated with them. "
+"Some of the contacts (%1) that you have selected do not have email addresses "
+"associated with them. "
 msgstr ""
 "Alguns dos contactos (%1) que escolleu non teñen un enderezo de correo "
 "asociado a eles. "
@@ -4677,29 +4758,43 @@ msgstr ""
 "el. "
 
 #: src/linkaddressbook/addressbook_base.cpp:489
+#, fuzzy
+#| msgid ""
+#| "You can right click on a contact, and choose to edit the addressbook "
+#| "contact, adding an email for them."
 msgid ""
-"You can right click on a contact, and choose to edit the addressbook "
-"contact, adding an email for them."
+"You can right click on a contact and edit the corresponding address book "
+"entry to add an email address for them."
 msgstr ""
 "Pode premer o botón direito nun contacto e escoller editar o contacto do "
 "caderno de enderezos, engadindo-lle un correo electrónico."
 
 #: src/linkaddressbook/addressbook_base.cpp:493
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "Some of the contacts (%1) that you have selected are not associated with "
+#| "addressbook contacts, and some of the contacts (%2) do not have an email "
+#| "address associated with them.  "
 msgid ""
 "Some of the contacts (%1) that you have selected are not associated with "
-"addressbook contacts, and some of the contacts (%2) do not have an email "
-"address associated with them.  "
+"address book entries, and some of the contacts (%2) do not have email "
+"addresses associated with them.  "
 msgstr ""
 "Alguns dos contactos (%1) que escolleu non están asociados con contactos do "
 "caderno de enderezos, e alguns dos contactos (%2) non teñen un enderezo de "
 "correo asociado a eles. "
 
 #: src/linkaddressbook/addressbook_base.cpp:494
+#, fuzzy
+#| msgid ""
+#| "You can right click on a contact, and choose to edit the Addressbook "
+#| "Associations to link them to a contact in your addressbook, and choose to "
+#| "edit the addressbook contact, adding an email for them."
 msgid ""
-"You can right click on a contact, and choose to edit the Addressbook "
-"Associations to link them to a contact in your addressbook, and choose to "
-"edit the addressbook contact, adding an email for them."
+"For the former contacts, this can be resolved by right clicking on a contact "
+"and choosing to edit the Address Book Associations, thereby linking them to "
+"a contact in your address book.  For the latter, by choosing to editing the "
+"corresponding address book contact you can specify an email address for them."
 msgstr ""
 "Pode premer co botón direito nun contacto e escoller editar a Asociazón co "
 "Caderno de Enderezos para vinculá-lo cun contacto do seu libro de enderezos, "
@@ -4707,10 +4802,15 @@ msgstr ""
 "correo electrónico."
 
 #: src/linkaddressbook/addressbook_base.cpp:503
+#, fuzzy
+#| msgid ""
+#| "\n"
+#| "Do you want to send an email anyway to the nicks that do have an email "
+#| "address?"
 msgid ""
 "\n"
-"Do you want to send an email anyway to the nicks that do have an email "
-"address?"
+"Do you want to send an email anyway to the nicks that do have email "
+"addresses?"
 msgstr ""
 "\n"
 "Desexa enviar un correo electrónico para os alcumes que teñen un enderezo de "
@@ -4721,7 +4821,9 @@ msgid "Send Email"
 msgstr "Enviar un correo"
 
 #: src/linkaddressbook/linkaddressbookui.cpp:51
-msgid "Link IRC Nick to Addressbook Contact"
+#, fuzzy
+#| msgid "Link IRC Nick to Addressbook Contact"
+msgid "Link IRC Nick to Address Book Contact"
 msgstr "Vincular o Alcume de IRC cun Contacto de Libro de Enderezos"
 
 #: src/linkaddressbook/linkaddressbookui.cpp:118
@@ -4756,7 +4858,7 @@ msgstr "Novo contacto do Libro de Enderezos"
 msgid "Name the new entry:"
 msgstr "Nome do novo contacto:"
 
-#: src/urlcatcher.cpp:35 src/viewer/viewcontainer.cpp:2000
+#: src/urlcatcher.cpp:35 src/viewer/viewcontainer.cpp:2004
 msgid "URL Catcher"
 msgstr "Extractor de URLs"
 
@@ -4908,7 +5010,7 @@ msgstr "Inserir Caracter"
 
 #. i18n: file: data/konversationui.rc:23
 #. i18n: ectx: Menu (insert)
-#: src/viewer/insertchardialog.cpp:30 rc.cpp:1804
+#: src/viewer/insertchardialog.cpp:30 rc.cpp:1778
 #, fuzzy
 #| msgid "secret"
 msgid "&Insert"
@@ -4962,7 +5064,7 @@ msgstr "Abrir unha conversa privada con %1"
 msgid "Join the channel %1"
 msgstr "Unir-se ao canal %1"
 
-#: src/viewer/ircinput.cpp:65
+#: src/viewer/ircinput.cpp:67
 #, fuzzy
 msgid ""
 "<qt><p>The input line is where you type messages to be sent the channel, "
@@ -4990,22 +5092,45 @@ msgstr ""
 "comandos, consulte o Manual de Konversation.<p>Unha mensaxe pode ter como "
 "máximo 512 carácteres e non pode conter varias liñas.</qt>"
 
-#: src/viewer/ircinput.cpp:432
-#, kde-format
+#: src/viewer/ircinput.cpp:456
+#, fuzzy, kde-format
+#| msgid " bytes"
+msgid "1 byte"
+msgid_plural "%1 bytes"
+msgstr[0] " bytes"
+msgstr[1] " bytes"
+
+#: src/viewer/ircinput.cpp:457
+#, fuzzy, kde-format
+#| msgid " lines"
+msgid "1 line"
+msgid_plural "%1 lines"
+msgstr[0] " liñas"
+msgstr[1] " liñas"
+
+#: src/viewer/ircinput.cpp:463
+#, fuzzy, kde-format
+#| msgid ""
+#| "<qt>You are attempting to paste a large portion of text (%1 bytes or %2 "
+#| "lines) into the chat. This can cause connection resets or flood kills. Do "
+#| "you really want to continue?</qt>"
+msgctxt ""
+"%1 is, for instance, '200 bytes'.  %2 is, for instance, '7 lines'.  Both are "
+"localised (see the two previous messages)."
 msgid ""
-"<qt>You are attempting to paste a large portion of text (%1 bytes or %2 "
-"lines) into the chat. This can cause connection resets or flood kills. Do "
-"you really want to continue?</qt>"
+"<qt>You are attempting to paste a large portion of text (%1 or %2) into the "
+"chat. This can cause connection resets or flood kills. Do you really want to "
+"continue?</qt>"
 msgstr ""
 "<qt>Está a tentar apegar unha grande cantidade de texto na conversa (%1 "
 "bytes ou %2 liñas). Isto pode causar a quebra de conexón ou desconexóns por "
 "demasiados dados enviados. Quer realmente continuar?</qt>"
 
-#: src/viewer/ircinput.cpp:435
+#: src/viewer/ircinput.cpp:466
 msgid "Large Paste Warning"
 msgstr "Aviso de Apegado Grande"
 
-#: src/viewer/ircinput.cpp:436
+#: src/viewer/ircinput.cpp:467
 #, fuzzy
 #| msgid "Part"
 msgid "Paste"
@@ -5015,7 +5140,7 @@ msgstr "Abandonar"
 #. i18n: ectx: property (text), widget (KPushButton, m_editIdentityButton)
 #. i18n: file: src/irc/serverlistdialogui.ui:162
 #. i18n: ectx: property (text), widget (QPushButton, m_editButton)
-#: src/viewer/ircinput.cpp:437 rc.cpp:65 rc.cpp:200
+#: src/viewer/ircinput.cpp:468 rc.cpp:65 rc.cpp:200
 msgid "&Edit..."
 msgstr "&Editar..."
 
@@ -5073,6 +5198,10 @@ msgstr "Escolla de Cores do IRC"
 msgid "None"
 msgstr "Nengunha"
 
+#: src/viewer/pasteeditor.cpp:31
+msgid "Edit Multiline Paste"
+msgstr "Editar Apegado Multi-Liña"
+
 #: src/viewer/chatwindow.cpp:352
 #, kde-format
 msgid ""
@@ -5086,21 +5215,7 @@ msgstr ""
 "*** o %1\n"
 "\n"
 
-#: src/viewer/multilineedit.cpp:26
-msgid "Add &Quotation Indicators"
-msgstr "Engadir Indicadores de &Cita"
-
-#: src/viewer/multilineedit.cpp:27
-#, fuzzy
-#| msgid "Remove Theme"
-msgid "Remove Newlines"
-msgstr "Borrar o Tema"
-
-#: src/viewer/multilineedit.cpp:29
-msgid "Edit Multiline Paste"
-msgstr "Editar Apegado Multi-Liña"
-
-#: src/viewer/rawlog.cpp:28 src/viewer/viewcontainer.cpp:2137
+#: src/viewer/rawlog.cpp:28 src/viewer/viewcontainer.cpp:2141
 msgid "Raw Log"
 msgstr "Rexisto en Bruto"
 
@@ -5168,12 +5283,12 @@ msgstr "Só pode procurar en campos de texto."
 msgid "Find Text Information"
 msgstr "Procurar Informazón do Texto"
 
-#: src/viewer/viewcontainer.cpp:1979
+#: src/viewer/viewcontainer.cpp:1983
 #, kde-format
 msgid "Logfile of %1"
 msgstr "Ficheiro de rexisto de %1"
 
-#: src/viewer/viewcontainer.cpp:2375
+#: src/viewer/viewcontainer.cpp:2382
 msgid ""
 "Using this function may result in a lot of network traffic. If your "
 "connection is not fast enough, it is possible that your client will be "
@@ -5183,14 +5298,18 @@ msgstr ""
 "non é suficientemente rápida, é posíbel que o seu cliente sexa desconectado "
 "do servidor."
 
-#: src/viewer/viewcontainer.cpp:2379
+#: src/viewer/viewcontainer.cpp:2386
 msgid "Channel List Warning"
 msgstr "Aviso da Lista de Canais"
 
-#: src/viewer/viewcontainer.cpp:2398
+#: src/viewer/viewcontainer.cpp:2405
+#, fuzzy
+#| msgid ""
+#| "The channel list can only be opened from a query, channel or status "
+#| "window to find out, which server this list belongs to."
 msgid ""
-"The channel list can only be opened from a query, channel or status window "
-"to find out, which server this list belongs to."
+"To know which server to display the channel list for, the list can only be "
+"opened from a query, channel or status window."
 msgstr ""
 "A lista de canais só pode abrir-se desde unha xanela de conversa privada, "
 "canal ou estado, para averiguar a que servidor pertence a lista."
@@ -5800,9 +5919,9 @@ msgstr "Te&ma"
 
 #. i18n: file: src/irc/channeloptionsui.ui:62
 #. i18n: ectx: property (text), widget (QTreeWidget, topicHistoryList)
-#. i18n: file: src/identitydialog.ui:214
+#. i18n: file: src/identitydialog.ui:211
 #. i18n: ectx: property (title), widget (KEditListBox, m_nicknameLBox)
-#: rc.cpp:116 rc.cpp:1287
+#: rc.cpp:116 rc.cpp:1252
 msgid "Nickname"
 msgstr "Alcume"
 
@@ -6169,7 +6288,9 @@ msgstr "Aczón do Botón"
 
 #. i18n: file: src/preferences/quickbuttons_preferencesui.ui:55
 #. i18n: ectx: property (text), widget (QPushButton, removeButton)
-#: rc.cpp:350
+#. i18n: file: src/identitydialog.ui:158
+#. i18n: ectx: property (toolTip), widget (KPushButton, m_delBtn)
+#: rc.cpp:350 rc.cpp:1235
 #, fuzzy
 msgid "Remove"
 msgstr "Borrado"
@@ -7097,7 +7218,7 @@ msgstr "Evento do canal"
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox10)
 #. i18n: file: src/viewer/searchbarbase.ui:92
 #. i18n: ectx: property (text), widget (QToolButton, m_optionsButton)
-#: rc.cpp:819 rc.cpp:1750
+#: rc.cpp:819 rc.cpp:1715
 #, fuzzy
 #| msgid "Exception"
 msgid "Options"
@@ -7467,7 +7588,7 @@ msgstr "Cor do te&xto:"
 #. i18n: ectx: property (text), widget (QLabel, textLabel3)
 #. i18n: file: src/viewer/irccolorchooserui.ui:122
 #. i18n: ectx: property (text), widget (QLabel, m_bgColorLbl)
-#: rc.cpp:1007 rc.cpp:1801
+#: rc.cpp:1007 rc.cpp:1775
 msgid "&Background color:"
 msgstr "Cor de &fondo:"
 
@@ -7892,62 +8013,15 @@ msgstr "Duplicada"
 msgid "Rename"
 msgstr "Mudar o Nome"
 
-#. i18n: file: src/identitydialog.ui:161
-#. i18n: ectx: property (text), widget (KPushButton, m_editBtn)
-#: rc.cpp:1235
-msgctxt "Edit"
-msgid ""
-"\n"
-"         </property>\n"
-"         <property name=\"iconSize\">\n"
-"          <size>\n"
-"           <width>16</width>\n"
-"           <height>16</height>\n"
-"          </size>\n"
-"         </property>\n"
-"        </widget>\n"
-"       </item>\n"
-"       <item>\n"
-"        <widget class=\"KPushButton\" name=\"m_delBtn\">\n"
-"         <property name=\"sizePolicy\">\n"
-"          <sizepolicy hsizetype=\"Fixed\" vsizetype=\"Fixed\">\n"
-"           <horstretch>0</horstretch>\n"
-"           <verstretch>0</verstretch>\n"
-"          </sizepolicy>\n"
-"         </property>\n"
-"         <property name=\"minimumSize\">\n"
-"          <size>\n"
-"           <width>28</width>\n"
-"           <height>28</height>\n"
-"          </size>\n"
-"         </property>\n"
-"         <property name=\"maximumSize\">\n"
-"          <size>\n"
-"           <width>28</width>\n"
-"           <height>28</height>\n"
-"          </size>\n"
-"         </property>\n"
-"         <property name=\"toolTip\">\n"
-"          <string>Remove"
-msgstr ""
-
-#. i18n: file: src/identitydialog.ui:162
-#. i18n: ectx: property (iconSize), widget (KPushButton, m_editBtn)
-#: rc.cpp:1269
-msgid ""
-"Remove</string>\n"
-"         </property>"
-msgstr ""
-
-#. i18n: file: src/identitydialog.ui:190
+#. i18n: file: src/identitydialog.ui:187
 #. i18n: ectx: property (text), widget (QLabel, realNameLabel)
-#: rc.cpp:1276
+#: rc.cpp:1241
 msgid "&Real name:"
 msgstr "Nome ve&rdadeiro:"
 
-#. i18n: file: src/identitydialog.ui:200
+#. i18n: file: src/identitydialog.ui:197
 #. i18n: ectx: property (whatsThis), widget (KLineEdit, m_realNameEdit)
-#: rc.cpp:1279
+#: rc.cpp:1244
 msgid ""
 "Enter your real name here. IRC is not intended to keep you hidden from your "
 "friends or enemies. Keep this in mind if you are tempted to behave "
@@ -7961,9 +8035,9 @@ msgstr ""
 "ocultar o seu sexo aos anormais existentes por aí, pero o PC que use sempre "
 "pode ser localizado, polo que nunca será anónimo de todo."
 
-#. i18n: file: src/identitydialog.ui:211
+#. i18n: file: src/identitydialog.ui:208
 #. i18n: ectx: property (whatsThis), widget (KEditListBox, m_nicknameLBox)
-#: rc.cpp:1282
+#: rc.cpp:1247
 msgid ""
 "This is your list of nicknames. A nickname is the name that other users will "
 "know you by. You may use any name you desire. The first character must be a "
@@ -7983,37 +8057,41 @@ msgstr ""
 "alcumes alternativas para si. Se a sua primeira escolla fose rexeitada polo "
 "servidor, Konversation tentará cos alcumes alternativos."
 
-#. i18n: file: src/identitydialog.ui:221
+#. i18n: file: src/identitydialog.ui:218
 #. i18n: ectx: property (title), widget (QGroupBox, autoIdentifyGroup)
-#: rc.cpp:1290
+#: rc.cpp:1255
 msgid "Auto Identify"
 msgstr "Identificar Automaticamente"
 
-#. i18n: file: src/identitydialog.ui:227
+#. i18n: file: src/identitydialog.ui:224
 #. i18n: ectx: property (text), widget (QLabel, botLabel)
-#: rc.cpp:1293
+#: rc.cpp:1258
 msgid "Ser&vice:"
 msgstr "Ser&vizo:"
 
-#. i18n: file: src/identitydialog.ui:237
+#. i18n: file: src/identitydialog.ui:234
 #. i18n: ectx: property (whatsThis), widget (KLineEdit, m_botEdit)
-#: rc.cpp:1296
+#: rc.cpp:1261
+#, fuzzy
+#| msgid ""
+#| "Service name can be <b><i>nickserv</i></b> or a network dependant name "
+#| "like  <b><i>nickserv@services.dal.net</i></b>"
 msgid ""
-"Service name can be <b><i>nickserv</i></b> or a network dependant name like  "
-"<b><i>nickserv@services.dal.net</i></b>"
+"Service name can be <b><i>nickserv</i></b> or a network-dependent name such "
+"as <b><i>nickserv@services.dal.net</i></b>"
 msgstr ""
 "O nome do servizo pode ser <b><i>nickserv</i></b> ou un nome dependente da "
 "rede como <b><i>nickserv@services.dal.net</i></b>"
 
-#. i18n: file: src/identitydialog.ui:244
+#. i18n: file: src/identitydialog.ui:241
 #. i18n: ectx: property (text), widget (QLabel, passwordLabel)
-#: rc.cpp:1299
+#: rc.cpp:1264
 msgid "Pa&ssword:"
 msgstr "&Contrasinal:"
 
-#. i18n: file: src/identitydialog.ui:273
+#. i18n: file: src/identitydialog.ui:270
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, m_insertRememberLineOnAwayChBox)
-#: rc.cpp:1305
+#: rc.cpp:1270
 msgid ""
 "If you check this box, whenever you perform an <b>/away</b> command, a "
 "horizontal line will appear in the channel, marking the point where you went "
@@ -8023,21 +8101,21 @@ msgstr ""
 "unha liña horizontal no canal, marcando o ponto en que se  ausentou. Os "
 "outros usuários de IRC non verán esta liña horizontal."
 
-#. i18n: file: src/identitydialog.ui:276
+#. i18n: file: src/identitydialog.ui:273
 #. i18n: ectx: property (text), widget (QCheckBox, m_insertRememberLineOnAwayChBox)
-#: rc.cpp:1308
+#: rc.cpp:1273
 msgid "Mark the last position in chat windows when going away"
 msgstr ""
 
-#. i18n: file: src/identitydialog.ui:283
+#. i18n: file: src/identitydialog.ui:280
 #. i18n: ectx: property (text), widget (QLabel, awayNicknameLabel)
-#: rc.cpp:1311
+#: rc.cpp:1276
 msgid "Away nickname:"
 msgstr "Alcume de auséncia:"
 
-#. i18n: file: src/identitydialog.ui:290
+#. i18n: file: src/identitydialog.ui:287
 #. i18n: ectx: property (whatsThis), widget (KLineEdit, m_awayNickEdit)
-#: rc.cpp:1314
+#: rc.cpp:1279
 msgid ""
 "Enter a nickname that indicates you are away. Whenever you perform an <b>/"
 "away msg</b> command in any channel joined with this Identity, Konversation "
@@ -8056,53 +8134,53 @@ msgstr ""
 "volta para o orixinal. Se non quer mudar automaticamente o seu alcume ao "
 "pasar para ausente, deixe-o en branco."
 
-#. i18n: file: src/identitydialog.ui:305
+#. i18n: file: src/identitydialog.ui:302
 #. i18n: ectx: property (whatsThis), widget (QGroupBox, automaticAwayGroup)
-#: rc.cpp:1317
+#: rc.cpp:1282
 msgid ""
 "If you check this box, Konversation will automatically set all connections "
 "using this Identity away when the screensaver starts or after a period of "
 "user inactivity configured below."
 msgstr ""
 
-#. i18n: file: src/identitydialog.ui:308
+#. i18n: file: src/identitydialog.ui:305
 #. i18n: ectx: property (title), widget (QGroupBox, automaticAwayGroup)
-#: rc.cpp:1320
+#: rc.cpp:1285
 msgid "Automatic Away"
 msgstr ""
 
-#. i18n: file: src/identitydialog.ui:326
+#. i18n: file: src/identitydialog.ui:323
 #. i18n: ectx: property (text), widget (QLabel, setAwayAfterLabel)
-#: rc.cpp:1323
+#: rc.cpp:1288
 msgid "Set away after"
 msgstr ""
 
-#. i18n: file: src/identitydialog.ui:349
+#. i18n: file: src/identitydialog.ui:346
 #. i18n: ectx: property (text), widget (QLabel, timeOfUserInactivityLabel)
-#: rc.cpp:1326
+#: rc.cpp:1291
 #, fuzzy
 msgid "of user inactivity"
 msgstr "Na actividade de pes&quisa"
 
-#. i18n: file: src/identitydialog.ui:356
+#. i18n: file: src/identitydialog.ui:353
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, m_automaticUnawayChBox)
-#: rc.cpp:1329
+#: rc.cpp:1294
 msgid ""
 "If you check this box, Konversation will automatically cancel away for all "
 "connections using this Identity when the screensaver stops or new user "
 "activity is detected."
 msgstr ""
 
-#. i18n: file: src/identitydialog.ui:359
+#. i18n: file: src/identitydialog.ui:356
 #. i18n: ectx: property (text), widget (QCheckBox, m_automaticUnawayChBox)
-#: rc.cpp:1332
+#: rc.cpp:1297
 #, fuzzy
 msgid "Automatically return on activity"
 msgstr "Continuar au&tomaticamente as transferéncias"
 
-#. i18n: file: src/identitydialog.ui:375
+#. i18n: file: src/identitydialog.ui:372
 #. i18n: ectx: property (whatsThis), widget (QGroupBox, awayMessageGroup)
-#: rc.cpp:1336
+#: rc.cpp:1301
 #, no-c-format
 msgid ""
 "If you check this box, Konversation will automatically send the Away message "
@@ -8116,40 +8194,40 @@ msgstr ""
 "away</b>, a mensaxe de regreso será apresentada en todos os canais aos que "
 "se conecta-se con esta identidade."
 
-#. i18n: file: src/identitydialog.ui:378
+#. i18n: file: src/identitydialog.ui:375
 #. i18n: ectx: property (title), widget (QGroupBox, awayMessageGroup)
-#: rc.cpp:1339
+#: rc.cpp:1304
 #, fuzzy
 msgid "Away Messages"
 msgstr "Mensaxe de auséncia:"
 
-#. i18n: file: src/identitydialog.ui:390
+#. i18n: file: src/identitydialog.ui:387
 #. i18n: ectx: property (text), widget (QLabel, awayLabel)
-#: rc.cpp:1342
+#: rc.cpp:1307
 msgid "Away &message:"
 msgstr "&Mensaxe de auséncia:"
 
-#. i18n: file: src/identitydialog.ui:403
+#. i18n: file: src/identitydialog.ui:400
 #. i18n: ectx: property (text), widget (QLabel, unAwayLabel)
-#: rc.cpp:1345
+#: rc.cpp:1310
 msgid "Re&turn message:"
 msgstr "Mensaxe de re&greso:"
 
-#. i18n: file: src/identitydialog.ui:433
+#. i18n: file: src/identitydialog.ui:430
 #. i18n: ectx: attribute (title), widget (QWidget, advancedWidget)
-#: rc.cpp:1348
+#: rc.cpp:1313
 msgid "Advanced"
 msgstr "Avanzado"
 
-#. i18n: file: src/identitydialog.ui:439
+#. i18n: file: src/identitydialog.ui:436
 #. i18n: ectx: property (text), widget (QLabel, sCommandLabel)
-#: rc.cpp:1351
+#: rc.cpp:1316
 msgid "&Pre-shell command:"
 msgstr "&Pré-comando:"
 
-#. i18n: file: src/identitydialog.ui:449
+#. i18n: file: src/identitydialog.ui:446
 #. i18n: ectx: property (whatsThis), widget (KLineEdit, m_sCommandEdit)
-#: rc.cpp:1354
+#: rc.cpp:1319
 msgid ""
 "Here you can enter a command to be executed before connection to server "
 "starts<br>If you have multiple servers in this identity this command will be "
@@ -8159,15 +8237,15 @@ msgstr ""
 "servidor<br>Se tivese vários servidores nesta identidade, o comando  será "
 "executado para cada un deles"
 
-#. i18n: file: src/identitydialog.ui:462
+#. i18n: file: src/identitydialog.ui:459
 #. i18n: ectx: property (text), widget (QLabel, codecLabel)
-#: rc.cpp:1357
+#: rc.cpp:1322
 msgid "&Encoding:"
 msgstr "&Codificazón:"
 
-#. i18n: file: src/identitydialog.ui:472
+#. i18n: file: src/identitydialog.ui:469
 #. i18n: ectx: property (whatsThis), widget (KComboBox, m_codecCBox)
-#: rc.cpp:1360
+#: rc.cpp:1325
 msgid ""
 "This setting affects how characters you type are encoded for sending to the "
 "server. It also affects how messages are displayed. When you first open "
@@ -8181,15 +8259,15 @@ msgstr ""
 "sistema operativo. Se tivese problemas para ver correctamente as mensaxes "
 "dos outros usuários, cámbie esta configurazón."
 
-#. i18n: file: src/identitydialog.ui:479
+#. i18n: file: src/identitydialog.ui:476
 #. i18n: ectx: property (text), widget (QLabel, loginLabel)
-#: rc.cpp:1363
+#: rc.cpp:1328
 msgid "I&dent:"
 msgstr "I&dent:"
 
-#. i18n: file: src/identitydialog.ui:489
+#. i18n: file: src/identitydialog.ui:486
 #. i18n: ectx: property (whatsThis), widget (KLineEdit, m_loginEdit)
-#: rc.cpp:1366
+#: rc.cpp:1331
 msgid ""
 "When you connect, many servers query your computer for an IDENT response. If "
 "you computer is not running an IDENT server, this response is sent by "
@@ -8199,51 +8277,51 @@ msgstr ""
 "resposta de IDENT. Se o seu ordenador non estivese a executar un servidor de "
 "IDENT, esta resposta é enviada por Konversation. Non pode conter espazos."
 
-#. i18n: file: src/identitydialog.ui:496
+#. i18n: file: src/identitydialog.ui:493
 #. i18n: ectx: property (text), widget (QLabel, quitLabel)
-#: rc.cpp:1369
+#: rc.cpp:1334
 #, fuzzy
 msgid "&Quit reason:"
 msgstr "Motivo da &partida:"
 
-#. i18n: file: src/identitydialog.ui:506
+#. i18n: file: src/identitydialog.ui:503
 #. i18n: ectx: property (whatsThis), widget (KLineEdit, m_quitEdit)
-#: rc.cpp:1372
+#: rc.cpp:1337
 #, fuzzy
 msgid "Whenever you leave a server, this message is shown to others."
 msgstr "Sempre que abandone un canal, esta mensaxe é enviada para el."
 
-#. i18n: file: src/identitydialog.ui:509
+#. i18n: file: src/identitydialog.ui:506
 #. i18n: ectx: property (text), widget (KLineEdit, m_quitEdit)
-#. i18n: file: src/identitydialog.ui:529
+#. i18n: file: src/identitydialog.ui:526
 #. i18n: ectx: property (text), widget (KLineEdit, m_partEdit)
-#: rc.cpp:1375 rc.cpp:1384
+#: rc.cpp:1340 rc.cpp:1349
 #, fuzzy
 #| msgid "Konversation"
-msgid "Konversation terminated!"
+msgid "Konversation terminated."
 msgstr "Konversation"
 
-#. i18n: file: src/identitydialog.ui:516
+#. i18n: file: src/identitydialog.ui:513
 #. i18n: ectx: property (text), widget (QLabel, partLabel)
-#: rc.cpp:1378
+#: rc.cpp:1343
 msgid "&Part reason:"
 msgstr "Motivo da &partida:"
 
-#. i18n: file: src/identitydialog.ui:526
+#. i18n: file: src/identitydialog.ui:523
 #. i18n: ectx: property (whatsThis), widget (KLineEdit, m_partEdit)
-#: rc.cpp:1381
+#: rc.cpp:1346
 msgid "Whenever you leave a channel, this message is sent to the channel."
 msgstr "Sempre que abandone un canal, esta mensaxe é enviada para el."
 
-#. i18n: file: src/identitydialog.ui:536
+#. i18n: file: src/identitydialog.ui:533
 #. i18n: ectx: property (text), widget (QLabel, kickLabel)
-#: rc.cpp:1387
+#: rc.cpp:1352
 msgid "&Kick reason:"
 msgstr "Motivo da e&xpulsión:"
 
-#. i18n: file: src/identitydialog.ui:546
+#. i18n: file: src/identitydialog.ui:543
 #. i18n: ectx: property (whatsThis), widget (KLineEdit, m_kickEdit)
-#: rc.cpp:1390
+#: rc.cpp:1355
 msgid ""
 "Whenever you are kicked from a channel (usually by an IRC operator), this "
 "message is sent to the channel."
@@ -8251,28 +8329,32 @@ msgstr ""
 "Sempre que sexa expulsado dun canal (normalmente por un operador de IRC), "
 "esta mensaxe é enviada para dito canal."
 
-#. i18n: file: src/identitydialog.ui:549
+#. i18n: file: src/identitydialog.ui:546
 #. i18n: ectx: property (text), widget (KLineEdit, m_kickEdit)
-#: rc.cpp:1393
-msgid "User terminated!"
-msgstr ""
+#: rc.cpp:1358
+#, fuzzy
+#| msgid "Konversation"
+msgid "User terminated."
+msgstr "Konversation"
 
 #. i18n: file: src/config/konversation.kcfg:21
 #. i18n: ectx: label, entry, group (Appearance)
-#: rc.cpp:1398
-msgid "Limit the size of the tab labels to fit all on screen"
+#: rc.cpp:1363
+#, fuzzy
+#| msgid "Limit the size of the tab labels to fit all on screen"
+msgid "Limit the size of the tab labels to fit them all on screen"
 msgstr ""
 "Limitar o tamaño das lendas dos separadores para couber todo na pantalla"
 
 #. i18n: file: src/config/konversation.kcfg:226
 #. i18n: ectx: label, entry, group (Appearance)
-#: rc.cpp:1467
+#: rc.cpp:1432
 msgid "Hide the scrollbar"
 msgstr ""
 
 #. i18n: file: src/config/konversation.kcfg:232
 #. i18n: ectx: whatsthis, entry, group (General Options)
-#: rc.cpp:1470
+#: rc.cpp:1435
 msgid ""
 "Enable if you want all the IRC input lines to check your spelling as you type"
 msgstr ""
@@ -8281,7 +8363,7 @@ msgstr ""
 
 #. i18n: file: src/config/konversation.kcfg:241
 #. i18n: ectx: whatsthis, entry, group (General Options)
-#: rc.cpp:1473
+#: rc.cpp:1438
 msgid ""
 "Enabling this will cause the input box to grow vertically when it fills up."
 msgstr ""
@@ -8289,92 +8371,112 @@ msgstr ""
 
 #. i18n: file: src/config/konversation.kcfg:275
 #. i18n: ectx: label, entry, group (General Options)
-#: rc.cpp:1488
-msgid "Start with hidden mainwindow"
+#: rc.cpp:1453
+msgid "Start with hidden main window"
 msgstr ""
 
 #. i18n: file: src/config/konversation.kcfg:329
 #. i18n: ectx: label, entry, group (General Options)
-#: rc.cpp:1511
+#: rc.cpp:1476
 msgid "&Show real names next to nicknames"
 msgstr "Mo&strar os nomes verdadeiros ao lado dos alcumes"
 
 #. i18n: file: src/config/konversation.kcfg:543
 #. i18n: ectx: label, entry (OpenWatchedNicksAtStartup), group (Notify List)
-#: rc.cpp:1595
+#: rc.cpp:1560
 msgid "Open Watched Nicks tab at application startup"
 msgstr "Mostrar a páxina de alcumes vixiados no início da aplicazón"
 
 #. i18n: file: src/config/konversation.kcfg:827
 #. i18n: ectx: label, entry, group (Themes)
-#: rc.cpp:1693
+#: rc.cpp:1658
 msgid "Enable emoticons"
 msgstr "Activar os emoticones"
 
 #. i18n: file: src/config/konversation.kcfg:831
 #. i18n: ectx: label, entry, group (Themes)
-#: rc.cpp:1696
+#: rc.cpp:1661
 msgid "Emoticons theme"
 msgstr "Tema de emoticones"
 
 #. i18n: file: src/linkaddressbook/linkaddressbookui_base.ui:41
 #. i18n: ectx: property (toolTip), widget (QPushButton, addAddresseeButton)
-#: rc.cpp:1720
+#: rc.cpp:1685
 msgid "Create a new entry in your address book"
 msgstr "Cria un novo rexisto no seu caderno de enderezos"
 
 #. i18n: file: src/linkaddressbook/linkaddressbookui_base.ui:44
 #. i18n: ectx: property (text), widget (QPushButton, addAddresseeButton)
-#: rc.cpp:1723
+#: rc.cpp:1688
 msgid "Create New &Entry..."
 msgstr "Criar unha r&existo novo..."
 
 #. i18n: file: src/linkaddressbook/linkaddressbookui_base.ui:67
 #. i18n: ectx: property (toolTip), widget (K3ListView, addresseeListView)
-#: rc.cpp:1726
+#: rc.cpp:1691
 msgid "Select the contact you want to communicate with via Instant Messaging"
 msgstr ""
 "Escolla o contacto co que desexa contactar através da Mensaxeiria Instantánea"
 
 #. i18n: file: src/linkaddressbook/linkaddressbookui_base.ui:77
 #. i18n: ectx: property (text), widget (K3ListView, addresseeListView)
-#: rc.cpp:1729
+#: rc.cpp:1694
 msgid "Photo"
 msgstr "Fotografia"
 
 #. i18n: file: src/linkaddressbook/linkaddressbookui_base.ui:88
 #. i18n: ectx: property (text), widget (K3ListView, addresseeListView)
-#: rc.cpp:1732
+#: rc.cpp:1697
 msgid "Name"
 msgstr "Nome"
 
 #. i18n: file: src/linkaddressbook/linkaddressbookui_base.ui:121
 #. i18n: ectx: property (text), widget (QLabel, lblSearch)
-#: rc.cpp:1738
+#: rc.cpp:1703
 msgid "S&earch:"
 msgstr "P&rocurar:"
 
 #. i18n: file: src/viewer/searchbarbase.ui:72
 #. i18n: ectx: property (text), widget (KPushButton, m_findNextButton)
-#: rc.cpp:1744
+#: rc.cpp:1709
 msgid "Find Ne&xt"
 msgstr "Procurar o Segui&nte"
 
 #. i18n: file: src/viewer/searchbarbase.ui:82
 #. i18n: ectx: property (text), widget (KPushButton, m_findPreviousButton)
-#: rc.cpp:1747
+#: rc.cpp:1712
 msgid "Find Previous"
 msgstr "Procurar o Anterior"
 
+#. i18n: file: src/viewer/pasteeditor.ui:14
+#. i18n: ectx: property (windowTitle), widget (QWidget, PasteEditor)
+#: rc.cpp:1718
+msgid "Paste Editor"
+msgstr ""
+
+#. i18n: file: src/viewer/pasteeditor.ui:20
+#. i18n: ectx: property (text), widget (KPushButton, m_removeNewlinesButton)
+#: rc.cpp:1721
+#, fuzzy
+#| msgid "Remove Theme"
+msgid "&Remove Newlines"
+msgstr "Borrar o Tema"
+
+#. i18n: file: src/viewer/pasteeditor.ui:27
+#. i18n: ectx: property (text), widget (KPushButton, m_addQuotesButton)
+#: rc.cpp:1724
+msgid "Add &Quotation Indicators"
+msgstr "Engadir Indicadores de &Cita"
+
 #. i18n: file: src/viewer/irccolorchooserui.ui:19
 #. i18n: ectx: property (toolTip), widget (QLabel, m_previewLbl)
-#: rc.cpp:1753
+#: rc.cpp:1727
 msgid "This is how your message will look with these colors"
 msgstr "Esta é a aparéncia que a mensaxe vai ter con estas cores"
 
 #. i18n: file: src/viewer/irccolorchooserui.ui:24
 #. i18n: ectx: property (whatsThis), widget (QLabel, m_previewLbl)
-#: rc.cpp:1756
+#: rc.cpp:1730
 msgid ""
 "<qt>This is a preview of how your readers may see view your message if you "
 "select these colors.<br>\n"
@@ -8390,7 +8492,7 @@ msgstr ""
 
 #. i18n: file: src/viewer/irccolorchooserui.ui:33
 #. i18n: ectx: property (text), widget (QLabel, m_previewLbl)
-#: rc.cpp:1761
+#: rc.cpp:1735
 msgid "Preview"
 msgstr "Antevisión"
 
@@ -8398,7 +8500,7 @@ msgstr "Antevisión"
 #. i18n: ectx: property (toolTip), widget (KComboBox, m_fgColorCBox)
 #. i18n: file: src/viewer/irccolorchooserui.ui:69
 #. i18n: ectx: property (toolTip), widget (QLabel, m_fgColorLbl)
-#: rc.cpp:1764 rc.cpp:1771
+#: rc.cpp:1738 rc.cpp:1745
 msgid "The chosen text color is added to the input line."
 msgstr "A cor de texto escollida é engadida á liña de entrada."
 
@@ -8406,7 +8508,7 @@ msgstr "A cor de texto escollida é engadida á liña de entrada."
 #. i18n: ectx: property (whatsThis), widget (KComboBox, m_fgColorCBox)
 #. i18n: file: src/viewer/irccolorchooserui.ui:73
 #. i18n: ectx: property (whatsThis), widget (QLabel, m_fgColorLbl)
-#: rc.cpp:1767 rc.cpp:1774
+#: rc.cpp:1741 rc.cpp:1748
 msgid ""
 "<qt>Here you choose what color you want you the text in the next message you "
 "send to be.  If you choose a color and click Ok, the chosen color is added "
@@ -8423,7 +8525,7 @@ msgstr ""
 
 #. i18n: file: src/viewer/irccolorchooserui.ui:76
 #. i18n: ectx: property (text), widget (QLabel, m_fgColorLbl)
-#: rc.cpp:1778
+#: rc.cpp:1752
 msgid "&Foreground color:"
 msgstr "Cor &principal:"
 
@@ -8431,7 +8533,7 @@ msgstr "Cor &principal:"
 #. i18n: ectx: property (toolTip), widget (KComboBox, m_bgColorCBox)
 #. i18n: file: src/viewer/irccolorchooserui.ui:112
 #. i18n: ectx: property (toolTip), widget (QLabel, m_bgColorLbl)
-#: rc.cpp:1781 rc.cpp:1791
+#: rc.cpp:1755 rc.cpp:1765
 msgid "The chosen text-background color is added to the input line."
 msgstr "A cor de fondo do texto escollida é engadida á liña de entrada."
 
@@ -8439,7 +8541,7 @@ msgstr "A cor de fondo do texto escollida é engadida á liña de entrada."
 #. i18n: ectx: property (whatsThis), widget (KComboBox, m_bgColorCBox)
 #. i18n: file: src/viewer/irccolorchooserui.ui:119
 #. i18n: ectx: property (whatsThis), widget (QLabel, m_bgColorLbl)
-#: rc.cpp:1784 rc.cpp:1794
+#: rc.cpp:1758 rc.cpp:1768
 msgid ""
 "<qt>Here you choose what color you want you background for the text in the "
 "next message you send to be.\n"
@@ -8467,9 +8569,19 @@ msgstr ""
 
 #. i18n: file: data/konversationui.rc:35
 #. i18n: ectx: Menu (windows)
-#: rc.cpp:1807
+#: rc.cpp:1781
 msgid "&Window"
 msgstr "&Fiestra"
+
+#~ msgid "No such ignores: %1"
+#~ msgstr "Non existen os elementosignorados: %1"
+
+#~ msgid ""
+#~ "None of the contacts that you have selected have an email address "
+#~ "associated with them. "
+#~ msgstr ""
+#~ "Nengun dos contactos que escolleu ten un enderezo de correo asociado con "
+#~ "el. "
 
 #, fuzzy
 #~| msgid ""
