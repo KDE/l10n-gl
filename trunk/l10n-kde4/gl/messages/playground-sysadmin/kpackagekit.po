@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kpackagekit\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2009-05-14 14:03+0200\n"
+"POT-Creation-Date: 2009-05-19 11:39+0200\n"
 "PO-Revision-Date: 2009-03-13 21:06+0100\n"
 "Last-Translator: marce villarino <mvillarino@users.sourceforge.net>\n"
 "Language-Team: Galician <proxecto@trasno.ent>\n"
@@ -22,7 +22,7 @@ msgstr ""
 #: Updater/KpkUpdate.cpp:117 Updater/KpkUpdate.cpp:129
 #: Updater/KpkUpdate.cpp:144 libkpackagekit/KpkReviewChanges.cpp:212
 #: libkpackagekit/KpkReviewChanges.cpp:249
-#: SmartIcon/KpkTransactionTrayIcon.cpp:107 Settings/KpkSettings.cpp:163
+#: SmartIcon/KpkTransactionTrayIcon.cpp:117 Settings/KpkSettings.cpp:163
 #: KPackageKit/KpkInstallFiles.cpp:114
 #, fuzzy
 #| msgid "You don't have the necessary privileges to perform this action."
@@ -37,7 +37,7 @@ msgstr "Non foi posíbel actualizar o sistema"
 msgid "Failed to update package lists"
 msgstr "Non foi posíbel actualizar as listas de paquetes"
 
-#: Updater/KpkUpdate.cpp:145 SmartIcon/KpkTransactionTrayIcon.cpp:108
+#: Updater/KpkUpdate.cpp:145 SmartIcon/KpkTransactionTrayIcon.cpp:118
 msgid "Failed to refresh package lists"
 msgstr "Non foi posíbel refrescar as listas de paquetes"
 
@@ -54,7 +54,7 @@ msgstr "Acción"
 #. i18n: file: libkpackagekit/KpkTransaction.ui:103
 #. i18n: ectx: property (title), widget (QGroupBox, detailGroup)
 #: Updater/KpkSimpleTransactionModel.cpp:48 AddRm/KpkPackageDetails.cpp:128
-#: SmartIcon/KpkTransactionTrayIcon.cpp:243 rc.cpp:23 rc.cpp:71
+#: SmartIcon/KpkTransactionTrayIcon.cpp:277 rc.cpp:23 rc.cpp:71
 msgid "Details"
 msgstr "Detalles"
 
@@ -2253,36 +2253,48 @@ msgstr[0] "Xa están instalados todos os paquetes"
 msgstr[1] "Xa están instalados todos os paquetes"
 
 #: libkpackagekit/KpkStrings.cpp:699
-msgid "No restart is required"
-msgstr "Non precisa dun reinicio"
+#, fuzzy
+#| msgid "No restart is necessary for this update"
+msgid "No restart is necessary"
+msgstr "Esta actualización non precisa reiniciar nada"
 
 #: libkpackagekit/KpkStrings.cpp:701
-msgid "A system restart is required"
-msgstr "Requírese que se reinicie o sistema"
+#, fuzzy
+#| msgid "You need to restart the application"
+msgid "You will be required to restart this application"
+msgstr "Deberá reiniciar o programa"
 
 #: libkpackagekit/KpkStrings.cpp:703
-msgid "You will need to log off and log back on"
+#, fuzzy
+#| msgid "You will need to log off and log back on"
+msgid "You will be required to log out and back in"
 msgstr "Deberá saír e entrar de novo no sistema"
 
 #: libkpackagekit/KpkStrings.cpp:705
-msgid "You need to restart the application"
-msgstr "Deberá reiniciar o programa"
+#, fuzzy
+#| msgid "No restart is required"
+msgid "A restart will be required"
+msgstr "Non precisa dun reinicio"
 
 #: libkpackagekit/KpkStrings.cpp:717
-msgid "No restart is necessary for this update"
-msgstr "Esta actualización non precisa reiniciar nada"
+msgid "No restart is required"
+msgstr "Non precisa dun reinicio"
 
 #: libkpackagekit/KpkStrings.cpp:719
-msgid "An application restart is required after this update"
-msgstr "Esta actualización precisa reiniciar un programa"
+#, fuzzy
+#| msgid "No restart is required"
+msgid "A restart is required"
+msgstr "Non precisa dun reinicio"
 
 #: libkpackagekit/KpkStrings.cpp:721
-msgid "You will be required to log off and back on after this update"
-msgstr "Requírese que saia e entre de novo no sistema tras esta actualización"
+#, fuzzy
+#| msgid "You will need to log off and log back on"
+msgid "You need to log out and log back in"
+msgstr "Deberá saír e entrar de novo no sistema"
 
 #: libkpackagekit/KpkStrings.cpp:723
-msgid "A system restart is required after this update"
-msgstr "Esta actualización precisa que se reinicie o sistema"
+msgid "You need to restart the application"
+msgstr "Deberá reiniciar o programa"
 
 #: libkpackagekit/KpkStrings.cpp:735
 msgid "Stable"
@@ -2402,7 +2414,8 @@ msgstr[1] "<br /><i>E %1 actualizacións máis</i>"
 msgid "Review and update"
 msgstr "Examinar e actualizar"
 
-#: SmartIcon/KpkUpdateIcon.cpp:192
+#: SmartIcon/KpkUpdateIcon.cpp:192 SmartIcon/KpkTransactionTrayIcon.cpp:362
+#: SmartIcon/KpkTransactionTrayIcon.cpp:370
 msgid "Not now"
 msgstr "Non agora"
 
@@ -2466,52 +2479,75 @@ msgstr "Adrien Bustany"
 msgid "libpackagekit-qt and other stuff"
 msgstr "libpackagekit-qt e outras cousas"
 
-#: SmartIcon/KpkTransactionTrayIcon.cpp:50
+#: SmartIcon/KpkTransactionTrayIcon.cpp:53
 msgid "Transactions"
 msgstr "Transaccións"
 
-#: SmartIcon/KpkTransactionTrayIcon.cpp:66
+#: SmartIcon/KpkTransactionTrayIcon.cpp:69
 #, fuzzy
 #| msgid "Refresh Packages List"
 msgid "Refresh package list"
 msgstr "Refrescar a lista de paquetes"
 
-#: SmartIcon/KpkTransactionTrayIcon.cpp:73
+#: SmartIcon/KpkTransactionTrayIcon.cpp:76
 #, fuzzy
 #| msgid "Show Updates"
 msgid "Show messages"
 msgstr "Mostrar as actualizacións"
 
-#: SmartIcon/KpkTransactionTrayIcon.cpp:79
+#: SmartIcon/KpkTransactionTrayIcon.cpp:82
 msgid "Hide this icon"
 msgstr ""
 
-#: SmartIcon/KpkTransactionTrayIcon.cpp:173
-#, fuzzy
-#| msgid "You have %1"
-msgid "You have a message"
-msgid_plural "You have messages"
-msgstr[0] "Deberá %1"
-msgstr[1] "Deberá %1"
+#: SmartIcon/KpkTransactionTrayIcon.cpp:188
+#, fuzzy, kde-format
+#| msgid "Package Name"
+msgid "Package: %1"
+msgid_plural "Packages: %1"
+msgstr[0] "Nome do paquete"
+msgstr[1] "Nome do paquete"
 
-#: SmartIcon/KpkTransactionTrayIcon.cpp:197
-#: SmartIcon/KpkTransactionTrayIcon.cpp:210
+#: SmartIcon/KpkTransactionTrayIcon.cpp:201
+#, kde-format
+msgid "One message from the package manager"
+msgid_plural "%1 messages from the package manager"
+msgstr[0] ""
+msgstr[1] ""
+
+#: SmartIcon/KpkTransactionTrayIcon.cpp:231
+#: SmartIcon/KpkTransactionTrayIcon.cpp:244
 #, kde-format
 msgid "%1% - %2"
 msgstr "%1% - %2"
 
-#: SmartIcon/KpkTransactionTrayIcon.cpp:199
-#: SmartIcon/KpkTransactionTrayIcon.cpp:212
+#: SmartIcon/KpkTransactionTrayIcon.cpp:233
+#: SmartIcon/KpkTransactionTrayIcon.cpp:246
 #, kde-format
 msgid "%1"
 msgstr "%1"
 
-#: SmartIcon/KpkTransactionTrayIcon.cpp:229
+#: SmartIcon/KpkTransactionTrayIcon.cpp:263
 msgid "Package Manager Messages"
 msgstr ""
 
-#: SmartIcon/KpkTransactionTrayIcon.cpp:243
+#: SmartIcon/KpkTransactionTrayIcon.cpp:277
 msgid "Message"
+msgstr ""
+
+#: SmartIcon/KpkTransactionTrayIcon.cpp:353
+#, fuzzy
+#| msgid "The software update failed."
+msgid "The system update has completed"
+msgstr "Fallou a actualización do software."
+
+#: SmartIcon/KpkTransactionTrayIcon.cpp:361
+#: SmartIcon/KpkTransactionTrayIcon.cpp:365
+msgid "Restart"
+msgstr "Reiniciar"
+
+#: SmartIcon/KpkTransactionTrayIcon.cpp:369
+#: SmartIcon/KpkTransactionTrayIcon.cpp:375
+msgid "Logout"
 msgstr ""
 
 #. i18n: file: Settings/KpkSettings.ui:28
@@ -3135,6 +3171,26 @@ msgstr "Orixe dos paquetes"
 msgid "&Show origins of debug and development packages"
 msgstr "&Mostrar as fontes dos paquetes de depuración e desenvolvemento"
 
+#~ msgid "A system restart is required"
+#~ msgstr "Requírese que se reinicie o sistema"
+
+#~ msgid "An application restart is required after this update"
+#~ msgstr "Esta actualización precisa reiniciar un programa"
+
+#~ msgid "You will be required to log off and back on after this update"
+#~ msgstr ""
+#~ "Requírese que saia e entre de novo no sistema tras esta actualización"
+
+#~ msgid "A system restart is required after this update"
+#~ msgstr "Esta actualización precisa que se reinicie o sistema"
+
+#, fuzzy
+#~| msgid "You have %1"
+#~ msgid "You have a message"
+#~ msgid_plural "You have messages"
+#~ msgstr[0] "Deberá %1"
+#~ msgstr[1] "Deberá %1"
+
 #~ msgid "KPackageKit user interface"
 #~ msgstr "Interface de usuario de KPackageKit"
 
@@ -3236,9 +3292,6 @@ msgstr "&Mostrar as fontes dos paquetes de depuración e desenvolvemento"
 
 #~ msgid "CVE Home Page"
 #~ msgstr "Páxina de CVE"
-
-#~ msgid "Restart"
-#~ msgstr "Reiniciar"
 
 #~ msgid "Update"
 #~ msgstr "Actualizar"
