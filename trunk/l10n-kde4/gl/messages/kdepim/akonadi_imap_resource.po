@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: akonadi_imap_resource\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2009-05-14 13:55+0200\n"
+"POT-Creation-Date: 2009-05-25 11:40+0200\n"
 "PO-Revision-Date: 2009-05-08 21:22+0200\n"
 "Last-Translator: Xosé <xosecalvo@gmail.com>\n"
 "Language-Team: Galego <kde-i18n-doc@kde.org>\n"
@@ -16,11 +16,7 @@ msgstr ""
 "X-Generator: Lokalize 0.3\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
-#: imapresource.cpp:177
-msgid "No message retrieved, server reply was empty."
-msgstr "Non se obtivo nengunha mensaxe; a resposta do servidor estaba baleira."
-
-#: imapresource.cpp:213
+#: imapaccount.cpp:195
 #, kde-format
 msgid ""
 "You requested TLS/SSL to connect to %1, but your system does not seem to be "
@@ -29,51 +25,18 @@ msgstr ""
 "Solicitouse TLS/SSL para conectar con %1, mais parece que este sistema non "
 "está configurado para iso."
 
-#: imapresource.cpp:598
-msgid "Failed to create the folder, restoring folder list."
-msgstr "Non se puido crear o cartafol; restáurase a lista de cartafoles."
-
-#: imapresource.cpp:637
-msgid "Failed to rename the folder, restoring folder list."
-msgstr ""
-"Non se puido mudar o cartafol de nome; restáurase a lista de cartafoles."
-
-#: imapresource.cpp:660
-msgid "Failed to delete the folder, restoring folder list."
-msgstr "Non se pode eliminar o cartafol; restáurase a lista de cartafoles."
-
-#: imapresource.cpp:678
-msgid ""
-"The server refused the supplied username and password. Do you want to go to "
-"the settings, have another attempt at logging in, or do nothing?"
-msgstr ""
-"O servidor rexeitou o nome de usuario e contrasinal que se lle enviaron. "
-"Quere ir á configuración, tentar ligar outra vez ou non facer nada?"
-
-#: imapresource.cpp:681
-msgid "Could Not Authenticate"
-msgstr "Non foi posíbel autenticar"
-
-#: imapresource.cpp:682
-msgid "Settings"
-msgstr "Configuración"
-
-#: imapresource.cpp:683
-msgid "Single Input"
-msgstr "Entrada sinxela"
-
-#: imapresource.cpp:691
+#: imapaccount.cpp:234 imapresource.cpp:608
 #, kde-format
 msgid "Could not connect to the IMAP-server %1."
 msgstr "Non foi posíbel conectar co servidor de IMAP %1."
 
-#: imapresource.cpp:698
+#: imapaccount.cpp:243
 #, kde-format
 msgid "Could not test the capabilities supported by the IMAP server %1."
 msgstr ""
 "Non foi posíbel examinar as capacidades admitidas polo servidor de IMAP %1."
 
-#: imapresource.cpp:716
+#: imapaccount.cpp:263
 #, kde-format
 msgid ""
 "Cannot use the IMAP server %1, some mandatory capabilities are missing: %2. "
@@ -83,7 +46,44 @@ msgstr ""
 "capacidadas requiridas: %2. Pídalle ao administrador do sistema que "
 "actualice o servidor."
 
-#: imapresource.cpp:951
+#: imapresource.cpp:166
+msgid "No message retrieved, server reply was empty."
+msgstr "Non se obtivo nengunha mensaxe; a resposta do servidor estaba baleira."
+
+#: imapresource.cpp:519
+msgid "Failed to create the folder, restoring folder list."
+msgstr "Non se puido crear o cartafol; restáurase a lista de cartafoles."
+
+#: imapresource.cpp:558
+msgid "Failed to rename the folder, restoring folder list."
+msgstr ""
+"Non se puido mudar o cartafol de nome; restáurase a lista de cartafoles."
+
+#: imapresource.cpp:581
+msgid "Failed to delete the folder, restoring folder list."
+msgstr "Non se pode eliminar o cartafol; restáurase a lista de cartafoles."
+
+#: imapresource.cpp:593
+msgid ""
+"The server refused the supplied username and password. Do you want to go to "
+"the settings, have another attempt at logging in, or do nothing?"
+msgstr ""
+"O servidor rexeitou o nome de usuario e contrasinal que se lle enviaron. "
+"Quere ir á configuración, tentar ligar outra vez ou non facer nada?"
+
+#: imapresource.cpp:596
+msgid "Could Not Authenticate"
+msgstr "Non foi posíbel autenticar"
+
+#: imapresource.cpp:597
+msgid "Settings"
+msgstr "Configuración"
+
+#: imapresource.cpp:598
+msgid "Single Input"
+msgstr "Entrada sinxela"
+
+#: imapresource.cpp:846
 msgid "Could not find a valid password, please enter it here."
 msgstr "Non se atopou ningún contrasinal válido; escríbao aquí."
 
@@ -111,9 +111,15 @@ msgstr "Define o tipo de cifrado que se ha de empregar"
 msgid "Defines the authentication type to use"
 msgstr "Define o tipo de autenticación que se ha de empregar"
 
+#. i18n: file: imapresource.kcfg:23
+#. i18n: ectx: label, entry (SubscriptionEnabled), group (network)
+#: rc.cpp:15
+msgid "Defines if the server side subscription is enabled"
+msgstr ""
+
 #. i18n: file: setupserverview.ui:19
 #. i18n: ectx: property (whatsThis), widget (QLabel, label)
-#: rc.cpp:15
+#: rc.cpp:18
 msgid ""
 "Indicate the IMAP server. If you want to connect to a non-standard port for "
 "a specific encryption scheme, you can add \":port\" to indicate that. For "
@@ -125,19 +131,19 @@ msgstr ""
 
 #. i18n: file: setupserverview.ui:22
 #. i18n: ectx: property (text), widget (QLabel, label)
-#: rc.cpp:18
+#: rc.cpp:21
 msgid "IMAP server:"
 msgstr "Servidor de IMAP:"
 
 #. i18n: file: setupserverview.ui:37
 #. i18n: ectx: property (text), widget (KPushButton, testButton)
-#: rc.cpp:21
+#: rc.cpp:24
 msgid "Auto Detect"
 msgstr "Detectar automaticamente"
 
 #. i18n: file: setupserverview.ui:52
 #. i18n: ectx: property (whatsThis), widget (QGroupBox, safeImap)
-#: rc.cpp:24
+#: rc.cpp:27
 msgid ""
 "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
 "REC-html40/strict.dtd\">\n"
@@ -179,13 +185,13 @@ msgstr ""
 
 #. i18n: file: setupserverview.ui:55
 #. i18n: ectx: property (title), widget (QGroupBox, safeImap)
-#: rc.cpp:33
+#: rc.cpp:36
 msgid "Encryption"
 msgstr "Cifrado"
 
 #. i18n: file: setupserverview.ui:61
 #. i18n: ectx: property (text), widget (QRadioButton, noRadio)
-#: rc.cpp:36
+#: rc.cpp:39
 msgid "None"
 msgstr "Nengunha"
 
@@ -195,55 +201,55 @@ msgstr "Nengunha"
 #. i18n: ectx: attribute (buttonGroup), widget (QRadioButton, sslRadio)
 #. i18n: file: setupserverview.ui:87
 #. i18n: ectx: attribute (buttonGroup), widget (QRadioButton, tlsRadio)
-#: rc.cpp:39 rc.cpp:45 rc.cpp:51
+#: rc.cpp:42 rc.cpp:48 rc.cpp:54
 msgid "safeImapGroup"
 msgstr "safeImapGroup"
 
 #. i18n: file: setupserverview.ui:74
 #. i18n: ectx: property (text), widget (QRadioButton, sslRadio)
-#: rc.cpp:42
+#: rc.cpp:45
 msgid "SSL"
 msgstr "SSL"
 
 #. i18n: file: setupserverview.ui:84
 #. i18n: ectx: property (text), widget (QRadioButton, tlsRadio)
-#: rc.cpp:48
+#: rc.cpp:51
 msgid "TLS"
 msgstr "TLS"
 
 #. i18n: file: setupserverview.ui:97
 #. i18n: ectx: property (whatsThis), widget (QLabel, label_2)
-#: rc.cpp:54
+#: rc.cpp:57
 msgid "The username."
 msgstr "O nome do usuario."
 
 #. i18n: file: setupserverview.ui:100
 #. i18n: ectx: property (text), widget (QLabel, label_2)
-#: rc.cpp:57
+#: rc.cpp:60
 msgid "User name:"
 msgstr "Nome de usuario:"
 
 #. i18n: file: setupserverview.ui:113
 #. i18n: ectx: property (whatsThis), widget (QLabel, label_3)
-#: rc.cpp:60
+#: rc.cpp:63
 msgid "The password."
 msgstr "O contrasinal."
 
 #. i18n: file: setupserverview.ui:116
 #. i18n: ectx: property (text), widget (QLabel, label_3)
-#: rc.cpp:63
+#: rc.cpp:66
 msgid "Password:"
 msgstr "Contrasinal:"
 
 #. i18n: file: setupserverview.ui:133
 #. i18n: ectx: property (title), widget (QGroupBox, authImap)
-#: rc.cpp:66
+#: rc.cpp:69
 msgid "Authentication Method"
 msgstr "Método de autenticación"
 
 #. i18n: file: setupserverview.ui:139
 #. i18n: ectx: property (text), widget (QRadioButton, clearRadio)
-#: rc.cpp:69
+#: rc.cpp:72
 msgid "Clear text"
 msgstr "Texto simple"
 
@@ -263,70 +269,76 @@ msgstr "Texto simple"
 #. i18n: ectx: attribute (buttonGroup), widget (QRadioButton, cramMd5Radio)
 #. i18n: file: setupserverview.ui:215
 #. i18n: ectx: attribute (buttonGroup), widget (QRadioButton, anonymousRadio)
-#: rc.cpp:72 rc.cpp:78 rc.cpp:84 rc.cpp:90 rc.cpp:96 rc.cpp:102 rc.cpp:108
-#: rc.cpp:114
+#: rc.cpp:75 rc.cpp:81 rc.cpp:87 rc.cpp:93 rc.cpp:99 rc.cpp:105 rc.cpp:111
+#: rc.cpp:117
 msgid "authImapGroup"
 msgstr "authImapGroup"
 
 #. i18n: file: setupserverview.ui:152
 #. i18n: ectx: property (text), widget (QRadioButton, digestMd5Radio)
-#: rc.cpp:75
+#: rc.cpp:78
 msgid "DIGEST-MD5"
 msgstr "DIGEST-MD5"
 
 #. i18n: file: setupserverview.ui:162
 #. i18n: ectx: property (text), widget (QRadioButton, loginRadio)
-#: rc.cpp:81
+#: rc.cpp:84
 msgid "LOGIN"
 msgstr "Identificación"
 
 #. i18n: file: setupserverview.ui:172
 #. i18n: ectx: property (text), widget (QRadioButton, ntlmRadio)
-#: rc.cpp:87
+#: rc.cpp:90
 msgid "NTLM"
 msgstr "NTLM"
 
 #. i18n: file: setupserverview.ui:182
 #. i18n: ectx: property (text), widget (QRadioButton, plainRadio)
-#: rc.cpp:93
+#: rc.cpp:96
 msgid "PLAIN"
 msgstr "SIMPLE"
 
 #. i18n: file: setupserverview.ui:192
 #. i18n: ectx: property (text), widget (QRadioButton, gssapiRadio)
-#: rc.cpp:99
+#: rc.cpp:102
 msgid "GSSAPI"
 msgstr "GSSAPI"
 
 #. i18n: file: setupserverview.ui:202
 #. i18n: ectx: property (text), widget (QRadioButton, cramMd5Radio)
-#: rc.cpp:105
+#: rc.cpp:108
 msgid "CRAM-MD5"
 msgstr "CRAM-MD5"
 
 #. i18n: file: setupserverview.ui:212
 #. i18n: ectx: property (text), widget (QRadioButton, anonymousRadio)
-#: rc.cpp:111
+#: rc.cpp:114
 msgid "Anonymous"
 msgstr "Anónimo"
 
-#. i18n: file: setupserverview.ui:233
+#. i18n: file: setupserverview.ui:242
+#. i18n: ectx: property (text), widget (KPushButton, subscriptionButton)
+#: rc.cpp:120 setupserver.cpp:336
+msgid "Serverside Subscription..."
+msgstr ""
+
+#. i18n: file: setupserverview.ui:257
 #. i18n: ectx: property (text), widget (QLabel, testInfo)
-#: rc.cpp:117
+#: rc.cpp:123
 msgid "Empty"
 msgstr "Baleiro"
 
-#: rc.cpp:118
+#: rc.cpp:124
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr "Xosé Calvo"
 
-#: rc.cpp:119
+#: rc.cpp:125
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "proxecto@trasno.net"
 
-#: setupserver.cpp:135
+#: setupserver.cpp:150
 msgid ""
 "Could not access KWallet. If you want to store the password permanently then "
 "you have to activate it. If you do not want to use KWallet, check the box "
@@ -337,19 +349,19 @@ msgstr ""
 "opción de embaixo, mais lembre que se lle ha pedir o contrasinal sempre que "
 "sexa preciso."
 
-#: setupserver.cpp:140
+#: setupserver.cpp:155
 msgid "Do not use KWallet"
 msgstr "Non empregar KWallet"
 
-#: setupserver.cpp:183
+#: setupserver.cpp:201
 msgid "<qt><b>TLS is supported and recommended.</b></qt>"
 msgstr "<qt><b>Admítese TSL, e recoméndase.</b></qt>"
 
-#: setupserver.cpp:186
+#: setupserver.cpp:204
 msgid "<qt><b>SSL is supported and recommended.</b></qt>"
 msgstr "<qt><b>Admítese SSL, e recoméndase.</b></qt>"
 
-#: setupserver.cpp:189
+#: setupserver.cpp:207
 msgid ""
 "<qt><b>No security is supported. It is not recommended to connect to this "
 "server.</b></qt>"
@@ -357,9 +369,30 @@ msgstr ""
 "<qt><b>Non se admite nengún tipo de seguranza. Non se recomenda ligar con "
 "este servidor.</b></qt>"
 
-#: setupserver.cpp:192
+#: setupserver.cpp:210
 msgid "<qt><b>It is not possible to use this server.</b></qt>"
 msgstr "<qt><b>Non é posíbel empregar este servidor.</b></qt>"
+
+#: subscriptiondialog.cpp:305
+msgid "Enable Subscriptions?"
+msgstr ""
+
+#: subscriptiondialog.cpp:305
+msgid "Enable"
+msgstr ""
+
+#: subscriptiondialog.cpp:305
+msgid "Do Not Enable"
+msgstr ""
+
+#: subscriptiondialog.cpp:372
+#, kde-format
+msgctxt "@info"
+msgid ""
+"Currently subscriptions are not used for server <resource>%1</resource>.<nl/"
+">\n"
+"Do you want to enable subscriptions?"
+msgstr ""
 
 #~ msgid "Form"
 #~ msgstr "Formulario"
