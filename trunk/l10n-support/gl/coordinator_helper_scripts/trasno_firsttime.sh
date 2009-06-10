@@ -1,8 +1,8 @@
 #! /usr/bin/env bash
 
-# usage: trasno_firsttime.sh <lang>
+# usage: trasno_firsttime.sh <lang> <user>
 # fai a configuración inicial dun proxecto de tradución, para ser empregado por
-# tradutores, non coordinadores (acede a anonsvn.kde.org)
+# tradutores, ou coordinadores (acede a anonsvn.kde.org ou a svn+ssh)
 
 # Copyright (c) 2008, Marcelino Villarino Aguiar
 # All rights reserved.
@@ -28,11 +28,12 @@
 # ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
 # POSSIBILITY OF SUCH DAMAGE.
 
-if [ $# -lt 1 ] ; then
-   echo "Usage: trasno_firsttine.sh lang_code"
+if [ $# -ne 2 ] ; then
+   echo "Usage: trasno_firsttime.sh lang_code [svnUser]"
    exit 2
 else
    code=$1
+   user=$2
 fi
 
 #primeiro, modifica o .bashrc, se non o foi xa.
@@ -55,13 +56,44 @@ mkdir -p $BASE_REPO/trunk/l10n-kde4/{$code,scripts,templates}
 mkdir -p $BASE_REPO/trunk/l10n-kde4/documentation
 mkdir -p $BASE_REPO/trunk/l10n-support/{$code,pology,scripts}
 mkdir -p $BASE_REPO/trunk/l10n-support/templates
+mkdir -p $BASE_REPO/branches/stable/l10n-kde4/{$code,templates,scripts}
 
 #agora os svn checkout
-for place in trunk/{l10n-kde4,l10n-support}/{scripts,templates,$code,pology,documentation}; do
-    if [ -d $BASE_REPO/$place -a ! -d $BASE_REPO/$place/.svn ]; then
-        echo $BASE_REPO/$place
-         svn checkout svn://anonsvn.kde.org/home/kde/$place $BASE_REPO/$place
-    else
-        echo "non: " $BASE_REPO/$place
-    fi
-done
+if [ $# -eq 2 ]; then
+    echo "Will try to checkout svn(+ssh) with user $user"
+    for place in trunk/{l10n-kde4,l10n-support}/{scripts,templates,$code,pology,documentation}; do
+        if [ -d $BASE_REPO/$place -a ! -d $BASE_REPO/$place/.svn ]; then
+            echo $BASE_REPO/$place
+            svn checkout svn+ssh://${user}@svn.kde.org/home/kde/$place $BASE_REPO/$place
+        else
+            echo "non: " $BASE_REPO/$place
+        fi
+    done
+    for place in branches/stable/l10n-kde4/{scripts,templates,$code}; do
+        if [ -d $BASE_REPO/$place -a ! -d $BASE_REPO/$place/.svn ]; then
+            echo $BASE_REPO/$place
+            svn checkout svn+ssh://${user}@svn.kde.org/home/kde/$place $BASE_REPO/$place
+        else
+            echo "non: " $BASE_REPO/$place
+        fi
+    done
+fi
+if [ $# -eq 1 ]; then
+    echo "Will try to checkout via anonsvn"
+    for place in trunk/{l10n-kde4,l10n-support}/{scripts,templates,$code,pology,documentation}; do
+        if [ -d $BASE_REPO/$place -a ! -d $BASE_REPO/$place/.svn ]; then
+            echo $BASE_REPO/$place
+            svn checkout svn://anonsvn.kde.org/home/kde/$place $BASE_REPO/$place
+        else
+            echo "non: " $BASE_REPO/$place
+        fi
+    done
+    for place in branches/stable/l10n-kde4/{scripts,templates,$code}; do
+        if [ -d $BASE_REPO/$place -a ! -d $BASE_REPO/$place/.svn ]; then
+            echo $BASE_REPO/$place
+            svn checkout svn://anonsvn.kde.org/home/kde/$place $BASE_REPO/$place
+        else
+            echo "non: " $BASE_REPO/$place
+        fi
+    done
+fi
