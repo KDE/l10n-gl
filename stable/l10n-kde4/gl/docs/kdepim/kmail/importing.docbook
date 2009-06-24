@@ -1,0 +1,381 @@
+<chapter id="importing">
+
+<chapterinfo>
+<authorgroup>
+<author
+><firstname
+>Daniel</firstname
+> <surname
+>Naber</surname
+> <affiliation
+><address
+> <email
+>daniel.naber@t-online.de</email>
+</address
+></affiliation>
+</author>
+<author
+><firstname
+>David</firstname
+> <surname
+>Rugge</surname
+> <affiliation
+><address
+> <email
+>davidrugge@mediaone.net</email>
+</address
+></affiliation>
+</author>
+<othercredit role="translator"
+><firstname
+></firstname
+><surname
+></surname
+><affiliation
+><address
+><email
+>xosecalvo@edu.xunta.es</email
+></address
+></affiliation
+><contrib
+></contrib
+></othercredit
+> 
+</authorgroup>
+<date
+>2002-10-03</date
+> <releaseinfo
+>1.5</releaseinfo
+> </chapterinfo>
+
+<title
+>Usar outros ficheiros de caixas de correo co &kmail;</title>
+
+<para
+>O &kmail; ofrece unha ferramenta para importar as mensaxes e cadernos de enderezos dalgún outro cliente de correo. Pode acceder a ela desde <menuchoice
+><guimenu
+>Ferramentas</guimenu
+><guimenuitem
+>Importar...</guimenuitem
+></menuchoice
+>. Asegúrese de que compacta os cartafoles no outro cliente de correo, independentemente de se vai empregar a utilidade de importación ou de se vai copiar os ficheiros manualmente. Só precisa ler este capítulo se esta ferramenta non lle funciona.</para>
+
+<para
+>Esta sección é para todos os usuarios que precisan mover mensaxes de correo desde o seu cliente de correo anterior parao &kmail;. O &kmail; pode almacenar as mensaxes nos formatos <quote
+>mbox</quote
+> e <quote
+>maildir</quote
+>, que son os formatos de caixa de correo máis usados nos sistemas &UNIX;. As caixas de correo Mbox almacenan as mensaxes nun único ficheiro e identifican onde comezan e rematan as mensaxes cunha liña <literal
+>From</literal
+> (non confundila coa cabeceira <literal
+>From:</literal
+> que contén o remitente da mensaxe); Maildir utiliza un ficheiro por mensaxe. Con moitos clientes de correo de &UNIX; o único que hai que facer é mover as caixas de correo para <filename class="directory"
+>~/Mail</filename
+> (ou facer que <filename class="symlink"
+>Mail</filename
+> sexa unha ligazón simbólica para o cartafol que contén as caixas do correo); asegúrese de que o seu usuario ten permiso de escrita e execute o &kmail;. As caixas de correo deberían aparecer correctamente no &kmail;.</para>
+
+<para
+>Consulte primeiro a <ulink url="http://kontact.kde.org/kmail/tools.html"
+>Sección de ferramentas na páxina web do &kmail;</ulink
+> para ver se existe unha ferramenta que importe a súa caixa de correo e talvez mesmo o seu caderno de enderezos.</para>
+
+<warning
+><para
+>Non utilice un segundo cliente de correo que acceda aos ficheiros de <filename class="directory"
+>~/Mail</filename
+> ao mesmo tempo que se executa o &kmail; ou podería perder mensaxes. Esta sección só explica como importar caixas de correo para o &kmail; unha vez; non é útil se vostede planea empregar varios clientes de correo para as súas caixas de correo no futuro.</para
+></warning>
+
+<variablelist>
+
+<varlistentry>
+<term
+><application
+>Eudora Lite</application
+>/<application
+>Eudora Pro</application
+></term>
+<listitem>
+<para
+><application
+>Eudora</application
+> emprega o formato mbox para os seus ficheiros de correo. Para utilizalos co &kmail; asegúrese de que se compactaron as caixas de correo de <application
+>Eudora</application
+> e copie os ficheiros <literal role="extension"
+>.mbx</literal
+> (&Windows; <application
+>Eudora</application
+>) ou ficheiros de caixa de correo <application
+>Eudora</application
+> (&Mac; <application
+>Eudora</application
+>) para o cartafol <filename class="directory"
+>~/Mail</filename
+>. Non necesita copiar os ficheiros <filename
+>index</filename
+>. Unha vez que inicie o &kmail;, as caixas de correo deberían aparecer na área dos Cartafoles e as mensaxes estaren accesíbeis na área Cabeceiras.</para>
+<para
+>Se non aparecen mensaxes no panel de Cabeceiras, pode qque os ficheiros da caixa de correos conteñan ainda caracteres de fin de liña de &Windows; ou &Mac;. Empregue o seu editor de texto favorito, o comando <application
+>recode</application
+> ou unha linguaxe de programación para mudar os caracteres de fin de liña do &Windows; ou do &Mac; para fin de liña do &UNIX;.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><application
+>Mailsmith</application
+></term>
+<listitem>
+<para
+><application
+>Mailsmith</application
+> corre no &Mac; e emprega o seu propio formato de base de datos; porén, é posíbel exportar correo para o formato mbox usando <menuchoice
+><guimenu
+>Ficheiro</guimenu
+><guimenuitem
+>Exportar Correo</guimenuitem
+></menuchoice
+> sobre unha caixa de correo ou mensaxes seleccionados. Unha vez exportadas as mensaxes, traduza os finais de liña do &Mac; para &UNIX; mediante o seu editor de texto favorito ou mediante o comando seguinte no &Linux;:</para>
+
+<para
+><userinput
+><command
+>perl</command
+> <option
+>-pe 's/\r/\n/g'</option
+> mail-mac.txt 
+> mail-unix.txt</userinput
+></para>
+
+<para
+>O &kmail; só recoñece os ficheiros mbox que están colocados directametne no cartafol <filename class="directory"
+>~/Mail/</filename
+>. Isto significa que non se pode preservar unha xerarquía de cartafoles movendo apenas os ficheiros para o cartafol <filename class="directory"
+>~/Mail/</filename
+>, senón que a hai que reconstruir manualmente no &kmail;.</para>
+
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+>MMDF</term>
+<listitem>
+<para
+>Este formato é tan semellante ao formato mailbox que o &kmail; debería poder empregar estas caixas de correo se simplemente as copia para o cartafol <filename class="directory"
+>~/Mail</filename
+>; porén, as caixas de correo MMDF non se probaron co &kmail;, de xeito que os resultados poderán variar. Se consigue utilizar este formato co &kmail;, comuníquenolo para que poidamos incluir indicacións máis específicas na próxima versión da documentación.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+>Caixas de correio do MH</term>
+<listitem>
+<para
+>As caixas de correo do MH son directorios que conteñen ficheiros que corresponden a cada unha das mensaxes desa caixa de correo. Polo menos nas edicións do código fonte do &kmail; existe un guión de consola, <command
+>mh2kmail</command
+>, para comverter as caixas de correo do MH en caixas de correo mbox, mais pode ser que non se inclúa nas edicións empaquetadas. A execución deste guión nun cartafol do MH converteráo nun ficheiro mbox. Recoméndase crear unha copia de seguranza dos cartafoles de correo do MH antes de empregar este guión.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+>Forte <application
+>Agent</application
+></term>
+<listitem>
+<para
+>No <application
+>Agent</application
+>:</para>
+<procedure>
+<step>
+<para
+>Seleccione as mensaxes que queira exportar</para>
+</step>
+<step>
+<para
+>Seleccione <menuchoice
+><guimenu
+>FILE</guimenu
+><guimenuitem
+>SAVE MESSAGES AS</guimenuitem
+></menuchoice
+></para>
+</step>
+<step>
+<para
+>Marque as opcións <guilabel
+>UNIX FORMAT</guilabel
+> e <guilabel
+>SAVE RAW</guilabel
+> </para>
+</step>
+<step>
+<para
+>Delle ao ficheiro a extensión <literal role="extension"
+>.txt</literal
+> e gráveo.</para>
+</step>
+</procedure>
+
+<para
+>No &kde;:</para>
+
+<procedure>
+<step>
+<para
+>Mova o ficheiro gravado anteriormente para o cartafol <filename class="directory"
+>~/Mail</filename
+> correcto</para>
+</step>
+<step>
+<para
+>Mude o nome do ficheiro para que fique sen a extensión <literal role="extension"
+>.txt</literal
+></para>
+</step>
+</procedure>
+<para
+>Cando abra o &kmail;, alí estará o novo cartafol coas mensaxes apropiadas.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+>&Netscape; Mail</term>
+<listitem>
+
+<para
+>Se está a usar o &Netscape; 4.x, os ficheiros de correo deberían estar en <filename class="directory"
+>~/nsmail</filename
+>; se está a usar o &Netscape; 6.x, están enterrados nun cartafol máis profundo no sub-cartafol <filename class="directory"
+>~/.mozilla</filename
+>, algo así como <filename class="directory"
+>/home/nome_do_usuario/.mozilla/nome_do_usuario/2ts1ixha.slt/Mail/Mail/server_name</filename
+> (a cadea <filename class="directory"
+>2ts1ixha.slt</filename
+> probabelmente variará, polo que deberá comprobala no seu sistema). O cartafol <filename class="directory"
+>[...]/Mail/Mail</filename
+> contén un sub-cartafol para cada conta coa que recibe correo mediante o Netscape (&eg; <filename class="directory"
+>[...]/Mail/Mail/mate.universidade.net</filename
+>); terá que copiar os ficheiros de cada unha delas se quere telo todo accesíbel desde o &kmail;.</para>
+
+<para
+>Se non ten sub-cartafoles, simplemente copie todos os ficheiros do &Netscape; para <filename class="directory"
+>~/Mail</filename
+>, asegúrese de que ten permisos de escrita (só para o seu usuario, claro) e reinicie o &kmail;; todas as mensaxes aparecerán entón en cartafoles do &kmail;. (Teña en conta que se emprega un comando como <command
+>cp <parameter
+>*</parameter
+> <parameter
+>~/Mail</parameter
+></command
+>, este deberá ir seguido de <command
+>rm <option
+>-f</option
+> <parameter
+>~/Mail/*.msf</parameter
+></command
+>; todos os cartafoles do &Netscape; 6 teñen un ficheiro <filename
+>.msf</filename
+> relacionado e se non se libra deles terá un monte de cartafoles baleiros inútiles).</para>
+
+<para
+>Se estiver a usar sub-cartafoles co &Netscape; (&eg; un cartafol principal chamado <replaceable
+>Traballo</replaceable
+> con sub-cartafoles chamados <replaceable
+>Manuel</replaceable
+> e <replaceable
+>Marta</replaceable
+>), hai uns pasos adicionais necesarios. Primeiro, cree un cartafol principal (<replaceable
+>Traballo</replaceable
+>) no &kmail; e cree un cartafol fillo temporaria baixo el (premendo co botón dereito do rato no nome do cartafol e seleccionando <guilabel
+>Crear cartafol fillo</guilabel
+>); non importa como se chame este cartafol -- <replaceable
+>trapalladas</replaceable
+> ou o que se crea por omisión, <replaceable
+>sen nome</replaceable
+>, por exemplo. Unha vez pedido un cartafol fillo, o &kmail; crea un cartafol agochado en <filename class="directory"
+>~/Mail</filename
+> que se chama (neste exemplo) <filename class="directory"
+>.Traballo.directory</filename
+>. A continuación xa pode copiar os seus ficheiros dos sub-cartafoles do &Netscape; (<replaceable
+>Manuel</replaceable
+> e <replaceable
+>Marta</replaceable
+>) para <filename class="directory"
+>~/Mail/.Work.directory</filename
+> e reiniciar o &kmail; os cartafoles fillo aparecerán baixo o cartafol principal <replaceable
+>Traballo</replaceable
+>. Obviamente, este procedemento pódese extender para os sub-cartafoles até calquera profundidade (pode eliminar os cartafoles fillo temporarias posteriormente, a non ser que lle agrade ter un sub-cartafol de <replaceable
+>Traballo</replaceable
+> chamado <replaceable
+>traballadas</replaceable
+>).</para>
+
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><application
+>Pegasus Mail</application
+></term>
+<listitem>
+<para
+>O <application
+>Pegasus</application
+> para o win32 emprega ficheiros únicos para os cartafoles de correo semellantes aos do &kmail;. Os ficheiros dos cartafoles do <application
+>Pegasus mail</application
+> teñen a extensión <literal role="extension"
+>.pmm</literal
+> mais teñen o mesmo formato que o mbox, excepto que as mensaxes non comezan coa cabeceira <literal
+>From</literal
+>, senón cun carácter de control. Para solucionar isto, substitúa todas as veces que aparece o carácter de control con <literal
+>From aaa@aaa Mon Jan 01 00:00:00 1997</literal
+>. Esta liña <literal
+>From</literal
+> debería ser a primeira de cada mensaxe, antes de <literal
+>Received:</literal
+> e as demais cabeceiras. Asegúrese de utilizar un editor de texto que permita gravar os ficheiros no formato do &UNIX; ou cree cartafoles novos en <application
+>Pegasus</application
+> que teñan o formato do &UNIX; e copie as súas mensaxes para alá.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+>Maildir / Outlook Express / xfmail</term>
+<listitem>
+<para
+>Existen ferramentas disponíbeis para converter estes formatos na <ulink url="http://kontact.kde.org/kmail/tools.html"
+>sección de ferramentas da páxina web do &kmail;</ulink
+>.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+>Lotus <application
+>Notes</application
+>, ficheiros do BeOS Mail, <application
+>cc: Mail</application
+>, &etc;...</term>
+<listitem>
+<para
+>Primeiro terá que consultar a <ulink url="http://kontact.kde.org/kmail/tools.html"
+>sección de ferramentas da páxina web do &kmail;</ulink
+> para ver se existen ferramentas que convertan as mensaxes.</para>
+<para
+>Os programas de correo que non se listan aquí ou na páxina web probabelmente non funcionan co &kmail; dado que empregan formatos de correo privativos que o &kmail; non pode comprender. Porén, non fai mal ningún tentalo! Se o ficheiro da caixa de correo for semellante ao formato mbox, tente copiar o ficheiro da caixa de correo (lembre, o ficheiro index non é necesario) para o cartafol <filename class="directory"
+>~/Mail</filename
+> e vexa o que acontece cando inicie o &kmail;. Se consigue que as caixas de correo do seu cliente de correo favorito funcionan no &kmail;, comuníquenolo, por favor, indicándonos como fixo para que así poidamos incluir as instrucións nunha futura revisión desta documentación. </para>
+</listitem>
+</varlistentry>
+
+</variablelist>
+
+</chapter>
