@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kleopatra\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2009-05-21 11:32+0200\n"
+"POT-Creation-Date: 2009-06-25 14:51+0200\n"
 "PO-Revision-Date: 2009-05-08 22:36+0200\n"
 "Last-Translator: Xosé <xosecalvo@gmail.com>\n"
 "Language-Team: Galego <kde-i18n-doc@kde.org>\n"
@@ -532,7 +532,7 @@ msgctxt "@title"
 msgid "Subkeys"
 msgstr "Subchaves"
 
-#: dialogs/lookupcertificatesdialog.cpp:126
+#: dialogs/lookupcertificatesdialog.cpp:120
 msgid "Import"
 msgstr "Importar"
 
@@ -1011,37 +1011,43 @@ msgid "Invalid signature by %1: %2"
 msgstr "Sinatura non válida de %1: %2"
 
 #: utils/formatting.cpp:563
+#, fuzzy
+#| msgid "Please select one or more of the following certificates:"
+msgid "This certificate was imported from the following sources:"
+msgstr "Seleccione un ou máis dos certificados seguintes:"
+
+#: utils/formatting.cpp:573
 msgid "The import of this certificate was canceled."
 msgstr "Cancelouse a importación deste certificado."
 
-#: utils/formatting.cpp:565
+#: utils/formatting.cpp:575
 #, kde-format
 msgid "An error occurred importing this certificate: %1"
 msgstr "Ocorreu un erro mentres se tentaba importar este certificado: %1"
 
-#: utils/formatting.cpp:571
+#: utils/formatting.cpp:581
 msgid "This certificate was new to your keystore. The secret key is available."
 msgstr ""
 "Este certificado resulta novo no seu almacén de chaves. Disponse da chave "
 "secreta."
 
-#: utils/formatting.cpp:572
+#: utils/formatting.cpp:582
 msgid "This certificate is new to your keystore."
 msgstr "Este certificado resulta novo no seu almacén de chaves."
 
-#: utils/formatting.cpp:576
+#: utils/formatting.cpp:586
 msgid "New user-ids were added to this certificate by the import."
 msgstr "Engadíronse novas id de usuario a este certificado coa importación."
 
-#: utils/formatting.cpp:578
+#: utils/formatting.cpp:588
 msgid "New signatures were added to this certificate by the import."
 msgstr "Engadíronse novas sinaturas a este certificado coa importación."
 
-#: utils/formatting.cpp:580
+#: utils/formatting.cpp:590
 msgid "New subkeys were added to this certificate by the import."
 msgstr "Engadíronse novas subchaves a este certificado coa importación."
 
-#: utils/formatting.cpp:583
+#: utils/formatting.cpp:593
 msgid "The import contained no new data for this certificate. It is unchanged."
 msgstr ""
 "A importación non contiña datos novos para este certificado. Fica como "
@@ -1213,7 +1219,7 @@ msgid "Could not open FD %1 for reading"
 msgstr "Non foi posíbel abrir FD %1 para ler"
 
 #: utils/input.cpp:184 utils/input.cpp:200
-#: uiserver/assuanserverconnection.cpp:531
+#: uiserver/assuanserverconnection.cpp:540
 #, kde-format
 msgid "Could not open file \"%1\" for reading"
 msgstr "Non foi posíbel abrir o ficheiro \"%1\" para leitura"
@@ -1263,32 +1269,32 @@ msgid "Premature end of hex-encoded char in input stream"
 msgstr ""
 "Remate prematuro de carácter codificado en hexadecimal no fluxo de entrada"
 
-#: main.cpp:127
+#: main.cpp:129
 msgid "Performing Self-Check..."
 msgstr "A realizar a Auto-Comprobación..."
 
-#: main.cpp:138
+#: main.cpp:140
 msgctxt "did not pass"
 msgid "Self-Check Failed"
 msgstr "Fallou a Auto-comprobación"
 
-#: main.cpp:141
+#: main.cpp:143
 msgid "Self-Check Passed"
 msgstr "Pasou a Auto-Comprobación"
 
-#: main.cpp:156
+#: main.cpp:158
 msgid "Loading certificate cache..."
 msgstr "A cargar a caché de certificados..."
 
-#: main.cpp:159
+#: main.cpp:161
 msgid "Certificate cache loaded."
 msgstr "Caché de certificados cargada."
 
-#: main.cpp:257
+#: main.cpp:261
 msgid "GPG UI Server Error"
 msgstr "Erro do Servidor de UI de GPG"
 
-#: main.cpp:258
+#: main.cpp:262
 #, kde-format
 msgid ""
 "<qt>The Kleopatra GPG UI Server Module could not be initialized.<br/>The "
@@ -1362,17 +1368,17 @@ msgstr ""
 "para os receptores de S/MIME."
 
 #: crypto/gui/signencryptfileswizard.cpp:131
-#: crypto/signencryptfilescontroller.cpp:127
+#: crypto/signencryptfilescontroller.cpp:129
 msgid "Sign/Encrypt Files"
 msgstr "Asinar/Cifrar Ficheiros"
 
 #: crypto/gui/signencryptfileswizard.cpp:132
-#: crypto/signencryptfilescontroller.cpp:122
+#: crypto/signencryptfilescontroller.cpp:124
 msgid "Sign Files"
 msgstr "Asinar Ficheiros"
 
 #: crypto/gui/signencryptfileswizard.cpp:133
-#: crypto/signencryptfilescontroller.cpp:125
+#: crypto/signencryptfilescontroller.cpp:127
 msgid "Encrypt Files"
 msgstr "Cifrar Ficheiros"
 
@@ -1403,10 +1409,12 @@ msgid "Encryption Options"
 msgstr "Opcións de Cifrado"
 
 #: crypto/gui/signerresolvepage.cpp:301
+#: crypto/gui/newsignencryptfileswizard.cpp:305
 msgid "Text output (ASCII armor)"
 msgstr "Saída de texto (ASCII armor)"
 
 #: crypto/gui/signerresolvepage.cpp:304
+#: crypto/gui/newsignencryptfileswizard.cpp:306
 msgid "Remove unencrypted original file when done"
 msgstr "Eliminar o ficheiro orixinal sen cifrar ao rematar"
 
@@ -1426,32 +1434,33 @@ msgstr "Mudar os Certificados de Sinatura..."
 msgid "<b>Choose Operation to be Performed</b>"
 msgstr "<b>Escolla a Operación que Queira Realizar</b>"
 
-#: crypto/gui/resultpage.cpp:104
+#: crypto/gui/resultpage.cpp:104 crypto/gui/newresultpage.cpp:95
 msgid "Keep open after operation completed"
 msgstr "Manter aberta despois de completar a operación"
 
-#: crypto/gui/resultpage.cpp:131
+#: crypto/gui/resultpage.cpp:131 crypto/gui/newresultpage.cpp:122
 #, kde-format
 msgid "%1: All operations completed."
 msgstr "%1: Completáronse todas as operacións."
 
-#: crypto/gui/resultpage.cpp:133
+#: crypto/gui/resultpage.cpp:133 crypto/gui/newresultpage.cpp:124
 msgid "All operations completed."
 msgstr "Completáronse todas as operacións."
 
 #: crypto/gui/resultpage.cpp:149 crypto/gui/resultlistwidget.cpp:209
+#: crypto/gui/newresultpage.cpp:146
 #, kde-format
 msgctxt "number, operation description"
 msgid "Operation %1: %2"
 msgstr "Operación %1: %2"
 
-#: crypto/gui/resultpage.cpp:151
+#: crypto/gui/resultpage.cpp:151 crypto/gui/newresultpage.cpp:148
 #, kde-format
 msgctxt "tag( \"OpenPGP\" or \"CMS\"),  operation description"
 msgid "%1: %2"
 msgstr "%1: %2"
 
-#: crypto/gui/resultpage.cpp:156
+#: crypto/gui/resultpage.cpp:156 crypto/gui/newresultpage.cpp:153
 msgid "<b>Results</b>"
 msgstr "<b>Resultados</b>"
 
@@ -1515,7 +1524,7 @@ msgstr "<b>Obxectos</b>"
 msgid "Select File"
 msgstr "Seleccionar Ficheiro"
 
-#: crypto/gui/signingcertificateselectiondialog.cpp:72
+#: crypto/gui/signingcertificateselectiondialog.cpp:49
 msgid "Select Signing Certificates"
 msgstr "Seleccionar Certificados de Sinatura"
 
@@ -1542,6 +1551,163 @@ msgstr "Crear todos os ficheiros de saída nun único cartafol"
 #: crypto/gui/decryptverifyfileswizard.cpp:218
 msgid "&Output folder:"
 msgstr "Cartaf&ol de saída:"
+
+#: crypto/gui/newsignencryptfileswizard.cpp:143
+#, fuzzy
+#| msgid "Select File"
+msgctxt "@title:window"
+msgid "Selected Files"
+msgstr "Seleccionar Ficheiro"
+
+#: crypto/gui/newsignencryptfileswizard.cpp:222
+#, fuzzy
+#| msgid "No certificate selected"
+msgid "No files selected."
+msgstr "Non se seleccionou ningún certificado"
+
+#: crypto/gui/newsignencryptfileswizard.cpp:223
+#, fuzzy
+#| msgid "Select File"
+msgid "Selected file:"
+msgid_plural "Selected files:"
+msgstr[0] "Seleccionar Ficheiro"
+msgstr[1] "Seleccionar Ficheiro"
+
+#: crypto/gui/newsignencryptfileswizard.cpp:226
+#, fuzzy
+#| msgid "Revoke..."
+msgctxt "@action"
+msgid "More..."
+msgstr "Revogar..."
+
+#: crypto/gui/newsignencryptfileswizard.cpp:302
+#, fuzzy
+#| msgid "Sign and encrypt (OpenPGP only)"
+msgid "Sign and Encrypt (OpenPGP only)"
+msgstr "Asinar e cifrar (só OpenPGP)"
+
+#: crypto/gui/newsignencryptfileswizard.cpp:303
+#: newcertificatewizard/newcertificatewizard.cpp:1195
+#: newcertificatewizard/newcertificatewizard.cpp:1219
+msgid "Encrypt"
+msgstr "Cifrar"
+
+#: crypto/gui/newsignencryptfileswizard.cpp:304
+#: newcertificatewizard/newcertificatewizard.cpp:1193
+msgid "Sign"
+msgstr "Asinar"
+
+#: crypto/gui/newsignencryptfileswizard.cpp:308
+msgctxt "@title"
+msgid "What do you want to do?"
+msgstr ""
+
+#: crypto/gui/newsignencryptfileswizard.cpp:310
+msgctxt "@title"
+msgid "Please select here whether you want to sign or encrypt files."
+msgstr ""
+
+#: crypto/gui/newsignencryptfileswizard.cpp:356
+msgid "This operation is not available for S/MIME"
+msgstr ""
+
+#: crypto/gui/newsignencryptfileswizard.cpp:376
+#, fuzzy
+#| msgid "Add..."
+msgid "Add"
+msgstr "Engadir..."
+
+#: crypto/gui/newsignencryptfileswizard.cpp:377
+msgid "Remove"
+msgstr ""
+
+#: crypto/gui/newsignencryptfileswizard.cpp:380
+msgctxt "@title"
+msgid "Whom do you want to encrypt to?"
+msgstr ""
+
+#: crypto/gui/newsignencryptfileswizard.cpp:382
+msgctxt "@title"
+msgid ""
+"Please select whom you want the files to be encrypted to. Do not forget to "
+"pick one of your own certificates."
+msgstr ""
+
+#: crypto/gui/newsignencryptfileswizard.cpp:385
+#, fuzzy
+#| msgid "Encrypt"
+msgctxt "@action"
+msgid "Encrypt"
+msgstr "Cifrar"
+
+#: crypto/gui/newsignencryptfileswizard.cpp:479
+msgctxt "@info"
+msgid ""
+"<para>None of the recipients you are encrypting to seems to be your own.</"
+"para><para>This means that you will not be able to decrypt the data anymore, "
+"once encrypted.</para><para>Do you want to continue, or cancel to change the "
+"recipient selection?</para>"
+msgstr ""
+
+#: crypto/gui/newsignencryptfileswizard.cpp:482
+#: crypto/gui/newsignencryptfileswizard.cpp:493
+msgctxt "@title:window"
+msgid "Encrypt-To-Self Warning"
+msgstr ""
+
+#: crypto/gui/newsignencryptfileswizard.cpp:491
+msgctxt "@info"
+msgid ""
+"<para>You have requested the unencrypted data to be removed after encryption."
+"</para><para>Are you really sure you do not need to access the data anymore "
+"in decrypted form?</para>"
+msgstr ""
+
+#: crypto/gui/newsignencryptfileswizard.cpp:541
+#, fuzzy
+#| msgid "Signed with key %1."
+msgid "Sign with OpenPGP"
+msgstr "Asinado coa chave %1."
+
+#: crypto/gui/newsignencryptfileswizard.cpp:542
+msgid "Sign with S/MIME"
+msgstr ""
+
+#: crypto/gui/newsignencryptfileswizard.cpp:545
+msgctxt "@title"
+msgid "Who do you want to sign as?"
+msgstr ""
+
+#: crypto/gui/newsignencryptfileswizard.cpp:547
+msgctxt "@title"
+msgid "Please choose an identity with which to sign the data."
+msgstr ""
+
+#: crypto/gui/newsignencryptfileswizard.cpp:622
+#, fuzzy
+#| msgid "Sign"
+msgctxt "@action"
+msgid "Sign"
+msgstr "Asinar"
+
+#: crypto/gui/newsignencryptfileswizard.cpp:641
+#, fuzzy
+#| msgid "Sign/Encrypt..."
+msgctxt "@action"
+msgid "Sign && Encrypt"
+msgstr "Asinar/Cifrar..."
+
+#: crypto/gui/newsignencryptfileswizard.cpp:688
+#, fuzzy
+#| msgid "Result"
+msgctxt "@title"
+msgid "Results"
+msgstr "Resultado"
+
+#: crypto/gui/newsignencryptfileswizard.cpp:690
+msgctxt "@title"
+msgid "Status and progress of the crypto operations is shown here."
+msgstr ""
 
 #: crypto/gui/wizard.cpp:99
 msgid "&Next"
@@ -1599,12 +1765,12 @@ msgid "&Signed data:"
 msgstr "Datos as&inados:"
 
 #: crypto/signemailcontroller.cpp:179
-#: crypto/signencryptfilescontroller.cpp:224
+#: crypto/signencryptfilescontroller.cpp:227
 #: crypto/encryptemailcontroller.cpp:168
 msgid "User cancel"
 msgstr "Cancelar polo usuario"
 
-#: crypto/signencryptfilescontroller.cpp:357
+#: crypto/signencryptfilescontroller.cpp:358
 #, kde-format
 msgid ""
 "Caught unexpected exception in SignEncryptFilesController::Private::"
@@ -1613,7 +1779,7 @@ msgstr ""
 "Recolleuse unha excepción inesperada en SignEncryptFilesController::Private::"
 "slotWizardOperationPrepared: %1"
 
-#: crypto/signencryptfilescontroller.cpp:361
+#: crypto/signencryptfilescontroller.cpp:362
 msgid ""
 "Caught unknown exception in SignEncryptFilesController::Private::"
 "slotWizardOperationPrepared"
@@ -2069,41 +2235,34 @@ msgstr "Mudouse a Confianza do Propietario Sen Problemas"
 msgid "Unable to start process %1. Please check your installation."
 msgstr "Imposíbel iniciar o proceso %1. Por favor, comprobe a súa instalación."
 
-#: commands/importcertificatefromfilecommand.cpp:135
-msgid "Importing more than one file at a time is not yet implemented."
-msgstr "Ainda non resulta posíbel importar máis dun ficheiro de cada vez."
-
-#: commands/importcertificatefromfilecommand.cpp:136
-msgid "Too many files"
-msgstr "Demasiados ficheiros"
-
-#: commands/importcertificatefromfilecommand.cpp:145
+#: commands/importcertificatefromfilecommand.cpp:139
 #, kde-format
 msgid "Could not open file %1 for reading"
 msgstr "Non foi posíbel abrir o ficheiro %1 para lectura"
 
-#: commands/importcertificatefromfilecommand.cpp:145
-#: commands/importcertificatefromfilecommand.cpp:151
-#: commands/importcertificatescommand.cpp:272
-#: commands/importcertificatescommand.cpp:278
-#: commands/importcertificatescommand.cpp:310
+#: commands/importcertificatefromfilecommand.cpp:139
+#: commands/importcertificatefromfilecommand.cpp:144
+#: commands/importcertificatescommand.cpp:337
+#: commands/importcertificatescommand.cpp:343
+#: commands/importcertificatescommand.cpp:406
+#: commands/importcertificatescommand.cpp:443
 msgid "Certificate Import Failed"
 msgstr "Fallou a Importación do Certificado"
 
-#: commands/importcertificatefromfilecommand.cpp:151
+#: commands/importcertificatefromfilecommand.cpp:144
 #, kde-format
 msgid "Could not determine certificate type of %1."
 msgstr "Non foi posíbel determinar o tipo de certificado de %1."
 
-#: commands/importcertificatefromfilecommand.cpp:159
+#: commands/importcertificatefromfilecommand.cpp:153
 msgid "Certificates"
 msgstr "Certificados"
 
-#: commands/importcertificatefromfilecommand.cpp:160
+#: commands/importcertificatefromfilecommand.cpp:154
 msgid "Any files"
 msgstr "Calquera ficheiro"
 
-#: commands/importcertificatefromfilecommand.cpp:166
+#: commands/importcertificatefromfilecommand.cpp:160
 msgid "Select Certificate File"
 msgstr "Seleccione o Ficheiro de Certificado"
 
@@ -2358,31 +2517,15 @@ msgstr "Engadiuse ID de usuario satisfactoriamente."
 msgid "Add User-ID Succeeded"
 msgstr "Engadiuse ID de Usuario Satisfactoriamente"
 
-#: commands/lookupcertificatescommand.cpp:368
-#, kde-format
-msgid "Download of certificate %1 failed. Error message: %2"
-msgstr "Fallou a descarga do certificado %1. Mensaxe de erro: %2"
+#: commands/lookupcertificatescommand.cpp:275
+#: commands/lookupcertificatescommand.cpp:280
+#, fuzzy, kde-format
+#| msgid "Export Certificates to Server..."
+msgctxt "@title %1:\"OpenPGP\" or \"CMS\""
+msgid "%1 Certificate Server"
+msgstr "Exportar Certificados ao Servidor..."
 
-#: commands/lookupcertificatescommand.cpp:371
-#, kde-format
-msgid "All certificate downloads failed. Sample error message: %1"
-msgstr ""
-"Fallaron todas as descargas de certificados. Mostra da mensaxe de erro: %1"
-
-#: commands/lookupcertificatescommand.cpp:373
-#: commands/lookupcertificatescommand.cpp:381
-msgid "Certificate Download Failed"
-msgstr "Fallou a descargas do certificado"
-
-#: commands/lookupcertificatescommand.cpp:378
-msgid ""
-"Some certificates failed to download. Do you want to proceed with importing "
-"the following successful downloads?"
-msgstr ""
-"Fallou a descarga dalgúns certificados. Desexa continuar a importar as "
-"descargas seguintes, que si se completaron?"
-
-#: commands/lookupcertificatescommand.cpp:418
+#: commands/lookupcertificatescommand.cpp:307
 #, kde-format
 msgid ""
 "Failed to search on keyserver. The error returned was:\n"
@@ -2391,7 +2534,7 @@ msgstr ""
 "Fallo na procura no servidor de chaves. O erro que se devolveu foi:\n"
 "%1"
 
-#: commands/lookupcertificatescommand.cpp:426
+#: commands/lookupcertificatescommand.cpp:315
 msgctxt "@info"
 msgid ""
 "<para>The query result has been truncated.</para><para>Either the local or a "
@@ -2406,12 +2549,12 @@ msgstr ""
 "pero se o factor limitante o establece a configuración dos servidores ha ter "
 "que redefinir a súa procura.</para>"
 
-#: commands/lookupcertificatescommand.cpp:434
+#: commands/lookupcertificatescommand.cpp:323
 msgctxt "@title"
 msgid "Result Truncated"
 msgstr "Resultado Truncado"
 
-#: commands/lookupcertificatescommand.cpp:463
+#: commands/lookupcertificatescommand.cpp:352
 msgctxt "@info"
 msgid ""
 "<para>You do not have any directory servers configured.</para><para>You need "
@@ -2424,7 +2567,7 @@ msgstr ""
 "para><para>Pode configurar servidores de directorio aquí: "
 "<interface>Configuración->Configurar Kleopatra</interface>.</para>"
 
-#: commands/lookupcertificatescommand.cpp:468
+#: commands/lookupcertificatescommand.cpp:357
 msgctxt "@title"
 msgid "No Directory Servers Configured"
 msgstr "Non Hai Servidores de Directorio Configurados"
@@ -2468,97 +2611,138 @@ msgstr "Exportouse a chave secreta satisfactoriamente."
 msgid "Encrypt Clipboard Error"
 msgstr "Cifrar Erro de Porta-retallos"
 
-#: commands/importcertificatescommand.cpp:181
-msgid "Imported Certificates"
-msgstr "Certificados Importados"
-
-#: commands/importcertificatescommand.cpp:182
-#, kde-format
+#: commands/importcertificatescommand.cpp:212
+#, fuzzy, kde-format
+#| msgid "Imported Certificates from %1"
+msgctxt "@info:tooltip"
 msgid "Imported Certificates from %1"
 msgstr "Certificados Importados de %1"
 
-#: commands/importcertificatescommand.cpp:189
+#: commands/importcertificatescommand.cpp:216
+#, fuzzy, kde-format
+#| msgid "Imported Certificates from %1"
+msgctxt "@info:tooltip"
+msgid "Imported certificates from these sources:<br>%1"
+msgstr "Certificados Importados de %1"
+
+#: commands/importcertificatescommand.cpp:223
+#, fuzzy
+#| msgid "Imported Certificates"
+msgctxt "@title:tab"
+msgid "Imported Certificates"
+msgstr "Certificados Importados"
+
+#: commands/importcertificatescommand.cpp:236
 #, kde-format
 msgid "<tr><td align=\"right\">%1</td><td>%2</td></tr>"
 msgstr "<tr><td align=\"right\">%1</td><td>%2</td></tr>"
 
-#: commands/importcertificatescommand.cpp:190
+#: commands/importcertificatescommand.cpp:237
 #, kde-format
 msgid "<tr><td align=\"right\"><b>%1</b></td><td>%2</td></tr>"
 msgstr "<tr><td align=\"right\"><b>%1</b></td><td>%2</td></tr>"
 
-#: commands/importcertificatescommand.cpp:193
+#: commands/importcertificatescommand.cpp:238
+#, fuzzy, kde-format
+#| msgid "<tr><td align=\"right\">%1</td><td>%2</td></tr>"
+msgid "<tr><th colspan=\"2\" align=\"center\">%1</th></tr>"
+msgstr "<tr><td align=\"right\">%1</td><td>%2</td></tr>"
+
+#: commands/importcertificatescommand.cpp:245
 msgid "Total number processed:"
 msgstr "Número total procesado:"
 
-#: commands/importcertificatescommand.cpp:195
+#: commands/importcertificatescommand.cpp:247
 msgid "Imported:"
 msgstr "Importado:"
 
-#: commands/importcertificatescommand.cpp:198
+#: commands/importcertificatescommand.cpp:250
 msgid "New signatures:"
 msgstr "Novas sinaturas:"
 
-#: commands/importcertificatescommand.cpp:201
+#: commands/importcertificatescommand.cpp:253
 msgid "New user IDs:"
 msgstr "Novos IDs de usuario:"
 
-#: commands/importcertificatescommand.cpp:204
+#: commands/importcertificatescommand.cpp:256
 msgid "Certificates without user IDs:"
 msgstr "Certificados sen IDs de usuario:"
 
-#: commands/importcertificatescommand.cpp:207
+#: commands/importcertificatescommand.cpp:259
 msgid "New subkeys:"
 msgstr "Novas subchaves:"
 
-#: commands/importcertificatescommand.cpp:210
+#: commands/importcertificatescommand.cpp:262
 msgid "Newly revoked:"
 msgstr "Recentemente revogados:"
 
-#: commands/importcertificatescommand.cpp:213
+#: commands/importcertificatescommand.cpp:265
 msgid "Not imported:"
 msgstr "Sen importar:"
 
-#: commands/importcertificatescommand.cpp:216
+#: commands/importcertificatescommand.cpp:268
 msgid "Unchanged:"
 msgstr "Sen alteracións:"
 
-#: commands/importcertificatescommand.cpp:219
+#: commands/importcertificatescommand.cpp:271
 msgid "Secret keys processed:"
 msgstr "Chaves secretas procesadas:"
 
-#: commands/importcertificatescommand.cpp:222
+#: commands/importcertificatescommand.cpp:274
 msgid "Secret keys imported:"
 msgstr "Chaves secretas importadas:"
 
-#: commands/importcertificatescommand.cpp:225
+#: commands/importcertificatescommand.cpp:278
 msgid "Secret keys <em>not</em> imported:"
 msgstr "Chaves secretas <em>non</em> importadas:"
 
-#: commands/importcertificatescommand.cpp:230
+#: commands/importcertificatescommand.cpp:281
 msgid "Secret keys unchanged:"
 msgstr "Chaves segredas sen mudanzas:"
 
-#: commands/importcertificatescommand.cpp:234
-#, kde-format
+#: commands/importcertificatescommand.cpp:294
+#, fuzzy
+#| msgid ""
+#| "Could not pass socket to Qt: %1. This should not happen, please report "
+#| "this bug."
+msgid "No imports (should not happen, please report a bug)."
+msgstr ""
+"Non foi posíbel pasar o socket a Qt: %1. Isto non debería acontecer. Por "
+"favor, informe deste erro."
+
+#: commands/importcertificatescommand.cpp:298
+#: commands/importcertificatescommand.cpp:303
+#, fuzzy, kde-format
+#| msgid ""
+#| "<qt><p>Detailed results of certificate import:</p><table>%1</table></qt>"
 msgid ""
-"<qt><p>Detailed results of certificate import:</p><table>%1</table></qt>"
+"<qt><p>Detailed results of certificate import:</p><table width=\"100%\">%1</"
+"table></qt>"
 msgstr ""
 "<qt><p>Resultados detallados da importación do certificado:</p><table>%1</"
 "table></qt>"
 
-#: commands/importcertificatescommand.cpp:237
-#, kde-format
-msgid "<qt><p>Detailed results of importing %1:</p><table>%2</table></qt>"
+#: commands/importcertificatescommand.cpp:300
+#, fuzzy, kde-format
+#| msgid "<qt><p>Detailed results of importing %1:</p><table>%2</table></qt>"
+msgid ""
+"<qt><p>Detailed results of importing %1:</p><table width=\"100%\">%2</"
+"table></qt>"
 msgstr ""
 "<qt><p>Resultados detallados da importación de %1:</p><table>%2</table></qt>"
 
-#: commands/importcertificatescommand.cpp:245
-#: commands/importcertificatescommand.cpp:253
+#: commands/importcertificatescommand.cpp:304
+#, fuzzy
+#| msgid "&Tools"
+msgid "Totals"
+msgstr "&Ferramentas"
+
+#: commands/importcertificatescommand.cpp:310
+#: commands/importcertificatescommand.cpp:318
 msgid "Certificate Import Result"
 msgstr "Resultado da Importación de Certificados"
 
-#: commands/importcertificatescommand.cpp:260
+#: commands/importcertificatescommand.cpp:325
 #, kde-format
 msgid ""
 "<qt><p>An error occurred while trying to import the certificate:</p><p><b>%"
@@ -2567,7 +2751,7 @@ msgstr ""
 "<qt><p>Ocorreu un erro mentres se tentaba importar o certificado:</p><p><b>%"
 "1</b></p></qt>"
 
-#: commands/importcertificatescommand.cpp:264
+#: commands/importcertificatescommand.cpp:329
 #, kde-format
 msgid ""
 "<qt><p>An error occurred while trying to import the certificate %1:</p><p><b>"
@@ -2576,7 +2760,8 @@ msgstr ""
 "<qt><p>Ocorreu un erro mentres se tentaba importar o certificado %1:</"
 "p><p><b>%2</b></p></qt>"
 
-#: commands/importcertificatescommand.cpp:308
+#: commands/importcertificatescommand.cpp:404
+#: commands/importcertificatescommand.cpp:441
 #, kde-format
 msgid ""
 "The type of this certificate (%1) is not supported by this Kleopatra "
@@ -3138,59 +3323,63 @@ msgstr "Non se deu un nome de opción"
 msgid "Parse error"
 msgstr "Erro de Análise Sintáctica"
 
-#: uiserver/assuanserverconnection.cpp:348
+#: uiserver/assuanserverconnection.cpp:346
+msgid "Parse error: numerial session id too large"
+msgstr ""
+
+#: uiserver/assuanserverconnection.cpp:357
 msgid "CAPABILITIES does not take arguments"
 msgstr "CAPABILITIES non leva argumentos"
 
-#: uiserver/assuanserverconnection.cpp:382
+#: uiserver/assuanserverconnection.cpp:391
 msgid "Unknown value for WHAT"
 msgstr "Valor descoñecido de WHAT"
 
-#: uiserver/assuanserverconnection.cpp:393
+#: uiserver/assuanserverconnection.cpp:402
 msgid "START_KEYMANAGER does not take arguments"
 msgstr "START_KEYMANAGER non leva argumentos"
 
-#: uiserver/assuanserverconnection.cpp:407
+#: uiserver/assuanserverconnection.cpp:416
 msgid "START_CONFDIALOG does not take arguments"
 msgstr "START_CONFDIALOG non leva argumentos"
 
-#: uiserver/assuanserverconnection.cpp:452
+#: uiserver/assuanserverconnection.cpp:461
 #, kde-format
 msgid "Message #%1"
 msgstr "Mensaxe nº%1"
 
-#: uiserver/assuanserverconnection.cpp:463
+#: uiserver/assuanserverconnection.cpp:472
 msgid "Empty file path"
 msgstr "Camiño baleiro ao ficheiro"
 
-#: uiserver/assuanserverconnection.cpp:466
-#: uiserver/assuanserverconnection.cpp:519
+#: uiserver/assuanserverconnection.cpp:475
+#: uiserver/assuanserverconnection.cpp:528
 msgid "Only absolute file paths are allowed"
 msgstr "Só se permiten camiños absolutos aos ficheiros"
 
-#: uiserver/assuanserverconnection.cpp:524
+#: uiserver/assuanserverconnection.cpp:533
 #, kde-format
 msgid "Could not access directory \"%1\" for reading"
 msgstr "Non foi posíbel abrir o ficheiro \"%1\" para lectura "
 
-#: uiserver/assuanserverconnection.cpp:541
+#: uiserver/assuanserverconnection.cpp:550
 msgid "unknown exception caught"
 msgstr "recolleuse unha excepción descoñecida"
 
-#: uiserver/assuanserverconnection.cpp:594
+#: uiserver/assuanserverconnection.cpp:603
 msgid "Cannot mix --info with non-info SENDER or RECIPIENT"
 msgstr "Non se poden mesturar SENDER ou RECIPIENT --info con non-info"
 
-#: uiserver/assuanserverconnection.cpp:598
+#: uiserver/assuanserverconnection.cpp:607
 msgid "Argument is not a valid RFC-2822 mailbox"
 msgstr "O argumento non é unha caixa de correo RFC-2822 válida"
 
-#: uiserver/assuanserverconnection.cpp:601
+#: uiserver/assuanserverconnection.cpp:610
 msgid "Garbage after valid RFC-2822 mailbox detected"
 msgstr "Detectouse lixo despois dunha caixa de correo RFC- 2822 válida"
 
-#: uiserver/assuanserverconnection.cpp:630
-#: uiserver/assuanserverconnection.cpp:641
+#: uiserver/assuanserverconnection.cpp:639
+#: uiserver/assuanserverconnection.cpp:650
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -3200,71 +3389,71 @@ msgstr ""
 "<para>O enderezo do remitente <email>%1</email> coincide con máis de un "
 "formato criptográfico.</para> <para>Que fomato quere empregar?</para>"
 
-#: uiserver/assuanserverconnection.cpp:632
-#: uiserver/assuanserverconnection.cpp:643
+#: uiserver/assuanserverconnection.cpp:641
+#: uiserver/assuanserverconnection.cpp:652
 msgctxt "@title"
 msgid "Format Choice"
 msgstr "Escolla do formato"
 
-#: uiserver/assuanserverconnection.cpp:633
-#: uiserver/assuanserverconnection.cpp:644
+#: uiserver/assuanserverconnection.cpp:642
+#: uiserver/assuanserverconnection.cpp:653
 msgctxt "@action:button"
 msgid "Send OpenPGP-Signed"
 msgstr "Enviar asinado co OpenPGP"
 
-#: uiserver/assuanserverconnection.cpp:634
-#: uiserver/assuanserverconnection.cpp:645
+#: uiserver/assuanserverconnection.cpp:643
+#: uiserver/assuanserverconnection.cpp:654
 msgctxt "@action:button"
 msgid "Send S/MIME-Signed"
 msgstr "Enviar asinado co S/MIME"
 
-#: uiserver/assuanserverconnection.cpp:1016
+#: uiserver/assuanserverconnection.cpp:1029
 #, kde-format
 msgid "Caught unexpected exception: %1"
 msgstr "Recolleuse unha excepción inesperada: %1"
 
-#: uiserver/assuanserverconnection.cpp:1020
+#: uiserver/assuanserverconnection.cpp:1033
 msgid "Caught unknown exception - please report this error to the developers."
 msgstr ""
 "Recolleuse unha excepción descoñecida - informe deste problema aos "
 "programadores."
 
-#: uiserver/assuanserverconnection.cpp:1185
+#: uiserver/assuanserverconnection.cpp:1198
 #, kde-format
 msgid "Can not send \"%1\" status"
 msgstr "Non se pode enviar o estado \"%1\""
 
-#: uiserver/assuanserverconnection.cpp:1192
+#: uiserver/assuanserverconnection.cpp:1205
 msgid "Can not send data"
 msgstr "Non se poden enviar os datos"
 
-#: uiserver/assuanserverconnection.cpp:1195
+#: uiserver/assuanserverconnection.cpp:1208
 msgid "Can not flush data"
 msgstr "Non se poden limpar os datos"
 
-#: uiserver/assuanserverconnection.cpp:1360
-#: uiserver/assuanserverconnection.cpp:1405
+#: uiserver/assuanserverconnection.cpp:1378
+#: uiserver/assuanserverconnection.cpp:1423
 msgid "Caught unknown exception"
 msgstr "Recolleuse unha excepción descoñecida"
 
-#: uiserver/assuanserverconnection.cpp:1426
+#: uiserver/assuanserverconnection.cpp:1444
 msgid "Required --mode option missing"
 msgstr "Falta a opción --mode requirida"
 
-#: uiserver/assuanserverconnection.cpp:1433
+#: uiserver/assuanserverconnection.cpp:1451
 #, kde-format
 msgid "invalid mode: \"%1\""
 msgstr "modo non válido: \"%1\""
 
-#: uiserver/assuanserverconnection.cpp:1454
+#: uiserver/assuanserverconnection.cpp:1472
 msgid "Required --protocol option missing"
 msgstr "Falta a opción --protocol requirida"
 
-#: uiserver/assuanserverconnection.cpp:1459
+#: uiserver/assuanserverconnection.cpp:1477
 msgid "--protocol is not allowed here"
 msgstr "aquí non se permite --protocol"
 
-#: uiserver/assuanserverconnection.cpp:1466
+#: uiserver/assuanserverconnection.cpp:1484
 #, kde-format
 msgid "invalid protocol \"%1\""
 msgstr "protocolo \"%1\" non válido"
@@ -4549,23 +4738,27 @@ msgstr "Valor personalizado:"
 msgid "Impose setting on all users"
 msgstr "Imporlles a configuración a todos os usuarios"
 
-#. i18n: file: crypto/gui/signingcertificateselectionwidget.ui:16
-#. i18n: ectx: property (text), widget (QLabel, pgpLabel)
-#: rc.cpp:539
-msgid "OpenPGP signing certificate:"
-msgstr "Certificado de Sinatura OpenPGP:"
-
-#. i18n: file: crypto/gui/signingcertificateselectionwidget.ui:26
-#. i18n: ectx: property (text), widget (QLabel, cmsLabel)
-#: rc.cpp:542
-msgid "S/MIME signing certificate:"
-msgstr "Certificado de Sinatura S/MIME:"
-
-#. i18n: file: crypto/gui/signingcertificateselectionwidget.ui:36
+#. i18n: file: crypto/gui/signingcertificateselectionwidget.ui:37
 #. i18n: ectx: property (text), widget (QCheckBox, rememberCO)
-#: rc.cpp:545
+#: rc.cpp:539
 msgid "Remember these as default for future operations"
 msgstr "Lembrar estes como predefinidos para operacións futuras"
+
+#. i18n: file: crypto/gui/signingcertificateselectionwidget.ui:57
+#. i18n: ectx: property (text), widget (QLabel, pgpLabel)
+#: rc.cpp:542
+#, fuzzy
+#| msgid "OpenPGP signing certificate:"
+msgid "OpenPGP Signing Certificate:"
+msgstr "Certificado de Sinatura OpenPGP:"
+
+#. i18n: file: crypto/gui/signingcertificateselectionwidget.ui:67
+#. i18n: ectx: property (text), widget (QLabel, cmsLabel)
+#: rc.cpp:545
+#, fuzzy
+#| msgid "S/MIME signing certificate:"
+msgid "S/MIME Signing Certificate:"
+msgstr "Certificado de Sinatura S/MIME:"
 
 #. i18n: file: newcertificatewizard/overviewpage.ui:5
 #. i18n: ectx: property (title), widget (QWizardPage, Kleo::NewCertificateUi::OverviewPage)
@@ -5430,15 +5623,6 @@ msgctxt "Format string for the labels in the \"Your Personal Data\" page"
 msgid "%1 (%2):"
 msgstr "%1 (%2):"
 
-#: newcertificatewizard/newcertificatewizard.cpp:1193
-msgid "Sign"
-msgstr "Asinar"
-
-#: newcertificatewizard/newcertificatewizard.cpp:1195
-#: newcertificatewizard/newcertificatewizard.cpp:1219
-msgid "Encrypt"
-msgstr "Cifrar"
-
 #: newcertificatewizard/newcertificatewizard.cpp:1200
 msgid "Authenticate"
 msgstr "Autenticar"
@@ -6064,6 +6248,29 @@ msgstr "Erro do Xestor de Certificados"
 #: crlview.cpp:145
 msgid "The GpgSM process ended prematurely because of an unexpected error."
 msgstr "O proceso GPGSM rematou prematuramente debido a un erro inesperado."
+
+#~ msgid "Importing more than one file at a time is not yet implemented."
+#~ msgstr "Ainda non resulta posíbel importar máis dun ficheiro de cada vez."
+
+#~ msgid "Too many files"
+#~ msgstr "Demasiados ficheiros"
+
+#~ msgid "Download of certificate %1 failed. Error message: %2"
+#~ msgstr "Fallou a descarga do certificado %1. Mensaxe de erro: %2"
+
+#~ msgid "All certificate downloads failed. Sample error message: %1"
+#~ msgstr ""
+#~ "Fallaron todas as descargas de certificados. Mostra da mensaxe de erro: %1"
+
+#~ msgid "Certificate Download Failed"
+#~ msgstr "Fallou a descargas do certificado"
+
+#~ msgid ""
+#~ "Some certificates failed to download. Do you want to proceed with "
+#~ "importing the following successful downloads?"
+#~ msgstr ""
+#~ "Fallou a descarga dalgúns certificados. Desexa continuar a importar as "
+#~ "descargas seguintes, que si se completaron?"
 
 #~ msgid ""
 #~ "All of the certificates to be deleted are either your own, or are issuers "
