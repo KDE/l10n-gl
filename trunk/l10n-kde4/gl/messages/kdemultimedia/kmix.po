@@ -15,7 +15,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmix\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2009-06-20 12:15+0200\n"
+"POT-Creation-Date: 2009-07-05 11:43+0200\n"
 "PO-Revision-Date: 2009-06-20 19:51+0100\n"
 "Last-Translator: Manuel A. Vázquez <xixirei@yahoo.es>\n"
 "Language-Team: galician <proxecto@trasno.net>\n"
@@ -42,21 +42,23 @@ msgstr "Mesturador actual"
 msgid "Select the channel representing the master volume:"
 msgstr "Escolla a canle que representa o volume mestre:"
 
-#: dialogviewconfiguration.cpp:42 kmixprefdlg.cpp:41
+#: dialogviewconfiguration.cpp:152 kmixprefdlg.cpp:41
 msgid "Configure"
 msgstr "Configurar"
 
-#: dialogviewconfiguration.cpp:58
+#: dialogviewconfiguration.cpp:167
 msgid "Configuration of the channels."
 msgstr "Configuración das canles."
 
-#: dialogviewconfiguration.cpp:73
-msgid "Show/Hide"
-msgstr "Mostrar/Acochar"
+#: dialogviewconfiguration.cpp:228
+#, fuzzy
+#| msgid "Available mixers:"
+msgid "Available channels"
+msgstr "Mesturadores disponibeis:"
 
-#: dialogviewconfiguration.cpp:75
-msgid "Split"
-msgstr "Dividir"
+#: dialogviewconfiguration.cpp:232
+msgid "Visible channels"
+msgstr ""
 
 #: kmixapplet.cpp:94
 msgid "Configure - Mixer Applet"
@@ -102,31 +104,35 @@ msgstr "Mesturadores disponibeis:"
 msgid "Invalid mixer entered."
 msgstr "Indicouse un mesturador non válido."
 
-#: kmix.cpp:119
+#: kmix.cpp:120
 msgid "Hardware &Information"
 msgstr "&Información do Hardware"
 
-#: kmix.cpp:122 kmixdockwidget.cpp:382
+#: kmix.cpp:123 kmixdockwidget.cpp:380
 msgid "Hide Mixer Window"
 msgstr "Agochar a fiestra do mesturador"
 
-#: kmix.cpp:126
+#: kmix.cpp:127
 msgid "Configure &Channels..."
 msgstr "Configurar as &canles..."
 
-#: kmix.cpp:130 mdwslider.cpp:111
+#: kmix.cpp:130 kmixdockwidget.cpp:103
+msgid "Select Master Channel..."
+msgstr "Escoller a canle mestra..."
+
+#: kmix.cpp:134 mdwslider.cpp:111
 msgid "Increase Volume"
 msgstr "Aumentar o volume"
 
-#: kmix.cpp:135 mdwslider.cpp:122
+#: kmix.cpp:139 mdwslider.cpp:122
 msgid "Decrease Volume"
 msgstr "Baixar o volume"
 
-#: kmix.cpp:140 mdwslider.cpp:365
+#: kmix.cpp:144 mdwslider.cpp:365
 msgid "Mute"
 msgstr "Silenciar"
 
-#: kmix.cpp:493
+#: kmix.cpp:503
 #, kde-format
 msgid ""
 "The soundcard containing the master device was unplugged. Changing to "
@@ -135,11 +141,11 @@ msgstr ""
 "Desconectouse a tarxeta de son que contén o dispositivo mestre. Múdase para "
 "controlar %1 na tarxeta %2."
 
-#: kmix.cpp:502
+#: kmix.cpp:512
 msgid "The last soundcard was unplugged."
 msgstr "Desconectouse a última tarxeta de son."
 
-#: kmix.cpp:777
+#: kmix.cpp:789
 msgid "Mixer Hardware Information"
 msgstr "Información do mesturador hardware"
 
@@ -171,24 +177,20 @@ msgstr "Restaurar os volumes predeterminados"
 msgid "M&ute"
 msgstr "&Silenciar"
 
-#: kmixdockwidget.cpp:104
-msgid "Select Master Channel..."
-msgstr "Escoller a canle mestra..."
-
-#: kmixdockwidget.cpp:193
+#: kmixdockwidget.cpp:191
 msgid "Mixer cannot be found"
 msgstr "Non foi posíbel atopar o mesturador"
 
-#: kmixdockwidget.cpp:213
+#: kmixdockwidget.cpp:211
 #, kde-format
 msgid "Volume at %1%"
 msgstr "Volume ao %1%"
 
-#: kmixdockwidget.cpp:215
+#: kmixdockwidget.cpp:213
 msgid " (Muted)"
 msgstr " (Silenciado)"
 
-#: kmixdockwidget.cpp:386
+#: kmixdockwidget.cpp:384
 msgid "Show Mixer Window"
 msgstr "Mostrar a fiestra do mesturador"
 
@@ -450,6 +452,35 @@ msgstr ""
 msgid "kmix: Unknown error. Please report how you produced this error."
 msgstr "kmix: Erro descoñecido. Por favor, informe de como produciu este erro."
 
+#: mixer_oss4.cpp:349 mixer_oss.cpp:230
+msgid ""
+"kmix: You do not have permission to access the mixer device.\n"
+"Login as root and do a 'chmod a+rw /dev/mixer*' to allow the access."
+msgstr ""
+"kmix: Non ten permisos para acceder ao dispositivo do mesturador.\n"
+"Entre como root e faga «chmod a+rw /dev/mixer*» para permitir o acceso."
+
+#: mixer_oss4.cpp:353
+#, fuzzy
+#| msgid ""
+#| "kmix: Mixer cannot be found.\n"
+#| "Please check that the soundcard is installed and the\n"
+#| "soundcard driver is loaded.\n"
+#| "On Linux you might need to use 'insmod' to load the driver.\n"
+#| "Use 'soundon' when using commercial OSS."
+msgid ""
+"kmix: Mixer cannot be found.\n"
+"Please check that the soundcard is installed and the\n"
+"soundcard driver is loaded.\n"
+"On Linux you might need to use 'insmod' to load the driver.\n"
+"Use 'soundon' when using OSS4 from 4front."
+msgstr ""
+"kmix: Non se atopa o mesturador.\n"
+"Comprobe que a tarxeta de son está instalada e que o\n"
+"controlador está cargado.\n"
+"En Linux, pode que teña que usar «insmod» para cargar o controlador.\n"
+"Utilice «soundon» se está a usar o OSS comercial."
+
 #: mixer_oss.cpp:58
 msgid "Volume"
 msgstr "Volume"
@@ -562,14 +593,6 @@ msgstr "Centrado 3D"
 msgid "unused"
 msgstr "sen usar"
 
-#: mixer_oss.cpp:230
-msgid ""
-"kmix: You do not have permission to access the mixer device.\n"
-"Login as root and do a 'chmod a+rw /dev/mixer*' to allow the access."
-msgstr ""
-"kmix: Non ten permisos para acceder ao dispositivo do mesturador.\n"
-"Entre como root e faga «chmod a+rw /dev/mixer*» para permitir o acceso."
-
 #: mixer_oss.cpp:234
 msgid ""
 "kmix: Mixer cannot be found.\n"
@@ -617,11 +640,11 @@ msgstr ""
 "Pídalle ao seu administrador de sistema que arranxe o /dev/audioctl para "
 "permitir o acceso."
 
-#: mixertoolbox.cpp:198
+#: mixertoolbox.cpp:199
 msgid "Sound drivers supported:"
 msgstr "Controladores de son aturados:"
 
-#: mixertoolbox.cpp:199
+#: mixertoolbox.cpp:200
 msgid "Sound drivers used:"
 msgstr "Controladores de son empregados:"
 
@@ -685,7 +708,7 @@ msgstr "Silen&cio:"
 msgid "&File"
 msgstr "&Ficheiro"
 
-#. i18n: file: kmixui.rc:19
+#. i18n: file: kmixui.rc:20
 #. i18n: ectx: Menu (help)
 #: rc.cpp:33
 msgid "&Help"
@@ -705,13 +728,19 @@ msgstr "xabigf@gmx.net"
 msgid "&Channels"
 msgstr "&Canles"
 
-#: viewbase.cpp:146
+#: viewbase.cpp:182
 msgid "Device Settings"
 msgstr "Opcións do Dispositivo"
 
-#: viewdockareapopup.cpp:112
+#: viewdockareapopup.cpp:115
 msgid "Mixer"
 msgstr "Mesturador"
+
+#~ msgid "Show/Hide"
+#~ msgstr "Mostrar/Acochar"
+
+#~ msgid "Split"
+#~ msgstr "Dividir"
 
 #~ msgid "Current Mixer"
 #~ msgstr "Mesturador Actual"
