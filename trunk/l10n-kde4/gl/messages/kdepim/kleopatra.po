@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kleopatra\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2009-07-16 11:37+0200\n"
+"POT-Creation-Date: 2009-07-31 06:20+0200\n"
 "PO-Revision-Date: 2009-07-21 22:15+0200\n"
 "Last-Translator: Xosé <xosecalvo@gmail.com>\n"
 "Language-Team: Galego <kde-i18n-doc@kde.org>\n"
@@ -25,7 +25,7 @@ msgctxt "Key filter without user-assigned name"
 msgid "<unnamed>"
 msgstr "<sennome>"
 
-#: conf/appearanceconfigwidget.cpp:278
+#: conf/appearanceconfigwidget.cpp:277
 msgid "This parameter has been locked down by the system administrator."
 msgstr "Este parámetro foi bloqueado polo administrador do sistema."
 
@@ -1213,7 +1213,8 @@ msgstr "Non está soportado como saída o cartafol (\"%1\")"
 msgid "Could not write to clipboard"
 msgstr "Non foi posíbel escribir no portarretallos"
 
-#: utils/output.cpp:370 systrayicon.cpp:215
+#: utils/output.cpp:370 commands/importcertificatefromclipboardcommand.cpp:122
+#: systrayicon.cpp:198
 msgid "Clipboard"
 msgstr "Porta-retallos"
 
@@ -2281,6 +2282,8 @@ msgstr "Non foi posíbel abrir o ficheiro %1 para lectura"
 
 #: commands/importcertificatefromfilecommand.cpp:139
 #: commands/importcertificatefromfilecommand.cpp:144
+#: commands/importcertificatefromclipboardcommand.cpp:116
+#: commands/importcertificatefromclipboardcommand.cpp:120
 #: commands/importcertificatescommand.cpp:337
 #: commands/importcertificatescommand.cpp:343
 #: commands/importcertificatescommand.cpp:406
@@ -2542,6 +2545,53 @@ msgstr ""
 msgid "CRL cache cleared successfully."
 msgstr "Caché de CRl limpada satisfactoriamente."
 
+#: commands/learncardkeyscommand.cpp:72
+msgid "Error Learning SmartCard"
+msgstr ""
+
+#: commands/learncardkeyscommand.cpp:76
+msgid "Finished Learning SmartCard"
+msgstr ""
+
+#: commands/learncardkeyscommand.cpp:81
+#, fuzzy, kde-format
+#| msgctxt "@info"
+#| msgid ""
+#| "<para>The GPG or GpgSM process that tried to export the secret key ended "
+#| "prematurely because of an unexpected error.</para><para>Please check the "
+#| "output of <icode>%1</icode> for details.</para>"
+msgctxt "@info"
+msgid ""
+"<para>The GPG or GpgSM process that tried to learn the smart card ended "
+"prematurely because of an unexpected error.</para><para>Please check the "
+"output of <icode>%1</icode> for details.</para>"
+msgstr ""
+"<para>O proceso GPG ou GpgSM que tentaba limpar exportar a chave secreta "
+"rematou prematuramente por causa dun erro inesperado.</para><para>Comprobe a "
+"saída de <icode>%1</icode> para máis detalles.</para>"
+
+#: commands/learncardkeyscommand.cpp:88
+#, fuzzy, kde-format
+#| msgctxt "@info"
+#| msgid ""
+#| "<para>An error occurred while trying to export the secret key.</para> "
+#| "<para>The output from <command>%1</command> was: <message>%2</message></"
+#| "para>"
+msgctxt "@info"
+msgid ""
+"<para>An error occurred while trying to learn the smart card's keys.</para> "
+"<para>The output from <command>%1</command> was: <message>%2</message></para>"
+msgstr ""
+"<para>Ocorreu un erro cando se tentaba exportar a chave secreta.</para> "
+"<para>A saída de <command>%1</command> foi: <message>%2</message></para>"
+
+#: commands/learncardkeyscommand.cpp:94
+#, fuzzy
+#| msgctxt "@info"
+#| msgid "Secret key successfully exported."
+msgid "Smart card keys successfully learned."
+msgstr "Exportouse a chave secreta satisfactoriamente."
+
 #: commands/adduseridcommand.cpp:212
 #, kde-format
 msgctxt "@info"
@@ -2663,6 +2713,16 @@ msgstr "Exportouse a chave secreta satisfactoriamente."
 #: commands/encryptclipboardcommand.cpp:160
 msgid "Encrypt Clipboard Error"
 msgstr "Cifrar Erro de Porta-retallos"
+
+#: commands/importcertificatefromclipboardcommand.cpp:115
+msgid "Clipboard contents do not look like a certificate."
+msgstr ""
+
+#: commands/importcertificatefromclipboardcommand.cpp:120
+#, fuzzy
+#| msgid "Could not determine certificate type of %1."
+msgid "Could not determine certificate type of clipboard contents."
+msgstr "Non foi posíbel determinar o tipo de certificado de %1."
 
 #: commands/importcertificatescommand.cpp:212
 #, kde-format
@@ -3647,11 +3707,11 @@ msgstr "&Vista"
 
 #. i18n: file: kleopatra.rc:34
 #. i18n: ectx: Menu (certMenu)
-#. i18n: file: kleopatra.rc:98
+#. i18n: file: kleopatra.rc:97
 #. i18n: ectx: Menu (listview_popup)
 #. i18n: file: kleopatra.rc:34
 #. i18n: ectx: Menu (certMenu)
-#. i18n: file: kleopatra.rc:98
+#. i18n: file: kleopatra.rc:97
 #. i18n: ectx: Menu (listview_popup)
 #: rc.cpp:9 rc.cpp:30 rc.cpp:535 rc.cpp:556
 msgid "&Certificates"
@@ -3689,7 +3749,7 @@ msgstr "&Axuda"
 msgid "Main Toolbar"
 msgstr "Barra de Ferramentas Principal"
 
-#. i18n: file: kleopatra.rc:93
+#. i18n: file: kleopatra.rc:92
 #. i18n: ectx: ToolBar (searchToolBar)
 #: rc.cpp:27 rc.cpp:553
 msgid "Search Toolbar"
@@ -5242,54 +5302,58 @@ msgstr "Crear un certificado de sinatura cos mesmos parámetros"
 msgid "Create Encryption Certificate With Same Parameters"
 msgstr "Crear un certificado de cifrado cos mesmos parámetros"
 
-#: systrayicon.cpp:86
-msgid "Learn Keys"
-msgstr "Aprender as chaves"
-
-#: systrayicon.cpp:211
+#: systrayicon.cpp:194
 msgid "&Open Certificate Manager..."
 msgstr "&Abrir o xestor de certificados..."
 
-#: systrayicon.cpp:212
+#: systrayicon.cpp:195
 #, kde-format
 msgid "&Configure %1..."
 msgstr "&Configurar %1..."
 
-#: systrayicon.cpp:213
+#: systrayicon.cpp:196
 #, kde-format
 msgid "&About %1..."
 msgstr "&Acerca de %1..."
 
-#: systrayicon.cpp:214
+#: systrayicon.cpp:197
 msgid "&Shutdown Kleopatra"
 msgstr "A&pagar o Kleopatra"
 
-#: systrayicon.cpp:216
+#: systrayicon.cpp:199
+#, fuzzy
+#| msgid "Certificate Import Failed"
+msgid "Certificate Import"
+msgstr "Fallou a Importación do Certificado"
+
+#: systrayicon.cpp:200
 msgid "Encrypt..."
 msgstr "Cifrar..."
 
-#: systrayicon.cpp:217
+#: systrayicon.cpp:201
 msgid "S/MIME-Sign..."
 msgstr "Sinatura S/MIME..."
 
-#: systrayicon.cpp:218
+#: systrayicon.cpp:202
 msgid "OpenPGP-Sign..."
 msgstr "Sinatura OpenPGP..."
 
-#: systrayicon.cpp:219 mainwindow.cpp:632
+#: systrayicon.cpp:203 mainwindow.cpp:632
 msgid "Decrypt/Verify..."
 msgstr "Descifrar/Verificar..."
 
-#: systrayicon.cpp:220
+#: systrayicon.cpp:204
 msgid "SmartCard"
 msgstr "SmartCard"
 
-#: systrayicon.cpp:221
+#: systrayicon.cpp:205
 msgid "Set Initial PIN..."
 msgstr "Estabelecer o PIN inicial..."
 
-#: systrayicon.cpp:222
-msgid "Learn Card Certificates..."
+#: systrayicon.cpp:206
+#, fuzzy
+#| msgid "Learn Card Certificates..."
+msgid "Learn Card Certificates"
 msgstr "Aprender os certificados da tarxeta..."
 
 #: selftest/gpgagentcheck.cpp:64
@@ -6437,6 +6501,9 @@ msgstr "Erro do Xestor de Certificados"
 #: crlview.cpp:145
 msgid "The GpgSM process ended prematurely because of an unexpected error."
 msgstr "O proceso GPGSM rematou prematuramente debido a un erro inesperado."
+
+#~ msgid "Learn Keys"
+#~ msgstr "Aprender as chaves"
 
 #~ msgid "Importing more than one file at a time is not yet implemented."
 #~ msgstr "Ainda non resulta posíbel importar máis dun ficheiro de cada vez."
