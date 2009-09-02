@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kget\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2009-08-25 07:10+0200\n"
+"POT-Creation-Date: 2009-09-02 07:25+0200\n"
 "PO-Revision-Date: 2009-07-09 14:49+0200\n"
 "Last-Translator: Miguel Branco <mgl.branco@gmail.com>\n"
 "Language-Team: Galician <proxecto@trasno.net>\n"
@@ -59,7 +59,9 @@ msgstr[1] "Eliminar grupos"
 msgid "Use default directories for groups as suggestion"
 msgstr "Empregar para os grupos os cartafoles que se suxiren por defecto"
 
-#: conf/transfersgroupwidget.cpp:171
+#. i18n: file: transfer-plugins/checksumsearch/checksumsearch.ui:30
+#. i18n: ectx: property (text), widget (KPushButton, add)
+#: conf/transfersgroupwidget.cpp:171 rc.cpp:137
 msgid "Add"
 msgstr "Engadir"
 
@@ -67,7 +69,9 @@ msgstr "Engadir"
 msgid "Delete"
 msgstr "Eliminar"
 
-#: conf/transfersgroupwidget.cpp:176
+#. i18n: file: ui/transfersettingsdialog.ui:122
+#. i18n: ectx: property (text), widget (KPushButton, rename)
+#: conf/transfersgroupwidget.cpp:176 rc.cpp:514
 msgid "Rename"
 msgstr "Renomear"
 
@@ -113,7 +117,7 @@ msgstr "Xestiona-los grupos"
 
 #. i18n: file: transfer-plugins/bittorrent/btsettingswidget.ui:22
 #. i18n: ectx: property (title), widget (QGroupBox, networkGroupBox)
-#: conf/preferencesdialog.cpp:72 rc.cpp:209
+#: conf/preferencesdialog.cpp:72 rc.cpp:233
 msgid "Network"
 msgstr "Rede"
 
@@ -187,7 +191,7 @@ msgstr "Estado"
 #: core/transfertreemodel.cpp:602
 #: transfer-plugins/bittorrent/advanceddetails/torrentfiletreemodel.cpp:377
 #: transfer-plugins/bittorrent/advanceddetails/torrentfilelistmodel.cpp:70
-#: rc.cpp:557
+#: rc.cpp:893
 msgid "Size"
 msgstr "Tamaño"
 
@@ -205,6 +209,27 @@ msgstr "Velocidade"
 msgid "Remaining Time"
 msgstr "Tempo restante"
 
+#: core/filemodel.cpp:237
+#, fuzzy
+#| msgid "File"
+msgctxt "file in a filsystem"
+msgid "File"
+msgstr "Ficheiro "
+
+#: core/filemodel.cpp:237
+#, fuzzy
+#| msgid "Status"
+msgctxt "status of the download"
+msgid "Status"
+msgstr "Estado"
+
+#: core/filemodel.cpp:237
+#, fuzzy
+#| msgid "Size"
+msgctxt "size of the download"
+msgid "Size"
+msgstr "Tamaño"
+
 #: core/transferhandler.cpp:130
 #: transfer-plugins/bittorrent/btdetailswidget.cpp:27
 #: transfer-plugins/bittorrent/btdetailswidget.cpp:28
@@ -221,13 +246,13 @@ msgstr "n/d"
 
 #: core/transferhandler.cpp:138
 #: transfer-plugins/bittorrent/libbtcore/torrent/torrentcontrol.cpp:1489
-#: ui/transferdetails.cpp:103
+#: ui/transferdetails.cpp:93
 msgid "Stalled"
 msgstr "Atrancado"
 
 #: core/transferhandler.cpp:143 core/transfergrouphandler.cpp:112
 #: transfer-plugins/bittorrent/libbtcore/util/functions.cpp:263
-#: ui/transferdetails.cpp:108
+#: ui/transferdetails.cpp:98
 #, kde-format
 msgid "%1/s"
 msgstr "%1/s"
@@ -249,29 +274,67 @@ msgctxt "stop transfergroup downloads"
 msgid "Stop"
 msgstr "Deter "
 
-#: core/transfer.cpp:49 core/transfer.cpp:142 core/transfer.cpp:210
-#: transfer-plugins/kio/transferKio.cpp:56
+#: core/datasourcefactory.cpp:607
+#, kde-format
+msgctxt "A mirror is removed when the file has the wrong download size"
+msgid "%1 removed as it did report a wrong file size."
+msgstr ""
+
+#: core/datasourcefactory.cpp:607 core/kget.cpp:496 core/kget.cpp:843
+#: core/kget.cpp:851 transfer-plugins/metalink/metalink.cpp:198
+#: transfer-plugins/bittorrent/bttransfer.cpp:422
+#: transfer-plugins/bittorrent/bttransfer.cpp:433
+#: ui/metalinkcreator/metalinkcreator.cpp:273
+#: ui/metalinkcreator/metalinkcreator.cpp:292
+msgid "Error"
+msgstr "Erro"
+
+#: core/verifier.cpp:381
+#, fuzzy
+#| msgctxt "list header: type of file"
+#| msgid "File Type"
+msgctxt "the type of the hash, e.g. MD5"
+msgid "Type"
+msgstr "Tipo de Ficheiro "
+
+#: core/verifier.cpp:385
+msgctxt "the used hash for verification"
+msgid "Hash"
+msgstr ""
+
+#: core/transfer.cpp:30
+msgid "Downloading...."
+msgstr "A descargar..."
+
+#: core/transfer.cpp:30
+msgctxt "transfer state: delayed"
+msgid "Delayed"
+msgstr "Atrasar"
+
+#: core/transfer.cpp:30 core/transfer.cpp:229 core/transfer.cpp:254
 #: transfer-plugins/mms/mmsTransfer.cpp:52
-#: transfer-plugins/multisegmentkio/transfermultisegkio.cpp:64
-#: transfer-plugins/metalink/metalink.cpp:59
-#: transfer-plugins/bittorrent/bttransfer.cpp:231
+#: transfer-plugins/bittorrent/bttransfer.cpp:316
 #: transfer-plugins/contentfetch/contentfetch.cpp:64
 msgctxt "transfer state: stopped"
 msgid "Stopped"
 msgstr "Detido "
 
-#: core/transfer.cpp:135
-msgctxt "transfer state: delayed"
-msgid "Delayed"
-msgstr "Atrasar"
+#: core/transfer.cpp:30
+msgctxt "transfer state: aborted"
+msgid "Aborted"
+msgstr "Abortado "
 
-#: core/transfer.cpp:206 transfer-plugins/kio/transferKio.cpp:117
-#: transfer-plugins/multisegmentkio/transfermultisegkio.cpp:209
-#: transfer-plugins/metalink/metalink.cpp:110
-#: transfer-plugins/bittorrent/bttransfer.cpp:228
+#: core/transfer.cpp:30 transfer-plugins/bittorrent/bttransfer.cpp:313
 msgctxt "transfer state: finished"
 msgid "Finished"
 msgstr "Rematada "
+
+#: core/transfer.cpp:30 transfer-plugins/bittorrent/bttransfer.cpp:136
+#, fuzzy
+#| msgid "Open Destination"
+msgctxt "changing the destination of the file"
+msgid "Changing destination"
+msgstr "Abrir o destino"
 
 #: core/linkimporter.cpp:90
 #, kde-format
@@ -295,36 +358,30 @@ msgstr ""
 msgid "Overwrite existing file?"
 msgstr "Desexa sobrescribir o ficheiro xa existente?"
 
-#: core/kget.cpp:495
+#: core/kget.cpp:495 ui/metalinkcreator/metalinkcreator.cpp:292
 #, kde-format
 msgid "Unable to save to: %1"
 msgstr "Non foi posíbel gardar en: %1"
 
-#: core/kget.cpp:496 core/kget.cpp:836 core/kget.cpp:844
-#: transfer-plugins/bittorrent/bttransfer.cpp:333
-#: transfer-plugins/bittorrent/bttransfer.cpp:344
-msgid "Error"
-msgstr "Erro"
-
-#: core/kget.cpp:704 ui/contextmenu.cpp:139
+#: core/kget.cpp:709 ui/contextmenu.cpp:135
 msgid "My Downloads"
 msgstr "Descargas"
 
 #. i18n: file: ui/newtransferwidget.ui:25
 #. i18n: ectx: property (text), widget (KTitleWidget, titleWidget)
-#: core/kget.cpp:776 ui/newtransferdialog.cpp:238 rc.cpp:472
+#: core/kget.cpp:783 ui/newtransferdialog.cpp:249 rc.cpp:520
 msgid "New Download"
 msgstr "Nova transferencia"
 
-#: core/kget.cpp:776
+#: core/kget.cpp:783
 msgid "Enter URL:"
 msgstr "Introduza o URL:"
 
-#: core/kget.cpp:809
+#: core/kget.cpp:816
 msgid "Save As"
 msgstr "Gardar como"
 
-#: core/kget.cpp:835
+#: core/kget.cpp:842
 #, kde-format
 msgid ""
 "Malformed URL:\n"
@@ -333,7 +390,7 @@ msgstr ""
 "URL malformado:\n"
 "%1"
 
-#: core/kget.cpp:843
+#: core/kget.cpp:850
 #, kde-format
 msgid ""
 "Malformed URL, protocol missing:\n"
@@ -342,7 +399,7 @@ msgstr ""
 "URL malformado, falta o protocolo:\n"
 "%1"
 
-#: core/kget.cpp:856
+#: core/kget.cpp:863
 #, kde-format
 msgid ""
 "URL already saved:\n"
@@ -353,15 +410,15 @@ msgstr ""
 "%1\n"
 "Desexa transferilo outra vez?"
 
-#: core/kget.cpp:857
+#: core/kget.cpp:864
 msgid "Download URL again?"
 msgstr "Transferir o URL de novo?"
 
-#: core/kget.cpp:885 core/kget.cpp:892
+#: core/kget.cpp:892 core/kget.cpp:899
 msgid "Directory is not writable"
 msgstr "Non se pode gravar no cartafol"
 
-#: core/kget.cpp:902
+#: core/kget.cpp:909
 #, kde-format
 msgid ""
 "Destination file \n"
@@ -374,11 +431,11 @@ msgstr ""
 "xa existe.\n"
 "Desexa sobrescribilo?"
 
-#: core/kget.cpp:903
+#: core/kget.cpp:910
 msgid "Overwrite destination"
 msgstr "Sobreescribir destino"
 
-#: core/kget.cpp:1031
+#: core/kget.cpp:1038
 #, kde-format
 msgid ""
 "<html><p>Plugin loader could not load the plugin:<br/><i>%1</i></p></html>"
@@ -386,7 +443,7 @@ msgstr ""
 "<html><p>O cargador de engadidos non puido cargar o engadido:<br/><i>%1</i></"
 "p></html> "
 
-#: core/kget.cpp:1049
+#: core/kget.cpp:1056
 #, kde-format
 msgid ""
 "Not deleting\n"
@@ -397,7 +454,7 @@ msgstr ""
 "%1\n"
 "xa que é un cartafol."
 
-#: core/kget.cpp:1059
+#: core/kget.cpp:1066
 #, kde-format
 msgid ""
 "Not deleting\n"
@@ -410,48 +467,108 @@ msgstr ""
 
 #. i18n: file: conf/dlgadvanced.ui:40
 #. i18n: ectx: property (text), item, widget (KComboBox, kcfg_AfterFinishAction)
-#: core/kget.cpp:1248 core/kget.cpp:1258 ui/droptarget.cpp:94 rc.cpp:65
+#: core/kget.cpp:1255 core/kget.cpp:1265 ui/droptarget.cpp:94 rc.cpp:65
 msgid "Quit KGet"
 msgstr "Saír de KGet"
 
-#: core/kget.cpp:1249
+#: core/kget.cpp:1256
 msgid "KGet is now closing, as all downloads have completed."
 msgstr "Todas as descargan acabaron así que KGet apagarase agora mesmo. "
 
-#: core/kget.cpp:1259
+#: core/kget.cpp:1266
 msgid "The computer will now turn off, as all downloads have completed."
 msgstr "O ordenador apagarase agora mesmo xa que remataron todas as descargas."
 
-#: transfer-plugins/kio/transferKio.cpp:38
-#: transfer-plugins/multisegmentkio/transfermultisegkio.cpp:46
-#: transfer-plugins/metalink/metalink.cpp:43
+#: transfer-plugins/kio/transferKio.cpp:97
 msgctxt "transfer state: connecting"
 msgid "Connecting...."
 msgstr "A conectar..."
 
-#: transfer-plugins/kio/transferKio.cpp:128
-#: transfer-plugins/multisegmentkio/transfermultisegkio.cpp:220
-msgid "Aborted"
-msgstr "Abortado"
+#: transfer-plugins/kio/transferKio.cpp:257
+#: transfer-plugins/multisegmentkio/transfermultisegkio.cpp:213
+#, kde-format
+msgid "The download (%1) could not be verfied. Do you want to repair it?"
+msgstr ""
 
-#: transfer-plugins/kio/transferKio.cpp:156
-#: transfer-plugins/kio/transferKio.cpp:170
-#: transfer-plugins/kio/transferKio.cpp:185
-#: transfer-plugins/multisegmentkio/transfermultisegkio.cpp:251
-#: transfer-plugins/multisegmentkio/transfermultisegkio.cpp:268
-#: transfer-plugins/multisegmentkio/transfermultisegkio.cpp:285
-msgid "Downloading...."
-msgstr "A descargar..."
+#: transfer-plugins/kio/transferKio.cpp:258
+#: transfer-plugins/multisegmentkio/transfermultisegkio.cpp:214
+msgid "Verification failed."
+msgstr ""
 
 #: transfer-plugins/mms/mmsTransfer.cpp:36
 msgctxt "transfer state: running"
 msgid "Running...."
 msgstr "A executar..."
 
-#: transfer-plugins/metalink/metalink.cpp:119
-msgctxt "transfer state: aborted"
-msgid "Aborted"
-msgstr "Abortado "
+#: transfer-plugins/checksumsearch/dlgchecksumsearch.cpp:41
+msgid "Add item"
+msgstr ""
+
+#: transfer-plugins/checksumsearch/dlgchecksumsearch.cpp:69
+#, kde-format
+msgid "%1 would become %2"
+msgstr ""
+
+#: transfer-plugins/checksumsearch/dlgchecksumsearch.cpp:197
+#, fuzzy
+#| msgid "Change appearance settings"
+msgctxt "the string that is used to modify an url"
+msgid "Change string"
+msgstr "Cambiar propiedades de aparencia"
+
+#: transfer-plugins/checksumsearch/dlgchecksumsearch.cpp:198
+#, fuzzy
+#| msgid "Change Tracker"
+msgctxt "the mode defines how the url should be changed"
+msgid "Change mode"
+msgstr "Modificar o localizador"
+
+#: transfer-plugins/checksumsearch/dlgchecksumsearch.cpp:199
+msgctxt "the type of the checksum e.g. md5"
+msgid "Checksum type"
+msgstr ""
+
+#: transfer-plugins/checksumsearch/checksumsearch.cpp:30
+#, fuzzy
+#| msgid "Appearance"
+msgid "Append"
+msgstr "Aparencia"
+
+#: transfer-plugins/checksumsearch/checksumsearch.cpp:30
+#, fuzzy
+#| msgid "Open file"
+msgid "Replace file"
+msgstr "Abrir ficheiro "
+
+#: transfer-plugins/checksumsearch/checksumsearch.cpp:30
+msgid "Replace file-ending"
+msgstr ""
+
+#: transfer-plugins/metalink/metalink.cpp:91
+#, fuzzy
+#| msgid "Downloading Torrent File...."
+msgid "Downloading Metalink File...."
+msgstr "Descargando ficheiro torrent... "
+
+#: transfer-plugins/metalink/metalink.cpp:198
+msgid "Download failed, no working urls were found."
+msgstr ""
+
+#: transfer-plugins/metalink/metalink.cpp:199
+#: transfer-plugins/bittorrent/bttransfer.cpp:421
+#: transfer-plugins/bittorrent/bttransfer.cpp:432
+msgid "An error occurred...."
+msgstr "Aconteceu un erro..."
+
+#: transfer-plugins/metalink/metalink.cpp:222
+#, fuzzy
+#| msgid "File Settings"
+msgid "File Selection"
+msgstr "Configuracións de ficheiro"
+
+#: transfer-plugins/metalink/metalink.cpp:502
+msgid "The cownload could not be verified, try to repair it?"
+msgstr ""
 
 #: transfer-plugins/mirrorsearch/dlgmirrorsearch.cpp:23
 msgid "Insert Engine"
@@ -459,11 +576,20 @@ msgstr "Inserir Motor "
 
 #. i18n: file: transfer-plugins/mirrorsearch/dlgengineediting.ui:16
 #. i18n: ectx: property (text), widget (QLabel, engineNameLabel)
-#: transfer-plugins/mirrorsearch/dlgmirrorsearch.cpp:28 rc.cpp:158
+#: transfer-plugins/mirrorsearch/dlgmirrorsearch.cpp:28 rc.cpp:182
 msgid "Engine name:"
 msgstr "Nome do motor:"
 
-#: transfer-plugins/mirrorsearch/dlgmirrorsearch.cpp:29
+#. i18n: file: ui/metalinkcreator/filedlg.ui:357
+#. i18n: ectx: property (text), widget (QLabel, label_23)
+#. i18n: file: ui/metalinkcreator/filedlg.ui:411
+#. i18n: ectx: property (text), widget (QLabel, label_21)
+#. i18n: file: ui/metalinkcreator/general2.ui:57
+#. i18n: ectx: property (text), widget (QLabel, label_26)
+#. i18n: file: ui/metalinkcreator/general2.ui:98
+#. i18n: ectx: property (text), widget (QLabel, label_27)
+#: transfer-plugins/mirrorsearch/dlgmirrorsearch.cpp:29 rc.cpp:614 rc.cpp:632
+#: rc.cpp:752 rc.cpp:767
 msgid "Url:"
 msgstr "Url:"
 
@@ -708,7 +834,7 @@ msgstr "Se o parceiro está interesado en descargar datos deste parceiro"
 #. i18n: file: transfer-plugins/mirrorsearch/dlgmirrorsearch.ui:32
 #. i18n: ectx: property (text), widget (QTreeWidget, enginesTreeWidget)
 #: transfer-plugins/bittorrent/advanceddetails/webseedsmodel.cpp:124
-#: rc.cpp:170
+#: rc.cpp:194
 msgid "URL"
 msgstr "URL"
 
@@ -742,12 +868,12 @@ msgid "Cannot remove webseed %1, it is part of the torrent."
 msgstr "Non se pode eliminar a fontes web %1, é parte do torrente."
 
 #: transfer-plugins/bittorrent/advanceddetails/trackerview.cpp:87
-#: transfer-plugins/bittorrent/bttransfer.cpp:189
+#: transfer-plugins/bittorrent/bttransfer.cpp:270
 msgid "Cannot add a tracker to a private torrent."
 msgstr "Non pode engadir un localizador a un torrente privado."
 
 #: transfer-plugins/bittorrent/advanceddetails/trackerview.cpp:94
-#: transfer-plugins/bittorrent/bttransfer.cpp:195
+#: transfer-plugins/bittorrent/bttransfer.cpp:276
 msgid "Malformed URL."
 msgstr "URL malformado."
 
@@ -884,25 +1010,21 @@ msgstr "Opcións &Avanzadas "
 msgid "&Scan Files"
 msgstr "&Explorar Ficheiros "
 
-#: transfer-plugins/bittorrent/bttransfer.cpp:77
+#: transfer-plugins/bittorrent/bttransfer.cpp:108
 msgid "Downloading Torrent File...."
 msgstr "Descargando ficheiro torrent... "
 
-#: transfer-plugins/bittorrent/bttransfer.cpp:213
+#: transfer-plugins/bittorrent/bttransfer.cpp:153
+#: transfer-plugins/bittorrent/bttransfer.cpp:294
 msgctxt "transfer state: downloading"
 msgid "Downloading...."
 msgstr "Descargando..."
 
-#: transfer-plugins/bittorrent/bttransfer.cpp:283
+#: transfer-plugins/bittorrent/bttransfer.cpp:368
 msgid "Analyzing torrent...."
 msgstr "Analizando torrent... "
 
-#: transfer-plugins/bittorrent/bttransfer.cpp:332
-#: transfer-plugins/bittorrent/bttransfer.cpp:343
-msgid "An error occurred...."
-msgstr "Aconteceu un erro..."
-
-#: transfer-plugins/bittorrent/bttransfer.cpp:353
+#: transfer-plugins/bittorrent/bttransfer.cpp:442
 msgctxt "Transfer status: seeding"
 msgid "Seeding...."
 msgstr "Sementando..."
@@ -1443,17 +1565,17 @@ msgstr "Eliminar Etiqueta"
 msgid "Add Tag"
 msgstr "Engadir etiqueta"
 
-#: ui/contextmenu.cpp:74
+#: ui/contextmenu.cpp:71
 msgid "Semantic Desktop"
 msgstr "Escritorio Semántico"
 
-#: ui/contextmenu.cpp:148 mainwindow.cpp:183
+#: ui/contextmenu.cpp:144 mainwindow.cpp:190
 msgid "Delete Group"
 msgid_plural "Delete Groups"
 msgstr[0] "Eliminar o Grupo "
 msgstr[1] "Borrar os grupos"
 
-#: ui/contextmenu.cpp:152 mainwindow.cpp:188
+#: ui/contextmenu.cpp:148 mainwindow.cpp:195
 msgid "Rename Group..."
 msgid_plural "Rename Groups..."
 msgstr[0] "Renomear grupo..."
@@ -1467,7 +1589,160 @@ msgstr "Detalles da transferencia"
 msgid "Select columns"
 msgstr "Escoller as columnas"
 
-#: ui/tray_newproto.cpp:45 main.cpp:133 mainwindow.cpp:89 mainwindow.cpp:458
+#: ui/renamefile.cpp:32
+#, fuzzy
+#| msgid "Rename"
+msgid "Rename File"
+msgstr "Renomear"
+
+#: ui/renamefile.cpp:41
+#, fuzzy, kde-format
+#| msgid "Rename"
+msgid "Rename %1 to:"
+msgstr "Renomear"
+
+#: ui/renamefile.cpp:44
+#, fuzzy
+#| msgid "Rename"
+msgid "&Rename"
+msgstr "Renomear"
+
+#: ui/verificationdialog.cpp:35
+msgid "Add chechksum"
+msgstr ""
+
+#: ui/verificationdialog.cpp:48 ui/mirror/mirrorsettings.cpp:60
+#, fuzzy
+#| msgid "Add Tracker"
+msgctxt "Adds the item and reopens the dialog to add a further item"
+msgid "Add more"
+msgstr "Engadir un localizador"
+
+#: ui/verificationdialog.cpp:81
+#, kde-format
+msgid "%1 %2 has been successfully added."
+msgstr ""
+
+#: ui/verificationdialog.cpp:101
+#, fuzzy, kde-format
+#| msgid "Transfer Settings for %1"
+msgid "Transfer Verification for %1"
+msgstr "Configuración de transferencia para %1"
+
+#: ui/verificationdialog.cpp:187
+#, kde-format
+msgid "%1 was successfully verified."
+msgstr ""
+
+#: ui/verificationdialog.cpp:188
+msgid "Verification successful"
+msgstr ""
+
+#: ui/metalinkcreator/dragdlg.cpp:54
+msgid "Import dropped files"
+msgstr ""
+
+#: ui/metalinkcreator/metalinkcreator.cpp:226
+msgid "Create a Metalink"
+msgstr ""
+
+#: ui/metalinkcreator/metalinkcreator.cpp:273
+#, fuzzy, kde-format
+#| msgid "Unable to save to: %1"
+msgid "Unable to load: %1"
+msgstr "Non foi posíbel gardar en: %1"
+
+#: ui/metalinkcreator/metalinkcreator.cpp:303
+#: ui/metalinkcreator/metalinkcreator.cpp:308
+#, fuzzy
+#| msgid "Open file"
+msgid "Metalink file"
+msgstr "Abrir ficheiro "
+
+#: ui/metalinkcreator/metalinkcreator.cpp:314
+msgid "Define the saving location."
+msgstr ""
+
+#: ui/metalinkcreator/metalinkcreator.cpp:346
+#: ui/metalinkcreator/metalinkcreator.cpp:447
+msgid "General optional information for the metalink."
+msgstr ""
+
+#: ui/metalinkcreator/metalinkcreator.cpp:492
+msgctxt "file as in file on hard drive"
+msgid "Enter at least one file."
+msgstr ""
+
+#: ui/metalinkcreator/filedlg.cpp:100
+#, fuzzy
+#| msgid "File Settings"
+msgid "File Properties"
+msgstr "Configuracións de ficheiro"
+
+#: ui/metalinkcreator/filedlg.cpp:109
+#, fuzzy
+#| msgid "Enter a new Tag"
+msgid "Enter a filename."
+msgstr "Introducir unha nova Etiqueta"
+
+#: ui/metalinkcreator/filedlg.cpp:110
+msgid "Enter at least one url."
+msgstr ""
+
+#: ui/metalinkcreator/filedlg.cpp:111
+msgid "The filename exists already, choose a different one."
+msgstr ""
+
+#: ui/metalinkcreator/filedlg.cpp:142
+msgid "Required data entered, also consider to enter additional information."
+msgstr ""
+
+#: ui/mirror/mirrorsettings.cpp:44
+msgid "Add mirror"
+msgstr ""
+
+#: ui/mirror/mirrorsettings.cpp:122
+#, kde-format
+msgid "%1 has been successfully added."
+msgstr ""
+
+#: ui/mirror/mirrorsettings.cpp:162
+msgid "Modify the used mirrors."
+msgstr ""
+
+#. i18n: file: ui/mirror/mirroradddlg.ui:82
+#. i18n: ectx: property (specialValueText), widget (KIntNumInput, preference)
+#: ui/mirror/mirrormodel.cpp:201 ui/mirror/mirrormodel.cpp:219 rc.cpp:818
+msgid "not specified"
+msgstr ""
+
+#: ui/mirror/mirrormodel.cpp:378
+#, fuzzy
+#| msgid "Error"
+msgctxt "Mirror as in server, in url"
+msgid "Mirror"
+msgstr "Erro"
+
+#: ui/mirror/mirrormodel.cpp:380
+#, fuzzy
+#| msgid "Connections"
+msgctxt "Number of paralell connections to the mirror"
+msgid "Connections"
+msgstr "Conexións"
+
+#: ui/mirror/mirrormodel.cpp:382
+msgctxt "The preference of the mirror"
+msgid "Preference"
+msgstr ""
+
+#: ui/mirror/mirrormodel.cpp:384
+#, fuzzy
+#| msgid "Location (URL)"
+msgctxt "Location = country"
+msgid "Location"
+msgstr "Localización (URL)"
+
+#: ui/tray_newproto.cpp:45 main.cpp:133 mainwindow.cpp:90 mainwindow.cpp:465
 msgid "KGet"
 msgstr "KGet"
 
@@ -1601,33 +1876,23 @@ msgstr "Borrar a selección"
 msgid "Open file"
 msgstr "Abrir ficheiro "
 
-#: ui/transfersettingsdialog.cpp:18
+#: ui/transfersettingsdialog.cpp:29
 #, kde-format
 msgid "Transfer Settings for %1"
 msgstr "Configuración de transferencia para %1"
 
-#: ui/transferdetails.cpp:38
-msgctxt "@label transfer source"
-msgid "Source:"
-msgstr "Fonte: "
+#: ui/transfersettingsdialog.cpp:122
+msgid ""
+"Changing the destination did not work, the destination stays unmodified."
+msgstr ""
 
-#. i18n: file: transfer-plugins/bittorrent/btdetailswidgetfrm.ui:247
-#. i18n: ectx: property (text), widget (QLabel, label_2)
-#. i18n: file: ui/transferdetailsfrm.ui:43
-#. i18n: ectx: property (text), widget (QLabel, destLabel)
-#: ui/transferdetails.cpp:39 rc.cpp:379 rc.cpp:484
-msgid "Saving to:"
-msgstr "Gardar en:"
+#: ui/transfersettingsdialog.cpp:122
+#, fuzzy
+#| msgid "Destination"
+msgid "Destination unmodified"
+msgstr "Destino "
 
-#. i18n: file: transfer-plugins/bittorrent/advanceddetails/trackerview.ui:55
-#. i18n: ectx: property (text), widget (QLabel, label_2)
-#. i18n: file: ui/transferdetailsfrm.ui:113
-#. i18n: ectx: property (text), widget (QLabel, statusLabel)
-#: ui/transferdetails.cpp:40 rc.cpp:286 rc.cpp:491
-msgid "Status:"
-msgstr "Estado:"
-
-#: ui/transferdetails.cpp:88
+#: ui/transferdetails.cpp:78
 #, kde-format
 msgid "%1 of %2"
 msgstr "%1 de %2"
@@ -1637,15 +1902,15 @@ msgctxt "fix position for droptarget"
 msgid "Sticky"
 msgstr "Pegañento"
 
-#: ui/droptarget.cpp:224 mainwindow.cpp:956
+#: ui/droptarget.cpp:224 mainwindow.cpp:970
 msgid "The dropped file is a KGet Transfer List"
 msgstr "O ficheiro arrastrado é unha listaxe de transferencias de KGet "
 
-#: ui/droptarget.cpp:225 mainwindow.cpp:957
+#: ui/droptarget.cpp:225 mainwindow.cpp:971
 msgid "&Download"
 msgstr "&Descargar"
 
-#: ui/droptarget.cpp:226 mainwindow.cpp:958
+#: ui/droptarget.cpp:226 mainwindow.cpp:972
 msgid "&Load transfer list"
 msgstr "&Cargar Listaxe de Transferencias"
 
@@ -1667,7 +1932,19 @@ msgstr "Icona de Descargas"
 msgid "You can drag download links into the drop target."
 msgstr "Pode arrastra-las descargas á icona de descargas."
 
-#: ui/droptarget.cpp:408
+#: ui/droptarget.cpp:406
+#, kde-format
+msgctxt "%1 filename, %2 total size, %3 status"
+msgid "%1(%2) %3"
+msgstr "%1(%2) %3"
+
+#: ui/droptarget.cpp:412
+#, kde-format
+msgctxt "%1 filename, %2 percent complete, %3 downloaded out of %4 total size"
+msgid "%1(%2% %3/%4) Speed:%5/s"
+msgstr "%1(%2% %3/%4) Velocidade:%5/s"
+
+#: ui/droptarget.cpp:420
 #, kde-format
 msgctxt ""
 "%1 filename, %2 percent complete, %3 downloaded out of %4 total size, %5 "
@@ -1675,23 +1952,11 @@ msgctxt ""
 msgid "%1(%2% %3/%4) %5"
 msgstr "%1(%2% %3/%4) %5"
 
-#: ui/droptarget.cpp:416
-#, kde-format
-msgctxt "%1 filename, %2 total size, %3 status"
-msgid "%1(%2) %3"
-msgstr "%1(%2) %3"
-
-#: ui/droptarget.cpp:422
-#, kde-format
-msgctxt "%1 filename, %2 percent complete, %3 downloaded out of %4 total size"
-msgid "%1(%2% %3/%4) Speed:%5/s"
-msgstr "%1(%2% %3/%4) Velocidade:%5/s"
-
-#: ui/droptarget.cpp:436
+#: ui/droptarget.cpp:434
 msgid "Ready"
 msgstr "Listo"
 
-#: ui/droptarget.cpp:446
+#: ui/droptarget.cpp:444
 msgid ""
 "Drop target has been hidden. If you want to show it again, go to Settings-"
 ">Configure KGet->Look & Feel."
@@ -1699,7 +1964,7 @@ msgstr ""
 "Agochouse o destino onde deixar. Se quer mostralo de novo, vaia a "
 "Configuración->Configurar KGet->Aspecto e comportamento."
 
-#: ui/droptarget.cpp:448
+#: ui/droptarget.cpp:446
 msgid "Hiding drop target"
 msgstr "Agochando o obxectivo"
 
@@ -1747,7 +2012,7 @@ msgstr "Nome de Ficheiro"
 
 #. i18n: file: transfer-plugins/contentfetch/dlgcontentfetchsettingwidget.ui:37
 #. i18n: ectx: property (text), widget (QTreeWidget, scriptTreeWidget)
-#: ui/linkview/kget_linkview.cpp:126 rc.cpp:439
+#: ui/linkview/kget_linkview.cpp:126 rc.cpp:463
 msgid "Description"
 msgstr "Descrición"
 
@@ -1771,7 +2036,7 @@ msgstr "&Seleccionar todo o filtrado"
 
 #. i18n: file: ui/linkview/importlinkdialog.ui:227
 #. i18n: ectx: property (text), widget (KPushButton, selectAll)
-#: ui/linkview/kget_linkview.cpp:264 rc.cpp:619
+#: ui/linkview/kget_linkview.cpp:264 rc.cpp:955
 msgid "&Select All"
 msgstr "&Seleccionar todo "
 
@@ -1781,11 +2046,11 @@ msgstr "Deseleccionar todo o filtrado"
 
 #. i18n: file: ui/linkview/importlinkdialog.ui:217
 #. i18n: ectx: property (text), widget (KPushButton, deselectAll)
-#: ui/linkview/kget_linkview.cpp:265 rc.cpp:616
+#: ui/linkview/kget_linkview.cpp:265 rc.cpp:952
 msgid "D&eselect All"
 msgstr "&Deseleccionar todo "
 
-#: extensions/konqueror/kget_plug_in.cpp:54 mainwindow.cpp:299
+#: extensions/konqueror/kget_plug_in.cpp:54 mainwindow.cpp:306
 msgid "Show Drop Target"
 msgstr "Mostrar Xestor de Descargas"
 
@@ -2032,39 +2297,43 @@ msgstr ""
 msgid "URL(s) to download"
 msgstr "URL(s) a transferir"
 
-#: mainwindow.cpp:142
+#: mainwindow.cpp:145
 msgid "KGet Transfer List"
 msgstr "Listaxe de transferencias de KGet"
 
-#: mainwindow.cpp:149
+#: mainwindow.cpp:152
 msgid "Export Transfers"
 msgstr "Exportar as transferencias"
 
-#: mainwindow.cpp:159
+#: mainwindow.cpp:162
 msgid "&New Download..."
 msgstr "&Nova transferencia..."
 
-#: mainwindow.cpp:165
+#: mainwindow.cpp:168
 msgid "&Import Transfers..."
 msgstr "&Importar Transferencias..."
 
-#: mainwindow.cpp:171
+#: mainwindow.cpp:174
 msgid "&Export Transfers List..."
 msgstr "&Exportar a lista de transferencias..."
 
-#: mainwindow.cpp:177
+#: mainwindow.cpp:180
 msgid "&Export Transfers as Plain Text..."
 msgstr "&Exportar a lista de transferencias como texto..."
 
-#: mainwindow.cpp:193
+#: mainwindow.cpp:186
+msgid "&Create a Metalink"
+msgstr ""
+
+#: mainwindow.cpp:200
 msgid "Set Icon..."
 msgstr "Establecer icona..."
 
-#: mainwindow.cpp:198
+#: mainwindow.cpp:205
 msgid "Auto-Paste Mode"
 msgstr "Modo apegado automático"
 
-#: mainwindow.cpp:201
+#: mainwindow.cpp:208
 msgid ""
 "<b>Auto paste</b> button toggles the auto-paste mode on and off.\n"
 "When set, KGet will periodically scan the clipboard for URLs and paste them "
@@ -2074,82 +2343,82 @@ msgstr ""
 "Se o activa, KGet examinará periodicamente o portaretallos á procura de URLs "
 "e apegaraas automaticamente."
 
-#: mainwindow.cpp:207
+#: mainwindow.cpp:214
 msgid "Use KGet as Konqueror Download Manager"
 msgstr "Usar KGet como o xestor de descargas de Konqueror"
 
-#: mainwindow.cpp:225
+#: mainwindow.cpp:232
 msgctxt "delete selected transfer item"
 msgid "Delete Selected"
 msgstr "Eliminas o Escollido"
 
-#: mainwindow.cpp:231
+#: mainwindow.cpp:238
 msgctxt "delete all finished transfers"
 msgid "Delete All Finished"
 msgstr "Eliminar todo o rematado"
 
-#: mainwindow.cpp:236
+#: mainwindow.cpp:243
 msgctxt "redownload selected transfer item"
 msgid "Redownload Selected"
 msgstr "Volver Descargar o Escollido"
 
-#: mainwindow.cpp:241
+#: mainwindow.cpp:248
 msgid "Start / Resume All"
 msgstr "Iniciar/Continuar todas"
 
-#: mainwindow.cpp:247
+#: mainwindow.cpp:254
 msgid "Start / Resume Selected"
 msgstr "Iniciar/Continuar as escollidas"
 
-#: mainwindow.cpp:252
+#: mainwindow.cpp:259
 msgid "Stop All"
 msgstr "Deter todas"
 
-#: mainwindow.cpp:258
+#: mainwindow.cpp:265
 msgid "Stop Selected"
 msgstr "Deter as escollidas"
 
-#: mainwindow.cpp:262
+#: mainwindow.cpp:269
 msgid "Start / Resume"
 msgstr "Iniciar/Continuar"
 
-#: mainwindow.cpp:270
+#: mainwindow.cpp:277
 msgid "Stop"
 msgstr "Deter"
 
-#: mainwindow.cpp:279
+#: mainwindow.cpp:286
 msgid "Open Destination"
 msgstr "Abrir o destino"
 
-#: mainwindow.cpp:284 mainwindow.cpp:440
+#: mainwindow.cpp:291 mainwindow.cpp:447
 msgid "Open File"
 msgstr "Abrir un ficheiro"
 
-#: mainwindow.cpp:289
+#: mainwindow.cpp:296
 msgid "Show Details"
 msgstr "Mostrar os detalles"
 
-#: mainwindow.cpp:294
+#: mainwindow.cpp:301
 msgid "Copy URL to Clipboard"
 msgstr "Copiar o URL ao Portarretallos"
 
-#: mainwindow.cpp:305
+#: mainwindow.cpp:312
 msgid "&Transfer History"
 msgstr "&Historial de Transferencias"
 
-#: mainwindow.cpp:311
+#: mainwindow.cpp:318
 msgid "&Group Settings"
 msgstr "&Configuración de grupo"
 
-#: mainwindow.cpp:317
+#: mainwindow.cpp:324
 msgid "&Transfer Settings"
 msgstr "&Configuración de Transferencia"
 
-#: mainwindow.cpp:323
+#: mainwindow.cpp:330
 msgid "Import &Links..."
 msgstr "Importar &ligazóns..."
 
-#: mainwindow.cpp:364
+#: mainwindow.cpp:371
 msgid ""
 "This is the first time you have run KGet.\n"
 "Would you like to enable KGet as the download manager for Konqueror?"
@@ -2157,29 +2426,29 @@ msgstr ""
 "Esta é a primeira vez que executa KGet.\n"
 "Desexa usar KGet como o xestor de descargas de Konqueror? "
 
-#: mainwindow.cpp:366
+#: mainwindow.cpp:373
 msgid "Konqueror Integration"
 msgstr "Integración con Konqueror"
 
-#: mainwindow.cpp:366
+#: mainwindow.cpp:373
 msgid "Enable"
 msgstr "Habilitar"
 
-#: mainwindow.cpp:367
+#: mainwindow.cpp:374
 msgid "Do Not Enable"
 msgstr "Non habilitar"
 
-#: mainwindow.cpp:439
+#: mainwindow.cpp:446
 msgid "All Openable Files"
 msgstr "Tódolos Ficheiros que se Poidan Abrir"
 
-#: mainwindow.cpp:456
+#: mainwindow.cpp:463
 #, kde-format
 msgctxt "window title including overall download progress in percent"
 msgid "KGet - %1%"
 msgstr "KGet - %1%"
 
-#: mainwindow.cpp:498
+#: mainwindow.cpp:505
 msgid ""
 "Some transfers are still running.\n"
 "Are you sure you want to close KGet?"
@@ -2187,29 +2456,29 @@ msgstr ""
 "Algunhas transferencias aínda están en marcha.\n"
 "Desexa realmente pechar KGet?"
 
-#: mainwindow.cpp:500
+#: mainwindow.cpp:507
 msgid "Confirm Quit"
 msgstr "Confirmar a saída"
 
-#: mainwindow.cpp:555
+#: mainwindow.cpp:569
 msgid "Enter Group Name"
 msgstr "Introduza o nome do grupo"
 
-#: mainwindow.cpp:556
+#: mainwindow.cpp:570
 msgid "Group name:"
 msgstr "Nome do grupo:"
 
-#: mainwindow.cpp:624
+#: mainwindow.cpp:638
 msgid "Are you sure you want to delete the selected transfer?"
 msgid_plural "Are you sure you want to delete the selected transfers?"
 msgstr[0] "Desexa realmente eliminar a transferencia escollida?"
 msgstr[1] "Está seguro que quere eliminar a transferencia escollida?"
 
-#: mainwindow.cpp:626
+#: mainwindow.cpp:640
 msgid "Confirm transfer delete"
 msgstr "Confirmar a eliminación da transferencia"
 
-#: mainwindow.cpp:826
+#: mainwindow.cpp:840
 msgid ""
 "KGet has been temporarily disabled as download manager for Konqueror. If you "
 "want to disable it forever, go to Settings->Advanced and disable \"Use as "
@@ -2459,7 +2728,7 @@ msgstr "Activar interface web "
 #. i18n: ectx: property (text), widget (QLabel, portLabel)
 #. i18n: file: transfer-plugins/bittorrent/btsettingswidget.ui:31
 #. i18n: ectx: property (text), widget (QLabel, portLabel)
-#: rc.cpp:128 rc.cpp:212
+#: rc.cpp:128 rc.cpp:236
 msgid "Port:"
 msgstr "Porto:"
 
@@ -2473,47 +2742,105 @@ msgstr "Usuario:"
 #. i18n: ectx: property (text), widget (QLabel, passwordLabel)
 #. i18n: file: transfer-plugins/contentfetch/scripts/youtubedl/youtube_option.ui:87
 #. i18n: ectx: property (text), widget (QLabel, passwordLabel)
-#: rc.cpp:134 rc.cpp:409
+#: rc.cpp:134 rc.cpp:433
 msgid "Password:"
 msgstr "Contrasinal:"
 
-#. i18n: file: transfer-plugins/multisegmentkio/dlgmultisegkio.ui:16
+#. i18n: file: transfer-plugins/checksumsearch/checksumsearch.ui:37
+#. i18n: ectx: property (text), widget (KPushButton, remove)
+#. i18n: file: transfer-plugins/mirrorsearch/dlgmirrorsearch.ui:62
+#. i18n: ectx: property (text), widget (QPushButton, removeEngineBt)
+#. i18n: file: transfer-plugins/contentfetch/dlgcontentfetchsettingwidget.ui:67
+#. i18n: ectx: property (text), widget (QPushButton, removeScriptButton)
+#: rc.cpp:140 rc.cpp:200 rc.cpp:469
+msgid "Remove"
+msgstr "Eliminar"
+
+#. i18n: file: transfer-plugins/checksumsearch/checksumsearchadddlg.ui:19
+#. i18n: ectx: property (text), widget (QLabel, label_1)
+#: rc.cpp:143
+#, fuzzy
+#| msgid "Change appearance settings"
+msgid "Change string:"
+msgstr "Cambiar propiedades de aparencia"
+
+#. i18n: file: transfer-plugins/checksumsearch/checksumsearchadddlg.ui:33
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: rc.cpp:146
+msgid "Mode:"
+msgstr ""
+
+#. i18n: file: transfer-plugins/checksumsearch/checksumsearchadddlg.ui:43
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#: rc.cpp:149
+msgid "Checksum type:"
+msgstr ""
+
+#. i18n: file: transfer-plugins/checksumsearch/checksumsearchadddlg.ui:77
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#: rc.cpp:152
+msgid "Result:"
+msgstr ""
+
+#. i18n: file: transfer-plugins/checksumsearch/checksumsearchadddlg.ui:84
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: rc.cpp:155
+msgid "label"
+msgstr ""
+
+#. i18n: file: transfer-plugins/multisegmentkio/dlgmultisegkio.ui:17
 #. i18n: ectx: property (text), widget (KTitleWidget, ktitlewidget)
-#: rc.cpp:137
+#: rc.cpp:158
 msgid "Threads"
 msgstr "Fíos"
 
-#. i18n: file: transfer-plugins/multisegmentkio/dlgmultisegkio.ui:25
+#. i18n: file: transfer-plugins/multisegmentkio/dlgmultisegkio.ui:29
 #. i18n: ectx: property (text), widget (QLabel, label)
-#: rc.cpp:140
+#: rc.cpp:161
 msgid "Number of threads:"
 msgstr "Número de fíos:"
 
-#. i18n: file: transfer-plugins/multisegmentkio/dlgmultisegkio.ui:45
-#. i18n: ectx: property (text), widget (QLabel, segmentSizeLabel)
-#: rc.cpp:143
-msgid "Minimal segment size:"
-msgstr "Tamaño mínimo de segmento:"
-
-#. i18n: file: transfer-plugins/multisegmentkio/dlgmultisegkio.ui:52
-#. i18n: ectx: property (suffix), widget (QSpinBox, minSegSizeSpinBox)
-#. i18n: file: transfer-plugins/multisegmentkio/dlgmultisegkio.ui:81
-#. i18n: ectx: property (suffix), widget (QSpinBox, saveDataSizeSpinBox)
-#: rc.cpp:146 rc.cpp:152
-msgid "kBi"
-msgstr "kBi"
-
-#. i18n: file: transfer-plugins/multisegmentkio/dlgmultisegkio.ui:74
-#. i18n: ectx: property (text), widget (QLabel, saveDataLabel)
-#: rc.cpp:149
-msgid "Save data every:"
-msgstr "Gravar datos cada:"
-
-#. i18n: file: transfer-plugins/multisegmentkio/dlgmultisegkio.ui:102
+#. i18n: file: transfer-plugins/multisegmentkio/dlgmultisegkio.ui:51
 #. i18n: ectx: property (text), widget (QCheckBox, enginesCheckBox)
-#: rc.cpp:155
+#: rc.cpp:164
 msgid "Use search engines"
 msgstr "Empregar buscadores"
+
+#. i18n: file: transfer-plugins/multisegmentkio/dlgmultisegkio.ui:58
+#. i18n: ectx: property (text), widget (QCheckBox, verificationCheckBox)
+#: rc.cpp:167
+msgid "Search for verification information"
+msgstr ""
+
+#. i18n: file: transfer-plugins/metalink/dlgmetalink.ui:22
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: rc.cpp:170
+#, fuzzy
+#| msgid "Number of chunks downloaded:"
+msgid "Number of simultanous downloaded files:"
+msgstr "Número de anacos descargados:"
+
+#. i18n: file: transfer-plugins/metalink/dlgmetalink.ui:39
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: rc.cpp:173
+#, fuzzy
+#| msgid "Number of retries:"
+msgid "Number of mirrors per file:"
+msgstr "Número de intentos:"
+
+#. i18n: file: transfer-plugins/metalink/dlgmetalink.ui:56
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#: rc.cpp:176
+#, fuzzy
+#| msgid "Number of retries:"
+msgid "Number of connections per url:"
+msgstr "Número de intentos:"
+
+#. i18n: file: transfer-plugins/metalink/fileselection.ui:17
+#. i18n: ectx: property (text), widget (KTitleWidget, ktitlewidget)
+#: rc.cpp:179
+msgid "Select the files you want to be downloaded."
+msgstr ""
 
 #. i18n: file: transfer-plugins/mirrorsearch/dlgengineediting.ui:30
 #. i18n: ectx: property (text), widget (QLabel, urlLabel)
@@ -2521,63 +2848,55 @@ msgstr "Empregar buscadores"
 #. i18n: ectx: property (text), widget (QLabel, label)
 #. i18n: file: ui/newtransferwidget.ui:34
 #. i18n: ectx: property (text), widget (QLabel, label)
-#: rc.cpp:161 rc.cpp:283 rc.cpp:475
+#: rc.cpp:185 rc.cpp:307 rc.cpp:523
 msgid "URL:"
 msgstr "URL:"
 
 #. i18n: file: transfer-plugins/mirrorsearch/dlgmirrorsearch.ui:16
 #. i18n: ectx: property (text), widget (KTitleWidget, ktitlewidget)
-#: rc.cpp:164
+#: rc.cpp:188
 msgid "Search Engines"
 msgstr "Motores de procura"
 
 #. i18n: file: transfer-plugins/mirrorsearch/dlgmirrorsearch.ui:27
 #. i18n: ectx: property (text), widget (QTreeWidget, enginesTreeWidget)
-#: rc.cpp:167
+#: rc.cpp:191
 msgid "Engine Name"
 msgstr "Nome do motor de procura"
 
 #. i18n: file: transfer-plugins/mirrorsearch/dlgmirrorsearch.ui:55
 #. i18n: ectx: property (text), widget (QPushButton, newEngineBt)
-#: rc.cpp:173
+#: rc.cpp:197
 msgid "New Engine..."
 msgstr "Novo Motor..."
 
-#. i18n: file: transfer-plugins/mirrorsearch/dlgmirrorsearch.ui:62
-#. i18n: ectx: property (text), widget (QPushButton, removeEngineBt)
-#. i18n: file: transfer-plugins/contentfetch/dlgcontentfetchsettingwidget.ui:67
-#. i18n: ectx: property (text), widget (QPushButton, removeScriptButton)
-#: rc.cpp:176 rc.cpp:445
-msgid "Remove"
-msgstr "Eliminar"
-
 #. i18n: file: transfer-plugins/bittorrent/scandlg.ui:16
 #. i18n: ectx: property (text), widget (QLabel, torrent_label)
-#: rc.cpp:179
+#: rc.cpp:203
 msgid "Scanning data of torrent:"
 msgstr "Escaneando os datos do torrent: "
 
 #. i18n: file: transfer-plugins/bittorrent/scandlg.ui:30
 #. i18n: ectx: property (text), widget (QLabel, textLabel2)
-#: rc.cpp:182
+#: rc.cpp:206
 msgid "Number of chunks found:"
 msgstr "Número de anacos atopados:"
 
 #. i18n: file: transfer-plugins/bittorrent/scandlg.ui:40
 #. i18n: ectx: property (text), widget (QLabel, textLabel3)
-#: rc.cpp:185
+#: rc.cpp:209
 msgid "Number of chunks failed:"
 msgstr "Número de anacos errados:"
 
 #. i18n: file: transfer-plugins/bittorrent/scandlg.ui:50
 #. i18n: ectx: property (text), widget (QLabel, label)
-#: rc.cpp:188
+#: rc.cpp:212
 msgid "Number of chunks not downloaded:"
 msgstr "Número de anacos sen descargar:"
 
 #. i18n: file: transfer-plugins/bittorrent/scandlg.ui:57
 #. i18n: ectx: property (text), widget (QLabel, label_2)
-#: rc.cpp:191
+#: rc.cpp:215
 msgid "Number of chunks downloaded:"
 msgstr "Número de anacos descargados:"
 
@@ -2589,19 +2908,19 @@ msgstr "Número de anacos descargados:"
 #. i18n: ectx: property (text), widget (QLabel, chunks_not_downloaded)
 #. i18n: file: transfer-plugins/bittorrent/scandlg.ui:137
 #. i18n: ectx: property (text), widget (QLabel, chunks_downloaded)
-#: rc.cpp:194 rc.cpp:197 rc.cpp:200 rc.cpp:203
+#: rc.cpp:218 rc.cpp:221 rc.cpp:224 rc.cpp:227
 msgid "0"
 msgstr "0"
 
 #. i18n: file: transfer-plugins/bittorrent/scandlg.ui:183
 #. i18n: ectx: property (text), widget (KPushButton, cancel)
-#: rc.cpp:206
+#: rc.cpp:230
 msgid "Cancel"
 msgstr "Cancelar"
 
 #. i18n: file: transfer-plugins/bittorrent/btsettingswidget.ui:48
 #. i18n: ectx: property (text), widget (QLabel, uploadLimitLabel)
-#: rc.cpp:215
+#: rc.cpp:239
 msgid "Upload limit per transfer:"
 msgstr "Límite de envío por transferencia: "
 
@@ -2609,7 +2928,7 @@ msgstr "Límite de envío por transferencia: "
 #. i18n: ectx: property (specialValueText), widget (QSpinBox, uploadBox)
 #. i18n: file: transfer-plugins/bittorrent/btsettingswidget.ui:75
 #. i18n: ectx: property (specialValueText), widget (QSpinBox, downloadBox)
-#: rc.cpp:218 rc.cpp:227
+#: rc.cpp:242 rc.cpp:251
 msgid "No Limit"
 msgstr "Sen límite"
 
@@ -2617,51 +2936,51 @@ msgstr "Sen límite"
 #. i18n: ectx: property (suffix), widget (QSpinBox, uploadBox)
 #. i18n: file: transfer-plugins/bittorrent/btsettingswidget.ui:78
 #. i18n: ectx: property (suffix), widget (QSpinBox, downloadBox)
-#. i18n: file: ui/transfersettingsdialog.ui:41
+#. i18n: file: ui/transfersettingsdialog.ui:55
 #. i18n: ectx: property (suffix), widget (QSpinBox, uploadSpin)
-#. i18n: file: ui/transfersettingsdialog.ui:61
+#. i18n: file: ui/transfersettingsdialog.ui:75
 #. i18n: ectx: property (suffix), widget (QSpinBox, downloadSpin)
 #. i18n: file: ui/groupsettingsdialog.ui:91
 #. i18n: ectx: property (suffix), widget (QSpinBox, downloadBox)
 #. i18n: file: ui/groupsettingsdialog.ui:117
 #. i18n: ectx: property (suffix), widget (QSpinBox, uploadBox)
-#: rc.cpp:221 rc.cpp:230 rc.cpp:460 rc.cpp:466 rc.cpp:518 rc.cpp:524
+#: rc.cpp:245 rc.cpp:254 rc.cpp:496 rc.cpp:502 rc.cpp:842 rc.cpp:848
 msgid "KiB"
 msgstr "KiB"
 
 #. i18n: file: transfer-plugins/bittorrent/btsettingswidget.ui:68
 #. i18n: ectx: property (text), widget (QLabel, downloadLabel)
-#: rc.cpp:224
+#: rc.cpp:248
 msgid "Download limit per transfer:"
 msgstr "Límite de descarga por transferencia:"
 
 #. i18n: file: transfer-plugins/bittorrent/btsettingswidget.ui:97
 #. i18n: ectx: property (title), widget (QGroupBox, folderGroupBox)
-#: rc.cpp:233
+#: rc.cpp:257
 msgid "Folders"
 msgstr "Cartafoles"
 
 #. i18n: file: transfer-plugins/bittorrent/btsettingswidget.ui:109
 #. i18n: ectx: property (text), widget (QLabel, torrentFolderLabel)
-#: rc.cpp:236
+#: rc.cpp:260
 msgid "Default torrent folder:"
 msgstr "Cartafol de torrents predefinido: "
 
 #. i18n: file: transfer-plugins/bittorrent/btsettingswidget.ui:129
 #. i18n: ectx: property (text), widget (QLabel, tempFolderLabel)
-#: rc.cpp:239
+#: rc.cpp:263
 msgid "Default temporary folder"
 msgstr "Cartafol temporal predefinido"
 
 #. i18n: file: transfer-plugins/bittorrent/btsettingswidget.ui:146
 #. i18n: ectx: property (text), widget (QCheckBox, preallocBox)
-#: rc.cpp:242
+#: rc.cpp:266
 msgid "Pre-allocate disk space"
 msgstr "Reservar espazo en disco"
 
 #. i18n: file: transfer-plugins/bittorrent/advanceddetails/webseedstab.ui:21
 #. i18n: ectx: property (toolTip), widget (KLineEdit, m_webseed)
-#: rc.cpp:245
+#: rc.cpp:269
 msgid ""
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
 "\">\n"
@@ -2697,13 +3016,13 @@ msgstr ""
 
 #. i18n: file: transfer-plugins/bittorrent/advanceddetails/webseedstab.ui:28
 #. i18n: ectx: property (text), widget (QPushButton, m_add)
-#: rc.cpp:253
+#: rc.cpp:277
 msgid "Add Webseed"
 msgstr "Engadir unha fonte web"
 
 #. i18n: file: transfer-plugins/bittorrent/advanceddetails/webseedstab.ui:50
 #. i18n: ectx: property (text), widget (QPushButton, m_remove)
-#: rc.cpp:256
+#: rc.cpp:280
 msgid "Remove Webseed"
 msgstr "Eliminar Fonte Web"
 
@@ -2711,19 +3030,19 @@ msgstr "Eliminar Fonte Web"
 #. i18n: ectx: property (windowTitle), widget (QWidget, ChunkDownloadView)
 #. i18n: file: transfer-plugins/bittorrent/btdetailswidgetfrm.ui:154
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
-#: rc.cpp:259 rc.cpp:349
+#: rc.cpp:283 rc.cpp:373
 msgid "Chunks"
 msgstr "Anacos"
 
 #. i18n: file: transfer-plugins/bittorrent/advanceddetails/chunkdownloadview.ui:23
 #. i18n: ectx: property (text), widget (QLabel, textLabel1)
-#: rc.cpp:262
+#: rc.cpp:286
 msgid "Total:"
 msgstr "Total:"
 
 #. i18n: file: transfer-plugins/bittorrent/advanceddetails/chunkdownloadview.ui:59
 #. i18n: ectx: property (text), widget (QLabel, textLabel5)
-#: rc.cpp:265
+#: rc.cpp:289
 msgid "Currently downloading:"
 msgstr "A recibir:"
 
@@ -2731,7 +3050,7 @@ msgstr "A recibir:"
 #. i18n: ectx: property (text), widget (QLabel, textLabel3)
 #. i18n: file: transfer-plugins/bittorrent/btdetailswidgetfrm.ui:163
 #. i18n: ectx: property (text), widget (QLabel, label_3)
-#: rc.cpp:268 rc.cpp:352
+#: rc.cpp:292 rc.cpp:376
 msgid "Downloaded:"
 msgstr "Descargado:"
 
@@ -2739,33 +3058,41 @@ msgstr "Descargado:"
 #. i18n: ectx: property (text), widget (QLabel, textLabel1_4)
 #. i18n: file: transfer-plugins/bittorrent/btdetailswidgetfrm.ui:205
 #. i18n: ectx: property (text), widget (QLabel, label_6)
-#: rc.cpp:271 rc.cpp:370
+#: rc.cpp:295 rc.cpp:394
 msgid "Excluded:"
 msgstr "Excluído:"
 
 #. i18n: file: transfer-plugins/bittorrent/advanceddetails/chunkdownloadview.ui:167
 #. i18n: ectx: property (text), widget (QLabel, textLabel1_4_2)
-#: rc.cpp:274
+#: rc.cpp:298
 msgid "Left:"
 msgstr "A faltar:"
 
 #. i18n: file: transfer-plugins/bittorrent/advanceddetails/chunkdownloadview.ui:203
 #. i18n: ectx: property (text), widget (QLabel, textLabel1_8)
-#: rc.cpp:277
+#: rc.cpp:301
 msgid "Size:"
 msgstr "Tamaño :"
 
 #. i18n: file: transfer-plugins/bittorrent/advanceddetails/trackerview.ui:26
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
-#: rc.cpp:280
+#: rc.cpp:304
 msgid "Current Tracker"
 msgstr "Localizador Actual"
+
+#. i18n: file: transfer-plugins/bittorrent/advanceddetails/trackerview.ui:55
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#. i18n: file: ui/transferdetailsfrm.ui:114
+#. i18n: ectx: property (text), widget (QLabel, statusLabel)
+#: rc.cpp:310 rc.cpp:539
+msgid "Status:"
+msgstr "Estado:"
 
 #. i18n: file: transfer-plugins/bittorrent/advanceddetails/trackerview.ui:78
 #. i18n: ectx: property (text), widget (QLabel, label_3)
 #. i18n: file: transfer-plugins/bittorrent/btdetailswidgetfrm.ui:47
 #. i18n: ectx: property (text), widget (QLabel, label_7)
-#: rc.cpp:289 rc.cpp:325
+#: rc.cpp:313 rc.cpp:349
 msgid "Seeders:"
 msgstr "Parceiros:"
 
@@ -2773,67 +3100,67 @@ msgstr "Parceiros:"
 #. i18n: ectx: property (text), widget (QLabel, label_6)
 #. i18n: file: transfer-plugins/bittorrent/btdetailswidgetfrm.ui:99
 #. i18n: ectx: property (text), widget (QLabel, label_8)
-#: rc.cpp:292 rc.cpp:337
+#: rc.cpp:316 rc.cpp:361
 msgid "Leechers:"
 msgstr "Parceiros incompletos:"
 
 #. i18n: file: transfer-plugins/bittorrent/advanceddetails/trackerview.ui:126
 #. i18n: ectx: property (text), widget (QLabel, label_8)
-#: rc.cpp:295
+#: rc.cpp:319
 msgid "Times downloaded:"
 msgstr "Veces Descargado: "
 
 #. i18n: file: transfer-plugins/bittorrent/advanceddetails/trackerview.ui:150
 #. i18n: ectx: property (text), widget (QLabel, label_5)
-#: rc.cpp:298
+#: rc.cpp:322
 msgid "Next update in:"
 msgstr "Vindeira actualización en:"
 
 #. i18n: file: transfer-plugins/bittorrent/advanceddetails/trackerview.ui:189
 #. i18n: ectx: property (text), widget (KPushButton, m_announce)
-#: rc.cpp:301
+#: rc.cpp:325
 msgid "Manual Announce"
 msgstr "Anuncio Manual"
 
 #. i18n: file: transfer-plugins/bittorrent/advanceddetails/trackerview.ui:196
 #. i18n: ectx: property (text), widget (QPushButton, m_scrape)
-#: rc.cpp:304
+#: rc.cpp:328
 msgid "Scrape"
 msgstr "Rabuñar"
 
 #. i18n: file: transfer-plugins/bittorrent/advanceddetails/trackerview.ui:219
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
-#: rc.cpp:307
+#: rc.cpp:331
 msgid "Available Trackers"
 msgstr "Localizadores Dispoñibles"
 
 #. i18n: file: transfer-plugins/bittorrent/advanceddetails/trackerview.ui:232
 #. i18n: ectx: property (text), widget (KPushButton, m_add_tracker)
-#: rc.cpp:310
+#: rc.cpp:334
 msgid "Add Tracker"
 msgstr "Engadir un localizador"
 
 #. i18n: file: transfer-plugins/bittorrent/advanceddetails/trackerview.ui:244
 #. i18n: ectx: property (text), widget (KPushButton, m_remove_tracker)
-#: rc.cpp:313
+#: rc.cpp:337
 msgid "Remove Tracker"
 msgstr "Eliminar Localizador"
 
 #. i18n: file: transfer-plugins/bittorrent/advanceddetails/trackerview.ui:251
 #. i18n: ectx: property (text), widget (KPushButton, m_change_tracker)
-#: rc.cpp:316
+#: rc.cpp:340
 msgid "Change Tracker"
 msgstr "Modificar o localizador"
 
 #. i18n: file: transfer-plugins/bittorrent/advanceddetails/trackerview.ui:271
 #. i18n: ectx: property (text), widget (KPushButton, m_restore_defaults)
-#: rc.cpp:319
+#: rc.cpp:343
 msgid "Restore Defaults"
 msgstr "Repor as predefinicións"
 
 #. i18n: file: transfer-plugins/bittorrent/btdetailswidgetfrm.ui:29
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_3)
-#: rc.cpp:322
+#: rc.cpp:346
 msgid "Stats"
 msgstr "Estatísticas"
 
@@ -2853,91 +3180,101 @@ msgstr "Estatísticas"
 #. i18n: ectx: property (text), widget (QLabel, chunksAllLabel)
 #. i18n: file: transfer-plugins/bittorrent/btdetailswidgetfrm.ui:212
 #. i18n: ectx: property (text), widget (QLabel, chunksExcludedLabel)
-#: rc.cpp:328 rc.cpp:334 rc.cpp:340 rc.cpp:346 rc.cpp:355 rc.cpp:361
-#: rc.cpp:367 rc.cpp:373
+#: rc.cpp:352 rc.cpp:358 rc.cpp:364 rc.cpp:370 rc.cpp:379 rc.cpp:385
+#: rc.cpp:391 rc.cpp:397
 msgid "<n>"
 msgstr "<n>"
 
 #. i18n: file: transfer-plugins/bittorrent/btdetailswidgetfrm.ui:73
 #. i18n: ectx: property (text), widget (QLabel, label_9)
-#: rc.cpp:331
+#: rc.cpp:355
 msgid "Download speed:"
 msgstr "Velocidade de descarga:"
 
 #. i18n: file: transfer-plugins/bittorrent/btdetailswidgetfrm.ui:125
 #. i18n: ectx: property (text), widget (QLabel, label_10)
-#: rc.cpp:343
+#: rc.cpp:367
 msgid "Upload speed:"
 msgstr "Velocidade de subida:"
 
 #. i18n: file: transfer-plugins/bittorrent/btdetailswidgetfrm.ui:177
 #. i18n: ectx: property (text), widget (QLabel, label_5)
-#: rc.cpp:358
+#: rc.cpp:382
 msgctxt "chunks left"
 msgid "Left:"
 msgstr "Esquerda:"
 
 #. i18n: file: transfer-plugins/bittorrent/btdetailswidgetfrm.ui:191
 #. i18n: ectx: property (text), widget (QLabel, label_4)
-#: rc.cpp:364
+#: rc.cpp:388
 msgctxt "all chunks"
 msgid "All:"
 msgstr "Todo:"
 
 #. i18n: file: transfer-plugins/bittorrent/btdetailswidgetfrm.ui:240
 #. i18n: ectx: property (text), widget (QLabel, label_11)
-#. i18n: file: ui/transferdetailsfrm.ui:50
+#. i18n: file: ui/transferdetailsfrm.ui:51
 #. i18n: ectx: property (text), widget (QLabel, sourceLabel)
-#: rc.cpp:376 rc.cpp:487
+#: rc.cpp:400 rc.cpp:535
 msgctxt "source-file"
 msgid "Source:"
 msgstr "Fonte: "
 
+#. i18n: file: transfer-plugins/bittorrent/btdetailswidgetfrm.ui:247
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#. i18n: file: ui/transferdetailsfrm.ui:44
+#. i18n: ectx: property (text), widget (QLabel, destLabel)
+#: rc.cpp:403 rc.cpp:532
+msgid "Saving to:"
+msgstr "Gardar en:"
+
 #. i18n: file: transfer-plugins/contentfetch/scripts/youtubedl/youtube_option.ui:16
 #. i18n: ectx: property (title), widget (QGroupBox, fileSettingGroupBox)
-#: rc.cpp:382
+#: rc.cpp:406
 msgid "File Settings"
 msgstr "Configuracións de ficheiro"
 
 #. i18n: file: transfer-plugins/contentfetch/scripts/youtubedl/youtube_option.ui:25
 #. i18n: ectx: property (text), widget (QLabel, fileNameLabel)
-#: rc.cpp:385
+#. i18n: file: ui/metalinkcreator/filedlg.ui:54
+#. i18n: ectx: property (text), widget (QLabel, label_10)
+#: rc.cpp:409 rc.cpp:551
 msgid "Filename:"
 msgstr "Nome do ficheiro: "
 
 #. i18n: file: transfer-plugins/contentfetch/scripts/youtubedl/youtube_option.ui:33
 #. i18n: ectx: property (text), item, widget (QComboBox, fileNameComboBox)
-#: rc.cpp:388
+#: rc.cpp:412
 msgid "Use Normalized Name"
 msgstr "Empregar Nome Normalizado"
 
 #. i18n: file: transfer-plugins/contentfetch/scripts/youtubedl/youtube_option.ui:38
 #. i18n: ectx: property (text), item, widget (QComboBox, fileNameComboBox)
-#: rc.cpp:391
+#: rc.cpp:415
 msgid "Use Literal Name"
 msgstr "Empregar Nome Literal"
 
 #. i18n: file: transfer-plugins/contentfetch/scripts/youtubedl/youtube_option.ui:46
 #. i18n: ectx: property (text), widget (QLabel, qualityLabel)
-#: rc.cpp:394
+#: rc.cpp:418
 msgid "Quality:"
 msgstr "Calidade:"
 
 #. i18n: file: transfer-plugins/contentfetch/scripts/youtubedl/youtube_option.ui:54
 #. i18n: ectx: property (text), item, widget (QComboBox, qualityComboBox)
-#: rc.cpp:397
+#: rc.cpp:421
 msgid "Best Quality (.mp4)"
 msgstr "Mellor Calidade (.mp4)"
 
 #. i18n: file: transfer-plugins/contentfetch/scripts/youtubedl/youtube_option.ui:59
 #. i18n: ectx: property (text), item, widget (QComboBox, qualityComboBox)
-#: rc.cpp:400
+#: rc.cpp:424
 msgid "Normal Quality (.flv)"
 msgstr "Calidade Normal (.flv)"
 
 #. i18n: file: transfer-plugins/contentfetch/scripts/youtubedl/youtube_option.ui:70
 #. i18n: ectx: property (toolTip), widget (QGroupBox, loginGroupBox)
-#: rc.cpp:403
+#: rc.cpp:427
 msgid ""
 "Provide login info of your YouTube account in order to access restricted "
 "media."
@@ -2947,163 +3284,678 @@ msgstr ""
 
 #. i18n: file: transfer-plugins/contentfetch/scripts/youtubedl/youtube_option.ui:73
 #. i18n: ectx: property (title), widget (QGroupBox, loginGroupBox)
-#: rc.cpp:406
+#: rc.cpp:430
 msgid "Login Info"
 msgstr "Información de Acceso"
 
 #. i18n: file: transfer-plugins/contentfetch/scripts/youtubedl/youtube_option.ui:101
 #. i18n: ectx: property (text), widget (QLabel, usernameLabel)
-#: rc.cpp:412
+#: rc.cpp:436
 msgid "Username:"
 msgstr "Usuario:"
 
 #. i18n: file: transfer-plugins/contentfetch/scripts/youtubedl/youtube_option.ui:113
 #. i18n: ectx: property (toolTip), widget (QCheckBox, useNetrcCheck)
-#: rc.cpp:415
+#: rc.cpp:439
 msgid ".netrc must have a hostname called 'youtube'."
 msgstr ".netrc ten que ter un hostname chamado 'youtube'."
 
 #. i18n: file: transfer-plugins/contentfetch/scripts/youtubedl/youtube_option.ui:116
 #. i18n: ectx: property (text), widget (QCheckBox, useNetrcCheck)
-#: rc.cpp:418
+#: rc.cpp:442
 msgid "User .netrc file"
 msgstr "Ficheiro de usuario .netrc"
 
 #. i18n: file: transfer-plugins/contentfetch/dlgscriptediting.ui:29
 #. i18n: ectx: property (text), widget (QLabel, scriptUrlRegexpLabel)
-#: rc.cpp:421
+#: rc.cpp:445
 msgid "Regexp:"
 msgstr "Exp. regular:"
 
 #. i18n: file: transfer-plugins/contentfetch/dlgscriptediting.ui:36
 #. i18n: ectx: property (text), widget (QLabel, scriptPathLabel)
-#: rc.cpp:424
+#: rc.cpp:448
 msgid "Path:"
 msgstr "Ruta:"
 
 #. i18n: file: transfer-plugins/contentfetch/dlgscriptediting.ui:43
 #. i18n: ectx: property (text), widget (QLabel, scriptDescriptionLabel)
-#: rc.cpp:427
+#. i18n: file: ui/metalinkcreator/filedlg.ui:248
+#. i18n: ectx: property (text), widget (QLabel, label_6)
+#. i18n: file: ui/metalinkcreator/general.ui:69
+#. i18n: ectx: property (text), widget (QLabel, label_6)
+#: rc.cpp:451 rc.cpp:584 rc.cpp:692
 msgid "Description:"
 msgstr "Descrición: "
 
 #. i18n: file: transfer-plugins/contentfetch/dlgcontentfetchsettingwidget.ui:16
 #. i18n: ectx: property (text), widget (KTitleWidget, ktitlewidget)
-#: rc.cpp:430
+#: rc.cpp:454
 msgid "User Scripts"
 msgstr "Guións de usuario "
 
 #. i18n: file: transfer-plugins/contentfetch/dlgcontentfetchsettingwidget.ui:27
 #. i18n: ectx: property (text), widget (QTreeWidget, scriptTreeWidget)
-#: rc.cpp:433
+#: rc.cpp:457
 msgid "Path"
 msgstr "Rota "
 
 #. i18n: file: transfer-plugins/contentfetch/dlgcontentfetchsettingwidget.ui:32
 #. i18n: ectx: property (text), widget (QTreeWidget, scriptTreeWidget)
-#: rc.cpp:436
+#: rc.cpp:460
 msgid "RegExp"
 msgstr "Exp regular"
 
 #. i18n: file: transfer-plugins/contentfetch/dlgcontentfetchsettingwidget.ui:60
 #. i18n: ectx: property (text), widget (QPushButton, newScriptButton)
-#: rc.cpp:442
+#: rc.cpp:466
 msgid "New Script...."
 msgstr "Novo Guión..."
 
 #. i18n: file: transfer-plugins/contentfetch/dlgcontentfetchsettingwidget.ui:74
 #. i18n: ectx: property (text), widget (QPushButton, editScriptButton)
-#: rc.cpp:448
+#: rc.cpp:472
 msgid "Edit...."
 msgstr "Editar... "
 
 #. i18n: file: transfer-plugins/contentfetch/dlgcontentfetchsettingwidget.ui:81
 #. i18n: ectx: property (text), widget (QPushButton, configureScriptButton)
-#: rc.cpp:451
+#: rc.cpp:475
 msgid "Configure...."
 msgstr "Configurar... "
 
-#. i18n: file: ui/transfersettingsdialog.ui:22
+#. i18n: file: ui/verificationdialog.ui:33
+#. i18n: ectx: property (toolTip), widget (KPushButton, verify)
+#: rc.cpp:478
+msgid "Verify the finnished download with the selected checksum."
+msgstr ""
+
+#. i18n: file: ui/verificationdialog.ui:36
+#. i18n: ectx: property (text), widget (KPushButton, verify)
+#: rc.cpp:481
+msgid "&Verify"
+msgstr ""
+
+#. i18n: file: ui/verificationdialog.ui:62
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#: rc.cpp:484
+msgid "Verifying:"
+msgstr ""
+
+#. i18n: file: ui/transfersettingsdialog.ui:23
 #. i18n: ectx: property (text), widget (KTitleWidget, ktitlewidget)
-#: rc.cpp:454
+#: rc.cpp:487
 msgid "Transfer Settings"
 msgstr "Configuración de transferencia "
 
-#. i18n: file: ui/transfersettingsdialog.ui:31
+#. i18n: file: ui/transfersettingsdialog.ui:35
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: rc.cpp:490
+#, fuzzy
+#| msgid "Destination:"
+msgid "Download Destination:"
+msgstr "Destino:"
+
+#. i18n: file: ui/transfersettingsdialog.ui:45
 #. i18n: ectx: property (text), widget (QCheckBox, uploadCheck)
-#: rc.cpp:457
-msgid "Upload limit:"
+#: rc.cpp:493
+#, fuzzy
+#| msgid "Upload limit:"
+msgid "Upload Limit"
 msgstr "Límite de subida:"
 
-#. i18n: file: ui/transfersettingsdialog.ui:51
+#. i18n: file: ui/transfersettingsdialog.ui:65
 #. i18n: ectx: property (text), widget (QCheckBox, downloadCheck)
-#: rc.cpp:463
-msgid "Download limit:"
+#: rc.cpp:499
+#, fuzzy
+#| msgid "Download limit:"
+msgid "Download Limit"
 msgstr "Límite de descarga :"
 
-#. i18n: file: ui/transfersettingsdialog.ui:71
+#. i18n: file: ui/transfersettingsdialog.ui:85
 #. i18n: ectx: property (text), widget (QCheckBox, ratioCheck)
-#: rc.cpp:469
-msgid "Maximum share ratio:"
+#: rc.cpp:505
+#, fuzzy
+#| msgid "Maximum share ratio:"
+msgid "Maximum Share Ratio"
 msgstr "Ratio máximo de compartición:"
+
+#. i18n: file: ui/transfersettingsdialog.ui:112
+#. i18n: ectx: property (toolTip), widget (KPushButton, mirrors)
+#: rc.cpp:508
+msgid "Modify the mirrors used for downloading."
+msgstr ""
+
+#. i18n: file: ui/transfersettingsdialog.ui:115
+#. i18n: ectx: property (text), widget (KPushButton, mirrors)
+#: rc.cpp:511
+#, fuzzy
+#| msgid "Error"
+msgctxt "The available mirrors (servers) for downloading"
+msgid "Mirrors"
+msgstr "Erro"
+
+#. i18n: file: ui/transfersettingsdialog.ui:129
+#. i18n: ectx: property (text), widget (KPushButton, verification)
+#: rc.cpp:517
+#, fuzzy
+#| msgid "Destination"
+msgctxt "verification of the download (e.g. by using MD5)"
+msgid "Verification"
+msgstr "Destino "
 
 #. i18n: file: ui/newtransferwidget.ui:44
 #. i18n: ectx: property (text), widget (QLabel, label_2)
-#: rc.cpp:478
+#: rc.cpp:526
 msgid "Destination:"
 msgstr "Destino:"
 
 #. i18n: file: ui/newtransferwidget.ui:54
 #. i18n: ectx: property (text), widget (QLabel, groupLabel)
-#: rc.cpp:481
+#: rc.cpp:529
 msgid "Transfer group:"
 msgstr "Grupo de transferencias: "
 
-#. i18n: file: ui/transferdetailsfrm.ui:164
+#. i18n: file: ui/transferdetailsfrm.ui:165
 #. i18n: ectx: property (text), widget (QLabel, label)
-#: rc.cpp:497
-msgid "Remaining time:"
+#: rc.cpp:545
+#, fuzzy
+#| msgid "Remaining Time"
+msgid "Remaining Time:"
+msgstr "Tempo restante"
+
+#. i18n: file: ui/metalinkcreator/filedlg.ui:24
+#. i18n: ectx: attribute (title), widget (QWidget, tab_3)
+#: rc.cpp:548
+#, fuzzy
+#| msgid "Requests"
+msgid "Required"
+msgstr "Pedidos"
+
+#. i18n: file: ui/metalinkcreator/filedlg.ui:95
+#. i18n: ectx: property (text), widget (QLabel, label_9)
+#: rc.cpp:554
+#, fuzzy
+#| msgid "Used tags:"
+msgid "Used Mirrors:"
+msgstr "Etiquetas empregadas:"
+
+#. i18n: file: ui/metalinkcreator/filedlg.ui:103
+#. i18n: ectx: attribute (title), widget (QWidget, tab_4)
+#: rc.cpp:557
+msgid "Recommended"
+msgstr ""
+
+#. i18n: file: ui/metalinkcreator/filedlg.ui:111
+#. i18n: ectx: property (text), widget (QLabel, label_11)
+#: rc.cpp:560
+msgid "File size (in bytes):"
+msgstr ""
+
+#. i18n: file: ui/metalinkcreator/filedlg.ui:121
+#. i18n: ectx: property (validChars), widget (KRestrictedLine, size)
+#: rc.cpp:563
+msgid "0123456789"
+msgstr ""
+
+#. i18n: file: ui/metalinkcreator/filedlg.ui:152
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: rc.cpp:566
+#, fuzzy
+#| msgid "Description:"
+msgid "Verification:"
+msgstr "Descrición: "
+
+#. i18n: file: ui/metalinkcreator/filedlg.ui:200
+#. i18n: ectx: property (toolTip), widget (QLabel, label_3)
+#. i18n: file: ui/metalinkcreator/general.ui:39
+#. i18n: ectx: property (toolTip), widget (QLabel, label_3)
+#: rc.cpp:569 rc.cpp:677
+msgctxt "the basic identity of the metalink-file, e.g. KDE"
+msgid "The identity of the file"
+msgstr ""
+
+#. i18n: file: ui/metalinkcreator/filedlg.ui:203
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#. i18n: file: ui/metalinkcreator/general.ui:42
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#: rc.cpp:572 rc.cpp:680
+msgid "Identity:"
+msgstr ""
+
+#. i18n: file: ui/metalinkcreator/filedlg.ui:217
+#. i18n: ectx: property (toolTip), widget (QLabel, label_4)
+#. i18n: file: ui/metalinkcreator/general.ui:56
+#. i18n: ectx: property (toolTip), widget (QLabel, label_4)
+#: rc.cpp:575 rc.cpp:686
+msgctxt "the version of the file e.g. 4.3 for KDE"
+msgid "The version of the file"
+msgstr ""
+
+#. i18n: file: ui/metalinkcreator/filedlg.ui:220
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#. i18n: file: ui/metalinkcreator/general.ui:59
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#: rc.cpp:578 rc.cpp:689
+#, fuzzy
+#| msgid "Description:"
+msgid "Version:"
+msgstr "Descrición: "
+
+#. i18n: file: ui/metalinkcreator/filedlg.ui:237
+#. i18n: ectx: attribute (title), widget (QWidget, Seite)
+#: rc.cpp:581
+msgid "Optional"
+msgstr ""
+
+#. i18n: file: ui/metalinkcreator/filedlg.ui:262
+#. i18n: ectx: property (text), widget (QLabel, label_12)
+#. i18n: file: ui/metalinkcreator/general.ui:83
+#. i18n: ectx: property (text), widget (QLabel, label_17)
+#: rc.cpp:587 rc.cpp:695
+msgid "Logo:"
+msgstr ""
+
+#. i18n: file: ui/metalinkcreator/filedlg.ui:272
+#. i18n: ectx: property (clickMessage), widget (KLineEdit, logo)
+#. i18n: file: ui/metalinkcreator/general.ui:93
+#. i18n: ectx: property (clickMessage), widget (KLineEdit, logo)
+#: rc.cpp:590 rc.cpp:698
+msgid "Url to the logo"
+msgstr ""
+
+#. i18n: file: ui/metalinkcreator/filedlg.ui:282
+#. i18n: ectx: property (toolTip), widget (QLabel, label_13)
+#. i18n: file: ui/metalinkcreator/general.ui:103
+#. i18n: ectx: property (toolTip), widget (QLabel, label_19)
+#: rc.cpp:593 rc.cpp:701
+msgid "The language of the file"
+msgstr ""
+
+#. i18n: file: ui/metalinkcreator/filedlg.ui:285
+#. i18n: ectx: property (text), widget (QLabel, label_13)
+#. i18n: file: ui/metalinkcreator/general.ui:106
+#. i18n: ectx: property (text), widget (QLabel, label_19)
+#: rc.cpp:596 rc.cpp:704
+msgid "Language:"
+msgstr ""
+
+#. i18n: file: ui/metalinkcreator/filedlg.ui:295
+#. i18n: ectx: property (text), widget (QLabel, label_14)
+#. i18n: file: ui/metalinkcreator/general.ui:116
+#. i18n: ectx: property (text), widget (QLabel, label_20)
+#: rc.cpp:599 rc.cpp:707
+msgid "Operating system:"
+msgstr ""
+
+#. i18n: file: ui/metalinkcreator/filedlg.ui:309
+#. i18n: ectx: property (text), widget (QLabel, label_18)
+#. i18n: file: ui/metalinkcreator/general2.ui:22
+#. i18n: ectx: property (text), widget (QLabel, label_23)
+#: rc.cpp:602 rc.cpp:743
+msgid "Copyright:"
+msgstr ""
+
+#. i18n: file: ui/metalinkcreator/filedlg.ui:331
+#. i18n: ectx: property (text), widget (QLabel, label_22)
+#. i18n: file: ui/metalinkcreator/general2.ui:139
+#. i18n: ectx: property (text), widget (QLabel, label_24)
+#: rc.cpp:605 rc.cpp:779
+msgid "License:"
+msgstr ""
+
+#. i18n: file: ui/metalinkcreator/filedlg.ui:340
+#. i18n: ectx: property (text), widget (QLabel, label_19)
+#. i18n: file: ui/metalinkcreator/filedlg.ui:391
+#. i18n: ectx: property (text), widget (QLabel, label_8)
+#. i18n: file: ui/metalinkcreator/general2.ui:40
+#. i18n: ectx: property (text), widget (QLabel, label_25)
+#. i18n: file: ui/metalinkcreator/general2.ui:78
+#. i18n: ectx: property (text), widget (QLabel, label_8)
+#: rc.cpp:608 rc.cpp:623 rc.cpp:746 rc.cpp:758
+#, fuzzy
+#| msgid "Name"
+msgid "Name:"
+msgstr "Nome "
+
+#. i18n: file: ui/metalinkcreator/filedlg.ui:347
+#. i18n: ectx: property (clickMessage), widget (KLineEdit, lic_name)
+#. i18n: file: ui/metalinkcreator/general2.ui:47
+#. i18n: ectx: property (clickMessage), widget (KLineEdit, lic_name)
+#: rc.cpp:611 rc.cpp:749
+#, fuzzy
+#| msgid "Number of the chunk"
+msgid "Name of the license"
+msgstr "Número do anaco"
+
+#. i18n: file: ui/metalinkcreator/filedlg.ui:364
+#. i18n: ectx: property (clickMessage), widget (KLineEdit, lic_url)
+#. i18n: file: ui/metalinkcreator/general2.ui:64
+#. i18n: ectx: property (clickMessage), widget (KLineEdit, lic_url)
+#: rc.cpp:617 rc.cpp:755
+msgid "Url to the license"
+msgstr ""
+
+#. i18n: file: ui/metalinkcreator/filedlg.ui:382
+#. i18n: ectx: property (text), widget (QLabel, label_20)
+#. i18n: file: ui/metalinkcreator/general2.ui:126
+#. i18n: ectx: property (text), widget (QLabel, label_28)
+#: rc.cpp:620 rc.cpp:776
+msgid "Publisher:"
+msgstr ""
+
+#. i18n: file: ui/metalinkcreator/filedlg.ui:398
+#. i18n: ectx: property (toolTip), widget (KLineEdit, pub_name)
+#. i18n: file: ui/metalinkcreator/filedlg.ui:418
+#. i18n: ectx: property (toolTip), widget (KLineEdit, pub_url)
+#. i18n: file: ui/metalinkcreator/general2.ui:85
+#. i18n: ectx: property (toolTip), widget (KLineEdit, pub_name)
+#. i18n: file: ui/metalinkcreator/general2.ui:105
+#. i18n: ectx: property (toolTip), widget (KLineEdit, pub_url)
+#: rc.cpp:626 rc.cpp:635 rc.cpp:761 rc.cpp:770
+msgid "publisher"
+msgstr ""
+
+#. i18n: file: ui/metalinkcreator/filedlg.ui:401
+#. i18n: ectx: property (clickMessage), widget (KLineEdit, pub_name)
+#. i18n: file: ui/metalinkcreator/general2.ui:88
+#. i18n: ectx: property (clickMessage), widget (KLineEdit, pub_name)
+#: rc.cpp:629 rc.cpp:764
+#, fuzzy
+#| msgid "IP address of the peer"
+msgid "Name of the publisher"
+msgstr "Dirección IP do parceiro"
+
+#. i18n: file: ui/metalinkcreator/filedlg.ui:421
+#. i18n: ectx: property (clickMessage), widget (KLineEdit, pub_url)
+#. i18n: file: ui/metalinkcreator/general2.ui:108
+#. i18n: ectx: property (clickMessage), widget (KLineEdit, pub_url)
+#: rc.cpp:638 rc.cpp:773
+msgid "Url to the publisher"
+msgstr ""
+
+#. i18n: file: ui/metalinkcreator/files.ui:23
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: rc.cpp:641
+#, fuzzy
+#| msgid "Files"
+msgctxt "Files as in files on a server"
+msgid "Files:"
+msgstr "Ficheiros"
+
+#. i18n: file: ui/metalinkcreator/files.ui:51
+#. i18n: ectx: property (text), widget (KPushButton, add_local_file)
+#: rc.cpp:644
+msgid "Add local files"
+msgstr ""
+
+#. i18n: file: ui/metalinkcreator/files.ui:82
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: rc.cpp:647
+msgid ""
+"Add at least one file. You can also drag and drop local files into this "
+"window, that would enter a lot information automatically."
+msgstr ""
+
+#. i18n: file: ui/metalinkcreator/files.ui:98
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#: rc.cpp:650
+msgid "Adding dropped files."
+msgstr ""
+
+#. i18n: file: ui/metalinkcreator/files.ui:115
+#. i18n: ectx: property (text), widget (QLabel, needUrl)
+#: rc.cpp:653
+msgid "You need to set mirrors for the entries with an icon."
+msgstr ""
+
+#. i18n: file: ui/metalinkcreator/introduction.ui:17
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: rc.cpp:656
+msgid ""
+"This assistant allows you to create metalinks from scratch or base them on "
+"existing metalinks. A lot of the fields are optional or recommended, so "
+"enter them at will. The minimum is a save location, at least one file and "
+"one url."
+msgstr ""
+
+#. i18n: file: ui/metalinkcreator/introduction.ui:45
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: rc.cpp:659
+msgid "Save created Metalink at:"
+msgstr ""
+
+#. i18n: file: ui/metalinkcreator/introduction.ui:71
+#. i18n: ectx: property (text), widget (QRadioButton, createButton)
+#: rc.cpp:662
+msgid "Create new Metalink"
+msgstr ""
+
+#. i18n: file: ui/metalinkcreator/introduction.ui:78
+#. i18n: ectx: property (text), widget (QRadioButton, loadButton)
+#: rc.cpp:665
+msgid "Load existing Metalink:"
+msgstr ""
+
+#. i18n: file: ui/metalinkcreator/general.ui:22
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: rc.cpp:668
+msgid "Origin:"
+msgstr ""
+
+#. i18n: file: ui/metalinkcreator/general.ui:29
+#. i18n: ectx: property (toolTip), widget (QLabel, labelDynamic)
+#: rc.cpp:671
+msgid "Dynamic means that updated metalinks can be found at \"Origin\"."
+msgstr ""
+
+#. i18n: file: ui/metalinkcreator/general.ui:32
+#. i18n: ectx: property (text), widget (QLabel, labelDynamic)
+#: rc.cpp:674
+msgid "Dynamic:"
+msgstr ""
+
+#. i18n: file: ui/metalinkcreator/general.ui:49
+#. i18n: ectx: property (clickMessage), widget (KLineEdit, identity)
+#: rc.cpp:683
+msgid "Identity e.g. \"KDE\""
+msgstr ""
+
+#. i18n: file: ui/metalinkcreator/general.ui:130
+#. i18n: ectx: property (clickMessage), widget (KLineEdit, origin)
+#: rc.cpp:710
+msgid "Web-Url to the metalink"
+msgstr ""
+
+#. i18n: file: ui/metalinkcreator/general.ui:149
+#. i18n: ectx: property (text), widget (QLabel, label_30)
+#. i18n: file: ui/metalinkcreator/general.ui:192
+#. i18n: ectx: property (text), widget (QLabel, label_29)
+#: rc.cpp:713 rc.cpp:722
+#, fuzzy
+#| msgid "Remaining time:"
+msgid "Date and time:"
 msgstr "Tempo restante:"
+
+#. i18n: file: ui/metalinkcreator/general.ui:159
+#. i18n: ectx: property (text), widget (QCheckBox, use_publishedtimeoffset)
+#. i18n: file: ui/metalinkcreator/general.ui:202
+#. i18n: ectx: property (text), widget (QCheckBox, use_updatedtimeoffset)
+#: rc.cpp:716 rc.cpp:725
+msgid "Timezone offset:"
+msgstr ""
+
+#. i18n: file: ui/metalinkcreator/general.ui:176
+#. i18n: ectx: property (text), widget (QLabel, label)
+#. i18n: file: ui/metalinkcreator/general.ui:212
+#. i18n: ectx: property (text), widget (QLabel, label_8)
+#: rc.cpp:719 rc.cpp:728
+msgid "Negative offset:"
+msgstr ""
+
+#. i18n: file: ui/metalinkcreator/general.ui:242
+#. i18n: ectx: property (text), widget (QCheckBox, use_published)
+#: rc.cpp:731
+msgid "Metalink published:"
+msgstr ""
+
+#. i18n: file: ui/metalinkcreator/general.ui:255
+#. i18n: ectx: property (text), widget (QLabel, label_5)
+#: rc.cpp:734
+msgid "General information:"
+msgstr ""
+
+#. i18n: file: ui/metalinkcreator/general.ui:262
+#. i18n: ectx: property (text), widget (QCheckBox, use_updated)
+#: rc.cpp:737
+#, fuzzy
+#| msgid "Next update in:"
+msgid "Metalink updated:"
+msgstr "Vindeira actualización en:"
+
+#. i18n: file: ui/metalinkcreator/general.ui:301
+#. i18n: ectx: property (text), widget (QLabel, label_7)
+#: rc.cpp:740
+msgid ""
+"Here you can enter optional general information on the metalink. What you "
+"set here applies to all files, if an option is set here and later on a "
+"specific file then the later is preferred."
+msgstr ""
+
+#. i18n: file: ui/metalinkcreator/dragdlg.ui:23
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: rc.cpp:782
+msgid "Create checksums:"
+msgstr ""
+
+#. i18n: file: ui/metalinkcreator/dragdlg.ui:30
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#: rc.cpp:785
+msgid ""
+"Automatically create create checksums for the selected types. Keep in mind "
+"that this might take a while."
+msgstr ""
+
+#. i18n: file: ui/metalinkcreator/dragdlg.ui:40
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
+#: rc.cpp:788
+msgid "Types of the checksums:"
+msgstr ""
+
+#. i18n: file: ui/metalinkcreator/dragdlg.ui:53
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: rc.cpp:791
+#, fuzzy
+#| msgid "General"
+msgid "General url:"
+msgstr "Xeral"
+
+#. i18n: file: ui/metalinkcreator/dragdlg.ui:60
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#: rc.cpp:794
+msgid ""
+"Enter urls here if all the dropped files are on that server and in the same "
+"directory. For each dropped file the url would consist of the entered part "
+"and the filename."
+msgstr ""
+
+#. i18n: file: ui/metalinkcreator/dragdlg.ui:105
+#. i18n: ectx: property (text), widget (QCheckBox, partialChecksums)
+#: rc.cpp:797
+msgid "Create partial checksums"
+msgstr ""
+
+#. i18n: file: ui/mirror/mirroradddlg.ui:17
+#. i18n: ectx: property (text), widget (QLabel, successLabel)
+#. i18n: file: ui/verificationadddlg.ui:17
+#. i18n: ectx: property (text), widget (QLabel, successLabel)
+#: rc.cpp:800 rc.cpp:869
+msgid "TextLabel"
+msgstr ""
+
+#. i18n: file: ui/mirror/mirroradddlg.ui:29
+#. i18n: ectx: property (text), widget (QLabel, labelMirror)
+#: rc.cpp:803
+#, fuzzy
+#| msgid "Error: "
+msgid "Mirror:"
+msgstr "Erro:"
+
+#. i18n: file: ui/mirror/mirroradddlg.ui:36
+#. i18n: ectx: property (text), widget (QLabel, labelConnections)
+#: rc.cpp:806
+#, fuzzy
+#| msgid "Number of retries:"
+msgid "Number of connections:"
+msgstr "Número de intentos:"
+
+#. i18n: file: ui/mirror/mirroradddlg.ui:43
+#. i18n: ectx: property (clickMessage), widget (KLineEdit, url)
+#: rc.cpp:809
+#, fuzzy
+#| msgid "Enter a new Tag"
+msgid "Enter an url"
+msgstr "Introducir unha nova Etiqueta"
+
+#. i18n: file: ui/mirror/mirroradddlg.ui:63
+#. i18n: ectx: property (text), widget (QLabel, labelPreference)
+#: rc.cpp:812
+msgid "Preference:"
+msgstr ""
+
+#. i18n: file: ui/mirror/mirroradddlg.ui:70
+#. i18n: ectx: property (toolTip), widget (KIntNumInput, preference)
+#: rc.cpp:815
+msgid "Optional: The preference of the mirror, 1 lowest 100 highest."
+msgstr ""
+
+#. i18n: file: ui/mirror/mirroradddlg.ui:89
+#. i18n: ectx: property (text), widget (QLabel, labelLocation)
+#: rc.cpp:821
+#, fuzzy
+#| msgid "Location (URL)"
+msgid "Location:"
+msgstr "Localización (URL)"
 
 #. i18n: file: ui/groupsettingsdialog.ui:32
 #. i18n: ectx: property (text), widget (KTitleWidget, ktitlewidget)
-#: rc.cpp:500
+#: rc.cpp:824
 msgid "Group Settings"
 msgstr "Configuración de grupo"
 
 #. i18n: file: ui/groupsettingsdialog.ui:44
 #. i18n: ectx: property (text), widget (QLabel, label)
-#: rc.cpp:503
+#: rc.cpp:827
 msgid "Default folder:"
 msgstr "Cartafol por omisión:"
 
 #. i18n: file: ui/groupsettingsdialog.ui:58
 #. i18n: ectx: property (toolTip), widget (QLabel, label_2)
-#: rc.cpp:506
+#: rc.cpp:830
 msgid "Moves all transfers with the regular expression to this group"
 msgstr "Move todas as transferencias coa expresión regular a este grupo"
 
 #. i18n: file: ui/groupsettingsdialog.ui:61
 #. i18n: ectx: property (text), widget (QLabel, label_2)
-#: rc.cpp:509
+#: rc.cpp:833
 msgid "Regular expression:"
 msgstr "Expresión regular:"
 
 #. i18n: file: ui/groupsettingsdialog.ui:68
 #. i18n: ectx: property (clickMessage), widget (KLineEdit, regExpEdit)
-#: rc.cpp:512
+#: rc.cpp:836
 msgid "*movies*"
 msgstr "*películas*"
 
 #. i18n: file: ui/groupsettingsdialog.ui:75
 #. i18n: ectx: property (text), widget (QCheckBox, downloadCheck)
-#: rc.cpp:515
+#: rc.cpp:839
 msgid "Maximum download speed:"
 msgstr "Velocidade de descarga máxima :"
 
 #. i18n: file: ui/groupsettingsdialog.ui:101
 #. i18n: ectx: property (text), widget (QCheckBox, uploadCheck)
-#: rc.cpp:521
+#: rc.cpp:845
 msgid "Maximum upload speed:"
 msgstr "Velocidade de subida máxima:"
 
@@ -3111,267 +3963,311 @@ msgstr "Velocidade de subida máxima:"
 #. i18n: ectx: property (text), widget (QLabel, label_3)
 #. i18n: file: ui/grouptagssettingsdialog.ui:42
 #. i18n: ectx: property (text), widget (QLabel, label_3)
-#: rc.cpp:527 rc.cpp:539
+#: rc.cpp:851 rc.cpp:863
 msgid "Used tags:"
 msgstr "Etiquetas empregadas:"
 
 #. i18n: file: ui/groupsettingsdialog.ui:166
 #. i18n: ectx: property (text), widget (QPushButton, tagButton)
-#: rc.cpp:530
+#: rc.cpp:854
 msgid "Modify Tags..."
 msgstr "Modificar Etiquetas..."
 
 #. i18n: file: ui/grouptagssettingsdialog.ui:25
 #. i18n: ectx: property (text), widget (KTitleWidget, ktitlewidget)
-#: rc.cpp:533
+#: rc.cpp:857
 msgid "Tag Settings"
 msgstr "Configuración de etiquetas"
 
 #. i18n: file: ui/grouptagssettingsdialog.ui:32
 #. i18n: ectx: property (text), widget (QLabel, label_4)
-#: rc.cpp:536
+#: rc.cpp:860
 msgid "Available tags:"
 msgstr "Etiquetas dispoñibles:"
 
 #. i18n: file: ui/grouptagssettingsdialog.ui:64
 #. i18n: ectx: property (clickMessage), widget (KLineEdit, newTagsEdit)
-#: rc.cpp:542
+#: rc.cpp:866
 msgid "Enter a new Tag"
 msgstr "Introducir unha nova Etiqueta"
 
+#. i18n: file: ui/verificationadddlg.ui:29
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: rc.cpp:872
+msgctxt "hash type as in md5t, sha1 etc."
+msgid "Hash type:"
+msgstr ""
+
+#. i18n: file: ui/verificationadddlg.ui:36
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: rc.cpp:875
+#, fuzzy
+#| msgid "Path:"
+msgctxt "hash as a hash of type md5, sha1 etc."
+msgid "Hash:"
+msgstr "Ruta:"
+
+#. i18n: file: ui/verificationadddlg.ui:43
+#. i18n: ectx: property (clickMessage), widget (KLineEdit, newHash)
+#: rc.cpp:878
+msgid "Enter a hash key"
+msgstr ""
+
 #. i18n: file: ui/history/transferhistory.ui:26
 #. i18n: ectx: property (text), widget (QPushButton, clearButton)
-#: rc.cpp:545
+#: rc.cpp:881
 msgid "Clear History"
 msgstr "Limpar Historial"
 
 #. i18n: file: ui/history/transferhistory.ui:46
 #. i18n: ectx: property (title), widget (KButtonGroup, viewmodesgroup)
-#: rc.cpp:548
+#: rc.cpp:884
 msgctxt "View modes"
 msgid "View Modes"
 msgstr "Modos de Vista"
 
 #. i18n: file: ui/history/transferhistory.ui:99
 #. i18n: ectx: property (title), widget (KButtonGroup, kbuttongroup_2)
-#: rc.cpp:551
+#: rc.cpp:887
 msgid "Select Ranges"
 msgstr "Escoller rangos"
 
 #. i18n: file: ui/history/transferhistory.ui:115
 #. i18n: ectx: property (text), item, widget (KComboBox, rangeType)
-#: rc.cpp:554
+#: rc.cpp:890
 msgid "Date"
 msgstr "Data"
 
 #. i18n: file: ui/history/transferhistory.ui:125
 #. i18n: ectx: property (text), item, widget (KComboBox, rangeType)
-#: rc.cpp:560
+#: rc.cpp:896
 msgid "Host"
 msgstr "Servidor"
 
 #. i18n: file: ui/history/transferhistory.ui:136
 #. i18n: ectx: property (title), widget (KButtonGroup, kbuttongroup_3)
-#: rc.cpp:563
+#: rc.cpp:899
 msgid "Filter History"
 msgstr "Filtro de historial"
 
 #. i18n: file: ui/history/transferhistory.ui:165
 #. i18n: ectx: property (text), widget (KLineEdit, searchBar)
-#: rc.cpp:566
+#: rc.cpp:902
 msgctxt "delete selected transfer"
 msgid "Delete Selected"
 msgstr "Eliminar Escollidos"
 
 #. i18n: file: ui/history/transferhistory.ui:170
 #. i18n: ectx: property (text), widget (KLineEdit, searchBar)
-#: rc.cpp:569
+#: rc.cpp:905
 msgid "Download"
 msgstr "Descargar"
 
 #. i18n: file: ui/nepomukwidget.ui:32
 #. i18n: ectx: property (clickMessage), widget (KLineEdit, lineEdit)
-#: rc.cpp:572
+#: rc.cpp:908
 msgid "Enter a new tag"
 msgstr "Introduza unha nova etiqueta"
 
 #. i18n: file: ui/linkview/importlinkdialog.ui:19
 #. i18n: ectx: property (text), widget (QLabel, label)
-#: rc.cpp:575
+#: rc.cpp:911
 msgid "&File with links to import:"
 msgstr "&Ficheiro coas ligazóns a importar: "
 
 #. i18n: file: ui/linkview/importlinkdialog.ui:35
 #. i18n: ectx: property (text), widget (KPushButton, importLinks)
-#: rc.cpp:578
+#: rc.cpp:914
 msgid "&Import Links"
 msgstr "Importar &ligazóns"
 
 #. i18n: file: ui/linkview/importlinkdialog.ui:49
 #. i18n: ectx: property (text), widget (QLabel, label_2)
-#: rc.cpp:581
+#: rc.cpp:917
 msgid "Show:"
 msgstr "Mostrar:"
 
 #. i18n: file: ui/linkview/importlinkdialog.ui:56
 #. i18n: ectx: property (text), widget (KPushButton, showAll)
-#: rc.cpp:584
+#: rc.cpp:920
 msgctxt "filter: show all file types"
 msgid "&All"
 msgstr "&Todas "
 
 #. i18n: file: ui/linkview/importlinkdialog.ui:75
 #. i18n: ectx: property (text), widget (KPushButton, showVideos)
-#: rc.cpp:588
+#: rc.cpp:924
 msgid "&Videos"
 msgstr "&Vídeos "
 
 #. i18n: file: ui/linkview/importlinkdialog.ui:91
 #. i18n: ectx: property (text), widget (KPushButton, showImages)
-#: rc.cpp:592
+#: rc.cpp:928
 msgid "Ima&ges"
 msgstr "Ima&xes"
 
 #. i18n: file: ui/linkview/importlinkdialog.ui:107
 #. i18n: ectx: property (text), widget (KPushButton, showAudio)
-#: rc.cpp:596
+#: rc.cpp:932
 msgid "A&udio"
 msgstr "&Son"
 
 #. i18n: file: ui/linkview/importlinkdialog.ui:123
 #. i18n: ectx: property (text), widget (KPushButton, showArchives)
-#: rc.cpp:600
+#: rc.cpp:936
 msgid "A&rchives"
 msgstr "&Arquivos"
 
 #. i18n: file: ui/linkview/importlinkdialog.ui:145
 #. i18n: ectx: property (toolTip), widget (KLineEdit, textFilter)
-#: rc.cpp:604
+#: rc.cpp:940
 msgid "You can use wildcards for filtering."
 msgstr "Para filtrar pode empregar comodíns (*, ?)."
 
 #. i18n: file: ui/linkview/importlinkdialog.ui:148
 #. i18n: ectx: property (clickMessage), widget (KLineEdit, textFilter)
-#: rc.cpp:607
+#: rc.cpp:943
 msgid "Filter files here...."
 msgstr "Tipos de ficheiros aquí..."
 
 #. i18n: file: ui/linkview/importlinkdialog.ui:159
 #. i18n: ectx: property (text), item, widget (KComboBox, filterMode)
-#: rc.cpp:610
+#: rc.cpp:946
 msgid "Contains"
 msgstr "Contén"
 
 #. i18n: file: ui/linkview/importlinkdialog.ui:164
 #. i18n: ectx: property (text), item, widget (KComboBox, filterMode)
-#: rc.cpp:613
+#: rc.cpp:949
 msgid "Does Not Contain"
 msgstr "Non contén "
 
 #. i18n: file: ui/linkview/importlinkdialog.ui:237
 #. i18n: ectx: property (text), widget (KPushButton, invertSelection)
-#: rc.cpp:622
+#: rc.cpp:958
 msgid "Inver&t Selection"
 msgstr "&Inverter a escolla "
 
 #. i18n: file: ui/linkview/importlinkdialog.ui:247
 #. i18n: ectx: property (text), widget (KPushButton, checkSelected)
-#: rc.cpp:625
+#: rc.cpp:961
 msgctxt "Check as in mark, not as in verify"
 msgid "Chec&k Selected"
 msgstr "Comp&robar os seleccionados"
 
 #. i18n: file: ui/linkview/importlinkdialog.ui:254
 #. i18n: ectx: property (text), widget (QCheckBox, showWebContent)
-#: rc.cpp:628
+#: rc.cpp:964
 msgid "Show &web content"
 msgstr "Mostrar contido &web"
 
 #. i18n: file: ui/kgetui.rc:4
 #. i18n: ectx: Menu (file)
-#: rc.cpp:631
+#: rc.cpp:967
 msgid "&File"
 msgstr "&Ficheiro"
 
-#. i18n: file: ui/kgetui.rc:16
+#. i18n: file: ui/kgetui.rc:17
 #. i18n: ectx: Menu (Downloads)
-#: rc.cpp:634
+#: rc.cpp:970
 msgid "&Downloads"
 msgstr "&Descargas"
 
-#. i18n: file: ui/kgetui.rc:26
+#. i18n: file: ui/kgetui.rc:27
 #. i18n: ectx: Menu (settings)
-#: rc.cpp:637
+#: rc.cpp:973
 msgid "&Settings"
 msgstr "&Configuración"
 
-#. i18n: file: ui/kgetui.rc:30
+#. i18n: file: ui/kgetui.rc:31
 #. i18n: ectx: Menu (help)
-#: rc.cpp:640
+#: rc.cpp:976
 msgid "&Help"
 msgstr "&Axuda"
 
-#. i18n: file: ui/kgetui.rc:33
+#. i18n: file: ui/kgetui.rc:34
 #. i18n: ectx: ToolBar (kget_toolbar)
-#: rc.cpp:643
+#: rc.cpp:979
 msgid "Main Toolbar"
 msgstr "Barra de ferramentas Principal"
 
 #. i18n: file: extensions/konqueror/kget_plug_in.rc:4
 #. i18n: ectx: Menu (tools)
-#: rc.cpp:646
+#: rc.cpp:982
 msgid "&Tools"
 msgstr "&Ferramentas"
 
 #. i18n: file: conf/kget.kcfg:28
 #. i18n: ectx: label, entry (ShowSplashscreen), group (Appearance)
-#: rc.cpp:649
+#: rc.cpp:985
 msgid "Sets to show the splashscreen while KGet is loading"
 msgstr "Configuracións para mostrar a pantalla de incio ao iniciar KGet"
 
 #. i18n: file: conf/kget.kcfg:164
 #. i18n: ectx: label, entry (ColumnWidths), group (Geometry)
-#: rc.cpp:652
+#: rc.cpp:988
 msgid "The width of the columns in the main view"
 msgstr "O ancho das columnas na vista principal"
 
 #. i18n: file: conf/kget.kcfg:167
 #. i18n: ectx: label, entry (HistoryColumnWidths), group (Geometry)
-#: rc.cpp:655
+#: rc.cpp:991
 msgid "The width of the columns in the history view"
 msgstr "O ancho das columnas na vista de historial"
 
+#. i18n: file: transfer-plugins/checksumsearch/kget_checksumsearchfactory.kcfg:7
+#. i18n: ectx: label, entry (SearchStrings), group (ChecksumSearch)
 #. i18n: file: transfer-plugins/mirrorsearch/kget_mirrorsearchfactory.kcfg:10
 #. i18n: ectx: label, entry (SearchEnginesNameList), group (SearchEngines)
-#: rc.cpp:658
+#: rc.cpp:994 rc.cpp:1003
 msgid "List of the available search engines"
 msgstr "Lista de motores de procura dispoñibles"
 
+#. i18n: file: transfer-plugins/checksumsearch/kget_checksumsearchfactory.kcfg:11
+#. i18n: ectx: label, entry (UrlChangeModeList), group (ChecksumSearch)
+#. i18n: file: transfer-plugins/checksumsearch/kget_checksumsearchfactory.kcfg:15
+#. i18n: ectx: label, entry (ChecksumTypeList), group (ChecksumSearch)
 #. i18n: file: transfer-plugins/mirrorsearch/kget_mirrorsearchfactory.kcfg:14
 #. i18n: ectx: label, entry (SearchEnginesUrlList), group (SearchEngines)
 #. i18n: file: transfer-plugins/contentfetch/kget_contentfetchfactory.kcfg:11
 #. i18n: ectx: label, entry (PathList), group (UserScripts)
-#: rc.cpp:661 rc.cpp:667
+#: rc.cpp:997 rc.cpp:1000 rc.cpp:1006 rc.cpp:1012
 msgid "Urls list of the available search engines"
 msgstr "Lista de urls dos motores de procura dispoñibles"
 
 #. i18n: file: transfer-plugins/contentfetch/kget_contentfetchfactory.kcfg:7
 #. i18n: ectx: label, entry (UrlRegexpList), group (UserScripts)
-#: rc.cpp:664
+#: rc.cpp:1009
 msgid "List of the Regexp to match input Url"
 msgstr "Lista das expresións regulares para cadrar coa Url de entrada"
 
 #. i18n: file: transfer-plugins/contentfetch/kget_contentfetchfactory.kcfg:19
 #. i18n: ectx: label, entry (DescriptionList), group (UserScripts)
-#: rc.cpp:670
+#: rc.cpp:1015
 msgid "List of descriptions for user scripts"
 msgstr "Lista de descripcións para os guións de usuario"
 
 #. i18n: file: transfer-plugins/contentfetch/kget_contentfetchfactory.kcfg:23
 #. i18n: ectx: label, entry (EnableList), group (UserScripts)
-#: rc.cpp:673
+#: rc.cpp:1018
 msgid "List of whether the script is enabled"
 msgstr "Lista de guións activados"
+
+#~ msgid "Aborted"
+#~ msgstr "Abortado"
+
+#~ msgctxt "@label transfer source"
+#~ msgid "Source:"
+#~ msgstr "Fonte: "
+
+#~ msgid "Minimal segment size:"
+#~ msgstr "Tamaño mínimo de segmento:"
+
+#~ msgid "kBi"
+#~ msgstr "kBi"
+
+#~ msgid "Save data every:"
+#~ msgstr "Gravar datos cada:"
 
 #~ msgid ""
 #~ "You will lose all data in these files, are you sure you want to do this?"
