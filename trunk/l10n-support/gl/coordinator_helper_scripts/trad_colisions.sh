@@ -52,13 +52,12 @@ marca="mine"
 cd $BASE_REPO
 
 echo "...solving conflicts on $1 ..."
-for ficheiro in `find $prefix/$lang -name *."$marca"`
+for ficheiro in `svn status $BASE_REPO/$prefix/$lang/ | grep "^C " | cut -d" " -f7`
   do
     directorio=`dirname $ficheiro`
     nome=`basename $ficheiro ."$marca"`
     echo "PRESENTABA CONFLITOS: $nome"
-    cp $ficheiro $directorio/$nome
-    svn resolved $directorio/$nome
+    svn resolve --accept mine-full $directorio/$nome
     postpath=`echo $directorio | sed "s:$prefix/$lang::"` #cut --delimiter="/" --fields=2- -`
     $BASE_REPO/$prefix/scripts/merge.sh $BASE_REPO/$directorio/$nome $BASE_REPO/$prefix/"templates/"$postpath/$nome"t"
   done

@@ -1,0 +1,234 @@
+#! /bin/sh
+# Script to check that the GUI texts in the documentation match the ones in the
+#	application, and to provide a translation for them if available
+#	translation provided on a screen and in templates/docmessages/*/*.gui-translated.po
+#	the last one is supposed to be used as a source for KBabel's fuzzy translation
+# Syntax: ./scripts/check_gui_texts <language> <documentation> <silent ::= 1|0>
+# silent = 1 => only list created *gui-translated.po on stdout
+#
+# Original author: Eric Bischoff <e.bischoff -at- noos.fr>
+# Generation of .po files w/ gui elements translated: Nick Shaforostoff <shaforostoff -at- users.sourceforge.net>
+
+### FIXME: $appdir is used both as test for "templates" and as directory. That is bad has the real directory should be templates/messages. So probably the "messages" part of the path must be take out of the variable.
+if [ "$1" = ""  -o "$1" = "en" ]; then appdir=templates; else appdir=$1/messages; fi
+if [ "$2" = "" ]; then documentation=kspell; else documentation=$2; fi
+modules="kdeaddons kdeadmin kdebase kdeedu kdegames kdegraphics kdelibs kdemultimedia kdenetwork kdenonbeta kdepim kdesdk kdetoys kdeutils koffice extragear-multimedia extragear-graphics extragear-network extragear-libs extragear-pim extragear-utils"
+
+# Verify that the language exists
+if [ ! -d $appdir ]; then
+	echo "Language not supported: $1"
+	exit 1
+fi
+
+### TODO: improve security
+TMPDIR=`mktemp -d`
+if test ! -d "$TMPDIR"; then
+    echo "Cannot create temporary directory with mktemp, try manually"
+    TMPDIR=/tmp/seek-tmp.$$
+    if mkdir $TMPDIR; then
+        true;
+    else
+        echo "Creating $TMPDIR failed! Aborting!"
+        exit 10
+    fi
+    if test ! -d "$TMPDIR"; then
+        echo "Directory $TMPDIR was wrongly created! Aborting!"
+        exit 11
+    fi
+fi
+
+echo "Using temporary directory: $TMPDIR" # DEBUG
+
+TMPFILE=$TMPDIR/tmp
+
+
+# Search the module this documentation belongs to
+module=
+for m in $modules; do
+	if [ -f templates/docmessages/$m/$documentation.pot ]; then module=$m; fi
+done
+if test -z "$module" ; then
+	echo "Documentation not found: $documentation"
+	exit 1
+fi
+
+# Prepare file for translation
+echo > $TMPFILE-msgs
+
+# Extract the GUI elements from the documentation
+egrep -v "^(#|msgstr)" templates/docmessages/$module/$documentation*.pot | sed 's/^[^"]*"//; s/"$//' | awk 'BEGIN { r=""} !/^$/ {r=r$0} /^$/ {print r; r=""} END {print r}' > $TMPFILE-1
+sed 's:<guilabel>:#msgid ":g; s:</guilabel>:"#:g; s:<guimenu>:#msgid ":g; s:</guimenu>:"#:g; s:<guisubmenu>:#msgid ":g; s:</guisubmenu>:"#:g; s:<guimenuitem>:#msgid ":g; s:</guimenuitem>:"#:g; s:<guibutton>:#msgid ":g; s:</guibutton>:"#:g' $TMPFILE-1 | tr '#' '\n' | grep '^msgid "' | sort -u > $TMPFILE-2
+if [ ! -s $TMPFILE-2 ]; then
+	echo "No GUI elements in the documentation: $documentation"
+	rm $TMPFILE-*
+	exit 0
+fi
+
+# Determine where to search
+# Feel free to add the information relevant for the documents that are not yet listed here
+case $documentation in
+	kasteroids) where="kdelibs/kdelibs.po kdegames/libkdegames.po kdegames/kasteroids.po"
+		;;
+	katomic) where="kdelibs/kdelibs.po kdegames/libkdegames.po kdegames/katomic.po"
+		;;
+	kbackgammon) where="kdelibs/kdelibs.po kdegames/libkdegames.po kdegames/kbackgammon.po"
+		;;
+	kbattleship) where="kdelibs/kdelibs.po kdegames/libkdegames.po kdegames/kbattleship.po"
+		;;
+	kblackbox) where="kdelibs/kdelibs.po kdegames/libkdegames.po kdegames/kblackbox.po"
+		;;
+	kenolaba) where="kdelibs/kdelibs.po kdegames/libkdegames.po kdegames/kenolaba.po"
+		;;
+	kfouleggs) where="kdelibs/kdelibs.po kdegames/libkdegames.po kdegames/ksirtet.po"
+		;;
+	kjezz) where="kdelibs/kdelibs.po kdegames/libkdegames.po kdegames/kjezz.po"
+		;;
+	kjumpingcube) where="kdelibs/kdelibs.po kdegames/libkdegames.po kdegames/kjumpingcube.po"
+		;;
+	klines) where="kdelibs/kdelibs.po kdegames/libkdegames.po kdegames/klines.po"
+		;;
+	kmines) where="kdelibs/kdelibs.po kdegames/libkdegames.po kdegames/kmines.po"
+		;;
+	konqueror) where="kdelibs/kdelibs.po kdeaddons/konqsidebar_mediaplayer.po kdebase/konqueror.po"
+		;;
+	konquest) where="kdelibs/kdelibs.po kdegames/libkdegames.po kdegames/konquest.po"
+		;;
+	kpat) where="kdelibs/kdelibs.po kdegames/libkdegames.po kdegames/kpat.po"
+		;;
+	kpoker) where="kdelibs/kdelibs.po kdegames/libkdegames.po kdegames/kpoker.po"
+		;;
+	kreversi) where="kdelibs/kdelibs.po kdegames/libkdegames.po kdegames/kreversi.po"
+		;;
+	ksame) where="kdelibs/kdelibs.po kdegames/libkdegames.po kdegames/ksame.po"
+		;;
+	kshisen) where="kdelibs/kdelibs.po kdegames/libkdegames.po kdegames/kshisen.po"
+		;;
+	ksmiletris) where="kdelibs/kdelibs.po kdegames/libkdegames.po kdegames/ksirtet.po kdegames/ksmiletris.po"
+		;;
+	ksnake) where="kdelibs/kdelibs.po kdegames/libkdegames.po kdegames/ksnake.po"
+		;;
+	ksokoban) where="kdelibs/kdelibs.po kdegames/libkdegames.po kdegames/ksokoban.po"
+		;;
+	kspell) where="kdelibs/kdelibs.po"
+		;;
+	kspaceduel) where="kdelibs/kdelibs.po kdegames/libkdegames.po kdegames/kspaceduel.po"
+		;;
+	ktron) where="kdelibs/kdelibs.po kdegames/libkdegames.po kdegames/ktron.po"
+		;;
+	ktuberling) where="kdelibs/kdelibs.po kdegames/libkdegames.po kdegames/ktuberling.po"
+		;;
+	kwin4) where="kdelibs/kdelibs.po kdegames/libkdegames.po kdegames/kwin4.po"
+		;;
+	lskat) where="kdelibs/kdelibs.po kdegames/libkdegames.po kdegames/lskat.po"
+		;;
+	kpresenter) where="kdelibs/kdelibs.po kdebase/kcmspellchecking.po koffice/koffice.po koffice/kpresenter.po"
+		;;
+	kword) where="kdelibs/kdelibs.po kdebase/kcmspellchecking.po koffice/koffice.po koffice/kword.po"
+		;;
+	kspread) where="kdelibs/kdelibs.po kdebase/kcmspellchecking.po koffice/koffice.po koffice/kspread.po"
+		;;
+	*) if [ ! -f  $appdir/$module/$documentation.po* ]; then
+		echo "Cannot determine the list of po files to search"
+		echo "for $documentation (module $module)"
+		rm $TMPFILE-*
+		exit 1
+	   fi
+	   where="kdelibs/kdelibs.po $module/$documentation.po"
+esac
+
+
+# Prepare .pot to easy processing
+po_files=`echo ./templates/docmessages/$module/$documentation*.pot`
+for f in $po_files; do
+	msgen --no-wrap $f | grep -v "^#" > $f.po
+done;
+
+
+# Verify that these GUI texts exist in the GUI messages,
+# and if yes then provide their translation
+cat $TMPFILE-2 | (read guielement; \
+while [ "$guielement" != "" ]; do \
+	mmmm=$guielement; \
+	if [ "$3" != "1" ]; then echo "$guielement"; fi; \
+	# Escape characters that have a meaning for egrep
+	guielement=`echo $guielement | sed 's/[\^\$\+\*\?]/\\&/g; s/^/\^/'`
+	found=no; \
+	# Try to search an exact match
+	for f in $where; do \
+		file=$appdir/$f; \
+		if [ $appdir = templates ]; then file=${file}t; fi; \
+        	cat $file | tr -d '&' > $TMPFILE-1; \
+		result=`egrep -n "$guielement" $TMPFILE-1`
+		if [ $? -eq 0 ]; then \
+			found=yes; \
+			line=`echo $result | sed 's/^\([^:]*\):.*$/\1/'`
+			echo -n $mmmm\#\# >> $TMPFILE-msgs; \
+			if [ $appdir = templates ]; then \
+				echo "  Found in $file"; \
+			else \
+				head -n `expr $line + 1` $file | tail -n 1 | tr -d '&' > $TMPFILE-3
+				echo "`cat $TMPFILE-3`" >> $TMPFILE-msgs
+				if [ "$3" != "1" ]; then \
+					recode utf-8..iso-8859-1 $TMPFILE-3; \
+					echo "  Found in $file: `cat $TMPFILE-3`"
+				fi; \
+			fi; \
+		fi; \
+	done; \
+	# Try to search an approximative match
+	if [ $found = no ]; then \
+		guielement=`echo $guielement | sed 's/^\^msgid "//; s/"$//'`
+		guielement=`echo $guielement | sed 's/  */ */g; s/^/\^msgid "/; s/[:.! ]*$/[:.! ]*"/'`
+		for f in $where; do \
+			file=$appdir/$f; \
+			if [ $appdir = templates ]; then file=${file}t; fi; \
+        		cat $file | tr -d '&' > $TMPFILE-1; \
+			result=`egrep -i -n "$guielement" $TMPFILE-1`
+			if [ $? -eq 0 ]; then \
+				found=yes; \
+				echo -n $mmmm\#\# >> $TMPFILE-msgs; \
+				line=`echo $result | sed 's/^\([^:]*\):.*$/\1/'`
+				if [ $appdir = templates ]; then \
+					head -n $line $file | tail -n 1 | tr -d '&' > $TMPFILE-3; \
+					echo "  Found something similar in $file:"
+					sed "s/^/    /" $TMPFILE-3; \
+				else \
+					head -n `expr $line + 1` $file | tail -n 2 | tr -d '&' > $TMPFILE-3
+					grep msgstr $TMPFILE-3 >> $TMPFILE-msgs; \
+					if [ "$3" != "1" ]; then \
+						recode utf-8..iso-8859-1 $TMPFILE-3; \
+						echo "  Found something similar in $file:"; \
+						sed "s/^/    /" $TMPFILE-3; \
+					fi; \
+				fi; \
+				# this is temporary, should be done using some flags...
+				break ; \ 
+			fi; \
+		done; \
+	fi; \
+	# Not found: indicate where we've been searching
+	if [ "$3" != "1" ]; then \
+		if [ $found = no ]; then \
+			echo "  Not found! I searched in:"; \
+				for f in $where; do \
+				file=$appdir/$f; \
+				if [ $appdir = templates ]; then file=${file}t; fi; \
+				echo "  $file"; \
+			done; \
+		fi; \
+	fi; \
+	read guielement; \
+done)
+
+for f in $po_files; do \
+	if [ "$3" = "1" ]; then \
+		echo $f.gui-translated.po; \
+	fi; \
+	perl ./scripts/translate_gui.pl --tmp-file=$TMPFILE-msgs --file=$f.po > $f.gui-translated.po; 
+	rm $f.po
+done; \
+
+
+# Do housekeeping
+rm $TMPDIR/*
+rmdir $TMPDIR
