@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kget\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2009-09-23 07:16+0200\n"
+"POT-Creation-Date: 2009-09-24 06:18+0200\n"
 "PO-Revision-Date: 2009-09-17 00:24+0200\n"
 "Last-Translator: Xosé <xosecalvo@edu.xunta.es>\n"
 "Language-Team: Galego <proxecto@trasno.org>\n"
@@ -229,8 +229,8 @@ msgctxt "A mirror is removed when the file has the wrong download size"
 msgid "%1 removed as it did report a wrong file size."
 msgstr "eliminouse %1 porque informou dun tamaño de ficheiro erróneo"
 
-#: core/datasourcefactory.cpp:636 core/kget.cpp:529 core/kget.cpp:878
-#: core/kget.cpp:886 transfer-plugins/metalink/metalink.cpp:193
+#: core/datasourcefactory.cpp:636 core/kget.cpp:554 core/kget.cpp:902
+#: core/kget.cpp:911 transfer-plugins/metalink/metalink.cpp:193
 #: transfer-plugins/bittorrent/bttransfer.cpp:494
 #: transfer-plugins/bittorrent/bttransfer.cpp:505
 #: ui/metalinkcreator/metalinkcreator.cpp:287
@@ -257,7 +257,7 @@ msgctxt "transfer state: delayed"
 msgid "Delayed"
 msgstr "Adiado"
 
-#: core/transfer.cpp:30 core/transfer.cpp:240 core/transfer.cpp:265
+#: core/transfer.cpp:30 core/transfer.cpp:234 core/transfer.cpp:259
 #: transfer-plugins/mms/mmsTransfer.cpp:52
 #: transfer-plugins/bittorrent/bttransfer.cpp:321
 #: transfer-plugins/contentfetch/contentfetch.cpp:64
@@ -309,11 +309,42 @@ msgstr "Desexa realmente borrar os grupos seguintes?"
 msgid "Remove groups"
 msgstr "Eliminar os grupos"
 
-#: core/kget.cpp:237
-msgid "Rename transfer"
-msgstr "Mudar o nome da transferencia"
+#: core/kget.cpp:241
+msgid ""
+"You have already downloaded that file from another location\n"
+"\n"
+"Download and delete the previous one?"
+msgstr ""
 
-#: core/kget.cpp:514
+#: core/kget.cpp:242
+#, fuzzy
+#| msgid ""
+#| "URL already saved:\n"
+#| "%1\n"
+#| "Download again?"
+msgid "File already downloaded. Download anyway?"
+msgstr ""
+"Xa se está a gardar o URL\n"
+"%1\n"
+"Desexa transferilo outra vez?"
+
+#: core/kget.cpp:251
+#, fuzzy
+#| msgid "You are already downloading the torrent %1"
+msgid "You are already downloading the same file"
+msgstr "Xa está a descargar o torrent %1"
+
+#: core/kget.cpp:255
+#, fuzzy
+#| msgid ""
+#| "The file %1 already exists.\n"
+#| "Overwrite?"
+msgid "File already exists"
+msgstr ""
+"O ficheiro %1 xa existe.\n"
+"Desexa substituílo?"
+
+#: core/kget.cpp:539
 #, kde-format
 msgid ""
 "The file %1 already exists.\n"
@@ -322,34 +353,34 @@ msgstr ""
 "O ficheiro %1 xa existe.\n"
 "Desexa substituílo?"
 
-#: core/kget.cpp:515
+#: core/kget.cpp:540
 msgid "Overwrite existing file?"
 msgstr "Desexa substituír o ficheiro xa existente?"
 
-#: core/kget.cpp:528 ui/metalinkcreator/metalinkcreator.cpp:306
+#: core/kget.cpp:553 ui/metalinkcreator/metalinkcreator.cpp:306
 #, kde-format
 msgid "Unable to save to: %1"
 msgstr "Non foi posíbel gardar en: %1"
 
-#: core/kget.cpp:747 ui/contextmenu.cpp:135
+#: core/kget.cpp:772 ui/contextmenu.cpp:135
 msgid "My Downloads"
 msgstr "As miñas descargas"
 
 #. i18n: file: ui/newtransferwidget.ui:25
 #. i18n: ectx: property (text), widget (KTitleWidget, titleWidget)
-#: core/kget.cpp:817 ui/newtransferdialog.cpp:254 rc.cpp:520
+#: core/kget.cpp:842 ui/newtransferdialog.cpp:254 rc.cpp:520
 msgid "New Download"
 msgstr "Nova transferencia"
 
-#: core/kget.cpp:817
+#: core/kget.cpp:842
 msgid "Enter URL:"
 msgstr "Introduza o URL:"
 
-#: core/kget.cpp:849
+#: core/kget.cpp:874
 msgid "Save As"
 msgstr "Gardar como"
 
-#: core/kget.cpp:877
+#: core/kget.cpp:901
 #, kde-format
 msgid ""
 "Malformed URL:\n"
@@ -358,7 +389,7 @@ msgstr ""
 "O URL está mal escrito:\n"
 "%1"
 
-#: core/kget.cpp:885
+#: core/kget.cpp:910
 #, kde-format
 msgid ""
 "Malformed URL, protocol missing:\n"
@@ -367,26 +398,43 @@ msgstr ""
 "O URL está mal escrito; falta o protocolo:\n"
 "%1"
 
-#: core/kget.cpp:898
+#: core/kget.cpp:922
 #, kde-format
 msgid ""
-"URL already saved:\n"
+"You have already completed a download from the location: \n"
+"\n"
 "%1\n"
-"Download again?"
+"\n"
+"Download it again?"
 msgstr ""
-"Xa se está a gardar o URL\n"
+
+#: core/kget.cpp:923
+#, fuzzy
+#| msgid "Download again"
+msgid "Download it again?"
+msgstr "Descargar de novo? "
+
+#: core/kget.cpp:935
+#, kde-format
+msgid ""
+"You have a download in progress from the location: \n"
+"\n"
 "%1\n"
-"Desexa transferilo outra vez?"
+"\n"
+"Delete it and download again?"
+msgstr ""
 
-#: core/kget.cpp:899
-msgid "Download URL again?"
-msgstr "Transferir o URL de novo?"
+#: core/kget.cpp:936
+#, fuzzy
+#| msgid "Download again"
+msgid "Delete it and download again?"
+msgstr "Descargar de novo? "
 
-#: core/kget.cpp:927 core/kget.cpp:934
+#: core/kget.cpp:959 core/kget.cpp:966
 msgid "Directory is not writable"
 msgstr "Non se pode gravar no cartafol"
 
-#: core/kget.cpp:944
+#: core/kget.cpp:976
 #, kde-format
 msgid ""
 "Destination file \n"
@@ -399,11 +447,11 @@ msgstr ""
 "xa existe.\n"
 "Desexa sobrescribilo?"
 
-#: core/kget.cpp:945
+#: core/kget.cpp:977
 msgid "Overwrite destination"
 msgstr "Sobreescribir destino"
 
-#: core/kget.cpp:1076
+#: core/kget.cpp:1108
 #, kde-format
 msgid ""
 "<html><p>Plugin loader could not load the plugin:<br/><i>%1</i></p></html>"
@@ -411,7 +459,7 @@ msgstr ""
 "<html><p>O cargador de engadidos non puido cargar o engadido:<br/><i>%1</i></"
 "p></html> "
 
-#: core/kget.cpp:1094
+#: core/kget.cpp:1126
 #, kde-format
 msgid ""
 "Not deleting\n"
@@ -422,7 +470,7 @@ msgstr ""
 "%1\n"
 "xa que é un cartafol."
 
-#: core/kget.cpp:1104
+#: core/kget.cpp:1136
 #, kde-format
 msgid ""
 "Not deleting\n"
@@ -435,15 +483,15 @@ msgstr ""
 
 #. i18n: file: conf/dlgadvanced.ui:40
 #. i18n: ectx: property (text), item, widget (KComboBox, kcfg_AfterFinishAction)
-#: core/kget.cpp:1295 core/kget.cpp:1305 ui/droptarget.cpp:94 rc.cpp:65
+#: core/kget.cpp:1327 core/kget.cpp:1337 ui/droptarget.cpp:94 rc.cpp:65
 msgid "Quit KGet"
 msgstr "Saír de KGet"
 
-#: core/kget.cpp:1296
+#: core/kget.cpp:1328
 msgid "KGet is now closing, as all downloads have completed."
 msgstr "Todas as descargan acabaron así que KGet apagarase agora mesmo. "
 
-#: core/kget.cpp:1306
+#: core/kget.cpp:1338
 msgid "The computer will now turn off, as all downloads have completed."
 msgstr "O ordenador apagarase agora mesmo xa que remataron todas as descargas."
 
@@ -4179,6 +4227,12 @@ msgstr "Lista de descricións dos scripts de usuario"
 #: rc.cpp:1018
 msgid "List of whether the script is enabled"
 msgstr "Lista de scripts activados"
+
+#~ msgid "Rename transfer"
+#~ msgstr "Mudar o nome da transferencia"
+
+#~ msgid "Download URL again?"
+#~ msgstr "Transferir o URL de novo?"
 
 #~ msgctxt "file in a filsystem"
 #~ msgid "File"
