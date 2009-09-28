@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: drkonqi\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2009-09-24 06:15+0200\n"
+"POT-Creation-Date: 2009-09-28 06:14+0200\n"
 "PO-Revision-Date: 2009-06-18 22:02+0200\n"
 "Last-Translator: Marce Villarino <mvillarino@gmail.com>\n"
 "Language-Team: Galician <proxecto@trasno.net>\n"
@@ -643,17 +643,17 @@ msgctxt "@info"
 msgid "Cannot open file <filename>%1</filename> for writing."
 msgstr "Non é posíbel abrir o ficheiro <filename>%1</filename> para escritura."
 
-#: drkonqidialog.cpp:62
+#: drkonqidialog.cpp:63
 msgctxt "@title:tab general information"
 msgid "&General"
 msgstr "&Xeral"
 
-#: drkonqidialog.cpp:66
+#: drkonqidialog.cpp:67
 msgctxt "@title:tab"
 msgid "&Developer Information"
 msgstr "Información do &desenvolvente"
 
-#: drkonqidialog.cpp:95
+#: drkonqidialog.cpp:98
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -662,7 +662,16 @@ msgstr ""
 "<para>Sentímolo, <application>%1</application> pechouse inesperadamente.</"
 "para>"
 
-#: drkonqidialog.cpp:101
+#: drkonqidialog.cpp:104
+#, kde-format
+msgctxt "@info"
+msgid ""
+"<para>The reporting assistant is disabled because the crash handler dialog "
+"was started in safe mode.<nl />You can manually report this bug to %1 "
+"(including the backtrace from the Developer Information tab)</para>"
+msgstr ""
+
+#: drkonqidialog.cpp:110
 msgctxt "@info"
 msgid ""
 "<para>You can help us improve KDE by reporting this error.<nl /><link "
@@ -675,19 +684,19 @@ msgstr ""
 "para><para><note>Pode pechar este diálogo se non quere informar deste erro.</"
 "note></para>"
 
-#: drkonqidialog.cpp:107
+#: drkonqidialog.cpp:117
 msgctxt "@info"
 msgid ""
 "<para>You can't report this error because the application does not provide a "
 "bug reporting address</para>"
 msgstr ""
 
-#: drkonqidialog.cpp:137
+#: drkonqidialog.cpp:127
 msgctxt "@label"
 msgid "Details:"
 msgstr "Detalles:"
 
-#: drkonqidialog.cpp:139
+#: drkonqidialog.cpp:129
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -697,46 +706,46 @@ msgstr ""
 "<para>Executábel: <application>%1</application> PID: <numid>%2</numid> "
 "Sinal: %3 (%4)</para>"
 
-#: drkonqidialog.cpp:160
+#: drkonqidialog.cpp:144
 msgctxt "@action:button"
 msgid "Report Bug"
 msgstr "Informar dun erro"
 
-#: drkonqidialog.cpp:163
+#: drkonqidialog.cpp:147
 msgctxt "@info:tooltip"
 msgid "Starts the bug report assistant."
 msgstr "Inicia o asistente de informe de erros."
 
-#: drkonqidialog.cpp:171
+#: drkonqidialog.cpp:156
 msgctxt ""
 "@action:button this is the debug menu button label which contains the "
 "debugging applications"
 msgid "Debug"
 msgstr "Depurar"
 
-#: drkonqidialog.cpp:172
+#: drkonqidialog.cpp:157
 msgctxt "@info:tooltip"
 msgid "Starts a program to debug the crashed application."
 msgstr ""
 "Iniciar un programa para depurar o programa que se pechou inesperadamente."
 
-#: drkonqidialog.cpp:191
+#: drkonqidialog.cpp:176
 msgctxt "@action:button"
 msgid "Restart Application"
 msgstr "Reiniciar o programa"
 
-#: drkonqidialog.cpp:193
+#: drkonqidialog.cpp:178
 msgctxt "@info:tooltip"
 msgid "Use this button to restart the crashed application."
 msgstr ""
 "Empregue este botón para reiniciar o programa que se pechou inesperadamente."
 
-#: drkonqidialog.cpp:200
+#: drkonqidialog.cpp:185
 msgctxt "@info:tooltip"
 msgid "Close this dialog (you will lose the crash information.)"
 msgstr "Pechar este diálogo (perderá a información do peche)."
 
-#: drkonqidialog.cpp:211
+#: drkonqidialog.cpp:196
 #, kde-format
 msgctxt "@action:inmenu 1 is the debugger name"
 msgid "Debug in <application>%1</application>"
@@ -1027,6 +1036,12 @@ msgstr "Reiniciar o programa logo de premer no botón de Rematar"
 msgid "Restart the application when clicking the Finish button"
 msgstr "Reiniciar o programa logo de premer no botón de Rematar"
 
+#. i18n: file: ui/maindialog.ui:14
+#. i18n: ectx: property (windowTitle), widget (QWidget, MainWidget)
+#: rc.cpp:75
+msgid "Form"
+msgstr ""
+
 #: reportassistantdialog.cpp:47
 msgctxt "@title:window"
 msgid "Crash Reporting Assistant"
@@ -1096,8 +1111,7 @@ msgstr ""
 "Empregue este botón para mostrar a información do informe que se xerou "
 "acerca deste peche inesperado."
 
-#: reportassistantpages_base.cpp:171 reportassistantpages_base.cpp:340
-#: reportassistantpages_bugzilla.cpp:547
+#: reportassistantpages_base.cpp:171
 #, kde-format
 msgctxt "@info/plain"
 msgid "Report to %1"
@@ -1260,17 +1274,25 @@ msgstr ""
 "Pode informar manualmente deste erro aos mantenedores en <link>%1</link>. "
 "Prema en <interface>Rematar</interface> para pechar o asistente."
 
-#: reportassistantpages_base.cpp:366
+#: reportassistantpages_base.cpp:334
+#, fuzzy, kde-format
+#| msgctxt "@info/plain"
+#| msgid "Report to %1"
+msgctxt "@info/plain report to url/mail address"
+msgid "Report to %1"
+msgstr "Informe para %1"
+
+#: reportassistantpages_base.cpp:361
 msgctxt "@title:window"
 msgid "Contents of the Report"
 msgstr "Contido do informe"
 
-#: reportassistantpages_base.cpp:371
+#: reportassistantpages_base.cpp:366
 msgctxt "@action:button"
 msgid "&Save to File..."
 msgstr "&Gardar nun ficheiro..."
 
-#: reportassistantpages_base.cpp:373
+#: reportassistantpages_base.cpp:368
 msgctxt "@info:tooltip"
 msgid ""
 "Use this button to save the generated crash report information to a file. "
@@ -1516,6 +1538,14 @@ msgid "Error sending the crash report:  <message>%1.</message>"
 msgstr ""
 "Aconteceu un erro ao enviar o informe do peche inesperado: <message>%1.</"
 "message>"
+
+#: reportassistantpages_bugzilla.cpp:547
+#, fuzzy, kde-format
+#| msgctxt "@info/plain"
+#| msgid "Report to %1"
+msgctxt "@info/plain report to KDE bugtracker addres"
+msgid "Report to %1"
+msgstr "Informe para %1"
 
 #: reportassistantpages_bugzilla_duplicates.cpp:62
 msgctxt "@item:intable custom bug report number"
