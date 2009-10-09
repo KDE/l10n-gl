@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma_applet_devicenotifier\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2009-09-29 06:07+0200\n"
+"POT-Creation-Date: 2009-10-09 06:17+0200\n"
 "PO-Revision-Date: 2009-10-03 23:43+0200\n"
 "Last-Translator: Marce Villarino <mvillarino@gmail.com>\n"
 "Language-Team: Galician <proxecto@trasno.net>\n"
@@ -19,39 +19,60 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Lokalize 1.0\n"
 
-#: devicenotifier.cpp:201
+#: deviceitem.cpp:241
+msgid "Click to safely remove this device from the computer."
+msgstr ""
+
+#: deviceitem.cpp:242
+msgid "Device is plugged in and can be accessed by applications."
+msgstr ""
+
+#: deviceitem.cpp:245
+msgid "Click to access this device from other applications."
+msgstr ""
+
+#: deviceitem.cpp:246
+msgid "Device is plugged in, but not mounted for access yet."
+msgstr ""
+
+#: deviceitem.cpp:289
+#, fuzzy, kde-format
+#| msgctxt "@info:status Free disk space"
+#| msgid "%1  free"
+msgctxt "@info:status Free disk space"
+msgid "%1 free"
+msgstr "%1 libre"
+
+#: devicenotifier.cpp:172
 #, kde-format
 msgid "1 action for this device"
 msgid_plural "%1 actions for this device"
 msgstr[0] "1 acción para este dispositivo"
 msgstr[1] "%1 accións para este dispositivo"
 
-#: devicenotifier.cpp:260
+#: devicenotifier.cpp:225
+msgid "No devices plugged in"
+msgstr "Non hai ningún dispositivo conectado"
+
+#: devicenotifier.cpp:229
 #, kde-format
 msgid "Last plugged in device: %1"
 msgstr "Último dispositivo conectado: %1"
 
-#: devicenotifier.cpp:263
-msgid "No devices plugged in"
-msgstr "Non hai ningún dispositivo conectado"
-
-#: devicenotifier.cpp:344
+#: devicenotifier.cpp:317
+#, fuzzy
+#| msgid "General"
+msgctxt "General options page"
 msgid "General"
 msgstr "Xeral"
 
-#: devicenotifier.cpp:349
-msgid " second"
-msgid_plural " seconds"
-msgstr[0] " segundo"
-msgstr[1] " segundos"
+#: notifierdialog.cpp:64
+#, fuzzy
+#| msgid "Show removable devices only"
+msgid "Show hidden devices"
+msgstr "Mostrar só os dispositivos extraíbeis"
 
-#: devicespaceinfodelegate.cpp:60
-#, kde-format
-msgctxt "@info:status Free disk space"
-msgid "%1  free"
-msgstr "%1 libre"
-
-#: notifierdialog.cpp:337
+#: notifierdialog.cpp:330
 msgid ""
 "Could not unmount the device.\n"
 "One or more files on this device are open within an application."
@@ -59,7 +80,7 @@ msgstr ""
 "Non é posíbel desmontar o dispositivo.\n"
 "Algún programa ten aberto polo menos un ficheiro deste dispositivo."
 
-#: notifierdialog.cpp:352
+#: notifierdialog.cpp:349
 msgid ""
 "Cannot eject the disc.\n"
 "One or more files on this disc are open within an application."
@@ -67,43 +88,73 @@ msgstr ""
 "Non é posíbel expulsar o disco.\n"
 "Algún programa ten aberto polo menos un ficheiro desde disco."
 
-#: notifierdialog.cpp:366
+#: notifierdialog.cpp:364
 msgid "Cannot mount the disc."
 msgstr "Non foi posíbel montar o disco."
 
-#: notifierdialog.cpp:533
-#, kde-format
-msgid "<font color=\"%1\">Devices recently plugged in:</font>"
-msgstr "<font color=\"%1\">Dispositivos conectados recentemente:</font>"
-
-#: notifierview.cpp:66
-msgid "Show all the items"
-msgstr "Mostrar todos os elementos"
-
-#: notifierview.cpp:356
-msgid "Hide "
+#: notifierdialog.cpp:555
+#, fuzzy, kde-format
+#| msgid "Hide "
+msgctxt "Hide a device"
+msgid "Hide %1"
 msgstr "Acochar "
 
-#. i18n: file: configurationpage.ui:25
-#. i18n: ectx: property (specialValueText), widget (KIntSpinBox, hidePopupAfter)
-#: rc.cpp:3
-msgid "never"
-msgstr "nunca"
+#: notifierdialog.cpp:619
+#, fuzzy
+#| msgid "No devices plugged in"
+msgid "No devices plugged in."
+msgstr "Non hai ningún dispositivo conectado"
 
-#. i18n: file: configurationpage.ui:44
-#. i18n: ectx: property (text), widget (QLabel, label)
-#: rc.cpp:6
-msgid "When inserting a device close the popup after"
-msgstr "Tras inserir un dispositivo pechar a fiestra emerxente despois de"
+#: notifierdialog.cpp:621
+#, fuzzy
+#| msgid "<font color=\"%1\">Devices recently plugged in:</font>"
+msgid "Devices recently plugged in:"
+msgstr "<font color=\"%1\">Dispositivos conectados recentemente:</font>"
 
-#. i18n: file: configurationpage.ui:56
-#. i18n: ectx: property (text), widget (QCheckBox, showOnlyRemovable)
-#: rc.cpp:9
-msgid "Show removable devices only"
-msgstr "Mostrar só os dispositivos extraíbeis"
-
-#. i18n: file: configurationpage.ui:63
+#. i18n: file: configurationpage.ui:17
 #. i18n: ectx: property (text), widget (QCheckBox, showPopupOnInsert)
-#: rc.cpp:12
+#: rc.cpp:3 rc.cpp:18
 msgid "Show the popup when a device is inserted"
 msgstr "Mostrar a fiestra emerxente cando se insira un dispositivo"
+
+#. i18n: file: configurationpage.ui:32
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: rc.cpp:6 rc.cpp:21
+msgid "Show "
+msgstr ""
+
+#. i18n: file: configurationpage.ui:40
+#. i18n: ectx: property (text), item, widget (KComboBox, showDevices)
+#: rc.cpp:9 rc.cpp:24
+#, fuzzy
+#| msgid "Show removable devices only"
+msgid "Removable devices only"
+msgstr "Mostrar só os dispositivos extraíbeis"
+
+#. i18n: file: configurationpage.ui:45
+#. i18n: ectx: property (text), item, widget (KComboBox, showDevices)
+#: rc.cpp:12 rc.cpp:27
+#, fuzzy
+#| msgid "Show removable devices only"
+msgid "Non-removable devices only"
+msgstr "Mostrar só os dispositivos extraíbeis"
+
+#. i18n: file: configurationpage.ui:50
+#. i18n: ectx: property (text), item, widget (KComboBox, showDevices)
+#: rc.cpp:15 rc.cpp:30
+msgid "All devices"
+msgstr ""
+
+#~ msgid " second"
+#~ msgid_plural " seconds"
+#~ msgstr[0] " segundo"
+#~ msgstr[1] " segundos"
+
+#~ msgid "Show all the items"
+#~ msgstr "Mostrar todos os elementos"
+
+#~ msgid "never"
+#~ msgstr "nunca"
+
+#~ msgid "When inserting a device close the popup after"
+#~ msgstr "Tras inserir un dispositivo pechar a fiestra emerxente despois de"
