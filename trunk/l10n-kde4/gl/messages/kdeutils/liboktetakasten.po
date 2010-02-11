@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: okteta\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2010-02-09 06:29+0100\n"
+"POT-Creation-Date: 2010-02-11 07:06+0100\n"
 "PO-Revision-Date: 2009-12-04 20:34+0100\n"
 "Last-Translator: Marce Villarino <mvillarino@gmail.com>\n"
 "Language-Team: Galician <proxecto@trasno.net>\n"
@@ -29,6 +29,8 @@ msgstr "&Tamaño:"
 
 #: gui/io/generator/randomdata/bytearrayrandomdatageneratorconfigeditor.cpp:51
 #: controllers/view/bytetable/bytetableview.cpp:77
+#: controllers/view/viewconfig/bytesperlinedialog.cpp:46
+#: controllers/view/viewconfig/bytesperlinedialog.cpp:54
 #: controllers/view/libbytearrayfilter/filter/rotatebytearrayfilterparametersetedit.cpp:45
 msgid " byte"
 msgid_plural " bytes"
@@ -164,6 +166,7 @@ msgid "The preview uses maximal the first 100 bytes."
 msgstr "Vista previa (máx. os primeiros 100 bytes)"
 
 #: gui/io/streamencoder/uuencoding/bytearrayuuencodingstreamencoderconfigeditor.cpp:51
+#: gui/io/streamencoder/xxencoding/bytearrayxxencodingstreamencoderconfigeditor.cpp:50
 msgctxt "@label:textbox file name internally given to the encoded data"
 msgid "Internal name of file:"
 msgstr ""
@@ -171,9 +174,7 @@ msgstr ""
 #: gui/io/streamencoder/uuencoding/bytearrayuuencodingstreamencoderconfigeditor.cpp:61
 #, fuzzy
 #| msgid "Value coding:"
-msgctxt ""
-"@label:listbox the type of the used encoding: historical, xxencoding or "
-"Base64."
+msgctxt "@label:listbox the type of the used encoding: historical or Base64."
 msgid "Encoding:"
 msgstr "Codificación do valor:"
 
@@ -184,20 +185,13 @@ msgstr ""
 
 #: gui/io/streamencoder/uuencoding/bytearrayuuencodingstreamencoderconfigeditor.cpp:68
 #, fuzzy
-#| msgid "Value coding:"
-msgctxt "@item:inmenu Doing the uuencoding using the xxencoding encoding"
-msgid "Xxencoding"
-msgstr "Codificación do valor:"
-
-#: gui/io/streamencoder/uuencoding/bytearrayuuencodingstreamencoderconfigeditor.cpp:70
-#, fuzzy
 #| msgctxt "name of the encoding target"
 #| msgid "Base64"
 msgctxt "@item:inmenu Doing the uuencoding using the base64 encoding"
 msgid "Base64"
 msgstr "Base64"
 
-#: gui/io/streamencoder/uuencoding/bytearrayuuencodingstreamencoder.cpp:108
+#: gui/io/streamencoder/uuencoding/bytearrayuuencodingstreamencoder.cpp:86
 #, fuzzy
 #| msgid "Value coding:"
 msgctxt "name of the encoding target"
@@ -275,6 +269,13 @@ msgctxt ""
 "datatype has the property Unsigned"
 msgid "Unsigned as hexadecimal:"
 msgstr "Sen signo como hexadecimal:"
+
+#: gui/io/streamencoder/xxencoding/bytearrayxxencodingstreamencoder.cpp:70
+#, fuzzy
+#| msgid "Value coding:"
+msgctxt "name of the encoding target"
+msgid "Xxencoding"
+msgstr "Codificación do valor:"
 
 #: gui/io/streamencoder/values/bytearrayvaluesstreamencoderconfigeditor.cpp:52
 msgid "Value coding:"
@@ -1790,90 +1791,121 @@ msgctxt "@info:whatsthis"
 msgid "Only search within the current selection."
 msgstr "Procura só dentro da selección actual."
 
-#: controllers/view/viewconfig/viewconfigcontroller.cpp:47
+#: controllers/view/viewconfig/viewconfigcontroller.cpp:48
 msgctxt "@title:menu"
 msgid "&Value Coding"
 msgstr "Codificación do &valor"
 
-#: controllers/view/viewconfig/viewconfigcontroller.cpp:49
+#: controllers/view/viewconfig/viewconfigcontroller.cpp:50
 msgctxt ""
 "@item:inmenu encoding of the bytes as values in the hexadecimal format"
 msgid "&Hexadecimal"
 msgstr "&Hexadecimal"
 
-#: controllers/view/viewconfig/viewconfigcontroller.cpp:50
+#: controllers/view/viewconfig/viewconfigcontroller.cpp:51
 msgctxt "@item:inmenu encoding of the bytes as values in the decimal format"
 msgid "&Decimal"
 msgstr "&Decimal"
 
-#: controllers/view/viewconfig/viewconfigcontroller.cpp:51
+#: controllers/view/viewconfig/viewconfigcontroller.cpp:52
 msgctxt "@item:inmenu encoding of the bytes as values in the octal format"
 msgid "&Octal"
 msgstr "&Octal"
 
-#: controllers/view/viewconfig/viewconfigcontroller.cpp:52
+#: controllers/view/viewconfig/viewconfigcontroller.cpp:53
 msgctxt "@item:inmenu encoding of the bytes as values in the binary format"
 msgid "&Binary"
 msgstr "&Binario"
 
-#: controllers/view/viewconfig/viewconfigcontroller.cpp:58
+#: controllers/view/viewconfig/viewconfigcontroller.cpp:59
 msgctxt "@title:menu"
 msgid "&Char Coding"
 msgstr "Codificación dos &caracteres"
 
-#: controllers/view/viewconfig/viewconfigcontroller.cpp:63
+#: controllers/view/viewconfig/viewconfigcontroller.cpp:64
 msgctxt "@option:check"
 msgid "Show &Non-printing Chars"
 msgstr "Mostrar os caracteres &non imprimíbeis"
 
-#: controllers/view/viewconfig/viewconfigcontroller.cpp:68
+#: controllers/view/viewconfig/viewconfigcontroller.cpp:69
+#, fuzzy
+#| msgctxt "@label:textbox to define after how many items the list is wrapped"
+#| msgid "Items per line:"
+msgctxt "@action:inmenu"
+msgid "Set Bytes per Line..."
+msgstr "Elementos por liña:"
+
+#: controllers/view/viewconfig/viewconfigcontroller.cpp:74
 msgctxt "@title:menu"
 msgid "&Dynamic Layout"
 msgstr "&Disposición dinámica"
 
-#: controllers/view/viewconfig/viewconfigcontroller.cpp:71
+#: controllers/view/viewconfig/viewconfigcontroller.cpp:77
 msgctxt "@item:inmenu  The layout will not change on size changes."
 msgid "&Off"
 msgstr "&Desactivada"
 
-#: controllers/view/viewconfig/viewconfigcontroller.cpp:73
+#: controllers/view/viewconfig/viewconfigcontroller.cpp:79
 msgctxt ""
 "@item:inmenu  The layout will adapt to the size, but only with complete "
 "groups of bytes."
 msgid "&Wrap Only Complete Byte Groups"
 msgstr "Dividir só por &grupos completos de bytes"
 
-#: controllers/view/viewconfig/viewconfigcontroller.cpp:75
+#: controllers/view/viewconfig/viewconfigcontroller.cpp:81
 msgctxt ""
 "@item:inmenu  The layout will adapt to the size and fit in as much bytes per "
 "line as possible."
 msgid "&On"
 msgstr "&Activada"
 
-#: controllers/view/viewconfig/viewconfigcontroller.cpp:80
+#: controllers/view/viewconfig/viewconfigcontroller.cpp:86
 msgctxt "@option:check"
 msgid "Show &Line Offset"
 msgstr "Mostrar o desprazamentos na &liña"
 
-#: controllers/view/viewconfig/viewconfigcontroller.cpp:86
+#: controllers/view/viewconfig/viewconfigcontroller.cpp:92
 msgctxt "@title:menu"
 msgid "&Show Values or Chars"
 msgstr "&Mostrar os valores dos caracteres"
 
-#: controllers/view/viewconfig/viewconfigcontroller.cpp:88
+#: controllers/view/viewconfig/viewconfigcontroller.cpp:94
 msgctxt "@item:inmenu"
 msgid "&Values"
 msgstr "&Valores"
 
-#: controllers/view/viewconfig/viewconfigcontroller.cpp:89
+#: controllers/view/viewconfig/viewconfigcontroller.cpp:95
 msgctxt "@item:inmenu"
 msgid "&Chars"
 msgstr "&Caracteres"
 
-#: controllers/view/viewconfig/viewconfigcontroller.cpp:90
+#: controllers/view/viewconfig/viewconfigcontroller.cpp:96
 msgctxt "@item:inmenu"
 msgid "Values && Chars"
 msgstr "Valores e caracteres"
+
+#: controllers/view/viewconfig/bytesperlinedialog.cpp:49
+msgctxt "@label:spinbox number of bytes which are shown per line"
+msgid "Per Line:"
+msgstr ""
+
+#: controllers/view/viewconfig/bytesperlinedialog.cpp:56
+msgctxt ""
+msgid "No grouping."
+msgstr ""
+
+#: controllers/view/viewconfig/bytesperlinedialog.cpp:60
+msgctxt "@label:spinbox number of bytes which are grouped"
+msgid "Size of Groups:"
+msgstr ""
+
+#: controllers/view/viewconfig/bytesperlinedialog.cpp:64
+#, fuzzy
+#| msgctxt "@label:textbox to define after how many items the list is wrapped"
+#| msgid "Items per line:"
+msgctxt "@title:window"
+msgid "Set Bytes per Line"
+msgstr "Elementos por liña:"
 
 #: controllers/view/bookmarks/bookmarklistmodel.cpp:128
 msgctxt "@title:column offset of the bookmark"
