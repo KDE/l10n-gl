@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: amarok\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2010-03-15 04:38+0100\n"
+"POT-Creation-Date: 2010-03-16 04:47+0100\n"
 "PO-Revision-Date: 2010-02-01 18:27+0100\n"
 "Last-Translator: Chema Barcala <shemari@gmail.com>\n"
 "Language-Team: Galician <proxecto@trasno.net>\n"
@@ -168,7 +168,7 @@ msgctxt "track from source"
 msgid "from <b>%1</b>"
 msgstr "de <b>%1</b>"
 
-#: Amarok.cpp:190 context/applets/currenttrack/CurrentTrack.cpp:126
+#: Amarok.cpp:190 context/applets/currenttrack/CurrentTrack.cpp:117
 #: context/applets/photos/PhotosApplet.cpp:132
 #: context/engines/current/CurrentEngine.cpp:150 mac/GrowlInterface.cpp:37
 #: widgets/Osd.cpp:578
@@ -577,10 +577,6 @@ msgstr "Non se puido analizar a información da imaxe do avatar."
 msgid "New Bookmark"
 msgstr "Novo marcador"
 
-#: amarokurls/BookmarkManager.cpp:43 MainWindow.cpp:779
-msgid "Bookmark Manager"
-msgstr "Xestor dos marcadores"
-
 #: amarokurls/BookmarkManagerWidget.cpp:44
 #: browsers/playlistbrowser/PlaylistCategory.cpp:86
 #, fuzzy
@@ -672,7 +668,7 @@ msgstr "Nova pista de código de tempo"
 #: collection/audiocd/AudioCdCollection.cpp:418
 #: collection/audiocd/AudioCdCollection.cpp:419
 #: collection/audiocd/AudioCdCollection.cpp:420
-#: context/applets/albums/AlbumItem.cpp:73 MainWindow.cpp:1225
+#: context/applets/albums/AlbumItem.cpp:73 MainWindow.cpp:1227
 msgid "Unknown"
 msgstr "Descoñecido"
 
@@ -685,35 +681,39 @@ msgstr "Contexto: %1"
 msgid "Bookmark Context View Applets"
 msgstr "Marcar os applets da vista de contexto"
 
-#: amarokurls/NavigationUrlGenerator.cpp:152
+#: amarokurls/PlayUrlGenerator.cpp:85
+msgid "Bookmark Track Position"
+msgstr "Marcar a posición da pista"
+
+#: amarokurls/BookmarkManager.cpp:43 MainWindow.cpp:781
+msgid "Bookmark Manager"
+msgstr "Xestor dos marcadores"
+
+#: amarokurls/NavigationUrlGenerator.cpp:170
 #, kde-format
 msgid "Album \"%1\" from %2"
 msgstr "Álbum \"%1\" de %2"
 
-#: amarokurls/NavigationUrlGenerator.cpp:154
+#: amarokurls/NavigationUrlGenerator.cpp:172
 #, kde-format
 msgid "Album \"%1\""
 msgstr "Álbum \"%1\""
 
-#: amarokurls/NavigationUrlGenerator.cpp:201
+#: amarokurls/NavigationUrlGenerator.cpp:219
 #, kde-format
 msgid "Artist \"%1\" from %2"
 msgstr "Artista \"%1\" de %2"
 
-#: amarokurls/NavigationUrlGenerator.cpp:203
+#: amarokurls/NavigationUrlGenerator.cpp:221
 #, kde-format
 msgid "Artist \"%1\""
 msgstr "Artista \"%1\""
 
-#: amarokurls/NavigationUrlGenerator.cpp:216 MainWindow.cpp:775
+#: amarokurls/NavigationUrlGenerator.cpp:234 MainWindow.cpp:777
 #, fuzzy
 #| msgid "Bookmarks"
 msgid "Bookmark Media Sources View"
 msgstr "Marcar a vista d"
-
-#: amarokurls/PlayUrlGenerator.cpp:85
-msgid "Bookmark Track Position"
-msgstr "Marcar a posición da pista"
 
 #: analyzers/analyzerfactory.cpp:82
 msgid "Click for Analyzers"
@@ -1216,8 +1216,8 @@ msgstr "Cualificación"
 #. i18n: ectx: property (text), item, widget (KComboBox, keywordCombo)
 #: browsers/playlistbrowser/DynamicBiasWidgets.cpp:256
 #: browsers/playlistbrowser/DynamicBiasWidgets.cpp:695
-#: context/applets/currenttrack/CurrentTrack.cpp:133
-#: context/applets/currenttrack/CurrentTrack.cpp:578
+#: context/applets/currenttrack/CurrentTrack.cpp:124
+#: context/applets/currenttrack/CurrentTrack.cpp:575
 #: playlist/PlaylistModel.cpp:714 widgets/SmartPlaylistEditor.cpp:185
 #: TrayIcon.cpp:155 rc.cpp:898
 msgid "Score"
@@ -1252,8 +1252,8 @@ msgstr "Primeira reprodución"
 
 #: browsers/playlistbrowser/DynamicBiasWidgets.cpp:261
 #: browsers/playlistbrowser/DynamicBiasWidgets.cpp:700
-#: context/applets/currenttrack/CurrentTrack.cpp:134
-#: context/applets/currenttrack/CurrentTrack.cpp:579 TrayIcon.cpp:185
+#: context/applets/currenttrack/CurrentTrack.cpp:125
+#: context/applets/currenttrack/CurrentTrack.cpp:576 TrayIcon.cpp:185
 msgid "Last Played"
 msgstr "Última reprodución"
 
@@ -2357,16 +2357,6 @@ msgid_plural "%1 tracks"
 msgstr[0] "%1 pista"
 msgstr[1] "%1 pistas"
 
-#: context/applets/albums/Albums.cpp:66
-#: context/engines/current/CurrentEngine.cpp:158
-msgid "Recently added albums"
-msgstr "Álbumes  engadidos recentemente"
-
-#: context/applets/albums/Albums.cpp:182
-#, kde-format
-msgid "Disc %1"
-msgstr "Disco %1"
-
 #: context/applets/albums/AlbumsView.cpp:114
 #: context/applets/videoclip/VideoItemButton.cpp:97
 msgid "&Queue"
@@ -2377,32 +2367,42 @@ msgstr "&Pór na cola"
 msgid "Edit Track Details"
 msgstr "Editar os detalles da pista"
 
-#: context/applets/currenttrack/CurrentTrack.cpp:83
+#: context/applets/albums/Albums.cpp:66
+#: context/engines/current/CurrentEngine.cpp:158
+msgid "Recently added albums"
+msgstr "Álbumes  engadidos recentemente"
+
+#: context/applets/albums/Albums.cpp:183
+#, kde-format
+msgid "Disc %1"
+msgstr "Disco %1"
+
+#: context/applets/currenttrack/CurrentTrack.cpp:84
 msgctxt "What artist is this track by"
 msgid "By"
 msgstr "De"
 
-#: context/applets/currenttrack/CurrentTrack.cpp:84
+#: context/applets/currenttrack/CurrentTrack.cpp:85
 msgctxt "What album is this track on"
 msgid "On"
 msgstr "En"
 
-#: context/applets/currenttrack/CurrentTrack.cpp:132
-#: context/applets/currenttrack/CurrentTrack.cpp:577
+#: context/applets/currenttrack/CurrentTrack.cpp:123
+#: context/applets/currenttrack/CurrentTrack.cpp:574
 msgid "Play count"
 msgstr "Nº de reproducións"
 
-#: context/applets/currenttrack/CurrentTrack.cpp:139
+#: context/applets/currenttrack/CurrentTrack.cpp:130
 msgid "Last played"
 msgstr "Última reprodución"
 
-#: context/applets/currenttrack/CurrentTrack.cpp:140
+#: context/applets/currenttrack/CurrentTrack.cpp:131
 msgid "Favorite tracks"
 msgstr "Pistas favoritas"
 
 #. i18n: file: context/applets/currenttrack/currentTrackSettings.ui:26
 #. i18n: ectx: property (windowTitle), widget (QWidget, currentTrackSettings)
-#: context/applets/currenttrack/CurrentTrack.cpp:721 rc.cpp:810
+#: context/applets/currenttrack/CurrentTrack.cpp:715 rc.cpp:810
 msgid "Current Track Settings"
 msgstr "Configuración da pista actual"
 
@@ -2678,7 +2678,7 @@ msgstr ""
 "Pode engadir applets desde a barra de ferramentas situada na parte inferior "
 "da vista de contexto."
 
-#: context/engines/current/CurrentEngine.cpp:312
+#: context/engines/current/CurrentEngine.cpp:314
 #, kde-format
 msgid "Albums by %1"
 msgstr "Álbumes de %1"
@@ -2943,7 +2943,7 @@ msgstr "%1 - %2 (%3)"
 msgid "Containments"
 msgstr "Confinamentos"
 
-#: covermanager/CoverManager.cpp:102 MainWindow.cpp:795
+#: covermanager/CoverManager.cpp:102 MainWindow.cpp:797
 #, fuzzy
 msgid "Cover Manager"
 msgstr "Xestor de portadas"
@@ -3066,38 +3066,6 @@ msgstr "Imaxe da portada"
 msgid "No Artist"
 msgstr "Ningún artista"
 
-#: covermanager/CoverFetcher.cpp:122
-msgid "No covers found."
-msgstr "Non se atopou portada ningunha."
-
-#: covermanager/CoverFetcher.cpp:141
-msgid "Fetching Cover"
-msgstr "Obtendo a portada"
-
-#: covermanager/CoverFetcher.cpp:163
-msgid "There was an error communicating with last.fm."
-msgstr "Produciuse un erro durante a comunicación con Last.fm."
-
-#: covermanager/CoverFetcher.cpp:293
-#, kde-format
-msgid "Retrieved cover successfully for '%1'."
-msgstr "A portada de '%1' recibiuse correctamente."
-
-#: covermanager/CoverFetcher.cpp:301
-#, kde-format
-msgid "Fetching cover for '%1' failed."
-msgstr "A obtención da portada de '%1' fallou."
-
-#: covermanager/CoverFetcher.cpp:309
-#, kde-format
-msgid "Canceled fetching cover for '%1'."
-msgstr "A obtención da portada de '%1' foi cancelada."
-
-#: covermanager/CoverFetcher.cpp:316
-#, kde-format
-msgid "Unable to find a cover for '%1'."
-msgstr "Non se atopou ningunha portada para '%1'."
-
 #: covermanager/CoverFetchingActions.cpp:44
 msgid "Fetch Cover"
 msgid_plural "Fetch Covers"
@@ -3112,7 +3080,7 @@ msgstr[0] "Obter o material gráfico deste álbum"
 msgstr[1] "Obter o material gráfico destes %1 álbumes"
 
 #: covermanager/CoverFetchingActions.cpp:66
-#: covermanager/CoverFoundDialog.cpp:192
+#: covermanager/CoverFoundDialog.cpp:216
 msgid "Display Cover"
 msgstr "Mostrar a portada"
 
@@ -3156,61 +3124,102 @@ msgstr[1] "Establecer material gráfico personalizado para estes %1 álbumes"
 msgid "Select Cover Image File"
 msgstr "Seleccionar o ficheiro da imaxe da portada"
 
-#: covermanager/CoverFoundDialog.cpp:75
+#: covermanager/CoverViewDialog.h:66
+#, fuzzy
+#| msgid "Cover size"
+msgid "Cover View"
+msgstr "Tamaño da portada"
+
+#: covermanager/CoverFetcher.cpp:122
+msgid "No covers found."
+msgstr "Non se atopou portada ningunha."
+
+#: covermanager/CoverFetcher.cpp:141
+msgid "Fetching Cover"
+msgstr "Obtendo a portada"
+
+#: covermanager/CoverFetcher.cpp:163
+msgid "There was an error communicating with last.fm."
+msgstr "Produciuse un erro durante a comunicación con Last.fm."
+
+#: covermanager/CoverFetcher.cpp:294
+#, kde-format
+msgid "Retrieved cover successfully for '%1'."
+msgstr "A portada de '%1' recibiuse correctamente."
+
+#: covermanager/CoverFetcher.cpp:302
+#, kde-format
+msgid "Fetching cover for '%1' failed."
+msgstr "A obtención da portada de '%1' fallou."
+
+#: covermanager/CoverFetcher.cpp:310
+#, kde-format
+msgid "Canceled fetching cover for '%1'."
+msgstr "A obtención da portada de '%1' foi cancelada."
+
+#: covermanager/CoverFetcher.cpp:317
+#, kde-format
+msgid "Unable to find a cover for '%1'."
+msgstr "Non se atopou ningunha portada para '%1'."
+
+#: covermanager/CoverFoundDialog.cpp:67
+msgid "More Results"
+msgstr ""
+
+#: covermanager/CoverFoundDialog.cpp:82
 msgid "Enter Custom Search"
 msgstr "Faga unha procura personalizada"
 
-#: covermanager/CoverFoundDialog.cpp:93
+#: covermanager/CoverFoundDialog.cpp:100
 #, fuzzy
 msgid "Last.fm"
 msgstr "last.fm"
 
-#: covermanager/CoverFoundDialog.cpp:94
+#: covermanager/CoverFoundDialog.cpp:101
 #, fuzzy
-#| msgid "&Search"
-msgid "Web Search"
-msgstr "&Procurar"
+#| msgctxt "The quality of music"
+#| msgid "Good"
+msgid "Google"
+msgstr "Boa"
 
-#: covermanager/CoverFoundDialog.cpp:241
+#: covermanager/CoverFoundDialog.cpp:102
+msgid "Yahoo!"
+msgstr ""
+
+#: covermanager/CoverFoundDialog.cpp:291
 #, fuzzy
 #| msgid "No purchases found!"
 msgid "No Images Found"
 msgstr "Non se atoparon compras!"
 
-#: covermanager/CoverFoundDialog.cpp:242
+#: covermanager/CoverFoundDialog.cpp:292
 #, kde-format
 msgid "1 Image Found"
 msgid_plural "%1 Images Found"
 msgstr[0] ""
 msgstr[1] ""
 
-#: covermanager/CoverFoundDialog.cpp:260 covermanager/CoverFoundDialog.cpp:490
+#: covermanager/CoverFoundDialog.cpp:310 covermanager/CoverFoundDialog.cpp:543
 #: dialogs/TagDialog.cpp:1023
 msgid "Size:"
 msgstr "Tamaño:"
 
-#: covermanager/CoverFoundDialog.cpp:284
+#: covermanager/CoverFoundDialog.cpp:334
 #, fuzzy
 msgid "Information"
 msgstr "Información sobre a pista"
 
-#: covermanager/CoverFoundDialog.cpp:285
+#: covermanager/CoverFoundDialog.cpp:335
 #, fuzzy
 #| msgid "Bitrate"
 msgid "Abstract"
 msgstr "Taxa de bits"
 
-#: covermanager/CoverFoundDialog.cpp:452
+#: covermanager/CoverFoundDialog.cpp:505
 #, fuzzy
 #| msgid "Fetching Cover"
 msgid "Fetching Large Cover"
 msgstr "Obtendo a portada"
-
-#: covermanager/CoverViewDialog.h:66
-#, fuzzy
-#| msgid "Cover size"
-msgid "Cover View"
-msgstr "Tamaño da portada"
 
 #: databaseimporter/amarok14/FastForwardImporterConfig.cpp:36
 msgid "Connection"
@@ -3721,7 +3730,7 @@ msgstr "&Avanzado..."
 msgid "Folder"
 msgstr "Cartafol"
 
-#: dialogs/ScriptManager.cpp:100 MainWindow.cpp:804
+#: dialogs/ScriptManager.cpp:100 MainWindow.cpp:806
 msgid "Script Manager"
 msgstr "Xestor dos scripts"
 
@@ -4928,194 +4937,9 @@ msgstr "Transmisión (%1)"
 msgid "Cannot write playlist (%1)."
 msgstr "Non se puido gardar a lista de reprodución (%1)."
 
-#: playlist/PlaylistActions.cpp:381
-msgid "Too many errors encountered in playlist. Playback stopped."
-msgstr "Atopáronse demasiados erros na lista, e a reprodución foi detida."
-
 #: playlist/PlaylistBreadcrumbItem.cpp:110
 msgid "Add a sorting level to the playlist."
 msgstr "Engadir un nivel á ordenación da lista de reprodución."
-
-#: playlist/PlaylistDefines.h:86
-msgctxt "Empty placeholder token used for spacing in playlist layouts"
-msgid "Placeholder"
-msgstr "Espazador"
-
-#: playlist/PlaylistDefines.h:87
-msgctxt "'Album' playlist column name and token for playlist layouts"
-msgid "Album"
-msgstr "Álbum"
-
-#: playlist/PlaylistDefines.h:88
-msgctxt "'Album artist' playlist column name and token for playlist layouts"
-msgid "Album artist"
-msgstr "Artista do álbum"
-
-#: playlist/PlaylistDefines.h:89
-msgctxt "'Artist' playlist column name and token for playlist layouts"
-msgid "Artist"
-msgstr "Artista"
-
-#: playlist/PlaylistDefines.h:90
-msgctxt "'Bitrate' playlist column name and token for playlist layouts"
-msgid "Bitrate"
-msgstr "Taxa de bits"
-
-#: playlist/PlaylistDefines.h:91
-msgctxt ""
-"'Beats per minute' playlist column name and token for playlist layouts"
-msgid "BPM"
-msgstr "LPM"
-
-#: playlist/PlaylistDefines.h:92
-msgctxt "'Comment' playlist column name and token for playlist layouts"
-msgid "Comment"
-msgstr "Comentario"
-
-#: playlist/PlaylistDefines.h:93
-msgctxt "'Composer' playlist column name and token for playlist layouts"
-msgid "Composer"
-msgstr "Compositor"
-
-#: playlist/PlaylistDefines.h:94
-msgctxt "'Cover image' playlist column name and token for playlist layouts"
-msgid "Cover image"
-msgstr "Imaxe da portada"
-
-#: playlist/PlaylistDefines.h:95
-msgctxt "'Directory' playlist column name and token for playlist layouts"
-msgid "Directory"
-msgstr "Directorio"
-
-#: playlist/PlaylistDefines.h:96
-msgctxt "'Disc number' playlist column name and token for playlist layouts"
-msgid "Disc number"
-msgstr "Número do disco"
-
-#: playlist/PlaylistDefines.h:97
-msgctxt ""
-"'Divider' token for playlist layouts representing a small visual divider"
-msgid "Divider"
-msgstr "Divisoria"
-
-#: playlist/PlaylistDefines.h:98
-msgctxt "'File name' playlist column name and token for playlist layouts"
-msgid "File name"
-msgstr "Nome do ficheiro"
-
-#: playlist/PlaylistDefines.h:99
-msgctxt "'File size' playlist column name and token for playlist layouts"
-msgid "File size"
-msgstr "Tamaño do ficheiro"
-
-#: playlist/PlaylistDefines.h:100
-msgctxt "'Genre' playlist column name and token for playlist layouts"
-msgid "Genre"
-msgstr "Estilo"
-
-#: playlist/PlaylistDefines.h:101
-msgctxt ""
-"'Group length' (total play time of group) playlist column name and token for "
-"playlist layouts"
-msgid "Group length"
-msgstr "Duración do grupo"
-
-#: playlist/PlaylistDefines.h:102
-msgctxt ""
-"'Group tracks' (number of tracks in group) playlist column name and token "
-"for playlist layouts"
-msgid "Group tracks"
-msgstr "Pistas no grupo"
-
-#: playlist/PlaylistDefines.h:103
-msgctxt "'Labels' playlist column name and token for playlist layouts"
-msgid "Labels"
-msgstr "Etiquetas"
-
-#: playlist/PlaylistDefines.h:104
-msgctxt ""
-"'Last played' (when was track last played) playlist column name and token "
-"for playlist layouts"
-msgid "Last played"
-msgstr "Última reprodución"
-
-#: playlist/PlaylistDefines.h:105 playlist/PlaylistDefines.h:106
-msgctxt ""
-"'Length' (track length) playlist column name and token for playlist layouts"
-msgid "Length"
-msgstr "Duración"
-
-#: playlist/PlaylistDefines.h:107
-msgctxt "'Mood' playlist column name and token for playlist layouts"
-msgid "Mood"
-msgstr "Estado de ánimo"
-
-#: playlist/PlaylistDefines.h:108
-#: playlist/layouts/PlaylistLayoutEditDialog.cpp:72
-msgctxt "'Moodbar' playlist column name and token for playlist layouts"
-msgid "Moodbar"
-msgstr "Barra do estado de ánimo"
-
-#: playlist/PlaylistDefines.h:109
-msgctxt "'Play count' playlist column name and token for playlist layouts"
-msgid "Play count"
-msgstr "Nº de reproducións"
-
-#: playlist/PlaylistDefines.h:110
-msgctxt "'Rating' playlist column name and token for playlist layouts"
-msgid "Rating"
-msgstr "Cualificación"
-
-#: playlist/PlaylistDefines.h:111
-msgctxt "'Sample rate' playlist column name and token for playlist layouts"
-msgid "Sample rate"
-msgstr "Taxa da mostraxe"
-
-#: playlist/PlaylistDefines.h:112
-msgctxt "'Score' playlist column name and token for playlist layouts"
-msgid "Score"
-msgstr "Puntuación"
-
-#: playlist/PlaylistDefines.h:113
-msgctxt ""
-"'Source' (local collection, Magnatune.com, last.fm, ... ) playlist column "
-"name and token for playlist layouts"
-msgid "Source"
-msgstr "Orixe"
-
-#: playlist/PlaylistDefines.h:114
-msgctxt "'SourceEmblem' playlist column name and token for playlist layouts"
-msgid "SourceEmblem"
-msgstr "Emblema da orixe"
-
-#: playlist/PlaylistDefines.h:115
-msgctxt ""
-"'Title' (track name) playlist column name and token for playlist layouts"
-msgid "Title"
-msgstr "Título"
-
-#: playlist/PlaylistDefines.h:116
-msgctxt ""
-"'Title (with track number)' (track name prefixed with the track number) "
-"playlist column name and token for playlist layouts"
-msgid "Title (with track number)"
-msgstr "Título (co número da pista)"
-
-#: playlist/PlaylistDefines.h:117
-msgctxt "'Track number' playlist column name and token for playlist layouts"
-msgid "Track number"
-msgstr "Número da pista"
-
-#: playlist/PlaylistDefines.h:118
-msgctxt ""
-"'Type' (file format) playlist column name and token for playlist layouts"
-msgid "Type"
-msgstr "Tipo"
-
-#: playlist/PlaylistDefines.h:119
-msgctxt "'Year' playlist column name and token for playlist layouts"
-msgid "Year"
-msgstr "Ano"
 
 #: playlist/PlaylistHeader.cpp:40
 msgid "Track Number - Title"
@@ -5144,7 +4968,7 @@ msgstr "Procurar %1"
 msgid "%1 layout"
 msgstr "Deseño %1"
 
-#: playlist/PlaylistViewUrlGenerator.cpp:101 MainWindow.cpp:787
+#: playlist/PlaylistViewUrlGenerator.cpp:101 MainWindow.cpp:789
 #, fuzzy
 #| msgid "Smart Playlist"
 msgid "Bookmark Playlist Setup"
@@ -5286,6 +5110,12 @@ msgstr "O deseño '%1' é un dos predeterminados e non se pode eliminar."
 #: playlist/layouts/LayoutManager.cpp:397
 msgid "Cannot Delete Default Layouts"
 msgstr "Os deseños predeterminados non se poden eliminar"
+
+#: playlist/layouts/PlaylistLayoutEditDialog.cpp:72
+#: playlist/PlaylistDefines.h:108
+msgctxt "'Moodbar' playlist column name and token for playlist layouts"
+msgid "Moodbar"
+msgstr "Barra do estado de ánimo"
 
 #: playlist/layouts/PlaylistLayoutEditDialog.cpp:104
 msgid "Head"
@@ -5443,6 +5273,12 @@ msgstr "Aliñamento: "
 msgid "Font: "
 msgstr "Tipo de letra: "
 
+#: playlist/layouts/LayoutEditDialog.cpp:239
+#, fuzzy, kde-format
+#| msgid "Configuration for"
+msgid "Configuration for '%1'"
+msgstr "Configuración de"
+
 #: playlist/navigators/NavigatorConfigAction.cpp:33
 msgid "Track Progression"
 msgstr "Progresión da pista"
@@ -5491,7 +5327,7 @@ msgstr "Non reproducidas recentemente"
 msgid "Stop Playing After This Track"
 msgstr "Deter a reprodución despois desta pista"
 
-#: playlist/view/PlaylistViewCommon.cpp:128 MainWindow.cpp:905
+#: playlist/view/PlaylistViewCommon.cpp:128 MainWindow.cpp:907
 #, fuzzy
 msgid "Queue Track"
 msgstr "Pór a pista en espera"
@@ -5575,6 +5411,185 @@ msgstr "Estado de ánimo"
 #: playlist/PlaylistModel.cpp:719
 msgid "File Size"
 msgstr "Tamaño do ficheiro"
+
+#: playlist/PlaylistActions.cpp:381
+msgid "Too many errors encountered in playlist. Playback stopped."
+msgstr "Atopáronse demasiados erros na lista, e a reprodución foi detida."
+
+#: playlist/PlaylistDefines.h:86
+msgctxt "Empty placeholder token used for spacing in playlist layouts"
+msgid "Placeholder"
+msgstr "Espazador"
+
+#: playlist/PlaylistDefines.h:87
+msgctxt "'Album' playlist column name and token for playlist layouts"
+msgid "Album"
+msgstr "Álbum"
+
+#: playlist/PlaylistDefines.h:88
+msgctxt "'Album artist' playlist column name and token for playlist layouts"
+msgid "Album artist"
+msgstr "Artista do álbum"
+
+#: playlist/PlaylistDefines.h:89
+msgctxt "'Artist' playlist column name and token for playlist layouts"
+msgid "Artist"
+msgstr "Artista"
+
+#: playlist/PlaylistDefines.h:90
+msgctxt "'Bitrate' playlist column name and token for playlist layouts"
+msgid "Bitrate"
+msgstr "Taxa de bits"
+
+#: playlist/PlaylistDefines.h:91
+msgctxt ""
+"'Beats per minute' playlist column name and token for playlist layouts"
+msgid "BPM"
+msgstr "LPM"
+
+#: playlist/PlaylistDefines.h:92
+msgctxt "'Comment' playlist column name and token for playlist layouts"
+msgid "Comment"
+msgstr "Comentario"
+
+#: playlist/PlaylistDefines.h:93
+msgctxt "'Composer' playlist column name and token for playlist layouts"
+msgid "Composer"
+msgstr "Compositor"
+
+#: playlist/PlaylistDefines.h:94
+msgctxt "'Cover image' playlist column name and token for playlist layouts"
+msgid "Cover image"
+msgstr "Imaxe da portada"
+
+#: playlist/PlaylistDefines.h:95
+msgctxt "'Directory' playlist column name and token for playlist layouts"
+msgid "Directory"
+msgstr "Directorio"
+
+#: playlist/PlaylistDefines.h:96
+msgctxt "'Disc number' playlist column name and token for playlist layouts"
+msgid "Disc number"
+msgstr "Número do disco"
+
+#: playlist/PlaylistDefines.h:97
+msgctxt ""
+"'Divider' token for playlist layouts representing a small visual divider"
+msgid "Divider"
+msgstr "Divisoria"
+
+#: playlist/PlaylistDefines.h:98
+msgctxt "'File name' playlist column name and token for playlist layouts"
+msgid "File name"
+msgstr "Nome do ficheiro"
+
+#: playlist/PlaylistDefines.h:99
+msgctxt "'File size' playlist column name and token for playlist layouts"
+msgid "File size"
+msgstr "Tamaño do ficheiro"
+
+#: playlist/PlaylistDefines.h:100
+msgctxt "'Genre' playlist column name and token for playlist layouts"
+msgid "Genre"
+msgstr "Estilo"
+
+#: playlist/PlaylistDefines.h:101
+msgctxt ""
+"'Group length' (total play time of group) playlist column name and token for "
+"playlist layouts"
+msgid "Group length"
+msgstr "Duración do grupo"
+
+#: playlist/PlaylistDefines.h:102
+msgctxt ""
+"'Group tracks' (number of tracks in group) playlist column name and token "
+"for playlist layouts"
+msgid "Group tracks"
+msgstr "Pistas no grupo"
+
+#: playlist/PlaylistDefines.h:103
+msgctxt "'Labels' playlist column name and token for playlist layouts"
+msgid "Labels"
+msgstr "Etiquetas"
+
+#: playlist/PlaylistDefines.h:104
+msgctxt ""
+"'Last played' (when was track last played) playlist column name and token "
+"for playlist layouts"
+msgid "Last played"
+msgstr "Última reprodución"
+
+#: playlist/PlaylistDefines.h:105 playlist/PlaylistDefines.h:106
+msgctxt ""
+"'Length' (track length) playlist column name and token for playlist layouts"
+msgid "Length"
+msgstr "Duración"
+
+#: playlist/PlaylistDefines.h:107
+msgctxt "'Mood' playlist column name and token for playlist layouts"
+msgid "Mood"
+msgstr "Estado de ánimo"
+
+#: playlist/PlaylistDefines.h:109
+msgctxt "'Play count' playlist column name and token for playlist layouts"
+msgid "Play count"
+msgstr "Nº de reproducións"
+
+#: playlist/PlaylistDefines.h:110
+msgctxt "'Rating' playlist column name and token for playlist layouts"
+msgid "Rating"
+msgstr "Cualificación"
+
+#: playlist/PlaylistDefines.h:111
+msgctxt "'Sample rate' playlist column name and token for playlist layouts"
+msgid "Sample rate"
+msgstr "Taxa da mostraxe"
+
+#: playlist/PlaylistDefines.h:112
+msgctxt "'Score' playlist column name and token for playlist layouts"
+msgid "Score"
+msgstr "Puntuación"
+
+#: playlist/PlaylistDefines.h:113
+msgctxt ""
+"'Source' (local collection, Magnatune.com, last.fm, ... ) playlist column "
+"name and token for playlist layouts"
+msgid "Source"
+msgstr "Orixe"
+
+#: playlist/PlaylistDefines.h:114
+msgctxt "'SourceEmblem' playlist column name and token for playlist layouts"
+msgid "SourceEmblem"
+msgstr "Emblema da orixe"
+
+#: playlist/PlaylistDefines.h:115
+msgctxt ""
+"'Title' (track name) playlist column name and token for playlist layouts"
+msgid "Title"
+msgstr "Título"
+
+#: playlist/PlaylistDefines.h:116
+msgctxt ""
+"'Title (with track number)' (track name prefixed with the track number) "
+"playlist column name and token for playlist layouts"
+msgid "Title (with track number)"
+msgstr "Título (co número da pista)"
+
+#: playlist/PlaylistDefines.h:117
+msgctxt "'Track number' playlist column name and token for playlist layouts"
+msgid "Track number"
+msgstr "Número da pista"
+
+#: playlist/PlaylistDefines.h:118
+msgctxt ""
+"'Type' (file format) playlist column name and token for playlist layouts"
+msgid "Type"
+msgstr "Tipo"
+
+#: playlist/PlaylistDefines.h:119
+msgctxt "'Year' playlist column name and token for playlist layouts"
+msgid "Year"
+msgstr "Ano"
 
 #: playlistmanager/PlaylistManager.cpp:189
 #, fuzzy
@@ -7070,7 +7085,7 @@ msgstr "Listar e executar os marcadores, ou ben crealos novos"
 msgid "Amarok Bookmarks"
 msgstr "Marcadores do Amarok"
 
-#: widgets/MainControlsWidget.cpp:62 MainWindow.cpp:828
+#: widgets/MainControlsWidget.cpp:62 MainWindow.cpp:830
 #, fuzzy
 msgid "Previous Track"
 msgstr "Pista anterior"
@@ -7083,7 +7098,7 @@ msgstr "Reproducir/pór en pausa"
 msgid "Stop"
 msgstr "Deter"
 
-#: widgets/MainControlsWidget.cpp:86 MainWindow.cpp:844
+#: widgets/MainControlsWidget.cpp:86 MainWindow.cpp:846
 #, fuzzy
 msgid "Next Track"
 msgstr "Pista seguinte"
@@ -7449,541 +7464,6 @@ msgstr "Sen soporte de MP3"
 #| msgid "Pre-amp"
 msgid "Preamp"
 msgstr "Preeamplificación"
-
-#: ActionClasses.cpp:86
-msgid "Amarok Menu"
-msgstr "Menú de Amarok"
-
-#: ActionClasses.cpp:306
-msgid "Click to change"
-msgstr "Prema para mudar"
-
-#: ActionClasses.cpp:323
-msgid "&Replay Gain Mode"
-msgstr "Modo &Replay Gain (normalizar o volume)"
-
-#: ActionClasses.cpp:325
-msgctxt "Replay Gain state, as in, disabled"
-msgid "&Off"
-msgstr "&Desactivado"
-
-#: ActionClasses.cpp:325
-msgctxt "Item, as in, music"
-msgid "&Track"
-msgstr "&Pista"
-
-#: ActionClasses.cpp:326
-msgid "&Album"
-msgstr "&Álbum"
-
-#: ActionClasses.cpp:335
-msgid "&Equalizer"
-msgstr "&Ecualizador"
-
-#: ActionClasses.cpp:363
-msgid "Your current setup does not support the equalizer feature"
-msgstr "A configuración actual non soporta a función do ecualizador"
-
-#: ActionClasses.cpp:368
-msgctxt "Equalizer state, as in, disabled"
-msgid "&Off"
-msgstr "&Desactivado"
-
-#: ActionClasses.cpp:419
-msgid "Burn"
-msgstr "Gravar"
-
-#: ActionClasses.cpp:458
-msgid "Current Playlist"
-msgstr "Lista de reprodución actual"
-
-#: ActionClasses.cpp:459
-msgid "Selected Tracks"
-msgstr "Pistas seleccionadas"
-
-#: ActionClasses.cpp:526
-msgid "Stop after current Track"
-msgstr "Deter logo da pista actual"
-
-#: ActionClasses.cpp:541
-msgid "Stop after current track: On"
-msgstr "Deter logo da pista actual: activado"
-
-#: ActionClasses.cpp:546
-msgid "Stop after current track: Off"
-msgstr "Deter logo da pista actual: desactivado"
-
-#: MainWindow.cpp:262
-#, fuzzy
-#| msgid "File Extension of Source"
-msgid "Media Sources"
-msgstr "Extensión de ficheiro da fonte"
-
-#: MainWindow.cpp:295
-msgid "Context"
-msgstr "Contexto"
-
-#: MainWindow.cpp:323
-msgid "Local Music"
-msgstr ""
-
-#: MainWindow.cpp:325
-#, fuzzy
-msgid "Local sources of content"
-msgstr "Orixes de contido locais"
-
-#: MainWindow.cpp:333
-msgid "Internet"
-msgstr "Internet"
-
-#: MainWindow.cpp:335
-#, fuzzy
-msgid "Online sources of content"
-msgstr "Orixes de contido online"
-
-#: MainWindow.cpp:341
-#, fuzzy
-msgid "Playlists"
-msgstr "Listas de reprodución"
-
-#: MainWindow.cpp:343
-#, fuzzy
-#| msgid "Various Artists"
-msgid "Various types of playlists"
-msgstr "Varios artistas"
-
-#: MainWindow.cpp:350
-#, fuzzy
-msgid "Files"
-msgstr "Ficheiros"
-
-#: MainWindow.cpp:352
-msgid "Browse local hard drive for content"
-msgstr ""
-
-#: MainWindow.cpp:422
-#, fuzzy
-#| msgctxt "@title buttontext for popup-menu"
-#| msgid "View"
-msgctxt "@item:inmenu"
-msgid "&View"
-msgstr "Vista"
-
-#: MainWindow.cpp:425
-msgid "Lock layout"
-msgstr "Bloquear o deseño"
-
-#: MainWindow.cpp:536
-#, fuzzy
-msgid ""
-"<qt>Closing the main window will keep Amarok running in the System Tray. Use "
-"<B>Quit</B> from the menu, or the Amarok tray icon to exit the application.</"
-"qt>"
-msgstr ""
-"<qt>Se pecha a fiestra principal Amarok continuará a funcionar na bandexa do "
-"sistema. Use <B>Pechar</B> no menú, ou a icona de Amarok na bandexa para "
-"saír do programa</qt>"
-
-#: MainWindow.cpp:538
-#, fuzzy
-msgid "Docking in System Tray"
-msgstr "Ancorar na Bandexa do sistema"
-
-#: MainWindow.cpp:556
-#, fuzzy
-msgid "Use relative path for &saving"
-msgstr "Empregar rotas relativas para &gardar"
-
-#: MainWindow.cpp:567
-#, fuzzy
-msgid "Save As"
-msgstr "Gardar como"
-
-#: MainWindow.cpp:615
-#, fuzzy
-msgid "Play Media (Files or URLs)"
-msgstr "Reproducir os medios (ficheiros ou URLs)"
-
-#: MainWindow.cpp:615
-#, fuzzy
-msgid "Add Media (Files or URLs)"
-msgstr "Engadir medios (ficheiros ou URLs)"
-
-#: MainWindow.cpp:630
-#, fuzzy
-msgid "Add Stream"
-msgstr "Engadir unha retransmisións"
-
-#: MainWindow.cpp:630
-#, fuzzy
-msgid "Enter Stream URL:"
-msgstr "Introduza o URL da retransmisión:"
-
-#: MainWindow.cpp:751
-#, fuzzy
-msgid "&Add Media..."
-msgstr "Engadir &medios..."
-
-#: MainWindow.cpp:756
-#, fuzzy
-msgctxt "clear playlist"
-msgid "&Clear Playlist"
-msgstr "&Limpar a lista de temas"
-
-#: MainWindow.cpp:760
-#, fuzzy
-#| msgid "Remove %1"
-msgctxt "Remove duplicate and dead (unplayable) tracks from the playlist"
-msgid "Re&move Duplicates"
-msgstr "Eliminar %1"
-
-#: MainWindow.cpp:767
-#, fuzzy
-msgid "&Add Stream..."
-msgstr "Engadir unha &retransmisión..."
-
-#: MainWindow.cpp:771
-#, fuzzy
-msgid "&Export Playlist As..."
-msgstr "&Exportar a lista de temas como..."
-
-#: MainWindow.cpp:783
-msgid "Equalizer"
-msgstr "Ecualizador"
-
-#: MainWindow.cpp:791
-#, fuzzy
-#| msgid "Various Artists"
-msgid "Bookmark Context Applets"
-msgstr "Marcar os applets de contexto"
-
-#: MainWindow.cpp:799
-#, fuzzy
-msgid "Play Media..."
-msgstr "Reproducir os medios..."
-
-#: MainWindow.cpp:808
-#, fuzzy
-msgid "&Seek Forward"
-msgstr "Procurar cara a &adiante"
-
-#: MainWindow.cpp:814
-#, fuzzy
-msgid "&Seek Backward"
-msgstr "Procurar cara a &atrás"
-
-#: MainWindow.cpp:821
-#, fuzzy
-msgid "Update Collection"
-msgstr "Actualizar a colección"
-
-#: MainWindow.cpp:834
-#, fuzzy
-#| msgid "Repeat Playlist"
-msgid "Repopulate Playlist"
-msgstr "Repetir a Lista de temas"
-
-#: MainWindow.cpp:849
-#, fuzzy
-msgid "Increase Volume"
-msgstr "Aumentar o volume"
-
-#: MainWindow.cpp:855
-#, fuzzy
-msgid "Decrease Volume"
-msgstr "Diminuír o volume"
-
-#: MainWindow.cpp:861
-#, fuzzy
-msgid "Toggle Main Window"
-msgstr "Conmutar a fiestra principal"
-
-#: MainWindow.cpp:866
-msgid "Toggle Full Screen"
-msgstr ""
-
-#: MainWindow.cpp:871
-msgid "Jump to"
-msgstr ""
-
-#: MainWindow.cpp:876
-msgid "Show active track"
-msgstr "Mostrar a pista activa"
-
-#: MainWindow.cpp:880
-#, fuzzy
-#| msgid "Location:"
-msgid "Show Notification Popup"
-msgstr "Localización:"
-
-#: MainWindow.cpp:885
-#, fuzzy
-msgid "Mute Volume"
-msgstr "Volume mudo"
-
-#: MainWindow.cpp:890
-#, fuzzy
-#| msgid "Love Current Track"
-msgid "Last.fm: Love Current Track"
-msgstr "Marcar a pista actual como Preferida"
-
-#: MainWindow.cpp:895
-#, fuzzy
-#| msgid "Love Current Track"
-msgid "Last.fm: Ban Current Track"
-msgstr "Marcar a pista actual como Preferida"
-
-#: MainWindow.cpp:900
-#, fuzzy
-#| msgid "Love Current Track"
-msgid "Last.fm: Skip Current Track"
-msgstr "Marcar a pista actual como Preferida"
-
-#: MainWindow.cpp:910
-#, fuzzy
-msgid "Rate Current Track: 1"
-msgstr "Cualificación da pista actual: 1"
-
-#: MainWindow.cpp:915
-#, fuzzy
-msgid "Rate Current Track: 2"
-msgstr "Cualificación da pista actual: 2"
-
-#: MainWindow.cpp:920
-#, fuzzy
-msgid "Rate Current Track: 3"
-msgstr "Cualificación da pista actual: 3"
-
-#: MainWindow.cpp:925
-#, fuzzy
-msgid "Rate Current Track: 4"
-msgstr "Cualificación da pista actual: 4"
-
-#: MainWindow.cpp:930
-#, fuzzy
-msgid "Rate Current Track: 5"
-msgstr "Cualificación da pista actual: 5"
-
-#: MainWindow.cpp:947
-msgid "&About Amarok"
-msgstr "&Acerca de Amarok"
-
-#: MainWindow.cpp:951
-msgid "&Report Bug..."
-msgstr ""
-
-#: MainWindow.cpp:1011
-#, fuzzy
-msgid "&Music"
-msgstr "&Música"
-
-#: MainWindow.cpp:1015
-#, fuzzy
-msgid "&Amarok"
-msgstr "&Amarok"
-
-#: MainWindow.cpp:1034
-#, fuzzy
-msgid "&Playlist"
-msgstr "&Lista de temas"
-
-#: MainWindow.cpp:1050
-#, fuzzy
-msgid "&Tools"
-msgstr "&Ferramentas"
-
-#: MainWindow.cpp:1062
-msgid "&Settings"
-msgstr "&Configuración"
-
-#: MainWindow.cpp:1206
-#, kde-format
-msgid "Paused  ::  %1"
-msgstr "En pausa  ::  %1"
-
-#: MainWindow.cpp:1225
-#, fuzzy, kde-format
-msgid "%1 - %2  ::  %3"
-msgstr "%1 - %2  ::  %3"
-
-#: likeback/LikeBack.cpp:218
-msgid "&Send a Comment to the Developers"
-msgstr ""
-
-#: likeback/LikeBack.cpp:224
-#, fuzzy
-msgid "Show &Feedback Icons"
-msgstr "Mostrar os controis da reprodución inseridos"
-
-#: likeback/LikeBack.cpp:293
-#, kde-format
-msgctxt "Welcome dialog text, header text for test apps"
-msgid "Welcome to this testing version of %1."
-msgstr ""
-
-#: likeback/LikeBack.cpp:298
-#, kde-format
-msgctxt "Welcome dialog text, header text for released apps"
-msgid "Welcome to %1."
-msgstr ""
-
-#: likeback/LikeBack.cpp:306
-msgctxt ""
-"Welcome dialog text, explanation for both the like and dislike buttons"
-msgid ""
-"Each time you have a great or frustrating experience, please click on the "
-"appropriate face below the window title bar, briefly describe what you like "
-"or dislike and click on 'Send'."
-msgstr ""
-
-#: likeback/LikeBack.cpp:313
-msgctxt "Welcome dialog text, explanation for the like button alone"
-msgid ""
-"Each time you have a great experience, please click on the smiling face "
-"below the window title-bar, briefly describe what you like and click on "
-"'Send'."
-msgstr ""
-
-#: likeback/LikeBack.cpp:320
-msgctxt "Welcome dialog text, explanation for the dislike button alone"
-msgid ""
-"Each time you have a frustrating experience, please click on the frowning "
-"face below the window title-bar, briefly describe what you dislike and click "
-"on 'Send'."
-msgstr ""
-
-#: likeback/LikeBack.cpp:330
-msgctxt "Welcome dialog text, explanation for the bug button"
-msgid ""
-"If you experience an improper behavior in the application, just click on the "
-"bug icon in the top-right corner of the window, describe the behavior and "
-"click on 'Send'."
-msgstr ""
-
-#: likeback/LikeBack.cpp:342
-msgctxt "Welcome dialog text, usage example"
-msgid "<b>I like</b> the new artwork. Very refreshing."
-msgstr ""
-
-#: likeback/LikeBack.cpp:350
-msgctxt "Welcome dialog text, usage example"
-msgid ""
-"<b>I dislike</b> the welcome page of this assistant. Too time consuming."
-msgstr ""
-
-#: likeback/LikeBack.cpp:358
-msgctxt "Welcome dialog text, usage example"
-msgid ""
-"<b>The application shows an improper behavior</b> when clicking the Add "
-"button. Nothing happens."
-msgstr ""
-
-#: likeback/LikeBack.cpp:366
-msgctxt "Welcome dialog text, usage example"
-msgid "<b>I desire a new feature</b> allowing me to send my work by email."
-msgstr ""
-
-#: likeback/LikeBack.cpp:379
-msgctxt "Welcome dialog text, us=the developers, it=the application"
-msgid "To help us improve it, your comments are important."
-msgstr ""
-
-#: likeback/LikeBack.cpp:382
-#, fuzzy
-#| msgid "Example: My_Ipod"
-msgctxt "Welcome dialog text, header for the examples"
-msgid "Example"
-msgid_plural "Examples"
-msgstr[0] "Exemplo: OMeu_iPod"
-msgstr[1] "Exemplo: OMeu_iPod"
-
-#: likeback/LikeBack.cpp:388
-msgctxt "Welcome dialog title"
-msgid "Help Improve the Application"
-msgstr ""
-
-#: likeback/LikeBackDialog.cpp:45
-msgid "Send a Comment to the Developers"
-msgstr ""
-
-#: likeback/LikeBackDialog.cpp:154
-#, kde-format
-msgctxt ""
-"Feedback dialog text, message with one accepted language for the comments"
-msgid ""
-"Please, write it in <b>%1</b> (you may want to use an <a href=\"%3\">online "
-"translation tool</a> for this).<br/>"
-msgstr ""
-
-#: likeback/LikeBackDialog.cpp:161
-#, kde-format
-msgctxt ""
-"Feedback dialog text, message with list of accepted languages for the "
-"comments"
-msgid ""
-"Please, write it in <b>%1 or %2</b> (you may want to use an <a href=\"%3"
-"\">online translation tool</a> for this).<br/>"
-msgstr ""
-
-#: likeback/LikeBackDialog.cpp:174
-msgctxt ""
-"Feedback dialog text, message to remind to balance the likes and dislikes"
-msgid ""
-"To make the comments you send more useful in improving this application, try "
-"to send the same amount of positive and negative comments.<br/>"
-msgstr ""
-
-#: likeback/LikeBackDialog.cpp:183
-msgctxt "Feedback dialog text, text to disallow feature requests"
-msgid ""
-"Please, do not ask for new features: this kind of request will be ignored."
-"<br/>"
-msgstr ""
-
-#: likeback/LikeBackDialog.cpp:189
-#, kde-format
-msgctxt ""
-"Feedback dialog text, %1=Application name,%2=message with list of accepted "
-"languages for the comment,%3=optional text to remind to balance the likes "
-"and dislikes,%4=optional text to disallow feature requests."
-msgid ""
-"<p>You can provide the developers a brief description of your opinions about "
-"%1.<br/>%2 %3%4</p>"
-msgstr ""
-
-#: likeback/LikeBackDialog.cpp:230
-#, fuzzy, kde-format
-msgid ""
-"The email address you have entered is not valid, and cannot be used: '%1'"
-msgstr "O enderezo de correo electrónico que inseriu non semella ser válido"
-
-#: likeback/LikeBackDialog.cpp:302
-msgctxt "Dialog box text"
-msgid ""
-"<p>Your comment has been sent successfully.</p><p>Thank you for your time.</"
-"p>"
-msgstr ""
-
-#: likeback/LikeBackDialog.cpp:304
-#, fuzzy
-#| msgid "Comment"
-msgctxt "Dialog box title"
-msgid "Comment Sent"
-msgstr "Comentario"
-
-#: likeback/LikeBackDialog.cpp:315
-msgctxt "Dialog box text"
-msgid ""
-"<p>There has been an error while trying to send the comment.</p><p>Please, "
-"try again later.</p>"
-msgstr ""
-
-#: likeback/LikeBackDialog.cpp:317
-#, fuzzy
-#| msgid "Collection Scan Error"
-msgctxt "Dialog box title"
-msgid "Comment Sending Error"
-msgstr "Produciuse un erro durante a exploración da colección"
 
 #. i18n: file: amarokconfig.kcfg:13
 #. i18n: ectx: label, entry, group (General Options)
@@ -12014,6 +11494,546 @@ msgstr "Agrupamentos"
 msgid "Verbose"
 msgstr ""
 
+#: likeback/LikeBack.cpp:218
+msgid "&Send a Comment to the Developers"
+msgstr ""
+
+#: likeback/LikeBack.cpp:224
+#, fuzzy
+msgid "Show &Feedback Icons"
+msgstr "Mostrar os controis da reprodución inseridos"
+
+#: likeback/LikeBack.cpp:293
+#, kde-format
+msgctxt "Welcome dialog text, header text for test apps"
+msgid "Welcome to this testing version of %1."
+msgstr ""
+
+#: likeback/LikeBack.cpp:298
+#, kde-format
+msgctxt "Welcome dialog text, header text for released apps"
+msgid "Welcome to %1."
+msgstr ""
+
+#: likeback/LikeBack.cpp:306
+msgctxt ""
+"Welcome dialog text, explanation for both the like and dislike buttons"
+msgid ""
+"Each time you have a great or frustrating experience, please click on the "
+"appropriate face below the window title bar, briefly describe what you like "
+"or dislike and click on 'Send'."
+msgstr ""
+
+#: likeback/LikeBack.cpp:313
+msgctxt "Welcome dialog text, explanation for the like button alone"
+msgid ""
+"Each time you have a great experience, please click on the smiling face "
+"below the window title-bar, briefly describe what you like and click on "
+"'Send'."
+msgstr ""
+
+#: likeback/LikeBack.cpp:320
+msgctxt "Welcome dialog text, explanation for the dislike button alone"
+msgid ""
+"Each time you have a frustrating experience, please click on the frowning "
+"face below the window title-bar, briefly describe what you dislike and click "
+"on 'Send'."
+msgstr ""
+
+#: likeback/LikeBack.cpp:330
+msgctxt "Welcome dialog text, explanation for the bug button"
+msgid ""
+"If you experience an improper behavior in the application, just click on the "
+"bug icon in the top-right corner of the window, describe the behavior and "
+"click on 'Send'."
+msgstr ""
+
+#: likeback/LikeBack.cpp:342
+msgctxt "Welcome dialog text, usage example"
+msgid "<b>I like</b> the new artwork. Very refreshing."
+msgstr ""
+
+#: likeback/LikeBack.cpp:350
+msgctxt "Welcome dialog text, usage example"
+msgid ""
+"<b>I dislike</b> the welcome page of this assistant. Too time consuming."
+msgstr ""
+
+#: likeback/LikeBack.cpp:358
+msgctxt "Welcome dialog text, usage example"
+msgid ""
+"<b>The application shows an improper behavior</b> when clicking the Add "
+"button. Nothing happens."
+msgstr ""
+
+#: likeback/LikeBack.cpp:366
+msgctxt "Welcome dialog text, usage example"
+msgid "<b>I desire a new feature</b> allowing me to send my work by email."
+msgstr ""
+
+#: likeback/LikeBack.cpp:379
+msgctxt "Welcome dialog text, us=the developers, it=the application"
+msgid "To help us improve it, your comments are important."
+msgstr ""
+
+#: likeback/LikeBack.cpp:382
+#, fuzzy
+#| msgid "Example: My_Ipod"
+msgctxt "Welcome dialog text, header for the examples"
+msgid "Example"
+msgid_plural "Examples"
+msgstr[0] "Exemplo: OMeu_iPod"
+msgstr[1] "Exemplo: OMeu_iPod"
+
+#: likeback/LikeBack.cpp:388
+msgctxt "Welcome dialog title"
+msgid "Help Improve the Application"
+msgstr ""
+
+#: likeback/LikeBackDialog.cpp:45
+msgid "Send a Comment to the Developers"
+msgstr ""
+
+#: likeback/LikeBackDialog.cpp:154
+#, kde-format
+msgctxt ""
+"Feedback dialog text, message with one accepted language for the comments"
+msgid ""
+"Please, write it in <b>%1</b> (you may want to use an <a href=\"%3\">online "
+"translation tool</a> for this).<br/>"
+msgstr ""
+
+#: likeback/LikeBackDialog.cpp:161
+#, kde-format
+msgctxt ""
+"Feedback dialog text, message with list of accepted languages for the "
+"comments"
+msgid ""
+"Please, write it in <b>%1 or %2</b> (you may want to use an <a href=\"%3"
+"\">online translation tool</a> for this).<br/>"
+msgstr ""
+
+#: likeback/LikeBackDialog.cpp:174
+msgctxt ""
+"Feedback dialog text, message to remind to balance the likes and dislikes"
+msgid ""
+"To make the comments you send more useful in improving this application, try "
+"to send the same amount of positive and negative comments.<br/>"
+msgstr ""
+
+#: likeback/LikeBackDialog.cpp:183
+msgctxt "Feedback dialog text, text to disallow feature requests"
+msgid ""
+"Please, do not ask for new features: this kind of request will be ignored."
+"<br/>"
+msgstr ""
+
+#: likeback/LikeBackDialog.cpp:189
+#, kde-format
+msgctxt ""
+"Feedback dialog text, %1=Application name,%2=message with list of accepted "
+"languages for the comment,%3=optional text to remind to balance the likes "
+"and dislikes,%4=optional text to disallow feature requests."
+msgid ""
+"<p>You can provide the developers a brief description of your opinions about "
+"%1.<br/>%2 %3%4</p>"
+msgstr ""
+
+#: likeback/LikeBackDialog.cpp:230
+#, fuzzy, kde-format
+msgid ""
+"The email address you have entered is not valid, and cannot be used: '%1'"
+msgstr "O enderezo de correo electrónico que inseriu non semella ser válido"
+
+#: likeback/LikeBackDialog.cpp:302
+msgctxt "Dialog box text"
+msgid ""
+"<p>Your comment has been sent successfully.</p><p>Thank you for your time.</"
+"p>"
+msgstr ""
+
+#: likeback/LikeBackDialog.cpp:304
+#, fuzzy
+#| msgid "Comment"
+msgctxt "Dialog box title"
+msgid "Comment Sent"
+msgstr "Comentario"
+
+#: likeback/LikeBackDialog.cpp:315
+msgctxt "Dialog box text"
+msgid ""
+"<p>There has been an error while trying to send the comment.</p><p>Please, "
+"try again later.</p>"
+msgstr ""
+
+#: likeback/LikeBackDialog.cpp:317
+#, fuzzy
+#| msgid "Collection Scan Error"
+msgctxt "Dialog box title"
+msgid "Comment Sending Error"
+msgstr "Produciuse un erro durante a exploración da colección"
+
+#: ActionClasses.cpp:86
+msgid "Amarok Menu"
+msgstr "Menú de Amarok"
+
+#: ActionClasses.cpp:306
+msgid "Click to change"
+msgstr "Prema para mudar"
+
+#: ActionClasses.cpp:323
+msgid "&Replay Gain Mode"
+msgstr "Modo &Replay Gain (normalizar o volume)"
+
+#: ActionClasses.cpp:325
+msgctxt "Replay Gain state, as in, disabled"
+msgid "&Off"
+msgstr "&Desactivado"
+
+#: ActionClasses.cpp:325
+msgctxt "Item, as in, music"
+msgid "&Track"
+msgstr "&Pista"
+
+#: ActionClasses.cpp:326
+msgid "&Album"
+msgstr "&Álbum"
+
+#: ActionClasses.cpp:335
+msgid "&Equalizer"
+msgstr "&Ecualizador"
+
+#: ActionClasses.cpp:363
+msgid "Your current setup does not support the equalizer feature"
+msgstr "A configuración actual non soporta a función do ecualizador"
+
+#: ActionClasses.cpp:368
+msgctxt "Equalizer state, as in, disabled"
+msgid "&Off"
+msgstr "&Desactivado"
+
+#: ActionClasses.cpp:419
+msgid "Burn"
+msgstr "Gravar"
+
+#: ActionClasses.cpp:458
+msgid "Current Playlist"
+msgstr "Lista de reprodución actual"
+
+#: ActionClasses.cpp:459
+msgid "Selected Tracks"
+msgstr "Pistas seleccionadas"
+
+#: ActionClasses.cpp:526
+msgid "Stop after current Track"
+msgstr "Deter logo da pista actual"
+
+#: ActionClasses.cpp:542
+msgid "Stop after current track: On"
+msgstr "Deter logo da pista actual: activado"
+
+#: ActionClasses.cpp:548
+msgid "Stop after current track: Off"
+msgstr "Deter logo da pista actual: desactivado"
+
+#: MainWindow.cpp:262
+#, fuzzy
+#| msgid "File Extension of Source"
+msgid "Media Sources"
+msgstr "Extensión de ficheiro da fonte"
+
+#: MainWindow.cpp:295
+msgid "Context"
+msgstr "Contexto"
+
+#: MainWindow.cpp:323
+msgid "Local Music"
+msgstr ""
+
+#: MainWindow.cpp:325
+#, fuzzy
+msgid "Local sources of content"
+msgstr "Orixes de contido locais"
+
+#: MainWindow.cpp:333
+msgid "Internet"
+msgstr "Internet"
+
+#: MainWindow.cpp:335
+#, fuzzy
+msgid "Online sources of content"
+msgstr "Orixes de contido online"
+
+#: MainWindow.cpp:341
+#, fuzzy
+msgid "Playlists"
+msgstr "Listas de reprodución"
+
+#: MainWindow.cpp:343
+#, fuzzy
+#| msgid "Various Artists"
+msgid "Various types of playlists"
+msgstr "Varios artistas"
+
+#: MainWindow.cpp:350
+#, fuzzy
+msgid "Files"
+msgstr "Ficheiros"
+
+#: MainWindow.cpp:352
+msgid "Browse local hard drive for content"
+msgstr ""
+
+#: MainWindow.cpp:422
+#, fuzzy
+#| msgctxt "@title buttontext for popup-menu"
+#| msgid "View"
+msgctxt "@item:inmenu"
+msgid "&View"
+msgstr "Vista"
+
+#: MainWindow.cpp:425
+msgid "Lock layout"
+msgstr "Bloquear o deseño"
+
+#: MainWindow.cpp:536
+#, fuzzy
+msgid ""
+"<qt>Closing the main window will keep Amarok running in the System Tray. Use "
+"<B>Quit</B> from the menu, or the Amarok tray icon to exit the application.</"
+"qt>"
+msgstr ""
+"<qt>Se pecha a fiestra principal Amarok continuará a funcionar na bandexa do "
+"sistema. Use <B>Pechar</B> no menú, ou a icona de Amarok na bandexa para "
+"saír do programa</qt>"
+
+#: MainWindow.cpp:538
+#, fuzzy
+msgid "Docking in System Tray"
+msgstr "Ancorar na Bandexa do sistema"
+
+#: MainWindow.cpp:556
+#, fuzzy
+msgid "Use relative path for &saving"
+msgstr "Empregar rotas relativas para &gardar"
+
+#: MainWindow.cpp:567
+#, fuzzy
+msgid "Save As"
+msgstr "Gardar como"
+
+#: MainWindow.cpp:616
+#, fuzzy
+msgid "Play Media (Files or URLs)"
+msgstr "Reproducir os medios (ficheiros ou URLs)"
+
+#: MainWindow.cpp:616
+#, fuzzy
+msgid "Add Media (Files or URLs)"
+msgstr "Engadir medios (ficheiros ou URLs)"
+
+#: MainWindow.cpp:632
+#, fuzzy
+msgid "Add Stream"
+msgstr "Engadir unha retransmisións"
+
+#: MainWindow.cpp:632
+#, fuzzy
+msgid "Enter Stream URL:"
+msgstr "Introduza o URL da retransmisión:"
+
+#: MainWindow.cpp:753
+#, fuzzy
+msgid "&Add Media..."
+msgstr "Engadir &medios..."
+
+#: MainWindow.cpp:758
+#, fuzzy
+msgctxt "clear playlist"
+msgid "&Clear Playlist"
+msgstr "&Limpar a lista de temas"
+
+#: MainWindow.cpp:762
+#, fuzzy
+#| msgid "Remove %1"
+msgctxt "Remove duplicate and dead (unplayable) tracks from the playlist"
+msgid "Re&move Duplicates"
+msgstr "Eliminar %1"
+
+#: MainWindow.cpp:769
+#, fuzzy
+msgid "&Add Stream..."
+msgstr "Engadir unha &retransmisión..."
+
+#: MainWindow.cpp:773
+#, fuzzy
+msgid "&Export Playlist As..."
+msgstr "&Exportar a lista de temas como..."
+
+#: MainWindow.cpp:785
+msgid "Equalizer"
+msgstr "Ecualizador"
+
+#: MainWindow.cpp:793
+#, fuzzy
+#| msgid "Various Artists"
+msgid "Bookmark Context Applets"
+msgstr "Marcar os applets de contexto"
+
+#: MainWindow.cpp:801
+#, fuzzy
+msgid "Play Media..."
+msgstr "Reproducir os medios..."
+
+#: MainWindow.cpp:810
+#, fuzzy
+msgid "&Seek Forward"
+msgstr "Procurar cara a &adiante"
+
+#: MainWindow.cpp:816
+#, fuzzy
+msgid "&Seek Backward"
+msgstr "Procurar cara a &atrás"
+
+#: MainWindow.cpp:823
+#, fuzzy
+msgid "Update Collection"
+msgstr "Actualizar a colección"
+
+#: MainWindow.cpp:836
+#, fuzzy
+#| msgid "Repeat Playlist"
+msgid "Repopulate Playlist"
+msgstr "Repetir a Lista de temas"
+
+#: MainWindow.cpp:851
+#, fuzzy
+msgid "Increase Volume"
+msgstr "Aumentar o volume"
+
+#: MainWindow.cpp:857
+#, fuzzy
+msgid "Decrease Volume"
+msgstr "Diminuír o volume"
+
+#: MainWindow.cpp:863
+#, fuzzy
+msgid "Toggle Main Window"
+msgstr "Conmutar a fiestra principal"
+
+#: MainWindow.cpp:868
+msgid "Toggle Full Screen"
+msgstr ""
+
+#: MainWindow.cpp:873
+msgid "Jump to"
+msgstr ""
+
+#: MainWindow.cpp:878
+msgid "Show active track"
+msgstr "Mostrar a pista activa"
+
+#: MainWindow.cpp:882
+#, fuzzy
+#| msgid "Location:"
+msgid "Show Notification Popup"
+msgstr "Localización:"
+
+#: MainWindow.cpp:887
+#, fuzzy
+msgid "Mute Volume"
+msgstr "Volume mudo"
+
+#: MainWindow.cpp:892
+#, fuzzy
+#| msgid "Love Current Track"
+msgid "Last.fm: Love Current Track"
+msgstr "Marcar a pista actual como Preferida"
+
+#: MainWindow.cpp:897
+#, fuzzy
+#| msgid "Love Current Track"
+msgid "Last.fm: Ban Current Track"
+msgstr "Marcar a pista actual como Preferida"
+
+#: MainWindow.cpp:902
+#, fuzzy
+#| msgid "Love Current Track"
+msgid "Last.fm: Skip Current Track"
+msgstr "Marcar a pista actual como Preferida"
+
+#: MainWindow.cpp:912
+#, fuzzy
+msgid "Rate Current Track: 1"
+msgstr "Cualificación da pista actual: 1"
+
+#: MainWindow.cpp:917
+#, fuzzy
+msgid "Rate Current Track: 2"
+msgstr "Cualificación da pista actual: 2"
+
+#: MainWindow.cpp:922
+#, fuzzy
+msgid "Rate Current Track: 3"
+msgstr "Cualificación da pista actual: 3"
+
+#: MainWindow.cpp:927
+#, fuzzy
+msgid "Rate Current Track: 4"
+msgstr "Cualificación da pista actual: 4"
+
+#: MainWindow.cpp:932
+#, fuzzy
+msgid "Rate Current Track: 5"
+msgstr "Cualificación da pista actual: 5"
+
+#: MainWindow.cpp:949
+msgid "&About Amarok"
+msgstr "&Acerca de Amarok"
+
+#: MainWindow.cpp:953
+msgid "&Report Bug..."
+msgstr ""
+
+#: MainWindow.cpp:1013
+#, fuzzy
+msgid "&Music"
+msgstr "&Música"
+
+#: MainWindow.cpp:1017
+#, fuzzy
+msgid "&Amarok"
+msgstr "&Amarok"
+
+#: MainWindow.cpp:1036
+#, fuzzy
+msgid "&Playlist"
+msgstr "&Lista de temas"
+
+#: MainWindow.cpp:1052
+#, fuzzy
+msgid "&Tools"
+msgstr "&Ferramentas"
+
+#: MainWindow.cpp:1064
+msgid "&Settings"
+msgstr "&Configuración"
+
+#: MainWindow.cpp:1208
+#, kde-format
+msgid "Paused  ::  %1"
+msgstr "En pausa  ::  %1"
+
+#: MainWindow.cpp:1227
+#, fuzzy, kde-format
+msgid "%1 - %2  ::  %3"
+msgstr "%1 - %2  ::  %3"
+
+#, fuzzy
+#~| msgid "&Search"
+#~ msgid "Web Search"
+#~ msgstr "&Procurar"
+
 #~ msgid "Cover Not Found"
 #~ msgstr "Non se atopou a portada"
 
@@ -12637,12 +12657,6 @@ msgstr ""
 #~| msgid "Love Current Track"
 #~ msgid "Get Current"
 #~ msgstr "Marcar a pista actual como Preferida"
-
-#, fuzzy
-#~| msgctxt "The quality of music"
-#~| msgid "Good"
-#~ msgid "Goto"
-#~ msgstr "Boa"
 
 #, fuzzy
 #~| msgid "Enter new preset name:"
