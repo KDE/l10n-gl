@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: partitionmanager\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2010-03-26 04:44+0100\n"
+"POT-Creation-Date: 2010-03-27 04:30+0100\n"
 "PO-Revision-Date: 2009-02-06 00:02+0100\n"
 "Last-Translator: mvillarino <mvillarino@users.sourceforge.net>\n"
 "Language-Team: galician <proxecto@trasno.net>\n"
@@ -338,27 +338,51 @@ msgctxt "@label"
 msgid "Scanning device: <filename>%1</filename>"
 msgstr "Propriedades da partición: <filename>%1</filename>"
 
-#: gui/devicepropsdialog.cpp:43
+#: gui/devicepropsdialog.cpp:45
 #, fuzzy, kde-format
 #| msgctxt "@title:window"
 #| msgid "Partition properties: <filename>%1</filename>"
 msgctxt "@title:window"
-msgid "Device properties: <filename>%1</filename>"
+msgid "Device Properties: <filename>%1</filename>"
 msgstr "Propriedades da partición: <filename>%1</filename>"
 
-#: gui/devicepropsdialog.cpp:70 gui/infopane.cpp:143
+#: gui/devicepropsdialog.cpp:72 gui/infopane.cpp:143
 #, kde-format
 msgctxt "@label device"
 msgid "%1 (read only)"
 msgstr "%1 (só leitura)"
 
-#: gui/devicepropsdialog.cpp:97 gui/infopane.cpp:155
+#: gui/devicepropsdialog.cpp:99 gui/infopane.cpp:155
 #, kde-format
 msgctxt "@label"
 msgid "1 Sector"
 msgid_plural "%1 Sectors"
 msgstr[0] "1 sector"
 msgstr[1] "%1 sectores"
+
+#: gui/devicepropsdialog.cpp:109
+msgctxt "@label SMART disk status"
+msgid "good"
+msgstr ""
+
+#: gui/devicepropsdialog.cpp:114
+msgctxt "@label SMART disk status"
+msgid "BAD"
+msgstr ""
+
+#: gui/devicepropsdialog.cpp:119
+#, kde-format
+msgctxt "@label temperature in celsius"
+msgid "%1° C"
+msgstr ""
+
+#: gui/devicepropsdialog.cpp:126
+#, fuzzy
+#| msgctxt "@item/plain filesystem name"
+#| msgid "unknown"
+msgctxt "@label"
+msgid "(unknown)"
+msgstr "descoñecido"
 
 #: gui/editmountoptionsdialog.cpp:33
 #, fuzzy
@@ -490,7 +514,7 @@ msgstr "&Non criar de novo o sistema de ficheiros"
 
 #. i18n: file: gui/mainwindowbase.ui:61
 #. i18n: ectx: property (windowTitle), widget (QDockWidget, m_DockInformation)
-#: gui/infopane.cpp:51 rc.cpp:314
+#: gui/infopane.cpp:51 rc.cpp:329
 msgctxt "@title:window"
 msgid "Information"
 msgstr "Información"
@@ -3494,18 +3518,12 @@ msgstr ""
 
 #. i18n: file: gui/devicepropswidgetbase.ui:58
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextType)
-#. i18n: file: gui/editmountpointdialogwidgetbase.ui:53
-#. i18n: ectx: property (text), widget (QLabel, m_LabelType)
-#. i18n: file: gui/devicepropswidgetbase.ui:58
-#. i18n: ectx: property (text), widget (QLabel, m_LabelTextType)
-#. i18n: file: gui/editmountpointdialogwidgetbase.ui:53
-#. i18n: ectx: property (text), widget (QLabel, m_LabelType)
-#: rc.cpp:68 rc.cpp:332
+#: rc.cpp:68
 #, fuzzy
-#| msgctxt "@label device"
-#| msgid "Type:"
-msgid "Type:"
-msgstr "Tipo:"
+#| msgctxt "@label"
+#| msgid "Partition type:"
+msgid "Partition table:"
+msgstr "Tipo de partición:"
 
 #. i18n: file: gui/devicepropswidgetbase.ui:83
 #. i18n: ectx: property (text), widget (QRadioButton, m_RadioCylinderBased)
@@ -3513,7 +3531,7 @@ msgstr "Tipo:"
 #, fuzzy
 #| msgctxt "@label device"
 #| msgid "Cylinder size:"
-msgid "Cylinder Alignment"
+msgid "Cylinder alignment"
 msgstr "Tamaño do cilindro:"
 
 #. i18n: file: gui/devicepropswidgetbase.ui:90
@@ -3522,7 +3540,7 @@ msgstr "Tamaño do cilindro:"
 #, fuzzy
 #| msgctxt "@label"
 #| msgid "Partition type:"
-msgid "Sector Based Alignment"
+msgid "Sector based alignment"
 msgstr "Tipo de partición:"
 
 #. i18n: file: gui/devicepropswidgetbase.ui:119
@@ -3540,7 +3558,7 @@ msgstr "Capacidade:"
 #, fuzzy
 #| msgctxt "@label device"
 #| msgid "Total sectors:"
-msgid "Total Sectors:"
+msgid "Total sectors:"
 msgstr "Cantidade total de sectores:"
 
 #. i18n: file: gui/devicepropswidgetbase.ui:172
@@ -3555,7 +3573,7 @@ msgstr ""
 #, fuzzy
 #| msgctxt "@label device"
 #| msgid "Sector size:"
-msgid "Logical Sector Size:"
+msgid "Logical sector size:"
 msgstr "Tamaño do sector:"
 
 #. i18n: file: gui/devicepropswidgetbase.ui:218
@@ -3564,7 +3582,7 @@ msgstr "Tamaño do sector:"
 #, fuzzy
 #| msgctxt "@label device"
 #| msgid "Cylinder size:"
-msgid "Cylinder Size:"
+msgid "Cylinder size:"
 msgstr "Tamaño do cilindro:"
 
 #. i18n: file: gui/devicepropswidgetbase.ui:248
@@ -3576,9 +3594,45 @@ msgstr "Tamaño do cilindro:"
 msgid "Primaries/Max:"
 msgstr "Primarios/Máx:"
 
+#. i18n: file: gui/devicepropswidgetbase.ui:278
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextSmartStatus)
+#: rc.cpp:95
+#, fuzzy
+#| msgctxt "@label"
+#| msgid "Status:"
+msgid "SMART status:"
+msgstr "Estado:"
+
+#. i18n: file: gui/devicepropswidgetbase.ui:312
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextSmartTemperature)
+#: rc.cpp:98
+msgid "Temperature:"
+msgstr ""
+
+#. i18n: file: gui/devicepropswidgetbase.ui:329
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextSmartBadSectors)
+#: rc.cpp:101
+#, fuzzy
+#| msgctxt "@label device"
+#| msgid "Total sectors:"
+msgid "Bad sectors:"
+msgstr "Cantidade total de sectores:"
+
+#. i18n: file: gui/devicepropswidgetbase.ui:346
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextSmartPoweredOn)
+#: rc.cpp:104
+msgid "Powered on for:"
+msgstr ""
+
+#. i18n: file: gui/devicepropswidgetbase.ui:363
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextSmartPowerCycles)
+#: rc.cpp:107
+msgid "Power cycles:"
+msgstr ""
+
 #. i18n: file: gui/treelogbase.ui:54
 #. i18n: ectx: property (text), widget (QTreeWidget, m_TreeLog)
-#: rc.cpp:95
+#: rc.cpp:110
 msgctxt ""
 "@title:column Severity of a log entry / log level. Text must be very short."
 msgid "Sev."
@@ -3586,13 +3640,13 @@ msgstr ""
 
 #. i18n: file: gui/treelogbase.ui:57
 #. i18n: ectx: property (toolTip), widget (QTreeWidget, m_TreeLog)
-#: rc.cpp:98
+#: rc.cpp:113
 msgid "Severity"
 msgstr ""
 
 #. i18n: file: gui/treelogbase.ui:62
 #. i18n: ectx: property (text), widget (QTreeWidget, m_TreeLog)
-#: rc.cpp:101
+#: rc.cpp:116
 #, fuzzy
 #| msgctxt "@label"
 #| msgid "Time"
@@ -3602,7 +3656,7 @@ msgstr "Tempo"
 
 #. i18n: file: gui/treelogbase.ui:67
 #. i18n: ectx: property (text), widget (QTreeWidget, m_TreeLog)
-#: rc.cpp:104
+#: rc.cpp:119
 #, fuzzy
 #| msgctxt "@label"
 #| msgid "Message"
@@ -3612,7 +3666,7 @@ msgstr "Mensaxe"
 
 #. i18n: file: gui/sizedetailswidgetbase.ui:62
 #. i18n: ectx: property (text), widget (QLabel, label_6)
-#: rc.cpp:107
+#: rc.cpp:122
 #, fuzzy
 #| msgctxt "@label partition"
 #| msgid "First sector:"
@@ -3622,7 +3676,7 @@ msgstr "Primeiro sector:"
 
 #. i18n: file: gui/sizedetailswidgetbase.ui:97
 #. i18n: ectx: property (text), widget (QLabel, label_7)
-#: rc.cpp:110
+#: rc.cpp:125
 #, fuzzy
 #| msgctxt "@label partition"
 #| msgid "Last sector:"
@@ -3632,7 +3686,7 @@ msgstr "Último sector:"
 
 #. i18n: file: gui/sizedetailswidgetbase.ui:126
 #. i18n: ectx: property (text), widget (QCheckBox, m_CheckAlign)
-#: rc.cpp:113
+#: rc.cpp:128
 #, fuzzy
 #| msgctxt "@info:tooltip"
 #| msgid "New partition"
@@ -3641,7 +3695,7 @@ msgstr "Partición nova"
 
 #. i18n: file: gui/editmountoptionsdialogwidgetbase.ui:14
 #. i18n: ectx: property (windowTitle), widget (QWidget, EditMountOptionsDialogWidgetBase)
-#: rc.cpp:116
+#: rc.cpp:131
 #, fuzzy
 #| msgctxt "@title:window"
 #| msgid "Pending Operations"
@@ -3650,7 +3704,7 @@ msgstr "Operacións pendentes"
 
 #. i18n: file: gui/editmountoptionsdialogwidgetbase.ui:20
 #. i18n: ectx: property (text), widget (QLabel, m_Label)
-#: rc.cpp:119
+#: rc.cpp:134
 msgid "Edit the mount options for this file system:"
 msgstr ""
 
@@ -3662,7 +3716,7 @@ msgstr ""
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextLabel)
 #. i18n: file: gui/sizedialogwidgetbase.ui:122
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextLabel)
-#: rc.cpp:122 rc.cpp:202
+#: rc.cpp:137 rc.cpp:217
 #, fuzzy
 #| msgctxt "@label"
 #| msgid "&Label:"
@@ -3678,7 +3732,7 @@ msgstr "&Etiqueta:"
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextNoSetLabel)
 #. i18n: file: gui/sizedialogwidgetbase.ui:144
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextNoSetLabel)
-#: rc.cpp:125 rc.cpp:205
+#: rc.cpp:140 rc.cpp:220
 msgctxt "@label"
 msgid "This file system does not support setting a label."
 msgstr "Este sistema de ficheiro non soporta o estabelecer unha etiqueta."
@@ -3691,7 +3745,7 @@ msgstr "Este sistema de ficheiro non soporta o estabelecer unha etiqueta."
 #. i18n: ectx: property (text), widget (QLabel, m_LabelFileSystem)
 #. i18n: file: gui/sizedialogwidgetbase.ui:99
 #. i18n: ectx: property (text), widget (QLabel, m_LabelFileSystem)
-#: rc.cpp:128 rc.cpp:199
+#: rc.cpp:143 rc.cpp:214
 #, fuzzy
 #| msgctxt "@label partition"
 #| msgid "File system:"
@@ -3701,70 +3755,70 @@ msgstr "Sistema de ficheiros:"
 
 #. i18n: file: gui/partpropswidgetbase.ui:93
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextMountPoint)
-#: rc.cpp:131
+#: rc.cpp:146
 msgctxt "@label"
 msgid "Mount point:"
 msgstr "Ponto de montaxe:"
 
 #. i18n: file: gui/partpropswidgetbase.ui:110
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextRole)
-#: rc.cpp:134
+#: rc.cpp:149
 msgctxt "@label"
 msgid "Partition type:"
 msgstr "Tipo de partición:"
 
 #. i18n: file: gui/partpropswidgetbase.ui:127
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextStatus)
-#: rc.cpp:137
+#: rc.cpp:152
 msgctxt "@label"
 msgid "Status:"
 msgstr "Estado:"
 
 #. i18n: file: gui/partpropswidgetbase.ui:151
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextCapacity)
-#: rc.cpp:140
+#: rc.cpp:155
 msgctxt "@label"
 msgid "Size:"
 msgstr "Tamaño:"
 
 #. i18n: file: gui/partpropswidgetbase.ui:168
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextAvailable)
-#: rc.cpp:143
+#: rc.cpp:158
 msgctxt "@label partition capacity available"
 msgid "Available:"
 msgstr "Disponíbel:"
 
 #. i18n: file: gui/partpropswidgetbase.ui:185
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextUsed)
-#: rc.cpp:146
+#: rc.cpp:161
 msgctxt "@label partition capacity used"
 msgid "Used:"
 msgstr "Empregada:"
 
 #. i18n: file: gui/partpropswidgetbase.ui:209
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextFirstSector)
-#: rc.cpp:149
+#: rc.cpp:164
 msgctxt "@label"
 msgid "First sector:"
 msgstr "Primeiro sector:"
 
 #. i18n: file: gui/partpropswidgetbase.ui:226
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextLastSector)
-#: rc.cpp:152
+#: rc.cpp:167
 msgctxt "@label"
 msgid "Last sector:"
 msgstr "Último sector:"
 
 #. i18n: file: gui/partpropswidgetbase.ui:243
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextNumSectors)
-#: rc.cpp:155
+#: rc.cpp:170
 msgctxt "@label"
 msgid "Number of sectors:"
 msgstr "Número de sectores:"
 
 #. i18n: file: gui/partpropswidgetbase.ui:267
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextFlags)
-#: rc.cpp:158
+#: rc.cpp:173
 #, fuzzy
 #| msgctxt "@label"
 #| msgid "&Flags:"
@@ -3774,14 +3828,14 @@ msgstr "&Bandeiras:"
 
 #. i18n: file: gui/partpropswidgetbase.ui:312
 #. i18n: ectx: property (text), widget (QCheckBox, m_CheckRecreate)
-#: rc.cpp:161
+#: rc.cpp:176
 msgctxt "@action:button"
 msgid "Recreate existing file system"
 msgstr "Criar de novo o sistema de ficheiro existente"
 
 #. i18n: file: gui/partpropswidgetbase.ui:335
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextUuid)
-#: rc.cpp:164
+#: rc.cpp:179
 #, fuzzy
 #| msgid "User ID:"
 msgctxt "@label"
@@ -3790,45 +3844,45 @@ msgstr "ID do usuario:"
 
 #. i18n: file: gui/applyprogressdialogwidgetbase.ui:33
 #. i18n: ectx: property (text), widget (QTreeWidget, m_TreeTasks)
-#: rc.cpp:167
+#: rc.cpp:182
 msgid "Operations and Jobs"
 msgstr "Operacións e tarefas"
 
 #. i18n: file: gui/applyprogressdialogwidgetbase.ui:38
 #. i18n: ectx: property (text), widget (QTreeWidget, m_TreeTasks)
-#: rc.cpp:170
+#: rc.cpp:185
 msgid "Time Elapsed"
 msgstr "Tempo transcorrido"
 
 #. i18n: file: gui/applyprogressdialogwidgetbase.ui:64
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTime)
-#: rc.cpp:173
+#: rc.cpp:188
 msgid "Total Time: 00:00:00"
 msgstr "Duración total: 00:00:00"
 
 #. i18n: file: gui/applyprogressdialogwidgetbase.ui:81
 #. i18n: ectx: property (format), widget (QProgressBar, m_ProgressSub)
-#: rc.cpp:177
+#: rc.cpp:192
 #, no-c-format
 msgid "Operation: %p%"
 msgstr "Operación: %p%"
 
 #. i18n: file: gui/applyprogressdialogwidgetbase.ui:91
 #. i18n: ectx: property (text), widget (QLabel, m_LabelStatus)
-#: rc.cpp:180
+#: rc.cpp:195
 msgid "Status"
 msgstr "Estado"
 
 #. i18n: file: gui/applyprogressdialogwidgetbase.ui:107
 #. i18n: ectx: property (format), widget (QProgressBar, m_ProgressTotal)
-#: rc.cpp:184
+#: rc.cpp:199
 #, no-c-format
 msgid "Total: %p%"
 msgstr "Total: %p%"
 
 #. i18n: file: gui/sizedialogwidgetbase.ui:55
 #. i18n: ectx: property (text), widget (QLabel, m_LabelRole)
-#: rc.cpp:187
+#: rc.cpp:202
 #, fuzzy
 #| msgctxt "@label"
 #| msgid "Partition type:"
@@ -3838,7 +3892,7 @@ msgstr "Tipo de partición:"
 
 #. i18n: file: gui/sizedialogwidgetbase.ui:70
 #. i18n: ectx: property (text), widget (QRadioButton, m_RadioPrimary)
-#: rc.cpp:190
+#: rc.cpp:205
 #, fuzzy
 #| msgid "&Primary"
 msgid "Primary"
@@ -3846,7 +3900,7 @@ msgstr "&Primaria"
 
 #. i18n: file: gui/sizedialogwidgetbase.ui:77
 #. i18n: ectx: property (text), widget (QRadioButton, m_RadioExtended)
-#: rc.cpp:193
+#: rc.cpp:208
 #, fuzzy
 #| msgid "&Extended"
 msgid "Extended"
@@ -3854,7 +3908,7 @@ msgstr "&Extendido"
 
 #. i18n: file: gui/sizedialogwidgetbase.ui:84
 #. i18n: ectx: property (text), widget (QRadioButton, m_RadioLogical)
-#: rc.cpp:196
+#: rc.cpp:211
 #, fuzzy
 #| msgid "&Logical"
 msgid "Logical"
@@ -3862,21 +3916,21 @@ msgstr "&Lóxica"
 
 #. i18n: file: gui/sizedialogwidgetbase.ui:162
 #. i18n: ectx: property (text), widget (QLabel, label_4)
-#: rc.cpp:208
+#: rc.cpp:223
 msgctxt "@label"
 msgid "Minimum size:"
 msgstr "Tamaño mínimo:"
 
 #. i18n: file: gui/sizedialogwidgetbase.ui:185
 #. i18n: ectx: property (text), widget (QLabel, label_5)
-#: rc.cpp:211
+#: rc.cpp:226
 msgctxt "@label"
 msgid "Maximum size:"
 msgstr "Tamaño máximo:"
 
 #. i18n: file: gui/sizedialogwidgetbase.ui:208
 #. i18n: ectx: property (text), widget (QLabel, label)
-#: rc.cpp:214
+#: rc.cpp:229
 #, fuzzy
 #| msgctxt "@label:listbox"
 #| msgid "Free space &before:"
@@ -3886,7 +3940,7 @@ msgstr "Espazo libre &anterior:"
 
 #. i18n: file: gui/sizedialogwidgetbase.ui:243
 #. i18n: ectx: property (text), widget (QLabel, label_2)
-#: rc.cpp:217
+#: rc.cpp:232
 #, fuzzy
 #| msgctxt "@label"
 #| msgid "Size:"
@@ -3896,7 +3950,7 @@ msgstr "Tamaño:"
 
 #. i18n: file: gui/sizedialogwidgetbase.ui:278
 #. i18n: ectx: property (text), widget (QLabel, label_3)
-#: rc.cpp:220
+#: rc.cpp:235
 #, fuzzy
 #| msgctxt "@label:listbox"
 #| msgid "Free space &after:"
@@ -3906,7 +3960,7 @@ msgstr "Espazo libre p&osterior:"
 
 #. i18n: file: gui/filesystemsupportdialogwidgetbase.ui:18
 #. i18n: ectx: property (text), widget (QLabel, label)
-#: rc.cpp:223
+#: rc.cpp:238
 msgid ""
 "This table shows which file systems are supported and which specific "
 "operations can be performed on them.\n"
@@ -3924,79 +3978,79 @@ msgstr ""
 
 #. i18n: file: gui/filesystemsupportdialogwidgetbase.ui:65
 #. i18n: ectx: property (text), widget (QTreeWidget, m_Tree)
-#: rc.cpp:227
+#: rc.cpp:242
 msgid "File System"
 msgstr "Sistema de ficheiros"
 
 #. i18n: file: gui/filesystemsupportdialogwidgetbase.ui:70
 #. i18n: ectx: property (text), widget (QTreeWidget, m_Tree)
-#: rc.cpp:230
+#: rc.cpp:245
 msgid "Create"
 msgstr "Criar"
 
 #. i18n: file: gui/filesystemsupportdialogwidgetbase.ui:75
 #. i18n: ectx: property (text), widget (QTreeWidget, m_Tree)
-#: rc.cpp:233
+#: rc.cpp:248
 msgid "Grow"
 msgstr "Amecer"
 
 #. i18n: file: gui/filesystemsupportdialogwidgetbase.ui:80
 #. i18n: ectx: property (text), widget (QTreeWidget, m_Tree)
-#: rc.cpp:236
+#: rc.cpp:251
 msgid "Shrink"
 msgstr "Reducir"
 
 #. i18n: file: gui/filesystemsupportdialogwidgetbase.ui:85
 #. i18n: ectx: property (text), widget (QTreeWidget, m_Tree)
-#: rc.cpp:239
+#: rc.cpp:254
 msgid "Move"
 msgstr "Mover"
 
 #. i18n: file: gui/filesystemsupportdialogwidgetbase.ui:90
 #. i18n: ectx: property (text), widget (QTreeWidget, m_Tree)
-#: rc.cpp:242
+#: rc.cpp:257
 msgid "Copy"
 msgstr "Copiar"
 
 #. i18n: file: gui/filesystemsupportdialogwidgetbase.ui:95
 #. i18n: ectx: property (text), widget (QTreeWidget, m_Tree)
-#: rc.cpp:245
+#: rc.cpp:260
 msgid "Check"
 msgstr "Comprobar"
 
 #. i18n: file: gui/filesystemsupportdialogwidgetbase.ui:100
 #. i18n: ectx: property (text), widget (QTreeWidget, m_Tree)
-#: rc.cpp:248
+#: rc.cpp:263
 msgid "Read Label"
 msgstr "Ler a etiqueta"
 
 #. i18n: file: gui/filesystemsupportdialogwidgetbase.ui:105
 #. i18n: ectx: property (text), widget (QTreeWidget, m_Tree)
-#: rc.cpp:251
+#: rc.cpp:266
 msgid "Write Label"
 msgstr "Escreber a etiqueta"
 
 #. i18n: file: gui/filesystemsupportdialogwidgetbase.ui:110
 #. i18n: ectx: property (text), widget (QTreeWidget, m_Tree)
-#: rc.cpp:254
+#: rc.cpp:269
 msgid "Read Usage"
 msgstr "Ler a utilización"
 
 #. i18n: file: gui/filesystemsupportdialogwidgetbase.ui:115
 #. i18n: ectx: property (text), widget (QTreeWidget, m_Tree)
-#: rc.cpp:257
+#: rc.cpp:272
 msgid "Backup"
 msgstr "Copia de respaldo"
 
 #. i18n: file: gui/filesystemsupportdialogwidgetbase.ui:120
 #. i18n: ectx: property (text), widget (QTreeWidget, m_Tree)
-#: rc.cpp:260
+#: rc.cpp:275
 msgid "Restore"
 msgstr "Restaurar"
 
 #. i18n: file: gui/filesystemsupportdialogwidgetbase.ui:130
 #. i18n: ectx: property (text), widget (KPushButton, m_ButtonRescan)
-#: rc.cpp:263
+#: rc.cpp:278
 #, fuzzy
 #| msgctxt "@action:button"
 #| msgid "&Rescan Support"
@@ -4012,14 +4066,14 @@ msgstr "&Analisar de novo o soporte"
 #. i18n: ectx: property (windowTitle), widget (QWidget, PartitionManagerWidgetBase)
 #. i18n: file: gui/mainwindowbase.ui:14
 #. i18n: ectx: property (windowTitle), widget (QMainWindow, MainWindowBase)
-#: rc.cpp:266 rc.cpp:305
+#: rc.cpp:281 rc.cpp:320
 msgctxt "@title:window"
 msgid "KDE Partition Manager"
 msgstr "Xestor de particións de KDE"
 
 #. i18n: file: gui/partitionmanagerwidgetbase.ui:67
 #. i18n: ectx: property (text), widget (QTreeWidget, m_TreePartitions)
-#: rc.cpp:269
+#: rc.cpp:284
 #, fuzzy
 #| msgctxt "@title:menu"
 #| msgid "Partition"
@@ -4028,7 +4082,7 @@ msgstr "Partición"
 
 #. i18n: file: gui/partitionmanagerwidgetbase.ui:72
 #. i18n: ectx: property (text), widget (QTreeWidget, m_TreePartitions)
-#: rc.cpp:272
+#: rc.cpp:287
 #, fuzzy
 #| msgctxt "@label partition type"
 #| msgid "Type"
@@ -4037,7 +4091,7 @@ msgstr "Tipo"
 
 #. i18n: file: gui/partitionmanagerwidgetbase.ui:77
 #. i18n: ectx: property (text), widget (QTreeWidget, m_TreePartitions)
-#: rc.cpp:275
+#: rc.cpp:290
 #, fuzzy
 #| msgctxt "@label"
 #| msgid "Mount Point"
@@ -4052,7 +4106,7 @@ msgstr "Ponto de montaxe"
 #. i18n: ectx: property (text), widget (QTreeWidget, m_TreePartitions)
 #. i18n: file: gui/editmountpointdialogwidgetbase.ui:302
 #. i18n: ectx: property (text), widget (QRadioButton, m_RadioLabel)
-#: rc.cpp:278 rc.cpp:377
+#: rc.cpp:293 rc.cpp:392
 #, fuzzy
 #| msgctxt "@label file system label"
 #| msgid "Label"
@@ -4067,7 +4121,7 @@ msgstr "Etiqueta"
 #. i18n: ectx: property (text), widget (QTreeWidget, m_TreePartitions)
 #. i18n: file: gui/editmountpointdialogwidgetbase.ui:295
 #. i18n: ectx: property (text), widget (QRadioButton, m_RadioUUID)
-#: rc.cpp:281 rc.cpp:374
+#: rc.cpp:296 rc.cpp:389
 #, fuzzy
 #| msgid "User ID:"
 msgid "UUID"
@@ -4075,7 +4129,7 @@ msgstr "ID do usuario:"
 
 #. i18n: file: gui/partitionmanagerwidgetbase.ui:92
 #. i18n: ectx: property (text), widget (QTreeWidget, m_TreePartitions)
-#: rc.cpp:284
+#: rc.cpp:299
 #, fuzzy
 #| msgctxt "@label total file system size"
 #| msgid "Size"
@@ -4084,7 +4138,7 @@ msgstr "Tamaño"
 
 #. i18n: file: gui/partitionmanagerwidgetbase.ui:97
 #. i18n: ectx: property (text), widget (QTreeWidget, m_TreePartitions)
-#: rc.cpp:287
+#: rc.cpp:302
 #, fuzzy
 #| msgctxt "@label space used"
 #| msgid "Used"
@@ -4093,7 +4147,7 @@ msgstr "Empregado"
 
 #. i18n: file: gui/partitionmanagerwidgetbase.ui:102
 #. i18n: ectx: property (text), widget (QTreeWidget, m_TreePartitions)
-#: rc.cpp:290
+#: rc.cpp:305
 #, fuzzy
 #| msgctxt "@label partition"
 #| msgid "Available:"
@@ -4102,7 +4156,7 @@ msgstr "Disponíbel:"
 
 #. i18n: file: gui/partitionmanagerwidgetbase.ui:107
 #. i18n: ectx: property (text), widget (QTreeWidget, m_TreePartitions)
-#: rc.cpp:293
+#: rc.cpp:308
 #, fuzzy
 #| msgctxt "@label partition"
 #| msgid "First sector:"
@@ -4111,7 +4165,7 @@ msgstr "Primeiro sector:"
 
 #. i18n: file: gui/partitionmanagerwidgetbase.ui:112
 #. i18n: ectx: property (text), widget (QTreeWidget, m_TreePartitions)
-#: rc.cpp:296
+#: rc.cpp:311
 #, fuzzy
 #| msgctxt "@label partition"
 #| msgid "Last sector:"
@@ -4120,7 +4174,7 @@ msgstr "Último sector:"
 
 #. i18n: file: gui/partitionmanagerwidgetbase.ui:117
 #. i18n: ectx: property (text), widget (QTreeWidget, m_TreePartitions)
-#: rc.cpp:299
+#: rc.cpp:314
 #, fuzzy
 #| msgctxt "@label partition"
 #| msgid "Number of sectors:"
@@ -4129,7 +4183,7 @@ msgstr "Número de sectores:"
 
 #. i18n: file: gui/partitionmanagerwidgetbase.ui:122
 #. i18n: ectx: property (text), widget (QTreeWidget, m_TreePartitions)
-#: rc.cpp:302
+#: rc.cpp:317
 #, fuzzy
 #| msgctxt "@label partition flags"
 #| msgid "Flags"
@@ -4138,28 +4192,28 @@ msgstr "Bandeiras"
 
 #. i18n: file: gui/mainwindowbase.ui:28
 #. i18n: ectx: property (windowTitle), widget (QDockWidget, m_DockDevices)
-#: rc.cpp:308
+#: rc.cpp:323
 msgctxt "@title:window"
 msgid "Devices"
 msgstr "Dispositivos"
 
 #. i18n: file: gui/mainwindowbase.ui:46
 #. i18n: ectx: property (windowTitle), widget (QDockWidget, m_DockOperations)
-#: rc.cpp:311
+#: rc.cpp:326
 msgctxt "@title:window"
 msgid "Pending Operations"
 msgstr "Operacións pendentes"
 
 #. i18n: file: gui/mainwindowbase.ui:75
 #. i18n: ectx: property (windowTitle), widget (QDockWidget, m_DockLog)
-#: rc.cpp:317
+#: rc.cpp:332
 msgctxt "@title:window"
 msgid "Log Output"
 msgstr "Rexistro da saída"
 
 #. i18n: file: gui/applyprogressdetailswidgetbase.ui:37
 #. i18n: ectx: property (text), widget (QPushButton, m_ButtonSave)
-#: rc.cpp:320
+#: rc.cpp:335
 #, fuzzy
 #| msgid "&Save"
 msgid "Save"
@@ -4167,7 +4221,7 @@ msgstr "&Gardar"
 
 #. i18n: file: gui/applyprogressdetailswidgetbase.ui:44
 #. i18n: ectx: property (text), widget (QPushButton, m_ButtonBrowser)
-#: rc.cpp:323
+#: rc.cpp:338
 #, fuzzy
 #| msgid "&Open in External Browser"
 msgid "Open in External Browser"
@@ -4175,7 +4229,7 @@ msgstr "dispoñíbun navegador externo"
 
 #. i18n: file: gui/editmountpointdialogwidgetbase.ui:17
 #. i18n: ectx: property (text), widget (QLabel, m_LabelPath)
-#: rc.cpp:326
+#: rc.cpp:341
 #, fuzzy
 #| msgctxt "@label device"
 #| msgid "Path:"
@@ -4184,13 +4238,22 @@ msgstr "Rota:"
 
 #. i18n: file: gui/editmountpointdialogwidgetbase.ui:46
 #. i18n: ectx: property (text), widget (KPushButton, m_ButtonSelect)
-#: rc.cpp:329
+#: rc.cpp:344
 msgid "Select..."
 msgstr ""
 
+#. i18n: file: gui/editmountpointdialogwidgetbase.ui:53
+#. i18n: ectx: property (text), widget (QLabel, m_LabelType)
+#: rc.cpp:347
+#, fuzzy
+#| msgctxt "@label device"
+#| msgid "Type:"
+msgid "Type:"
+msgstr "Tipo:"
+
 #. i18n: file: gui/editmountpointdialogwidgetbase.ui:63
 #. i18n: ectx: property (text), widget (QLabel, m_LabelOptions)
-#: rc.cpp:335
+#: rc.cpp:350
 #, fuzzy
 #| msgid "Operation: %p%"
 msgid "Options:"
@@ -4198,7 +4261,7 @@ msgstr "Operación: %p%"
 
 #. i18n: file: gui/editmountpointdialogwidgetbase.ui:73
 #. i18n: ectx: property (text), widget (QCheckBox, m_CheckReadOnly)
-#: rc.cpp:338
+#: rc.cpp:353
 #, fuzzy
 #| msgctxt "@label device"
 #| msgid "%1 (read only)"
@@ -4207,67 +4270,67 @@ msgstr "%1 (só leitura)"
 
 #. i18n: file: gui/editmountpointdialogwidgetbase.ui:80
 #. i18n: ectx: property (text), widget (QCheckBox, m_CheckUsers)
-#: rc.cpp:341
+#: rc.cpp:356
 msgid "Users can mount and unmount"
 msgstr ""
 
 #. i18n: file: gui/editmountpointdialogwidgetbase.ui:87
 #. i18n: ectx: property (text), widget (QCheckBox, m_CheckNoAuto)
-#: rc.cpp:344
+#: rc.cpp:359
 msgid "No automatic mount"
 msgstr ""
 
 #. i18n: file: gui/editmountpointdialogwidgetbase.ui:94
 #. i18n: ectx: property (text), widget (QCheckBox, m_CheckNoAtime)
-#: rc.cpp:347
+#: rc.cpp:362
 msgid "No update of file access times"
 msgstr ""
 
 #. i18n: file: gui/editmountpointdialogwidgetbase.ui:101
 #. i18n: ectx: property (text), widget (QCheckBox, m_CheckSync)
-#: rc.cpp:350
+#: rc.cpp:365
 msgid "Synchronous access"
 msgstr ""
 
 #. i18n: file: gui/editmountpointdialogwidgetbase.ui:108
 #. i18n: ectx: property (text), widget (QCheckBox, m_CheckNoDirAtime)
-#: rc.cpp:353
+#: rc.cpp:368
 msgid "No update of directory access times"
 msgstr ""
 
 #. i18n: file: gui/editmountpointdialogwidgetbase.ui:115
 #. i18n: ectx: property (text), widget (QCheckBox, m_CheckNoExec)
-#: rc.cpp:356
+#: rc.cpp:371
 msgid "No binary execution"
 msgstr ""
 
 #. i18n: file: gui/editmountpointdialogwidgetbase.ui:122
 #. i18n: ectx: property (text), widget (QCheckBox, m_CheckRelAtime)
-#: rc.cpp:359
+#: rc.cpp:374
 msgid "Update access times relative to modification"
 msgstr ""
 
 #. i18n: file: gui/editmountpointdialogwidgetbase.ui:142
 #. i18n: ectx: property (text), widget (KPushButton, m_ButtonMore)
-#: rc.cpp:362
+#: rc.cpp:377
 msgid "More..."
 msgstr ""
 
 #. i18n: file: gui/editmountpointdialogwidgetbase.ui:149
 #. i18n: ectx: property (text), widget (QLabel, m_LabelDumpFreq)
-#: rc.cpp:365
+#: rc.cpp:380
 msgid "Dump Frequency:"
 msgstr ""
 
 #. i18n: file: gui/editmountpointdialogwidgetbase.ui:178
 #. i18n: ectx: property (text), widget (QLabel, m_LabelPassNumber)
-#: rc.cpp:368
+#: rc.cpp:383
 msgid "Pass Number:"
 msgstr ""
 
 #. i18n: file: gui/editmountpointdialogwidgetbase.ui:285
 #. i18n: ectx: property (text), widget (QRadioButton, m_RadioDeviceNode)
-#: rc.cpp:371
+#: rc.cpp:386
 #, fuzzy
 #| msgctxt "@title:menu"
 #| msgid "Device"
@@ -4276,7 +4339,7 @@ msgstr "Dispositivo"
 
 #. i18n: file: gui/editmountpointdialogwidgetbase.ui:309
 #. i18n: ectx: property (text), widget (QLabel, label)
-#: rc.cpp:380
+#: rc.cpp:395
 msgid "Identify by:"
 msgstr ""
 
@@ -4288,7 +4351,7 @@ msgstr ""
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
 #. i18n: file: config/configurepagegeneral.ui:154
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_4)
-#: rc.cpp:383 rc.cpp:479
+#: rc.cpp:398 rc.cpp:494
 #, fuzzy
 #| msgid "File System"
 msgid "File Systems"
@@ -4296,7 +4359,7 @@ msgstr "Sistema de ficheiros"
 
 #. i18n: file: config/configurepagefilesystemcolors.ui:29
 #. i18n: ectx: property (text), widget (QLabel, textLabel)
-#: rc.cpp:386
+#: rc.cpp:401
 #, fuzzy
 #| msgctxt "@item/plain filesystem name"
 #| msgid "ext2"
@@ -4305,7 +4368,7 @@ msgstr "ext2"
 
 #. i18n: file: config/configurepagefilesystemcolors.ui:58
 #. i18n: ectx: property (text), widget (QLabel, textLabel_2)
-#: rc.cpp:389
+#: rc.cpp:404
 #, fuzzy
 #| msgctxt "@item/plain filesystem name"
 #| msgid "ext3"
@@ -4314,7 +4377,7 @@ msgstr "ext3"
 
 #. i18n: file: config/configurepagefilesystemcolors.ui:87
 #. i18n: ectx: property (text), widget (QLabel, textLabel_3)
-#: rc.cpp:392
+#: rc.cpp:407
 #, fuzzy
 #| msgctxt "@item/plain filesystem name"
 #| msgid "ext4"
@@ -4323,7 +4386,7 @@ msgstr "ext4"
 
 #. i18n: file: config/configurepagefilesystemcolors.ui:103
 #. i18n: ectx: property (text), widget (QLabel, textLabel_4)
-#: rc.cpp:395
+#: rc.cpp:410
 #, fuzzy
 #| msgctxt "@item/plain filesystem name"
 #| msgid "linuxswap"
@@ -4332,7 +4395,7 @@ msgstr "linuxswap"
 
 #. i18n: file: config/configurepagefilesystemcolors.ui:132
 #. i18n: ectx: property (text), widget (QLabel, textLabel_6)
-#: rc.cpp:398
+#: rc.cpp:413
 #, fuzzy
 #| msgctxt "@item/plain filesystem name"
 #| msgid "fat16"
@@ -4341,7 +4404,7 @@ msgstr "fat16"
 
 #. i18n: file: config/configurepagefilesystemcolors.ui:161
 #. i18n: ectx: property (text), widget (QLabel, textLabel_5)
-#: rc.cpp:401
+#: rc.cpp:416
 #, fuzzy
 #| msgctxt "@item/plain filesystem name"
 #| msgid "fat32"
@@ -4350,7 +4413,7 @@ msgstr "fat32"
 
 #. i18n: file: config/configurepagefilesystemcolors.ui:177
 #. i18n: ectx: property (text), widget (QLabel, textLabel_9)
-#: rc.cpp:404
+#: rc.cpp:419
 #, fuzzy
 #| msgctxt "@item/plain filesystem name"
 #| msgid "ntfs"
@@ -4359,7 +4422,7 @@ msgstr "ntfs"
 
 #. i18n: file: config/configurepagefilesystemcolors.ui:206
 #. i18n: ectx: property (text), widget (QLabel, textLabel_7)
-#: rc.cpp:407
+#: rc.cpp:422
 #, fuzzy
 #| msgctxt "@item/plain filesystem name"
 #| msgid "reiser"
@@ -4368,7 +4431,7 @@ msgstr "reiser"
 
 #. i18n: file: config/configurepagefilesystemcolors.ui:235
 #. i18n: ectx: property (text), widget (QLabel, textLabel_8)
-#: rc.cpp:410
+#: rc.cpp:425
 #, fuzzy
 #| msgctxt "@item/plain filesystem name"
 #| msgid "reiser4"
@@ -4377,7 +4440,7 @@ msgstr "reiser4"
 
 #. i18n: file: config/configurepagefilesystemcolors.ui:251
 #. i18n: ectx: property (text), widget (QLabel, textLabel_10)
-#: rc.cpp:413
+#: rc.cpp:428
 #, fuzzy
 #| msgctxt "@item/plain filesystem name"
 #| msgid "xfs"
@@ -4386,7 +4449,7 @@ msgstr "xfs"
 
 #. i18n: file: config/configurepagefilesystemcolors.ui:280
 #. i18n: ectx: property (text), widget (QLabel, textLabel_11)
-#: rc.cpp:416
+#: rc.cpp:431
 #, fuzzy
 #| msgctxt "@item/plain filesystem name"
 #| msgid "jfs"
@@ -4395,7 +4458,7 @@ msgstr "jfs"
 
 #. i18n: file: config/configurepagefilesystemcolors.ui:309
 #. i18n: ectx: property (text), widget (QLabel, textLabel_12)
-#: rc.cpp:419
+#: rc.cpp:434
 #, fuzzy
 #| msgctxt "@item/plain filesystem name"
 #| msgid "hfs"
@@ -4404,7 +4467,7 @@ msgstr "hfs"
 
 #. i18n: file: config/configurepagefilesystemcolors.ui:325
 #. i18n: ectx: property (text), widget (QLabel, textLabel_14)
-#: rc.cpp:422
+#: rc.cpp:437
 #, fuzzy
 #| msgctxt "@item/plain filesystem name"
 #| msgid "hfsplus"
@@ -4413,7 +4476,7 @@ msgstr "hfsplus"
 
 #. i18n: file: config/configurepagefilesystemcolors.ui:354
 #. i18n: ectx: property (text), widget (QLabel, textLabel_15)
-#: rc.cpp:425
+#: rc.cpp:440
 #, fuzzy
 #| msgctxt "@item/plain filesystem name"
 #| msgid "ufs"
@@ -4422,7 +4485,7 @@ msgstr "ufs"
 
 #. i18n: file: config/configurepagefilesystemcolors.ui:383
 #. i18n: ectx: property (text), widget (QLabel, textLabel_13)
-#: rc.cpp:428
+#: rc.cpp:443
 #, fuzzy
 #| msgctxt "@item/plain filesystem name"
 #| msgid "extended"
@@ -4431,7 +4494,7 @@ msgstr "estendido"
 
 #. i18n: file: config/configurepagefilesystemcolors.ui:399
 #. i18n: ectx: property (text), widget (QLabel, textLabel_16)
-#: rc.cpp:431
+#: rc.cpp:446
 #, fuzzy
 #| msgctxt "@item/plain filesystem name"
 #| msgid "unknown"
@@ -4440,7 +4503,7 @@ msgstr "descoñecido"
 
 #. i18n: file: config/configurepagefilesystemcolors.ui:428
 #. i18n: ectx: property (text), widget (QLabel, textLabel_17)
-#: rc.cpp:434
+#: rc.cpp:449
 #, fuzzy
 #| msgctxt "@item/plain filesystem name"
 #| msgid "unformatted"
@@ -4449,13 +4512,13 @@ msgstr "sen formato"
 
 #. i18n: file: config/configurepagefilesystemcolors.ui:466
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
-#: rc.cpp:437
+#: rc.cpp:452
 msgid "Available and Used Space"
 msgstr ""
 
 #. i18n: file: config/configurepagefilesystemcolors.ui:472
 #. i18n: ectx: property (text), widget (QLabel, textLabel_19)
-#: rc.cpp:440
+#: rc.cpp:455
 #, fuzzy
 #| msgctxt "@label partition"
 #| msgid "Available:"
@@ -4464,7 +4527,7 @@ msgstr "Disponíbel:"
 
 #. i18n: file: config/configurepagefilesystemcolors.ui:501
 #. i18n: ectx: property (text), widget (QLabel, textLabel_18)
-#: rc.cpp:443
+#: rc.cpp:458
 #, fuzzy
 #| msgctxt "@label partition"
 #| msgid "Used:"
@@ -4473,7 +4536,7 @@ msgstr "Utilizado:"
 
 #. i18n: file: config/configurepagegeneral.ui:23
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
-#: rc.cpp:446
+#: rc.cpp:461
 #, fuzzy
 #| msgctxt "@title:menu"
 #| msgid "Partition"
@@ -4482,7 +4545,7 @@ msgstr "Partición"
 
 #. i18n: file: config/configurepagegeneral.ui:35
 #. i18n: ectx: property (text), widget (QCheckBox, kcfg_allowApplyOperationsAsNonRoot)
-#: rc.cpp:449
+#: rc.cpp:464
 #, fuzzy
 #| msgctxt "@action:button"
 #| msgid "Run without administrative privileges"
@@ -4491,19 +4554,19 @@ msgstr "Executar sen privilexios de administrador"
 
 #. i18n: file: config/configurepagegeneral.ui:51
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
-#: rc.cpp:452
+#: rc.cpp:467
 msgid "Alignment"
 msgstr ""
 
 #. i18n: file: config/configurepagegeneral.ui:57
 #. i18n: ectx: property (text), widget (QCheckBox, kcfg_useCylinderAlignment)
-#: rc.cpp:455
+#: rc.cpp:470
 msgid "Use cylinder based MS-Dos partition alignment (Windows XP compatible)"
 msgstr ""
 
 #. i18n: file: config/configurepagegeneral.ui:70
 #. i18n: ectx: property (text), widget (QLabel, label)
-#: rc.cpp:458
+#: rc.cpp:473
 #, fuzzy
 #| msgctxt "@label"
 #| msgid "Partition type:"
@@ -4512,25 +4575,25 @@ msgstr "Tipo de partición:"
 
 #. i18n: file: config/configurepagegeneral.ui:105
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_3)
-#: rc.cpp:461
+#: rc.cpp:476
 msgid "Logging"
 msgstr ""
 
 #. i18n: file: config/configurepagegeneral.ui:111
 #. i18n: ectx: property (text), widget (QLabel, label_2)
-#: rc.cpp:464
+#: rc.cpp:479
 msgid "Hide messages below:"
 msgstr ""
 
 #. i18n: file: config/configurepagegeneral.ui:122
 #. i18n: ectx: property (text), item, widget (KComboBox, kcfg_minLogLevel)
-#: rc.cpp:467
+#: rc.cpp:482
 msgid "Debug"
 msgstr ""
 
 #. i18n: file: config/configurepagegeneral.ui:127
 #. i18n: ectx: property (text), item, widget (KComboBox, kcfg_minLogLevel)
-#: rc.cpp:470
+#: rc.cpp:485
 #, fuzzy
 #| msgctxt "@title:window"
 #| msgid "Information"
@@ -4539,7 +4602,7 @@ msgstr "Información"
 
 #. i18n: file: config/configurepagegeneral.ui:132
 #. i18n: ectx: property (text), item, widget (KComboBox, kcfg_minLogLevel)
-#: rc.cpp:473
+#: rc.cpp:488
 #, fuzzy
 #| msgctxt "@info:progress operation"
 #| msgid "Warning"
@@ -4548,7 +4611,7 @@ msgstr "Aviso"
 
 #. i18n: file: config/configurepagegeneral.ui:137
 #. i18n: ectx: property (text), item, widget (KComboBox, kcfg_minLogLevel)
-#: rc.cpp:476
+#: rc.cpp:491
 #, fuzzy
 #| msgctxt "@info:progress operation"
 #| msgid "Error"
@@ -4557,7 +4620,7 @@ msgstr "Erro"
 
 #. i18n: file: config/configurepagegeneral.ui:160
 #. i18n: ectx: property (text), widget (QLabel, label_3)
-#: rc.cpp:482
+#: rc.cpp:497
 #, fuzzy
 #| msgid "File System"
 msgid "Default file system:"
@@ -4565,7 +4628,7 @@ msgstr "Sistema de ficheiros"
 
 #. i18n: file: config/configurepagegeneral.ui:182
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_5)
-#: rc.cpp:485
+#: rc.cpp:500
 #, fuzzy
 #| msgid "Backup"
 msgid "Backend"
@@ -4573,13 +4636,13 @@ msgstr "Copia de respaldo"
 
 #. i18n: file: config/configurepagegeneral.ui:188
 #. i18n: ectx: property (text), widget (QLabel, label_4)
-#: rc.cpp:488
+#: rc.cpp:503
 msgid "Active backend:"
 msgstr ""
 
 #. i18n: file: config/configurepagegeneral.ui:210
 #. i18n: ectx: property (title), widget (KButtonGroup, kcfg_shredSource)
-#: rc.cpp:491
+#: rc.cpp:506
 #, fuzzy
 #| msgid "Shrink"
 msgid "Shredding"
@@ -4587,7 +4650,7 @@ msgstr "Reducir"
 
 #. i18n: file: config/configurepagegeneral.ui:216
 #. i18n: ectx: property (text), widget (QLabel, label_5)
-#: rc.cpp:494
+#: rc.cpp:509
 #, fuzzy
 #| msgctxt "@action:button"
 #| msgid "&Overwrite File"
@@ -4596,15 +4659,27 @@ msgstr "&Sobrescreber o ficheiro"
 
 #. i18n: file: config/configurepagegeneral.ui:226
 #. i18n: ectx: property (text), widget (QRadioButton, radioButton)
-#: rc.cpp:497
+#: rc.cpp:512
 msgid "Random data"
 msgstr ""
 
 #. i18n: file: config/configurepagegeneral.ui:233
 #. i18n: ectx: property (text), widget (QRadioButton, radioButton_2)
-#: rc.cpp:500
+#: rc.cpp:515
 msgid "Zeros"
 msgstr ""
+
+#, fuzzy
+#~| msgctxt "@label device"
+#~| msgid "Total sectors:"
+#~ msgid "Total Sectors:"
+#~ msgstr "Cantidade total de sectores:"
+
+#, fuzzy
+#~| msgctxt "@label device"
+#~| msgid "Cylinder size:"
+#~ msgid "Cylinder Size:"
+#~ msgstr "Tamaño do cilindro:"
 
 #~ msgid "KDE Partition Manager KPart"
 #~ msgstr "Xestor de particións de KDE"
