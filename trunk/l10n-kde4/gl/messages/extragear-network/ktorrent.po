@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktorrent\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2010-04-06 04:52+0200\n"
+"POT-Creation-Date: 2010-04-08 04:33+0200\n"
 "PO-Revision-Date: 2009-10-20 19:07+0200\n"
 "Last-Translator: Xosé <xosecalvo@gmail.com>\n"
 "Language-Team: Galego <proxecto@trasno.net>\n"
@@ -1065,7 +1065,7 @@ msgstr "Velocidade"
 #: plugins/infowidget/webseedsmodel.cpp:127
 #: plugins/infowidget/trackermodel.cpp:148
 #: ktorrent/tools/queuemanagermodel.cpp:123 ktorrent/tools/magnetmodel.cpp:129
-#: ktorrent/view/viewmodel.cpp:436
+#: ktorrent/view/viewmodel.cpp:436 ktorrent/trayicon.cpp:149
 msgid "Status"
 msgstr "Estado"
 
@@ -1755,7 +1755,7 @@ msgid "Suspended"
 msgstr "Velocidade"
 
 #: plugins/bwscheduler/schedulegraphicsitem.cpp:83
-#: plugins/bwscheduler/schedulegraphicsitem.cpp:84 ktorrent/trayicon.cpp:310
+#: plugins/bwscheduler/schedulegraphicsitem.cpp:84 ktorrent/trayicon.cpp:352
 msgid "Unlimited"
 msgstr "Sen límite"
 
@@ -1869,7 +1869,7 @@ msgstr "O ficheiro xa existe"
 
 #: plugins/ipfilter/ipblockingprefpage.cpp:34
 #: plugins/ipfilter/ipfilterplugin.cpp:60
-#: plugins/ipfilter/ipfilterplugin.cpp:73 ktorrent/gui.cpp:417
+#: plugins/ipfilter/ipfilterplugin.cpp:73 ktorrent/gui.cpp:419
 msgid "IP Filter"
 msgstr "Filtro de IP"
 
@@ -3292,25 +3292,25 @@ msgstr "Comezar todos"
 msgid "Start all torrents"
 msgstr "Iniciar todos os torrentes"
 
-#: ktorrent/gui.cpp:400
+#: ktorrent/gui.cpp:401
 msgid "Stop All"
 msgstr "Detelos todos"
 
-#: ktorrent/gui.cpp:401
+#: ktorrent/gui.cpp:402
 msgid "Stop all torrents"
 msgstr "Deter todos os torrentes"
 
-#: ktorrent/gui.cpp:404
+#: ktorrent/gui.cpp:406
 msgid "Open URL"
 msgstr "Abrir un URL"
 
-#: ktorrent/gui.cpp:405
+#: ktorrent/gui.cpp:407
 #, fuzzy
 #| msgid "Open a URL which points to a torrent"
 msgid "Open a URL which points to a torrent, magnet links are supported"
 msgstr "Abrir un URL que apunta a un torrente"
 
-#: ktorrent/gui.cpp:410
+#: ktorrent/gui.cpp:412
 #, fuzzy
 #| msgid "Pause KTorrent"
 msgid "Suspend KTorrent"
@@ -3324,41 +3324,41 @@ msgstr "Pausar KTorrent"
 #. i18n: ectx: property (text), widget (QCheckBox, m_suspended)
 #. i18n: file: plugins/bwscheduler/additemdlg.ui:124
 #. i18n: ectx: property (text), widget (QCheckBox, m_suspended)
-#: ktorrent/gui.cpp:412 rc.cpp:1087 rc.cpp:1180
+#: ktorrent/gui.cpp:414 rc.cpp:1087 rc.cpp:1180
 #, fuzzy
 #| msgid "Pause all running torrents"
 msgid "Suspend all running torrents"
 msgstr "Pausa todos os torrentes en marcha"
 
-#: ktorrent/gui.cpp:418
+#: ktorrent/gui.cpp:420
 msgid "Show the list of blocked IP addresses"
 msgstr "Mostrar a lista de enderezos IP bloqueados"
 
-#: ktorrent/gui.cpp:425
+#: ktorrent/gui.cpp:427
 msgid "Import Torrent"
 msgstr "Importar un torrente"
 
-#: ktorrent/gui.cpp:426
+#: ktorrent/gui.cpp:428
 msgid "Import a torrent"
 msgstr "Importar un torrente"
 
-#: ktorrent/gui.cpp:432
+#: ktorrent/gui.cpp:434
 msgid "Import KDE3 Torrents"
 msgstr "Importar os torrentes de KDE3"
 
-#: ktorrent/gui.cpp:433
+#: ktorrent/gui.cpp:435
 msgid "Import all torrents from the KDE3 version of KTorrent"
 msgstr "Importar todos os torrentes da versión de KTorrent para KDE3"
 
-#: ktorrent/gui.cpp:440
+#: ktorrent/gui.cpp:442
 msgid "Show/Hide KTorrent"
 msgstr "Mostrar/Acochar KTorrent"
 
-#: ktorrent/gui.cpp:445
+#: ktorrent/gui.cpp:447
 msgid "Group View Visible"
 msgstr "Vista de grupo visíbel"
 
-#: ktorrent/gui.cpp:446
+#: ktorrent/gui.cpp:448
 msgid "Show or hide the group view"
 msgstr "Mostrar ou acochar a vista de grupo"
 
@@ -3390,22 +3390,29 @@ msgstr "O enderezo IP %1 non é válido"
 msgid "Duplicate IP address %1"
 msgstr "O enderezo IP %1 está duplicado"
 
-#: ktorrent/trayicon.cpp:81
+#: ktorrent/trayicon.cpp:107
 msgid "Set max upload speed"
 msgstr "Pór como velocidade máxima de envío"
 
-#: ktorrent/trayicon.cpp:83
+#: ktorrent/trayicon.cpp:109
 msgid "Set max download speed"
 msgstr "Pór como velocidade máxima de recepción"
 
-#: ktorrent/trayicon.cpp:102
-#, kde-format
+#: ktorrent/trayicon.cpp:138
+#, fuzzy, kde-format
+#| msgid ""
+#| "<table cellpadding='2' cellspacing='2' align='center'><tr><td><b>Speed:</"
+#| "b></td><td></td></tr><tr><td>Download: <font color='#1c9a1c'>%1</font></"
+#| "td><td>Upload: <font color='#990000'>%2</font></td></"
+#| "tr><tr><td><b>Transfer:</b></td><td></td></tr><tr><td>Download: <font "
+#| "color='#1c9a1c'>%3</font></td><td>Upload: <font color='#990000'>%4</"
+#| "font></td></tr></table>"
 msgid ""
-"<table cellpadding='2' cellspacing='2' align='center'><tr><td><b>Speed:</b></"
-"td><td></td></tr><tr><td>Download: <font color='#1c9a1c'>%1</font></"
-"td><td>Upload: <font color='#990000'>%2</font></td></tr><tr><td><b>Transfer:"
-"</b></td><td></td></tr><tr><td>Download: <font color='#1c9a1c'>%3</font></"
-"td><td>Upload: <font color='#990000'>%4</font></td></tr></table>"
+"<table><tr><td>Download&nbsp;speed:</td><td><font color='#1c9a1c'>%1</font></"
+"td></tr><tr><td>Upload&nbsp;speed:</td><td><font color='#990000'>%2</font></"
+"td></tr><tr><td>Received:</td><td><font color='#1c9a1c'>%3</font></td></"
+"tr><tr><td>Transmitted:</td><td><font color='#990000'>%4</font></td></tr></"
+"table>"
 msgstr ""
 "<table cellpadding='2' cellspacing='2' align='center'><tr><td><b>Velocidade:"
 "</b></td><td></td></tr><tr><td>Recepción: <font color='#1c9a1c'>%1</font></"
@@ -3414,12 +3421,12 @@ msgstr ""
 "color='#1c9a1c'>%3</font></td><td>Envío: <font color='#990000'>%4</font></"
 "td></tr></table>"
 
-#: ktorrent/trayicon.cpp:144
+#: ktorrent/trayicon.cpp:183
 #, kde-format
 msgid "<b>%1</b> has completed downloading.<br>Average speed: %2 DL / %3 UL."
 msgstr "Acabou de obterse <b>%1</b>.<br>Velocidade media: %2 Rec / %3 Env."
 
-#: ktorrent/trayicon.cpp:162
+#: ktorrent/trayicon.cpp:201
 #, kde-format
 msgid ""
 "<b>%1</b> has reached its maximum share ratio of %2 and has been stopped."
@@ -3428,7 +3435,7 @@ msgstr ""
 "<b>%1</b> acadou a súa taxa máxima de compartición, %2 e parouse. "
 "<br>Enviáronse %3 a unha velocidade media de %4."
 
-#: ktorrent/trayicon.cpp:181
+#: ktorrent/trayicon.cpp:220
 #, kde-format
 msgid ""
 "<b>%1</b> has reached its maximum seed time of %2 hours and has been stopped."
@@ -3437,12 +3444,12 @@ msgstr ""
 "<b>%1</b> acadou o prazo máximo de compartición de %2 horas e detívose. "
 "<br>Enviáronse %3 a unha velocidade media de %4."
 
-#: ktorrent/trayicon.cpp:196
+#: ktorrent/trayicon.cpp:235
 #, kde-format
 msgid "<b>%1</b> has been stopped with the following error: <br>%2"
 msgstr "<b>%1</b> detívose polo erro seguinte: <br>%2"
 
-#: ktorrent/trayicon.cpp:207
+#: ktorrent/trayicon.cpp:246
 #, kde-format
 msgid ""
 "Corrupted data has been found in the torrent <b>%1</b><br>It would be a good "
@@ -3451,7 +3458,7 @@ msgstr ""
 "Atopáronse datos corruptos no torrente <b>%1</b> <br>Sería boa idea facer "
 "unha verificación da integridade do torrente."
 
-#: ktorrent/trayicon.cpp:224
+#: ktorrent/trayicon.cpp:263
 #, kde-format
 msgid ""
 "<b>%1</b> has reached its maximum share ratio of %2 and cannot be enqueued. "
@@ -3460,7 +3467,7 @@ msgstr ""
 "<b>%1</b> acadou a taxa máxima de compartición de %2 e non pode ser posto na "
 "fila.<br>Elimine manualmente o límite se quer continuar a compartilo."
 
-#: ktorrent/trayicon.cpp:228
+#: ktorrent/trayicon.cpp:267
 #, kde-format
 msgid ""
 "<b>%1</b> has reached its maximum seed time of %2 hours and cannot be "
@@ -3470,36 +3477,36 @@ msgstr ""
 "posto na fila.<br>Elimine manualmente o límite se quer continuar a "
 "compartilo."
 
-#: ktorrent/trayicon.cpp:240
+#: ktorrent/trayicon.cpp:279
 #, kde-format
 msgid "Cannot start <b>%1</b> : <br>"
 msgstr "Non se pode iniciar <b>%1</b>:<br>"
 
-#: ktorrent/trayicon.cpp:247
+#: ktorrent/trayicon.cpp:286
 #, kde-format
 msgid "Cannot seed more than 1 torrent. <br>"
 msgid_plural "Cannot seed more than %1 torrents. <br>"
 msgstr[0] "Non é posíbel compartir máis de 1 torrente.<br>"
 msgstr[1] "Non é posíbel compartir máis de %1 torrentes.<br>"
 
-#: ktorrent/trayicon.cpp:252
+#: ktorrent/trayicon.cpp:291
 #, kde-format
 msgid "Cannot download more than 1 torrent. <br>"
 msgid_plural "Cannot download more than %1 torrents. <br>"
 msgstr[0] "Non é posíbel recibir máis de 1 torrente.<br>"
 msgstr[1] "Non é posíbel recibir máis de %1 torrentes.<br>"
 
-#: ktorrent/trayicon.cpp:255
+#: ktorrent/trayicon.cpp:294
 msgid "Go to Settings -> Configure KTorrent, if you want to change the limits."
 msgstr ""
 "Vaia para Configuración -> Configurar KTorrent se desexa modificar os "
 "límites."
 
-#: ktorrent/trayicon.cpp:259
+#: ktorrent/trayicon.cpp:298
 msgid "There is not enough diskspace available."
 msgstr "Non se dispón de espazo libre de abondo no disco."
 
-#: ktorrent/trayicon.cpp:272
+#: ktorrent/trayicon.cpp:311
 #, kde-format
 msgid ""
 "Your disk is running out of space.<br /><b>%1</b> is being downloaded to '%"
@@ -3507,11 +3514,11 @@ msgid ""
 msgstr ""
 "O seu disco está a esgotar o espazo.<br /><b>%1</b> estase a recibir en «%2»."
 
-#: ktorrent/trayicon.cpp:275
+#: ktorrent/trayicon.cpp:314
 msgid "Torrent has been stopped.<br />"
 msgstr "Detívose o torrente.<br />"
 
-#: ktorrent/trayicon.cpp:308
+#: ktorrent/trayicon.cpp:350
 msgid "Speed limit in KiB/s"
 msgstr "Límite de velocidade en KiB/s"
 
