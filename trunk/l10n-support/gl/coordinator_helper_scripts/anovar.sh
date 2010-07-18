@@ -3,7 +3,7 @@
 #versións, procesar os orfos e algunha cousa máis.
 #LER O FICHEIRO AXUDA.TXT ANTES DE UTILIZAR!!!!!
 
-# Copyright (c) 2008, Marcelino Villarino Aguiar
+# Copyright (c) 2008, 2010 Marcelino Villarino Aguiar
 # All rights reserved.
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are met:
@@ -52,7 +52,7 @@ fi
 for lugar in {trunk/l10n-kde4,branches/stable/l10n-kde4,trunk/l10n-support}/{scripts,templates,$code,documentation,pology}; do #anovamos a galla
     if [ -d $BASE_REPO/$lugar/.svn ]; then
         echo "$lugar"
-        svn update --quiet $BASE_REPO/$lugar
+        svn update --non-interactive --quiet $BASE_REPO/$lugar
     fi
 done
 echo "END OF REPOSITORIES UPDATES, going to second stage"
