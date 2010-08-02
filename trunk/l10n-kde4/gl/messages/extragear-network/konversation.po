@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: konversation\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2010-08-01 05:14+0200\n"
+"POT-Creation-Date: 2010-08-02 05:05+0200\n"
 "PO-Revision-Date: 2009-10-20 19:14+0200\n"
 "Last-Translator: Xosé <xosecalvo@gmail.com>\n"
 "Language-Team: Galego <proxecto@trasno.net>\n"
@@ -26,7 +26,7 @@ msgstr "Editor de favoritos de Konversation"
 #. i18n: ectx: property (text), widget (QPushButton, newButton)
 #: src/config/alias_config.cpp:162 src/config/highlight_config.cpp:246
 #: src/config/watchednicknames_config.cpp:218
-#: src/config/quickbuttons_config.cpp:201 rc.cpp:940
+#: src/config/quickbuttons_config.cpp:201 src/urlcatcher.cpp:305 rc.cpp:940
 msgid "New"
 msgstr "Novo"
 
@@ -121,10 +121,6 @@ msgstr "Administradores do canal (+p)"
 #: src/config/nicklistbehavior_config.cpp:58
 msgid "Channel Owners (+q)"
 msgstr "Donos do canal (+q)"
-
-#: src/config/preferences.cpp:50
-msgid "Default Identity"
-msgstr "Identidade por omisión"
 
 #: src/config/settingsdialog.cpp:46
 msgid "Interface"
@@ -371,6 +367,10 @@ msgid "Warn when sending characters incompatible with your current encoding"
 msgstr ""
 "Avisar cando se envíen caracteres que sexan incompatíbeis coa codificación "
 "actual"
+
+#: src/config/preferences.cpp:50
+msgid "Default Identity"
+msgstr "Identidade por omisión"
 
 #: src/dbus.cpp:144
 #, kde-format
@@ -783,7 +783,7 @@ msgstr "Transferencias entrantes"
 msgid "Outgoing Transfers"
 msgstr "Transferencias saíntes"
 
-#: src/dcc/transferpanel.cpp:45 src/viewer/viewcontainer.cpp:2163
+#: src/dcc/transferpanel.cpp:45 src/viewer/viewcontainer.cpp:2153
 msgid "DCC Status"
 msgstr "Estado de DCC"
 
@@ -1333,8 +1333,8 @@ msgstr "Tema do canal"
 
 #. i18n: file: src/irc/channellistpanelui.ui:14
 #. i18n: ectx: property (windowTitle), widget (QWidget, ChannelListWidgetUI)
-#: src/irc/channellistpanel.cpp:145 src/viewer/viewcontainer.cpp:2467
-#: src/viewer/viewcontainer.cpp:2525 rc.cpp:1630
+#: src/irc/channellistpanel.cpp:145 src/viewer/viewcontainer.cpp:2457
+#: src/viewer/viewcontainer.cpp:2515 rc.cpp:1630
 msgid "Channel List"
 msgstr "Lista de canais"
 
@@ -1434,142 +1434,12 @@ msgstr "Ten voz"
 
 #. i18n: file: src/config/nicklistbehavior_configui.ui:98
 #. i18n: ectx: property (text), widget (QTreeWidget, sortOrder)
-#: src/irc/channelnick.cpp:208 src/irc/channeloptionsdialog.cpp:296
-#: src/irc/inputfilter.cpp:983 src/irc/inputfilter.cpp:987
-#: src/irc/inputfilter.cpp:2112 src/irc/inputfilter.cpp:2166
-#: src/irc/channel.cpp:2146 rc.cpp:880
+#: src/irc/channelnick.cpp:208 src/irc/inputfilter.cpp:983
+#: src/irc/inputfilter.cpp:987 src/irc/inputfilter.cpp:2112
+#: src/irc/inputfilter.cpp:2166 src/irc/channel.cpp:2146
+#: src/irc/channeloptionsdialog.cpp:299 rc.cpp:880
 msgid "Mode"
 msgstr "Modo"
-
-#: src/irc/channeloptionsdialog.cpp:32
-#, kde-format
-msgid "Channel Settings for %1"
-msgstr "Opcións do canal para %1"
-
-#: src/irc/channeloptionsdialog.cpp:156
-msgid "&Hide Advanced Modes &lt;&lt;"
-msgstr "Acoc&har os modos avanzados &lt;&lt;"
-
-#: src/irc/channeloptionsdialog.cpp:160
-msgid "&Show Advanced Modes &gt;&gt;"
-msgstr "Mo&strar os modos avanzados &gt;&gt;"
-
-#: src/irc/channeloptionsdialog.cpp:296
-msgid "Parameter"
-msgstr "Parámetro"
-
-#: src/irc/channeloptionsdialog.cpp:304
-#, fuzzy, kde-format
-#| msgid "%1 (port %2)"
-msgctxt "<mode character> (<mode description>)"
-msgid "%1 (%2)"
-msgstr "%1 (porto %2)"
-
-#: src/irc/channeloptionsdialog.cpp:631
-msgid "Timestamp"
-msgstr "Marca de tempo"
-
-#: src/irc/channeloptionsdialog.cpp:633
-msgid "Author"
-msgstr "Autor"
-
-#: src/irc/channeloptionsdialog.cpp:694
-msgid ""
-"<qt><p>These control the <em>mode</em> of the channel.  Only an operator can "
-"change these.</p><p>The <b>T</b>opic mode means that only the channel "
-"operator can change the topic for the channel.</p></qt>"
-msgstr ""
-"<qt><p>Isto controla o <em>modo</em> do canal. Só un operador pode alteralo."
-"</p><p>O modo <b>T</b>ema significa que só o operador do canal pode trocar o "
-"tema do canal.</p></qt>"
-
-#: src/irc/channeloptionsdialog.cpp:696
-msgid ""
-"<qt><p>These control the <em>mode</em> of the channel.  Only an operator can "
-"change these.</p><p><b>N</b>o messages from outside means users who are not "
-"in the channel cannot send messages for everybody in the channel to see.  "
-"Almost all channels have this set to prevent nuisance messages.</p></qt>"
-msgstr ""
-"<qt><p>Isto controla o <em>modo</em> do canal. Só un operador pode alteralo."
-"</p><p>Sen Me<b>N</b>saxes do exterior significa que os usuarios que non "
-"estean no canal non poden enviar mensaxes que poidan ver todas as persoas "
-"que estean no canal. Case todos os canais teñen isto activo para evitaren "
-"mensaxes molestas.</p></qt>"
-
-#: src/irc/channeloptionsdialog.cpp:698
-msgid ""
-"<qt><p>These control the <em>mode</em> of the channel.  Only an operator can "
-"change these.</p><p>A <b>S</b>ecret channel will not show up in the channel "
-"list, nor will any user be able to see that you are in the channel with the "
-"<em>WHOIS</em> command or anything similar.  Only the people that are in the "
-"same channel will know that you are in this channel, if this mode is set.</"
-"p></qt>"
-msgstr ""
-"<qt><p>Isto controla o <em>modo</em> do canal. Só un operador pode alteralo."
-"</p><p>Un canal <b>S</b>egredo non aparecerá na lista de canais, e os "
-"usuarios non serán quen de ver que vostede está no canal co comando "
-"<em>WHOIS</em> ou similar. Só as persoas que estean no mesmo canal saberán "
-"que está neste canal se este modo estiver activo.</p></qt>"
-
-#: src/irc/channeloptionsdialog.cpp:700
-msgid ""
-"<qt><p>These control the <em>mode</em> of the channel.  Only an operator can "
-"change these.</p><p>An <b>I</b>nvite only channel means that people can only "
-"join the channel if they are invited.  To invite someone, a channel operator "
-"needs to issue the command <em>/invite nick</em> from within the channel.</"
-"p></qt>"
-msgstr ""
-"<qt><p>Isto controla o <em>modo</em> do canal. Só un operador pode alteralo."
-"</p><p>Un canal só por conv<b>I</b>te significa que a xente só poderá unirse "
-"ao canal se fose convidada. Para convidar alguén, un operador do canal debe "
-"enviar o comando <em>/invite alcume</em> desde o canal.</p></qt>"
-
-#: src/irc/channeloptionsdialog.cpp:702
-msgid ""
-"<qt><p>These control the <em>mode</em> of the channel.  Only an operator can "
-"change these.</p><p>A <b>P</b>rivate channel is shown in a listing of all "
-"channels, but the topic is not shown.  A user's <em>WHOIS</em> may or may "
-"not show them as being in a private channel depending on the IRC server.</"
-"p></qt>"
-msgstr ""
-"<qt><p>Isto controla o <em>modo</em> do canal. Só un operador pode alteralo."
-"</p><p>Un canal <b>P</b>rivado aparece nunha lista con todos os canais, mais "
-"o tema aparece. O <em>WHOIS</em> dun usuario pode ou non mostralo como que "
-"está nun canal privado, dependendo do servidor de IRC.</p></qt>"
-
-#: src/irc/channeloptionsdialog.cpp:704
-msgid ""
-"<qt><p>These control the <em>mode</em> of the channel.  Only an operator can "
-"change these.</p><p>A <b>M</b>oderated channel is one where only operators, "
-"half-operators and those with voice can talk.</p></qt>"
-msgstr ""
-"<qt><p>Isto controla o <em>modo</em> do canal. Só un operador pode alteralo."
-"</p><p>Un canal <b>M</b>oderado é un onde só os operadores, sub-operadores e "
-"os que teñan voz poden falar.</p></qt>"
-
-#: src/irc/channeloptionsdialog.cpp:706
-msgid ""
-"<qt><p>These control the <em>mode</em> of the channel.  Only an operator can "
-"change these.</p><p>A protected channel requires users to enter a password "
-"in order to join.</p></qt>"
-msgstr ""
-"<qt><p>Isto controla o <em>modo</em> do canal. Só un operador pode alteralo."
-"</p><p>Un canal <b>P</b>rotexido necesita que os usuarios indiquen un "
-"contrasinal para se conectaren.</p></qt>"
-
-#: src/irc/channeloptionsdialog.cpp:708
-msgid ""
-"<qt><p>These control the <em>mode</em> of the channel.  Only an operator can "
-"change these.</p><p>A channel that has a user <b>L</b>imit means that only "
-"that many users can be in the channel at any one time.  Some channels have a "
-"bot that sits in the channel and changes this automatically depending on how "
-"busy the channel is.</p></qt>"
-msgstr ""
-"<qt><p>Isto controla o <em>modo</em> do canal. Só un operador pode alteralo."
-"</p><p>Un canal con <b>L</b>ímite de usuarios significa que só ese número de "
-"usuarios pode estar no canal ao mesmo tempo. Alguns canais teñen un robot "
-"que se aloxa no canal e axusta isto automaticamente, dependendo do ocupado "
-"que estea o canal.</p></qt>"
 
 #: src/irc/invitedialog.cpp:31
 msgid "Channel Invites"
@@ -1602,7 +1472,7 @@ msgctxt "network (nickname)"
 msgid "%1 (%2)"
 msgstr "%1 (porto %2)"
 
-#: src/irc/nicksonline.cpp:42 src/viewer/viewcontainer.cpp:2535
+#: src/irc/nicksonline.cpp:42 src/viewer/viewcontainer.cpp:2525
 msgid "Watched Nicks Online"
 msgstr "Alcumes vixiados en liña"
 
@@ -1913,7 +1783,7 @@ msgid_plural "limited to %1 users"
 msgstr[0] "limitado a %1 usuario"
 msgstr[1] "limitado a %1 usuarios"
 
-#: src/irc/inputfilter.cpp:998 src/urlcatcher.cpp:138
+#: src/irc/inputfilter.cpp:998 src/urlcatcher.cpp:173
 msgid "URL"
 msgstr "URL"
 
@@ -4062,7 +3932,7 @@ msgid "Nickname error"
 msgstr "Erro do alcume"
 
 #: src/irc/server.cpp:1499 src/irc/server.cpp:3471 src/irc/server.cpp:3476
-#: src/application.cpp:370
+#: src/application.cpp:374
 msgid "D-Bus"
 msgstr "D-Bus"
 
@@ -4286,6 +4156,136 @@ msgid "Failed to parse DH1080_FINISH sent by %1. Key exchange failed."
 msgstr ""
 "Non se puido examinar o DH1080_FINISH enviado por %1. Fallou o intercambio "
 "de chaves."
+
+#: src/irc/channeloptionsdialog.cpp:32
+#, kde-format
+msgid "Channel Settings for %1"
+msgstr "Opcións do canal para %1"
+
+#: src/irc/channeloptionsdialog.cpp:159
+msgid "&Hide Advanced Modes &lt;&lt;"
+msgstr "Acoc&har os modos avanzados &lt;&lt;"
+
+#: src/irc/channeloptionsdialog.cpp:163
+msgid "&Show Advanced Modes &gt;&gt;"
+msgstr "Mo&strar os modos avanzados &gt;&gt;"
+
+#: src/irc/channeloptionsdialog.cpp:299
+msgid "Parameter"
+msgstr "Parámetro"
+
+#: src/irc/channeloptionsdialog.cpp:307
+#, fuzzy, kde-format
+#| msgid "%1 (port %2)"
+msgctxt "<mode character> (<mode description>)"
+msgid "%1 (%2)"
+msgstr "%1 (porto %2)"
+
+#: src/irc/channeloptionsdialog.cpp:634
+msgid "Timestamp"
+msgstr "Marca de tempo"
+
+#: src/irc/channeloptionsdialog.cpp:636
+msgid "Author"
+msgstr "Autor"
+
+#: src/irc/channeloptionsdialog.cpp:697
+msgid ""
+"<qt><p>These control the <em>mode</em> of the channel.  Only an operator can "
+"change these.</p><p>The <b>T</b>opic mode means that only the channel "
+"operator can change the topic for the channel.</p></qt>"
+msgstr ""
+"<qt><p>Isto controla o <em>modo</em> do canal. Só un operador pode alteralo."
+"</p><p>O modo <b>T</b>ema significa que só o operador do canal pode trocar o "
+"tema do canal.</p></qt>"
+
+#: src/irc/channeloptionsdialog.cpp:699
+msgid ""
+"<qt><p>These control the <em>mode</em> of the channel.  Only an operator can "
+"change these.</p><p><b>N</b>o messages from outside means users who are not "
+"in the channel cannot send messages for everybody in the channel to see.  "
+"Almost all channels have this set to prevent nuisance messages.</p></qt>"
+msgstr ""
+"<qt><p>Isto controla o <em>modo</em> do canal. Só un operador pode alteralo."
+"</p><p>Sen Me<b>N</b>saxes do exterior significa que os usuarios que non "
+"estean no canal non poden enviar mensaxes que poidan ver todas as persoas "
+"que estean no canal. Case todos os canais teñen isto activo para evitaren "
+"mensaxes molestas.</p></qt>"
+
+#: src/irc/channeloptionsdialog.cpp:701
+msgid ""
+"<qt><p>These control the <em>mode</em> of the channel.  Only an operator can "
+"change these.</p><p>A <b>S</b>ecret channel will not show up in the channel "
+"list, nor will any user be able to see that you are in the channel with the "
+"<em>WHOIS</em> command or anything similar.  Only the people that are in the "
+"same channel will know that you are in this channel, if this mode is set.</"
+"p></qt>"
+msgstr ""
+"<qt><p>Isto controla o <em>modo</em> do canal. Só un operador pode alteralo."
+"</p><p>Un canal <b>S</b>egredo non aparecerá na lista de canais, e os "
+"usuarios non serán quen de ver que vostede está no canal co comando "
+"<em>WHOIS</em> ou similar. Só as persoas que estean no mesmo canal saberán "
+"que está neste canal se este modo estiver activo.</p></qt>"
+
+#: src/irc/channeloptionsdialog.cpp:703
+msgid ""
+"<qt><p>These control the <em>mode</em> of the channel.  Only an operator can "
+"change these.</p><p>An <b>I</b>nvite only channel means that people can only "
+"join the channel if they are invited.  To invite someone, a channel operator "
+"needs to issue the command <em>/invite nick</em> from within the channel.</"
+"p></qt>"
+msgstr ""
+"<qt><p>Isto controla o <em>modo</em> do canal. Só un operador pode alteralo."
+"</p><p>Un canal só por conv<b>I</b>te significa que a xente só poderá unirse "
+"ao canal se fose convidada. Para convidar alguén, un operador do canal debe "
+"enviar o comando <em>/invite alcume</em> desde o canal.</p></qt>"
+
+#: src/irc/channeloptionsdialog.cpp:705
+msgid ""
+"<qt><p>These control the <em>mode</em> of the channel.  Only an operator can "
+"change these.</p><p>A <b>P</b>rivate channel is shown in a listing of all "
+"channels, but the topic is not shown.  A user's <em>WHOIS</em> may or may "
+"not show them as being in a private channel depending on the IRC server.</"
+"p></qt>"
+msgstr ""
+"<qt><p>Isto controla o <em>modo</em> do canal. Só un operador pode alteralo."
+"</p><p>Un canal <b>P</b>rivado aparece nunha lista con todos os canais, mais "
+"o tema aparece. O <em>WHOIS</em> dun usuario pode ou non mostralo como que "
+"está nun canal privado, dependendo do servidor de IRC.</p></qt>"
+
+#: src/irc/channeloptionsdialog.cpp:707
+msgid ""
+"<qt><p>These control the <em>mode</em> of the channel.  Only an operator can "
+"change these.</p><p>A <b>M</b>oderated channel is one where only operators, "
+"half-operators and those with voice can talk.</p></qt>"
+msgstr ""
+"<qt><p>Isto controla o <em>modo</em> do canal. Só un operador pode alteralo."
+"</p><p>Un canal <b>M</b>oderado é un onde só os operadores, sub-operadores e "
+"os que teñan voz poden falar.</p></qt>"
+
+#: src/irc/channeloptionsdialog.cpp:709
+msgid ""
+"<qt><p>These control the <em>mode</em> of the channel.  Only an operator can "
+"change these.</p><p>A protected channel requires users to enter a password "
+"in order to join.</p></qt>"
+msgstr ""
+"<qt><p>Isto controla o <em>modo</em> do canal. Só un operador pode alteralo."
+"</p><p>Un canal <b>P</b>rotexido necesita que os usuarios indiquen un "
+"contrasinal para se conectaren.</p></qt>"
+
+#: src/irc/channeloptionsdialog.cpp:711
+msgid ""
+"<qt><p>These control the <em>mode</em> of the channel.  Only an operator can "
+"change these.</p><p>A channel that has a user <b>L</b>imit means that only "
+"that many users can be in the channel at any one time.  Some channels have a "
+"bot that sits in the channel and changes this automatically depending on how "
+"busy the channel is.</p></qt>"
+msgstr ""
+"<qt><p>Isto controla o <em>modo</em> do canal. Só un operador pode alteralo."
+"</p><p>Un canal con <b>L</b>ímite de usuarios significa que só ese número de "
+"usuarios pode estar no canal ao mesmo tempo. Alguns canais teñen un robot "
+"que se aloxa no canal e axusta isto automaticamente, dependendo do ocupado "
+"que estea o canal.</p></qt>"
 
 #: src/konsolepanel.cpp:27 src/viewer/viewcontainer.cpp:2111
 #: src/viewer/viewcontainer.cpp:2112
@@ -4799,7 +4799,7 @@ msgstr "Antevisión OSD - arrastre para posicionar"
 msgid "Edit Multiline Paste"
 msgstr "Editar apegado de varias liñas"
 
-#: src/viewer/rawlog.cpp:25 src/viewer/viewcontainer.cpp:2249
+#: src/viewer/rawlog.cpp:25 src/viewer/viewcontainer.cpp:2239
 msgid "Raw Log"
 msgstr "Rexisto en bruto"
 
@@ -4940,119 +4940,6 @@ msgstr "Cambiar a información de notificación"
 msgid "Konversation"
 msgstr "Konversation"
 
-#: src/viewer/viewcontainer.cpp:212 src/mainwindow.cpp:292
-msgid "Move Tab Up"
-msgstr "Subir a páxina"
-
-#: src/viewer/viewcontainer.cpp:220 src/mainwindow.cpp:303
-msgid "Move Tab Down"
-msgstr "Baixar a páxina"
-
-#: src/viewer/viewcontainer.cpp:313 src/mainwindow.cpp:323
-#: src/mainwindow.cpp:335
-msgid "Move Tab Left"
-msgstr "Mover o separador para a esquerda"
-
-#: src/viewer/viewcontainer.cpp:321 src/mainwindow.cpp:314
-#: src/mainwindow.cpp:344
-msgid "Move Tab Right"
-msgstr "Mover o separador para a dereita"
-
-#: src/viewer/viewcontainer.cpp:546 src/viewer/ircview.cpp:233
-msgid "Find Text..."
-msgstr "Procurar texto..."
-
-#: src/viewer/viewcontainer.cpp:548
-msgid "Search for text in the current tab"
-msgstr "Procurar o texto na páxina actual"
-
-#: src/viewer/viewcontainer.cpp:566
-#, kde-format
-msgid "Channel &List for %1"
-msgstr "&Lista de canais de %1"
-
-#: src/viewer/viewcontainer.cpp:572 src/mainwindow.cpp:205
-msgid "Channel &List"
-msgstr "&Lista de canais"
-
-#: src/viewer/viewcontainer.cpp:581 src/mainwindow.cpp:188
-#: src/mainwindow.cpp:748
-msgid "&Open Logfile"
-msgstr "Abrir &o rexisto"
-
-#: src/viewer/viewcontainer.cpp:586
-#, kde-format
-msgid "&Open Logfile for %1"
-msgstr "Abrir &o richeiro de rexisto de %1"
-
-#: src/viewer/viewcontainer.cpp:597
-#, kde-format
-msgid "&Channel Settings for %1..."
-msgstr "Configuración do &canal para %1..."
-
-#: src/viewer/viewcontainer.cpp:602 src/mainwindow.cpp:197
-msgid "&Channel Settings..."
-msgstr "Configuración do &canal..."
-
-#: src/viewer/viewcontainer.cpp:1643
-msgid "Rename Tab"
-msgstr "Mudar o nome do separador"
-
-#: src/viewer/viewcontainer.cpp:1644
-msgid "Enter new tab name:"
-msgstr "Escriba o nome do novo separador:"
-
-#: src/viewer/viewcontainer.cpp:1716
-#, kde-format
-msgctxt "Default encoding"
-msgid "Default ( %1 )"
-msgstr "Por omisión (%1)"
-
-#: src/viewer/viewcontainer.cpp:1751
-msgid "&Rename Tab..."
-msgstr "Muda&r o nome do separador..."
-
-#: src/viewer/viewcontainer.cpp:1907
-msgid "You can only search in text fields."
-msgstr "Só pode procurar en campos de texto."
-
-#: src/viewer/viewcontainer.cpp:1908
-msgid "Find Text Information"
-msgstr "Procurar Información do texto"
-
-#: src/viewer/viewcontainer.cpp:2102
-#, kde-format
-msgid "Logfile of %1"
-msgstr "Ficheiro de rexisto de %1"
-
-#. i18n: file: src/urlcatcherui.ui:14
-#. i18n: ectx: property (windowTitle), widget (QWidget, URLCatcherUI)
-#: src/viewer/viewcontainer.cpp:2123 src/urlcatcher.cpp:148 rc.cpp:1951
-msgid "URL Catcher"
-msgstr "Extractor de URL"
-
-#: src/viewer/viewcontainer.cpp:2493
-msgid ""
-"Using this function may result in a lot of network traffic. If your "
-"connection is not fast enough, it is possible that your client will be "
-"disconnected by the server."
-msgstr ""
-"Se usa esta función pode xerar bastante tránsito na rede. Se a sua conexión "
-"non é suficientemente rápida é posíbel que o seu cliente sexa desconectado "
-"do servidor."
-
-#: src/viewer/viewcontainer.cpp:2497
-msgid "Channel List Warning"
-msgstr "Aviso da lista de canais"
-
-#: src/viewer/viewcontainer.cpp:2521
-msgid ""
-"To know which server to display the channel list for, the list can only be "
-"opened from a query, channel or status window."
-msgstr ""
-"Para saber de que servidor mostrar a lista, a lista só pode abrirse desde "
-"unha xanela de conversa privada, canal ou estado."
-
 #: src/viewer/statuspanel.cpp:232
 #, kde-format
 msgid ""
@@ -5120,6 +5007,10 @@ msgstr "&Copiar"
 msgid "Select All"
 msgstr "Seleccionalo todo"
 
+#: src/viewer/ircview.cpp:233 src/viewer/viewcontainer.cpp:546
+msgid "Find Text..."
+msgstr "Procurar texto..."
+
 #: src/viewer/ircview.cpp:1347
 msgid "Open Query"
 msgstr "Abrir a conversa privada"
@@ -5138,7 +5029,7 @@ msgid "Get &topic"
 msgstr "Obter o &tema"
 
 #: src/viewer/ircview.cpp:1542 src/viewer/topiclabel.cpp:328
-#: src/urlcatcher.cpp:464
+#: src/urlcatcher.cpp:277
 msgid "Save link as"
 msgstr "Gardar a ligazón como"
 
@@ -5152,146 +5043,112 @@ msgstr "Abrir unha conversa privada con %1"
 msgid "Join the channel %1"
 msgstr "Unirse ao canal %1"
 
-#: src/urlcatcher.cpp:136
-msgid "From"
-msgstr "De"
+#: src/viewer/viewcontainer.cpp:212 src/mainwindow.cpp:292
+msgid "Move Tab Up"
+msgstr "Subir a páxina"
 
-#: src/urlcatcher.cpp:140
-msgid "Date"
-msgstr "Data"
+#: src/viewer/viewcontainer.cpp:220 src/mainwindow.cpp:303
+msgid "Move Tab Down"
+msgstr "Baixar a páxina"
 
-#: src/urlcatcher.cpp:154
-#, fuzzy
-#| msgid "Open URL"
-msgctxt "open url"
-msgid "&Open"
-msgstr "Abrir o URL"
+#: src/viewer/viewcontainer.cpp:313 src/mainwindow.cpp:323
+#: src/mainwindow.cpp:335
+msgid "Move Tab Left"
+msgstr "Mover o separador para a esquerda"
 
-#: src/urlcatcher.cpp:155
-msgid "Open link in external browser."
-msgstr ""
+#: src/viewer/viewcontainer.cpp:321 src/mainwindow.cpp:314
+#: src/mainwindow.cpp:344
+msgid "Move Tab Right"
+msgstr "Mover o separador para a dereita"
 
-#: src/urlcatcher.cpp:156
-#, fuzzy
-#| msgid ""
-#| "<p>Select a <b>URL</b> above, then click this button to launch the "
-#| "application associated with the mimetype of the URL.</p>\n"
-#| "<p>In the <b>Settings</b>, under <b>Behavior</b> | <b>General</b>, you "
-#| "can specify a custom web browser for web URLs.</p>"
-msgid ""
-"<p>Select a <b>URL</b> above, then click this button to launch the "
-"application associated with the mimetype of the URL.</p>-<p>In the "
-"<b>Settings</b>, under <b>Behavior</b> | <b>General</b>, you can specify a "
-"custom web browser for web URLs.</p>"
-msgstr ""
-"<p>Escolla un <b>URL</b> en cima, e prema este botón para lanzar a "
-"aplicación asociada co tipo MIME do URL.</p>\n"
-"<p>Na <b>Configuración</b>, en  <b>Comportamento</b> | <b>Xeral</b>, pode "
-"indicar un navegador web personalizado para os URL.</p>"
+#: src/viewer/viewcontainer.cpp:548
+msgid "Search for text in the current tab"
+msgstr "Procurar o texto na páxina actual"
 
-#: src/urlcatcher.cpp:158
-#, fuzzy
-#| msgid "Save As..."
-msgid "&Save..."
-msgstr "Gardar como..."
-
-#: src/urlcatcher.cpp:159
-msgid "Save selected link to the disk."
-msgstr ""
-
-#: src/urlcatcher.cpp:162
-#, fuzzy
-#| msgid "&Copy"
-msgctxt "copy url"
-msgid "&Copy"
-msgstr "&Copiar"
-
-#: src/urlcatcher.cpp:163
-#, fuzzy
-#| msgid "Copy URL to Clipboard"
-msgid "Copy link address to the clipboard."
-msgstr "Copiar o URL para o Porta-retallos"
-
-#: src/urlcatcher.cpp:164
-msgid ""
-"Select a <b>URL</b> above, then click this button to copy the URL to the "
-"clipboard."
-msgstr ""
-"Escolla un <b>URL</b> en cima, e prema este botón para copiar o URL ao porta-"
-"retallos."
-
-#: src/urlcatcher.cpp:166
-#, fuzzy
-#| msgid "&Delete"
-msgctxt "delete url"
-msgid "&Delete"
-msgstr "Elimina&r"
-
-#: src/urlcatcher.cpp:167
-msgid ""
-"Select a <b>URL</b> above, then click this button to delete the URL from the "
-"list."
-msgstr ""
-"Escolla un <b>URL</b> en cima e prema este botón para borrar o URL da lista."
-
-#: src/urlcatcher.cpp:168
-#, fuzzy
-#| msgid "&Delete URL"
-msgid "Delete selected link."
-msgstr "&Borrar o URL"
-
-#: src/urlcatcher.cpp:171
-#, fuzzy
-#| msgid "Save &List..."
-msgctxt "save url list"
-msgid "&Save List..."
-msgstr "Gardar a &lista..."
-
-#: src/urlcatcher.cpp:172
-#, fuzzy
-#| msgid "Save URL List"
-msgid "Save list."
-msgstr "Gardar a lista de URL"
-
-#: src/urlcatcher.cpp:173
-msgid "Click to save the entire list to a file."
-msgstr "Prema para guardar toda a lista nun ficheiro."
-
-#: src/urlcatcher.cpp:175
-#, fuzzy
-#| msgid "C&lear List"
-msgctxt "clear url list"
-msgid "&Clear List"
-msgstr "&Limpar a lista"
-
-#: src/urlcatcher.cpp:176
-#, fuzzy
-#| msgid "C&lear List"
-msgid "Clear list."
-msgstr "&Limpar a lista"
-
-#: src/urlcatcher.cpp:177
-msgid "Click to erase the entire list."
-msgstr "Prema para borrar toda a lista."
-
-#: src/urlcatcher.cpp:180
-#, fuzzy
-#| msgid "Add to Bookmarks"
-msgid "Add Bookmark..."
-msgstr "Engadir aos favoritos"
-
-#: src/urlcatcher.cpp:376
-msgid "Save URL List"
-msgstr "Gardar a lista de URL"
-
-#: src/urlcatcher.cpp:400
+#: src/viewer/viewcontainer.cpp:566
 #, kde-format
+msgid "Channel &List for %1"
+msgstr "&Lista de canais de %1"
+
+#: src/viewer/viewcontainer.cpp:572 src/mainwindow.cpp:205
+msgid "Channel &List"
+msgstr "&Lista de canais"
+
+#: src/viewer/viewcontainer.cpp:581 src/mainwindow.cpp:188
+#: src/mainwindow.cpp:748
+msgid "&Open Logfile"
+msgstr "Abrir &o rexisto"
+
+#: src/viewer/viewcontainer.cpp:586
+#, kde-format
+msgid "&Open Logfile for %1"
+msgstr "Abrir &o richeiro de rexisto de %1"
+
+#: src/viewer/viewcontainer.cpp:597
+#, kde-format
+msgid "&Channel Settings for %1..."
+msgstr "Configuración do &canal para %1..."
+
+#: src/viewer/viewcontainer.cpp:602 src/mainwindow.cpp:197
+msgid "&Channel Settings..."
+msgstr "Configuración do &canal..."
+
+#: src/viewer/viewcontainer.cpp:1643
+msgid "Rename Tab"
+msgstr "Mudar o nome do separador"
+
+#: src/viewer/viewcontainer.cpp:1644
+msgid "Enter new tab name:"
+msgstr "Escriba o nome do novo separador:"
+
+#: src/viewer/viewcontainer.cpp:1716
+#, kde-format
+msgctxt "Default encoding"
+msgid "Default ( %1 )"
+msgstr "Por omisión (%1)"
+
+#: src/viewer/viewcontainer.cpp:1751
+msgid "&Rename Tab..."
+msgstr "Muda&r o nome do separador..."
+
+#: src/viewer/viewcontainer.cpp:1907
+msgid "You can only search in text fields."
+msgstr "Só pode procurar en campos de texto."
+
+#: src/viewer/viewcontainer.cpp:1908
+msgid "Find Text Information"
+msgstr "Procurar Información do texto"
+
+#: src/viewer/viewcontainer.cpp:2102
+#, kde-format
+msgid "Logfile of %1"
+msgstr "Ficheiro de rexisto de %1"
+
+#: src/viewer/viewcontainer.cpp:2122 src/urlcatcher.cpp:79
+msgid "URL Catcher"
+msgstr "Extractor de URL"
+
+#: src/viewer/viewcontainer.cpp:2483
 msgid ""
-"Konversation URL List: %1\n"
-"\n"
+"Using this function may result in a lot of network traffic. If your "
+"connection is not fast enough, it is possible that your client will be "
+"disconnected by the server."
 msgstr ""
-"Lista de URL de Konversation: %1\n"
-"\n"
+"Se usa esta función pode xerar bastante tránsito na rede. Se a sua conexión "
+"non é suficientemente rápida é posíbel que o seu cliente sexa desconectado "
+"do servidor."
+
+#: src/viewer/viewcontainer.cpp:2487
+msgid "Channel List Warning"
+msgstr "Aviso da lista de canais"
+
+#: src/viewer/viewcontainer.cpp:2511
+msgid ""
+"To know which server to display the channel list for, the list can only be "
+"opened from a query, channel or status window."
+msgstr ""
+"Para saber de que servidor mostrar a lista, a lista só pode abrirse desde "
+"unha xanela de conversa privada, canal ou estado."
 
 #: src/main.cpp:39
 #, fuzzy
@@ -6140,6 +5997,181 @@ msgstr "Configuración da identidade"
 #: src/connectionmanager.cpp:611
 msgid "Edit Identity..."
 msgstr "Modificar a identidade..."
+
+#: src/urlcatcher.cpp:100
+#, fuzzy
+#| msgid "Open URL"
+msgctxt "open url"
+msgid "&Open"
+msgstr "Abrir o URL"
+
+#: src/urlcatcher.cpp:103
+msgid "Open URLs in external browser."
+msgstr ""
+
+#: src/urlcatcher.cpp:104
+#, fuzzy
+#| msgid ""
+#| "<p>Select a <b>URL</b> above, then click this button to launch the "
+#| "application associated with the mimetype of the URL.</p>\n"
+#| "<p>In the <b>Settings</b>, under <b>Behavior</b> | <b>General</b>, you "
+#| "can specify a custom web browser for web URLs.</p>"
+msgid ""
+"<p>Select one or several <b>URLs</b> below, then click this button to launch "
+"the application associated with the mimetype of the URL.</p>-<p>In the "
+"<b>Settings</b>, under <b>Behavior</b> | <b>General</b>, you can specify a "
+"custom web browser for web URLs.</p>"
+msgstr ""
+"<p>Escolla un <b>URL</b> en cima, e prema este botón para lanzar a "
+"aplicación asociada co tipo MIME do URL.</p>\n"
+"<p>Na <b>Configuración</b>, en  <b>Comportamento</b> | <b>Xeral</b>, pode "
+"indicar un navegador web personalizado para os URL.</p>"
+
+#: src/urlcatcher.cpp:107
+#, fuzzy
+#| msgid "Save As..."
+msgid "&Save..."
+msgstr "Gardar como..."
+
+#: src/urlcatcher.cpp:110
+msgid "Save selected URLs to the disk."
+msgstr ""
+
+#: src/urlcatcher.cpp:113
+#, fuzzy
+#| msgid "Add to Bookmarks"
+msgid "Add Bookmark..."
+msgstr "Engadir aos favoritos"
+
+#: src/urlcatcher.cpp:121
+#, fuzzy
+#| msgid "&Copy"
+msgctxt "copy url"
+msgid "&Copy"
+msgstr "&Copiar"
+
+#: src/urlcatcher.cpp:124
+#, fuzzy
+#| msgid "Copy URL to Clipboard"
+msgid "Copy URLs to the clipboard."
+msgstr "Copiar o URL para o Porta-retallos"
+
+#: src/urlcatcher.cpp:125
+#, fuzzy
+#| msgid ""
+#| "Select a <b>URL</b> above, then click this button to copy the URL to the "
+#| "clipboard."
+msgid ""
+"Select one or several <b>URLs</b> above, then click this button to copy them "
+"to the clipboard."
+msgstr ""
+"Escolla un <b>URL</b> en cima, e prema este botón para copiar o URL ao porta-"
+"retallos."
+
+#: src/urlcatcher.cpp:128
+#, fuzzy
+#| msgid "&Delete"
+msgctxt "delete url"
+msgid "&Delete"
+msgstr "Elimina&r"
+
+#: src/urlcatcher.cpp:131
+#, fuzzy
+#| msgid ""
+#| "Select a <b>URL</b> above, then click this button to delete the URL from "
+#| "the list."
+msgid ""
+"Select one or several <b>URLs</b> above, then click this button to delete "
+"them from the list."
+msgstr ""
+"Escolla un <b>URL</b> en cima e prema este botón para borrar o URL da lista."
+
+#: src/urlcatcher.cpp:132
+#, fuzzy
+#| msgid "&Delete URL"
+msgid "Delete selected link."
+msgstr "&Borrar o URL"
+
+#: src/urlcatcher.cpp:138
+#, fuzzy
+#| msgid "Save &List..."
+msgctxt "save url list"
+msgid "&Save List..."
+msgstr "Gardar a &lista..."
+
+#: src/urlcatcher.cpp:140
+#, fuzzy
+#| msgid "Save URL List"
+msgid "Save list."
+msgstr "Gardar a lista de URL"
+
+#: src/urlcatcher.cpp:141
+msgid "Click to save the entire list to a file."
+msgstr "Prema para guardar toda a lista nun ficheiro."
+
+#: src/urlcatcher.cpp:144
+#, fuzzy
+#| msgid "C&lear List"
+msgctxt "clear url list"
+msgid "&Clear List"
+msgstr "&Limpar a lista"
+
+#: src/urlcatcher.cpp:146
+#, fuzzy
+#| msgid "C&lear List"
+msgid "Clear list."
+msgstr "&Limpar a lista"
+
+#: src/urlcatcher.cpp:147
+msgid "Click to erase the entire list."
+msgstr "Prema para borrar toda a lista."
+
+#: src/urlcatcher.cpp:158
+msgid ""
+"List of Uniform Resource Locators mentioned in any of the Konversation "
+"windows during this session."
+msgstr ""
+"Lista de URLs mencionadas en calquera das xanelas de Konversation durante "
+"esta sesión."
+
+#: src/urlcatcher.cpp:171
+msgid "From"
+msgstr "De"
+
+#: src/urlcatcher.cpp:175
+msgid "Date"
+msgstr "Data"
+
+#: src/urlcatcher.cpp:234
+msgid ""
+"You have selected more than one URL. Do you really want to open several URLs "
+"at once?"
+msgstr ""
+
+#: src/urlcatcher.cpp:235 src/urlcatcher.cpp:261
+#, fuzzy
+#| msgid "Open URL"
+msgid "Open URLs"
+msgstr "Abrir o URL"
+
+#: src/urlcatcher.cpp:259
+msgid ""
+"You have selected more than one URL. A file dialog to set the destination "
+"will open for each. Do you really want to save several URLs at once?"
+msgstr ""
+
+#: src/urlcatcher.cpp:371
+msgid "Save URL List"
+msgstr "Gardar a lista de URL"
+
+#: src/urlcatcher.cpp:398
+#, kde-format
+msgid ""
+"Konversation URL List: %1\n"
+"\n"
+msgstr ""
+"Lista de URL de Konversation: %1\n"
+"\n"
 
 #: rc.cpp:1
 msgctxt "NAME OF TRANSLATORS"
@@ -9420,16 +9452,6 @@ msgstr "Se&parador anterior"
 msgid "&Options"
 msgstr "Opcións"
 
-#. i18n: file: src/urlcatcherui.ui:32
-#. i18n: ectx: property (whatsThis), widget (QTreeView, m_urlListView)
-#: rc.cpp:1954
-msgid ""
-"List of Uniform Resource Locators mentioned in any of the Konversation "
-"windows during this session."
-msgstr ""
-"Lista de URLs mencionadas en calquera das xanelas de Konversation durante "
-"esta sesión."
-
 #~ msgid "Show raw mode characters"
 #~ msgstr "Mostrar os caracteres de modo bruto"
 
@@ -9477,11 +9499,6 @@ msgstr ""
 
 #~ msgid "Join Channel on %1"
 #~ msgstr "Unirse ao canal en %1"
-
-#, fuzzy
-#~| msgid "Open URL"
-#~ msgid "Open URL."
-#~ msgstr "Abrir o URL"
 
 #, fuzzy
 #~| msgid "&Copy URL"
