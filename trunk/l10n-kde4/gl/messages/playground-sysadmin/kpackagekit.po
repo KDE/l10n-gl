@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kpackagekit\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2010-07-31 05:47+0200\n"
+"POT-Creation-Date: 2010-08-10 06:28+0200\n"
 "PO-Revision-Date: 2009-03-13 21:06+0100\n"
 "Last-Translator: marce villarino <mvillarino@users.sourceforge.net>\n"
 "Language-Team: Galician <proxecto@trasno.ent>\n"
@@ -395,7 +395,8 @@ msgstr[1] ""
 msgid "Impossible to install"
 msgstr "É imposíbel de instalar"
 
-#: SmartIcon/PkInstallPackageFiles.cpp:104
+#: SmartIcon/PkInstallPackageFiles.cpp:104 Updater/KpkUpdateDelegate.cpp:55
+#: Updater/KpkUpdateDelegate.cpp:138
 msgid "Install"
 msgstr "Instalar"
 
@@ -1006,17 +1007,17 @@ msgstr ""
 msgid "Distribution upgrade complete."
 msgstr "Completouse o paso á nova versión da distribución."
 
-#: Updater/KcmKpkUpdate.cpp:57
+#: Updater/KcmKpkUpdate.cpp:58
 #, fuzzy
 #| msgid "Show Updates"
 msgid "Software update"
 msgstr "Mostrar as actualizacións"
 
-#: Updater/KcmKpkUpdate.cpp:59
+#: Updater/KcmKpkUpdate.cpp:60
 msgid "KDE interface for updating software"
 msgstr ""
 
-#: Updater/KcmKpkUpdate.cpp:61
+#: Updater/KcmKpkUpdate.cpp:62
 #, fuzzy
 #| msgid "(C) 2008-2009 Daniel Nicoletti"
 msgid "(C) 2008-2010 Daniel Nicoletti"
@@ -1027,7 +1028,7 @@ msgid "Date"
 msgstr "Data"
 
 #: Updater/KpkSimpleTransactionModel.cpp:47
-#: Updater/KpkUpdatePackageModel.cpp:56 libkpackagekit/KpkPackageModel.cpp:144
+#: Updater/KpkUpdatePackageModel.cpp:57 libkpackagekit/KpkPackageModel.cpp:144
 msgid "Action"
 msgstr "Acción"
 
@@ -1042,7 +1043,17 @@ msgstr "Nome de usuario"
 msgid "Application"
 msgstr "Programa"
 
-#: Updater/KpkUpdatePackageModel.cpp:54
+#: Updater/KpkUpdateDelegate.cpp:57 Updater/KpkUpdateDelegate.cpp:138
+#, fuzzy
+#| msgid "Removed"
+msgid "Remove"
+msgstr "Eliminado"
+
+#: Updater/KpkUpdateDelegate.cpp:61 Updater/KpkUpdateDelegate.cpp:134
+msgid "Unmark"
+msgstr ""
+
+#: Updater/KpkUpdatePackageModel.cpp:55
 #: libkpackagekit/KpkSimulateModel.cpp:132
 #: libkpackagekit/KpkPackageModel.cpp:142
 #, fuzzy
@@ -2684,7 +2695,7 @@ msgstr "Oficina"
 #, fuzzy
 #| msgid "Other"
 msgctxt "The group type"
-msgid "Other"
+msgid "Others"
 msgstr "Outro"
 
 #: libkpackagekit/KpkStrings.cpp:652
@@ -3493,7 +3504,7 @@ msgstr "%2 require a licenza para %1"
 
 #. i18n: file: KPackageKit/KpkBackendDetails.ui:514
 #. i18n: ectx: property (text), widget (QCheckBox, cancelCB)
-#: libkpackagekit/KpkTransactionBar.cpp:46 rc.cpp:221
+#: libkpackagekit/KpkTransactionBar.cpp:46 rc.cpp:230
 msgid "Cancel"
 msgstr "Cancelar"
 
@@ -3619,53 +3630,40 @@ msgstr "Engadir e eliminar software"
 msgid "KDE interface for managing software"
 msgstr ""
 
-#: AddRm/KpkAddRm.cpp:79 AddRm/KpkAddRm.cpp:228
+#: AddRm/KpkAddRm.cpp:91 AddRm/KpkAddRm.cpp:241
 msgid "Find"
 msgstr "Procurar"
 
-#: AddRm/KpkAddRm.cpp:126
-msgid "Text search"
-msgstr ""
-
-#: AddRm/KpkAddRm.cpp:129
-#, fuzzy
-#| msgid "Testing changes"
-msgid "List of changes"
-msgstr "A probar as modificacións"
-
-#: AddRm/KpkAddRm.cpp:138
+#: AddRm/KpkAddRm.cpp:147
 #, fuzzy
 #| msgid "Group"
-msgctxt "Groups of packages"
-msgid "Group:"
-msgid_plural "Groups:"
-msgstr[0] "Grupo"
-msgstr[1] "Grupo"
+msgid "Groups"
+msgstr "Grupo"
 
-#: AddRm/KpkAddRm.cpp:205 AddRm/KpkAddRm.cpp:206 AddRm/KpkAddRm.cpp:207
-#: AddRm/KpkAddRm.cpp:208
+#: AddRm/KpkAddRm.cpp:218 AddRm/KpkAddRm.cpp:219 AddRm/KpkAddRm.cpp:220
+#: AddRm/KpkAddRm.cpp:221
 msgid "&Cancel"
 msgstr "&Cancelar"
 
-#. i18n: file: AddRm/KpkAddRm.ui:150
-#. i18n: ectx: property (text), widget (KpkTransactionBar, transactionBar)
-#: AddRm/KpkAddRm.cpp:215 rc.cpp:107
+#. i18n: file: AddRm/KpkAddRm.ui:313
+#. i18n: ectx: property (text), widget (QTreeView, pendingView)
+#: AddRm/KpkAddRm.cpp:228 rc.cpp:116
 msgid "Find by &name"
 msgstr "Procurar polo &nome"
 
-#. i18n: file: AddRm/KpkAddRm.ui:160
-#. i18n: ectx: property (text), widget (KpkTransactionBar, transactionBar)
-#: AddRm/KpkAddRm.cpp:216 rc.cpp:113
+#. i18n: file: AddRm/KpkAddRm.ui:323
+#. i18n: ectx: property (text), widget (QTreeView, pendingView)
+#: AddRm/KpkAddRm.cpp:229 rc.cpp:122
 msgid "Find by f&ile name"
 msgstr "Procurar polo nome do &ficheiro"
 
-#. i18n: file: AddRm/KpkAddRm.ui:155
-#. i18n: ectx: property (text), widget (KpkTransactionBar, transactionBar)
-#: AddRm/KpkAddRm.cpp:217 rc.cpp:110
+#. i18n: file: AddRm/KpkAddRm.ui:318
+#. i18n: ectx: property (text), widget (QTreeView, pendingView)
+#: AddRm/KpkAddRm.cpp:230 rc.cpp:119
 msgid "Find by &description"
 msgstr "Procurar pola &descrición"
 
-#: AddRm/KpkAddRm.cpp:420
+#: AddRm/KpkAddRm.cpp:454
 msgid "Review Changes"
 msgstr "Revisar as modificacións"
 
@@ -3683,7 +3681,7 @@ msgstr "Excluir as coleccións"
 
 #. i18n: file: KPackageKit/KpkBackendDetails.ui:86
 #. i18n: ectx: property (text), widget (QCheckBox, installedCB)
-#: AddRm/KpkFiltersMenu.cpp:56 rc.cpp:140
+#: AddRm/KpkFiltersMenu.cpp:56 rc.cpp:149
 msgid "Installed"
 msgstr "Instalado"
 
@@ -3703,7 +3701,7 @@ msgstr "Sen filtro"
 
 #. i18n: file: KPackageKit/KpkBackendDetails.ui:102
 #. i18n: ectx: property (text), widget (QCheckBox, developmentCB)
-#: AddRm/KpkFiltersMenu.cpp:84 rc.cpp:143
+#: AddRm/KpkFiltersMenu.cpp:84 rc.cpp:152
 msgid "Development"
 msgstr "Desenvolvemento"
 
@@ -3784,14 +3782,6 @@ msgstr "Só os paquetes máis novos"
 #: AddRm/KpkFiltersMenu.cpp:237
 msgid "Only show the newest available package"
 msgstr "Mostrar só o paquete máis recente dispoñíbel"
-
-#: AddRm/KpkFiltersMenu.cpp:246
-msgid "View in groups"
-msgstr "Ver por grupos"
-
-#: AddRm/KpkFiltersMenu.cpp:249
-msgid "Display packages in groups according to status"
-msgstr "Mostra os paquetes por grupos segundo o estado"
 
 #: KPackageKit/main.cpp:36
 msgid "KPackageKit is a tool to manage software"
@@ -3907,7 +3897,7 @@ msgstr "&Mostrar as fontes dos paquetes de depuración e desenvolvemento"
 
 #. i18n: file: Updater/KpkHistory.ui:13
 #. i18n: ectx: property (windowTitle), widget (QWidget, KpkHistory)
-#. i18n: file: Updater/KcmKpkUpdate.ui:119
+#. i18n: file: Updater/KcmKpkUpdate.ui:122
 #. i18n: ectx: property (text), widget (KPushButton, historyPB)
 #: rc.cpp:26 rc.cpp:38
 msgid "History"
@@ -3925,7 +3915,7 @@ msgstr "Escriba o filtro"
 msgid "Time since last cache refresh: 5 hours"
 msgstr "Tempo transcorrido desde a última actualización da caché: 5 horas"
 
-#. i18n: file: Updater/KcmKpkUpdate.ui:109
+#. i18n: file: Updater/KcmKpkUpdate.ui:112
 #. i18n: ectx: property (text), widget (KPushButton, refreshPB)
 #: rc.cpp:35
 #, fuzzy
@@ -4033,35 +4023,57 @@ msgstr "É requirido por"
 msgid "Add and Remove Software"
 msgstr "Engadir e eliminar software"
 
-#. i18n: file: AddRm/KpkAddRm.ui:34
-#. i18n: ectx: property (clickMessage), widget (KLineEdit, searchKLE)
+#. i18n: file: AddRm/KpkAddRm.ui:42
+#. i18n: ectx: attribute (title), widget (QWidget, browse)
 #: rc.cpp:98
+msgid "Browse"
+msgstr ""
+
+#. i18n: file: AddRm/KpkAddRm.ui:75
+#. i18n: ectx: property (text), widget (QToolButton, backTB)
+#: rc.cpp:101
+msgid "Back"
+msgstr ""
+
+#. i18n: file: AddRm/KpkAddRm.ui:92
+#. i18n: ectx: property (clickMessage), widget (KLineEdit, searchKLE)
+#: rc.cpp:104
 msgid "Search packages"
 msgstr "Procurar paquetes"
 
-#. i18n: file: AddRm/KpkAddRm.ui:68
+#. i18n: file: AddRm/KpkAddRm.ui:127
 #. i18n: ectx: property (text), widget (QToolButton, filtersTB)
 #. i18n: file: KPackageKit/KpkBackendDetails.ui:77
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
-#: rc.cpp:101 rc.cpp:137
+#: rc.cpp:107 rc.cpp:146
 msgid "Filters"
 msgstr "Filtros"
 
-#. i18n: file: AddRm/KpkAddRm.ui:91
-#. i18n: ectx: property (text), item, widget (KComboBox, groupsCB)
-#: rc.cpp:104
-msgid "All Packages"
-msgstr "Todos os paquetes"
+#. i18n: file: AddRm/KpkAddRm.ui:198
+#. i18n: ectx: attribute (title), widget (QWidget, tab_2)
+#: rc.cpp:110
+#, fuzzy
+#| msgid "Installed packages"
+msgid "Installed Packages"
+msgstr "Paquetes instalados"
+
+#. i18n: file: AddRm/KpkAddRm.ui:254
+#. i18n: ectx: attribute (title), widget (QWidget, tab_3)
+#: rc.cpp:113
+#, fuzzy
+#| msgid "Testing changes"
+msgid "15 Pending Changes"
+msgstr "A probar as modificacións"
 
 #. i18n: file: KPackageKit/KpkBackendDetails.ui:26
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
-#: rc.cpp:116
+#: rc.cpp:125
 msgid "About Backend"
 msgstr ""
 
 #. i18n: file: KPackageKit/KpkBackendDetails.ui:32
 #. i18n: ectx: property (text), widget (QLabel, label)
-#: rc.cpp:119
+#: rc.cpp:128
 #, fuzzy
 #| msgid "Package Name"
 msgid "Backend name:"
@@ -4069,7 +4081,7 @@ msgstr "Nome do paquete"
 
 #. i18n: file: KPackageKit/KpkBackendDetails.ui:39
 #. i18n: ectx: property (text), widget (QLabel, nameL)
-#: rc.cpp:122
+#: rc.cpp:131
 #, fuzzy
 #| msgid "Package Name"
 msgid "backend name here"
@@ -4077,7 +4089,7 @@ msgstr "Nome do paquete"
 
 #. i18n: file: KPackageKit/KpkBackendDetails.ui:46
 #. i18n: ectx: property (text), widget (QLabel, label_2)
-#: rc.cpp:125
+#: rc.cpp:134
 #, fuzzy
 #| msgid "Package Name"
 msgid "Backend author:"
@@ -4085,7 +4097,7 @@ msgstr "Nome do paquete"
 
 #. i18n: file: KPackageKit/KpkBackendDetails.ui:53
 #. i18n: ectx: property (text), widget (QLabel, label_3)
-#: rc.cpp:128
+#: rc.cpp:137
 #, fuzzy
 #| msgid "Find Description"
 msgid "Backend description:"
@@ -4093,7 +4105,7 @@ msgstr "Procurar pola descrición"
 
 #. i18n: file: KPackageKit/KpkBackendDetails.ui:60
 #. i18n: ectx: property (text), widget (QLabel, authorL)
-#: rc.cpp:131
+#: rc.cpp:140
 #, fuzzy
 #| msgid "Package Name"
 msgid "backend author name here"
@@ -4101,7 +4113,7 @@ msgstr "Nome do paquete"
 
 #. i18n: file: KPackageKit/KpkBackendDetails.ui:67
 #. i18n: ectx: property (text), widget (QLabel, descriptionL)
-#: rc.cpp:134
+#: rc.cpp:143
 #, fuzzy
 #| msgid "Package Name"
 msgid "backend description here"
@@ -4109,7 +4121,7 @@ msgstr "Nome do paquete"
 
 #. i18n: file: KPackageKit/KpkBackendDetails.ui:118
 #. i18n: ectx: property (text), widget (QCheckBox, visibleCB)
-#: rc.cpp:146
+#: rc.cpp:155
 #, fuzzy
 #| msgid "Package install blocked"
 msgid "Package is visible"
@@ -4117,19 +4129,19 @@ msgstr "Paquete instalado bloqueado"
 
 #. i18n: file: KPackageKit/KpkBackendDetails.ui:134
 #. i18n: ectx: property (text), widget (QCheckBox, newestCB)
-#: rc.cpp:149
+#: rc.cpp:158
 msgid "Newest"
 msgstr ""
 
 #. i18n: file: KPackageKit/KpkBackendDetails.ui:150
 #. i18n: ectx: property (text), widget (QCheckBox, guiCB)
-#: rc.cpp:152
+#: rc.cpp:161
 msgid "GUI"
 msgstr ""
 
 #. i18n: file: KPackageKit/KpkBackendDetails.ui:166
 #. i18n: ectx: property (text), widget (QCheckBox, freeCB)
-#: rc.cpp:155
+#: rc.cpp:164
 #, fuzzy
 #| msgid "Only free software"
 msgid "Free software"
@@ -4137,19 +4149,19 @@ msgstr "Só software libre"
 
 #. i18n: file: KPackageKit/KpkBackendDetails.ui:182
 #. i18n: ectx: property (text), widget (QCheckBox, supportedCB)
-#: rc.cpp:158
+#: rc.cpp:167
 msgid "Supported"
 msgstr ""
 
 #. i18n: file: KPackageKit/KpkBackendDetails.ui:201
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_3)
-#: rc.cpp:161
+#: rc.cpp:170
 msgid "Methods"
 msgstr ""
 
 #. i18n: file: KPackageKit/KpkBackendDetails.ui:210
 #. i18n: ectx: property (text), widget (QCheckBox, getUpdatesCB)
-#: rc.cpp:164
+#: rc.cpp:173
 #, fuzzy
 #| msgid "Updates"
 msgid "GetUpdates"
@@ -4157,7 +4169,7 @@ msgstr "Actualizacións"
 
 #. i18n: file: KPackageKit/KpkBackendDetails.ui:226
 #. i18n: ectx: property (text), widget (QCheckBox, updatePackageCB)
-#: rc.cpp:167
+#: rc.cpp:176
 #, fuzzy
 #| msgid "Updated packages"
 msgid "UpdatePackage"
@@ -4165,7 +4177,7 @@ msgstr "Paquetes actualizados"
 
 #. i18n: file: KPackageKit/KpkBackendDetails.ui:242
 #. i18n: ectx: property (text), widget (QCheckBox, getRepositoryListCB)
-#: rc.cpp:170
+#: rc.cpp:179
 #, fuzzy
 #| msgid "Repository"
 msgid "GetRepositoryList"
@@ -4173,7 +4185,7 @@ msgstr "Repositorio"
 
 #. i18n: file: KPackageKit/KpkBackendDetails.ui:258
 #. i18n: ectx: property (text), widget (QCheckBox, refreshCacheCB)
-#: rc.cpp:173
+#: rc.cpp:182
 #, fuzzy
 #| msgid "Refresh"
 msgid "RefreshCache"
@@ -4181,7 +4193,7 @@ msgstr "Anovar"
 
 #. i18n: file: KPackageKit/KpkBackendDetails.ui:274
 #. i18n: ectx: property (text), widget (QCheckBox, installPackageCB)
-#: rc.cpp:176
+#: rc.cpp:185
 #, fuzzy
 #| msgid "Installed packages"
 msgid "InstallPackage"
@@ -4189,7 +4201,7 @@ msgstr "Paquetes instalados"
 
 #. i18n: file: KPackageKit/KpkBackendDetails.ui:290
 #. i18n: ectx: property (text), widget (QCheckBox, repositoryEnableCB)
-#: rc.cpp:179
+#: rc.cpp:188
 #, fuzzy
 #| msgid "Repository name:"
 msgid "RepositoryEnable"
@@ -4197,7 +4209,7 @@ msgstr "Nome do repositorio:"
 
 #. i18n: file: KPackageKit/KpkBackendDetails.ui:306
 #. i18n: ectx: property (text), widget (QCheckBox, updateSystemCB)
-#: rc.cpp:182
+#: rc.cpp:191
 #, fuzzy
 #| msgid "Updated system"
 msgid "UpdateSystem"
@@ -4205,7 +4217,7 @@ msgstr "Anovouse o sistema"
 
 #. i18n: file: KPackageKit/KpkBackendDetails.ui:322
 #. i18n: ectx: property (text), widget (QCheckBox, removePackageCB)
-#: rc.cpp:185
+#: rc.cpp:194
 #, fuzzy
 #| msgid "Removed packages"
 msgid "RemovePackage"
@@ -4213,7 +4225,7 @@ msgstr "Paquetes eliminados"
 
 #. i18n: file: KPackageKit/KpkBackendDetails.ui:338
 #. i18n: ectx: property (text), widget (QCheckBox, repositorySetEnableCB)
-#: rc.cpp:188
+#: rc.cpp:197
 #, fuzzy
 #| msgid "Repository name:"
 msgid "RepositorySetEnable"
@@ -4221,7 +4233,7 @@ msgstr "Nome do repositorio:"
 
 #. i18n: file: KPackageKit/KpkBackendDetails.ui:354
 #. i18n: ectx: property (text), widget (QCheckBox, searchNameCB)
-#: rc.cpp:191
+#: rc.cpp:200
 #, fuzzy
 #| msgid "Search"
 msgid "SearchName"
@@ -4229,7 +4241,7 @@ msgstr "Procurar"
 
 #. i18n: file: KPackageKit/KpkBackendDetails.ui:370
 #. i18n: ectx: property (text), widget (QCheckBox, getDependsCB)
-#: rc.cpp:194
+#: rc.cpp:203
 #, fuzzy
 #| msgid "Depends on"
 msgid "GetDepends"
@@ -4237,7 +4249,7 @@ msgstr "Depende de"
 
 #. i18n: file: KPackageKit/KpkBackendDetails.ui:386
 #. i18n: ectx: property (text), widget (QCheckBox, whatProvidesCB)
-#: rc.cpp:197
+#: rc.cpp:206
 #, fuzzy
 #| msgid "Got what provides"
 msgid "WhatProvides"
@@ -4245,7 +4257,7 @@ msgstr "Obtívose o que fornece"
 
 #. i18n: file: KPackageKit/KpkBackendDetails.ui:402
 #. i18n: ectx: property (text), widget (QCheckBox, searchDetailsCB)
-#: rc.cpp:200
+#: rc.cpp:209
 #, fuzzy
 #| msgid "Searching details"
 msgid "SearchDetails"
@@ -4253,7 +4265,7 @@ msgstr "A procurar os detalles"
 
 #. i18n: file: KPackageKit/KpkBackendDetails.ui:418
 #. i18n: ectx: property (text), widget (QCheckBox, getRequiresCB)
-#: rc.cpp:203
+#: rc.cpp:212
 #, fuzzy
 #| msgid "Got requires"
 msgid "GetRequires"
@@ -4261,7 +4273,7 @@ msgstr "Obtivéronse os requirimentos"
 
 #. i18n: file: KPackageKit/KpkBackendDetails.ui:434
 #. i18n: ectx: property (text), widget (QCheckBox, getPackagesCB)
-#: rc.cpp:206
+#: rc.cpp:215
 #, fuzzy
 #| msgid "All Packages"
 msgid "GetPackages"
@@ -4269,7 +4281,7 @@ msgstr "Todos os paquetes"
 
 #. i18n: file: KPackageKit/KpkBackendDetails.ui:450
 #. i18n: ectx: property (text), widget (QCheckBox, searchGroupCB)
-#: rc.cpp:209
+#: rc.cpp:218
 #, fuzzy
 #| msgid "Searched groups"
 msgid "SearchGroup"
@@ -4277,7 +4289,7 @@ msgstr "Procurouse por grupos"
 
 #. i18n: file: KPackageKit/KpkBackendDetails.ui:466
 #. i18n: ectx: property (text), widget (QCheckBox, getUpdateDetailCB)
-#: rc.cpp:212
+#: rc.cpp:221
 #, fuzzy
 #| msgid "Got update detail"
 msgid "GetUpdateDetail"
@@ -4285,7 +4297,7 @@ msgstr "Obtivo os detalles da actualización"
 
 #. i18n: file: KPackageKit/KpkBackendDetails.ui:482
 #. i18n: ectx: property (text), widget (QCheckBox, searchFileCB)
-#: rc.cpp:215
+#: rc.cpp:224
 #, fuzzy
 #| msgid "Search killed"
 msgid "SearchFile"
@@ -4293,7 +4305,7 @@ msgstr "Matouse a procura"
 
 #. i18n: file: KPackageKit/KpkBackendDetails.ui:498
 #. i18n: ectx: property (text), widget (QCheckBox, getDescriptionCB)
-#: rc.cpp:218
+#: rc.cpp:227
 #, fuzzy
 #| msgid "Description"
 msgid "GetDescription"
@@ -4301,7 +4313,7 @@ msgstr "Descrición"
 
 #. i18n: file: KPackageKit/KpkBackendDetails.ui:530
 #. i18n: ectx: property (text), widget (QCheckBox, getFilesCB)
-#: rc.cpp:224
+#: rc.cpp:233
 #, fuzzy
 #| msgid "Details"
 msgid "GetFiles"
@@ -4309,7 +4321,7 @@ msgstr "Detalles"
 
 #. i18n: file: KPackageKit/KpkBackendDetails.ui:546
 #. i18n: ectx: property (text), widget (QCheckBox, resolveCB)
-#: rc.cpp:227
+#: rc.cpp:236
 #, fuzzy
 #| msgid "Resolved"
 msgid "Resolve"
@@ -4317,7 +4329,7 @@ msgstr "Resolto"
 
 #. i18n: file: KPackageKit/KpkBackendDetails.ui:562
 #. i18n: ectx: property (text), widget (QCheckBox, installFileCB)
-#: rc.cpp:230
+#: rc.cpp:239
 #, fuzzy
 #| msgid "Installed"
 msgid "InstallFIle"
@@ -4325,7 +4337,7 @@ msgstr "Instalado"
 
 #. i18n: file: KPackageKit/KpkBackendDetails.ui:578
 #. i18n: ectx: property (text), widget (QCheckBox, simulateInstallFilesCB)
-#: rc.cpp:233
+#: rc.cpp:242
 #, fuzzy
 #| msgid "Installed"
 msgid "SimulateInstallFiles"
@@ -4333,7 +4345,7 @@ msgstr "Instalado"
 
 #. i18n: file: KPackageKit/KpkBackendDetails.ui:591
 #. i18n: ectx: property (text), widget (QCheckBox, simulateInstallPackagesCB)
-#: rc.cpp:236
+#: rc.cpp:245
 #, fuzzy
 #| msgid "Installed packages"
 msgid "SimulateInstallPackages"
@@ -4341,7 +4353,7 @@ msgstr "Paquetes instalados"
 
 #. i18n: file: KPackageKit/KpkBackendDetails.ui:604
 #. i18n: ectx: property (text), widget (QCheckBox, simulateRemovePackagesCB)
-#: rc.cpp:239
+#: rc.cpp:248
 #, fuzzy
 #| msgid "Removed packages"
 msgid "SimulateRemovePackages"
@@ -4349,11 +4361,33 @@ msgstr "Paquetes eliminados"
 
 #. i18n: file: KPackageKit/KpkBackendDetails.ui:617
 #. i18n: ectx: property (text), widget (QCheckBox, simulateUpdatePackagesCB)
-#: rc.cpp:242
+#: rc.cpp:251
 #, fuzzy
 #| msgid "Updated packages"
 msgid "SimulateUpdatePackages"
 msgstr "Paquetes actualizados"
+
+#, fuzzy
+#~| msgid "Testing changes"
+#~ msgid "List of changes"
+#~ msgstr "A probar as modificacións"
+
+#, fuzzy
+#~| msgid "Group"
+#~ msgctxt "Groups of packages"
+#~ msgid "Group:"
+#~ msgid_plural "Groups:"
+#~ msgstr[0] "Grupo"
+#~ msgstr[1] "Grupo"
+
+#~ msgid "View in groups"
+#~ msgstr "Ver por grupos"
+
+#~ msgid "Display packages in groups according to status"
+#~ msgstr "Mostra os paquetes por grupos segundo o estado"
+
+#~ msgid "All Packages"
+#~ msgstr "Todos os paquetes"
 
 #, fuzzy
 #~| msgid "Security update"
