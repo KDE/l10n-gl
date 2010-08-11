@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kpackagekit\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2010-08-10 06:28+0200\n"
+"POT-Creation-Date: 2010-08-11 05:22+0200\n"
 "PO-Revision-Date: 2009-03-13 21:06+0100\n"
 "Last-Translator: marce villarino <mvillarino@users.sourceforge.net>\n"
 "Language-Team: Galician <proxecto@trasno.ent>\n"
@@ -359,7 +359,7 @@ msgid "KPackageKit Tray Icon"
 msgstr "Icona de KPackageKit na bandexa"
 
 #: SmartIcon/main.cpp:38 Settings/KcmKpkSettings.cpp:42
-#: AddRm/KcmKpkAddRm.cpp:45 KPackageKit/main.cpp:38
+#: KPackageKit/main.cpp:38
 msgid "(C) 2008-2009 Daniel Nicoletti"
 msgstr "(C) 2008-2009 Daniel Nicoletti"
 
@@ -395,8 +395,7 @@ msgstr[1] ""
 msgid "Impossible to install"
 msgstr "É imposíbel de instalar"
 
-#: SmartIcon/PkInstallPackageFiles.cpp:104 Updater/KpkUpdateDelegate.cpp:55
-#: Updater/KpkUpdateDelegate.cpp:138
+#: SmartIcon/PkInstallPackageFiles.cpp:104 libkpackagekit/KpkDelegate.cpp:41
 msgid "Install"
 msgstr "Instalar"
 
@@ -1007,17 +1006,17 @@ msgstr ""
 msgid "Distribution upgrade complete."
 msgstr "Completouse o paso á nova versión da distribución."
 
-#: Updater/KcmKpkUpdate.cpp:58
+#: Updater/KcmKpkUpdate.cpp:59
 #, fuzzy
 #| msgid "Show Updates"
 msgid "Software update"
 msgstr "Mostrar as actualizacións"
 
-#: Updater/KcmKpkUpdate.cpp:60
+#: Updater/KcmKpkUpdate.cpp:61
 msgid "KDE interface for updating software"
 msgstr ""
 
-#: Updater/KcmKpkUpdate.cpp:62
+#: Updater/KcmKpkUpdate.cpp:63 AddRm/AddRmKCM.cpp:75
 #, fuzzy
 #| msgid "(C) 2008-2009 Daniel Nicoletti"
 msgid "(C) 2008-2010 Daniel Nicoletti"
@@ -1028,7 +1027,6 @@ msgid "Date"
 msgstr "Data"
 
 #: Updater/KpkSimpleTransactionModel.cpp:47
-#: Updater/KpkUpdatePackageModel.cpp:57 libkpackagekit/KpkPackageModel.cpp:144
 msgid "Action"
 msgstr "Acción"
 
@@ -1042,24 +1040,6 @@ msgstr "Nome de usuario"
 #: Updater/KpkSimpleTransactionModel.cpp:50
 msgid "Application"
 msgstr "Programa"
-
-#: Updater/KpkUpdateDelegate.cpp:57 Updater/KpkUpdateDelegate.cpp:138
-#, fuzzy
-#| msgid "Removed"
-msgid "Remove"
-msgstr "Eliminado"
-
-#: Updater/KpkUpdateDelegate.cpp:61 Updater/KpkUpdateDelegate.cpp:134
-msgid "Unmark"
-msgstr ""
-
-#: Updater/KpkUpdatePackageModel.cpp:55
-#: libkpackagekit/KpkSimulateModel.cpp:132
-#: libkpackagekit/KpkPackageModel.cpp:142
-#, fuzzy
-#| msgid "KPackageKit"
-msgid "Package"
-msgstr "KPackageKit"
 
 #: libkpackagekit/KpkStrings.cpp:33
 #, fuzzy
@@ -2969,8 +2949,8 @@ msgstr[1] "%1 actualizacións triviais"
 #| msgid "1 update"
 #| msgid_plural "%1 updates"
 msgctxt "Type of update, in the case it's just an update"
-msgid "1 update"
-msgid_plural "%1 updates"
+msgid "1 Update"
+msgid_plural "%1 Updates"
 msgstr[0] "1 actualización"
 msgstr[1] "%1 actualizacións"
 
@@ -3044,8 +3024,8 @@ msgstr[1] "%1 actualizacións triviais"
 #| msgid "1 update"
 #| msgid_plural "%1 updates"
 msgctxt "Type of update, in the case it's just an update"
-msgid "1 update selected"
-msgid_plural "%1 updates selected"
+msgid "1 Update Selected"
+msgid_plural "%1 Updates Selected"
 msgstr[0] "1 actualización"
 msgstr[1] "%1 actualizacións"
 
@@ -3116,10 +3096,8 @@ msgstr[1] "%1 actualizacións triviais"
 #| msgid "1 update"
 #| msgid_plural "%1 updates"
 msgctxt "Type of update, in the case it's just an update"
-msgid "%1 update"
-msgid_plural "%1 updates, %2 selected"
-msgstr[0] "1 actualización"
-msgstr[1] "%1 actualizacións"
+msgid "%1 Updates, %2 Selected"
+msgstr "1 actualización"
 
 #: libkpackagekit/KpkStrings.cpp:807
 #, fuzzy, kde-format
@@ -3481,11 +3459,27 @@ msgstr "A infraestrutura que está a empregar non permite instalar paquetes"
 msgid "Failed to remove package"
 msgstr "Non foi posíbel eliminar o paquete"
 
+#: libkpackagekit/KpkSimulateModel.cpp:132
+#, fuzzy
+#| msgid "KPackageKit"
+msgid "Package"
+msgstr "KPackageKit"
+
 #: libkpackagekit/KpkSimulateModel.cpp:134
 #, fuzzy
 #| msgid "New version"
 msgid "Version"
 msgstr "Nova versión"
+
+#: libkpackagekit/KpkDelegate.cpp:43
+#, fuzzy
+#| msgid "Removed"
+msgid "Remove"
+msgstr "Eliminado"
+
+#: libkpackagekit/KpkDelegate.cpp:45
+msgid "Unmark"
+msgstr ""
 
 #: libkpackagekit/KpkLicenseAgreement.cpp:34
 msgid "Accept Agreement"
@@ -3514,6 +3508,14 @@ msgstr "Cancelar"
 msgctxt "The transaction finished it's job"
 msgid "Finished"
 msgstr "Rematado"
+
+#: libkpackagekit/KpkPackageModel.cpp:58
+#, fuzzy, kde-format
+#| msgid "KPackageKit"
+msgid "1 Package"
+msgid_plural "%1 Packages"
+msgstr[0] "KPackageKit"
+msgstr[1] "KPackageKit"
 
 #: libkpackagekit/KpkRequirements.cpp:220
 #, fuzzy
@@ -3619,53 +3621,6 @@ msgstr "Tamaño"
 #: AddRm/KpkPackageDetails.cpp:199
 msgid "No files were found."
 msgstr "Non se achou ningún ficheiro."
-
-#: AddRm/KcmKpkAddRm.cpp:41
-#, fuzzy
-#| msgid "Add and Remove Software"
-msgid "Add and remove software"
-msgstr "Engadir e eliminar software"
-
-#: AddRm/KcmKpkAddRm.cpp:43
-msgid "KDE interface for managing software"
-msgstr ""
-
-#: AddRm/KpkAddRm.cpp:91 AddRm/KpkAddRm.cpp:241
-msgid "Find"
-msgstr "Procurar"
-
-#: AddRm/KpkAddRm.cpp:147
-#, fuzzy
-#| msgid "Group"
-msgid "Groups"
-msgstr "Grupo"
-
-#: AddRm/KpkAddRm.cpp:218 AddRm/KpkAddRm.cpp:219 AddRm/KpkAddRm.cpp:220
-#: AddRm/KpkAddRm.cpp:221
-msgid "&Cancel"
-msgstr "&Cancelar"
-
-#. i18n: file: AddRm/KpkAddRm.ui:313
-#. i18n: ectx: property (text), widget (QTreeView, pendingView)
-#: AddRm/KpkAddRm.cpp:228 rc.cpp:116
-msgid "Find by &name"
-msgstr "Procurar polo &nome"
-
-#. i18n: file: AddRm/KpkAddRm.ui:323
-#. i18n: ectx: property (text), widget (QTreeView, pendingView)
-#: AddRm/KpkAddRm.cpp:229 rc.cpp:122
-msgid "Find by f&ile name"
-msgstr "Procurar polo nome do &ficheiro"
-
-#. i18n: file: AddRm/KpkAddRm.ui:318
-#. i18n: ectx: property (text), widget (QTreeView, pendingView)
-#: AddRm/KpkAddRm.cpp:230 rc.cpp:119
-msgid "Find by &description"
-msgstr "Procurar pola &descrición"
-
-#: AddRm/KpkAddRm.cpp:454
-msgid "Review Changes"
-msgstr "Revisar as modificacións"
 
 #: AddRm/KpkFiltersMenu.cpp:35
 msgid "Collections"
@@ -3783,6 +3738,53 @@ msgstr "Só os paquetes máis novos"
 msgid "Only show the newest available package"
 msgstr "Mostrar só o paquete máis recente dispoñíbel"
 
+#. i18n: file: AddRm/AddRmKCM.ui:20
+#. i18n: ectx: property (windowTitle), widget (QWidget, AddRmKCM)
+#: AddRm/AddRmKCM.cpp:71 rc.cpp:95
+msgid "Add and Remove Software"
+msgstr "Engadir e eliminar software"
+
+#: AddRm/AddRmKCM.cpp:73
+msgid "KDE interface for managing software"
+msgstr ""
+
+#: AddRm/AddRmKCM.cpp:117 AddRm/AddRmKCM.cpp:271
+msgid "Find"
+msgstr "Procurar"
+
+#: AddRm/AddRmKCM.cpp:173
+#, fuzzy
+#| msgid "Group"
+msgid "Groups"
+msgstr "Grupo"
+
+#: AddRm/AddRmKCM.cpp:248 AddRm/AddRmKCM.cpp:249 AddRm/AddRmKCM.cpp:250
+#: AddRm/AddRmKCM.cpp:251
+msgid "&Cancel"
+msgstr "&Cancelar"
+
+#. i18n: file: AddRm/AddRmKCM.ui:250
+#. i18n: ectx: property (text), widget (QTreeView, installedView_2)
+#: AddRm/AddRmKCM.cpp:258 rc.cpp:116
+msgid "Find by &name"
+msgstr "Procurar polo &nome"
+
+#. i18n: file: AddRm/AddRmKCM.ui:260
+#. i18n: ectx: property (text), widget (QTreeView, installedView_2)
+#: AddRm/AddRmKCM.cpp:259 rc.cpp:122
+msgid "Find by f&ile name"
+msgstr "Procurar polo nome do &ficheiro"
+
+#. i18n: file: AddRm/AddRmKCM.ui:255
+#. i18n: ectx: property (text), widget (QTreeView, installedView_2)
+#: AddRm/AddRmKCM.cpp:260 rc.cpp:119
+msgid "Find by &description"
+msgstr "Procurar pola &descrición"
+
+#: AddRm/AddRmKCM.cpp:487
+msgid "Review Changes"
+msgstr "Revisar as modificacións"
+
 #: KPackageKit/main.cpp:36
 msgid "KPackageKit is a tool to manage software"
 msgstr ""
@@ -3897,7 +3899,7 @@ msgstr "&Mostrar as fontes dos paquetes de depuración e desenvolvemento"
 
 #. i18n: file: Updater/KpkHistory.ui:13
 #. i18n: ectx: property (windowTitle), widget (QWidget, KpkHistory)
-#. i18n: file: Updater/KcmKpkUpdate.ui:122
+#. i18n: file: Updater/KcmKpkUpdate.ui:116
 #. i18n: ectx: property (text), widget (KPushButton, historyPB)
 #: rc.cpp:26 rc.cpp:38
 msgid "History"
@@ -3915,7 +3917,7 @@ msgstr "Escriba o filtro"
 msgid "Time since last cache refresh: 5 hours"
 msgstr "Tempo transcorrido desde a última actualización da caché: 5 horas"
 
-#. i18n: file: Updater/KcmKpkUpdate.ui:112
+#. i18n: file: Updater/KcmKpkUpdate.ui:106
 #. i18n: ectx: property (text), widget (KPushButton, refreshPB)
 #: rc.cpp:35
 #, fuzzy
@@ -4017,31 +4019,25 @@ msgstr "Depende de"
 msgid "Required by"
 msgstr "É requirido por"
 
-#. i18n: file: AddRm/KpkAddRm.ui:20
-#. i18n: ectx: property (windowTitle), widget (QWidget, KpkAddRm)
-#: rc.cpp:95
-msgid "Add and Remove Software"
-msgstr "Engadir e eliminar software"
-
-#. i18n: file: AddRm/KpkAddRm.ui:42
+#. i18n: file: AddRm/AddRmKCM.ui:42
 #. i18n: ectx: attribute (title), widget (QWidget, browse)
 #: rc.cpp:98
 msgid "Browse"
 msgstr ""
 
-#. i18n: file: AddRm/KpkAddRm.ui:75
+#. i18n: file: AddRm/AddRmKCM.ui:75
 #. i18n: ectx: property (text), widget (QToolButton, backTB)
 #: rc.cpp:101
 msgid "Back"
 msgstr ""
 
-#. i18n: file: AddRm/KpkAddRm.ui:92
+#. i18n: file: AddRm/AddRmKCM.ui:92
 #. i18n: ectx: property (clickMessage), widget (KLineEdit, searchKLE)
 #: rc.cpp:104
 msgid "Search packages"
 msgstr "Procurar paquetes"
 
-#. i18n: file: AddRm/KpkAddRm.ui:127
+#. i18n: file: AddRm/AddRmKCM.ui:127
 #. i18n: ectx: property (text), widget (QToolButton, filtersTB)
 #. i18n: file: KPackageKit/KpkBackendDetails.ui:77
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
@@ -4049,7 +4045,7 @@ msgstr "Procurar paquetes"
 msgid "Filters"
 msgstr "Filtros"
 
-#. i18n: file: AddRm/KpkAddRm.ui:198
+#. i18n: file: AddRm/AddRmKCM.ui:177
 #. i18n: ectx: attribute (title), widget (QWidget, tab_2)
 #: rc.cpp:110
 #, fuzzy
@@ -4057,7 +4053,7 @@ msgstr "Filtros"
 msgid "Installed Packages"
 msgstr "Paquetes instalados"
 
-#. i18n: file: AddRm/KpkAddRm.ui:254
+#. i18n: file: AddRm/AddRmKCM.ui:212
 #. i18n: ectx: attribute (title), widget (QWidget, tab_3)
 #: rc.cpp:113
 #, fuzzy
@@ -4366,6 +4362,20 @@ msgstr "Paquetes eliminados"
 #| msgid "Updated packages"
 msgid "SimulateUpdatePackages"
 msgstr "Paquetes actualizados"
+
+#, fuzzy
+#~| msgid "1 update"
+#~| msgid_plural "%1 updates"
+#~ msgctxt "Type of update, in the case it's just an update"
+#~ msgid "%1 update"
+#~ msgid_plural "%1 updates, %2 selected"
+#~ msgstr[0] "1 actualización"
+#~ msgstr[1] "%1 actualizacións"
+
+#, fuzzy
+#~| msgid "Add and Remove Software"
+#~ msgid "Add and remove software"
+#~ msgstr "Engadir e eliminar software"
 
 #, fuzzy
 #~| msgid "Testing changes"
