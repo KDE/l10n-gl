@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kget\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2010-09-21 07:14+0200\n"
+"POT-Creation-Date: 2010-09-22 06:07+0200\n"
 "PO-Revision-Date: 2010-02-07 22:49+0100\n"
 "Last-Translator: Xosé <xosecalvo@gmail.com>\n"
 "Language-Team: Galego <proxecto@trasno.net>\n"
@@ -161,7 +161,7 @@ msgid_plural "%1 Items"
 msgstr[0] "1 elemento"
 msgstr[1] "%1 elementos"
 
-#: core/transfergrouphandler.cpp:113 core/transferhandler.cpp:148
+#: core/transfergrouphandler.cpp:113 core/transferhandler.cpp:150
 #: ui/transferdetails.cpp:100
 #, kde-format
 msgid "%1/s"
@@ -442,39 +442,65 @@ msgstr ""
 msgid "Download started"
 msgstr "Velocidade de descarga"
 
-#: core/kget.cpp:1374
+#: core/kget.cpp:1331 core/datasourcefactory.cpp:269
+#: core/datasourcefactory.cpp:595 transfer-plugins/metalink/metalink.cpp:201
+#: ui/metalinkcreator/metalinkcreator.cpp:156
+#: ui/metalinkcreator/metalinkcreator.cpp:173
+msgid "Error"
+msgstr "Erro"
+
+#: core/kget.cpp:1331
+#, fuzzy, kde-format
+#| msgid ""
+#| "<p>The following file has finished downloading:</p><p style=\"font-size: "
+#| "small;\">                      %1</p>"
+msgid ""
+"<p>There has been an error in the following transfer:</p><p style=\"font-"
+"size: small;\">\\%1</p><p>The error message is:</p><p style=\"font-size: "
+"small;\">\\%2</p>"
+msgstr ""
+"<p>Rematou a seguinte descarga:</p><p style=\"font-size: small;"
+"\">                      %1</p>"
+
+#: core/kget.cpp:1336
+#, fuzzy
+#| msgid "Remove"
+msgid "Resolve"
+msgstr "Eliminar"
+
+#: core/kget.cpp:1384
 msgid "KGet is now closing, as all downloads have completed."
 msgstr "Todas as descargan acabaron así que KGet apagarase agora mesmo. "
 
-#: core/kget.cpp:1378
+#: core/kget.cpp:1388
 msgid "The computer will now turn off, as all downloads have completed."
 msgstr "O ordenador apagarase agora mesmo xa que remataron todas as descargas."
 
-#: core/kget.cpp:1378
+#: core/kget.cpp:1388
 #, fuzzy
 #| msgid "Auto shutdown"
 msgctxt "Shutting down computer"
 msgid "Shutdown"
 msgstr "Apagar automaticamente"
 
-#: core/kget.cpp:1381
+#: core/kget.cpp:1391
 #, fuzzy
 #| msgid "The computer will now turn off, as all downloads have completed."
 msgid "The computer will now suspend to disk, as all downloads have completed."
 msgstr "O ordenador apagarase agora mesmo xa que remataron todas as descargas."
 
-#: core/kget.cpp:1381
+#: core/kget.cpp:1391
 msgctxt "Hibernating computer"
 msgid "Hibernating"
 msgstr ""
 
-#: core/kget.cpp:1384
+#: core/kget.cpp:1394
 #, fuzzy
 #| msgid "The computer will now turn off, as all downloads have completed."
 msgid "The computer will now suspend to RAM, as all downloads have completed."
 msgstr "O ordenador apagarase agora mesmo xa que remataron todas as descargas."
 
-#: core/kget.cpp:1384
+#: core/kget.cpp:1394
 #, fuzzy
 #| msgctxt "Preview pending"
 #| msgid "Pending"
@@ -482,18 +508,18 @@ msgctxt "Suspending computer"
 msgid "Suspending"
 msgstr "Pendente"
 
-#: core/kget.cpp:1392
+#: core/kget.cpp:1402
 #, fuzzy
 #| msgid "Aborted"
 msgctxt "abort the proposed action"
 msgid "Abort"
 msgstr "Abortado"
 
-#: core/kget.cpp:1402
+#: core/kget.cpp:1412
 msgid "<p>All transfers have been finished.</p>"
 msgstr ""
 
-#: core/kget.cpp:1403
+#: core/kget.cpp:1413
 msgid "Downloads completed"
 msgstr "Descargas completas"
 
@@ -581,22 +607,13 @@ msgstr ""
 msgid "Filesize is larger than maximum file size supported by VFAT."
 msgstr ""
 
-#: core/datasourcefactory.cpp:269 core/datasourcefactory.cpp:595
-#: transfer-plugins/metalink/metalink.cpp:201
-#: transfer-plugins/bittorrent/bttransfer.cpp:469
-#: transfer-plugins/bittorrent/bttransfer.cpp:480
-#: ui/metalinkcreator/metalinkcreator.cpp:156
-#: ui/metalinkcreator/metalinkcreator.cpp:173
-msgid "Error"
-msgstr "Erro"
-
 #: core/datasourcefactory.cpp:595
 #, kde-format
 msgctxt "A mirror is removed when the file has the wrong download size"
 msgid "%1 removed as it did report a wrong file size."
 msgstr "eliminouse %1 porque informou dun tamaño de ficheiro erróneo"
 
-#: core/transferhandler.cpp:135
+#: core/transferhandler.cpp:137
 #: transfer-plugins/bittorrent/btdetailswidget.cpp:27
 #: transfer-plugins/bittorrent/btdetailswidget.cpp:28
 #: transfer-plugins/bittorrent/btdetailswidget.cpp:29
@@ -618,7 +635,7 @@ msgctxt "not available"
 msgid "n/a"
 msgstr "n/d"
 
-#: core/transferhandler.cpp:143 ui/transferdetails.cpp:95
+#: core/transferhandler.cpp:145 ui/transferdetails.cpp:95
 msgid "Stalled"
 msgstr "Atrancado"
 
@@ -1300,17 +1317,20 @@ msgid "Cannot add a tracker to a private torrent."
 msgstr "Non pode engadir un localizador a un torrent privado."
 
 #: transfer-plugins/bittorrent/bttransfer.cpp:406
-#: transfer-plugins/bittorrent/bttransfer.cpp:422
-#: transfer-plugins/bittorrent/bttransfer.cpp:468
-#: transfer-plugins/bittorrent/bttransfer.cpp:479
-msgid "An error occurred...."
-msgstr "Aconteceu un erro..."
+#, fuzzy
+#| msgid "The directory %1 does not exist"
+msgid "Torrent file does not exist"
+msgstr "O directorio %1 non existe"
 
-#: transfer-plugins/bittorrent/bttransfer.cpp:410
+#: transfer-plugins/bittorrent/bttransfer.cpp:411
 msgid "Analyzing torrent...."
 msgstr "Analizando torrent... "
 
-#: transfer-plugins/bittorrent/bttransfer.cpp:489
+#: transfer-plugins/bittorrent/bttransfer.cpp:423
+msgid "Cannot initialize port..."
+msgstr ""
+
+#: transfer-plugins/bittorrent/bttransfer.cpp:492
 msgctxt "Transfer status: seeding"
 msgid "Seeding...."
 msgstr "Sementando..."
@@ -4165,6 +4185,9 @@ msgstr "Lista de descricións dos scripts de usuario"
 msgid "List of whether the script is enabled"
 msgstr "Lista de scripts activados"
 
+#~ msgid "An error occurred...."
+#~ msgstr "Aconteceu un erro..."
+
 #~ msgid "Remove Tag"
 #~ msgstr "Eliminar a etiqueta"
 
@@ -4315,9 +4338,6 @@ msgstr "Lista de scripts activados"
 #~ msgid_plural "%1 peers"
 #~ msgstr[0] "1 parceiro"
 #~ msgstr[1] "%1 parceiros"
-
-#~ msgid "The directory %1 does not exist"
-#~ msgstr "O directorio %1 non existe"
 
 #~ msgid "Illegal token: %1"
 #~ msgstr "Elemento ilegal: %1"
