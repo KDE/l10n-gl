@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdevcppdebugger\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2010-09-28 01:48+0200\n"
+"POT-Creation-Date: 2010-10-14 01:45+0200\n"
 "PO-Revision-Date: 2009-11-15 12:24+0100\n"
 "Last-Translator: Marce Villarino <mvillarino@gmail.com>\n"
 "Language-Team: Galician <proxecto@trasno.net>\n"
@@ -255,10 +255,6 @@ msgstr "Pechar esta vista"
 msgid "Special debugger views"
 msgstr "Vistas especiais do depurador"
 
-#: processselection.cpp:37
-msgid "Attach to a process"
-msgstr "Xuntar cun proceso"
-
 #: selectcoredialog.cpp:32
 msgid "Select Core File"
 msgstr "Escoller un ficheiro core"
@@ -267,43 +263,49 @@ msgstr "Escoller un ficheiro core"
 msgid "kdevelop: Debug application console"
 msgstr "kdevelop: Consola de depuración de programa"
 
-#: gdboutputwidget.cpp:67
-msgid "GDB Output"
-msgstr "Saída de GDB"
+#: gdb.cpp:94
+#, kde-format
+msgid "Could not locate the debugging shell '%1'."
+msgstr "Non foi posíbel localizar a shell de depuración «%1»."
 
-#: gdboutputwidget.cpp:68
+#: gdb.cpp:95
+msgid "Debugging Shell Not Found"
+msgstr "Non se atopou a shell de depuración"
+
+#: gdb.cpp:326
+msgctxt "<b>Internal debugger error</b>"
 msgid ""
-"<b>GDB output</b><p>Shows all gdb commands being executed. You can also "
-"issue any other gdb command while debugging.</p>"
+"<p>The debugger component encountered internal error while processing reply "
+"from gdb. Please submit a bug report."
 msgstr ""
-"<b>Saída de GDB</b><p>Mostra todas as ordes en execución de gdb. Tamén pode "
-"emitir calquera outro orde de gdb durante a depuración.</p>"
+"<p>A compoñente de depuración atopou un erro interno ao procesar a resposta "
+"de gdb. Por favor, envíe un informe de erro"
 
-#: gdboutputwidget.cpp:77
-msgid "&GDB cmd:"
-msgstr "Orde de &gdb:"
-
-#: gdboutputwidget.cpp:82
-msgid "Pause execution of the app to enter gdb commands"
-msgstr "Pausa a execución do programa para introducir ordes de gdb"
-
-#: gdboutputwidget.cpp:374 gdboutputwidget.cpp:424
-msgid "Show Internal Commands"
-msgstr "Mostrar as ordes internas"
-
-#: gdboutputwidget.cpp:381 gdboutputwidget.cpp:431
+#: gdb.cpp:328
+#, kde-format
 msgid ""
-"Controls if commands issued internally by KDevelop will be shown or not."
-"<br>This option will affect only future commands, it will not add or remove "
-"already issued commands from the view."
+"The exception is: %1\n"
+"The MI response is: %2"
 msgstr ""
-"Controla se as ordes emitidas internamente por KDevelop serán mostradas ou "
-"non.<br>Esta opción afectará só ás ordes futuras, non engadirá nin eliminará "
-"da vista ordes xa emitidas."
+"A excepción é: %1\n"
+"A resposta MI é: %2"
 
-#: gdboutputwidget.cpp:386
-msgid "Copy All"
-msgstr "Copiar todo"
+#: gdb.cpp:331
+msgid "Internal debugger error"
+msgstr "Erro interno do depurador"
+
+#: gdb.cpp:385
+#, kde-format
+msgid ""
+"<b>Could not start debugger.</b><p>Could not run '%1'. Make sure that the "
+"path name is specified correctly."
+msgstr ""
+"<b>Non foi posíbel iniciar o depurador.</b><p>Non foi posíbel executar «%1». "
+"Verifique que o nome da rota é correcto."
+
+#: gdb.cpp:389
+msgid "Could not start debugger"
+msgstr "Non foi posíbel iniciar o depurador"
 
 #: debugsession.cpp:169
 msgid "Debugger stopped"
@@ -438,74 +440,72 @@ msgstr ""
 msgid "Debugger status"
 msgstr "Estado do depurador"
 
-#: debugsession.cpp:1404
+#: debugsession.cpp:1409
 #, kde-format
 msgid "<b>You need gdb 7.0.0 or higher.</b><br />You are using: %1"
 msgstr "<b>Precisa o gdb 7.0.0 ou superior.</b><br />Está a empregar: %1"
 
-#: debugsession.cpp:1406
+#: debugsession.cpp:1411
 msgid "gdb error"
 msgstr "Erro de gdb"
 
-#: debugsession.cpp:1417
+#: debugsession.cpp:1422
 #, fuzzy
 #| msgid "Could not start debugger"
 msgid "<b>Could not start debugger:</b><br />"
 msgstr "Non foi posíbel iniciar o depurador"
 
-#: debugsession.cpp:1419 debugsession.cpp:1431
+#: debugsession.cpp:1424 debugsession.cpp:1436
 msgid "Startup error"
 msgstr ""
 
-#: debugsession.cpp:1429
+#: debugsession.cpp:1434
 #, fuzzy
 #| msgid "Could not start debugger"
 msgid "<b>Could not attach debugger:</b><br />"
 msgstr "Non foi posíbel iniciar o depurador"
 
-#: gdb.cpp:94
-#, kde-format
-msgid "Could not locate the debugging shell '%1'."
-msgstr "Non foi posíbel localizar a shell de depuración «%1»."
+#: gdboutputwidget.cpp:68
+msgid "GDB Output"
+msgstr "Saída de GDB"
 
-#: gdb.cpp:95
-msgid "Debugging Shell Not Found"
-msgstr "Non se atopou a shell de depuración"
-
-#: gdb.cpp:326
-msgctxt "<b>Internal debugger error</b>"
+#: gdboutputwidget.cpp:69
 msgid ""
-"<p>The debugger component encountered internal error while processing reply "
-"from gdb. Please submit a bug report."
+"<b>GDB output</b><p>Shows all gdb commands being executed. You can also "
+"issue any other gdb command while debugging.</p>"
 msgstr ""
-"<p>A compoñente de depuración atopou un erro interno ao procesar a resposta "
-"de gdb. Por favor, envíe un informe de erro"
+"<b>Saída de GDB</b><p>Mostra todas as ordes en execución de gdb. Tamén pode "
+"emitir calquera outro orde de gdb durante a depuración.</p>"
 
-#: gdb.cpp:328
-#, kde-format
+#: gdboutputwidget.cpp:78
+msgid "&GDB cmd:"
+msgstr "Orde de &gdb:"
+
+#: gdboutputwidget.cpp:83
+msgid "Pause execution of the app to enter gdb commands"
+msgstr "Pausa a execución do programa para introducir ordes de gdb"
+
+#: gdboutputwidget.cpp:390 gdboutputwidget.cpp:440
+msgid "Show Internal Commands"
+msgstr "Mostrar as ordes internas"
+
+#: gdboutputwidget.cpp:397 gdboutputwidget.cpp:447
 msgid ""
-"The exception is: %1\n"
-"The MI response is: %2"
+"Controls if commands issued internally by KDevelop will be shown or not."
+"<br>This option will affect only future commands, it will not add or remove "
+"already issued commands from the view."
 msgstr ""
-"A excepción é: %1\n"
-"A resposta MI é: %2"
+"Controla se as ordes emitidas internamente por KDevelop serán mostradas ou "
+"non.<br>Esta opción afectará só ás ordes futuras, non engadirá nin eliminará "
+"da vista ordes xa emitidas."
 
-#: gdb.cpp:331
-msgid "Internal debugger error"
-msgstr "Erro interno do depurador"
+#: gdboutputwidget.cpp:402
+msgid "Copy All"
+msgstr "Copiar todo"
 
-#: gdb.cpp:385
-#, kde-format
-msgid ""
-"<b>Could not start debugger.</b><p>Could not run '%1'. Make sure that the "
-"path name is specified correctly."
-msgstr ""
-"<b>Non foi posíbel iniciar o depurador.</b><p>Non foi posíbel executar «%1». "
-"Verifique que o nome da rota é correcto."
-
-#: gdb.cpp:389
-msgid "Could not start debugger"
-msgstr "Non foi posíbel iniciar o depurador"
+#: processselection.cpp:38
+msgid "Attach to a process"
+msgstr "Xuntar cun proceso"
 
 #. i18n: file: debuggerconfigwidget.ui:14
 #. i18n: ectx: property (windowTitle), widget (QWidget, DebuggerConfigWidget)
