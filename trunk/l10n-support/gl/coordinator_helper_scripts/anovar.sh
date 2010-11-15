@@ -38,6 +38,7 @@ fi
 
 code=$1
 ssh_key=$2
+auxiliar="pt"
 
 if [ ! -f "${HOME}/.ssh/${ssh_key}" ]; then
     echo "There is no ${HOME}/.ssh/${ssh_key}, exiting"
@@ -49,7 +50,7 @@ fi
 # antes que nada, facemos unha copia de seguranza da bbdd de traduzón
 #tar cvf $BASE_REPO/db_backup`date +%F`.tar $HOME/.kde/share/apps/kbabeldict/dbsearchengine/
 
-for lugar in {trunk/l10n-kde4,branches/stable/l10n-kde4,trunk/l10n-support}/{scripts,templates,$code,documentation,pology}; do #anovamos a galla
+for lugar in {trunk/l10n-kde4,branches/stable/l10n-kde4,trunk/l10n-support}/{scripts,templates,$code,$auxiliar,documentation,pology}; do #anovamos a galla
     if [ -d $BASE_REPO/$lugar/.svn ]; then
         echo "$lugar"
         svn update --non-interactive --quiet $BASE_REPO/$lugar
