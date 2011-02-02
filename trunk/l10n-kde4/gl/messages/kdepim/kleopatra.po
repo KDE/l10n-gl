@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kleopatra\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2011-01-28 02:52+0100\n"
+"POT-Creation-Date: 2011-02-02 03:13+0100\n"
 "PO-Revision-Date: 2010-12-10 00:00+0100\n"
 "Last-Translator: Xosé <xosecalvo@gmail.com>\n"
 "Language-Team: Galician <proxecto@trasno.net>\n"
@@ -1215,6 +1215,10 @@ msgstr "Este parámetro foi bloqueado polo administrador do sistema."
 msgid "DN-Attribute Order"
 msgstr "Orde dos atributos DN"
 
+#: conf/configuredialog.cpp:73
+msgid "Configure"
+msgstr "Configurar"
+
 #: conf/dirservconfigpage.cpp:171
 msgid "LDAP &timeout (minutes:seconds):"
 msgstr "&Tempo de agarda de LDAP (minutos:segundos):"
@@ -1238,10 +1242,6 @@ msgstr "Erro do mecanismo: gpgconf semella non saber a entrada para %1/%2/%3"
 #, kde-format
 msgid "Backend error: gpgconf has wrong type for %1/%2/%3: %4 %5"
 msgstr "Erro do mecanismo: gpgconf ten un tipo incorrecto para %1/%2/%3: %4 %5"
-
-#: conf/configuredialog.cpp:73
-msgid "Configure"
-msgstr "Configurar"
 
 #: conf/smimevalidationconfigurationwidget.cpp:132
 msgid "This option requires dirmngr >= 0.9.0"
@@ -2630,7 +2630,7 @@ msgstr "Cargar as certificacións (pode levar un anaco)"
 msgid "Issuer Certificate Not Found (%1)"
 msgstr "Non se atopou o certificado do expendedor ( %1)"
 
-#: dialogs/certificatedetailsdialog.cpp:417
+#: dialogs/certificatedetailsdialog.cpp:418
 msgctxt "@title"
 msgid "Subkeys"
 msgstr "Subchaves"
@@ -2897,13 +2897,13 @@ msgstr "Importar"
 msgid "(unknown certificate)"
 msgstr "(certificado descoñecido)"
 
-#: dialogs/ownertrustdialog.cpp:102
+#: dialogs/ownertrustdialog.cpp:105
 #, kde-format
 msgctxt "@title"
 msgid "Change Trust Level of %1"
 msgstr "Mudar o nivel de confianza de %1"
 
-#: dialogs/ownertrustdialog.cpp:103
+#: dialogs/ownertrustdialog.cpp:106
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -3376,6 +3376,65 @@ msgstr "Non foi posíbel gardar o ficheiro %1: %2"
 #: kwatchgnupg/tray.cpp:57
 msgid "KWatchGnuPG Log Viewer"
 msgstr "Visor de rexistro do KWatchGnuPG"
+
+#: main.cpp:146
+msgid "Performing Self-Check..."
+msgstr "A realizar a comprobación automática..."
+
+#: main.cpp:163
+msgctxt "did not pass"
+msgid "Self-Check Failed"
+msgstr "Fallou a comprobación automática"
+
+#: main.cpp:168
+msgid "Self-Check Passed"
+msgstr "Pasou a comprobación automática"
+
+#: main.cpp:185
+msgid "Loading certificate cache..."
+msgstr "A cargar a caché de certificados..."
+
+#: main.cpp:192
+msgid "Certificate cache loaded."
+msgstr "Caché de certificados cargada."
+
+#: main.cpp:231
+msgctxt "@info"
+msgid ""
+"<para>The version of the <application>GpgME</application> library you are "
+"running against is older than the one that the <application>GpgME++</"
+"application> library was built against.</para><para><application>Kleopatra</"
+"application> will not function in this setting.</para><para>Please ask your "
+"administrator for help in resolving this issue.</para>"
+msgstr ""
+"<para>A versión da biblioteca <application>GpgME</application> que se está a "
+"executar é máis vella que a da biblioteca <application>GpgME++</application> "
+"coa que se construíu.</para><para><application>Kleopatra</application> non "
+"funciona con esta configuración.</para><para>Pídalle axuda ao administrador "
+"para que axude a resolver este problema.</para>"
+
+#: main.cpp:235
+msgctxt "@title"
+msgid "GpgME Too Old"
+msgstr "GpgME é vella de máis"
+
+#: main.cpp:328
+msgid "GPG UI Server Error"
+msgstr "Erro do servidor de UI de GPG"
+
+#: main.cpp:329
+#, kde-format
+msgid ""
+"<qt>The Kleopatra GPG UI Server Module could not be initialized.<br/>The "
+"error given was: <b>%1</b><br/>You can use Kleopatra as a certificate "
+"manager, but cryptographic plugins that rely on a GPG UI Server being "
+"present might not work correctly, or at all.</qt>"
+msgstr ""
+"<qt>Non foi posíbel inicializar o Módulo Servidor de UI de GPG de Kleopatra."
+"<br/>O erro fornecido foi: <b>%1</b><br/>Pode empregar Kleopatra como xestor "
+"de certificados, mais pode que non funcionen correctamente as extensións "
+"criptográficas que dependen da presenza dun servidor de UI de GPG, ou que "
+"non funcionen en absoluto.</qt>"
 
 #: mainwindow_desktop.cpp:121 mainwindow_mobile.cpp:151
 #, kde-format
@@ -5195,7 +5254,7 @@ msgstr "&Procurar:"
 msgid "Search interactively for icon names (e.g. folder)."
 msgstr "Procurar interactivamente os nomes das iconas (p.ex. cartafol)."
 
-#. i18n: file: dialogs/certificatedetailsdialog.ui:34
+#. i18n: file: dialogs/certificatedetailsdialog.ui:27
 #. i18n: ectx: property (title), widget (QGroupBox, overviewActionsGB)
 #: utils/kleo_kicondialog.cpp:367 rc.cpp:223 qml/kleopatra-mobile.qml:84
 msgid "Actions"
@@ -5387,8 +5446,8 @@ msgstr "Redebuxar"
 msgid "Stop Operation"
 msgstr "Parar a operación"
 
-#. i18n: file: dialogs/certificatedetailsdialog.ui:13
-#. i18n: ectx: property (windowTitle), widget (QDialog, CertificateDetailsDialog)
+#. i18n: file: dialogs/certificatedetailsdialog.ui:14
+#. i18n: ectx: property (windowTitle), widget (QWidget, CertificateDetailsDialog)
 #: view/keylistcontroller.cpp:361 rc.cpp:217
 msgid "Certificate Details"
 msgstr "Detalles do certificado"
@@ -5401,7 +5460,7 @@ msgstr "Eliminar"
 msgid "Certify Certificate..."
 msgstr "Certificar o certificado..."
 
-#. i18n: file: dialogs/certificatedetailsdialog.ui:60
+#. i18n: file: dialogs/certificatedetailsdialog.ui:53
 #. i18n: ectx: property (text), widget (QPushButton, changeExpiryDatePB)
 #: view/keylistcontroller.cpp:368 rc.cpp:232
 msgid "Change Expiry Date..."
@@ -5419,7 +5478,7 @@ msgstr "Confiar no certificado raíz"
 msgid "Distrust Root Certificate"
 msgstr "Desconfiar do certificado raíz"
 
-#. i18n: file: dialogs/certificatedetailsdialog.ui:40
+#. i18n: file: dialogs/certificatedetailsdialog.ui:33
 #. i18n: ectx: property (text), widget (QPushButton, changePassphrasePB)
 #: view/keylistcontroller.cpp:376 rc.cpp:226
 msgid "Change Passphrase..."
@@ -5525,7 +5584,7 @@ msgstr "CTRL+MAIÚS+RIGHT"
 msgid "Hierarchical Certificate List"
 msgstr "Lista xerárquica dos certificados"
 
-#. i18n: file: dialogs/certificatedetailsdialog.ui:244
+#. i18n: file: dialogs/certificatedetailsdialog.ui:229
 #. i18n: ectx: property (text), widget (QPushButton, expandAllCertificationsPB)
 #: view/tabwidget.cpp:408 rc.cpp:269
 msgid "Expand All"
@@ -5535,7 +5594,7 @@ msgstr "Expandir todo"
 msgid "CTRL+."
 msgstr "CTRL+."
 
-#. i18n: file: dialogs/certificatedetailsdialog.ui:254
+#. i18n: file: dialogs/certificatedetailsdialog.ui:239
 #. i18n: ectx: property (text), widget (QPushButton, collapseAllCertificationsPB)
 #: view/tabwidget.cpp:410 rc.cpp:272
 msgid "Collapse All"
@@ -5552,65 +5611,6 @@ msgstr "Mudar o nome da lapela"
 #: view/tabwidget.cpp:536
 msgid "New tab title:"
 msgstr "Novo título da lapela:"
-
-#: main.cpp:150
-msgid "Performing Self-Check..."
-msgstr "A realizar a comprobación automática..."
-
-#: main.cpp:167
-msgctxt "did not pass"
-msgid "Self-Check Failed"
-msgstr "Fallou a comprobación automática"
-
-#: main.cpp:172
-msgid "Self-Check Passed"
-msgstr "Pasou a comprobación automática"
-
-#: main.cpp:189
-msgid "Loading certificate cache..."
-msgstr "A cargar a caché de certificados..."
-
-#: main.cpp:196
-msgid "Certificate cache loaded."
-msgstr "Caché de certificados cargada."
-
-#: main.cpp:238
-msgctxt "@info"
-msgid ""
-"<para>The version of the <application>GpgME</application> library you are "
-"running against is older than the one that the <application>GpgME++</"
-"application> library was built against.</para><para><application>Kleopatra</"
-"application> will not function in this setting.</para><para>Please ask your "
-"administrator for help in resolving this issue.</para>"
-msgstr ""
-"<para>A versión da biblioteca <application>GpgME</application> que se está a "
-"executar é máis vella que a da biblioteca <application>GpgME++</application> "
-"coa que se construíu.</para><para><application>Kleopatra</application> non "
-"funciona con esta configuración.</para><para>Pídalle axuda ao administrador "
-"para que axude a resolver este problema.</para>"
-
-#: main.cpp:242
-msgctxt "@title"
-msgid "GpgME Too Old"
-msgstr "GpgME é vella de máis"
-
-#: main.cpp:335
-msgid "GPG UI Server Error"
-msgstr "Erro do servidor de UI de GPG"
-
-#: main.cpp:336
-#, kde-format
-msgid ""
-"<qt>The Kleopatra GPG UI Server Module could not be initialized.<br/>The "
-"error given was: <b>%1</b><br/>You can use Kleopatra as a certificate "
-"manager, but cryptographic plugins that rely on a GPG UI Server being "
-"present might not work correctly, or at all.</qt>"
-msgstr ""
-"<qt>Non foi posíbel inicializar o Módulo Servidor de UI de GPG de Kleopatra."
-"<br/>O erro fornecido foi: <b>%1</b><br/>Pode empregar Kleopatra como xestor "
-"de certificados, mais pode que non funcionen correctamente as extensións "
-"criptográficas que dependen da presenza dun servidor de UI de GPG, ou que "
-"non funcionen en absoluto.</qt>"
 
 #: rc.cpp:1
 msgctxt "NAME OF TRANSLATORS"
@@ -6143,31 +6143,31 @@ msgid "This is how the new User-ID will be stored in the certificate:"
 msgstr ""
 "Así é como se almacenará no certificado o novo identificador do usuario:"
 
-#. i18n: file: dialogs/certificatedetailsdialog.ui:28
+#. i18n: file: dialogs/certificatedetailsdialog.ui:21
 #. i18n: ectx: attribute (title), widget (QWidget, overviewTab)
 #: rc.cpp:220
 msgid "Overview"
 msgstr "Vista global"
 
-#. i18n: file: dialogs/certificatedetailsdialog.ui:50
+#. i18n: file: dialogs/certificatedetailsdialog.ui:43
 #. i18n: ectx: property (text), widget (QPushButton, changeTrustLevelPB)
 #: rc.cpp:229
 msgid "Trust Certifications Made by This Certificate..."
 msgstr "Certificacións de confianza feitas por este certificado..."
 
-#. i18n: file: dialogs/certificatedetailsdialog.ui:70
+#. i18n: file: dialogs/certificatedetailsdialog.ui:63
 #. i18n: ectx: property (text), widget (QPushButton, revokeCertificatePB)
 #: rc.cpp:235
 msgid "Revoke This Certificate..."
 msgstr "Revogar este certificado..."
 
-#. i18n: file: dialogs/certificatedetailsdialog.ui:118
+#. i18n: file: dialogs/certificatedetailsdialog.ui:111
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
 #: rc.cpp:238
 msgid "Photo"
 msgstr "Foto"
 
-#. i18n: file: dialogs/certificatedetailsdialog.ui:128
+#. i18n: file: dialogs/certificatedetailsdialog.ui:121
 #. i18n: ectx: property (text), widget (QLabel, photoLB)
 #: rc.cpp:241
 msgid ""
@@ -6186,45 +6186,45 @@ msgstr ""
 "<li>As fotos incrementan o tamaño dos certificados.</li>\n"
 "</ul>"
 
-#. i18n: file: dialogs/certificatedetailsdialog.ui:153
+#. i18n: file: dialogs/certificatedetailsdialog.ui:138
 #. i18n: ectx: attribute (title), widget (QWidget, certificationsTab)
 #: rc.cpp:248
 msgid "User-IDs && Certifications"
 msgstr "Identificadores de usuario e certificacións"
 
-#. i18n: file: dialogs/certificatedetailsdialog.ui:173
+#. i18n: file: dialogs/certificatedetailsdialog.ui:158
 #. i18n: ectx: property (title), widget (QGroupBox, userIDsActionsGB)
 #: rc.cpp:251
 msgid "User-IDs"
 msgstr "Identificadores de usuario"
 
-#. i18n: file: dialogs/certificatedetailsdialog.ui:179
+#. i18n: file: dialogs/certificatedetailsdialog.ui:164
 #. i18n: ectx: property (text), widget (QPushButton, addUserIDPB)
 #: rc.cpp:254
 msgid "Add..."
 msgstr "Engadir..."
 
-#. i18n: file: dialogs/certificatedetailsdialog.ui:189
+#. i18n: file: dialogs/certificatedetailsdialog.ui:174
 #. i18n: ectx: property (text), widget (QPushButton, revokeUserIDPB)
-#. i18n: file: dialogs/certificatedetailsdialog.ui:218
+#. i18n: file: dialogs/certificatedetailsdialog.ui:203
 #. i18n: ectx: property (text), widget (QPushButton, revokeCertificationPB)
 #: rc.cpp:257 rc.cpp:266
 msgid "Revoke..."
 msgstr "Revogar..."
 
-#. i18n: file: dialogs/certificatedetailsdialog.ui:199
+#. i18n: file: dialogs/certificatedetailsdialog.ui:184
 #. i18n: ectx: property (text), widget (QPushButton, certifyUserIDPB)
 #: rc.cpp:260
 msgid "Certify..."
 msgstr "Certificar..."
 
-#. i18n: file: dialogs/certificatedetailsdialog.ui:212
+#. i18n: file: dialogs/certificatedetailsdialog.ui:197
 #. i18n: ectx: property (title), widget (QGroupBox, certificationsActionGB)
 #: rc.cpp:263
 msgid "Certifications"
 msgstr "Certificacións"
 
-#. i18n: file: dialogs/certificatedetailsdialog.ui:287
+#. i18n: file: dialogs/certificatedetailsdialog.ui:264
 #. i18n: ectx: attribute (title), widget (QWidget, detailsTab)
 #. i18n: file: newcertificatewizard/advancedsettingsdialog.ui:20
 #. i18n: ectx: attribute (title), widget (QWidget, technicalTab)
@@ -6232,25 +6232,25 @@ msgstr "Certificacións"
 msgid "Technical Details"
 msgstr "Detalles técnicos"
 
-#. i18n: file: dialogs/certificatedetailsdialog.ui:328
+#. i18n: file: dialogs/certificatedetailsdialog.ui:297
 #. i18n: ectx: attribute (title), widget (QWidget, chainTab)
 #: rc.cpp:278
 msgid "Chain"
 msgstr "Cadea"
 
-#. i18n: file: dialogs/certificatedetailsdialog.ui:341
+#. i18n: file: dialogs/certificatedetailsdialog.ui:310
 #. i18n: ectx: property (text), widget (QTreeWidget, chainTW)
 #: rc.cpp:281
 msgid "1"
 msgstr "1"
 
-#. i18n: file: dialogs/certificatedetailsdialog.ui:358
+#. i18n: file: dialogs/certificatedetailsdialog.ui:319
 #. i18n: ectx: attribute (title), widget (QWidget, dumpTab)
 #: rc.cpp:284
 msgid "Dump"
 msgstr "Volcar"
 
-#. i18n: file: dialogs/certificatedetailsdialog.ui:364
+#. i18n: file: dialogs/certificatedetailsdialog.ui:325
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: rc.cpp:287
 msgid ""
@@ -6289,55 +6289,55 @@ msgstr "Certificar para que o vexan todos"
 msgid "Send certified certificate to server afterwards"
 msgstr "Enviar despois o certificado certificado ao servidor"
 
-#. i18n: file: dialogs/expirydialog.ui:13
-#. i18n: ectx: property (windowTitle), widget (QDialog, Kleo::Dialogs::ExpiryDialog)
+#. i18n: file: dialogs/expirydialog.ui:14
+#. i18n: ectx: property (windowTitle), widget (QWidget, Kleo::Dialogs::ExpiryDialog)
 #: rc.cpp:309
 msgid "Change Certificate Date of Expiry"
 msgstr "Obter a data de caducidade do certificado"
 
-#. i18n: file: dialogs/expirydialog.ui:19
+#. i18n: file: dialogs/expirydialog.ui:20
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: rc.cpp:312
 msgid "Please select when to expire this certificate:"
 msgstr "Seleccione cando quere facer que caduque este certificado:"
 
-#. i18n: file: dialogs/expirydialog.ui:26
+#. i18n: file: dialogs/expirydialog.ui:27
 #. i18n: ectx: property (text), widget (QRadioButton, neverRB)
 #: rc.cpp:315
 msgid "Never"
 msgstr "Nunca"
 
-#. i18n: file: dialogs/expirydialog.ui:38
+#. i18n: file: dialogs/expirydialog.ui:39
 #. i18n: ectx: property (text), widget (QRadioButton, inRB)
 #: rc.cpp:318
 msgid "In"
 msgstr "En"
 
-#. i18n: file: dialogs/expirydialog.ui:62
+#. i18n: file: dialogs/expirydialog.ui:63
 #. i18n: ectx: property (text), item, widget (QComboBox, inCB)
 #: rc.cpp:321
 msgid "Days"
 msgstr "Días"
 
-#. i18n: file: dialogs/expirydialog.ui:67
+#. i18n: file: dialogs/expirydialog.ui:68
 #. i18n: ectx: property (text), item, widget (QComboBox, inCB)
 #: rc.cpp:324
 msgid "Weeks"
 msgstr "Semanas"
 
-#. i18n: file: dialogs/expirydialog.ui:72
+#. i18n: file: dialogs/expirydialog.ui:73
 #. i18n: ectx: property (text), item, widget (QComboBox, inCB)
 #: rc.cpp:327
 msgid "Months"
 msgstr "Meses"
 
-#. i18n: file: dialogs/expirydialog.ui:77
+#. i18n: file: dialogs/expirydialog.ui:78
 #. i18n: ectx: property (text), item, widget (QComboBox, inCB)
 #: rc.cpp:330
 msgid "Years"
 msgstr "Anos"
 
-#. i18n: file: dialogs/expirydialog.ui:100
+#. i18n: file: dialogs/expirydialog.ui:101
 #. i18n: ectx: property (text), widget (QRadioButton, onRB)
 #: rc.cpp:333
 msgid "On this day:"
@@ -6403,19 +6403,19 @@ msgstr "Anular a selección"
 msgid "Find:"
 msgstr "Procurar:"
 
-#. i18n: file: dialogs/ownertrustdialog.ui:28
+#. i18n: file: dialogs/ownertrustdialog.ui:29
 #. i18n: ectx: property (text), widget (QRadioButton, unknownRB)
 #: rc.cpp:369
 msgid "I do not know"
 msgstr "Non sei"
 
-#. i18n: file: dialogs/ownertrustdialog.ui:41
+#. i18n: file: dialogs/ownertrustdialog.ui:42
 #. i18n: ectx: property (text), widget (QLabel, label_7)
 #: rc.cpp:372
 msgid "<i>(unknown trust)</i>"
 msgstr "<i>(confianza descoñecida)</i>"
 
-#. i18n: file: dialogs/ownertrustdialog.ui:74
+#. i18n: file: dialogs/ownertrustdialog.ui:75
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: rc.cpp:375
 msgid ""
@@ -6428,19 +6428,19 @@ msgstr ""
 "nivel de confianza ignóranse ao comprobar a validez dos certificados OpenPGP."
 "</font>"
 
-#. i18n: file: dialogs/ownertrustdialog.ui:88
+#. i18n: file: dialogs/ownertrustdialog.ui:89
 #. i18n: ectx: property (text), widget (QRadioButton, neverRB)
 #: rc.cpp:378
 msgid "I do NOT trust them"
 msgstr "NON confío neles"
 
-#. i18n: file: dialogs/ownertrustdialog.ui:98
+#. i18n: file: dialogs/ownertrustdialog.ui:99
 #. i18n: ectx: property (text), widget (QLabel, label_8)
 #: rc.cpp:381
 msgid "<i>(never trust)</i>"
 msgstr "<i>(non confiar nunca)</i>"
 
-#. i18n: file: dialogs/ownertrustdialog.ui:131
+#. i18n: file: dialogs/ownertrustdialog.ui:132
 #. i18n: ectx: property (text), widget (QLabel, label_3)
 #: rc.cpp:384
 msgid ""
@@ -6456,19 +6456,19 @@ msgstr ""
 "certificacións con este nivel de confianza ignóranse ao comprobar a validez "
 "dos certificados OpenPGP.</font>"
 
-#. i18n: file: dialogs/ownertrustdialog.ui:145
+#. i18n: file: dialogs/ownertrustdialog.ui:146
 #. i18n: ectx: property (text), widget (QRadioButton, marginalRB)
 #: rc.cpp:387
 msgid "I believe checks are casual"
 msgstr "Penso que as comprobacións son informais"
 
-#. i18n: file: dialogs/ownertrustdialog.ui:155
+#. i18n: file: dialogs/ownertrustdialog.ui:156
 #. i18n: ectx: property (text), widget (QLabel, label_9)
 #: rc.cpp:390
 msgid "<i>(marginal trust)</i>"
 msgstr "<i>(confianza marxinal)</i>"
 
-#. i18n: file: dialogs/ownertrustdialog.ui:188
+#. i18n: file: dialogs/ownertrustdialog.ui:189
 #. i18n: ectx: property (text), widget (QLabel, label_4)
 #: rc.cpp:393
 msgid ""
@@ -6482,19 +6482,19 @@ msgstr ""
 "certificados só serán válidos con varias certificacións (tipicamente tres). "
 "Normalmente esta é unha boa escolla.</font>"
 
-#. i18n: file: dialogs/ownertrustdialog.ui:202
+#. i18n: file: dialogs/ownertrustdialog.ui:203
 #. i18n: ectx: property (text), widget (QRadioButton, fullRB)
 #: rc.cpp:396
 msgid "I believe checks are very accurate"
 msgstr "Penso que as comprobacións son moi precisas"
 
-#. i18n: file: dialogs/ownertrustdialog.ui:212
+#. i18n: file: dialogs/ownertrustdialog.ui:213
 #. i18n: ectx: property (text), widget (QLabel, label_10)
 #: rc.cpp:399
 msgid "<i>(full trust)</i>"
 msgstr "<i>(confianza completa)</i>"
 
-#. i18n: file: dialogs/ownertrustdialog.ui:245
+#. i18n: file: dialogs/ownertrustdialog.ui:246
 #. i18n: ectx: property (text), widget (QLabel, label_5)
 #: rc.cpp:402
 msgid ""
@@ -6508,19 +6508,19 @@ msgstr ""
 "cunha única certificación, así que tente ben ao asignar esta confianza.</"
 "font>"
 
-#. i18n: file: dialogs/ownertrustdialog.ui:262
+#. i18n: file: dialogs/ownertrustdialog.ui:263
 #. i18n: ectx: property (text), widget (QRadioButton, ultimateRB)
 #: rc.cpp:405
 msgid "This is my certificate"
 msgstr "Este é o meu certificado"
 
-#. i18n: file: dialogs/ownertrustdialog.ui:272
+#. i18n: file: dialogs/ownertrustdialog.ui:273
 #. i18n: ectx: property (text), widget (QLabel, label_11)
 #: rc.cpp:408
 msgid "<i>(ultimate trust)</i>"
 msgstr "<i>(confianza definitiva)</i>"
 
-#. i18n: file: dialogs/ownertrustdialog.ui:305
+#. i18n: file: dialogs/ownertrustdialog.ui:306
 #. i18n: ectx: property (text), widget (QLabel, label_6)
 #: rc.cpp:411
 msgid ""
@@ -7200,12 +7200,6 @@ msgstr "Crear un certificado de sinatura cos mesmos parámetros"
 msgid "Create Encryption Certificate With Same Parameters"
 msgstr "Crear un certificado de cifrado cos mesmos parámetros"
 
-#: qml/kleopatra-mobile.qml:73
-#, fuzzy
-#| msgid "No certificate selected"
-msgid "No certificates loaded yet."
-msgstr "Non se seleccionou ningún certificado"
-
 #: qml/KleopatraActions.qml:48
 #, fuzzy
 #| msgid "&File"
@@ -7223,6 +7217,12 @@ msgstr "&Vista"
 #| msgid "&Settings"
 msgid "Settings"
 msgstr "&Configuración"
+
+#: qml/kleopatra-mobile.qml:73
+#, fuzzy
+#| msgid "No certificate selected"
+msgid "No certificates loaded yet."
+msgstr "Non se seleccionou ningún certificado"
 
 #, fuzzy
 #~| msgid "&Tools"
