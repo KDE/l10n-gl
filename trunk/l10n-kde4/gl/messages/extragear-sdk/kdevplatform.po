@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdevplatform\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2011-02-02 03:22+0100\n"
+"POT-Creation-Date: 2011-02-04 02:38+0100\n"
 "PO-Revision-Date: 2009-11-15 21:16+0100\n"
 "Last-Translator: Marce Villarino <mvillarino@gmail.com>\n"
 "Language-Team: Galician <proxecto@trasno.net>\n"
@@ -1878,15 +1878,6 @@ msgid ""
 "Make sure that KDEDIRS is set properly and that you ran kbuildsycoca4."
 msgstr ""
 
-#: shell/partdocument.cpp:108 shell/textdocument.cpp:356
-#, kde-format
-msgid "The document \"%1\" has unsaved changes. Would you like to save them?"
-msgstr "O documento «%1» ten modificacións sen gardar. Desexa gardalas?"
-
-#: shell/partdocument.cpp:109 shell/textdocument.cpp:357
-msgid "Close Document"
-msgstr "Pechar o documento"
-
 #: shell/plugincontroller.cpp:443
 #, kde-format
 msgid ""
@@ -2628,6 +2619,15 @@ msgstr "Non foi posíbel obter o ficheiro do proxecto: %1"
 msgid "Unable to write to %1"
 msgstr "Non foi posíbel crear o ficheiro de configuración %1"
 
+#: shell/textdocument.cpp:356 shell/partdocument.cpp:108
+#, kde-format
+msgid "The document \"%1\" has unsaved changes. Would you like to save them?"
+msgstr "O documento «%1» ten modificacións sen gardar. Desexa gardalas?"
+
+#: shell/textdocument.cpp:357 shell/partdocument.cpp:109
+msgid "Close Document"
+msgstr "Pechar o documento"
+
 #: shell/textdocument.cpp:369
 #, kde-format
 msgid ""
@@ -3224,7 +3224,7 @@ msgstr "Fallou a listaxe do rexistro dos ficheiros"
 msgid "No log information found"
 msgstr "Non se achou información de rexistro"
 
-#: vcs/dvcs/ui/logview.cpp:63 vcs/widgets/vcsdiffpatchsources.cpp:127
+#: vcs/dvcs/ui/logview.cpp:63 vcs/widgets/vcsdiffpatchsources.cpp:153
 msgid "Commit"
 msgstr "Entregar"
 
@@ -3287,6 +3287,96 @@ msgstr "Lugar de orixe"
 msgid "Source Revision"
 msgstr "Revisión de orixe"
 
+#: vcs/widgets/standardvcslocationwidget.cpp:35
+msgid "Introduce the repository URL..."
+msgstr ""
+
+#: vcs/widgets/vcsdiffwidget.cpp:103
+#, kde-format
+msgid "Difference between revision %1 and %2:"
+msgstr "Diferenzas entre as revisións %1 e %2:"
+
+#: vcs/widgets/vcseventwidget.cpp:83
+msgid "Diff to previous revision"
+msgstr "Diferenzas coa revisión anterior"
+
+#: vcs/widgets/vcseventwidget.cpp:86
+msgid "Diff between revisions"
+msgstr "Diferenzas entre revisións"
+
+#: vcs/widgets/vcseventwidget.cpp:151
+msgid "Difference To Previous"
+msgstr "Diferenzas coa anterior"
+
+#: vcs/widgets/vcseventwidget.cpp:175
+msgid "Difference between Revisions"
+msgstr "Diferenzas entre revisións"
+
+#: vcs/widgets/vcscommitdialog.cpp:110
+msgid "Commit Message"
+msgstr "Descrición da entrega"
+
+#: vcs/widgets/vcscommitdialog.cpp:191
+msgctxt "file was added to versioncontrolsystem"
+msgid "Added"
+msgstr "Engadido"
+
+#: vcs/widgets/vcscommitdialog.cpp:195
+msgctxt "file was deleted from versioncontrolsystem"
+msgid "Deleted"
+msgstr "Eliminado"
+
+#: vcs/widgets/vcscommitdialog.cpp:199
+msgctxt "version controlled file was modified"
+msgid "Modified"
+msgstr "Modificado"
+
+#: vcs/widgets/vcscommitdialog.cpp:202
+msgctxt "file is not known to versioncontrolsystem"
+msgid "Unknown"
+msgstr "Descoñecido"
+
+#: vcs/widgets/vcscommitdialog.cpp:293 vcs/vcspluginhelper.cpp:270
+msgid "Unable to get difference."
+msgstr "Non foi posíbel obter as diferenzas."
+
+#. i18n: file: vcs/widgets/vcscommitdialog.ui:22
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: vcs/widgets/vcsdiffpatchsources.cpp:46 rc.cpp:411
+msgid "Commit Message:"
+msgstr "Descrición da entrega:"
+
+#: vcs/widgets/vcsdiffpatchsources.cpp:50
+#, fuzzy
+#| msgid "Message"
+msgid "Old Messages"
+msgstr "Mensaxe"
+
+#: vcs/widgets/vcsdiffpatchsources.cpp:180
+#, fuzzy
+#| msgid "Files will be committed:"
+msgid "Files will be committed:\n"
+msgstr "Os ficheiros para entregar:"
+
+#: vcs/widgets/vcsdiffpatchsources.cpp:184
+#, fuzzy, kde-format
+#| msgid "With message:"
+msgid ""
+"\n"
+"With message:\n"
+" %1"
+msgstr "Coa mensaxe:"
+
+#: vcs/widgets/vcsdiffpatchsources.cpp:186
+msgid "About to commit to repository"
+msgstr "Estase a piques de entregar ao repositorio"
+
+#: vcs/widgets/vcsdiffpatchsources.cpp:229
+#, fuzzy
+#| msgid "Could not open project %1."
+msgid "Could not create a patch for the current version."
+msgstr "Non foi posíbel abrir o proxecto %1."
+
 #: vcs/vcspluginhelper.cpp:96
 msgid "Commit..."
 msgstr "Entregar..."
@@ -3337,16 +3427,12 @@ msgstr "Non foi posíbel obter as diferenzas."
 msgid "VCS support"
 msgstr ""
 
-#: vcs/vcspluginhelper.cpp:270 vcs/widgets/vcscommitdialog.cpp:293
-msgid "Unable to get difference."
-msgstr "Non foi posíbel obter as diferenzas."
-
-#: vcs/vcspluginhelper.cpp:313
+#: vcs/vcspluginhelper.cpp:310
 #, kde-format
 msgid "%2 History (%1)"
 msgstr "Historial de %2 (%1)"
 
-#: vcs/vcspluginhelper.cpp:347
+#: vcs/vcspluginhelper.cpp:344
 msgid ""
 "Cannot display annotations, missing interface KTextEditor::"
 "AnnotationInterface for the editor."
@@ -3354,7 +3440,7 @@ msgstr ""
 "Non é posíbel mostrar as anotacións; falta a interface KTextEditor::"
 "AnnotationInterface do editor."
 
-#: vcs/vcspluginhelper.cpp:351
+#: vcs/vcspluginhelper.cpp:348
 #, kde-format
 msgid ""
 "Cannot execute annotate action because the document was not found, or was "
@@ -3364,92 +3450,6 @@ msgstr ""
 "Non foi posíbel executar a acción de anotación porque ou non se achou o "
 "documento ou non era un documento de texto:\n"
 "%1"
-
-#: vcs/vcspluginhelper.cpp:412
-#, fuzzy
-#| msgid "Could not open project %1."
-msgid "Could not create a patch for the current version."
-msgstr "Non foi posíbel abrir o proxecto %1."
-
-#: vcs/widgets/standardvcslocationwidget.cpp:35
-msgid "Introduce the repository URL..."
-msgstr ""
-
-#: vcs/widgets/vcscommitdialog.cpp:110
-msgid "Commit Message"
-msgstr "Descrición da entrega"
-
-#: vcs/widgets/vcscommitdialog.cpp:191
-msgctxt "file was added to versioncontrolsystem"
-msgid "Added"
-msgstr "Engadido"
-
-#: vcs/widgets/vcscommitdialog.cpp:195
-msgctxt "file was deleted from versioncontrolsystem"
-msgid "Deleted"
-msgstr "Eliminado"
-
-#: vcs/widgets/vcscommitdialog.cpp:199
-msgctxt "version controlled file was modified"
-msgid "Modified"
-msgstr "Modificado"
-
-#: vcs/widgets/vcscommitdialog.cpp:202
-msgctxt "file is not known to versioncontrolsystem"
-msgid "Unknown"
-msgstr "Descoñecido"
-
-#. i18n: file: vcs/widgets/vcscommitdialog.ui:22
-#. i18n: ectx: property (text), widget (QLabel, label)
-#: vcs/widgets/vcsdiffpatchsources.cpp:46 rc.cpp:411
-msgid "Commit Message:"
-msgstr "Descrición da entrega:"
-
-#: vcs/widgets/vcsdiffpatchsources.cpp:50
-#, fuzzy
-#| msgid "Message"
-msgid "Old Messages"
-msgstr "Mensaxe"
-
-#: vcs/widgets/vcsdiffpatchsources.cpp:154
-#, fuzzy
-#| msgid "Files will be committed:"
-msgid "Files will be committed:\n"
-msgstr "Os ficheiros para entregar:"
-
-#: vcs/widgets/vcsdiffpatchsources.cpp:158
-#, fuzzy, kde-format
-#| msgid "With message:"
-msgid ""
-"\n"
-"With message:\n"
-" %1"
-msgstr "Coa mensaxe:"
-
-#: vcs/widgets/vcsdiffpatchsources.cpp:160
-msgid "About to commit to repository"
-msgstr "Estase a piques de entregar ao repositorio"
-
-#: vcs/widgets/vcsdiffwidget.cpp:103
-#, kde-format
-msgid "Difference between revision %1 and %2:"
-msgstr "Diferenzas entre as revisións %1 e %2:"
-
-#: vcs/widgets/vcseventwidget.cpp:83
-msgid "Diff to previous revision"
-msgstr "Diferenzas coa revisión anterior"
-
-#: vcs/widgets/vcseventwidget.cpp:86
-msgid "Diff between revisions"
-msgstr "Diferenzas entre revisións"
-
-#: vcs/widgets/vcseventwidget.cpp:151
-msgid "Difference To Previous"
-msgstr "Diferenzas coa anterior"
-
-#: vcs/widgets/vcseventwidget.cpp:175
-msgid "Difference between Revisions"
-msgstr "Diferenzas entre revisións"
 
 #: rc.cpp:1
 msgctxt "NAME OF TRANSLATORS"
