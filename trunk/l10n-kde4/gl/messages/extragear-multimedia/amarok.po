@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: amarok\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2011-02-21 03:29+0100\n"
+"POT-Creation-Date: 2011-02-23 03:16+0100\n"
 "PO-Revision-Date: 2010-03-22 17:07+0100\n"
 "Last-Translator: Chema Barcala <shemari@gmail.com>\n"
 "Language-Team: Galician <proxecto@trasno.net>\n"
@@ -331,6 +331,7 @@ msgid "<b>%1</b> on <b>%2</b>"
 msgstr "<b>%1</b> en <b>%2</b>"
 
 #: EngineController.cpp:1386
+#: core-impl/collections/mediadevicecollection/MediaDeviceMeta.cpp:152
 msgid "Unknown track"
 msgstr "Pista descoñecida"
 
@@ -2141,6 +2142,7 @@ msgid "Show Year In Media Sources"
 msgstr "Mostrar nas orixes de medios"
 
 #: context/applets/currenttrack/CurrentTrack.h:38
+#: core-impl/collections/mediadevicecollection/MediaDeviceMeta.cpp:150
 #: core-impl/collections/mtpcollection/handler/MtpHandler.cpp:417
 #: core/meta/Meta.cpp:394 covermanager/CoverFetchUnit.cpp:595
 #: covermanager/CoverFetchUnit.cpp:605
@@ -4967,64 +4969,6 @@ msgstr "A obtención da portada de '%1' foi cancelada."
 msgid "Unable to find a cover for '%1'."
 msgstr "Non se atopou ningunha portada para '%1'."
 
-#: covermanager/CoverFetchingActions.cpp:47
-msgid "Fetch Cover"
-msgid_plural "Fetch Covers"
-msgstr[0] "Obter a portada"
-msgstr[1] "Obter as portadas"
-
-#: covermanager/CoverFetchingActions.cpp:49
-#, kde-format
-msgid "Fetch the artwork for this album"
-msgid_plural "Fetch artwork for %1 albums"
-msgstr[0] "Obter o material gráfico deste álbum"
-msgstr[1] "Obter o material gráfico destes %1 álbumes"
-
-#: covermanager/CoverFetchingActions.cpp:69
-#: covermanager/CoverFoundDialog.cpp:358
-msgid "Display Cover"
-msgstr "Mostrar a portada"
-
-#: covermanager/CoverFetchingActions.cpp:71
-msgid "Display artwork for this album"
-msgstr "Mostrar o material gráfico deste álbum"
-
-#: covermanager/CoverFetchingActions.cpp:89
-msgid "Unset Cover"
-msgid_plural "Unset Covers"
-msgstr[0] "Quitar a portada"
-msgstr[1] "Quitar as portadas"
-
-#: covermanager/CoverFetchingActions.cpp:91
-#, kde-format
-msgid "Remove artwork for this album"
-msgid_plural "Remove artwork for %1 albums"
-msgstr[0] "Eliminar o material gráfico deste álbum"
-msgstr[1] "Eliminar o material gráfico destes %1 álbumes"
-
-#: covermanager/CoverFetchingActions.cpp:104
-#, kde-format
-msgid "Are you sure you want to remove this cover from the Collection?"
-msgid_plural ""
-"Are you sure you want to delete these %1 covers from the Collection?"
-msgstr[0] "Realmente desexa eliminar esta portada da colección?"
-msgstr[1] "Realmente desexa eliminar estas %1 portadas da colección?"
-
-#: covermanager/CoverFetchingActions.cpp:127
-msgid "Set Custom Cover"
-msgstr "Establecer unha portada personalizada"
-
-#: covermanager/CoverFetchingActions.cpp:129
-#, kde-format
-msgid "Set custom artwork for this album"
-msgid_plural "Set custom artwork for these %1 albums"
-msgstr[0] "Establecer material gráfico personalizado para este álbum"
-msgstr[1] "Establecer material gráfico personalizado para estes %1 álbumes"
-
-#: covermanager/CoverFetchingActions.cpp:155
-msgid "Select Cover Image File"
-msgstr "Seleccionar o ficheiro da imaxe da portada"
-
 #: covermanager/CoverFoundDialog.cpp:81
 #, fuzzy
 msgid "Finding cover for"
@@ -5053,6 +4997,11 @@ msgstr "Discogs"
 #: covermanager/CoverFoundDialog.cpp:141
 msgid "Sort by size"
 msgstr ""
+
+#: covermanager/CoverFoundDialog.cpp:358
+#: covermanager/CoverFetchingActions.cpp:69
+msgid "Display Cover"
+msgstr "Mostrar a portada"
 
 #: covermanager/CoverFoundDialog.cpp:376
 #, fuzzy
@@ -5324,6 +5273,59 @@ msgstr "Ningún artista"
 #, fuzzy
 msgid "Cover View"
 msgstr "Tamaño da portada"
+
+#: covermanager/CoverFetchingActions.cpp:47
+msgid "Fetch Cover"
+msgid_plural "Fetch Covers"
+msgstr[0] "Obter a portada"
+msgstr[1] "Obter as portadas"
+
+#: covermanager/CoverFetchingActions.cpp:49
+#, kde-format
+msgid "Fetch the artwork for this album"
+msgid_plural "Fetch artwork for %1 albums"
+msgstr[0] "Obter o material gráfico deste álbum"
+msgstr[1] "Obter o material gráfico destes %1 álbumes"
+
+#: covermanager/CoverFetchingActions.cpp:71
+msgid "Display artwork for this album"
+msgstr "Mostrar o material gráfico deste álbum"
+
+#: covermanager/CoverFetchingActions.cpp:89
+msgid "Unset Cover"
+msgid_plural "Unset Covers"
+msgstr[0] "Quitar a portada"
+msgstr[1] "Quitar as portadas"
+
+#: covermanager/CoverFetchingActions.cpp:91
+#, kde-format
+msgid "Remove artwork for this album"
+msgid_plural "Remove artwork for %1 albums"
+msgstr[0] "Eliminar o material gráfico deste álbum"
+msgstr[1] "Eliminar o material gráfico destes %1 álbumes"
+
+#: covermanager/CoverFetchingActions.cpp:104
+#, kde-format
+msgid "Are you sure you want to remove this cover from the Collection?"
+msgid_plural ""
+"Are you sure you want to delete these %1 covers from the Collection?"
+msgstr[0] "Realmente desexa eliminar esta portada da colección?"
+msgstr[1] "Realmente desexa eliminar estas %1 portadas da colección?"
+
+#: covermanager/CoverFetchingActions.cpp:127
+msgid "Set Custom Cover"
+msgstr "Establecer unha portada personalizada"
+
+#: covermanager/CoverFetchingActions.cpp:129
+#, kde-format
+msgid "Set custom artwork for this album"
+msgid_plural "Set custom artwork for these %1 albums"
+msgstr[0] "Establecer material gráfico personalizado para este álbum"
+msgstr[1] "Establecer material gráfico personalizado para estes %1 álbumes"
+
+#: covermanager/CoverFetchingActions.cpp:155
+msgid "Select Cover Image File"
+msgstr "Seleccionar o ficheiro da imaxe da portada"
 
 #: databaseimporter/amarok14/FastForwardImporterConfig.cpp:39
 msgid "Connection"
@@ -5745,28 +5747,6 @@ msgid ""
 msgstr ""
 "Descartouse <b><font color='red'>%1</font></b>, xa que se atoparon varias "
 "coincidencias ambiguas dela."
-
-#. i18n: file: dialogs/EditFilterDialog.ui:172
-#. i18n: ectx: property (text), item, widget (QComboBox, cbAndOr)
-#: dialogs/EditFilterDialog.cpp:37 rc.cpp:1231
-msgid "AND"
-msgstr "E"
-
-#. i18n: file: dialogs/EditFilterDialog.ui:177
-#. i18n: ectx: property (text), item, widget (QComboBox, cbAndOr)
-#: dialogs/EditFilterDialog.cpp:38 rc.cpp:1234
-msgid "OR"
-msgstr "OU"
-
-#: dialogs/EditFilterDialog.cpp:39
-#, fuzzy
-#| msgid "Sample Rate"
-msgid "Simple text"
-msgstr "Taxa de mostraxe"
-
-#: dialogs/EditFilterDialog.cpp:46
-msgid "Edit Filter"
-msgstr "Editar o filtro"
 
 #: dialogs/EqualizerDialog.cpp:45
 msgid "Configure Equalizer"
@@ -6427,6 +6407,28 @@ msgstr "Nome da lista de reprodución"
 #| msgid "Delete Preset"
 msgid "New Preset"
 msgstr "Eliminar a predefinición"
+
+#. i18n: file: dialogs/EditFilterDialog.ui:172
+#. i18n: ectx: property (text), item, widget (QComboBox, cbAndOr)
+#: dialogs/EditFilterDialog.cpp:37 rc.cpp:1231
+msgid "AND"
+msgstr "E"
+
+#. i18n: file: dialogs/EditFilterDialog.ui:177
+#. i18n: ectx: property (text), item, widget (QComboBox, cbAndOr)
+#: dialogs/EditFilterDialog.cpp:38 rc.cpp:1234
+msgid "OR"
+msgstr "OU"
+
+#: dialogs/EditFilterDialog.cpp:39
+#, fuzzy
+#| msgid "Sample Rate"
+msgid "Simple text"
+msgstr "Taxa de mostraxe"
+
+#: dialogs/EditFilterDialog.cpp:46
+msgid "Edit Filter"
+msgstr "Editar o filtro"
 
 #: dynamic/BiasedPlaylist.cpp:142
 #, fuzzy
@@ -8237,7 +8239,7 @@ msgstr "maior que"
 #: playlistgenerator/constraints/PlaylistDuration.cpp:273
 #: playlistgenerator/constraints/PlaylistLength.cpp:210
 #: playlistgenerator/constraints/TagMatch.cpp:473
-#: widgets/MetaQueryWidget.cpp:922
+#: widgets/MetaQueryWidget.cpp:918
 #, fuzzy
 #| msgid "Unknown Artist"
 msgid "unknown comparison"
@@ -8286,7 +8288,7 @@ msgstr "maior que"
 #. i18n: ectx: property (text), item, widget (QComboBox, comboBox_ComparisonRating)
 #: playlistgenerator/constraints/PlaylistLength.cpp:208
 #: playlistgenerator/constraints/TagMatch.cpp:448
-#: widgets/MetaQueryWidget.cpp:903 rc.cpp:2075 rc.cpp:2159 rc.cpp:2192
+#: widgets/MetaQueryWidget.cpp:899 rc.cpp:2075 rc.cpp:2159 rc.cpp:2192
 msgid "less than"
 msgstr "menor que"
 
@@ -8366,7 +8368,7 @@ msgid "\"%1\""
 msgstr ""
 
 #: playlistgenerator/constraints/TagMatch.cpp:444
-#: widgets/MetaQueryWidget.cpp:905
+#: widgets/MetaQueryWidget.cpp:901
 #, fuzzy
 #| msgid "equal to"
 msgctxt "a numerical tag (like year or track number) equals a value"
@@ -8380,7 +8382,7 @@ msgstr "igual a"
 #. i18n: file: playlistgenerator/constraints/TagMatchEditWidget.ui:614
 #. i18n: ectx: property (text), item, widget (QComboBox, comboBox_ComparisonRating)
 #: playlistgenerator/constraints/TagMatch.cpp:446
-#: widgets/MetaQueryWidget.cpp:907 rc.cpp:2081 rc.cpp:2165 rc.cpp:2198
+#: widgets/MetaQueryWidget.cpp:903 rc.cpp:2081 rc.cpp:2165 rc.cpp:2198
 msgid "greater than"
 msgstr "maior que"
 
@@ -8421,7 +8423,7 @@ msgid "equals"
 msgstr "igual a"
 
 #: playlistgenerator/constraints/TagMatch.cpp:464
-#: widgets/MetaQueryWidget.cpp:915
+#: widgets/MetaQueryWidget.cpp:911
 #, fuzzy
 #| msgid "starts with"
 msgctxt ""
@@ -8430,7 +8432,7 @@ msgid "starts with"
 msgstr "comeza con"
 
 #: playlistgenerator/constraints/TagMatch.cpp:466
-#: widgets/MetaQueryWidget.cpp:917
+#: widgets/MetaQueryWidget.cpp:913
 #, fuzzy
 #| msgid "ends with"
 msgctxt "an alphabetical tag (like title or artist name) ends with some string"
@@ -8438,7 +8440,7 @@ msgid "ends with"
 msgstr "remata con"
 
 #: playlistgenerator/constraints/TagMatch.cpp:468
-#: widgets/MetaQueryWidget.cpp:911
+#: widgets/MetaQueryWidget.cpp:907
 #, fuzzy
 #| msgid "contains"
 msgctxt "an alphabetical tag (like title or artist name) contains some string"
@@ -9878,121 +9880,6 @@ msgstr "Marcadores de Amarok"
 msgid "Copy Current View Bookmark to Clipboard"
 msgstr ""
 
-#: widgets/MetaQueryWidget.cpp:124
-#, fuzzy
-#| msgid "Seconds"
-msgid "second"
-msgid_plural "seconds"
-msgstr[0] "Segundos"
-msgstr[1] "Segundos"
-
-#: widgets/MetaQueryWidget.cpp:125
-#, fuzzy
-msgid "minute"
-msgid_plural "minutes"
-msgstr[0] "Minutos"
-msgstr[1] "Minutos"
-
-#: widgets/MetaQueryWidget.cpp:126
-#, fuzzy
-#| msgid "Hours"
-msgid "hour"
-msgid_plural "hours"
-msgstr[0] "Horas"
-msgstr[1] "Horas"
-
-#: widgets/MetaQueryWidget.cpp:127
-#, fuzzy
-#| msgid "today"
-msgid "day"
-msgid_plural "days"
-msgstr[0] "hoxe"
-msgstr[1] "hoxe"
-
-#: widgets/MetaQueryWidget.cpp:128
-#, fuzzy
-#| msgid "Months"
-msgid "month"
-msgid_plural "months"
-msgstr[0] "Meses"
-msgstr[1] "Meses"
-
-#: widgets/MetaQueryWidget.cpp:229
-msgid "Simple Search"
-msgstr "Procura simple"
-
-#: widgets/MetaQueryWidget.cpp:445 widgets/SmartPlaylistEditor.cpp:934
-#: widgets/SmartPlaylistEditor.cpp:956 widgets/SmartPlaylistEditor.cpp:984
-#: widgets/SmartPlaylistEditor.cpp:1003
-msgid "and"
-msgstr "e"
-
-#: widgets/MetaQueryWidget.cpp:555
-msgctxt "Unit for data rate kilo bit per seconds"
-msgid "kbps"
-msgstr ""
-
-#: widgets/MetaQueryWidget.cpp:557
-msgctxt "Unit for sample rate"
-msgid "Hz"
-msgstr ""
-
-#: widgets/MetaQueryWidget.cpp:559
-msgctxt "Unit for file size in mega byte"
-msgid "MiB"
-msgstr ""
-
-#: widgets/MetaQueryWidget.cpp:883
-#, fuzzy
-#| msgid "is before"
-msgctxt "The date lies before the given fixed date"
-msgid "before"
-msgstr "é anterior a"
-
-#: widgets/MetaQueryWidget.cpp:885
-#, fuzzy
-#| msgid "none"
-msgctxt "The date is the same as the given fixed date"
-msgid "on"
-msgstr "ningún"
-
-#: widgets/MetaQueryWidget.cpp:887
-#, fuzzy
-#| msgid "is after"
-msgctxt "The date is after the given fixed date"
-msgid "after"
-msgstr "é posterior a"
-
-#: widgets/MetaQueryWidget.cpp:889
-#, fuzzy
-msgctxt "The date is between the given fixed dates"
-msgid "between"
-msgstr "está entre"
-
-#: widgets/MetaQueryWidget.cpp:891
-#, fuzzy
-msgctxt "The date lies before the given time interval"
-msgid "older than"
-msgstr "menor que"
-
-#: widgets/MetaQueryWidget.cpp:893
-#, fuzzy
-msgctxt "The date lies after the given time interval"
-msgid "within"
-msgstr "por"
-
-#: widgets/MetaQueryWidget.cpp:909
-#, fuzzy
-msgctxt "a numerical tag (like year or track number) is between two values"
-msgid "between"
-msgstr "está entre"
-
-#: widgets/MetaQueryWidget.cpp:913
-#, fuzzy
-msgctxt "an alphabetical tag (like title or artist name) equals some string"
-msgid "matches"
-msgstr "Actualizar"
-
 #: widgets/Osd.cpp:134
 msgid "Rating changed"
 msgstr "A cualificación foi modificada"
@@ -10236,6 +10123,12 @@ msgstr "é menor que"
 msgid "is before"
 msgstr "é anterior a"
 
+#: widgets/SmartPlaylistEditor.cpp:934 widgets/SmartPlaylistEditor.cpp:956
+#: widgets/SmartPlaylistEditor.cpp:984 widgets/SmartPlaylistEditor.cpp:1003
+#: widgets/MetaQueryWidget.cpp:441
+msgid "and"
+msgstr "e"
+
 #: widgets/SmartPlaylistEditor.cpp:974
 msgid "Days"
 msgstr "Días"
@@ -10325,6 +10218,115 @@ msgstr "O tempo transcorrido na canción actual"
 #: widgets/ProgressWidget.cpp:121
 msgid "The amount of time remaining in current song"
 msgstr "O tempo restante na canción actual"
+
+#: widgets/MetaQueryWidget.cpp:124
+#, fuzzy
+#| msgid "Seconds"
+msgid "second"
+msgid_plural "seconds"
+msgstr[0] "Segundos"
+msgstr[1] "Segundos"
+
+#: widgets/MetaQueryWidget.cpp:125
+#, fuzzy
+msgid "minute"
+msgid_plural "minutes"
+msgstr[0] "Minutos"
+msgstr[1] "Minutos"
+
+#: widgets/MetaQueryWidget.cpp:126
+#, fuzzy
+#| msgid "Hours"
+msgid "hour"
+msgid_plural "hours"
+msgstr[0] "Horas"
+msgstr[1] "Horas"
+
+#: widgets/MetaQueryWidget.cpp:127
+#, fuzzy
+#| msgid "today"
+msgid "day"
+msgid_plural "days"
+msgstr[0] "hoxe"
+msgstr[1] "hoxe"
+
+#: widgets/MetaQueryWidget.cpp:128
+#, fuzzy
+#| msgid "Months"
+msgid "month"
+msgid_plural "months"
+msgstr[0] "Meses"
+msgstr[1] "Meses"
+
+#: widgets/MetaQueryWidget.cpp:229
+msgid "Simple Search"
+msgstr "Procura simple"
+
+#: widgets/MetaQueryWidget.cpp:551
+msgctxt "Unit for data rate kilo bit per seconds"
+msgid "kbps"
+msgstr ""
+
+#: widgets/MetaQueryWidget.cpp:553
+msgctxt "Unit for sample rate"
+msgid "Hz"
+msgstr ""
+
+#: widgets/MetaQueryWidget.cpp:555
+msgctxt "Unit for file size in mega byte"
+msgid "MiB"
+msgstr ""
+
+#: widgets/MetaQueryWidget.cpp:879
+#, fuzzy
+#| msgid "is before"
+msgctxt "The date lies before the given fixed date"
+msgid "before"
+msgstr "é anterior a"
+
+#: widgets/MetaQueryWidget.cpp:881
+#, fuzzy
+#| msgid "none"
+msgctxt "The date is the same as the given fixed date"
+msgid "on"
+msgstr "ningún"
+
+#: widgets/MetaQueryWidget.cpp:883
+#, fuzzy
+#| msgid "is after"
+msgctxt "The date is after the given fixed date"
+msgid "after"
+msgstr "é posterior a"
+
+#: widgets/MetaQueryWidget.cpp:885
+#, fuzzy
+msgctxt "The date is between the given fixed dates"
+msgid "between"
+msgstr "está entre"
+
+#: widgets/MetaQueryWidget.cpp:887
+#, fuzzy
+msgctxt "The date lies before the given time interval"
+msgid "older than"
+msgstr "menor que"
+
+#: widgets/MetaQueryWidget.cpp:889
+#, fuzzy
+msgctxt "The date lies after the given time interval"
+msgid "within"
+msgstr "por"
+
+#: widgets/MetaQueryWidget.cpp:905
+#, fuzzy
+msgctxt "a numerical tag (like year or track number) is between two values"
+msgid "between"
+msgstr "está entre"
+
+#: widgets/MetaQueryWidget.cpp:909
+#, fuzzy
+msgctxt "an alphabetical tag (like title or artist name) equals some string"
+msgid "matches"
+msgstr "Actualizar"
 
 #: rc.cpp:1
 msgctxt "NAME OF TRANSLATORS"
