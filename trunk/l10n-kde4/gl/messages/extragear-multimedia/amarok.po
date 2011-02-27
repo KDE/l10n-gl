@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: amarok\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2011-02-26 03:20+0100\n"
+"POT-Creation-Date: 2011-02-27 03:22+0100\n"
 "PO-Revision-Date: 2010-03-22 17:07+0100\n"
 "Last-Translator: Chema Barcala <shemari@gmail.com>\n"
 "Language-Team: Galician <proxecto@trasno.net>\n"
@@ -979,8 +979,8 @@ msgid "Unknown"
 msgstr "Descoñecido"
 
 #: browsers/CollectionTreeItemModelBase.cpp:316
-#: core-impl/collections/db/ScanResultProcessor.cpp:258
 #: core-impl/collections/db/sql/SqlMeta.cpp:420
+#: core-impl/collections/db/ScanResultProcessor.cpp:270
 #: covermanager/CoverManager.cpp:845 dialogs/TrackOrganizer.cpp:47
 #: playlist/PlaylistModel.cpp:866 widgets/AlbumBreadcrumbWidget.cpp:60
 msgid "Various Artists"
@@ -1885,7 +1885,7 @@ msgstr "Editar os detalles da pista"
 #: context/applets/currenttrack/CurrentTrack.cpp:104
 #: core-impl/collections/db/sql/mysqlecollection/MySqlEmbeddedCollection.cpp:35
 #: core-impl/collections/db/sql/mysqlservercollection/MySqlServerCollection.cpp:41
-#: core-impl/collections/db/sql/SqlCollectionLocation.cpp:71
+#: core-impl/collections/db/sql/SqlCollectionLocation.cpp:72
 msgid "Local Collection"
 msgstr "Colección local"
 
@@ -3096,33 +3096,111 @@ msgstr "Cargando a colección remota desde o servidor %1"
 msgid "Music share at %1"
 msgstr "Música compartida en %1"
 
-#: core-impl/collections/db/ScanManager.cpp:132
+#: core-impl/collections/db/sql/CapabilityDelegateImpl.cpp:59
+msgid "Do not show under Various Artists"
+msgstr "Non mostrar en Varios artistas"
+
+#: core-impl/collections/db/sql/CapabilityDelegateImpl.cpp:64
+msgid "Show under Various Artists"
+msgstr "Mostrar en Varios artistas"
+
+#: core-impl/collections/db/sql/SqlMeta.cpp:272
+#: covermanager/CoverManager.cpp:846 services/lastfm/meta/LastFmMeta.cpp:133
+#, kde-format
+msgid "%1 - %2"
+msgstr "%1 - %2"
+
+#: core-impl/collections/db/sql/SqlCollectionLocation.cpp:483
+msgid "Organizing tracks"
+msgstr "Organizando as pistas"
+
+#: core-impl/collections/db/sql/SqlCollectionLocation.cpp:485
+msgid "Moving tracks"
+msgstr "Movendo as pistas"
+
+#: core-impl/collections/db/sql/SqlCollectionLocation.cpp:489
+msgid "Copying tracks"
+msgstr "Copiando as pistas"
+
+#: core-impl/collections/db/sql/SqlCollectionLocation.cpp:491
+#, fuzzy
+#| msgid "Organizing tracks"
+msgid "Transcoding tracks"
+msgstr "Organizando as pistas"
+
+#: core-impl/collections/db/sql/SqlCollectionLocation.cpp:548
+#, kde-format
+msgid "Could not create directory: %1"
+msgstr "Non se puido crear o directorio: %1"
+
+#: core-impl/collections/db/sql/SqlCollectionLocation.cpp:625
+#, kde-format
+msgid "Transferring: %1"
+msgstr "Transferindo: %1"
+
+#: core-impl/collections/db/sql/SqlCollectionLocation.cpp:627
+#, fuzzy, kde-format
+#| msgid "Transferring: %1"
+msgid "Transcoding: %1"
+msgstr "Transferindo: %1"
+
+#: core-impl/collections/db/sql/SqlCollectionLocation.cpp:671
+#: core-impl/collections/support/FileCollectionLocation.cpp:99
+#, kde-format
+msgid "Removing: %1"
+msgstr "Eliminando: %1"
+
+#. i18n: file: dialogs/OrganizeCollectionDialogBase.ui:21
+#. i18n: ectx: property (windowTitle), widget (QWidget, OrganizeCollectionDialogBase)
+#: core-impl/collections/db/sql/SqlCollection.cpp:81 rc.cpp:1611
+msgid "Organize Files"
+msgstr "Organizar os ficheiros"
+
+#: core-impl/collections/db/sql/SqlCollection.cpp:172
+#, kde-format
+msgid ""
+"The amarok database reported the following errors:\n"
+"%1\n"
+"In most cases you will need to resolve these errors before Amarok will run "
+"properly."
+msgstr ""
+
+#: core-impl/collections/db/ScanManager.cpp:134
 msgid "Database import requested"
 msgstr ""
 
-#: core-impl/collections/db/ScanManager.cpp:239
+#: core-impl/collections/db/ScanManager.cpp:240
 msgid "Scanning music"
 msgstr "Explorando a música"
 
-#: core-impl/collections/db/ScanManager.cpp:273
+#: core-impl/collections/db/ScanManager.cpp:276
 msgid ""
 "<p>The version of the 'amarokcollectionscanner' tool\n"
 "does not match your Amarok version.</p><p>Please note that Collection "
 "Scanning may not work correctly.</p>"
 msgstr ""
 
-#: core-impl/collections/db/ScanManager.cpp:433
+#: core-impl/collections/db/ScanManager.cpp:341
+#, kde-format
+msgid ""
+"The collection scanner reported the following errors:\n"
+"%1\n"
+"In most cases this means that not all of your tracks were imported.\n"
+"Further errors will only be reported on the console."
+msgstr ""
+
+#: core-impl/collections/db/ScanManager.cpp:486
 #, kde-format
 msgid "Failed to write scanner batch file \"%1\""
 msgstr ""
 
-#: core-impl/collections/db/ScanManager.cpp:441
+#: core-impl/collections/db/ScanManager.cpp:494
 #, fuzzy
 #| msgid "Amarok Applet Manager"
 msgid "Unable to start Amarok collection scanner."
 msgstr "Xestor dos applets de Amarok"
 
-#: core-impl/collections/db/ScanManager.cpp:490
+#: core-impl/collections/db/ScanManager.cpp:543
 #, fuzzy, kde-format
 #| msgid "Could not create directory: %1"
 msgid "Found one directory"
@@ -3130,21 +3208,21 @@ msgid_plural "Found %1 directories"
 msgstr[0] "Non se puido crear o directorio: %1"
 msgstr[1] "Non se puido crear o directorio: %1"
 
-#: core-impl/collections/db/ScanManager.cpp:502
+#: core-impl/collections/db/ScanManager.cpp:555
 #, kde-format
 msgid "Got directory \"%1\" from scanner."
 msgstr ""
 
-#: core-impl/collections/db/ScanManager.cpp:543
+#: core-impl/collections/db/ScanManager.cpp:596
 #, kde-format
 msgid "Aborting scanner with error: %1"
 msgstr ""
 
-#: core-impl/collections/db/ScanManager.cpp:561
+#: core-impl/collections/db/ScanManager.cpp:615
 msgid "Scanner aborted."
 msgstr ""
 
-#: core-impl/collections/db/ScanManager.cpp:658
+#: core-impl/collections/db/ScanManager.cpp:712
 #, fuzzy
 #| msgid ""
 #| "<p>Sorry, the collection scan had to be aborted.</p><p>Too many errors "
@@ -3156,70 +3234,10 @@ msgstr ""
 "<p>Desculpe, pero houbo que interromper a exploración da colección.</"
 "p><p>Atopáronse erros de máis durante a mesma.</p>"
 
-#: core-impl/collections/db/ScanResultProcessor.cpp:249
+#: core-impl/collections/db/ScanResultProcessor.cpp:261
 msgctxt "The genre name for classical music"
 msgid "Classical"
 msgstr ""
-
-#: core-impl/collections/db/sql/CapabilityDelegateImpl.cpp:59
-msgid "Do not show under Various Artists"
-msgstr "Non mostrar en Varios artistas"
-
-#: core-impl/collections/db/sql/CapabilityDelegateImpl.cpp:64
-msgid "Show under Various Artists"
-msgstr "Mostrar en Varios artistas"
-
-#. i18n: file: dialogs/OrganizeCollectionDialogBase.ui:21
-#. i18n: ectx: property (windowTitle), widget (QWidget, OrganizeCollectionDialogBase)
-#: core-impl/collections/db/sql/SqlCollection.cpp:82 rc.cpp:1611
-msgid "Organize Files"
-msgstr "Organizar os ficheiros"
-
-#: core-impl/collections/db/sql/SqlCollectionLocation.cpp:472
-msgid "Organizing tracks"
-msgstr "Organizando as pistas"
-
-#: core-impl/collections/db/sql/SqlCollectionLocation.cpp:474
-msgid "Moving tracks"
-msgstr "Movendo as pistas"
-
-#: core-impl/collections/db/sql/SqlCollectionLocation.cpp:478
-msgid "Copying tracks"
-msgstr "Copiando as pistas"
-
-#: core-impl/collections/db/sql/SqlCollectionLocation.cpp:480
-#, fuzzy
-#| msgid "Organizing tracks"
-msgid "Transcoding tracks"
-msgstr "Organizando as pistas"
-
-#: core-impl/collections/db/sql/SqlCollectionLocation.cpp:537
-#, kde-format
-msgid "Could not create directory: %1"
-msgstr "Non se puido crear o directorio: %1"
-
-#: core-impl/collections/db/sql/SqlCollectionLocation.cpp:614
-#, kde-format
-msgid "Transferring: %1"
-msgstr "Transferindo: %1"
-
-#: core-impl/collections/db/sql/SqlCollectionLocation.cpp:616
-#, fuzzy, kde-format
-#| msgid "Transferring: %1"
-msgid "Transcoding: %1"
-msgstr "Transferindo: %1"
-
-#: core-impl/collections/db/sql/SqlCollectionLocation.cpp:660
-#: core-impl/collections/support/FileCollectionLocation.cpp:99
-#, kde-format
-msgid "Removing: %1"
-msgstr "Eliminando: %1"
-
-#: core-impl/collections/db/sql/SqlMeta.cpp:272
-#: covermanager/CoverManager.cpp:846 services/lastfm/meta/LastFmMeta.cpp:133
-#, kde-format
-msgid "%1 - %2"
-msgstr "%1 - %2"
 
 #: core-impl/collections/ipodcollection/handler/IpodHandler.cpp:290
 msgid "iPod was not initialized:"
@@ -3639,7 +3657,17 @@ msgstr ""
 msgid "Remove empty folders?"
 msgstr ""
 
-#: core-impl/collections/support/CollectionManager.cpp:162
+#: core-impl/collections/support/TrashCollectionLocation.cpp:46
+#, fuzzy
+msgid "Trash"
+msgstr "Pistas"
+
+#: core-impl/collections/support/TrashCollectionLocation.cpp:100
+#, fuzzy, kde-format
+msgid "Moving to trash: %1"
+msgstr "Movendo os ficheiros para o lixo"
+
+#: core-impl/collections/support/CollectionManager.cpp:169
 msgid ""
 "<p>Amarok could not find any collection plugins. It is possible that Amarok "
 "is installed under the wrong prefix, please fix your installation using:<pre>"
@@ -3656,16 +3684,6 @@ msgstr ""
 "kbuildsycoca4 --noincremental<br>$ amarok</pre>Pode atopar máis información "
 "no ficheiro README. Se precisa de axuda adicional pode unirse á canle "
 "#amarok en irc.freenode.net.</p>"
-
-#: core-impl/collections/support/TrashCollectionLocation.cpp:46
-#, fuzzy
-msgid "Trash"
-msgstr "Pistas"
-
-#: core-impl/collections/support/TrashCollectionLocation.cpp:100
-#, fuzzy, kde-format
-msgid "Moving to trash: %1"
-msgstr "Movendo os ficheiros para o lixo"
 
 #: core-impl/collections/umscollection/handler/UmsHandler.cpp:474
 msgid "&Use as Collection"
@@ -7976,57 +7994,6 @@ msgstr ""
 msgid "Export `%1' preset"
 msgstr ""
 
-#: playlistgenerator/constraints/Checkpoint.cpp:61
-msgid "Checkpoint"
-msgstr ""
-
-#: playlistgenerator/constraints/Checkpoint.cpp:62
-msgid "Fixes a track, album, or artist to a certain position in the playlist"
-msgstr ""
-
-#: playlistgenerator/constraints/Checkpoint.cpp:175
-#, fuzzy, kde-format
-#| msgid "Context: %1"
-msgid "Checkpoint: %1"
-msgstr "Contexto: %1"
-
-#: playlistgenerator/constraints/Checkpoint.cpp:183
-#: playlistgenerator/constraints/Checkpoint.cpp:191
-#: playlistgenerator/constraints/Checkpoint.cpp:203
-msgid "unassigned"
-msgstr ""
-
-#: playlistgenerator/constraints/Checkpoint.cpp:185
-#, fuzzy, kde-format
-#| msgctxt "%1 is number of tracks, %2 is time"
-#| msgid "%1 track (%2)"
-#| msgid_plural "%1 tracks (%2)"
-msgid "\"%1\" (track) by %2"
-msgstr "%1 pista (%2)"
-
-#: playlistgenerator/constraints/Checkpoint.cpp:194
-#, fuzzy, kde-format
-#| msgid "Albums by %1"
-msgid "\"%1\" (album) by %2"
-msgstr "Álbumes de %1"
-
-#: playlistgenerator/constraints/Checkpoint.cpp:196
-#, fuzzy, kde-format
-#| msgid "1 album"
-#| msgid_plural "%1 albums"
-msgid "\"%1\" (album)"
-msgstr "1 álbum"
-
-#: playlistgenerator/constraints/Checkpoint.cpp:205
-#, fuzzy, kde-format
-#| msgctxt ""
-#| "Last part of: Jamendo.com database update complete. Added 3 tracks on 4 "
-#| "albums from 5 artists."
-#| msgid "1 artist."
-#| msgid_plural "%1 artists."
-msgid "\"%1\" (artist)"
-msgstr "1 artista."
-
 #: playlistgenerator/constraints/PlaylistDuration.cpp:58
 #, fuzzy
 msgid "Playlist Duration"
@@ -8424,6 +8391,57 @@ msgstr "nº de reproducións"
 #| msgid "Label"
 msgid "label"
 msgstr "Etiqueta"
+
+#: playlistgenerator/constraints/Checkpoint.cpp:61
+msgid "Checkpoint"
+msgstr ""
+
+#: playlistgenerator/constraints/Checkpoint.cpp:62
+msgid "Fixes a track, album, or artist to a certain position in the playlist"
+msgstr ""
+
+#: playlistgenerator/constraints/Checkpoint.cpp:178
+#, fuzzy, kde-format
+#| msgid "Context: %1"
+msgid "Checkpoint: %1"
+msgstr "Contexto: %1"
+
+#: playlistgenerator/constraints/Checkpoint.cpp:186
+#: playlistgenerator/constraints/Checkpoint.cpp:194
+#: playlistgenerator/constraints/Checkpoint.cpp:206
+msgid "unassigned"
+msgstr ""
+
+#: playlistgenerator/constraints/Checkpoint.cpp:188
+#, fuzzy, kde-format
+#| msgctxt "%1 is number of tracks, %2 is time"
+#| msgid "%1 track (%2)"
+#| msgid_plural "%1 tracks (%2)"
+msgid "\"%1\" (track) by %2"
+msgstr "%1 pista (%2)"
+
+#: playlistgenerator/constraints/Checkpoint.cpp:197
+#, fuzzy, kde-format
+#| msgid "Albums by %1"
+msgid "\"%1\" (album) by %2"
+msgstr "Álbumes de %1"
+
+#: playlistgenerator/constraints/Checkpoint.cpp:199
+#, fuzzy, kde-format
+#| msgid "1 album"
+#| msgid_plural "%1 albums"
+msgid "\"%1\" (album)"
+msgstr "1 álbum"
+
+#: playlistgenerator/constraints/Checkpoint.cpp:208
+#, fuzzy, kde-format
+#| msgctxt ""
+#| "Last part of: Jamendo.com database update complete. Added 3 tracks on 4 "
+#| "albums from 5 artists."
+#| msgid "1 artist."
+#| msgid_plural "%1 artists."
+msgid "\"%1\" (artist)"
+msgstr "1 artista."
 
 #: playlistmanager/PlaylistManager.cpp:278
 #, fuzzy
