@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: k3b\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2011-06-16 03:49+0200\n"
+"POT-Creation-Date: 2011-07-30 03:50+0200\n"
 "PO-Revision-Date: 2009-02-06 00:01+0100\n"
 "Last-Translator: mvillarino <mvillarino@users.sourceforge.net>\n"
 "Language-Team: galician <proxecto@trasno.net>\n"
@@ -498,36 +498,9 @@ msgstr ""
 msgid "Setting the read speed failed."
 msgstr "Fallou a mudanza da velocidade de leitura."
 
-#: k3bdirview.cpp:206
-msgid ""
-"K3b uses vcdxrip from the vcdimager package to rip Video CDs. Please make "
-"sure it is installed."
-msgstr ""
-"K3b usa vcdxrip do paquete vcdimager para extrair Vídeo CD. Verifique que "
-"estexa instalado."
-
-#: k3bdirview.cpp:240
-msgid "Mount Failed"
-msgstr "Fallou a montaxe"
-
-#: k3bdirview.cpp:241
-#, kde-format
-msgid "<p>K3b was unable to mount medium <b>%1</b> in device <em>%2 - %3</em>"
-msgstr ""
-"<p>K3b non foi capaz de montar o disco <b>%1</b> no dispositivo <em>%2 - %3</"
-"em>"
-
-#: k3bdirview.cpp:256
-msgid "Unmount Failed"
-msgstr "Fallou a desmontaxe"
-
-#: k3bdirview.cpp:257
-#, kde-format
-msgid ""
-"<p>K3b was unable to unmount medium <b>%1</b> in device <em>%2 - %3</em>"
-msgstr ""
-"<p>K3b non foi capaz de desmontar o disco <b>%1</b> no dispositivo <em>%2 - %"
-"3</em>"
+#: k3bfiletreeview.cpp:96 k3bdiroperator.cpp:55
+msgid "&Add to Project"
+msgstr "&Engadir ao proxecto"
 
 #: k3bburnprogressdialog.cpp:39
 msgid "Estimated writing speed:"
@@ -609,6 +582,37 @@ msgstr "Copiar no portarretallos"
 msgid "Could not open file %1"
 msgstr "Non foi posíbel abrir o ficheiro %1"
 
+#: k3bdirview.cpp:206
+msgid ""
+"K3b uses vcdxrip from the vcdimager package to rip Video CDs. Please make "
+"sure it is installed."
+msgstr ""
+"K3b usa vcdxrip do paquete vcdimager para extrair Vídeo CD. Verifique que "
+"estexa instalado."
+
+#: k3bdirview.cpp:240
+msgid "Mount Failed"
+msgstr "Fallou a montaxe"
+
+#: k3bdirview.cpp:241
+#, kde-format
+msgid "<p>K3b was unable to mount medium <b>%1</b> in device <em>%2 - %3</em>"
+msgstr ""
+"<p>K3b non foi capaz de montar o disco <b>%1</b> no dispositivo <em>%2 - %3</"
+"em>"
+
+#: k3bdirview.cpp:256
+msgid "Unmount Failed"
+msgstr "Fallou a desmontaxe"
+
+#: k3bdirview.cpp:257
+#, kde-format
+msgid ""
+"<p>K3b was unable to unmount medium <b>%1</b> in device <em>%2 - %3</em>"
+msgstr ""
+"<p>K3b non foi capaz de desmontar o disco <b>%1</b> no dispositivo <em>%2 - %"
+"3</em>"
+
 #: k3bdiroperator.cpp:48
 msgid "K3b Bookmarks"
 msgstr "Marcadores de K3b"
@@ -616,10 +620,6 @@ msgstr "Marcadores de K3b"
 #: k3bdiroperator.cpp:51
 msgid "Bookmarks"
 msgstr "Marcadores"
-
-#: k3bdiroperator.cpp:55 k3bfiletreeview.cpp:96
-msgid "&Add to Project"
-msgstr "&Engadir ao proxecto"
 
 #: k3bdiskinfoview.cpp:80
 msgid "No medium present"
@@ -714,9 +714,9 @@ msgstr "Atributos"
 msgid "First-Last Sector"
 msgstr "Primeiro-último sector"
 
-#: k3bdiskinfoview.cpp:256 rip/k3bvideocdview.cpp:210
-#: rip/k3baudiotrackmodel.cpp:165 rip/k3baudioprojectconvertingdialog.cpp:126
-#: rip/k3baudiorippingdialog.cpp:143
+#: k3bdiskinfoview.cpp:256 rip/k3baudiotrackmodel.cpp:165
+#: rip/k3baudioprojectconvertingdialog.cpp:126
+#: rip/k3baudiorippingdialog.cpp:143 rip/k3bvideocdview.cpp:210
 msgid "Length"
 msgstr "Duración"
 
@@ -736,11 +736,11 @@ msgstr "Identificación do disco:"
 #: k3bdiskinfoview.cpp:299 rip/k3bpatternparser.cpp:124
 #: rip/k3bpatternparser.cpp:160 rip/k3bpatternparser.cpp:168
 #: rip/videodvd/k3bvideodvdrippingwidget.cpp:277
-#: rip/k3baudioconvertingoptionwidget.cpp:223
-#: rip/k3baudioconvertingoptionwidget.cpp:257
 #: rip/k3baudioprojectconvertingdialog.cpp:275
 #: rip/k3baudioprojectconvertingdialog.cpp:314
 #: rip/k3baudiorippingdialog.cpp:357 rip/k3baudiorippingdialog.cpp:412
+#: rip/k3baudioconvertingoptionwidget.cpp:223
+#: rip/k3baudioconvertingoptionwidget.cpp:257
 msgid "unknown"
 msgstr "descoñecido"
 
@@ -1169,6 +1169,671 @@ msgstr "Espazo libre no cartafol:"
 #| msgid "Capacity:"
 msgid "Capacity: %1"
 msgstr "Capacidade:"
+
+#: k3bapplication.cpp:161
+msgid "K3b is busy"
+msgstr "K3b está atarefado"
+
+#: k3bapplication.cpp:162
+msgid "K3b is currently busy and cannot start any other operations."
+msgstr "K3b está atarefado e non pode comezar ningunha outra operación."
+
+#: k3bprojectmanager.cpp:211
+#, kde-format
+msgid "AudioCD%1"
+msgstr "CD de son %1"
+
+#: k3bprojectmanager.cpp:217
+#, kde-format
+msgid "Data%1"
+msgstr "Datos %1"
+
+#: k3bprojectmanager.cpp:223
+#, kde-format
+msgid "MixedCD%1"
+msgstr "CDMixto%1"
+
+#: k3bprojectmanager.cpp:229
+#, kde-format
+msgid "VideoCD%1"
+msgstr "VídeoCD%1"
+
+#: k3bprojectmanager.cpp:235
+#, kde-format
+msgid "eMovix%1"
+msgstr "eMovix%1"
+
+#: k3bprojectmanager.cpp:241
+#, kde-format
+msgid "VideoDVD%1"
+msgstr "VídeoDVD%1"
+
+#: k3bprojecttabwidget.cpp:82 projects/k3bprojectburndialog.cpp:61
+msgid "Project"
+msgstr "Proxecto"
+
+#: k3bstatusbarmanager.cpp:60
+msgid "Temp:"
+msgstr "Tempo:"
+
+#: k3bstatusbarmanager.cpp:120
+msgid "No info"
+msgstr "Non hai información"
+
+#: k3bstatusbarmanager.cpp:162
+#, fuzzy, kde-format
+#| msgid "1 folder"
+#| msgid_plural "%1 folders"
+msgid "one folder"
+msgid_plural "%1 folders"
+msgstr[0] "1 cartafol"
+msgstr[1] "%1 cartafoles"
+
+#: k3bstatusbarmanager.cpp:159
+#, fuzzy, kde-format
+#| msgid "1 file in %2"
+#| msgid_plural "%1 files in %2"
+msgid "One file in %2"
+msgid_plural "%1 files in %2"
+msgstr[0] "1 ficheiro en %2"
+msgstr[1] "%1 ficheiros en %2"
+
+#: k3bstatusbarmanager.cpp:189
+#, kde-format
+msgid "Audio CD (1 track)"
+msgid_plural "Audio CD (%1 tracks)"
+msgstr[0] "CD de son (1 pista)"
+msgstr[1] "CD de son (%1 pistas)"
+
+#: k3bstatusbarmanager.cpp:195
+#, kde-format
+msgid "Data Project (%1)"
+msgstr "Proxecto de datos (%1)"
+
+#: k3bstatusbarmanager.cpp:202
+#, kde-format
+msgid "Mixed CD (1 track and %2)"
+msgid_plural "Mixed CD (%1 tracks and %2)"
+msgstr[0] "CD mixto (1 pista e %2)"
+msgstr[1] "CD mixto (%1 pistas e %2)"
+
+#: k3bstatusbarmanager.cpp:209
+#, kde-format
+msgid "Video CD (1 track)"
+msgid_plural "Video CD (%1 tracks)"
+msgstr[0] "Vídeo CD (1 pista)"
+msgstr[1] "Vídeo CD (%1 pistas)"
+
+#: k3bstatusbarmanager.cpp:215
+#, kde-format
+msgid "eMovix Project (%1)"
+msgstr "Proxecto de eMovix (%1)"
+
+#: k3bstatusbarmanager.cpp:221
+#, kde-format
+msgid "Video DVD (%1)"
+msgstr "Vídeo DVD (%1)"
+
+#: k3bsystemproblemdialog.cpp:89 k3bsystemproblemdialog.cpp:96
+msgid "System Configuration Problems"
+msgstr "Problemas de configuración do sistema"
+
+#: k3bsystemproblemdialog.cpp:97
+#, kde-format
+msgid "1 problem"
+msgid_plural "%1 problems"
+msgstr[0] "1 problema"
+msgstr[1] "%1 problemas"
+
+#: k3bsystemproblemdialog.cpp:101
+msgid "Do not show again"
+msgstr "Non mostrar de novo"
+
+#: k3bsystemproblemdialog.cpp:106 option/k3bdevicewidget.cpp:57
+#, fuzzy
+#| msgid "&Setup System Permissions..."
+msgid "Modify Permissions..."
+msgstr "Configurar os &permisos do sistema..."
+
+#: k3bsystemproblemdialog.cpp:152
+msgid "Solution"
+msgstr "Solución"
+
+#: k3bsystemproblemdialog.cpp:181
+msgid "Click \"Modify Permissions...\" to solve this problem."
+msgstr ""
+
+#: k3bsystemproblemdialog.cpp:188
+#, fuzzy
+#| msgid "No usable medium found."
+msgid "No optical drive found."
+msgstr "Non se atopou un medio usábel."
+
+#: k3bsystemproblemdialog.cpp:189
+msgid "K3b did not find any optical device in your system."
+msgstr ""
+
+#: k3bsystemproblemdialog.cpp:191
+msgid "Make sure HAL daemon is running, it is used by K3b for finding devices."
+msgstr ""
+
+#: k3bsystemproblemdialog.cpp:199
+#, fuzzy
+#| msgid "No CD/DVD writer found."
+msgid "No CD/DVD/BD writer found."
+msgstr "Non se achou ningunha gravadora de CD/DVD."
+
+#: k3bsystemproblemdialog.cpp:200
+#, fuzzy
+#| msgid ""
+#| "K3b did not find an optical writing device in your system. Thus, you will "
+#| "not be able to burn CDs or DVDs. However, you can still use other K3b "
+#| "features like audio track extraction or audio transcoding or ISO9660 "
+#| "image creation."
+msgid ""
+"K3b did not find an optical writing device in your system. Thus, you will "
+"not be able to burn CDs or DVDs. However, you can still use other K3b "
+"features such as audio track extraction, audio transcoding or ISO9660 image "
+"creation."
+msgstr ""
+"K3b non achou ningún dispositivo óptico de gravación no seu sistema. Por "
+"ende, non poderá gravar CD nin DVD. Porén, aínda pode usar outras "
+"funcionalidades de K3b como a extracción de pistas de son, a "
+"transcodificación de son ou a criación de imaxes ISO9660."
+
+#: k3bsystemproblemdialog.cpp:210 k3bsystemproblemdialog.cpp:265
+#: k3bsystemproblemdialog.cpp:290 k3bsystemproblemdialog.cpp:335
+#, kde-format
+msgid "Unable to find %1 executable"
+msgstr "Non foi posíbel atopar o executábel %1"
+
+#: k3bsystemproblemdialog.cpp:211
+msgid "K3b uses cdrecord to actually write CDs."
+msgstr "K3b emprega cdrecord para escribir CD."
+
+#: k3bsystemproblemdialog.cpp:212
+msgid "Install the cdrtools package which contains cdrecord."
+msgstr "Instale o paquete cdrtools que contén a cdrecord."
+
+#: k3bsystemproblemdialog.cpp:218 k3bsystemproblemdialog.cpp:299
+#: k3bsystemproblemdialog.cpp:306 k3bsystemproblemdialog.cpp:314
+#: k3bsystemproblemdialog.cpp:346 k3bsystemproblemdialog.cpp:452
+#, kde-format
+msgid "Used %1 version %2 is outdated"
+msgstr "A versión %2 de %1, que é a empregada, é moi antiga"
+
+#: k3bsystemproblemdialog.cpp:219
+msgid ""
+"Although K3b supports all cdrtools versions since 1.10 it is highly "
+"recommended to at least use version 2.0."
+msgstr ""
+"Aínda que K3b soporta todas as versións de cdrtools desde a 1.10, "
+"recoméndase empregar polo menos a versión 2.0."
+
+#: k3bsystemproblemdialog.cpp:222
+msgid "Install a more recent version of the cdrtools."
+msgstr "Instalar unha versión máis recentes de cdrtools."
+
+#: k3bsystemproblemdialog.cpp:239
+#, kde-format
+msgid "%1 will be run with root privileges on kernel >= 2.6.8"
+msgstr "%1 será executado con privilexios de root nun kernel >= 2.6.8"
+
+#: k3bsystemproblemdialog.cpp:240
+#, kde-format
+msgid ""
+"Since Linux kernel 2.6.8 %1 will not work when run suid root for security "
+"reasons anymore."
+msgstr ""
+"Desde o kernel Linux 2.6.8, %1 non funcionará con suid root por razóns de "
+"seguridade."
+
+#: k3bsystemproblemdialog.cpp:250 k3bsystemproblemdialog.cpp:275
+#, kde-format
+msgid "%1 will be run without root privileges"
+msgstr "%1 será executado sen privilexios de root"
+
+#: k3bsystemproblemdialog.cpp:251
+#, fuzzy
+#| msgid ""
+#| "It is highly recommended to configure cdrecord to run with root "
+#| "privileges. Only then cdrecord runs with high priority which increases "
+#| "the overall stability of the burning process. Apart from that it allows "
+#| "changing the size of the used burning buffer. A lot of user problems "
+#| "could be solved this way. This is also true when using SuSE's resmgr."
+msgid ""
+"It is highly recommended to configure cdrecord to run with root privileges, "
+"as then cdrecord runs with high priority that increases the overall "
+"stability of the burning process. As well as this, it allows the size of the "
+"burning buffer to be changed, and a lot of user problems can be solved this "
+"way."
+msgstr ""
+"Recoméndase configurar cdrecord para executarse con privilexios de root. Só "
+"entón cdrecord será executado con prioridade alta, o que incrementa a "
+"estabilidade do proceso de gravación. Ademais así poderase mudar o tamaño do "
+"buffer de gravación empregado. Unha grande cantidade de problemas dos "
+"usuarios pódense resolver deste xeito. Tamén pasa cando se emprega o resmgr "
+"de SuSE."
+
+#: k3bsystemproblemdialog.cpp:266
+msgid "K3b uses cdrdao to actually write CDs."
+msgstr "K3b usa cdrdao para gravar os CD."
+
+#: k3bsystemproblemdialog.cpp:267
+msgid "Install the cdrdao package."
+msgstr "Instale o paquete cdrdao."
+
+#: k3bsystemproblemdialog.cpp:276
+msgid ""
+"It is highly recommended to configure cdrdao to run with root privileges to "
+"increase the overall stability of the burning process."
+msgstr ""
+"Recoméndase configurar cdrdao para que se execute con privilexios de root, "
+"de xeito que se poida incrementar a estabilidade do proceso de gravación."
+
+#: k3bsystemproblemdialog.cpp:291
+#, fuzzy
+#| msgid ""
+#| "K3b uses growisofs to actually write dvds. Without growisofs you will not "
+#| "be able to write dvds. Make sure to install at least version 5.10."
+msgid ""
+"K3b uses growisofs to actually write DVDs. Without growisofs you will not be "
+"able to write DVDs. Make sure to install at least version 5.10."
+msgstr ""
+"K3b emprega growisofs para gravar os dvd. Sen growisofs non será quen de "
+"gravar DVD. Verifique que instala unha versión superior a 5.10."
+
+#: k3bsystemproblemdialog.cpp:294 k3bsystemproblemdialog.cpp:337
+msgid "Install the dvd+rw-tools package."
+msgstr "Instalar o paquete dvd+rw-tools."
+
+#: k3bsystemproblemdialog.cpp:300
+#, fuzzy
+#| msgid ""
+#| "K3b needs at least growisofs version 5.10 to write dvds. All older "
+#| "versions will not work and K3b will refuse to use them."
+msgid ""
+"K3b needs at least growisofs version 5.10 to write DVDs. All older versions "
+"will not work and K3b will refuse to use them."
+msgstr ""
+"K3b precisa polo menos a versión 5.10 de growisofs para gravar DVD. Todas as "
+"versións máis antigas non funcionarán e k3b rexeitaraas."
+
+#: k3bsystemproblemdialog.cpp:302 k3bsystemproblemdialog.cpp:310
+#: k3bsystemproblemdialog.cpp:318 k3bsystemproblemdialog.cpp:351
+#, kde-format
+msgid "Install a more recent version of %1."
+msgstr "Instale unha versión máis recente de %1."
+
+#: k3bsystemproblemdialog.cpp:307
+msgid ""
+"K3b will not be able to copy DVDs on-the-fly or write a DVD+RW in multiple "
+"sessions using a growisofs version older than 5.12."
+msgstr ""
+"K3b non será quén de copiar DVD ao voo nin gravar DVD+RW multisesión "
+"empregando unha versión de growisofs máis antiga que 5.12."
+
+#: k3bsystemproblemdialog.cpp:315
+msgid ""
+"It is highly recommended to use growisofs 7.0 or higher. K3b will not be "
+"able to write a DVD+RW in multiple sessions using a growisofs version older "
+"than 7.0."
+msgstr ""
+"Recoméndase usar growisofs 7.0 ou posterior. K3b non poderá gravar un DVD+RW "
+"multisesión usando unha versión de growisofs anterior á 7.0."
+
+#: k3bsystemproblemdialog.cpp:336
+msgid "K3b uses dvd+rw-format to format DVD-RWs and DVD+RWs."
+msgstr "K3b emprega o formato dvd+rw para formatear os DVD-RWs e DVD+RWs."
+
+#: k3bsystemproblemdialog.cpp:349
+msgid ""
+"K3b needs at least mkisofs version 1.14. Older versions may introduce "
+"problems when creating data projects."
+msgstr ""
+"K3b precisa a versión 1.14 ou posterior de mkisofs. As versións mais vellas "
+"poden ter problemas cando se crean proxectos de datos."
+
+#: k3bsystemproblemdialog.cpp:373
+#, kde-format
+msgid "Device %1 - %2 is automounted."
+msgstr "Dispositivo %1 - %2 está automontado."
+
+#: k3bsystemproblemdialog.cpp:375
+msgid ""
+"K3b is not able to unmount automounted devices. Thus, especially DVD+RW "
+"rewriting might fail. There is no need to report this as a bug or feature "
+"wish; it is not possible to solve this problem from within K3b."
+msgstr ""
+"K3b non pode desmontar dispositivos automontados. Por ende, especialmente a "
+"regravación de DVD+RW pode fallar. Non é preciso informar isto como un erro "
+"ou petición de funcionalidade; non é posíbel arranxar isto desde K3b."
+
+#: k3bsystemproblemdialog.cpp:379
+msgid ""
+"Replace the automounting entries in /etc/fstab with old-fashioned ones or "
+"use a user-space mounting solution like pmount or ivman."
+msgstr ""
+"Substitúa as entradas de automontaxe en /etc/fstab con entradas ao antigo "
+"estilo ou use un sistema de montaxe en espazo de usuario como pmount ou "
+"ivman."
+
+#: k3bsystemproblemdialog.cpp:388
+msgid "No ATAPI writing support in kernel"
+msgstr "Non hai soporte de escritura ATAPI no núcleo"
+
+#: k3bsystemproblemdialog.cpp:389
+msgid ""
+"Your kernel does not support writing without SCSI emulation but there is at "
+"least one writer in your system not configured to use SCSI emulation."
+msgstr ""
+"O núcleo non soporta a escrita sen a emulación SCSI pero hai polo menos unha "
+"gravadora no sistema non configurada para empregar a emulación SCSI."
+
+#: k3bsystemproblemdialog.cpp:393
+#, fuzzy
+#| msgid ""
+#| "The best and recommended solution is to enable ide-scsi (SCSI emulation) "
+#| "for all devices. This way you will not have any problems.Be aware that "
+#| "you may still enable DMA on ide-scsi emulated drives."
+msgid ""
+"The best and recommended solution is to enable ide-scsi (SCSI emulation) for "
+"all devices. This way you will not have any problems. Be aware that you may "
+"still enable DMA on ide-scsi emulated drives."
+msgstr ""
+"A mellor e máis recomendábel opción é habilitar o módulo ide-scsi (emulación "
+"de SCSI) para todos os dispositivos. Deste xeito non terá ningún problema. "
+"Sexa consciente de que aínda poderá habilitar DMA nos dispositivos con "
+"emulación ide-scsi."
+
+#: k3bsystemproblemdialog.cpp:409 k3bsystemproblemdialog.cpp:428
+#, kde-format
+msgid "%1 %2 does not support ATAPI"
+msgstr "%1 %2 non soporta ATAPI"
+
+#: k3bsystemproblemdialog.cpp:410 k3bsystemproblemdialog.cpp:431
+#, kde-format
+msgid ""
+"The configured version of %1 does not support writing to ATAPI devices "
+"without SCSI emulation and there is at least one writer in your system not "
+"configured to use SCSI emulation."
+msgstr ""
+"A versión configurada de %1 non soporta a escrita en dispositivos ATAPI sen "
+"emulación SCSI e hai polo menos unha gravadora no sistema non configurada "
+"para empregar a emulación SCSI."
+
+#: k3bsystemproblemdialog.cpp:415 k3bsystemproblemdialog.cpp:439
+#, kde-format
+msgid ""
+"The best, and recommended, solution is to use ide-scsi (SCSI emulation) for "
+"all writer devices: this way you will not have any problems; or, you can "
+"install (or select as the default) a more recent version of %1."
+msgstr ""
+"A mellor e máis recomendábel opción é usar o módulo ide-scsi (emulación "
+"SCSI) para todos os dispositivos de gravación: deste xeito non terá ningún "
+"problema. Ou pode instalar (ou escoller como a predeterminada) unha versión "
+"máis nova que a %1."
+
+#: k3bsystemproblemdialog.cpp:437
+msgid ""
+"Install cdrdao >= 1.1.8 which supports writing to ATAPI devices directly."
+msgstr ""
+"Instale cdrdao >= 1.1.8 que soporta a gravación de dispositivos ATAPI "
+"directamente."
+
+#: k3bsystemproblemdialog.cpp:453
+msgid ""
+"K3b will not be able to write DVD-R Dual Layer media using a growisofs "
+"version older than 6.0."
+msgstr ""
+"K3b non poderá gravar discos DVD-R de capa dupla empregando unha versión de "
+"growisofs máis antiga que a 6.0."
+
+#: k3bsystemproblemdialog.cpp:455
+msgid "Install a more recent version of growisofs."
+msgstr "Instalar unha versión máis recente de growisofs."
+
+#: k3bsystemproblemdialog.cpp:467
+#, kde-format
+msgid "No write access to device %1"
+msgstr "Non ten aceso de escrita no dispositivo %1"
+
+#: k3bsystemproblemdialog.cpp:468
+#, kde-format
+msgid ""
+"K3b needs write access to all the devices to perform certain tasks. Without "
+"it you might encounter problems with %1 - %2"
+msgstr ""
+"K3b precisa aceso de escrita a todos os dispositivos para realizar certas "
+"tarefas. Sen el pode atopar problemas con %1 - %2"
+
+#: k3bsystemproblemdialog.cpp:470
+#, fuzzy, kde-format
+#| msgid ""
+#| "Make sure you have write access to %1. In case you are not using devfs or "
+#| "udev K3bSetup is able to do this for you."
+msgid ""
+"Make sure you have write access to %1. In case you are not using devfs or "
+"udev click \"Modify Permissions...\" and setup permissions by hand."
+msgstr ""
+"Verifique que ten aceso de escrita a %1. Se non está a usar devfs ou udev "
+"K3bSetup poderá facer isto por si."
+
+#: k3bsystemproblemdialog.cpp:476
+#, kde-format
+msgid "DMA disabled on device %1 - %2"
+msgstr "DMA está deshabilitado no dispositivo %1 - %2"
+
+#: k3bsystemproblemdialog.cpp:477
+#, fuzzy
+#| msgid ""
+#| "With most modern CD/DVD devices enabling DMA highly increases read/write "
+#| "performance. If you experience very low writing speeds this is probably "
+#| "the cause."
+msgid ""
+"With most modern CD/DVD/BD devices enabling DMA highly increases read/write "
+"performance. If you experience very low writing speeds this is probably the "
+"cause."
+msgstr ""
+"Coa maioría dos dispositivos de CD/DVD modernos habilitar DMA aumenta moito "
+"o rendimento de leitura/escrita. Se ten moi baixas velocidades posibelmente "
+"esta sexa a causa."
+
+#: k3bsystemproblemdialog.cpp:480
+#, kde-format
+msgid "Enable DMA temporarily as root with 'hdparm -d 1 %1'."
+msgstr "Habilite o DMA temporalmente como root mediante «hdparm -d 1 %1»."
+
+#: k3bsystemproblemdialog.cpp:495
+#, kde-format
+msgid "User parameters specified for external program %1"
+msgstr "Parámetros do usuario especificados para o programa externo %1"
+
+#: k3bsystemproblemdialog.cpp:496
+#, fuzzy
+#| msgid ""
+#| "Sometimes it may be nessessary to specify user parameters in addition to "
+#| "the parameters generated by K3b. This is simply a warning to make sure "
+#| "that these parameters are really wanted and will not be part of some bug "
+#| "report."
+msgid ""
+"Sometimes it may be necessary to specify user parameters in addition to the "
+"parameters generated by K3b. This is simply a warning to make sure that "
+"these parameters are really wanted and will not be part of some bug report."
+msgstr ""
+"Ás veces pode ser preciso especificar parámetros de usuario ademais dos "
+"xerados por K3b. Isto é simplesmente un aviso para garantir que estes "
+"parámetros son realmente desexados e non formarán parte de ningún informe de "
+"erro."
+
+#: k3bsystemproblemdialog.cpp:499
+#, kde-format
+msgid ""
+"To remove the user parameters for the external program %1 open the K3b "
+"settings page 'Programs' and choose the tab 'User Parameters'."
+msgstr ""
+"Para eliminar os parámetros de usuario do programa externo %1 abra a páxina "
+"«Programas» da configuración de K3b e escolla a páxina «Parámetros de usuario»."
+
+#: k3bsystemproblemdialog.cpp:520
+#, fuzzy
+#| msgid "Mp3 Audio Decoder plugin not found."
+msgid "MP3 Audio Decoder plugin not found."
+msgstr "Non se atopou a extensión decodificadora de son mp3."
+
+#: k3bsystemproblemdialog.cpp:521
+#, fuzzy
+#| msgid ""
+#| "K3b could not load or find the Mp3 decoder plugin. This means that you "
+#| "will not be able to create Audio CDs from Mp3 files. Many Linux "
+#| "distributions do not include Mp3 support for legal reasons."
+msgid ""
+"K3b could not load or find the MP3 decoder plugin. This means that you will "
+"not be able to create Audio CDs from MP3 files. Many Linux distributions do "
+"not include MP3 support for legal reasons."
+msgstr ""
+"K3b non foi capaz de cargar ou achar a extensión decodificadora de mp3. Isto "
+"significa que non será capaz de criar CD de son apartir de ficheiros mp3. "
+"Moitas distribucións de Linux non inclúen soporte para mp3 por motivos "
+"legais."
+
+#: k3bsystemproblemdialog.cpp:524
+#, fuzzy
+#| msgid ""
+#| "To enable Mp3 support, please install the MAD Mp3 decoding library as "
+#| "well as the K3b MAD Mp3 decoder plugin (the latter may already be "
+#| "installed but not functional due to the missing libmad). Some "
+#| "distributions allow installation of Mp3 support via an online update tool "
+#| "(e.g. SuSE's YOU)."
+msgid ""
+"To enable MP3 support, please install the MAD MP3 decoding library as well "
+"as the K3b MAD MP3 decoder plugin (the latter may already be installed but "
+"not functional due to the missing libmad). Some distributions allow "
+"installation of MP3 support via an online update tool."
+msgstr ""
+"Para habilitar o soporte de mp3, instale a biblioteca MAD de decodificación "
+"de mp3 xunto coa extensión de decodificación de mp3 vía MAD de K3b (esta "
+"poida que xa estexa instalada que non funcional por carecer de libmad). "
+"Algunhas distribucións permiten instalar o soporte de mp3 mediante unha "
+"ferramenta de actualización online (p.ex. YOU de SuSE)."
+
+#: k3bsystemproblemdialog.cpp:539
+msgid "System locale charset is ANSI_X3.4-1968"
+msgstr "O conxunto de caracteres do locale do sistema é ANSI_X3.4-1968"
+
+#: k3bsystemproblemdialog.cpp:540
+msgid ""
+"Your system's locale charset (i.e. the charset used to encode filenames) is "
+"set to ANSI_X3.4-1968. It is highly unlikely that this has been done "
+"intentionally. Most likely the locale is not set at all. An invalid setting "
+"will result in problems when creating data projects."
+msgstr ""
+"O conxunto de caracteres do locale do seu sistema (i.e. os caracteres usados "
+"para codificar os nomes dos ficheiros) é ANSI_X3.4-1968. É moi improbábel "
+"que isto sexa así adrede. Posibelmente o locale non teña sido configurado. "
+"Unha configuración incorrecta dará problemas cando se críen proxectos de "
+"datos."
+
+#: k3bsystemproblemdialog.cpp:544
+msgid ""
+"To properly set the locale charset make sure the LC_* environment variables "
+"are set. Normally the distribution setup tools take care of this."
+msgstr ""
+"Para configurar correctamente o conxunto de caracteres do locale verifique "
+"que as variábeis de entorno LC_* estexan configuradas. Normalmente as "
+"ferramentas de configuración da distribución encárganse disto."
+
+#: k3bsystemproblemdialog.cpp:557
+msgid "Running K3b as root user"
+msgstr "A executar K3b como usuario root"
+
+#: k3bsystemproblemdialog.cpp:558
+msgid ""
+"It is not recommended to run K3b under the root user account. This "
+"introduces unnecessary security risks."
+msgstr ""
+"Non se recomenda usar K3b coa conta de root. Isto trae problemas de "
+"innecesarios de seguridade."
+
+#: k3bsystemproblemdialog.cpp:560
+msgid ""
+"Run K3b from a proper user account and setup the device and external tool "
+"permissions appropriately."
+msgstr ""
+"Execute K3b desde unha conta de usuario apropriada e configure o dispositivo "
+"e os permisos da ferramenta externa correctamente."
+
+#: k3bsystemproblemdialog.cpp:563
+#, fuzzy
+#| msgid "The latter can be done via K3bSetup."
+msgid "The latter can be done via \"Modify Permissions...\"."
+msgstr "Isto último pode facerse mediante K3bSetup."
+
+#: k3bsystemproblemdialog.cpp:594
+msgid "System configured properly"
+msgstr "O sistema foi configurado adecuadamente"
+
+#: k3bsystemproblemdialog.cpp:595
+msgid "No problems found in system configuration."
+msgstr "Non se atoparon problemas na configuración do sistema."
+
+#: k3btempdirselectionwidget.cpp:54
+#, fuzzy
+#| msgid "Free space in temporary directory:"
+msgid "Free space in temporary folder:"
+msgstr "Espazo libre no cartafol temporal:"
+
+#: k3btempdirselectionwidget.cpp:79
+#, fuzzy
+#| msgid "The directory in which to save the image files"
+msgid "The folder in which to save the image files"
+msgstr "O cartafol no que se gardarán os ficheiros imaxe"
+
+#: k3btempdirselectionwidget.cpp:83
+#, fuzzy
+#| msgid ""
+#| "<p>This is the directory in which K3b will save the <em>image files</em>."
+#| "<p>Please make sure that it resides on a partition that has enough free "
+#| "space."
+msgid ""
+"<p>This is the folder in which K3b will save the <em>image files</em>."
+"<p>Please make sure that it resides on a partition that has enough free "
+"space."
+msgstr ""
+"<p>Este é o cartafol no que K3b garda os <em>ficheiros imaxe</em>. <p>Por "
+"favor, verifique que reside nunha partición que teña espazo libre de abondo."
+
+#: k3btempdirselectionwidget.cpp:190
+#, fuzzy
+#| msgid "Select Temporary File"
+msgid "Select Temporary Folder"
+msgstr "Escoller o ficheiro temporal"
+
+#: k3btempdirselectionwidget.cpp:192
+msgid "Wri&te image files to:"
+msgstr "&Gravar os ficheiros imaxe en:"
+
+#: k3btempdirselectionwidget.cpp:193
+#, fuzzy
+#| msgid "Temporary File"
+msgid "Temporary Folder"
+msgstr "Ficheiro temporal"
+
+#: k3btempdirselectionwidget.cpp:196
+msgid "Select Temporary File"
+msgstr "Escoller o ficheiro temporal"
+
+#: k3btempdirselectionwidget.cpp:198
+msgid "Wri&te image file to:"
+msgstr "&Gravar o ficheiro imaxe en:"
+
+#: k3btempdirselectionwidget.cpp:199
+msgid "Temporary File"
+msgstr "Ficheiro temporal"
+
+#: k3btempdirselectionwidget.cpp:209
+msgid "Size of project:"
+msgstr "Tamaño do proxecto:"
 
 #: rc.cpp:1
 msgctxt "NAME OF TRANSLATORS"
@@ -2357,9 +3022,8 @@ msgstr "Nada"
 #: projects/k3baudioburndialog.cpp:79 projects/k3bdatapropertiesdialog.cpp:148
 #: projects/k3bprojectburndialog.cpp:268 projects/k3bvcdburndialog.cpp:415
 #: projects/k3bvcdburndialog.cpp:447 projects/k3bvcdtrackdialog.cpp:456
-#: rip/k3bvideocdrippingdialog.cpp:102
 #: rip/k3baudioprojectconvertingdialog.cpp:144
-#: rip/k3baudiorippingdialog.cpp:163
+#: rip/k3baudiorippingdialog.cpp:163 rip/k3bvideocdrippingdialog.cpp:102
 msgid "Settings"
 msgstr "Configuración"
 
@@ -4260,671 +4924,6 @@ msgstr "Palabras de 16 bits"
 msgid "32-bit Words"
 msgstr "Palabras de 32 bits"
 
-#: k3bapplication.cpp:161
-msgid "K3b is busy"
-msgstr "K3b está atarefado"
-
-#: k3bapplication.cpp:162
-msgid "K3b is currently busy and cannot start any other operations."
-msgstr "K3b está atarefado e non pode comezar ningunha outra operación."
-
-#: k3bprojectmanager.cpp:211
-#, kde-format
-msgid "AudioCD%1"
-msgstr "CD de son %1"
-
-#: k3bprojectmanager.cpp:217
-#, kde-format
-msgid "Data%1"
-msgstr "Datos %1"
-
-#: k3bprojectmanager.cpp:223
-#, kde-format
-msgid "MixedCD%1"
-msgstr "CDMixto%1"
-
-#: k3bprojectmanager.cpp:229
-#, kde-format
-msgid "VideoCD%1"
-msgstr "VídeoCD%1"
-
-#: k3bprojectmanager.cpp:235
-#, kde-format
-msgid "eMovix%1"
-msgstr "eMovix%1"
-
-#: k3bprojectmanager.cpp:241
-#, kde-format
-msgid "VideoDVD%1"
-msgstr "VídeoDVD%1"
-
-#: k3bprojecttabwidget.cpp:82 projects/k3bprojectburndialog.cpp:61
-msgid "Project"
-msgstr "Proxecto"
-
-#: k3bstatusbarmanager.cpp:60
-msgid "Temp:"
-msgstr "Tempo:"
-
-#: k3bstatusbarmanager.cpp:120
-msgid "No info"
-msgstr "Non hai información"
-
-#: k3bstatusbarmanager.cpp:162
-#, fuzzy, kde-format
-#| msgid "1 folder"
-#| msgid_plural "%1 folders"
-msgid "one folder"
-msgid_plural "%1 folders"
-msgstr[0] "1 cartafol"
-msgstr[1] "%1 cartafoles"
-
-#: k3bstatusbarmanager.cpp:159
-#, fuzzy, kde-format
-#| msgid "1 file in %2"
-#| msgid_plural "%1 files in %2"
-msgid "One file in %2"
-msgid_plural "%1 files in %2"
-msgstr[0] "1 ficheiro en %2"
-msgstr[1] "%1 ficheiros en %2"
-
-#: k3bstatusbarmanager.cpp:189
-#, kde-format
-msgid "Audio CD (1 track)"
-msgid_plural "Audio CD (%1 tracks)"
-msgstr[0] "CD de son (1 pista)"
-msgstr[1] "CD de son (%1 pistas)"
-
-#: k3bstatusbarmanager.cpp:195
-#, kde-format
-msgid "Data Project (%1)"
-msgstr "Proxecto de datos (%1)"
-
-#: k3bstatusbarmanager.cpp:202
-#, kde-format
-msgid "Mixed CD (1 track and %2)"
-msgid_plural "Mixed CD (%1 tracks and %2)"
-msgstr[0] "CD mixto (1 pista e %2)"
-msgstr[1] "CD mixto (%1 pistas e %2)"
-
-#: k3bstatusbarmanager.cpp:209
-#, kde-format
-msgid "Video CD (1 track)"
-msgid_plural "Video CD (%1 tracks)"
-msgstr[0] "Vídeo CD (1 pista)"
-msgstr[1] "Vídeo CD (%1 pistas)"
-
-#: k3bstatusbarmanager.cpp:215
-#, kde-format
-msgid "eMovix Project (%1)"
-msgstr "Proxecto de eMovix (%1)"
-
-#: k3bstatusbarmanager.cpp:221
-#, kde-format
-msgid "Video DVD (%1)"
-msgstr "Vídeo DVD (%1)"
-
-#: k3bsystemproblemdialog.cpp:89 k3bsystemproblemdialog.cpp:96
-msgid "System Configuration Problems"
-msgstr "Problemas de configuración do sistema"
-
-#: k3bsystemproblemdialog.cpp:97
-#, kde-format
-msgid "1 problem"
-msgid_plural "%1 problems"
-msgstr[0] "1 problema"
-msgstr[1] "%1 problemas"
-
-#: k3bsystemproblemdialog.cpp:101
-msgid "Do not show again"
-msgstr "Non mostrar de novo"
-
-#: k3bsystemproblemdialog.cpp:106 option/k3bdevicewidget.cpp:57
-#, fuzzy
-#| msgid "&Setup System Permissions..."
-msgid "Modify Permissions..."
-msgstr "Configurar os &permisos do sistema..."
-
-#: k3bsystemproblemdialog.cpp:152
-msgid "Solution"
-msgstr "Solución"
-
-#: k3bsystemproblemdialog.cpp:181
-msgid "Click \"Modify Permissions...\" to solve this problem."
-msgstr ""
-
-#: k3bsystemproblemdialog.cpp:188
-#, fuzzy
-#| msgid "No usable medium found."
-msgid "No optical drive found."
-msgstr "Non se atopou un medio usábel."
-
-#: k3bsystemproblemdialog.cpp:189
-msgid "K3b did not find any optical device in your system."
-msgstr ""
-
-#: k3bsystemproblemdialog.cpp:191
-msgid "Make sure HAL daemon is running, it is used by K3b for finding devices."
-msgstr ""
-
-#: k3bsystemproblemdialog.cpp:199
-#, fuzzy
-#| msgid "No CD/DVD writer found."
-msgid "No CD/DVD/BD writer found."
-msgstr "Non se achou ningunha gravadora de CD/DVD."
-
-#: k3bsystemproblemdialog.cpp:200
-#, fuzzy
-#| msgid ""
-#| "K3b did not find an optical writing device in your system. Thus, you will "
-#| "not be able to burn CDs or DVDs. However, you can still use other K3b "
-#| "features like audio track extraction or audio transcoding or ISO9660 "
-#| "image creation."
-msgid ""
-"K3b did not find an optical writing device in your system. Thus, you will "
-"not be able to burn CDs or DVDs. However, you can still use other K3b "
-"features such as audio track extraction, audio transcoding or ISO9660 image "
-"creation."
-msgstr ""
-"K3b non achou ningún dispositivo óptico de gravación no seu sistema. Por "
-"ende, non poderá gravar CD nin DVD. Porén, aínda pode usar outras "
-"funcionalidades de K3b como a extracción de pistas de son, a "
-"transcodificación de son ou a criación de imaxes ISO9660."
-
-#: k3bsystemproblemdialog.cpp:210 k3bsystemproblemdialog.cpp:265
-#: k3bsystemproblemdialog.cpp:290 k3bsystemproblemdialog.cpp:335
-#, kde-format
-msgid "Unable to find %1 executable"
-msgstr "Non foi posíbel atopar o executábel %1"
-
-#: k3bsystemproblemdialog.cpp:211
-msgid "K3b uses cdrecord to actually write CDs."
-msgstr "K3b emprega cdrecord para escribir CD."
-
-#: k3bsystemproblemdialog.cpp:212
-msgid "Install the cdrtools package which contains cdrecord."
-msgstr "Instale o paquete cdrtools que contén a cdrecord."
-
-#: k3bsystemproblemdialog.cpp:218 k3bsystemproblemdialog.cpp:299
-#: k3bsystemproblemdialog.cpp:306 k3bsystemproblemdialog.cpp:314
-#: k3bsystemproblemdialog.cpp:346 k3bsystemproblemdialog.cpp:452
-#, kde-format
-msgid "Used %1 version %2 is outdated"
-msgstr "A versión %2 de %1, que é a empregada, é moi antiga"
-
-#: k3bsystemproblemdialog.cpp:219
-msgid ""
-"Although K3b supports all cdrtools versions since 1.10 it is highly "
-"recommended to at least use version 2.0."
-msgstr ""
-"Aínda que K3b soporta todas as versións de cdrtools desde a 1.10, "
-"recoméndase empregar polo menos a versión 2.0."
-
-#: k3bsystemproblemdialog.cpp:222
-msgid "Install a more recent version of the cdrtools."
-msgstr "Instalar unha versión máis recentes de cdrtools."
-
-#: k3bsystemproblemdialog.cpp:239
-#, kde-format
-msgid "%1 will be run with root privileges on kernel >= 2.6.8"
-msgstr "%1 será executado con privilexios de root nun kernel >= 2.6.8"
-
-#: k3bsystemproblemdialog.cpp:240
-#, kde-format
-msgid ""
-"Since Linux kernel 2.6.8 %1 will not work when run suid root for security "
-"reasons anymore."
-msgstr ""
-"Desde o kernel Linux 2.6.8, %1 non funcionará con suid root por razóns de "
-"seguridade."
-
-#: k3bsystemproblemdialog.cpp:250 k3bsystemproblemdialog.cpp:275
-#, kde-format
-msgid "%1 will be run without root privileges"
-msgstr "%1 será executado sen privilexios de root"
-
-#: k3bsystemproblemdialog.cpp:251
-#, fuzzy
-#| msgid ""
-#| "It is highly recommended to configure cdrecord to run with root "
-#| "privileges. Only then cdrecord runs with high priority which increases "
-#| "the overall stability of the burning process. Apart from that it allows "
-#| "changing the size of the used burning buffer. A lot of user problems "
-#| "could be solved this way. This is also true when using SuSE's resmgr."
-msgid ""
-"It is highly recommended to configure cdrecord to run with root privileges, "
-"as then cdrecord runs with high priority that increases the overall "
-"stability of the burning process. As well as this, it allows the size of the "
-"burning buffer to be changed, and a lot of user problems can be solved this "
-"way."
-msgstr ""
-"Recoméndase configurar cdrecord para executarse con privilexios de root. Só "
-"entón cdrecord será executado con prioridade alta, o que incrementa a "
-"estabilidade do proceso de gravación. Ademais así poderase mudar o tamaño do "
-"buffer de gravación empregado. Unha grande cantidade de problemas dos "
-"usuarios pódense resolver deste xeito. Tamén pasa cando se emprega o resmgr "
-"de SuSE."
-
-#: k3bsystemproblemdialog.cpp:266
-msgid "K3b uses cdrdao to actually write CDs."
-msgstr "K3b usa cdrdao para gravar os CD."
-
-#: k3bsystemproblemdialog.cpp:267
-msgid "Install the cdrdao package."
-msgstr "Instale o paquete cdrdao."
-
-#: k3bsystemproblemdialog.cpp:276
-msgid ""
-"It is highly recommended to configure cdrdao to run with root privileges to "
-"increase the overall stability of the burning process."
-msgstr ""
-"Recoméndase configurar cdrdao para que se execute con privilexios de root, "
-"de xeito que se poida incrementar a estabilidade do proceso de gravación."
-
-#: k3bsystemproblemdialog.cpp:291
-#, fuzzy
-#| msgid ""
-#| "K3b uses growisofs to actually write dvds. Without growisofs you will not "
-#| "be able to write dvds. Make sure to install at least version 5.10."
-msgid ""
-"K3b uses growisofs to actually write DVDs. Without growisofs you will not be "
-"able to write DVDs. Make sure to install at least version 5.10."
-msgstr ""
-"K3b emprega growisofs para gravar os dvd. Sen growisofs non será quen de "
-"gravar DVD. Verifique que instala unha versión superior a 5.10."
-
-#: k3bsystemproblemdialog.cpp:294 k3bsystemproblemdialog.cpp:337
-msgid "Install the dvd+rw-tools package."
-msgstr "Instalar o paquete dvd+rw-tools."
-
-#: k3bsystemproblemdialog.cpp:300
-#, fuzzy
-#| msgid ""
-#| "K3b needs at least growisofs version 5.10 to write dvds. All older "
-#| "versions will not work and K3b will refuse to use them."
-msgid ""
-"K3b needs at least growisofs version 5.10 to write DVDs. All older versions "
-"will not work and K3b will refuse to use them."
-msgstr ""
-"K3b precisa polo menos a versión 5.10 de growisofs para gravar DVD. Todas as "
-"versións máis antigas non funcionarán e k3b rexeitaraas."
-
-#: k3bsystemproblemdialog.cpp:302 k3bsystemproblemdialog.cpp:310
-#: k3bsystemproblemdialog.cpp:318 k3bsystemproblemdialog.cpp:351
-#, kde-format
-msgid "Install a more recent version of %1."
-msgstr "Instale unha versión máis recente de %1."
-
-#: k3bsystemproblemdialog.cpp:307
-msgid ""
-"K3b will not be able to copy DVDs on-the-fly or write a DVD+RW in multiple "
-"sessions using a growisofs version older than 5.12."
-msgstr ""
-"K3b non será quén de copiar DVD ao voo nin gravar DVD+RW multisesión "
-"empregando unha versión de growisofs máis antiga que 5.12."
-
-#: k3bsystemproblemdialog.cpp:315
-msgid ""
-"It is highly recommended to use growisofs 7.0 or higher. K3b will not be "
-"able to write a DVD+RW in multiple sessions using a growisofs version older "
-"than 7.0."
-msgstr ""
-"Recoméndase usar growisofs 7.0 ou posterior. K3b non poderá gravar un DVD+RW "
-"multisesión usando unha versión de growisofs anterior á 7.0."
-
-#: k3bsystemproblemdialog.cpp:336
-msgid "K3b uses dvd+rw-format to format DVD-RWs and DVD+RWs."
-msgstr "K3b emprega o formato dvd+rw para formatear os DVD-RWs e DVD+RWs."
-
-#: k3bsystemproblemdialog.cpp:349
-msgid ""
-"K3b needs at least mkisofs version 1.14. Older versions may introduce "
-"problems when creating data projects."
-msgstr ""
-"K3b precisa a versión 1.14 ou posterior de mkisofs. As versións mais vellas "
-"poden ter problemas cando se crean proxectos de datos."
-
-#: k3bsystemproblemdialog.cpp:373
-#, kde-format
-msgid "Device %1 - %2 is automounted."
-msgstr "Dispositivo %1 - %2 está automontado."
-
-#: k3bsystemproblemdialog.cpp:375
-msgid ""
-"K3b is not able to unmount automounted devices. Thus, especially DVD+RW "
-"rewriting might fail. There is no need to report this as a bug or feature "
-"wish; it is not possible to solve this problem from within K3b."
-msgstr ""
-"K3b non pode desmontar dispositivos automontados. Por ende, especialmente a "
-"regravación de DVD+RW pode fallar. Non é preciso informar isto como un erro "
-"ou petición de funcionalidade; non é posíbel arranxar isto desde K3b."
-
-#: k3bsystemproblemdialog.cpp:379
-msgid ""
-"Replace the automounting entries in /etc/fstab with old-fashioned ones or "
-"use a user-space mounting solution like pmount or ivman."
-msgstr ""
-"Substitúa as entradas de automontaxe en /etc/fstab con entradas ao antigo "
-"estilo ou use un sistema de montaxe en espazo de usuario como pmount ou "
-"ivman."
-
-#: k3bsystemproblemdialog.cpp:388
-msgid "No ATAPI writing support in kernel"
-msgstr "Non hai soporte de escritura ATAPI no núcleo"
-
-#: k3bsystemproblemdialog.cpp:389
-msgid ""
-"Your kernel does not support writing without SCSI emulation but there is at "
-"least one writer in your system not configured to use SCSI emulation."
-msgstr ""
-"O núcleo non soporta a escrita sen a emulación SCSI pero hai polo menos unha "
-"gravadora no sistema non configurada para empregar a emulación SCSI."
-
-#: k3bsystemproblemdialog.cpp:393
-#, fuzzy
-#| msgid ""
-#| "The best and recommended solution is to enable ide-scsi (SCSI emulation) "
-#| "for all devices. This way you will not have any problems.Be aware that "
-#| "you may still enable DMA on ide-scsi emulated drives."
-msgid ""
-"The best and recommended solution is to enable ide-scsi (SCSI emulation) for "
-"all devices. This way you will not have any problems. Be aware that you may "
-"still enable DMA on ide-scsi emulated drives."
-msgstr ""
-"A mellor e máis recomendábel opción é habilitar o módulo ide-scsi (emulación "
-"de SCSI) para todos os dispositivos. Deste xeito non terá ningún problema. "
-"Sexa consciente de que aínda poderá habilitar DMA nos dispositivos con "
-"emulación ide-scsi."
-
-#: k3bsystemproblemdialog.cpp:409 k3bsystemproblemdialog.cpp:428
-#, kde-format
-msgid "%1 %2 does not support ATAPI"
-msgstr "%1 %2 non soporta ATAPI"
-
-#: k3bsystemproblemdialog.cpp:410 k3bsystemproblemdialog.cpp:431
-#, kde-format
-msgid ""
-"The configured version of %1 does not support writing to ATAPI devices "
-"without SCSI emulation and there is at least one writer in your system not "
-"configured to use SCSI emulation."
-msgstr ""
-"A versión configurada de %1 non soporta a escrita en dispositivos ATAPI sen "
-"emulación SCSI e hai polo menos unha gravadora no sistema non configurada "
-"para empregar a emulación SCSI."
-
-#: k3bsystemproblemdialog.cpp:415 k3bsystemproblemdialog.cpp:439
-#, kde-format
-msgid ""
-"The best, and recommended, solution is to use ide-scsi (SCSI emulation) for "
-"all writer devices: this way you will not have any problems; or, you can "
-"install (or select as the default) a more recent version of %1."
-msgstr ""
-"A mellor e máis recomendábel opción é usar o módulo ide-scsi (emulación "
-"SCSI) para todos os dispositivos de gravación: deste xeito non terá ningún "
-"problema. Ou pode instalar (ou escoller como a predeterminada) unha versión "
-"máis nova que a %1."
-
-#: k3bsystemproblemdialog.cpp:437
-msgid ""
-"Install cdrdao >= 1.1.8 which supports writing to ATAPI devices directly."
-msgstr ""
-"Instale cdrdao >= 1.1.8 que soporta a gravación de dispositivos ATAPI "
-"directamente."
-
-#: k3bsystemproblemdialog.cpp:453
-msgid ""
-"K3b will not be able to write DVD-R Dual Layer media using a growisofs "
-"version older than 6.0."
-msgstr ""
-"K3b non poderá gravar discos DVD-R de capa dupla empregando unha versión de "
-"growisofs máis antiga que a 6.0."
-
-#: k3bsystemproblemdialog.cpp:455
-msgid "Install a more recent version of growisofs."
-msgstr "Instalar unha versión máis recente de growisofs."
-
-#: k3bsystemproblemdialog.cpp:467
-#, kde-format
-msgid "No write access to device %1"
-msgstr "Non ten aceso de escrita no dispositivo %1"
-
-#: k3bsystemproblemdialog.cpp:468
-#, kde-format
-msgid ""
-"K3b needs write access to all the devices to perform certain tasks. Without "
-"it you might encounter problems with %1 - %2"
-msgstr ""
-"K3b precisa aceso de escrita a todos os dispositivos para realizar certas "
-"tarefas. Sen el pode atopar problemas con %1 - %2"
-
-#: k3bsystemproblemdialog.cpp:470
-#, fuzzy, kde-format
-#| msgid ""
-#| "Make sure you have write access to %1. In case you are not using devfs or "
-#| "udev K3bSetup is able to do this for you."
-msgid ""
-"Make sure you have write access to %1. In case you are not using devfs or "
-"udev click \"Modify Permissions...\" and setup permissions by hand."
-msgstr ""
-"Verifique que ten aceso de escrita a %1. Se non está a usar devfs ou udev "
-"K3bSetup poderá facer isto por si."
-
-#: k3bsystemproblemdialog.cpp:476
-#, kde-format
-msgid "DMA disabled on device %1 - %2"
-msgstr "DMA está deshabilitado no dispositivo %1 - %2"
-
-#: k3bsystemproblemdialog.cpp:477
-#, fuzzy
-#| msgid ""
-#| "With most modern CD/DVD devices enabling DMA highly increases read/write "
-#| "performance. If you experience very low writing speeds this is probably "
-#| "the cause."
-msgid ""
-"With most modern CD/DVD/BD devices enabling DMA highly increases read/write "
-"performance. If you experience very low writing speeds this is probably the "
-"cause."
-msgstr ""
-"Coa maioría dos dispositivos de CD/DVD modernos habilitar DMA aumenta moito "
-"o rendimento de leitura/escrita. Se ten moi baixas velocidades posibelmente "
-"esta sexa a causa."
-
-#: k3bsystemproblemdialog.cpp:480
-#, kde-format
-msgid "Enable DMA temporarily as root with 'hdparm -d 1 %1'."
-msgstr "Habilite o DMA temporalmente como root mediante «hdparm -d 1 %1»."
-
-#: k3bsystemproblemdialog.cpp:495
-#, kde-format
-msgid "User parameters specified for external program %1"
-msgstr "Parámetros do usuario especificados para o programa externo %1"
-
-#: k3bsystemproblemdialog.cpp:496
-#, fuzzy
-#| msgid ""
-#| "Sometimes it may be nessessary to specify user parameters in addition to "
-#| "the parameters generated by K3b. This is simply a warning to make sure "
-#| "that these parameters are really wanted and will not be part of some bug "
-#| "report."
-msgid ""
-"Sometimes it may be necessary to specify user parameters in addition to the "
-"parameters generated by K3b. This is simply a warning to make sure that "
-"these parameters are really wanted and will not be part of some bug report."
-msgstr ""
-"Ás veces pode ser preciso especificar parámetros de usuario ademais dos "
-"xerados por K3b. Isto é simplesmente un aviso para garantir que estes "
-"parámetros son realmente desexados e non formarán parte de ningún informe de "
-"erro."
-
-#: k3bsystemproblemdialog.cpp:499
-#, kde-format
-msgid ""
-"To remove the user parameters for the external program %1 open the K3b "
-"settings page 'Programs' and choose the tab 'User Parameters'."
-msgstr ""
-"Para eliminar os parámetros de usuario do programa externo %1 abra a páxina "
-"«Programas» da configuración de K3b e escolla a páxina «Parámetros de usuario»."
-
-#: k3bsystemproblemdialog.cpp:520
-#, fuzzy
-#| msgid "Mp3 Audio Decoder plugin not found."
-msgid "MP3 Audio Decoder plugin not found."
-msgstr "Non se atopou a extensión decodificadora de son mp3."
-
-#: k3bsystemproblemdialog.cpp:521
-#, fuzzy
-#| msgid ""
-#| "K3b could not load or find the Mp3 decoder plugin. This means that you "
-#| "will not be able to create Audio CDs from Mp3 files. Many Linux "
-#| "distributions do not include Mp3 support for legal reasons."
-msgid ""
-"K3b could not load or find the MP3 decoder plugin. This means that you will "
-"not be able to create Audio CDs from MP3 files. Many Linux distributions do "
-"not include MP3 support for legal reasons."
-msgstr ""
-"K3b non foi capaz de cargar ou achar a extensión decodificadora de mp3. Isto "
-"significa que non será capaz de criar CD de son apartir de ficheiros mp3. "
-"Moitas distribucións de Linux non inclúen soporte para mp3 por motivos "
-"legais."
-
-#: k3bsystemproblemdialog.cpp:524
-#, fuzzy
-#| msgid ""
-#| "To enable Mp3 support, please install the MAD Mp3 decoding library as "
-#| "well as the K3b MAD Mp3 decoder plugin (the latter may already be "
-#| "installed but not functional due to the missing libmad). Some "
-#| "distributions allow installation of Mp3 support via an online update tool "
-#| "(e.g. SuSE's YOU)."
-msgid ""
-"To enable MP3 support, please install the MAD MP3 decoding library as well "
-"as the K3b MAD MP3 decoder plugin (the latter may already be installed but "
-"not functional due to the missing libmad). Some distributions allow "
-"installation of MP3 support via an online update tool."
-msgstr ""
-"Para habilitar o soporte de mp3, instale a biblioteca MAD de decodificación "
-"de mp3 xunto coa extensión de decodificación de mp3 vía MAD de K3b (esta "
-"poida que xa estexa instalada que non funcional por carecer de libmad). "
-"Algunhas distribucións permiten instalar o soporte de mp3 mediante unha "
-"ferramenta de actualización online (p.ex. YOU de SuSE)."
-
-#: k3bsystemproblemdialog.cpp:539
-msgid "System locale charset is ANSI_X3.4-1968"
-msgstr "O conxunto de caracteres do locale do sistema é ANSI_X3.4-1968"
-
-#: k3bsystemproblemdialog.cpp:540
-msgid ""
-"Your system's locale charset (i.e. the charset used to encode filenames) is "
-"set to ANSI_X3.4-1968. It is highly unlikely that this has been done "
-"intentionally. Most likely the locale is not set at all. An invalid setting "
-"will result in problems when creating data projects."
-msgstr ""
-"O conxunto de caracteres do locale do seu sistema (i.e. os caracteres usados "
-"para codificar os nomes dos ficheiros) é ANSI_X3.4-1968. É moi improbábel "
-"que isto sexa así adrede. Posibelmente o locale non teña sido configurado. "
-"Unha configuración incorrecta dará problemas cando se críen proxectos de "
-"datos."
-
-#: k3bsystemproblemdialog.cpp:544
-msgid ""
-"To properly set the locale charset make sure the LC_* environment variables "
-"are set. Normally the distribution setup tools take care of this."
-msgstr ""
-"Para configurar correctamente o conxunto de caracteres do locale verifique "
-"que as variábeis de entorno LC_* estexan configuradas. Normalmente as "
-"ferramentas de configuración da distribución encárganse disto."
-
-#: k3bsystemproblemdialog.cpp:557
-msgid "Running K3b as root user"
-msgstr "A executar K3b como usuario root"
-
-#: k3bsystemproblemdialog.cpp:558
-msgid ""
-"It is not recommended to run K3b under the root user account. This "
-"introduces unnecessary security risks."
-msgstr ""
-"Non se recomenda usar K3b coa conta de root. Isto trae problemas de "
-"innecesarios de seguridade."
-
-#: k3bsystemproblemdialog.cpp:560
-msgid ""
-"Run K3b from a proper user account and setup the device and external tool "
-"permissions appropriately."
-msgstr ""
-"Execute K3b desde unha conta de usuario apropriada e configure o dispositivo "
-"e os permisos da ferramenta externa correctamente."
-
-#: k3bsystemproblemdialog.cpp:563
-#, fuzzy
-#| msgid "The latter can be done via K3bSetup."
-msgid "The latter can be done via \"Modify Permissions...\"."
-msgstr "Isto último pode facerse mediante K3bSetup."
-
-#: k3bsystemproblemdialog.cpp:594
-msgid "System configured properly"
-msgstr "O sistema foi configurado adecuadamente"
-
-#: k3bsystemproblemdialog.cpp:595
-msgid "No problems found in system configuration."
-msgstr "Non se atoparon problemas na configuración do sistema."
-
-#: k3btempdirselectionwidget.cpp:54
-#, fuzzy
-#| msgid "Free space in temporary directory:"
-msgid "Free space in temporary folder:"
-msgstr "Espazo libre no cartafol temporal:"
-
-#: k3btempdirselectionwidget.cpp:79
-#, fuzzy
-#| msgid "The directory in which to save the image files"
-msgid "The folder in which to save the image files"
-msgstr "O cartafol no que se gardarán os ficheiros imaxe"
-
-#: k3btempdirselectionwidget.cpp:83
-#, fuzzy
-#| msgid ""
-#| "<p>This is the directory in which K3b will save the <em>image files</em>."
-#| "<p>Please make sure that it resides on a partition that has enough free "
-#| "space."
-msgid ""
-"<p>This is the folder in which K3b will save the <em>image files</em>."
-"<p>Please make sure that it resides on a partition that has enough free "
-"space."
-msgstr ""
-"<p>Este é o cartafol no que K3b garda os <em>ficheiros imaxe</em>. <p>Por "
-"favor, verifique que reside nunha partición que teña espazo libre de abondo."
-
-#: k3btempdirselectionwidget.cpp:190
-#, fuzzy
-#| msgid "Select Temporary File"
-msgid "Select Temporary Folder"
-msgstr "Escoller o ficheiro temporal"
-
-#: k3btempdirselectionwidget.cpp:192
-msgid "Wri&te image files to:"
-msgstr "&Gravar os ficheiros imaxe en:"
-
-#: k3btempdirselectionwidget.cpp:193
-#, fuzzy
-#| msgid "Temporary File"
-msgid "Temporary Folder"
-msgstr "Ficheiro temporal"
-
-#: k3btempdirselectionwidget.cpp:196
-msgid "Select Temporary File"
-msgstr "Escoller o ficheiro temporal"
-
-#: k3btempdirselectionwidget.cpp:198
-msgid "Wri&te image file to:"
-msgstr "&Gravar o ficheiro imaxe en:"
-
-#: k3btempdirselectionwidget.cpp:199
-msgid "Temporary File"
-msgstr "Ficheiro temporal"
-
-#: k3btempdirselectionwidget.cpp:209
-msgid "Size of project:"
-msgstr "Tamaño do proxecto:"
-
 #: k3bwelcomewidget.cpp:86
 msgid "More actions..."
 msgstr "Máis accións..."
@@ -6239,58 +6238,6 @@ msgstr ""
 msgid "You do not have permission to write to %1."
 msgstr "Non ten permiso para escribir en %1."
 
-#: option/k3boptiondialog.cpp:133
-msgid "Miscellaneous Settings"
-msgstr "Opcións diversas"
-
-#: option/k3boptiondialog.cpp:142
-msgid "Devices"
-msgstr "Dispositivos"
-
-#: option/k3boptiondialog.cpp:143
-msgid "Setup Devices"
-msgstr "Configurar os dispositivos"
-
-#: option/k3boptiondialog.cpp:153
-msgid "Setup External Programs"
-msgstr "Configurar os programas externos"
-
-#: option/k3boptiondialog.cpp:162
-msgid "Notifications"
-msgstr "Notificacións"
-
-#: option/k3boptiondialog.cpp:163
-msgid "System Notifications"
-msgstr "Notificacións do sistema"
-
-#: option/k3boptiondialog.cpp:172
-msgid "Plugins"
-msgstr "Extensións"
-
-#: option/k3boptiondialog.cpp:173
-msgid "K3b Plugin Configuration"
-msgstr "Configuración das extensións de K3b"
-
-#: option/k3boptiondialog.cpp:182
-msgid "Themes"
-msgstr "Temas"
-
-#: option/k3boptiondialog.cpp:183
-msgid "K3b GUI Themes"
-msgstr "Temas da GUI de K3b"
-
-#: option/k3boptiondialog.cpp:192
-msgid "CDDB"
-msgstr "CDDB"
-
-#: option/k3boptiondialog.cpp:193
-msgid "CDDB Audio CD Info Retrieval"
-msgstr "Obtención de información acerca do CD de son desde CDDB"
-
-#: option/k3boptiondialog.cpp:203
-msgid "Advanced Settings"
-msgstr "Configuración avanzada"
-
 #: option/k3bthememodel.cpp:99
 msgid "Theme"
 msgstr "Tema"
@@ -6302,57 +6249,6 @@ msgstr "Autor"
 #: option/k3bthememodel.cpp:102
 msgid "Comment"
 msgstr "Comentario"
-
-#: option/k3bthemeoptiontab.cpp:91
-msgid "K3b - The CD/DVD Kreator"
-msgstr "K3b - O creador de CD/DVD"
-
-#: option/k3bthemeoptiontab.cpp:111
-msgid "Drag or Type Theme URL"
-msgstr "Arrastre ou escreba o URL do tema"
-
-#: option/k3bthemeoptiontab.cpp:123
-#, kde-format
-msgid "Unable to find the icon theme archive %1."
-msgstr "Non foi posíbel atopar o ficheiro do tema de ícones %1."
-
-#: option/k3bthemeoptiontab.cpp:125
-#, kde-format
-msgid ""
-"Unable to download the icon theme archive.\n"
-"Please check that address %1 is correct."
-msgstr ""
-"Non foi posíbel obter o ficheiro do tema de ícones.\n"
-"Por favor, comprobe que o enderezo %1 é correcto."
-
-#: option/k3bthemeoptiontab.cpp:157
-msgid "The file is not a valid K3b theme archive."
-msgstr "O ficheiro non é un arquivo de tema K3b válido."
-
-#: option/k3bthemeoptiontab.cpp:165
-#, kde-format
-msgid "A theme with the name '%1' already exists. Do you want to overwrite it?"
-msgstr "Xa existe un tema chamado «%1». Desexa sobrescribilo?"
-
-#: option/k3bthemeoptiontab.cpp:167
-msgid "Theme exists"
-msgstr "O tema xa existe"
-
-#: option/k3bthemeoptiontab.cpp:186
-#, fuzzy, kde-format
-#| msgid ""
-#| "<qt>Are you sure you want to remove the <strong>%1</strong> icon theme?"
-#| "<br><br>This will delete the files installed by this theme.</qt>"
-msgid ""
-"<qt>Are you sure you want to remove the <strong>%1</strong> theme?"
-"<br><br>This will delete the files installed by this theme.</qt>"
-msgstr ""
-"<qt>Desexa realmente borrar o tema de ícones <strong>%1</strong>?"
-"<br><br>Isto borrará os ficheiros instalados por este tema.</qt>"
-
-#: option/k3bthemeoptiontab.cpp:191
-msgid "Delete"
-msgstr "Borrar"
 
 #: option/k3bdevicewidget.cpp:58
 msgid "Refresh"
@@ -6425,6 +6321,109 @@ msgstr "Modos de gravación:"
 #: option/k3bdevicewidget.cpp:217 option/k3bdevicewidget.cpp:222
 msgid "none"
 msgstr "ningún"
+
+#: option/k3boptiondialog.cpp:133
+msgid "Miscellaneous Settings"
+msgstr "Opcións diversas"
+
+#: option/k3boptiondialog.cpp:142
+msgid "Devices"
+msgstr "Dispositivos"
+
+#: option/k3boptiondialog.cpp:143
+msgid "Setup Devices"
+msgstr "Configurar os dispositivos"
+
+#: option/k3boptiondialog.cpp:153
+msgid "Setup External Programs"
+msgstr "Configurar os programas externos"
+
+#: option/k3boptiondialog.cpp:162
+msgid "Notifications"
+msgstr "Notificacións"
+
+#: option/k3boptiondialog.cpp:163
+msgid "System Notifications"
+msgstr "Notificacións do sistema"
+
+#: option/k3boptiondialog.cpp:172
+msgid "Plugins"
+msgstr "Extensións"
+
+#: option/k3boptiondialog.cpp:173
+msgid "K3b Plugin Configuration"
+msgstr "Configuración das extensións de K3b"
+
+#: option/k3boptiondialog.cpp:182
+msgid "Themes"
+msgstr "Temas"
+
+#: option/k3boptiondialog.cpp:183
+msgid "K3b GUI Themes"
+msgstr "Temas da GUI de K3b"
+
+#: option/k3boptiondialog.cpp:192
+msgid "CDDB"
+msgstr "CDDB"
+
+#: option/k3boptiondialog.cpp:193
+msgid "CDDB Audio CD Info Retrieval"
+msgstr "Obtención de información acerca do CD de son desde CDDB"
+
+#: option/k3boptiondialog.cpp:203
+msgid "Advanced Settings"
+msgstr "Configuración avanzada"
+
+#: option/k3bthemeoptiontab.cpp:91
+msgid "K3b - The CD/DVD Kreator"
+msgstr "K3b - O creador de CD/DVD"
+
+#: option/k3bthemeoptiontab.cpp:111
+msgid "Drag or Type Theme URL"
+msgstr "Arrastre ou escreba o URL do tema"
+
+#: option/k3bthemeoptiontab.cpp:123
+#, kde-format
+msgid "Unable to find the icon theme archive %1."
+msgstr "Non foi posíbel atopar o ficheiro do tema de ícones %1."
+
+#: option/k3bthemeoptiontab.cpp:125
+#, kde-format
+msgid ""
+"Unable to download the icon theme archive.\n"
+"Please check that address %1 is correct."
+msgstr ""
+"Non foi posíbel obter o ficheiro do tema de ícones.\n"
+"Por favor, comprobe que o enderezo %1 é correcto."
+
+#: option/k3bthemeoptiontab.cpp:157
+msgid "The file is not a valid K3b theme archive."
+msgstr "O ficheiro non é un arquivo de tema K3b válido."
+
+#: option/k3bthemeoptiontab.cpp:165
+#, kde-format
+msgid "A theme with the name '%1' already exists. Do you want to overwrite it?"
+msgstr "Xa existe un tema chamado «%1». Desexa sobrescribilo?"
+
+#: option/k3bthemeoptiontab.cpp:167
+msgid "Theme exists"
+msgstr "O tema xa existe"
+
+#: option/k3bthemeoptiontab.cpp:186
+#, fuzzy, kde-format
+#| msgid ""
+#| "<qt>Are you sure you want to remove the <strong>%1</strong> icon theme?"
+#| "<br><br>This will delete the files installed by this theme.</qt>"
+msgid ""
+"<qt>Are you sure you want to remove the <strong>%1</strong> theme?"
+"<br><br>This will delete the files installed by this theme.</qt>"
+msgstr ""
+"<qt>Desexa realmente borrar o tema de ícones <strong>%1</strong>?"
+"<br><br>Isto borrará os ficheiros instalados por este tema.</qt>"
+
+#: option/k3bthemeoptiontab.cpp:191
+msgid "Delete"
+msgstr "Borrar"
 
 #: projects/k3baudioburndialog.cpp:63
 #: projects/k3baudiotracktrmlookupdialog.cpp:123
@@ -8957,10 +8956,6 @@ msgstr "&Propriedades"
 msgid "Open the properties dialog"
 msgstr "Abre o diálogo de propriedades"
 
-#: projects/k3bvolumenamewidget.cpp:57
-msgid "Volume Name:"
-msgstr "Nome do volume:"
-
 #: projects/kostore/KoStore.cpp:195
 msgid "The directory mode is not supported for remote locations."
 msgstr "O modo directorio non está soportado para lugares remotos."
@@ -8983,6 +8978,10 @@ msgstr ""
 "Non foi posíbel achar o executábel VcdImager. Para crear o VídeoCD precisa "
 "instalar VcdImager >= 0.7.12. Pode encontralo nos discos da distribución ou "
 "obtelo en http://www.vcdimager.org"
+
+#: projects/k3bvolumenamewidget.cpp:57
+msgid "Volume Name:"
+msgstr "Nome do volume:"
 
 #: rip/categories.cpp:22
 msgid "Blues"
@@ -9021,436 +9020,10 @@ msgstr "Rock"
 msgid "Soundtrack"
 msgstr "Banda sonora"
 
-#: rip/k3bcddbpatternwidget.cpp:53
-#, fuzzy
-#| msgid "%A - %T/%n - !a='%A'{%a - }%t"
-msgctxt ""
-"Please do NOT modify/translate the quotes, they are part of the pattern!"
-msgid "%A - %T/%n - !a='%A'{%a - }%t"
-msgstr "%A - %T/%n - !a='%A'{%a - }%t"
-
-#: rip/k3bcddbpatternwidget.cpp:54
-msgid "%{albumartist} - %{albumtitle}/%{number} - %{artist} - %{title}"
-msgstr "%{albumartist} - %{albumtitle}/%{number} - %{artist} - %{title}"
-
-#: rip/k3bcddbpatternwidget.cpp:55
-msgid "%{genre}/%{albumartist} - %{albumtitle}/Track%{number}"
-msgstr "%{genre}/%{albumartist} - %{albumtitle}/Pista%{number}"
-
-#: rip/k3bcddbpatternwidget.cpp:56
-msgid "music/ripped-tracks/%a - %t"
-msgstr "música/pistas%20extraídas/%a - %t"
-
-#: rip/k3bcddbpatternwidget.cpp:58
-msgid "%{albumartist} - %{albumtitle}"
-msgstr "%{albumartist} - %{albumtitle}"
-
-#: rip/k3bcddbpatternwidget.cpp:59 rip/k3baudiorippingdialog.cpp:427
-msgid "Playlist"
-msgstr "Lista de reprodución"
-
-#: rip/k3bcddbpatternwidget.cpp:60
-msgid "playlists/%{albumartist}/%{albumtitle    }"
-msgstr "listas%20de%20temas/%{albumartist}/%{albumtitle    }"
-
-#: rip/k3bcddbpatternwidget.cpp:127
-#, fuzzy
-#| msgid ""
-#| "<p><b>Pattern special strings:</b><p>The following strings will be "
-#| "replaced with their respective meaning in every track name.<br><em>Hint:</"
-#| "em> %A differs from %a only on soundtracks or compilations.<p><table "
-#| "border=\"0\"><tr><td></td><td><em>Meaning</em></td><td><em>Alternatives</"
-#| "em></td></tr><tr><td>%a</td><td>artist of the track</td><td>%{a} or %"
-#| "{artist}</td></tr><tr><td>%t</td><td>title of the track</td><td>%{t} or %"
-#| "{title}</td></tr><tr><td>%n</td><td>track number</td><td>%{n} or %{number}"
-#| "</td></tr><tr><td>%y</td><td>year of the CD</td><td>%{y} or %{year}</td></"
-#| "tr><tr><td>%c</td><td>extended track information</td><td>%{c} or %"
-#| "{comment}</td></tr><tr><td>%g</td><td>genre of the CD</td><td>%{g} or %"
-#| "{genre}</td></tr><tr><td>%A</td><td>album artist</td><td>%{A} or %"
-#| "{albumartist}</td></tr><tr><td>%T</td><td>album title</td><td>%{T} or %"
-#| "{albumtitle}</td></tr><tr><td>%C</td><td>extended CD information</td><td>%"
-#| "{C} or %{albumcomment}</td></tr><tr><td>%d</td><td>current date</td><td>%"
-#| "{d} or %{date}</td></tr></table>"
-msgid ""
-"<p><b>Pattern special strings:</b><p>The following strings will be replaced "
-"with their respective meaning in every track name.<br><em>Hint:</em> %A "
-"differs from %a only on soundtracks or compilations.<p><table border=\"0"
-"\"><tr><td></td><td><em>Meaning</em></td><td><em>Alternatives</em></td></"
-"tr><tr><td>%a</td><td>artist of the track</td><td>%{a} or %{artist}</td></"
-"tr><tr><td>%t</td><td>title of the track</td><td>%{t} or %{title}</td></"
-"tr><tr><td>%n</td><td>track number</td><td>%{n} or %{number}</td></"
-"tr><tr><td>%y</td><td>year of the CD</td><td>%{y} or %{year}</td></"
-"tr><tr><td>%c</td><td>extended track information</td><td>%{c} or %{comment}</"
-"td></tr><tr><td>%g</td><td>genre of the CD</td><td>%{g} or %{genre}</td></"
-"tr><tr><td>%A</td><td>album artist</td><td>%{A} or %{albumartist}</td></"
-"tr><tr><td>%T</td><td>album title</td><td>%{T} or %{albumtitle}</td></"
-"tr><tr><td>%C</td><td>extended CD information</td><td>%{C} or %{albumcomment}"
-"</td></tr><tr><td>%d</td><td>current date</td><td>%{d} or %{date}</td></"
-"tr><tr><td>%e</td><td>file extension (if left out, it is added automatically)"
-"</td><td>%{e} or %{ext}</td></tr></table>"
-msgstr ""
-"<p><b>Cadeas de substitución:</b><p>As seguíntes cadeas serán substituídas "
-"polo seu respectivo significado en cada nome de pista.<br><em>Axuda:</em> %A "
-"é distinto de %a só en bandas sonoras e recopilatorios. <p><table border=\"0"
-"\"><tr><td></td><td><em>Significado</em></td><td><em>Alternativas</em></td></"
-"tr><tr><td>%a%a</td><td>artista da pista</td><td>%{a} ou %{artist}</td></"
-"tr><tr><td>%t</td><td>título da pista</td><td>%{t} ou %{title}</td></"
-"tr><tr><td>%n</td><td>número da pista</td><td>%{n} ou %{number}</td></"
-"tr><tr><td>%y</td><td>ano do CD</td><td>%{y} ou %{year}</td></tr><tr><td>%c</"
-"td><td>información ampliada acerca da pista</td><td>%{c} ou %{comment}</td></"
-"tr><tr><td>%g</td><td>estilo musical do CD</td><td>%{g} ou %{genre}</td></"
-"tr><tr><td>%A</td><td>artista do álbum</td><td>%{A} ou %{albumartist}</td></"
-"tr><tr><td>%T</td><td>título do álbum</td><td>%{T} ou %{albumtitle}</td></"
-"tr><tr><td>%C</td><td>información ampliada acerca do CD</td><td>%{C} ou %"
-"{albumcomment}</td></tr><tr><td>%d</td><td>data actual</td><td>%{d} ou %"
-"{date}</td></tr></table>"
-
-#: rip/k3bcddbpatternwidget.cpp:153
-#, fuzzy, c-format
-#| msgid ""
-#| "<p><b>Conditional inclusion:</b><p>These patterns make it possible to "
-#| "selectively include texts, depending on the value of CDDB entries. You "
-#| "can choose only to include or exclude texts if one of the entries is "
-#| "empty, or if it has a specific value. Examples:<ul><li>@T{TEXT} includes "
-#| "TEXT if the album title is specified<li>!T{TEXT} includes TEXT if the "
-#| "album title is not specified<li>@C='Soundtrack'{TEXT} includes TEXT if "
-#| "the CD's extended information is named Soundtrack<li>!"
-#| "C='Soundtrack'{TEXT} includes TEXT if the CD's extended information is "
-#| "anything else but Soundtrack<li>It is also possible to include special "
-#| "strings in texts and conditions, e.g. !a='%A'{%a} only includes the "
-#| "title's artist information if it does not differ from the album artist.</"
-#| "ul><p>Conditional includes make use of the same characters as the special "
-#| "strings, which means that the X in @X{...} can be one character out of "
-#| "[atnycgATCd]."
-msgctxt ""
-"Please do NOT modify/translate the quotes, they are part of the pattern!"
-msgid ""
-"<p><b>Conditional inclusion:</b><p>These patterns make it possible to "
-"selectively include texts, depending on the value of CDDB entries. You can "
-"choose only to include or exclude texts if one of the entries is empty, or "
-"if it has a specific value. Examples:<ul><li>@T{TEXT} includes TEXT if the "
-"album title is specified<li>!T{TEXT} includes TEXT if the album title is not "
-"specified<li>@C='Soundtrack'{TEXT} includes TEXT if the CD's extended "
-"information is named Soundtrack<li>!C='Soundtrack'{TEXT} includes TEXT if "
-"the CD's extended information is anything else but Soundtrack<li>It is also "
-"possible to include special strings in texts and conditions, e.g. !a='%A'{%"
-"a} only includes the title's artist information if it does not differ from "
-"the album artist.</ul><p>Conditional includes make use of the same "
-"characters as the special strings, which means that the X in @X{...} can be "
-"one character out of [atnycgATCd]."
-msgstr ""
-"<p><b>Inclusión condicionada:</b><p>Estes padróns posibilitan o incluir "
-"textos de xeito condicional, dependendo das entradas na CDDB. Pode escoller "
-"incluir ou excluir textos se unha das entradas está vacía, ou se ten un "
-"valor concreto. Exemplos: <ul><li>@T{TEXTO} inclúe TEXTO de especificarse o "
-"título do álbum <li>!T{TEXT} inclúe TEXTO caso de non especificarse o título "
-"do álbum <li>@C='Soundtrack'{TEXTO} inclúe TEXTO se a información ampliada "
-"acerca do CD é Soundtrack <li>!C='Soundtrack'{TEXTO} inclúe TEXTO se a "
-"información ampliada acerca do CD é diferente de Sountrack <li>Tamén é "
-"posíbel incluir cadeas especiais nos textos e condicións, p.ex. !a='%A'{%a} "
-"só inclúe a información do artista do título se non é diferente do artista "
-"do álbum.</ul> <p>As inclusións condicionadas usan os mesmos caracteres que "
-"as cadeas especiais, o que significa que o X en @X{...} pode ser un caracter "
-"do conxunto [atnycgATCd]."
-
 #: rip/k3bpatternparser.cpp:133
 #, kde-format
 msgid "Track %1"
 msgstr "Pista %1"
-
-#: rip/k3bvideocdrip.cpp:62
-msgid "Job canceled by user."
-msgstr "Traballo cancelado polo usuario."
-
-#: rip/k3bvideocdrip.cpp:91
-msgid "Check files"
-msgstr "Comprobar os ficheiros"
-
-#: rip/k3bvideocdrip.cpp:101
-#, kde-format
-msgid "Could not find %1 executable."
-msgstr "Non foi posíbel atopar o executábel %1."
-
-#: rip/k3bvideocdrip.cpp:102
-#, fuzzy, kde-format
-#| msgid "To rip VideoCD's you must install VcdImager Version %1."
-msgid "To rip Video CDs you have to install VcdImager Version %1."
-msgstr "Para extraer o Vídeo CD debe instalar VcdImager versión %1."
-
-#: rip/k3bvideocdrip.cpp:103
-#, fuzzy
-#| msgid ""
-#| "You can find this on your distribution disks or download it from http://"
-#| "www.vcdimager.org"
-msgid ""
-"You can find this on your distribution’s software repository or download it "
-"from http://www.vcdimager.org"
-msgstr ""
-"Pode atopalo nos discos da súa distribución ou obtelo en http://www."
-"vcdimager.org"
-
-#: rip/k3bvideocdrip.cpp:111
-#, fuzzy, kde-format
-#| msgid "%1 executable too old! Need version %2 or greater"
-msgid "%1 executable too old: need version %2 or greater."
-msgstr "O executábel de %1 é moi antigo! Precísase a versión %2 ou posterior"
-
-#: rip/k3bvideocdrip.cpp:112
-msgid ""
-"You can find this on your distribution disks or download it from http://www."
-"vcdimager.org"
-msgstr ""
-"Pode atopalo nos discos da súa distribución ou obtelo en http://www."
-"vcdimager.org"
-
-#: rip/k3bvideocdrip.cpp:119
-#, fuzzy, kde-format
-#| msgid "Using %1 %2 - Copyright (C) %3"
-msgid "Using %1 %2 – Copyright © %3"
-msgstr "A empregar %1 %2 - Copyright (C) %3"
-
-#: rip/k3bvideocdrip.cpp:170
-msgid "Extracting"
-msgstr "A extraer"
-
-#: rip/k3bvideocdrip.cpp:171
-msgid "Start extracting."
-msgstr "Comeza a extracción."
-
-#: rip/k3bvideocdrip.cpp:172
-#, kde-format
-msgid "Extract files from %1 to %2."
-msgstr "Extraer ficheiros de %1 en %2."
-
-#: rip/k3bvideocdrip.cpp:177
-#, kde-format
-msgid "Could not start %1."
-msgstr "Non foi posíbel comezar %1."
-
-#: rip/k3bvideocdrip.cpp:267
-msgid "Files successfully extracted."
-msgstr "Os ficheiros foron extraídos satisfactoriamente."
-
-#: rip/k3bvideocdrip.cpp:270
-#, kde-format
-msgid "%1 returned an unknown error (code %2)."
-msgstr "%1 devolveu un erro descoñecido (código %2)."
-
-#: rip/k3bvideocdrip.cpp:271
-msgid "Please send me an email with the last output..."
-msgstr "Por favor, envíeme un correo electrónico coa última saída..."
-
-#: rip/k3bvideocdrip.cpp:277
-#, kde-format
-msgid "%1 did not exit cleanly."
-msgstr "%1 non saíu limpamente."
-
-#: rip/k3bvideocdrip.cpp:291
-#, kde-format
-msgid "%1 encountered non-form2 sector"
-msgstr "%1 atopou un sector non form2"
-
-#: rip/k3bvideocdrip.cpp:292
-msgid "leaving loop"
-msgstr "saíndo do ciclo"
-
-#: rip/k3bvideocdrip.cpp:300
-msgid "detected extended VCD2.0 PBC files"
-msgstr "detectáronse ficheiros PBC VCD2.0 ampliado"
-
-#: rip/k3bvideocdrip.cpp:327 rip/k3bvideocdrip.cpp:345
-#, kde-format
-msgid "Extracting %1"
-msgstr "A extraer %1"
-
-#: rip/k3bvideocdrip.cpp:338
-#, kde-format
-msgid "Extracting %1 to %2"
-msgstr "A extraer %1 en %2"
-
-#: rip/k3bvideocdrippingdialog.cpp:50
-msgid "Video CD Ripping"
-msgstr "Extracción do Vídeo CD"
-
-#: rip/k3bvideocdrippingdialog.cpp:74
-#, fuzzy
-#| msgid "Destination Directory"
-msgid "Destination Folder"
-msgstr "Cartafol de destino"
-
-#: rip/k3bvideocdrippingdialog.cpp:79
-msgid "Rip files to:"
-msgstr "Extraer os ficheiros en:"
-
-#: rip/k3bvideocdrippingdialog.cpp:86
-#, fuzzy
-#| msgid "Free space in directory:"
-msgid "Free space in folder:"
-msgstr "Espazo libre no cartafol:"
-
-#: rip/k3bvideocdrippingdialog.cpp:91
-msgid "Necessary storage size:"
-msgstr "Tamaño de almacenaxe necesario:"
-
-#: rip/k3bvideocdrippingdialog.cpp:103
-msgid "Ignore /EXT/PSD_X.VCD"
-msgstr "Ignorar /EXT/PSD_X.VCD"
-
-#: rip/k3bvideocdrippingdialog.cpp:104
-msgid "Use 2336 byte sector mode for image file"
-msgstr "Empregar o modo de sectores de 2336 bytes para o ficheiro imaxe"
-
-#: rip/k3bvideocdrippingdialog.cpp:108
-msgid "Extract XML structure"
-msgstr "Extraer a estrutura XML"
-
-#: rip/k3bvideocdrippingdialog.cpp:118 rip/k3bvideocdview.cpp:386
-#: rip/videodvd/k3bvideodvdrippingview.cpp:347 rip/k3baudiocdview.cpp:235
-#: rip/k3baudiorippingdialog.cpp:200
-msgid "Start Ripping"
-msgstr "Comezar a extracción"
-
-#: rip/k3bvideocdrippingdialog.cpp:118
-msgid "Starts extracting the selected VideoCd tracks"
-msgstr "Comeza a extracción das pistas de VideoCd escollidas"
-
-#: rip/k3bvideocdrippingdialog.cpp:129
-#, fuzzy, kde-format
-#| msgid "Free space on destination directory: %1"
-msgid "Free space in destination folder: %1"
-msgstr "Espazo libre no cartafol de destino: %1"
-
-#: rip/k3bvideocdrippingdialog.cpp:131
-msgid "Necessary space for extracted files"
-msgstr "Espazo preciso para os ficheiros extraídos"
-
-#: rip/k3bvideocdrippingdialog.cpp:133
-msgid "Ignore extended PSD"
-msgstr "Ignorar o PSD ampliado"
-
-#: rip/k3bvideocdrippingdialog.cpp:134
-msgid ""
-"<p>Ignore extended PSD (located in the ISO-9660 filesystem under `/EXT/PSD_X."
-"VCD') and use the <em>standard</em> PSD.</p>"
-msgstr ""
-"<p>Ignorar o PSD ampliado (localizado no sistema de ficheiros ISO-9660 baixo "
-"«/EXT/PSD_X.VCD») e empregar o PSD <em>estándar</em>.</p>"
-
-#: rip/k3bvideocdrippingdialog.cpp:136
-msgid "Assume a 2336-byte sector mode"
-msgstr "Asumir un modo de sectores de 2336 bites"
-
-#: rip/k3bvideocdrippingdialog.cpp:137
-msgid ""
-"<p>This option only makes sense if you are reading from a BIN CD disk image. "
-"This indicates to `vcdxrip' to assume a 2336-byte sector mode for image file."
-"</p><b>Note: This option is slated to disappear.</b>"
-msgstr ""
-"<p>Esta opción só ten sentido se está a ler unha imaxe de disco BIN CD. Isto "
-"indícalle a «vcdxrip» que asuma o modo de sectores de 2336 bytes para o "
-"ficheiro imaxe.</p><b>Nota: esta opción vai desaparecer.</b>"
-
-#: rip/k3bvideocdrippingdialog.cpp:140
-msgid "Create XML description file."
-msgstr "Crear o ficheiro XML de descrición."
-
-#: rip/k3bvideocdrippingdialog.cpp:141
-msgid ""
-"<p>This option creates an XML description file with all video CD information."
-"</p><p>This file will always contain all of the information.</p><p>Example: "
-"If you only extract sequences, the description file will also hold the "
-"information for files and segments.</p><p>The filename is the same as the "
-"video CD name, with a .xml extension. The default is VIDEOCD.xml.</p>"
-msgstr ""
-"<p>Esta opción crea un ficheiro XML de descrición para toda a información do "
-"Vídeo CD.</p><p>Este ficheiro sempre conterá toda a información.</"
-"p><p>Exemplo: Se só extrae secuencias, o ficheiro de descrición conterá "
-"tamén a información dos ficheiros e segmentos.</p><p>O nome do ficheiro é o "
-"mesmo que o do Vídeo CD, cunha extensión .xml. Por omisión é VIDEOCD.xml.</p>"
-
-#: rip/k3bvideocdrippingdialog.cpp:173
-msgid "Continue although the folder is not empty?"
-msgstr "Continuar aínda que o cartafol non estexa vacío?"
-
-#: rip/k3bvideocdrippingdialog.cpp:175
-#: rip/videodvd/k3bvideodvdrippingdialog.cpp:518
-#: rip/k3baudioprojectconvertingdialog.cpp:196
-#: rip/k3baudiorippingdialog.cpp:266
-msgid "Files Exist"
-msgstr "O ficheiro xa existe"
-
-#: rip/k3bvideocdview.cpp:208
-msgid "Item Name"
-msgstr "Nome do ítem"
-
-#: rip/k3bvideocdview.cpp:209
-msgid "Extracted Name"
-msgstr "Nome extraído"
-
-#: rip/k3bvideocdview.cpp:269 rip/k3bvideocdview.cpp:433
-msgid "Video CD MPEG tracks"
-msgstr "Pistas MPEG do Vídeo CD"
-
-#: rip/k3bvideocdview.cpp:270
-msgid "Video CD DATA track"
-msgstr "Pista de DATOS do Vídeo CD"
-
-#: rip/k3bvideocdview.cpp:286
-#, kde-format
-msgid "Sequence-%1"
-msgstr "Secuencia-%1"
-
-#: rip/k3bvideocdview.cpp:291 rip/k3bvideocdview.cpp:334
-#: rip/k3bvideocdview.cpp:439
-msgid "Files"
-msgstr "Ficheiros"
-
-#: rip/k3bvideocdview.cpp:292 rip/k3bvideocdview.cpp:445
-msgid "Segments"
-msgstr "Segmentos"
-
-#: rip/k3bvideocdview.cpp:366 rip/k3baudiocdview.cpp:184
-#: rip/k3baudioprojectconvertingdialog.cpp:105
-#: rip/k3baudiorippingdialog.cpp:124
-#, kde-format
-msgid "1 track (%2)"
-msgid_plural "%1 tracks (%2)"
-msgstr[0] "1 pista (%2)"
-msgstr[1] "%1 pistas (%2)"
-
-#: rip/k3bvideocdview.cpp:374
-msgid "Check All"
-msgstr "Sinalar todo"
-
-#: rip/k3bvideocdview.cpp:377
-msgid "Uncheck All"
-msgstr "Desmarcar todo"
-
-#: rip/k3bvideocdview.cpp:380
-msgid "Check Track"
-msgstr "Escoller a pista"
-
-#: rip/k3bvideocdview.cpp:383
-msgid "Uncheck Track"
-msgstr "Anular a escolla da pista"
-
-#: rip/k3bvideocdview.cpp:389
-#, fuzzy
-#| msgid "Hidden Files"
-msgid "View Files"
-msgstr "Ficheiros ocultos"
-
-#: rip/k3bvideocdview.cpp:391
-msgid "View plain data files"
-msgstr ""
-
-#: rip/k3bvideocdview.cpp:452 rip/k3baudiocdview.cpp:319
-msgid "Please select the tracks to rip."
-msgstr "Por favor, escolla as pistas a extraer."
-
-#: rip/k3bvideocdview.cpp:452 rip/k3baudiocdview.cpp:320
-msgid "No Tracks Selected"
-msgstr "Non se escolleu ningunha pista"
 
 #: rip/videodvd/k3bvideodvdaudiomodel.cpp:155
 #: rip/videodvd/k3bvideodvdtitlemodel.cpp:221
@@ -9533,51 +9106,11 @@ msgstr "AC3 paso a través"
 msgid "Do you want to overwrite these files?"
 msgstr "Desexa sobrescribir estes ficheiros?"
 
-#: rip/videodvd/k3bvideodvdrippingjob.cpp:110
-msgid "Ripping Video DVD Titles"
-msgstr "A extraer os títulos do Video DVD"
-
-#: rip/videodvd/k3bvideodvdrippingjob.cpp:116
-#, kde-format
-msgid "Transcoding 1 title to %2/%3"
-msgid_plural "Transcoding %1 titles to %2/%3"
-msgstr[0] "A transcodificar 1 título para %2/%3"
-msgstr[1] "A transcodificar %1 títulos para %2/%3"
-
-#: rip/videodvd/k3bvideodvdrippingjob.cpp:145
-#, fuzzy, kde-format
-#| msgid "Successfully ripped title %1"
-msgid "Successfully ripped title %1 to '%2'"
-msgstr "Extraeuse satisfactoriamente o título %1"
-
-#: rip/videodvd/k3bvideodvdrippingjob.cpp:150
-#, kde-format
-msgid "Failed to rip title %1"
-msgstr "Fallou a extracción do título %1"
-
-#: rip/videodvd/k3bvideodvdrippingjob.cpp:180
-#, kde-format
-msgid "Determined clipping values for title %1"
-msgstr "Valores de recorte determinados para o título %1"
-
-#: rip/videodvd/k3bvideodvdrippingjob.cpp:181
-#, kde-format
-msgid "Top: %1, Bottom: %2"
-msgstr "Cume: %1, Fondo: %2"
-
-#: rip/videodvd/k3bvideodvdrippingjob.cpp:182
-#, kde-format
-msgid "Left: %1, Right: %2"
-msgstr "Esquerda: %1, Dereita: %2"
-
-#: rip/videodvd/k3bvideodvdrippingjob.cpp:189
-msgid "Insane clipping values. No clipping will be done at all."
-msgstr "Os valores de recorte son absurdos. Non se fará ningún recorte."
-
-#: rip/videodvd/k3bvideodvdrippingjob.cpp:199
-#, kde-format
-msgid "Failed to determine clipping values for title %1"
-msgstr "Fallou a determinación dos valores de recorte do título %1"
+#: rip/videodvd/k3bvideodvdrippingdialog.cpp:518
+#: rip/k3baudioprojectconvertingdialog.cpp:196
+#: rip/k3baudiorippingdialog.cpp:266 rip/k3bvideocdrippingdialog.cpp:175
+msgid "Files Exist"
+msgstr "O ficheiro xa existe"
 
 #: rip/videodvd/k3bvideodvdtitlemodel.cpp:49
 #, fuzzy, kde-format
@@ -9642,6 +9175,52 @@ msgstr "anamórfico"
 #: rip/videodvd/k3bvideodvdtitlemodel.cpp:315
 msgid "Subpicture"
 msgstr "Imaxe subposta"
+
+#: rip/videodvd/k3bvideodvdrippingjob.cpp:110
+msgid "Ripping Video DVD Titles"
+msgstr "A extraer os títulos do Video DVD"
+
+#: rip/videodvd/k3bvideodvdrippingjob.cpp:116
+#, kde-format
+msgid "Transcoding 1 title to %2/%3"
+msgid_plural "Transcoding %1 titles to %2/%3"
+msgstr[0] "A transcodificar 1 título para %2/%3"
+msgstr[1] "A transcodificar %1 títulos para %2/%3"
+
+#: rip/videodvd/k3bvideodvdrippingjob.cpp:145
+#, fuzzy, kde-format
+#| msgid "Successfully ripped title %1"
+msgid "Successfully ripped title %1 to '%2'"
+msgstr "Extraeuse satisfactoriamente o título %1"
+
+#: rip/videodvd/k3bvideodvdrippingjob.cpp:150
+#, kde-format
+msgid "Failed to rip title %1"
+msgstr "Fallou a extracción do título %1"
+
+#: rip/videodvd/k3bvideodvdrippingjob.cpp:180
+#, kde-format
+msgid "Determined clipping values for title %1"
+msgstr "Valores de recorte determinados para o título %1"
+
+#: rip/videodvd/k3bvideodvdrippingjob.cpp:181
+#, kde-format
+msgid "Top: %1, Bottom: %2"
+msgstr "Cume: %1, Fondo: %2"
+
+#: rip/videodvd/k3bvideodvdrippingjob.cpp:182
+#, kde-format
+msgid "Left: %1, Right: %2"
+msgstr "Esquerda: %1, Dereita: %2"
+
+#: rip/videodvd/k3bvideodvdrippingjob.cpp:189
+msgid "Insane clipping values. No clipping will be done at all."
+msgstr "Os valores de recorte son absurdos. Non se fará ningún recorte."
+
+#: rip/videodvd/k3bvideodvdrippingjob.cpp:199
+#, kde-format
+msgid "Failed to determine clipping values for title %1"
+msgstr "Fallou a determinación dos valores de recorte do título %1"
 
 #: rip/videodvd/k3bvideodvdrippingview.cpp:87
 #, fuzzy
@@ -9730,6 +9309,12 @@ msgstr "Escoller a pista"
 #| msgid "Uncheck Track"
 msgid "Uncheck Tracks"
 msgstr "Anular a escolla da pista"
+
+#: rip/videodvd/k3bvideodvdrippingview.cpp:347
+#: rip/k3baudiorippingdialog.cpp:200 rip/k3baudiocdview.cpp:235
+#: rip/k3bvideocdrippingdialog.cpp:118 rip/k3bvideocdview.cpp:386
+msgid "Start Ripping"
+msgstr "Comezar a extracción"
 
 #: rip/videodvd/k3bvideodvdrippingview.cpp:349
 msgid "Open the Video DVD ripping dialog"
@@ -9912,139 +9497,18 @@ msgstr "Título"
 msgid "Data Track"
 msgstr "A reproducir a pista"
 
-#: rip/k3baudiocdview.cpp:150
-msgid "Searching for Artist information..."
-msgstr "A procurar información do artista..."
-
-#: rip/k3baudiocdview.cpp:206
-msgid "Audio CD"
-msgstr "CD de son"
-
-#: rip/k3baudiocdview.cpp:223
-#, fuzzy
-#| msgid "Edit Track cddb Info"
-msgid "Edit Track Info..."
-msgstr "Editar a información da pista en cddb"
-
-#: rip/k3baudiocdview.cpp:224
-msgid "Edit current track information"
-msgstr ""
-
-#: rip/k3baudiocdview.cpp:229
-#, fuzzy
-#| msgid "Edit Album cddb Info"
-msgid "Edit Album Info..."
-msgstr "Editar a información do álbum en cddb"
-
-#: rip/k3baudiocdview.cpp:230
-#, fuzzy
-#| msgid "Edit Album cddb Info"
-msgid "Edit album information"
-msgstr "Editar a información do álbum en cddb"
-
-#: rip/k3baudiocdview.cpp:236
-#, fuzzy
-#| msgid "Start the burning process"
-msgid "Start audio ripping process"
-msgstr "Comeza o proceso de gravación"
-
-#: rip/k3baudiocdview.cpp:241
-#, fuzzy
-#| msgid "Query Cddb"
-msgid "Query CD Database"
-msgstr "Pesquisar en cddb"
-
-#: rip/k3baudiocdview.cpp:242
-msgid "Look for information on CDDB"
-msgstr ""
-
-#: rip/k3baudiocdview.cpp:247
-#, fuzzy
-#| msgid "Use CD-Text"
-msgid "Read CD-Text"
-msgstr "Empregar o CD-Text"
-
-#: rip/k3baudiocdview.cpp:248
-msgid "Read CD-Text information"
-msgstr ""
-
-#: rip/k3baudiocdview.cpp:253
-msgid "Load CD Info"
-msgstr ""
-
-#: rip/k3baudiocdview.cpp:254
-#, fuzzy
-#| msgid "Display generic medium information"
-msgid "Load track and album information"
-msgstr "Mostrar información xenérica do disco"
-
-#: rip/k3baudiocdview.cpp:261
-#, fuzzy
-#| msgid "Save Cddb Entry Locally"
-msgid "Save CD Info Locally"
-msgstr "Gardar localmente a entrada en cddb"
-
-#: rip/k3baudiocdview.cpp:262
-msgid "Save track and album information to the local CDDB cache"
-msgstr ""
-
-#: rip/k3baudiocdview.cpp:267
-#, fuzzy
-#| msgid "New &Data Project"
-msgid "Show Data Part"
-msgstr "Novo proxecto de CD de &datos"
-
-#: rip/k3baudiocdview.cpp:268
-msgid "Mounts the data part of CD"
-msgstr ""
-
-#: rip/k3baudiocdview.cpp:340
-#, fuzzy
-#| msgid "Merge Tracks"
-msgid "Multiple Tracks"
-msgstr "Xuntar as pistas"
-
-#: rip/k3baudiocdview.cpp:342
-#, fuzzy, kde-format
-#| msgid "Cddb Track %1"
-msgid "CDDB Track %1"
-msgstr "Pista %1 de Cddb"
-
-#: rip/k3baudiocdview.cpp:356 rip/k3baudiocdview.cpp:413
-msgid "Title:"
-msgstr "Título:"
-
-#: rip/k3baudiocdview.cpp:358 rip/k3baudiocdview.cpp:414
-msgid "Artist:"
-msgstr "Artista:"
-
-#: rip/k3baudiocdview.cpp:359 rip/k3baudiocdview.cpp:415
-msgid "Extra info:"
-msgstr "Información adicional:"
-
-#: rip/k3baudiocdview.cpp:376
-msgid "Album Cddb"
-msgstr "Cddb de álbuns"
-
-#: rip/k3baudiocdview.cpp:416
-msgid "Genre:"
-msgstr "Estilo:"
-
-#: rip/k3baudiocdview.cpp:417
-msgid "Year:"
-msgstr "Ano:"
-
-#: rip/k3baudiocdview.cpp:419
-msgid "Category:"
-msgstr "Categoría:"
-
-#: rip/k3baudioconvertingoptionwidget.cpp:174
-msgid "Wave"
-msgstr "Wave"
-
 #: rip/k3baudioprojectconvertingdialog.cpp:104
 msgid "Audio Project Conversion"
 msgstr "Conversión do proxecto de audio"
+
+#: rip/k3baudioprojectconvertingdialog.cpp:105
+#: rip/k3baudiorippingdialog.cpp:124 rip/k3baudiocdview.cpp:184
+#: rip/k3bvideocdview.cpp:366
+#, kde-format
+msgid "1 track (%2)"
+msgid_plural "%1 tracks (%2)"
+msgstr[0] "1 pista (%2)"
+msgstr[1] "%1 pistas (%2)"
 
 #: rip/k3baudioprojectconvertingdialog.cpp:125
 #, fuzzy
@@ -10219,6 +9683,10 @@ msgstr "Ficheiro CUE"
 msgid "Track%1"
 msgstr "Pista%1"
 
+#: rip/k3baudiorippingdialog.cpp:427 rip/k3bcddbpatternwidget.cpp:59
+msgid "Playlist"
+msgstr "Lista de reprodución"
+
 #: rip/k3bmassaudioencodingjob.cpp:159
 #, kde-format
 msgid "1 track (encoding to %2)"
@@ -10257,6 +9725,536 @@ msgstr "A escribir a lista de reprodución en %1."
 #, kde-format
 msgid "Writing cue file to %1."
 msgstr "A escribir o ficheiro imaxe en %1."
+
+#: rip/k3baudiocdview.cpp:150
+msgid "Searching for Artist information..."
+msgstr "A procurar información do artista..."
+
+#: rip/k3baudiocdview.cpp:206
+msgid "Audio CD"
+msgstr "CD de son"
+
+#: rip/k3baudiocdview.cpp:223
+#, fuzzy
+#| msgid "Edit Track cddb Info"
+msgid "Edit Track Info..."
+msgstr "Editar a información da pista en cddb"
+
+#: rip/k3baudiocdview.cpp:224
+msgid "Edit current track information"
+msgstr ""
+
+#: rip/k3baudiocdview.cpp:229
+#, fuzzy
+#| msgid "Edit Album cddb Info"
+msgid "Edit Album Info..."
+msgstr "Editar a información do álbum en cddb"
+
+#: rip/k3baudiocdview.cpp:230
+#, fuzzy
+#| msgid "Edit Album cddb Info"
+msgid "Edit album information"
+msgstr "Editar a información do álbum en cddb"
+
+#: rip/k3baudiocdview.cpp:236
+#, fuzzy
+#| msgid "Start the burning process"
+msgid "Start audio ripping process"
+msgstr "Comeza o proceso de gravación"
+
+#: rip/k3baudiocdview.cpp:241
+#, fuzzy
+#| msgid "Query Cddb"
+msgid "Query CD Database"
+msgstr "Pesquisar en cddb"
+
+#: rip/k3baudiocdview.cpp:242
+msgid "Look for information on CDDB"
+msgstr ""
+
+#: rip/k3baudiocdview.cpp:247
+#, fuzzy
+#| msgid "Use CD-Text"
+msgid "Read CD-Text"
+msgstr "Empregar o CD-Text"
+
+#: rip/k3baudiocdview.cpp:248
+msgid "Read CD-Text information"
+msgstr ""
+
+#: rip/k3baudiocdview.cpp:253
+msgid "Load CD Info"
+msgstr ""
+
+#: rip/k3baudiocdview.cpp:254
+#, fuzzy
+#| msgid "Display generic medium information"
+msgid "Load track and album information"
+msgstr "Mostrar información xenérica do disco"
+
+#: rip/k3baudiocdview.cpp:261
+#, fuzzy
+#| msgid "Save Cddb Entry Locally"
+msgid "Save CD Info Locally"
+msgstr "Gardar localmente a entrada en cddb"
+
+#: rip/k3baudiocdview.cpp:262
+msgid "Save track and album information to the local CDDB cache"
+msgstr ""
+
+#: rip/k3baudiocdview.cpp:267
+#, fuzzy
+#| msgid "New &Data Project"
+msgid "Show Data Part"
+msgstr "Novo proxecto de CD de &datos"
+
+#: rip/k3baudiocdview.cpp:268
+msgid "Mounts the data part of CD"
+msgstr ""
+
+#: rip/k3baudiocdview.cpp:319 rip/k3bvideocdview.cpp:452
+msgid "Please select the tracks to rip."
+msgstr "Por favor, escolla as pistas a extraer."
+
+#: rip/k3baudiocdview.cpp:320 rip/k3bvideocdview.cpp:452
+msgid "No Tracks Selected"
+msgstr "Non se escolleu ningunha pista"
+
+#: rip/k3baudiocdview.cpp:340
+#, fuzzy
+#| msgid "Merge Tracks"
+msgid "Multiple Tracks"
+msgstr "Xuntar as pistas"
+
+#: rip/k3baudiocdview.cpp:342
+#, fuzzy, kde-format
+#| msgid "Cddb Track %1"
+msgid "CDDB Track %1"
+msgstr "Pista %1 de Cddb"
+
+#: rip/k3baudiocdview.cpp:356 rip/k3baudiocdview.cpp:413
+msgid "Title:"
+msgstr "Título:"
+
+#: rip/k3baudiocdview.cpp:358 rip/k3baudiocdview.cpp:414
+msgid "Artist:"
+msgstr "Artista:"
+
+#: rip/k3baudiocdview.cpp:359 rip/k3baudiocdview.cpp:415
+msgid "Extra info:"
+msgstr "Información adicional:"
+
+#: rip/k3baudiocdview.cpp:376
+msgid "Album Cddb"
+msgstr "Cddb de álbuns"
+
+#: rip/k3baudiocdview.cpp:416
+msgid "Genre:"
+msgstr "Estilo:"
+
+#: rip/k3baudiocdview.cpp:417
+msgid "Year:"
+msgstr "Ano:"
+
+#: rip/k3baudiocdview.cpp:419
+msgid "Category:"
+msgstr "Categoría:"
+
+#: rip/k3baudioconvertingoptionwidget.cpp:174
+msgid "Wave"
+msgstr "Wave"
+
+#: rip/k3bcddbpatternwidget.cpp:53
+#, fuzzy
+#| msgid "%A - %T/%n - !a='%A'{%a - }%t"
+msgctxt ""
+"Please do NOT modify/translate the quotes, they are part of the pattern!"
+msgid "%A - %T/%n - !a='%A'{%a - }%t"
+msgstr "%A - %T/%n - !a='%A'{%a - }%t"
+
+#: rip/k3bcddbpatternwidget.cpp:54
+msgid "%{albumartist} - %{albumtitle}/%{number} - %{artist} - %{title}"
+msgstr "%{albumartist} - %{albumtitle}/%{number} - %{artist} - %{title}"
+
+#: rip/k3bcddbpatternwidget.cpp:55
+msgid "%{genre}/%{albumartist} - %{albumtitle}/Track%{number}"
+msgstr "%{genre}/%{albumartist} - %{albumtitle}/Pista%{number}"
+
+#: rip/k3bcddbpatternwidget.cpp:56
+msgid "music/ripped-tracks/%a - %t"
+msgstr "música/pistas%20extraídas/%a - %t"
+
+#: rip/k3bcddbpatternwidget.cpp:58
+msgid "%{albumartist} - %{albumtitle}"
+msgstr "%{albumartist} - %{albumtitle}"
+
+#: rip/k3bcddbpatternwidget.cpp:60
+msgid "playlists/%{albumartist}/%{albumtitle    }"
+msgstr "listas%20de%20temas/%{albumartist}/%{albumtitle    }"
+
+#: rip/k3bcddbpatternwidget.cpp:127
+#, fuzzy
+#| msgid ""
+#| "<p><b>Pattern special strings:</b><p>The following strings will be "
+#| "replaced with their respective meaning in every track name.<br><em>Hint:</"
+#| "em> %A differs from %a only on soundtracks or compilations.<p><table "
+#| "border=\"0\"><tr><td></td><td><em>Meaning</em></td><td><em>Alternatives</"
+#| "em></td></tr><tr><td>%a</td><td>artist of the track</td><td>%{a} or %"
+#| "{artist}</td></tr><tr><td>%t</td><td>title of the track</td><td>%{t} or %"
+#| "{title}</td></tr><tr><td>%n</td><td>track number</td><td>%{n} or %{number}"
+#| "</td></tr><tr><td>%y</td><td>year of the CD</td><td>%{y} or %{year}</td></"
+#| "tr><tr><td>%c</td><td>extended track information</td><td>%{c} or %"
+#| "{comment}</td></tr><tr><td>%g</td><td>genre of the CD</td><td>%{g} or %"
+#| "{genre}</td></tr><tr><td>%A</td><td>album artist</td><td>%{A} or %"
+#| "{albumartist}</td></tr><tr><td>%T</td><td>album title</td><td>%{T} or %"
+#| "{albumtitle}</td></tr><tr><td>%C</td><td>extended CD information</td><td>%"
+#| "{C} or %{albumcomment}</td></tr><tr><td>%d</td><td>current date</td><td>%"
+#| "{d} or %{date}</td></tr></table>"
+msgid ""
+"<p><b>Pattern special strings:</b><p>The following strings will be replaced "
+"with their respective meaning in every track name.<br><em>Hint:</em> %A "
+"differs from %a only on soundtracks or compilations.<p><table border=\"0"
+"\"><tr><td></td><td><em>Meaning</em></td><td><em>Alternatives</em></td></"
+"tr><tr><td>%a</td><td>artist of the track</td><td>%{a} or %{artist}</td></"
+"tr><tr><td>%t</td><td>title of the track</td><td>%{t} or %{title}</td></"
+"tr><tr><td>%n</td><td>track number</td><td>%{n} or %{number}</td></"
+"tr><tr><td>%y</td><td>year of the CD</td><td>%{y} or %{year}</td></"
+"tr><tr><td>%c</td><td>extended track information</td><td>%{c} or %{comment}</"
+"td></tr><tr><td>%g</td><td>genre of the CD</td><td>%{g} or %{genre}</td></"
+"tr><tr><td>%A</td><td>album artist</td><td>%{A} or %{albumartist}</td></"
+"tr><tr><td>%T</td><td>album title</td><td>%{T} or %{albumtitle}</td></"
+"tr><tr><td>%C</td><td>extended CD information</td><td>%{C} or %{albumcomment}"
+"</td></tr><tr><td>%d</td><td>current date</td><td>%{d} or %{date}</td></"
+"tr><tr><td>%e</td><td>file extension (if left out, it is added automatically)"
+"</td><td>%{e} or %{ext}</td></tr></table>"
+msgstr ""
+"<p><b>Cadeas de substitución:</b><p>As seguíntes cadeas serán substituídas "
+"polo seu respectivo significado en cada nome de pista.<br><em>Axuda:</em> %A "
+"é distinto de %a só en bandas sonoras e recopilatorios. <p><table border=\"0"
+"\"><tr><td></td><td><em>Significado</em></td><td><em>Alternativas</em></td></"
+"tr><tr><td>%a%a</td><td>artista da pista</td><td>%{a} ou %{artist}</td></"
+"tr><tr><td>%t</td><td>título da pista</td><td>%{t} ou %{title}</td></"
+"tr><tr><td>%n</td><td>número da pista</td><td>%{n} ou %{number}</td></"
+"tr><tr><td>%y</td><td>ano do CD</td><td>%{y} ou %{year}</td></tr><tr><td>%c</"
+"td><td>información ampliada acerca da pista</td><td>%{c} ou %{comment}</td></"
+"tr><tr><td>%g</td><td>estilo musical do CD</td><td>%{g} ou %{genre}</td></"
+"tr><tr><td>%A</td><td>artista do álbum</td><td>%{A} ou %{albumartist}</td></"
+"tr><tr><td>%T</td><td>título do álbum</td><td>%{T} ou %{albumtitle}</td></"
+"tr><tr><td>%C</td><td>información ampliada acerca do CD</td><td>%{C} ou %"
+"{albumcomment}</td></tr><tr><td>%d</td><td>data actual</td><td>%{d} ou %"
+"{date}</td></tr></table>"
+
+#: rip/k3bcddbpatternwidget.cpp:153
+#, fuzzy, c-format
+#| msgid ""
+#| "<p><b>Conditional inclusion:</b><p>These patterns make it possible to "
+#| "selectively include texts, depending on the value of CDDB entries. You "
+#| "can choose only to include or exclude texts if one of the entries is "
+#| "empty, or if it has a specific value. Examples:<ul><li>@T{TEXT} includes "
+#| "TEXT if the album title is specified<li>!T{TEXT} includes TEXT if the "
+#| "album title is not specified<li>@C='Soundtrack'{TEXT} includes TEXT if "
+#| "the CD's extended information is named Soundtrack<li>!"
+#| "C='Soundtrack'{TEXT} includes TEXT if the CD's extended information is "
+#| "anything else but Soundtrack<li>It is also possible to include special "
+#| "strings in texts and conditions, e.g. !a='%A'{%a} only includes the "
+#| "title's artist information if it does not differ from the album artist.</"
+#| "ul><p>Conditional includes make use of the same characters as the special "
+#| "strings, which means that the X in @X{...} can be one character out of "
+#| "[atnycgATCd]."
+msgctxt ""
+"Please do NOT modify/translate the quotes, they are part of the pattern!"
+msgid ""
+"<p><b>Conditional inclusion:</b><p>These patterns make it possible to "
+"selectively include texts, depending on the value of CDDB entries. You can "
+"choose only to include or exclude texts if one of the entries is empty, or "
+"if it has a specific value. Examples:<ul><li>@T{TEXT} includes TEXT if the "
+"album title is specified<li>!T{TEXT} includes TEXT if the album title is not "
+"specified<li>@C='Soundtrack'{TEXT} includes TEXT if the CD's extended "
+"information is named Soundtrack<li>!C='Soundtrack'{TEXT} includes TEXT if "
+"the CD's extended information is anything else but Soundtrack<li>It is also "
+"possible to include special strings in texts and conditions, e.g. !a='%A'{%"
+"a} only includes the title's artist information if it does not differ from "
+"the album artist.</ul><p>Conditional includes make use of the same "
+"characters as the special strings, which means that the X in @X{...} can be "
+"one character out of [atnycgATCd]."
+msgstr ""
+"<p><b>Inclusión condicionada:</b><p>Estes padróns posibilitan o incluir "
+"textos de xeito condicional, dependendo das entradas na CDDB. Pode escoller "
+"incluir ou excluir textos se unha das entradas está vacía, ou se ten un "
+"valor concreto. Exemplos: <ul><li>@T{TEXTO} inclúe TEXTO de especificarse o "
+"título do álbum <li>!T{TEXT} inclúe TEXTO caso de non especificarse o título "
+"do álbum <li>@C='Soundtrack'{TEXTO} inclúe TEXTO se a información ampliada "
+"acerca do CD é Soundtrack <li>!C='Soundtrack'{TEXTO} inclúe TEXTO se a "
+"información ampliada acerca do CD é diferente de Sountrack <li>Tamén é "
+"posíbel incluir cadeas especiais nos textos e condicións, p.ex. !a='%A'{%a} "
+"só inclúe a información do artista do título se non é diferente do artista "
+"do álbum.</ul> <p>As inclusións condicionadas usan os mesmos caracteres que "
+"as cadeas especiais, o que significa que o X en @X{...} pode ser un caracter "
+"do conxunto [atnycgATCd]."
+
+#: rip/k3bvideocdrip.cpp:62
+msgid "Job canceled by user."
+msgstr "Traballo cancelado polo usuario."
+
+#: rip/k3bvideocdrip.cpp:91
+msgid "Check files"
+msgstr "Comprobar os ficheiros"
+
+#: rip/k3bvideocdrip.cpp:101
+#, kde-format
+msgid "Could not find %1 executable."
+msgstr "Non foi posíbel atopar o executábel %1."
+
+#: rip/k3bvideocdrip.cpp:102
+#, fuzzy, kde-format
+#| msgid "To rip VideoCD's you must install VcdImager Version %1."
+msgid "To rip Video CDs you have to install VcdImager Version %1."
+msgstr "Para extraer o Vídeo CD debe instalar VcdImager versión %1."
+
+#: rip/k3bvideocdrip.cpp:103
+#, fuzzy
+#| msgid ""
+#| "You can find this on your distribution disks or download it from http://"
+#| "www.vcdimager.org"
+msgid ""
+"You can find this on your distribution’s software repository or download it "
+"from http://www.vcdimager.org"
+msgstr ""
+"Pode atopalo nos discos da súa distribución ou obtelo en http://www."
+"vcdimager.org"
+
+#: rip/k3bvideocdrip.cpp:111
+#, fuzzy, kde-format
+#| msgid "%1 executable too old! Need version %2 or greater"
+msgid "%1 executable too old: need version %2 or greater."
+msgstr "O executábel de %1 é moi antigo! Precísase a versión %2 ou posterior"
+
+#: rip/k3bvideocdrip.cpp:112
+msgid ""
+"You can find this on your distribution disks or download it from http://www."
+"vcdimager.org"
+msgstr ""
+"Pode atopalo nos discos da súa distribución ou obtelo en http://www."
+"vcdimager.org"
+
+#: rip/k3bvideocdrip.cpp:119
+#, fuzzy, kde-format
+#| msgid "Using %1 %2 - Copyright (C) %3"
+msgid "Using %1 %2 – Copyright © %3"
+msgstr "A empregar %1 %2 - Copyright (C) %3"
+
+#: rip/k3bvideocdrip.cpp:170
+msgid "Extracting"
+msgstr "A extraer"
+
+#: rip/k3bvideocdrip.cpp:171
+msgid "Start extracting."
+msgstr "Comeza a extracción."
+
+#: rip/k3bvideocdrip.cpp:172
+#, kde-format
+msgid "Extract files from %1 to %2."
+msgstr "Extraer ficheiros de %1 en %2."
+
+#: rip/k3bvideocdrip.cpp:177
+#, kde-format
+msgid "Could not start %1."
+msgstr "Non foi posíbel comezar %1."
+
+#: rip/k3bvideocdrip.cpp:267
+msgid "Files successfully extracted."
+msgstr "Os ficheiros foron extraídos satisfactoriamente."
+
+#: rip/k3bvideocdrip.cpp:270
+#, kde-format
+msgid "%1 returned an unknown error (code %2)."
+msgstr "%1 devolveu un erro descoñecido (código %2)."
+
+#: rip/k3bvideocdrip.cpp:271
+msgid "Please send me an email with the last output..."
+msgstr "Por favor, envíeme un correo electrónico coa última saída..."
+
+#: rip/k3bvideocdrip.cpp:277
+#, kde-format
+msgid "%1 did not exit cleanly."
+msgstr "%1 non saíu limpamente."
+
+#: rip/k3bvideocdrip.cpp:291
+#, kde-format
+msgid "%1 encountered non-form2 sector"
+msgstr "%1 atopou un sector non form2"
+
+#: rip/k3bvideocdrip.cpp:292
+msgid "leaving loop"
+msgstr "saíndo do ciclo"
+
+#: rip/k3bvideocdrip.cpp:300
+msgid "detected extended VCD2.0 PBC files"
+msgstr "detectáronse ficheiros PBC VCD2.0 ampliado"
+
+#: rip/k3bvideocdrip.cpp:327 rip/k3bvideocdrip.cpp:345
+#, kde-format
+msgid "Extracting %1"
+msgstr "A extraer %1"
+
+#: rip/k3bvideocdrip.cpp:338
+#, kde-format
+msgid "Extracting %1 to %2"
+msgstr "A extraer %1 en %2"
+
+#: rip/k3bvideocdrippingdialog.cpp:50
+msgid "Video CD Ripping"
+msgstr "Extracción do Vídeo CD"
+
+#: rip/k3bvideocdrippingdialog.cpp:74
+#, fuzzy
+#| msgid "Destination Directory"
+msgid "Destination Folder"
+msgstr "Cartafol de destino"
+
+#: rip/k3bvideocdrippingdialog.cpp:79
+msgid "Rip files to:"
+msgstr "Extraer os ficheiros en:"
+
+#: rip/k3bvideocdrippingdialog.cpp:86
+#, fuzzy
+#| msgid "Free space in directory:"
+msgid "Free space in folder:"
+msgstr "Espazo libre no cartafol:"
+
+#: rip/k3bvideocdrippingdialog.cpp:91
+msgid "Necessary storage size:"
+msgstr "Tamaño de almacenaxe necesario:"
+
+#: rip/k3bvideocdrippingdialog.cpp:103
+msgid "Ignore /EXT/PSD_X.VCD"
+msgstr "Ignorar /EXT/PSD_X.VCD"
+
+#: rip/k3bvideocdrippingdialog.cpp:104
+msgid "Use 2336 byte sector mode for image file"
+msgstr "Empregar o modo de sectores de 2336 bytes para o ficheiro imaxe"
+
+#: rip/k3bvideocdrippingdialog.cpp:108
+msgid "Extract XML structure"
+msgstr "Extraer a estrutura XML"
+
+#: rip/k3bvideocdrippingdialog.cpp:118
+msgid "Starts extracting the selected VideoCd tracks"
+msgstr "Comeza a extracción das pistas de VideoCd escollidas"
+
+#: rip/k3bvideocdrippingdialog.cpp:129
+#, fuzzy, kde-format
+#| msgid "Free space on destination directory: %1"
+msgid "Free space in destination folder: %1"
+msgstr "Espazo libre no cartafol de destino: %1"
+
+#: rip/k3bvideocdrippingdialog.cpp:131
+msgid "Necessary space for extracted files"
+msgstr "Espazo preciso para os ficheiros extraídos"
+
+#: rip/k3bvideocdrippingdialog.cpp:133
+msgid "Ignore extended PSD"
+msgstr "Ignorar o PSD ampliado"
+
+#: rip/k3bvideocdrippingdialog.cpp:134
+msgid ""
+"<p>Ignore extended PSD (located in the ISO-9660 filesystem under `/EXT/PSD_X."
+"VCD') and use the <em>standard</em> PSD.</p>"
+msgstr ""
+"<p>Ignorar o PSD ampliado (localizado no sistema de ficheiros ISO-9660 baixo "
+"«/EXT/PSD_X.VCD») e empregar o PSD <em>estándar</em>.</p>"
+
+#: rip/k3bvideocdrippingdialog.cpp:136
+msgid "Assume a 2336-byte sector mode"
+msgstr "Asumir un modo de sectores de 2336 bites"
+
+#: rip/k3bvideocdrippingdialog.cpp:137
+msgid ""
+"<p>This option only makes sense if you are reading from a BIN CD disk image. "
+"This indicates to `vcdxrip' to assume a 2336-byte sector mode for image file."
+"</p><b>Note: This option is slated to disappear.</b>"
+msgstr ""
+"<p>Esta opción só ten sentido se está a ler unha imaxe de disco BIN CD. Isto "
+"indícalle a «vcdxrip» que asuma o modo de sectores de 2336 bytes para o "
+"ficheiro imaxe.</p><b>Nota: esta opción vai desaparecer.</b>"
+
+#: rip/k3bvideocdrippingdialog.cpp:140
+msgid "Create XML description file."
+msgstr "Crear o ficheiro XML de descrición."
+
+#: rip/k3bvideocdrippingdialog.cpp:141
+msgid ""
+"<p>This option creates an XML description file with all video CD information."
+"</p><p>This file will always contain all of the information.</p><p>Example: "
+"If you only extract sequences, the description file will also hold the "
+"information for files and segments.</p><p>The filename is the same as the "
+"video CD name, with a .xml extension. The default is VIDEOCD.xml.</p>"
+msgstr ""
+"<p>Esta opción crea un ficheiro XML de descrición para toda a información do "
+"Vídeo CD.</p><p>Este ficheiro sempre conterá toda a información.</"
+"p><p>Exemplo: Se só extrae secuencias, o ficheiro de descrición conterá "
+"tamén a información dos ficheiros e segmentos.</p><p>O nome do ficheiro é o "
+"mesmo que o do Vídeo CD, cunha extensión .xml. Por omisión é VIDEOCD.xml.</p>"
+
+#: rip/k3bvideocdrippingdialog.cpp:173
+msgid "Continue although the folder is not empty?"
+msgstr "Continuar aínda que o cartafol non estexa vacío?"
+
+#: rip/k3bvideocdview.cpp:208
+msgid "Item Name"
+msgstr "Nome do ítem"
+
+#: rip/k3bvideocdview.cpp:209
+msgid "Extracted Name"
+msgstr "Nome extraído"
+
+#: rip/k3bvideocdview.cpp:269 rip/k3bvideocdview.cpp:433
+msgid "Video CD MPEG tracks"
+msgstr "Pistas MPEG do Vídeo CD"
+
+#: rip/k3bvideocdview.cpp:270
+msgid "Video CD DATA track"
+msgstr "Pista de DATOS do Vídeo CD"
+
+#: rip/k3bvideocdview.cpp:286
+#, kde-format
+msgid "Sequence-%1"
+msgstr "Secuencia-%1"
+
+#: rip/k3bvideocdview.cpp:291 rip/k3bvideocdview.cpp:334
+#: rip/k3bvideocdview.cpp:439
+msgid "Files"
+msgstr "Ficheiros"
+
+#: rip/k3bvideocdview.cpp:292 rip/k3bvideocdview.cpp:445
+msgid "Segments"
+msgstr "Segmentos"
+
+#: rip/k3bvideocdview.cpp:374
+msgid "Check All"
+msgstr "Sinalar todo"
+
+#: rip/k3bvideocdview.cpp:377
+msgid "Uncheck All"
+msgstr "Desmarcar todo"
+
+#: rip/k3bvideocdview.cpp:380
+msgid "Check Track"
+msgstr "Escoller a pista"
+
+#: rip/k3bvideocdview.cpp:383
+msgid "Uncheck Track"
+msgstr "Anular a escolla da pista"
+
+#: rip/k3bvideocdview.cpp:389
+#, fuzzy
+#| msgid "Hidden Files"
+msgid "View Files"
+msgstr "Ficheiros ocultos"
+
+#: rip/k3bvideocdview.cpp:391
+msgid "View plain data files"
+msgstr ""
 
 #: ../plugins/decoder/ffmpeg/k3bffmpegwrapper.cpp:208
 msgid "Windows Media v1"
@@ -10475,16 +10473,6 @@ msgstr "Engada o nome do ficheiro de saída (%f) á liña de comandos."
 msgid "No filename specified"
 msgstr "Non indicou o nome do ficheiro de saída"
 
-#: ../plugins/encoder/lame/k3blameencoderconfigwidget.cpp:128
-#, kde-format
-msgid "Constant Bitrate: %1 kbps (%2)"
-msgstr "Taxa de bits constante: %1 kbps (%2)"
-
-#: ../plugins/encoder/lame/k3blameencoderconfigwidget.cpp:132
-#, kde-format
-msgid "Variable Bitrate (%1)"
-msgstr "Taxa de bits variábel (%1)"
-
 #: ../plugins/encoder/lame/k3blamemanualsettingsdialog.cpp:23
 msgid "(Lame) Manual Quality Settings"
 msgstr "(Lam) Axuste manual da calidade"
@@ -10528,6 +10516,16 @@ msgstr "Alta fidelidade (230 kbps promedio)"
 #: ../plugins/encoder/lame/k3blametyes.h:87
 msgid "Archiving (320 kbps)"
 msgstr "Arquivo (320 kbps)"
+
+#: ../plugins/encoder/lame/k3blameencoderconfigwidget.cpp:128
+#, kde-format
+msgid "Constant Bitrate: %1 kbps (%2)"
+msgstr "Taxa de bits constante: %1 kbps (%2)"
+
+#: ../plugins/encoder/lame/k3blameencoderconfigwidget.cpp:132
+#, kde-format
+msgid "Variable Bitrate (%1)"
+msgstr "Taxa de bits variábel (%1)"
 
 #: ../plugins/encoder/ogg/k3boggvorbisencoderconfigwidget.cpp:63
 msgid "Controls the quality of the encoded files."
