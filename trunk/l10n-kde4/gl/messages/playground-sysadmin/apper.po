@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kpackagekit\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2011-08-18 04:21+0200\n"
+"POT-Creation-Date: 2011-08-19 03:59+0200\n"
 "PO-Revision-Date: 2009-03-13 21:06+0100\n"
 "Last-Translator: marce villarino <mvillarino@users.sourceforge.net>\n"
 "Language-Team: Galician <proxecto@trasno.ent>\n"
@@ -757,7 +757,7 @@ msgstr "Paquetes instalados"
 #: Sentinel/PkInstallProvideFiles.cpp:49
 #, fuzzy
 #| msgid "No files were found."
-msgid "No files where provided"
+msgid "No files were provided"
 msgstr "Non se achou ningún ficheiro."
 
 #: Sentinel/PkInstallProvideFiles.cpp:52
@@ -792,7 +792,7 @@ msgstr[1] "Fallou a instalación do paquete"
 msgid "Failed to start search file transaction"
 msgstr "Fallou a procura de provisións"
 
-#: Sentinel/PkInstallProvideFiles.cpp:101 libapper/PkTransaction.cpp:281
+#: Sentinel/PkInstallProvideFiles.cpp:101 libapper/PkTransaction.cpp:263
 msgid "Failed to install file"
 msgid_plural "Failed to install files"
 msgstr[0] "Non foi posíbel instalar o ficheiro"
@@ -1211,55 +1211,49 @@ msgstr "Transaccións"
 msgid "An unknown error happened"
 msgstr "Erro descoñecido"
 
-#: Sentinel/SessionTask.cpp:63 libapper/Requirements.cpp:229
+#: Sentinel/SessionTask.cpp:63 libapper/Requirements.cpp:43
 msgid "Continue"
 msgstr ""
 
-#: Sentinel/SessionTask.cpp:334
+#: Sentinel/SessionTask.cpp:343
 #, fuzzy
 #| msgid "The package is not installed"
 msgid "There are no packages to Install or Remove"
 msgstr "O paquete non está instalado"
 
-#: Sentinel/SessionTask.cpp:335
+#: Sentinel/SessionTask.cpp:344
 msgid "This action should not happen"
 msgstr ""
 
-#: Sentinel/SessionTask.cpp:364
+#: Sentinel/SessionTask.cpp:373
 #, fuzzy
 #| msgid "Failed to install package"
 msgid "Could not find"
 msgstr "Fallou a instalación do paquete"
 
-#: Sentinel/SessionTask.cpp:365 Sentinel/SessionTask.cpp:374
+#: Sentinel/SessionTask.cpp:374 Sentinel/SessionTask.cpp:383
 #, fuzzy
 #| msgid "Source packages cannot be installed"
 msgid "No packages were found that meet the request"
 msgstr "Non foi posíbel instalar os paquetes de fontes"
 
-#: Sentinel/SessionTask.cpp:373
+#: Sentinel/SessionTask.cpp:382
 #, fuzzy
 #| msgid "Failed to find software"
 msgid "Failed to find"
 msgstr "Non foi posíbel achar software"
 
-#: Sentinel/SessionTask.cpp:391
-#, fuzzy
-#| msgid "Transactions"
-msgid "Failed to commit transaction"
-msgstr "Transaccións"
-
-#: Sentinel/SessionTask.cpp:393
+#: Sentinel/SessionTask.cpp:404
 msgid "Transaction did not finish with success"
 msgstr ""
 
-#: Sentinel/SessionTask.cpp:399
+#: Sentinel/SessionTask.cpp:410
 #, fuzzy
 #| msgid "Obsoleted"
 msgid "Task completed"
 msgstr "Obsoleto"
 
-#: Sentinel/SessionTask.cpp:399
+#: Sentinel/SessionTask.cpp:410
 #, fuzzy
 #| msgid "File was installed successfully"
 #| msgid_plural "Files were installed successfully"
@@ -2697,7 +2691,7 @@ msgstr "Xa está instalado o paquete que está a tentar instalar."
 msgid "No space is left on the disk"
 msgstr ""
 
-#: libapper/PkStrings.cpp:477 libapper/PkTransaction.cpp:602
+#: libapper/PkStrings.cpp:477 libapper/PkTransaction.cpp:577
 #, fuzzy
 #| msgid "A system restart is required"
 msgid "A media change is required"
@@ -3949,99 +3943,121 @@ msgstr "Fallou a instalación do paquete"
 msgid "An unknown error happened."
 msgstr "Erro descoñecido"
 
-#. i18n: file: libapper/RepoSig.ui:14
-#. i18n: ectx: property (windowTitle), widget (QWidget, RepoSig)
-#: libapper/RepoSig.cpp:38 rc.cpp:221
-msgid "Software signature is required"
-msgstr "Requírese a sinatura do software"
+#: libapper/PkTransactionDialog.cpp:88
+#, fuzzy
+#| msgid "Allows you to hide the window but keeps running transaction task"
+msgid ""
+"Allows you to hide the window whilst keeping the transaction task running."
+msgstr "Permítelle acochar a fiestra e á vez manter a executar as transaccións"
 
-#: libapper/ApplicationLauncher.cpp:77
+#: libapper/SimulateModel.cpp:139
+#, fuzzy
+#| msgid "KPackageKit"
+msgid "Package"
+msgstr "KPackageKit"
+
+#: libapper/ApplicationLauncher.cpp:92
 msgid "The following application was just installed. Click on it to launch:"
 msgid_plural ""
 "The following applications were just installed. Click on them to launch:"
 msgstr[0] ""
 msgstr[1] ""
 
-#: libapper/PkTransaction.cpp:136
+#: libapper/LicenseAgreement.cpp:36
+msgid "Accept Agreement"
+msgstr "Aceptar a licenza"
+
+#. i18n: file: libapper/LicenseAgreement.ui:14
+#. i18n: ectx: property (windowTitle), widget (QWidget, LicenseAgreement)
+#: libapper/LicenseAgreement.cpp:37 rc.cpp:251
+msgid "License Agreement Required"
+msgstr "Requírese que se acepte a licenza"
+
+#: libapper/LicenseAgreement.cpp:38
+#, kde-format
+msgid "License required for %1 by %2"
+msgstr "%2 require a licenza para %1"
+
+#: libapper/PkTransaction.cpp:122
 #, fuzzy
 #| msgid "Failed to update package lists"
 msgid "Failed to simulate file install"
 msgstr "Non foi posíbel actualizar as listas de paquetes"
 
-#: libapper/PkTransaction.cpp:142
+#: libapper/PkTransaction.cpp:129
 #, fuzzy
 #| msgid "Sorry, your backend does not support installing packages"
 msgid "Current backend does not support installing files."
 msgstr "A infraestrutura que está a empregar non permite instalar paquetes"
 
-#: libapper/PkTransaction.cpp:142 libapper/PkTransaction.cpp:167
-#: libapper/PkTransaction.cpp:194 libapper/PkTransaction.cpp:217
+#: libapper/PkTransaction.cpp:129 libapper/PkTransaction.cpp:153
+#: libapper/PkTransaction.cpp:179 libapper/PkTransaction.cpp:202
 msgid "Error"
 msgstr ""
 
-#: libapper/PkTransaction.cpp:161
+#: libapper/PkTransaction.cpp:146
 #, fuzzy
 #| msgid "Failed to update package lists"
 msgid "Failed to simulate package install"
 msgstr "Non foi posíbel actualizar as listas de paquetes"
 
-#: libapper/PkTransaction.cpp:167
+#: libapper/PkTransaction.cpp:153
 #, fuzzy
 #| msgid "Sorry, your backend does not support installing packages"
 msgid "Current backend does not support installing packages."
 msgstr "A infraestrutura que está a empregar non permite instalar paquetes"
 
-#: libapper/PkTransaction.cpp:187
+#: libapper/PkTransaction.cpp:171
 #, fuzzy
 #| msgid "Failed to update package lists"
 msgid "Failed to simulate package removal"
 msgstr "Non foi posíbel actualizar as listas de paquetes"
 
-#: libapper/PkTransaction.cpp:194
+#: libapper/PkTransaction.cpp:179
 #, fuzzy
 #| msgid "Sorry, your backend does not support removing packages"
 msgid "The current backend does not support removing packages."
 msgstr "A infraestrutura que está a empregar non permite eliminar paquetes"
 
-#: libapper/PkTransaction.cpp:211
+#: libapper/PkTransaction.cpp:195
 #, fuzzy
 #| msgid "Failed to update package lists"
 msgid "Failed to simulate package update"
 msgstr "Non foi posíbel actualizar as listas de paquetes"
 
-#: libapper/PkTransaction.cpp:217
+#: libapper/PkTransaction.cpp:202
 #, fuzzy
 #| msgid "Sorry, your backend does not support removing packages"
 msgid "The current backend does not support updating packages."
 msgstr "A infraestrutura que está a empregar non permite eliminar paquetes"
 
-#: libapper/PkTransaction.cpp:229
+#: libapper/PkTransaction.cpp:213
 #, fuzzy
 #| msgid "Failed to refresh package lists"
 msgid "Failed to refresh package cache"
 msgstr "Non foi posíbel refrescar as listas de paquetes"
 
-#: libapper/PkTransaction.cpp:268
+#: libapper/PkTransaction.cpp:251
 msgid "Failed to install package"
 msgstr "Fallou a instalación do paquete"
 
-#: libapper/PkTransaction.cpp:296
+#: libapper/PkTransaction.cpp:276
 msgid "Failed to remove package"
 msgstr "Non foi posíbel eliminar o paquete"
 
-#: libapper/PkTransaction.cpp:309
+#: libapper/PkTransaction.cpp:288
 #, fuzzy
 #| msgid "Failed to install package"
 msgid "Failed to update package"
 msgstr "Fallou a instalación do paquete"
 
-#: libapper/PkTransaction.cpp:475
+#: libapper/PkTransaction.cpp:453
 #, fuzzy, kde-format
 #| msgid "Downloading packages"
 msgid "Downloading packages at %1/s"
 msgstr "A obter os paquetes"
 
-#: libapper/PkTransaction.cpp:524
+#: libapper/PkTransaction.cpp:501
 #, fuzzy
 #| msgid ""
 #| "<br />Installing unsigned packages can compromise your system, as it is "
@@ -4057,81 +4073,16 @@ msgstr ""
 "é posíbel verificar se o software veu dunha fonte de confianza. Desexa "
 "realmente continuar coa instalación?"
 
-#: libapper/PkTransaction.cpp:527
+#: libapper/PkTransaction.cpp:504
 msgid "Installing unsigned software"
 msgstr "A instalar software non asinado"
 
-#: libapper/PkTransaction.cpp:586
-#, fuzzy
-#| msgid "Failed to finalize"
-msgid "Failed to accept EULA"
-msgstr "Fallou a finalización"
-
-#: libapper/PkTransaction.cpp:635
+#: libapper/PkTransaction.cpp:562 libapper/PkTransaction.cpp:615
 #, fuzzy
 #| msgid "Failed to install file"
 #| msgid_plural "Failed to install files"
 msgid "Failed to install signature"
 msgstr "Non foi posíbel instalar o ficheiro"
-
-#: libapper/PkTransactionDialog.cpp:88
-#, fuzzy
-#| msgid "Allows you to hide the window but keeps running transaction task"
-msgid ""
-"Allows you to hide the window whilst keeping the transaction task running."
-msgstr "Permítelle acochar a fiestra e á vez manter a executar as transaccións"
-
-#: libapper/Requirements.cpp:227
-#, fuzzy
-#| msgid "Testing changes"
-msgid "Additional changes"
-msgstr "A probar as modificacións"
-
-#: libapper/Requirements.cpp:257
-#, fuzzy, kde-format
-#| msgid "Searching by package name"
-msgid "1 package to remove"
-msgid_plural "%1 packages to remove"
-msgstr[0] "A procurar polo nome do paquete"
-msgstr[1] "A procurar polo nome do paquete"
-
-#: libapper/Requirements.cpp:267
-#, fuzzy, kde-format
-#| msgid "No packages to update"
-msgid "1 package to downgrade"
-msgid_plural "%1 packages to downgrade"
-msgstr[0] "Non hai ningún paquete para actualizar"
-msgstr[1] "Non hai ningún paquete para actualizar"
-
-#: libapper/Requirements.cpp:279
-#, fuzzy, kde-format
-#| msgid "Package file to install"
-msgid "1 package to reinstall"
-msgid_plural "%1 packages to reinstall"
-msgstr[0] "O paquete a instalar"
-msgstr[1] "O paquete a instalar"
-
-#: libapper/Requirements.cpp:291
-#, fuzzy, kde-format
-#| msgid "Package file to install"
-msgid "1 package to install"
-msgid_plural "%1 packages to install"
-msgstr[0] "O paquete a instalar"
-msgstr[1] "O paquete a instalar"
-
-#: libapper/Requirements.cpp:303
-#, fuzzy, kde-format
-#| msgid "No packages to update"
-msgid "1 package to update"
-msgid_plural "%1 packages to update"
-msgstr[0] "Non hai ningún paquete para actualizar"
-msgstr[1] "Non hai ningún paquete para actualizar"
-
-#: libapper/SimulateModel.cpp:139
-#, fuzzy
-#| msgid "KPackageKit"
-msgid "Package"
-msgstr "KPackageKit"
 
 #: libapper/ApplicationsDelegate.cpp:40
 msgid "Install"
@@ -4143,20 +4094,57 @@ msgstr "Instalar"
 msgid "Remove"
 msgstr "Eliminado"
 
-#: libapper/LicenseAgreement.cpp:34
-msgid "Accept Agreement"
-msgstr "Aceptar a licenza"
+#. i18n: file: libapper/RepoSig.ui:14
+#. i18n: ectx: property (windowTitle), widget (QWidget, RepoSig)
+#: libapper/RepoSig.cpp:40 rc.cpp:224
+msgid "Software signature is required"
+msgstr "Requírese a sinatura do software"
 
-#. i18n: file: libapper/LicenseAgreement.ui:14
-#. i18n: ectx: property (windowTitle), widget (QWidget, LicenseAgreement)
-#: libapper/LicenseAgreement.cpp:35 rc.cpp:254
-msgid "License Agreement Required"
-msgstr "Requírese que se acepte a licenza"
+#: libapper/Requirements.cpp:41
+#, fuzzy
+#| msgid "Testing changes"
+msgid "Additional changes"
+msgstr "A probar as modificacións"
 
-#: libapper/LicenseAgreement.cpp:36
-#, kde-format
-msgid "License required for %1 by %2"
-msgstr "%2 require a licenza para %1"
+#: libapper/Requirements.cpp:62
+#, fuzzy, kde-format
+#| msgid "Searching by package name"
+msgid "1 package to remove"
+msgid_plural "%1 packages to remove"
+msgstr[0] "A procurar polo nome do paquete"
+msgstr[1] "A procurar polo nome do paquete"
+
+#: libapper/Requirements.cpp:77
+#, fuzzy, kde-format
+#| msgid "No packages to update"
+msgid "1 package to downgrade"
+msgid_plural "%1 packages to downgrade"
+msgstr[0] "Non hai ningún paquete para actualizar"
+msgstr[1] "Non hai ningún paquete para actualizar"
+
+#: libapper/Requirements.cpp:92
+#, fuzzy, kde-format
+#| msgid "Package file to install"
+msgid "1 package to reinstall"
+msgid_plural "%1 packages to reinstall"
+msgstr[0] "O paquete a instalar"
+msgstr[1] "O paquete a instalar"
+
+#: libapper/Requirements.cpp:105
+#, fuzzy, kde-format
+#| msgid "Package file to install"
+msgid "1 package to install"
+msgid_plural "%1 packages to install"
+msgstr[0] "O paquete a instalar"
+msgstr[1] "O paquete a instalar"
+
+#: libapper/Requirements.cpp:118
+#, fuzzy, kde-format
+#| msgid "No packages to update"
+msgid "1 package to update"
+msgid_plural "%1 packages to update"
+msgstr[0] "Non hai ningún paquete para actualizar"
+msgstr[1] "Non hai ningún paquete para actualizar"
 
 #: rc.cpp:1
 msgctxt "NAME OF TRANSLATORS"
@@ -4608,47 +4596,9 @@ msgstr "Paquetes instalados"
 msgid "TextLabel"
 msgstr "Etiqueta de texto"
 
-#. i18n: file: libapper/ApplicationLauncher.ui:40
-#. i18n: ectx: property (text), widget (QCheckBox, showCB)
-#: rc.cpp:218
-#, fuzzy
-#| msgid "Don't ask anymore"
-msgid "Do not show this dialog again"
-msgstr "Non voltar preguntar"
-
-#. i18n: file: libapper/RepoSig.ui:29
-#. i18n: ectx: property (text), widget (QLabel, label)
-#: rc.cpp:224
-msgid "Do you trust the origin of packages?"
-msgstr "Confía na orixe dos paquetes?"
-
-#. i18n: file: libapper/RepoSig.ui:47
-#. i18n: ectx: property (text), widget (QLabel, label_2)
-#: rc.cpp:227
-msgid "Repository name:"
-msgstr "Nome do repositorio:"
-
-#. i18n: file: libapper/RepoSig.ui:70
-#. i18n: ectx: property (text), widget (QLabel, label_3)
-#: rc.cpp:230
-msgid "Signature URL:"
-msgstr "URL da sinatura:"
-
-#. i18n: file: libapper/RepoSig.ui:93
-#. i18n: ectx: property (text), widget (QLabel, label_4)
-#: rc.cpp:233
-msgid "Signature user identifier:"
-msgstr "Identificación do usuario da sinatura:"
-
-#. i18n: file: libapper/RepoSig.ui:116
-#. i18n: ectx: property (text), widget (QLabel, label_5)
-#: rc.cpp:236
-msgid "Signature identifier:"
-msgstr "Identificación da sinatura:"
-
 #. i18n: file: libapper/PkTransaction.ui:38
 #. i18n: ectx: property (text), widget (QLabel, label)
-#: rc.cpp:239
+#: rc.cpp:218
 #, fuzzy
 #| msgid "Action"
 msgid "icon"
@@ -4656,36 +4606,81 @@ msgstr "Acción"
 
 #. i18n: file: libapper/PkTransaction.ui:64
 #. i18n: ectx: property (text), widget (QLabel, currentL)
-#: rc.cpp:242
+#: rc.cpp:221
 msgid "Downloading Packages"
 msgstr "A obter os paquetes"
 
+#. i18n: file: libapper/RepoSig.ui:23
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: rc.cpp:227
+msgid "Do you trust the origin of packages?"
+msgstr "Confía na orixe dos paquetes?"
+
+#. i18n: file: libapper/RepoSig.ui:47
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: rc.cpp:230
+msgid "Repository name:"
+msgstr "Nome do repositorio:"
+
+#. i18n: file: libapper/RepoSig.ui:73
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#: rc.cpp:233
+msgid "Signature URL:"
+msgstr "URL da sinatura:"
+
+#. i18n: file: libapper/RepoSig.ui:99
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#: rc.cpp:236
+msgid "Signature user identifier:"
+msgstr "Identificación do usuario da sinatura:"
+
+#. i18n: file: libapper/RepoSig.ui:125
+#. i18n: ectx: property (text), widget (QLabel, label_5)
+#: rc.cpp:239
+msgid "Signature identifier:"
+msgstr "Identificación da sinatura:"
+
 #. i18n: file: libapper/Requirements.ui:31
 #. i18n: ectx: property (text), widget (QLabel, label)
-#: rc.cpp:245
+#: rc.cpp:242
 msgid "Additional changes are required to complete the task"
 msgstr ""
 
-#. i18n: file: libapper/Requirements.ui:57
-#. i18n: ectx: property (windowTitle), widget (QDockWidget, dockWidget)
-#: rc.cpp:248
-#, fuzzy
-#| msgid "Action"
-msgid "Actions"
-msgstr "Acción"
-
-#. i18n: file: libapper/Requirements.ui:144
+#. i18n: file: libapper/Requirements.ui:81
 #. i18n: ectx: property (text), widget (QCheckBox, confirmCB)
-#: rc.cpp:251
+#: rc.cpp:245
 msgid ""
 "Do not show this confirmation when installing or updating additional packages"
 msgstr ""
 
-#. i18n: file: libapper/LicenseAgreement.ui:34
+#. i18n: file: libapper/ApplicationLauncher.ui:63
+#. i18n: ectx: property (text), widget (QCheckBox, showCB)
+#: rc.cpp:248
+#, fuzzy
+#| msgid "Don't ask anymore"
+msgid "Do not show this dialog again"
+msgstr "Non voltar preguntar"
+
+#. i18n: file: libapper/LicenseAgreement.ui:40
 #. i18n: ectx: property (text), widget (QLabel, label_2)
-#: rc.cpp:257
+#: rc.cpp:254
 msgid "Please read the following important information before continuing:"
 msgstr "Lea esta importante información antes de continuar:"
+
+#, fuzzy
+#~| msgid "Transactions"
+#~ msgid "Failed to commit transaction"
+#~ msgstr "Transaccións"
+
+#, fuzzy
+#~| msgid "Failed to finalize"
+#~ msgid "Failed to accept EULA"
+#~ msgstr "Fallou a finalización"
+
+#, fuzzy
+#~| msgid "Action"
+#~ msgid "Actions"
+#~ msgstr "Acción"
 
 #, fuzzy
 #~| msgid "(C) 2008-2009 Daniel Nicoletti"
