@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktorrent\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2011-08-02 05:00+0200\n"
+"POT-Creation-Date: 2011-08-20 02:37+0200\n"
 "PO-Revision-Date: 2009-10-20 19:07+0200\n"
 "Last-Translator: Xosé <xosecalvo@gmail.com>\n"
 "Language-Team: Galego <proxecto@trasno.net>\n"
@@ -85,6 +85,14 @@ msgstr "Non foi posíbel converter %1 nun enteiro"
 msgid "Torrent is incomplete."
 msgstr "O torrente está incompleto."
 
+#: src/datachecker/multidatachecker.cpp:209
+#: src/datachecker/singledatachecker.cpp:49 src/diskio/multifilecache.cpp:722
+#: src/diskio/multifilecache.cpp:761 src/torrent/torrentcreator.cpp:124
+#: src/torrent/torrentcreator.cpp:255 src/torrent/torrentcreator.cpp:292
+#, kde-format
+msgid "Cannot open file %1: %2"
+msgstr "Non foi posíbel acceder ao ficheiro %1 : %2"
+
 #: src/datachecker/datacheckerjob.cpp:82
 msgid "Waiting for other data checks to finish"
 msgstr ""
@@ -98,14 +106,6 @@ msgstr "A verificar os datos"
 #| msgid "Checking data"
 msgid "Checking Data"
 msgstr "A verificar os datos"
-
-#: src/datachecker/multidatachecker.cpp:209
-#: src/datachecker/singledatachecker.cpp:49 src/diskio/multifilecache.cpp:722
-#: src/diskio/multifilecache.cpp:761 src/torrent/torrentcreator.cpp:124
-#: src/torrent/torrentcreator.cpp:255 src/torrent/torrentcreator.cpp:292
-#, kde-format
-msgid "Cannot open file %1: %2"
-msgstr "Non foi posíbel acceder ao ficheiro %1 : %2"
 
 #: src/diskio/cachefile.cpp:94 src/util/fileops.cpp:354
 #: src/util/fileops.cpp:396
@@ -186,6 +186,28 @@ msgstr "Non foi posíbel gardar o primeiro anaco no ficheiro DND: %1"
 msgid "Failed to write last chunk to DND file: %1"
 msgstr "Non foi posíbel gardar o último anaco no ficheiro DND: %1"
 
+#: src/diskio/multifilecache.cpp:93 src/diskio/singlefilecache.cpp:79
+#, fuzzy, kde-format
+#| msgid "Failed to open %1 : %2"
+msgid "Failed to open %1: %2"
+msgstr "Non foi posíbel abrir %1: %2"
+
+#: src/diskio/multifilecache.cpp:120 src/diskio/singlefilecache.cpp:90
+#, fuzzy, kde-format
+#| msgid "Failed to create %1 : %2"
+msgid "Failed to create %1: %2"
+msgstr "Non foi posíbel crear %1: %2"
+
+#: src/diskio/piecedata.cpp:65 src/diskio/piecedata.cpp:104
+msgid "Unable to write to a piece mapped read only"
+msgstr ""
+
+#: src/diskio/chunkmanager.cpp:936 src/diskio/chunkmanager.cpp:962
+#, fuzzy, kde-format
+#| msgid "Cannot open index file %1 : %2"
+msgid "Cannot open index file %1: %2"
+msgstr "Non foi posíbel abrir o ficheiro do índice %1: %2"
+
 #: src/diskio/movedatafilesjob.cpp:140
 msgid "Waiting for other move jobs to finish"
 msgstr ""
@@ -210,28 +232,6 @@ msgstr "Destino"
 msgctxt "@title job"
 msgid "Moving"
 msgstr "Media móbil"
-
-#: src/diskio/multifilecache.cpp:93 src/diskio/singlefilecache.cpp:79
-#, fuzzy, kde-format
-#| msgid "Failed to open %1 : %2"
-msgid "Failed to open %1: %2"
-msgstr "Non foi posíbel abrir %1: %2"
-
-#: src/diskio/multifilecache.cpp:120 src/diskio/singlefilecache.cpp:90
-#, fuzzy, kde-format
-#| msgid "Failed to create %1 : %2"
-msgid "Failed to create %1: %2"
-msgstr "Non foi posíbel crear %1: %2"
-
-#: src/diskio/piecedata.cpp:65 src/diskio/piecedata.cpp:104
-msgid "Unable to write to a piece mapped read only"
-msgstr ""
-
-#: src/diskio/chunkmanager.cpp:936 src/diskio/chunkmanager.cpp:962
-#, fuzzy, kde-format
-#| msgid "Cannot open index file %1 : %2"
-msgid "Cannot open index file %1: %2"
-msgstr "Non foi posíbel abrir o ficheiro do índice %1: %2"
 
 #: src/download/httpconnection.cpp:37 src/download/webseed.cpp:51
 #: src/download/webseed.cpp:98
@@ -455,17 +455,6 @@ msgstr "Xa está a obter o torrente %1"
 msgid "Redirect without a redirect location"
 msgstr "Redirixido sen unha localización de redirección"
 
-#: src/tracker/udptracker.cpp:372 src/tracker/udptracker.cpp:382
-#: src/tracker/httptracker.cpp:561
-#, kde-format
-msgid "Timeout contacting tracker %1"
-msgstr ""
-
-#: src/tracker/udptracker.cpp:409
-#, kde-format
-msgid "Unable to resolve hostname %1"
-msgstr "Non foi posíbel resolver o nome do servidor %1"
-
 #: src/tracker/httptracker.cpp:284 src/tracker/httptracker.cpp:304
 #: src/tracker/httptracker.cpp:466
 msgid "Invalid response from tracker"
@@ -478,6 +467,17 @@ msgstr "Os datos do localizador non son válidos"
 #: src/tracker/httptracker.cpp:483
 msgid "Invalid tracker URL"
 msgstr "O URL do localizador non é válido"
+
+#: src/tracker/httptracker.cpp:561 src/tracker/udptracker.cpp:372
+#: src/tracker/udptracker.cpp:382
+#, kde-format
+msgid "Timeout contacting tracker %1"
+msgstr ""
+
+#: src/tracker/udptracker.cpp:409
+#, kde-format
+msgid "Unable to resolve hostname %1"
+msgstr "Non foi posíbel resolver o nome do servidor %1"
 
 #: src/upnp/httprequest.cpp:96
 #, fuzzy
