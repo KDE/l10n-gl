@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2011-09-15 04:08+0200\n"
+"POT-Creation-Date: 2011-09-23 04:11+0200\n"
 "PO-Revision-Date: 2010-12-16 18:17+0100\n"
 "Last-Translator: Xosé <xosecalvo@gmail.com>\n"
 "Language-Team: Galician <proxecto@trasno.net>\n"
@@ -187,12 +187,12 @@ msgctxt "Sort order for mail groups"
 msgid "Descending"
 msgstr "Descendente"
 
-#: core/item.cpp:228
+#: core/item.cpp:228 core/messageitem.cpp:611
 msgctxt "Status of an item"
 msgid "Read"
 msgstr "Lida"
 
-#: core/item.cpp:230
+#: core/item.cpp:230 core/messageitem.cpp:611
 msgctxt "Status of an item"
 msgid "Unread"
 msgstr "Sen ler"
@@ -202,7 +202,7 @@ msgctxt "Status of an item"
 msgid "Has Attachment"
 msgstr "Contén anexos"
 
-#: core/item.cpp:236
+#: core/item.cpp:236 core/messageitem.cpp:609
 msgctxt "Status of an item"
 msgid "Replied"
 msgstr "Respostada"
@@ -397,86 +397,6 @@ msgstr "Rectángulos con estilo"
 msgid "Styled Joined Rectangles"
 msgstr "Rectángulos unidos con estilo"
 
-#: core/model.cpp:290
-msgid "Today"
-msgstr "Hoxe"
-
-#: core/model.cpp:291
-msgid "Yesterday"
-msgstr "Onte"
-
-#: core/model.cpp:293 core/manager.cpp:98
-msgctxt "Unknown date"
-msgid "Unknown"
-msgstr "Descoñecida"
-
-#: core/model.cpp:294
-msgid "Last Week"
-msgstr "A semana pasada"
-
-#: core/model.cpp:295
-msgid "Two Weeks Ago"
-msgstr "Hai dúas semanas"
-
-#: core/model.cpp:296
-msgid "Three Weeks Ago"
-msgstr "Hai tres semanas"
-
-#: core/model.cpp:297
-msgid "Four Weeks Ago"
-msgstr "Hai catro semanas"
-
-#: core/model.cpp:298
-msgid "Five Weeks Ago"
-msgstr "Hai cinco semanas"
-
-#: core/model.cpp:512 utils/themeeditor.cpp:204
-msgid "Receiver"
-msgstr "Destinatario"
-
-#: core/model.cpp:513 utils/themeeditor.cpp:203
-msgid "Sender"
-msgstr "Remitente"
-
-#: core/model.cpp:1335
-#, kde-format
-msgctxt "Message Aggregation Group Header: Month name and Year number"
-msgid "%1 %2"
-msgstr "%1 %2"
-
-#: core/model.cpp:3765
-#, kde-format
-msgid "Processed 1 Message of %2"
-msgid_plural "Processed %1 Messages of %2"
-msgstr[0] "Procesouse %1 mensaxe de %2"
-msgstr[1] "Procesáronse %1 mensaxes de %2"
-
-#: core/model.cpp:3771 core/model.cpp:3777
-#, kde-format
-msgid "Threaded 1 Message of %2"
-msgid_plural "Threaded %1 Messages of %2"
-msgstr[0] "Enfiouse %1 mensaxe de %2"
-msgstr[1] "Enfiáronse %1 mensaxes de %2"
-
-#: core/model.cpp:3783
-#, kde-format
-msgid "Grouped 1 Thread of %2"
-msgid_plural "Grouped %1 Threads of %2"
-msgstr[0] "Agrupouse %1 fío de %2"
-msgstr[1] "Agrupáronse %1 fíos de %2"
-
-#: core/model.cpp:3789
-#, kde-format
-msgid "Updated 1 Group of %2"
-msgid_plural "Updated %1 Groups of %2"
-msgstr[0] "Actualizouse %1 grupo de %2"
-msgstr[1] "Actualizáronse %1 grupos de %2"
-
-#: core/model.cpp:3885
-msgctxt "@info:status Finished view fill"
-msgid "Ready"
-msgstr "Listo"
-
 #: core/view.cpp:721
 msgid "Adjust Column Sizes"
 msgstr "Axustar os tamaños das columnas"
@@ -660,6 +580,11 @@ msgid "<b>%1</b> message (<b>%2</b> unread)"
 msgid_plural "<b>%1</b> messages (<b>%2</b> unread)"
 msgstr[0] "<b>%1</b> mensaxe (<b>%2</b> sen ler)"
 msgstr[1] "<b>%1</b> mensaxes (<b>%2</b> sen ler)"
+
+#: core/manager.cpp:98 core/model.cpp:293
+msgctxt "Unknown date"
+msgid "Unknown"
+msgstr "Descoñecida"
 
 #: core/manager.cpp:320
 msgid "Current Activity, Threaded"
@@ -952,6 +877,81 @@ msgstr "Dirección de ordenación dos grupos"
 #: core/widgetbase.cpp:733
 msgid "Folder Always Uses This Sort Order"
 msgstr "O cartafol sempre emprega este modo de ordenación"
+
+#: core/model.cpp:290
+msgid "Today"
+msgstr "Hoxe"
+
+#: core/model.cpp:291
+msgid "Yesterday"
+msgstr "Onte"
+
+#: core/model.cpp:294
+msgid "Last Week"
+msgstr "A semana pasada"
+
+#: core/model.cpp:295
+msgid "Two Weeks Ago"
+msgstr "Hai dúas semanas"
+
+#: core/model.cpp:296
+msgid "Three Weeks Ago"
+msgstr "Hai tres semanas"
+
+#: core/model.cpp:297
+msgid "Four Weeks Ago"
+msgstr "Hai catro semanas"
+
+#: core/model.cpp:298
+msgid "Five Weeks Ago"
+msgstr "Hai cinco semanas"
+
+#: core/model.cpp:524 utils/themeeditor.cpp:204
+msgid "Receiver"
+msgstr "Destinatario"
+
+#: core/model.cpp:525 utils/themeeditor.cpp:203
+msgid "Sender"
+msgstr "Remitente"
+
+#: core/model.cpp:1347
+#, kde-format
+msgctxt "Message Aggregation Group Header: Month name and Year number"
+msgid "%1 %2"
+msgstr "%1 %2"
+
+#: core/model.cpp:3777
+#, kde-format
+msgid "Processed 1 Message of %2"
+msgid_plural "Processed %1 Messages of %2"
+msgstr[0] "Procesouse %1 mensaxe de %2"
+msgstr[1] "Procesáronse %1 mensaxes de %2"
+
+#: core/model.cpp:3783 core/model.cpp:3789
+#, kde-format
+msgid "Threaded 1 Message of %2"
+msgid_plural "Threaded %1 Messages of %2"
+msgstr[0] "Enfiouse %1 mensaxe de %2"
+msgstr[1] "Enfiáronse %1 mensaxes de %2"
+
+#: core/model.cpp:3795
+#, kde-format
+msgid "Grouped 1 Thread of %2"
+msgid_plural "Grouped %1 Threads of %2"
+msgstr[0] "Agrupouse %1 fío de %2"
+msgstr[1] "Agrupáronse %1 fíos de %2"
+
+#: core/model.cpp:3801
+#, kde-format
+msgid "Updated 1 Group of %2"
+msgid_plural "Updated %1 Groups of %2"
+msgstr[0] "Actualizouse %1 grupo de %2"
+msgstr[1] "Actualizáronse %1 grupos de %2"
+
+#: core/model.cpp:3897
+msgctxt "@info:status Finished view fill"
+msgid "Ready"
+msgstr "Listo"
 
 #: utils/configureaggregationsdialog.cpp:98
 msgid "Customize Message Aggregation Modes"
