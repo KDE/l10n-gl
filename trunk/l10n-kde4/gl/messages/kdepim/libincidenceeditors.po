@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2011-10-04 04:59+0200\n"
+"POT-Creation-Date: 2011-10-05 04:00+0200\n"
 "PO-Revision-Date: 2011-05-19 00:04+0200\n"
 "Last-Translator: Xosé <xosecalvo@gmail.com>\n"
 "Language-Team: Galician <proxecto@trasno.net>\n"
@@ -408,6 +408,34 @@ msgstr "[Datos binarios]"
 msgid "invalid@email.address"
 msgstr "O enderezo de correo electrónico non é válido"
 
+#: incidencedatetime.cpp:200
+msgctxt "@action show or hide the time zone widgets"
+msgid "Time zones"
+msgstr "Fusos horarios"
+
+#: incidencedatetime.cpp:625
+msgctxt "@label The due date/time of a to-do"
+msgid "Due:"
+msgstr "Vence:"
+
+#: incidencedatetime.cpp:804
+msgctxt "@info"
+msgid ""
+"The event ends before it starts.\n"
+"Please correct dates and times."
+msgstr ""
+"A actividade remata antes de que comece.\n"
+"Por favor, corrixa as datas e horas."
+
+#: incidencedatetime.cpp:809
+msgctxt "@info"
+msgid ""
+"The to-do is due before it starts.\n"
+"Please correct dates and times."
+msgstr ""
+"A tarefa remata antes de que comece.\n"
+"Por favor, corrixa as datas e horas."
+
 #: editoritemmanager.cpp:209
 msgid ""
 "The item has been changed by another application.\n"
@@ -487,34 +515,6 @@ msgid "Location of Free/Busy information for %1 <placeholder>%2</placeholder>:"
 msgstr ""
 "Localización da información de dispoñibilidade de %1 <placeholder>%2</"
 "placeholder>:"
-
-#: incidencedatetime.cpp:200
-msgctxt "@action show or hide the time zone widgets"
-msgid "Time zones"
-msgstr "Fusos horarios"
-
-#: incidencedatetime.cpp:625
-msgctxt "@label The due date/time of a to-do"
-msgid "Due:"
-msgstr "Vence:"
-
-#: incidencedatetime.cpp:804
-msgctxt "@info"
-msgid ""
-"The event ends before it starts.\n"
-"Please correct dates and times."
-msgstr ""
-"A actividade remata antes de que comece.\n"
-"Por favor, corrixa as datas e horas."
-
-#: incidencedatetime.cpp:809
-msgctxt "@info"
-msgid ""
-"The to-do is due before it starts.\n"
-"Please correct dates and times."
-msgstr ""
-"A tarefa remata antes de que comece.\n"
-"Por favor, corrixa as datas e horas."
 
 #: incidencealarm.cpp:290
 msgctxt "Disable currently selected reminder"
@@ -1445,14 +1445,14 @@ msgid "&Start:"
 msgstr "&Comezo:"
 
 #. i18n: file: eventortododesktop.ui:400
-#. i18n: ectx: property (toolTip), widget (KPIM::KDateEdit, mStartDateEdit)
+#. i18n: ectx: property (toolTip), widget (KDateComboBox, mStartDateEdit)
 #: rc.cpp:290
 msgctxt "@info:tooltip"
 msgid "Set the start date"
 msgstr "Estableza a data de comezo"
 
 #. i18n: file: eventortododesktop.ui:403
-#. i18n: ectx: property (whatsThis), widget (KPIM::KDateEdit, mStartDateEdit)
+#. i18n: ectx: property (whatsThis), widget (KDateComboBox, mStartDateEdit)
 #. i18n: file: eventortodomobile.ui:176
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, mStartCheck)
 #: rc.cpp:293 rc.cpp:521
@@ -1461,7 +1461,7 @@ msgid "Sets the start date for this to-do"
 msgstr "Establece a data de inicio desta tarefa."
 
 #. i18n: file: eventortododesktop.ui:419
-#. i18n: ectx: property (whatsThis), widget (KPIM::KTimeEdit, mStartTimeEdit)
+#. i18n: ectx: property (whatsThis), widget (KTimeComboBox, mStartTimeEdit)
 #: rc.cpp:296
 msgctxt "@info:whatsthis"
 msgid "Sets the start time for this to-do."
@@ -1496,7 +1496,7 @@ msgid "&End:"
 msgstr "R&emate:"
 
 #. i18n: file: eventortododesktop.ui:518
-#. i18n: ectx: property (whatsThis), widget (KPIM::KDateEdit, mEndDateEdit)
+#. i18n: ectx: property (whatsThis), widget (KDateComboBox, mEndDateEdit)
 #. i18n: file: eventortodomobile.ui:218
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, mEndCheck)
 #: rc.cpp:308 rc.cpp:530
@@ -1505,7 +1505,7 @@ msgid "Sets the due date for this to-do."
 msgstr "Establece a data límite desta tarefa."
 
 #. i18n: file: eventortododesktop.ui:534
-#. i18n: ectx: property (whatsThis), widget (KPIM::KTimeEdit, mEndTimeEdit)
+#. i18n: ectx: property (whatsThis), widget (KTimeComboBox, mEndTimeEdit)
 #: rc.cpp:311
 msgctxt "@info:whatsthis"
 msgid "Sets the due time for this to-do."
@@ -1734,7 +1734,7 @@ msgid "after"
 msgstr "despois de"
 
 #. i18n: file: eventortododesktop.ui:1238
-#. i18n: ectx: property (whatsThis), widget (KPIM::KDateEdit, mRecurrenceEndDate)
+#. i18n: ectx: property (whatsThis), widget (KDateComboBox, mRecurrenceEndDate)
 #: rc.cpp:440
 msgctxt "@info:whatsthis"
 msgid "Date after which the event or to-do should stop recurring"
@@ -1902,114 +1902,82 @@ msgctxt ""
 msgid "Progress:"
 msgstr "Evolución:"
 
-#. i18n: file: incidenceeditor.kcfg:13
-#. i18n: ectx: label, entry (DefaultEmailAttachMethod), group (AttachmentHandling)
+#. i18n: file: schedulingdialog.ui:14
+#. i18n: ectx: property (windowTitle), widget (QWidget, Dialog)
 #: rc.cpp:584
-msgid "Default Email Attachment Method"
-msgstr "Método predefinido de tratamento dos anexos de correo electrónico"
+msgid "Schedule a time"
+msgstr "Programar unha hora"
 
-#. i18n: file: incidenceeditor.kcfg:14
-#. i18n: ectx: whatsthis, entry (DefaultEmailAttachMethod), group (AttachmentHandling)
-#: rc.cpp:587
-msgid "The default way of attaching dropped emails to an event"
-msgstr ""
-"O xeito por omisión no que se xuntarán mensaxes de correo electrónico a un "
-"evento"
-
-#. i18n: file: incidenceeditor.kcfg:17
-#. i18n: ectx: label, entry (DefaultEmailAttachMethod), group (AttachmentHandling)
-#: rc.cpp:590
-msgid "Always ask"
-msgstr "Preguntar sempre"
-
-#. i18n: file: incidenceeditor.kcfg:20
-#. i18n: ectx: label, entry (DefaultEmailAttachMethod), group (AttachmentHandling)
-#: rc.cpp:593
-msgid "Only attach link to message"
-msgstr "Só xuntar a ligazón á mensaxe"
-
-#. i18n: file: incidenceeditor.kcfg:23
-#. i18n: ectx: label, entry (DefaultEmailAttachMethod), group (AttachmentHandling)
-#: rc.cpp:596
-msgid "Attach complete message"
-msgstr "Xuntar a mensaxe completa"
-
-#. i18n: file: incidenceeditor.kcfg:26
-#. i18n: ectx: label, entry (DefaultEmailAttachMethod), group (AttachmentHandling)
-#: rc.cpp:599
-msgid "Attach message without attachments"
-msgstr "Xuntar a mensaxe sen anexos"
-
-#. i18n: file: mobileschedulingdialog.ui:17
-#. i18n: ectx: property (text), widget (QLabel, label)
 #. i18n: file: schedulingdialog.ui:27
 #. i18n: ectx: property (text), widget (QLabel, label)
-#: rc.cpp:602 rc.cpp:650
+#. i18n: file: mobileschedulingdialog.ui:17
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: rc.cpp:587 rc.cpp:656
 msgid "Earliest time to start:"
 msgstr "Hora máis cedo de inicio:"
 
-#. i18n: file: mobileschedulingdialog.ui:33
-#. i18n: ectx: property (text), widget (QLabel, label_2)
 #. i18n: file: schedulingdialog.ui:47
 #. i18n: ectx: property (text), widget (QLabel, label_2)
-#: rc.cpp:605 rc.cpp:653
+#. i18n: file: mobileschedulingdialog.ui:33
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: rc.cpp:590 rc.cpp:659
 msgid "Latest time to end:"
 msgstr "Hora máis tarde de remate:"
 
-#. i18n: file: mobileschedulingdialog.ui:49
-#. i18n: ectx: property (toolTip), widget (QLabel, label_3)
-#. i18n: file: mobileschedulingdialog.ui:71
-#. i18n: ectx: property (toolTip), widget (KPIM::KWeekdayCheckCombo, mWeekdayCombo)
 #. i18n: file: schedulingdialog.ui:71
 #. i18n: ectx: property (toolTip), widget (QLabel, label_3)
 #. i18n: file: schedulingdialog.ui:96
 #. i18n: ectx: property (toolTip), widget (KPIM::KWeekdayCheckCombo, mWeekdayCombo)
-#: rc.cpp:608 rc.cpp:617 rc.cpp:656 rc.cpp:665
+#. i18n: file: mobileschedulingdialog.ui:49
+#. i18n: ectx: property (toolTip), widget (QLabel, label_3)
+#. i18n: file: mobileschedulingdialog.ui:71
+#. i18n: ectx: property (toolTip), widget (KPIM::KWeekdayCheckCombo, mWeekdayCombo)
+#: rc.cpp:593 rc.cpp:602 rc.cpp:662 rc.cpp:671
 msgid "Check the weekdays to include in the search."
 msgstr "Verificar os días laborais que incluír na busca."
 
-#. i18n: file: mobileschedulingdialog.ui:52
-#. i18n: ectx: property (whatsThis), widget (QLabel, label_3)
-#. i18n: file: mobileschedulingdialog.ui:74
-#. i18n: ectx: property (whatsThis), widget (KPIM::KWeekdayCheckCombo, mWeekdayCombo)
 #. i18n: file: schedulingdialog.ui:77
 #. i18n: ectx: property (whatsThis), widget (QLabel, label_3)
 #. i18n: file: schedulingdialog.ui:99
 #. i18n: ectx: property (whatsThis), widget (KPIM::KWeekdayCheckCombo, mWeekdayCombo)
-#: rc.cpp:611 rc.cpp:620 rc.cpp:659 rc.cpp:668
+#. i18n: file: mobileschedulingdialog.ui:52
+#. i18n: ectx: property (whatsThis), widget (QLabel, label_3)
+#. i18n: file: mobileschedulingdialog.ui:74
+#. i18n: ectx: property (whatsThis), widget (KPIM::KWeekdayCheckCombo, mWeekdayCombo)
+#: rc.cpp:596 rc.cpp:605 rc.cpp:665 rc.cpp:674
 msgid ""
 "Only the checked weekdays will be included in the free time slot search."
 msgstr "Só se inclúen os días laborábeis na busca de horas libres."
 
-#. i18n: file: mobileschedulingdialog.ui:55
-#. i18n: ectx: property (text), widget (QLabel, label_3)
 #. i18n: file: schedulingdialog.ui:80
 #. i18n: ectx: property (text), widget (QLabel, label_3)
-#: rc.cpp:614 rc.cpp:662
+#. i18n: file: mobileschedulingdialog.ui:55
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#: rc.cpp:599 rc.cpp:668
 msgid "Allowed weekdays:"
 msgstr "Días da semana permitidos:"
 
-#. i18n: file: mobileschedulingdialog.ui:81
-#. i18n: ectx: property (toolTip), widget (QLabel, label_5)
-#. i18n: file: mobileschedulingdialog.ui:103
-#. i18n: ectx: property (toolTip), widget (KPIM::KCheckComboBox, mRolesCombo)
 #. i18n: file: schedulingdialog.ui:106
 #. i18n: ectx: property (toolTip), widget (QLabel, label_5)
 #. i18n: file: schedulingdialog.ui:128
 #. i18n: ectx: property (toolTip), widget (KPIM::KCheckComboBox, mRolesCombo)
-#: rc.cpp:623 rc.cpp:632 rc.cpp:671 rc.cpp:680
+#. i18n: file: mobileschedulingdialog.ui:81
+#. i18n: ectx: property (toolTip), widget (QLabel, label_5)
+#. i18n: file: mobileschedulingdialog.ui:103
+#. i18n: ectx: property (toolTip), widget (KPIM::KCheckComboBox, mRolesCombo)
+#: rc.cpp:608 rc.cpp:617 rc.cpp:677 rc.cpp:686
 msgid "Check the roles to include in the search."
 msgstr "Verificar os papeles que incluír na busca."
 
-#. i18n: file: mobileschedulingdialog.ui:84
-#. i18n: ectx: property (whatsThis), widget (QLabel, label_5)
-#. i18n: file: mobileschedulingdialog.ui:106
-#. i18n: ectx: property (whatsThis), widget (KPIM::KCheckComboBox, mRolesCombo)
 #. i18n: file: schedulingdialog.ui:109
 #. i18n: ectx: property (whatsThis), widget (QLabel, label_5)
 #. i18n: file: schedulingdialog.ui:131
 #. i18n: ectx: property (whatsThis), widget (KPIM::KCheckComboBox, mRolesCombo)
-#: rc.cpp:626 rc.cpp:635 rc.cpp:674 rc.cpp:683
+#. i18n: file: mobileschedulingdialog.ui:84
+#. i18n: ectx: property (whatsThis), widget (QLabel, label_5)
+#. i18n: file: mobileschedulingdialog.ui:106
+#. i18n: ectx: property (whatsThis), widget (KPIM::KCheckComboBox, mRolesCombo)
+#: rc.cpp:611 rc.cpp:620 rc.cpp:680 rc.cpp:689
 msgid ""
 "Only the participants with the checked roles will be considered in the free "
 "time slot search."
@@ -2017,55 +1985,87 @@ msgstr ""
 "Só se consideran os participantes cuxos papeis estean seleccionados ao "
 "buscar horas libres."
 
-#. i18n: file: mobileschedulingdialog.ui:87
-#. i18n: ectx: property (text), widget (QLabel, label_5)
 #. i18n: file: schedulingdialog.ui:112
 #. i18n: ectx: property (text), widget (QLabel, label_5)
-#: rc.cpp:629 rc.cpp:677
+#. i18n: file: mobileschedulingdialog.ui:87
+#. i18n: ectx: property (text), widget (QLabel, label_5)
+#: rc.cpp:614 rc.cpp:683
 msgid "Mandatory roles:"
 msgstr "Papeis obrigatorios:"
 
-#. i18n: file: mobileschedulingdialog.ui:141
-#. i18n: ectx: property (title), widget (QGroupBox, mMoveApptGroupBox)
-#. i18n: file: schedulingdialog.ui:189
-#. i18n: ectx: property (title), widget (QGroupBox, mMoveApptGroupBox)
-#: rc.cpp:638 rc.cpp:692
-msgid "Move your appointment to:"
-msgstr "Mover a cita para:"
-
-#. i18n: file: mobileschedulingdialog.ui:162
-#. i18n: ectx: property (text), widget (QLabel, mMoveDayLabel)
-#. i18n: file: schedulingdialog.ui:210
-#. i18n: ectx: property (text), widget (QLabel, mMoveDayLabel)
-#: rc.cpp:641 rc.cpp:695
-msgid "Monday, 12th June"
-msgstr "O luns, 12 de xuño"
-
-#. i18n: file: mobileschedulingdialog.ui:175
-#. i18n: ectx: property (text), widget (QLabel, mMoveEndTimeLabel)
-#. i18n: file: schedulingdialog.ui:223
-#. i18n: ectx: property (text), widget (QLabel, mMoveEndTimeLabel)
-#: rc.cpp:644 rc.cpp:698
-msgid "to 10:00am"
-msgstr "ás 10:00am"
-
-#. i18n: file: schedulingdialog.ui:14
-#. i18n: ectx: property (windowTitle), widget (QWidget, Dialog)
-#: rc.cpp:647
-msgid "Schedule a time"
-msgstr "Programar unha hora"
-
 #. i18n: file: schedulingdialog.ui:146
 #. i18n: ectx: attribute (title), widget (QWidget, mTextTab)
-#: rc.cpp:686
+#: rc.cpp:623
 msgid "Automatic Search"
 msgstr "Busca automática"
 
 #. i18n: file: schedulingdialog.ui:181
 #. i18n: ectx: attribute (title), widget (QWidget, mGanttTab)
-#: rc.cpp:689
+#: rc.cpp:626
 msgid "Visual Search"
 msgstr "Busca visual"
+
+#. i18n: file: schedulingdialog.ui:189
+#. i18n: ectx: property (title), widget (QGroupBox, mMoveApptGroupBox)
+#. i18n: file: mobileschedulingdialog.ui:141
+#. i18n: ectx: property (title), widget (QGroupBox, mMoveApptGroupBox)
+#: rc.cpp:629 rc.cpp:692
+msgid "Move your appointment to:"
+msgstr "Mover a cita para:"
+
+#. i18n: file: schedulingdialog.ui:210
+#. i18n: ectx: property (text), widget (QLabel, mMoveDayLabel)
+#. i18n: file: mobileschedulingdialog.ui:162
+#. i18n: ectx: property (text), widget (QLabel, mMoveDayLabel)
+#: rc.cpp:632 rc.cpp:695
+msgid "Monday, 12th June"
+msgstr "O luns, 12 de xuño"
+
+#. i18n: file: schedulingdialog.ui:223
+#. i18n: ectx: property (text), widget (QLabel, mMoveEndTimeLabel)
+#. i18n: file: mobileschedulingdialog.ui:175
+#. i18n: ectx: property (text), widget (QLabel, mMoveEndTimeLabel)
+#: rc.cpp:635 rc.cpp:698
+msgid "to 10:00am"
+msgstr "ás 10:00am"
+
+#. i18n: file: incidenceeditor.kcfg:13
+#. i18n: ectx: label, entry (DefaultEmailAttachMethod), group (AttachmentHandling)
+#: rc.cpp:638
+msgid "Default Email Attachment Method"
+msgstr "Método predefinido de tratamento dos anexos de correo electrónico"
+
+#. i18n: file: incidenceeditor.kcfg:14
+#. i18n: ectx: whatsthis, entry (DefaultEmailAttachMethod), group (AttachmentHandling)
+#: rc.cpp:641
+msgid "The default way of attaching dropped emails to an event"
+msgstr ""
+"O xeito por omisión no que se xuntarán mensaxes de correo electrónico a un "
+"evento"
+
+#. i18n: file: incidenceeditor.kcfg:17
+#. i18n: ectx: label, entry (DefaultEmailAttachMethod), group (AttachmentHandling)
+#: rc.cpp:644
+msgid "Always ask"
+msgstr "Preguntar sempre"
+
+#. i18n: file: incidenceeditor.kcfg:20
+#. i18n: ectx: label, entry (DefaultEmailAttachMethod), group (AttachmentHandling)
+#: rc.cpp:647
+msgid "Only attach link to message"
+msgstr "Só xuntar a ligazón á mensaxe"
+
+#. i18n: file: incidenceeditor.kcfg:23
+#. i18n: ectx: label, entry (DefaultEmailAttachMethod), group (AttachmentHandling)
+#: rc.cpp:650
+msgid "Attach complete message"
+msgstr "Xuntar a mensaxe completa"
+
+#. i18n: file: incidenceeditor.kcfg:26
+#. i18n: ectx: label, entry (DefaultEmailAttachMethod), group (AttachmentHandling)
+#: rc.cpp:653
+msgid "Attach message without attachments"
+msgstr "Xuntar a mensaxe sen anexos"
 
 #. i18n: file: template_management_dialog_base.ui:14
 #. i18n: ectx: property (windowTitle), widget (QWidget, TemplateManagementDialog_base)
@@ -3008,7 +3008,7 @@ msgctxt "@label"
 msgid "New attachment"
 msgstr "Novo anexo"
 
-#: incidencerecurrence.cpp:148
+#: incidencerecurrence.cpp:147
 msgctxt ""
 "In several of the messages below, an ordinal number is substituted into the "
 "message. Translate this as \"0\" if English ordinal suffixes should be added "
@@ -3017,112 +3017,118 @@ msgctxt ""
 msgid "0"
 msgstr "0"
 
-#: incidencerecurrence.cpp:428
+#: incidencerecurrence.cpp:431
+msgid ""
+"A recurring event or to-do must occur at least once. Adjust the recurring "
+"parameters."
+msgstr ""
+
+#: incidencerecurrence.cpp:436
 msgid "The event's start date or the to-do's due date is invalid."
 msgstr "A data de inicio da actividade ou da tarefa non son válidas."
 
-#: incidencerecurrence.cpp:468
+#: incidencerecurrence.cpp:478
 #, kde-format
 msgctxt "example: the 30th"
 msgid "the %1"
 msgstr "o %1"
 
-#: incidencerecurrence.cpp:472
+#: incidencerecurrence.cpp:482
 #, kde-format
 msgctxt "example: the 4th to last day"
 msgid "the %1 to last day"
 msgstr "o %1º día antes do último"
 
-#: incidencerecurrence.cpp:476
+#: incidencerecurrence.cpp:486
 #, kde-format
 msgctxt "example: the 5th Wednesday"
 msgid "the %1 %2"
 msgstr "o %1º %2"
 
-#: incidencerecurrence.cpp:482
+#: incidencerecurrence.cpp:492
 #, kde-format
 msgctxt "example: the last Wednesday"
 msgid "the last %1"
 msgstr "o derradeiro %1"
 
-#: incidencerecurrence.cpp:487
+#: incidencerecurrence.cpp:497
 #, kde-format
 msgctxt "example: the 5th to last Wednesday"
 msgid "the %1 to last %2"
 msgstr "o %1º antes do último %2"
 
-#: incidencerecurrence.cpp:503
+#: incidencerecurrence.cpp:513
 #, kde-format
 msgctxt "example: the 5th of June"
 msgid "the %1 of %2"
 msgstr "o %1 de %2"
 
-#: incidencerecurrence.cpp:508
+#: incidencerecurrence.cpp:518
 #, kde-format
 msgctxt "example: the 3rd to last day of June"
 msgid "the %1 to last day of %2"
 msgstr "o %1º día antes do fin de %2"
 
-#: incidencerecurrence.cpp:513
+#: incidencerecurrence.cpp:523
 #, kde-format
 msgctxt "example: the 4th Wednesday of June"
 msgid "the %1 %2 of %3"
 msgstr "o %1º %2 de %3"
 
-#: incidencerecurrence.cpp:519
+#: incidencerecurrence.cpp:529
 #, kde-format
 msgctxt "example: the last Wednesday of June"
 msgid "the last %1 of %2"
 msgstr "o derradeiro %1 de %2"
 
-#: incidencerecurrence.cpp:524
+#: incidencerecurrence.cpp:534
 #, kde-format
 msgctxt "example: the 4th to last Wednesday of June"
 msgid "the %1 to last %2 of %3 "
 msgstr "o %1º %2 antes do fin de %3"
 
-#: incidencerecurrence.cpp:532
+#: incidencerecurrence.cpp:542
 #, kde-format
 msgctxt "example: the 15th day of the year"
 msgid "the %1 day of the year"
 msgstr "o %1 día do ano"
 
-#: incidencerecurrence.cpp:549
+#: incidencerecurrence.cpp:559
 msgctxt "Recurrence ends after n occurrences"
 msgid "occurrence"
 msgid_plural "occurrences"
 msgstr[0] "repetición"
 msgstr[1] "repeticións"
 
-#: incidencerecurrence.cpp:575
+#: incidencerecurrence.cpp:585
 msgctxt "repeat every N >weeks<"
 msgid "week"
 msgid_plural "weeks"
 msgstr[0] "semana"
 msgstr[1] "semanas"
 
-#: incidencerecurrence.cpp:579
+#: incidencerecurrence.cpp:589
 msgctxt "repeat every N >months<"
 msgid "month"
 msgid_plural "months"
 msgstr[0] "mes"
 msgstr[1] "meses"
 
-#: incidencerecurrence.cpp:583
+#: incidencerecurrence.cpp:593
 msgctxt "repeat every N >years<"
 msgid "year"
 msgid_plural "years"
 msgstr[0] "ano"
 msgstr[1] "anos"
 
-#: incidencerecurrence.cpp:587
+#: incidencerecurrence.cpp:597
 msgctxt "repeat every N >days<"
 msgid "day"
 msgid_plural "days"
 msgstr[0] "día"
 msgstr[1] "días"
 
-#: incidencerecurrence.cpp:595
+#: incidencerecurrence.cpp:605
 msgctxt ""
 "repeat >every< N years/months/...; dynamic context 'type': 'd' days, 'w' "
 "weeks, 'm' months, 'y' years"
