@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kio4\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2011-08-02 06:20+0200\n"
+"POT-Creation-Date: 2011-11-01 05:27+0100\n"
 "PO-Revision-Date: 2011-04-02 09:51+0200\n"
 "Last-Translator: Marce Villarino <mvillarino@gmail.com>\n"
 "Language-Team: Galician <kde-i18n-doc@kde.org>\n"
@@ -66,8 +66,8 @@ msgctxt "@title:window"
 msgid "Select Folder"
 msgstr "Escoller un cartafol"
 
-#: bookmarks/kbookmarkdialog.cc:159 ../kfile/knewfilemenu.cpp:1015
-#: ../kfile/kdirselectdialog.cpp:135
+#: bookmarks/kbookmarkdialog.cc:159 ../kfile/kdirselectdialog.cpp:135
+#: ../kfile/knewfilemenu.cpp:1015
 msgctxt "@title:window"
 msgid "New Folder"
 msgstr "Novo cartafol"
@@ -125,6 +125,33 @@ msgstr "Marcadores"
 #: bookmarks/kbookmarkimporter_opera.cc:125
 msgid "*.adr|Opera Bookmark Files (*.adr)"
 msgstr "*.adr|Marcadores de Opera (*.adr)"
+
+#: bookmarks/konqbookmarkmenu.cc:61 bookmarks/konqbookmarkmenu.cc:78
+msgid "Hide in toolbar"
+msgstr "Acochar na barra de ferramentas"
+
+#: bookmarks/konqbookmarkmenu.cc:61 bookmarks/konqbookmarkmenu.cc:78
+msgid "Show in toolbar"
+msgstr "Mostrar na barra de ferramentas"
+
+#: bookmarks/konqbookmarkmenu.cc:71
+msgid "Open in New Window"
+msgstr "Abrir nunha xanela nova"
+
+#: bookmarks/konqbookmarkmenu.cc:72
+msgid "Open in New Tab"
+msgstr "Abrir nunha páxina nova"
+
+#: bookmarks/kbookmarkmanager.cc:443
+#, kde-format
+msgid ""
+"Unable to save bookmarks in %1. Reported error was: %2. This error message "
+"will only be shown once. The cause of the error needs to be fixed as quickly "
+"as possible, which is most likely a full hard drive."
+msgstr ""
+"Non foi posíbel gardar os marcadores en %1. O erro recibido foi: %2. Esta "
+"mensaxe de erro só se mostrará unha vez. A causa do erro debe ser corrixida "
+"tan axiña como se poda, posibelmente sexa un disco duro cheo."
 
 #: bookmarks/kbookmarkmenu.cc:267
 msgid "Add Bookmark Here"
@@ -207,33 +234,6 @@ msgstr "Novo cartafol de marcadores..."
 #: bookmarks/kbookmarkmenu.cc:519
 msgid "Create a new bookmark folder in this menu"
 msgstr "Crea un novo cartafol de marcadores neste menú"
-
-#: bookmarks/konqbookmarkmenu.cc:61 bookmarks/konqbookmarkmenu.cc:78
-msgid "Hide in toolbar"
-msgstr "Acochar na barra de ferramentas"
-
-#: bookmarks/konqbookmarkmenu.cc:61 bookmarks/konqbookmarkmenu.cc:78
-msgid "Show in toolbar"
-msgstr "Mostrar na barra de ferramentas"
-
-#: bookmarks/konqbookmarkmenu.cc:71
-msgid "Open in New Window"
-msgstr "Abrir nunha xanela nova"
-
-#: bookmarks/konqbookmarkmenu.cc:72
-msgid "Open in New Tab"
-msgstr "Abrir nunha páxina nova"
-
-#: bookmarks/kbookmarkmanager.cc:443
-#, kde-format
-msgid ""
-"Unable to save bookmarks in %1. Reported error was: %2. This error message "
-"will only be shown once. The cause of the error needs to be fixed as quickly "
-"as possible, which is most likely a full hard drive."
-msgstr ""
-"Non foi posíbel gardar os marcadores en %1. O erro recibido foi: %2. Esta "
-"mensaxe de erro só se mostrará unha vez. A causa do erro debe ser corrixida "
-"tan axiña como se poda, posibelmente sexa un disco duro cheo."
 
 #: httpfilter/httpfilter.cc:179
 msgid "Receiving corrupt data."
@@ -444,7 +444,7 @@ msgctxt "@title:tab"
 msgid "Information"
 msgstr "Información"
 
-#: kfile/knfotranslator.cpp:40 kfile/kfilemetadataprovider.cpp:399
+#: kfile/knfotranslator.cpp:40 kfile/kfilemetadataprovider.cpp:422
 msgctxt "@label"
 msgid "Comment"
 msgstr "Comentario"
@@ -743,7 +743,7 @@ msgctxt "@title:tab File properties"
 msgid "&General"
 msgstr "&Xeral"
 
-#: kfile/kpropertiesdialog.cpp:947 kio/kfileitem.cpp:1089
+#: kfile/kpropertiesdialog.cpp:947 kio/kfileitem.cpp:1130
 msgid "Type:"
 msgstr "Tipo:"
 
@@ -765,7 +765,7 @@ msgstr "Contidos:"
 msgid "Location:"
 msgstr "Lugar:"
 
-#: kfile/kpropertiesdialog.cpp:995 kio/kfileitem.cpp:1098
+#: kfile/kpropertiesdialog.cpp:995 kio/kfileitem.cpp:1139
 msgid "Size:"
 msgstr "Tamaño:"
 
@@ -789,7 +789,7 @@ msgstr "Apunta a:"
 msgid "Created:"
 msgstr "Creado o:"
 
-#: kfile/kpropertiesdialog.cpp:1056 kio/kfileitem.cpp:1102
+#: kfile/kpropertiesdialog.cpp:1056 kio/kfileitem.cpp:1143
 msgid "Modified:"
 msgstr "Modificado:"
 
@@ -1422,42 +1422,53 @@ msgstr "Estado"
 msgid "*.png *.xpm *.svg *.svgz|Icon Files (*.png *.xpm *.svg *.svgz)"
 msgstr "*.png *.xpm *.svg *.svgz|Ficheiros de icona (*.png *.xpm *.svg *.svgz)"
 
-#: kfile/kfilemetadataprovider.cpp:400
+#: kfile/kfilemetadataprovider.cpp:223
+#, fuzzy, kde-format
+#| msgctxt "Items in a folder"
+#| msgid "1 item"
+#| msgid_plural "%1 items"
+msgctxt "@item:intable"
+msgid "%1 item"
+msgid_plural "%1 items"
+msgstr[0] "1 ítem"
+msgstr[1] "%1 ítems"
+
+#: kfile/kfilemetadataprovider.cpp:423
 msgctxt "@label"
 msgid "Modified"
 msgstr "Modificación"
 
-#: kfile/kfilemetadataprovider.cpp:401
+#: kfile/kfilemetadataprovider.cpp:424
 msgctxt "@label"
 msgid "Owner"
 msgstr "Dono"
 
-#: kfile/kfilemetadataprovider.cpp:402
+#: kfile/kfilemetadataprovider.cpp:425
 msgctxt "@label"
 msgid "Permissions"
 msgstr "Permisos"
 
-#: kfile/kfilemetadataprovider.cpp:403
+#: kfile/kfilemetadataprovider.cpp:426
 msgctxt "@label"
 msgid "Rating"
 msgstr "Puntuación"
 
-#: kfile/kfilemetadataprovider.cpp:404
+#: kfile/kfilemetadataprovider.cpp:427
 msgctxt "@label"
 msgid "Size"
 msgstr "Tamaño"
 
-#: kfile/kfilemetadataprovider.cpp:405
+#: kfile/kfilemetadataprovider.cpp:428
 msgctxt "@label"
 msgid "Tags"
 msgstr "Etiquetas"
 
-#: kfile/kfilemetadataprovider.cpp:406
+#: kfile/kfilemetadataprovider.cpp:429
 msgctxt "@label"
 msgid "Total Size"
 msgstr "Tamaño total"
 
-#: kfile/kfilemetadataprovider.cpp:407
+#: kfile/kfilemetadataprovider.cpp:430
 msgctxt "@label"
 msgid "Type"
 msgstr "Tipo"
@@ -1535,7 +1546,7 @@ msgstr ""
 msgid "&Skip File"
 msgstr "Omitir o &ficheiro"
 
-#: kio/connection.cpp:211
+#: kio/connection.cpp:213
 #, kde-format
 msgid "Unable to create io-slave: %1"
 msgstr "Non foi posíbel crear o ioslave: %1"
@@ -1545,7 +1556,7 @@ msgid "Folder Already Exists"
 msgstr "O cartafol xa existe"
 
 #: kio/copyjob.cpp:1349 kio/copyjob.cpp:1921 kio/global.cpp:669
-#: kio/job.cpp:2209 kio/paste.cpp:116
+#: kio/job.cpp:2218 kio/paste.cpp:116
 msgid "File Already Exists"
 msgstr "O ficheiro xa existe"
 
@@ -3323,7 +3334,7 @@ msgstr ""
 "O servidor estaba ocupado de máis respondendo outros pedidos para poder "
 "responderlle ao seu."
 
-#: kio/global.cpp:1094 kio/slavebase.cpp:1324
+#: kio/global.cpp:1094 kio/slavebase.cpp:1331
 msgid "Unknown Error"
 msgstr "Erro descoñecido"
 
@@ -3633,37 +3644,37 @@ msgstr ""
 "Non é posíbel listar o URL\n"
 "%1"
 
-#: kio/kdirmodel.cpp:997
+#: kio/kdirmodel.cpp:998
 msgctxt "@title:column"
 msgid "Name"
 msgstr "Nome"
 
-#: kio/kdirmodel.cpp:999
+#: kio/kdirmodel.cpp:1000
 msgctxt "@title:column"
 msgid "Size"
 msgstr "Tamaño"
 
-#: kio/kdirmodel.cpp:1001
+#: kio/kdirmodel.cpp:1002
 msgctxt "@title:column"
 msgid "Date"
 msgstr "Data"
 
-#: kio/kdirmodel.cpp:1003
+#: kio/kdirmodel.cpp:1004
 msgctxt "@title:column"
 msgid "Permissions"
 msgstr "Permisos"
 
-#: kio/kdirmodel.cpp:1005
+#: kio/kdirmodel.cpp:1006
 msgctxt "@title:column"
 msgid "Owner"
 msgstr "Dono"
 
-#: kio/kdirmodel.cpp:1007
+#: kio/kdirmodel.cpp:1008
 msgctxt "@title:column"
 msgid "Group"
 msgstr "Grupo"
 
-#: kio/kdirmodel.cpp:1009
+#: kio/kdirmodel.cpp:1010
 msgctxt "@title:column"
 msgid "Type"
 msgstr "Tipo"
@@ -3673,35 +3684,35 @@ msgstr "Tipo"
 msgid "Default"
 msgstr "Predeterminado"
 
-#: kio/kfileitem.cpp:1053
+#: kio/kfileitem.cpp:1094
 #, kde-format
 msgid "(Symbolic Link to %1)"
 msgstr "(Ligazón simbólica con %1)"
 
-#: kio/kfileitem.cpp:1055
+#: kio/kfileitem.cpp:1096
 #, kde-format
 msgid "(%1, Link to %2)"
 msgstr "(%1, ligazón para %2)"
 
-#: kio/kfileitem.cpp:1059
+#: kio/kfileitem.cpp:1100
 #, kde-format
 msgid " (Points to %1)"
 msgstr " (Apunta a %1)"
 
-#: kio/kfileitem.cpp:1088 ../kioslave/http/kcookiejar/kcookiewin.cpp:205
+#: kio/kfileitem.cpp:1129 ../kioslave/http/kcookiejar/kcookiewin.cpp:205
 msgid "Name:"
 msgstr "Nome:"
 
-#: kio/kfileitem.cpp:1093
+#: kio/kfileitem.cpp:1134
 #, kde-format
 msgid "Link to %1 (%2)"
 msgstr "Ligazón con %1 (%2)"
 
-#: kio/kfileitem.cpp:1105
+#: kio/kfileitem.cpp:1146
 msgid "Owner:"
 msgstr "Dono:"
 
-#: kio/kfileitem.cpp:1106
+#: kio/kfileitem.cpp:1147
 msgid "Permissions:"
 msgstr "Permisos:"
 
@@ -4099,19 +4110,19 @@ msgstr ""
 "Non foi posíbel crear o ioslave:\n"
 "klauncher dixo: %1"
 
-#: kio/slaveinterface.cpp:415 kio/tcpslavebase.cpp:821 kssl/sslui.cpp:81
+#: kio/slaveinterface.cpp:415 kio/tcpslavebase.cpp:835 kssl/sslui.cpp:81
 msgid "&Details"
 msgstr "&Detalles"
 
-#: kio/slaveinterface.cpp:417 kio/tcpslavebase.cpp:838 kssl/sslui.cpp:120
+#: kio/slaveinterface.cpp:417 kio/tcpslavebase.cpp:852 kssl/sslui.cpp:120
 msgid "&Forever"
 msgstr "Para &sempre"
 
-#: kio/slaveinterface.cpp:422 kio/tcpslavebase.cpp:821 kssl/sslui.cpp:82
+#: kio/slaveinterface.cpp:422 kio/tcpslavebase.cpp:835 kssl/sslui.cpp:82
 msgid "Co&ntinue"
 msgstr "&Continuar"
 
-#: kio/slaveinterface.cpp:424 kio/tcpslavebase.cpp:839 kssl/sslui.cpp:121
+#: kio/slaveinterface.cpp:424 kio/tcpslavebase.cpp:853 kssl/sslui.cpp:121
 msgid "&Current Session only"
 msgstr "Só nesta &sesión"
 
@@ -4119,11 +4130,11 @@ msgstr "Só nesta &sesión"
 msgid "The peer SSL certificate chain appears to be corrupt."
 msgstr "A cadea do certificado SSL do parceiro semella estar corrompida."
 
-#: kio/slaveinterface.cpp:485 kio/tcpslavebase.cpp:766
+#: kio/slaveinterface.cpp:485 kio/tcpslavebase.cpp:780
 msgid "SSL"
 msgstr "SSL"
 
-#: kio/tcpslavebase.cpp:325
+#: kio/tcpslavebase.cpp:340
 msgid ""
 "You are about to leave secure mode. Transmissions will no longer be "
 "encrypted.\n"
@@ -4133,21 +4144,21 @@ msgstr ""
 "cifradas.\n"
 "Isto significa que outra persoa podería observar os datos en tránsito."
 
-#: kio/tcpslavebase.cpp:331 kio/tcpslavebase.cpp:599
+#: kio/tcpslavebase.cpp:346 kio/tcpslavebase.cpp:613
 msgid "Security Information"
 msgstr "Información de seguranza"
 
-#: kio/tcpslavebase.cpp:332
+#: kio/tcpslavebase.cpp:347
 msgid "C&ontinue Loading"
 msgstr "Continuar a &cargar"
 
-#: kio/tcpslavebase.cpp:381
+#: kio/tcpslavebase.cpp:395
 #, kde-format
 msgctxt "%1 is a host name"
 msgid "%1: SSL negotiation failed"
 msgstr "%1: Fallou a negociación SSL."
 
-#: kio/tcpslavebase.cpp:593
+#: kio/tcpslavebase.cpp:607
 msgid ""
 "You are about to enter secure mode. All transmissions will be encrypted "
 "unless otherwise noted.\n"
@@ -4159,33 +4170,33 @@ msgstr ""
 "Isto significa que ningunha outra persoa poderá observar facilmente os datos "
 "transferidos."
 
-#: kio/tcpslavebase.cpp:600
+#: kio/tcpslavebase.cpp:614
 msgid "Display SSL &Information"
 msgstr "Ver a &información de SSL"
 
-#: kio/tcpslavebase.cpp:601
+#: kio/tcpslavebase.cpp:615
 msgid "C&onnect"
 msgstr "&Conectar"
 
-#: kio/tcpslavebase.cpp:737
+#: kio/tcpslavebase.cpp:751
 msgid "Enter the certificate password:"
 msgstr "Introduza o contrasinal do certificado:"
 
-#: kio/tcpslavebase.cpp:738
+#: kio/tcpslavebase.cpp:752
 msgid "SSL Certificate Password"
 msgstr "Contrasinal de certificado SSL"
 
-#: kio/tcpslavebase.cpp:751
+#: kio/tcpslavebase.cpp:765
 msgid "Unable to open the certificate. Try a new password?"
 msgstr "Non foi posíbel abrir o certificado. Probar con outro contrasinal?"
 
-#: kio/tcpslavebase.cpp:764
+#: kio/tcpslavebase.cpp:778
 msgid "The procedure to set the client certificate for the session failed."
 msgstr ""
 "Fallou o procedemento para estabelecer o certificado do cliente para a "
 "sesión."
 
-#: kio/tcpslavebase.cpp:810 kssl/sslui.cpp:71
+#: kio/tcpslavebase.cpp:824 kssl/sslui.cpp:71
 #, kde-format
 msgid ""
 "The server failed the authenticity check (%1).\n"
@@ -4194,18 +4205,18 @@ msgstr ""
 "O servidor fallou a proba de autenticidade (%1).\n"
 "\n"
 
-#: kio/tcpslavebase.cpp:820 kio/tcpslavebase.cpp:837 kio/tcpslavebase.cpp:939
-#: kio/tcpslavebase.cpp:951 kssl/sslui.cpp:80 kssl/sslui.cpp:119
+#: kio/tcpslavebase.cpp:834 kio/tcpslavebase.cpp:851 kio/tcpslavebase.cpp:953
+#: kio/tcpslavebase.cpp:965 kssl/sslui.cpp:80 kssl/sslui.cpp:119
 msgid "Server Authentication"
 msgstr "Autenticación do servidor"
 
-#: kio/tcpslavebase.cpp:834 kssl/sslui.cpp:116
+#: kio/tcpslavebase.cpp:848 kssl/sslui.cpp:116
 msgid ""
 "Would you like to accept this certificate forever without being prompted?"
 msgstr ""
 "Desexa aceptar este certificado para sempre sen que se lle volte a preguntar?"
 
-#: kio/tcpslavebase.cpp:938
+#: kio/tcpslavebase.cpp:952
 msgid ""
 "You have indicated that you wish to accept this certificate, but it is not "
 "issued to the server who is presenting it. Do you wish to continue loading?"
@@ -4213,7 +4224,7 @@ msgstr ""
 "Indicou que desexa aceptar este certificado, pero non foi expendido para o "
 "servidor que o está a presentar. Desexa continuar cargando?"
 
-#: kio/tcpslavebase.cpp:950
+#: kio/tcpslavebase.cpp:964
 msgid ""
 "SSL certificate is being rejected as requested. You can disable this in the "
 "KDE System Settings."
@@ -4772,24 +4783,6 @@ msgstr ""
 msgid "Got an invalid reply when calling %1"
 msgstr ""
 
-#: misc/kpac/proxyscout.cpp:203
-#, kde-format
-msgid ""
-"The proxy configuration script is invalid:\n"
-"%1"
-msgstr ""
-"O guión de configuración do proxy non é válido:\n"
-"%1"
-
-#: misc/kpac/proxyscout.cpp:317
-#, kde-format
-msgid ""
-"The proxy configuration script returned an error:\n"
-"%1"
-msgstr ""
-"O guión de configuración do proxy devolveu un erro:\n"
-"%1"
-
 #: misc/kpac/downloader.cpp:87
 #, kde-format
 msgid ""
@@ -4806,6 +4799,24 @@ msgstr "Non foi posíbel obter o guión de configuración do proxy"
 #: misc/kpac/discovery.cpp:111
 msgid "Could not find a usable proxy configuration script"
 msgstr "Non foi posíbel atopar un script de configuración do proxy usábel"
+
+#: misc/kpac/proxyscout.cpp:224
+#, kde-format
+msgid ""
+"The proxy configuration script is invalid:\n"
+"%1"
+msgstr ""
+"O guión de configuración do proxy non é válido:\n"
+"%1"
+
+#: misc/kpac/proxyscout.cpp:337
+#, kde-format
+msgid ""
+"The proxy configuration script returned an error:\n"
+"%1"
+msgstr ""
+"O guión de configuración do proxy devolveu un erro:\n"
+"%1"
 
 #: misc/ksendbugmail/main.cpp:43
 msgid "Error connecting to server."
@@ -5231,7 +5242,7 @@ msgstr ""
 #. i18n: ectx: property (text), widget (QPushButton, addFiletypeButton)
 #. i18n: file: kssl/kcm/cacertificates.ui:111
 #. i18n: ectx: property (text), widget (KPushButton, add)
-#: rc.cpp:168 rc.cpp:237
+#: rc.cpp:168 rc.cpp:201
 msgid "Add..."
 msgstr "Engadir..."
 
@@ -5249,7 +5260,7 @@ msgstr ""
 #. i18n: ectx: property (text), widget (QPushButton, delFiletypeButton)
 #. i18n: file: kssl/kcm/cacertificates.ui:104
 #. i18n: ectx: property (text), widget (KPushButton, removeSelection)
-#: rc.cpp:174 rc.cpp:234
+#: rc.cpp:174 rc.cpp:198
 msgid "Remove"
 msgstr "Eliminar"
 
@@ -5270,153 +5281,81 @@ msgstr ""
 msgid "Ad&vanced Options"
 msgstr "Opcións a&vanzadas"
 
-#. i18n: file: kssl/certificateparty.ui:27
-#. i18n: ectx: property (text), widget (QLabel, commonNameTag)
-#: rc.cpp:183
-msgid "Common name:"
-msgstr "Nome común:"
-
-#. i18n: file: kssl/certificateparty.ui:37
-#. i18n: ectx: property (text), widget (QLabel, commonName)
-#: rc.cpp:186
-msgid "Acme Co."
-msgstr "Acme Co."
-
-#. i18n: file: kssl/certificateparty.ui:44
-#. i18n: ectx: property (text), widget (QLabel, organizationTag)
-#: rc.cpp:189
-msgid "Organization:"
-msgstr "Organización:"
-
-#. i18n: file: kssl/certificateparty.ui:54
-#. i18n: ectx: property (text), widget (QLabel, organization)
-#: rc.cpp:192
-msgid "Acme Sundry Products Company"
-msgstr "Acme Sundry Products Company"
-
-#. i18n: file: kssl/certificateparty.ui:61
-#. i18n: ectx: property (text), widget (QLabel, organizationalUnitTag)
-#: rc.cpp:195
-msgid "Organizational unit:"
-msgstr "Unidade da organización:"
-
-#. i18n: file: kssl/certificateparty.ui:71
-#. i18n: ectx: property (text), widget (QLabel, organizationalUnit)
-#: rc.cpp:198
-msgid "Fraud Department"
-msgstr "Departamento de fraudes"
-
-#. i18n: file: kssl/certificateparty.ui:78
-#. i18n: ectx: property (text), widget (QLabel, countryTag)
-#: rc.cpp:201
-msgid "Country:"
-msgstr "País:"
-
-#. i18n: file: kssl/certificateparty.ui:88
-#. i18n: ectx: property (text), widget (QLabel, country)
-#: rc.cpp:204
-msgid "Canada"
-msgstr "Canadá"
-
-#. i18n: file: kssl/certificateparty.ui:95
-#. i18n: ectx: property (text), widget (QLabel, stateTag)
-#: rc.cpp:207
-msgid "State:"
-msgstr "Estado:"
-
-#. i18n: file: kssl/certificateparty.ui:105
-#. i18n: ectx: property (text), widget (QLabel, state)
-#: rc.cpp:210
-msgid "Quebec"
-msgstr "Quebec"
-
-#. i18n: file: kssl/certificateparty.ui:112
-#. i18n: ectx: property (text), widget (QLabel, cityTag)
-#: rc.cpp:213
-msgid "City:"
-msgstr "Cidade:"
-
-#. i18n: file: kssl/certificateparty.ui:122
-#. i18n: ectx: property (text), widget (QLabel, city)
-#: rc.cpp:216
-msgid "Lakeridge Meadows"
-msgstr "Lakeridge Meadows"
-
 #. i18n: file: kssl/kcm/cacertificates.ui:24
 #. i18n: ectx: property (text), widget (QTreeWidget, treeWidget)
-#: rc.cpp:219
+#: rc.cpp:183
 msgid "Organization / Common Name"
 msgstr "Organización / Nome normal"
 
 #. i18n: file: kssl/kcm/cacertificates.ui:29
 #. i18n: ectx: property (text), widget (QTreeWidget, treeWidget)
-#: rc.cpp:222
+#: rc.cpp:186
 msgid "Organizational Unit"
 msgstr "Unidade da organización"
 
 #. i18n: file: kssl/kcm/cacertificates.ui:42
 #. i18n: ectx: property (text), widget (QPushButton, displaySelection)
-#: rc.cpp:225
+#: rc.cpp:189
 msgid "Display..."
 msgstr "Mostrar..."
 
 #. i18n: file: kssl/kcm/cacertificates.ui:68
 #. i18n: ectx: property (text), widget (KPushButton, disableSelection)
-#: rc.cpp:228
+#: rc.cpp:192
 msgid "Disable"
 msgstr "Desactivar"
 
 #. i18n: file: kssl/kcm/cacertificates.ui:78
 #. i18n: ectx: property (text), widget (QPushButton, enableSelection)
-#: rc.cpp:231
+#: rc.cpp:195
 msgid "Enable"
 msgstr "Activar"
 
 #. i18n: file: kssl/kcm/displaycert.ui:23
 #. i18n: ectx: property (text), widget (QLabel, subjectHeading)
-#: rc.cpp:240
+#: rc.cpp:204
 msgid "<b>Subject Information</b>"
 msgstr "<b>Información sobre o asunto</b>"
 
 #. i18n: file: kssl/kcm/displaycert.ui:39
 #. i18n: ectx: property (text), widget (QLabel, issuerHeading)
-#: rc.cpp:243
+#: rc.cpp:207
 msgid "<b>Issuer Information</b>"
 msgstr "<b>Información sobre o expedidor</b>"
 
 #. i18n: file: kssl/kcm/displaycert.ui:55
 #. i18n: ectx: property (text), widget (QLabel, label)
-#: rc.cpp:246
+#: rc.cpp:210
 msgid "<b>Other</b>"
 msgstr "<b>Outro</b>"
 
 #. i18n: file: kssl/kcm/displaycert.ui:64
 #. i18n: ectx: property (text), widget (QLabel, validityPeriodLabel)
-#: rc.cpp:249
+#: rc.cpp:213
 msgid "Validity period"
 msgstr "Período de validez"
 
 #. i18n: file: kssl/kcm/displaycert.ui:78
 #. i18n: ectx: property (text), widget (QLabel, serialNumberLabel)
-#: rc.cpp:252
+#: rc.cpp:216
 msgid "Serial number"
 msgstr "Número de serie"
 
 #. i18n: file: kssl/kcm/displaycert.ui:92
 #. i18n: ectx: property (text), widget (QLabel, md5DigestLabel)
-#: rc.cpp:255
+#: rc.cpp:219
 msgid "MD5 digest"
 msgstr "Resumo MD5"
 
 #. i18n: file: kssl/kcm/displaycert.ui:106
 #. i18n: ectx: property (text), widget (QLabel, sha1DigestLabel)
-#: rc.cpp:258
+#: rc.cpp:222
 msgid "SHA1 digest"
 msgstr "Resumo SHA1"
 
 #. i18n: file: kssl/keygenwizard.ui:35
 #. i18n: ectx: property (text), widget (QLabel, TextLabel1)
-#: rc.cpp:261
+#: rc.cpp:225
 msgid ""
 "You have indicated that you wish to obtain or purchase a secure certificate. "
 "This wizard is intended to guide you through the procedure. You may cancel "
@@ -5428,7 +5367,7 @@ msgstr ""
 
 #. i18n: file: kssl/keygenwizard2.ui:35
 #. i18n: ectx: property (text), widget (QLabel, TextLabel4)
-#: rc.cpp:264
+#: rc.cpp:228
 msgid ""
 "You must now provide a password for the certificate request. Please choose a "
 "very secure password as this will be used to encrypt your private key."
@@ -5439,84 +5378,156 @@ msgstr ""
 
 #. i18n: file: kssl/keygenwizard2.ui:48
 #. i18n: ectx: property (text), widget (QLabel, TextLabel6)
-#: rc.cpp:267
+#: rc.cpp:231
 msgid "&Repeat password:"
 msgstr "&Repetir o contrasinal:"
 
 #. i18n: file: kssl/keygenwizard2.ui:58
 #. i18n: ectx: property (text), widget (QLabel, TextLabel5)
-#: rc.cpp:270
+#: rc.cpp:234
 msgid "&Choose password:"
 msgstr "&Escoller o contrasinal:"
 
-#. i18n: file: kssl/sslinfo.ui:16
+#. i18n: file: kssl/certificateparty.ui:28
+#. i18n: ectx: property (text), widget (QLabel, commonNameTag)
+#: rc.cpp:237
+msgid "Common name:"
+msgstr "Nome común:"
+
+#. i18n: file: kssl/certificateparty.ui:38
+#. i18n: ectx: property (text), widget (QLabel, commonName)
+#: rc.cpp:240
+msgid "Acme Co."
+msgstr "Acme Co."
+
+#. i18n: file: kssl/certificateparty.ui:48
+#. i18n: ectx: property (text), widget (QLabel, organizationTag)
+#: rc.cpp:243
+msgid "Organization:"
+msgstr "Organización:"
+
+#. i18n: file: kssl/certificateparty.ui:58
+#. i18n: ectx: property (text), widget (QLabel, organization)
+#: rc.cpp:246
+msgid "Acme Sundry Products Company"
+msgstr "Acme Sundry Products Company"
+
+#. i18n: file: kssl/certificateparty.ui:68
+#. i18n: ectx: property (text), widget (QLabel, organizationalUnitTag)
+#: rc.cpp:249
+msgid "Organizational unit:"
+msgstr "Unidade da organización:"
+
+#. i18n: file: kssl/certificateparty.ui:78
+#. i18n: ectx: property (text), widget (QLabel, organizationalUnit)
+#: rc.cpp:252
+msgid "Fraud Department"
+msgstr "Departamento de fraudes"
+
+#. i18n: file: kssl/certificateparty.ui:88
+#. i18n: ectx: property (text), widget (QLabel, countryTag)
+#: rc.cpp:255
+msgid "Country:"
+msgstr "País:"
+
+#. i18n: file: kssl/certificateparty.ui:98
+#. i18n: ectx: property (text), widget (QLabel, country)
+#: rc.cpp:258
+msgid "Canada"
+msgstr "Canadá"
+
+#. i18n: file: kssl/certificateparty.ui:108
+#. i18n: ectx: property (text), widget (QLabel, stateTag)
+#: rc.cpp:261
+msgid "State:"
+msgstr "Estado:"
+
+#. i18n: file: kssl/certificateparty.ui:118
+#. i18n: ectx: property (text), widget (QLabel, state)
+#: rc.cpp:264
+msgid "Quebec"
+msgstr "Quebec"
+
+#. i18n: file: kssl/certificateparty.ui:128
+#. i18n: ectx: property (text), widget (QLabel, cityTag)
+#: rc.cpp:267
+msgid "City:"
+msgstr "Cidade:"
+
+#. i18n: file: kssl/certificateparty.ui:138
+#. i18n: ectx: property (text), widget (QLabel, city)
+#: rc.cpp:270
+msgid "Lakeridge Meadows"
+msgstr "Lakeridge Meadows"
+
+#. i18n: file: kssl/sslinfo.ui:17
 #. i18n: ectx: property (text), widget (QLabel, encryptionIndicator)
 #: rc.cpp:273
 msgid "[padlock]"
 msgstr "[bloqueo de teclado]"
 
-#. i18n: file: kssl/sslinfo.ui:30
+#. i18n: file: kssl/sslinfo.ui:34
 #. i18n: ectx: property (text), widget (QLabel, addressTag)
 #: rc.cpp:276
 msgctxt "Web page address"
 msgid "Address:"
 msgstr "Enderezo:"
 
-#. i18n: file: kssl/sslinfo.ui:47
+#. i18n: file: kssl/sslinfo.ui:54
 #. i18n: ectx: property (text), widget (QLabel, ipTag)
 #: rc.cpp:279
 msgid "IP address:"
 msgstr "Enderezo IP:"
 
-#. i18n: file: kssl/sslinfo.ui:64
+#. i18n: file: kssl/sslinfo.ui:74
 #. i18n: ectx: property (text), widget (QLabel, encryptionTag)
 #: rc.cpp:282
 msgid "Encryption:"
 msgstr "Cifraxe:"
 
-#. i18n: file: kssl/sslinfo.ui:81
+#. i18n: file: kssl/sslinfo.ui:94
 #. i18n: ectx: property (text), widget (QLabel, detailsTag)
 #: rc.cpp:285
 msgid "Details:"
 msgstr "Detalles:"
 
-#. i18n: file: kssl/sslinfo.ui:98
+#. i18n: file: kssl/sslinfo.ui:114
 #. i18n: ectx: property (text), widget (QLabel, sslVersionTag)
 #: rc.cpp:288
 msgid "SSL version:"
 msgstr "Versión de SSL:"
 
-#. i18n: file: kssl/sslinfo.ui:115
+#. i18n: file: kssl/sslinfo.ui:134
 #. i18n: ectx: property (text), widget (QLabel, certSelectorTag)
 #: rc.cpp:291
 msgid "Certificate chain:"
 msgstr "Cadea do certificado:"
 
-#. i18n: file: kssl/sslinfo.ui:144
+#. i18n: file: kssl/sslinfo.ui:163
 #. i18n: ectx: property (text), widget (QLabel, trustedTag)
 #: rc.cpp:294
 msgid "Trusted:"
 msgstr "Validado:"
 
-#. i18n: file: kssl/sslinfo.ui:161
+#. i18n: file: kssl/sslinfo.ui:183
 #. i18n: ectx: property (text), widget (QLabel, validityPeriodTag)
 #: rc.cpp:297
 msgid "Validity period:"
 msgstr "Período de validez:"
 
-#. i18n: file: kssl/sslinfo.ui:178
+#. i18n: file: kssl/sslinfo.ui:203
 #. i18n: ectx: property (text), widget (QLabel, serialTag)
 #: rc.cpp:300
 msgid "Serial number:"
 msgstr "Número de serie:"
 
-#. i18n: file: kssl/sslinfo.ui:195
+#. i18n: file: kssl/sslinfo.ui:223
 #. i18n: ectx: property (text), widget (QLabel, digestTag)
 #: rc.cpp:303
 msgid "MD5 digest:"
 msgstr "Resumo MD5:"
 
-#. i18n: file: kssl/sslinfo.ui:211
+#. i18n: file: kssl/sslinfo.ui:243
 #. i18n: ectx: property (text), widget (QLabel, sha1DigestTag)
 #: rc.cpp:306
 msgid "SHA1 digest:"
@@ -5556,46 +5567,46 @@ msgstr "Non foi posíbel obter a id do grupo especificado, %1"
 msgid "Setting ACL for %1"
 msgstr "A asignar a ACL de %1"
 
-#: ../kioslave/file/file.cpp:918
+#: ../kioslave/file/file.cpp:923
 msgid "No Media inserted or Media not recognized."
 msgstr "Non se introduciu ou non se recoñece ningún medio."
 
-#: ../kioslave/file/file.cpp:928 ../kioslave/file/file.cpp:1137
+#: ../kioslave/file/file.cpp:933 ../kioslave/file/file.cpp:1142
 msgid "\"vold\" is not running."
 msgstr "«vold» non está a executarse."
 
-#: ../kioslave/file/file.cpp:963
+#: ../kioslave/file/file.cpp:968
 msgid "Could not find program \"mount\""
 msgstr "Non foi posíbel atopar o programa «mount»"
 
-#: ../kioslave/file/file.cpp:1042
+#: ../kioslave/file/file.cpp:1047
 msgid "mounting is not supported by wince."
 msgstr "wince non admite montar."
 
-#: ../kioslave/file/file.cpp:1150
+#: ../kioslave/file/file.cpp:1155
 msgid "Could not find program \"umount\""
 msgstr "Non foi posíbel atopar programa «umount»"
 
-#: ../kioslave/file/file.cpp:1164
+#: ../kioslave/file/file.cpp:1169
 msgid "unmounting is not supported by wince."
 msgstr "wince non admite desmontar."
 
-#: ../kioslave/file/file.cpp:1251
+#: ../kioslave/file/file.cpp:1256
 #, kde-format
 msgid "Could not read %1"
 msgstr "Non foi posíbel ler %1"
 
-#: ../kioslave/ftp/ftp.cpp:341
+#: ../kioslave/ftp/ftp.cpp:354
 #, kde-format
 msgid "Opening connection to host %1"
 msgstr "A abrir unha conexión co servidor %1"
 
-#: ../kioslave/ftp/ftp.cpp:356
+#: ../kioslave/ftp/ftp.cpp:369
 #, kde-format
 msgid "Connected to host %1"
 msgstr "Conectado co servidor %1"
 
-#: ../kioslave/ftp/ftp.cpp:425
+#: ../kioslave/ftp/ftp.cpp:476
 #, kde-format
 msgid ""
 "%1.\n"
@@ -5606,11 +5617,11 @@ msgstr ""
 "\n"
 "Razón: %2"
 
-#: ../kioslave/ftp/ftp.cpp:454
+#: ../kioslave/ftp/ftp.cpp:505
 msgid "Sending login information"
 msgstr "A enviar a información de inicio de sesión"
 
-#: ../kioslave/ftp/ftp.cpp:517
+#: ../kioslave/ftp/ftp.cpp:568
 #, kde-format
 msgid ""
 "Message sent:\n"
@@ -5627,28 +5638,53 @@ msgstr ""
 "%2\n"
 "\n"
 
-#: ../kioslave/ftp/ftp.cpp:525 ../kioslave/http/http.cpp:3344
+#: ../kioslave/ftp/ftp.cpp:576 ../kioslave/http/http.cpp:3489
 msgid "You need to supply a username and a password to access this site."
 msgstr ""
 "Debe indicar un nome de usuario e contrasinal para acceder a este sitio."
 
-#: ../kioslave/ftp/ftp.cpp:527 ../kioslave/http/http.cpp:3346
+#: ../kioslave/ftp/ftp.cpp:578 ../kioslave/http/http.cpp:3491
 msgid "Site:"
 msgstr "Sitio:"
 
-#: ../kioslave/ftp/ftp.cpp:528
+#: ../kioslave/ftp/ftp.cpp:579
 #, kde-format
 msgid "<b>%1</b>"
 msgstr "<b>%1</b>"
 
-#: ../kioslave/ftp/ftp.cpp:626
+#: ../kioslave/ftp/ftp.cpp:677
 msgid "Login OK"
 msgstr "Inicio de sesión correcto"
 
-#: ../kioslave/ftp/ftp.cpp:655
+#: ../kioslave/ftp/ftp.cpp:706
 #, kde-format
 msgid "Could not login to %1."
 msgstr "Non foi posíbel acceder a %1."
+
+#: ../kioslave/ftp/ftp.cpp:2549 ../kioslave/http/http.cpp:3501
+#: ../kioslave/http/http.cpp:5410
+msgid ""
+"You need to supply a username and a password for the proxy server listed "
+"below before you are allowed to access any sites."
+msgstr ""
+"Debe indicar un nome de usuario e contrasinal para o servidor proxy citado "
+"en baixo antes que se lle permita acceder a ningún sitio."
+
+#: ../kioslave/ftp/ftp.cpp:2553 ../kioslave/http/http.cpp:3504
+#: ../kioslave/http/http.cpp:5414
+msgid "Proxy:"
+msgstr "Proxy:"
+
+#: ../kioslave/ftp/ftp.cpp:2554 ../kioslave/http/http.cpp:3578
+#: ../kioslave/http/http.cpp:5415
+#, kde-format
+msgid "<b>%1</b> at <b>%2</b>"
+msgstr "<b>%1</b> en <b>%2</b>"
+
+#: ../kioslave/ftp/ftp.cpp:2555 ../kioslave/http/http.cpp:3568
+#: ../kioslave/http/http.cpp:5416
+msgid "Proxy Authentication Failed."
+msgstr "Fallou a autenticación co proxy."
 
 #: ../kioslave/http/http_cache_cleaner.cpp:728
 #: ../kioslave/http/http_cache_cleaner.cpp:729
@@ -5829,90 +5865,86 @@ msgstr "Borrar todas as cookies"
 msgid "Reload configuration file"
 msgstr "Cargar de novo o ficheiro de configuración"
 
-#: ../kioslave/http/http.cpp:606
+#: ../kioslave/http/http.cpp:589
 msgid "No host specified."
 msgstr "Non se especificou ningún servidor."
 
-#: ../kioslave/http/http.cpp:1487
-msgid "The resource cannot be deleted."
-msgstr "Non se pode borrar o recurso."
-
-#: ../kioslave/http/http.cpp:1608
+#: ../kioslave/http/http.cpp:1596
 msgid "Otherwise, the request would have succeeded."
 msgstr "Polo demais, o pedido teríase satisfeito."
 
-#: ../kioslave/http/http.cpp:1612
+#: ../kioslave/http/http.cpp:1600
 msgctxt "request type"
 msgid "retrieve property values"
 msgstr "averiguar os valores das propiedades"
 
-#: ../kioslave/http/http.cpp:1615
+#: ../kioslave/http/http.cpp:1603
 msgctxt "request type"
 msgid "set property values"
 msgstr "estabelecer os valores das propiedades"
 
-#: ../kioslave/http/http.cpp:1618
+#: ../kioslave/http/http.cpp:1606
 msgctxt "request type"
 msgid "create the requested folder"
 msgstr "crear un cartafol pedido"
 
-#: ../kioslave/http/http.cpp:1621
+#: ../kioslave/http/http.cpp:1609
 msgctxt "request type"
 msgid "copy the specified file or folder"
 msgstr "copiar o ficheiro ou cartafol especificado "
 
-#: ../kioslave/http/http.cpp:1624
+#: ../kioslave/http/http.cpp:1612
 msgctxt "request type"
 msgid "move the specified file or folder"
 msgstr "mover o ficheiro ou cartafol especificado"
 
-#: ../kioslave/http/http.cpp:1627
+#: ../kioslave/http/http.cpp:1615
 msgctxt "request type"
 msgid "search in the specified folder"
 msgstr "buscar no cartafol especificado"
 
-#: ../kioslave/http/http.cpp:1630
+#: ../kioslave/http/http.cpp:1618
 msgctxt "request type"
 msgid "lock the specified file or folder"
 msgstr "trancar o ficheiro ou cartafol especificado"
 
-#: ../kioslave/http/http.cpp:1633
+#: ../kioslave/http/http.cpp:1621
 msgctxt "request type"
 msgid "unlock the specified file or folder"
 msgstr "desatrancar o ficheiro ou cartafol especificado"
 
-#: ../kioslave/http/http.cpp:1636
+#: ../kioslave/http/http.cpp:1624
 msgctxt "request type"
 msgid "delete the specified file or folder"
 msgstr "borrar o ficheiro ou cartafol especificado"
 
-#: ../kioslave/http/http.cpp:1639
+#: ../kioslave/http/http.cpp:1627
 msgctxt "request type"
 msgid "query the server's capabilities"
 msgstr "preguntar as capacidades do servidor"
 
-#: ../kioslave/http/http.cpp:1642
+#: ../kioslave/http/http.cpp:1630
 msgctxt "request type"
 msgid "retrieve the contents of the specified file or folder"
 msgstr "obter os contidos do ficheiro ou cartafol especificados"
 
-#: ../kioslave/http/http.cpp:1645
+#: ../kioslave/http/http.cpp:1633
 msgctxt "request type"
 msgid "run a report in the specified folder"
 msgstr "executar un informe no cartafol especificado"
 
-#: ../kioslave/http/http.cpp:1656
+#: ../kioslave/http/http.cpp:1644
 #, kde-format
 msgctxt "%1: code, %2: request type"
 msgid "An unexpected error (%1) occurred while attempting to %2."
 msgstr "Aconteceu un erro inesperado (%1) mentres se tentaba %2."
 
-#: ../kioslave/http/http.cpp:1664
+#: ../kioslave/http/http.cpp:1652
 msgid "The server does not support the WebDAV protocol."
 msgstr "O servidor non soporta o protocolo WebDAV."
 
 # skip-rule: noPT-2010-dual_atopar
-#: ../kioslave/http/http.cpp:1706
+#: ../kioslave/http/http.cpp:1694
 #, kde-format
 msgctxt "%1: request type, %2: url"
 msgid ""
@@ -5921,17 +5953,17 @@ msgid ""
 msgstr ""
 "Aconteceu un erro ao tentar %1, %2. En baixo atopará un resumo das razóns."
 
-#: ../kioslave/http/http.cpp:1720 ../kioslave/http/http.cpp:1818
+#: ../kioslave/http/http.cpp:1708 ../kioslave/http/http.cpp:1839
 #, kde-format
 msgctxt "%1: request type"
 msgid "Access was denied while attempting to %1."
 msgstr "Denegouse o acceso ao tentar %1."
 
-#: ../kioslave/http/http.cpp:1726
+#: ../kioslave/http/http.cpp:1714
 msgid "The specified folder already exists."
 msgstr "O cartafol especificado xa existe."
 
-#: ../kioslave/http/http.cpp:1732 ../kioslave/http/http.cpp:1823
+#: ../kioslave/http/http.cpp:1720 ../kioslave/http/http.cpp:1845
 msgid ""
 "A resource cannot be created at the destination until one or more "
 "intermediate collections (folders) have been created."
@@ -5939,7 +5971,7 @@ msgstr ""
 "Non é posíbel crear un recurso no destino até que se creen unha ou máis "
 "coleccións (cartafoles) intermedias."
 
-#: ../kioslave/http/http.cpp:1740
+#: ../kioslave/http/http.cpp:1728
 #, kde-format
 msgid ""
 "The server was unable to maintain the liveness of the properties listed in "
@@ -5950,26 +5982,26 @@ msgstr ""
 "elemento XML propertybehaviour, ou tentou sobrescribir un ficheiro cando "
 "pedira que os ficheiros non foses sobrescritos. %1"
 
-#: ../kioslave/http/http.cpp:1748
+#: ../kioslave/http/http.cpp:1736
 #, kde-format
 msgid "The requested lock could not be granted. %1"
 msgstr "Non foi posíbel conceder o tranque pedido. %1"
 
-#: ../kioslave/http/http.cpp:1754
+#: ../kioslave/http/http.cpp:1742
 msgid "The server does not support the request type of the body."
 msgstr "O servidor non soporta o tipo de corpo pedido."
 
-#: ../kioslave/http/http.cpp:1759 ../kioslave/http/http.cpp:1830
+#: ../kioslave/http/http.cpp:1747 ../kioslave/http/http.cpp:1853
 #, kde-format
 msgctxt "%1: request type"
 msgid "Unable to %1 because the resource is locked."
 msgstr "Non foi posíbel %1 porque o recurso está trancado."
 
-#: ../kioslave/http/http.cpp:1763
+#: ../kioslave/http/http.cpp:1751
 msgid "This action was prevented by another error."
 msgstr "Esta acción foi evitada por outro erro."
 
-#: ../kioslave/http/http.cpp:1769 ../kioslave/http/http.cpp:1835
+#: ../kioslave/http/http.cpp:1757 ../kioslave/http/http.cpp:1859
 #, kde-format
 msgctxt "%1: request type"
 msgid ""
@@ -5979,7 +6011,7 @@ msgstr ""
 "Non foi posíbel %1 porque o servidor de destino négase a aceptar o ficheiro "
 "ou cartafol."
 
-#: ../kioslave/http/http.cpp:1776 ../kioslave/http/http.cpp:1841
+#: ../kioslave/http/http.cpp:1764 ../kioslave/http/http.cpp:1866
 msgid ""
 "The destination resource does not have sufficient space to record the state "
 "of the resource after the execution of this method."
@@ -5987,24 +6019,28 @@ msgstr ""
 "O recurso de destino non ten espazo de abondo para rexistrar o estado do "
 "recurso tras a execución deste método."
 
-#: ../kioslave/http/http.cpp:1797
+#: ../kioslave/http/http.cpp:1817
+msgid "The resource cannot be deleted."
+msgstr "Non se pode borrar o recurso."
+
+#: ../kioslave/http/http.cpp:1830
 #, kde-format
 msgctxt "request type"
 msgid "upload %1"
 msgstr "enviar %1"
 
-#: ../kioslave/http/http.cpp:1807
+#: ../kioslave/http/http.cpp:1880
 #, kde-format
 msgctxt "%1: response code, %2: request type"
 msgid "An unexpected error (%1) occurred while attempting to %2."
 msgstr "Aconteceu un erro inesperado (%1) mentres se tentaba %2."
 
-#: ../kioslave/http/http.cpp:2569
+#: ../kioslave/http/http.cpp:2702
 #, kde-format
 msgid "%1 contacted. Waiting for reply..."
 msgstr "Contactouse con %1. Agardando a resposta..."
 
-#: ../kioslave/http/http.cpp:2900
+#: ../kioslave/http/http.cpp:3033
 #, kde-format
 msgctxt "@warning: Security check on url being accessed"
 msgid ""
@@ -6013,62 +6049,36 @@ msgid ""
 "<p>Is \"%1\" the site you want to visit?"
 msgstr ""
 
-#: ../kioslave/http/http.cpp:2907
+#: ../kioslave/http/http.cpp:3040
 msgctxt "@title:window"
 msgid "Confirm Website Access"
 msgstr ""
 
-#: ../kioslave/http/http.cpp:2984
+#: ../kioslave/http/http.cpp:3117
 msgid "Server processing request, please wait..."
 msgstr "O servidor está a procesar o pedido, agarde un momento..."
 
-#: ../kioslave/http/http.cpp:3356 ../kioslave/http/http.cpp:5260
-msgid ""
-"You need to supply a username and a password for the proxy server listed "
-"below before you are allowed to access any sites."
-msgstr ""
-"Debe indicar un nome de usuario e contrasinal para o servidor proxy citado "
-"en baixo antes que se lle permita acceder a ningún sitio."
-
-#: ../kioslave/http/http.cpp:3359 ../kioslave/http/http.cpp:5264
-msgid "Proxy:"
-msgstr "Proxy:"
-
-#: ../kioslave/http/http.cpp:3420
+#: ../kioslave/http/http.cpp:3565
 msgid "Authentication Failed."
 msgstr "Fallou a autenticación."
 
-#: ../kioslave/http/http.cpp:3423 ../kioslave/http/http.cpp:5266
-msgid "Proxy Authentication Failed."
-msgstr "Fallou a autenticación co proxy."
-
-#: ../kioslave/http/http.cpp:3433 ../kioslave/http/http.cpp:5265
-#, kde-format
-msgid "<b>%1</b> at <b>%2</b>"
-msgstr "<b>%1</b> en <b>%2</b>"
-
-#: ../kioslave/http/http.cpp:3465
+#: ../kioslave/http/http.cpp:3611
 msgid "Authorization failed."
 msgstr "Fallou a autorización."
 
-#: ../kioslave/http/http.cpp:3482
+#: ../kioslave/http/http.cpp:3628
 msgid "Unknown Authorization method."
 msgstr "Método descoñecido de autorización."
 
-#: ../kioslave/http/http.cpp:3871 ../kioslave/http/http.cpp:3925
+#: ../kioslave/http/http.cpp:4017 ../kioslave/http/http.cpp:4071
 #, kde-format
 msgid "Sending data to %1"
 msgstr "A enviar os datos para %1"
 
-#: ../kioslave/http/http.cpp:4387
+#: ../kioslave/http/http.cpp:4533
 #, kde-format
 msgid "Retrieving %1 from %2..."
 msgstr "A obter %1 de %2..."
-
-#: ../kioslave/http/http.cpp:4393
-#, kde-format
-msgid "Retrieving from %1..."
-msgstr "Recuperando de %1..."
 
 #: ../kioslave/metainfo/metainfo.cpp:39
 msgid "kio_metainfo"
@@ -6078,79 +6088,6 @@ msgstr "kio_metainfo"
 #, kde-format
 msgid "No metainfo for %1"
 msgstr "Non hai metainformación para %1"
-
-#: ../kfile/kfileplaceeditdialog.cpp:90
-msgid "Add Places Entry"
-msgstr "Engadir a entrada a Lugares"
-
-#: ../kfile/kfileplaceeditdialog.cpp:92
-msgid "Edit Places Entry"
-msgstr "Editar a entrada en Lugares"
-
-#: ../kfile/kfileplaceeditdialog.cpp:103
-msgid ""
-"<qt>This is the text that will appear in the Places panel.<br /><br />The "
-"label should consist of one or two words that will help you remember what "
-"this entry refers to. If you do not enter a label, it will be derived from "
-"the location's URL.</qt>"
-msgstr ""
-"<qt>Este é o texto que aparecerá no panel de Lugares.<br /><br />A etiqueta "
-"debería consistir nunha ou dúas palabras que o axuden a lembrar aquelo a que "
-"se refire esta entrada. Se non introduce unha etiqueta, obterase do URL do "
-"lugar.</qt>"
-
-#: ../kfile/kfileplaceeditdialog.cpp:109
-msgid "L&abel:"
-msgstr "&Etiqueta:"
-
-#: ../kfile/kfileplaceeditdialog.cpp:111
-msgid "Enter descriptive label here"
-msgstr "Escriba unha etiqueta descritiva"
-
-#: ../kfile/kfileplaceeditdialog.cpp:115
-#, kde-format
-msgid ""
-"<qt>This is the location associated with the entry. Any valid URL may be "
-"used. For example:<br /><br />%1<br />http://www.kde.org<br />ftp://ftp.kde."
-"org/pub/kde/stable<br /><br />By clicking on the button next to the text "
-"edit box you can browse to an appropriate URL.</qt>"
-msgstr ""
-"<qt>Este é o lugar asociado coa entrada. Pode usar calquera URL válido. Por "
-"exemplo:<br /><br />%1<br/>http://www.kde.org<br/>ftp://ftp.kde.org/pub/kde/"
-"stable <br /><br />Se preme no botón xunto ao campo de texto poderá navegar "
-"até un URL axeitado.</qt>"
-
-#: ../kfile/kfileplaceeditdialog.cpp:121
-msgid "&Location:"
-msgstr "&Lugar:"
-
-#: ../kfile/kfileplaceeditdialog.cpp:125
-msgid ""
-"<qt>This is the icon that will appear in the Places panel.<br /><br />Click "
-"on the button to select a different icon.</qt>"
-msgstr ""
-"<qt>Esta é a icona que aparecerá no panel de Lugares.<br /><br />Prema no "
-"botón para escoller unha icona diferente.</qt>"
-
-#: ../kfile/kfileplaceeditdialog.cpp:128
-msgid "Choose an &icon:"
-msgstr "&Escoller unha icona:"
-
-#: ../kfile/kfileplaceeditdialog.cpp:145
-#, kde-format
-msgid "&Only show when using this application (%1)"
-msgstr "Mostrar só cando se use este &programa (%1)"
-
-#: ../kfile/kfileplaceeditdialog.cpp:147
-#, kde-format
-msgid ""
-"<qt>Select this setting if you want this entry to show only when using the "
-"current application (%1).<br /><br />If this setting is not selected, the "
-"entry will be available in all applications.</qt>"
-msgstr ""
-"<qt>Escolla esta opción se quer que esta entrada só sexa mostrada cando "
-"estea no programa actual (%1).<br /><br />Se non escolle esta opción, a "
-"entrada estará dispoñíbel en todos os programas.</qt>"
 
 #: ../kfile/kfileplacesview.cpp:575
 msgctxt "@action:inmenu"
@@ -6214,84 +6151,6 @@ msgstr "*|Todos os ficheiros"
 msgid "All Files"
 msgstr "*|Todos os ficheiros"
 
-#: ../kfile/knewfilemenu.cpp:368 ../kfile/knewfilemenu.cpp:872
-msgid "Sorry"
-msgstr "Desculpe"
-
-#: ../kfile/knewfilemenu.cpp:377
-#, kde-format
-msgid "<qt>The template file <b>%1</b> does not exist.</qt>"
-msgstr "<qt>Non existe o ficheiro de modelo <b>%1</b>.</qt>"
-
-#: ../kfile/knewfilemenu.cpp:396
-msgctxt "@action:button"
-msgid "Create directory"
-msgstr "Crear o directorio"
-
-#: ../kfile/knewfilemenu.cpp:398
-msgctxt "@action:button"
-msgid "Enter a different name"
-msgstr "Introducir un nome diferente"
-
-#: ../kfile/knewfilemenu.cpp:401
-msgid "Create hidden directory?"
-msgstr "Desexa crear un directorio acochado?"
-
-#: ../kfile/knewfilemenu.cpp:405
-#, kde-format
-msgid ""
-"The name \"%1\" starts with a dot, so the directory will be hidden by "
-"default."
-msgstr ""
-"O nome «%1» comeza cun punto, polo que por omisión hase acochar este "
-"directorio."
-
-#: ../kfile/knewfilemenu.cpp:407
-msgid "Do not ask again"
-msgstr "Non preguntar máis"
-
-#: ../kfile/knewfilemenu.cpp:500 ../kfile/knewfilemenu.cpp:558
-msgid "File name:"
-msgstr "Nome do ficheiro:"
-
-#: ../kfile/knewfilemenu.cpp:503
-msgid "Create Symlink"
-msgstr "Crear unha ligazón simbólica"
-
-#: ../kfile/knewfilemenu.cpp:562
-msgid "Create link to URL"
-msgstr "Creado unha ligazón a un URL"
-
-#: ../kfile/knewfilemenu.cpp:882
-msgid ""
-"Basic links can only point to local files or directories.\n"
-"Please use \"Link to Location\" for remote URLs."
-msgstr ""
-"As ligazóns básicas só poden apuntar para ficheiros ou directorios locais.\n"
-"Empregue «Ligazón a un lugar (URL)»."
-
-#: ../kfile/knewfilemenu.cpp:947
-msgid "Create New"
-msgstr "Crear novo"
-
-#: ../kfile/knewfilemenu.cpp:960
-msgid "Link to Device"
-msgstr "Ligazón a un dispositivo"
-
-#: ../kfile/knewfilemenu.cpp:1005
-msgctxt "Default name for a new folder"
-msgid "New Folder"
-msgstr "Novo cartafol"
-
-#: ../kfile/knewfilemenu.cpp:1019
-#, kde-format
-msgid ""
-"Create new folder in:\n"
-"%1"
-msgstr ""
-"Crear un cartafol novo en:\n"
-"%1"
-
 #: ../kfile/kfileplacesmodel.cpp:117
 msgctxt "KFile System Bookmarks"
 msgid "Home"
@@ -6346,6 +6205,299 @@ msgstr "Aconteceu un erro ao acceder a «%1»; o sistema respondeu: %2"
 #, kde-format
 msgid "An error occurred while accessing '%1'"
 msgstr "Aconteceu un erro ao acceder a «%1»"
+
+#: ../kfile/kdiroperator.cpp:766 ../kfile/kdirselectdialog.cpp:159
+#, kde-format
+msgid "A file or folder named %1 already exists."
+msgstr "Xa existe un ficheiro ou cartafol chamado %1."
+
+#: ../kfile/kdiroperator.cpp:768 ../kfile/kdirselectdialog.cpp:163
+msgid "You do not have permission to create that folder."
+msgstr "Non ten permisos para crear ese cartafol."
+
+#: ../kfile/kdiroperator.cpp:783
+msgid "You did not select a file to delete."
+msgstr "Non escolleu un ficheiro para borrar."
+
+#: ../kfile/kdiroperator.cpp:784
+msgid "Nothing to Delete"
+msgstr "Non hai nada para borrar"
+
+#: ../kfile/kdiroperator.cpp:805
+#, kde-format
+msgid ""
+"<qt>Do you really want to delete\n"
+" <b>'%1'</b>?</qt>"
+msgstr ""
+"<qt>Desexa realmente borrar\n"
+" <b>«%1»</b>?</qt>"
+
+#: ../kfile/kdiroperator.cpp:807
+msgid "Delete File"
+msgstr "Borrar o ficheiro"
+
+#: ../kfile/kdiroperator.cpp:845
+msgid "You did not select a file to trash."
+msgstr "Non escolleu un ficheiro para deitar no lixo."
+
+#: ../kfile/kdiroperator.cpp:846
+msgid "Nothing to Trash"
+msgstr "Non hai nada para deitar no lixo"
+
+#: ../kfile/kdiroperator.cpp:863
+#, kde-format
+msgid ""
+"<qt>Do you really want to trash\n"
+" <b>'%1'</b>?</qt>"
+msgstr ""
+"<qt>Desexa realmente deitar no lixo\n"
+"<b>«%1»</b>?</qt>"
+
+#: ../kfile/kdiroperator.cpp:865
+msgid "Trash File"
+msgstr "Deitar o ficheiro no lixo"
+
+#: ../kfile/kdiroperator.cpp:866 ../kfile/kdiroperator.cpp:873
+msgctxt "to trash"
+msgid "&Trash"
+msgstr "Deitar no &Lixo"
+
+#: ../kfile/kdiroperator.cpp:870
+#, kde-format
+msgid "translators: not called for n == 1"
+msgid_plural "Do you really want to trash these %1 items?"
+msgstr[0] "vergalludo! "
+msgstr[1] "Desexa realmente deitar no lixo estes %1 ítems? "
+
+#: ../kfile/kdiroperator.cpp:872
+msgid "Trash Files"
+msgstr "Deitar no lixo os ficheiros"
+
+#: ../kfile/kdiroperator.cpp:1064 ../kfile/kdiroperator.cpp:1201
+msgid "The specified folder does not exist or was not readable."
+msgstr "O cartafol especificado non existe ou non é lexíbel."
+
+#: ../kfile/kdiroperator.cpp:1852
+msgid "Menu"
+msgstr "Menú"
+
+#: ../kfile/kdiroperator.cpp:1856
+msgid "Parent Folder"
+msgstr "Cartafol superior"
+
+#: ../kfile/kdiroperator.cpp:1863
+msgid "Home Folder"
+msgstr "Cartafol persoal"
+
+#: ../kfile/kdiroperator.cpp:1866
+msgid "Reload"
+msgstr "Cargar de novo"
+
+#: ../kfile/kdiroperator.cpp:1869
+msgid "New Folder..."
+msgstr "Novo cartafol..."
+
+#: ../kfile/kdiroperator.cpp:1880
+msgid "Delete"
+msgstr "Borrar"
+
+#: ../kfile/kdiroperator.cpp:1887
+msgid "Sorting"
+msgstr "Ordenación"
+
+#: ../kfile/kdiroperator.cpp:1890
+msgid "By Name"
+msgstr "Polo nome"
+
+#: ../kfile/kdiroperator.cpp:1894
+msgid "By Size"
+msgstr "Polo tamaño"
+
+#: ../kfile/kdiroperator.cpp:1898
+msgid "By Date"
+msgstr "Pola data"
+
+#: ../kfile/kdiroperator.cpp:1902
+msgid "By Type"
+msgstr "Polo tipo"
+
+#: ../kfile/kdiroperator.cpp:1906
+msgid "Descending"
+msgstr "Descendente"
+
+#: ../kfile/kdiroperator.cpp:1910
+msgid "Folders First"
+msgstr "Os cartafoles primeiro"
+
+#: ../kfile/kdiroperator.cpp:1920
+msgid "Icon Position"
+msgstr "Posición das iconas"
+
+#: ../kfile/kdiroperator.cpp:1923
+msgid "Next to File Name"
+msgstr "Xunto ao nome do ficheiro"
+
+#: ../kfile/kdiroperator.cpp:1927
+msgid "Above File Name"
+msgstr "Sobre o nome do ficheiro"
+
+#: ../kfile/kdiroperator.cpp:1938
+msgid "Short View"
+msgstr "Vista abreviada"
+
+#: ../kfile/kdiroperator.cpp:1943
+msgid "Detailed View"
+msgstr "Vista detallada"
+
+#: ../kfile/kdiroperator.cpp:1948
+msgid "Tree View"
+msgstr "Vista en árbore"
+
+#: ../kfile/kdiroperator.cpp:1953
+msgid "Detailed Tree View"
+msgstr "Vista en árbore detallada"
+
+#: ../kfile/kdiroperator.cpp:1964
+msgid "Show Hidden Files"
+msgstr "Mostrar os ficheiros ocultos"
+
+#: ../kfile/kdiroperator.cpp:1968
+msgid "Show Aside Preview"
+msgstr "Mostrar a vista previa a un lado"
+
+#: ../kfile/kdiroperator.cpp:1974
+msgid "Show Preview"
+msgstr "Mostrar a vista previa"
+
+#: ../kfile/kdiroperator.cpp:1978
+msgid "Open File Manager"
+msgstr "Abrir o xestor de ficheiros"
+
+#: ../kfile/kdiroperator.cpp:1990
+msgid "&View"
+msgstr "&Vista"
+
+#: ../kfile/kdirselectdialog.cpp:131
+msgctxt "folder name"
+msgid "New Folder"
+msgstr "Cartafol novo"
+
+#: ../kfile/kdirselectdialog.cpp:136
+#, kde-format
+msgctxt "@label:textbox"
+msgid ""
+"Create new folder in:\n"
+"%1"
+msgstr ""
+"Crear un cartafol novo en:\n"
+"%1"
+
+#: ../kfile/kdirselectdialog.cpp:283
+msgctxt "@action:button"
+msgid "New Folder..."
+msgstr "Novo cartafol..."
+
+#: ../kfile/kdirselectdialog.cpp:324
+msgctxt "@action:inmenu"
+msgid "New Folder..."
+msgstr "Novo cartafol..."
+
+#: ../kfile/kdirselectdialog.cpp:331
+msgctxt "@action:inmenu"
+msgid "Move to Trash"
+msgstr "Deitar no lixo"
+
+#: ../kfile/kdirselectdialog.cpp:338
+msgctxt "@action:inmenu"
+msgid "Delete"
+msgstr "Borrar"
+
+#: ../kfile/kdirselectdialog.cpp:347
+msgctxt "@option:check"
+msgid "Show Hidden Folders"
+msgstr "Mostrar os cartafoles acochados"
+
+#: ../kfile/kdirselectdialog.cpp:354
+msgctxt "@action:inmenu"
+msgid "Properties"
+msgstr "Propiedades"
+
+#: ../kfile/kfiletreeview.cpp:187
+msgid "Show Hidden Folders"
+msgstr "Mostrar os cartafoles acochados"
+
+#: ../kfile/kfileplaceeditdialog.cpp:90
+msgid "Add Places Entry"
+msgstr "Engadir a entrada a Lugares"
+
+#: ../kfile/kfileplaceeditdialog.cpp:92
+msgid "Edit Places Entry"
+msgstr "Editar a entrada en Lugares"
+
+#: ../kfile/kfileplaceeditdialog.cpp:103
+msgid ""
+"<qt>This is the text that will appear in the Places panel.<br /><br />The "
+"label should consist of one or two words that will help you remember what "
+"this entry refers to. If you do not enter a label, it will be derived from "
+"the location's URL.</qt>"
+msgstr ""
+"<qt>Este é o texto que aparecerá no panel de Lugares.<br /><br />A etiqueta "
+"debería consistir nunha ou dúas palabras que o axuden a lembrar aquelo a que "
+"se refire esta entrada. Se non introduce unha etiqueta, obterase do URL do "
+"lugar.</qt>"
+
+#: ../kfile/kfileplaceeditdialog.cpp:109
+msgid "L&abel:"
+msgstr "&Etiqueta:"
+
+#: ../kfile/kfileplaceeditdialog.cpp:111
+msgid "Enter descriptive label here"
+msgstr "Escriba unha etiqueta descritiva"
+
+#: ../kfile/kfileplaceeditdialog.cpp:115
+#, kde-format
+msgid ""
+"<qt>This is the location associated with the entry. Any valid URL may be "
+"used. For example:<br /><br />%1<br />http://www.kde.org<br />ftp://ftp.kde."
+"org/pub/kde/stable<br /><br />By clicking on the button next to the text "
+"edit box you can browse to an appropriate URL.</qt>"
+msgstr ""
+"<qt>Este é o lugar asociado coa entrada. Pode usar calquera URL válido. Por "
+"exemplo:<br /><br />%1<br/>http://www.kde.org<br/>ftp://ftp.kde.org/pub/kde/"
+"stable <br /><br />Se preme no botón xunto ao campo de texto poderá navegar "
+"até un URL axeitado.</qt>"
+
+#: ../kfile/kfileplaceeditdialog.cpp:121
+msgid "&Location:"
+msgstr "&Lugar:"
+
+#: ../kfile/kfileplaceeditdialog.cpp:127
+msgid ""
+"<qt>This is the icon that will appear in the Places panel.<br /><br />Click "
+"on the button to select a different icon.</qt>"
+msgstr ""
+"<qt>Esta é a icona que aparecerá no panel de Lugares.<br /><br />Prema no "
+"botón para escoller unha icona diferente.</qt>"
+
+#: ../kfile/kfileplaceeditdialog.cpp:130
+msgid "Choose an &icon:"
+msgstr "&Escoller unha icona:"
+
+#: ../kfile/kfileplaceeditdialog.cpp:147
+#, kde-format
+msgid "&Only show when using this application (%1)"
+msgstr "Mostrar só cando se use este &programa (%1)"
+
+#: ../kfile/kfileplaceeditdialog.cpp:149
+#, kde-format
+msgid ""
+"<qt>Select this setting if you want this entry to show only when using the "
+"current application (%1).<br /><br />If this setting is not selected, the "
+"entry will be available in all applications.</qt>"
+msgstr ""
+"<qt>Escolla esta opción se quer que esta entrada só sexa mostrada cando "
+"estea no programa actual (%1).<br /><br />Se non escolle esta opción, a "
+"entrada estará dispoñíbel en todos os programas.</qt>"
 
 # skip-rule: noPT-2010-dual_mostrar
 #: ../kfile/kfilewidget.cpp:286
@@ -6618,185 +6770,85 @@ msgstr ""
 "><br />Estes marcadores son específicos do diálogo de ficheiro, polo demais "
 "funcionan como os demais marcadores de KDE.</qt>"
 
-#: ../kfile/kdiroperator.cpp:766 ../kfile/kdirselectdialog.cpp:159
+#: ../kfile/knewfilemenu.cpp:368 ../kfile/knewfilemenu.cpp:872
+msgid "Sorry"
+msgstr "Desculpe"
+
+#: ../kfile/knewfilemenu.cpp:377
 #, kde-format
-msgid "A file or folder named %1 already exists."
-msgstr "Xa existe un ficheiro ou cartafol chamado %1."
+msgid "<qt>The template file <b>%1</b> does not exist.</qt>"
+msgstr "<qt>Non existe o ficheiro de modelo <b>%1</b>.</qt>"
 
-#: ../kfile/kdiroperator.cpp:768 ../kfile/kdirselectdialog.cpp:163
-msgid "You do not have permission to create that folder."
-msgstr "Non ten permisos para crear ese cartafol."
+#: ../kfile/knewfilemenu.cpp:396
+msgctxt "@action:button"
+msgid "Create directory"
+msgstr "Crear o directorio"
 
-#: ../kfile/kdiroperator.cpp:783
-msgid "You did not select a file to delete."
-msgstr "Non escolleu un ficheiro para borrar."
+#: ../kfile/knewfilemenu.cpp:398
+msgctxt "@action:button"
+msgid "Enter a different name"
+msgstr "Introducir un nome diferente"
 
-#: ../kfile/kdiroperator.cpp:784
-msgid "Nothing to Delete"
-msgstr "Non hai nada para borrar"
+#: ../kfile/knewfilemenu.cpp:401
+msgid "Create hidden directory?"
+msgstr "Desexa crear un directorio acochado?"
 
-#: ../kfile/kdiroperator.cpp:805
-#, kde-format
-msgid ""
-"<qt>Do you really want to delete\n"
-" <b>'%1'</b>?</qt>"
-msgstr ""
-"<qt>Desexa realmente borrar\n"
-" <b>«%1»</b>?</qt>"
-
-#: ../kfile/kdiroperator.cpp:807
-msgid "Delete File"
-msgstr "Borrar o ficheiro"
-
-#: ../kfile/kdiroperator.cpp:845
-msgid "You did not select a file to trash."
-msgstr "Non escolleu un ficheiro para deitar no lixo."
-
-#: ../kfile/kdiroperator.cpp:846
-msgid "Nothing to Trash"
-msgstr "Non hai nada para deitar no lixo"
-
-#: ../kfile/kdiroperator.cpp:863
+#: ../kfile/knewfilemenu.cpp:405
 #, kde-format
 msgid ""
-"<qt>Do you really want to trash\n"
-" <b>'%1'</b>?</qt>"
+"The name \"%1\" starts with a dot, so the directory will be hidden by "
+"default."
 msgstr ""
-"<qt>Desexa realmente deitar no lixo\n"
-"<b>«%1»</b>?</qt>"
+"O nome «%1» comeza cun punto, polo que por omisión hase acochar este "
+"directorio."
 
-#: ../kfile/kdiroperator.cpp:865
-msgid "Trash File"
-msgstr "Deitar o ficheiro no lixo"
+#: ../kfile/knewfilemenu.cpp:407
+msgid "Do not ask again"
+msgstr "Non preguntar máis"
 
-#: ../kfile/kdiroperator.cpp:866 ../kfile/kdiroperator.cpp:873
-msgctxt "to trash"
-msgid "&Trash"
-msgstr "Deitar no &Lixo"
+#: ../kfile/knewfilemenu.cpp:500 ../kfile/knewfilemenu.cpp:558
+msgid "File name:"
+msgstr "Nome do ficheiro:"
 
-#: ../kfile/kdiroperator.cpp:870
-#, kde-format
-msgid "translators: not called for n == 1"
-msgid_plural "Do you really want to trash these %1 items?"
-msgstr[0] "vergalludo! "
-msgstr[1] "Desexa realmente deitar no lixo estes %1 ítems? "
+#: ../kfile/knewfilemenu.cpp:503
+msgid "Create Symlink"
+msgstr "Crear unha ligazón simbólica"
 
-#: ../kfile/kdiroperator.cpp:872
-msgid "Trash Files"
-msgstr "Deitar no lixo os ficheiros"
+#: ../kfile/knewfilemenu.cpp:562
+msgid "Create link to URL"
+msgstr "Creado unha ligazón a un URL"
 
-#: ../kfile/kdiroperator.cpp:1064 ../kfile/kdiroperator.cpp:1201
-msgid "The specified folder does not exist or was not readable."
-msgstr "O cartafol especificado non existe ou non é lexíbel."
+#: ../kfile/knewfilemenu.cpp:608 ../kfile/knewfilemenu.cpp:656
+#, fuzzy, kde-format
+#| msgctxt "@item:inmenu Open With, %1 is application name"
+#| msgid "%1"
+msgctxt "@item:inmenu Create New"
+msgid "%1"
+msgstr "%1"
 
-#: ../kfile/kdiroperator.cpp:1852
-msgid "Menu"
-msgstr "Menú"
+#: ../kfile/knewfilemenu.cpp:882
+msgid ""
+"Basic links can only point to local files or directories.\n"
+"Please use \"Link to Location\" for remote URLs."
+msgstr ""
+"As ligazóns básicas só poden apuntar para ficheiros ou directorios locais.\n"
+"Empregue «Ligazón a un lugar (URL)»."
 
-#: ../kfile/kdiroperator.cpp:1856
-msgid "Parent Folder"
-msgstr "Cartafol superior"
+#: ../kfile/knewfilemenu.cpp:947
+msgid "Create New"
+msgstr "Crear novo"
 
-#: ../kfile/kdiroperator.cpp:1863
-msgid "Home Folder"
-msgstr "Cartafol persoal"
+#: ../kfile/knewfilemenu.cpp:960
+msgid "Link to Device"
+msgstr "Ligazón a un dispositivo"
 
-#: ../kfile/kdiroperator.cpp:1866
-msgid "Reload"
-msgstr "Cargar de novo"
-
-#: ../kfile/kdiroperator.cpp:1869
-msgid "New Folder..."
-msgstr "Novo cartafol..."
-
-#: ../kfile/kdiroperator.cpp:1880
-msgid "Delete"
-msgstr "Borrar"
-
-#: ../kfile/kdiroperator.cpp:1887
-msgid "Sorting"
-msgstr "Ordenación"
-
-#: ../kfile/kdiroperator.cpp:1890
-msgid "By Name"
-msgstr "Polo nome"
-
-#: ../kfile/kdiroperator.cpp:1894
-msgid "By Size"
-msgstr "Polo tamaño"
-
-#: ../kfile/kdiroperator.cpp:1898
-msgid "By Date"
-msgstr "Pola data"
-
-#: ../kfile/kdiroperator.cpp:1902
-msgid "By Type"
-msgstr "Polo tipo"
-
-#: ../kfile/kdiroperator.cpp:1906
-msgid "Descending"
-msgstr "Descendente"
-
-#: ../kfile/kdiroperator.cpp:1910
-msgid "Folders First"
-msgstr "Os cartafoles primeiro"
-
-#: ../kfile/kdiroperator.cpp:1920
-msgid "Icon Position"
-msgstr "Posición das iconas"
-
-#: ../kfile/kdiroperator.cpp:1923
-msgid "Next to File Name"
-msgstr "Xunto ao nome do ficheiro"
-
-#: ../kfile/kdiroperator.cpp:1927
-msgid "Above File Name"
-msgstr "Sobre o nome do ficheiro"
-
-#: ../kfile/kdiroperator.cpp:1938
-msgid "Short View"
-msgstr "Vista abreviada"
-
-#: ../kfile/kdiroperator.cpp:1943
-msgid "Detailed View"
-msgstr "Vista detallada"
-
-#: ../kfile/kdiroperator.cpp:1948
-msgid "Tree View"
-msgstr "Vista en árbore"
-
-#: ../kfile/kdiroperator.cpp:1953
-msgid "Detailed Tree View"
-msgstr "Vista en árbore detallada"
-
-#: ../kfile/kdiroperator.cpp:1964
-msgid "Show Hidden Files"
-msgstr "Mostrar os ficheiros ocultos"
-
-#: ../kfile/kdiroperator.cpp:1968
-msgid "Show Aside Preview"
-msgstr "Mostrar a vista previa a un lado"
-
-#: ../kfile/kdiroperator.cpp:1974
-msgid "Show Preview"
-msgstr "Mostrar a vista previa"
-
-#: ../kfile/kdiroperator.cpp:1978
-msgid "Open File Manager"
-msgstr "Abrir o xestor de ficheiros"
-
-#: ../kfile/kdiroperator.cpp:1990
-msgid "&View"
-msgstr "&Vista"
-
-#: ../kfile/kdirselectdialog.cpp:131
-msgctxt "folder name"
+#: ../kfile/knewfilemenu.cpp:1005
+msgctxt "Default name for a new folder"
 msgid "New Folder"
-msgstr "Cartafol novo"
+msgstr "Novo cartafol"
 
-#: ../kfile/kdirselectdialog.cpp:136
+#: ../kfile/knewfilemenu.cpp:1019
 #, kde-format
-msgctxt "@label:textbox"
 msgid ""
 "Create new folder in:\n"
 "%1"
@@ -6804,68 +6856,37 @@ msgstr ""
 "Crear un cartafol novo en:\n"
 "%1"
 
-#: ../kfile/kdirselectdialog.cpp:283
-msgctxt "@action:button"
-msgid "New Folder..."
-msgstr "Novo cartafol..."
-
-#: ../kfile/kdirselectdialog.cpp:324
-msgctxt "@action:inmenu"
-msgid "New Folder..."
-msgstr "Novo cartafol..."
-
-#: ../kfile/kdirselectdialog.cpp:331
-msgctxt "@action:inmenu"
-msgid "Move to Trash"
-msgstr "Deitar no lixo"
-
-#: ../kfile/kdirselectdialog.cpp:338
-msgctxt "@action:inmenu"
-msgid "Delete"
-msgstr "Borrar"
-
-#: ../kfile/kdirselectdialog.cpp:347
-msgctxt "@option:check"
-msgid "Show Hidden Folders"
-msgstr "Mostrar os cartafoles acochados"
-
-#: ../kfile/kdirselectdialog.cpp:354
-msgctxt "@action:inmenu"
-msgid "Properties"
-msgstr "Propiedades"
-
-#: ../kfile/kfiletreeview.cpp:187
-msgid "Show Hidden Folders"
-msgstr "Mostrar os cartafoles acochados"
-
-#: ../kfile/kurlnavigator.cpp:429
+#: ../kfile/kurlnavigator.cpp:431
 msgid "Copy"
 msgstr "Copiar"
 
-#: ../kfile/kurlnavigator.cpp:433
+#: ../kfile/kurlnavigator.cpp:435
 msgid "Paste"
 msgstr "Apegar"
 
-#: ../kfile/kurlnavigator.cpp:440
+#: ../kfile/kurlnavigator.cpp:442
 msgid "Edit"
 msgstr "Editar"
 
-#: ../kfile/kurlnavigator.cpp:443
+#: ../kfile/kurlnavigator.cpp:445
 msgid "Navigate"
 msgstr "Navegar"
 
-#: ../kfile/kurlnavigator.cpp:458
+#: ../kfile/kurlnavigator.cpp:460
 msgid "Show Full Path"
 msgstr "Mostrar a ruta completa"
 
-#: ../kfile/kurlnavigator.cpp:690
+#: ../kfile/kurlnavigator.cpp:698
 msgid "Custom Path"
 msgstr "Ruta personalizada"
 
-#: ../kfile/kurlnavigatorbutton.cpp:612
+#: ../kfile/kurlnavigatorbutton.cpp:675
 msgctxt "@action:inmenu"
 msgid "More"
 msgstr "Máis"
+
+#~ msgid "Retrieving from %1..."
+#~ msgstr "Recuperando de %1..."
 
 #~ msgid "Edit file type"
 #~ msgstr "Editar o tipo de ficheiro"
