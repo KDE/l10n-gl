@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kaudiocreator\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2011-12-21 04:31+0100\n"
+"POT-Creation-Date: 2011-12-22 04:04+0100\n"
 "PO-Revision-Date: 2010-07-03 17:12+0200\n"
 "Last-Translator: Marce Villarino <mvillarino@gmail.com>\n"
 "Language-Team: Galician <kde-i18n-doc@kde.org>\n"
@@ -127,6 +127,61 @@ msgctxt "@title:column"
 msgid "Encoder"
 msgstr "Codificador"
 
+#: encoderconfigimp.cpp:101
+msgid "The default encoder has to accept wav as input."
+msgstr ""
+
+#: encoderconfigimp.cpp:101 encoderconfigimp.cpp:194 encoderconfigimp.cpp:235
+msgid "Not Allowed"
+msgstr ""
+
+#: encoderconfigimp.cpp:128
+#, fuzzy
+#| msgid "Encoder"
+msgid "Add Encoder"
+msgstr "Codificador"
+
+#: encoderconfigimp.cpp:150 encoderconfigimp.cpp:189 encoderconfigimp.cpp:230
+msgid "Please select an encoder."
+msgstr "Escolla un codificador."
+
+#: encoderconfigimp.cpp:150 encoderconfigimp.cpp:189 encoderconfigimp.cpp:230
+#: encoder.cpp:76
+msgid "No Encoder Selected"
+msgstr "Non se escolleu ningún codificador"
+
+#: encoderconfigimp.cpp:173
+#, fuzzy
+#| msgid "Encoder"
+msgid "Copy Encoder"
+msgstr "Codificador"
+
+#: encoderconfigimp.cpp:194
+msgid "WAV is not allowed to be removed."
+msgstr ""
+
+#: encoderconfigimp.cpp:198
+msgid "Delete encoder?"
+msgstr "Borrar o codificador?"
+
+#: encoderconfigimp.cpp:198
+msgid "Delete Encoder"
+msgstr "Borrar o codificador"
+
+#: encoderconfigimp.cpp:235
+msgid ""
+"WAV is not allowed to be changed.\n"
+"You can copy it to adjust it to your needs."
+msgstr ""
+
+#: encoderconfigimp.cpp:250
+msgid "Configure Encoder"
+msgstr "Configurar o codificador"
+
+#: encoderconfigimp.cpp:384 kaudiocreator.cpp:426
+msgid "Encoder Configuration"
+msgstr "Configuración do Codificador"
+
 #: encoder.cpp:76
 msgid ""
 "No encoder has been selected.\n"
@@ -134,11 +189,6 @@ msgid ""
 msgstr ""
 "Non se escolleu ningún codificador.\n"
 "Por favor, escolla un na configuración."
-
-#: encoder.cpp:76 encoderconfigimp.cpp:150 encoderconfigimp.cpp:189
-#: encoderconfigimp.cpp:230
-msgid "No Encoder Selected"
-msgstr "Non se escolleu ningún codificador"
 
 #: encoder.cpp:161
 #, kde-format
@@ -194,56 +244,6 @@ msgstr ""
 "Verifique as opcións do codificador.\n"
 "O ficheiro wav foi eliminado.\n"
 "Desexa ver a saída completa do codificador?"
-
-#: encoderconfigimp.cpp:101
-msgid "The default encoder has to accept wav as input."
-msgstr ""
-
-#: encoderconfigimp.cpp:101 encoderconfigimp.cpp:194 encoderconfigimp.cpp:235
-msgid "Not Allowed"
-msgstr ""
-
-#: encoderconfigimp.cpp:128
-#, fuzzy
-#| msgid "Encoder"
-msgid "Add Encoder"
-msgstr "Codificador"
-
-#: encoderconfigimp.cpp:150 encoderconfigimp.cpp:189 encoderconfigimp.cpp:230
-msgid "Please select an encoder."
-msgstr "Escolla un codificador."
-
-#: encoderconfigimp.cpp:173
-#, fuzzy
-#| msgid "Encoder"
-msgid "Copy Encoder"
-msgstr "Codificador"
-
-#: encoderconfigimp.cpp:194
-msgid "WAV is not allowed to be removed."
-msgstr ""
-
-#: encoderconfigimp.cpp:198
-msgid "Delete encoder?"
-msgstr "Borrar o codificador?"
-
-#: encoderconfigimp.cpp:198
-msgid "Delete Encoder"
-msgstr "Borrar o codificador"
-
-#: encoderconfigimp.cpp:235
-msgid ""
-"WAV is not allowed to be changed.\n"
-"You can copy it to adjust it to your needs."
-msgstr ""
-
-#: encoderconfigimp.cpp:250
-msgid "Configure Encoder"
-msgstr "Configurar o codificador"
-
-#: encoderconfigimp.cpp:384 kaudiocreator.cpp:426
-msgid "Encoder Configuration"
-msgstr "Configuración do Codificador"
 
 #: general.cpp:61
 #, kde-format
@@ -963,7 +963,7 @@ msgstr "Eliminar &automaticamente os traballos ao rematalos"
 #. i18n: ectx: property (text), widget (QCheckBox, kcfg_promptIfIncompleteInfo)
 #. i18n: file: kaudiocreator.kcfg:24
 #. i18n: ectx: label, entry (promptIfIncompleteInfo), group (CD)
-#: rc.cpp:223 rc.cpp:482
+#: rc.cpp:223 rc.cpp:497
 msgid "Prompt if information is not complete"
 msgstr "Preguntar se a información do álbum non está completa"
 
@@ -1204,7 +1204,7 @@ msgstr ""
 #. i18n: ectx: property (text), widget (QCheckBox, kcfg_removeRippedWavs)
 #. i18n: file: kaudiocreator.kcfg:34
 #. i18n: ectx: label, entry (removeRippedWavs), group (General)
-#: rc.cpp:369 rc.cpp:488
+#: rc.cpp:369 rc.cpp:503
 msgid "Remove ripped wav files after encoding"
 msgstr ""
 
@@ -1371,15 +1371,45 @@ msgstr "Co&mentario"
 msgid "Arti&st's Initial"
 msgstr "Inicial do arti&sta"
 
+#. i18n: file: kaudiocreator_encoders.kcfg:12
+#. i18n: ectx: label, entry (encoderName), group ($(encoder))
+#: rc.cpp:473
+msgid "Name of the encoder"
+msgstr "Nome do codificador"
+
+#. i18n: file: kaudiocreator_encoders.kcfg:16
+#. i18n: ectx: label, entry (commandLine), group ($(encoder))
+#: rc.cpp:476
+msgid "Command line to invoke encoder"
+msgstr "Liña de comandos para invocar o codificador"
+
+#. i18n: file: kaudiocreator_encoders.kcfg:20
+#. i18n: ectx: label, entry (extension), group ($(encoder))
+#: rc.cpp:479
+msgid "File extension"
+msgstr "Extensión do ficheiro"
+
+#. i18n: file: kaudiocreator_encoders.kcfg:24
+#. i18n: ectx: label, entry (inputTypes), group ($(encoder))
+#: rc.cpp:482
+msgid "Input Types"
+msgstr ""
+
+#. i18n: file: kaudiocreator_encoders.kcfg:32
+#. i18n: ectx: label, entry (checkOutput), group ($(encoder))
+#: rc.cpp:485
+msgid "Check output files"
+msgstr ""
+
 #. i18n: file: kaudiocreator.kcfg:12
 #. i18n: ectx: label, entry (performCDDBauto), group (CD)
-#: rc.cpp:473
+#: rc.cpp:488
 msgid "Perform automatic CDDB lookups."
 msgstr "Procurar automaticamente na CDDB."
 
 #. i18n: file: kaudiocreator.kcfg:16
 #. i18n: ectx: label, entry (autoRip), group (CD)
-#: rc.cpp:476
+#: rc.cpp:491
 msgid "Automatically rip all tracks upon a successful CDDB retrieval"
 msgstr ""
 "Extraer automaticamente todas as pistas despois de recibir a información da "
@@ -1387,25 +1417,25 @@ msgstr ""
 
 #. i18n: file: kaudiocreator.kcfg:20
 #. i18n: ectx: label, entry (lastUsedDevice), group (CD)
-#: rc.cpp:479
+#: rc.cpp:494
 msgid "Last used CD device"
 msgstr "Último leitor de CD empregado"
 
 #. i18n: file: kaudiocreator.kcfg:30
 #. i18n: ectx: label, entry (removeCompletedJobs), group (General)
-#: rc.cpp:485
+#: rc.cpp:500
 msgid "Automatically remove jobs when finished"
 msgstr "Eliminar automaticamente os traballos ao rematar"
 
 #. i18n: file: kaudiocreator.kcfg:38
 #. i18n: ectx: label, entry (replaceInput), group (General)
-#: rc.cpp:491
+#: rc.cpp:506
 msgid "Regexp to match file names with"
 msgstr "Procurar os ficheiros empregando a expresión regular"
 
 #. i18n: file: kaudiocreator.kcfg:41
 #. i18n: ectx: label, entry (replaceOutput), group (General)
-#: rc.cpp:494
+#: rc.cpp:509
 msgid "String used to replace the parts that match the selection regexp"
 msgstr ""
 "Cadea empregada para substituír as partes que se axusten á expresión regular "
@@ -1413,7 +1443,7 @@ msgstr ""
 
 #. i18n: file: kaudiocreator.kcfg:67
 #. i18n: ectx: label, entry (defaultEncoder), group (Encoder)
-#: rc.cpp:497
+#: rc.cpp:512
 #, fuzzy
 #| msgid "Current default encoder:"
 msgid "Current default encoder"
@@ -1421,97 +1451,67 @@ msgstr "Actual codificador por omisión:"
 
 #. i18n: file: kaudiocreator.kcfg:71
 #. i18n: ectx: label, entry (inputTypesList), group (Encoder)
-#: rc.cpp:500
+#: rc.cpp:515
 msgid "List of available input types"
 msgstr ""
 
 #. i18n: file: kaudiocreator.kcfg:74
 #. i18n: ectx: label, entry (numberOfCpus), group (Encoder)
-#: rc.cpp:503
+#: rc.cpp:518
 msgid "Number of files to encode at a time"
 msgstr "Número de ficheiros a codificar simultaneamente"
 
 #. i18n: file: kaudiocreator.kcfg:78
 #. i18n: ectx: label, entry (fileFormat), group (Encoder)
-#: rc.cpp:506
+#: rc.cpp:521
 msgid "Location pattern for encoded files"
 msgstr "Patrón da rota aos ficheiros codificados"
 
 #. i18n: file: kaudiocreator.kcfg:82
 #. i18n: ectx: label, entry (NiceLevel), group (Encoder)
-#: rc.cpp:509
+#: rc.cpp:524
 msgid "Encoder priority"
 msgstr "Prioridade do codificador"
 
 #. i18n: file: kaudiocreator.kcfg:88
 #. i18n: ectx: label, entry (FullDecoderDebug), group (Encoder)
-#: rc.cpp:512
+#: rc.cpp:527
 msgid "Enable full decoder debugging"
 msgstr "Habilitar a depuración total do decodificador"
 
 #. i18n: file: kaudiocreator.kcfg:94
 #. i18n: ectx: label, entry (beepAfterRip), group (Ripper)
-#: rc.cpp:515
+#: rc.cpp:530
 msgid "Beep after rip"
 msgstr "Pitar tras extraer"
 
 #. i18n: file: kaudiocreator.kcfg:98
 #. i18n: ectx: label, entry (autoEjectAfterRip), group (Ripper)
-#: rc.cpp:518
+#: rc.cpp:533
 msgid "Eject CD after last track is ripped"
 msgstr "Expulsar o CD tras extraer a derradeira pista"
 
 #. i18n: file: kaudiocreator.kcfg:102
 #. i18n: ectx: label, entry (autoEjectDelay), group (Ripper)
-#: rc.cpp:521
+#: rc.cpp:536
 msgid "Auto-eject delay"
 msgstr "Retardo da autoexpulsión"
 
 #. i18n: file: kaudiocreator.kcfg:106
 #. i18n: ectx: label, entry (enableTempDir), group (Ripper)
-#: rc.cpp:524
+#: rc.cpp:539
 msgid "Specify temporary directory"
 msgstr "Especificar un cartafol temporal"
 
 #. i18n: file: kaudiocreator.kcfg:110
 #. i18n: ectx: label, entry (tempDir), group (Ripper)
-#: rc.cpp:527
+#: rc.cpp:542
 msgid "Location of temporary directory to use"
 msgstr "Rota ao cartafol temporal a empregar"
 
 #. i18n: file: kaudiocreator.kcfg:53
-#: rc.cpp:530
+#: rc.cpp:545
 msgid "Various Artists"
-msgstr ""
-
-#. i18n: file: kaudiocreator_encoders.kcfg:12
-#. i18n: ectx: label, entry (encoderName), group ($(encoder))
-#: rc.cpp:534
-msgid "Name of the encoder"
-msgstr "Nome do codificador"
-
-#. i18n: file: kaudiocreator_encoders.kcfg:16
-#. i18n: ectx: label, entry (commandLine), group ($(encoder))
-#: rc.cpp:537
-msgid "Command line to invoke encoder"
-msgstr "Liña de comandos para invocar o codificador"
-
-#. i18n: file: kaudiocreator_encoders.kcfg:20
-#. i18n: ectx: label, entry (extension), group ($(encoder))
-#: rc.cpp:540
-msgid "File extension"
-msgstr "Extensión do ficheiro"
-
-#. i18n: file: kaudiocreator_encoders.kcfg:24
-#. i18n: ectx: label, entry (inputTypes), group ($(encoder))
-#: rc.cpp:543
-msgid "Input Types"
-msgstr ""
-
-#. i18n: file: kaudiocreator_encoders.kcfg:32
-#. i18n: ectx: label, entry (checkOutput), group ($(encoder))
-#: rc.cpp:546
-msgid "Check output files"
 msgstr ""
 
 #: ripper.cpp:139
