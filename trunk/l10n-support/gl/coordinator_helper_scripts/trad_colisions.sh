@@ -71,10 +71,9 @@ for ficheiro in `svn status $BASE_REPO/$prefix/$lang/ | grep "^C " | cut -d" " -
   do
     directorio=`dirname $ficheiro`
     nome=`basename $ficheiro ."$marca"`
-    echo "PRESENTABA CONFLITOS: $nome"
     svn resolve --accept mine-full $directorio/$nome
     postpath=`echo $directorio | sed "s:$prefix/$lang::"` #cut --delimiter="/" --fields=2- -`
-    echo "    postprocesando: ${BASE_REPO}/${directorio}/${nome} con ${BASE_REPO}/${prefix}/templates/${postpath}/${nome}t"
-    $BASE_REPO/$prefix/scripts/merge.sh $BASE_REPO/$directorio/$nome $BASE_REPO/$prefix/"templates/"$postpath/$nome"t"
+    echo "    postprocesando: ${directorio}/${nome} con ${BASE_REPO}/${prefix}/templates/${postpath}/${nome}t"
+    $BASE_REPO/$prefix/scripts/merge.sh ${directorio}/${nome} ${BASE_REPO}/${prefix}/templates/${nome}t
   done
 echo "...done $1"

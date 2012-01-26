@@ -2,7 +2,7 @@
 #Este script serve para engadir e entregar o traballo a KDE.
 
 #TODO: Resolver conflitos (?)
-# Copyright (c) 2011 Marcelino Villarino Aguiar. All rights reserved.
+# Copyright (c) 2011, 2012 Marcelino Villarino Aguiar. All rights reserved.
 # Redistribution and use in source and binary forms, with or without modification,
 # are permitted provided that the following conditions are met: Redistributions
 # of source code must retain the above copyright notice, this list of conditions
@@ -24,10 +24,10 @@
 # OF THE POSSIBILITY OF SUCH DAMAGE.
 
 
-if [ $# -ne 2 ]; then
+if [ $# -lt 2 ]; then
       echo "Usage: sender.sh <version> <message>" >&2
       echo "version is one in stable or trunk" >&2
-      echo "If message is a text with several words, enclose it in quotes (\"\")" >&2
+#       echo "If message is a text with several words, enclose it in quotes (\"\")" >&2
    exit 1
 fi
 
@@ -39,9 +39,11 @@ fi
 case "$1" in
    stable)
       repo=${BASE_REPO}/branches/stable/l10n-kde4/
+      shift
       ;;
    trunk)
       repo=${BASE_REPO}/trunk/l10n-kde4/
+      shift
       ;;
    *)
       echo "Usage: sender.sh <version> <message>"
@@ -54,5 +56,4 @@ if [ `svn status ${repo}gl/ | grep "^\?" | cut -d" " -f8 | wc -l` -ne  0 ] ; the
         svn add `svn status ${repo}gl/  | grep "?" | cut -d" " -f8`
 fi
  
-svn commit ${repo}gl/ -m"$1"
-
+svn commit ${repo}gl/ -m"$@"
