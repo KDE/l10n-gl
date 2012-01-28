@@ -1,0 +1,713 @@
+<?xml version="1.0" ?>
+<!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.2-Based Variant V1.1//EN" "dtd/kdex.dtd" [
+  <!ENTITY kappname "&ksnapshot;">
+  <!ENTITY package "kdegraphics">
+  <!ENTITY % addindex "IGNORE">
+  <!ENTITY % Galician  "INCLUDE"
+> <!-- change language only here -->
+]>
+
+<book lang="&language;">
+
+<bookinfo>
+<title
+>Manual do &ksnapshot;</title>
+
+<authorgroup>
+<author
+><firstname
+>Richard</firstname
+> <othername
+>J.</othername
+> <surname
+>Moore</surname
+> <affiliation
+> <address
+>&Richard.J.Moore.mail;</address>
+</affiliation>
+</author>
+
+<author
+><firstname
+>Robert</firstname
+> <othername
+>L.</othername
+> <surname
+>McCormick</surname
+> <affiliation
+> <address
+>&Robert.L.McCormick.mail;</address>
+</affiliation>
+</author>
+
+<author
+><firstname
+>Brad</firstname
+> <surname
+>Hards</surname
+> <affiliation
+> <address
+>&Brad.Hards.mail;</address>
+</affiliation>
+</author>
+
+<othercredit role="reviewer"
+><firstname
+>Lauri</firstname
+> <surname
+>Watts</surname
+> <affiliation
+> <address
+>&Lauri.Watts.mail;</address>
+</affiliation>
+<contrib
+>Revisións</contrib>
+</othercredit>
+
+<othercredit role="developer"
+><firstname
+>Richard</firstname
+> <othername
+>J</othername
+> <surname
+>Moore</surname
+> <affiliation
+> <address
+>&Richard.J.Moore.mail;</address>
+</affiliation>
+<contrib
+>Programación</contrib>
+</othercredit>
+
+<othercredit role="developer"
+><firstname
+>Matthias</firstname
+> <surname
+>Ettrich</surname
+> <affiliation
+> <address
+>&Matthias.Ettrich.mail;</address>
+</affiliation>
+<contrib
+>Programación</contrib>
+</othercredit>
+
+<othercredit role="translator"
+><firstname
+>Xosé</firstname
+><surname
+>Calvo</surname
+><affiliation
+><address
+><email
+></email
+></address
+></affiliation
+><contrib
+>Tradutor do proxecto Trasno</contrib
+></othercredit
+> 
+</authorgroup>
+
+<copyright>
+<year
+>1997-2000</year>
+<holder
+>&Richard.J.Moore;</holder>
+</copyright>
+
+<copyright>
+<year
+>2000</year>
+<holder
+>&Matthias.Ettrich;</holder>
+</copyright>
+
+<legalnotice
+>&FDLNotice;</legalnotice>
+
+<date
+>2006-07-05</date>
+<releaseinfo
+>0.7</releaseinfo>
+
+<abstract>
+<para
+>O &ksnapshot; é unha applet para tomar capturas de pantalla. Pode capturar imaxes de todo o escritorio, dunha única xanela, dunha sección dunha xanela ou dunha rexión seleccionada. As imaxes pódense gravar en varios formatos.</para>
+</abstract>
+
+<keywordset>
+<keyword
+>KDE</keyword>
+<keyword
+>KSnapshot</keyword>
+<keyword
+>kdegraphics</keyword>
+<keyword
+>captura de pantalla</keyword>
+<keyword
+>captura de imaxe</keyword>
+</keywordset>
+
+</bookinfo>
+
+<chapter id="introduction">
+<title
+>Introdución</title>
+
+<para
+>O &ksnapshot; é unha applet para tomar capturas de pantalla. Pode capturar imaxes de todo o escritorio, dunha única xanela, dunha sección dunha xanela ou dunha rexión seleccionada. As imaxes pódense gravar en varios formatos.</para>
+
+<para
+>Informe dos problemas e peticións de características no <ulink url="http://bugs.kde.org/wizard.cgi"
+>sistema de seguimento de erros do &kde;</ulink
+></para>
+
+</chapter>
+
+<chapter id="using-ksapshot">
+<title
+>Uso do &ksnapshot;</title>
+
+<para
+>Este capítulo describe o uso do &ksnapshot; para capturar imaxes de pantalla.</para>
+
+<sect1 id="starting">
+<title
+>Inicio do &ksnapshot;</title>
+
+<para
+>Pódese iniciar o &ksnapshot; de varios xeitos, que se describen embaixo.</para>
+
+<itemizedlist>
+<listitem>
+<para
+>Pódese iniciar o &ksnapshot; seleccionanándoo no <menuchoice
+> <guimenu
+>Menú K</guimenu
+><guisubmenu
+>Gráficos</guisubmenu
+> <guimenuitem
+>&ksnapshot; (Programa para facer capturas de pantalla)</guimenuitem
+></menuchoice
+>. </para
+></listitem>
+<listitem>
+<para
+>Pódese iniciar o &ksnapshot; escribindo o seguinte nunha liña de comandos:</para>
+<screen width="40"
+><prompt
+>%</prompt
+> <command
+>ksnapshot &amp;</command
+>
+</screen>
+</listitem>
+<listitem
+><para
+>A mini-liña de comandos (invocada con <keycombo action="simul"
+>&Alt;<keycap
+>Fs</keycap
+></keycombo
+>) tamén se pode empregar para iniciar o &ksnapshot;</para
+></listitem>
+</itemizedlist>
+
+<para
+>Cando se inicia o &ksnapshot; vese unha xanela como a seguinte: <mediaobject>
+<imageobject>
+<imagedata fileref="window.png" format="PNG"/>
+</imageobject>
+<textobject
+><phrase
+>Xanela de previsualización do &ksnapshot;</phrase>
+</textobject>
+</mediaobject>
+</para>
+
+</sect1>
+
+<sect1 id="taking-snapshot">
+<title
+>Capturar unha pantalla</title>
+
+<para
+>O &ksnapshot; toma unha imaxe do escritorio completo cando se inicia, mais antes de aparecer na pantalla. Isto permite crear rapidamente unha imaxe de toda a pantalla.</para>
+
+<para
+>A imaxe que toma o &ksnapshot; móstrase na xanela de previsualización, que se sitúa na parte superior esquerda da xanela da aplicación &ksnapshot;. Aquí embaixo hai un exemplo da xanela de previsualización do &ksnapshot;. A previsualización que vostede teña será diferente dependendo do que teña no escritorio.</para>
+
+<mediaobject>
+<imageobject>
+<imagedata fileref="preview.png" format="PNG"/>
+</imageobject>
+<textobject
+><phrase
+>Xanela de previsualización do &ksnapshot;</phrase>
+</textobject>
+</mediaobject>
+
+<para
+>Pódese gravar a imaxe premendo o botón <guibutton
+>Gardar como...</guibutton
+>. Isto abre o diálogo normal do &kde; para gardar, no que se pode escoller o nome do ficheiro, a localización do cartafol e o formato no que se quere gravar a imaxe. Se se toman varias imaxes, o nome do ficheiro increméntase automaticamente para evitar que se sobreescriban as imaxes anteriores. Porén, pódese modificar o nome do ficheiro como se queira, incluído o nome dunha imaxe gravada antes. </para>
+
+<para
+>Para tomar unha imaxe dunha única xanela, seleccione a entrada <guilabel
+>A fiestra na que está o cursor</guilabel
+> no menú despregábel que está acarón da etiqueta <guilabel
+>Modo de captura</guilabel
+>) e prema o botón <guibutton
+>Nova captura</guibutton
+>.</para>
+
+<para
+>Dependendo da configuración do <guilabel
+>Retardo da captura</guilabel
+> tense unha cruz como punteiro do rato (con <guilabel
+>Sen retardo</guilabel
+>) ou un cursor normal do rato que se pode empregar para traballar co programa até que remate esa demora e se tome a instantánea.</para>
+
+<para
+>Con <guilabel
+>Sen retardo</guilabel
+>, a imaxe tómase inmediatamente despois de premer unha xanela.</para>
+
+<para
+>O &ksnapshot; mostra a nova imaxe na área de previsualización, momento no que se pode escoller gravar a imaxe nova (premendo <guibutton
+>Gardar como...</guibutton
+>) ou tomar outra nova, premendo o botón <guibutton
+>Nova captura</guibutton
+>.</para>
+
+<para
+>Para tomar unha imaxe nova de todo o escritorio, seleccione a entrada <guilabel
+>Pantalla completa</guilabel
+> do menú despregábel e prema o botón <guibutton
+>Nova captura</guibutton
+>. O &ksnapshot; captura o escritorio completo se se preme <guibutton
+>Nova captura</guibutton
+>.</para>
+
+<para
+>De maneira semellante, para tomar unha imaxe dunha área, seleccione a entrada <guilabel
+>Zona</guilabel
+> do menú despregábel, configure o <guilabel
+>Retardo da captura</guilabel
+> como <guilabel
+>Sen retardo</guilabel
+> e prema o botón <guibutton
+>Nova captura</guibutton
+>. O cursor do rato tórnase unha cruz e pódese empregar o rato para seleccionar a zona que se queira capturar. </para>
+
+<para
+>Para tomar unha imaxe nova dunha sección dunha xanela, seleccione a entrada <guilabel
+>Sección da fiestra</guilabel
+> e prema o botón <guibutton
+>Nova captura</guibutton
+>. Con <guilabel
+>Sen retardo</guilabel
+> o punteiro do rato tórnase unha cruz e hai que premer a xanela unha vez co &LMB;. A sección da xanela que estea por baixo do cursor resáltase cun bordo vermello. Mova o rasto para a sección que queira e prema o &LMB; para capturar a imaxe. </para>
+
+</sect1>
+
+<sect1 id="additional-features">
+<title
+>Características adicionais</title>
+
+<sect2 id="delay">
+<title
+>Retardo da captura</title>
+
+<para
+>A opción <guilabel
+>Retardo da captura</guilabel
+> permite introducir unha demora arbitraria en segundos entre o momento en que se preme o botón <guibutton
+>Nova captura</guibutton
+> e o momento no que se toma a imaxe.</para>
+
+<para
+>Cando se configura un retardo non hai que premer o botón do rato para capturar unha imaxe. Isto permite abrir un menú despregábel e tomar unha imaxe del.</para>
+
+</sect2>
+
+<sect2 id="window-decoration">
+<title
+>Excluir as decoracións da fiestra</title>
+
+<para
+><guilabel
+>Incluir as decoracións da fiestra</guilabel
+> está activado por omisión.</para>
+
+<para
+>Cando queira capturar a aplicación mesma sen a decoración da xanela que a rodea, desactive esta opción e tome unha imaxe nova.</para>
+
+</sect2>
+
+<sect2 id="print-snapshot">
+<title
+>Imprimir</title>
+
+<para
+>Cando queira imprimir a imaxe desde a previsualización, simplemente prema <guibutton
+>Imprimir...</guibutton
+> e terá o diálogo normal Imprimir do &kde;, desde o que pode imprimir directamente a imaxe.</para>
+</sect2>
+
+<sect2 id="copy-snapshot">
+<title
+>Copiar ao portarretallos</title>
+
+<para
+>Cando queira modificar a imaxe nunha aplicación de gráficos sen gravar a imaxe, simplemente prema <guibutton
+>Copiar ao portarretallos</guibutton
+> e insira a imaxe nun visor un aplicación de gráficos.</para>
+</sect2>
+
+
+<sect2 id="bottom-buttons">
+<title
+>Botóns</title>
+
+<para
+>Hai dous botóns adicionais situados na parte inferior da xanela do &ksnapshot;. A súa función descríbese embaixo.</para>
+
+<variablelist>
+<varlistentry>
+<term
+><guibutton
+>Axuda</guibutton
+></term>
+<listitem
+><para
+>Mostra un menú no que se pode abrir o <guimenuitem
+>Manual de &ksnapshot;</guimenuitem
+>, informar dun erro ou obter máis información <guimenuitem
+>Acerca de &ksnapshot;</guimenuitem
+> e <guimenuitem
+>Acerca de &kde;</guimenuitem
+>. </para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guibutton
+>Sair</guibutton
+></term>
+<listitem
+><para
+>Sae da aplicación &ksnapshot;</para
+></listitem>
+</varlistentry>
+</variablelist>
+
+</sect2>
+</sect1>
+</chapter>
+
+<chapter id="dcop">
+
+<title
+>Interface &DCOP;</title>
+
+<para
+>Pódense escribir scripts para o &ksnapshot; empregando a súa interface &DCOP;. este capítulo explica as diversas chamadas a &DCOP; que se poden empregar e fornece algúns exemplos de como utilizalas.</para>
+
+<para
+>Como con todas as chamadas a &DCOP;, hai que especificar a aplicación coa que se quere interactuar e a interface específica. Co &ksnapshot; hai que identificar a aplicación específica, que é <literal
+>ksnapshot</literal
+>, seguida polo número do proceso.</para>
+
+<para
+>Para iniciar o &ksnapshot; e obter o argumento correcto, empregue <command
+>dcopstart ksnapshot</command
+>, que devolve o argumento (como <computeroutput
+>ksnapshot-20594</computeroutput
+>) na saída normal.</para>
+
+<para
+>Pódese obter unha lista das interfaces de &DCOP; disponíbeis para empregar os argumentos correctos, como se mostra neste exemplo: <screen width="60"
+><prompt
+>$</prompt
+> <command
+>dcop `dcopstart ksnapshot` interface</command
+><computeroutput>
+QCStringList interfaces()
+QCStringList functions()
+QString url()
+void slotGrab()
+void slotPrint()
+void slotSave()
+bool save(QString filename)
+void slotSaveAs()
+void slotCopy()
+void setTime(int newTime)
+int timeout()
+void setURL(QString newURL)
+void setGrabMode(int grab)
+int grabMode()
+void slotMovePointer(int x,int y)
+void exit()
+</computeroutput
+>
+</screen>
+</para>
+
+<para
+>Nos exemplos que seguen, o proceso é sempre <computeroutput
+>ksnapshot-23151</computeroutput
+>. </para>
+
+<sect1 id="dcop-settings">
+
+<title
+>Acceso &DCOP; á configuración</title>
+
+<para
+>Para cada opción que se poida controlar coa &GUI; pódese obter o estado actual desa opción e modificar a opción empregando &DCOP;. </para>
+
+<para
+>Pódese obter o modo de captura actual con  <literal
+>grabMode</literal
+>, como se mostra embaixo: <screen width="60">
+<prompt
+>$</prompt
+> <command
+>dcop ksnapshot-23151 interface grabMode</command>
+</screen
+> Isto devolve <computeroutput
+>0</computeroutput
+> para a captura da pantalla completa, <computeroutput
+>1</computeroutput
+> para a captura dunha xanela e <computeroutput
+>2</computeroutput
+> para a captura dunha zona. </para>
+
+<para
+>Pódese configurar o modo de captura empregando <literal
+>setGrabMode</literal
+>, que require un argumento para identificar o modo requirido (como con <literal
+>grabMode</literal
+>). Así, pódes configurar o modo de captura de xanela (<command
+>1</command
+>), empregando: <screen width="60"
+><prompt
+>$</prompt
+> <command
+>dcop ksnapshot-23151 interface setGrabMode 1</command
+>
+</screen>
+</para>
+
+<para
+>Pódese obter a configuración actual da demora (o elemento da &GUI; <guilabel
+>Retardo da captura</guilabel
+>) empregando  <literal
+>timeout</literal
+>, como se mostra embaixo: <screen width="60">
+<prompt
+>$</prompt
+> <command
+>dcop ksnapshot-23151 interface timeout</command>
+</screen
+> Isto devolve a configuración da demora en segundos, ou cero se non hai demora (capturar ao premer o botón do rato). </para>
+
+<para
+>Pódese configurar a demora empregando <literal
+>setTime</literal
+>, que require un argumento para identificar a duración da demora. Pódese configurar unha demora de 4 segundos empregando: <screen width="60"
+><prompt
+>$</prompt
+> <command
+>dcop ksnapshot-23151 interface setTime 4</command
+>
+</screen>
+</para>
+
+<para
+>Pódese obter a ruta na que se ha de gravar a imaxe empregando <literal
+>url</literal
+>, como se mostra embaixo: <screen width="60">
+<prompt
+>$</prompt
+><command
+>dcop ksnapshot-23151 interface url</command>
+</screen
+> Isto devolve o nome do ficheiro como &URL; (p.ex., como <computeroutput
+>file:///home/xiana/proba2.png</computeroutput
+>). </para>
+
+<para
+>Pódese configurar a ruta empregando <literal
+>setURL</literal
+>, que require un argumento cunha cadea para identificar a nova ruta. Pódese configuar a ruta a <literal
+>file:///home/xiana/captura.jpg</literal
+> empregando: <screen width="60"
+><prompt
+>$</prompt
+> <command
+>dcop ksnapshot-23151 interface setURL file:///home/xiana/captura.jpg</command
+>
+</screen>
+</para>
+
+</sect1>
+
+<sect1 id="dcop-snapshot">
+<title
+>Facer capturas de pantalla con &DCOP;</title>
+
+<para
+>A clave para facer capturas de pantalla con &DCOP; é empregar <literal
+>slotGrab</literal
+>, como se mostra embaixo: <screen width="60"
+><prompt
+>$</prompt
+> <command
+>dcop ksnapshot-23151 interface slotGrab</command
+>
+</screen>
+</para>
+
+<para
+>Isto fai unha captura empregando o modo de captura e as opcións de demora actuais (como se describiron antes). Se se quere gravar a imaxe da captura hai varias chamadas que se poden empregar. Se só se quere gravar a imaxe na ruta actual (o que devolve <literal
+>url</literal
+> ou se configura con <literal
+>setURL</literal
+>), pódese empregar <literal
+>slotSave</literal
+> como se mostra embaixo: <screen width="60"
+><prompt
+>$</prompt
+> <command
+>dcop ksnapshot-23151 interface slotSave</command
+>
+</screen>
+</para>
+
+<para
+>Se quere que o usuario poida especificar un nome de ficheiro (e ruta), pode empregar <literal
+>slotSaveAs</literal
+>, que abre o diálogo normal de gravar ficheiros do &kde;.</para>
+
+<para
+>Se quere gravar a imaxe cun nome (ou ruta) diferente) sen alterar a ruta con <literal
+>setURL</literal
+>, pode empregar <literal
+>save</literal
+> eo &URL; como argumento. Por exemplo, se quere gravar a imaxe en <filename
+>file:///tmp/tempshot.png</filename
+> pode facer o seguinte: <screen width="60">
+<prompt
+>$</prompt
+> <command
+>dcop ksnapshot-23151 interface save file:///tmp/tempshot.png</command>
+</screen
+> Lembre que isto devolve true se a imaxe se gravou correctamente e false se non. Tamén, hai que ter presente que se o ficheiro xa existe o usuario verá un diálogo normal do &kde; que lle pide que decida se o quere sobreescribir ou non. </para>
+
+<para
+>Para alén de gravar a imaxe, esta tamén se pode copiar ao portarretallos empregando <literal
+>slotcopy</literal
+>, como se mostra embaixo: <screen width="60"
+><prompt
+>$</prompt
+> <command
+>dcop ksnapshot-23151 interface slotCopy</command
+>
+</screen>
+</para>
+
+<para
+>Se ten que seleccionar unha xanela que pode que non estea por debaixo do cursor do rato, póde empregar <literal
+>slotMovePointer</literal
+> e pasar a posición x (en píxeles de pantalla) e a posición y (tamén en píxeles de pantalla) como argumentos. Por exemplo, para mover o rato ao recanto superior esquerdo da pantalla (0,0) pódese facer o seguinte: <screen width="60"
+><prompt
+>$</prompt
+> <command
+>dcop ksnapshot-23151 interface slotMoveMouse 0 0</command
+>
+</screen>
+</para>
+</sect1>
+
+<sect1 id="dcop-print">
+<title
+>Impresión de capturas de pantalla con &DCOP;</title>
+
+<para
+>Pódese imprimir a captura de pantalla actual (que pode ou non ter sido gravada) empregando <literal
+>printSlot</literal
+>, como se mostra embaixo: <screen width="60"
+><prompt
+>$</prompt
+> <command
+>dcop ksnapshot-23151 interface slotPrint</command
+>
+</screen>
+</para>
+
+<para
+>Lembre que isto abre o diálogo normal de impresión do &kde;, que pode requirir a interacción co usuario. </para>
+
+</sect1>
+
+<sect1 id="dcop-exit">
+<title
+>Control da aplicación con &DCOP;</title>
+
+<para
+>Pódese facer que se saia do &ksnapshot; empregando <literal
+>exit</literal
+>, como se mostra embaixo. <screen width="60"
+><prompt
+>$</prompt
+> <command
+>dcop ksnapshot-23151 interface exit</command
+>
+</screen>
+</para>
+
+</sect1>
+
+</chapter>
+
+<chapter id="credits">
+
+<title
+>Créditos e licenza</title>
+
+<para
+>Copyright do programa</para>
+<itemizedlist>
+<listitem
+><para
+>1997-2000 &Richard.J.Moore; &Richard.J.Moore.mail;</para
+></listitem>
+<listitem
+><para
+>2000 &Matthias.Ettrich; &Matthias.Ettrich.mail;</para
+></listitem>
+</itemizedlist>
+
+<para
+>Documentación baseada na orixinal, copyright 1997-2000 &Richard.J.Moore; &Richard.J.Moore.mail;</para>
+<para
+>Tradución da documentación: Xosé Calvo - http://trasno.net/</para
+> 
+&underFDL; &underGPL; </chapter>
+
+&documentation.index;
+</book>
+
+<!--
+Local Variables:
+sgml-minimize-attributes: nil
+sgml-general-insert-case: lower
+End:
+-->
+
+
+
+
