@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: dolphin\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2012-03-08 03:49+0100\n"
+"POT-Creation-Date: 2012-03-10 04:29+0100\n"
 "PO-Revision-Date: 2011-01-28 16:40+0100\n"
 "Last-Translator: Marce Villarino <mvillarino@gmail.com>\n"
 "Language-Team: Galician <proxecto@trasno.net>\n"
@@ -37,7 +37,12 @@ msgctxt "@label:textbox"
 msgid "Filter:"
 msgstr "Filtro:"
 
-#: kitemviews/kfileitemlistwidget.cpp:233
+#: kitemviews/kfileitemlistview.cpp:559
+msgctxt "@item:intable"
+msgid "items"
+msgstr ""
+
+#: kitemviews/kfileitemlistwidget.cpp:248
 #, fuzzy
 #| msgctxt "@info:status"
 #| msgid "Unknown size"
@@ -45,7 +50,7 @@ msgctxt "@item:intable"
 msgid "Unknown"
 msgstr "Tamaño descoñecido"
 
-#: kitemviews/kfileitemlistwidget.cpp:235
+#: kitemviews/kfileitemlistwidget.cpp:250
 #, fuzzy, kde-format
 #| msgctxt "@info"
 #| msgid "%1 item selected"
@@ -309,11 +314,6 @@ msgstr "prohibido"
 msgctxt "@title:group Files and folders by permissions"
 msgid "User: %1 | Group: %2 | Others: %3"
 msgstr "(Usuario: %1) (Grupo: %2) (Outros: %3)"
-
-#: kitemviews/kfileitemlistview.cpp:552
-msgctxt "@item:intable"
-msgid "items"
-msgstr ""
 
 #: panels/folders/treeviewcontextmenu.cpp:58
 msgctxt "@action:inmenu"
@@ -749,55 +749,63 @@ msgctxt "@action:button Choose font"
 msgid "Choose..."
 msgstr "Escoller..."
 
-#: settings/viewmodes/viewsettingstab.cpp:49
+#: settings/viewmodes/viewsettingstab.cpp:51
 msgctxt "@title:group"
 msgid "Icon Size"
 msgstr "Tamaño das iconas"
 
-#: settings/viewmodes/viewsettingstab.cpp:54
+#: settings/viewmodes/viewsettingstab.cpp:56
 msgctxt "@label:listbox"
 msgid "Default:"
 msgstr "Predeterminado:"
 
-#: settings/viewmodes/viewsettingstab.cpp:60
+#: settings/viewmodes/viewsettingstab.cpp:62
 msgctxt "@label:listbox"
 msgid "Preview:"
 msgstr "Vista previa:"
 
-#: settings/viewmodes/viewsettingstab.cpp:73
+#: settings/viewmodes/viewsettingstab.cpp:75
 msgctxt "@title:group"
 msgid "Text"
 msgstr "Texto"
 
-#: settings/viewmodes/viewsettingstab.cpp:75
+#: settings/viewmodes/viewsettingstab.cpp:77
 msgctxt "@label:listbox"
 msgid "Font:"
 msgstr "Tipo de letra:"
 
-#: settings/viewmodes/viewsettingstab.cpp:83
+#: settings/viewmodes/viewsettingstab.cpp:86
 msgctxt "@label:listbox"
 msgid "Text width:"
 msgstr "Largura do texto:"
 
-#: settings/viewmodes/viewsettingstab.cpp:85
+#: settings/viewmodes/viewsettingstab.cpp:88
 msgctxt "@item:inlistbox Text width"
 msgid "Small"
 msgstr "Pequeno"
 
-#: settings/viewmodes/viewsettingstab.cpp:86
+#: settings/viewmodes/viewsettingstab.cpp:89
 msgctxt "@item:inlistbox Text width"
 msgid "Medium"
 msgstr "Medio"
 
-#: settings/viewmodes/viewsettingstab.cpp:87
+#: settings/viewmodes/viewsettingstab.cpp:90
 msgctxt "@item:inlistbox Text width"
 msgid "Large"
 msgstr "Grande"
 
-#: settings/viewmodes/viewsettingstab.cpp:88
+#: settings/viewmodes/viewsettingstab.cpp:91
 msgctxt "@item:inlistbox Text width"
 msgid "Huge"
 msgstr "Enorme"
+
+#: settings/viewmodes/viewsettingstab.cpp:98
+#, fuzzy
+#| msgctxt "@option:radio Apply View Properties To"
+#| msgid "All folders"
+msgctxt "@option:check"
+msgid "Expandable folders"
+msgstr "A todos os cartafoles"
 
 #: settings/viewpropsprogressinfo.cpp:49
 msgctxt "@title:window"
@@ -2003,85 +2011,79 @@ msgstr "Lugar"
 msgid "What"
 msgstr "Que"
 
-#. i18n: file: settings/dolphin_detailsmodesettings.kcfg:12
-#. i18n: ectx: label, entry (FontFamily), group (DetailsMode)
-#. i18n: file: settings/dolphin_iconsmodesettings.kcfg:16
-#. i18n: ectx: label, entry (FontFamily), group (IconsMode)
-#. i18n: file: settings/dolphin_compactmodesettings.kcfg:16
-#. i18n: ectx: label, entry (FontFamily), group (CompactMode)
-#: rc.cpp:26 rc.cpp:57 rc.cpp:202
-msgid "Font family"
-msgstr "Familia do tipo de letra"
-
-#. i18n: file: settings/dolphin_detailsmodesettings.kcfg:16
-#. i18n: ectx: label, entry (UseSystemFont), group (DetailsMode)
 #. i18n: file: settings/dolphin_iconsmodesettings.kcfg:12
 #. i18n: ectx: label, entry (UseSystemFont), group (IconsMode)
 #. i18n: file: settings/dolphin_compactmodesettings.kcfg:12
 #. i18n: ectx: label, entry (UseSystemFont), group (CompactMode)
-#: rc.cpp:29 rc.cpp:54 rc.cpp:199
+#. i18n: file: settings/dolphin_detailsmodesettings.kcfg:16
+#. i18n: ectx: label, entry (UseSystemFont), group (DetailsMode)
+#: rc.cpp:26 rc.cpp:171 rc.cpp:199
 msgid "Use system font"
 msgstr "Usar o tipo de letra do sistema"
 
-#. i18n: file: settings/dolphin_detailsmodesettings.kcfg:20
-#. i18n: ectx: label, entry (FontSize), group (DetailsMode)
+#. i18n: file: settings/dolphin_iconsmodesettings.kcfg:16
+#. i18n: ectx: label, entry (FontFamily), group (IconsMode)
+#. i18n: file: settings/dolphin_compactmodesettings.kcfg:16
+#. i18n: ectx: label, entry (FontFamily), group (CompactMode)
+#. i18n: file: settings/dolphin_detailsmodesettings.kcfg:12
+#. i18n: ectx: label, entry (FontFamily), group (DetailsMode)
+#: rc.cpp:29 rc.cpp:174 rc.cpp:196
+msgid "Font family"
+msgstr "Familia do tipo de letra"
+
 #. i18n: file: settings/dolphin_iconsmodesettings.kcfg:20
 #. i18n: ectx: label, entry (FontSize), group (IconsMode)
 #. i18n: file: settings/dolphin_compactmodesettings.kcfg:20
 #. i18n: ectx: label, entry (FontSize), group (CompactMode)
-#: rc.cpp:32 rc.cpp:60 rc.cpp:205
+#. i18n: file: settings/dolphin_detailsmodesettings.kcfg:20
+#. i18n: ectx: label, entry (FontSize), group (DetailsMode)
+#: rc.cpp:32 rc.cpp:177 rc.cpp:202
 msgid "Font size"
 msgstr "Tamaño da letra"
 
-#. i18n: file: settings/dolphin_detailsmodesettings.kcfg:24
-#. i18n: ectx: label, entry (ItalicFont), group (DetailsMode)
 #. i18n: file: settings/dolphin_iconsmodesettings.kcfg:24
 #. i18n: ectx: label, entry (ItalicFont), group (IconsMode)
 #. i18n: file: settings/dolphin_compactmodesettings.kcfg:24
 #. i18n: ectx: label, entry (ItalicFont), group (CompactMode)
-#: rc.cpp:35 rc.cpp:63 rc.cpp:208
+#. i18n: file: settings/dolphin_detailsmodesettings.kcfg:24
+#. i18n: ectx: label, entry (ItalicFont), group (DetailsMode)
+#: rc.cpp:35 rc.cpp:180 rc.cpp:205
 msgid "Italic"
 msgstr "Cursiva"
 
-#. i18n: file: settings/dolphin_detailsmodesettings.kcfg:28
-#. i18n: ectx: label, entry (FontWeight), group (DetailsMode)
 #. i18n: file: settings/dolphin_iconsmodesettings.kcfg:28
 #. i18n: ectx: label, entry (FontWeight), group (IconsMode)
 #. i18n: file: settings/dolphin_compactmodesettings.kcfg:28
 #. i18n: ectx: label, entry (FontWeight), group (CompactMode)
-#: rc.cpp:38 rc.cpp:66 rc.cpp:211
+#. i18n: file: settings/dolphin_detailsmodesettings.kcfg:28
+#. i18n: ectx: label, entry (FontWeight), group (DetailsMode)
+#: rc.cpp:38 rc.cpp:183 rc.cpp:208
 msgid "Font weight"
 msgstr "Grosor do tipo de letra"
 
-#. i18n: file: settings/dolphin_detailsmodesettings.kcfg:32
-#. i18n: ectx: label, entry (IconSize), group (DetailsMode)
 #. i18n: file: settings/dolphin_iconsmodesettings.kcfg:32
 #. i18n: ectx: label, entry (IconSize), group (IconsMode)
 #. i18n: file: settings/dolphin_compactmodesettings.kcfg:32
 #. i18n: ectx: label, entry (IconSize), group (CompactMode)
-#: rc.cpp:41 rc.cpp:69 rc.cpp:214
+#. i18n: file: settings/dolphin_detailsmodesettings.kcfg:32
+#. i18n: ectx: label, entry (IconSize), group (DetailsMode)
+#: rc.cpp:41 rc.cpp:186 rc.cpp:211
 msgid "Icon size"
 msgstr "Tamaño das iconas"
 
-#. i18n: file: settings/dolphin_detailsmodesettings.kcfg:36
-#. i18n: ectx: label, entry (PreviewSize), group (DetailsMode)
 #. i18n: file: settings/dolphin_iconsmodesettings.kcfg:36
 #. i18n: ectx: label, entry (PreviewSize), group (IconsMode)
 #. i18n: file: settings/dolphin_compactmodesettings.kcfg:36
 #. i18n: ectx: label, entry (PreviewSize), group (CompactMode)
-#: rc.cpp:44 rc.cpp:72 rc.cpp:217
+#. i18n: file: settings/dolphin_detailsmodesettings.kcfg:36
+#. i18n: ectx: label, entry (PreviewSize), group (DetailsMode)
+#: rc.cpp:44 rc.cpp:189 rc.cpp:214
 msgid "Preview size"
 msgstr "Tamaño da vista previa"
 
-#. i18n: file: settings/dolphin_detailsmodesettings.kcfg:40
-#. i18n: ectx: label, entry (ColumnPositions), group (DetailsMode)
-#: rc.cpp:47
-msgid "Position of columns"
-msgstr "Posición das columnas"
-
 #. i18n: file: settings/dolphin_iconsmodesettings.kcfg:40
 #. i18n: ectx: label, entry (TextWidthIndex), group (IconsMode)
-#: rc.cpp:75
+#: rc.cpp:47
 #, fuzzy
 #| msgctxt "@label:listbox"
 #| msgid "Text width:"
@@ -2090,13 +2092,13 @@ msgstr "Largura do texto:"
 
 #. i18n: file: settings/dolphin_versioncontrolsettings.kcfg:10
 #. i18n: ectx: label, entry (enabledPlugins), group (VersionControl)
-#: rc.cpp:82
+#: rc.cpp:54
 msgid "Enabled plugins"
 msgstr "Engadidos activados"
 
 #. i18n: file: settings/dolphin_directoryviewpropertysettings.kcfg:11
 #. i18n: ectx: label, entry (HiddenFilesShown), group (Settings)
-#: rc.cpp:85
+#: rc.cpp:57
 #, fuzzy
 #| msgid "Show hidden files"
 msgctxt "@label"
@@ -2105,7 +2107,7 @@ msgstr "Mostrar os ficheiros acochados"
 
 #. i18n: file: settings/dolphin_directoryviewpropertysettings.kcfg:12
 #. i18n: ectx: whatsthis, entry (HiddenFilesShown), group (Settings)
-#: rc.cpp:88
+#: rc.cpp:60
 msgctxt "@info:whatsthis"
 msgid ""
 "When this option is enabled hidden files, such as those starting with a '.', "
@@ -2116,28 +2118,28 @@ msgstr ""
 
 #. i18n: file: settings/dolphin_directoryviewpropertysettings.kcfg:19
 #. i18n: ectx: label, entry (Version), group (Dolphin)
-#: rc.cpp:91
+#: rc.cpp:63
 msgctxt "@label"
 msgid "Version"
 msgstr "Versión"
 
 #. i18n: file: settings/dolphin_directoryviewpropertysettings.kcfg:20
 #. i18n: ectx: whatsthis, entry (Version), group (Dolphin)
-#: rc.cpp:94
+#: rc.cpp:66
 msgctxt "@info:whatsthis"
 msgid "This option defines the used version of the view properties."
 msgstr "Esta opción define a versión empregada das propiedades da vista."
 
 #. i18n: file: settings/dolphin_directoryviewpropertysettings.kcfg:26
 #. i18n: ectx: label, entry (ViewMode), group (Dolphin)
-#: rc.cpp:97
+#: rc.cpp:69
 msgctxt "@label"
 msgid "View Mode"
 msgstr "Modo da vista"
 
 #. i18n: file: settings/dolphin_directoryviewpropertysettings.kcfg:27
 #. i18n: ectx: whatsthis, entry (ViewMode), group (Dolphin)
-#: rc.cpp:100
+#: rc.cpp:72
 msgctxt "@info:whatsthis"
 msgid ""
 "This option controls the style of the view. Currently supported values "
@@ -2148,7 +2150,7 @@ msgstr ""
 
 #. i18n: file: settings/dolphin_directoryviewpropertysettings.kcfg:32
 #. i18n: ectx: label, entry (PreviewsShown), group (Dolphin)
-#: rc.cpp:103
+#: rc.cpp:75
 #, fuzzy
 #| msgctxt "@title:tab Previews settings"
 #| msgid "Previews"
@@ -2158,7 +2160,7 @@ msgstr "Vistas previas"
 
 #. i18n: file: settings/dolphin_directoryviewpropertysettings.kcfg:33
 #. i18n: ectx: whatsthis, entry (PreviewsShown), group (Dolphin)
-#: rc.cpp:106
+#: rc.cpp:78
 msgctxt "@info:whatsthis"
 msgid ""
 "When this option is enabled, a preview of the file content is shown as an "
@@ -2169,7 +2171,7 @@ msgstr ""
 
 #. i18n: file: settings/dolphin_directoryviewpropertysettings.kcfg:38
 #. i18n: ectx: label, entry (GroupedSorting), group (Dolphin)
-#: rc.cpp:109
+#: rc.cpp:81
 #, fuzzy
 #| msgctxt "@label"
 #| msgid "Categorized Sorting"
@@ -2179,7 +2181,7 @@ msgstr "Organización por categorías"
 
 #. i18n: file: settings/dolphin_directoryviewpropertysettings.kcfg:39
 #. i18n: ectx: whatsthis, entry (GroupedSorting), group (Dolphin)
-#: rc.cpp:112
+#: rc.cpp:84
 #, fuzzy
 #| msgctxt "@info:whatsthis"
 #| msgid ""
@@ -2194,14 +2196,14 @@ msgstr ""
 
 #. i18n: file: settings/dolphin_directoryviewpropertysettings.kcfg:44
 #. i18n: ectx: label, entry (Sorting), group (Dolphin)
-#: rc.cpp:115
+#: rc.cpp:87
 msgctxt "@label"
 msgid "Sort files by"
 msgstr "Organizar os ficheiros segundo"
 
 #. i18n: file: settings/dolphin_directoryviewpropertysettings.kcfg:45
 #. i18n: ectx: whatsthis, entry (Sorting), group (Dolphin)
-#: rc.cpp:118
+#: rc.cpp:90
 msgctxt "@info:whatsthis"
 msgid ""
 "This option defines which attribute (name, size, date, etc.) sorting is "
@@ -2212,67 +2214,67 @@ msgstr ""
 
 #. i18n: file: settings/dolphin_directoryviewpropertysettings.kcfg:50
 #. i18n: ectx: label, entry (SortOrder), group (Dolphin)
-#: rc.cpp:121
+#: rc.cpp:93
 msgctxt "@label"
 msgid "Order in which to sort files"
 msgstr "Orden para organizar os ficheiros"
 
 #. i18n: file: settings/dolphin_directoryviewpropertysettings.kcfg:57
 #. i18n: ectx: label, entry (SortFoldersFirst), group (Dolphin)
-#: rc.cpp:124
+#: rc.cpp:96
 msgctxt "@label"
 msgid "Show folders first when sorting files and folders"
 msgstr "Mostrar primeiro os cartafoles cando se ordene"
 
 #. i18n: file: settings/dolphin_directoryviewpropertysettings.kcfg:62
 #. i18n: ectx: label, entry (AdditionalInfo), group (Dolphin)
-#: rc.cpp:127
+#: rc.cpp:99
 msgctxt "@label"
 msgid "Additional information"
 msgstr "Información adicional"
 
 #. i18n: file: settings/dolphin_directoryviewpropertysettings.kcfg:67
 #. i18n: ectx: label, entry (Timestamp), group (Dolphin)
-#: rc.cpp:130
+#: rc.cpp:102
 msgctxt "@label"
 msgid "Properties last changed"
 msgstr "Última modificación das propiedades"
 
 #. i18n: file: settings/dolphin_directoryviewpropertysettings.kcfg:68
 #. i18n: ectx: whatsthis, entry (Timestamp), group (Dolphin)
-#: rc.cpp:133
+#: rc.cpp:105
 msgctxt "@info:whatsthis"
 msgid "The last time these properties were changed by the user."
 msgstr "A última vez que estas propiedades foron modificadas polo usuario."
 
 #. i18n: file: settings/dolphin_generalsettings.kcfg:12
 #. i18n: ectx: label, entry (EditableUrl), group (General)
-#: rc.cpp:140
+#: rc.cpp:112
 msgid "Should the URL be editable for the user"
 msgstr "Indica se o URL debería ser editábel polo usuario"
 
 #. i18n: file: settings/dolphin_generalsettings.kcfg:16
 #. i18n: ectx: label, entry (UrlCompletionMode), group (General)
-#: rc.cpp:143
+#: rc.cpp:115
 msgid "Text completion mode of the URL Navigator"
 msgstr "Modo de completado do texto do navegador de URL"
 
 #. i18n: file: settings/dolphin_generalsettings.kcfg:20
 #. i18n: ectx: label, entry (ShowFullPath), group (General)
-#: rc.cpp:146
+#: rc.cpp:118
 msgid "Should the full path be shown inside the location bar"
 msgstr "Indica se debe mostrarse a ruta completa na barra de localización"
 
 #. i18n: file: settings/dolphin_generalsettings.kcfg:24
 #. i18n: ectx: label, entry (Version), group (General)
-#: rc.cpp:149
+#: rc.cpp:121
 msgid ""
 "Internal version of Dolphin, containing 3 digits for major, minor, bugfix"
 msgstr ""
 
 #. i18n: file: settings/dolphin_generalsettings.kcfg:28
 #. i18n: ectx: label, entry (ModifiedStartupSettings), group (General)
-#: rc.cpp:152
+#: rc.cpp:124
 msgid ""
 "Have the startup settings been modified (internal setting not shown in the "
 "UI)"
@@ -2280,124 +2282,139 @@ msgstr ""
 
 #. i18n: file: settings/dolphin_generalsettings.kcfg:32
 #. i18n: ectx: label, entry (HomeUrl), group (General)
-#: rc.cpp:155
+#: rc.cpp:127
 msgid "Home URL"
 msgstr "URL de inicio"
 
 #. i18n: file: settings/dolphin_generalsettings.kcfg:36
 #. i18n: ectx: label, entry (SplitView), group (General)
-#: rc.cpp:158
+#: rc.cpp:130
 msgid "Split the view into two panes"
 msgstr "Dividir a vista en dous paneis"
 
 #. i18n: file: settings/dolphin_generalsettings.kcfg:40
 #. i18n: ectx: label, entry (FilterBar), group (General)
-#: rc.cpp:161
+#: rc.cpp:133
 msgid "Should the filter bar be shown"
 msgstr "Indica se debe mostrarse a barra de filtro"
 
 #. i18n: file: settings/dolphin_generalsettings.kcfg:44
 #. i18n: ectx: label, entry (GlobalViewProps), group (General)
-#: rc.cpp:164
+#: rc.cpp:136
 msgid "Should the view properties be used for all directories"
 msgstr ""
 "Indica se as propiedades da vista deberían empregarse en todos os cartafoles"
 
 #. i18n: file: settings/dolphin_generalsettings.kcfg:48
 #. i18n: ectx: label, entry (BrowseThroughArchives), group (General)
-#: rc.cpp:167
+#: rc.cpp:139
 msgid "Browse through archives"
 msgstr "Navegar polo interior dos arquivos"
 
 #. i18n: file: settings/dolphin_generalsettings.kcfg:52
 #. i18n: ectx: label, entry (ConfirmClosingMultipleTabs), group (General)
-#: rc.cpp:170
+#: rc.cpp:142
 msgid "Ask for confirmation when closing windows with multiple tabs."
 msgstr "Pedir confirmación cando se peche unha xanela con varias lapelas."
 
 #. i18n: file: settings/dolphin_generalsettings.kcfg:56
 #. i18n: ectx: label, entry (ShowSelectionToggle), group (General)
-#: rc.cpp:173
+#: rc.cpp:145
 msgid "Show selection toggle"
 msgstr "Mostrar o conmutador da selección"
 
 #. i18n: file: settings/dolphin_generalsettings.kcfg:60
 #. i18n: ectx: label, entry (ShowToolTips), group (General)
-#: rc.cpp:176
+#: rc.cpp:148
 msgid "Show tooltips"
 msgstr "Mostrar as axudiñas"
 
 #. i18n: file: settings/dolphin_generalsettings.kcfg:64
 #. i18n: ectx: label, entry (ShowCopyMoveMenu), group (General)
-#: rc.cpp:179
+#: rc.cpp:151
 msgid "Show 'Copy To' and 'Move To' commands in context menu"
 msgstr "Mostrar as ordes «Copiar en» e «Mover a» no menú contextual"
 
 #. i18n: file: settings/dolphin_generalsettings.kcfg:68
 #. i18n: ectx: label, entry (ViewPropsTimestamp), group (General)
-#: rc.cpp:182
+#: rc.cpp:154
 msgid "Timestamp since when the view properties are valid"
 msgstr "Hora desde a que son válidas as propiedades da vista"
 
 #. i18n: file: settings/dolphin_generalsettings.kcfg:71
 #. i18n: ectx: label, entry (AutoExpandFolders), group (General)
-#: rc.cpp:185
+#: rc.cpp:157
 msgid "Use auto-expanding folders for all view types"
 msgstr "Utilizar cartafoles autoexpansivos para todos os tipos de vista"
 
 #. i18n: file: settings/dolphin_generalsettings.kcfg:75
 #. i18n: ectx: label, entry (ShowZoomSlider), group (General)
-#: rc.cpp:188
+#: rc.cpp:160
 msgid "Show zoom slider in the statusbar"
 msgstr "Mostrar a barra de ampliación na barra de estado"
 
 #. i18n: file: settings/dolphin_generalsettings.kcfg:79
 #. i18n: ectx: label, entry (ShowSpaceInfo), group (General)
-#: rc.cpp:191
+#: rc.cpp:163
 msgid "Show the space information in the statusbar"
 msgstr "Mostrar o espazo de información na barra de estado"
 
 #. i18n: file: settings/dolphin_generalsettings.kcfg:83
 #. i18n: ectx: label, entry (LockPanels), group (General)
-#: rc.cpp:194
+#: rc.cpp:166
 msgid "Lock the layout of the panels"
 msgstr ""
 
+#. i18n: file: settings/dolphin_detailsmodesettings.kcfg:40
+#. i18n: ectx: label, entry (ColumnPositions), group (DetailsMode)
+#: rc.cpp:217
+msgid "Position of columns"
+msgstr "Posición das columnas"
+
+#. i18n: file: settings/dolphin_detailsmodesettings.kcfg:44
+#. i18n: ectx: label, entry (ExpandableFolders), group (DetailsMode)
+#: rc.cpp:220
+#, fuzzy
+#| msgctxt "@option:radio Apply View Properties To"
+#| msgid "All folders"
+msgid "Expandable folders"
+msgstr "A todos os cartafoles"
+
 #. i18n: file: dolphinpart.rc:4
 #. i18n: ectx: Menu (edit)
-#: rc.cpp:224
+#: rc.cpp:227
 msgid "&Edit"
 msgstr "&Editar"
 
 #. i18n: file: dolphinpart.rc:14
 #. i18n: ectx: Menu (selection)
-#: rc.cpp:227
+#: rc.cpp:230
 msgctxt "@title:menu"
 msgid "Selection"
 msgstr "Selección"
 
 #. i18n: file: dolphinpart.rc:23
 #. i18n: ectx: Menu (view)
-#: rc.cpp:230
+#: rc.cpp:233
 msgid "&View"
 msgstr "&Vista"
 
 #. i18n: file: dolphinpart.rc:32
 #. i18n: ectx: Menu (go)
-#: rc.cpp:233
+#: rc.cpp:236
 msgid "&Go"
 msgstr "&Ir para"
 
 #. i18n: file: dolphinpart.rc:40
 #. i18n: ectx: Menu (tools)
-#: rc.cpp:236
+#: rc.cpp:239
 msgctxt "@title:menu"
 msgid "Tools"
 msgstr "Utilidades"
 
 #. i18n: file: dolphinpart.rc:48
 #. i18n: ectx: ToolBar (mainToolBar)
-#: rc.cpp:239
+#: rc.cpp:242
 msgctxt "@title:menu"
 msgid "Dolphin Toolbar"
 msgstr "Barra de ferramentas de Dolphin"
