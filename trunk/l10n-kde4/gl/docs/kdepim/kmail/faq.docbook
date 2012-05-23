@@ -43,10 +43,10 @@
 > 
 </authorgroup>
 <date
->2004-07-14</date
-> <releaseinfo
->1.7</releaseinfo
-> </chapterinfo>
+>2004-07-14</date>
+<releaseinfo
+>1.7</releaseinfo>
+</chapterinfo>
 
 <title
 >Preguntas Máis Frecuentes (&FAQ;)</title>
@@ -149,9 +149,9 @@
 </listitem>
 <listitem>
 <para
->O &kmail; non pode cifrar e asinar os ficheiros anexos se vostede estiver a empregar o soporte incorporado do OpenPGP. Para os anexos cifrados e asinados ha de ter instaladas e configuradas as <link linkend="configure-security-crypto-backends"
->extensións de cifrado</link
->.</para>
+>&kmail; cannot encrypt and sign attachments if you are using the built-in OpenPGP support. For encrypted and signed attachments you need to have <link linkend="configure-security-crypto-backends"
+>crypto plugins</link
+> installed and configured.</para>
 </listitem>
 <listitem>
 <para
@@ -168,25 +168,25 @@
 ></question
 > <answer
 > <para
->A maioría das configuracións gárdanse en <filename
+>Most &kmail; settings are stored in <filename
 >$<envar
 >KDEHOME</envar
 >/share/config/kmailrc</filename
->, onde $<envar
+>, where $<envar
 >KDEHOME</envar
-> é normalmente <filename class="directory"
+> is typically <filename class="directory"
 >~/.kde</filename
->; as identidades almacénanse en <filename
+>; the identities are stored in <filename
 >$<envar
 >KDEHOME</envar
 >/share/config/emailidentities</filename
-> e o seu correo grávase en <filename class="directory"
+> and your mail is saved in <filename class="directory"
 >$<envar
 >KDEHOME</envar
 >/share/apps/kmail</filename
-> (ou <filename class="directory"
+> (or <filename class="directory"
 >~/Mail</filename
-> se actualizou desde unha versión previa do &kmail; que utilizase esta localización). Teña en conta que algúns dos ficheiros están agochados: lémbrese tamén de copialos se quere facer unha copia de seguranza ou arquivar o seu correo.</para
+> if you upgraded from a previous &kmail; version that used this location.) Note that some of the files are hidden: remember to also copy those if you want to backup or archive your mails.</para
 > </answer
 > </qandaentry>
 
@@ -226,19 +226,19 @@
 <qandaentry>
 <question
 ><para
->Non pode engadir enderezos ao meu caderno de enderezos depois de ter actualizado para o KDE 3.x.</para
+>I cannot add addresses to my address book after upgrading to KDE 3.x.</para
 ></question>
 <answer>
 <para
->Probabelmente copiou o seu ficheiro <filename
+>You probably copied your old <filename
 >kmailrc</filename
-> vello manualmente. Isto non é necesario, dado que existe un guión que se encarga desas cousas cando executa o KDE 3.x pola primeira vez. Para arranxar o problema, elimine o grupo <quote
+> file manually. That is not necessary, there is a script that will do such things when you run KDE 3.x for the first time. To fix the problem, remove the complete <quote
 >[AddressBook]</quote
-> completo e a opción do caderno de enderezos no grupo <quote
+> group and the addressbook option in group <quote
 >[General]</quote
-> do ficheiro <filename
+> in your <filename
 >kmailrc</filename
->; porén, é posíbel que tamén atope outros problemas que o guión de actualización da configuración tería resolvido.</para>
+> file; however, chances are you will also encounter other problems that the config update script would have solved.</para>
 </answer>
 </qandaentry>
 
@@ -271,13 +271,13 @@
 <qandaentry>
 <question
 ><para
->Como podo empregarun navegador distinto do &konqueror; para abrir as ligazóns das mensaxes?</para
+>How can I use a browser other than &konqueror; to open links in messages?</para
 ></question>
 <answer>
 <para
->Mude as <guilabel
->Asociacións de Ficheiros</guilabel
-> para os ficheiros HTML no &kcontrol;.</para>
+>Change the <guilabel
+>File Associations</guilabel
+> for HTML files using &systemsettings;.</para>
 </answer>
 </qandaentry>
 
@@ -314,12 +314,12 @@
 <qandaentry>
 <question
 ><para
->Por que o &kmail; se enlentece/deixa de funcionar cando tento enviar anexos grandes?</para
+>Why does &kmail; get slow / stop working when I try to send big attachments?</para
 ></question>
 <answer>
 <!-- fixme: update for 3.2 -->
 <para
->Sábese que o &kmail; ten problemas cos anexos grandes. Estamos a traballar nunha solución para este problema para o &kde; 3.2, mais de momento consume memoria virtual unhas 10-15 veces o tamaño do anexo. Isto significa que, se engade un ficheiro de 2MB, o &kmail; podería precisar temporariamente duns 20-30 MB de memoria virtual (=RAM + memoria de intercambio). De non dispor de memoria virtual abonda, terá problemas.</para>
+>&kmail; is known to have problems with large attachments. We are working on a solution for this problem for &kde; 3.2 but currently it temporarily consumes virtual memory of about 10-15 times the size of the attachment. That means that if you attach a 2MB file &kmail; might temporarily need about 20-30 MB of virtual memory (= RAM + swap space). If you do not have enough virtual memory this will lead to problems.</para>
 </answer>
 </qandaentry>
 
@@ -446,15 +446,15 @@
 ></question>
 <answer>
 <para
->Existe unha lista de erros enviados á que se pode acceder desde a <ulink url="http://kontact.kde.org/kmail/"
->páxina do &kmail;</ulink
->. Repare en que non todos estes erros son válidos. No fin de todo, achamos que o &kmail; é un programa bastante robusto.</para>
+>A list of submitted bugs is linked at <ulink url="http://kontact.kde.org/kmail/"
+>the &kmail; homepage</ulink
+>. Note that not all these bugs are valid. All in all we think that &kmail; is a very robust piece of software.</para>
 <para
 ><warning
 ><para
->Porén, non debería executar o &kmail; mentres outro cliente de correo estea xa a acceder aos ficheiros de <filename class="directory"
+>However, you should not run &kmail; while another email client is already accessing the files in <filename class="directory"
 >~/Mail</filename
->; se o tenta facer, poderá perder mensaxes. Lembre que, de calquer forma, debería facer copias de seguranza das súas mensaxes.</para
+>; if you try to do so, you might lose messages. Note that you should make backups of your messages anyway.</para
 ></warning
 ></para>
 </answer>
@@ -469,13 +469,13 @@
 ></question>
 <answer
 ><para
->As referencias a contido externo, como imaxes, están desactivadas por omisión, dado que se poden empregar para observar se e cando vostede leu unha mensaxe. Pódese activar a carga de referencias externas na pestana <guilabel
->Seguranza</guilabel
-> do diálogo de configuración do &kmail;; tampouco se mostrarán no &kmail; extensións (como <trademark class="registered"
+>References to external content like images, are disabled by default, as they can be used to track whether and when you read a message. Loading external references can be activated in the <guilabel
+>Security</guilabel
+> tab in &kmail;'s configuration dialog; also Plugins (like <trademark class="registered"
 >Macromedia</trademark
 > <application
 >Flash</application
->, &Java; e JavaScript por razóns de seguranza - e non hai maneira de activalos.</para
+>), &Java; and JavaScript will not be displayed in &kmail; for security reasons and there is no way to activate them.</para
 ></answer>
 </qandaentry>
 
@@ -508,11 +508,11 @@
 ></question>
 <answer
 ><para
->O &kmail; tenta gravar o correo en <filename
+>&kmail; tries to save your mail to <filename
 >~/dead.letter</filename
-> en caso de o programa morrer. A próxima vez que inicie o &kmail;, o compositor da mensaxe debería aparecer de novo coa súa mensaxe; se non o fai, tente abrir <filename
+> in case of a crash. The next time you start &kmail; the mail composer should appear with your mail again; If it does not, try to open <filename
 >~/dead.letter</filename
-> cun editor. De non existir, o fallo foi tan grave que o &kmail; non conseguiu gravar a súa mensaxe.</para
+> with an editor. If it does not exist then the crash was so bad that &kmail; could not save your mail.</para
 ></answer>
 </qandaentry>
 
@@ -625,8 +625,8 @@
 > 
 <answer
 ><para
->Vexa a sección <link linkend="importing"
->Empregar outros ficheiros Mailbox con &kmail;</link
+>See the section <link linkend="importing"
+>Using other Mailbox files With &kmail;</link
 >.</para
 ></answer>
 </qandaentry>
@@ -789,21 +789,21 @@
 ></question>
 <answer
 ><para
->Vexa o capítulo <link linkend="popfilters"
->Filtros de recepción</link
->. Se quere deixar todas as mensaxes no servidor: abra a xanela <menuchoice
+>See the <link linkend="popfilters"
+>Download filters</link
+> chapter. If you want to leave all messages on the server: open up the <menuchoice
 ><guimenu
->Configuración</guimenu
+>Settings</guimenu
 ><guimenuitem
->Configurar &kmail;...</guimenuitem
+>Configure &kmail;...</guimenuitem
 > </menuchoice
->. Prema a páxina <guilabel
->Rede</guilabel
->. Seleccione a conta da lista de contas e prema o botón <guibutton
->Modificar...</guibutton
->. Este diálogo contén a opción <guilabel
->Deixar as mensaxes obtidas no servidor</guilabel
->, que deberá activar.</para
+> window. Click on the <guilabel
+>Accounts</guilabel
+> page. Select your account from the account list and click the <guibutton
+>Modify...</guibutton
+> button. This dialog contains the <guilabel
+>Leave fetched messages on the server</guilabel
+> setting which you must enable.</para
 ></answer>
 </qandaentry>
 
@@ -814,21 +814,21 @@
 ></question>
 <answer
 ><para
->O rodapé chámase tamén sinatura (non o hai que confundir cunha sinatura criptográfica). Seleccione <menuchoice
+>The text footer is also called a signature (not to be confused with a cryptographic signature). Select <menuchoice
 ><guimenu
->Configuración</guimenu
-><guimenuitem
->Configurar &kmail;...</guimenuitem
+>Settings</guimenu
+> <guimenuitem
+>Configure &kmail;...</guimenuitem
 ></menuchoice
->. Procure na páxina <guilabel
->Identidade</guilabel
-> pola pestana <guilabel
->Sinatura</guilabel
-> e engada aí a súa sinatura. A continnuación vaia á pestana <guilabel
->Xeral</guilabel
-> da páxina do <guilabel
->Compositor</guilabel
-> e actívea. <xref linkend="configure-composer-general-append-signature"/></para
+> Look in the <guilabel
+>Identity</guilabel
+> page for the <guilabel
+>Signature</guilabel
+> tab and add your signature there. Then go to the <guilabel
+>General</guilabel
+> tab on the <guilabel
+>Composer</guilabel
+> page and enable <xref linkend="configure-composer-general-append-signature"/></para
 ></answer
 > 
 </qandaentry>
@@ -845,8 +845,8 @@
 >Primeiro deberá ver se a súa distribución lle pode facer isto. Probabelmente xa se configurou durante a instalación.</para>
 
 <para
->De non ser o caso, consulte no <ulink url="http://en.tldp.org/HOWTO/mini/Mail-Queue.html"
->COMO de Filas de Correo</ulink
+>If that is not the case, you may want to have a look at <ulink url="http://en.tldp.org/HOWTO/mini/Mail-Queue.html"
+>the Mail Queue HOWTO</ulink
 >.</para
 ></answer>
 </qandaentry>
@@ -858,15 +858,15 @@
 ></question>
 <answer
 ><para
->Pode obter unha lista de funcións usando este comando nunha consola: <userinput
+>You can get a list of functions by using this command in a shell: <userinput
 ><command
 >dcop</command
 > <option
 >kmail KMailIface</option
 ></userinput
->. Disponse de algo de documentación en <filename
+>. Some documentation is also available in <filename
 >kdenetwork/kmail/kmailIface.h</filename
-> e <filename
+> and <filename
 >kdenetwork/kmail/mailcomposerIface.h</filename
 >.</para
 ></answer>
@@ -891,13 +891,13 @@
 ></question>
 <answer
 ><para
->Non, non se pode librar deles. Os cartafoles locais funcional como recurso de reserva cando non se pode acceder ao servidor de &imap;. Ainda que só empregue o &imap; o &kmail; utiliza a caixa de saída para enviar as mensaxes. Se se agochan todos os cartafoles locais, non será quen de corrixir as mensaxes do cartafol de saída que, por algunha razón, non se poidan enviar. Mais é posíbel manter os cartafoles locais recollidos. O que ten que facer é ir a <menuchoice
+>No you can not get rid of them. The local folders function as a fallback when the &imap; server is unreachable. Although you only use &imap;, &kmail; uses the outbox for sending the messages. If we hide all local folders you won't be able to fix messages in the outbox which can not be send for some reason. But it is possible to keep the local folders collapsed. What you have to do is go to <menuchoice
 ><guimenu
->Configuración</guimenu
+>Settings</guimenu
 ><guimenuitem
->Configurar &kmail;...</guimenuitem
+> Configure &kmail;...</guimenuitem
 ></menuchoice
-> e ir á sección Miscelánea, onde pode configurar o cartafol de inicio. Se o muda a un cartafol da conta do &imap;, os Cartafoles Locais ficarán recollidos cando se inicie o &kmail;. </para
+> and go to the section Misc, there you can setup the folder on startup. If you change that to a folder on the &imap; account, the Local Folders will stay collapsed when &kmail; starts. </para
 ></answer>
 </qandaentry>
 

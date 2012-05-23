@@ -2,9 +2,6 @@
 <!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.2-Based Variant V1.1//EN" "dtd/kdex.dtd" [
   <!ENTITY kappname "&kalgebra;">
   <!ENTITY package "kdeedu">
-  
-  <!ENTITY commands SYSTEM "commands.docbook">
-  
   <!ENTITY % addindex "IGNORE">
   <!ENTITY % Galician  "INCLUDE">
 ]>
@@ -55,13 +52,13 @@
 
 
 <date
->2010-09-22</date>
+>2009-11-8</date>
 <releaseinfo
->0.10 (&kde; 4.5)</releaseinfo>
+>0.9 (&kde; 4.4.0)</releaseinfo>
 
 <abstract>
 <para
->O &kalgebra; é unha calculadora matemática baseada na linguaxe de etiquetaxe de contidos MathML. Agora mesmo é capaz de facer operacións simples de MathML (aritméticas e lóxicas) e de representar gráficos 2D e 3D. De momento non se precisa saber MathML para empregar o &kalgebra;. </para>
+>&kalgebra; is a mathematical calculator based on content markup MathML language. Nowadays it is capable to make simple MathML operations (arithmetic and logical) and to representate 2D and 3D graphs. It is actually not necessary to know MathML to use &kalgebra;. </para>
 </abstract>
 
 <keywordset>
@@ -89,7 +86,7 @@
 >Introdución</title
 > 
 <para
->O &kalgebra; é unha calculadora gráfica baseada en MathML. Aínda que inicialmente se orientaba cara o MathML, agora pódea utilizar calquera persoa con poucos coñecementos matemáticos.</para
+>&kalgebra; is a MathML-based graph calculator. Although it was initially MathML oriented it can now be used by everyone with little mathematic knowledge.</para
 > 
 
 <screenshot>
@@ -107,70 +104,15 @@
 </screenshot>
 
 <para
->A xanela principal do &kalgebra; consiste nunha lapela <guilabel
->Consola</guilabel
->, unha lapela <guilabel
->Gráficas 2D</guilabel
->, unha lapela <guilabel
->Gráficas 3D</guilabel
-> e unha lapela <guilabel
->Dicionario</guilabel
->. Por baixo destas lapelas hai un campo de entrada no que escribir as funcións ou facer cálculos. </para>
-
-<para
->Opcións de menú frecuentes da lapela <guilabel
->Consola</guilabel
->, a lapela <guilabel
->2D</guilabel
-> e a lapela <guilabel
->Gráficos 3D</guilabel
->:</para>
-
-<variablelist>
-
-<varlistentry>
-<term
-><menuchoice
-><shortcut
-><keycombo action="simul"
->&Ctrl; <keycap
->N</keycap
-></keycombo
-></shortcut
-> <guimenu
->Sesión</guimenu
-><guimenuitem
->Nova</guimenuitem
-> </menuchoice
-></term>
-<listitem
-><para
->Abre unha xanela nova do &kalgebra;</para
-></listitem>
-</varlistentry>
-
-<varlistentry>
-<term
-><menuchoice
-><shortcut
-><keycombo action="simul"
->&Ctrl; <keycap
->Q</keycap
-></keycombo
-></shortcut
-> <guimenu
->Sesión</guimenu
-><guimenuitem
->Saír</guimenuitem
-> </menuchoice
-></term>
-<listitem
-><para
->Apaga o programa.</para
-></listitem>
-</varlistentry>
-
-</variablelist>
+>&kalgebra; main window consists in a <guilabel
+>Console</guilabel
+> tab, a <guilabel
+>2D Graph</guilabel
+> tab, a <guilabel
+>3D Graph</guilabel
+> tab and a <guilabel
+>Dictionary</guilabel
+> tab. Below these tabs you will find an input field to type your functions or do your calculations. </para>
 
 </chapter>
 
@@ -179,7 +121,7 @@
 >Sintaxe</title>
 
 <para
->Para comprender como funciona, o mellor é pensar que o que escribamos se converte en MathML, aínda que non se precisa coñecer MathML. Basei a sintaxe basicamente no senso común e non lle debería resultar difícil a ninguén; estudei ben as sintaxes de maxima e de maple para que se lle asemellen bastante.</para>
+>If we want to understand how it works, the best thing we can do is to realize that our input is being converted into MathML although it is not necessary to know MathML. I have based the syntax basically on common sense, it should not be hard for anyone, I’ve looked closely to maxima and maple’s syntax so they look very similar.</para>
 <para
 >Eis unha listaxe dos operadores dispoñíbeis de momento:</para>
 <itemizedlist>
@@ -193,11 +135,11 @@
 ></listitem>
 <listitem
 ><para
->-&gt; : lambda. É como se especifica a variábel ligada (ou muda) dunha función.</para
+>-&gt; : lambda. It’s the way to specify the bounded variable in a function.</para
 ></listitem>
 <listitem
 ><para
->x=a..b : Isto emprégase cando hai que delimitar un intervalo (variábel ligada+límite superior+límite inferior). Isto significa que x vai de a a b.</para
+>x=a..b : This is used when we need to delimitate a range (bounded variable+uplimit+downlimit). This means that x goes from a to b.</para
 ></listitem>
 <listitem
 ><para
@@ -213,7 +155,7 @@
 ></listitem>
 <listitem
 ><para
->? : Definición de condición de segmento. Segmento é como podemos definir as operacións condicionais no &kalgebra;. Se se introduce a condición antes do «?», só emprega esta condición se é verdadeira; se atopa un «?» sen ningunha condición, entra na última instancia. Exemplo: piecewise { x=0 ? 0, x=1 ? x+1, ? x**2 } </para
+>? : Piecewise condition definition. Piecewise is the way we can define conditional operations in &kalgebra;. If we introduce the condition before the '?' it will use this condition only if it is true, if it finds a '?' without any condition, it will enter in the last instance. Example: piecewise { x=0 ? 0, x=1 ? x+1, ? x**2 } </para
 ></listitem>
 <listitem
 ><para
@@ -233,7 +175,7 @@
 <title
 >Uso da consola</title>
 <para
->A consola do &kalgebra; é útil como calculadora. Nela hai unha lista das variábeis declaradas. Preméndoas dúas veces aparece un diálogo que permite alterar os seus valores (é un xeito de enganar o rexistro). Cada vez que se escribe unha expresión, o valor da variábel «ans» muda para o último resultado.</para>
+>&kalgebra;'s console is useful as a calculator. There you have a list of the declared variables. By double clicking on them you will see a dialog that lets you change their values (just a way to trick the log). Every time you enter an expression, the "ans" variable value will be changed to the last result.</para>
 
 <para
 >Exemplos:</para>
@@ -261,9 +203,28 @@
 </itemizedlist>
 
 <para
->Opcións do menú:</para>
+>Menu options:</para>
 
 <variablelist>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl; <keycap
+>N</keycap
+></keycombo
+></shortcut
+> <guimenuitem
+>New</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Flushes the log.</para
+></listitem>
+</varlistentry>
 
 <varlistentry>
 <term
@@ -274,15 +235,13 @@
 >L</keycap
 ></keycombo
 ></shortcut
-> <guimenu
->Consola</guimenu
-><guimenuitem
->Cargar un script</guimenuitem
+> <guimenuitem
+>Load Script</guimenuitem
 > </menuchoice
 ></term>
 <listitem
 ><para
->Executa secuencialmente as instrucións dun ficheiro. Está ben se se queren definir algunhas bibliotecas ou volver sobre algún traballo anterior.</para
+>Executes the instructions in a file sequentially. Nice if you want to define some libraries or resume some previous work.</para
 ></listitem>
 </varlistentry>
 
@@ -295,10 +254,8 @@
 >G</keycap
 ></keycombo
 ></shortcut
-> <guimenu
->Consola</guimenu
-><guimenuitem
->Gardar o script</guimenuitem
+> <guimenuitem
+>Save Script</guimenuitem
 > </menuchoice
 ></term>
 <listitem
@@ -316,15 +273,32 @@
 >S</keycap
 ></keycombo
 ></shortcut
-> <guimenu
->Consola</guimenu
-><guimenuitem
->Exportar o rexistro</guimenuitem
+> <guimenuitem
+>Save Log</guimenuitem
 > </menuchoice
 ></term>
 <listitem
 ><para
->Garda o rexistro con todos os resultados nun ficheiro HTML que se poida imprimir ou publicar.</para
+>Saves the log with all results into an HTML file to be able to print or publish.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl; <keycap
+>Q</keycap
+></keycombo
+></shortcut
+> <guimenuitem
+>Quit</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Apaga o programa.</para
 ></listitem>
 </varlistentry>
 
@@ -336,17 +310,17 @@
 <title
 >Gráficas 2D</title>
 <para
->Para engadir unha gráfica 2D nova no &kalgebra; hai que ir á lapela<guilabel
->Gráfica 2D</guilabel
-> e premer a lapela <guilabel
->Engadir</guilabel
-> para adicionar a nova función. O foco pasa a unha caixa de entrada de texto na que se pode escribir a función.</para>
+>To add a new 2D graph on &kalgebra;, what you have to do is to go to the <guilabel
+>2D Graph</guilabel
+> tab and click in the <guilabel
+>Add</guilabel
+> tab to add the new function. Then your focus will go to an input text box where you can type your function.</para>
 
 <sect1 id="two-D-syntax">
 <title
 >Sintaxe</title>
 <para
->Se se quere empregar unha función típica f(x) non é preciso especificala, mais se se quere unha función f(y) ou polar hai que engadir y-> e q-> como variábeis ligadas.</para>
+>If you want to use a typical f(x) function it is not necessary to specify it, but if you want a f(y) or a polar function, you will have to add y-> and q-> as the bounded variables.</para>
 
 <para
 >Exemplos:</para>
@@ -446,9 +420,9 @@
 >Gráficas 3D</title>
 
 <para
->Para debuxar unha gráfica 3D co &kalgebra; hai que ir á lapela <guilabel
->Gráfica 3D</guilabel
->, onde se ve un campo de entrada no fondo no que se pode escribir a función. Z non se pode definir aínda; de momento, o &kalgebra; só permite gráficas 3D implícitas que dependan só de x e y, como (x,y)->x*y, onde z=x*y.</para>
+>To draw a 3D Graph with &kalgebra; you will have to go to the <guilabel
+>3D Graph</guilabel
+> tab and you will see an input field at the bottom where you will type your function. Z can not be defined yet, for the moment &kalgebra; only supports implicit 3d graphs dependent only on the x and y, such as (x,y)->x*y, where z=x*y.</para>
 
 <para
 >Exemplos:</para>
@@ -476,7 +450,7 @@
 <itemizedlist>
 <listitem
 ><para
->Activar ou desactivar a transparencia</para
+>Enable or disable transparency</para
 ></listitem>
 <listitem
 ><para
@@ -492,7 +466,7 @@
 ></listitem>
 <listitem
 ><para
->Deseñar os gráficos con puntos, liñas discontinuas ou liñas continuas</para
+>Draw the graphs with dots, lines or solid</para
 ></listitem>
 </itemizedlist>
 
@@ -504,10 +478,10 @@
 >Dicionario</title>
 
 <para
->O dicionario é unha colección de todas as operacións dispoñíbeis no &kalgebra;. Pode ser útil comprobar no dicionario para que vale unha operación e para saber de cantos parámetros precisa unha función.</para>
+>The dictionary is a collection of all &kalgebra; available operations. It can be useful to check in the dictionary what is an operation useful for and to know how many parameters does a function stand for.</para>
+
 </chapter>
 
-&commands;
 
 <chapter id="credits">
 <title

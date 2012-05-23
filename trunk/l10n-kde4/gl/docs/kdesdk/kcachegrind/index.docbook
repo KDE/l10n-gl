@@ -18,13 +18,17 @@
   <!ENTITY oprofile "<application
 >OProfile</application
 >">
+  <!ENTITY EBS "<acronym
+>EBS</acronym
+>">
+  <!ENTITY TBS "<acronym
+>TBS</acronym
+>">
   <!ENTITY kappname "&kcachegrind;">
   <!ENTITY package "kdesdk">
   <!ENTITY % addindex "IGNORE">
   <!ENTITY % Galician  "INCLUDE">
 ]>
-
-<!-- ................................................................ -->
 
 <book lang="&language;">
 
@@ -44,6 +48,23 @@
 >Josef.Weidendorfer@gmx.de</email
 ></address>
 </affiliation>
+<contrib
+>Original author of the documentation</contrib>
+</author>
+
+<author
+><firstname
+>Federico</firstname
+> <surname
+>Zenith</surname
+> <affiliation
+> <address
+><email
+>federico.zenith@member.fsf.org</email
+></address>
+</affiliation>
+<contrib
+>Updates and corrections</contrib>
 </author>
 
 <othercredit role="translator"
@@ -71,13 +92,19 @@
 >&Josef.Weidendorfer;</holder
 >	
 </copyright>
+<copyright>
+<year
+>2009</year>
+<holder
+>Federico Zenith</holder>
+</copyright>
 <legalnotice
 >&FDLNotice;</legalnotice>
 
 <date
->2004-07-27</date>
+>2009-10-07</date>
 <releaseinfo
->0.4.6</releaseinfo>
+>0.5.1</releaseinfo>
 
 <abstract>
 <para
@@ -131,7 +158,13 @@
 >Para medir con exactitude o tempo decorrido ou rexistrar os eventos que aconteceron durante a execución dun código concreto (&eg; unha función), debe inserir medidas adicionais no código, antes e despois da área en concreto. Este código le o tempo ou un reconto globla de eventos, e calcula as diferenzas. Deste xeito, as fontes orixinais deben ser modificadas antes da execución. Isto é denominado Instrumentación. A instrumentación pode ser feita polo propio programador, polo compilador ou polo sistema de execución. Dado que as áreas interesantes polo xeral están aniñadas, o proceso de medida sempre influi no medido. Polo tanto, a instrumentación debe ser feita de xeito selectivo e os resultados teñen que ser interpretados con coidado. Por suposto, isto fai que as análises de rendimento mediante medidas exactas sexa un proceso moi complexo.</para>
 
 <para
->A medida exacta é posíbel debido á existencia de contadores por hardware (incluíndo os contadores que se incrementan cun golpe de reloxio) nos procesadores modernos, se se incrementan sempre que acontece un evento. Xa que queremos atribuir eventos a rexións de código, sen os contadores deberíamos xestionar cada evento aumentando por nós mesmos un contador para a rexión de código. Facer isto mediante sóftware non é posíbel; pero, se asumimos que a distribuición dos eventos sobre o código fonte é similar cando se examina o n-ésimo evento no canto de a cada evento, podemos desenvolver un método de medida cuxo custo sexa axustábel: é a denominada Mostraxe. A mostraxe baseada en tempo (TBS) usa un cronómetro para comprobar periodicamente o contador do programa e criar un histograma sobre o código do programa. A mostraxe baseada en eventos (EBS) aproveita os contadores hardware dos procesadores modernos, e usa un modo no que se chama un xestor de interrupcións para xerar un histograma da distribución de eventos correspondente: no xestor, a conta de eventos sempre é inicializada de novo para o "n" do método de mostraxe. A avantaxe da mostraxe é que as fontes non deben ser tocadas, pero aínda así é un compromiso: a suposición de riba será máis correcta se "n" é pequeno, pero canto menor sexa "n", maior será a sobrecarga do xestor de interrupcións.</para>
+>Exact measurement is possible because of hardware counters (including counters incrementing on a time tick) provided in modern processors, which are incremented whenever an event is happening. As we want to attribute events to code regions, without the counters, we would have to handle every event by incrementing a counter for the current code region ourself. Doing this in software is, of course, not possible; but, on the assumption that the event distribution over source code is similar when looking only at every n-th event instead of every event, a measurement method whose overhead is tunable has been developed: it is called Sampling. Time Based Sampling (&TBS;) uses a timer to regularly look at the program counter to create a histogram over the program code. Event Based Sampling (&EBS;) exploits the hardware counters of modern processors, and uses a mode where an interrupt handler is called on counter underflow to generate a histogram of the corresponding event distribution: in the handler, the event counter is always reinitialized to the <symbol
+>n</symbol
+> of the sampling method. The advantage of sampling is that the code does not have to be changed, but it is still a compromise: the above assumption will be more correct if <symbol
+>n</symbol
+> is small, but the smaller the <symbol
+>n</symbol
+>, the higher the overhead of the interrupt handler.</para>
 
 <para
 >Outro método de medición consiste en simular os acontecimentos dun sistema informático durante a execución dun certo código, &ie; unha simulación guiada pola execución. A simulación sempre se deriva dun modelo de máquina máis ou menos exacto; porén, con modelos de máquinas moi detallados, que dan aproximacións moi exactas á realidade, a duración da simulación pode ser excesivamente alta como para poder ser usada na prática. A vantaxe da simulación é que código de medida/simulación arbitrariamente complexo pode ser inserido no código a medir sen perturbar os resultados. Facer isto directamente antes da execución (o que se chama instrumentación do tempo de execución), usando o binario orixinal, é moi confortábel para o usuario: non é preciso recompilar. A simulación é usábel cando só son simuladas partes dunha máquina cun modelo simples; outra vantaxe é que o resultado producido por un modelo simples polo xeral é máis fácil de comprender: a miúdo, o problema co hardware real é que os resultados inclúen resultados con efeitos de solapamentos de diferentes partes da máquina.</para>
@@ -142,27 +175,29 @@
 >Ferramentas de Perfilado</title>
 
 <para
->A ferramenta de perfilado máis coñecida é a de GCC, <application
+>Most known is the GCC profiling tool <application
 >gprof</application
->: Só precisa compilar o programa coa opción <option
+>: one needs to compile the program with option <option
 >-pg</option
->; ao executar o programa xerarase un ficheiro <filename
+>; running the program generates a file <filename
 >gmon.out</filename
->, que pode ser transformado a un formato lexíbel con <command
+>, which can be transformed into human-readable form with <command
 >gprof</command
->. Unha desvantaxe é o paso de recompilación preciso para preparar o executábel, que debe estar ligado estaticamente. O método usado aquí é a instrumentación xerada polo compilador - que mide os arcos de chamadas entre funcións e a conta de chamadas correspondente - xunto con TBS - que dá un histograma da distribuición do tempo sobre o código. Usando ambas as dúas pezas de información é posíble calcular heuristicamente o tempo acumulado das funcióne, &ie; o tempo dispendido por unha función xunto con todas as funcións chamadas desde ela. </para>
+>. One disadvantage is the required re-compilation step to prepare the executable, which has to be statically linked. The method used here is compiler-generated instrumentation, which measures call arcs happening among functions and corresponding call counts, in conjunction with &TBS;, which gives a histogram of time distribution over the code. Using both pieces of information, it is possible to heuristically calculate inclusive time of functions, &ie; time spent in a function together with all functions called from it. </para>
 
 <para
 >Para medir exactamente os eventos que acontecen, existen bibliotecas con funcións capaces de ler contadores de rendimento do hardware. A máis coñecida destas é o parche PerfCtr para &Linux;, e as bibliotecas independentes da arquitectura PAPI e PCL. Aínda así, unha medición exacta requere de instrumentación do código, como de indicou antes. Pode usar unha das bibliotecas en si ou un sistema de instrumentación automática como ADAPTOR (para instrumentar código fonte FORTRAN) ou DynaProf (para inxectar código mediante DynInst).</para>
 
 <para
->&oprofile; é unha ferramenta de perfilado de sistema para &Linux; que usa Mostraxe.</para>
+>&oprofile; é unha ferramenta de perfilado de sistema para &Linux; que usa Mostraxe. </para>
 
 <para
 >En moitos aspeitos, un xeito cómodo de perfilar é usar &cachegrind; ou &callgrind;, que son simuladores que usar o framework de intrumentación en tempo de execución &valgrind;. Debido a que non hai necesidade de aceder a contadores hardware (o que a miúdo é difícil nas instalacións &Linux; actuais), e a que os binarios para perfilar poden ser deixados sen modificar, é unha boa alternativa a outras ferramentas de perfilado. A desvantaxe da simulación - enlentecimento - pode ser reducida facendo a simulación só das partes interesantes do programa, e talvez só unhas poucas iteracións dun bucle. Sen instrumentación de medida/simulación, o uso de &valgrind; só ten un factor de enlentecimento no rango de 3 a 5. Ademais, cando só interesan os grafos de chamadas e reconto de chamadas, o simulador da caché pode non ser utilizado. </para>
 
 <para
->A simulación da caché é o primeiro paso para aproximarse aos tempos reais; dado que, non sistemas modernos, o tempo de execución é moi sensíbel ao uso das cachés (buffers pequenos e rápidos que aceleran os acesos repetidos ás mesmas celas principais da memoria) &cachegrind; simula a caché capturando os acesos a memoria. Os datos producidos inclúen o número de instrución/acesos a datos en memoria e perdas en caché de 1º e 2º nível, e relaciónao coas liñas das fontes e as funcións do programa en execución. Pode facerse unha estimación do tempo dispendido combinando esta conta de perdas, usando as latencias das perdas dos procesadores típicos. </para>
+>Cache simulation is the first step in approximating real times, since runtime is very sensitive to the exploitation of so-called <emphasis
+>caches</emphasis
+>, small and fast buffers which accelerate repeated accesses to the same main memory cells, on modern systems. &cachegrind; does cache simulation by catching memory accesses. The data produced includes the number of instruction/data memory accesses and first- and second-level cache misses, and relates it to source lines and functions of the run program. By combining these miss counts, using miss latencies from typical processors, an estimation of spent time can be given. </para>
 
 <para
 >&callgrind; é unha extensión de &cachegrind; que construi ao vóo o grafo de chamadas dun programa, &ie; como se chaman entre si as funcións e como acontecen múltiplos eventos ao executar unha función. Tamén pode separar os datos recollidos no perfilado por contextos de fíos e de cadea de chamadas. Pode fornecer datos de perfilado a nível de instrución e permite anotar o código desensamblado. </para>
@@ -176,10 +211,10 @@
 >As ferramentas de perfilado polo xeral producen grandes cantidades de datos. O motivo de elaborar dunha aplicación de &GUI; foi poder examinar de riba a baixo o grafo de chamadas, así como poder mudar rapidamente o modo de ordenar as funcións e mostrar os diferentes tipos de eventos. </para>
 
 <para
->&kappname; é unha ferramenta de visualización de datos de perfilado que satisfai estes desexos. Apesar de que inicialmente foi programada para examinar os dados de &cachegrind; e &calltree;, hai disponíbeis convertedores capaces de mostrar datos de perfilado producidos por outras ferramentas. No apéndice, dase unha descrición do formato de ficheiro de &cachegrind;/&callgrind;. </para>
+>&kappname; is a visualization tool for profile data fulfilling these wishes. Despite being programmed first with browsing the data from &cachegrind; and &calltree; in mind, there are converters available to be able to display profile data produced by other tools. In the appendix, a description of the &cachegrind;/&callgrind; file format is given. </para>
 
 <para
->Ademais dunha lista de funcións ordenadas de acordo co custo simples ou acumulado, e agrupadas opcionalmente segundo o ficheiro de fontes, biblioteca compartida ou clase C++, &kappname; permite varias visualizacións dunha función escollida, que son <itemizedlist>
+>Besides a list of functions sorted according exclusive or inclusive cost metrics, and optionally grouped by source file, shared library or C++ class, &kappname; features various views for a selected function, namely: <itemizedlist>
 <listitem
 ><para
 >unha vista de grafo de chamadas, que mostra unha sección do grafo de chamadas arredor da función escollida,</para>
@@ -214,35 +249,65 @@
 >&callgrind;</title>
 
 <para
->&callgrind; está disponíbel en <ulink url="http://kcachegrind.sf.net"
->http://kcachegrind.sf.net</ulink
->. Lembre que antes era chamado &calltree;, pero ese nome producía confusión. </para>
+>&callgrind; is a part of <ulink url="http://valgrind.org"
+>&valgrind;</ulink
+>. Note that it previously was called &calltree;, but that name was misleading. </para>
 
 <para
->O uso máis común é para prefixar a liña de comandos para iniciar a súa aplicación con <application
->callgrind</application
->, como en <blockquote
-><para
+>The most common use is to prefix the command line to start your application with <userinput
 ><command
->callgrind oMeuPrograma argumentosPrograma</command
+>valgrind</command
+> <option
+>--tool=callgrind</option
+> </userinput
+>, as in: <blockquote
+><para
+><userinput
+> <command
+>valgrind</command
+> <option
+>--tool=callgrind</option
+> <replaceable
+>myprogram</replaceable
+> <replaceable
+>myargs</replaceable
+> </userinput
 ></para
 ></blockquote
->. Ao rematar a execución do programa, será xerado un ficheiro <filename
->callgrind.out.pid</filename
-> que pode ser cargado en &kcachegrind;. </para>
+> At program termination, a file <filename
+>callgrind.out.<replaceable
+>pid</replaceable
+></filename
+> will be generated, which can be loaded into &kcachegrind;. </para>
 
 <para
->Un uso máis avanzado consiste en emborcar os datos de perfilado sempre que sexa chamada unha función da súa aplicación, por exemplo, en <command
->konqueror</command
->, para ver os datos de perfilado só ao renderizar unha páxina web, pode decidir emborcar os datos sempre que escolla o ítem do menú Vista/Cargar de novo. Isto correspóndese cunha chamada a <symbol
->KonqMainWindow::slotReload</symbol
->. Use <blockquote
+>More advanced use is to dump out profile data whenever a given function of your application is called. E.g. for &konqueror;, to see profile data only for the rendering of a Web page, you could decide to dump the data whenever you select the menu item <menuchoice
+><guimenu
+>View</guimenu
+><guimenuitem
+>Reload </guimenuitem
+></menuchoice
+>. This corresponds to a call to <methodname
+>KonqMainWindow::slotReload</methodname
+>. Use: <blockquote
 ><para
-><command
->callgrind --dump-before=KonqMainWindow::slotReload konqueror</command
+><userinput
+> <command
+>valgrind</command
+> <option
+>--tool=callgrind</option
+> <option
+>--dump-before=KonqMainWindow::slotReload</option
+> <replaceable
+>konqueror</replaceable
+> </userinput
 ></para
 ></blockquote
->. Isto irá producir múltiplos ficheiros con datos de perfilado cun número secuencial adicional ao final do nome do ficheiro. Tamén se xerará un ficheiro sen tal número ao fin (só rematando no PID do proceso); se carga este ficheiro en &kcachegrind;, tamén cargará os outros, que poderán ser vistos no resumo de Partes e lista de Partes. </para>
+> This will produce multiple profile data files with an additional sequential number at the end of the filename. A file without such an number at the end (only ending in the process PID) will also be produced; by loading this file into &kcachegrind;, all others are loaded too, and can be seen in the <guilabel
+>Parts Overview</guilabel
+> and <guilabel
+>Parts</guilabel
+> list. </para>
 
 </sect2>
 
@@ -251,26 +316,42 @@
 >&oprofile;</title>
 
 <para
->&oprofile; está disponíbel en <ulink url="http://oprofile.sf.net"
->http://oprofile.sf.net</ulink
->. Siga as intrucións de instalación no sitio web; pero antes de facelo, verifique que a súa distribución non o forneza como un paquete (como é o caso de &SuSE;). </para>
+>&oprofile; is available from <ulink url="http://oprofile.sf.net"
+>its home page</ulink
+>. Follow the installation instructions on the Web site, but, before you do, check whether your distribution does not already provide it as package (like &SuSE;). </para>
 
 <para
->O perfilado de todo o sistema só se lle permite ao usuario root, xa que pode observar todas as accións no sistema, polo que debe ser feito por el. En primeiro lugar, configure o proceso de perfilado, empregando a &GUI; <command
+>System-wide profiling is only permitted to the root user, as all actions on the system can be observed; therefore, the following has to be done as root. First, configure the profiling process, using the &GUI; <command
 >oprof_start</command
-> ou a ferramenta da liña de comandos opcontrol. A configuración estándar debería ser no modo cronómetro (TBS, consulte a introdución). Para comezar a medición, execute <command
->opcontrol -s</command
->. Entón execute o programa no que estexa interesado e, despois, faga un <command
->opcontrol -d</command
->. Isto escreberá os resultados das medición en ficheiros dentro do cartafol <filename
->/var/lib/oprofile/samples/</filename
->. Para poder ver os datos en &kcachegrind;, crie un cartafol vacío: <blockquote
-><para
+> or the command-line tool <command
+>opcontrol</command
+>. Standard configuration should be timer mode (&TBS;, see introduction). To start the measurement, run <userinput
 ><command
->opreport -gdf | op2callgrind</command
+>opcontrol</command
+> <option
+>-s</option
+></userinput
+>. Then run the application you are interested in and, afterwards, do a <userinput
+><command
+>opcontrol</command
+> <option
+>-d</option
+></userinput
+>. This will write out the measurement results into files under folder <filename class="directory"
+>/var/lib/oprofile/samples/</filename
+>. To be able to visualize the data in &kcachegrind;, do in an empty directory: <blockquote
+><para
+><userinput
+> <command
+>opreport</command
+> <option
+>-gdf</option
+> | <command
+>op2callgrind</command
+> </userinput
 ></para
-> </blockquote
-> Isto producirá unha multitude de ficheiros, un por cada programa que estexa a executar no sistema. Cada un pode ser cargado en &kcachegrind; independentemente. </para>
+></blockquote
+> This will produce a lot of files, one for every program which was running on the system. Each one can be loaded into &kcachegrind; on its own. </para>
 
 </sect2>
 </sect1>
@@ -280,22 +361,60 @@
 >Descrición básica da interface de usuario</title>
 
 <para
->Cando inicie &kcachegrind; cun ficheiro de datos de perfilado como argumento, ou trar cargar un mediante Ficheiro/Abrir, verá un painel de navegacion que contén a lista de funcións á esquerda, e á dereita da parte principal, unha área con visualizacións dunha función escollida. Esta área de visualización pode ser configurada arbitrariamente para mostrar varias á vez. </para>
+>When starting &kcachegrind; with a profile data file as argument, or after loading one with <menuchoice
+><guimenu
+>File</guimenu
+> <guimenuitem
+>Open</guimenuitem
+></menuchoice
+>, you will see a navigation panel containing the function list at the left; and, on the right the main part, an area with views for a selected function. This view area can be arbitrarily configured to show multiple views at once. </para>
 
 <para
->Na primeira execución, esta área estará dividida nunha parte superior e outra inferior, cada unha con diferentes visualizacións que pode escoller coas solapas. Para mover as vistas de visualización, use o menú contextual das solapas, e axuste os separadores entre visualizacións. Para trocar rapidamente a disposición das visualizacións, use Vista/Disposicións/Duplicar, troque a disposición e pase dunha diposición para outra con  Vista/Disposición/Seguinte (ou, aínda mellor, use o atallo de teclado correspondente). </para>
-
-<para
->O tipo do evento activo é importante na visualización: para &callgrind; é, por exemplo, Perdas de Caché ou Estimación de Ciclo; para &oprofile; é "Temporizador" no caso máis simples. Pode trocar o tipo de evento mediante unha lista na barra de ferramentas ou na vista de Tipo de Evento. Debería fornecerse un primeiro resumo das características en execución cando escolla a función <symbol
->main</symbol
-> na lista á esquerda, e olle á visualización do grafo de chamadas; así verá o que está a pasar no seu programa. Lembre que a vista do grafo de chamadas só mostra funcións cunha conta alta de eventos. Se fai duplo-click nunha función no grafo, mudará para mostrar as funcións chamadas arredor da escollida. </para>
-
-<para
->Para explorar a &GUI; con maior profundidade, ademais deste manual, vote tamén unha ollada á sección de documentación no sitio web <ulink url="http://kcachegrind.sf.net"
->http://kcachegrind.sf.net</ulink
->. Tamén, cada widget de &kcachegrind; ten axudas <quote
->Que é isto</quote
+>At first start, this area will be divided into a top and a bottom part, each with different tab-selectable views. To move views, use the tabs' context menu, and adjust the splitters between views. To switch quickly between different viewing layouts, use <menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;<keycap
+>→</keycap
+> </keycombo
+></shortcut
+> <guimenu
+>View</guimenu
+><guisubmenu
+>Layout</guisubmenu
+> <guimenuitem
+>Go to Next</guimenuitem
+></menuchoice
+> and <menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;<keycap
+>←</keycap
+> </keycombo
+></shortcut
+> <guimenu
+>View</guimenu
+><guisubmenu
+>Layout</guisubmenu
+> <guimenuitem
+>Go to Previous</guimenuitem
+></menuchoice
 >. </para>
+
+<para
+>The active event type is important for visualization: for &callgrind;, this is, for example, cache misses or cycle estimation; for &oprofile;, this is <quote
+>Timer</quote
+> in the simplest case. You can change the event type via a combobox in the toolbar or in the <guilabel
+>Event Type</guilabel
+> view. A first overview of the runtime characteristics should be given when you select function <function
+>main</function
+> in the left list; look then at the call graph view. There, you see the calls occurring in your program. Note that the call graph view only shows functions with high event count. By double-clicking a function in the graph, it will change to show the called functions around the selected one. </para>
+
+<para
+>To explore the &GUI; further, in addition to this manual, also have a look at the documentation section <ulink url="http://kcachegrind.sf.net"
+>on the Web site</ulink
+>. Also, every widget in &kcachegrind; has <quote
+>What's this</quote
+> help. </para>
 </sect1>
 
 </chapter>
@@ -317,68 +436,103 @@
 >Entidades de custo</title>
 
 <para
->As contas do custo dos tipos de eventos (como perdas L2) son atribuídas a entidades de custo, que son itens relacionados co código fonte ou estruturas de datos dun programa dado. As entidades de custo non só poden ser código simples ou posicións de datos, senón tamén tuplas de posicións. Por exemplo, unha chamada ten unha orixe e un destino, ou un enderezo de datos pode ter un tipo de dato e unha posición no código onde aconteceu a súa reserva. </para>
+>Cost counts of event types (like L2 Misses) are attributed to cost entities, which are items with relationship to source code or data structures of a given program. Cost entities not only can be simple code or data positions, but also position tuples. For example, a call has a source and a target, or a data address can have a data type and a code position where its allocation happened. </para>
 
 <para
->As entidades de custo coñecidas por &kcachegrind; son as seguintes. Posicións simples: <itemizedlist
-><listitem
-><para
->Instrución: Unha instrución de ensamblador nun enderezo específico.</para
-></listitem
+>The cost entities known to &kcachegrind; are given in the following. Simple Positions: <variablelist
+> <varlistentry
+> <term
+>Instruction</term
 > <listitem
 ><para
->Liña de fonte dunha Función. Todas as instrucións que o compilador (mediante a información de depuración) mapea a unha liña específica das fontes especificada polo ficheiro das fontes e o número de liña, e que son executadas no contexto dalgunha función. Isto último é preciso porque unha liña de fontes dentro dunha función "inline" pode aparecer no contexto de múltiplas funcións. As instrucións sen nengún mapeado a unha liña real das fontes son mapeadas á liña número 0 no ficheiro "???".</para
+> An assembler instruction at a specified address. </para
 ></listitem
+> </varlistentry
+> <varlistentry
+> <term
+>Source Line of a Function</term
 > <listitem
 ><para
->Función. Todas as liñas das fontes dunha función dada compoñen a función en si. Unha función é especificada polo seu nome e localización nalgún obxecto binario, se está disponíbel. Isto último é preciso porque os obxectos binarios dun programa individual poden, cada un deles, conter funcións co mesmo nome (a estas pódese aceder &eg; con dlopen/dlsym; o enlazador en tempo de execución resolve as funcións nunha orden de procura dos obxectos binarios usados dada). Se a ferramenta de perfilado non pode detectar o nome do símbolo dunha función, &eg; debido a que non hai disponíbel información de depuración, usarase ou o enderezo da primeira instrución executada, ou "???".</para
+> All instructions that the compiler (via debug information) maps to a given source line specified by source file name and line number, and which are executed in the context of some function. The latter is needed because a source line inside of an inlined function can appear in the context of multiple functions. Instructions without any mapping to an actual source line are mapped to line number 0 in file <filename
+>???</filename
+>. </para
 ></listitem
+> </varlistentry
+> <varlistentry
+> <term
+>Function</term
 > <listitem
 ><para
->Obxecto binario. Todas as funcións que teñan o seu código dentro do rango dun obxecto binario dado, sexa o executábel principal ou unha biblioteca compartida.</para
+> All source lines of a given function make up the function itself. A function is specified by its name and its location in some binary object if available. The latter is needed because binary objects of a single program each can hold functions with the same name (these can be accessed &eg; with <function
+>dlopen</function
+> or <function
+>dlsym</function
+>; the runtime linker resolves functions in a given search order of binary objects used). If a profiling tool cannot detect the symbol name of a function, &eg; because debug information is not available, either the address of the first executed instruction typically is used, or <function
+>???</function
+>. </para
 ></listitem
+> </varlistentry
+> <varlistentry
+> <term
+>Binary Object</term
 > <listitem
 ><para
->Ficheiro de fontes. Todas as funcións que teñan a primeira instrución mapeada a unha liña do ficheiro de código fonte especificado.</para
+> All functions whose code is inside the range of a given binary object, either the main executable or a shared library. </para
 ></listitem
+> </varlistentry
+> <varlistentry
+> <term
+>Source File</term
 > <listitem
 ><para
->Clase. Os nómes simbólicos das funcións polo xeral están nunha orden hierárquica nos espazos de nomes, &eg; espazos de nomes de C++, ou clases das linguaxes orientadas a obxectos; así, unha clase pode conter funcións da clases ou clases que conteña dentro delas.</para
+> All functions whose first instruction is mapped to a line of the given source file. </para
 ></listitem
+> </varlistentry
+> <varlistentry
+> <term
+>Class</term
 > <listitem
 ><para
->Parte do perfilado. Unha sección no tempo dunha execución de perfilado, cun ID de fío, ID de proceso, e liña de ordes executada.</para
+> Symbol names of functions typically are hierarchically ordered in name spaces, &eg; C++ namespaces, or classes of object-oriented languages; thus, a class can hold functions of the class or embedded classes itself. </para
 ></listitem
-></itemizedlist
-> Como se pode ver na lista, un conxunto de entidades de custo frecuentemente define outra entidade de custo; así, hai unha hierarquía de inca de acumulación de entidades de custo que debera ser evidente a partir da descrición de riba. </para>
+> </varlistentry
+> <varlistentry
+> <term
+>Profile Part</term
+> <listitem
+><para
+> Some time section of a profile run, with a given thread ID, process ID, and command line executed. </para
+></listitem
+> </varlistentry
+> </variablelist
+> As can be seen from the list, a set of cost entities often defines another cost entity; thus, there is a inclusion hierarchy of cost entities. </para>
 
 <para
->Tuplas de posicións: <itemizedlist
-><listitem
+>Positions tuples: <itemizedlist
+> <listitem
 ><para
->Chamadas de enderezos de instrución a función obxectivo.</para
+> Call from instruction address to target function. </para
 ></listitem
 > <listitem
 ><para
->Chamada de liña das fontes a función obxectivo.</para
+> Call from source line to target function. </para
 ></listitem
 > <listitem
 ><para
->Chamada de función das fontes a función obxectivo.</para
+> Call from source function to target function. </para
 ></listitem
 > <listitem
 ><para
->Salto (in)condicional das fontes á instrución obxectivo.</para
+> (Un)conditional jump from source to target instruction. </para
 ></listitem
 > <listitem
 ><para
->Salto (in)condicional das fontes á liña obxectivo.</para
+> (Un)conditional jump from source to target line. </para
 ></listitem
-></itemizedlist
-> Os saltos entre funcións non están permitidos, xa que isto non ten sentido nun grafo de chamadas; en consecuencia, as construcións como xestión de excepcións e saltos longos en C deben ser traducidos en saltos na pila de chamadas segundo sexa preciso. </para>
+> </itemizedlist
+> Jumps between functions are not allowed, as this makes no sense in a call graph; thus, constructs like exception handling and long jumps in C have to be translated to popping the call stack as needed. </para>
 
 </sect2>
-
 
 
 <sect2>
@@ -398,33 +552,37 @@
 >Visualización do estado</title>
 
 <para
->A visualización do estado nunha fiestra de &kcachegrind; inclui:<itemizedlist
+>The visualization state of a &kcachegrind; window includes: <itemizedlist
 > <listitem
 ><para
->o tipo de evento primario e secundario escollido para o display,</para
+> the primary and secondary event type chosen for display, </para
 ></listitem
 > <listitem
 ><para
->o agrupamento da función (usado na lista de perfís da función e colorido de entidades),</para
+> the function grouping (used in the <guilabel
+>Function Profile</guilabel
+> list and entity coloring), </para
 ></listitem
 > <listitem
 ><para
->as partes do perfis cuxo custo deba ser incluido na visualización,</para
+> the profile parts whose costs are to be included in visualization, </para
 ></listitem
 > <listitem
 ><para
->unha entidade de custo activa (&eg; unha función escollida no acople de perfil da función),</para
+> an active cost entity (&eg; a function selected from the function profile sidedock), </para
 ></listitem
 > <listitem
 ><para
->unha entidade de custo escollida.</para
+> a selected cost entity. </para
 ></listitem
-></itemizedlist
-> Este estado influi nas visualizacións. </para>
+> </itemizedlist
+> This state influences the views. </para>
+
 <para
->As visualizacións sempres son mostradas para unha entidade de custo, a activa. Cando unha visualización dada non sexa apropiada para unha entidade de custo, será deshabilitada (&eg; se escolle un obxecto &ELF; na lista de grupos cun duplo-click, a anotación do código non terá sentido para este obxecto). </para>
+>Views are always shown for one cost entity, the active one. When a given view is inappropriate for a cost entity, it is disabled: when selecting &eg; an &ELF; object in the group list, source annotation makes no sense. </para>
+
 <para
->Por exemplo, para unha función activa, a lista de chamadores mostra todas as funcións chamadas desde esta: pode escoller unha desas funcións sen facela a activa; tamén, se o grafo de chamadas está a ser mostrado, este escollerá automaticamente a mesma función. </para>
+>For example, for an active function, the callee list shows all the functions called from the active one: one can select one of these functions without making it active. Also, if the call graph is shown beside, it will automatically select the same function. </para>
 
 </sect1>
 
@@ -436,18 +594,24 @@
 <title
 >Acoples laterais</title>
 <para
->Os acoples laterais (acoples) son fiestras laterais que poden ser situadas en calquer dos contornos dunha fiestra de &kcachegrind;. Sempre conteñen unha lista de entidades de custo ordenadas dalgún xeito. <itemizedlist>
+>Sidedocks are side windows which can be placed at any border of a &kcachegrind; window. They always contain a list of cost entities sorted in some way. <itemizedlist>
 <listitem
 ><para
->Perfil da función. O perfil da función é unha lista de funcións que mostra o custo acumulado e non acumulado, a conta de chamadas, o nome e a posición das funcións. </para
+>The <guilabel
+>Function Profile</guilabel
+> is a list of functions showing inclusive and exclusive cost, call count, name and position of functions. </para
 ></listitem>
 <listitem
-><para
->Resumos das Partes </para
+><para>
+<guilabel
+>Parts Overview</guilabel>
+</para
 ></listitem>
 <listitem
-><para
->Pila de Chamadas </para
+><para>
+<guilabel
+>Call Stack</guilabel>
+</para
 ></listitem>
 </itemizedlist>
 </para>
@@ -455,37 +619,65 @@
 
 <sect2>
 <title
->Área de Visualización</title>
+>View Area</title>
 <para
->A área de visualización, polo xeral a parte dereita da fiestra principal de &kcachegrind;, está composta por unha ou máis vistas paxinadas, aliñadas en horizontal ou en vertical. Cada vista paxinada consta de diferentes vistas dunha entidade de custo cada unha. O nome desta entidade indícase no cume da páxina. Se hai múltiplas vistas paxinadas, só unha será a activa. O nome da entidade na vista activa é mostrado en negriña e determina a entidade de custo activa da fiestra de &kcachegrind;. </para>
+>The view area, typically the right part of a &kcachegrind; main window, is made up of one (default) or more tabs, lined up either horizontally or vertically. Each tab holds different views of only one cost entity at a time. The name of this entity is given at the top of the tab. If there are multiple tabs, only one is active. The entity name in the active tab is shown in bold, and determines the active cost entity of the &kcachegrind; window. </para>
 </sect2>
 
 <sect2>
 <title
->Áreas dunha vista paxinada</title>
+>Areas of a Tab</title>
 <para
->Cada páxina dunha vista pode conter até catro áreas de vista, a Superior, a Esquerda, a Dereita e a Inferior. Cada área pode conter múltiplas vistas de visualización apiladas. A vista visíbel dunha área escóllese mediante unha barra de páxinas. As barras das páxinas das áreas superior e dereita están no cume; as das áreas esquerda e inferior están no fondo. Pode indica cal tipo de visualización debe ir en cal área usando os menús contextuais das páxinas. </para>
+>Each tab can hold up to four view areas, namely Top, Right, Left, and Bottom. Each area can hold multiple stacked views. The visible part of an area is selected by a tab bar. The tab bars of the top and right area are at the top; the tab bars of the left and bottom area are at the bottom. You can specify which kind of view should go into which area by using the tabs' context menus. </para>
 </sect2>
 
 <sect2>
 <title
->Visualización sincronizada mediante a entidade escollida nunha vista paxinada</title>
+>Synchronized View with Selected Entity in a Tab</title>
 <para
->Ademais dunha entidade activa, cada páxina ten unha entidade escollida. Xa que a maioría dos tipos de visualización mostran múltiplas entidades coa activa centrada, pode mudar o ítem escollido navegando pola visualización (premendo co rato ou usando o teclado). Tipicamente, os itens escollidos son realzados. Se cambia a entidade escollido nunha das visualizacións dunha páxina, todas as outras visualización na vista paxinada realzarán a nova entidade escollida. </para>
+>Besides an active entity, each tab has a selected entity. As most view types show multiple entities with the active one somehow centered, you can change the selected item by navigating inside a view (by clicking with the mouse or using the keyboard). Typically, selected items are shown in a highlighted state. By changing the selected entity in one of the views of a tab, all other views highlight the new selected entity accordingly. </para>
 </sect2>
 
 <sect2>
 <title
->Sincronización entre Vistas Paxinadas</title>
+>Synchronization between Tabs</title>
 <para
->Se ten múltiplas vistas paxinadas, un cambio na selección nunha páxina producirá un cambio na activación na seguinte (á esquerda/ao fondo) vista paxinada. Este tipo de ligazón debe, por exemplo, permitir unha navegación rápida polo grafo de chamadas. </para>
+>If there are multiple tabs, a selection change in one tab leads to an activation change in the next tab, be it right of the former or under it. This kind of linkage should, for example, allow for fast browsing in call graphs. </para>
 </sect2>
 
 <sect2>
 <title
 >Disposicións</title>
 <para
->Pode guardar a disposición de todas as vistas paxinadas dunha fiestra (consulte o ítem de menú Vista/Disposición). Tras duplicar a disposición actual (Ctrl++ ou menú) e mudar algúns tamaños ou mover unha vista de visualización para outra área dunha vista paxinada, pode trocar rapidamente entre as disposicións nova e vella mediante Ctrl+Esquerda/Dereita. O conxunto de disposicións será guardado entre sesións de &kcachegrind; do mesmo comando de perfilado. Pode facer que o conxunto actual de disposicións sexa o predeterminado para as futuras sesións de &kcachegrind;, ou restaurar o conxunto por omisión. </para>
+>The layout of all the tabs of a window can be saved (<menuchoice
+><guimenu
+>View </guimenu
+><guisubmenu
+>Layout</guisubmenu
+></menuchoice
+>). After duplicating the current layout (<menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl; <keycap
+>+</keycap
+></keycombo
+></shortcut
+> <guimenu
+>View</guimenu
+> <guisubmenu
+>Layout</guisubmenu
+><guimenuitem
+>Duplicate</guimenuitem
+> </menuchoice
+>) and changing some sizes or moving a view to another area of a tab, you can quickly switch between the old and the new layout via <keycombo action="simul"
+> &Ctrl;<keycap
+>←</keycap
+></keycombo
+> and <keycombo action="simul"
+>&Ctrl; <keycap
+>→</keycap
+></keycombo
+>. The set of layouts will be stored between &kcachegrind; sessions of the same profiled command. You can make the current set of layouts the default one for new &kcachegrind; sessions, or restore the default layout set. </para>
 </sect2>
 </sect1>
 
@@ -497,27 +689,49 @@
 <title
 >Perfil simples</title>
 <para
->O perfil simples contén unha lista de grupos e unha lista de funcións. A lista de grupos contén todos os grupos onde é dispendido o custo, dependendo do tipo de grupo escollido. A lista de grupos será acochada de deshabilitar o agrupamento. </para>
+>The <guilabel
+>Flat Profile</guilabel
+> contains a group list and a function list. The group list contains all groups where cost is spent in, depending on the chosen group type. The group list is hidden when grouping is switched off. </para>
 <para
->A lista de funcións contén as funcións do grupo escollido (ou todas as funcións se deshabilitou o agrupamento), ordenadas por algunha coluna, &eg; custo acumulado ou custo propio. Hai un límite máximo ao número de funcións mostradas na lista, que é configurábel en Configuración/Configurar &kcachegrind;. </para>
+>The function list contains the functions of the selected group (or all functions if grouping is switched off), ordered by some column, &eg; inclusive or self costs spent therein. There is a maximum number of functions shown in the list, configurable in <menuchoice
+><guimenu
+>Settings</guimenu
+><guimenuitem
+>Configure KCachegrind</guimenuitem
+></menuchoice
+>. </para>
 </sect2>
 
 <sect2>
 <title
 >Resumo das Partes</title>
 <para
->Nun perfilado poden producirse múltiplos ficheiros con datos, que poden ser cargados á vez en &kcachegrind;. O acople de Resumo das Partes móstraos, ordenados na horizontal de acordo coa hora de criación; os tamaños dos rectángulos son proporcionais ao custo dispendido nas partes. Pode escoller unha ou varias partes para limitar os custos mostrados nas outras vistas de &kcachegrind; a só esas partes. </para>
+>In a profile run, multiple profile data files can be produced, which can be loaded together into &kcachegrind;. The <guilabel
+>Parts Overview</guilabel
+> sidedock shows these, ordered horizontally according to creation time; the rectangle sizes are proportional to the cost spent each part. You can select one or several parts to constrain the costs shown in the other &kcachegrind; views to these parts only. </para>
 <para
->As partes están á súa vez subdivididas: hai un modo de división por particionado e por custo acumulado: <itemizedlist>
+>The parts are further subdivided between a partitioning and an inclusive cost split mode: <variablelist>
+<varlistentry>
+<term
+><guilabel
+>Partitioning Mode</guilabel
+></term>
 <listitem
 ><para
->Particionado: Verá o particionado en grupos para unha parte de datos dun perfilado, de acordo co tipo de grupo escollido. Por exemplo, se escolle usar grupos de obxectos &ELF;, verá rectángulos coloridos para cada obxecto &ELF; usado (biblioteca compartida ou executábel), cun tamaño en función do custo dispendido nel. </para
+>The partitioning is shown in groups for a profile data part, according to the group type selected. For example, if &ELF; object groups are selected, you see colored rectangles for each used &ELF; object (shared library or executable), sized according to the cost spent therein. </para
 ></listitem>
+</varlistentry>
+<varlistentry>
+<term
+><guilabel
+>Diagram Mode</guilabel
+></term>
 <listitem
 ><para
->División por custo acumulado: Móstrase un rectángulo co custo acumulado da funcio activa. Esta, á súa vez, está dividida para mostrar os custos acumulados das súas chamadas. </para
+>A rectangle showing the inclusive cost of the current active function in the part is shown. This, again, is split up to show the inclusive costs of its callees. </para
 ></listitem>
-</itemizedlist>
+</varlistentry>
+</variablelist>
 </para>
 </sect2>
 
@@ -525,47 +739,68 @@
 <title
 >Pila de Chamadas</title>
 <para
->Esta é unha pila de chamadas "máis probábeis" puramente ficticia. Está elaborada comezando coa función activa e engade os chamadores/chamados con maior custo no cume e no fondo. </para>
+>This is a purely fictional <quote
+>most probable</quote
+> call stack. It is built up by starting with the current active function, and adds the callers and callees with highest cost at the top and to bottom. </para>
 <para
->As colunas "Custo" e "Chamadas" mostran o custo usado por todas as chamadas desde a función na liña de cima. </para>
+>The <guilabel
+>Cost</guilabel
+> and <guilabel
+>Calls</guilabel
+> columns show the cost used for all calls from the function in the line above. </para>
 </sect2>
 </sect1>
 
-<sect1 id="concepts-visualizations">
+<sect1 id="concepts-views">
 <title
->Visualizacións</title>
+>Views</title>
 
 <sect2>
 <title
->Tipos de evento</title>
+>Event Type</title>
 <para
->Esta lista mostra todos os tipos de custo disponíbeis e os custos propio e acumulado da función activa para tal tipo de evento. </para>
+>The <guilabel
+>Event Type</guilabel
+> list shows all cost types available and the corresponding self and inclusive cost of the current active function for that event type. </para>
 <para
->Se escolle un tipo de evento na lista, trocará o tipo de custo mostrado por todo &kcachegrind; para o que escolla. </para>
+>By choosing an event type from the list, you change the type of costs shown all over &kcachegrind; to the selected one. </para>
 </sect2>
 
 <sect2>
 <title
 >Lista de chamadas</title>
 <para
->Esta lista mostra as chamadas de/a a función activa. Mediante "todas" indicará as funcións chamadoras/chamadas que poden ser acadadas na dirección da chamadora/chamada, mesmo se hai outras funcións entre medias. </para>
+>These lists show calls to and from the current active function. With <guilabel
+>All Callers</guilabel
+> and <guilabel
+>All Callees</guilabel
+> are meant those functions reachable in the caller and callee direction, even when other functions are in between. </para>
+
 <para
 >As vistas de lista de chamadas inclúen: <itemizedlist>
 <listitem
 ><para
->Chamadoras directas </para
+>Direct <guilabel
+>Callers</guilabel
+></para
 ></listitem>
 <listitem
 ><para
->Chamadas directas </para
+>Direct <guilabel
+>Callees</guilabel
+></para
 ></listitem>
 <listitem
 ><para
->Todos os chamadores </para
+><guilabel
+>Todos os chamadores</guilabel
+></para
 ></listitem>
 <listitem
 ><para
->Todos os chamados </para
+><guilabel
+>Todos os chamados</guilabel
+></para
 ></listitem>
 </itemizedlist>
 </para>
@@ -575,31 +810,47 @@
 <title
 >Mapas</title>
 <para
->Unha visualización en mapa en árbore da tipo de evento primario, cara riba ou baixo da hierarquía de chamadas. Cada rectángulo colorido representa unha función; o tamaño tenta ser proporcional ao custo dispendido nela mentres a función activa está a ser executada (porén, hai restrizóns ao debuxar). </para>
+>A treemap view of the primary event type, up or down the call hierarchy. Each colored rectangle represents a function; its size is approximately proportional to the cost spent therein while the active function is running (however, there are drawing constrains). </para>
 <para
->Co mapa de chamadores, o grafo mostra a hierarquía aniñada dos chamadores da función actualmente activada; co de chamadas, mostra a hierarquía aniñada de todas as funcións chamadas pola función activada. </para>
+>For the <guilabel
+>Caller Map</guilabel
+>, the graph shows the nested hierarchy of all callers of the currently activated function; for the <guilabel
+>Callee Map</guilabel
+>, it shows that of all callees. </para>
 <para
->As opcións de aparencia están no menú contextual. Para ter proporcións exactas de tamaño, escolla "Agochar contornos incorrectos". Xa que este modo pode requerer de moito tempo, ao mellor lle convén limitar o nível máximo de aniñamento antes. "Mellor" determina a dirección de división dos fillos a partir das proporcións do pai. "Sempre a mellor" decide con base no espazo restante para cada irmá. "Ignorar as proporcións" reserva espazo para debuxar o nome da función antes de debuxar os fillos. Lembre que as proporcións poden estar moi equivocadas. </para>
+>Appearance options can be found in the context menu. To get exact size proportions, choose <guimenuitem
+>Skip Incorrect Borders</guimenuitem
+>. As this mode can be very time-consuming, you may want to limit the maximum drawn nesting level before. <guilabel
+>Best</guilabel
+> determinates the split direction for children from the aspect ratio of the parent. <guilabel
+>Always Best</guilabel
+> decides on remaining space for each sibling. <guilabel
+>Ignore Proportions</guilabel
+> takes space for function name drawing before drawing children. Note that size proportions can get heavily wrong. </para>
 <para
->Pode desprazarse co teclado usando os cursores esquerdo/dereito para cambiar entre irmaos, e riba/baixo para ir un nível de aniñamento cara riba/baixo. "Intro" activa o ítem actual. </para>
+>Keyboard navigation is available with the left and right arrow keys for traversing siblings, and up and down arrow keys to go a nesting level up and down. &Enter; activates the current item. </para>
 </sect2>
 
 <sect2>
 <title
 >Grafo de chamadas</title>
 <para
->Esta vista mostra o grafo de chamadas arredos da función actual. O custo que mostra é só o custo dispendido mentres a función activa estaba realmente en execución; &ie; o custo mostrado para main() -se está visíbel- será o mesmo que o custo da función activa, xa que esta é a parte do custo acumulado de main() que é dispendido mentres a función actual estaba a ser executada. </para>
+>This view shows the call graph around the active function. The cost shown is only the cost spent while the active function was actually running, &ie; the cost shown for <function
+>main()</function
+> (if it's visible) should be the same as the cost of the active function, as that is the part of inclusive cost of <function
+>main()</function
+> spent while the active function was running. </para>
 <para
->Para os ciclos, unha frecha de chamada azul indica que esta é unha chamada artificial engadida para debuxar correctamente, pero que en realidade nunca aconteceu. </para>
+>For cycles, blue call arrows indicate that this is an artificial call, which never actually happened, added for correct drawing. </para>
 <para
->Se o grafo é maior que a área do widget, mostrarase unha vista de paxaro nun dos lados. Hai opcións de visualización similares ás do mapa de chamadas en árbore; a función escollida é realzada. </para>
+>If the graph is larger than the drawing area, a bird's eye view is shown on a side. There are view options similar to those of the call maps; the selected function is highlighted. </para>
 </sect2>
 
 <sect2>
 <title
 >Anotacións</title>
 <para
->As listas de fontes/ensamblador anotadas mostran as liñas das fontes / instrucións desensambladas da función activa xunto co custo (propio) dispendido na execución do código dunha liña de fontes /instrución. Se fose unha chamada, inseriranse liñas na fonte con detalles da chamada: o custo (acumulado) dispendido na chamada, o número de chamadas a acontecer, e o destino da chamada. </para>
+>The annotated source or assembler lists show the source lines or disassembled instructions of the current active function together with the (self) cost spent executing the code of a source line or instruction. If there was a call, lines with details on the call are inserted into the source: the (inclusive) cost spent inside of the call, the number of calls happening, and the call destination. </para>
 <para
 >Escolla unha destas liñas de información de chamadas para activar o destino da chamada. </para>
 </sect2>
@@ -634,16 +885,22 @@
 ></keycombo
 > </shortcut
 > <guimenu
->Ficheiro</guimenu
-> <guimenuitem
->Novo</guimenuitem
+>File</guimenu
+><guimenuitem
+>New</guimenuitem
 > </menuchoice
 ></term>
 <listitem
 ><para
 ><action
->Abre unha fiestra principal na que pode cargar datos dun perfilado.</action
-> Esta acción en realidade non é precisa, xa que Ficheiro/Abrir abrirá unha fiestra nova se a actual xa tivese datos cargados. </para
+>Opens an empty top-level window</action
+> in which you can load profile data. This action is not really necessary, as <menuchoice
+> <guimenu
+>File</guimenu
+><guimenuitem
+>Open</guimenuitem
+></menuchoice
+> gives you a new top-level window if the current one already shows some data. </para
 ></listitem>
 </varlistentry>
 
@@ -657,20 +914,52 @@
 ></keycombo
 > </shortcut
 > <guimenu
->Ficheiro</guimenu
-> <guimenuitem
->Abrir</guimenuitem
+>File</guimenu
+><guimenuitem
+>Open</guimenuitem
 > </menuchoice
 ></term>
-<listitem
-><para
+<listitem>
+<para
 ><action
->Abre o diálogo de abertura de ficheiros para escoller un ficheiro de datos de perfilado para cargalo.</action
-> Se xa hai datos na fiestra actual, abrirá unha fiestra nova; se quer engadir datos de perfilado adicionais na fiestra actual, use Ficheiro/Engadir. </para>
+>Pops up the &kde; file selector</action
+> to choose a profile data file to be loaded. If there is some data already shown in the current top-level window, this will open a new window; if you want to open additional profile data in the current window, use <menuchoice
+> <guimenu
+>File</guimenu
+><guimenuitem
+>Add</guimenuitem
+></menuchoice
+>. </para>
 <para
->Os nomes dos ficheiros con datos de perfilado polo xeral rematan en ..-, os números son opcionais e son usados unha ficheiros múltiplos de datos dun mesmo perfilado. Se carga un ficheiro que remate só en ., no caso de existir ficheiros de datos do mesmo perfilado pero con números adicionais, tamén serán cargados. </para>
-<para
->Exemplo: De existir os ficheiros con datos de perfilado cachegrind.out.123 e cachegrind.out.123.1, se carga o primeiro, o segundo tamén será cargado automaticamente. </para
+>The name of profile data files usually ends in <literal role="extension"
+>.<replaceable
+>pid</replaceable
+>.<replaceable
+>part</replaceable
+>-<replaceable
+>threadID</replaceable
+></literal
+>, where <replaceable
+>part</replaceable
+> and <replaceable
+>threadID</replaceable
+> are optional. <replaceable
+>pid</replaceable
+> and <replaceable
+>part</replaceable
+> are used for multiple profile data files belonging to one application run. By loading a file ending only in <literal role="extension"
+><replaceable
+>pid</replaceable
+></literal
+>, any existing data files for this run with additional endings are loaded as well. </para>
+<informalexample
+><para
+>If there exist profile data files <filename
+>cachegrind.out.123</filename
+> and <filename
+>cachegrind.out.123.1</filename
+>, by loading the first, the second will be automatically loaded too. </para
+></informalexample
 ></listitem>
 </varlistentry>
 
@@ -678,33 +967,39 @@
 <term
 ><menuchoice
 ><guimenu
->Ficheiro</guimenu
-> <guimenuitem
->Engadir</guimenuitem
+>File</guimenu
+><guimenuitem
+>Add</guimenuitem
 > </menuchoice
 ></term>
 <listitem
 ><para
 ><action
->Engade un ficheiro con datos de perfilado na fiestra actual.</action
-> Se usa isto, pode forzar a carga de múltiplos ficheiros na mesma fiestra mesmo se non son da mesma execución dun perfilado segundo o convenio de nomeado dos ficheiros. Por exemplo, isto pode ser usado para comparar lado por lado os perfilados. </para
+>Adds a profile data file</action
+> to the current window. Using this, you can force multiple data files to be loaded into the same top-level window even if they are not from the same run, as given by the profile data file naming convention. For example, this can be used for side-by-side comparison. </para
 ></listitem>
 </varlistentry>
 
 <varlistentry>
 <term
 ><menuchoice
-><guimenu
->Ficheiro</guimenu
-> <guimenuitem
->Cargar de novo</guimenuitem
+><shortcut
+> <keycombo
+><keycap
+>F5</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>File</guimenu
+><guimenuitem
+>Reload</guimenuitem
 > </menuchoice
 ></term>
 <listitem
 ><para
 ><action
->Carga de novo os datos do perfilado.</action
-> Isto é máis interesante tras xerar outro ficheiro con datos de perfilado para unha execución xa cargada dunha aplicación. </para
+>Reload the profile data</action
+>. This is useful when another profile data file was generated for an already loaded application run. </para
 ></listitem>
 </varlistentry>
 
@@ -718,9 +1013,9 @@
 ></keycombo
 > </shortcut
 > <guimenu
->Ficheiro</guimenu
-> <guimenuitem
->Sair</guimenuitem
+>File</guimenu
+><guimenuitem
+>Quit</guimenuitem
 > </menuchoice
 ></term>
 <listitem
@@ -734,105 +1029,6 @@
 </para>
 
 </sect2>
-
-<sect2>
-<title
->O menú <guimenu
->Vista</guimenu
-></title>
-<para>
-<variablelist>
-
-<varlistentry>
-<term
-><menuchoice
-><guimenu
->Vista</guimenu
-> <guimenuitem
->Tipo de evento primario</guimenuitem
-> </menuchoice
-></term>
-<listitem
-><para
-><action
->(To-do)</action
-></para
-></listitem>
-</varlistentry>
-
-<varlistentry>
-<term
-><menuchoice
-><guimenu
->Vista</guimenu
-> <guimenuitem
->Tipo de evento secundario</guimenuitem
-> </menuchoice
-></term>
-<listitem
-><para
-><action
->(To-do)</action
-></para
-></listitem>
-</varlistentry>
-
-<varlistentry>
-<term
-><menuchoice
-><guimenu
->Vista</guimenu
-> <guimenuitem
->Agrupamento</guimenuitem
-> </menuchoice
-></term>
-<listitem
-><para
-><action
->(To-do)</action
-></para
-></listitem>
-</varlistentry>
-
-<varlistentry>
-<term
-><menuchoice
-><guimenu
->Vista</guimenu
-> <guimenuitem
->Disposición</guimenuitem
-> </menuchoice
-></term>
-<listitem
-><para
-><action
->(To-do)</action
-></para
-></listitem>
-</varlistentry>
-
-<varlistentry>
-<term
-><menuchoice
-><guimenu
->Vista</guimenu
-> <guimenuitem
->División</guimenuitem
-> </menuchoice
-></term>
-<listitem
-><para
-><action
->(To-do)</action
-></para
-></listitem>
-</varlistentry>
-
-</variablelist>
-</para>
-
-</sect2>
-
 
 </sect1>
 </chapter>
@@ -850,44 +1046,82 @@
 </question>
 <answer>
 <para
->&kcachegrind; é unha aplicación para unha etapa final do desenvolvimento, chamada Perfilado. Se non desenvolve programas, non precisa de &kcachegrind;. </para>
+>&kcachegrind; is a helpful at a late stage in software development, called profiling. If you don't develop applications, you don't need &kcachegrind;. </para>
 </answer>
 </qandaentry>
 
 <qandaentry>
 <question>
 <para
->Cal é a diferenza entre "Acum." e "Propio"? </para>
+>What is the difference between <guilabel
+>Incl.</guilabel
+> and <guilabel
+>Self</guilabel
+>? </para>
 </question>
 <answer>
 <para
->Son atributos do custo das funcións con respeito a algún tipo de evento. Xa que as funcións poden chamar unhas por outras, ten sentido diferenciar entre o custo da función en si ("Custo propio") e o custo incluíndo todas as función chamadas ("Custo acumulado"). "Propio" en ocasións é chamado tamén "Exclusivo". </para>
+>These are cost attributes for functions regarding some event type. As functions can call each other, it makes sense to distinguish the cost of the function itself (<quote
+>Self Cost</quote
+>) and the cost including all called functions (<quote
+>Inclusive Cost</quote
+>). <quote
+>Self</quote
+> is sometimes also referred to as <quote
+>Exclusive</quote
+> costs. </para>
 <para
->Deste xeito, por exemplo, para main(), sempre terá un custo acumulado de case o 100%, mentres que o custo propio é ínfimo cando o traballo real é feito en outra función. </para>
+>So, for example, for <function
+>main()</function
+>, you will always have an inclusive cost of almost 100%, whereas the self cost is negligible when the real work is done in another function. </para>
 </answer>
 </qandaentry>
 
 <qandaentry>
 <question>
 <para
->A barra de menú/ferramentas de &kcachegrind; ten un aspeito pobre. É isto normal?</para>
+>The toolbar and menubar of my &kcachegrind; look spartan. Is this normal?</para>
 </question>
 <answer>
 <para
->Obviamente &kcachegrind; está mal instalado. Recoméndase que o compile cun prefixo de instalación que sexa o directorio base de &kde; do sistema como <command
->configura --prefix=/opt/kde3; make install</command
->. Se escolle outro cartafol como $HOME/kde, deberá axustar a variábel de entorno KDEDIR para este cartafol antes de executar &kcachegrind;. </para>
+>&kcachegrind; has probably been installed incorrectly on your system. It is recommended to compile it with the installation prefix set to your system-wide &kde; base folder, like <userinput
+><command
+>configure <option
+>--prefix=<replaceable
+>/opt/kde4</replaceable
+></option
+></command
+>; <command
+>make install</command
+></userinput
+>. If you choose another folder, like <filename class="directory"
+>$<envar
+>HOME</envar
+>/kde</filename
+>, you should set the environment variable <envar
+>KDEDIR</envar
+> to this folder before running &kcachegrind;. </para>
 </answer>
 </qandaentry>
 
 <qandaentry>
 <question>
 <para
->Se fago un duplo-click nunha función na Vista do grafo de chamadas, móstrase para a función main o mesmo custo que para a escollida. Non se supón que debe ser constante no 100%? </para>
+>If I double-click on a function down in the <guilabel
+>Call Graph</guilabel
+> view, it shows for function <function
+>main()</function
+> the same cost as the selected function. Isn't this supposed to be constant at 100%? </para>
 </question>
 <answer>
 <para
->Activou unha función dentro de main() cun custo inferior ao de main(). Para calquer función, só se mostra esa parte do custo completo, a que é dispendida mentres a función activa está en execución; isto é, o custo mostrado para calquer función nunca pode ser maior que o custo da función activada. </para>
+>You have activated a function below <function
+>main()</function
+>, which obviously costs less than <function
+>main()</function
+> itself. For every function, it is shown only the part of the cost spent while the <emphasis
+>activated</emphasis
+> function is running; that is, the cost shown for any function can never be higher than the cost of the activated function. </para>
 </answer>
 </qandaentry>
 
@@ -895,76 +1129,134 @@
 </qandaset>
 </chapter>
 
-<chapter id="glossary">
-<title
->Glosario</title>
 
-<para
->A seguir vai unha lista de termos misturados. <itemizedlist>
-<listitem
+<glossary>
+
+<glossentry id="costentity">
+<glossterm
+>Cost Entity</glossterm>
+<glossdef
 ><para
->Perfilado: O proceso de recoller información estatística acerca das características en execución dun programa. </para
-></listitem>
-<listitem
+>An abstract item related to source code to which event counts can be attributed. Dimensions for cost entities are code location (&eg; source line, function), data location (&eg; accessed data type, data object), execution location (&eg; thread, process), and tuples or triples of the aforementioned positions (&eg; calls, object access from statement, evicted data from cache).</para
+></glossdef>
+</glossentry>
+
+<glossentry id="eventcosts">
+<glossterm
+>Event Costs</glossterm>
+<glossdef
 ><para
->Tracexamento: O proceso de supervisar a execución dun programa e guardar os eventos acontecidos ordenados por un selo temporal nun ficheiro de saída, a Traza. </para
-></listitem>
-<listitem
+>Sum of events of some event type occurring while the execution is related to some cost entity. The cost is attributed to the entity.</para
+></glossdef>
+</glossentry>
+
+<glossentry id="eventtype">
+<glossterm
+>Event Type</glossterm>
+<glossdef
 ><para
->Traza: Unha secuencia de eventos con selo temporal que aconteceron durante a execución dun programa de trazado. O seu tamaño tipicamente é linear no tempo de execución do programa. </para
-></listitem>
-<listitem
+>The kind of event of which costs can be attributed to a cost entity. There are real event types and inherited event types.</para
+></glossdef>
+</glossentry>
+
+<glossentry id="inheritedeventtype">
+<glossterm
+>Inherited Event Type</glossterm>
+<glossdef
 ><para
->Ficheiro de datos de perfilado: Un ficheiro que contén datos medidos nunha proba de perfilado (ou parte dela) ou producidos polo procesamento dunha traza. O seu tamaño polo xeral é linear co tamano do código do programa. </para
-></listitem>
-<listitem
+>A virtual event type only visible in the view, defined by a formula to be calculated from real event types.</para
+></glossdef>
+</glossentry>
+
+<glossentry id="profiledatafile">
+<glossterm
+>Profile Data File</glossterm>
+<glossdef
 ><para
->Parte de datos de perfilado (tamén usado, pero incorrecto: Parte de traza): Datos dun ficheiro de datos de perfilado. </para
-></listitem>
-<listitem
+>A file containing data measured in a profile experiment, or part of one, or produced by post-processing a trace. Its size is typically linear with the code size of the program.</para
+></glossdef>
+</glossentry>
+
+<glossentry id="profiledatapart">
+<glossterm
+>Profile Data Part</glossterm>
+<glossdef
 ><para
->Experimento de perfilado: Un programa executado coa supervisión dunha ferramenta de perfilado, que produce múltiplos ficheiros de datos de perfilado para as partes e/ou fíos da execución. </para
-></listitem>
-<listitem
+>Data from a profile data file.</para
+></glossdef>
+</glossentry>
+
+<glossentry id="profileexperiment">
+<glossterm
+>Profile Experiment</glossterm>
+<glossdef
 ><para
->Proxecto de perfilado: Unha configuración dos experimentos de perfilado usada por un programa que debe ser perfilado, talvez en múltiplas versións. As comparacións de datos de perfilado polo xeral só teñen sentido entre datos de perfilado producidos en experimentos dun proxecto de perfilado. </para
-></listitem>
-<listitem
+>A program run supervised by a profiling tool, producing possibly multiple profile data files from parts or threads of the run.</para
+></glossdef>
+</glossentry>
+
+<glossentry id="profileproject">
+<glossterm
+>Profile Project</glossterm>
+<glossdef
 ><para
->Entidade de custo: Un ítem abstracto relacionado co código fonte ao cal poden ser atribuída unha conta de eventos. As dimensións das entidades de custo son localización do código (&eg; liña das fontes, función), localización dos datos (&eg; tipo de dato acedido, obxecto de datos), localización da execución (&eg; fío, proceso), e tuplas ou triplas das posicións antes mencionadas (&eg; chamadas, obxecto acedido desde unha orde, datos extraídos da caché). </para
-></listitem>
-<listitem
+>A configuration for profile experiments used for one program to profile, perhaps in multiple versions. Comparisons of profile data typically only makes sense between profile data produced in experiments of one profile project.</para
+></glossdef>
+</glossentry>
+
+<glossentry id="profiling">
+<glossterm
+>Profiling</glossterm>
+<glossdef
 ><para
->Tipo de evento: O tipo do evento que ten uns custos que poden ser atribuidos a unha entidade de custo. Existen tipos de eventos reais e tipos de eventos herdados. </para
-></listitem>
-<listitem
+>The process of collecting statistical information about runtime characteristics of program runs.</para
+></glossdef>
+</glossentry>
+
+<glossentry id="realeventtype">
+<glossterm
+>Real Event Type</glossterm>
+<glossdef
 ><para
->Tipo de evento real: Un tipo de evento que pode ser medido por unha ferramenta. Isto precisa da existencia dun sensor para tal tipo de evento. </para
-></listitem>
-<listitem
+>An event type that can be measured by a tool. This requires the existence of a sensor for the given event type.</para
+></glossdef>
+</glossentry>
+
+<glossentry id="trace">
+<glossterm
+>Trace</glossterm>
+<glossdef
 ><para
->Tipo de evento herdado: Un tipo de evento virtual visíbel somente na visualización que é definido por unha fórmula que é calculada a partir de tipos de eventos reais. </para
-></listitem>
-<listitem
+>A sequence of timestamped events that occurred while tracing a program run. Its size is typically linear with the execution time of the program run.</para
+></glossdef>
+</glossentry>
+
+<glossentry id="tracepart">
+<glossterm
+>Trace Part</glossterm>
+<glosssee otherterm="profiledatapart"/>
+</glossentry>
+
+<glossentry id="tracing">
+<glossterm
+>Tracing</glossterm>
+<glossdef
 ><para
->Custos do evento: Suma dos eventos dalgún tipo que acontecen mentres a execución está relacionada con algunha entidade de custo. O custo é atribuído á entidade. </para
-></listitem>
-</itemizedlist>
-</para>
-</chapter>
+>The process of supervising a program run and storing its events, sorted by a timestamp, in an output file, the trace.</para
+></glossdef>
+</glossentry>
+
+</glossary>
 
 <chapter id="credits">
-
 
 <title
 >Recoñecimentos e Licenza</title>
 
 <para
->&kappname; </para>
-<para
 >Grazas a Julian Seward polo seu excelente &valgrind; e a Nicholas Nethercote pola adición de &cachegrind;. Sen estes programas, &kcachegrind; non había existir. Asimesmo, algunhas ideas para esta &GUI; son deles. </para>
 <para
->E grazas a todos os informes de erro e suxestións dos usuarios. </para>
+>Thanks for all the bug reports and suggestions from different users. </para>
 
 <para
 >mvillarino<email
@@ -982,9 +1274,9 @@
 >Como obter &kcachegrind;</title>
 
 <para
->&kcachegrind; forma parte do paquete &package; de &kde;. Para obter versións non publicadas, con menos soporte, &callgrind; e para máis documentación, consulte a páxina web en <ulink url="http://kcachegrind.sf.net"
->http://kcachegrind.sf.net</ulink
->. Procure aló máis instrucións de instalación e compilación. </para>
+>&kcachegrind; is part of the &package; package of &kde;. For less supported interim releases, &callgrind; and further documentation, see <ulink url="http://kcachegrind.sf.net"
+>the Web page</ulink
+>. Look there for further installation and compile instructions. </para>
 </sect1>
 
 <sect1 id="requirements">
@@ -992,7 +1284,7 @@
 >Requerimentos</title>
 
 <para
->Para poder usar &kcachegrind; precisa &kde; 3.x. Para xerar datos de perfilado, recoméndase &cachegrind; ou &calltree;/&callgrind;. </para>
+>In order to use &kcachegrind;, you need &kde; 4.x. To generate profile data, &cachegrind; or &calltree;/&callgrind; is recommended. </para>
 </sect1>
 
 <sect1 id="compilation">
@@ -1005,7 +1297,7 @@
 >Configuración</title>
 
 <para
->Todas as opcións de configuración están ou no diálogo de configuración ou nos menús contextuais das visualizacións. </para>
+>All configuration options are either in the configuration dialog or in the context menus of the views.</para>
 
 </sect1>
 
@@ -1013,25 +1305,3 @@
 
 &documentation.index;
 </book>
-<!--
-Local Variables:
-mode: sgml
-sgml-minimize-attributes:nil
-sgml-general-insert-case:lower
-sgml-indent-step:0
-sgml-indent-data:nil
-End:
--->
-
-
-
-
-
-
-
-
-
-
-
-
-
