@@ -71,6 +71,7 @@ for ficheiro in `svn status $BASE_REPO/$prefix/$lang/ | grep "^C " | cut -d" " -
   do
     directorio=`dirname $ficheiro`
     nome=`basename $ficheiro ."$marca"`
+    echo "Solving conflicts in: ${directorio}/${nome}"
     svn resolve --accept mine-full $directorio/$nome
 #     $BASE_REPO/$prefix/scripts/merge.sh ${directorio}/${nome} ${BASE_REPO}/${prefix}/templates/${nome}t
     $BASE_REPO/$prefix/scripts/merge.sh ${directorio}/${nome} ${BASE_REPO}/${prefix}/templates${directorio##"${BASE_REPO}/${prefix}/${lang}"}/${nome}t

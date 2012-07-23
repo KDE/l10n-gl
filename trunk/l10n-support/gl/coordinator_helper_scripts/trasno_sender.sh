@@ -1,7 +1,6 @@
 #! /usr/bin/env bash
 #Este script serve para engadir e entregar o traballo a KDE.
 
-#TODO: Resolver conflitos (?)
 # Copyright (c) 2011, 2012 Marcelino Villarino Aguiar. All rights reserved.
 # Redistribution and use in source and binary forms, with or without modification,
 # are permitted provided that the following conditions are met: Redistributions
