@@ -18,7 +18,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmix\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2012-08-05 04:26+0200\n"
+"POT-Creation-Date: 2012-08-07 21:43+0200\n"
 "PO-Revision-Date: 2012-07-23 15:34+0100\n"
 "Last-Translator: Manuel A. Vázquez <xixirei@yahoo.es>\n"
 "Language-Team: Galician <proxecto@trasno.net>\n"
@@ -255,6 +255,47 @@ msgstr "Erro"
 msgid "No sound card is installed or currently plugged in."
 msgstr "Non está instalada ou non está conectada ningunha placa de son."
 
+#: backends/mixer_backend_i18n.cpp:24
+msgid "Recording level of the microphone input."
+msgstr "Nivel de gravación da entrada de micrófono. "
+
+#: backends/mixer_backend_i18n.cpp:25
+msgid ""
+"Controls the volume of the front speakers or all speakers (depending on your "
+"soundcard model). If you use a digital output, you might need to also use "
+"other controls like ADC or DAC. For headphones, soundcards often supply a "
+"Headphone control."
+msgstr ""
+"Controla o volume dos altofalantes frontais ou de todos os altofalantes (en "
+"función do modelo de tarxeta de son que teña). Se usa unha saída dixital é "
+"posible que precise outros controis coma ADC ou DAC. No caso dos "
+"auriculares, as tarxetas de son soen dispoñer ademais dun control específico "
+"para eles. "
+
+#: backends/mixer_backend_i18n.cpp:26
+msgid ""
+"Most media, such as MP3s or Videos, are played back using the PCM channel. "
+"As such, the playback volume of such media is controlled by both this and "
+"the Master or Headphone channels."
+msgstr ""
+"A meirande parte do contido multimedia, coma os MP3s ou os vídeos, "
+"reprodúcense empregando a canle PCM. Ao ser así o volume de reprodución dese "
+"contido contrólase tanto dende as canle mestra coma da canles dos "
+"auriculares. "
+
+#: backends/mixer_backend_i18n.cpp:27
+msgid ""
+"Controls the headphone volume. Some soundcards include a switch that must be "
+"manually activated to enable the headphone output."
+msgstr ""
+"Controla o volume dos auriculares. Algunhas tarxetas de son inclúen un "
+"conmutador, que hai que activar para que a saída de son se produza polos "
+"auriculares. "
+
+#: backends/mixer_backend_i18n.cpp:28
+msgid "---"
+msgstr "---"
+
 #: backends/mixer_alsa9.cpp:891
 msgid ""
 "You do not have permission to access the alsa mixer device.\n"
@@ -302,47 +343,6 @@ msgstr ""
 #: backends/mixer_backend.cpp:268
 msgid "kmix: Unknown error. Please report how you produced this error."
 msgstr "kmix: Erro descoñecido. Por favor, informe de como produciu este erro."
-
-#: backends/mixer_backend_i18n.cpp:24
-msgid "Recording level of the microphone input."
-msgstr "Nivel de gravación da entrada de micrófono. "
-
-#: backends/mixer_backend_i18n.cpp:25
-msgid ""
-"Controls the volume of the front speakers or all speakers (depending on your "
-"soundcard model). If you use a digital output, you might need to also use "
-"other controls like ADC or DAC. For headphones, soundcards often supply a "
-"Headphone control."
-msgstr ""
-"Controla o volume dos altofalantes frontais ou de todos os altofalantes (en "
-"función do modelo de tarxeta de son que teña). Se usa unha saída dixital é "
-"posible que precise outros controis coma ADC ou DAC. No caso dos "
-"auriculares, as tarxetas de son soen dispoñer ademais dun control específico "
-"para eles. "
-
-#: backends/mixer_backend_i18n.cpp:26
-msgid ""
-"Most media, such as MP3s or Videos, are played back using the PCM channel. "
-"As such, the playback volume of such media is controlled by both this and "
-"the Master or Headphone channels."
-msgstr ""
-"A meirande parte do contido multimedia, coma os MP3s ou os vídeos, "
-"reprodúcense empregando a canle PCM. Ao ser así o volume de reprodución dese "
-"contido contrólase tanto dende as canle mestra coma da canles dos "
-"auriculares. "
-
-#: backends/mixer_backend_i18n.cpp:27
-msgid ""
-"Controls the headphone volume. Some soundcards include a switch that must be "
-"manually activated to enable the headphone output."
-msgstr ""
-"Controla o volume dos auriculares. Algunhas tarxetas de son inclúen un "
-"conmutador, que hai que activar para que a saída de son se produza polos "
-"auriculares. "
-
-#: backends/mixer_backend_i18n.cpp:28
-msgid "---"
-msgstr "---"
 
 #: backends/mixer_mpris2.cpp:49 backends/mixer_pulse.cpp:1025
 msgid "Playback Streams"
@@ -692,21 +692,26 @@ msgstr "Opcións do dispositivo"
 msgid "Mixer"
 msgstr "Mesturador"
 
-#: gui/viewsliders.cpp:94
-msgid "Nothing is capturing audio."
-msgstr "Non hai nada que capture audio."
+#: gui/kmixdockwidget.cpp:68
+msgid "Volume Control"
+msgstr "Control de volume"
 
-#: gui/viewsliders.cpp:96 gui/viewsliders.cpp:102
-msgid "Nothing is playing audio."
-msgstr "Non hai nada que reproduza audio."
+#: gui/kmixdockwidget.cpp:137
+msgid "M&ute"
+msgstr "&Silenciar"
 
-#: gui/viewsliders.cpp:98
-msgid "No capture devices."
-msgstr "Sen dispositivos de captura."
+#: gui/kmixdockwidget.cpp:225
+msgid "Mixer cannot be found"
+msgstr "Non foi posíbel atopar o mesturador"
 
-#: gui/viewsliders.cpp:100
-msgid "No playback devices."
-msgstr "Sen dispositivos de reprodución."
+#: gui/kmixdockwidget.cpp:239
+#, kde-format
+msgid "Volume at %1%"
+msgstr "Volume ao %1%"
+
+#: gui/kmixdockwidget.cpp:241
+msgid " (Muted)"
+msgstr " (Silenciado)"
 
 #: gui/kmixprefdlg.cpp:55
 msgid "Behavior"
@@ -768,26 +773,21 @@ msgstr "&Horizontal"
 msgid "&Vertical"
 msgstr "&Vertical"
 
-#: gui/kmixdockwidget.cpp:68
-msgid "Volume Control"
-msgstr "Control de volume"
+#: gui/viewsliders.cpp:94
+msgid "Nothing is capturing audio."
+msgstr "Non hai nada que capture audio."
 
-#: gui/kmixdockwidget.cpp:137
-msgid "M&ute"
-msgstr "&Silenciar"
+#: gui/viewsliders.cpp:96 gui/viewsliders.cpp:102
+msgid "Nothing is playing audio."
+msgstr "Non hai nada que reproduza audio."
 
-#: gui/kmixdockwidget.cpp:225
-msgid "Mixer cannot be found"
-msgstr "Non foi posíbel atopar o mesturador"
+#: gui/viewsliders.cpp:98
+msgid "No capture devices."
+msgstr "Sen dispositivos de captura."
 
-#: gui/kmixdockwidget.cpp:239
-#, kde-format
-msgid "Volume at %1%"
-msgstr "Volume ao %1%"
-
-#: gui/kmixdockwidget.cpp:241
-msgid " (Muted)"
-msgstr " (Silenciado)"
+#: gui/viewsliders.cpp:100
+msgid "No playback devices."
+msgstr "Sen dispositivos de reprodución."
 
 #: rc.cpp:1
 msgctxt "NAME OF TRANSLATORS"
