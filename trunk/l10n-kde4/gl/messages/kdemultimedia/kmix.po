@@ -18,7 +18,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmix\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2012-08-10 05:04+0200\n"
+"POT-Creation-Date: 2012-08-14 07:25+0200\n"
 "PO-Revision-Date: 2012-07-23 15:34+0100\n"
 "Last-Translator: Manuel A. Vázquez <xixirei@yahoo.es>\n"
 "Language-Team: Galician <proxecto@trasno.net>\n"
@@ -154,6 +154,19 @@ msgid ""
 "Inhibits the unhiding of the KMix main window, if KMix is already running."
 msgstr "Inhibe o erguer a fiestra principal de KMix, se xa esta á executarse."
 
+#: apps/kmixd.cpp:301 apps/kmix.cpp:902
+#, kde-format
+msgid ""
+"The soundcard containing the master device was unplugged. Changing to "
+"control %1 on card %2."
+msgstr ""
+"Desconectouse a tarxeta de son que contén o dispositivo mestre. Múdase para "
+"controlar %1 na tarxeta %2."
+
+#: apps/kmixd.cpp:311 apps/kmix.cpp:912
+msgid "The last soundcard was unplugged."
+msgstr "Desconectouse a última tarxeta de son."
+
 #: apps/kmix.cpp:150
 msgid "Audio Setup"
 msgstr "Configuración de audio"
@@ -226,19 +239,6 @@ msgstr "Non é posíbel engadir unha vista - GUIProfile é incorrecto."
 msgid "View already exists. Cannot add View."
 msgstr "A vista xa existe. Non é posíbel engadir outra."
 
-#: apps/kmix.cpp:902 apps/kmixd.cpp:301
-#, kde-format
-msgid ""
-"The soundcard containing the master device was unplugged. Changing to "
-"control %1 on card %2."
-msgstr ""
-"Desconectouse a tarxeta de son que contén o dispositivo mestre. Múdase para "
-"controlar %1 na tarxeta %2."
-
-#: apps/kmix.cpp:912 apps/kmixd.cpp:311
-msgid "The last soundcard was unplugged."
-msgstr "Desconectouse a última tarxeta de son."
-
 #: apps/kmix.cpp:1204
 msgid "Mixer Hardware Information"
 msgstr "Información do mesturador hardware"
@@ -254,6 +254,12 @@ msgstr "Erro"
 #: apps/kmix.cpp:1261 gui/dialogaddview.cpp:128 gui/dialogselectmaster.cpp:112
 msgid "No sound card is installed or currently plugged in."
 msgstr "Non está instalada ou non está conectada ningunha placa de son."
+
+#: apps/kmix.cpp:1272
+#, fuzzy
+#| msgid "Mixer"
+msgid "KDE Mixer"
+msgstr "Mesturador"
 
 #: backends/mixer_alsa9.cpp:891
 msgid ""
@@ -709,7 +715,7 @@ msgstr "Volume ao %1%"
 msgid " (Muted)"
 msgstr " (Silenciado)"
 
-#: gui/dialogviewconfiguration.cpp:153 gui/kmixprefdlg.cpp:40
+#: gui/dialogviewconfiguration.cpp:153 gui/kmixprefdlg.cpp:43
 msgid "Configure"
 msgstr "Configurar"
 
@@ -731,89 +737,95 @@ msgstr "Canles visíbeis "
 msgid "Invalid mixer"
 msgstr "Mesturador incorrecto"
 
-#: gui/kmixprefdlg.cpp:55
+#: gui/kmixprefdlg.cpp:58
 msgid "Behavior"
 msgstr "Comportamento"
 
-#: gui/kmixprefdlg.cpp:62
+#: gui/kmixprefdlg.cpp:65
 msgid "&Dock in system tray"
 msgstr "&Acoplar na bandexa do sistema"
 
-#: gui/kmixprefdlg.cpp:64
+#: gui/kmixprefdlg.cpp:67
 msgid "Docks the mixer into the KDE system tray"
 msgstr "Ancorar o mesturador na bandexa de KDE"
 
-#: gui/kmixprefdlg.cpp:69
+#: gui/kmixprefdlg.cpp:72
 msgid "Enable system tray &volume control"
 msgstr "Habilitar o control de volume na &bandexa do sistema"
 
-#: gui/kmixprefdlg.cpp:71
+#: gui/kmixprefdlg.cpp:74
 msgid "Allows to control the volume from the system tray"
 msgstr "Permítelle controlar o volume desde a bandexa do sistema"
 
-#: gui/kmixprefdlg.cpp:77
+#: gui/kmixprefdlg.cpp:80
 msgid "Volume Feedback"
 msgstr "Volume de volta"
 
-#: gui/kmixprefdlg.cpp:83
+#: gui/kmixprefdlg.cpp:86
 msgid "Volume feedback is only available for Pulseaudio."
 msgstr ""
 
-#: gui/kmixprefdlg.cpp:88
+#: gui/kmixprefdlg.cpp:91
 msgid "Startup"
 msgstr ""
 
-#: gui/kmixprefdlg.cpp:94
+#: gui/kmixprefdlg.cpp:97
 msgid "Restore volumes on login"
 msgstr "Restaurar os volumes ao acceder ao sistema"
 
-#: gui/kmixprefdlg.cpp:95
+#: gui/kmixprefdlg.cpp:98
 #, fuzzy
 #| msgid "Restore volumes on login"
 msgid "Restore all volume levels and switches."
 msgstr "Restaurar os volumes ao acceder ao sistema"
 
-#: gui/kmixprefdlg.cpp:102
+#: gui/kmixprefdlg.cpp:105
 msgid "Dynamic controls from Pulseaudio and MPRIS2 will not be restored."
 msgstr ""
 
-#: gui/kmixprefdlg.cpp:114
-msgid "Suppress KMix Autostart"
+#: gui/kmixprefdlg.cpp:117
+msgid "Autostart"
 msgstr ""
 
-#: gui/kmixprefdlg.cpp:115
-msgid "Disables the KMix autostart service (kmix_autostart.desktop)"
+#: gui/kmixprefdlg.cpp:118
+msgid "Enables the KMix autostart service (kmix_autostart.desktop)"
 msgstr ""
 
-#: gui/kmixprefdlg.cpp:121
+#: gui/kmixprefdlg.cpp:124
+msgid ""
+"Autostart can not be enabled, as the autostart file kmix_autostart.desktop "
+"is not installed."
+msgstr ""
+
+#: gui/kmixprefdlg.cpp:127
 msgid "Visual"
 msgstr "Visual"
 
-#: gui/kmixprefdlg.cpp:127
+#: gui/kmixprefdlg.cpp:133
 msgid "Show &tickmarks"
 msgstr "Mostrar marcas de &nivel"
 
-#: gui/kmixprefdlg.cpp:129
+#: gui/kmixprefdlg.cpp:135
 msgid "Enable/disable tickmark scales on the sliders"
 msgstr "Activar/desactivar escadas nos desprazadores de control"
 
-#: gui/kmixprefdlg.cpp:134
+#: gui/kmixprefdlg.cpp:140
 msgid "Show &labels"
 msgstr "Mostrar &etiquetas"
 
-#: gui/kmixprefdlg.cpp:136
+#: gui/kmixprefdlg.cpp:142
 msgid "Enables/disables description labels above the sliders"
 msgstr "Habilita/deshabilita etiquetas de descrición enriba dos deslizadores"
 
-#: gui/kmixprefdlg.cpp:143
+#: gui/kmixprefdlg.cpp:149
 msgid "Slider orientation: "
 msgstr "Orientación do desprazador: "
 
-#: gui/kmixprefdlg.cpp:144
+#: gui/kmixprefdlg.cpp:150
 msgid "&Horizontal"
 msgstr "&Horizontal"
 
-#: gui/kmixprefdlg.cpp:145
+#: gui/kmixprefdlg.cpp:151
 msgid "&Vertical"
 msgstr "&Vertical"
 
