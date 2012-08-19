@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kofficefilters\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2012-08-18 03:01+0200\n"
+"POT-Creation-Date: 2012-08-19 02:35+0200\n"
 "PO-Revision-Date: 2012-04-27 18:49+0200\n"
 "Last-Translator: Miguel Branco <mgl.branco@gmail.com>\n"
 "Language-Team: Galician <kde-i18n-doc@kde.org>\n"
@@ -24,6 +24,15 @@ msgstr ""
 "X-Accelerator-Marker: &\n"
 "X-Text-Markup: kde4\n"
 
+#: flow/imageexport/flow_imageexportdialog.cpp:35
+msgid "Export to Image"
+msgstr "Exportar a imaxe "
+
+#: flow/imageexport/flow_imageexport.cpp:91
+#: kchart/genericimageexport/genericimageexport.cpp:67
+msgid "Failed to read data."
+msgstr "Non se puideron ler os datos."
+
 #: flow/imageexport/flow_imageexport.cpp:91
 #: flow/imageexport/flow_imageexport.cpp:102
 #: kchart/genericimageexport/genericimageexport.cpp:68
@@ -31,19 +40,10 @@ msgstr ""
 msgid "Export Error"
 msgstr "Erro de exportación"
 
-#: flow/imageexport/flow_imageexport.cpp:91
-#: kchart/genericimageexport/genericimageexport.cpp:67
-msgid "Failed to read data."
-msgstr "Non se puideron ler os datos."
-
 #: flow/imageexport/flow_imageexport.cpp:102
 #: kchart/genericimageexport/genericimageexport.cpp:80
 msgid "Malformed XML data."
 msgstr "Datos da XML malformados."
-
-#: flow/imageexport/flow_imageexportdialog.cpp:35
-msgid "Export to Image"
-msgstr "Exportar a imaxe "
 
 #: karbon/eps/EpsExportDlg.cpp:37
 msgid "EPS Export"
@@ -113,16 +113,9 @@ msgstr "Erro de exportación de PNG"
 
 #: libmsooxml/MsooXmlDocPropertiesReader.cpp:75
 #: libmsooxml/MsooXmlReader.cpp:182 libmsooxml/MsooXmlThemesReader.cpp:363
-#: sheets/xlsx/XlsxXmlCommentsReader.cpp:108
-#: sheets/xlsx/XlsxXmlDocumentReader.cpp:134
-#: sheets/xlsx/XlsxXmlSharedStringsReader.cpp:113
-#: sheets/xlsx/XlsxXmlStylesReader.cpp:457
-#: sheets/xlsx/XlsxXmlTableReader.cpp:78
-#: sheets/xlsx/XlsxXmlWorksheetReader.cpp:301
-#: stage/pptx/PptxXmlDocumentReader.cpp:151
 #: stage/pptx/PptxXmlSlideReader.cpp:333
+#: stage/pptx/PptxXmlDocumentReader.cpp:151
 #: words/docx/DocxXmlCommentsReader.cpp:89
-#: words/docx/DocxXmlDocumentReader.cpp:201
 #: words/docx/DocxXmlEndnoteReader.cpp:90
 #: words/docx/DocxXmlFontTableReader.cpp:89
 #: words/docx/DocxXmlFooterReader.cpp:95
@@ -130,6 +123,13 @@ msgstr "Erro de exportación de PNG"
 #: words/docx/DocxXmlHeaderReader.cpp:95
 #: words/docx/DocxXmlNumberingReader.cpp:87
 #: words/docx/DocxXmlSettingsReader.cpp:87
+#: words/docx/DocxXmlDocumentReader.cpp:201
+#: sheets/xlsx/XlsxXmlCommentsReader.cpp:108
+#: sheets/xlsx/XlsxXmlDocumentReader.cpp:134
+#: sheets/xlsx/XlsxXmlSharedStringsReader.cpp:113
+#: sheets/xlsx/XlsxXmlStylesReader.cpp:457
+#: sheets/xlsx/XlsxXmlTableReader.cpp:78
+#: sheets/xlsx/XlsxXmlWorksheetReader.cpp:301
 #, kde-format
 msgid "Namespace \"%1\" not found"
 msgstr "Non se atopou o espazo de nome «%1»"
@@ -221,6 +221,10 @@ msgstr "Non se atoparon o ficheiro de relacións «%1»"
 msgid "Could not find target for relationship \"%1\" in file \"%2\""
 msgstr "Non se atopou o destino para a relación «%1» no ficheiro «%2»"
 
+#: libmsooxml/MsooXmlUtils.cpp:180
+msgid "QXml"
+msgstr "QXml"
+
 #: libmsooxml/MsooXmlUtils.cpp:179
 #, kde-format
 msgid ""
@@ -229,10 +233,6 @@ msgid ""
 msgstr ""
 "Houbo un erro de procesamento do documento na liña %1, columna %2.\n"
 "Mensaxe de erro: %3"
-
-#: libmsooxml/MsooXmlUtils.cpp:180
-msgid "QXml"
-msgstr "QXml"
 
 #: libmsooxml/MsooXmlUtils.cpp:229
 #, kde-format
@@ -254,6 +254,248 @@ msgstr "Non se puido abrir para escribir a entrada «%1»."
 #: libmsooxml/MsooXmlUtils.cpp:411
 msgid "Could not write block"
 msgstr "Non se puido escribir o bloque"
+
+#: stage/pptx/PptxImport.cpp:1097 words/docx/DocxImport.cpp:168
+#: sheets/xlsx/XlsxImport.cpp:571
+#, kde-format
+msgid "Unable to find part for type %1"
+msgstr "Non se puido atopar a parte para o tipo %1"
+
+#: stage/pptx/PptxXmlSlideReader.cpp:629
+#, kde-format
+msgid "Slide %1"
+msgstr "Diapositiva %1"
+
+#: stage/pptx/PptxXmlDocumentReader.cpp:289
+#, kde-format
+msgid "Slide layout \"%1\" not found"
+msgstr "Non se atopa o modelo de diapositiva «%1»"
+
+#: words/ascii/ImportDialog.cc:45
+msgid "Words's Plain Text Import Filter"
+msgstr "Filtro de importación de texto plano de Words"
+
+#: words/ascii/ImportDialog.cc:49 sheets/csv/csvdialog.cpp:65
+#: sheets/csv/csvexportdialog.cpp:46
+#, kde-format
+msgctxt "Descriptive encoding name"
+msgid "Recommended ( %1 )"
+msgstr "Recomendada (%1)"
+
+#: words/ascii/ImportDialog.cc:50 sheets/csv/csvdialog.cpp:66
+#: sheets/csv/csvexportdialog.cpp:47
+#, kde-format
+msgctxt "Descriptive encoding name"
+msgid "Locale ( %1 )"
+msgstr "Local (%1)"
+
+#: words/ascii/ImportDialog.cc:53 sheets/csv/csvdialog.cpp:69
+#: sheets/csv/csvexportdialog.cpp:50
+#, kde-format
+msgctxt "Descriptive encoding name"
+msgid "Other ( %1 )"
+msgstr "Outra (%1)"
+
+#: words/ascii/ImportDialog.cc:107 sheets/csv/csvdialog.cpp:522
+#: sheets/csv/csvexportdialog.cpp:286
+#, kde-format
+msgid "Cannot find encoding: %1"
+msgstr "Non se puido atopar a codificación: %1"
+
+#: words/html-odf/exportdialog.cpp:36 sheets/html/exportdialog.cc:37
+msgid "Export Sheet to HTML"
+msgstr "Exportar Folla para HTML"
+
+#: words/html-odf/exportdialog.cpp:43 sheets/html/exportdialog.cc:48
+msgid "Recommended: UTF-8"
+msgstr "Recomendado: UTF-8"
+
+#: words/html-odf/exportdialog.cpp:44 sheets/html/exportdialog.cc:49
+#, kde-format
+msgid "Locale (%1)"
+msgstr "Local (%1)"
+
+#: words/msword-odf/conversion.cpp:830
+msgid "Even Pages Header"
+msgstr "Cabeceira das páxinas pares"
+
+#: words/msword-odf/conversion.cpp:832
+msgid "Odd Pages Header"
+msgstr "Cabeceira das páxinas impares"
+
+#: words/msword-odf/conversion.cpp:834
+msgid "Even Pages Footer"
+msgstr "Rodapé das páxinas pares"
+
+#: words/msword-odf/conversion.cpp:836
+msgid "Odd Pages Footer"
+msgstr "Rodapé das páxinas impares"
+
+#: words/msword-odf/conversion.cpp:838
+msgid "First Page Header"
+msgstr "Cabeceira da primeira páxina"
+
+#: words/msword-odf/conversion.cpp:840
+msgid "First Page Footer"
+msgstr "Rodapé da primeira páxina"
+
+#: words/msword-odf/texthandler.cpp:624
+#, kde-format
+msgid "Table %1"
+msgstr "Táboa %1"
+
+#: words/rtf/import/rtfimport.cpp:56
+msgid "The file cannot be loaded, as it seems not to be an RTF document."
+msgstr "Non se puido cargar o ficheiro xa que non parece ser un documento RTF."
+
+#: words/rtf/import/rtfimport.cpp:57 words/rtf/import/rtfimport.cpp:71
+#: words/rtf/import/rtfimport.cpp:81
+msgid "Words's RTF Import Filter"
+msgstr "Filtro de importación de RTF de Words"
+
+#: words/rtf/import/rtfimport.cpp:70 words/rtf/import/rtfimport.cpp:80
+msgid "The file cannot be loaded."
+msgstr "Non se puido cargar o ficheiro."
+
+#: sheets/csv/csvdialog.cpp:61
+msgid "Import"
+msgstr "Importación"
+
+#: sheets/csv/csvdialog.cpp:75 sheets/csv/csvdialog.cpp:276
+#: sheets/csv/csvdialog.cpp:334
+msgid "Text"
+msgstr "Texto"
+
+#: sheets/csv/csvdialog.cpp:76 sheets/csv/csvdialog.cpp:336
+msgid "Number"
+msgstr "Número"
+
+#: sheets/csv/csvdialog.cpp:77 sheets/csv/csvdialog.cpp:338
+msgid "Currency"
+msgstr "Moeda"
+
+#: sheets/csv/csvdialog.cpp:78 sheets/csv/csvdialog.cpp:340
+msgid "Date"
+msgstr "Data"
+
+#: sheets/csv/csvdialog.cpp:79 sheets/csv/csvdialog.cpp:342
+msgid "Decimal Comma Number"
+msgstr "Número decimal con coma"
+
+#: sheets/csv/csvdialog.cpp:80 sheets/csv/csvdialog.cpp:344
+msgid "Decimal Point Number"
+msgstr "Número decimal con punto"
+
+#. i18n: file: sheets/csv/dialogui.ui:275
+#. i18n: ectx: property (text), item, widget (QComboBox, m_comboQuote)
+#: sheets/csv/csvdialog.cpp:454 rc.cpp:144
+msgid "None"
+msgstr "Ningún"
+
+#: sheets/csv/csvdialog.cpp:480
+msgid ""
+"Please check the ranges you specified. The start value must be lower than "
+"the end value."
+msgstr ""
+"Verifique os rangos que indicou. O valor inicial debe ser inferior ao valor "
+"final."
+
+#: sheets/csv/csvexport.cc:282
+msgid "<SHEETNAME>"
+msgstr "<NOMEDAFOLLA>"
+
+#: sheets/csv/csvimport.cc:92
+msgid "CSV filter cannot open input file - please report."
+msgstr ""
+"O filtro de CSV non foi quen de abrir o ficheiro de entrada - informe aos "
+"desenvolvedores."
+
+#: sheets/dbase/dbaseimport.cc:56
+msgid "File format is not supported."
+msgstr "O formato do ficheiro se soporta."
+
+#: sheets/dbase/dbaseimport.cc:61
+msgid "Could not read from file."
+msgstr "Non se puido ler do ficheiro."
+
+#: sheets/html/htmlexport.cc:209 sheets/html/htmlexport.cc:385
+msgid "Top"
+msgstr "Arriba"
+
+#: sheets/opencalc/opencalcimport.cc:1236
+msgid "The file seems to be corrupt. Skipping a table."
+msgstr "O ficheiro parece estar corrompido. Ignorarase a táboa."
+
+#: sheets/opencalc/opencalcimport.cc:1247
+msgid "Skipping a table."
+msgstr "Ignorarase a táboa."
+
+#: sheets/opencalc/opencalcimport.cc:1947
+#, kde-format
+msgid ""
+"This document was created with OpenOffice.org version '%1'. This filter was "
+"written for version 1.0. Reading this file could cause strange behavior, "
+"crashes or incorrect display of the data. Do you want to continue converting "
+"the document?"
+msgstr ""
+"Este documento foi creado co OpenOffice.org versión %1. Este filtro foi "
+"escrito para a versión 1.0. Se le este ficheiro poden ocorrer comportamentos "
+"estraños, colgues ou mostrarse mal datos. Desexa continuar a conversión "
+"deste documento?"
+
+#: sheets/opencalc/opencalcimport.cc:1948
+msgid "Unsupported document version"
+msgstr "Versión do documento non soportada"
+
+#: sheets/opencalc/opencalcexport.cc:914
+msgid "Page "
+msgstr "Páxina"
+
+#: sheets/qpro/qproimport.cc:128
+msgid "QPRO filter cannot open input file - please report."
+msgstr ""
+"O filtro de QPRO non foi quen de abrir o ficheiro de entrada - informe aos "
+"desenvolvedores."
+
+#: sheets/qpro/qproimport.cc:239
+msgid ""
+"Unable to open password protected files.\n"
+"The password algorithm has not been published"
+msgstr ""
+"Non se pode abrir ficheiros protexidos con contrasinais.\n"
+"O algoritmo utilizado non é público"
+
+#: sheets/xlsx/XlsxXmlSharedStringsReader.cpp:181
+#, kde-format
+msgid "Declared number of shared strings too small (%1)"
+msgstr "O número declarado de cadeas  compartidas é moi baixo (%1)"
+
+#: sheets/xlsx/XlsxXmlStylesReader.cpp:571
+#, kde-format
+msgid "Declared number of font styles too small (%1)"
+msgstr "O número declarado de estilos tipográficos é moi baixo (%1)"
+
+#: sheets/xlsx/XlsxXmlStylesReader.cpp:924
+#, kde-format
+msgid "Declared number of cell formats too small (%1)"
+msgstr "O número declarado de formatos de cela é moi baixo (%1)"
+
+#: sheets/xlsx/XlsxXmlStylesReader.cpp:1047
+#: sheets/xlsx/XlsxXmlStylesReader.cpp:1393
+#, kde-format
+msgid "Declared number of fill styles too small (%1)"
+msgstr "O número declarado de estilos cubertos é moi baixo (%1)"
+
+#: sheets/xlsx/XlsxXmlWorksheetReader.cpp:350
+msgid ""
+"The data could not be loaded completely because the maximum size of sheet "
+"was exceeded."
+msgstr ""
+"Non se puideron cargar os datos xa que se excedeu o tamaño máximo da folla."
+
+#: sheets/xlsx/XlsxXmlWorksheetReader.cpp:1429
+msgid "Expected integer or floating point number"
+msgstr "Número enteiro ou punto flotante esperado."
 
 #. i18n: file: flow/imageexport/flow_imageexportwidget.ui:27
 #. i18n: ectx: property (text), widget (QLabel)
@@ -563,12 +805,6 @@ msgstr "\""
 #: rc.cpp:141 rc.cpp:231
 msgid "'"
 msgstr "'"
-
-#. i18n: file: sheets/csv/dialogui.ui:275
-#. i18n: ectx: property (text), item, widget (QComboBox, m_comboQuote)
-#: rc.cpp:144 sheets/csv/csvdialog.cpp:454
-msgid "None"
-msgstr "Ningún"
 
 #. i18n: file: sheets/csv/dialogui.ui:316
 #. i18n: ectx: attribute (title), widget (QWidget, tab)
@@ -985,242 +1221,6 @@ msgstr "&Aceptar"
 #: rc.cpp:405
 msgid "&Cancel"
 msgstr "&Cancelar"
-
-#: sheets/csv/csvdialog.cpp:61
-msgid "Import"
-msgstr "Importación"
-
-#: sheets/csv/csvdialog.cpp:65 sheets/csv/csvexportdialog.cpp:46
-#: words/ascii/ImportDialog.cc:49
-#, kde-format
-msgctxt "Descriptive encoding name"
-msgid "Recommended ( %1 )"
-msgstr "Recomendada (%1)"
-
-#: sheets/csv/csvdialog.cpp:66 sheets/csv/csvexportdialog.cpp:47
-#: words/ascii/ImportDialog.cc:50
-#, kde-format
-msgctxt "Descriptive encoding name"
-msgid "Locale ( %1 )"
-msgstr "Local (%1)"
-
-#: sheets/csv/csvdialog.cpp:69 sheets/csv/csvexportdialog.cpp:50
-#: words/ascii/ImportDialog.cc:53
-#, kde-format
-msgctxt "Descriptive encoding name"
-msgid "Other ( %1 )"
-msgstr "Outra (%1)"
-
-#: sheets/csv/csvdialog.cpp:75 sheets/csv/csvdialog.cpp:276
-#: sheets/csv/csvdialog.cpp:334
-msgid "Text"
-msgstr "Texto"
-
-#: sheets/csv/csvdialog.cpp:76 sheets/csv/csvdialog.cpp:336
-msgid "Number"
-msgstr "Número"
-
-#: sheets/csv/csvdialog.cpp:77 sheets/csv/csvdialog.cpp:338
-msgid "Currency"
-msgstr "Moeda"
-
-#: sheets/csv/csvdialog.cpp:78 sheets/csv/csvdialog.cpp:340
-msgid "Date"
-msgstr "Data"
-
-#: sheets/csv/csvdialog.cpp:79 sheets/csv/csvdialog.cpp:342
-msgid "Decimal Comma Number"
-msgstr "Número decimal con coma"
-
-#: sheets/csv/csvdialog.cpp:80 sheets/csv/csvdialog.cpp:344
-msgid "Decimal Point Number"
-msgstr "Número decimal con punto"
-
-#: sheets/csv/csvdialog.cpp:480
-msgid ""
-"Please check the ranges you specified. The start value must be lower than "
-"the end value."
-msgstr ""
-"Verifique os rangos que indicou. O valor inicial debe ser inferior ao valor "
-"final."
-
-#: sheets/csv/csvdialog.cpp:522 sheets/csv/csvexportdialog.cpp:286
-#: words/ascii/ImportDialog.cc:107
-#, kde-format
-msgid "Cannot find encoding: %1"
-msgstr "Non se puido atopar a codificación: %1"
-
-#: sheets/csv/csvexport.cc:282
-msgid "<SHEETNAME>"
-msgstr "<NOMEDAFOLLA>"
-
-#: sheets/csv/csvimport.cc:92
-msgid "CSV filter cannot open input file - please report."
-msgstr ""
-"O filtro de CSV non foi quen de abrir o ficheiro de entrada - informe aos "
-"desenvolvedores."
-
-#: sheets/dbase/dbaseimport.cc:56
-msgid "File format is not supported."
-msgstr "O formato do ficheiro se soporta."
-
-#: sheets/dbase/dbaseimport.cc:61
-msgid "Could not read from file."
-msgstr "Non se puido ler do ficheiro."
-
-#: sheets/html/exportdialog.cc:37 words/html-odf/exportdialog.cpp:36
-msgid "Export Sheet to HTML"
-msgstr "Exportar Folla para HTML"
-
-#: sheets/html/exportdialog.cc:48 words/html-odf/exportdialog.cpp:43
-msgid "Recommended: UTF-8"
-msgstr "Recomendado: UTF-8"
-
-#: sheets/html/exportdialog.cc:49 words/html-odf/exportdialog.cpp:44
-#, kde-format
-msgid "Locale (%1)"
-msgstr "Local (%1)"
-
-#: sheets/html/htmlexport.cc:209 sheets/html/htmlexport.cc:385
-msgid "Top"
-msgstr "Arriba"
-
-#: sheets/opencalc/opencalcexport.cc:914
-msgid "Page "
-msgstr "Páxina"
-
-#: sheets/opencalc/opencalcimport.cc:1236
-msgid "The file seems to be corrupt. Skipping a table."
-msgstr "O ficheiro parece estar corrompido. Ignorarase a táboa."
-
-#: sheets/opencalc/opencalcimport.cc:1247
-msgid "Skipping a table."
-msgstr "Ignorarase a táboa."
-
-#: sheets/opencalc/opencalcimport.cc:1947
-#, kde-format
-msgid ""
-"This document was created with OpenOffice.org version '%1'. This filter was "
-"written for version 1.0. Reading this file could cause strange behavior, "
-"crashes or incorrect display of the data. Do you want to continue converting "
-"the document?"
-msgstr ""
-"Este documento foi creado co OpenOffice.org versión %1. Este filtro foi "
-"escrito para a versión 1.0. Se le este ficheiro poden ocorrer comportamentos "
-"estraños, colgues ou mostrarse mal datos. Desexa continuar a conversión "
-"deste documento?"
-
-#: sheets/opencalc/opencalcimport.cc:1948
-msgid "Unsupported document version"
-msgstr "Versión do documento non soportada"
-
-#: sheets/qpro/qproimport.cc:128
-msgid "QPRO filter cannot open input file - please report."
-msgstr ""
-"O filtro de QPRO non foi quen de abrir o ficheiro de entrada - informe aos "
-"desenvolvedores."
-
-#: sheets/qpro/qproimport.cc:239
-msgid ""
-"Unable to open password protected files.\n"
-"The password algorithm has not been published"
-msgstr ""
-"Non se pode abrir ficheiros protexidos con contrasinais.\n"
-"O algoritmo utilizado non é público"
-
-#: sheets/xlsx/XlsxImport.cpp:571 stage/pptx/PptxImport.cpp:1097
-#: words/docx/DocxImport.cpp:168
-#, kde-format
-msgid "Unable to find part for type %1"
-msgstr "Non se puido atopar a parte para o tipo %1"
-
-#: sheets/xlsx/XlsxXmlSharedStringsReader.cpp:181
-#, kde-format
-msgid "Declared number of shared strings too small (%1)"
-msgstr "O número declarado de cadeas  compartidas é moi baixo (%1)"
-
-#: sheets/xlsx/XlsxXmlStylesReader.cpp:571
-#, kde-format
-msgid "Declared number of font styles too small (%1)"
-msgstr "O número declarado de estilos tipográficos é moi baixo (%1)"
-
-#: sheets/xlsx/XlsxXmlStylesReader.cpp:924
-#, kde-format
-msgid "Declared number of cell formats too small (%1)"
-msgstr "O número declarado de formatos de cela é moi baixo (%1)"
-
-#: sheets/xlsx/XlsxXmlStylesReader.cpp:1047
-#: sheets/xlsx/XlsxXmlStylesReader.cpp:1393
-#, kde-format
-msgid "Declared number of fill styles too small (%1)"
-msgstr "O número declarado de estilos cubertos é moi baixo (%1)"
-
-#: sheets/xlsx/XlsxXmlWorksheetReader.cpp:350
-msgid ""
-"The data could not be loaded completely because the maximum size of sheet "
-"was exceeded."
-msgstr ""
-"Non se puideron cargar os datos xa que se excedeu o tamaño máximo da folla."
-
-#: sheets/xlsx/XlsxXmlWorksheetReader.cpp:1429
-msgid "Expected integer or floating point number"
-msgstr "Número enteiro ou punto flotante esperado."
-
-#: stage/pptx/PptxXmlDocumentReader.cpp:289
-#, kde-format
-msgid "Slide layout \"%1\" not found"
-msgstr "Non se atopa o modelo de diapositiva «%1»"
-
-#: stage/pptx/PptxXmlSlideReader.cpp:629
-#, kde-format
-msgid "Slide %1"
-msgstr "Diapositiva %1"
-
-#: words/ascii/ImportDialog.cc:45
-msgid "Words's Plain Text Import Filter"
-msgstr "Filtro de importación de texto plano de Words"
-
-#: words/msword-odf/conversion.cpp:830
-msgid "Even Pages Header"
-msgstr "Cabeceira das páxinas pares"
-
-#: words/msword-odf/conversion.cpp:832
-msgid "Odd Pages Header"
-msgstr "Cabeceira das páxinas impares"
-
-#: words/msword-odf/conversion.cpp:834
-msgid "Even Pages Footer"
-msgstr "Rodapé das páxinas pares"
-
-#: words/msword-odf/conversion.cpp:836
-msgid "Odd Pages Footer"
-msgstr "Rodapé das páxinas impares"
-
-#: words/msword-odf/conversion.cpp:838
-msgid "First Page Header"
-msgstr "Cabeceira da primeira páxina"
-
-#: words/msword-odf/conversion.cpp:840
-msgid "First Page Footer"
-msgstr "Rodapé da primeira páxina"
-
-#: words/msword-odf/texthandler.cpp:624
-#, kde-format
-msgid "Table %1"
-msgstr "Táboa %1"
-
-#: words/rtf/import/rtfimport.cpp:56
-msgid "The file cannot be loaded, as it seems not to be an RTF document."
-msgstr "Non se puido cargar o ficheiro xa que non parece ser un documento RTF."
-
-#: words/rtf/import/rtfimport.cpp:57 words/rtf/import/rtfimport.cpp:71
-#: words/rtf/import/rtfimport.cpp:81
-msgid "Words's RTF Import Filter"
-msgstr "Filtro de importación de RTF de Words"
-
-#: words/rtf/import/rtfimport.cpp:70 words/rtf/import/rtfimport.cpp:80
-msgid "The file cannot be loaded."
-msgstr "Non se puido cargar o ficheiro."
 
 #~ msgid ""
 #~ "An error has occurred while parsing the Words file.\n"

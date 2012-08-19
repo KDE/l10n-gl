@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kgpg\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2012-08-18 04:25+0200\n"
+"POT-Creation-Date: 2012-08-19 05:49+0200\n"
 "PO-Revision-Date: 2010-01-30 18:31+0100\n"
 "Last-Translator: Marce Villarino <mvillarino@gmail.com>\n"
 "Language-Team: Galician <proxecto@trasno.net>\n"
@@ -23,6 +23,32 @@ msgstr ""
 "X-Environment: kde\n"
 "X-Accelerator-Marker: &\n"
 "X-Text-Markup: kde4\n"
+
+#: kgpg.h:32
+msgid ""
+"Hi,\n"
+"\n"
+"please find attached the user id '%UIDNAME%' of your key %KEYID% signed by "
+"me. This mail is encrypted with that key to make sure you control both the "
+"email address and the key.\n"
+"\n"
+"If you have multiple user ids, I sent the signature for each user id "
+"separately to that user id's associated email address. You can import the "
+"signatures by running each through `gpg --import` after you have decrypted "
+"them with `gpg --decrypt`.\n"
+"\n"
+"If you are using KGpg store the attachment to disk and then import it. Just "
+"select `Import Key...` from `Keys` menu and open the file.\n"
+"\n"
+"Note that I did not upload your key to any keyservers. If you want this new "
+"signature to be available to others, please upload it yourself. With GnuPG "
+"this can be done using gpg --keyserver subkeys.pgp.net --send-key %KEYID%.\n"
+"\n"
+"With KGpg you can right click on the key once you imported all user ids and "
+"choose `Export Public Key...`.\n"
+"\n"
+"If you have any questions, don't hesitate to ask.\n"
+msgstr ""
 
 #: caff.cpp:258
 msgctxt "Email template placeholder for key id"
@@ -38,442 +64,13 @@ msgstr ""
 msgid "your key "
 msgstr ""
 
-#: core/KGpgGroupNode.cpp:164
-#, kde-format
-msgid "1 key"
-msgid_plural "%1 keys"
-msgstr[0] "1 chave"
-msgstr[1] "%1 chaves"
-
-#: core/KGpgKeyNode.cpp:84
-#, kde-format
-msgctxt "size of signing key / size of encryption key"
-msgid "%1 / %2"
-msgstr "%1 / %2"
-
-#: core/KGpgKeyNode.cpp:164 core/KGpgSignableNode.cpp:48
-#, kde-format
-msgid "1 signature"
-msgid_plural "%1 signatures"
-msgstr[0] "1 sinatura"
-msgstr[1] "%1 sinaturas"
-
-#: core/KGpgNode.cpp:56
-#, kde-format
-msgctxt "Name of uid (comment)"
-msgid "%1 (%2)"
-msgstr "%1 (%2)"
-
-#: core/KGpgRefNode.cpp:128 transactions/kgpgtransaction.cpp:481
-msgid "[No user id found]"
-msgstr "[Non se atopou un identificador de usuario]"
-
-#: core/KGpgSignNode.cpp:86
-#, kde-format
-msgid "%1 [local signature]"
-msgstr "%1 [sinatura local]"
-
-#: core/KGpgSubkeyNode.cpp:86
-#, kde-format
-msgid "%1 subkey"
-msgstr "%1 subchave"
-
-#: core/KGpgUatNode.cpp:105
-msgid "Photo id"
-msgstr "Foto da ID"
-
-#: core/convert.cpp:37
-msgctxt "Encryption algorithm"
-msgid "RSA"
-msgstr "RSA"
-
-#: core/convert.cpp:38
-msgctxt "Encryption algorithm"
-msgid "DSA"
-msgstr "DSA"
-
-#: core/convert.cpp:39
-msgctxt "Encryption algorithm"
-msgid "ElGamal"
-msgstr "ElGamal"
-
-#: core/convert.cpp:40
-msgctxt "Encryption algorithm"
-msgid "DSA & ElGamal"
-msgstr "DSA e ElGamal"
-
-#: core/convert.cpp:41
-msgctxt "Encryption algorithm RSA, Signing algorithm RSA"
-msgid "RSA & RSA"
-msgstr ""
-
-#: core/convert.cpp:43
-msgctxt "Unknown algorithm"
-msgid "Unknown"
-msgstr "Descoñecido"
-
-#: core/convert.cpp:51
-msgid "Do not Know"
-msgstr "Non sei"
-
-#: core/convert.cpp:52
-msgid "Do NOT Trust"
-msgstr "NON confío"
-
-#. i18n: file: kgpgKeyInfo.ui:193
-#. i18n: ectx: property (text), item, widget (KComboBox, m_owtrust)
-#: core/convert.cpp:53 rc.cpp:547
-msgid "Marginally"
-msgstr "Marxinalmente"
-
-#. i18n: file: kgpgKeyInfo.ui:198
-#. i18n: ectx: property (text), item, widget (KComboBox, m_owtrust)
-#: core/convert.cpp:54 rc.cpp:550
-msgid "Fully"
-msgstr "Completamente"
-
-#. i18n: file: kgpgKeyInfo.ui:203
-#. i18n: ectx: property (text), item, widget (KComboBox, m_owtrust)
-#: core/convert.cpp:55 rc.cpp:553
-msgid "Ultimately"
-msgstr "Final"
-
-#: core/convert.cpp:57
-msgctxt "Unknown trust in key owner"
-msgid "Unknown"
-msgstr "Descoñecida"
-
-#: core/convert.cpp:65
-msgctxt "Invalid key"
-msgid "Invalid"
-msgstr "Non válida"
-
-#: core/convert.cpp:66
-msgctxt "Disabled key"
-msgid "Disabled"
-msgstr "Desactivada"
-
-#: core/convert.cpp:67
-msgid "Revoked"
-msgstr "Revogada"
-
-#: core/convert.cpp:68
-msgctxt "Expired key"
-msgid "Expired"
-msgstr "Caducada"
-
-#: core/convert.cpp:69
-msgctxt "Undefined key trust"
-msgid "Undefined"
-msgstr "Non definida"
-
-#: core/convert.cpp:70
-msgctxt "No trust in key"
-msgid "None"
-msgstr "Ningunha"
-
-#: core/convert.cpp:71
-msgctxt "Marginal trust in key"
-msgid "Marginal"
-msgstr "Marxinal"
-
-#: core/convert.cpp:72
-msgctxt "Full trust in key"
-msgid "Full"
-msgstr "Completa"
-
-#: core/convert.cpp:73
-msgctxt "Ultimate trust in key"
-msgid "Ultimate"
-msgstr "Total"
-
-#: core/convert.cpp:75
-msgctxt "Unknown trust in key"
-msgid "Unknown"
-msgstr "Descoñecida"
-
 #: detailedconsole.cpp:30
 msgid "Info"
 msgstr "Información"
 
-#: editor/kgpgeditor.cpp:90 editor/kgpgeditor.cpp:240
-#: editor/kgpgeditor.cpp:747 editor/kgpgeditor.cpp:776
-msgid "Untitled"
-msgstr "Sen título"
-
-#: editor/kgpgeditor.cpp:186
-msgid "&Encrypt File..."
-msgstr "&Cifrar un ficheiro..."
-
-#: editor/kgpgeditor.cpp:190
-msgid "&Decrypt File..."
-msgstr "&Descifrar un ficheiro..."
-
-#: editor/kgpgeditor.cpp:194
-msgid "&Open Key Manager"
-msgstr "Abrir o &claviculario"
-
-#: editor/kgpgeditor.cpp:197
-msgid "&Generate Signature..."
-msgstr "&Xerar unha sinatura..."
-
-#: editor/kgpgeditor.cpp:201
-msgid "&Verify Signature..."
-msgstr "&Verificar unha sinatura..."
-
-#: editor/kgpgeditor.cpp:204
-msgid "&Check MD5 Sum..."
-msgstr "&Comprobar a suma MD5..."
-
-#: editor/kgpgeditor.cpp:207
-msgid "&Unicode (utf-8) Encoding"
-msgstr "Codificación &unicode (utf-8)"
-
-#: editor/kgpgeditor.cpp:213
-msgid "En&crypt"
-msgstr "&Cifrar"
-
-#: editor/kgpgeditor.cpp:217
-msgid "&Decrypt"
-msgstr "&Descifrar"
-
-#: editor/kgpgeditor.cpp:221
-msgid "S&ign/Verify"
-msgstr "As&inar/Verificar"
-
-#: editor/kgpgeditor.cpp:244
-#, kde-format
-msgid ""
-"The document \"%1\" has changed.\n"
-"Do you want to save it?"
-msgstr ""
-"O documento «%1» foi modificado.\n"
-"Desexa gardalo?"
-
-#: editor/kgpgeditor.cpp:245
-msgid "Close the document"
-msgstr "Pechar o documento"
-
-#: editor/kgpgeditor.cpp:291
-#, fuzzy
-#| msgid ""
-#| "The document could not been saved, as the selected encoding cannot encode "
-#| "every unicode character in it."
-msgid ""
-"The document could not been saved, as the selected codec is not supported."
-msgstr ""
-"Non foi posíbel gardar o documento, xa que a codificación escollida non pode "
-"codificar todos os caracteres unicode que contén."
-
-#: editor/kgpgeditor.cpp:297
-msgid ""
-"The document could not been saved, as the selected encoding cannot encode "
-"every unicode character in it."
-msgstr ""
-"Non foi posíbel gardar o documento, xa que a codificación escollida non pode "
-"codificar todos os caracteres unicode que contén."
-
-#: editor/kgpgeditor.cpp:306 editor/kgpgeditor.cpp:325
-msgid ""
-"The document could not be saved, please check your permissions and disk "
-"space."
-msgstr ""
-"Non foi posíbel gardar o documento, verifique os seus permisos e o espazo "
-"dispoñíbel no disco."
-
-#: editor/kgpgeditor.cpp:351 editor/kgpgeditor.cpp:358 keyexport.cpp:41
-#, kde-format
-msgid "Overwrite existing file %1?"
-msgstr "Sobrescribir o ficheiro existente %1?"
-
-#: editor/kgpgeditor.cpp:469 editor/kgpgeditor.cpp:477
-#: editor/kgpgeditor.cpp:612 editor/kgpgeditor.cpp:650
-#: editor/kgpgeditor.cpp:688
-msgid "*|All Files"
-msgstr "*|Todos os ficheiros"
-
-#: editor/kgpgeditor.cpp:469
-msgid "Open File to Encode"
-msgstr "Abrir o ficheiro para codificar"
-
-#: editor/kgpgeditor.cpp:477
-msgid "Open File to Decode"
-msgstr "Abrir o ficheiro para descodificar"
-
-#: editor/kgpgeditor.cpp:491
-msgid "Decrypt File To"
-msgstr "Descifrar o ficheiro en"
-
-#: editor/kgpgeditor.cpp:500 keyexport.cpp:28
-msgid "Save File"
-msgstr "Gardar o ficheiro"
-
-#. i18n: file: conf_misc.ui:245
-#. i18n: ectx: property (text), item, widget (KComboBox, kcfg_LeftClick)
-#. i18n: file: conf_misc.ui:272
-#. i18n: ectx: attribute (title), widget (QWidget, tabEditor)
-#: editor/kgpgeditor.cpp:502 rc.cpp:202 rc.cpp:205
-msgid "Editor"
-msgstr "Editor"
-
-#: editor/kgpgeditor.cpp:521 kgpgexternalactions.cpp:206
-#: kgpgexternalactions.cpp:361 transactions/kgpgencrypt.cpp:123
-msgid "File Already Exists"
-msgstr "O ficheiro xa existe"
-
-#: editor/kgpgeditor.cpp:612
-msgid "Open File to Sign"
-msgstr "Abrir un ficheiro a asinalo"
-
-#: editor/kgpgeditor.cpp:650 editor/kgpgeditor.cpp:688
-msgid "Open File to Verify"
-msgstr "Abrir un ficheiro para verificalo"
-
-#: editor/kgpgeditor.cpp:701 editor/kgpgtextedit.cpp:333
-#, kde-format
-msgid ""
-"<qt><b>Missing signature:</b><br />Key id: %1<br /><br />Do you want to "
-"import this key from a keyserver?</qt>"
-msgstr ""
-"<qt><b>Sinatura en falta:</b><br />ID da chave: %1<br /><br />Desexa "
-"importar esta chave desde un servidor de chaves?</qt>"
-
-#: editor/kgpgeditor.cpp:702 keytreeview.cpp:168
-msgid "Do Not Import"
-msgstr "Non importar"
-
-#. i18n: file: keyserver.ui:32
-#. i18n: ectx: attribute (title), widget (QWidget, tab_import)
-#: editor/kgpgeditor.cpp:702 keytreeview.cpp:167 rc.cpp:450
-msgid "Import"
-msgstr "Importar"
-
-#: editor/kgpgeditor.cpp:728 transactions/kgpgverify.cpp:149
-msgid "No signature found."
-msgstr "Non se atopou unha sinatura."
-
-#: editor/kgpgeditor.cpp:733 editor/kgpgtextedit.cpp:320
-#: kgpgexternalactions.cpp:283
-msgctxt "Caption of message box"
-msgid "Verification Finished"
-msgstr ""
-
-#: editor/kgpgmd5widget.cpp:28
-msgid "MD5 Checksum"
-msgstr "Suma de verificación MD5"
-
-#: editor/kgpgmd5widget.cpp:31
-msgid "Compare MD5 with Clipboard"
-msgstr "Comparar a MD5 co portarretallos"
-
-#: editor/kgpgmd5widget.cpp:46
-#, kde-format
-msgid "MD5 sum for <b>%1</b> is:"
-msgstr "A suma MD5 de <b>%1</b> é:"
-
-#: editor/kgpgmd5widget.cpp:59
-msgid "<b>Unknown status</b>"
-msgstr "<b>Estado descoñecido</b>"
-
-#: editor/kgpgmd5widget.cpp:84
-msgid "Clipboard content is not a MD5 sum."
-msgstr "O contido do portarretallos non é unha suma MD5."
-
-#: editor/kgpgmd5widget.cpp:88
-msgid "<b>Correct checksum</b>, file is ok."
-msgstr "<b>Suma de verificación correcta</b>, o ficheiro é bon."
-
-#: editor/kgpgmd5widget.cpp:94
-msgid "<b>Wrong checksum, <em>file corrupted</em></b>"
-msgstr ""
-"<b>Sumar de verificación errada, <em>o ficheiro está corrompido</em></b>"
-
-#: editor/kgpgtextedit.cpp:90
-msgid ""
-"<qt><b>Remote file dropped</b>.<br />The remote file will now be copied to a "
-"temporary file to process requested operation. This temporary file will be "
-"deleted after operation.</qt>"
-msgstr ""
-"<qt><b>Soltouse un ficheiro remoto.</b><br />O ficheiro remoto copiarase "
-"agora a un ficheiro temporal para procesar a operación pedida. Este ficheiro "
-"temporal borrarase despois da operación.</qt>"
-
-#: editor/kgpgtextedit.cpp:94
-msgid "Could not download file."
-msgstr "Non foi posíbel obter o ficheiro."
-
-#: editor/kgpgtextedit.cpp:127
-#, fuzzy
-#| msgid ""
-#| "<p>The dropped text is a public key.<br />Do you want to import it ?</p>"
-msgid ""
-"<qt>This file is a <b>public</b> key.<br />Do you want to import it instead "
-"of opening it in editor?</qt>"
-msgstr "<p>O texto soltado é unha chave pública.<br />Desexa importala?</p>"
-
-#: editor/kgpgtextedit.cpp:130
-#, fuzzy
-#| msgid ""
-#| "<qt>This file is a <b>private</b> key.\n"
-#| "Please use kgpg key management to import it.</qt>"
-msgid ""
-"<qt>This file is a <b>private</b> key.<br />Do you want to import it instead "
-"of opening it in editor?</qt>"
-msgstr ""
-"<qt>Este ficheiro é unha chave <b>privada</b>.\n"
-"Por favor, empregue a xestión de chaves de kgpg para importala.</qt>"
-
-#: editor/kgpgtextedit.cpp:135
-msgid "Key file dropped on Editor"
-msgstr ""
-
-#: editor/kgpgtextedit.cpp:257 kgpgexternalactions.cpp:397
-msgid "Decryption failed."
-msgstr "Fallou a decifraxe."
-
-#: editor/kgpgtextedit.cpp:272 foldercompressjob.cpp:139
-#, kde-format
-msgid "The encryption failed with error code %1"
-msgstr ""
-
-#: editor/kgpgtextedit.cpp:273 foldercompressjob.cpp:140
-msgid "Encryption failed."
-msgstr "Fallou a cifraxe."
-
-#: editor/kgpgtextedit.cpp:286
-msgid "Signing not possible: bad passphrase or missing key"
-msgstr "Non é posíbel a sinatura: contrasinal malo ou chave en falta"
-
-#. i18n: file: keyserver.ui:144
-#. i18n: ectx: property (text), widget (QPushButton, Buttonimport)
-#: editor/kgpgtextedit.cpp:326 keyservers.cpp:211 rc.cpp:476
-msgid "&Import"
-msgstr "&Importar"
-
-#: editor/kgpgtextedit.cpp:327
-msgid "Import key in your list"
-msgstr "Importar para o chaveiro"
-
-#: editor/kgpgtextedit.cpp:330
-msgid "Do &Not Import"
-msgstr "&Non importar"
-
-#: editor/kgpgtextedit.cpp:331
-msgid "Will not import this key in your list"
-msgstr "Non importará esta chave para o seu chaveiro"
-
-#: editor/kgpgtextedit.cpp:333
-msgid "Missing Key"
-msgstr "Chave en falta"
-
 #: foldercompressjob.cpp:44
 msgid "Processing folder compression and encryption"
 msgstr "A procesar a compresión e cifraxe do cartafol"
-
-#: foldercompressjob.cpp:71 transactions/kgpgtransactionjob.cpp:39
-msgctxt "Job is started up"
-msgid "Startup"
-msgstr "Iniciado"
 
 #: foldercompressjob.cpp:71 foldercompressjob.cpp:121
 #: foldercompressjob.cpp:140 foldercompressjob.cpp:142
@@ -481,6 +78,11 @@ msgstr "Iniciado"
 msgctxt "State of operation as in status"
 msgid "State"
 msgstr "Estado"
+
+#: foldercompressjob.cpp:71 transactions/kgpgtransactionjob.cpp:39
+msgctxt "Job is started up"
+msgid "Startup"
+msgstr "Iniciado"
 
 #: foldercompressjob.cpp:103
 msgid "Unable to create temporary file"
@@ -492,6 +94,15 @@ msgstr "Non foi posíbel crear o ficheiro temporal"
 msgctxt "Status message 'Encrypting <filename>' (operation starts)"
 msgid "Encrypting %1"
 msgstr "A descifrar %1"
+
+#: foldercompressjob.cpp:139 editor/kgpgtextedit.cpp:272
+#, kde-format
+msgid "The encryption failed with error code %1"
+msgstr ""
+
+#: foldercompressjob.cpp:140 editor/kgpgtextedit.cpp:273
+msgid "Encryption failed."
+msgstr "Fallou a cifraxe."
 
 #: foldercompressjob.cpp:143 transactions/kgpgencrypt.cpp:118
 #, fuzzy, kde-format
@@ -539,6 +150,15 @@ msgstr "Chaves autenticadas dispoñíbeis"
 #: keyexport.cpp:25
 msgid "Public Key Export"
 msgstr "Exportación da chave pública"
+
+#: keyexport.cpp:28 editor/kgpgeditor.cpp:500
+msgid "Save File"
+msgstr "Gardar o ficheiro"
+
+#: keyexport.cpp:41 editor/kgpgeditor.cpp:351 editor/kgpgeditor.cpp:358
+#, kde-format
+msgid "Overwrite existing file %1?"
+msgstr "Sobrescribir o ficheiro existente %1?"
 
 #: keyinfodialog.cpp:166
 msgid ""
@@ -650,6 +270,12 @@ msgid "Import Key From Keyserver"
 msgid_plural "Import Keys From Keyserver"
 msgstr[0] "Importar a chave desde un servidor de chaves"
 msgstr[1] "Importar as chaves desde un servidor de chaves"
+
+#. i18n: file: keyserver.ui:144
+#. i18n: ectx: property (text), widget (QPushButton, Buttonimport)
+#: keyservers.cpp:211 rc.cpp:476 editor/kgpgtextedit.cpp:326
+msgid "&Import"
+msgstr "&Importar"
 
 #: keyservers.cpp:216
 msgid "Connecting to the server..."
@@ -938,10 +564,6 @@ msgstr ""
 msgid "You can only refresh primary keys. Please check your selection."
 msgstr "Só pode anovar chaves primarias. Por favor, comprobe a súa selección."
 
-#: keysmanager.cpp:848 keysmanager.cpp:853
-msgid "Add New User Id"
-msgstr "Engadir unha nova Id de usuario"
-
 #: keysmanager.cpp:848
 msgid ""
 "Another operation is still in progress.\n"
@@ -949,6 +571,10 @@ msgid ""
 msgstr ""
 "Aínda se está a executar outra operación.\n"
 "Agarde até que a operación remate."
+
+#: keysmanager.cpp:848 keysmanager.cpp:853
+msgid "Add New User Id"
+msgstr "Engadir unha nova Id de usuario"
 
 #: keysmanager.cpp:888
 #, fuzzy
@@ -1155,12 +781,12 @@ msgstr ""
 "actualidade non é acusábel:</p><p>Desexa xerar de novo a chave pública?</p>"
 
 #: keysmanager.cpp:1591
-msgid "Do Not Generate"
-msgstr "Non xerar"
-
-#: keysmanager.cpp:1591
 msgid "Generate"
 msgstr "Xerar"
+
+#: keysmanager.cpp:1591
+msgid "Do Not Generate"
+msgstr "Non xerar"
 
 #: keysmanager.cpp:1621
 #, kde-format
@@ -1500,17 +1126,27 @@ msgstr "O texto cifrouse con éxito."
 msgid "<p>Do you want to import file <b>%1</b> into your key ring?</p>"
 msgstr "<p>Desexa importar o ficheiro <b>%1</b> no seu chaveiro?</p>"
 
-#: kgpg.cpp:78
-#, fuzzy
-#| msgid "GnuPG Home"
-msgid "GnuPG error"
-msgstr "Páxina de GnuPG"
+#. i18n: file: keyserver.ui:32
+#. i18n: ectx: attribute (title), widget (QWidget, tab_import)
+#: keytreeview.cpp:167 rc.cpp:450 editor/kgpgeditor.cpp:702
+msgid "Import"
+msgstr "Importar"
+
+#: keytreeview.cpp:168 editor/kgpgeditor.cpp:702
+msgid "Do Not Import"
+msgstr "Non importar"
 
 #: kgpg.cpp:78
 msgid ""
 "GnuPG failed to start.<br />You must fix the GnuPG error first before "
 "running KGpg."
 msgstr ""
+
+#: kgpg.cpp:78
+#, fuzzy
+#| msgid "GnuPG Home"
+msgid "GnuPG error"
+msgstr "Páxina de GnuPG"
 
 #: kgpg.cpp:95
 #, kde-format
@@ -1547,32 +1183,6 @@ msgstr ""
 "Por favor, escolla só un cartafol ou varios ficheiros, pero non misture "
 "ficheiros e cartafoles."
 
-#: kgpg.h:32
-msgid ""
-"Hi,\n"
-"\n"
-"please find attached the user id '%UIDNAME%' of your key %KEYID% signed by "
-"me. This mail is encrypted with that key to make sure you control both the "
-"email address and the key.\n"
-"\n"
-"If you have multiple user ids, I sent the signature for each user id "
-"separately to that user id's associated email address. You can import the "
-"signatures by running each through `gpg --import` after you have decrypted "
-"them with `gpg --decrypt`.\n"
-"\n"
-"If you are using KGpg store the attachment to disk and then import it. Just "
-"select `Import Key...` from `Keys` menu and open the file.\n"
-"\n"
-"Note that I did not upload your key to any keyservers. If you want this new "
-"signature to be available to others, please upload it yourself. With GnuPG "
-"this can be done using gpg --keyserver subkeys.pgp.net --send-key %KEYID%.\n"
-"\n"
-"With KGpg you can right click on the key once you imported all user ids and "
-"choose `Export Public Key...`.\n"
-"\n"
-"If you have any questions, don't hesitate to ask.\n"
-msgstr ""
-
 #: kgpgexternalactions.cpp:126
 msgid "Cannot create temporary file for folder compression."
 msgstr ""
@@ -1595,11 +1205,26 @@ msgstr ""
 msgid "Compression method for archive:"
 msgstr "Método de compresión do ficheiro:"
 
+#: kgpgexternalactions.cpp:206 kgpgexternalactions.cpp:361
+#: editor/kgpgeditor.cpp:521 transactions/kgpgencrypt.cpp:123
+msgid "File Already Exists"
+msgstr "O ficheiro xa existe"
+
+#: kgpgexternalactions.cpp:283 editor/kgpgeditor.cpp:733
+#: editor/kgpgtextedit.cpp:320
+msgctxt "Caption of message box"
+msgid "Verification Finished"
+msgstr ""
+
 #: kgpgexternalactions.cpp:395
 msgid "Decryption of this file failed:"
 msgid_plural "Decryption of these files failed:"
 msgstr[0] "Fallou a decifraxe deste ficheiro:"
 msgstr[1] "Fallou a decifraxe destes ficheiros:"
+
+#: kgpgexternalactions.cpp:397 editor/kgpgtextedit.cpp:257
+msgid "Decryption failed."
+msgstr "Fallou a decifraxe."
 
 #: kgpgexternalactions.cpp:422
 msgid ""
@@ -1612,12 +1237,12 @@ msgstr ""
 ">Desexa iniciar o asistente de KGpg para corrixir este problema?</qt>"
 
 #: kgpgexternalactions.cpp:423
-msgid "Do Not Start"
-msgstr "Non iniciar"
-
-#: kgpgexternalactions.cpp:423
 msgid "Start Assistant"
 msgstr "Iniciar o asistente"
+
+#: kgpgexternalactions.cpp:423
+msgid "Do Not Start"
+msgstr "Non iniciar"
 
 #: kgpgfirstassistant.cpp:44
 msgid "KGpg Assistant"
@@ -1990,32 +1615,32 @@ msgstr ""
 "Agardo que o goce."
 
 #: main.cpp:30
-msgid "(C) 2003 Jean-Baptiste Mardelle"
-msgstr "(C) 2003 Jean-Baptiste Mardelle"
-
-#: main.cpp:30
 msgid "KGpg"
 msgstr "KGpg"
 
-#: main.cpp:31
-msgid "Author and former maintainer"
-msgstr "Autor a anterior mantenedor"
+#: main.cpp:30
+msgid "(C) 2003 Jean-Baptiste Mardelle"
+msgstr "(C) 2003 Jean-Baptiste Mardelle"
 
 #: main.cpp:31
 msgid "Jean-Baptiste Mardelle"
 msgstr "Jean-Baptiste Mardelle"
+
+#: main.cpp:31
+msgid "Author and former maintainer"
+msgstr "Autor a anterior mantenedor"
 
 #: main.cpp:32
 msgid "Jimmy Gilles"
 msgstr "Jimmy Gilles"
 
 #: main.cpp:33
-msgid "Maintainer"
-msgstr "Mantenedor"
-
-#: main.cpp:33
 msgid "Rolf Eike Beer"
 msgstr "Rolf Eike Beer"
+
+#: main.cpp:33
+msgid "Maintainer"
+msgstr "Mantenedor"
 
 #: main.cpp:38
 msgid "Encrypt file"
@@ -2040,87 +1665,6 @@ msgstr "Verificar a sinatura"
 #: main.cpp:44
 msgid "File to open"
 msgstr "Ficheiro para abrir"
-
-#: model/keylistproxymodel.cpp:96 transactions/kgpgimport.cpp:193
-#, kde-format
-msgctxt "ID: Name"
-msgid "%1: %2"
-msgstr "%1: %2"
-
-#: model/keylistproxymodel.cpp:98 transactions/kgpgimport.cpp:195
-#, kde-format
-msgctxt "ID: Name <Email>"
-msgid "%1: %2 &lt;%3&gt;"
-msgstr "%1: %2 &lt;%3&gt;"
-
-#: model/keylistproxymodel.cpp:103
-#, kde-format
-msgctxt "Name <Email>: ID"
-msgid "%1 &lt;%2&gt;: %3"
-msgstr "%1 &lt;%2&gt;: %3"
-
-#: model/kgpgitemmodel.cpp:228 model/kgpgitemmodel.cpp:231
-#, kde-format
-msgid "1 Key"
-msgid_plural "%1 Keys"
-msgstr[0] "1 chave"
-msgstr[1] "%1 chaves"
-
-#: model/kgpgitemmodel.cpp:232
-#, kde-format
-msgid "1 Group"
-msgid_plural "%1 Groups"
-msgstr[0] "1 grupo"
-msgstr[1] "%1 grupos"
-
-#: model/kgpgitemmodel.cpp:234
-#, kde-format
-msgctxt "%1 = something like 7 keys, %2 = something like 2 groups"
-msgid "%1, %2"
-msgstr "%1, %2"
-
-#. i18n: file: groupedit.ui:74
-#. i18n: ectx: property (text), widget (QTableView, availableKeys)
-#. i18n: file: groupedit.ui:158
-#. i18n: ectx: property (text), widget (QTableView, groupKeys)
-#: model/kgpgitemmodel.cpp:329 model/kgpgsearchresultmodel.cpp:332 rc.cpp:429
-#: rc.cpp:441
-msgid "Name"
-msgstr "Nome"
-
-#. i18n: file: groupedit.ui:79
-#. i18n: ectx: property (text), widget (QTableView, availableKeys)
-#. i18n: file: groupedit.ui:163
-#. i18n: ectx: property (text), widget (QTableView, groupKeys)
-#: model/kgpgitemmodel.cpp:330 model/kgpgsearchresultmodel.cpp:334 rc.cpp:432
-#: rc.cpp:444
-msgctxt "@title:column Title of a column of emails"
-msgid "Email"
-msgstr "Correo electrónico"
-
-#: model/kgpgitemmodel.cpp:335
-msgid "ID"
-msgstr "ID"
-
-#: model/kgpgsearchresultmodel.cpp:124
-#, kde-format
-msgctxt "example: ID abc123xy, 1024-bit RSA key, created Jan 12 2009, revoked"
-msgid "ID %1, %2-bit %3 key, created %4, revoked"
-msgstr "ID %1, chave %3 de %2 bits, creada o %4, revogada"
-
-#: model/kgpgsearchresultmodel.cpp:129
-#, kde-format
-msgctxt "example: ID abc123xy, 1024-bit RSA key, created Jan 12 2009"
-msgid "ID %1, %2-bit %3 key, created %4"
-msgstr "ID %1, chave %3 de %2 bits, creada o %4"
-
-#: model/kgpgsearchresultmodel.cpp:218
-#, fuzzy, kde-format
-#| msgid "Photo ID"
-msgid "One Photo ID"
-msgid_plural "%1 Photo IDs"
-msgstr[0] "Foto da ID"
-msgstr[1] "Foto da ID"
 
 #: rc.cpp:1
 msgctxt "NAME OF TRANSLATORS"
@@ -2619,6 +2163,14 @@ msgstr "O botón esquerdo abre:"
 msgid "Key Manager"
 msgstr "Claviculario"
 
+#. i18n: file: conf_misc.ui:245
+#. i18n: ectx: property (text), item, widget (KComboBox, kcfg_LeftClick)
+#. i18n: file: conf_misc.ui:272
+#. i18n: ectx: attribute (title), widget (QWidget, tabEditor)
+#: rc.cpp:202 rc.cpp:205 editor/kgpgeditor.cpp:502
+msgid "Editor"
+msgstr "Editor"
+
 #. i18n: file: conf_misc.ui:280
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: rc.cpp:208
@@ -3065,6 +2617,25 @@ msgid ""
 "This is the text of the email sent by the \"Sign and Mail User ID\" action."
 msgstr ""
 
+#. i18n: file: groupedit.ui:74
+#. i18n: ectx: property (text), widget (QTableView, availableKeys)
+#. i18n: file: groupedit.ui:158
+#. i18n: ectx: property (text), widget (QTableView, groupKeys)
+#: rc.cpp:429 rc.cpp:441 model/kgpgitemmodel.cpp:329
+#: model/kgpgsearchresultmodel.cpp:332
+msgid "Name"
+msgstr "Nome"
+
+#. i18n: file: groupedit.ui:79
+#. i18n: ectx: property (text), widget (QTableView, availableKeys)
+#. i18n: file: groupedit.ui:163
+#. i18n: ectx: property (text), widget (QTableView, groupKeys)
+#: rc.cpp:432 rc.cpp:444 model/kgpgitemmodel.cpp:330
+#: model/kgpgsearchresultmodel.cpp:334
+msgctxt "@title:column Title of a column of emails"
+msgid "Email"
+msgstr "Correo electrónico"
+
 #. i18n: file: groupedit.ui:84
 #. i18n: ectx: property (text), widget (QTableView, availableKeys)
 #. i18n: file: groupedit.ui:168
@@ -3278,6 +2849,24 @@ msgstr "Non a sei"
 #: rc.cpp:544
 msgid "I do NOT trust"
 msgstr "NON confío nela"
+
+#. i18n: file: kgpgKeyInfo.ui:193
+#. i18n: ectx: property (text), item, widget (KComboBox, m_owtrust)
+#: rc.cpp:547 core/convert.cpp:53
+msgid "Marginally"
+msgstr "Marxinalmente"
+
+#. i18n: file: kgpgKeyInfo.ui:198
+#. i18n: ectx: property (text), item, widget (KComboBox, m_owtrust)
+#: rc.cpp:550 core/convert.cpp:54
+msgid "Fully"
+msgstr "Completamente"
+
+#. i18n: file: kgpgKeyInfo.ui:203
+#. i18n: ectx: property (text), item, widget (KComboBox, m_owtrust)
+#: rc.cpp:553 core/convert.cpp:55
+msgid "Ultimately"
+msgstr "Final"
 
 #. i18n: file: kgpgKeyInfo.ui:211
 #. i18n: ectx: property (text), widget (QLabel, tl_algorithm)
@@ -3835,9 +3424,416 @@ msgstr ""
 "de tamaño no claviculario. Debe expandir unha chave para que isto funcione.</"
 "p>\n"
 
-#: transactions/kgpgaddphoto.cpp:41
-msgid "Do Not Use"
-msgstr "Non empregala"
+#: core/convert.cpp:37
+msgctxt "Encryption algorithm"
+msgid "RSA"
+msgstr "RSA"
+
+#: core/convert.cpp:38
+msgctxt "Encryption algorithm"
+msgid "DSA"
+msgstr "DSA"
+
+#: core/convert.cpp:39
+msgctxt "Encryption algorithm"
+msgid "ElGamal"
+msgstr "ElGamal"
+
+#: core/convert.cpp:40
+msgctxt "Encryption algorithm"
+msgid "DSA & ElGamal"
+msgstr "DSA e ElGamal"
+
+#: core/convert.cpp:41
+msgctxt "Encryption algorithm RSA, Signing algorithm RSA"
+msgid "RSA & RSA"
+msgstr ""
+
+#: core/convert.cpp:43
+msgctxt "Unknown algorithm"
+msgid "Unknown"
+msgstr "Descoñecido"
+
+#: core/convert.cpp:51
+msgid "Do not Know"
+msgstr "Non sei"
+
+#: core/convert.cpp:52
+msgid "Do NOT Trust"
+msgstr "NON confío"
+
+#: core/convert.cpp:57
+msgctxt "Unknown trust in key owner"
+msgid "Unknown"
+msgstr "Descoñecida"
+
+#: core/convert.cpp:65
+msgctxt "Invalid key"
+msgid "Invalid"
+msgstr "Non válida"
+
+#: core/convert.cpp:66
+msgctxt "Disabled key"
+msgid "Disabled"
+msgstr "Desactivada"
+
+#: core/convert.cpp:67
+msgid "Revoked"
+msgstr "Revogada"
+
+#: core/convert.cpp:68
+msgctxt "Expired key"
+msgid "Expired"
+msgstr "Caducada"
+
+#: core/convert.cpp:69
+msgctxt "Undefined key trust"
+msgid "Undefined"
+msgstr "Non definida"
+
+#: core/convert.cpp:70
+msgctxt "No trust in key"
+msgid "None"
+msgstr "Ningunha"
+
+#: core/convert.cpp:71
+msgctxt "Marginal trust in key"
+msgid "Marginal"
+msgstr "Marxinal"
+
+#: core/convert.cpp:72
+msgctxt "Full trust in key"
+msgid "Full"
+msgstr "Completa"
+
+#: core/convert.cpp:73
+msgctxt "Ultimate trust in key"
+msgid "Ultimate"
+msgstr "Total"
+
+#: core/convert.cpp:75
+msgctxt "Unknown trust in key"
+msgid "Unknown"
+msgstr "Descoñecida"
+
+#: core/KGpgGroupNode.cpp:164
+#, kde-format
+msgid "1 key"
+msgid_plural "%1 keys"
+msgstr[0] "1 chave"
+msgstr[1] "%1 chaves"
+
+#: core/KGpgKeyNode.cpp:84
+#, kde-format
+msgctxt "size of signing key / size of encryption key"
+msgid "%1 / %2"
+msgstr "%1 / %2"
+
+#: core/KGpgKeyNode.cpp:164 core/KGpgSignableNode.cpp:48
+#, kde-format
+msgid "1 signature"
+msgid_plural "%1 signatures"
+msgstr[0] "1 sinatura"
+msgstr[1] "%1 sinaturas"
+
+#: core/KGpgNode.cpp:56
+#, kde-format
+msgctxt "Name of uid (comment)"
+msgid "%1 (%2)"
+msgstr "%1 (%2)"
+
+#: core/KGpgRefNode.cpp:128 transactions/kgpgtransaction.cpp:481
+msgid "[No user id found]"
+msgstr "[Non se atopou un identificador de usuario]"
+
+#: core/KGpgSignNode.cpp:86
+#, kde-format
+msgid "%1 [local signature]"
+msgstr "%1 [sinatura local]"
+
+#: core/KGpgSubkeyNode.cpp:86
+#, kde-format
+msgid "%1 subkey"
+msgstr "%1 subchave"
+
+#: core/KGpgUatNode.cpp:105
+msgid "Photo id"
+msgstr "Foto da ID"
+
+#: editor/kgpgeditor.cpp:90 editor/kgpgeditor.cpp:240
+#: editor/kgpgeditor.cpp:747 editor/kgpgeditor.cpp:776
+msgid "Untitled"
+msgstr "Sen título"
+
+#: editor/kgpgeditor.cpp:186
+msgid "&Encrypt File..."
+msgstr "&Cifrar un ficheiro..."
+
+#: editor/kgpgeditor.cpp:190
+msgid "&Decrypt File..."
+msgstr "&Descifrar un ficheiro..."
+
+#: editor/kgpgeditor.cpp:194
+msgid "&Open Key Manager"
+msgstr "Abrir o &claviculario"
+
+#: editor/kgpgeditor.cpp:197
+msgid "&Generate Signature..."
+msgstr "&Xerar unha sinatura..."
+
+#: editor/kgpgeditor.cpp:201
+msgid "&Verify Signature..."
+msgstr "&Verificar unha sinatura..."
+
+#: editor/kgpgeditor.cpp:204
+msgid "&Check MD5 Sum..."
+msgstr "&Comprobar a suma MD5..."
+
+#: editor/kgpgeditor.cpp:207
+msgid "&Unicode (utf-8) Encoding"
+msgstr "Codificación &unicode (utf-8)"
+
+#: editor/kgpgeditor.cpp:213
+msgid "En&crypt"
+msgstr "&Cifrar"
+
+#: editor/kgpgeditor.cpp:217
+msgid "&Decrypt"
+msgstr "&Descifrar"
+
+#: editor/kgpgeditor.cpp:221
+msgid "S&ign/Verify"
+msgstr "As&inar/Verificar"
+
+#: editor/kgpgeditor.cpp:244
+#, kde-format
+msgid ""
+"The document \"%1\" has changed.\n"
+"Do you want to save it?"
+msgstr ""
+"O documento «%1» foi modificado.\n"
+"Desexa gardalo?"
+
+#: editor/kgpgeditor.cpp:245
+msgid "Close the document"
+msgstr "Pechar o documento"
+
+#: editor/kgpgeditor.cpp:291
+#, fuzzy
+#| msgid ""
+#| "The document could not been saved, as the selected encoding cannot encode "
+#| "every unicode character in it."
+msgid ""
+"The document could not been saved, as the selected codec is not supported."
+msgstr ""
+"Non foi posíbel gardar o documento, xa que a codificación escollida non pode "
+"codificar todos os caracteres unicode que contén."
+
+#: editor/kgpgeditor.cpp:297
+msgid ""
+"The document could not been saved, as the selected encoding cannot encode "
+"every unicode character in it."
+msgstr ""
+"Non foi posíbel gardar o documento, xa que a codificación escollida non pode "
+"codificar todos os caracteres unicode que contén."
+
+#: editor/kgpgeditor.cpp:306 editor/kgpgeditor.cpp:325
+msgid ""
+"The document could not be saved, please check your permissions and disk "
+"space."
+msgstr ""
+"Non foi posíbel gardar o documento, verifique os seus permisos e o espazo "
+"dispoñíbel no disco."
+
+#: editor/kgpgeditor.cpp:469 editor/kgpgeditor.cpp:477
+#: editor/kgpgeditor.cpp:612 editor/kgpgeditor.cpp:650
+#: editor/kgpgeditor.cpp:688
+msgid "*|All Files"
+msgstr "*|Todos os ficheiros"
+
+#: editor/kgpgeditor.cpp:469
+msgid "Open File to Encode"
+msgstr "Abrir o ficheiro para codificar"
+
+#: editor/kgpgeditor.cpp:477
+msgid "Open File to Decode"
+msgstr "Abrir o ficheiro para descodificar"
+
+#: editor/kgpgeditor.cpp:491
+msgid "Decrypt File To"
+msgstr "Descifrar o ficheiro en"
+
+#: editor/kgpgeditor.cpp:612
+msgid "Open File to Sign"
+msgstr "Abrir un ficheiro a asinalo"
+
+#: editor/kgpgeditor.cpp:650 editor/kgpgeditor.cpp:688
+msgid "Open File to Verify"
+msgstr "Abrir un ficheiro para verificalo"
+
+#: editor/kgpgeditor.cpp:701 editor/kgpgtextedit.cpp:333
+#, kde-format
+msgid ""
+"<qt><b>Missing signature:</b><br />Key id: %1<br /><br />Do you want to "
+"import this key from a keyserver?</qt>"
+msgstr ""
+"<qt><b>Sinatura en falta:</b><br />ID da chave: %1<br /><br />Desexa "
+"importar esta chave desde un servidor de chaves?</qt>"
+
+#: editor/kgpgeditor.cpp:728 transactions/kgpgverify.cpp:149
+msgid "No signature found."
+msgstr "Non se atopou unha sinatura."
+
+#: editor/kgpgmd5widget.cpp:28
+msgid "MD5 Checksum"
+msgstr "Suma de verificación MD5"
+
+#: editor/kgpgmd5widget.cpp:31
+msgid "Compare MD5 with Clipboard"
+msgstr "Comparar a MD5 co portarretallos"
+
+#: editor/kgpgmd5widget.cpp:46
+#, kde-format
+msgid "MD5 sum for <b>%1</b> is:"
+msgstr "A suma MD5 de <b>%1</b> é:"
+
+#: editor/kgpgmd5widget.cpp:59
+msgid "<b>Unknown status</b>"
+msgstr "<b>Estado descoñecido</b>"
+
+#: editor/kgpgmd5widget.cpp:84
+msgid "Clipboard content is not a MD5 sum."
+msgstr "O contido do portarretallos non é unha suma MD5."
+
+#: editor/kgpgmd5widget.cpp:88
+msgid "<b>Correct checksum</b>, file is ok."
+msgstr "<b>Suma de verificación correcta</b>, o ficheiro é bon."
+
+#: editor/kgpgmd5widget.cpp:94
+msgid "<b>Wrong checksum, <em>file corrupted</em></b>"
+msgstr ""
+"<b>Sumar de verificación errada, <em>o ficheiro está corrompido</em></b>"
+
+#: editor/kgpgtextedit.cpp:90
+msgid ""
+"<qt><b>Remote file dropped</b>.<br />The remote file will now be copied to a "
+"temporary file to process requested operation. This temporary file will be "
+"deleted after operation.</qt>"
+msgstr ""
+"<qt><b>Soltouse un ficheiro remoto.</b><br />O ficheiro remoto copiarase "
+"agora a un ficheiro temporal para procesar a operación pedida. Este ficheiro "
+"temporal borrarase despois da operación.</qt>"
+
+#: editor/kgpgtextedit.cpp:94
+msgid "Could not download file."
+msgstr "Non foi posíbel obter o ficheiro."
+
+#: editor/kgpgtextedit.cpp:127
+#, fuzzy
+#| msgid ""
+#| "<p>The dropped text is a public key.<br />Do you want to import it ?</p>"
+msgid ""
+"<qt>This file is a <b>public</b> key.<br />Do you want to import it instead "
+"of opening it in editor?</qt>"
+msgstr "<p>O texto soltado é unha chave pública.<br />Desexa importala?</p>"
+
+#: editor/kgpgtextedit.cpp:130
+#, fuzzy
+#| msgid ""
+#| "<qt>This file is a <b>private</b> key.\n"
+#| "Please use kgpg key management to import it.</qt>"
+msgid ""
+"<qt>This file is a <b>private</b> key.<br />Do you want to import it instead "
+"of opening it in editor?</qt>"
+msgstr ""
+"<qt>Este ficheiro é unha chave <b>privada</b>.\n"
+"Por favor, empregue a xestión de chaves de kgpg para importala.</qt>"
+
+#: editor/kgpgtextedit.cpp:135
+msgid "Key file dropped on Editor"
+msgstr ""
+
+#: editor/kgpgtextedit.cpp:286
+msgid "Signing not possible: bad passphrase or missing key"
+msgstr "Non é posíbel a sinatura: contrasinal malo ou chave en falta"
+
+#: editor/kgpgtextedit.cpp:327
+msgid "Import key in your list"
+msgstr "Importar para o chaveiro"
+
+#: editor/kgpgtextedit.cpp:330
+msgid "Do &Not Import"
+msgstr "&Non importar"
+
+#: editor/kgpgtextedit.cpp:331
+msgid "Will not import this key in your list"
+msgstr "Non importará esta chave para o seu chaveiro"
+
+#: editor/kgpgtextedit.cpp:333
+msgid "Missing Key"
+msgstr "Chave en falta"
+
+#: model/keylistproxymodel.cpp:96 transactions/kgpgimport.cpp:193
+#, kde-format
+msgctxt "ID: Name"
+msgid "%1: %2"
+msgstr "%1: %2"
+
+#: model/keylistproxymodel.cpp:98 transactions/kgpgimport.cpp:195
+#, kde-format
+msgctxt "ID: Name <Email>"
+msgid "%1: %2 &lt;%3&gt;"
+msgstr "%1: %2 &lt;%3&gt;"
+
+#: model/keylistproxymodel.cpp:103
+#, kde-format
+msgctxt "Name <Email>: ID"
+msgid "%1 &lt;%2&gt;: %3"
+msgstr "%1 &lt;%2&gt;: %3"
+
+#: model/kgpgitemmodel.cpp:228 model/kgpgitemmodel.cpp:231
+#, kde-format
+msgid "1 Key"
+msgid_plural "%1 Keys"
+msgstr[0] "1 chave"
+msgstr[1] "%1 chaves"
+
+#: model/kgpgitemmodel.cpp:232
+#, kde-format
+msgid "1 Group"
+msgid_plural "%1 Groups"
+msgstr[0] "1 grupo"
+msgstr[1] "%1 grupos"
+
+#: model/kgpgitemmodel.cpp:234
+#, kde-format
+msgctxt "%1 = something like 7 keys, %2 = something like 2 groups"
+msgid "%1, %2"
+msgstr "%1, %2"
+
+#: model/kgpgitemmodel.cpp:335
+msgid "ID"
+msgstr "ID"
+
+#: model/kgpgsearchresultmodel.cpp:124
+#, kde-format
+msgctxt "example: ID abc123xy, 1024-bit RSA key, created Jan 12 2009, revoked"
+msgid "ID %1, %2-bit %3 key, created %4, revoked"
+msgstr "ID %1, chave %3 de %2 bits, creada o %4, revogada"
+
+#: model/kgpgsearchresultmodel.cpp:129
+#, kde-format
+msgctxt "example: ID abc123xy, 1024-bit RSA key, created Jan 12 2009"
+msgid "ID %1, %2-bit %3 key, created %4"
+msgstr "ID %1, chave %3 de %2 bits, creada o %4"
+
+#: model/kgpgsearchresultmodel.cpp:218
+#, fuzzy, kde-format
+#| msgid "Photo ID"
+msgid "One Photo ID"
+msgid_plural "%1 Photo IDs"
+msgstr[0] "Foto da ID"
+msgstr[1] "Foto da ID"
 
 #: transactions/kgpgaddphoto.cpp:41
 msgid "This image is very large. Use it anyway?"
@@ -3846,6 +3842,10 @@ msgstr "Esta imaxe é moi grande. Desexa empregala aínda así?"
 #: transactions/kgpgaddphoto.cpp:41
 msgid "Use Anyway"
 msgstr "Empregala aínda así"
+
+#: transactions/kgpgaddphoto.cpp:41
+msgid "Do Not Use"
+msgstr "Non empregala"
 
 #: transactions/kgpgchangepass.cpp:75
 #, kde-format
@@ -4099,12 +4099,12 @@ msgstr[0] "Chave non modificada"
 msgstr[1] "Chaves non modificadas"
 
 #: transactions/kgpgkeyservertransaction.cpp:93
-msgid "<b>Connecting to the server...</b>"
-msgstr "<b>Conectando co servidor...</b>"
-
-#: transactions/kgpgkeyservertransaction.cpp:93
 msgid "Keyserver"
 msgstr "Servidor de chaves"
+
+#: transactions/kgpgkeyservertransaction.cpp:93
+msgid "<b>Connecting to the server...</b>"
+msgstr "<b>Conectando co servidor...</b>"
 
 #: transactions/kgpgtransaction.cpp:302 transactions/kgpgtransaction.cpp:495
 msgid "Requesting Passphrase"
