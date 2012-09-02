@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: skrooge\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2012-08-25 05:56+0200\n"
+"POT-Creation-Date: 2012-09-02 04:22+0200\n"
 "PO-Revision-Date: 2012-01-03 19:57+0100\n"
 "Last-Translator: Adrian Chaves Fernandez <adriyetichaves@gmail.com>\n"
 "Language-Team: Galician <proxecto@trasno.net>\n"
@@ -58,6 +58,7 @@ msgstr "Sabía que…"
 #: plugins/generic/skg_properties/skg_properties.rc:9
 #: plugins/generic/skg_selectall/skg_selectall.rc:9
 #: plugins/generic/skg_undoredo/skg_undoredo.rc:9
+#: plugins/skrooge/skrooge_bank/skgbankpluginwidget.cpp:135
 #: plugins/skrooge/skrooge_bank/skrooge_bank.rc:9
 #: plugins/skrooge/skrooge_budget/skrooge_budget.rc:9
 #: plugins/skrooge/skrooge_calculator/skrooge_calculator.rc:9
@@ -1576,6 +1577,7 @@ msgid "Default bank '%1' created for import"
 msgstr "Creouse o banco predefinido «%1» para a importación."
 
 #: plugins/import/skrooge_import_csv/skgimportplugincsv.cpp:606
+#: plugins/import/skrooge_import_json/skgimportpluginjson.cpp:67
 #: plugins/import/skrooge_import_kmy/skgimportpluginkmy.cpp:650
 #: plugins/import/skrooge_import_qif/skgimportpluginqif.cpp:782
 #: plugins/import/skrooge_import_xml/skgimportpluginxml.cpp:67
@@ -1689,6 +1691,14 @@ msgstr "Importar as categorías"
 msgctxt "A file format"
 msgid "Grisbi file"
 msgstr "Ficheiro de Grisbi"
+
+#: plugins/import/skrooge_import_json/skgimportpluginjson.cpp:83
+#, fuzzy
+#| msgctxt "A file format"
+#| msgid "CSV file"
+msgctxt "A file format"
+msgid "JSON file"
+msgstr "Ficheiro CSV"
 
 #: plugins/import/skrooge_import_kmy/skgimportpluginkmy.cpp:558
 #: plugins/import/skrooge_import_mmb/skgimportpluginmmb.cpp:569
@@ -2079,7 +2089,7 @@ msgstr "Todo"
 #: plugins/skrooge/skrooge_bank/skgaccountboardwidget.cpp:297
 #: plugins/skrooge/skrooge_bank/skgbankboardwidget.cpp:89
 #: plugins/skrooge/skrooge_calculator/skginterestboardwidget.cpp:95
-#: skgbankmodeler/skgdocumentbank.cpp:2493
+#: skgbankmodeler/skgdocumentbank.cpp:2501
 #: skgbankmodeler/skgreportbank.cpp:191
 msgctxt "Noun, the numerical total of a sum of values"
 msgid "Total"
@@ -2290,11 +2300,9 @@ msgid "Graph"
 msgstr "Gráfico"
 
 #: plugins/skrooge/skrooge_bank/skgbankpluginwidget.cpp:135
-msgid "Edition"
-msgstr "Edición"
-
-#: plugins/skrooge/skrooge_bank/skgbankpluginwidget.cpp:135
-msgid "Display the account edition panel"
+#, fuzzy
+#| msgid "Display the account edition panel"
+msgid "Display the account edit panel"
 msgstr "Amosar o panel de edición das contas"
 
 #: plugins/skrooge/skrooge_bank/skgbankpluginwidget.cpp:194
@@ -2678,7 +2686,9 @@ msgid "Manual"
 msgstr "Manual"
 
 #: plugins/skrooge/skrooge_budget/skgbudgetpluginwidget.cpp:159
-msgid "Display the edition panel for standard budget"
+#, fuzzy
+#| msgid "Display the edition panel for standard budget"
+msgid "Display the edit panel for standard budget"
 msgstr "Amosar o panel de edición para presupostos estándar"
 
 #: plugins/skrooge/skrooge_budget/skgbudgetpluginwidget.cpp:165
@@ -2686,7 +2696,9 @@ msgid "Auto"
 msgstr "Automático"
 
 #: plugins/skrooge/skrooge_budget/skgbudgetpluginwidget.cpp:165
-msgid "Display the edition panel for automatic budgets"
+#, fuzzy
+#| msgid "Display the edition panel for automatic budgets"
+msgid "Display the edit panel for automatic budgets"
 msgstr "Mostrar o panel de edición para presupostos automáticos"
 
 #: plugins/skrooge/skrooge_budget/skgbudgetpluginwidget.cpp:171
@@ -2694,7 +2706,9 @@ msgid "Rules"
 msgstr "Regras"
 
 #: plugins/skrooge/skrooge_budget/skgbudgetpluginwidget.cpp:171
-msgid "Display the edition panel for rules"
+#, fuzzy
+#| msgid "Display the edition panel for rules"
+msgid "Display the edit panel for rules"
 msgstr "Mostrar o panel de edición das regras"
 
 #: plugins/skrooge/skrooge_budget/skgbudgetpluginwidget.cpp:317
@@ -4143,7 +4157,7 @@ msgid "Operations validated."
 msgstr "Verificáronse as operacións."
 
 #: plugins/skrooge/skrooge_importexport/skgimportexportplugin.cpp:719
-#: skgbasemodeler/skgservices.cpp:1011
+#: skgbasemodeler/skgservices.cpp:1062
 #, kde-format
 msgctxt "An erro message"
 msgid "Open file '%1' failed"
@@ -4618,26 +4632,36 @@ msgid "Compute balances"
 msgstr "Calcular o balance"
 
 #: plugins/skrooge/skrooge_operation/skgoperationboardwidget.cpp:48
-msgctxt "Noun, a type of account"
+#, fuzzy
+#| msgid "Transfers"
+msgctxt "Noun, a type of operations"
 msgid "Transfers"
-msgstr "Transferencias"
+msgstr "Transferencias."
 
-#: plugins/skrooge/skrooge_operation/skgoperationboardwidget.cpp:106
+#: plugins/skrooge/skrooge_operation/skgoperationboardwidget.cpp:54
+#, fuzzy
+#| msgctxt "Noun, something that is used to track items"
+#| msgid "Tracker"
+msgctxt "Noun, a type of operations"
+msgid "Tracked"
+msgstr "Seguimento"
+
+#: plugins/skrooge/skrooge_operation/skgoperationboardwidget.cpp:115
 msgctxt "Title of a list of operations"
 msgid "Incomes of current month"
 msgstr "Ingresos deste mes"
 
-#: plugins/skrooge/skrooge_operation/skgoperationboardwidget.cpp:107
+#: plugins/skrooge/skrooge_operation/skgoperationboardwidget.cpp:116
 msgctxt "Title of a list of operations"
 msgid "Expenses of current month"
 msgstr "Gastos deste mes"
 
-#: plugins/skrooge/skrooge_operation/skgoperationboardwidget.cpp:108
+#: plugins/skrooge/skrooge_operation/skgoperationboardwidget.cpp:117
 msgctxt "Title of a list of operations"
 msgid "Incomes of previous month"
 msgstr "Ingresos do mes anterior"
 
-#: plugins/skrooge/skrooge_operation/skgoperationboardwidget.cpp:109
+#: plugins/skrooge/skrooge_operation/skgoperationboardwidget.cpp:118
 msgctxt "Title of a list of operations"
 msgid "Expenses of previous month"
 msgstr "Gastos do mes anterior"
@@ -5121,7 +5145,9 @@ msgid "Standard"
 msgstr "Estándar"
 
 #: plugins/skrooge/skrooge_operation/skgoperationpluginwidget.cpp:141
-msgid "Display the edition panel for standard operations"
+#, fuzzy
+#| msgid "Display the edition panel for standard operations"
+msgid "Display the edit panel for standard operations"
 msgstr "Amosar o panel de edición das operacións estándar."
 
 #: plugins/skrooge/skrooge_operation/skgoperationpluginwidget.cpp:151
@@ -5129,7 +5155,9 @@ msgid "Split"
 msgstr "Múltiple"
 
 #: plugins/skrooge/skrooge_operation/skgoperationpluginwidget.cpp:151
-msgid "Display the edition panel for split operations"
+#, fuzzy
+#| msgid "Display the edition panel for split operations"
+msgid "Display the edit panel for split operations"
 msgstr "Amosar o panel de edición das operacións múltiples."
 
 #: plugins/skrooge/skrooge_operation/skgoperationpluginwidget.cpp:162
@@ -5137,7 +5165,9 @@ msgid "Transfer"
 msgstr "Transferencia"
 
 #: plugins/skrooge/skrooge_operation/skgoperationpluginwidget.cpp:162
-msgid "Display the edition panel for transfers between accounts"
+#, fuzzy
+#| msgid "Display the edition panel for transfers between accounts"
+msgid "Display the edit panel for transfers between accounts"
 msgstr "Amosar o panel de edición das transferencias entre contas."
 
 #: plugins/skrooge/skrooge_operation/skgoperationpluginwidget.cpp:171
@@ -5145,7 +5175,9 @@ msgid "Shares"
 msgstr "Accións"
 
 #: plugins/skrooge/skrooge_operation/skgoperationpluginwidget.cpp:171
-msgid "Display the edition panel for purchasing or selling shares"
+#, fuzzy
+#| msgid "Display the edition panel for purchasing or selling shares"
+msgid "Display the edit panel for purchasing or selling shares"
 msgstr "Amosar o panel de edición da compra e venda de accións."
 
 #: plugins/skrooge/skrooge_operation/skgoperationpluginwidget.cpp:287
@@ -6075,7 +6107,9 @@ msgid "Setup Report"
 msgstr "Configurar o informe"
 
 #: plugins/skrooge/skrooge_report/skgreportpluginwidget.cpp:88
-msgid "Display the edition panel for report"
+#, fuzzy
+#| msgid "Display the edition panel for report"
+msgid "Display the edit panel for report"
 msgstr "Amosar o panel de edición do informe"
 
 #: plugins/skrooge/skrooge_report/skgreportpluginwidget.cpp:381
@@ -6868,7 +6902,7 @@ msgid "Alarm"
 msgstr "Alarma"
 
 #: plugins/skrooge/skrooge_search/skgsearchpluginwidget.cpp:50
-#: skgbankmodeler/skgdocumentbank.cpp:2406
+#: skgbankmodeler/skgdocumentbank.cpp:2414
 msgctxt "Adjective, an highlighted item"
 msgid "Highlighted"
 msgstr "Salientada"
@@ -6883,7 +6917,9 @@ msgid "Search"
 msgstr "Buscar"
 
 #: plugins/skrooge/skrooge_search/skgsearchpluginwidget.cpp:70
-msgid "Display the edition panel for searches"
+#, fuzzy
+#| msgid "Display the edition panel for searches"
+msgid "Display the edit panel for searches"
 msgstr "Amosar o panel de edición das buscas"
 
 #: plugins/skrooge/skrooge_search/skgsearchpluginwidget.cpp:77
@@ -6891,7 +6927,9 @@ msgid "Update"
 msgstr "Actualizar"
 
 #: plugins/skrooge/skrooge_search/skgsearchpluginwidget.cpp:77
-msgid "Display the edition panel for updates"
+#, fuzzy
+#| msgid "Display the edition panel for updates"
+msgid "Display the edit panel for updates"
 msgstr "Amosar o panel de edición das actualizacións"
 
 #. i18n: ectx: property (title), widget (QGroupBox, kAlarmFrm)
@@ -6901,7 +6939,9 @@ msgid "Alarm"
 msgstr "Alarma"
 
 #: plugins/skrooge/skrooge_search/skgsearchpluginwidget.cpp:84
-msgid "Display the edition panel for alarm"
+#, fuzzy
+#| msgid "Display the edition panel for alarm"
+msgid "Display the edit panel for alarm"
 msgstr "Amosar o panel de edición das alarmas"
 
 #: plugins/skrooge/skrooge_search/skgsearchpluginwidget.cpp:242
@@ -7533,7 +7573,9 @@ msgid "simplify values"
 msgstr "simplificar os valores"
 
 #: plugins/skrooge/skrooge_unit/skgunitpluginwidget.cpp:172
-msgid "Display the edition panel for standard units"
+#, fuzzy
+#| msgid "Display the edition panel for standard units"
+msgid "Display the edit panel for standard units"
 msgstr "Amosar o panel de edición das unidades estándar"
 
 #: plugins/skrooge/skrooge_unit/skgunitpluginwidget.cpp:178
@@ -7541,7 +7583,9 @@ msgid "Manual / Share"
 msgstr "Manual / Acción"
 
 #: plugins/skrooge/skrooge_unit/skgunitpluginwidget.cpp:178
-msgid "Display the edition panel for manual units"
+#, fuzzy
+#| msgid "Display the edition panel for manual units"
+msgid "Display the edit panel for manual units"
 msgstr "Amosar o panel de edición das unidades manuais"
 
 #: plugins/skrooge/skrooge_unit/skgunitpluginwidget.cpp:184
@@ -7549,7 +7593,9 @@ msgid "Values"
 msgstr "Valores"
 
 #: plugins/skrooge/skrooge_unit/skgunitpluginwidget.cpp:184
-msgid "Display the edition panel for values of units"
+#, fuzzy
+#| msgid "Display the edition panel for values of units"
+msgid "Display the edit panel for values of units"
 msgstr "Amosar o panel de edición dos valores das unidades"
 
 #: plugins/skrooge/skrooge_unit/skgunitpluginwidget.cpp:189
@@ -8377,7 +8423,7 @@ msgstr "días"
 #: skgbankmodeler/skgdocumentbank.cpp:469
 #: skgbankmodeler/skgdocumentbank.cpp:531
 #: skgbankmodeler/skgdocumentbank.cpp:603
-#: skgbankmodeler/skgdocumentbank.cpp:2358
+#: skgbankmodeler/skgdocumentbank.cpp:2366
 msgctxt "Noun, financial operations with a negative amount"
 msgid "Expenditure"
 msgstr "Gastos"
@@ -8385,7 +8431,7 @@ msgstr "Gastos"
 #: skgbankmodeler/skgdocumentbank.cpp:469
 #: skgbankmodeler/skgdocumentbank.cpp:531
 #: skgbankmodeler/skgdocumentbank.cpp:603
-#: skgbankmodeler/skgdocumentbank.cpp:2356
+#: skgbankmodeler/skgdocumentbank.cpp:2364
 msgctxt "Noun, financial operations with a positive amount"
 msgid "Income"
 msgstr "Ingresos"
@@ -8463,504 +8509,504 @@ msgid "Current"
 msgstr "Actual"
 
 #: skgbankmodeler/skgdocumentbank.cpp:637
-#: skgbankmodeler/skgdocumentbank.cpp:2426
+#: skgbankmodeler/skgdocumentbank.cpp:2434
 msgctxt "Noun"
 msgid "Year"
 msgstr "Ano"
 
-#: skgbankmodeler/skgdocumentbank.cpp:1555 skgbasemodeler/skgdocument.cpp:1366
+#: skgbankmodeler/skgdocumentbank.cpp:1563 skgbasemodeler/skgdocument.cpp:1366
 msgctxt "Progression step"
 msgid "Migrate document"
 msgstr "Migrar o documento"
 
-#: skgbankmodeler/skgdocumentbank.cpp:1779 skgbasemodeler/skgdocument.cpp:1395
+#: skgbankmodeler/skgdocumentbank.cpp:1787 skgbasemodeler/skgdocument.cpp:1395
 msgctxt "Error message"
 msgid "Impossible to load a document generated by a more recent version"
 msgstr ""
 "Non se poden cargar documentos xerados cunha versión posterior do aplicativo."
 
-#: skgbankmodeler/skgdocumentbank.cpp:1813 skgbasemodeler/skgdocument.cpp:1600
+#: skgbankmodeler/skgdocumentbank.cpp:1821 skgbasemodeler/skgdocument.cpp:1600
 msgctxt "Progression step"
 msgid "Refresh views"
 msgstr "Actualizar as vistas"
 
-#: skgbankmodeler/skgdocumentbank.cpp:1817
+#: skgbankmodeler/skgdocumentbank.cpp:1825
 msgctxt "Progression step"
 msgid "Computation of balances"
 msgstr "Cálculo do balance"
 
-#: skgbankmodeler/skgdocumentbank.cpp:1819
+#: skgbankmodeler/skgdocumentbank.cpp:1827
 msgctxt "Progression step"
 msgid "Computation of budgets"
 msgstr "Cálculo dos presupostos"
 
-#: skgbankmodeler/skgdocumentbank.cpp:1828 skgbasemodeler/skgdocument.cpp:1615
+#: skgbankmodeler/skgdocumentbank.cpp:1836 skgbasemodeler/skgdocument.cpp:1615
 #, kde-format
 msgctxt "Error message: Could not perform database migration"
 msgid "Database migration from version %1 to version %2 failed"
 msgstr "A migración da base de datos da versión %1 á %2 non funcionou."
 
-#: skgbankmodeler/skgdocumentbank.cpp:1916
-#: skgbankmodeler/skgdocumentbank.cpp:2001
+#: skgbankmodeler/skgdocumentbank.cpp:1924
+#: skgbankmodeler/skgdocumentbank.cpp:2009
 #, kde-format
 msgctxt "Error message"
 msgid "Operation '%1' on '%2' failed"
 msgstr "Non se puido efectuar a operación «%1» sobre «%2»."
 
-#: skgbankmodeler/skgdocumentbank.cpp:2033
-#: skgbankmodeler/skgdocumentbank.cpp:2098
-#: skgbankmodeler/skgdocumentbank.cpp:2114
-#: skgbankmodeler/skgdocumentbank.cpp:2135
-#: skgbankmodeler/skgdocumentbank.cpp:2163
-#: skgbankmodeler/skgdocumentbank.cpp:2177
-#: skgbankmodeler/skgdocumentbank.cpp:2184
-#: skgbankmodeler/skgdocumentbank.cpp:2198
-#: skgbankmodeler/skgdocumentbank.cpp:2212
-#: skgbankmodeler/skgdocumentbank.cpp:2219
-#: skgbankmodeler/skgdocumentbank.cpp:2233
-#: skgbankmodeler/skgdocumentbank.cpp:2247
-#: skgbankmodeler/skgdocumentbank.cpp:2261 skgbasemodeler/skgdocument.cpp:2098
+#: skgbankmodeler/skgdocumentbank.cpp:2041
+#: skgbankmodeler/skgdocumentbank.cpp:2106
+#: skgbankmodeler/skgdocumentbank.cpp:2122
+#: skgbankmodeler/skgdocumentbank.cpp:2143
+#: skgbankmodeler/skgdocumentbank.cpp:2171
+#: skgbankmodeler/skgdocumentbank.cpp:2185
+#: skgbankmodeler/skgdocumentbank.cpp:2192
+#: skgbankmodeler/skgdocumentbank.cpp:2206
+#: skgbankmodeler/skgdocumentbank.cpp:2220
+#: skgbankmodeler/skgdocumentbank.cpp:2227
+#: skgbankmodeler/skgdocumentbank.cpp:2241
+#: skgbankmodeler/skgdocumentbank.cpp:2255
+#: skgbankmodeler/skgdocumentbank.cpp:2269 skgbasemodeler/skgdocument.cpp:2098
 #: skgbasemodeler/skgdocument.cpp:2112 skgbasemodeler/skgdocument.cpp:2119
 msgctxt "Noun, the default value of an item"
 msgid "Default"
 msgstr "Predeterminado"
 
-#: skgbankmodeler/skgdocumentbank.cpp:2046
-#: skgbankmodeler/skgdocumentbank.cpp:2106
-#: skgbankmodeler/skgdocumentbank.cpp:2121
-#: skgbankmodeler/skgdocumentbank.cpp:2142
-#: skgbankmodeler/skgdocumentbank.cpp:2170
-#: skgbankmodeler/skgdocumentbank.cpp:2191
-#: skgbankmodeler/skgdocumentbank.cpp:2205
-#: skgbankmodeler/skgdocumentbank.cpp:2226
-#: skgbankmodeler/skgdocumentbank.cpp:2240
-#: skgbankmodeler/skgdocumentbank.cpp:2254 skgbasemodeler/skgdocument.cpp:2105
+#: skgbankmodeler/skgdocumentbank.cpp:2054
+#: skgbankmodeler/skgdocumentbank.cpp:2114
+#: skgbankmodeler/skgdocumentbank.cpp:2129
+#: skgbankmodeler/skgdocumentbank.cpp:2150
+#: skgbankmodeler/skgdocumentbank.cpp:2178
+#: skgbankmodeler/skgdocumentbank.cpp:2199
+#: skgbankmodeler/skgdocumentbank.cpp:2213
+#: skgbankmodeler/skgdocumentbank.cpp:2234
+#: skgbankmodeler/skgdocumentbank.cpp:2248
+#: skgbankmodeler/skgdocumentbank.cpp:2262 skgbasemodeler/skgdocument.cpp:2105
 msgctxt "Noun, the minimum value of an item"
 msgid "Minimum"
 msgstr "Mínimo"
 
-#: skgbankmodeler/skgdocumentbank.cpp:2059
+#: skgbankmodeler/skgdocumentbank.cpp:2067
 msgctxt "Noun"
 msgid "Amount in 2 columns"
 msgstr "Importe en dúas columnas"
 
-#: skgbankmodeler/skgdocumentbank.cpp:2072
-#: skgbankmodeler/skgdocumentbank.cpp:2364
+#: skgbankmodeler/skgdocumentbank.cpp:2080
+#: skgbankmodeler/skgdocumentbank.cpp:2372
 msgctxt "Noun"
 msgid "Amount entered"
 msgstr "Importe especificado"
 
-#: skgbankmodeler/skgdocumentbank.cpp:2085
+#: skgbankmodeler/skgdocumentbank.cpp:2093
 msgctxt "Noun"
 msgid "Amount entered in 2 columns"
 msgstr "Importe especificado en dúas columnas"
 
-#: skgbankmodeler/skgdocumentbank.cpp:2128
+#: skgbankmodeler/skgdocumentbank.cpp:2136
 msgctxt "Noun, an intermediate value between two extremums"
 msgid "Intermediate"
 msgstr "Intermedio"
 
-#: skgbankmodeler/skgdocumentbank.cpp:2149
+#: skgbankmodeler/skgdocumentbank.cpp:2157
 msgctxt "Noun"
 msgid "With operations"
 msgstr "Con operacións"
 
-#: skgbankmodeler/skgdocumentbank.cpp:2156
+#: skgbankmodeler/skgdocumentbank.cpp:2164
 msgctxt "Noun"
 msgid "With cumulative operations"
 msgstr "Con operacións acumulativas"
 
-#: skgbankmodeler/skgdocumentbank.cpp:2344
+#: skgbankmodeler/skgdocumentbank.cpp:2352
 msgctxt "Noun, an account as in a bank account"
 msgid "Account"
 msgstr "Conta"
 
-#: skgbankmodeler/skgdocumentbank.cpp:2345
+#: skgbankmodeler/skgdocumentbank.cpp:2353
 msgctxt "Noun, an account as in a bank account"
 msgid "Account's type"
 msgstr "Tipo de conta"
 
-#: skgbankmodeler/skgdocumentbank.cpp:2346
+#: skgbankmodeler/skgdocumentbank.cpp:2354
 msgctxt "Noun, a financial operation"
 msgid "Operation"
 msgstr "Operación"
 
-#: skgbankmodeler/skgdocumentbank.cpp:2347 skgbasemodeler/skgdocument.cpp:2132
+#: skgbankmodeler/skgdocumentbank.cpp:2355 skgbasemodeler/skgdocument.cpp:2132
 msgctxt "Noun, the name of an item"
 msgid "Name"
 msgstr "Nome"
 
-#: skgbankmodeler/skgdocumentbank.cpp:2349
+#: skgbankmodeler/skgdocumentbank.cpp:2357
 msgctxt "Noun, as in commercial balance"
 msgid "Balance"
 msgstr "Balance"
 
-#: skgbankmodeler/skgdocumentbank.cpp:2350
+#: skgbankmodeler/skgdocumentbank.cpp:2358
 msgctxt "Noun, as in commercial balance"
 msgid "Balance entered"
 msgstr "Balance introducido"
 
-#: skgbankmodeler/skgdocumentbank.cpp:2351
-#: skgbankmodeler/skgdocumentbank.cpp:2353
+#: skgbankmodeler/skgdocumentbank.cpp:2359
+#: skgbankmodeler/skgdocumentbank.cpp:2361
 msgctxt "Name, the numerical amount of a financial operation"
 msgid "Amount"
 msgstr "Importe"
 
-#: skgbankmodeler/skgdocumentbank.cpp:2354
+#: skgbankmodeler/skgdocumentbank.cpp:2362
 msgctxt "Name, the numerical amount of a financial operation"
 msgid "Today amount"
 msgstr "Importe de hoxe"
 
-#: skgbankmodeler/skgdocumentbank.cpp:2360
+#: skgbankmodeler/skgdocumentbank.cpp:2368
 msgctxt "Noun"
 msgid "Income entered"
 msgstr "Ingresos efectuados"
 
-#: skgbankmodeler/skgdocumentbank.cpp:2362
+#: skgbankmodeler/skgdocumentbank.cpp:2370
 msgctxt "Noun"
 msgid "Expenditure entered"
 msgstr "Gastos efectuados"
 
-#: skgbankmodeler/skgdocumentbank.cpp:2363
+#: skgbankmodeler/skgdocumentbank.cpp:2371
 msgctxt "Noun"
 msgid "Quantity owned"
 msgstr "Cantidade en posesión"
 
-#: skgbankmodeler/skgdocumentbank.cpp:2365
+#: skgbankmodeler/skgdocumentbank.cpp:2373
 msgctxt "Noun"
 msgid "Account number"
 msgstr "Número de conta"
 
-#: skgbankmodeler/skgdocumentbank.cpp:2367
+#: skgbankmodeler/skgdocumentbank.cpp:2375
 msgctxt "Noun, a number identifying an item"
 msgid "Number"
 msgstr "Número"
 
-#: skgbankmodeler/skgdocumentbank.cpp:2368
+#: skgbankmodeler/skgdocumentbank.cpp:2376
 msgctxt "Noun"
 msgid "Bank number"
 msgstr "Número do banco"
 
-#: skgbankmodeler/skgdocumentbank.cpp:2369
+#: skgbankmodeler/skgdocumentbank.cpp:2377
 msgctxt "Noun"
 msgid "Agency number"
 msgstr "Número da axencia"
 
-#: skgbankmodeler/skgdocumentbank.cpp:2370
+#: skgbankmodeler/skgdocumentbank.cpp:2378
 msgctxt "Noun"
 msgid "Agency address"
 msgstr "Enderezo da axencia"
 
-#: skgbankmodeler/skgdocumentbank.cpp:2371
+#: skgbankmodeler/skgdocumentbank.cpp:2379
 msgctxt "Noun"
 msgid "Address"
 msgstr "Enderezo"
 
-#: skgbankmodeler/skgdocumentbank.cpp:2372
+#: skgbankmodeler/skgdocumentbank.cpp:2380
 msgctxt "A person or institution receiving a payment, or paying the operation"
 msgid "Payee"
 msgstr "Parte"
 
-#: skgbankmodeler/skgdocumentbank.cpp:2373
+#: skgbankmodeler/skgdocumentbank.cpp:2381
 msgctxt "Noun, a user comment on an item"
 msgid "Comment"
 msgstr "Comentario"
 
-#: skgbankmodeler/skgdocumentbank.cpp:2374
+#: skgbankmodeler/skgdocumentbank.cpp:2382
 msgctxt "Noun, a user comment on an item"
 msgid "Sub comment"
 msgstr "Comentario secundario"
 
-#: skgbankmodeler/skgdocumentbank.cpp:2375
+#: skgbankmodeler/skgdocumentbank.cpp:2383
 msgctxt ""
 "Noun, the mode used for payment of the operation (Credit Card, Cheque, "
 "Transfer...)"
 msgid "Mode"
 msgstr "Método"
 
-#: skgbankmodeler/skgdocumentbank.cpp:2376
+#: skgbankmodeler/skgdocumentbank.cpp:2384
 msgctxt "Noun"
 msgid "Next occurrence"
 msgstr "Seguinte ocorrencia"
 
-#: skgbankmodeler/skgdocumentbank.cpp:2377
-#: skgbankmodeler/skgdocumentbank.cpp:2383 skgbasemodeler/skgdocument.cpp:2133
+#: skgbankmodeler/skgdocumentbank.cpp:2385
+#: skgbankmodeler/skgdocumentbank.cpp:2391 skgbasemodeler/skgdocument.cpp:2133
 msgctxt "Noun, the date of an item"
 msgid "Date"
 msgstr "Data"
 
-#: skgbankmodeler/skgdocumentbank.cpp:2378
+#: skgbankmodeler/skgdocumentbank.cpp:2386
 msgctxt "Noun, 7 days"
 msgid "Week"
 msgstr "Semana"
 
-#: skgbankmodeler/skgdocumentbank.cpp:2379
+#: skgbankmodeler/skgdocumentbank.cpp:2387
 msgctxt "Noun, the months in a year"
 msgid "Month"
 msgstr "Mes"
 
-#: skgbankmodeler/skgdocumentbank.cpp:2380
+#: skgbankmodeler/skgdocumentbank.cpp:2388
 msgctxt "Noun, 3 months"
 msgid "Quarter"
 msgstr "Trimestre"
 
-#: skgbankmodeler/skgdocumentbank.cpp:2381
+#: skgbankmodeler/skgdocumentbank.cpp:2389
 msgctxt "Noun, 6 months"
 msgid "Semester"
 msgstr "Semestre"
 
-#: skgbankmodeler/skgdocumentbank.cpp:2382
+#: skgbankmodeler/skgdocumentbank.cpp:2390
 msgctxt "Noun, the years in a century"
 msgid "Year"
 msgstr "Ano"
 
-#: skgbankmodeler/skgdocumentbank.cpp:2384
+#: skgbankmodeler/skgdocumentbank.cpp:2392
 msgctxt "Noun, the date of an item"
 msgid "First date"
 msgstr "Data inicial"
 
-#: skgbankmodeler/skgdocumentbank.cpp:2385
+#: skgbankmodeler/skgdocumentbank.cpp:2393
 msgctxt "Noun, the date of an item"
 msgid "Last date"
 msgstr "Data final"
 
-#: skgbankmodeler/skgdocumentbank.cpp:2388
+#: skgbankmodeler/skgdocumentbank.cpp:2396
 msgctxt "Noun, the category of an item"
 msgid "Category"
 msgstr "Categoría"
 
-#: skgbankmodeler/skgdocumentbank.cpp:2389
+#: skgbankmodeler/skgdocumentbank.cpp:2397
 msgctxt "Noun, a financial institution"
 msgid "Bank"
 msgstr "Banco"
 
-#: skgbankmodeler/skgdocumentbank.cpp:2390
+#: skgbankmodeler/skgdocumentbank.cpp:2398
 msgctxt "Noun, the unit of an operation, usually a currency or a share"
 msgid "Unit"
 msgstr "Unidade"
 
-#: skgbankmodeler/skgdocumentbank.cpp:2391
+#: skgbankmodeler/skgdocumentbank.cpp:2399
 msgctxt "Noun, the unit of an operation, usually a currency or a share"
 msgid "Unit's type"
 msgstr "Tipo de unidade"
 
-#: skgbankmodeler/skgdocumentbank.cpp:2392
+#: skgbankmodeler/skgdocumentbank.cpp:2400
 msgctxt "Adjective, has an item been checked or not"
 msgid "Checked"
 msgstr "Verificada"
 
-#: skgbankmodeler/skgdocumentbank.cpp:2393
+#: skgbankmodeler/skgdocumentbank.cpp:2401
 msgctxt "Adjective, a foreseen value"
 msgid "To be Checked"
 msgstr "Por verificar"
 
-#: skgbankmodeler/skgdocumentbank.cpp:2394
+#: skgbankmodeler/skgdocumentbank.cpp:2402
 msgctxt "Noun, ahe unit symbol, something in the line of $, €, £..."
 msgid "Symbol"
 msgstr "Símbolo"
 
-#: skgbankmodeler/skgdocumentbank.cpp:2395
+#: skgbankmodeler/skgdocumentbank.cpp:2403
 msgctxt "Noun, a country in the world (France, China...)"
 msgid "Country"
 msgstr "País"
 
-#: skgbankmodeler/skgdocumentbank.cpp:2397
-#: skgbankmodeler/skgdocumentbank.cpp:2398
+#: skgbankmodeler/skgdocumentbank.cpp:2405
+#: skgbankmodeler/skgdocumentbank.cpp:2406
 msgctxt "Noun, the type of an item"
 msgid "Type"
 msgstr "Tipo"
 
-#: skgbankmodeler/skgdocumentbank.cpp:2399
+#: skgbankmodeler/skgdocumentbank.cpp:2407
 msgctxt "Noun"
 msgid "Internet code"
 msgstr "Código da internet"
 
-#: skgbankmodeler/skgdocumentbank.cpp:2400
+#: skgbankmodeler/skgdocumentbank.cpp:2408
 msgctxt "Noun"
 msgid "Number of operations"
 msgstr "Número de operacións"
 
-#: skgbankmodeler/skgdocumentbank.cpp:2401
+#: skgbankmodeler/skgdocumentbank.cpp:2409
 msgctxt "Noun, how frequently something occurs"
 msgid "Periodicity"
 msgstr "Periodicidade"
 
-#: skgbankmodeler/skgdocumentbank.cpp:2402
+#: skgbankmodeler/skgdocumentbank.cpp:2410
 msgctxt "Automatically write something"
 msgid "Auto write"
 msgstr "Escribir automaticamente"
 
-#: skgbankmodeler/skgdocumentbank.cpp:2403
+#: skgbankmodeler/skgdocumentbank.cpp:2411
 msgctxt "Noun"
 msgid "Nb of occurrences"
 msgstr "Número de ocorrencias"
 
-#: skgbankmodeler/skgdocumentbank.cpp:2404
+#: skgbankmodeler/skgdocumentbank.cpp:2412
 msgctxt "Verb, warn the user about an event"
 msgid "Warn"
 msgstr "Aviso"
 
-#: skgbankmodeler/skgdocumentbank.cpp:2405
+#: skgbankmodeler/skgdocumentbank.cpp:2413
 msgctxt "Adjective, a closed item"
 msgid "Closed"
 msgstr "Pechada"
 
-#: skgbankmodeler/skgdocumentbank.cpp:2407
+#: skgbankmodeler/skgdocumentbank.cpp:2415
 msgctxt "Noun, the status of an item"
 msgid "Status"
 msgstr "Estado"
 
-#: skgbankmodeler/skgdocumentbank.cpp:2408
+#: skgbankmodeler/skgdocumentbank.cpp:2416
 msgctxt "Adjective, an item scheduled to happen on a regular basis"
 msgid "Scheduled"
 msgstr "Planificada"
 
-#: skgbankmodeler/skgdocumentbank.cpp:2409
+#: skgbankmodeler/skgdocumentbank.cpp:2417
 msgctxt "Noun"
 msgid "Number of operations (cumulative)"
 msgstr "Número de operacións (acumulativo)"
 
-#: skgbankmodeler/skgdocumentbank.cpp:2410
+#: skgbankmodeler/skgdocumentbank.cpp:2418
 msgctxt "Noun"
 msgid "Amount (cumulative)"
 msgstr "Importe (acumulativo)"
 
-#: skgbankmodeler/skgdocumentbank.cpp:2411
+#: skgbankmodeler/skgdocumentbank.cpp:2419
 msgctxt "Noun"
 msgid "Search description"
 msgstr "Buscar na descrición"
 
-#: skgbankmodeler/skgdocumentbank.cpp:2412
+#: skgbankmodeler/skgdocumentbank.cpp:2420
 msgctxt "Noun"
 msgid "Process description"
 msgstr "Procesar a descrición"
 
-#: skgbankmodeler/skgdocumentbank.cpp:2413
+#: skgbankmodeler/skgdocumentbank.cpp:2421
 msgctxt "Noun, the type of action"
 msgid "Action type"
 msgstr "Tipo de acción"
 
-#: skgbankmodeler/skgdocumentbank.cpp:2415
+#: skgbankmodeler/skgdocumentbank.cpp:2423
 msgctxt "Noun, something that is used to track items"
 msgid "Tracker"
 msgstr "Seguimento"
 
-#: skgbankmodeler/skgdocumentbank.cpp:2416
+#: skgbankmodeler/skgdocumentbank.cpp:2424
 msgctxt "Noun"
 msgid "Import status"
 msgstr "Estado da importación"
 
-#: skgbankmodeler/skgdocumentbank.cpp:2417
+#: skgbankmodeler/skgdocumentbank.cpp:2425
 msgctxt "Noun, after the dot"
 msgid "Nb decimal"
 msgstr "Número de decimais"
 
-#: skgbankmodeler/skgdocumentbank.cpp:2418
+#: skgbankmodeler/skgdocumentbank.cpp:2426
 msgctxt "Noun, for a share"
 msgid "Rate"
 msgstr "Taxa"
 
-#: skgbankmodeler/skgdocumentbank.cpp:2419
+#: skgbankmodeler/skgdocumentbank.cpp:2427
 msgctxt "Noun"
 msgid "Value date"
 msgstr "Data do valor"
 
-#: skgbankmodeler/skgdocumentbank.cpp:2420
+#: skgbankmodeler/skgdocumentbank.cpp:2428
 msgctxt "Noun"
 msgid "Coef"
 msgstr "Coeficiente"
 
-#: skgbankmodeler/skgdocumentbank.cpp:2421
+#: skgbankmodeler/skgdocumentbank.cpp:2429
 msgctxt "Noun"
 msgid "Annual Interest"
 msgstr "Interese anual"
 
-#: skgbankmodeler/skgdocumentbank.cpp:2422
+#: skgbankmodeler/skgdocumentbank.cpp:2430
 msgctxt "Noun"
 msgid "Accrued Interest"
 msgstr "Interese acumulado"
 
-#: skgbankmodeler/skgdocumentbank.cpp:2423
+#: skgbankmodeler/skgdocumentbank.cpp:2431
 msgctxt "Noun"
 msgid "Value date for credit"
 msgstr "Data do valor de crédito"
 
-#: skgbankmodeler/skgdocumentbank.cpp:2424
+#: skgbankmodeler/skgdocumentbank.cpp:2432
 msgctxt "Noun"
 msgid "Value date for debit"
 msgstr "Data do valor de débito"
 
-#: skgbankmodeler/skgdocumentbank.cpp:2425
+#: skgbankmodeler/skgdocumentbank.cpp:2433
 msgctxt "Noun"
 msgid "Base computation"
 msgstr "Cómputo base"
 
-#: skgbankmodeler/skgdocumentbank.cpp:2427
+#: skgbankmodeler/skgdocumentbank.cpp:2435
 msgctxt "Noun"
 msgid "Month"
 msgstr "Mes"
 
-#: skgbankmodeler/skgdocumentbank.cpp:2428
+#: skgbankmodeler/skgdocumentbank.cpp:2436
 msgctxt "Noun"
 msgid "Period"
 msgstr "Período"
 
-#: skgbankmodeler/skgdocumentbank.cpp:2429
+#: skgbankmodeler/skgdocumentbank.cpp:2437
 msgctxt "Noun, sort order"
 msgid "Order"
 msgstr "Orde"
 
-#: skgbankmodeler/skgdocumentbank.cpp:2430
+#: skgbankmodeler/skgdocumentbank.cpp:2438
 msgctxt "Noun"
 msgid "When"
 msgstr "Cando"
 
-#: skgbankmodeler/skgdocumentbank.cpp:2431
+#: skgbankmodeler/skgdocumentbank.cpp:2439
 msgctxt "Noun"
 msgid "What"
 msgstr "Que"
 
-#: skgbankmodeler/skgdocumentbank.cpp:2432
+#: skgbankmodeler/skgdocumentbank.cpp:2440
 msgctxt "Noun"
 msgid "Impacted budget"
 msgstr "Presuposto afectado"
 
-#: skgbankmodeler/skgdocumentbank.cpp:2433
+#: skgbankmodeler/skgdocumentbank.cpp:2441
 msgctxt "Noun"
 msgid "Rules"
 msgstr "Regras"
 
-#: skgbankmodeler/skgdocumentbank.cpp:2434
+#: skgbankmodeler/skgdocumentbank.cpp:2442
 msgctxt "Noun"
 msgid "Entered Budget"
 msgstr "Presuposto introducido"
 
-#: skgbankmodeler/skgdocumentbank.cpp:2435
+#: skgbankmodeler/skgdocumentbank.cpp:2443
 msgctxt "Noun"
 msgid "Corrected budget"
 msgstr "Presuposto corrixido"
 
-#: skgbankmodeler/skgdocumentbank.cpp:2436
+#: skgbankmodeler/skgdocumentbank.cpp:2444
 msgctxt "Noun"
 msgid "Delta after rules"
 msgstr "Diferencia tras as regras"
 
-#: skgbankmodeler/skgdocumentbank.cpp:2437
+#: skgbankmodeler/skgdocumentbank.cpp:2445
 msgctxt "Noun"
 msgid "Delta"
 msgstr "Diferencia"
 
-#: skgbankmodeler/skgdocumentbank.cpp:2438
+#: skgbankmodeler/skgdocumentbank.cpp:2446
 msgctxt "Noun"
 msgid "Download source"
 msgstr "Fonte de descarga"
 
-#: skgbankmodeler/skgdocumentbank.cpp:2439
+#: skgbankmodeler/skgdocumentbank.cpp:2447
 msgctxt "Noun, the absence of anything"
 msgid "-- Nothing --"
 msgstr "— Nada —"
 
-#: skgbankmodeler/skgdocumentbank.cpp:2578
+#: skgbankmodeler/skgdocumentbank.cpp:2586
 #, kde-format
 msgid ""
 "Expenses in category <b>'%1'</b> increased by <b>%2</b> for a total of <b>"
@@ -8969,7 +9015,7 @@ msgstr ""
 "Os gastos na categoría «<b>%1</b>» aumentaron un <b>%2</b> ata chegar a <b>"
 "%3</b>."
 
-#: skgbankmodeler/skgdocumentbank.cpp:2582
+#: skgbankmodeler/skgdocumentbank.cpp:2590
 #, kde-format
 msgid ""
 "Expenses in category <b>'%1'</b> decreased by <b>%2</b> for a total of <b>"
@@ -8978,7 +9024,7 @@ msgstr ""
 "Os gastos na categoría «<b>%1</b>» diminuíron un <b>%2</b> ata chegar a <b>"
 "%3</b>."
 
-#: skgbankmodeler/skgdocumentbank.cpp:2591
+#: skgbankmodeler/skgdocumentbank.cpp:2599
 #, kde-format
 msgid ""
 "Incomes in category <b>'%1'</b> increased by <b>%2</b> for a total of <b>%3</"
@@ -8987,7 +9033,7 @@ msgstr ""
 "Os ingresos na categoría «<b>%1</b>» aumentaron un <b>%2</b> ata chegar a <b>"
 "%3</b>."
 
-#: skgbankmodeler/skgdocumentbank.cpp:2596
+#: skgbankmodeler/skgdocumentbank.cpp:2604
 #, kde-format
 msgid ""
 "Incomes in category <b>'%1'</b> decreased by <b>%2</b> for a total of <b>%3</"
@@ -11255,19 +11301,19 @@ msgctxt "Error message: writing a file failed"
 msgid "Write file '%1' failed"
 msgstr "Non se puido escribir o ficheiro «%1»."
 
-#: skgbasemodeler/skgservices.cpp:831
+#: skgbasemodeler/skgservices.cpp:882
 #, kde-format
 msgctxt "An error message: creating a file failed"
 msgid "Creation file '%1' failed"
 msgstr "Non se puido crear o ficheiro «%1»."
 
-#: skgbasemodeler/skgservices.cpp:834
+#: skgbasemodeler/skgservices.cpp:885
 #, kde-format
 msgctxt "Error message: something failed"
 msgid "%1 failed"
 msgstr "%1 fallou."
 
-#: skgbasemodeler/skgservices.cpp:856 skgbasemodeler/skgservices.cpp:942
+#: skgbasemodeler/skgservices.cpp:907 skgbasemodeler/skgservices.cpp:993
 msgctxt "Error message"
 msgid "No database defined"
 msgstr "Non se definiu ningunha base de datos."
@@ -11417,6 +11463,13 @@ msgstr "Benvido ao complemento xxx"
 #: templates/skrooge_xxx/skgxxxpluginwidget_pref.ui:18
 msgid "xxx Settings:"
 msgstr "Configuración de xxx:"
+
+#~ msgid "Edition"
+#~ msgstr "Edición"
+
+#~ msgctxt "Noun, a type of account"
+#~ msgid "Transfers"
+#~ msgstr "Transferencias"
 
 #~ msgctxt "Adjective, a foreseen value"
 #~ msgid "Foreseen"
