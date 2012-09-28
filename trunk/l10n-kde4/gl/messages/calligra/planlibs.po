@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kplatoui\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2012-09-16 03:02+0200\n"
+"POT-Creation-Date: 2012-09-27 03:30+0200\n"
 "PO-Revision-Date: 2012-04-26 14:34+0200\n"
 "Last-Translator: Miguel Branco <mgl.branco@gmail.com>\n"
 "Language-Team: Galician <kde-i18n-doc@kde.org>\n"
@@ -139,12 +139,12 @@ msgid "Deleted"
 msgstr "Borrada"
 
 #: kernel/kptglobal.cpp:32 kernel/kptnode.cpp:605 kernel/kptschedule.cpp:1807
-#: models/kptschedulemodel.cpp:753
+#: models/kptschedulemodel.cpp:758
 msgid "Not scheduled"
 msgstr "Non planificado"
 
-#: kernel/kptglobal.cpp:34 models/kptschedulemodel.cpp:753
-#: models/kptschedulemodel.cpp:836
+#: kernel/kptglobal.cpp:34 models/kptschedulemodel.cpp:758
+#: models/kptschedulemodel.cpp:902
 msgid "Scheduled"
 msgstr "Planificadas"
 
@@ -187,7 +187,7 @@ msgstr "Rexistro de Axenda"
 #: models/kptnodeitemmodel.cpp:730 models/kptresourceallocationmodel.cpp:840
 #: models/kptresourcemodel.cpp:212 models/kptresourcemodel.cpp:244
 #: models/kptresourcemodel.cpp:365 models/kptresourcemodel.cpp:369
-#: models/kptresourcemodel.cpp:378 models/kptschedulemodel.cpp:524
+#: models/kptresourcemodel.cpp:378 models/kptschedulemodel.cpp:529
 #: models/kpttreecombobox.cpp:124 ui/kptpertresult.cpp:139
 #: ui/kptpertresult.cpp:494 ui/kptresourcedialog.cpp:300
 #: ui/kptresourcedialog.cpp:326 ui/kpttaskcostpanel.cpp:50
@@ -707,8 +707,8 @@ msgstr "%1(Conta predefinida)"
 #: models/kptresourceappointmentsmodel.cpp:907
 #: models/kptresourceappointmentsmodel.cpp:922
 #: models/kptresourceappointmentsmodel.cpp:1483
-#: models/kptresourcemodel.cpp:448 models/kptschedulemodel.cpp:827
-#: models/kptschedulemodel.cpp:1105 ui/kptresourceassignmentview.ui:27
+#: models/kptresourcemodel.cpp:448 models/kptschedulemodel.cpp:892
+#: models/kptschedulemodel.cpp:1172 ui/kptresourceassignmentview.ui:27
 msgid "Name"
 msgstr "Nome"
 
@@ -1670,75 +1670,82 @@ msgstr " "
 
 #: models/kptcommonstrings.cpp:165
 #, fuzzy
+#| msgid "The scheduler used for calculating the project schedule"
+msgctxt "@info:tooltip"
+msgid "The granularity used when calculating the project schedule"
+msgstr "O xestor empregafo para calcular a axenda do proxecto"
+
+#: models/kptcommonstrings.cpp:167
+#, fuzzy
 #| msgid "The url of the document"
 msgctxt "@info:tooltip"
 msgid "The url of the document"
 msgstr "A url do documento"
 
-#: models/kptcommonstrings.cpp:166
+#: models/kptcommonstrings.cpp:168
 #, fuzzy
 #| msgid "The type of the document"
 msgctxt "@info:tooltip"
 msgid "The type of the document"
 msgstr "O tipo de documento"
 
-#: models/kptcommonstrings.cpp:167
+#: models/kptcommonstrings.cpp:169
 #, fuzzy
 #| msgid "The status of the document"
 msgctxt "@info:tooltip"
 msgid "The status of the document"
 msgstr "O estado do documento"
 
-#: models/kptcommonstrings.cpp:168
+#: models/kptcommonstrings.cpp:170
 #, fuzzy
 #| msgid "Defines how this document is send"
 msgctxt "@info:tooltip"
 msgid "Defines how this document is sent"
 msgstr "Define cando se enviará este documento"
 
-#: models/kptcommonstrings.cpp:170
+#: models/kptcommonstrings.cpp:172
 #, fuzzy
 #| msgid "The name of the calendar"
 msgctxt "@info:tooltip"
 msgid "The name of the calendar"
 msgstr "O nome do calendario"
 
-#: models/kptcommonstrings.cpp:171
+#: models/kptcommonstrings.cpp:173
 #, fuzzy
 #| msgid "The timezone of the calendar"
 msgctxt "@info:tooltip"
 msgid "The timezone of the calendar"
 msgstr "A rexión horaria do calendario"
 
-#: models/kptcommonstrings.cpp:173
+#: models/kptcommonstrings.cpp:175
 #, fuzzy
 #| msgid "The name of the required task"
 msgctxt "@info:tooltip"
 msgid "The name of the required task"
 msgstr "O nome da tarefa requerida"
 
-#: models/kptcommonstrings.cpp:174
+#: models/kptcommonstrings.cpp:176
 #, fuzzy
 #| msgid "The name of the dependent task"
 msgctxt "@info:tooltip"
 msgid "The name of the dependent task"
 msgstr "O nome da tarefa dependente"
 
-#: models/kptcommonstrings.cpp:175
+#: models/kptcommonstrings.cpp:177
 #, fuzzy
 #| msgid "The type of relation"
 msgctxt "@info:tooltip"
 msgid "The type of relation"
 msgstr "O tipo de relación"
 
-#: models/kptcommonstrings.cpp:176
+#: models/kptcommonstrings.cpp:178
 #, fuzzy
 #| msgid "The relations time lag"
 msgctxt "@info:tooltip"
 msgid "The relations time lag"
 msgstr "O retraso para esta relación"
 
-#: models/kptcommonstrings.cpp:180 ui/kptdocumentspanel.cpp:198
+#: models/kptcommonstrings.cpp:182 ui/kptdocumentspanel.cpp:198
 #, fuzzy
 #| msgid "Remove Document"
 msgctxt "(qtundo-format)"
@@ -3271,7 +3278,7 @@ msgstr "Engadir Sub-Tarefa"
 msgid "Path"
 msgstr "Rota"
 
-#: models/kptpertcpmmodel.cpp:428 ui/kptscheduleeditor.cpp:726
+#: models/kptpertcpmmodel.cpp:428 ui/kptscheduleeditor.cpp:727
 msgid "Critical Path"
 msgstr "Rota Crítica"
 
@@ -3776,34 +3783,34 @@ msgctxt "(qtundo-format)"
 msgid "Add resource group"
 msgstr "Engadir un grupo de recursos"
 
-#: models/kptschedulemodel.cpp:388
+#: models/kptschedulemodel.cpp:393
 #, fuzzy
 #| msgid "Modify Calendar Name"
 msgctxt "(qtundo-format)"
 msgid "Modify schedule name"
 msgstr "Modificar o nome de calendario"
 
-#: models/kptschedulemodel.cpp:458 models/kptschedulemodel.cpp:461
+#: models/kptschedulemodel.cpp:463 models/kptschedulemodel.cpp:466
 msgid "Allow"
 msgstr "Permitir"
 
-#: models/kptschedulemodel.cpp:458 models/kptschedulemodel.cpp:464
+#: models/kptschedulemodel.cpp:463 models/kptschedulemodel.cpp:469
 msgid "Avoid"
 msgstr "Evitar"
 
-#: models/kptschedulemodel.cpp:461
+#: models/kptschedulemodel.cpp:466
 #, fuzzy
 #| msgid "Avoid"
 msgid "(Avoid)"
 msgstr "Evitar"
 
-#: models/kptschedulemodel.cpp:464
+#: models/kptschedulemodel.cpp:469
 #, fuzzy
 #| msgid "Allow"
 msgid "(Allow)"
 msgstr "Permitir"
 
-#: models/kptschedulemodel.cpp:472
+#: models/kptschedulemodel.cpp:477
 #, fuzzy
 #| msgid "Move resource"
 #| msgid_plural "Move %1 resources"
@@ -3811,7 +3818,7 @@ msgctxt "@info:tooltip"
 msgid "Allow overbooking resources"
 msgstr "Mover recurso"
 
-#: models/kptschedulemodel.cpp:473 models/kptschedulemodel.cpp:483
+#: models/kptschedulemodel.cpp:478 models/kptschedulemodel.cpp:488
 #, fuzzy
 #| msgid "Move resource"
 #| msgid_plural "Move %1 resources"
@@ -3819,13 +3826,13 @@ msgctxt "@info:tooltip"
 msgid "Avoid overbooking resources"
 msgstr "Mover recurso"
 
-#: models/kptschedulemodel.cpp:477
+#: models/kptschedulemodel.cpp:482
 #, fuzzy
 msgctxt "@info:tooltip"
 msgid "Allow overbooking of resources"
 msgstr "Permitir a saturación de recursos"
 
-#: models/kptschedulemodel.cpp:478
+#: models/kptschedulemodel.cpp:483
 #, fuzzy, kde-format
 #| msgid "Move resource"
 #| msgid_plural "Move %1 resources"
@@ -3833,7 +3840,7 @@ msgctxt "@info:tooltip 1=scheduler name"
 msgid "%1 always allows overbooking of resources"
 msgstr "Mover recurso"
 
-#: models/kptschedulemodel.cpp:482
+#: models/kptschedulemodel.cpp:487
 #, fuzzy, kde-format
 #| msgid "Move resource"
 #| msgid_plural "Move %1 resources"
@@ -3841,30 +3848,30 @@ msgctxt "@info:tooltip 1=scheduler name"
 msgid "%1 always avoids overbooking of resources"
 msgstr "Mover recurso"
 
-#: models/kptschedulemodel.cpp:487
+#: models/kptschedulemodel.cpp:492
 #, fuzzy
 #| msgid "Avoid"
 msgctxt "@label:listbox"
 msgid "Avoid"
 msgstr "Evitar"
 
-#: models/kptschedulemodel.cpp:487
+#: models/kptschedulemodel.cpp:492
 #, fuzzy
 #| msgid "Allow"
 msgctxt "@label:listbox"
 msgid "Allow"
 msgstr "Permitir"
 
-#: models/kptschedulemodel.cpp:507
+#: models/kptschedulemodel.cpp:512
 msgctxt "(qtundo-format)"
 msgid "Modify allow overbooking"
 msgstr ""
 
-#: models/kptschedulemodel.cpp:524
+#: models/kptschedulemodel.cpp:529
 msgid "PERT"
 msgstr "PERT"
 
-#: models/kptschedulemodel.cpp:527
+#: models/kptschedulemodel.cpp:532
 #, fuzzy
 #| msgid ""
 #| "Risk controls the PERT distribution used when calculating the actual "
@@ -3875,178 +3882,208 @@ msgstr ""
 "Cando se realiza a estimación desta tarefa o risco controla a distribución "
 "PERT empregada con tal fin."
 
-#: models/kptschedulemodel.cpp:528
+#: models/kptschedulemodel.cpp:533
 msgctxt "@info:tooltip"
 msgid "Use the tasks expected estimate directly"
 msgstr ""
 
-#: models/kptschedulemodel.cpp:530
+#: models/kptschedulemodel.cpp:535
 #, fuzzy
 #| msgid "None"
 msgctxt "@label:listbox"
 msgid "None"
 msgstr "Ningún"
 
-#: models/kptschedulemodel.cpp:530
+#: models/kptschedulemodel.cpp:535
 #, fuzzy
 #| msgid "PERT"
 msgctxt "@label:listbox"
 msgid "PERT"
 msgstr "PERT"
 
-#: models/kptschedulemodel.cpp:550
+#: models/kptschedulemodel.cpp:555
 #, fuzzy
 #| msgid "The scheduling direction"
 msgctxt "(qtundo-format)"
 msgid "Modify scheduling distribution"
 msgstr "A dirección da planificiación"
 
-#: models/kptschedulemodel.cpp:579
+#: models/kptschedulemodel.cpp:584
 #, fuzzy, kde-format
 #| msgid "Scheduled start: %1, target time: %2"
 msgctxt "@info:tooltip"
 msgid "Planned start: %1<nl/>Target start: %2"
 msgstr "Comezo planificado: %1, tempo previsto: %2"
 
-#: models/kptschedulemodel.cpp:581
+#: models/kptschedulemodel.cpp:586
 #, fuzzy, kde-format
 #| msgid "Earliest start:"
 msgctxt "@info:tooltip"
 msgid "Target start: %1"
 msgstr "Comezo máis temperá:"
 
-#: models/kptschedulemodel.cpp:615
+#: models/kptschedulemodel.cpp:620
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Planned finish: %1<nl/>Target finish: %2"
 msgstr ""
 
-#: models/kptschedulemodel.cpp:617
+#: models/kptschedulemodel.cpp:622
 #, fuzzy, kde-format
 #| msgid "Latest finish:"
 msgctxt "@info:tooltip"
 msgid "Target finish: %1"
 msgstr "Último remate:"
 
-#: models/kptschedulemodel.cpp:643 models/kptschedulemodel.cpp:649
+#: models/kptschedulemodel.cpp:648 models/kptschedulemodel.cpp:654
 msgid "Backwards"
 msgstr "Cara a atrás"
 
-#: models/kptschedulemodel.cpp:643 models/kptschedulemodel.cpp:646
+#: models/kptschedulemodel.cpp:648 models/kptschedulemodel.cpp:651
 msgid "Forward"
 msgstr "Cara a diante"
 
-#: models/kptschedulemodel.cpp:646
+#: models/kptschedulemodel.cpp:651
 #, fuzzy
 #| msgid "Backwards"
 msgid "(Backwards)"
 msgstr "Cara a atrás"
 
-#: models/kptschedulemodel.cpp:649
+#: models/kptschedulemodel.cpp:654
 #, fuzzy
 #| msgid "Forward"
 msgid "(Forward)"
 msgstr "Cara a diante"
 
-#: models/kptschedulemodel.cpp:657 models/kptschedulemodel.cpp:667
+#: models/kptschedulemodel.cpp:662 models/kptschedulemodel.cpp:672
 #, fuzzy
 #| msgid "Schedule project from: %1"
 msgctxt "@info:tooltip"
 msgid "Schedule project from target end time"
 msgstr "Anotar proxecto dende: %1 "
 
-#: models/kptschedulemodel.cpp:658 models/kptschedulemodel.cpp:663
+#: models/kptschedulemodel.cpp:663 models/kptschedulemodel.cpp:668
 #, fuzzy
 #| msgid "Schedule project from: %1"
 msgctxt "@info:tooltip"
 msgid "Schedule project from target start time"
 msgstr "Anotar proxecto dende: %1 "
 
-#: models/kptschedulemodel.cpp:662
+#: models/kptschedulemodel.cpp:667
 #, fuzzy, kde-format
 #| msgid "Can start project later than time: %1"
 msgctxt "@info:tooltip 1=scheduler name"
 msgid "%1 always schedules from target start time"
 msgstr "Pode comezar o proxecto retrasado: %1"
 
-#: models/kptschedulemodel.cpp:668
+#: models/kptschedulemodel.cpp:673
 #, fuzzy, kde-format
 #| msgid "Schedule from end time: %1"
 msgctxt "@info:tooltip 1=scheduler name"
 msgid "%1 always schedules from target end time"
 msgstr "Planificar dende o comezo: %1"
 
-#: models/kptschedulemodel.cpp:672
+#: models/kptschedulemodel.cpp:677
 #, fuzzy
 #| msgid "Forward"
 msgctxt "@label:listbox"
 msgid "Forward"
 msgstr "Cara a diante"
 
-#: models/kptschedulemodel.cpp:672
+#: models/kptschedulemodel.cpp:677
 #, fuzzy
 #| msgid "Backwards"
 msgctxt "@label:listbox"
 msgid "Backwards"
 msgstr "Cara a atrás"
 
-#: models/kptschedulemodel.cpp:692
+#: models/kptschedulemodel.cpp:697
 #, fuzzy
 #| msgid "The scheduling direction"
 msgctxt "(qtundo-format)"
 msgid "Modify scheduling direction"
 msgstr "A dirección da planificiación"
 
-#: models/kptschedulemodel.cpp:710
+#: models/kptschedulemodel.cpp:715
 #, fuzzy
 #| msgid "Unknown"
 msgid "Unknown"
 msgstr "Descoñecido"
 
-#: models/kptschedulemodel.cpp:735
+#: models/kptschedulemodel.cpp:740
 #, fuzzy
 #| msgid "Not scheduled"
 msgctxt "(qtundo-format)"
 msgid "Modify scheduler"
 msgstr "Non planificado"
 
-#: models/kptschedulemodel.cpp:828
+#: models/kptschedulemodel.cpp:783
+#, fuzzy
+#| msgid "None"
+msgctxt "Scheduling granularity not supported"
+msgid "None"
+msgstr "Ningún"
+
+#: models/kptschedulemodel.cpp:792
+msgctxt "@info:tooltip"
+msgid "Scheduling granularity not supported"
+msgstr ""
+
+#: models/kptschedulemodel.cpp:796
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Selected scheduling granularity: %1"
+msgstr ""
+
+#: models/kptschedulemodel.cpp:820
+#, fuzzy
+#| msgid "The scheduling direction"
+msgctxt "(qtundo-format)"
+msgid "Modify scheduling granularity"
+msgstr "A dirección da planificiación"
+
+#: models/kptschedulemodel.cpp:893
 msgid "State"
 msgstr "Estado"
 
-#: models/kptschedulemodel.cpp:829
+#: models/kptschedulemodel.cpp:894
 msgid "Direction"
 msgstr "Dirección"
 
-#: models/kptschedulemodel.cpp:830
+#: models/kptschedulemodel.cpp:895
 msgid "Overbooking"
 msgstr "Exceso de uso"
 
-#: models/kptschedulemodel.cpp:831
+#: models/kptschedulemodel.cpp:896
 msgid "Distribution"
 msgstr "Dristribución"
 
-#: models/kptschedulemodel.cpp:833
+#: models/kptschedulemodel.cpp:898
 msgid "Planned Start"
 msgstr "Comezo previsto"
 
-#: models/kptschedulemodel.cpp:834
+#: models/kptschedulemodel.cpp:899
 msgid "Planned Finish"
 msgstr "Remate previsto"
 
-#: models/kptschedulemodel.cpp:835
+#: models/kptschedulemodel.cpp:900
 msgid "Scheduler"
 msgstr "Xestor de axenda"
 
-#: models/kptschedulemodel.cpp:1105
+#: models/kptschedulemodel.cpp:901
+msgctxt "title:column"
+msgid "Granularity"
+msgstr ""
+
+#: models/kptschedulemodel.cpp:1172
 msgid "Phase"
 msgstr "Fase"
 
-#: models/kptschedulemodel.cpp:1105
+#: models/kptschedulemodel.cpp:1172
 msgid "Severity"
 msgstr "Gravidade"
 
-#: models/kptschedulemodel.cpp:1105
+#: models/kptschedulemodel.cpp:1172
 msgid "Message"
 msgstr "Mensaxe"
 
@@ -4135,7 +4172,7 @@ msgstr "Engadir Subconta"
 
 #: ui/kptaccountseditor.cpp:276 ui/kptcalendareditor.cpp:630
 #: ui/kptdependencyeditor.cpp:2338 ui/kptresourceeditor.cpp:291
-#: ui/kptscheduleeditor.cpp:291 ui/kpttaskeditor.cpp:729
+#: ui/kptscheduleeditor.cpp:292 ui/kpttaskeditor.cpp:729
 #, fuzzy
 #| msgid "Delete"
 msgctxt "@action"
@@ -4363,7 +4400,7 @@ msgstr "Engadir Sub-Tarefa"
 msgid "Add Sub-Milestone..."
 msgstr "Engadir sub-fito... "
 
-#: ui/kptdocumentseditor.cpp:217 ui/kptscheduleeditor.cpp:638
+#: ui/kptdocumentseditor.cpp:217 ui/kptscheduleeditor.cpp:639
 msgid "Edit..."
 msgstr "Editar..."
 
@@ -5109,54 +5146,54 @@ msgstr "Engadir un grupo de recursos"
 msgid "Add Resource"
 msgstr "Engadir recurso"
 
-#: ui/kptscheduleeditor.cpp:279
+#: ui/kptscheduleeditor.cpp:280
 msgid "Add Schedule"
 msgstr "Engadir Axenda"
 
-#: ui/kptscheduleeditor.cpp:285
+#: ui/kptscheduleeditor.cpp:286
 msgid "Add Sub-schedule"
 msgstr "Engadir Sub-Axenda "
 
-#: ui/kptscheduleeditor.cpp:297
+#: ui/kptscheduleeditor.cpp:298
 msgid "Calculate"
 msgstr "Calcular"
 
-#: ui/kptscheduleeditor.cpp:303
+#: ui/kptscheduleeditor.cpp:304
 msgid "Baseline"
 msgstr "Liña de base"
 
-#: ui/kptscheduleeditor.cpp:309
+#: ui/kptscheduleeditor.cpp:310
 #, fuzzy
 msgctxt "@action"
 msgid "Detach"
 msgstr "Desprender"
 
-#: ui/kptscheduleeditor.cpp:369 ui/kptscheduleeditor.cpp:402
+#: ui/kptscheduleeditor.cpp:370 ui/kptscheduleeditor.cpp:403
 #, fuzzy
 #| msgid "Create sub-schedule"
 msgctxt "(qtundo-format)"
 msgid "Create sub-schedule"
 msgstr "Crear sub-axenda"
 
-#: ui/kptscheduleeditor.cpp:380
+#: ui/kptscheduleeditor.cpp:381
 #, fuzzy, kde-format
 #| msgid "Add schedule %1"
 msgctxt "(qtundo-format)"
 msgid "Add schedule %1"
 msgstr "Engadir a planificación %1"
 
-#: ui/kptscheduleeditor.cpp:485
+#: ui/kptscheduleeditor.cpp:486
 #, fuzzy
 #| msgid "ForInformation"
 msgctxt "@action"
 msgid "Show Debug Information"
 msgstr "ParaInformación"
 
-#: ui/kptscheduleeditor.cpp:721
+#: ui/kptscheduleeditor.cpp:722
 msgid "Result"
 msgstr "Resultado"
 
-#: ui/kptscheduleeditor.cpp:731
+#: ui/kptscheduleeditor.cpp:732
 msgid "Scheduling Log"
 msgstr "Rexistro de Axenda"
 
