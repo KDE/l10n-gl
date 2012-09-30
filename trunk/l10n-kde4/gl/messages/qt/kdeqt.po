@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeqt\n"
 "Report-Msgid-Bugs-To: qt-bugs@trolltech.com\n"
-"POT-Creation-Date: 2012-09-28 02:38+0200\n"
+"POT-Creation-Date: 2012-09-30 04:49+0200\n"
 "PO-Revision-Date: 2012-03-29 23:49+0200\n"
 "Last-Translator: Marce Villarino <mvillarino@kde-espana.es>\n"
 "Language-Team: Galician <proxecto@trasno.net>\n"
@@ -1574,6 +1574,15 @@ msgctxt "QIODevice"
 msgid "No space left on device"
 msgstr "Non queda espazo no dispositivo"
 
+#: corelib/io/qiodevice.cpp:1630 corelib/plugin/qpluginloader.cpp:367
+#: corelib/plugin/qlibrary.cpp:1236
+#: corelib/statemachine/qstatemachine.cpp:1046
+#: network/kernel/qhostinfo_unix.cpp:301
+#: network/socket/qnativesocketengine.cpp:276
+#: network/socket/qsymbiansocketengine.cpp:1435 network/ssl/qsslerror.cpp:289
+msgid "Unknown error"
+msgstr "Erro descoñecido"
+
 #: corelib/io/qprocess.cpp:884 corelib/io/qprocess.cpp:936
 #: corelib/io/qprocess_win.cpp:601 corelib/io/qprocess_win.cpp:651
 msgid "Error reading from process"
@@ -1591,15 +1600,6 @@ msgstr "O proceso pechouse inesperadamente"
 #: corelib/io/qprocess.cpp:2054
 msgid "No program defined"
 msgstr "Non definiu programa ningún"
-
-#: corelib/io/qiodevice.cpp:1630 corelib/plugin/qlibrary.cpp:1236
-#: corelib/plugin/qpluginloader.cpp:367
-#: corelib/statemachine/qstatemachine.cpp:1046
-#: network/kernel/qhostinfo_unix.cpp:301
-#: network/socket/qnativesocketengine.cpp:276
-#: network/socket/qsymbiansocketengine.cpp:1435 network/ssl/qsslerror.cpp:289
-msgid "Unknown error"
-msgstr "Erro descoñecido"
 
 #: corelib/io/qprocess_win.cpp:138 corelib/io/qprocess_unix.cpp:402
 msgid "Could not open input redirection for reading"
@@ -1838,6 +1838,30 @@ msgctxt "QSystemSemaphore"
 msgid "%1: ftok failed"
 msgstr "%1: fallou ftok"
 
+#: corelib/plugin/qlibrary_unix.cpp:261 corelib/plugin/qlibrary_win.cpp:136
+#, qt-format
+msgid "Cannot load library %1: %2"
+msgstr "Non foi posíbel cargar a biblioteca %1: %2"
+
+#: corelib/plugin/qlibrary_unix.cpp:278 corelib/plugin/qlibrary_win.cpp:158
+#, qt-format
+msgid "Cannot unload library %1: %2"
+msgstr "Non foi posíbel descargar a biblioteca %1: %2"
+
+#: corelib/plugin/qlibrary_unix.cpp:312 corelib/plugin/qlibrary_win.cpp:173
+#, qt-format
+msgid "Cannot resolve symbol \"%1\" in %2: %3"
+msgstr "Non é posíbel resolver o símbolo «%1» en %2: %3"
+
+#: corelib/plugin/qpluginloader.cpp:254
+msgid "The plugin was not loaded."
+msgstr "O complemento non se cargou."
+
+#: corelib/plugin/qpluginloader.cpp:343 corelib/plugin/qlibrary.cpp:682
+#: corelib/plugin/qlibrary.cpp:828
+msgid "The shared library was not found."
+msgstr "Non se atopou a biblioteca compartida."
+
 #: corelib/plugin/qelfparser_p.cpp:77
 #, qt-format
 msgid "'%1' is not an ELF object (%2)"
@@ -1862,11 +1886,6 @@ msgstr "%1 non é un obxecto ELF válido (%2)"
 #, qt-format
 msgid "Plugin verification data mismatch in '%1'"
 msgstr "Erro de concordancia na verificación dos datos do complemento en «%1»"
-
-#: corelib/plugin/qlibrary.cpp:682 corelib/plugin/qlibrary.cpp:828
-#: corelib/plugin/qpluginloader.cpp:343
-msgid "The shared library was not found."
-msgstr "Non se atopou a biblioteca compartida."
 
 #: corelib/plugin/qlibrary.cpp:830
 #, qt-format
@@ -1896,25 +1915,6 @@ msgid ""
 msgstr ""
 "O complemento «%1» utiliza unha biblioteca Qt non compatíbel (Non é posíbel "
 "mesturar as bibliotecas de depuración coas publicadas)."
-
-#: corelib/plugin/qlibrary_unix.cpp:261 corelib/plugin/qlibrary_win.cpp:136
-#, qt-format
-msgid "Cannot load library %1: %2"
-msgstr "Non foi posíbel cargar a biblioteca %1: %2"
-
-#: corelib/plugin/qlibrary_unix.cpp:278 corelib/plugin/qlibrary_win.cpp:158
-#, qt-format
-msgid "Cannot unload library %1: %2"
-msgstr "Non foi posíbel descargar a biblioteca %1: %2"
-
-#: corelib/plugin/qlibrary_unix.cpp:312 corelib/plugin/qlibrary_win.cpp:173
-#, qt-format
-msgid "Cannot resolve symbol \"%1\" in %2: %3"
-msgstr "Non é posíbel resolver o símbolo «%1» en %2: %3"
-
-#: corelib/plugin/qpluginloader.cpp:254
-msgid "The plugin was not loaded."
-msgstr "O complemento non se cargou."
 
 #: corelib/statemachine/qstatemachine.cpp:1028
 #, qt-format
@@ -2124,12 +2124,12 @@ msgstr "LayoutMirroring só está dispoñíbel mediante propiedades anexas"
 msgid "Loader does not support loading non-visual elements."
 msgstr "O cargador non permite cargar elementos non visuais."
 
-#: declarative/graphicsitems/qdeclarativetextinput.cpp:962
-#: declarative/graphicsitems/qdeclarativetextinput.cpp:970
+#: declarative/graphicsitems/qdeclarativetextinput.cpp:961
+#: declarative/graphicsitems/qdeclarativetextinput.cpp:969
 msgid "Could not load cursor delegate"
 msgstr "Non foi posíbel cargar o delegado do cursor"
 
-#: declarative/graphicsitems/qdeclarativetextinput.cpp:981
+#: declarative/graphicsitems/qdeclarativetextinput.cpp:980
 msgid "Could not instantiate cursor delegate"
 msgstr "Non foi posíbel instanciar o delegado do cursor"
 
@@ -2980,22 +2980,6 @@ msgstr "Non é posíbel conservar a aparencia con escalado non uniforme"
 msgid "Unable to preserve appearance under scale of 0"
 msgstr "Non é posíbel conservar a aparencia con escala de 0"
 
-#: declarative/util/qdeclarativexmllistmodel.cpp:581
-#, qt-format
-msgid "\"%1\" duplicates a previous role name and will be disabled."
-msgstr "«%1» duplica un nome de rol anterior e desactivarase."
-
-#: declarative/util/qdeclarativexmllistmodel.cpp:826
-msgctxt "QDeclarativeXmlRoleList"
-msgid "An XmlListModel query must start with '/' or \"//\""
-msgstr "Unha pescuda XmlListModel non pode comezar por «/» nin por «//»"
-
-#: declarative/util/qdeclarativexmllistmodel.cpp:1105
-#: declarative/util/qdeclarativexmllistmodel.cpp:1109
-#, qt-format
-msgid "invalid query: \"%1\""
-msgstr "pescuda non válida: «%1»"
-
 #: declarative/util/qdeclarativeutilmodule.cpp:80
 msgid "Application is an abstract class"
 msgstr "Application é unha clase abstracta"
@@ -3013,6 +2997,22 @@ msgctxt "QDeclarativeXmlListModel"
 msgid "Qt was built without support for xmlpatterns"
 msgstr "Qt construíuse sen soporte para xmlpatterns"
 
+#: declarative/util/qdeclarativexmllistmodel.cpp:581
+#, qt-format
+msgid "\"%1\" duplicates a previous role name and will be disabled."
+msgstr "«%1» duplica un nome de rol anterior e desactivarase."
+
+#: declarative/util/qdeclarativexmllistmodel.cpp:826
+msgctxt "QDeclarativeXmlRoleList"
+msgid "An XmlListModel query must start with '/' or \"//\""
+msgstr "Unha pescuda XmlListModel non pode comezar por «/» nin por «//»"
+
+#: declarative/util/qdeclarativexmllistmodel.cpp:1105
+#: declarative/util/qdeclarativexmllistmodel.cpp:1109
+#, qt-format
+msgid "invalid query: \"%1\""
+msgstr "pescuda non válida: «%1»"
+
 #: declarative/util/qdeclarativeconnections.cpp:217
 msgid "Connections: nested objects not allowed"
 msgstr "Conexións: non se permiten obxectos aniñados"
@@ -3024,6 +3024,10 @@ msgstr "Conexións: erro de sintaxe"
 #: declarative/util/qdeclarativeconnections.cpp:228
 msgid "Connections: script expected"
 msgstr "Conexións: agardábase un script"
+
+#: declarative/util/qdeclarativebehavior.cpp:127
+msgid "Cannot change the animation assigned to a Behavior."
+msgstr "Non se pode mudar a animación asignada a un Behavior."
 
 #: declarative/util/qdeclarativeanimation.cpp:172
 #, qt-format
@@ -3040,10 +3044,6 @@ msgstr "Non se pode animar a propiedade só para lectura «%1»"
 #: declarative/util/qdeclarativeanimation.cpp:2867
 msgid "Cannot set a duration of < 0"
 msgstr "Non se pode indicar unha duración < 0"
-
-#: declarative/util/qdeclarativebehavior.cpp:127
-msgid "Cannot change the animation assigned to a Behavior."
-msgstr "Non se pode mudar a animación asignada a un Behavior."
 
 #: gui/accessible/qaccessibleobject.cpp:374
 #: plugins/accessible/widgets/complexwidgets.cpp:1617
@@ -3179,6 +3179,30 @@ msgid "<h3>About Qt</h3><p>This program uses Qt version %1.</p>"
 msgstr "<h3>Acerca de Qt</h3><p>Este programa emprega a versión %1 de Qt.</p>"
 
 #: gui/dialogs/qmessagebox.cpp:1767
+#, fuzzy
+#| msgid ""
+#| "<p>Qt is a C++ toolkit for cross-platform application development.</"
+#| "p><p>Qt provides single-source portability across MS&nbsp;Windows, "
+#| "Mac&nbsp;OS&nbsp;X, Linux, and all major commercial Unix variants. Qt is "
+#| "also available for embedded devices as Qt for Embedded Linux and Qt for "
+#| "Windows CE.</p><p>Qt is available under three different licensing options "
+#| "designed to accommodate the needs of our various users.</p><p>Qt licensed "
+#| "under our commercial license agreement is appropriate for development of "
+#| "proprietary/commercial software where you do not want to share any source "
+#| "code with third parties or otherwise cannot comply with the terms of the "
+#| "GNU LGPL version 2.1 or GNU GPL version 3.0.</p><p>Qt licensed under the "
+#| "GNU LGPL version 2.1 is appropriate for the development of Qt "
+#| "applications (proprietary or open source) provided you can comply with "
+#| "the terms and conditions of the GNU LGPL version 2.1.</p><p>Qt licensed "
+#| "under the GNU General Public License version 3.0 is appropriate for the "
+#| "development of Qt applications where you wish to use such applications in "
+#| "combination with software subject to the terms of the GNU GPL version 3.0 "
+#| "or where you are otherwise willing to comply with the terms of the GNU "
+#| "GPL version 3.0.</p><p>Please see <a href=\"http://qt.nokia.com/products/"
+#| "licensing\">qt.nokia.com/products/licensing</a> for an overview of Qt "
+#| "licensing.</p><p>Copyright (C) 2012 Nokia Corporation and/or its "
+#| "subsidiary(-ies).</p><p>Qt is a Nokia product. See <a href=\"http://qt."
+#| "nokia.com/\">qt.nokia.com</a> for more information.</p>"
 msgid ""
 "<p>Qt is a C++ toolkit for cross-platform application development.</p><p>Qt "
 "provides single-source portability across MS&nbsp;Windows, Mac&nbsp;OS&nbsp;"
@@ -3198,9 +3222,9 @@ msgid ""
 "terms of the GNU GPL version 3.0 or where you are otherwise willing to "
 "comply with the terms of the GNU GPL version 3.0.</p><p>Please see <a href="
 "\"http://qt.nokia.com/products/licensing\">qt.nokia.com/products/licensing</"
-"a> for an overview of Qt licensing.</p><p>Copyright (C) 2012 Nokia "
-"Corporation and/or its subsidiary(-ies).</p><p>Qt is a Nokia product. See <a "
-"href=\"http://qt.nokia.com/\">qt.nokia.com</a> for more information.</p>"
+"a> for an overview of Qt licensing.</p><p>Copyright (C) 2012 Digia Plc and/"
+"or its subsidiary(-ies).</p><p>Qt is a Nokia product. See <a href=\"http://"
+"qt.nokia.com/\">qt.nokia.com</a> for more information.</p>"
 msgstr ""
 "<p>Qt é un toolkit de C++ para o desenvolvemento de programas "
 "multiplataforma.</p> <p>Qt fornece portabilidade entre MS&nbsp;Windows, "
@@ -3457,16 +3481,6 @@ msgstr "Valor"
 msgid "Cancel"
 msgstr "Cancelar"
 
-#: gui/dialogs/qabstractpagesetupdialog.cpp:68
-#: gui/dialogs/qabstractpagesetupdialog.cpp:80
-msgctxt "QPrintPreviewDialog"
-msgid "Page Setup"
-msgstr "Configuración da páxina"
-
-#: gui/dialogs/qsidebar.cpp:442
-msgid "Remove"
-msgstr "Eliminar"
-
 #: gui/dialogs/qwizard.cpp:688
 msgid "Go Back"
 msgstr "Atrás"
@@ -3509,15 +3523,25 @@ msgstr "Axuda"
 msgid "&Help"
 msgstr "&Axuda"
 
-#: gui/dialogs/qdialog.cpp:653 gui/kernel/qwhatsthis.cpp:527
-msgid "What's This?"
-msgstr "Que é isto?"
+#: gui/dialogs/qabstractpagesetupdialog.cpp:68
+#: gui/dialogs/qabstractpagesetupdialog.cpp:80
+msgctxt "QPrintPreviewDialog"
+msgid "Page Setup"
+msgstr "Configuración da páxina"
 
 #: gui/dialogs/qabstractprintdialog.cpp:116
 #: gui/dialogs/qabstractprintdialog.cpp:129
 msgctxt "QPrintDialog"
 msgid "Print"
 msgstr "Imp Pant"
+
+#: gui/dialogs/qsidebar.cpp:442
+msgid "Remove"
+msgstr "Eliminar"
+
+#: gui/dialogs/qdialog.cpp:653 gui/kernel/qwhatsthis.cpp:527
+msgid "What's This?"
+msgstr "Que é isto?"
 
 #: gui/dialogs/qprintdialog_qws.cpp:148
 msgid "File exists"
@@ -3787,14 +3811,6 @@ msgstr "Método de entrada de Mac OS X"
 msgid "S60 FEP input method"
 msgstr "Método de entrada FEP de S60"
 
-#: gui/itemviews/qitemeditorfactory.cpp:556 qt3support/sql/q3datatable.cpp:286
-msgid "False"
-msgstr "Falso"
-
-#: gui/itemviews/qitemeditorfactory.cpp:557 qt3support/sql/q3datatable.cpp:285
-msgid "True"
-msgstr "Verdadeiro"
-
 #: gui/itemviews/qdirmodel.cpp:852
 msgctxt "QFileDialog"
 msgid "My Computer"
@@ -3840,6 +3856,14 @@ msgstr "Atallo"
 msgctxt "QFileDialog"
 msgid "Unknown"
 msgstr "Descoñecido"
+
+#: gui/itemviews/qitemeditorfactory.cpp:556 qt3support/sql/q3datatable.cpp:286
+msgid "False"
+msgstr "Falso"
+
+#: gui/itemviews/qitemeditorfactory.cpp:557 qt3support/sql/q3datatable.cpp:285
+msgid "True"
+msgstr "Verdadeiro"
 
 #: gui/kernel/qapplication.cpp:2428
 msgctxt ""
@@ -5526,7 +5550,7 @@ msgstr "Restaurar"
 #: gui/widgets/qmdisubwindow.cpp:352 gui/widgets/qworkspace.cpp:113
 #: plugins/accessible/compat/q3complexwidgets.cpp:256
 #: plugins/accessible/widgets/complexwidgets.cpp:1614
-#: plugins/accessible/widgets/complexwidgets.cpp:1910
+#: plugins/accessible/widgets/complexwidgets.cpp:1912
 #: plugins/accessible/widgets/qaccessiblemenu.cpp:157
 #: plugins/accessible/widgets/qaccessiblemenu.cpp:382
 #: plugins/accessible/widgets/qaccessiblewidgets.cpp:1329
@@ -5816,6 +5840,103 @@ msgstr "Non se indicou o nome do servidor"
 msgid "Invalid hostname"
 msgstr "O nome do servidor non é válido"
 
+#: network/socket/qsocks5socketengine.cpp:623
+msgid "Connection to proxy refused"
+msgstr "A conexión co proxy foi rexeitada"
+
+#: network/socket/qsocks5socketengine.cpp:627
+msgid "Connection to proxy closed prematurely"
+msgstr "A conexión co proxy pechouse antes de tempo"
+
+#: network/socket/qsocks5socketengine.cpp:631
+msgid "Proxy host not found"
+msgstr "Non se atopou o servidor proxy"
+
+#: network/socket/qsocks5socketengine.cpp:636
+msgid "Connection to proxy timed out"
+msgstr "A conexión co proxy esgotou o tempo-límite"
+
+#: network/socket/qsocks5socketengine.cpp:653
+msgid "Proxy authentication failed"
+msgstr "Fallou a autenticación co proxy"
+
+#: network/socket/qsocks5socketengine.cpp:654
+#, qt-format
+msgid "Proxy authentication failed: %1"
+msgstr "Fallou a autenticación no proxy: %1"
+
+#: network/socket/qsocks5socketengine.cpp:663
+msgid "SOCKS version 5 protocol error"
+msgstr "Erro do protocolo SOCKS versión 5"
+
+#: network/socket/qsocks5socketengine.cpp:682
+msgid "General SOCKSv5 server failure"
+msgstr "Fallo xeral do servidor SOCKSv5"
+
+#: network/socket/qsocks5socketengine.cpp:686
+msgid "Connection not allowed by SOCKSv5 server"
+msgstr "O servidor SOCKSv5 non permitiu a conexión"
+
+#: network/socket/qsocks5socketengine.cpp:690
+#: network/socket/qnativesocketengine.cpp:231
+#: network/socket/qsymbiansocketengine.cpp:1384
+msgid "Network unreachable"
+msgstr "Non foi posíbel acadar a rede"
+
+#: network/socket/qsocks5socketengine.cpp:698
+#: network/socket/qabstractsocket.cpp:968
+#: network/socket/qnativesocketengine.cpp:240
+#: network/socket/qsymbiansocketengine.cpp:1393
+msgid "Connection refused"
+msgstr "A conexión foi rexeitada"
+
+#: network/socket/qsocks5socketengine.cpp:702
+msgid "TTL expired"
+msgstr "Esgotouse o TTL"
+
+#: network/socket/qsocks5socketengine.cpp:706
+msgid "SOCKSv5 command not supported"
+msgstr "A orde SOCKSv5 non está soportada"
+
+#: network/socket/qsocks5socketengine.cpp:710
+msgid "Address type not supported"
+msgstr "Tipo de enderezo non soportado"
+
+#: network/socket/qsocks5socketengine.cpp:715
+#, qt-format
+msgid "Unknown SOCKSv5 proxy error code 0x%1"
+msgstr "Código de erro descoñecido (0x%1) do proxy SOCKSv5"
+
+#: network/socket/qsocks5socketengine.cpp:1409
+msgctxt "QSocks5SocketEngine"
+msgid "Network operation timed out"
+msgstr "A operación de rede esgotou o tempo-límite"
+
+#: network/socket/qudpsocket.cpp:199
+msgid "This platform does not support IPv6"
+msgstr "Esta plataforma non admite IPv6"
+
+#: network/socket/qabstractsocket.cpp:555
+#: network/socket/qabstractsocket.cpp:1382
+#: network/socket/qabstractsocket.cpp:1607 network/socket/qtcpserver.cpp:292
+#: network/socket/qtcpserver.cpp:421
+msgid "Operation on socket is not supported"
+msgstr "A operación no socket non está soportada"
+
+#: network/socket/qabstractsocket.cpp:1110
+#: network/socket/qnativesocketengine.cpp:237
+#: network/socket/qsymbiansocketengine.cpp:1390
+msgid "Connection timed out"
+msgstr "A conexión esgotou o tempo-límite"
+
+#: network/socket/qabstractsocket.cpp:1826
+msgid "Socket operation timed out"
+msgstr "A operación do socket esgotou o tempo-límite"
+
+#: network/socket/qabstractsocket.cpp:2263
+msgid "Socket is not connected"
+msgstr "O socket non está conectado"
+
 #: network/socket/qnativesocketengine.cpp:201
 #: network/socket/qsymbiansocketengine.cpp:1354
 msgid "Unable to initialize non-blocking socket"
@@ -5866,25 +5987,6 @@ msgstr "Descritor de socket non válido"
 #: network/socket/qsymbiansocketengine.cpp:1381
 msgid "Host unreachable"
 msgstr "Non foi posíbel acadar o servidor"
-
-#: network/socket/qnativesocketengine.cpp:231
-#: network/socket/qsocks5socketengine.cpp:690
-#: network/socket/qsymbiansocketengine.cpp:1384
-msgid "Network unreachable"
-msgstr "Non foi posíbel acadar a rede"
-
-#: network/socket/qnativesocketengine.cpp:237
-#: network/socket/qsymbiansocketengine.cpp:1390
-#: network/socket/qabstractsocket.cpp:1110
-msgid "Connection timed out"
-msgstr "A conexión esgotou o tempo-límite"
-
-#: network/socket/qnativesocketengine.cpp:240
-#: network/socket/qsocks5socketengine.cpp:698
-#: network/socket/qsymbiansocketengine.cpp:1393
-#: network/socket/qabstractsocket.cpp:968
-msgid "Connection refused"
-msgstr "A conexión foi rexeitada"
 
 #: network/socket/qnativesocketengine.cpp:243
 #: network/socket/qsymbiansocketengine.cpp:1396
@@ -5941,65 +6043,6 @@ msgstr "Operación nun non socket"
 msgid "The proxy type is invalid for this operation"
 msgstr "O tipo de proxy non é válido para esta operación"
 
-#: network/socket/qsocks5socketengine.cpp:623
-msgid "Connection to proxy refused"
-msgstr "A conexión co proxy foi rexeitada"
-
-#: network/socket/qsocks5socketengine.cpp:627
-msgid "Connection to proxy closed prematurely"
-msgstr "A conexión co proxy pechouse antes de tempo"
-
-#: network/socket/qsocks5socketengine.cpp:631
-msgid "Proxy host not found"
-msgstr "Non se atopou o servidor proxy"
-
-#: network/socket/qsocks5socketengine.cpp:636
-msgid "Connection to proxy timed out"
-msgstr "A conexión co proxy esgotou o tempo-límite"
-
-#: network/socket/qsocks5socketengine.cpp:653
-msgid "Proxy authentication failed"
-msgstr "Fallou a autenticación co proxy"
-
-#: network/socket/qsocks5socketengine.cpp:654
-#, qt-format
-msgid "Proxy authentication failed: %1"
-msgstr "Fallou a autenticación no proxy: %1"
-
-#: network/socket/qsocks5socketengine.cpp:663
-msgid "SOCKS version 5 protocol error"
-msgstr "Erro do protocolo SOCKS versión 5"
-
-#: network/socket/qsocks5socketengine.cpp:682
-msgid "General SOCKSv5 server failure"
-msgstr "Fallo xeral do servidor SOCKSv5"
-
-#: network/socket/qsocks5socketengine.cpp:686
-msgid "Connection not allowed by SOCKSv5 server"
-msgstr "O servidor SOCKSv5 non permitiu a conexión"
-
-#: network/socket/qsocks5socketengine.cpp:702
-msgid "TTL expired"
-msgstr "Esgotouse o TTL"
-
-#: network/socket/qsocks5socketengine.cpp:706
-msgid "SOCKSv5 command not supported"
-msgstr "A orde SOCKSv5 non está soportada"
-
-#: network/socket/qsocks5socketengine.cpp:710
-msgid "Address type not supported"
-msgstr "Tipo de enderezo non soportado"
-
-#: network/socket/qsocks5socketengine.cpp:715
-#, qt-format
-msgid "Unknown SOCKSv5 proxy error code 0x%1"
-msgstr "Código de erro descoñecido (0x%1) do proxy SOCKSv5"
-
-#: network/socket/qsocks5socketengine.cpp:1409
-msgctxt "QSocks5SocketEngine"
-msgid "Network operation timed out"
-msgstr "A operación de rede esgotou o tempo-límite"
-
 #: network/socket/qsymbiansocketengine.cpp:1429
 msgid "The address is invalid for this operation"
 msgstr "O enderezo non é válido para esta operación"
@@ -6007,86 +6050,6 @@ msgstr "O enderezo non é válido para esta operación"
 #: network/socket/qsymbiansocketengine.cpp:1432
 msgid "The specified network session is not opened"
 msgstr "A sesión de rede que se especificou non está aberta"
-
-#: network/socket/qtcpserver.cpp:292 network/socket/qtcpserver.cpp:421
-#: network/socket/qabstractsocket.cpp:555
-#: network/socket/qabstractsocket.cpp:1382
-#: network/socket/qabstractsocket.cpp:1607
-msgid "Operation on socket is not supported"
-msgstr "A operación no socket non está soportada"
-
-#: network/socket/qudpsocket.cpp:199
-msgid "This platform does not support IPv6"
-msgstr "Esta plataforma non admite IPv6"
-
-#: network/socket/qabstractsocket.cpp:1826
-msgid "Socket operation timed out"
-msgstr "A operación do socket esgotou o tempo-límite"
-
-#: network/socket/qabstractsocket.cpp:2263
-msgid "Socket is not connected"
-msgstr "O socket non está conectado"
-
-#: network/ssl/qsslsocket_openssl.cpp:287
-#, qt-format
-msgid "Error creating SSL context (%1)"
-msgstr "Aconteceu un erro ao crear o contexto SSL (%1)"
-
-#: network/ssl/qsslsocket_openssl.cpp:341
-#, qt-format
-msgid "Invalid or empty cipher list (%1)"
-msgstr "A lista de cifras ou non é válida ou está baleira (%1)"
-
-#: network/ssl/qsslsocket_openssl.cpp:385
-#, qt-format
-msgid "Cannot provide a certificate with no key, %1"
-msgstr "Non é posíbel fornecer un certificado sen chave, %1"
-
-#: network/ssl/qsslsocket_openssl.cpp:392
-#, qt-format
-msgid "Error loading local certificate, %1"
-msgstr "Aconteceu un erro ao cargar o certificado local, %1"
-
-#: network/ssl/qsslsocket_openssl.cpp:407
-#, qt-format
-msgid "Error loading private key, %1"
-msgstr "Aconteceu un erro ao cargar a chave privada, %1"
-
-#: network/ssl/qsslsocket_openssl.cpp:414
-#, qt-format
-msgid "Private key does not certify public key, %1"
-msgstr "A chave privada non certifica a chave pública, %1"
-
-#: network/ssl/qsslsocket_openssl.cpp:434
-#, qt-format
-msgid "Error creating SSL session, %1"
-msgstr "Aconteceu un erro ao crear a sesión SSL, %1"
-
-#: network/ssl/qsslsocket_openssl.cpp:470
-#, qt-format
-msgid "Error creating SSL session: %1"
-msgstr "Aconteceu un erro ao crear a sesión SSL: %1"
-
-#: network/ssl/qsslsocket_openssl.cpp:1023
-#, qt-format
-msgid "Unable to write data: %1"
-msgstr "Non foi posíbel escribir os datos: %1"
-
-#: network/ssl/qsslsocket_openssl.cpp:1093
-#, qt-format
-msgid "Unable to decrypt data: %1"
-msgstr "Non foi posíbel descifrar os datos: %1"
-
-#: network/ssl/qsslsocket_openssl.cpp:1171
-#: network/ssl/qsslsocket_openssl.cpp:1181
-#, qt-format
-msgid "Error while reading: %1"
-msgstr "Aconteceu un erro ao ler: %1"
-
-#: network/ssl/qsslsocket_openssl.cpp:1276
-#, qt-format
-msgid "Error during SSL handshake: %1"
-msgstr "Aconteceu un erro durante a negociación SSL: %1"
 
 #: network/ssl/qsslerror.cpp:217
 msgid "The issuer certificate could not be found"
@@ -6196,6 +6159,67 @@ msgstr ""
 msgid "The peer certificate is blacklisted"
 msgstr "O certificado do parceiro está na lista negra"
 
+#: network/ssl/qsslsocket_openssl.cpp:287
+#, qt-format
+msgid "Error creating SSL context (%1)"
+msgstr "Aconteceu un erro ao crear o contexto SSL (%1)"
+
+#: network/ssl/qsslsocket_openssl.cpp:341
+#, qt-format
+msgid "Invalid or empty cipher list (%1)"
+msgstr "A lista de cifras ou non é válida ou está baleira (%1)"
+
+#: network/ssl/qsslsocket_openssl.cpp:385
+#, qt-format
+msgid "Cannot provide a certificate with no key, %1"
+msgstr "Non é posíbel fornecer un certificado sen chave, %1"
+
+#: network/ssl/qsslsocket_openssl.cpp:392
+#, qt-format
+msgid "Error loading local certificate, %1"
+msgstr "Aconteceu un erro ao cargar o certificado local, %1"
+
+#: network/ssl/qsslsocket_openssl.cpp:407
+#, qt-format
+msgid "Error loading private key, %1"
+msgstr "Aconteceu un erro ao cargar a chave privada, %1"
+
+#: network/ssl/qsslsocket_openssl.cpp:414
+#, qt-format
+msgid "Private key does not certify public key, %1"
+msgstr "A chave privada non certifica a chave pública, %1"
+
+#: network/ssl/qsslsocket_openssl.cpp:434
+#, qt-format
+msgid "Error creating SSL session, %1"
+msgstr "Aconteceu un erro ao crear a sesión SSL, %1"
+
+#: network/ssl/qsslsocket_openssl.cpp:470
+#, qt-format
+msgid "Error creating SSL session: %1"
+msgstr "Aconteceu un erro ao crear a sesión SSL: %1"
+
+#: network/ssl/qsslsocket_openssl.cpp:1023
+#, qt-format
+msgid "Unable to write data: %1"
+msgstr "Non foi posíbel escribir os datos: %1"
+
+#: network/ssl/qsslsocket_openssl.cpp:1093
+#, qt-format
+msgid "Unable to decrypt data: %1"
+msgstr "Non foi posíbel descifrar os datos: %1"
+
+#: network/ssl/qsslsocket_openssl.cpp:1171
+#: network/ssl/qsslsocket_openssl.cpp:1181
+#, qt-format
+msgid "Error while reading: %1"
+msgstr "Aconteceu un erro ao ler: %1"
+
+#: network/ssl/qsslsocket_openssl.cpp:1276
+#, qt-format
+msgid "Error during SSL handshake: %1"
+msgstr "Aconteceu un erro durante a negociación SSL: %1"
+
 #: plugins/accessible/compat/q3complexwidgets.cpp:246
 msgid "System"
 msgstr "Sistema"
@@ -6259,8 +6283,8 @@ msgstr "Pechar a lapela"
 msgid "Activate the tab"
 msgstr "Activar a lapela"
 
-#: plugins/accessible/widgets/complexwidgets.cpp:1844
-#: plugins/accessible/widgets/complexwidgets.cpp:1910
+#: plugins/accessible/widgets/complexwidgets.cpp:1846
+#: plugins/accessible/widgets/complexwidgets.cpp:1912
 #: plugins/accessible/widgets/qaccessiblemenu.cpp:158
 #: plugins/accessible/widgets/qaccessiblemenu.cpp:383
 #: plugins/accessible/widgets/qaccessiblemenu.cpp:437
@@ -6275,6 +6299,14 @@ msgstr "Abrir"
 #: plugins/accessible/widgets/qaccessiblemenu.cpp:438
 msgid "Execute"
 msgstr "Executar"
+
+#: plugins/accessible/widgets/qaccessiblewidgets.cpp:1331
+msgid "Dock"
+msgstr "Acoplar"
+
+#: plugins/accessible/widgets/qaccessiblewidgets.cpp:1332
+msgid "Float"
+msgstr "Flutuante"
 
 #: plugins/accessible/widgets/rangecontrols.cpp:149
 #: plugins/accessible/widgets/rangecontrols.cpp:412
@@ -6311,14 +6343,6 @@ msgstr "Velocímetro"
 #: plugins/accessible/widgets/rangecontrols.cpp:937
 msgid "SliderHandle"
 msgstr "Asa da barra deslizante"
-
-#: plugins/accessible/widgets/qaccessiblewidgets.cpp:1331
-msgid "Dock"
-msgstr "Acoplar"
-
-#: plugins/accessible/widgets/qaccessiblewidgets.cpp:1332
-msgid "Float"
-msgstr "Flutuante"
 
 #: plugins/accessible/widgets/simplewidgets.cpp:123
 #: plugins/accessible/widgets/simplewidgets.cpp:268
@@ -6430,9 +6454,29 @@ msgstr ""
 "Selector entre métodos de entrada que usa o menú contextual dos widgets de "
 "texto"
 
-#: plugins/platforms/blackberry/qbbinputcontext_imf.cpp:889
+#: plugins/platforms/blackberry/qbbinputcontext_imf.cpp:893
 msgid "PlayBook IMF"
 msgstr "PlayBook IMF"
+
+#: plugins/qmltooling/qmldbg_inspector/editor/liveselectiontool.cpp:143
+msgid "Items"
+msgstr "Elementos"
+
+#: plugins/qmltooling/qmldbg_inspector/editor/toolbarcolorbox.cpp:65
+msgid "Copy Color"
+msgstr "Copiar a cor"
+
+#: plugins/qmltooling/qmldbg_inspector/editor/zoomtool.cpp:63
+msgid "Zoom to &100%"
+msgstr "Ampliar ao &100%"
+
+#: plugins/qmltooling/qmldbg_inspector/editor/zoomtool.cpp:64
+msgid "Zoom In"
+msgstr "Ampliar"
+
+#: plugins/qmltooling/qmldbg_inspector/editor/zoomtool.cpp:65
+msgid "Zoom Out"
+msgstr "Reducir"
 
 #: plugins/qmltooling/qmldbg_inspector/editor/qmltoolbar.cpp:65
 msgid "Inspector Mode"
@@ -6486,26 +6530,6 @@ msgstr "0.125x"
 msgid "0.1x"
 msgstr "0.1x"
 
-#: plugins/qmltooling/qmldbg_inspector/editor/toolbarcolorbox.cpp:65
-msgid "Copy Color"
-msgstr "Copiar a cor"
-
-#: plugins/qmltooling/qmldbg_inspector/editor/zoomtool.cpp:63
-msgid "Zoom to &100%"
-msgstr "Ampliar ao &100%"
-
-#: plugins/qmltooling/qmldbg_inspector/editor/zoomtool.cpp:64
-msgid "Zoom In"
-msgstr "Ampliar"
-
-#: plugins/qmltooling/qmldbg_inspector/editor/zoomtool.cpp:65
-msgid "Zoom Out"
-msgstr "Reducir"
-
-#: plugins/qmltooling/qmldbg_inspector/editor/liveselectiontool.cpp:143
-msgid "Items"
-msgstr "Elementos"
-
 #: qt3support/dialogs/q3tabdialog.cpp:648
 msgid "Apply"
 msgstr "Aplicar"
@@ -6531,14 +6555,6 @@ msgstr "%1, %2 non definido"
 #, qt-format
 msgid "Ambiguous %1 not handled"
 msgstr "Non se xestionou o %1 ambiguo"
-
-#: qt3support/sql/q3datatable.cpp:791
-msgid "Insert"
-msgstr "Inserir"
-
-#: qt3support/sql/q3datatable.cpp:792
-msgid "Update"
-msgstr "Actualizar"
 
 #: qt3support/sql/q3sqlmanager_p.cpp:890
 msgctxt "QSql"
@@ -6592,17 +6608,25 @@ msgctxt "QSql"
 msgid "Cancel your edits?"
 msgstr "Desexa cancelar as súas modificacións?"
 
+#: qt3support/sql/q3datatable.cpp:791
+msgid "Insert"
+msgstr "Inserir"
+
+#: qt3support/sql/q3datatable.cpp:792
+msgid "Update"
+msgstr "Actualizar"
+
 #: qt3support/text/q3textedit.cpp:5441
 msgid "Clear"
 msgstr "Limpar"
 
-#: qt3support/widgets/q3toolbar.cpp:692
-msgid "More..."
-msgstr "Máis..."
-
 #: qt3support/widgets/q3mainwindow.cpp:2053
 msgid "Customize..."
 msgstr "Personalizar..."
+
+#: qt3support/widgets/q3toolbar.cpp:692
+msgid "More..."
+msgstr "Máis..."
 
 #: scripttools/debugging/qscriptbreakpointsmodel.cpp:455
 msgctxt "QScriptBreakpointsModel"
@@ -7872,15 +7896,6 @@ msgid "The parameter %1 is required, but no corresponding %2 is supplied."
 msgstr ""
 "Requírese o parámetro %1, pero non se forneceu o %2 que lle corresponde."
 
-#: xmlpatterns/functions/qcontextnodechecker.cpp:54
-#, qt-format
-msgid ""
-"The root node of the second argument to function %1 must be a document node. "
-"%2 is not a document node."
-msgstr ""
-"O nodo raíz do segundo argumento da función %1 debe ser un nodo documento. "
-"%2 non é un nodo documento."
-
 #: xmlpatterns/functions/qdatetimefn.cpp:86
 #, qt-format
 msgid ""
@@ -8041,6 +8056,15 @@ msgstr "%1 non é un carácter válido de XML 1.0."
 #, qt-format
 msgid "The first argument to %1 cannot be of type %2."
 msgstr "O primeiro argumento de %1 non pode ser do tipo %2."
+
+#: xmlpatterns/functions/qcontextnodechecker.cpp:54
+#, qt-format
+msgid ""
+"The root node of the second argument to function %1 must be a document node. "
+"%2 is not a document node."
+msgstr ""
+"O nodo raíz do segundo argumento da función %1 debe ser un nodo documento. "
+"%2 non é un nodo documento."
 
 #: xmlpatterns/janitors/qcardinalityverifier.cpp:58
 #, qt-format
@@ -9430,78 +9454,78 @@ msgstr ""
 
 #: xmlpatterns/schema/qxsdschemaparser.cpp:1584
 #: xmlpatterns/schema/qxsdschemaparser.cpp:1703
-#: xmlpatterns/schema/qxsdschemaparser.cpp:1795
+#: xmlpatterns/schema/qxsdschemaparser.cpp:1792
 #, qt-format
 msgid "%1 element has neither %2 attribute nor %3 child element."
 msgstr "O elemento %1 non ten nin o atributo %2 nin o elemento fillo %3."
 
-#: xmlpatterns/schema/qxsdschemaparser.cpp:2630
-#: xmlpatterns/schema/qxsdschemaparser.cpp:4104
-#: xmlpatterns/schema/qxsdschemaparser.cpp:4336
-#: xmlpatterns/schema/qxsdschemaparser.cpp:4343
-#: xmlpatterns/schema/qxsdschemaparser.cpp:4603
-#: xmlpatterns/schema/qxsdschemaparser.cpp:4620
-#: xmlpatterns/schema/qxsdschemaparser.cpp:4878
-#: xmlpatterns/schema/qxsdschemaparser.cpp:4884
-#: xmlpatterns/schema/qxsdschemaparser.cpp:4901
-#: xmlpatterns/schema/qxsdschemaparser.cpp:4907
-#: xmlpatterns/schema/qxsdschemaparser.cpp:4924
-#: xmlpatterns/schema/qxsdschemaparser.cpp:4935
-#: xmlpatterns/schema/qxsdschemaparser.cpp:4946
-#: xmlpatterns/schema/qxsdschemaparser.cpp:4957
+#: xmlpatterns/schema/qxsdschemaparser.cpp:2627
+#: xmlpatterns/schema/qxsdschemaparser.cpp:4101
+#: xmlpatterns/schema/qxsdschemaparser.cpp:4333
+#: xmlpatterns/schema/qxsdschemaparser.cpp:4340
+#: xmlpatterns/schema/qxsdschemaparser.cpp:4600
+#: xmlpatterns/schema/qxsdschemaparser.cpp:4617
+#: xmlpatterns/schema/qxsdschemaparser.cpp:4875
+#: xmlpatterns/schema/qxsdschemaparser.cpp:4881
+#: xmlpatterns/schema/qxsdschemaparser.cpp:4898
+#: xmlpatterns/schema/qxsdschemaparser.cpp:4904
+#: xmlpatterns/schema/qxsdschemaparser.cpp:4921
+#: xmlpatterns/schema/qxsdschemaparser.cpp:4932
+#: xmlpatterns/schema/qxsdschemaparser.cpp:4943
+#: xmlpatterns/schema/qxsdschemaparser.cpp:4954
 #, qt-format
 msgid "%1 element with %2 child element must not have a %3 attribute."
 msgstr "Un elemento %1 cun elemento fillo %2 non pode ter un atributo %3."
 
-#: xmlpatterns/schema/qxsdschemaparser.cpp:3632
+#: xmlpatterns/schema/qxsdschemaparser.cpp:3629
 #, qt-format
 msgid "%1 attribute of %2 element must be %3 or %4."
 msgstr "O atributo %1 do elemento %2 debe ser %3 ou %4."
 
-#: xmlpatterns/schema/qxsdschemaparser.cpp:3668
+#: xmlpatterns/schema/qxsdschemaparser.cpp:3665
 #, qt-format
 msgid "%1 attribute of %2 element must have a value of %3."
 msgstr "O atributo %1 do elemento %2 debe ter un valor de %3."
 
-#: xmlpatterns/schema/qxsdschemaparser.cpp:3675
-#: xmlpatterns/schema/qxsdschemaparser.cpp:3709
+#: xmlpatterns/schema/qxsdschemaparser.cpp:3672
+#: xmlpatterns/schema/qxsdschemaparser.cpp:3706
 #, qt-format
 msgid "%1 attribute of %2 element must have a value of %3 or %4."
 msgstr "O atributo %1 do elemento %2 debe ter un valor de %3 ou %4."
 
-#: xmlpatterns/schema/qxsdschemaparser.cpp:4028
-#: xmlpatterns/schema/qxsdschemaparser.cpp:4157
-#: xmlpatterns/schema/qxsdschemaparser.cpp:4166
-#: xmlpatterns/schema/qxsdschemaparser.cpp:4173
-#: xmlpatterns/schema/qxsdschemaparser.cpp:4180
-#: xmlpatterns/schema/qxsdschemaparser.cpp:4507
-#: xmlpatterns/schema/qxsdschemaparser.cpp:4710
-#: xmlpatterns/schema/qxsdschemaparser.cpp:4716
-#: xmlpatterns/schema/qxsdschemaparser.cpp:4722
-#: xmlpatterns/schema/qxsdschemaparser.cpp:4728
-#: xmlpatterns/schema/qxsdschemaparser.cpp:4734
-#: xmlpatterns/schema/qxsdschemaparser.cpp:4740
-#: xmlpatterns/schema/qxsdschemaparser.cpp:4746
-#: xmlpatterns/schema/qxsdschemaparser.cpp:4823
+#: xmlpatterns/schema/qxsdschemaparser.cpp:4025
+#: xmlpatterns/schema/qxsdschemaparser.cpp:4154
+#: xmlpatterns/schema/qxsdschemaparser.cpp:4163
+#: xmlpatterns/schema/qxsdschemaparser.cpp:4170
+#: xmlpatterns/schema/qxsdschemaparser.cpp:4177
+#: xmlpatterns/schema/qxsdschemaparser.cpp:4504
+#: xmlpatterns/schema/qxsdschemaparser.cpp:4707
+#: xmlpatterns/schema/qxsdschemaparser.cpp:4713
+#: xmlpatterns/schema/qxsdschemaparser.cpp:4719
+#: xmlpatterns/schema/qxsdschemaparser.cpp:4725
+#: xmlpatterns/schema/qxsdschemaparser.cpp:4731
+#: xmlpatterns/schema/qxsdschemaparser.cpp:4737
+#: xmlpatterns/schema/qxsdschemaparser.cpp:4743
+#: xmlpatterns/schema/qxsdschemaparser.cpp:4820
 #, qt-format
 msgid "%1 element must not have %2 and %3 attribute together."
 msgstr "O elemento %1 non debe ter á vez os atributos %2 e %3."
 
-#: xmlpatterns/schema/qxsdschemaparser.cpp:4055
-#: xmlpatterns/schema/qxsdschemaparser.cpp:4277
+#: xmlpatterns/schema/qxsdschemaparser.cpp:4052
+#: xmlpatterns/schema/qxsdschemaparser.cpp:4274
 #, qt-format
 msgid "Content of %1 attribute of %2 element must not be from namespace %3."
 msgstr ""
 "O contido do atributo %1 do elemento %2 non debe proceder do espazo de nomes "
 "%3."
 
-#: xmlpatterns/schema/qxsdschemaparser.cpp:4062
-#: xmlpatterns/schema/qxsdschemaparser.cpp:4284
+#: xmlpatterns/schema/qxsdschemaparser.cpp:4059
+#: xmlpatterns/schema/qxsdschemaparser.cpp:4281
 #, qt-format
 msgid "%1 attribute of %2 element must not be %3."
 msgstr "O atributo %1 do elemento %2 non debe ser %3."
 
-#: xmlpatterns/schema/qxsdschemaparser.cpp:4220
+#: xmlpatterns/schema/qxsdschemaparser.cpp:4217
 #, qt-format
 msgid ""
 "%1 attribute of %2 element must have the value %3 because the %4 attribute "
@@ -9510,100 +9534,100 @@ msgstr ""
 "O atributo %1 do elemento %2 debe ter o mesmo valor %3 porque se indicou o "
 "atributo %4."
 
-#: xmlpatterns/schema/qxsdschemaparser.cpp:4407
+#: xmlpatterns/schema/qxsdschemaparser.cpp:4404
 msgid "Specifying use='prohibited' inside an attribute group has no effect."
 msgstr "Indicar use='prohibited' dentro dun grupo de atributos non ten efecto."
 
-#: xmlpatterns/schema/qxsdschemaparser.cpp:4760
+#: xmlpatterns/schema/qxsdschemaparser.cpp:4757
 #, qt-format
 msgid "%1 element must have either %2 or %3 attribute."
 msgstr "O elemento %1 debe ter o do atributo %2 ou o %3."
 
-#: xmlpatterns/schema/qxsdschemaparser.cpp:5314
+#: xmlpatterns/schema/qxsdschemaparser.cpp:5311
 #, qt-format
 msgid "%1 element must have either %2 attribute or %3 or %4 as child element."
 msgstr "O elemento %1 debe ter ou o atributo %2 ou un elemento fillo %3 ou %4."
 
-#: xmlpatterns/schema/qxsdschemaparser.cpp:5369
+#: xmlpatterns/schema/qxsdschemaparser.cpp:5366
 #, qt-format
 msgid "%1 element requires either %2 or %3 attribute."
 msgstr "O elemento %1 require o atributo %2 ou o %3."
 
-#: xmlpatterns/schema/qxsdschemaparser.cpp:5388
+#: xmlpatterns/schema/qxsdschemaparser.cpp:5385
 #, qt-format
 msgid "Text or entity references not allowed inside %1 element"
 msgstr ""
 "Non se permite referencias nin texto nin a entidades dentro dun elemento %1"
 
-#: xmlpatterns/schema/qxsdschemaparser.cpp:5429
-#: xmlpatterns/schema/qxsdschemaparser.cpp:5541
+#: xmlpatterns/schema/qxsdschemaparser.cpp:5426
+#: xmlpatterns/schema/qxsdschemaparser.cpp:5538
 #, qt-format
 msgid "%1 attribute of %2 element must contain %3, %4 or a list of URIs."
 msgstr ""
 "O atributo %1 do elemento %2 debe conter %3, %4 ou unha listaxe de URI."
 
-#: xmlpatterns/schema/qxsdschemaparser.cpp:5667
+#: xmlpatterns/schema/qxsdschemaparser.cpp:5664
 #, qt-format
 msgid "%1 element is not allowed in this context."
 msgstr "Non se permite o elemento %1 neste contexto."
 
-#: xmlpatterns/schema/qxsdschemaparser.cpp:5720
+#: xmlpatterns/schema/qxsdschemaparser.cpp:5717
 #, qt-format
 msgid "%1 attribute of %2 element has larger value than %3 attribute."
 msgstr "O atributo %1 do elemento %2 ten un valor maior do que o atributo %3."
 
-#: xmlpatterns/schema/qxsdschemaparser.cpp:5745
+#: xmlpatterns/schema/qxsdschemaparser.cpp:5742
 #, qt-format
 msgid "Prefix of qualified name %1 is not defined."
 msgstr "Non se definiu o prefixo do nome cualificado %1."
 
-#: xmlpatterns/schema/qxsdschemaparser.cpp:5810
-#: xmlpatterns/schema/qxsdschemaparser.cpp:5871
+#: xmlpatterns/schema/qxsdschemaparser.cpp:5807
+#: xmlpatterns/schema/qxsdschemaparser.cpp:5868
 #, qt-format
 msgid "%1 attribute of %2 element must either contain %3 or the other values."
 msgstr "O atributo %1 do elemento %2 debe conter %3 ou os outros valores."
 
-#: xmlpatterns/schema/qxsdschemaparser.cpp:6002
+#: xmlpatterns/schema/qxsdschemaparser.cpp:5999
 #, qt-format
 msgid "Component with ID %1 has been defined previously."
 msgstr "Xa se definiu anteriormente unha compoñente co ID %1."
 
-#: xmlpatterns/schema/qxsdschemaparser.cpp:6019
+#: xmlpatterns/schema/qxsdschemaparser.cpp:6016
 #, qt-format
 msgid "Element %1 already defined."
 msgstr "Xa se definiu o elemento %1."
 
-#: xmlpatterns/schema/qxsdschemaparser.cpp:6030
+#: xmlpatterns/schema/qxsdschemaparser.cpp:6027
 #, qt-format
 msgid "Attribute %1 already defined."
 msgstr "Xa se definiu o atributo %1."
 
-#: xmlpatterns/schema/qxsdschemaparser.cpp:6045
+#: xmlpatterns/schema/qxsdschemaparser.cpp:6042
 #, qt-format
 msgid "Type %1 already defined."
 msgstr "Xa se definiu o tipo %1."
 
-#: xmlpatterns/schema/qxsdschemaparser.cpp:6068
+#: xmlpatterns/schema/qxsdschemaparser.cpp:6065
 #, qt-format
 msgid "Attribute group %1 already defined."
 msgstr "Xa se definiu o grupo de atributos %1."
 
-#: xmlpatterns/schema/qxsdschemaparser.cpp:6079
+#: xmlpatterns/schema/qxsdschemaparser.cpp:6076
 #, qt-format
 msgid "Element group %1 already defined."
 msgstr "Xa se definiu o grupo de elementos %1."
 
-#: xmlpatterns/schema/qxsdschemaparser.cpp:6090
+#: xmlpatterns/schema/qxsdschemaparser.cpp:6087
 #, qt-format
 msgid "Notation %1 already defined."
 msgstr "Xa se definiu a notación %1."
 
-#: xmlpatterns/schema/qxsdschemaparser.cpp:6101
+#: xmlpatterns/schema/qxsdschemaparser.cpp:6098
 #, qt-format
 msgid "Identity constraint %1 already defined."
 msgstr "Xa se definiu a restrición de identidade %1."
 
-#: xmlpatterns/schema/qxsdschemaparser.cpp:6112
+#: xmlpatterns/schema/qxsdschemaparser.cpp:6109
 #, qt-format
 msgid "Duplicated facets in simple type %1."
 msgstr "Hai facetas duplicadas no tipo simple %1."
