@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2012-10-18 02:43+0200\n"
+"POT-Creation-Date: 2012-10-22 02:54+0200\n"
 "PO-Revision-Date: 2012-09-02 00:25+0200\n"
 "Last-Translator: Marce Villarino <mvillarino@kde-espana.es>\n"
 "Language-Team: Galician <proxecto@trasno.net>\n"
@@ -765,12 +765,26 @@ msgstr "Produciuse un erro ao cargar o complemento «%1»."
 msgid "No plugin for class \"%1\""
 msgstr "Non hai ningún complemento para a clase «%1»."
 
-#: core/kexiproject.cpp:225
+#: core/kexiproject.cpp:130 main/KexiMainWindow.cpp:3584
+msgid "Could not set empty name for this object."
+msgstr "Non é posíbel deixar o nome sen cubrir."
+
+#: core/kexiproject.cpp:134
+#, kde-format
+msgid "Could not use this name. Object with name \"%1\" already exists."
+msgstr "Non é posíbel utilizar este nome. Xa existe un obxecto co nome «%1»."
+
+#: core/kexiproject.cpp:145
+#, kde-format
+msgid "Could not rename object \"%1\"."
+msgstr "Non foi posíbel renomear o obxecto «%1»."
+
+#: core/kexiproject.cpp:307
 #, kde-format
 msgid "Could not open project \"%1\"."
 msgstr "Non foi posíbel abrir o proxecto «%1»."
 
-#: core/kexiproject.cpp:249
+#: core/kexiproject.cpp:331
 #, kde-format
 msgid ""
 "Database project %1 does not appear to have been created using Kexi and "
@@ -780,61 +794,47 @@ msgstr ""
 "pode abrirse.<br><br> É un ficheiro SQLite creado con outras ferramentas.</"
 "qt>"
 
-#: core/kexiproject.cpp:272
+#: core/kexiproject.cpp:354
 #, kde-format
 msgid "Could not create project \"%1\"."
 msgstr "Non foi posíbel crear o proxecto «%1»."
 
-#: core/kexiproject.cpp:315 core/kexiproject.cpp:380
+#: core/kexiproject.cpp:397 core/kexiproject.cpp:462
 msgid "Project major version"
 msgstr "Versión principal do proxecto"
 
-#: core/kexiproject.cpp:317 core/kexiproject.cpp:382
+#: core/kexiproject.cpp:399 core/kexiproject.cpp:464
 msgid "Project minor version"
 msgstr "Versión secundaria do proxecto"
 
-#: core/kexiproject.cpp:319
+#: core/kexiproject.cpp:401
 msgid "Project caption"
 msgstr "Título do proxecto"
 
-#: core/kexiproject.cpp:321
+#: core/kexiproject.cpp:403
 msgid "Project description"
 msgstr "Descrición do proxecto"
 
-#: core/kexiproject.cpp:854
+#: core/kexiproject.cpp:936
 #, kde-format
 msgid "Opening object \"%1\" failed."
 msgstr "Non foi posíbel abrir o obxecto «%1»."
 
-#: core/kexiproject.cpp:873
+#: core/kexiproject.cpp:955
 msgid "This project is opened as read only."
 msgstr "Este proxecto foi aberto só para lectura."
 
-#: core/kexiproject.cpp:904
+#: core/kexiproject.cpp:986
 #, fuzzy
 #| msgid "Could not remove object's data."
 msgid "Could not remove object's user data."
 msgstr "Non foi posíbel eliminar os datos do obxecto."
 
-#: core/kexiproject.cpp:934 main/KexiMainWindow.cpp:3582
-msgid "Could not set empty name for this object."
-msgstr "Non é posíbel deixar o nome sen cubrir."
-
-#: core/kexiproject.cpp:938
-#, kde-format
-msgid "Could not use this name. Object with name \"%1\" already exists."
-msgstr "Non é posíbel utilizar este nome. Xa existe un obxecto co nome «%1»."
-
-#: core/kexiproject.cpp:945
-#, kde-format
-msgid "Could not rename object \"%1\"."
-msgstr "Non foi posíbel renomear o obxecto «%1»."
-
-#: core/kexiproject.cpp:1069
+#: core/kexiproject.cpp:1108
 msgid "Warning: entire project's data will be removed."
 msgstr "Aviso: eliminaranse todos os datos do proxecto."
 
-#: core/kexiproject.cpp:1083
+#: core/kexiproject.cpp:1122
 #, kde-format
 msgid ""
 "The project %1 already exists.\n"
@@ -843,16 +843,16 @@ msgstr ""
 "O proxecto «%1» xa existe.\n"
 "Quere substituílo por un proxecto novo baleiro?"
 
-#: core/kexiproject.cpp:1086 main/kexifinddialog.cpp:228
+#: core/kexiproject.cpp:1125 main/kexifinddialog.cpp:228
 msgid "Replace"
 msgstr "Substituír"
 
-#: core/kexiproject.cpp:1110
+#: core/kexiproject.cpp:1149
 #, kde-format
 msgid "Do you want to drop the project \"%1\"?"
 msgstr "Quere eliminar o proxecto «%1»?"
 
-#: core/kexiproject.cpp:1120
+#: core/kexiproject.cpp:1159
 msgid ""
 "Could not drop this project. Database connection for this project has been "
 "opened as read only."
@@ -972,7 +972,7 @@ msgid ""
 "Design has been changed. You must save it before switching to other view."
 msgstr "Modificouse o deseño. Debe gardalo antes de cambiar a outra vista."
 
-#: core/KexiWindow.cpp:671 main/KexiMainWindow.cpp:2895
+#: core/KexiWindow.cpp:671 main/KexiMainWindow.cpp:2897
 #, kde-format
 msgid "Switching to other view failed (%1)."
 msgstr "non foi posíbel cambiar a outra vista (%1)."
@@ -2557,7 +2557,7 @@ msgstr "Abrir na vista dos datos"
 #: formeditor/kexiactionselectiondialog.cpp:278
 #: plugins/scripting/kexiscripting/kexiscriptdesignview.cpp:161
 #: plugins/scripting/kexiscripting/kexiscriptpart.cpp:126
-#: widget/navigator/KexiProjectNavigator.cpp:167
+#: widget/navigator/KexiProjectNavigator.cpp:170
 msgid "Execute"
 msgstr "Executar"
 
@@ -2886,7 +2886,7 @@ msgstr "A&topar:"
 
 #. i18n: ectx: property (text), widget (KPushButton, m_btnReplace)
 #: main/kexifinddialog.ui:103 migration/importwizard.cpp:809
-#: widget/KexiNameDialog.cpp:133 widget/utils/kexicontextmenuutils.cpp:234
+#: widget/KexiNameDialog.cpp:135 widget/utils/kexicontextmenuutils.cpp:234
 msgid "&Replace"
 msgstr "&Substituír"
 
@@ -3034,7 +3034,7 @@ msgstr "Garda os cambios nos obxectos da xanela seleccionada."
 msgid "Save &As..."
 msgstr "Gardar &como…"
 
-#: main/KexiMainWindow.cpp:498 main/KexiMainWindow.cpp:2749
+#: main/KexiMainWindow.cpp:498 main/KexiMainWindow.cpp:2751
 msgid "Save object as"
 msgstr "Gardar o obxecto como"
 
@@ -3178,7 +3178,7 @@ msgid "Show page setup for printing the active table or query"
 msgstr ""
 "Amosar a configuración da páxina para a impresión da táboa ou consulta activa"
 
-#: main/KexiMainWindow.cpp:624 widget/navigator/KexiProjectNavigator.cpp:197
+#: main/KexiMainWindow.cpp:624 widget/navigator/KexiProjectNavigator.cpp:200
 msgid "Shows page setup for printing the active table or query."
 msgstr ""
 "Amosa a configuración da páxina para a impresión da táboa ou consulta activa."
@@ -3535,87 +3535,87 @@ msgstr ""
 "Solicitou que os obxectos seleccionados se abran ou procesen de maneira "
 "automática no inicio. Varios deses obxectos non poden abrirse ou iniciarse."
 
-#: main/KexiMainWindow.cpp:2038
+#: main/KexiMainWindow.cpp:2040
 msgid "Property Editor"
 msgstr "Editor de propriedades"
 
-#: main/KexiMainWindow.cpp:2066
+#: main/KexiMainWindow.cpp:2068
 #: widget/properties/KexiPropertyEditorView.cpp:46
 #: widget/utils/kexicontextmenuutils.cpp:98
 msgid "Properties"
 msgstr "Propiedades"
 
-#: main/KexiMainWindow.cpp:2826
+#: main/KexiMainWindow.cpp:2828
 msgid "From File..."
 msgstr "Dun ficheiro…"
 
-#: main/KexiMainWindow.cpp:2831
+#: main/KexiMainWindow.cpp:2833
 msgid "From Server..."
 msgstr "Dun servidor…"
 
-#: main/KexiMainWindow.cpp:2881
+#: main/KexiMainWindow.cpp:2883
 #, kde-format
 msgid "Selected view is not supported for \"%1\" object."
 msgstr "A vista seleccionada é incompatíbel co obxecto «%1»."
 
-#: main/KexiMainWindow.cpp:2883
+#: main/KexiMainWindow.cpp:2885
 #, kde-format
 msgid "Selected view (%1) is not supported by this object type (%2)."
 msgstr "A vista seleccionada (%1) é incompatíbel co tipo de obxecto (%2)."
 
-#: main/KexiMainWindow.cpp:2959
+#: main/KexiMainWindow.cpp:2961
 msgid "Save Object As"
 msgstr "Gardar o obxecto como"
 
-#: main/KexiMainWindow.cpp:2983
+#: main/KexiMainWindow.cpp:2985
 #, kde-format
 msgid "Saving \"%1\" object failed."
 msgstr "Non foi posíbel gardar o obxecto «%1»."
 
-#: main/KexiMainWindow.cpp:3004
+#: main/KexiMainWindow.cpp:3006
 #, kde-format
 msgid "Saving new \"%1\" object failed."
 msgstr "Non foi posíbel gardar o novo obxecto, «%1»."
 
-#: main/KexiMainWindow.cpp:3069 main/KexiMainWindow.cpp:4190
+#: main/KexiMainWindow.cpp:3071 main/KexiMainWindow.cpp:4223
 msgid "Save changes"
 msgstr "Gardar as modificacións"
 
-#: main/KexiMainWindow.cpp:3071 main/KexiMainWindow.cpp:4192
+#: main/KexiMainWindow.cpp:3073 main/KexiMainWindow.cpp:4225
 #, kde-format
 msgid ""
 "Pressing this button will save all recent changes made in \"%1\" object."
 msgstr ""
 "Ao premer o botón gardaranse as últimas modificacións do proxecto «%1»."
 
-#: main/KexiMainWindow.cpp:3075
+#: main/KexiMainWindow.cpp:3077
 #, kde-format
 msgid ""
 "Pressing this button will discard all recent changes made in \"%1\" object."
 msgstr ""
 "Ao premer o botón descartaranse as últimas modificacións do proxecto «%1»."
 
-#: main/KexiMainWindow.cpp:3097
+#: main/KexiMainWindow.cpp:3099
 msgid "Do you want to save changes?"
 msgstr "Queres gardar as modificacións?"
 
-#: main/KexiMainWindow.cpp:3281
+#: main/KexiMainWindow.cpp:3283
 #, kde-format
 msgctxt "opening is not allowed in \"data view/design view/text view\" mode"
 msgid "opening is not allowed in \"%1\" mode"
 msgstr "O modo «%1» non permite a apertura."
 
-#: main/KexiMainWindow.cpp:3331
+#: main/KexiMainWindow.cpp:3333
 #, kde-format
 msgid "Tab for \"%1\" (%2)."
 msgstr "Lapela de «%1» (%2)."
 
-#: main/KexiMainWindow.cpp:3335
+#: main/KexiMainWindow.cpp:3337
 #, kde-format
 msgid "Tab for \"%1\"."
 msgstr "Lapela de «%1»."
 
-#: main/KexiMainWindow.cpp:3510
+#: main/KexiMainWindow.cpp:3512
 #, kde-format
 msgid ""
 "Do you want to permanently delete:\n"
@@ -3625,52 +3625,71 @@ msgstr ""
 "Quere eliminar «%1» de maneira permanente?\n"
 "Se preme o botón de «Eliminar», xa non poderá recuperalo."
 
-#: main/KexiMainWindow.cpp:3514
+#: main/KexiMainWindow.cpp:3516
 msgid "Delete"
 msgstr "Eliminar"
 
-#: main/KexiMainWindow.cpp:3568
+#: main/KexiMainWindow.cpp:3570
 msgid "Could not remove object."
 msgstr "Non foi posíbel eliminar o obxecto."
 
-#: main/KexiMainWindow.cpp:3590
+#: main/KexiMainWindow.cpp:3591
+#, kde-format
+msgid ""
+"<para>Before renaming object <resource>%1</resource> it should be closed.</"
+"para><para>Do you want to close it?</para>"
+msgstr ""
+
+#: main/KexiMainWindow.cpp:3595
+#, fuzzy
+#| msgid "Close windows"
+msgid "Close window"
+msgstr "Pechar as xanelas"
+
+#: main/KexiMainWindow.cpp:3606
 #, kde-format
 msgid "Renaming object \"%1\" failed."
 msgstr "Non foi posíbel renomear o obxecto «%1»."
 
-#: main/KexiMainWindow.cpp:3731
+#: main/KexiMainWindow.cpp:3623
+#, fuzzy, kde-format
+#| msgid "Renaming object \"%1\" failed."
+msgid "Setting caption for object \"%1\" failed."
+msgstr "Non foi posíbel renomear o obxecto «%1»."
+
+#: main/KexiMainWindow.cpp:3764
 msgid "Important Information"
 msgstr "Información importante"
 
-#: main/KexiMainWindow.cpp:3790
+#: main/KexiMainWindow.cpp:3823
 #, kde-format
 msgid "Could not start project \"%1\" in Final Mode."
 msgstr "Non foi posíbel iniciar o proxecto «%1» no modo final."
 
-#: main/KexiMainWindow.cpp:3794
+#: main/KexiMainWindow.cpp:3827
 msgid "No Final Mode data found."
 msgstr "Non se atoparon datos no modo final."
 
-#: main/KexiMainWindow.cpp:3801
+#: main/KexiMainWindow.cpp:3834
 msgid "Error reading Final Mode data."
 msgstr "Produciuse un erro ao ler os datos do modo final."
 
-#: main/KexiMainWindow.cpp:3830
+#: main/KexiMainWindow.cpp:3863
 msgid "Specified plugin does not exist."
 msgstr "O complemento indicado non existe."
 
-#: main/KexiMainWindow.cpp:3839
+#: main/KexiMainWindow.cpp:3872
 msgid "Specified object could not be opened."
 msgstr "Non foi posíbel abrir o obxecto indicado."
 
-#: main/KexiMainWindow.cpp:3926
+#: main/KexiMainWindow.cpp:3959
 #, kde-format
 msgid "Compacting database file <nobr>\"%1\"</nobr> is not supported."
 msgstr ""
 "Kexi non pode compactar o ficheiro de base de datos <nobr>«%1»</nobr> nin "
 "ficheiros similares."
 
-#: main/KexiMainWindow.cpp:3938
+#: main/KexiMainWindow.cpp:3971
 msgid ""
 "The current project has to be closed before compacting the database. It will "
 "be open again after compacting.\n"
@@ -3682,7 +3701,7 @@ msgstr ""
 "\n"
 "Quere continuar?"
 
-#: main/KexiMainWindow.cpp:4196
+#: main/KexiMainWindow.cpp:4229
 #, kde-format
 msgid ""
 "Pressing this button will ignore all unsaved changes made in \"%1\" object."
@@ -3690,16 +3709,16 @@ msgstr ""
 "Ao premer o botón ignoraranse as últimas modificacións sen gardar do "
 "proxecto «%1»."
 
-#: main/KexiMainWindow.cpp:4201
+#: main/KexiMainWindow.cpp:4234
 msgid "Do you want to save changes before printing?"
 msgstr "Queres gardar as modificacións antes de imprimir?"
 
-#: main/KexiMainWindow.cpp:4203
+#: main/KexiMainWindow.cpp:4236
 msgid "Do you want to save changes before making print preview?"
 msgstr ""
 "Queres gardar as modificacións antes de xerar a vista previa de impresión?"
 
-#: main/KexiMainWindow.cpp:4205
+#: main/KexiMainWindow.cpp:4238
 msgid "Do you want to save changes before showing page setup?"
 msgstr ""
 "Queres gardar as modificacións antes de amosar a configuración da páxina?"
@@ -4153,7 +4172,7 @@ msgstr "&Detalles"
 
 #: main/startup/KexiStartup.cpp:173 widget/kexidbconnectionwidget.cpp:401
 #: widget/KexiProjectSelectorWidget.cpp:308
-#: widget/navigator/KexiProjectNavigator.cpp:110
+#: widget/navigator/KexiProjectNavigator.cpp:112
 msgid "&Open"
 msgstr "&Abrir"
 
@@ -5601,7 +5620,7 @@ msgid "Copy"
 msgstr "Copiar"
 
 #: plugins/importexport/csv/kexicsvexportwizard.cpp:66
-#: widget/navigator/KexiProjectNavigator.cpp:173
+#: widget/navigator/KexiProjectNavigator.cpp:176
 msgid "Export"
 msgstr "Exportar"
 
@@ -6169,12 +6188,18 @@ msgstr "Crea unha nova consulta."
 msgid "SQL"
 msgstr "SQL"
 
-#: plugins/queries/kexiquerypart.cpp:200
+#: plugins/queries/kexiquerypart.cpp:62
+#, kde-format
+msgctxt "@info Object \"objectname\""
+msgid "%1 <resource>%2</resource>"
+msgstr ""
+
+#: plugins/queries/kexiquerypart.cpp:201
 #, kde-format
 msgid "Design of query \"%1\" has been modified."
 msgstr "Modificouse o deseño da consulta «%1»."
 
-#: plugins/queries/kexiquerypart.cpp:202
+#: plugins/queries/kexiquerypart.cpp:203
 #, kde-format
 msgid "Query \"%1\" already exists."
 msgstr "A consulta «%1» xa existe."
@@ -6834,39 +6859,54 @@ msgctxt "what's this"
 msgid "Creates new table."
 msgstr "Crea unha nova táboa."
 
-#: plugins/tables/kexitablepart.cpp:137
-#, kde-format
+#: plugins/tables/kexitablepart.cpp:136
+#, fuzzy, kde-format
+#| msgid ""
+#| "You are about to remove table \"%1\" but following objects using this "
+#| "table are opened:"
 msgid ""
-"You are about to remove table \"%1\" but following objects using this table "
-"are opened:"
+"You are about to remove table <resource>%1</resource> but following objects "
+"using this table are opened:"
 msgstr ""
 "Está a piques de eliminar a táboa «%1», pero os seguintes obxectos, que "
 "empregan a táboa, están abertos:"
 
-#: plugins/tables/kexitablepart.cpp:189
+#: plugins/tables/kexitablepart.cpp:155
+#, fuzzy, kde-format
+#| msgid ""
+#| "You are about to remove table \"%1\" but following objects using this "
+#| "table are opened:"
+msgid ""
+"You are about to rename table <resource>%1</resource> but following objects "
+"using this table are opened:"
+msgstr ""
+"Está a piques de eliminar a táboa «%1», pero os seguintes obxectos, que "
+"empregan a táboa, están abertos:"
+
+#: plugins/tables/kexitablepart.cpp:196
 msgid "Do you want to close all windows for these objects?"
 msgstr "Quere pechar todas as xanelas para estes obxectos?"
 
-#: plugins/tables/kexitablepart.cpp:190
+#: plugins/tables/kexitablepart.cpp:198
 msgid "Close windows"
 msgstr "Pechar as xanelas"
 
-#: plugins/tables/kexitablepart.cpp:208
+#: plugins/tables/kexitablepart.cpp:216
 #, kde-format
 msgid "Design of table \"%1\" has been modified."
 msgstr "Modificouse o deseño da táboa «%1»."
 
-#: plugins/tables/kexitablepart.cpp:211
+#: plugins/tables/kexitablepart.cpp:219
 #, kde-format
 msgid "Table \"%1\" already exists."
 msgstr "A táboa «%1» xa existe."
 
-#: plugins/tables/kexitablepart.cpp:215
+#: plugins/tables/kexitablepart.cpp:223
 msgid "Warning! Any data in this table will be removed upon design's saving!"
 msgstr ""
 "Aviso: calquera dato introducido na táboa eliminarase ao gardar o deseño!"
 
-#: plugins/tables/kexitablepart.cpp:245
+#: plugins/tables/kexitablepart.cpp:253
 msgid "Lookup column"
 msgstr "Buscar a columna"
 
@@ -7209,37 +7249,37 @@ msgstr ""
 "O ficheiro «%1» xa existe.\n"
 "Quéreo substituír?"
 
-#: widget/KexiNameDialog.cpp:124
+#: widget/KexiNameDialog.cpp:126
 msgid "Please choose other name."
 msgstr "Escolla outro nome."
 
-#: widget/KexiNameDialog.cpp:131
+#: widget/KexiNameDialog.cpp:133
 msgid "Do you want to replace it?"
 msgstr "Quere substituílo?"
 
-#: widget/KexiNameDialog.cpp:134
+#: widget/KexiNameDialog.cpp:136
 #, fuzzy
 #| msgid "Rename object"
 msgid "Replace object"
 msgstr "Renomear o obxecto"
 
-#: widget/KexiNameDialog.cpp:137
+#: widget/KexiNameDialog.cpp:139
 msgid "&Choose Other Name..."
 msgstr "&Escoller outro nome…"
 
-#: widget/KexiNameWidget.cpp:74
+#: widget/KexiNameWidget.cpp:75
 msgid "Caption:"
 msgstr "Lenda:"
 
-#: widget/KexiNameWidget.cpp:79
+#: widget/KexiNameWidget.cpp:80
 msgid "Name:"
 msgstr "Nome:"
 
-#: widget/KexiNameWidget.cpp:104
+#: widget/KexiNameWidget.cpp:107
 msgid "Please enter the name."
 msgstr "Escriba o nome."
 
-#: widget/KexiNameWidget.cpp:105
+#: widget/KexiNameWidget.cpp:108
 msgid "Please enter the caption."
 msgstr "Escriba a lenda."
 
@@ -7321,120 +7361,132 @@ msgstr ""
 "Zona\n"
 "exterior"
 
-#: widget/navigator/KexiProjectNavigator.cpp:72
+#: widget/navigator/KexiProjectNavigator.cpp:74
 msgid "Project Navigator"
 msgstr "Navegador de proxectos"
 
-#: widget/navigator/KexiProjectNavigator.cpp:111
+#: widget/navigator/KexiProjectNavigator.cpp:113
 msgid "Open object"
 msgstr "Abrir o obxecto"
 
-#: widget/navigator/KexiProjectNavigator.cpp:111
+#: widget/navigator/KexiProjectNavigator.cpp:113
 msgid "Opens object selected in the list."
 msgstr "Abre o obxecto seleccionado na lista."
 
-#: widget/navigator/KexiProjectNavigator.cpp:129
+#: widget/navigator/KexiProjectNavigator.cpp:131
 msgid "&Delete..."
 msgstr "&Eliminar…"
 
-#: widget/navigator/KexiProjectNavigator.cpp:130
+#: widget/navigator/KexiProjectNavigator.cpp:132
 msgid "Delete object"
 msgstr "Eliminar o obxecto"
 
-#: widget/navigator/KexiProjectNavigator.cpp:131
+#: widget/navigator/KexiProjectNavigator.cpp:133
 msgid "Deletes the object selected in the list."
 msgstr "Elimina o obxecto seleccionado na lista."
 
-#: widget/navigator/KexiProjectNavigator.cpp:134
+#: widget/navigator/KexiProjectNavigator.cpp:136
 msgid "&Rename..."
 msgstr "&Renomear…"
 
-#: widget/navigator/KexiProjectNavigator.cpp:135
+#: widget/navigator/KexiProjectNavigator.cpp:137
 msgid "Rename object"
 msgstr "Renomear o obxecto"
 
-#: widget/navigator/KexiProjectNavigator.cpp:136
+#: widget/navigator/KexiProjectNavigator.cpp:138
 msgid "Renames the object selected in the list."
 msgstr "Renomea o obxecto seleccionado na lista."
 
-#: widget/navigator/KexiProjectNavigator.cpp:144
+#: widget/navigator/KexiProjectNavigator.cpp:147
 msgid "&Design"
 msgstr "&Deseñar"
 
-#: widget/navigator/KexiProjectNavigator.cpp:145
+#: widget/navigator/KexiProjectNavigator.cpp:148
 msgid "Design object"
 msgstr "Deseñar o obxecto"
 
-#: widget/navigator/KexiProjectNavigator.cpp:146
+#: widget/navigator/KexiProjectNavigator.cpp:149
 msgid "Starts designing of the object selected in the list."
 msgstr "Inicia o deseño do obxecto seleccionado na lista."
 
-#: widget/navigator/KexiProjectNavigator.cpp:154
+#: widget/navigator/KexiProjectNavigator.cpp:157
 msgid "Design in &Text View"
 msgstr "Deseñar na vista de &texto"
 
-#: widget/navigator/KexiProjectNavigator.cpp:155
+#: widget/navigator/KexiProjectNavigator.cpp:158
 msgid "Design object in text view"
 msgstr "Deseñar o obxecto na vista de texto"
 
-#: widget/navigator/KexiProjectNavigator.cpp:156
+#: widget/navigator/KexiProjectNavigator.cpp:159
 msgid "Starts designing of the object in the list in text view."
 msgstr "Inicia o deseño do obxecto da lista na vista de texto."
 
-#: widget/navigator/KexiProjectNavigator.cpp:175
+#: widget/navigator/KexiProjectNavigator.cpp:178
 msgctxt "Export->To Clipboard as Data... "
 msgid "To &Clipboard..."
 msgstr "Ao &portapapeis…"
 
-#: widget/navigator/KexiProjectNavigator.cpp:176
+#: widget/navigator/KexiProjectNavigator.cpp:179
 msgid "Export data to clipboard"
 msgstr "Exportar os datos ao portapapeis"
 
-#: widget/navigator/KexiProjectNavigator.cpp:177
+#: widget/navigator/KexiProjectNavigator.cpp:180
 msgid "Exports data from the currently selected table or query to clipboard."
 msgstr "Exportar os datos da táboa ou consulta seleccionadas ao portapapeis."
 
-#: widget/navigator/KexiProjectNavigator.cpp:182
+#: widget/navigator/KexiProjectNavigator.cpp:185
 msgctxt "Export->To File As Data &Table... "
 msgid "To &File As Data Table..."
 msgstr "A un &ficheiro como táboa de datos…"
 
-#: widget/navigator/KexiProjectNavigator.cpp:183
+#: widget/navigator/KexiProjectNavigator.cpp:186
 msgid "Export data to a file"
 msgstr "Exportar os datos a un ficheiro"
 
-#: widget/navigator/KexiProjectNavigator.cpp:184
+#: widget/navigator/KexiProjectNavigator.cpp:187
 msgid "Exports data from the currently selected table or query to a file."
 msgstr "Exportar os datos da táboa ou consulta seleccionadas a un ficheiro."
 
-#: widget/navigator/KexiProjectNavigator.cpp:189
+#: widget/navigator/KexiProjectNavigator.cpp:192
 msgid "&Print..."
 msgstr "&Imprimir…"
 
-#: widget/navigator/KexiProjectNavigator.cpp:190
+#: widget/navigator/KexiProjectNavigator.cpp:193
 msgid "Print data"
 msgstr "Imprimir os datos"
 
-#: widget/navigator/KexiProjectNavigator.cpp:191
+#: widget/navigator/KexiProjectNavigator.cpp:194
 msgid "Prints data from the currently selected table or query."
 msgstr "Imprime os datos da táboa ou consulta seleccionadas."
 
-#: widget/navigator/KexiProjectNavigator.cpp:195
+#: widget/navigator/KexiProjectNavigator.cpp:198
 msgid "Page Setup..."
 msgstr "Configuración da páxina…"
 
-#: widget/navigator/KexiProjectNavigator.cpp:196
+#: widget/navigator/KexiProjectNavigator.cpp:199
 msgid "Page setup for data"
 msgstr "Configuración da páxina para os datos"
 
-#: widget/navigator/KexiProjectNavigator.cpp:368
+#: widget/navigator/KexiProjectNavigator.cpp:369
 #, kde-format
 msgid "&Create Object: %1..."
 msgstr "&Crear un obxecto: %1…"
 
-#: widget/navigator/KexiProjectNavigator.cpp:381
+#: widget/navigator/KexiProjectNavigator.cpp:382
 msgid "&Create Object..."
 msgstr "&Crear un obxecto…"
+
+#: widget/navigator/KexiProjectNavigator.cpp:487
+#, kde-format
+msgctxt "@info Rename object %1:"
+msgid "Rename <resource>%1</resource>:"
+msgstr ""
+
+#: widget/navigator/KexiProjectNavigator.cpp:498
+#, kde-format
+msgctxt "@title:window Rename Object %1."
+msgid "Rename <resource>%1</resource>"
+msgstr ""
 
 #: widget/pixmapcollection.cpp:151
 msgid "Load KDE Icon by Name"
