@@ -5,7 +5,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2012-09-03 03:18+0000\n"
-"PO-Revision-Date: 2012-09-28 08:41+0200\n"
+"PO-Revision-Date: 2012-11-07 20:58+0100\n"
 "Last-Translator: Adrián Chaves Fernández <adriyetichaves@gmail.com>\n"
 "Language-Team: Galician <proxecto@trasno.net>\n"
 "MIME-Version: 1.0\n"
@@ -501,6 +501,12 @@ msgid ""
 "supports building it as well if you desire. But to build libdbusmenu-qt, you "
 "must have Bazaar installed."
 msgstr ""
+"Aínda que non é un requisito, o xestor de control de código <ulink "
+"url=\"http://bazaar.canonical.com/\">Bazaar</ulink> emprégase para un dos "
+"módulos —libdbusmenu-qt— que si que é un requisito para as bibliotecas de "
+"&kde;. A meirande parte dos usuarios poderán instalar esta biblioteca "
+"mediante os paquetes da súa distribución, pero &kdesrc-build; permítelle "
+"construíla se quere. E en tal caso, necesitará Bazaar instalado."
 
 #. Tag: para
 #: index.docbook:300
@@ -741,12 +747,18 @@ msgid ""
 "environment variable, otherwise you may get messages saying that the command "
 "was not found, or you may run a previously-installed version by mistake."
 msgstr ""
+"Independentemente da técnica que decida empregar, asegúrese de que o ficheiro "
+"<filename>kdesrc-build</filename> ten permisos de execución. Ademais, por "
+"comodidade, cómpre situalo nun dos directorios definidos na variábel de "
+"ambiente <envar>PATH</envar>, pois de non facelo pode que reciba mensaxes "
+"indicando que non se atopa a orde, ou pode que nun descoido execute unha "
+"versión anterior aínda instalada."
 
 #. Tag: title
 #: index.docbook:403
 #, no-c-format
 msgid "Prepare the configuration file"
-msgstr ""
+msgstr "Preparación do ficheiro de configuración"
 
 #. Tag: para
 #: index.docbook:405
@@ -757,6 +769,9 @@ msgid ""
 "(located at <filename>~/.kdesrc-buildrc</filename>) to control which modules "
 "are built, where they are installed to, etc."
 msgstr ""
+"&kdesrc-build; emprega un <link linkend=\"configure-data\">ficheiro de "
+"configuración</link> (situado en <filename>~/.kdesrc-buildrc</filename>) para "
+"controlar que módulos se constrúen, onde se instalan, etc."
 
 #. Tag: para
 #: index.docbook:409
@@ -767,6 +782,10 @@ msgid ""
 "configuration. You can then edit the <filename>~/.kdesrc-buildrc</filename> "
 "from there to make any changes you see fit."
 msgstr ""
+"Para preparar unha configuración sinxela de &kdesrc-build; pode empregar <"
+"application>kdesrc-build-setup</application>, un programa incluído con "
+"&kdesrc-build;. Despois poderá editar o ficheiro <filename>~/.kdesrc-buildrc<"
+"/filename> para aplicar os cambios que queira."
 
 #. Tag: para
 #: index.docbook:415
@@ -777,6 +796,9 @@ msgid ""
 "can "
 "use it even if you have no graphical interface available yet."
 msgstr ""
+"<application>kdesrc-build-setup</application> execútase nun terminal —non "
+"dispón de interface gráfica—, igual que ocorre con &kdesrc-build;, de xeito "
+"que poderá executalo incluso se non dispón aínda dun entorno gráfico."
 
 #. Tag: para
 #: index.docbook:419
@@ -785,6 +807,9 @@ msgid ""
 "You can use the included <filename>kdesrc-buildrc-sample</filename> "
 "sample configuration to get explanations as to the various options available."
 msgstr ""
+"No ficheiro de configuración de exemplo, <filename>kdesrc-buildrc-sample<"
+"/filename>, atopará unha descrición detallada de cada unha das distintas "
+"opcións dispoñíbeis."
 
 #. Tag: para
 #: index.docbook:423
@@ -796,12 +821,16 @@ msgid ""
 "linkend=\"kdesrc-buildrc\"/>"
 "."
 msgstr ""
+"Para máis información sobre a sintaxe do <link linkend=\"configure-data\">"
+"ficheiro de configuración</link>, véxanse <xref linkend=\"configure-data\"/> "
+"e <xref linkend=\"kdesrc-buildrc\"/>."
+"."
 
 #. Tag: title
 #: index.docbook:432
 #, no-c-format
 msgid "Setting the Configuration Data"
-msgstr ""
+msgstr "Definición dos datos de configuración"
 
 #. Tag: para
 #: index.docbook:434
@@ -811,6 +840,9 @@ msgid ""
 "<filename>.kdesrc-buildrc</filename>, which sets the general options and sets "
 "the modules you would like to download and build."
 msgstr ""
+"Para empregar &kdesrc-build; debería contar no seu directorio persoal cun "
+"ficheiro chamado <filename>.kdesrc-buildrc</filename>, que define as opcións "
+"xerais, así como os módulos que se descargarán e construirán."
 
 #. Tag: para
 #: index.docbook:440
@@ -823,6 +855,11 @@ msgid ""
 "configuration "
 "is stored in <filename>~/.kdesrc-buildrc</filename>."
 msgstr ""
+"Tamén pode empregar ficheiros de configuración diferentes para "
+"&kdesrc-build;, tal e como se describe en <xref linkend=\"kdesrc-buildrc\"/>. "
+"Se necesita empregar varias configuracións, bótelle unha ollada a esa "
+"sección. Aquí partirase do suposto de que o ficheiro de configuración está en "
+"<filename>~/.kdesrc-buildrc</filename>."
 
 #. Tag: para
 #: index.docbook:445
@@ -834,6 +871,10 @@ msgid ""
 "options to match your wants, and also change the list of modules you want to "
 "build."
 msgstr ""
+"A forma máis doada de proceder é empregar o ficheiro <filename>"
+"kdesrc-buildrc-sample</filename> como modelo, e cambiar as opcións globais "
+"para que se axusten ás súas preferencias, así como a lista de módulos a "
+"construír."
 
 #. Tag: para
 #: index.docbook:452
@@ -843,6 +884,8 @@ msgid ""
 "&kde; "
 "build. Some settings that you may wish to alter include:"
 msgstr ""
+"De feito, a configuración predeterminada debería ser axeitada para compilar "
+"&kde;. Entre as opcións que pode que lle interese modificar están:"
 
 #. Tag: para
 #: index.docbook:457
@@ -856,6 +899,11 @@ msgid ""
 "you "
 "would set this option to <replaceable>true</replaceable>."
 msgstr ""
+"<link linkend=\"conf-use-stable-kde\">use-stable-kde</link>. Permite definir "
+"a versión dos módulos de &kde; a construír. &kdesrc-build; constrúe a versión "
+"inestábel (trunk) de maneira predeterminada. Se quere construír a última "
+"versión estábel de &kde; en vez de empregar os paquetes da súa distribución, "
+"déalle a esta opción o valor <replaceable>true</replaceable>."
 
 #. Tag: para
 #: index.docbook:464
@@ -865,6 +913,10 @@ msgid ""
 "database, so this feature only works for these modules. See also <xref "
 "linkend=\"kde-projects-module-sets\"/>."
 msgstr ""
+"Esta opción depende de información dispoñíbel na base de datos to proxecto "
+"&kde;, polo que esta funcionalidade unicamente ten efecto neses módulos. "
+"Véxase tamén <xref "
+"linkend=\"kde-projects-module-sets\"/>."
 
 #. Tag: para
 #: index.docbook:470
@@ -874,6 +926,10 @@ msgid ""
 "directory that &kde; is installed to. This defaults to <filename "
 "class=\"directory\">~/kde</filename>, which is a single-user installation."
 msgstr ""
+"<link linkend=\"conf-kdedir\">kdedir</link>. Permite alterar o directorio no "
+"que se instalará &kde;. O seu valor predeterminado é <filename "
+"class=\"directory\">~/kde</filename>, que consiste nunha instalación para un "
+"único usuario."
 
 #. Tag: para
 #: index.docbook:474
@@ -884,12 +940,17 @@ msgid ""
 "&kdesrc-build;, using the special qt module and the latest available source "
 "code. (<filename class=\"directory\">~/kdesrc/build/qt</filename>)."
 msgstr ""
+"<link linkend=\"conf-qtdir\">qtdir</link>. Controla a ruta na que está "
+"instalado o &Qt; a empregar. De maneira predeterminada, emprégase unha copia "
+"de &Qt; compilada por &kdesrc-build;, empregando o módulo especial «qt» e a "
+"última versión dispoñíbel do código (<filename class=\"directory\">"
+"~/kdesrc/build/qt</filename>)."
 
 #. Tag: para
 #: index.docbook:480
 #, no-c-format
 msgid "This also controls where to install qt."
-msgstr ""
+msgstr "Isto tamén serve para indicar onde instalar «qt»."
 
 #. Tag: para
 #: index.docbook:483
@@ -902,6 +963,10 @@ msgid ""
 "\""
 ">&kde; &subversion; account</ulink>."
 msgstr ""
+"<link linkend=\"conf-svn-server\">svn-server</link>. Permite indicar o &url; "
+"do que descargar os fontes. Útil para desenvolvedores cunha <ulink "
+"url=\"http://techbase.kde.org/Contribute/First_Steps_with_your_KDE_SVN_Account"
+"\">conta de &subversion; de &kde;</ulink>."
 
 #. Tag: para
 #: index.docbook:488
@@ -911,18 +976,20 @@ msgid ""
 "described "
 "in <xref linkend=\"selecting-modules\"/>."
 msgstr ""
+"Probablemente lle interese escoller unha combinación de módulos a construír "
+"distinta. Véxase <xref linkend=\"selecting-modules\"/>."
 
 #. Tag: title
 #: index.docbook:495
 #, no-c-format
 msgid "Module Organization and selection"
-msgstr ""
+msgstr "Organización e escolla dos módulos"
 
 #. Tag: title
 #: index.docbook:498
 #, no-c-format
 msgid "KDE Software Organization"
-msgstr ""
+msgstr "Organización do software de KDE"
 
 #. Tag: para
 #: index.docbook:500
@@ -932,6 +999,10 @@ msgid ""
 "by &kdesrc-build;. Understanding this organization will help you properly "
 "select the software modules that you want built."
 msgstr ""
+"O software de &kde; está organizado en compoñentes separados, moitos dos "
+"cales poden construírse con &kdesrc-build;. Comprender esta organización "
+"axudaralle a escoller con xeito os módulos de software que lle interesa "
+"construír."
 
 #. Tag: para
 #: index.docbook:507
@@ -945,6 +1016,13 @@ msgid ""
 "system "
 "if it is a recent enough version."
 msgstr ""
+"No nivel máis baixo está a biblioteca &Qt;. Esta biblioteca de utilidades "
+"para construír interfaces, que salienta pola súa potencia e a súa "
+"compatibilidade cunha ampla gama de plataformas, é a base de &kde;. Mesmo "
+"algunhas das bibliotecas de terceiros das que depende &kde; están tamén "
+"baseadas en &Qt;. Ao empregar &kdesrc-build;, pode escoller entre deixar que "
+"o script compile &Qt;, ou que empregue a versión da biblioteca que teña "
+"instalada no sistema, se está suficientemente ao día."
 
 #. Tag: para
 #: index.docbook:513
@@ -957,6 +1035,11 @@ msgid ""
 "libraries tended to get combined into a single <literal>kdesupport</literal> "
 "module."
 msgstr ""
+"Sobre &Qt; constrúense bibliotecas indispensábeis para o funcionamento do "
+"software de &kde;. Algunhas destas bibliotecas non se consideran parte de "
+"&kde; debido á súa natureza xenérica, pero resultan aínda así esenciais para "
+"a plataforma de &kde;. Estas bibliotecas adoitaban agruparse nun único "
+"módulo, <literal>kdesupport</literal>."
 
 #. Tag: para
 #: index.docbook:519
@@ -967,6 +1050,8 @@ msgid ""
 "git.kde.org</ulink>, although they are still not considered part of the "
 "Platform."
 msgstr ""
+"Estas bibliotecas migráronse a <ulink url=\"http://projects.kde.org/\">"
+"git.kde.org</ulink>, pero seguen sen considerarse parte da plataforma."
 
 #. Tag: para
 #: index.docbook:525
@@ -976,6 +1061,9 @@ msgid ""
 "libraries that are required for &kde; applications to work. A full desktop "
 "environment is not provided by the Platform however."
 msgstr ""
+"Sobre estas bibliotecas esenciais eríxese a plataforma de &kde;. A plataforma "
+"fórmana as bibliotecas que os aplicativos de &kde; precisan para poder "
+"funcionar. Porén, a plataforma non fornece un ambiente de traballo completo."
 
 #. Tag: para
 #: index.docbook:530
@@ -985,12 +1073,15 @@ msgid ""
 "kdelibs</literal>, <literal>kdepimlibs</literal>, and <literal>"
 "kde-runtime</literal> modules."
 msgstr ""
+"Para &kdesrc-build;, a capa da plataforma está formada polos módulos <literal>"
+"kdelibs</literal>, <literal>kdepimlibs</literal>, e <literal>kde-runtime<"
+"/literal>."
 
 #. Tag: para
 #: index.docbook:534
 #, no-c-format
 msgid "On top of the Platform, come several different things:"
-msgstr ""
+msgstr "Sobre a plataforma conviven moitas outras cousas:"
 
 #. Tag: para
 #: index.docbook:536
@@ -1000,6 +1091,9 @@ msgid ""
 "&kde; Platform but are not authored by or in association with the &kde; "
 "project."
 msgstr ""
+"Aplicativos <quote>de terceiros</quote>. Trátase de aplicativos que empregan "
+"a plataforma de &kde; pero non están creados polo proxecto &kde;, nin en "
+"asociación con el."
 
 #. Tag: para
 #: index.docbook:540
@@ -1010,6 +1104,9 @@ msgid ""
 ". This is provided by the &plasma; Desktop, mostly in <literal>"
 "kde-workspace</literal>."
 msgstr ""
+"Un ambiente de escritorio completo, o “espazo de traballo”. Isto é o que "
+"adoitan ver os usuarios cando acceden ao sistema. Trátase do escritorio "
+"&plasma;, radicado principalmente no módulo <literal>kde-workspace</literal>."
 
 #. Tag: para
 #: index.docbook:545
@@ -1023,6 +1120,13 @@ msgid ""
 "calendar/organizational software, &etc;, while <literal>kdegames</literal> "
 "contains a collection of high-quality games to while away the time."
 msgstr ""
+"A colección de software de &kde;. Trátase de útiles aplicativos distribuídos "
+"xunto coa plataforma e o escritorio &plasma;, agrupados en módulos "
+"individuais. Trátase dos módulos cuxos nomes levan o prefixo <literal>kde<"
+"/literal>. Por exemplo, <literal>kdepim</literal> forma parte da colección de "
+"software, e contén software de correo electrónico, lectura de novas, axendas, "
+"etc. Por outra banda, <literal>kdegames</literal> contén unha colección de "
+"xogos de alta calidade para matar o tempo."
 
 #. Tag: para
 #: index.docbook:554
@@ -1037,6 +1141,14 @@ msgid ""
 ". As with <literal>kdesupport</literal>, some of these Extragear applications "
 "are migrating to <ulink url=\"http://projects.kde.org/\">git.kde.org</ulink>."
 msgstr ""
+"Por último, hai unha colección de software —tamén agrupada en módulos— cuxo "
+"desenvolvemento está apoiado con recursos de &kde; —tradución, control de "
+"versións, seguimento de erros, etc.— pero non se publica xunto co resto de "
+"software de &kde; nin se considera parte da colección principal. Estes "
+"módulos denomínanse <quote>extragear</quote>, e o seu nome vai prefixado con "
+"esa palabra; por exemplo: <literal>extragear/network</literal>. Igual que no "
+"caso de <literal>kdesupport</literal>, estes módulos están —ou estarán— en <"
+"ulink url=\"http://projects.kde.org/\">git.kde.org</ulink>."
 
 #. Tag: title
 #: index.docbook:569
