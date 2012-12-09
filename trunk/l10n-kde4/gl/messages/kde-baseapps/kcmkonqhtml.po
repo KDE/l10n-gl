@@ -11,22 +11,22 @@
 # Xabi García <xabigf@gmx.net>, 2003.
 # Xabi G. Feal <xabigf@gmx.net>, 2006, 2007.
 # mvillarino <mvillarino@users.sourceforge.net>, 2007, 2008, 2009.
-# Marce Villarino <mvillarino@users.sourceforge.net>, 2009.
+# Marce Villarino <mvillarino@kde-espana.es>, 2009.
 # marce villarino <mvillarino@users.sourceforge.net>, 2009.
-# Marce Villarino <mvillarino@gmail.com>, 2009, 2011.
+# Marce Villarino <mvillarino@kde-espana.es>, 2009, 2011, 2012.
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmkonqhtml\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2012-08-20 03:23+0200\n"
-"PO-Revision-Date: 2011-02-10 18:51+0100\n"
-"Last-Translator: Marce Villarino <mvillarino@gmail.com>\n"
+"PO-Revision-Date: 2012-12-04 00:12+0100\n"
+"Last-Translator: Marce Villarino <mvillarino@kde-espana.es>\n"
 "Language-Team: Galician <proxecto@trasno.net>\n"
 "Language: gl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 1.0\n"
+"X-Generator: Lokalize 1.4\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Environment: kde\n"
 "X-Accelerator-Marker: &\n"
@@ -130,14 +130,11 @@ msgstr "Acochar a barra de páxinas cando só estea aberta unha páxina"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pPermanentCloseButton)
 #: advancedTabOptions.ui:81
-#, fuzzy
 #| msgid ""
 #| "This will display close buttons inside each tab instead of websites' "
 #| "icons."
 msgid "This will display close buttons inside each tab."
-msgstr ""
-"Isto mostrará o botón de pechar dentro de cada páxina no canto da icona "
-"favorita do sitio web."
+msgstr "Isto mostrará o botón de pechar dentro de cada lapela."
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_pPermanentCloseButton)
 #: advancedTabOptions.ui:84
@@ -146,7 +143,6 @@ msgstr "&Mostrar o botón de pechar nas lapelas"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pMiddleClickClose)
 #: advancedTabOptions.ui:91
-#, fuzzy
 #| msgid ""
 #| "When you click on a tab using the middle mouse button or mouse wheel, it "
 #| "will close that tab. (Konqueror needs to be restarted for changes to take "
@@ -154,9 +150,7 @@ msgstr "&Mostrar o botón de pechar nas lapelas"
 msgid ""
 "When you click on a tab using the middle mouse button or mouse wheel, it "
 "will close that tab."
-msgstr ""
-"Se preme co botón central ou coa roda do rato nunha lapela, pecharaa "
-"(Konqueror debe ser reiniciado para que se faga efectiva esta modificación)."
+msgstr "Se preme co botón central ou coa roda do rato nunha lapela, pecharaa."
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_pMiddleClickClose)
 #: advancedTabOptions.ui:94
@@ -823,7 +817,7 @@ msgstr ""
 "vista."
 
 #: css/kcmcss.cpp:346
-#, fuzzy, kde-format
+#, kde-format
 #| msgid ""
 #| "<html>\n"
 #| "\n"
@@ -858,15 +852,21 @@ msgid ""
 "</html>\n"
 msgstr ""
 "<html>\n"
-"\n"
-"<h1>Cabezallo 1</h1>\n"
-"<h2>Cabezallo 2</h2>\n"
-"<h3>Cabezallo 3</h3>\n"
+"<head>\n"
+"<style>\n"
+"<!--\n%1\n-->\n"
+"</style>\n"
+"</head>\n"
+"<body>\n"
+"<h1>Cabeceira 1</h1>\n"
+"<h2>Cabeceira 2</h2>\n"
+"<h3>Cabeceira 3</h3>\n"
 "\n"
 "<p>As follas de estilo definidas polo usuario\n"
 "permiten mellorar a accesibilidade da xente\n"
 "con algún problema na vista.</p>\n"
 "\n"
+"</body>\n"
 "</html>\n"
 
 #: domainlistview.cpp:48
@@ -948,10 +948,9 @@ msgid "Hide filtered images"
 msgstr "Acochar as imaxes filtradas"
 
 #: filteropts.cpp:71
-#, fuzzy
 #| msgid "Enable filters"
 msgid "Manual Filter"
-msgstr "Activar os filtros"
+msgstr "Filtro manual"
 
 #: filteropts.cpp:87
 msgid "Search:"
@@ -967,17 +966,17 @@ msgstr ""
 
 #: filteropts.cpp:109
 msgid "Automatic Filter"
-msgstr ""
+msgstr "Filtro automático"
 
 #: filteropts.cpp:118
 msgid "Automatic update interval:"
-msgstr ""
+msgstr "Intervalo de actualización:"
 
 #: filteropts.cpp:123
 msgid " day"
 msgid_plural " days"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] " día"
+msgstr[1] " días"
 
 #: filteropts.cpp:129
 msgid "Insert"
@@ -1041,6 +1040,14 @@ msgid ""
 "(allow) any matching URL, which takes priority over any blacklist (blocking) "
 "filter."
 msgstr ""
+"<qt>   <p>Escriba unha expresión para filtrar. Os filtros poden ser:    "
+"<ul>       <li>Expresións estilo shell, como <tt>http://www.example.com/"
+"ads*</tt>. Poden empregarse os símbolos <tt>*?[]</tt>.</li>       "
+"<li>Expresións regulares, delimitadas por barras inclinadas («<tt>/</tt>»), "
+"como <tt>/\\/(ad|banner)\\./</tt></li>     </ul>   <p>Calquera expresión de "
+"filtrado pode precederse de «<tt>@@</tt>» para permitir os enderezos URL que "
+"se correspondan con ela. As expresións de filtrado de enderezos permitidos "
+"teñen prioridade sobre as de enderezos prohibidos."
 
 #: filteropts.cpp:185
 msgid ""
@@ -1048,6 +1055,10 @@ msgid ""
 "lines starting with '<tt>!</tt>' and the header line <tt>[AdBlock]</tt> are "
 "ignored. Any other line is added as a filter expression."
 msgstr ""
+"<qt><p>O formato de importación de filtro é un ficheiro de texto simple. "
+"As liñas en branco, as de comentario que comezan por «<tt>!</tt>» e a de "
+"cabeceira «<tt>[AdBlock]</tt>» ignóranse. Calquera outra liña engádese "
+"como unha expresión de filtro."
 
 #: filteropts.cpp:190
 msgid ""
@@ -1055,6 +1066,9 @@ msgid ""
 "header line <tt>[AdBlock]</tt>, then all of the filters follow each on a "
 "separate line."
 msgstr ""
+"<qt><p>O formato de exportación de filtro é un ficheiro de texto simple. "
+"O ficheiro comeza por unha liña de cabeceira «<tt>[AdBlock]</tt>», "
+"logo os filtros van cada un na súa liña."
 
 #: filteropts.cpp:452
 msgid ""
@@ -1069,11 +1083,11 @@ msgstr ""
 
 #: filteropts.cpp:574
 msgid "Name"
-msgstr ""
+msgstr "Nome"
 
 #: filteropts.cpp:575
 msgid "URL"
-msgstr ""
+msgstr "URL"
 
 #: generalopts.cpp:55
 msgid "Tabbed Browsing"
@@ -1109,7 +1123,6 @@ msgid "Home page:"
 msgstr "Páxina de inicio:"
 
 #: generalopts.cpp:99
-#, fuzzy
 #| msgid "Select Home Page"
 msgctxt "@title:window"
 msgid "Select Home Page"
@@ -1127,7 +1140,7 @@ msgstr ""
 
 #: generalopts.cpp:114
 msgid "Default web browser engine:"
-msgstr ""
+msgstr "Motor predeterminado do navegador web:"
 
 #: htmlopts.cpp:46
 msgid ""
@@ -1269,20 +1282,27 @@ msgstr ""
 #: htmlopts.cpp:136
 msgid "Send the DNT header to tell web sites you do not want to be tracked"
 msgstr ""
+"Enviar a cabeceira DNT para indicarse aos sitios web que non desexa "
+"ser rastrexado"
 
 #: htmlopts.cpp:137
 msgid ""
 "Check this box if you want to inform a web site that you do not want your "
 "web browsing habits tracked."
 msgstr ""
+"Escolla esta opción se desexa informar ao sitio web de que non desexa que "
+"se faga seguimento dos seus hábitos de navegación."
 
 #: htmlopts.cpp:141
 msgid "Offer to save website passwords"
-msgstr ""
+msgstr "Oferecer gardar os contrasinais do sitio web"
 
 #: htmlopts.cpp:142
 msgid "Uncheck this box to prevent being prompted to save website passwords"
 msgstr ""
+"Desmarque esta opción para que non se lle pregunte se gardar os contrasinais "
+"dos "
+"sitios web"
 
 #: javaopts.cpp:78
 msgid "Enable Ja&va globally"
@@ -1305,12 +1325,11 @@ msgid "Shu&tdown applet server when inactive for more than"
 msgstr "&Apagar o servidor de applets cando estea inactivo durante máis de"
 
 #: javaopts.cpp:113
-#, fuzzy
 #| msgid " sec"
 msgid " second"
 msgid_plural " seconds"
-msgstr[0] " seg"
-msgstr[1] " seg"
+msgstr[0] " segundo"
+msgstr[1] " segundos"
 
 #: javaopts.cpp:119
 msgid "&Path to Java executable, or 'java':"
@@ -1441,18 +1460,16 @@ msgid "Doma&in-Specific"
 msgstr "Específ&ica de dominios"
 
 #: javaopts.cpp:321
-#, fuzzy
 #| msgid "New Java Policy"
 msgctxt "@title:window"
 msgid "New Java Policy"
 msgstr "Nova política de Java"
 
 #: javaopts.cpp:324
-#, fuzzy
 #| msgid "Change Java Policy"
 msgctxt "@title:window"
 msgid "Change Java Policy"
-msgstr "Mudar a política de Java"
+msgstr "Cambiar a política de Java"
 
 #: javaopts.cpp:328
 msgid "&Java policy:"
@@ -1566,14 +1583,12 @@ msgid "Do&main-Specific"
 msgstr "Específica de &dominio"
 
 #: jsopts.cpp:215
-#, fuzzy
 #| msgid "New JavaScript Policy"
 msgctxt "@title:window"
 msgid "New JavaScript Policy"
 msgstr "Nova política de JavaScript"
 
 #: jsopts.cpp:218
-#, fuzzy
 #| msgid "Change JavaScript Policy"
 msgctxt "@title:window"
 msgid "Change JavaScript Policy"
@@ -1940,7 +1955,6 @@ msgid "Domain-Specific Settin&gs"
 msgstr "Configuración especí&fica do dominio"
 
 #: pluginopts.cpp:124 pluginopts.cpp:632
-#, fuzzy
 #| msgid "Domain-Specific Policies"
 msgctxt "@title:window"
 msgid "Domain-Specific Policies"
@@ -2066,7 +2080,6 @@ msgid "Scanning for plugins"
 msgstr "Examinando os complementos"
 
 #: pluginopts.cpp:388
-#, fuzzy
 #| msgid "Select Plugin Scan Folder"
 msgctxt "@title:window"
 msgid "Select Plugin Scan Folder"
@@ -2097,18 +2110,16 @@ msgid "Doma&in-Specific"
 msgstr "Específ&ica de dominios"
 
 #: pluginopts.cpp:678
-#, fuzzy
 #| msgid "New Plugin Policy"
 msgctxt "@title:window"
 msgid "New Plugin Policy"
 msgstr "Nova política de complemento"
 
 #: pluginopts.cpp:681
-#, fuzzy
 #| msgid "Change Plugin Policy"
 msgctxt "@title:window"
 msgid "Change Plugin Policy"
-msgstr "Mudar a política do complemento"
+msgstr "Cambiar a política do complemento"
 
 #: pluginopts.cpp:685
 msgid "&Plugin policy:"
@@ -2134,3 +2145,5 @@ msgstr ""
 #: policydlg.cpp:124
 msgid "You must first enter a domain name."
 msgstr "Primeiro ten que introducir un nome de dominio."
+
+
