@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: rekonq\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2012-12-05 02:16+0100\n"
+"POT-Creation-Date: 2012-12-15 02:29+0100\n"
 "PO-Revision-Date: 2012-09-05 08:09+0200\n"
 "Last-Translator: Marce Villarino <mvillarino@kde-espana.es>\n"
 "Language-Team: Galician <proxecto@trasno.net>\n"
@@ -40,22 +40,12 @@ msgstr ""
 "mvillarino@users.sourceforge.net,,mgl.branco@gmail.com,adriyetichaves@gmail."
 "com,proxecto@trasno.net"
 
-#: adblock/adblockmanager.cpp:382
+#: adblock/adblockmanager.cpp:340
 msgctxt "@title:window"
 msgid "Ad Block Settings"
 msgstr "Configuración anti-publicidade"
 
-#: adblock/adblockmanager.cpp:424
-msgctxt "@title:window"
-msgid "Blocked elements"
-msgstr "Elementos bloqueados"
-
-#: adblock/adblocknetworkreply.cpp:48
-#, kde-format
-msgid "Blocked by AdBlockRule: %1"
-msgstr "Bloqueado pola regra «%1» do anti-publicidade."
-
-#: adblock/adblockwidget.cpp:52
+#: adblock/adblocksettingwidget.cpp:52
 msgid ""
 "<qt>Filter expression (e.g. <tt>http://www.example.com/ad/*</tt>, <a href="
 "\"filterhelp\">more information</a>):"
@@ -63,13 +53,13 @@ msgstr ""
 "<qt>Expresión de filtrado (por exemplo <tt>http://www.example.com/ad/*</tt>, "
 "<a href=\"filterhelp\">máis información</a>):"
 
-#: adblock/adblockwidget.cpp:68
+#: adblock/adblocksettingwidget.cpp:68
 msgid " day"
 msgid_plural " days"
 msgstr[0] " día"
 msgstr[1] " días"
 
-#: adblock/adblockwidget.cpp:85
+#: adblock/adblocksettingwidget.cpp:85
 msgid ""
 "<qt><p>Enter an expression to filter. Filters can be defined as either:"
 "<ul><li>a shell-style wildcard, e.g. <tt>http://www.example.com/ads*</tt>, "
@@ -102,6 +92,9 @@ msgstr ""
 msgid "<b>Hidden elements</b>"
 msgstr "<b>Elementos agochados</b>"
 
+#. i18n: ectx: property (text), widget (QLabel, label)
+#. i18n: ectx: property (text), widget (QLabel, syncLabel)
+#. i18n: ectx: property (text), widget (QLabel, hostLabel)
 #. i18n: ectx: property (text), widget (QLabel, certInfoLabel)
 #. i18n: ectx: property (text), widget (QLabel, subjectCN)
 #. i18n: ectx: property (text), widget (QLabel, subjectO)
@@ -114,34 +107,13 @@ msgstr "<b>Elementos agochados</b>"
 #. i18n: ectx: property (text), widget (QLabel, expiresOn)
 #. i18n: ectx: property (text), widget (QLabel, md5)
 #. i18n: ectx: property (text), widget (QLabel, sha1)
-#. i18n: ectx: property (text), widget (QLabel, label)
-#. i18n: ectx: property (text), widget (QLabel, syncLabel)
-#. i18n: ectx: property (text), widget (QLabel, hostLabel)
-#: adblock/blocked_elements.ui:108 sslinfo.ui:77 sslinfo.ui:131 sslinfo.ui:145
-#: sslinfo.ui:159 sslinfo.ui:173 sslinfo.ui:223 sslinfo.ui:244 sslinfo.ui:251
-#: sslinfo.ui:301 sslinfo.ui:315 sslinfo.ui:365 sslinfo.ui:379
-#: sync/sync_check.ui:30 sync/sync_check.ui:44
+#: adblock/blocked_elements.ui:108 sync/sync_check.ui:30 sync/sync_check.ui:44
+#: webtab/sslinfo.ui:77 webtab/sslinfo.ui:131 webtab/sslinfo.ui:145
+#: webtab/sslinfo.ui:159 webtab/sslinfo.ui:173 webtab/sslinfo.ui:223
+#: webtab/sslinfo.ui:244 webtab/sslinfo.ui:251 webtab/sslinfo.ui:301
+#: webtab/sslinfo.ui:315 webtab/sslinfo.ui:365 webtab/sslinfo.ui:379
 msgid "TextLabel"
 msgstr "Etiqueta de texto"
-
-#: adblock/blockedelementswidget.cpp:67 adblock/blockedelementswidget.cpp:102
-msgid "Unblock"
-msgstr "Desbloquear"
-
-#: adblock/blockedelementswidget.cpp:83
-#, kde-format
-msgid "There is %1 hidden element in this page."
-msgid_plural "There are %1 hidden elements in this page."
-msgstr[0] "Hai un elemento agochado nesta páxina."
-msgstr[1] "Hai %1 elementos agochados nesta páxina."
-
-#: adblock/blockedelementswidget.cpp:85
-msgid "Hiding elements is disabled."
-msgstr "A opción de agochar elementos está desactivada."
-
-#: adblock/blockedelementswidget.cpp:98
-msgid "Unblocked"
-msgstr "Desbloqueado"
 
 #. i18n: ectx: property (text), widget (QCheckBox, checkEnableAdblock)
 #: adblock/settings_adblock.ui:17
@@ -189,61 +161,22 @@ msgstr "…"
 msgid "Remove filter expression"
 msgstr "Eliminar a expresión de filtrado"
 
-#: analyzer/networkanalyzer.cpp:58
-msgid "Method"
-msgstr "Método"
+#: application.cpp:123 application.cpp:129
+#, fuzzy
+#| msgctxt "%1 = Error description"
+#| msgid "Error: %1"
+msgid "Error"
+msgstr "Erro: %1"
 
-#: analyzer/networkanalyzer.cpp:58
-msgid "URL"
-msgstr "URL"
+#: application.cpp:123
+msgid "Cannot launch webapp mode without an URL to load"
+msgstr ""
 
-#: analyzer/networkanalyzer.cpp:58
-msgid "Response"
-msgstr "Resposta"
+#: application.cpp:129
+msgid "Cannot load more than one URL in webapp mode"
+msgstr ""
 
-#: analyzer/networkanalyzer.cpp:58
-msgid "Length"
-msgstr "Lonxitude"
-
-#: analyzer/networkanalyzer.cpp:58
-msgid "Content Type"
-msgstr "Tipo de contido"
-
-#: analyzer/networkanalyzer.cpp:58
-msgid "Info"
-msgstr "Información"
-
-#: analyzer/networkanalyzer.cpp:85
-msgid "Copy URL"
-msgstr "Copiar o URL"
-
-#: analyzer/networkanalyzer.cpp:127
-msgid "Pending"
-msgstr "Pendente"
-
-#: analyzer/networkanalyzer.cpp:185
-#, kde-format
-msgid "%1 %2"
-msgstr "%1 %2"
-
-#: analyzer/networkanalyzer.cpp:196
-#, kde-format
-msgid "Redirect: %1"
-msgstr "Redirección: %1"
-
-#: analyzer/networkanalyzer.cpp:207
-msgid "<h3>Request Details</h3>"
-msgstr "<h3>Detalles da petición</h3>"
-
-#: analyzer/networkanalyzer.cpp:220
-msgid "<h3>Response Details</h3>"
-msgstr "<h3>Detalles da resposta</h3>"
-
-#: application.cpp:85
-msgid "Private &Browsing"
-msgstr "Navegación &privada"
-
-#: application.cpp:466 mainwindow.cpp:1627
+#: application.cpp:383
 #, kde-format
 msgid ""
 "Malformed URL:\n"
@@ -252,50 +185,38 @@ msgstr ""
 "URL incorrecto:\n"
 "%1"
 
-#: application.cpp:717
-msgid "Are you sure you want to turn on private browsing?"
-msgstr "Está seguro de que quere activar a navegación privada?"
-
-#: application.cpp:718
-#, kde-format
-msgid ""
-"<b>%1</b><p>rekonq will save your current tabs for when you'll stop private "
-"browsing the net.</p>"
-msgstr ""
-"<b>%1</b> <p>Rekonq gardará as súas lapelas actuais, e volverá cargalas "
-"cando saia da navegación privada.</p>"
-
-#: application.cpp:723
-msgid "don't ask again"
-msgstr "Non volver preguntar."
-
-#: application.cpp:773
+#: application.cpp:627
 msgid "Do you want to close the window or the whole application?"
 msgstr "Quere pechar a xanela ou todo o aplicativo?"
 
-#: application.cpp:774
+#: application.cpp:628
 msgid "Application/Window closing..."
 msgstr "Pechando a xanela ou o aplicativo…"
 
-#: application.cpp:775
+#: application.cpp:629
 msgid "C&lose Current Window"
 msgstr "&Pechar esta xanela"
 
-#: application.cpp:807
+#. i18n: ectx: property (windowTitle), widget (QWidget, ClearDataWidget)
+#: application.cpp:658 cleardata.ui:17
+msgctxt "@title:window"
+msgid "Clear Private Data"
+msgstr "Borrar os datos privados"
+
+#: application.cpp:662
+msgid "Clear"
+msgstr "Borrar"
+
+#: application.cpp:738
 msgctxt "@title:window"
 msgid "Create Application Shortcut"
 msgstr "Crear un atallo para o aplicativo"
 
-#: application.cpp:809
+#: application.cpp:740
 msgid "Create"
 msgstr "Crear"
 
-#. i18n: ectx: Menu (go)
-#: bookmarks/bookmarkmanager.cpp:95 rekonqui.rc:110
-msgid "&Bookmarks"
-msgstr "&Marcadores"
-
-#: bookmarks/bookmarkowner.cpp:75 history/historypanel.cpp:71
+#: bookmarks/bookmarkowner.cpp:75
 msgid "Open"
 msgstr "Abrir"
 
@@ -303,7 +224,7 @@ msgstr "Abrir"
 msgid "Open bookmark in current tab"
 msgstr "Abrir o marcador na lapela actual."
 
-#: bookmarks/bookmarkowner.cpp:78 history/historypanel.cpp:75
+#: bookmarks/bookmarkowner.cpp:78
 msgid "Open in New Tab"
 msgstr "Abrir nunha nova lapela"
 
@@ -311,7 +232,7 @@ msgstr "Abrir nunha nova lapela"
 msgid "Open bookmark in new tab"
 msgstr "Abrir o marcador nunha nova lapela."
 
-#: bookmarks/bookmarkowner.cpp:81 history/historypanel.cpp:79
+#: bookmarks/bookmarkowner.cpp:81
 msgid "Open in New Window"
 msgstr "Abrir nunha nova xanela"
 
@@ -319,7 +240,7 @@ msgstr "Abrir nunha nova xanela"
 msgid "Open bookmark in new window"
 msgstr "Abrir o marcador nunha nova xanela."
 
-#: bookmarks/bookmarkowner.cpp:84 history/historypanel.cpp:104
+#: bookmarks/bookmarkowner.cpp:84
 msgid "Open Folder in Tabs"
 msgstr "Abrir o cartafol en lapelas"
 
@@ -376,7 +297,7 @@ msgid "Link Nepomuk resources"
 msgstr "Ligar recursos de Nepomuk"
 
 #. i18n: ectx: property (text), widget (QPushButton, deleteButton)
-#: bookmarks/bookmarkowner.cpp:107 urlbar/urlbar.cpp:504
+#: bookmarks/bookmarkowner.cpp:107 urlbar/urlbar.cpp:484
 #: useragent/useragentsettings.ui:39
 msgid "Delete"
 msgstr "Borrar"
@@ -393,7 +314,7 @@ msgstr "Usar para a barra de marcadores"
 msgid "Unset this folder as the toolbar folder"
 msgstr "Deixar de usar para a barra de marcadores"
 
-#: bookmarks/bookmarkowner.cpp:172 history/historypanel.cpp:136
+#: bookmarks/bookmarkowner.cpp:172
 #, kde-format
 msgctxt "%1=Number of tabs. Value is always >=8"
 msgid ""
@@ -409,60 +330,39 @@ msgstr[1] ""
 "Está a piques de abrir %1 lapelas.\n"
 "Está seguro?"
 
-#: bookmarks/bookmarkowner.cpp:246
+#: bookmarks/bookmarkowner.cpp:249
 msgid "New folder"
 msgstr "Novo cartafol"
 
-#: bookmarks/bookmarkowner.cpp:344
+#: bookmarks/bookmarkowner.cpp:349
 msgid "Bookmark Folder Deletion"
 msgstr "Eliminar o cartafol de marcadores"
 
-#: bookmarks/bookmarkowner.cpp:345
+#: bookmarks/bookmarkowner.cpp:350
 #, kde-format
 msgid ""
 "Are you sure you wish to remove the bookmark folder\n"
 "\"%1\"?"
 msgstr "Está seguro de que quere eliminar o cartafol de marcadores «%1»?"
 
-#: bookmarks/bookmarkowner.cpp:349
+#: bookmarks/bookmarkowner.cpp:354
 msgid "Separator Deletion"
 msgstr "Eliminar o separador"
 
-#: bookmarks/bookmarkowner.cpp:350
+#: bookmarks/bookmarkowner.cpp:355
 msgid "Are you sure you wish to remove this separator?"
 msgstr "Está seguro de que quere eliminar o separador?"
 
-#: bookmarks/bookmarkowner.cpp:354
+#: bookmarks/bookmarkowner.cpp:359
 msgid "Bookmark Deletion"
 msgstr "Eliminar o marcador"
 
-#: bookmarks/bookmarkowner.cpp:355
+#: bookmarks/bookmarkowner.cpp:360
 #, kde-format
 msgid ""
 "Are you sure you wish to remove the bookmark\n"
 "\"%1\"?"
 msgstr "Está seguro de que quere eliminar o marcador «%1»?"
-
-#: bookmarks/bookmarkstreemodel.cpp:87
-#, kde-format
-msgctxt "%1=Number of items in bookmark folder"
-msgid " (1 item)"
-msgid_plural " (%1 items)"
-msgstr[0] " (un elemento)"
-msgstr[1] " (%1 elementos)"
-
-#. i18n: ectx: property (text), item, widget (KComboBox, kcfg_newTabStartPage)
-#. i18n: ectx: property (text), widget (QLabel, label)
-#: bookmarks/bookmarkstreemodel.cpp:263 newtabpage.cpp:334 newtabpage.cpp:374
-#: settings/settings_tabs.ui:109 sync/sync_check.ui:60
-msgid "Bookmarks"
-msgstr "Marcadores"
-
-#. i18n: ectx: property (windowTitle), widget (QWidget, ClearDataWidget)
-#: cleardata.ui:17 mainwindow.cpp:1324
-msgctxt "@title:window"
-msgid "Clear Private Data"
-msgstr "Borrar os datos privados"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: cleardata.ui:29
@@ -500,560 +400,295 @@ msgstr "Iconas das páxinas web."
 msgid "Home page thumbs"
 msgstr "Miniaturas da páxina persoal."
 
-#: clicktoflash.cpp:54
-msgid "Load Plugin"
-msgstr "Cargar o complemento"
-
-#: findbar.cpp:60
-msgid "&Match case"
-msgstr "&Diferenciar maiúsculas de minúsculas."
-
-#: findbar.cpp:61
-msgid "&Highlight all"
-msgstr "&Salientalas todas."
-
-#: findbar.cpp:81
-msgid "Find:"
-msgstr "Atopar:"
-
-#: findbar.cpp:91
-msgid "&Next"
-msgstr "&Seguinte"
-
-#: findbar.cpp:92
-msgid "&Previous"
-msgstr "&Anterior"
-
-#: history/historymodels.cpp:94
+#: history/historymodels.cpp:93
 msgid "Title"
 msgstr "Título"
 
-#: history/historymodels.cpp:95
+#: history/historymodels.cpp:94
 msgid "Address"
 msgstr "Enderezo"
 
-#: history/historymodels.cpp:157
+#: history/historymodels.cpp:156
 msgid "First Visit: "
 msgstr "Primeira visita: "
 
-#: history/historymodels.cpp:158
+#: history/historymodels.cpp:157
 msgid "Last Visit: "
 msgstr "Última visita: "
 
-#: history/historymodels.cpp:159
+#: history/historymodels.cpp:158
 msgid "Number of Visits: "
 msgstr "Número de visitas: "
 
-#: history/historymodels.cpp:454
+#: history/historymodels.cpp:453
 msgid "Earlier Today"
 msgstr "Antes, hoxe"
 
-#: history/historymodels.cpp:459
+#: history/historymodels.cpp:458
 #, kde-format
 msgid "1 item"
 msgid_plural "%1 items"
 msgstr[0] "Un elemento"
 msgstr[1] "%1 elementos"
 
-#: history/historypanel.cpp:83
-msgid "Copy Link Address"
-msgstr "Copiar o enderezo da ligazón"
-
-#: history/historypanel.cpp:87
-msgid "Remove Entry"
-msgstr "Eliminar a entrada"
-
-#: history/historypanel.cpp:91
-msgid "Remove all occurrences"
-msgstr "Eliminar todas as ocorrencias"
-
-#: history/historypanel.cpp:108
-msgid "Remove Folder"
-msgstr "Eliminar o cartafol"
-
-#: main.cpp:42
+#: main.cpp:44
 msgid "A lightweight Web Browser for KDE based on WebKit"
 msgstr "Navegador web lixeiro para KDE baseado no motor Webkit."
 
-#: main.cpp:49
+#: main.cpp:51 webtab/webtab.cpp:425
 msgid "rekonq"
 msgstr "Rekonq"
 
-#: main.cpp:53
+#: main.cpp:55
 msgid "(C) 2008-2012 Andrea Diamantini"
 msgstr "© 2008-2012 Andrea Diamantini"
 
-#: main.cpp:59
+#: main.cpp:62
 msgid "Andrea Diamantini"
 msgstr "Andrea Diamantini"
 
-#: main.cpp:60
+#: main.cpp:63
 msgid "Project Lead, Developer, Maintainer"
 msgstr "Liderado do proxecto, desenvolvemento e mantemento."
 
-#: main.cpp:64
+#: main.cpp:67
 msgid "Johannes Tröscher"
 msgstr "Johannes Tröscher"
 
-#: main.cpp:65
+#: main.cpp:68
 msgid "QGraphicsEffect expert. Tabbar highlight animation"
 msgstr ""
 "Axuda con QGraphicsEffect, animación de salientado da barra de lapelas."
 
-#: main.cpp:69
+#: main.cpp:72
 msgid "Furkan Uzumcu"
 msgstr "Furkan Uzumcu"
 
-#: main.cpp:70
+#: main.cpp:73
 msgid "A lot of improvements, especially on usability"
 msgstr "Moreas de melloras, especialmente na facilidade de uso."
 
-#: main.cpp:74
+#: main.cpp:77
 msgid "Yoann Laissus"
 msgstr "Yoann Laissus"
 
-#: main.cpp:75
+#: main.cpp:78
 msgid "Developer, History & Bookmarks Improvements"
 msgstr "Desenvolvemento e melloras no historial e os marcadores."
 
-#: main.cpp:79
+#: main.cpp:82
 msgid "Cédric Bellegarde"
 msgstr "Cédric Bellegarde"
 
-#: main.cpp:80
+#: main.cpp:83
 msgid "Patched code quite everywhere :)"
 msgstr "Parches en todas partes."
 
-#: main.cpp:84
+#: main.cpp:87
 msgid "Jon Ander Peñalba"
 msgstr "Jon Ander Peñalba"
 
-#: main.cpp:85
+#: main.cpp:88
 msgid "Bookmarks code peer reviewer. A fantastic help"
 msgstr "Revisión do código dos marcadores e axuda."
 
-#: main.cpp:89
+#: main.cpp:92
 msgid "Pierre Rossi"
 msgstr "Pierre Rossi"
 
-#: main.cpp:90
+#: main.cpp:93
 msgid "Urlbar, tests, new tab page, bars... and more"
 msgstr "Barra do URL, probas, taboleiro, barras e máis."
 
-#: main.cpp:94
+#: main.cpp:97
 msgid "Lionel Chauvin"
 msgstr "Lionel Chauvin"
 
-#: main.cpp:95
+#: main.cpp:98
 msgid "Development, Ideas, Mockups, rekonq Icon"
 msgstr "Desenvolvemento, ideas, prototipos e a icona do aplicativo."
 
-#: main.cpp:99
+#: main.cpp:102
 msgid "Siteshwar Vashisht"
 msgstr "Siteshwar Vashisht"
 
-#: main.cpp:100
+#: main.cpp:103
 msgid "Code, Ideas, sync... and IRC chats!"
 msgstr "Código, ideas, sincronización, e conversas por IRC!"
 
-#: main.cpp:104
+#: main.cpp:107
 msgid "Tirtha Chatterjee"
 msgstr "Tirtha Chatterjee"
 
-#: main.cpp:105
+#: main.cpp:108
 msgid "A lot of nice work, here and there in the code :)"
 msgstr "Moi bo traballo en distintas partes do código fonte."
 
-#: main.cpp:109
+#: main.cpp:112
 msgid "Lindsay Mathieson"
 msgstr "Lindsay Mathieson"
 
-#: main.cpp:110
+#: main.cpp:113
 msgid "Implemented inline spellcheck, provided hints, discovered bugs"
 msgstr ""
 
-#: main.cpp:115
+#: main.cpp:119
 msgid "Dawit Alemayehu"
 msgstr "Dawit Alemayehu"
 
-#: main.cpp:116
+#: main.cpp:120
 msgid "KDEWebKit (main) developer. And KIO. And KUriFilter. And more.."
 msgstr "Liderado no desenvolvemento de KDEWebKit, KIO, KUriFilter, e máis."
 
-#: main.cpp:120
+#: main.cpp:124
 msgid "Jekyll Wu"
 msgstr "Jekyll Wu"
 
-#: main.cpp:121
+#: main.cpp:125
 msgid "Bug triaging. Impressive job about..."
 msgstr "Un traballo impresionante organizando os informes de erro."
 
-#: main.cpp:125
+#: main.cpp:129
 msgid "Panagiotis Papadopoulos"
 msgstr "Panagiotis Papadopoulos"
 
-#: main.cpp:126
+#: main.cpp:130
 msgid "Quite everything but code"
 msgstr "De todo menos código."
 
-#: main.cpp:130
+#: main.cpp:134
 msgid "Phaneendra Hedge"
 msgstr "Phaneendra Hedge"
 
-#: main.cpp:131
+#: main.cpp:135
 msgid "Nepomuk fancy bookmarking"
 msgstr "Marcadores especiales de Nepomuk."
 
-#: main.cpp:135
+#: main.cpp:139
 msgid "Jonathan Raphael Joachim Kolberg"
 msgstr "Jonathan Raphael Joachim Kolberg"
 
-#: main.cpp:136
+#: main.cpp:140
 msgid "Handbook, Maintains a Kubuntu PPA with rekonq git packages"
 msgstr "Manual e empaquetado da versión Git para Kubuntu."
 
-#: main.cpp:140
+#: main.cpp:144
 msgid "Benjamin Poulain"
 msgstr "Benjamin Poulain"
 
-#: main.cpp:141
+#: main.cpp:145
 msgid ""
 "The \"QtWebKit guy\". Adblock (new) implementation. Code quality improvements"
 msgstr ""
 "O “tipo de QtWebKit”, novo anto-publicidade e melloras na calidade do código."
 
-#: main.cpp:145
+#: main.cpp:149
 msgid "Rohan Garg"
 msgstr "Rohan Garg"
 
-#: main.cpp:146
+#: main.cpp:150
 msgid "Handbook, Maintains a Kubuntu PPA with rekonq git packages."
 msgstr "Manual e empaquetado da versión Git para Kubuntu."
 
-#: main.cpp:150
+#: main.cpp:154
 msgid "Anton Kreuzkamp"
 msgstr "Anton Kreuzkamp"
 
-#: main.cpp:151
+#: main.cpp:155
 msgid "Session Management, patches"
 msgstr "Xestión das sesións, parches."
 
-#: main.cpp:155
+#: main.cpp:159
 msgid "David E. Narváez"
 msgstr "David E. Narváez"
 
-#: main.cpp:156
+#: main.cpp:160
 msgid "Implemented User Session Management and cleaned up SessionManager code"
 msgstr ""
 "Engadido da xestión de sesións de usuarios e limpeza do código de xestión de "
 "sesións."
 
-#: main.cpp:160
+#: main.cpp:164
 msgid "Marc Deop"
 msgstr "Marc Deop"
 
-#: main.cpp:161
+#: main.cpp:165
 msgid "Access Keys Navigation"
 msgstr "Navegación das teclas de acceso."
 
-#: main.cpp:165
+#: main.cpp:169
 msgid "Yuri Chornoivan"
 msgstr "Yuri Chornoivan"
 
-#: main.cpp:166 main.cpp:171
+#: main.cpp:170 main.cpp:175
 msgid "Checking rekonq strings, helping with docs"
 msgstr "Comprobación das cadeas e axuda coa documentación."
 
-#: main.cpp:170
+#: main.cpp:174
 msgid "Burkhard Lück"
 msgstr "Burkhard Lück"
 
-#: main.cpp:175
+#: main.cpp:179
 msgid "Andrius da Costa Ribas"
 msgstr "Andrius da Costa Ribas"
 
-#: main.cpp:176
+#: main.cpp:180
 msgid "Helped letting rekonq compile on Windows/MSVC and Mac OS X"
 msgstr "Axuda para conseguir que Rekonq funcione en Windows e Mac OS X."
 
-#: main.cpp:180
+#: main.cpp:184
 msgid "Pino Toscano"
 msgstr "Pino Toscano"
 
-#: main.cpp:181
+#: main.cpp:185
 msgid "fixuifiles ;)"
 msgstr "Arreglo dos ficheiros de interface."
 
-#: main.cpp:192
+#: main.cpp:197
+msgid "Open in incognito mode"
+msgstr ""
+
+#: main.cpp:198
+msgid "Open URL as web app (in a simple window)"
+msgstr ""
+
+#: main.cpp:199
 msgid "Location to open"
 msgstr "Enderezo a abrir"
 
-#: mainview.cpp:351 mainview.cpp:356 mainview.cpp:627 mainview.cpp:647
-msgid "(Untitled)"
-msgstr "(Sen título)"
-
-#: mainview.cpp:474
-msgid ""
-"This tab contains changes that have not been submitted.\n"
-"Closing the tab will discard these changes.\n"
-"Do you really want to close this tab?\n"
-msgstr ""
-"Algúns cambios nesta lapela non se enviaron aínda.\n"
-"Se a pecha perderanse eses cambios.\n"
-"Está seguro de que quere pechala?\n"
-
-#: mainview.cpp:477
-msgid "Closing Modified Tab"
-msgstr "Pechando unha lapela con cambios"
-
-#: mainview.cpp:477
-msgid "Close &Tab"
-msgstr "Pechar a &lapela"
-
-#: mainview.cpp:562
-msgid "Loading..."
-msgstr "Cargando…"
-
-#: mainview.cpp:598 urlbar/resourcelinkdialog.cpp:108
-msgid "Done"
-msgstr "Feito"
-
-#: mainwindow.cpp:249
-msgid "Location Bar"
-msgstr "Barra de enderezos"
-
-#: mainwindow.cpp:339
-msgid "&New Window"
-msgstr "&Nova xanela"
-
-#: mainwindow.cpp:367 mainwindow.cpp:1118
-msgid "Reload"
-msgstr "Actualizar"
-
-#: mainwindow.cpp:372
-msgid "&Stop"
-msgstr "&Deter"
-
-#: mainwindow.cpp:383
-msgid "Open Location"
-msgstr "Abrir o enderezo"
-
-#: mainwindow.cpp:398
-msgid "Tab List"
-msgstr "Lista de lapelas"
-
 #. i18n: ectx: property (text), item, widget (KComboBox, kcfg_newTabStartPage)
-#: mainwindow.cpp:410 newtabpage.cpp:340 newtabpage.cpp:386
-#: settings/settings_tabs.ui:119
-msgid "Downloads"
-msgstr "Descargas"
-
-#: mainwindow.cpp:416
-msgid "View Page S&ource"
-msgstr "Ver o código &fonte da páxina"
-
-#: mainwindow.cpp:426
-msgid "Clear Private Data..."
-msgstr "Borrar os datos privados…"
-
-#: mainwindow.cpp:451
-msgid "New &Tab"
-msgstr "Nova &lapela"
-
-#: mainwindow.cpp:456
-msgid "Reload All Tabs"
-msgstr "Actualizar todas as lapelas"
-
-#: mainwindow.cpp:460
-msgid "Show Next Tab"
-msgstr "Amosar a seguinte lapela"
-
-#: mainwindow.cpp:465
-msgid "Show Previous Tab"
-msgstr "Amosar a lapela anterior"
-
-#: mainwindow.cpp:470
-msgid "Open Last Closed Tab"
-msgstr "Abrir a última lapela en pecharse"
-
-#: mainwindow.cpp:480
-#, kde-format
-msgid "Switch to Tab %1"
-msgstr "Ir á lapela %1"
-
-#: mainwindow.cpp:492
-#, kde-format
-msgid "Switch to Favorite Page %1"
-msgstr "Ir á páxina favorita %1"
-
-#: mainwindow.cpp:501
-msgid "&Close Tab"
-msgstr "&Pechar a lapela"
-
-#: mainwindow.cpp:506
-msgid "Clone Tab"
-msgstr "Clonar a lapela"
-
-#: mainwindow.cpp:510
-msgid "Close &Other Tabs"
-msgstr "Pechar as &outras lapelas"
-
-#: mainwindow.cpp:514
-msgid "Reload Tab"
-msgstr "Actualizar a lapela"
-
-#: mainwindow.cpp:518
-msgid "Detach Tab"
-msgstr "Separar a lapela"
-
-#: mainwindow.cpp:531
-msgid "Bookmarks Toolbar"
-msgstr "Barra de marcadores"
-
-#: mainwindow.cpp:537 useragent/useragentmanager.cpp:47
-msgid "Browser Identification"
-msgstr "Identificación do navegador"
-
-#: mainwindow.cpp:544
-msgid "Set Editable"
-msgstr "Facer alterable"
-
-#: mainwindow.cpp:550
-msgid "Ad Block"
-msgstr "Anti-publicidade"
-
-#: mainwindow.cpp:555
-msgid "Create application shortcut"
-msgstr "Crear un atallo para o aplicativo"
-
-#: mainwindow.cpp:560
-msgid "Sync"
-msgstr "Sincronizar"
-
-#. i18n: ectx: Menu (toolsMenu)
-#. i18n: ectx: Menu (tools)
-#: mainwindow.cpp:568 rekonqui.rc:19 rekonqui.rc:114
-msgid "&Tools"
-msgstr "Ferramen&tas"
-
-#: mainwindow.cpp:586
-msgid "History Panel"
-msgstr "Panel do historial"
-
-#: mainwindow.cpp:605
-msgid "Bookmarks Panel"
-msgstr "Panel dos marcadores"
-
-#: mainwindow.cpp:626
-msgid "Web Inspector"
-msgstr "Inspector web"
-
-#: mainwindow.cpp:629
-msgid "Web &Inspector"
-msgstr "Inspector &web"
-
-#: mainwindow.cpp:639 mainwindow.cpp:642
-msgid "Network Analyzer"
-msgstr "Analizador da rede"
-
-#: mainwindow.cpp:782
-msgctxt "Window title when private browsing is activated"
-msgid "rekonq (Private Browsing)"
-msgstr "Rekonq (navegación privada)"
-
-#: mainwindow.cpp:793
-#, kde-format
-msgctxt "window title, %1 = title of the active website"
-msgid "%1 – rekonq (Private Browsing)"
-msgstr "%1 — Rekonq (navegación privada)"
-
-#: mainwindow.cpp:797
-#, kde-format
-msgctxt "window title, %1 = title of the active website"
-msgid "%1 – rekonq"
-msgstr "%1 — Rekonq"
-
-#: mainwindow.cpp:806
-msgid ""
-"*.html *.htm *.svg *.png *.gif *.svgz|Web Resources (*.html *.htm *.svg *."
-"png *.gif *.svgz)\n"
-"*.*|All files (*.*)"
-msgstr ""
-"*.html *.htm *.svg *.png *.gif *.svgz|Recursos web (*.html *.htm *.svg *.png "
-"*.gif *.svgz)\n"
-"*.*|Todos os ficheiros (*.*)"
-
-#: mainwindow.cpp:809
-msgid "Open Web Resource"
-msgstr "Abrir o recurso web"
-
-#: mainwindow.cpp:1063
-msgid "Source of: "
-msgstr "Código fonte de: "
-
-#: mainwindow.cpp:1096 mainwindow.cpp:1097
-msgid "Go"
-msgstr "Ir"
-
-#: mainwindow.cpp:1109
-msgid "Stop loading the current page"
-msgstr "Deixar de cargar esta páxina"
-
-#: mainwindow.cpp:1110
-msgid "Stop"
-msgstr "Deter"
-
-#: mainwindow.cpp:1117
-msgid "Reload the current page"
-msgstr "Actualizar esta páxina"
-
-#: mainwindow.cpp:1328
-msgid "Clear"
-msgstr "Borrar"
-
-#: messagebar.cpp:57
-msgid "Yes"
-msgstr "Si"
-
-#: messagebar.cpp:61
-msgid "No"
-msgstr "Non"
-
-#: networkaccessmanager.cpp:57
-msgid "Null reply"
-msgstr "Resposta null"
-
-#. i18n: ectx: property (text), item, widget (KComboBox, kcfg_newTabStartPage)
-#: newtabpage.cpp:313 newtabpage.cpp:362 settings/settings_tabs.ui:99
+#: rekonqpage/newtabpage.cpp:318 rekonqpage/newtabpage.cpp:367
+#: settings/settings_tabs.ui:99
 msgid "Favorites"
 msgstr "Favoritos"
-
-#. i18n: ectx: property (text), item, widget (KComboBox, kcfg_newTabStartPage)
-#: newtabpage.cpp:322 newtabpage.cpp:368 settings/settings_tabs.ui:104
-#: tabbar.cpp:406
-msgid "Closed Tabs"
-msgstr "Lapelas pechadas"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
 #. i18n: ectx: property (text), item, widget (KComboBox, kcfg_newTabStartPage)
 #. i18n: ectx: property (text), widget (QLabel, label_2)
-#: newtabpage.cpp:328 newtabpage.cpp:380 settings/settings_privacy.ui:56
-#: settings/settings_tabs.ui:114 sync/sync_check.ui:77
+#: rekonqpage/newtabpage.cpp:333 rekonqpage/newtabpage.cpp:385
+#: settings/settings_privacy.ui:56 settings/settings_tabs.ui:109
+#: sync/sync_check.ui:77
 msgid "History"
 msgstr "Historial"
 
-#. i18n: ectx: property (windowTitle), widget (QWidget, tabs)
 #. i18n: ectx: property (text), item, widget (KComboBox, kcfg_newTabStartPage)
-#: newtabpage.cpp:346 newtabpage.cpp:392 settings/settings_tabs.ui:14
-#: settings/settings_tabs.ui:124 settings/settingsdialog.cpp:96
-msgid "Tabs"
-msgstr "Lapelas"
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: rekonqpage/newtabpage.cpp:339 rekonqpage/newtabpage.cpp:379
+#: settings/settings_tabs.ui:104 sync/sync_check.ui:60
+msgid "Bookmarks"
+msgstr "Marcadores"
 
-#: newtabpage.cpp:415
+#. i18n: ectx: property (text), item, widget (KComboBox, kcfg_newTabStartPage)
+#: rekonqpage/newtabpage.cpp:345 rekonqpage/newtabpage.cpp:391
+#: settings/settings_tabs.ui:114
+msgid "Downloads"
+msgstr "Descargas"
+
+#: rekonqpage/newtabpage.cpp:420
 msgid "Add Favorite"
 msgstr "Marcar como favorita"
 
-#: newtabpage.cpp:428
+#: rekonqpage/newtabpage.cpp:433
 msgid ""
 "You can add a favorite by clicking the \"Add Favorite\" button in the top-"
 "right corner of this page"
@@ -1061,212 +696,110 @@ msgstr ""
 "Pode marcar unha páxina como favorita premendo o botón «Marcar como "
 "favorita» na esquina superior dereita da páxina."
 
-#: newtabpage.cpp:449
+#: rekonqpage/newtabpage.cpp:454
 msgid "Search History"
 msgstr "Historial de buscas"
 
-#: newtabpage.cpp:454
+#: rekonqpage/newtabpage.cpp:459
 msgid "Clear History"
 msgstr "Borrar o historial"
 
-#: newtabpage.cpp:475
+#: rekonqpage/newtabpage.cpp:480
 msgid "Your browsing history is empty"
 msgstr "O historial de navegación está baleiro."
 
-#: newtabpage.cpp:480
+#: rekonqpage/newtabpage.cpp:485
 #, kde-format
 msgid "No matches for string %1 in history"
 msgstr "Non hai resultados para os termos «%1» no historial."
 
-#: newtabpage.cpp:530
+#: rekonqpage/newtabpage.cpp:535
 msgid "Show full History"
 msgstr "Amosar todo o historial"
 
-#: newtabpage.cpp:544
+#: rekonqpage/newtabpage.cpp:549
 msgid "Edit Bookmarks"
 msgstr "Xestionar os marcadores"
 
-#: newtabpage.cpp:555
+#: rekonqpage/newtabpage.cpp:560
 msgid "You have no bookmarks"
 msgstr "Non ten marcadores."
 
-#: newtabpage.cpp:564
+#: rekonqpage/newtabpage.cpp:569
 msgid "Unsorted"
 msgstr "Sen ordenar"
 
-#: newtabpage.cpp:583
-msgid "There are no recently closed tabs"
-msgstr "Non pechou lapelas ultimamente."
-
-#: newtabpage.cpp:612
+#: rekonqpage/newtabpage.cpp:617
 msgid "Search Downloads"
 msgstr "Buscar descargas"
 
-#: newtabpage.cpp:616
+#: rekonqpage/newtabpage.cpp:621
 msgid "Clear Downloads"
 msgstr "Borrar a lista de descargas"
 
-#: newtabpage.cpp:630
+#: rekonqpage/newtabpage.cpp:635
 msgid "There are no recently downloaded files to show"
 msgstr "Non descargou ficheiros ultimamente."
 
-#: newtabpage.cpp:675
+#: rekonqpage/newtabpage.cpp:680
 msgid ""
 "This download is managed by KGet. Check it to grab information about its "
 "state"
 msgstr ""
 "Esta descarga está xestionada por KGet. Ábrao para informarse do seu estado."
 
-#: newtabpage.cpp:679
+#: rekonqpage/newtabpage.cpp:684
 msgid "Suspended"
 msgstr "Pausada"
 
-#: newtabpage.cpp:683
+#: rekonqpage/newtabpage.cpp:688
 msgid "Downloading now..."
 msgstr "Descargando…"
 
-#: newtabpage.cpp:687
+#: rekonqpage/newtabpage.cpp:692
 #, kde-format
 msgctxt "%1 = Error description"
 msgid "Error: %1"
 msgstr "Erro: %1"
 
-#: newtabpage.cpp:697
+#: rekonqpage/newtabpage.cpp:702
 msgid "Open directory"
 msgstr "Abrir un directorio"
 
-#: newtabpage.cpp:704
+#: rekonqpage/newtabpage.cpp:709
 msgid "Open file"
 msgstr "Abrir un ficheiro"
 
-#: newtabpage.cpp:716
+#: rekonqpage/newtabpage.cpp:713
+#, fuzzy
+#| msgid "Remove one"
+msgid "Removed"
+msgstr "Eliminar"
+
+#: rekonqpage/newtabpage.cpp:721
 msgid "Remove from list"
 msgstr "Retirar da lista"
 
-#: newtabpage.cpp:727
+#: rekonqpage/newtabpage.cpp:732
 #, kde-format
 msgid "No matches for string %1 in downloads"
 msgstr "Non hai resultados para os termos «%1» nas descargas."
 
-#: newtabpage.cpp:740
-msgid "Window"
-msgstr "Xanela"
-
-#: newtabpage.cpp:779
+#: rekonqpage/newtabpage.cpp:784
 msgid "Set a Preview..."
 msgstr "Escoller unha vista previa…"
 
-#: newtabpage.cpp:870
+#: rekonqpage/newtabpage.cpp:875
 msgid "Remove favorite"
 msgstr "Retirar dos favoritos"
 
-#: newtabpage.cpp:875
+#: rekonqpage/newtabpage.cpp:880
 msgid "Reload thumbnail"
 msgstr "Actualizar a miniatura"
 
-#: opensearch/opensearchreader.cpp:87
-msgid "The file is not an OpenSearch 1.1 file."
-msgstr "Non é un ficheiro OpenSearch 1.1."
-
-#: previewselectorbar.cpp:63
-msgid "Please open up the webpage you want to add as favorite"
-msgstr "Cargue a páxina web que queira marcar como favorita."
-
-#: previewselectorbar.cpp:65
-msgid "Set to This Page"
-msgstr "Usar a páxina actual"
-
-#: previewselectorbar.cpp:82
-msgid "You cannot add this webpage as favorite"
-msgstr "Non pode marcar esta páxina web como favorita."
-
-#: previewselectorbar.cpp:90
-msgid "Page is loading..."
-msgstr "Cargando a páxina…"
-
-#: protocolhandler.cpp:195
-#, kde-format
-msgctxt "@info"
-msgid "rekonq does not know how to handle this protocol: %1"
-msgstr "Rekonq non é compatíbel co protocolo «%1»."
-
-#: protocolhandler.cpp:307
-#, kde-format
-msgctxt "%1=an URL"
-msgid "<h2>Index of %1</h2>"
-msgstr "<h2>Índice de %1</h2>"
-
-#: protocolhandler.cpp:315
-msgid "Up to higher level directory"
-msgstr "Subir ao directorio de maior nivel"
-
-#: protocolhandler.cpp:320
-msgid "Name"
-msgstr "Nome"
-
-#: protocolhandler.cpp:321
-msgid "Size"
-msgstr "Tamaño"
-
-#: protocolhandler.cpp:322
-msgid "Last Modified"
-msgstr "Última modificación"
-
-#. i18n: ectx: Menu (help)
-#: rekonqui.rc:41
-msgid "&Help"
-msgstr "&Axuda"
-
-#. i18n: ectx: Menu (file)
-#: rekonqui.rc:60
-msgid "&File"
-msgstr "&Ficheiro"
-
-#. i18n: ectx: Menu (edit)
-#: rekonqui.rc:76
-msgid "&Edit"
-msgstr "&Editar"
-
-#. i18n: ectx: Menu (view)
-#: rekonqui.rc:90
-msgid "&View"
-msgstr "&Vista"
-
-#. i18n: ectx: Menu (go)
-#: rekonqui.rc:106
-msgid "Hi&story"
-msgstr "Hi&storial"
-
-#. i18n: ectx: Menu (settings)
-#: rekonqui.rc:127
-msgid "&Settings"
-msgstr "$Configuración"
-
-#. i18n: ectx: ToolBar (mainToolBar)
-#: rekonqui.rc:142
-msgid "Main Toolbar"
-msgstr "Barra de ferramentas"
-
-#. i18n: ectx: ToolBar (bookmarkToolBar)
-#: rekonqui.rc:152 urlbar/bookmarkwidget.cpp:242
-msgid "Bookmark Toolbar"
-msgstr "Barra de marcadores"
-
-#: searchenginebar.cpp:61
-msgid ""
-"You don't have a default search engine set. Without it, rekonq will not show "
-"proper url suggestions."
-msgstr ""
-"Non escolleu un motor de busca por omisión. Escolla un para mellorar a "
-"calidade das suxestións."
-
-#: searchenginebar.cpp:63
-msgid "Set it"
-msgstr "Escoller un"
-
-#: searchenginebar.cpp:67 webview.cpp:215
-msgid "Ignore"
-msgstr "Ignorar"
+#: rekonqpage/thumbupdater.cpp:57
+msgid "Loading Preview..."
+msgstr "Cargando a vista previa…"
 
 #: settings/appearancewidget.cpp:104
 msgid ""
@@ -1328,70 +861,63 @@ msgid "Change them!"
 msgstr "Cambialas!"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
-#: settings/settings_advanced.ui:58
+#: settings/settings_advanced.ui:56
 msgid "Misc"
 msgstr "Varios"
 
 #. i18n: ectx: property (text), widget (QCheckBox, kcfg_hScrollWheelHistory)
-#: settings/settings_advanced.ui:64
+#: settings/settings_advanced.ui:62
 msgid "Use horizontal scroll wheel to go through web history"
 msgstr ""
 "Empregar a roda de desprazamento horizontal para moverse polo historial web."
 
 #. i18n: ectx: property (text), widget (QCheckBox, kcfg_useFavicon)
-#: settings/settings_advanced.ui:71
+#: settings/settings_advanced.ui:69
 msgid "Use favicon of the current website as window icon"
 msgstr "Empregar a icona da páxina web actual como icona da xanela."
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, kcfg_smoothScrolling)
-#: settings/settings_advanced.ui:78
+#: settings/settings_advanced.ui:76
 msgid "Scroll pages with an eye candy effect"
 msgstr "Desprazarse polas páxinas cun efecto visual atractivo."
 
 #. i18n: ectx: property (text), widget (QCheckBox, kcfg_smoothScrolling)
-#: settings/settings_advanced.ui:81
+#: settings/settings_advanced.ui:79
 msgid "Enable smooth scrolling"
 msgstr "Activar o desprazamento suave."
 
 #. i18n: ectx: property (text), widget (QCheckBox, kcfg_enableViShortcuts)
-#: settings/settings_advanced.ui:91
+#: settings/settings_advanced.ui:89
 msgid "Enable Vi-like navigation shortcuts"
 msgstr "Activar os atallos de navegación estilo Vi."
 
 #. i18n: ectx: property (text), widget (QCheckBox, kcfg_accessKeysEnabled)
-#: settings/settings_advanced.ui:98
+#: settings/settings_advanced.ui:96
 msgid "Enable keyboard navigation using the Ctrl key"
 msgstr "Activar a navegación co teclado mediante a tecla Ctrl"
 
 #. i18n: ectx: property (text), widget (QLabel, label_11)
-#: settings/settings_advanced.ui:107
+#: settings/settings_advanced.ui:105
 msgid "Middle click should:"
 msgstr "O botón central debería:"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_middleClickAction)
-#: settings/settings_advanced.ui:118
+#: settings/settings_advanced.ui:116
 msgid "Auto-scroll"
 msgstr "Facer desprazamento automático."
 
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_middleClickAction)
-#: settings/settings_advanced.ui:123
+#: settings/settings_advanced.ui:121
 msgid "Load Clipboard URL"
 msgstr "Cargar o URL do portarretallos."
 
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_middleClickAction)
-#: settings/settings_advanced.ui:128
+#: settings/settings_advanced.ui:126
 msgid "Do Nothing"
 msgstr "Non facer nada."
 
-#. i18n: ectx: property (text), widget (QCheckBox, kcfg_automaticSpellChecking)
-#: settings/settings_advanced.ui:138
-#, fuzzy
-#| msgid "Automatic Filters"
-msgid "Automatic Spell Check"
-msgstr "Filtros automáticos"
-
 #. i18n: ectx: property (windowTitle), widget (QWidget, appearance)
-#: settings/settings_appearance.ui:14 settings/settingsdialog.cpp:102
+#: settings/settings_appearance.ui:14 settings/settingsdialog.cpp:95
 msgid "Appearance"
 msgstr "Aparencia"
 
@@ -1473,7 +999,7 @@ msgstr "*.css"
 #. i18n: ectx: property (windowTitle), widget (QWidget, general)
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
 #: settings/settings_general.ui:14 settings/settings_webkit.ui:17
-#: settings/settingsdialog.cpp:90
+#: settings/settingsdialog.cpp:83
 msgid "General"
 msgstr "Xeral"
 
@@ -1524,7 +1050,9 @@ msgstr "Empregar o taboleiro como páxina persoal."
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_4)
 #: settings/settings_general.ui:154
-msgid "Download Manager"
+#, fuzzy
+#| msgid "Download Manager"
+msgid "Downloads Management"
 msgstr "Xestor de descargas"
 
 #. i18n: ectx: property (text), widget (QRadioButton, askDownloadNo)
@@ -1661,6 +1189,11 @@ msgstr ""
 msgid "Manage Cache"
 msgstr "Xestionar a caché"
 
+#. i18n: ectx: property (windowTitle), widget (QWidget, tabs)
+#: settings/settings_tabs.ui:14 settings/settingsdialog.cpp:89
+msgid "Tabs"
+msgstr "Lapelas"
+
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_3)
 #: settings/settings_tabs.ui:20
 msgid "New Tab Behavior"
@@ -1693,76 +1226,51 @@ msgid "New Tab Page starts with:"
 msgstr "O taboleiro comeza con:"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_4)
-#: settings/settings_tabs.ui:135
+#: settings/settings_tabs.ui:125
 msgid "Tabbed Browsing"
 msgstr "Navegación con lapelas"
 
 #. i18n: ectx: property (text), widget (QLabel, label_6)
-#: settings/settings_tabs.ui:149
+#: settings/settings_tabs.ui:139
 msgid "When hovering a tab show:"
 msgstr "Ao situar o cursor sobre unha lapela, amosar:"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, kcfg_hoveringTabOption)
-#: settings/settings_tabs.ui:169
+#: settings/settings_tabs.ui:159
 msgid "Tab Preview"
 msgstr "unha previsualización da lapela"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, kcfg_hoveringTabOption)
-#: settings/settings_tabs.ui:174
+#: settings/settings_tabs.ui:164
 msgid "Tab's Title in a Tooltip"
 msgstr "o título da lapela"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, kcfg_hoveringTabOption)
-#: settings/settings_tabs.ui:179
+#: settings/settings_tabs.ui:169
 msgid "Tab's URL in a Tooltip"
 msgstr "o enderezo da lapela"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, kcfg_hoveringTabOption)
-#: settings/settings_tabs.ui:184
+#: settings/settings_tabs.ui:174
 msgctxt "@item:inlistbox"
 msgid "Nothing"
 msgstr "nada"
 
-#. i18n: ectx: property (text), widget (QCheckBox, kcfg_alwaysShowTabBar)
-#: settings/settings_tabs.ui:207
-msgid "Always show tab bar"
-msgstr "Mostrar sempre a barra das lapelas."
-
-#. i18n: ectx: property (text), widget (QCheckBox, kcfg_openLinksInNewWindow)
-#: settings/settings_tabs.ui:214
-msgid "Don't use tabs: open links in new windows"
-msgstr "Non empregar lapelas: abrir as ligazóns en xanelas novas."
-
 #. i18n: ectx: property (text), widget (QCheckBox, kcfg_openExternalLinksInNewWindow)
-#: settings/settings_tabs.ui:221
+#: settings/settings_tabs.ui:197
 msgid "Open as new window when URL is called externally"
 msgstr ""
 "Abrir xanelas novas para os enderezos solicitados desde fóra de Rekonq."
 
 #. i18n: ectx: property (text), widget (QCheckBox, kcfg_lastTabClosesWindow)
-#: settings/settings_tabs.ui:228
+#: settings/settings_tabs.ui:204
 msgid "Closing last tab closes window"
 msgstr "Pechar a última lapela pecha a xanela."
 
-#. i18n: ectx: property (text), widget (QCheckBox, kcfg_openNewTabsInBackground)
-#: settings/settings_tabs.ui:235
-msgid "Open new tabs in the background"
-msgstr "Abrir as novas lapelas no fondo."
-
-#. i18n: ectx: property (text), widget (QCheckBox, kcfg_openNewTabsNearCurrent)
-#: settings/settings_tabs.ui:242
-msgid "Open new tabs after currently active one"
-msgstr "Abrir as novas lapelas a continuación da actual."
-
 #. i18n: ectx: property (text), widget (QCheckBox, kcfg_closeTabSelectPrevious)
-#: settings/settings_tabs.ui:249
+#: settings/settings_tabs.ui:211
 msgid "Activate previously used tab when closing the current one"
 msgstr "Activar a última lapela empregada ao pechar a actual."
-
-#. i18n: ectx: property (text), widget (QCheckBox, kcfg_animatedTabHighlighting)
-#: settings/settings_tabs.ui:259
-msgid "Animated tab highlighting"
-msgstr "Animar as lapelas ao salientalas."
 
 #. i18n: ectx: property (text), widget (QCheckBox, kcfg_javascriptEnabled)
 #: settings/settings_webkit.ui:29
@@ -1844,27 +1352,23 @@ msgstr "Caché dos aplicativos web sen conexión."
 msgid "Local Storage"
 msgstr "Almacenamento local."
 
-#: settings/settingsdialog.cpp:108
+#: settings/settingsdialog.cpp:101
 msgid "WebKit"
 msgstr "WebKit"
 
-#: settings/settingsdialog.cpp:116
+#: settings/settingsdialog.cpp:109
 msgid "Privacy"
 msgstr "Intimidade"
 
-#: settings/settingsdialog.cpp:122
+#: settings/settingsdialog.cpp:115
 msgid "Advanced"
 msgstr "Avanzado"
 
-#: settings/settingsdialog.cpp:127
-msgid "Shortcuts"
-msgstr "Atallos"
-
-#: settings/settingsdialog.cpp:133
+#: settings/settingsdialog.cpp:121
 msgid "Search Engines"
 msgstr "Motores de busca"
 
-#: settings/settingsdialog.cpp:156
+#: settings/settingsdialog.cpp:144
 msgctxt "Window title of the settings dialog"
 msgid "Configure – rekonq"
 msgstr "Configuración — Rekonq"
@@ -1918,95 +1422,6 @@ msgstr "Activa a funcionalidade de HTML 5 da caché dos aplicativos web."
 msgid "Enables support for the HTML 5 local storage feature."
 msgstr "Activa a funcionalidade de HTML 5 de almacenamento local."
 
-#. i18n: ectx: property (text), widget (QLabel, label)
-#: sslinfo.ui:23
-msgid "<h2>Certificate Information</h2>"
-msgstr "<h2>Información do certificado</h2>"
-
-#. i18n: ectx: property (text), widget (QLabel, label_4)
-#: sslinfo.ui:45
-msgid "Certificate Chain:"
-msgstr "Cadea de certificación:"
-
-#. i18n: ectx: property (text), widget (QLabel, label_20)
-#: sslinfo.ui:103
-msgid "<h4>Issued To:</h4>"
-msgstr "<h4>Concedido a:</h4>"
-
-#. i18n: ectx: property (text), widget (QLabel, label_6)
-#. i18n: ectx: property (text), widget (QLabel, label_10)
-#: sslinfo.ui:124 sslinfo.ui:216
-msgid "Common Name (CN):"
-msgstr "Nome común (CN):"
-
-#. i18n: ectx: property (text), widget (QLabel, label_8)
-#. i18n: ectx: property (text), widget (QLabel, label_12)
-#: sslinfo.ui:138 sslinfo.ui:230
-msgid "Organization (O):"
-msgstr "Organización (O):"
-
-#. i18n: ectx: property (text), widget (QLabel, label_2)
-#. i18n: ectx: property (text), widget (QLabel, label_16)
-#: sslinfo.ui:152 sslinfo.ui:237
-msgid "Organizational Unit (OU):"
-msgstr "Unidade organizativa (OU):"
-
-#. i18n: ectx: property (text), widget (QLabel, label_3)
-#: sslinfo.ui:166
-msgid "Serial Number:"
-msgstr "Número de serie:"
-
-#. i18n: ectx: property (text), widget (QLabel, label_21)
-#: sslinfo.ui:195
-msgid "<h4>Issued By:</h4>"
-msgstr "<h4>Concedido por:</h4>"
-
-#. i18n: ectx: property (text), widget (QLabel, label_22)
-#: sslinfo.ui:273
-msgid "<h4>Validity Period:</h4>"
-msgstr "<h4>Período de validez:</h4>"
-
-#. i18n: ectx: property (text), widget (QLabel, label_14)
-#: sslinfo.ui:294
-msgid "Issued on:"
-msgstr "Concedido o:"
-
-#. i18n: ectx: property (text), widget (QLabel, label_18)
-#: sslinfo.ui:308
-msgid "Expires on:"
-msgstr "Caduca o:"
-
-#. i18n: ectx: property (text), widget (QLabel, label_23)
-#: sslinfo.ui:337
-msgid "<h4>Digests:</h4>"
-msgstr "<h4>Códigos de verificación:</h4>"
-
-#. i18n: ectx: property (text), widget (QLabel, label_36)
-#: sslinfo.ui:358
-msgid "Md5:"
-msgstr "MD5:"
-
-#. i18n: ectx: property (text), widget (QLabel, label_38)
-#: sslinfo.ui:372
-msgid "SHA-1:"
-msgstr "SHA-1:"
-
-#: sslinfodialog.cpp:53
-msgid "Rekonq SSL Information"
-msgstr "Información SSL de Rekonq"
-
-#: sslinfodialog.cpp:60
-msgid "Export"
-msgstr "Exportar"
-
-#: sslinfodialog.cpp:122
-msgid "The Certificate is Valid!"
-msgstr "O certificado é válido!"
-
-#: sslinfodialog.cpp:127
-msgid "The certificate for this site is NOT valid for the following reasons:"
-msgstr "O certificado deste sitio non é válido porque:"
-
 #: sync/ftpsynchandler.cpp:148
 msgid "Remote bookmarks file does NOT exists. Exporting local copy..."
 msgstr "O ficheiro remoto dos marcadores non existe. Exportando a copia local…"
@@ -2033,71 +1448,71 @@ msgid "Remote passwords file exists! Syncing local copy..."
 msgstr ""
 "O ficheiro remoto dos contrasinais existe! Sincronizando a copia local…"
 
-#: sync/googlesynchandler.cpp:87 sync/googlesynchandler.cpp:92
-#: sync/operasynchandler.cpp:90 sync/operasynchandler.cpp:95
+#: sync/googlesynchandler.cpp:86 sync/googlesynchandler.cpp:91
+#: sync/operasynchandler.cpp:89 sync/operasynchandler.cpp:94
 msgid "Not supported!"
 msgstr "Incompatíbel"
 
-#: sync/googlesynchandler.cpp:115 sync/operasynchandler.cpp:118
+#: sync/googlesynchandler.cpp:114 sync/operasynchandler.cpp:117
 msgid "Syncing history not supported!"
 msgstr "Non se pode sincronizar o historial."
 
-#: sync/googlesynchandler.cpp:123 sync/operasynchandler.cpp:126
+#: sync/googlesynchandler.cpp:122 sync/operasynchandler.cpp:125
 msgid "Syncing passwords not supported!"
 msgstr "Non se poden sincronizar os contrasinais."
 
-#: sync/googlesynchandler.cpp:145 sync/operasynchandler.cpp:148
+#: sync/googlesynchandler.cpp:144 sync/operasynchandler.cpp:147
 msgid "No username or password!"
 msgstr "Falta o usuario ou o contrasinal!"
 
-#: sync/googlesynchandler.cpp:165 sync/operasynchandler.cpp:203
+#: sync/googlesynchandler.cpp:164 sync/operasynchandler.cpp:202
 msgid "Error loading: "
 msgstr "Produciuse un erro ao cargar:"
 
-#: sync/googlesynchandler.cpp:190 sync/operasynchandler.cpp:233
+#: sync/googlesynchandler.cpp:187 sync/operasynchandler.cpp:232
 msgid "Signing in..."
 msgstr "Accedendo…"
 
-#: sync/googlesynchandler.cpp:202 sync/operasynchandler.cpp:287
+#: sync/googlesynchandler.cpp:199 sync/operasynchandler.cpp:286
 msgid "Fetching bookmarks from server..."
 msgstr "Descargando os marcadores do servidor…"
 
-#: sync/googlesynchandler.cpp:207 sync/operasynchandler.cpp:272
+#: sync/googlesynchandler.cpp:204 sync/operasynchandler.cpp:271
 msgid "Login failed!"
 msgstr "Fallou a identificación."
 
-#: sync/googlesynchandler.cpp:236
+#: sync/googlesynchandler.cpp:233
 msgid "Adding bookmarks on server..."
 msgstr "Actualizando os marcadores no servidor…"
 
-#: sync/googlesynchandler.cpp:266 sync/operasynchandler.cpp:343
-#: sync/operasynchandler.cpp:908
+#: sync/googlesynchandler.cpp:263 sync/operasynchandler.cpp:348
+#: sync/operasynchandler.cpp:913
 msgid "Done!"
 msgstr "Feito."
 
-#: sync/googlesynchandler.cpp:287
+#: sync/googlesynchandler.cpp:284
 msgid "Reading bookmarks..."
 msgstr "Lendo os marcadores…"
 
-#: sync/googlesynchandler.cpp:307
+#: sync/googlesynchandler.cpp:302
 msgid "Adding bookmark "
 msgstr "Engadindo o marcador "
 
-#: sync/googlesynchandler.cpp:325 sync/googlesynchandler.cpp:341
-#: sync/googlesynchandler.cpp:434
+#: sync/googlesynchandler.cpp:320 sync/googlesynchandler.cpp:336
+#: sync/googlesynchandler.cpp:429
 msgid "Signing out..."
 msgstr "Saíndo…"
 
-#: sync/operasynchandler.cpp:173
+#: sync/operasynchandler.cpp:172
 msgid "OAuth : Error fetching request token."
 msgstr ""
 "OAuth: produciuse un erro ao intentar descargar o código da solicitude."
 
-#: sync/operasynchandler.cpp:246
+#: sync/operasynchandler.cpp:245
 msgid "OAuth : Sending verification code."
 msgstr "OAuth: enviando o código de verificación."
 
-#: sync/operasynchandler.cpp:253
+#: sync/operasynchandler.cpp:252
 msgid "OAuth : Error fetching access token."
 msgstr "OAuth: produciuse un erro ao intentar descargar o código de acceso."
 
@@ -2195,7 +1610,7 @@ msgid "sync host type"
 msgstr "Tipo de servidor de sincronización"
 
 #. i18n: ectx: property (text), widget (QRadioButton, ftpRadioButton)
-#: sync/sync_host_type.ui:30 sync/synccheckwidget.cpp:60
+#: sync/sync_host_type.ui:30 sync/synccheckwidget.cpp:58
 msgid "FTP"
 msgstr "FTP."
 
@@ -2223,19 +1638,19 @@ msgstr "Configuración da conta de Opera"
 msgid "sync assistant"
 msgstr "Asistente de sincronización"
 
-#: sync/synccheckwidget.cpp:65
+#: sync/synccheckwidget.cpp:63
 msgid "Google"
 msgstr "Google"
 
-#: sync/synccheckwidget.cpp:70 useragent/useragentmanager.cpp:102
+#: sync/synccheckwidget.cpp:68 useragent/useragentmanager.cpp:117
 msgid "Opera"
 msgstr "Opera"
 
-#: sync/synccheckwidget.cpp:75
+#: sync/synccheckwidget.cpp:73
 msgid "No sync"
 msgstr "Non sincronizar"
 
-#: sync/synccheckwidget.cpp:76
+#: sync/synccheckwidget.cpp:74
 msgid "none"
 msgstr "Ningún"
 
@@ -2243,64 +1658,145 @@ msgstr "Ningún"
 msgid "Rekonq has been compiled without support for Opera Sync"
 msgstr "Rekonq compilouse sen compatibilidade coa sincronización de Opera."
 
-#: thumbupdater.cpp:53
-msgid "Loading Preview..."
-msgstr "Cargando a vista previa…"
+#: tabwindow/tabbar.cpp:193
+#, fuzzy
+#| msgid "Clone Tab"
+msgid "Clone"
+msgstr "Clonar a lapela"
 
-#: urlbar/bookmarkwidget.cpp:88
+#: tabwindow/tabbar.cpp:198 webwindow/webwindow.cpp:251
+#: webwindow/webwindow.cpp:406
+msgid "Reload"
+msgstr "Actualizar"
+
+#: tabwindow/tabbar.cpp:205
+#, fuzzy
+#| msgid "Detach Tab"
+msgid "Detach"
+msgstr "Separar a lapela"
+
+#: tabwindow/tabbar.cpp:213
+msgid "Unpin Tab"
+msgstr ""
+
+#: tabwindow/tabbar.cpp:220
+#, fuzzy
+#| msgid "Clone Tab"
+msgid "Pin Tab"
+msgstr "Clonar a lapela"
+
+#: tabwindow/tabbar.cpp:227
+#, fuzzy
+#| msgid "&Close Tab"
+msgid "&Close"
+msgstr "&Pechar a lapela"
+
+#: tabwindow/tabbar.cpp:234
+msgid "Close &Other Tabs"
+msgstr "Pechar as &outras lapelas"
+
+#: tabwindow/tabwindow.cpp:86 tabwindow/tabwindow.cpp:102
+#: tabwindow/tabwindow.cpp:247 tabwindow/tabwindow.cpp:253
+#: tabwindow/tabwindow.cpp:280 tabwindow/tabwindow.cpp:310
+msgid "new tab"
+msgstr ""
+
+#: tabwindow/tabwindow.cpp:142
+msgid "New &Tab"
+msgstr "Nova &lapela"
+
+#: tabwindow/tabwindow.cpp:147
+msgid "Open Last Closed Tab"
+msgstr "Abrir a última lapela en pecharse"
+
+#: tabwindow/tabwindow.cpp:152
+msgid "&Close Tab"
+msgstr "&Pechar a lapela"
+
+#: tabwindow/tabwindow.cpp:162
+#, fuzzy
+#| msgid "Bookmarks"
+msgid "Bookmark all tabs"
+msgstr "Marcadores"
+
+#: tabwindow/tabwindow.cpp:417
+msgid "Loading..."
+msgstr "Cargando…"
+
+#: tabwindow/tabwindow.cpp:626
+#, fuzzy
+#| msgid "Bookmarks"
+msgid "Bookmarked tabs: "
+msgstr "Marcadores"
+
+#: tabwindow/tabwindow.cpp:649 tabwindow/tabwindow.cpp:651
+msgid "restored tab"
+msgstr ""
+
+#: urlbar/adblockwidget.cpp:61
+#, fuzzy
+#| msgid "Ad Block"
+msgid " AdBlock"
+msgstr "Anti-publicidade"
+
+#: urlbar/adblockwidget.cpp:78
+msgid "Enable adblock for this site"
+msgstr ""
+
+#: urlbar/bookmarkwidget.cpp:86
 msgid " Bookmark"
 msgstr " Marcador"
 
-#: urlbar/bookmarkwidget.cpp:95
+#: urlbar/bookmarkwidget.cpp:93
 msgid "<a href='Remove'>Remove</a>"
 msgstr "<a href='Remove'>Eliminar</a>"
 
-#: urlbar/bookmarkwidget.cpp:105
+#: urlbar/bookmarkwidget.cpp:103
 msgid "Folder:"
 msgstr "Cartafol:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
-#: urlbar/bookmarkwidget.cpp:114 webappcreation.ui:19
+#: urlbar/bookmarkwidget.cpp:111 webappcreation.ui:19
 msgid "Name:"
 msgstr "Nome:"
 
-#: urlbar/bookmarkwidget.cpp:132
+#: urlbar/bookmarkwidget.cpp:129
 msgid "Rate:"
 msgstr "Valoración:"
 
-#: urlbar/bookmarkwidget.cpp:139
+#: urlbar/bookmarkwidget.cpp:136
 msgid "Rate this page"
 msgstr "Valorar a páxina"
 
-#: urlbar/bookmarkwidget.cpp:144
+#: urlbar/bookmarkwidget.cpp:141
 msgid "Describe:"
 msgstr "Descrición:"
 
-#: urlbar/bookmarkwidget.cpp:156
+#: urlbar/bookmarkwidget.cpp:153
 msgid "Tags:"
 msgstr "Etiquetas:"
 
-#: urlbar/bookmarkwidget.cpp:159
+#: urlbar/bookmarkwidget.cpp:156
 msgid "add tags(comma separated)"
 msgstr "engada etiquetas separadas por comas."
 
-#: urlbar/bookmarkwidget.cpp:175
+#: urlbar/bookmarkwidget.cpp:172
 msgid "Link Resources"
 msgstr "Ligar recursos"
 
-#: urlbar/bookmarkwidget.cpp:185
+#: urlbar/bookmarkwidget.cpp:182
 msgid "Nepomuk is actually disabled."
 msgstr "Nepomuk está desactivado."
 
-#: urlbar/bookmarkwidget.cpp:259
+#: urlbar/bookmarkwidget.cpp:245
+msgid "Bookmark Toolbar"
+msgstr "Barra de marcadores"
+
+#: urlbar/bookmarkwidget.cpp:262
 #, fuzzy
 #| msgid "New folder"
 msgid "Root folder"
 msgstr "Novo cartafol"
-
-#: urlbar/bookmarkwidget.cpp:276
-msgid "Choose..."
-msgstr ""
 
 #: urlbar/favoritewidget.cpp:68
 msgid "<h4>Remove this favorite?</h4>"
@@ -2316,13 +1812,13 @@ msgstr "Nome: %1"
 msgid "URL: %1"
 msgstr "URL: %1"
 
-#: urlbar/listitem.cpp:294
+#: urlbar/listitem.cpp:296
 #, kde-format
 msgctxt "%1=search engine, e.g. Google, Wikipedia %2=text to search for"
 msgid "Search %1 for <b>%2</b>"
 msgstr "Buscar <b>%2</b> en %1"
 
-#: urlbar/listitem.cpp:436
+#: urlbar/listitem.cpp:443
 msgid "Engines: "
 msgstr "Motores: "
 
@@ -2345,6 +1841,10 @@ msgstr "Descrición (opcional)"
 #: urlbar/resourcelinkdialog.cpp:103
 msgid "Resource Linker"
 msgstr "Ligador de recursos"
+
+#: urlbar/resourcelinkdialog.cpp:108
+msgid "Done"
+msgstr "Feito"
 
 #: urlbar/resourcelinkdialog.cpp:123
 msgid "Search resources"
@@ -2394,48 +1894,48 @@ msgstr "Crear un novo recurso"
 msgid "&Unlink "
 msgstr "&Desligar "
 
-#: urlbar/rsswidget.cpp:65
+#: urlbar/rsswidget.cpp:64
 msgid "Subscribe to RSS Feeds"
 msgstr "Subscribirse a fontes de novas RSS"
 
-#: urlbar/rsswidget.cpp:73
+#: urlbar/rsswidget.cpp:72
 msgid "Aggregator:"
 msgstr "Lector de fontes de novas:"
 
-#: urlbar/rsswidget.cpp:79
+#: urlbar/rsswidget.cpp:78
 msgid "Google Reader"
 msgstr "Google Reader"
 
-#: urlbar/rsswidget.cpp:85
+#: urlbar/rsswidget.cpp:84
 msgid "Feed:"
 msgstr "Fonte:"
 
-#: urlbar/rsswidget.cpp:100
+#: urlbar/rsswidget.cpp:99
 msgid "Add Feed"
 msgstr "Engadir unha fonte"
 
-#: urlbar/rsswidget.cpp:146 urlbar/rsswidget.cpp:158
+#: urlbar/rsswidget.cpp:145 urlbar/rsswidget.cpp:157
 msgid "Imported Feeds"
 msgstr "Importar fontes"
 
-#: urlbar/rsswidget.cpp:150
+#: urlbar/rsswidget.cpp:149
 msgid "Could not add feed to Akregator. Please add it manually:"
 msgstr "Non se puido engadir a fonte a Akregator. Fágao manualmente:"
 
-#: urlbar/rsswidget.cpp:162
+#: urlbar/rsswidget.cpp:161
 msgid ""
 "There was an error. Please verify Akregator is installed on your system."
 msgstr "Houbo un problema. Asegúrese de que Akregator está instalado."
 
-#: urlbar/sslwidget.cpp:76
+#: urlbar/sslwidget.cpp:75
 msgid "Identity"
 msgstr "Identidade"
 
-#: urlbar/sslwidget.cpp:86
+#: urlbar/sslwidget.cpp:85
 msgid "Warning: this site is NOT carrying a certificate."
 msgstr "Aviso: este sitio web carece de certificado."
 
-#: urlbar/sslwidget.cpp:94
+#: urlbar/sslwidget.cpp:93
 #, kde-format
 msgid ""
 "The certificate for this site is valid and has been verified by:\n"
@@ -2444,7 +1944,7 @@ msgstr ""
 "O certificado do sitio é válido e está verificado por:\n"
 "%1."
 
-#: urlbar/sslwidget.cpp:108
+#: urlbar/sslwidget.cpp:107
 #, kde-format
 msgid ""
 "The certificate for this site is NOT valid, for the following reasons:\n"
@@ -2453,34 +1953,34 @@ msgstr ""
 "O certificado deste sitio non é válido porque:\n"
 "%1"
 
-#: urlbar/sslwidget.cpp:117
+#: urlbar/sslwidget.cpp:116
 msgid "Certificate Information"
 msgstr "Información do certificado"
 
-#: urlbar/sslwidget.cpp:125
+#: urlbar/sslwidget.cpp:124
 msgid "Encryption"
 msgstr "Cifrado"
 
-#: urlbar/sslwidget.cpp:139
+#: urlbar/sslwidget.cpp:138
 #, kde-format
 msgid "Your connection to %1 is NOT encrypted.\n"
 msgstr "A conexión a %1 non está cifrada.\n"
 
-#: urlbar/sslwidget.cpp:148
+#: urlbar/sslwidget.cpp:147
 #, kde-format
 msgid "Your connection to \"%1\" is encrypted.\n"
 msgstr "A conexión a «%1» está cifrada.\n"
 
-#: urlbar/sslwidget.cpp:170
+#: urlbar/sslwidget.cpp:169
 msgid "Unknown"
 msgstr "Descoñecida"
 
-#: urlbar/sslwidget.cpp:176
+#: urlbar/sslwidget.cpp:175
 #, kde-format
 msgid "It uses protocol: %1.\n"
 msgstr "Emprega o protocolo «%1».\n"
 
-#: urlbar/sslwidget.cpp:183
+#: urlbar/sslwidget.cpp:182
 #, kde-format
 msgid ""
 "It is encrypted using %1 at %2 bits, with %3 for message authentication and "
@@ -2491,15 +1991,15 @@ msgstr ""
 "mecanismo %4 con autenticación %5 para o intercambio de claves.\n"
 "\n"
 
-#: urlbar/sslwidget.cpp:200
+#: urlbar/sslwidget.cpp:199
 msgid "Site Information"
 msgstr "Información do sitio"
 
-#: urlbar/sslwidget.cpp:216
+#: urlbar/sslwidget.cpp:215
 msgid "It is your first time visiting this site."
 msgstr "É a primeira vez que visita este sitio."
 
-#: urlbar/sslwidget.cpp:221
+#: urlbar/sslwidget.cpp:220
 #, kde-format
 msgid ""
 "You just visited this site.\n"
@@ -2508,77 +2008,64 @@ msgstr ""
 "Acaba de visitar o sitio.\n"
 "A primeira visita foi o %1.\n"
 
-#: urlbar/urlbar.cpp:130 urlbar/urlbar.cpp:283
+#: urlbar/urlbar.cpp:142 urlbar/urlbar.cpp:296
 msgid "Type here to search your bookmarks, history and the web..."
 msgstr ""
 "Escriba aquí algo para buscalo entre os seus marcadores, o historial e a "
 "Internet…"
 
-#: urlbar/urlbar.cpp:492
+#: urlbar/urlbar.cpp:472
 msgid "Paste && Go"
 msgstr "Pegar e cargar"
 
-#: urlbar/urlbar.cpp:497
+#: urlbar/urlbar.cpp:477
 msgid "Paste && Search"
 msgstr "Pegar e buscar"
 
-#: urlbar/urlbar.cpp:549
+#: urlbar/urlbar.cpp:529
 msgid "List all links with KGet"
 msgstr "Listar todas as ligazóns en KGet"
 
-#: urlbar/urlbar.cpp:553
+#: urlbar/urlbar.cpp:533
 msgid "List all available RSS feeds"
 msgstr "Listar todas as fontes de novas RSS dispoñíbeis"
 
-#: urlbar/urlbar.cpp:559
+#: urlbar/urlbar.cpp:539
 msgid "Show SSL Info"
 msgstr "Amosar a información SSL"
 
-#: urlbar/urlbar.cpp:565
+#: urlbar/urlbar.cpp:545
 msgid "Bookmark this page"
 msgstr "Marcar esta páxina"
 
-#: urlbar/urlbar.cpp:570
+#: urlbar/urlbar.cpp:550
 msgid "Edit this bookmark"
 msgstr "Editar o marcador"
 
-#: urlbar/urlbar.cpp:581
+#: urlbar/urlbar.cpp:561
 msgid "Add search engine"
 msgstr "Engadir un motor de busca"
 
-#: urlbar/urlbar.cpp:588
+#: urlbar/urlbar.cpp:568
 msgid "Remove from favorite"
 msgstr "Quitar dos favoritos"
 
-#: urlbar/urlbar.cpp:593
+#: urlbar/urlbar.cpp:573
 msgid "Add to favorites"
 msgstr "Marcar como favorita"
 
-#: urlbar/urlbar.cpp:598
-msgid "There are elements blocked by AdBlock"
-msgstr "AdBlock bloqueou algúns elementos."
+#: urlbar/urlbar.cpp:582
+msgid "AdBlock is enabled on this site"
+msgstr ""
 
-#: urlbar/urlresolver.cpp:280
+#: urlbar/urlbar.cpp:587
+msgid "AdBlock is NOT enabled on this site"
+msgstr ""
+
+#: urlbar/urlsuggester.cpp:308
 msgctxt "Browse a website"
 msgid "Browse"
 msgstr "Explorar"
-
-#: urlbar/webshortcutwidget.cpp:65
-msgid "Add Search Engine"
-msgstr "Engadir un motor de busca"
-
-#: urlbar/webshortcutwidget.cpp:74
-msgid "Shortcuts:"
-msgstr "Atallos:"
-
-#: urlbar/webshortcutwidget.cpp:149
-#, kde-format
-msgid "The shortcut \"%1\" is already assigned to \"%2\"."
-msgstr "O atallo «%1» xa está asignado a «%2»."
-
-#: urlpanel.cpp:74
-msgid "&Search:"
-msgstr "&Buscar:"
 
 #: useragent/useragentinfo.cpp:134
 #, kde-format
@@ -2586,33 +2073,37 @@ msgctxt "describe UA platform, eg: firefox 3.1 \"on Windows XP\""
 msgid " on %1 %2"
 msgstr " en %1 %2"
 
-#: useragent/useragentmanager.cpp:55
+#: useragent/useragentmanager.cpp:64 webwindow/webwindow.cpp:300
+msgid "Browser Identification"
+msgstr "Identificación do navegador"
+
+#: useragent/useragentmanager.cpp:72
 msgctxt "@title:window"
 msgid "User Agent Settings"
 msgstr "Configuración dos axentes"
 
-#: useragent/useragentmanager.cpp:84
+#: useragent/useragentmanager.cpp:99
 msgctxt "Default rekonq user agent"
 msgid "Default"
 msgstr "Predeterminado"
 
-#: useragent/useragentmanager.cpp:93
+#: useragent/useragentmanager.cpp:108
 msgid "Firefox"
 msgstr "Firefox"
 
-#: useragent/useragentmanager.cpp:96
+#: useragent/useragentmanager.cpp:111
 msgid "Internet Explorer"
 msgstr "Internet Explorer"
 
-#: useragent/useragentmanager.cpp:99
+#: useragent/useragentmanager.cpp:114
 msgid "Netscape"
 msgstr "Netscape"
 
-#: useragent/useragentmanager.cpp:105
+#: useragent/useragentmanager.cpp:120
 msgid "Safari"
 msgstr "Safari"
 
-#: useragent/useragentmanager.cpp:108
+#: useragent/useragentmanager.cpp:123
 msgid "Other"
 msgstr "Outro"
 
@@ -2625,23 +2116,6 @@ msgstr "Identificación"
 #: useragent/useragentsettings.ui:46
 msgid "Delete All"
 msgstr "Borralas todas"
-
-#: walletbar.cpp:53
-msgid "Remember"
-msgstr "Lembrar"
-
-#: walletbar.cpp:57
-msgid "Never for This Site"
-msgstr "Nunca para este sitio"
-
-#: walletbar.cpp:61
-msgid "Not Now"
-msgstr "Agora non"
-
-#: walletbar.cpp:99
-#, kde-format
-msgid "Do you want rekonq to remember the password on %1?"
-msgstr "Quere que Rekonq lembre o contrasinal de %1?"
 
 #. i18n: ectx: property (text), widget (QLabel, label_3)
 #: webappcreation.ui:29
@@ -2670,129 +2144,274 @@ msgstr "Escritorio"
 msgid "Application Menu"
 msgstr "Menú de aplicativos"
 
-#: webpage.cpp:254
+#: webtab/clicktoflash.cpp:54
+msgid "Load Plugin"
+msgstr "Cargar o complemento"
+
+#: webtab/crashmessagebar.cpp:57
+msgid "Yes"
+msgstr "Si"
+
+#: webtab/crashmessagebar.cpp:61
+msgid "No"
+msgstr "Non"
+
+#: webtab/networkaccessmanager.cpp:59
+#, fuzzy
+#| msgid "Blocked by AdBlockRule: %1"
+msgid "Blocked by ad filter"
+msgstr "Bloqueado pola regra «%1» do anti-publicidade."
+
+#: webtab/previewselectorbar.cpp:61
+msgid "Please open up the webpage you want to add as favorite"
+msgstr "Cargue a páxina web que queira marcar como favorita."
+
+#: webtab/previewselectorbar.cpp:63
+msgid "Set to This Page"
+msgstr "Usar a páxina actual"
+
+#: webtab/previewselectorbar.cpp:80
+msgid "You cannot add this webpage as favorite"
+msgstr "Non pode marcar esta páxina web como favorita."
+
+#: webtab/previewselectorbar.cpp:88
+msgid "Page is loading..."
+msgstr "Cargando a páxina…"
+
+#: webtab/protocolhandler.cpp:198
+#, kde-format
+msgctxt "@info"
+msgid "rekonq does not know how to handle this protocol: %1"
+msgstr "Rekonq non é compatíbel co protocolo «%1»."
+
+#: webtab/protocolhandler.cpp:315
+#, kde-format
+msgctxt "%1=an URL"
+msgid "<h2>Index of %1</h2>"
+msgstr "<h2>Índice de %1</h2>"
+
+#: webtab/protocolhandler.cpp:323
+msgid "Up to higher level directory"
+msgstr "Subir ao directorio de maior nivel"
+
+#: webtab/protocolhandler.cpp:328
+msgid "Name"
+msgstr "Nome"
+
+#: webtab/protocolhandler.cpp:329
+msgid "Size"
+msgstr "Tamaño"
+
+#: webtab/protocolhandler.cpp:330
+msgid "Last Modified"
+msgstr "Última modificación"
+
+#: webtab/searchenginebar.cpp:61
+msgid ""
+"You don't have a default search engine set. Without it, rekonq will not show "
+"proper url suggestions."
+msgstr ""
+"Non escolleu un motor de busca por omisión. Escolla un para mellorar a "
+"calidade das suxestións."
+
+#: webtab/searchenginebar.cpp:63
+msgid "Set it"
+msgstr "Escoller un"
+
+#: webtab/searchenginebar.cpp:67 webtab/webview.cpp:230
+msgid "Ignore"
+msgstr "Ignorar"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: webtab/sslinfo.ui:23
+msgid "<h2>Certificate Information</h2>"
+msgstr "<h2>Información do certificado</h2>"
+
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#: webtab/sslinfo.ui:45
+msgid "Certificate Chain:"
+msgstr "Cadea de certificación:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_20)
+#: webtab/sslinfo.ui:103
+msgid "<h4>Issued To:</h4>"
+msgstr "<h4>Concedido a:</h4>"
+
+#. i18n: ectx: property (text), widget (QLabel, label_6)
+#. i18n: ectx: property (text), widget (QLabel, label_10)
+#: webtab/sslinfo.ui:124 webtab/sslinfo.ui:216
+msgid "Common Name (CN):"
+msgstr "Nome común (CN):"
+
+#. i18n: ectx: property (text), widget (QLabel, label_8)
+#. i18n: ectx: property (text), widget (QLabel, label_12)
+#: webtab/sslinfo.ui:138 webtab/sslinfo.ui:230
+msgid "Organization (O):"
+msgstr "Organización (O):"
+
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#. i18n: ectx: property (text), widget (QLabel, label_16)
+#: webtab/sslinfo.ui:152 webtab/sslinfo.ui:237
+msgid "Organizational Unit (OU):"
+msgstr "Unidade organizativa (OU):"
+
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#: webtab/sslinfo.ui:166
+msgid "Serial Number:"
+msgstr "Número de serie:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_21)
+#: webtab/sslinfo.ui:195
+msgid "<h4>Issued By:</h4>"
+msgstr "<h4>Concedido por:</h4>"
+
+#. i18n: ectx: property (text), widget (QLabel, label_22)
+#: webtab/sslinfo.ui:273
+msgid "<h4>Validity Period:</h4>"
+msgstr "<h4>Período de validez:</h4>"
+
+#. i18n: ectx: property (text), widget (QLabel, label_14)
+#: webtab/sslinfo.ui:294
+msgid "Issued on:"
+msgstr "Concedido o:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_18)
+#: webtab/sslinfo.ui:308
+msgid "Expires on:"
+msgstr "Caduca o:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_23)
+#: webtab/sslinfo.ui:337
+msgid "<h4>Digests:</h4>"
+msgstr "<h4>Códigos de verificación:</h4>"
+
+#. i18n: ectx: property (text), widget (QLabel, label_36)
+#: webtab/sslinfo.ui:358
+msgid "Md5:"
+msgstr "MD5:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_38)
+#: webtab/sslinfo.ui:372
+msgid "SHA-1:"
+msgstr "SHA-1:"
+
+#: webtab/sslinfodialog.cpp:53
+msgid "Rekonq SSL Information"
+msgstr "Información SSL de Rekonq"
+
+#: webtab/sslinfodialog.cpp:60
+msgid "Export"
+msgstr "Exportar"
+
+#: webtab/sslinfodialog.cpp:122
+msgid "The Certificate is Valid!"
+msgstr "O certificado é válido!"
+
+#: webtab/sslinfodialog.cpp:127
+msgid "The certificate for this site is NOT valid for the following reasons:"
+msgstr "O certificado deste sitio non é válido porque:"
+
+#: webtab/walletbar.cpp:53
+msgid "Remember"
+msgstr "Lembrar"
+
+#: webtab/walletbar.cpp:57
+msgid "Never for This Site"
+msgstr "Nunca para este sitio"
+
+#: webtab/walletbar.cpp:61
+msgid "Not Now"
+msgstr "Agora non"
+
+#: webtab/walletbar.cpp:99
+#, kde-format
+msgid "Do you want rekonq to remember the password on %1?"
+msgstr "Quere que Rekonq lembre o contrasinal de %1?"
+
+#: webtab/webpage.cpp:249
 msgid "Are you sure you want to send your data again?"
 msgstr "Está seguro de que quere volver enviar os datos?"
 
-#: webpage.cpp:255
+#: webtab/webpage.cpp:250
 msgid "Resend form data"
 msgstr "Enviar os datos do formulario de novo"
 
-#: webpage.cpp:365
+#: webtab/webpage.cpp:379
 msgid "No service can handle this file."
 msgstr "Ningún servizo pode manexar o ficheiro."
 
-#: webpage.cpp:378
+#: webtab/webpage.cpp:400
 msgid "rekonq cannot properly handle this, sorry"
 msgstr "rekonq non pode xestionar isto adecuadamente. Desculpas"
 
-#: webpage.cpp:600
+#: webtab/webpage.cpp:619
 msgid "There was a problem while loading the page"
 msgstr "Houbo un problema ao intentar cargar a páxina."
 
-#: webpage.cpp:605
+#: webtab/webpage.cpp:626
+msgid "Network is NOT available"
+msgstr ""
+
+#: webtab/webpage.cpp:636
 #, kde-format
-msgid "<h1>Oops! Rekonq cannot load <em>%1</em></h1>"
+msgid ""
+"Maybe you are having problems with your network settings.<br />Try checking "
+"your <a href=\"%1\">network connections</a>, your <a href=\"%2\">proxy "
+"settings</a> and your <a href=\"%3\">firewall</a>.<br /><br />Then <a href="
+"\"%4\">try again</a>.<br />"
+msgstr ""
+
+#: webtab/webpage.cpp:653
+#, fuzzy, kde-format
+#| msgid "<h1>Oops! Rekonq cannot load <em>%1</em></h1>"
+msgid "Oops! Cannot load <em>%1</em>"
 msgstr "<h1>Non foi posíbel cargar «<em>%1</em>»</h1>"
 
-#: webpage.cpp:608
-msgid "<h2>Wrongly typed?</h2>"
-msgstr "<h2>Escribiuno mal?</h2>"
-
-#: webpage.cpp:615
-#, kde-format
-msgid "We tried to load url: %1.<br />"
-msgstr "Intentouse cargar o URL «%1».<br />"
-
-#: webpage.cpp:616
-msgid ""
-"Check your address for errors like <em>ww.kde.org</em> instead of <em>www."
-"kde.org</em>.<br />"
-msgstr ""
-"Comprobe o enderezo por se hai erros coma «<em>ww</em>.kde.org» en vez de "
-"«<em>www</em>.kde.org».<br />"
-
-#: webpage.cpp:617
-#, kde-format
-msgid "If you spelled right, just try to <a href=\"%1\">reload it</a>.<br />"
-msgstr ""
-"Se o enderezo está ben escrito, probe a <a href=\"%1\">actualizar</a>.<br />"
-
-#: webpage.cpp:618
-msgid "Otherwise, just be careful the next time around."
-msgstr "Se foi un erro, máis coidado para a seguinte."
-
-#: webpage.cpp:628
-msgid "<h2>Network problems?</h2>"
-msgstr "<h2>Ten problemas coa rede?</h2>"
-
-#: webpage.cpp:638
-msgid "Maybe you are having problems with your network.<br />"
-msgstr "Pode que estea a experimentar problemas de rede.<br />"
-
-#: webpage.cpp:639
-#, kde-format
-msgid "Try checking your <a href=\"%1\">network connections</a>"
-msgstr "Bótelle unha ollada á súa <a href=\"%1\">configuración de rede</a>"
-
-#: webpage.cpp:640
-#, kde-format
-msgid ", your <a href=\"%1\">proxy settings</a> "
-msgstr ", á <a href=\"%1\">configuración do proxy</a> "
-
-#: webpage.cpp:641
-#, kde-format
-msgid "and your <a href=\"%1\">firewall</a>.<br />"
-msgstr "e á da <a href=\"%1\">devasa</a>.<br />"
-
-#: webpage.cpp:642
-msgid "Then try again.<br />"
-msgstr "Despois volva a intentar acceder ao URL.<br />"
-
-#: webpage.cpp:649
-msgid "<h2>Suggestions</h2>"
-msgstr "<h2>Suxestións</h2>"
-
-#: webpage.cpp:661
-msgid "Consult your default search engine about:"
+#: webtab/webpage.cpp:669
+#, fuzzy
+#| msgid "Consult your default search engine about:"
+msgid "Ask your default search engine about:"
 msgstr "Probe a buscar o URL co seu motor de buscas predeterminado:"
 
-#: webpage.cpp:663
+#: webtab/webpage.cpp:671
 #, kde-format
 msgid "search with %1"
 msgstr "buscar con %1"
 
-#: webpage.cpp:668
+#: webtab/webpage.cpp:676
 msgid "You don't have a default search engine set. We won't suggest you one."
 msgstr ""
 "Non escolleu un motor de busca por omisión. Non se lle vai suxerir ningún."
 
-#: webpage.cpp:671
-msgid "At least, you can consult a cached snapshot of the site: <br />"
+#: webtab/webpage.cpp:681
+#, fuzzy
+#| msgid "At least, you can consult a cached snapshot of the site: <br />"
+msgid "Consult a cached snapshot of the site: "
 msgstr ""
 "E se aínda así non o dá atopado, sempre lle quedará consultar unha versión "
 "anterior do sitio: <br />"
 
-#: webpage.cpp:672
-#, kde-format
-msgid "Try checking the <a href=\"%1\">Wayback Machine</a>"
+#: webtab/webpage.cpp:682
+#, fuzzy, kde-format
+#| msgid "Try checking the <a href=\"%1\">Wayback Machine</a>"
+msgid "try checking the <a href=\"%1\">Wayback Machine</a>"
 msgstr "Probe a <a href=\"%1\">máquina de viaxe ao pasado</a>"
 
-#: webpage.cpp:673
+#: webtab/webpage.cpp:683
 #, kde-format
 msgid " or the <a href=\"%1\">Google Cache</a>."
 msgstr " ou a <a href=\"%1\">caché de Google</a>."
 
-#: webpage.cpp:741
+#: webtab/webpage.cpp:787
 msgid "This site does not contain SSL information."
 msgstr "O sitio non contén información SSL."
 
-#: webpage.cpp:742
+#: webtab/webpage.cpp:788
 msgctxt "Secure Sockets Layer"
 msgid "SSL"
 msgstr "SSL"
 
-#: webtab.cpp:365
+#: webtab/webtab.cpp:308
 msgid ""
 "It seems rekonq was not closed properly. Do you want to restore the last "
 "saved session?"
@@ -2800,133 +2419,557 @@ msgstr ""
 "Parece que Rekonq non se pechou axeitadamente. Quere restaurar a última "
 "sesión gardada?"
 
-#: webview.cpp:200
+#: webtab/webtab.cpp:383
+msgid "Max zoom reached: "
+msgstr ""
+
+#: webtab/webtab.cpp:394 webtab/webtab.cpp:409
+#, fuzzy
+#| msgid "Zoom:"
+msgid "Zooming: "
+msgstr "Ampliación:"
+
+#: webtab/webtab.cpp:402
+msgid "Min zoom reached: "
+msgstr ""
+
+#: webtab/webtab.cpp:418
+#, fuzzy
+#| msgctxt "Default rekonq user agent"
+#| msgid "Default"
+msgid "Default zoom: "
+msgstr "Predeterminado"
+
+#: webtab/webview.cpp:214
 #, kde-format
 msgid "No suggestions for %1"
 msgstr ""
 
-#: webview.cpp:216
+#: webtab/webview.cpp:231
 msgid "Add to Dictionary"
 msgstr ""
 
-#: webview.cpp:265
-msgid "Inspect Element"
-msgstr "Inspeccionar o elemento"
-
-#: webview.cpp:301
+#: webtab/webview.cpp:316
 msgid "Share page url"
 msgstr "Compartir o URL da páxina"
 
-#: webview.cpp:320
+#: webtab/webview.cpp:335
 msgid "Current Frame"
 msgstr "Marco actual"
 
-#: webview.cpp:323
+#: webtab/webview.cpp:338
 msgid "Print Frame"
 msgstr "Imprimir o marco"
 
-#: webview.cpp:338
+#: webtab/webview.cpp:354
 msgid "List All Links"
 msgstr "Listar todas as ligazóns"
 
-#: webview.cpp:358
+#: webtab/webview.cpp:371
 msgid "Share link"
 msgstr "Compartir a ligazón"
 
-#: webview.cpp:360
+#: webtab/webview.cpp:373
 msgid "Open in New &Tab"
 msgstr "Abrir nunha nova &lapela"
 
-#: webview.cpp:365
+#: webtab/webview.cpp:378
 msgid "Open in New &Window"
 msgstr "Abrir nunha nova &xanela"
 
-#: webview.cpp:375
+#: webtab/webview.cpp:385
+#, fuzzy
+#| msgid "Open in New &Window"
+msgid "Open in Private &Window"
+msgstr "Abrir nunha nova &xanela"
+
+#: webtab/webview.cpp:396
 msgid "Save Link..."
 msgstr "Gardar a ligazón…"
 
-#: webview.cpp:377
+#: webtab/webview.cpp:398
 msgid "Save Link"
 msgstr "Gardar a ligazón"
 
-#: webview.cpp:388
+#: webtab/webview.cpp:409
 msgid "Share image link"
 msgstr "Compartir a ligazón da imaxe"
 
-#: webview.cpp:392
+#: webtab/webview.cpp:413
 msgid "&View Image"
 msgstr "&Ver a imaxe"
 
-#: webview.cpp:400
+#: webtab/webview.cpp:419
+#, fuzzy
+#| msgid "Save Link..."
+msgid "Save image as..."
+msgstr "Gardar a ligazón…"
+
+#: webtab/webview.cpp:424
 msgid "&Copy Image Location"
 msgstr "&Copiar o enderezo da imaxe"
 
-#: webview.cpp:407
+#: webtab/webview.cpp:431
 msgid "Block image"
 msgstr "Bloquear a imaxe"
 
-#: webview.cpp:419
+#: webtab/webview.cpp:443
 msgid "Share selected text"
 msgstr "Compartir o texto seleccionado"
 
-#: webview.cpp:429
+#: webtab/webview.cpp:453
 msgid "Copy Text"
 msgstr "Copiar o texto"
 
-#: webview.cpp:431
+#: webtab/webview.cpp:455
 msgid "Copy"
 msgstr "Copiar"
 
-#: webview.cpp:452
+#: webtab/webview.cpp:479
 #, kde-format
 msgid "Open '%1' in New Tab"
 msgstr "Abrir «%1» nunha nova lapela"
 
-#: webview.cpp:457
+#: webtab/webview.cpp:485
 #, kde-format
 msgid "Open '%1' in New Window"
 msgstr "Abrir «%1» nunha nova xanela"
 
-#: webview.cpp:469
+#: webtab/webview.cpp:497
 #, kde-format
 msgctxt "Search selected text with the default search engine"
 msgid "Search with %1"
 msgstr "Buscar con %1"
 
-#: webview.cpp:477
+#: webtab/webview.cpp:506
 msgctxt "@title:menu"
 msgid "Search"
 msgstr "Buscar"
 
-#: webview.cpp:481
+#: webtab/webview.cpp:510
 #, kde-format
 msgctxt "@item:inmenu Search, %1 = search engine"
 msgid "With %1"
 msgstr "En %1"
 
 # «Buscar en → [esta cadea]» para buscar algo na páxina actual.
-#: webview.cpp:488
+#: webtab/webview.cpp:517
 msgid "On Current Page"
 msgstr "Páxina actual"
 
-#: webview.cpp:502
+#: webtab/webview.cpp:531
 msgid "&Bookmark link"
 msgstr "&Marcar a ligazón"
 
-#: zoombar.cpp:74
-msgid "Zoom:"
-msgstr "Ampliación:"
+#: webwindow/findbar.cpp:60
+msgid "&Match case"
+msgstr "&Diferenciar maiúsculas de minúsculas."
 
-#: zoombar.cpp:78
-msgctxt "percentage of the website zoom"
-msgid "100%"
-msgstr "100%"
+#: webwindow/findbar.cpp:61
+msgid "&Highlight all"
+msgstr "&Salientalas todas."
 
-#: zoombar.cpp:190
-#, kde-format
-msgctxt "percentage of the website zoom"
-msgid "%1%"
-msgstr "%1%"
+#: webwindow/findbar.cpp:81
+msgid "Find:"
+msgstr "Atopar:"
+
+#: webwindow/findbar.cpp:94
+msgid "&Next"
+msgstr "&Seguinte"
+
+#: webwindow/findbar.cpp:95
+msgid "&Previous"
+msgstr "&Anterior"
+
+#: webwindow/webwindow.cpp:190
+msgid "Location Bar"
+msgstr "Barra de enderezos"
+
+#: webwindow/webwindow.cpp:201
+msgid "&New Window"
+msgstr "&Nova xanela"
+
+#: webwindow/webwindow.cpp:214
+msgid "Bookmarks Toolbar"
+msgstr "Barra de marcadores"
+
+#: webwindow/webwindow.cpp:225
+#, fuzzy
+#| msgid "Download Manager"
+msgid "Downloads page"
+msgstr "Xestor de descargas"
+
+#: webwindow/webwindow.cpp:231
+#, fuzzy
+#| msgid "History Panel"
+msgid "History page"
+msgstr "Panel do historial"
+
+#: webwindow/webwindow.cpp:237
+#, fuzzy
+#| msgid "Bookmark this page"
+msgid "Bookmarks page"
+msgstr "Marcar esta páxina"
+
+#: webwindow/webwindow.cpp:256
+msgid "&Stop"
+msgstr "&Deter"
+
+#: webwindow/webwindow.cpp:262
+msgid "Open Location"
+msgstr "Abrir o enderezo"
+
+#: webwindow/webwindow.cpp:270
+msgid "View Page S&ource"
+msgstr "Ver o código &fonte da páxina"
+
+#: webwindow/webwindow.cpp:276
+#, fuzzy
+#| msgid "&New Window"
+msgid "New Private Window"
+msgstr "&Nova xanela"
+
+#: webwindow/webwindow.cpp:280
+msgid "Clear Private Data..."
+msgstr "Borrar os datos privados…"
+
+#: webwindow/webwindow.cpp:307
+msgid "Set Editable"
+msgstr "Facer alterable"
+
+#: webwindow/webwindow.cpp:313
+msgid "Ad Block"
+msgstr "Anti-publicidade"
+
+#: webwindow/webwindow.cpp:318
+msgid "Create application shortcut"
+msgstr "Crear un atallo para o aplicativo"
+
+#: webwindow/webwindow.cpp:323
+msgid "Sync"
+msgstr "Sincronizar"
+
+#: webwindow/webwindow.cpp:328
+#, fuzzy
+#| msgid "Web &Inspector"
+msgid "&Inspect"
+msgstr "Inspector &web"
+
+#: webwindow/webwindow.cpp:337
+msgid "&Tools"
+msgstr "Ferramen&tas"
+
+#: webwindow/webwindow.cpp:386
+msgid "Stop loading the current page"
+msgstr "Deixar de cargar esta páxina"
+
+#: webwindow/webwindow.cpp:387
+msgid "Stop"
+msgstr "Deter"
+
+#: webwindow/webwindow.cpp:405
+msgid "Reload the current page"
+msgstr "Actualizar esta páxina"
+
+#: webwindow/webwindow.cpp:417 webwindow/webwindow.cpp:418
+msgid "Go"
+msgstr "Ir"
+
+#: webwindow/webwindow.cpp:701
+msgid ""
+"*.html *.htm *.svg *.png *.gif *.svgz|Web Resources (*.html *.htm *.svg *."
+"png *.gif *.svgz)\n"
+"*.*|All files (*.*)"
+msgstr ""
+"*.html *.htm *.svg *.png *.gif *.svgz|Recursos web (*.html *.htm *.svg *.png "
+"*.gif *.svgz)\n"
+"*.*|Todos os ficheiros (*.*)"
+
+#: webwindow/webwindow.cpp:704
+msgid "Open Web Resource"
+msgstr "Abrir o recurso web"
+
+#~ msgctxt "@title:window"
+#~ msgid "Blocked elements"
+#~ msgstr "Elementos bloqueados"
+
+#~ msgid "Unblock"
+#~ msgstr "Desbloquear"
+
+#~ msgid "There is %1 hidden element in this page."
+#~ msgid_plural "There are %1 hidden elements in this page."
+#~ msgstr[0] "Hai un elemento agochado nesta páxina."
+#~ msgstr[1] "Hai %1 elementos agochados nesta páxina."
+
+#~ msgid "Hiding elements is disabled."
+#~ msgstr "A opción de agochar elementos está desactivada."
+
+#~ msgid "Unblocked"
+#~ msgstr "Desbloqueado"
+
+#~ msgid "Method"
+#~ msgstr "Método"
+
+#~ msgid "URL"
+#~ msgstr "URL"
+
+#~ msgid "Response"
+#~ msgstr "Resposta"
+
+#~ msgid "Length"
+#~ msgstr "Lonxitude"
+
+#~ msgid "Content Type"
+#~ msgstr "Tipo de contido"
+
+#~ msgid "Info"
+#~ msgstr "Información"
+
+#~ msgid "Copy URL"
+#~ msgstr "Copiar o URL"
+
+#~ msgid "Pending"
+#~ msgstr "Pendente"
+
+#~ msgid "%1 %2"
+#~ msgstr "%1 %2"
+
+#~ msgid "Redirect: %1"
+#~ msgstr "Redirección: %1"
+
+#~ msgid "<h3>Request Details</h3>"
+#~ msgstr "<h3>Detalles da petición</h3>"
+
+#~ msgid "<h3>Response Details</h3>"
+#~ msgstr "<h3>Detalles da resposta</h3>"
+
+#~ msgid "Private &Browsing"
+#~ msgstr "Navegación &privada"
+
+#~ msgid "Are you sure you want to turn on private browsing?"
+#~ msgstr "Está seguro de que quere activar a navegación privada?"
+
+#~ msgid ""
+#~ "<b>%1</b><p>rekonq will save your current tabs for when you'll stop "
+#~ "private browsing the net.</p>"
+#~ msgstr ""
+#~ "<b>%1</b> <p>Rekonq gardará as súas lapelas actuais, e volverá cargalas "
+#~ "cando saia da navegación privada.</p>"
+
+#~ msgid "don't ask again"
+#~ msgstr "Non volver preguntar."
+
+#~ msgid "&Bookmarks"
+#~ msgstr "&Marcadores"
+
+#~ msgctxt "%1=Number of items in bookmark folder"
+#~ msgid " (1 item)"
+#~ msgid_plural " (%1 items)"
+#~ msgstr[0] " (un elemento)"
+#~ msgstr[1] " (%1 elementos)"
+
+#~ msgid "Copy Link Address"
+#~ msgstr "Copiar o enderezo da ligazón"
+
+#~ msgid "Remove Entry"
+#~ msgstr "Eliminar a entrada"
+
+#~ msgid "Remove all occurrences"
+#~ msgstr "Eliminar todas as ocorrencias"
+
+#~ msgid "Remove Folder"
+#~ msgstr "Eliminar o cartafol"
+
+#~ msgid "(Untitled)"
+#~ msgstr "(Sen título)"
+
+#~ msgid ""
+#~ "This tab contains changes that have not been submitted.\n"
+#~ "Closing the tab will discard these changes.\n"
+#~ "Do you really want to close this tab?\n"
+#~ msgstr ""
+#~ "Algúns cambios nesta lapela non se enviaron aínda.\n"
+#~ "Se a pecha perderanse eses cambios.\n"
+#~ "Está seguro de que quere pechala?\n"
+
+#~ msgid "Closing Modified Tab"
+#~ msgstr "Pechando unha lapela con cambios"
+
+#~ msgid "Close &Tab"
+#~ msgstr "Pechar a &lapela"
+
+#~ msgid "Tab List"
+#~ msgstr "Lista de lapelas"
+
+#~ msgid "Reload All Tabs"
+#~ msgstr "Actualizar todas as lapelas"
+
+#~ msgid "Show Next Tab"
+#~ msgstr "Amosar a seguinte lapela"
+
+#~ msgid "Show Previous Tab"
+#~ msgstr "Amosar a lapela anterior"
+
+#~ msgid "Switch to Tab %1"
+#~ msgstr "Ir á lapela %1"
+
+#~ msgid "Switch to Favorite Page %1"
+#~ msgstr "Ir á páxina favorita %1"
+
+#~ msgid "Reload Tab"
+#~ msgstr "Actualizar a lapela"
+
+#~ msgid "Bookmarks Panel"
+#~ msgstr "Panel dos marcadores"
+
+#~ msgid "Web Inspector"
+#~ msgstr "Inspector web"
+
+#~ msgid "Network Analyzer"
+#~ msgstr "Analizador da rede"
+
+#~ msgctxt "Window title when private browsing is activated"
+#~ msgid "rekonq (Private Browsing)"
+#~ msgstr "Rekonq (navegación privada)"
+
+#~ msgctxt "window title, %1 = title of the active website"
+#~ msgid "%1 – rekonq (Private Browsing)"
+#~ msgstr "%1 — Rekonq (navegación privada)"
+
+#~ msgctxt "window title, %1 = title of the active website"
+#~ msgid "%1 – rekonq"
+#~ msgstr "%1 — Rekonq"
+
+#~ msgid "Source of: "
+#~ msgstr "Código fonte de: "
+
+#~ msgid "Null reply"
+#~ msgstr "Resposta null"
+
+#~ msgid "Closed Tabs"
+#~ msgstr "Lapelas pechadas"
+
+#~ msgid "There are no recently closed tabs"
+#~ msgstr "Non pechou lapelas ultimamente."
+
+#~ msgid "Window"
+#~ msgstr "Xanela"
+
+#~ msgid "The file is not an OpenSearch 1.1 file."
+#~ msgstr "Non é un ficheiro OpenSearch 1.1."
+
+#~ msgid "&Help"
+#~ msgstr "&Axuda"
+
+#~ msgid "&File"
+#~ msgstr "&Ficheiro"
+
+#~ msgid "&Edit"
+#~ msgstr "&Editar"
+
+#~ msgid "&View"
+#~ msgstr "&Vista"
+
+#~ msgid "Hi&story"
+#~ msgstr "Hi&storial"
+
+#~ msgid "&Settings"
+#~ msgstr "$Configuración"
+
+#~ msgid "Main Toolbar"
+#~ msgstr "Barra de ferramentas"
+
+#, fuzzy
+#~| msgid "Automatic Filters"
+#~ msgid "Automatic Spell Check"
+#~ msgstr "Filtros automáticos"
+
+#~ msgid "Always show tab bar"
+#~ msgstr "Mostrar sempre a barra das lapelas."
+
+#~ msgid "Don't use tabs: open links in new windows"
+#~ msgstr "Non empregar lapelas: abrir as ligazóns en xanelas novas."
+
+#~ msgid "Open new tabs in the background"
+#~ msgstr "Abrir as novas lapelas no fondo."
+
+#~ msgid "Open new tabs after currently active one"
+#~ msgstr "Abrir as novas lapelas a continuación da actual."
+
+#~ msgid "Animated tab highlighting"
+#~ msgstr "Animar as lapelas ao salientalas."
+
+#~ msgid "Shortcuts"
+#~ msgstr "Atallos"
+
+#~ msgid "There are elements blocked by AdBlock"
+#~ msgstr "AdBlock bloqueou algúns elementos."
+
+#~ msgid "Add Search Engine"
+#~ msgstr "Engadir un motor de busca"
+
+#~ msgid "Shortcuts:"
+#~ msgstr "Atallos:"
+
+#~ msgid "The shortcut \"%1\" is already assigned to \"%2\"."
+#~ msgstr "O atallo «%1» xa está asignado a «%2»."
+
+#~ msgid "&Search:"
+#~ msgstr "&Buscar:"
+
+#~ msgid "<h2>Wrongly typed?</h2>"
+#~ msgstr "<h2>Escribiuno mal?</h2>"
+
+#~ msgid "We tried to load url: %1.<br />"
+#~ msgstr "Intentouse cargar o URL «%1».<br />"
+
+#~ msgid ""
+#~ "Check your address for errors like <em>ww.kde.org</em> instead of <em>www."
+#~ "kde.org</em>.<br />"
+#~ msgstr ""
+#~ "Comprobe o enderezo por se hai erros coma «<em>ww</em>.kde.org» en vez de "
+#~ "«<em>www</em>.kde.org».<br />"
+
+#~ msgid ""
+#~ "If you spelled right, just try to <a href=\"%1\">reload it</a>.<br />"
+#~ msgstr ""
+#~ "Se o enderezo está ben escrito, probe a <a href=\"%1\">actualizar</a>."
+#~ "<br />"
+
+#~ msgid "Otherwise, just be careful the next time around."
+#~ msgstr "Se foi un erro, máis coidado para a seguinte."
+
+#~ msgid "<h2>Network problems?</h2>"
+#~ msgstr "<h2>Ten problemas coa rede?</h2>"
+
+#~ msgid "Maybe you are having problems with your network.<br />"
+#~ msgstr "Pode que estea a experimentar problemas de rede.<br />"
+
+#~ msgid "Try checking your <a href=\"%1\">network connections</a>"
+#~ msgstr "Bótelle unha ollada á súa <a href=\"%1\">configuración de rede</a>"
+
+#~ msgid ", your <a href=\"%1\">proxy settings</a> "
+#~ msgstr ", á <a href=\"%1\">configuración do proxy</a> "
+
+#~ msgid "and your <a href=\"%1\">firewall</a>.<br />"
+#~ msgstr "e á da <a href=\"%1\">devasa</a>.<br />"
+
+#~ msgid "Then try again.<br />"
+#~ msgstr "Despois volva a intentar acceder ao URL.<br />"
+
+#~ msgid "<h2>Suggestions</h2>"
+#~ msgstr "<h2>Suxestións</h2>"
+
+#~ msgid "Inspect Element"
+#~ msgstr "Inspeccionar o elemento"
+
+#~ msgctxt "percentage of the website zoom"
+#~ msgid "100%"
+#~ msgstr "100%"
+
+#~ msgctxt "percentage of the website zoom"
+#~ msgid "%1%"
+#~ msgstr "%1%"
 
 #~ msgid "Provided Patches & Hints, Discovered Bugs"
 #~ msgstr "Parches, indicacións e informes de erros."
