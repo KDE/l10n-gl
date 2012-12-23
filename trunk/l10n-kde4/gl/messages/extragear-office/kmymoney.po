@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gl\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2012-12-13 02:19+0100\n"
+"POT-Creation-Date: 2012-12-23 02:27+0100\n"
 "PO-Revision-Date: 2009-05-08 22:07+0200\n"
 "Last-Translator: marce villarino <mvillarino@users.sourceforge.net>\n"
 "Language-Team: Galician <proxecto@trasno.ent>\n"
@@ -614,8 +614,8 @@ msgstr "Non foi posíbel engadir asentos"
 #: kmymoney/kmymoney.cpp:5015 kmymoney/kmymoney.cpp:5033
 #: kmymoney/views/kbudgetview.cpp:714 kmymoney/views/kbudgetview.cpp:879
 #: kmymoney/views/kbudgetview.cpp:893 kmymoney/views/kpayeesview.cpp:335
-#: kmymoney/views/kpayeesview.cpp:655 kmymoney/views/ktagsview.cpp:260
-#: kmymoney/views/ktagsview.cpp:490
+#: kmymoney/views/kpayeesview.cpp:655 kmymoney/views/ktagsview.cpp:262
+#: kmymoney/views/ktagsview.cpp:492
 #, fuzzy, kde-format
 #| msgid "thrown in"
 msgid "%1 thrown in %2:%3"
@@ -1123,18 +1123,23 @@ msgid ""
 msgstr ""
 "Debe escoller unha conta, criar unha nova ou premer no botón <b>Abortar</b>."
 
-#: kmymoney/converter/mymoneystatementreader.cpp:1348
-#, kde-format
+#: kmymoney/converter/mymoneystatementreader.cpp:1428
+#, fuzzy, kde-format
+#| msgid ""
+#| "KMyMoney has found a scheduled transaction named <b>%1</b> which matches "
+#| "an imported transaction. Do you want KMyMoney to enter this schedule now "
+#| "so that the transaction can be matched? "
 msgid ""
-"KMyMoney has found a scheduled transaction named <b>%1</b> which matches an "
-"imported transaction. Do you want KMyMoney to enter this schedule now so "
-"that the transaction can be matched? "
+"KMyMoney has found a scheduled transaction which matches an imported "
+"transaction.<br/>Schedule name: <b>%1</b><br/>Transaction: <i>%2 %3</i><br/"
+">Do you want KMyMoney to enter this schedule now so that the transaction can "
+"be matched? "
 msgstr ""
 "KMyMoney atopou unha planificación de asentos chamada <b>%1</b> que casa cun "
 "asento importado. Desexa que KMyMoney introduza agora esta planificación de "
 "tal xeito que poda emparellar o asento?"
 
-#: kmymoney/converter/mymoneystatementreader.cpp:1348
+#: kmymoney/converter/mymoneystatementreader.cpp:1433
 msgid "Schedule found"
 msgstr "Atopouse unha planificación"
 
@@ -6117,12 +6122,12 @@ msgstr "Actualizar"
 
 #: kmymoney/dialogs/settings/ksettingsonlinequotes.cpp:52
 #: kmymoney/dialogs/transactioneditor.cpp:575
-#: kmymoney/views/kpayeesview.cpp:149 kmymoney/views/ktagsview.cpp:138
+#: kmymoney/views/kpayeesview.cpp:149 kmymoney/views/ktagsview.cpp:140
 msgid "Accepts the entered data and stores it"
 msgstr "Aceita os dados introducidos e almacénaos"
 
 #: kmymoney/dialogs/settings/ksettingsonlinequotes.cpp:53
-#: kmymoney/views/kpayeesview.cpp:150 kmymoney/views/ktagsview.cpp:139
+#: kmymoney/views/kpayeesview.cpp:150 kmymoney/views/ktagsview.cpp:141
 msgid "Use this to accept the modified data."
 msgstr "Use isto para aceitar os dados modificados."
 
@@ -14117,13 +14122,13 @@ msgid "Use this to discard the modified data."
 msgstr "Use isto para esquecer os dados modificados."
 
 #: kmymoney/views/kbudgetview.cpp:573 kmymoney/views/kpayeesview.cpp:383
-#: kmymoney/views/ktagsview.cpp:308
+#: kmymoney/views/ktagsview.cpp:310
 #, kde-format
 msgid "Do you want to save the changes for <b>%1</b>?"
 msgstr "Desexa gardar os cambios en <b>%1</b>?"
 
 #: kmymoney/views/kbudgetview.cpp:574 kmymoney/views/kpayeesview.cpp:384
-#: kmymoney/views/ktagsview.cpp:309
+#: kmymoney/views/ktagsview.cpp:311
 msgid "Save changes"
 msgstr "Gardar as mudanzas"
 
@@ -14471,7 +14476,7 @@ msgid "Difference: %1"
 msgstr "Diferenza: %1"
 
 #: kmymoney/views/kgloballedgerview.cpp:810 kmymoney/views/kpayeesview.cpp:487
-#: kmymoney/views/ktagsview.cpp:393
+#: kmymoney/views/ktagsview.cpp:395
 #, kde-format
 msgid "Balance: %1"
 msgstr "Saldo: %1"
@@ -15983,7 +15988,7 @@ msgstr ""
 msgid "Unable to modify payee"
 msgstr "Non foi posíbel modificar o beneficiario"
 
-#: kmymoney/views/kpayeesview.cpp:549 kmymoney/views/ktagsview.cpp:455
+#: kmymoney/views/kpayeesview.cpp:549 kmymoney/views/ktagsview.cpp:457
 #, fuzzy, kde-format
 #| msgid "Balance: %1"
 msgid "Balance: %1%2"
@@ -16579,50 +16584,64 @@ msgctxt "@item Show only unused tags"
 msgid "Unused"
 msgstr "Sen asinar"
 
-#: kmymoney/views/ktagsview.cpp:117
+#: kmymoney/views/ktagsview.cpp:113
+#, fuzzy
+#| msgid "&Open"
+msgctxt "@item Show only opened tags"
+msgid "Opened"
+msgstr "&Abrir"
+
+#: kmymoney/views/ktagsview.cpp:114
+#, fuzzy
+#| msgid "Closed"
+msgctxt "@item Show only closed tags"
+msgid "Closed"
+msgstr "Pechado"
+
+#: kmymoney/views/ktagsview.cpp:119
 #, fuzzy
 #| msgid "Create a new profile"
 msgid "Creates a new tag"
 msgstr "Crea un novo perfil"
 
-#: kmymoney/views/ktagsview.cpp:118
+#: kmymoney/views/ktagsview.cpp:120
 #, fuzzy
 #| msgid "Use this to create a new schedule."
 msgid "Use this to create a new tag."
 msgstr "Use isto para criar un novo asento planificado."
 
-#: kmymoney/views/ktagsview.cpp:124
+#: kmymoney/views/ktagsview.cpp:126
 #, fuzzy
 #| msgid "Rename the current selected budget"
 msgid "Rename the current selected tag"
 msgstr "Muda o nome do orzamento escollido"
 
-#: kmymoney/views/ktagsview.cpp:125
+#: kmymoney/views/ktagsview.cpp:127
 #, fuzzy
 #| msgid "Use this to start renaming the selected budget."
 msgid "Use this to start renaming the selected tag."
 msgstr "Use isto para mudar o nome do orzamento escollido."
 
-#: kmymoney/views/ktagsview.cpp:131
+#: kmymoney/views/ktagsview.cpp:133
 #, fuzzy
 #| msgid "Delete the current selected budget"
 msgid "Delete the current selected tag"
 msgstr "Borra o orzamento escollido"
 
-#: kmymoney/views/ktagsview.cpp:132
+#: kmymoney/views/ktagsview.cpp:134
 #, fuzzy
 #| msgid "Use this to delete the selected budget."
 msgid "Use this to delete the selected tag."
 msgstr "Use isto para borrar o orzamento escollido."
 
-#: kmymoney/views/ktagsview.cpp:136
+#: kmymoney/views/ktagsview.cpp:138
 #, fuzzy
 #| msgid "Update"
 msgctxt "Update tag"
 msgid "Update"
 msgstr "Actualizar"
 
-#: kmymoney/views/ktagsview.cpp:233
+#: kmymoney/views/ktagsview.cpp:235
 #, fuzzy, kde-format
 #| msgid ""
 #| "A payee with the name '%1' already exists. It is not advisable to have "
@@ -16636,7 +16655,7 @@ msgstr ""
 "Xa hai un beneficiario chamado «%1». Non se recomenda ter varios "
 "beneficiarios co mesmo nome. Desexa realmente mudar o nome do beneficiario?"
 
-#: kmymoney/views/ktagsview.cpp:259 kmymoney/views/ktagsview.cpp:489
+#: kmymoney/views/ktagsview.cpp:261 kmymoney/views/ktagsview.cpp:491
 #, fuzzy
 #| msgid "Unable to modify payee"
 msgid "Unable to modify tag"
