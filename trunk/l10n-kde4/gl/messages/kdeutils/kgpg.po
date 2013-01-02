@@ -6,19 +6,20 @@
 # mvillarino <mvillarino@users.sourceforge.net>, 2007, 2008, 2009.
 # Marce Villarino <mvillarino@users.sourceforge.net>, 2008.
 # Marce Villarino <mvillarino@gmail.com>, 2009, 2010.
+# Adrian Chaves Fernandez <adriyetichaves@gmail.com>, 2013.
 msgid ""
 msgstr ""
 "Project-Id-Version: kgpg\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2013-01-02 03:04+0100\n"
-"PO-Revision-Date: 2010-01-30 18:31+0100\n"
-"Last-Translator: Marce Villarino <mvillarino@gmail.com>\n"
+"PO-Revision-Date: 2013-01-02 10:31+0100\n"
+"Last-Translator: Adrian Chaves Fernandez <adriyetichaves@gmail.com>\n"
 "Language-Team: Galician <proxecto@trasno.net>\n"
 "Language: gl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 1.0\n"
+"X-Generator: Lokalize 1.5\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Environment: kde\n"
 "X-Accelerator-Marker: &\n"
@@ -51,16 +52,16 @@ msgstr "Comentario (opcional):"
 #: caff.cpp:258
 msgctxt "Email template placeholder for key id"
 msgid "KEYID"
-msgstr ""
+msgstr "IDCHAVE"
 
 #: caff.cpp:259
 msgctxt "Email template placeholder for key id"
 msgid "UIDNAME"
-msgstr ""
+msgstr "NOMEUID"
 
 #: caff.cpp:287
 msgid "your key "
-msgstr ""
+msgstr "a súa chave "
 
 #. i18n: ectx: property (whatsThis), widget (QLabel, textLabel1_4_2)
 #: conf_decryption.ui:52
@@ -186,7 +187,7 @@ msgid ""
 "it 'trusted'). Checking this box enables any key to be used even if it is "
 "untrusted.</p></qt>"
 msgstr ""
-"<qt><b>Permitir a cifraxe con chaves sen autenticar:</b> <br />\n"
+"<qt><b>Permitir cifrar con chaves non autenticadas:</b> <br />\n"
 "<p>Cando se importa unha chave pública, a chave normalmente márcase como non "
 "autenticada e polo tanto non pode ser usada a non ser que estea asinada pola "
 "chave predeterminada. Sinale esta opción para usar calquera chave mesmo se "
@@ -205,11 +206,17 @@ msgid ""
 "the <em>Allow encryption with untrusted keys</em> option this allows "
 "untrusted keys to become member of a key group.</p></qt>"
 msgstr ""
+"<qt><b>Permitir que as chaves non autenticadas formen parte de grupos:</b><br "
+"/> "
+"<p>Os grupos de chaves permiten cifrar facilmente para varios destinatarios "
+"ao mesmo tempo. é parecido á opción de <em>permitir cifrar con chaves non "
+"autenticadas</em>, só que neste caso o que se permite é que as chaves formen "
+"parte dun grupo de chaves.</p></qt>"
 
 #. i18n: ectx: property (text), widget (QCheckBox, kcfg_AllowUntrustedGroupMembers)
 #: conf_encryption.ui:148
 msgid "Allow untrusted keys as members of key groups"
-msgstr ""
+msgstr "Permitir que as chaves non autenticadas formen parte de grupos"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, kcfg_HideUserID)
 #: conf_encryption.ui:156
@@ -507,7 +514,7 @@ msgstr "Ficheiros recentes"
 #. i18n: ectx: attribute (title), widget (QWidget, tabSigning)
 #: conf_misc.ui:306
 msgid "Key Signing"
-msgstr ""
+msgstr "Sinatura con chaves"
 
 #. i18n: ectx: property (whatsThis), widget (QLabel, label_2)
 #: conf_misc.ui:314
@@ -517,33 +524,36 @@ msgid ""
 "with every other User Id you signed, only with the first Id you signed or to "
 "not send them at all."
 msgstr ""
+"Aquí pode definir como enviar os identificadores de usuario que non conteñen "
+"un enderezo de correo (como as fotos dos identificadores) ao propietario da "
+"chave. Pode escoller entre envialos co resto de identificadores de usuario "
+"asinados, só co primeiro identificador que asinou, ou non envialos."
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: conf_misc.ui:317
 msgid "Mailing of User Ids without Email Addresses"
-msgstr ""
+msgstr "Envío de identificadores de usuario sen enderezo de correo"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, kcfg_MailUats)
 #: conf_misc.ui:325
 msgid "Send with every Email"
-msgstr ""
+msgstr "Enviar con cada correo"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, kcfg_MailUats)
 #: conf_misc.ui:330
 msgid "Send only with first Email"
-msgstr ""
+msgstr "Enviar só co primeiro correo"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, kcfg_MailUats)
 #: conf_misc.ui:335
-#, fuzzy
 #| msgid "Do Not Use"
 msgid "Do not send"
-msgstr "Non empregala"
+msgstr "Non enviar"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
 #: conf_misc.ui:345
 msgid "Email template"
-msgstr ""
+msgstr "Modelo de mensaxe"
 
 #. i18n: ectx: property (whatsThis), widget (KTextEdit, EmailTemplateEdit)
 #: conf_misc.ui:353
@@ -554,6 +564,11 @@ msgid ""
 "The placeholders surrounded by the percent signs (like %KEYID%) will be "
 "replaced with the corresponding text for every single mail."
 msgstr ""
+"Este é o texto da mensaxe enviada mediante a acción de «asinar e enviar o "
+"identificador do usuario».\n"
+"\n"
+"As marcas de substitución, rodeadas por símbolos de porcentaxe (por exemplo, "
+"«%IDCHAVE%») substituiranse polo texto correspondente en cada mensaxe enviada."
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel1_4)
 #: conf_servers.ui:29
@@ -660,7 +675,7 @@ msgstr "DSA e ElGamal"
 #: core/convert.cpp:41
 msgctxt "Encryption algorithm RSA, Signing algorithm RSA"
 msgid "RSA & RSA"
-msgstr ""
+msgstr "RSA e RSA"
 
 #: core/convert.cpp:43
 msgctxt "Unknown algorithm"
@@ -851,15 +866,14 @@ msgid "Close the document"
 msgstr "Pechar o documento"
 
 #: editor/kgpgeditor.cpp:291
-#, fuzzy
 #| msgid ""
 #| "The document could not been saved, as the selected encoding cannot encode "
 #| "every unicode character in it."
 msgid ""
 "The document could not been saved, as the selected codec is not supported."
 msgstr ""
-"Non foi posíbel gardar o documento, xa que a codificación escollida non pode "
-"codificar todos os caracteres unicode que contén."
+"Non foi posíbel gardar o documento, xa que a codificación escollida non está "
+"admitida."
 
 #: editor/kgpgeditor.cpp:297
 msgid ""
@@ -943,7 +957,7 @@ msgstr "Non se atopou unha sinatura."
 #: kgpgexternalactions.cpp:283
 msgctxt "Caption of message box"
 msgid "Verification Finished"
-msgstr ""
+msgstr "Rematou a verificación"
 
 #. i18n: ectx: Menu (view)
 #: editor/kgpgeditor.rc:13 keysmanager.rc:24
@@ -1000,16 +1014,16 @@ msgid "Could not download file."
 msgstr "Non foi posíbel obter o ficheiro."
 
 #: editor/kgpgtextedit.cpp:127
-#, fuzzy
 #| msgid ""
 #| "<p>The dropped text is a public key.<br />Do you want to import it ?</p>"
 msgid ""
 "<qt>This file is a <b>public</b> key.<br />Do you want to import it instead "
 "of opening it in editor?</qt>"
-msgstr "<p>O texto soltado é unha chave pública.<br />Desexa importala?</p>"
+msgstr ""
+"<qt>Este ficheiro corresponde a unha chave <b>pública</b>.<br /> "
+"Quere importala en vez de abrila nun editor?</qt>"
 
 #: editor/kgpgtextedit.cpp:130
-#, fuzzy
 #| msgid ""
 #| "<qt>This file is a <b>private</b> key.\n"
 #| "Please use kgpg key management to import it.</qt>"
@@ -1017,12 +1031,12 @@ msgid ""
 "<qt>This file is a <b>private</b> key.<br />Do you want to import it instead "
 "of opening it in editor?</qt>"
 msgstr ""
-"<qt>Este ficheiro é unha chave <b>privada</b>.\n"
-"Por favor, empregue a xestión de chaves de kgpg para importala.</qt>"
+"<qt>Este ficheiro corresponde a unha chave <b>privada</b>.<br /> "
+"Quere importala en vez de abrila nun editor?</qt>"
 
 #: editor/kgpgtextedit.cpp:135
 msgid "Key file dropped on Editor"
-msgstr ""
+msgstr "Soltouse un ficheiro de chave no editor."
 
 #: editor/kgpgtextedit.cpp:257 kgpgexternalactions.cpp:397
 msgid "Decryption failed."
@@ -1031,7 +1045,7 @@ msgstr "Fallou a decifraxe."
 #: editor/kgpgtextedit.cpp:272 foldercompressjob.cpp:139
 #, kde-format
 msgid "The encryption failed with error code %1"
-msgstr ""
+msgstr "Non foi posíbel completar a cifraxe. Código do erro: %1."
 
 #: editor/kgpgtextedit.cpp:273 foldercompressjob.cpp:140
 msgid "Encryption failed."
@@ -1083,50 +1097,46 @@ msgid "Unable to create temporary file"
 msgstr "Non foi posíbel crear o ficheiro temporal"
 
 #: foldercompressjob.cpp:122 transactions/kgpgencrypt.cpp:110
-#, fuzzy, kde-format
+#, kde-format
 #| msgid "Decrypting %1"
 msgctxt "Status message 'Encrypting <filename>' (operation starts)"
 msgid "Encrypting %1"
-msgstr "A descifrar %1"
+msgstr "Cifrando %1…"
 
 #: foldercompressjob.cpp:143 transactions/kgpgencrypt.cpp:113
-#, fuzzy, kde-format
+#, kde-format
 #| msgid "Decrypting %1"
 msgctxt "Status message 'Encrypted <filename>' (operation was completed)"
 msgid "Encrypted %1"
-msgstr "A descifrar %1"
+msgstr "Cifrouse %1."
 
 #: foldercompressjob.cpp:174
 msgid "Zip"
 msgstr "Zip"
 
 #: foldercompressjob.cpp:175
-#, fuzzy
 #| msgid "Gzip"
 msgid "Tar/Gzip"
-msgstr "Gzip"
+msgstr "Tar/Gzip"
 
 #: foldercompressjob.cpp:176
-#, fuzzy
 #| msgid "Bzip2"
 msgid "Tar/Bzip2"
-msgstr "Bzip2"
+msgstr "Tar/Bzip2"
 
 #: foldercompressjob.cpp:177
 msgid "Tar"
 msgstr "Tar"
 
 #: foldercompressjob.cpp:178
-#, fuzzy
 #| msgid "Tar"
 msgid "Tar/XZ"
-msgstr "Tar"
+msgstr "Tar/XZ"
 
 #: groupedit.cpp:36
-#, fuzzy
 #| msgid "Available Trusted Keys"
 msgid "Available Keys"
-msgstr "Chaves autenticadas dispoñíbeis"
+msgstr "Chaves dispoñíbeis"
 
 #: groupedit.cpp:39
 msgid "Available Trusted Keys"
@@ -1271,10 +1281,9 @@ msgid "Could not change passphrase"
 msgstr "Non foi posíbel cambiar o contrasinal"
 
 #: keyinfodialog.cpp:311
-#, fuzzy
 #| msgid "Could not change passphrase"
 msgid "KGpg was unable to change the passphrase."
-msgstr "Non foi posíbel cambiar o contrasinal"
+msgstr "KGpg non puido cambiar o contrasinal."
 
 #: keyinfodialog.cpp:347
 msgid "Changing key properties failed."
@@ -1402,20 +1411,18 @@ msgstr "Debe introducir unha cadea de procura."
 
 #: keyservers.cpp:113
 msgid "You need to configure keyservers before trying to download keys."
-msgstr ""
+msgstr "Para descargar chaves antes ten que configurar servidores de chaves."
 
 #: keyservers.cpp:114
-#, fuzzy
 #| msgid "Upload to keyserver failed"
 msgid "No keyservers defined"
-msgstr "Fallou o envío ao servidor de chaves"
+msgstr "Non se definiu ningún servidor de chaves."
 
 #: keyservers.cpp:151
-#, fuzzy
 #| msgid "Key Import"
 msgctxt "Caption of message box"
 msgid "Key Import Finished"
-msgstr "Importación de chaves"
+msgstr "Importáronse as chaves"
 
 #: keyservers.cpp:179
 msgid "Upload to keyserver finished without errors"
@@ -1443,11 +1450,10 @@ msgstr[0] "Atopouse %1 chave coincidente"
 msgstr[1] "Atopáronse %1 chaves coincidentes"
 
 #: keyservers.cpp:272
-#, fuzzy
 #| msgid "Found 1 matching key"
 #| msgid_plural "Found %1 matching keys"
 msgid "No matching keys found"
-msgstr "Atopouse %1 chave coincidente"
+msgstr "Non se atopou ningunha coincidencia."
 
 #: keyservers.cpp:320
 msgid "You must choose a key."
@@ -1514,10 +1520,9 @@ msgid "&Delete Group"
 msgstr "&Borrar o grupo"
 
 #: keysmanager.cpp:213
-#, fuzzy
 #| msgid "&Delete Group"
 msgid "&Rename Group"
-msgstr "&Borrar o grupo"
+msgstr "&Renomear o grupo"
 
 #: keysmanager.cpp:222
 msgid "Set as De&fault Key"
@@ -1714,7 +1719,6 @@ msgid "Add New User Id"
 msgstr "Engadir unha nova Id de usuario"
 
 #: keysmanager.cpp:893
-#, fuzzy
 #| msgid ""
 #| "The image must be a JPEG file. Remember that the image is stored within "
 #| "your public key, so if you use a very large picture, your key will become "
@@ -1725,10 +1729,12 @@ msgid ""
 "large as well. The size should not exceed 6 KiB. An image size of around "
 "240x288 is a good size to use."
 msgstr ""
-"A imaxe debe ser un ficheiro JPEG. Lembre que a imaxe é almacenada coa súa "
+"A imaxe debe ser un ficheiro JPEG. Lembre que a imaxe almacénase dentro da "
+"súa "
 "chave pública, polo que se emprega unha imaxe moi grande, a chave aumentará "
-"de tamaño proporcionalmente. Un tamaño arredor de 240x288 é un bon tamaño "
-"para usar."
+"de tamaño proporcionalmente. O tamaño non debería exceder os 6 KiB. Un bo "
+"tamaño "
+"podería ser arredor de 240×288 píxeles."
 
 #: keysmanager.cpp:925
 #, kde-format
@@ -1792,13 +1798,12 @@ msgstr[0] "A&sinar o ID do usuario..."
 msgstr[1] "A&sinar os ID do usuario..."
 
 #: keysmanager.cpp:1176
-#, fuzzy
 #| msgid "&Sign User ID ..."
 #| msgid_plural "&Sign User IDs ..."
 msgid "Sign and &Mail User ID ..."
 msgid_plural "Sign and &Mail User IDs ..."
-msgstr[0] "A&sinar o ID do usuario..."
-msgstr[1] "A&sinar os ID do usuario..."
+msgstr[0] "Asinar e &enviar o identificador do usuario…"
+msgstr[1] "Asinar e &enviar os identificadores dos usuarios…"
 
 #: keysmanager.cpp:1177
 msgid "E&xport Public Key..."
@@ -1858,7 +1863,7 @@ msgstr ""
 
 #: keysmanager.cpp:1330
 msgid "*.asc|*.asc Files"
-msgstr ""
+msgstr "*.asc|Ficheiros *.asc"
 
 #: keysmanager.cpp:1330
 msgid "Export PRIVATE KEY As"
@@ -2141,6 +2146,8 @@ msgid ""
 "You are removing the last key from key group %1.<br/>Do you want to delete "
 "the group, too?"
 msgstr ""
+"Está a eliminar a última chave do grupo %1.<br/> "
+"Quere eliminar o grupo tamén?"
 
 #: keysmanager.cpp:2263
 #, kde-format
@@ -2213,12 +2220,14 @@ msgid ""
 "<qt>The text in the clipboard does not look like a key, but like encrypted "
 "text.<br />Do you want to decrypt it first and then try importing it?</qt>"
 msgstr ""
+"<qt>O contido do porta papeis non parece unha chave, senón texto cifrado.<br "
+"/> "
+"Quere descifralo primeiro e logo intentar importalo?</qt>"
 
 #: keysmanager.cpp:2417
-#, fuzzy
 #| msgid "&Encrypt Clipboard"
 msgid "Import from Clipboard"
-msgstr "&Cifrar o portarretallos"
+msgstr "&Importar do portapapeis"
 
 #: keysmanager.cpp:2437
 msgid "Importing..."
@@ -2283,12 +2292,13 @@ msgid ""
 "GnuPG failed to start.<br />You must fix the GnuPG error first before "
 "running KGpg."
 msgstr ""
+"GnuPG non puido iniciarse.<br /> "
+"Antes de executar KGpg, arranxe o erro de GnuPG."
 
 #: kgpg.cpp:78
-#, fuzzy
 #| msgid "GnuPG Home"
 msgid "GnuPG error"
-msgstr "Páxina de GnuPG"
+msgstr "Erro de GnuPG"
 
 #: kgpg.cpp:95
 #, kde-format
@@ -2350,6 +2360,29 @@ msgid ""
 "\n"
 "If you have any questions, don't hesitate to ask.\n"
 msgstr ""
+"Ola,\n"
+"\n"
+"Vai anexo o identificador de usuario «%NOMEUID%» da súa chave, %KEYID%, "
+"asinada por min. Este correo vai asinado con esa chave, para asegurarme de "
+"que ten no seu control tanto o enderezo de correo como a chave.\n"
+"\n"
+"Se ten varios identificadores de usuario, envieille a sinatura de cada "
+"identificador por separado ao enderezo de correo asociado ao identificador. "
+"Pode importar as sinaturas executando para cada unha delas a orde «gpg "
+"--import», despois de descifralas con «gpg --decrypt».\n"
+"\n"
+"Se está a usar KGpg, garde o anexo e logo impórteo desde o aplicativo. Só ten "
+"que seleccionar «Importar unha chave…» no menú «Chaves» e abrir o ficheiro.\n"
+"\n"
+"Teña en conta que non subín a súa chave a ningún servidor de chaves. Se quere "
+"que esta nova sinatura estea dispoñíbel para outras persoas, considere subila "
+"vostede mesmo. Pode facelo con GnuPG, executando a orde «gpg --keyserver "
+"subkeys.pgp.net --send-key %IDCHAVE%.\n"
+"\n"
+"Con KGpg pode premer co botón secundario na chave, despois de importar todos "
+"os identificadores de usuario, e seleccionar «Exportar a chave pública…».\n"
+"\n"
+"Se ten calquera dúbida, pregunte sen medo.\n"
 
 #. i18n: ectx: label, entry (CustomDecrypt), group (Decryption)
 #: kgpg.kcfg:13
@@ -2390,6 +2423,7 @@ msgstr "Permitir cifrar con chaves non autenticadas."
 #: kgpg.kcfg:41
 msgid "Allow untrusted keys to become members of key groups."
 msgstr ""
+"Permitir que as chaves non autenticadas pasen a formar parte de grupos."
 
 #. i18n: ectx: label, entry (HideUserID), group (Encryption)
 #: kgpg.kcfg:45
@@ -2582,10 +2616,13 @@ msgstr "Usar un proxy HTTP cando estea dispoñíbel."
 msgid ""
 "This is the text of the email sent by the \"Sign and Mail User ID\" action."
 msgstr ""
+"Este é o texto da mensaxe enviada mediante a acción de «asinar e enviar o "
+"identificador do usuario»."
 
 #: kgpgexternalactions.cpp:126
 msgid "Cannot create temporary file for folder compression."
 msgstr ""
+"Non foi posíbel crear o ficheiro temporal para a compresión do cartafol."
 
 #: kgpgexternalactions.cpp:126 kgpgexternalactions.cpp:132
 msgid "Temporary File Creation"
@@ -2738,6 +2775,8 @@ msgid ""
 "Your GnuPG version (%1) seems to be too old.<br />Compatibility with "
 "versions before 1.4.0 is no longer guaranteed."
 msgstr ""
+"A súa versión de GnuPG (%1) parece vella de máis.<br /> "
+"Non se garante a compatibilidade con versións previas á 1.4.0."
 
 #: kgpginterface.cpp:268
 msgid "An error occurred while scanning your keyring"
@@ -2758,7 +2797,7 @@ msgstr "Muda para o modo experto"
 #: kgpgkeygenerate.cpp:47
 msgid ""
 "If you go to expert mode, you will use the command line to create your key."
-msgstr ""
+msgstr "Se vai ao modo experto, usará a liña de ordes para crear a súa clave."
 
 #: kgpgkeygenerate.cpp:50
 msgid "Generate Key Pair"
@@ -2851,10 +2890,9 @@ msgstr "O enderezo de correo electrónico non é válido"
 
 #. i18n: ectx: property (windowTitle), widget (KDialog, kgpgKeyInfo)
 #: kgpgKeyInfo.ui:14
-#, fuzzy
 #| msgid "KGpg"
 msgid "Kgpg"
-msgstr "KGpg"
+msgstr "Kgpg"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel5)
 #. i18n: ectx: property (text), widget (QLabel, tl_id)
@@ -2932,17 +2970,15 @@ msgstr "Desactivar a chave"
 
 #. i18n: ectx: property (text), widget (KPushButton, m_expirationbtn)
 #: kgpgKeyInfo.ui:350
-#, fuzzy
 #| msgid "Change Expiration..."
 msgid "Change Expiration"
-msgstr "Cambiar a caducidade..."
+msgstr "Cambiar a caducidade"
 
 #. i18n: ectx: property (text), widget (KPushButton, m_password)
 #: kgpgKeyInfo.ui:357
-#, fuzzy
 #| msgid "Change Passphrase..."
 msgid "Change Passphrase"
-msgstr "Cambiar o contrasinal..."
+msgstr "Cambiar o contrasinal"
 
 #. i18n: ectx: property (title), widget (QGroupBox, gr_fingerprint)
 #: kgpgKeyInfo.ui:383
@@ -2974,7 +3010,6 @@ msgid "New GnuPG Home Location"
 msgstr "Novo sitio web de GnuPG"
 
 #: kgpgoptions.cpp:150
-#, fuzzy
 #| msgid ""
 #| "No configuration file was found in the selected location.\n"
 #| "Do you want to create it now ?\n"
@@ -2986,11 +3021,10 @@ msgid ""
 "\n"
 "Without a configuration file, neither KGpg nor GnuPG will work properly."
 msgstr ""
-"Non se atopou o ficheiro de configuración no lugar escollido.\n"
-"Desexa crealo agora?\n"
+"Non se atopou ningún ficheiro de configuración no lugar seleccionado.\n"
+"Quere crealo?\n"
 "\n"
-"Sen o ficheiro de configuración, nin KGpg nin GnuPG funcionarán "
-"correctamente."
+"Sen o ficheiro de configuración, nin KGpg nin GnuPG funcionarán correctamente."
 
 #: kgpgoptions.cpp:151
 msgid "No Configuration File Found"
@@ -3242,12 +3276,12 @@ msgid "ID %1, %2-bit %3 key, created %4"
 msgstr "ID %1, chave %3 de %2 bits, creada o %4"
 
 #: model/kgpgsearchresultmodel.cpp:218
-#, fuzzy, kde-format
+#, kde-format
 #| msgid "Photo ID"
 msgid "One Photo ID"
 msgid_plural "%1 Photo IDs"
-msgstr[0] "Foto da ID"
-msgstr[1] "Foto da ID"
+msgstr[0] "Unha foto da ID."
+msgstr[1] "%1 fotos da ID."
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox2)
 #: newkey.ui:19
@@ -3625,18 +3659,18 @@ msgstr ""
 "contrasinal ningún dos ficheiros e mensaxes cifradas serán accesíbeis.</qt>"
 
 #: transactions/kgpgdecrypt.cpp:118
-#, fuzzy, kde-format
+#, kde-format
 #| msgid "Decrypting %1"
 msgctxt "Status message 'Decrypting <filename>' (operation starts)"
 msgid "Decrypting %1"
-msgstr "A descifrar %1"
+msgstr "Descifrando %1…"
 
 #: transactions/kgpgdecrypt.cpp:121
-#, fuzzy, kde-format
+#, kde-format
 #| msgid "Decrypting %1"
 msgctxt "Status message 'Decrypted <filename>' (operation was completed)"
 msgid "Decrypted %1"
-msgstr "A descifrar %1"
+msgstr "Descifrouse %1."
 
 #: transactions/kgpggeneratekey.cpp:61
 #, kde-format
@@ -3699,13 +3733,13 @@ msgid "Key %1 generated"
 msgstr "Xerouse a chave %1"
 
 #: transactions/kgpggeneraterevoke.cpp:48
-#, fuzzy, kde-format
+#, kde-format
 #| msgid "Create revocation certificate for"
 msgid "Generating Revocation Certificate for key %1"
-msgstr "Crear un certificado de revogado para"
+msgstr "Xerando un certificado de revogación para a chave %1…"
 
 #: transactions/kgpgimport.cpp:128
-#, fuzzy, kde-format
+#, kde-format
 #| msgid ""
 #| "The import result string has an unsupported format.<br />Please see the "
 #| "detailed log for more information."
@@ -3713,8 +3747,8 @@ msgid ""
 "The import result string has an unsupported format in line %1.<br />Please "
 "see the detailed log for more information."
 msgstr ""
-"A cadea resultado da importación ten un formato non soportado.<br /> "
-"Consulte o rexistro detallado para máis información."
+"O formato da liña %1 da cadea de resultado da importación non se recoñece.<br "
+"/>Consulte o rexistro detallado para máis información."
 
 #: transactions/kgpgimport.cpp:139
 msgid "No key imported.<br />Please see the detailed log for more information."
@@ -3870,10 +3904,9 @@ msgid "<b>Connecting to the server...</b>"
 msgstr "<b>Conectando co servidor...</b>"
 
 #: transactions/kgpgtransaction.cpp:156
-#, fuzzy
 #| msgid "Enter passphrase"
 msgid "Got Passphrase"
-msgstr "Introduza o contrasinal"
+msgstr "Obtívose o contrasinal"
 
 #: transactions/kgpgtransaction.cpp:372 transactions/kgpgtransaction.cpp:559
 msgid "Requesting Passphrase"
@@ -3899,7 +3932,7 @@ msgstr[1] "<p><b>Contrasinal erróneo</b>. Quédanlle %1 intentos.</p>"
 #, kde-format
 msgctxt "first argument is formatted date, second argument is formatted time"
 msgid "The signature was created at %1 %2"
-msgstr ""
+msgstr "A sinatura creouse o %1 %2."
 
 #: transactions/kgpgverify.cpp:132 transactions/kgpgverify.cpp:166
 #, kde-format
@@ -3907,12 +3940,16 @@ msgid "<qt>Good signature from:<br /><b>%1</b><br />Key ID: %2<br /></qt>"
 msgstr "<qt>Sinatura boa desde:<br /><b>%1</b><br />ID da chave: %2<br /></qt>"
 
 #: transactions/kgpgverify.cpp:136 transactions/kgpgverify.cpp:170
-#, fuzzy, kde-format
+#, kde-format
 #| msgid "<qt>Good signature from:<br /><b>%1</b><br />Key ID: %2<br /></qt>"
 msgctxt "Good signature from: NAME <EMAIL>, Key ID: HEXID"
 msgid ""
 "<qt>Good signature from:<br /><b>%1 &lt;%2&gt;</b><br />Key ID: %3<br /></qt>"
-msgstr "<qt>Sinatura boa desde:<br /><b>%1</b><br />ID da chave: %2<br /></qt>"
+msgstr ""
+"<qt>Sinatura boa desde:<br /> "
+"<b>%1  &lt;%2&gt;</b><br /> "
+"ID da chave: %3<br /> "
+"</qt>"
 
 #: transactions/kgpgverify.cpp:182
 #, kde-format
