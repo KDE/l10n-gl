@@ -5,19 +5,20 @@
 # mvillarino <mvillarino@users.sourceforge.net>, 2008.
 # Xosé <xosecalvo@gmail.com>, 2009.
 # Marce Villarino <mvillarino@gmail.com>, 2009.
+# Adrian Chaves Fernandez <adriyetichaves@gmail.com>, 2012.
 msgid ""
 msgstr ""
 "Project-Id-Version: kdevexecute\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2012-07-21 13:37+0200\n"
-"PO-Revision-Date: 2009-11-15 12:43+0100\n"
-"Last-Translator: Marce Villarino <mvillarino@gmail.com>\n"
+"POT-Creation-Date: 2012-10-28 02:27+0100\n"
+"PO-Revision-Date: 2012-12-31 04:31+0100\n"
+"Last-Translator: Adrian Chaves Fernandez <adriyetichaves@gmail.com>\n"
 "Language-Team: Galician <proxecto@trasno.net>\n"
 "Language: gl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 1.0\n"
+"X-Generator: Lokalize 1.5\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Environment: kde\n"
 "X-Accelerator-Marker: &\n"
@@ -57,11 +58,16 @@ msgstr ""
 "Incluíuse un carácter meta de consola nos argumentos da configuración de "
 "lanzamento «%1», o que non se admite de momento. Cancélase o inicio."
 
-#: executeplugin.cpp:184
+#: executeplugin.cpp:135
+#, kde-format
+msgid "Couldn't resolve the dependency: %1"
+msgstr "Non foi posíbel resolver a dependencia: %1"
+
+#: executeplugin.cpp:189
 msgid "No valid executable specified"
 msgstr "Non se especificou un executábel válido"
 
-#: executeplugin.cpp:194
+#: executeplugin.cpp:199
 #, kde-format
 msgid ""
 "There is a quoting error in the executable for the launch configuration "
@@ -70,7 +76,7 @@ msgstr ""
 "Hai un erro de aspas no executábel da configuración de lanzamento «%1». "
 "Cancélase o inicio."
 
-#: executeplugin.cpp:199
+#: executeplugin.cpp:204
 #, kde-format
 msgid ""
 "A shell meta character was included in the executable for the launch "
@@ -79,18 +85,21 @@ msgstr ""
 "Incluíuse un carácter meta de consola no executábel da configuración de "
 "lanzamento «%1», o que non se admite de momento. Cancélase o inicio."
 
-#: nativeappconfig.cpp:274
+#: nativeappconfig.cpp:273
 msgid "Configure Native Application"
 msgstr "Configurar un programa nativo"
 
-#: nativeappconfig.cpp:294 nativeappconfig.cpp:353
+#: nativeappconfig.cpp:293
 msgid "Native Application"
 msgstr "Programa nativo"
 
-#: nativeappconfig.cpp:417
-#, fuzzy
+#: nativeappconfig.cpp:352
+msgid "Application"
+msgstr "Aplicativo"
+
+#: nativeappconfig.cpp:416
 msgid "Project Executables"
-msgstr "Executábel"
+msgstr "Executábeis do proxecto"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
 #: nativeappconfig.ui:17
@@ -109,13 +118,12 @@ msgstr "Executábel:"
 
 #. i18n: ectx: property (clickMessage), widget (KUrlRequester, executablePath)
 #: nativeappconfig.ui:88
-#, fuzzy
 msgid "Enter the executable name or absolute path to an executable file"
-msgstr "Introduza a rota absoluta a un ficheiro executábel"
+msgstr "Introduza o nome do executábel ou a súa ruta absoluta."
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
 #: nativeappconfig.ui:100
-msgid "Behaviour"
+msgid "Behavior"
 msgstr "Comportamento"
 
 #. i18n: ectx: property (text), widget (QLabel, label_3)
@@ -151,22 +159,26 @@ msgid "Select an environment to be used"
 msgstr "Escolla a contorna que quere empregar"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, runInTerminal)
-#: nativeappconfig.ui:176
+#: nativeappconfig.ui:191
 msgid ""
 "<p>By default applications will be run in the background and only their "
 "output will be displayed in a toolview. This makes it impossible to interact "
 "with applications requiring user input from a terminal emulator. To run such "
 "applications, you should use an external terminal.</p>"
 msgstr ""
+"<p>De maneira predeterminada, os aplicativos execútanse en segundo plano, e "
+"só se amosa a súa saída, nunha vista de ferramenta. Isto fai imposíbel "
+"comunicarse con aplicativos que requiren que o usuario introduza datos nun "
+"emulador de terminal. Para executar ese tipo de aplicativos, empregue un "
+"terminal externo.</p>"
 
 #. i18n: ectx: property (text), widget (QCheckBox, runInTerminal)
-#: nativeappconfig.ui:179
-#, fuzzy
-msgid "Use External Terminal"
-msgstr "Terminal externo:"
+#: nativeappconfig.ui:194
+msgid "Use External Terminal:"
+msgstr "Usar un terminal externo:"
 
 #. i18n: ectx: property (toolTip), widget (KComboBox, terminal)
-#: nativeappconfig.ui:196
+#: nativeappconfig.ui:219
 #, no-c-format
 msgid ""
 "<p>Defines the command to execute the external terminal emulator. Use the "
@@ -179,19 +191,28 @@ msgid ""
 "</dl>\n"
 "<p>The arguments defined above will get appended to this command.</p>"
 msgstr ""
+"<p>Define a orde para executar o emulador de terminal externo. Pode empregar "
+"os seguintes símbolos:</p>\n"
+"<dl>\n"
+"<dt><code>%exe</code></dt>\n"
+"<dd>Ruta ao executábel seleccionado máis arriba.</dd>\n"
+"<dt><code>%workdir</code></dt>\n"
+"<dd>Ruta ao directorio de traballo seleccionado máis arriba.</dd>\n"
+"</dl>\n"
+"<p>Os argumentos definidos máis arriba engadiranse a esta orde.</p>"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_3)
-#: nativeappconfig.ui:224
+#: nativeappconfig.ui:247
 msgid "Dependencies"
 msgstr "Dependencias"
 
 #. i18n: ectx: property (text), widget (QLabel, label_8)
-#: nativeappconfig.ui:230
+#: nativeappconfig.ui:253
 msgid "Action:"
 msgstr "Acción:"
 
 #. i18n: ectx: property (toolTip), widget (KComboBox, dependencyAction)
-#: nativeappconfig.ui:240
+#: nativeappconfig.ui:263
 msgid ""
 "Specifies the action to take for the dependencies before starting the "
 "executable."
@@ -200,7 +221,7 @@ msgstr ""
 "executábel."
 
 #. i18n: ectx: property (whatsThis), widget (KComboBox, dependencyAction)
-#: nativeappconfig.ui:243
+#: nativeappconfig.ui:266
 msgid ""
 "The selected action will be run before the executable is started.  This "
 "allows there to be parts of a project, upon which the executable does not "
@@ -211,47 +232,45 @@ msgstr ""
 "executábel, que se constrúan ou instalen antes de executar o programa."
 
 #. i18n: ectx: property (text), item, widget (KComboBox, dependencyAction)
-#: nativeappconfig.ui:250
+#: nativeappconfig.ui:273
 msgid "Do Nothing"
 msgstr "Non facer nada"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, dependencyAction)
-#: nativeappconfig.ui:255
-#, fuzzy
+#: nativeappconfig.ui:278
 msgctxt "@action"
 msgid "Build"
 msgstr "Construír"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, dependencyAction)
-#: nativeappconfig.ui:260
-#, fuzzy
+#: nativeappconfig.ui:283
 msgctxt "@action"
 msgid "Build and Install"
 msgstr "Construír e instalar"
 
 #. i18n: ectx: property (text), widget (QLabel, label_7)
-#: nativeappconfig.ui:268
+#: nativeappconfig.ui:291
 msgid "Targets:"
 msgstr "Destinos:"
 
 #. i18n: ectx: property (toolTip), widget (ProjectItemLineEdit, targetDependency)
 #. i18n: ectx: property (clickMessage), widget (ProjectItemLineEdit, targetDependency)
-#: nativeappconfig.ui:283 nativeappconfig.ui:286
+#: nativeappconfig.ui:306 nativeappconfig.ui:309
 msgid "Enter a dependency to add to the list"
 msgstr "Introduza unha dependencia para engadila á lista"
 
 #. i18n: ectx: property (toolTip), widget (QPushButton, addDependency)
-#: nativeappconfig.ui:306
+#: nativeappconfig.ui:329
 msgid "Adds the listed target to the dependency list."
 msgstr "Engade o destino listado á lista de dependencias."
 
 #. i18n: ectx: property (toolTip), widget (KListWidget, dependencies)
-#: nativeappconfig.ui:319
+#: nativeappconfig.ui:342
 msgid "List of indirect dependent targets."
 msgstr "Lista de destinos dependentes indirectos."
 
 #. i18n: ectx: property (whatsThis), widget (KListWidget, dependencies)
-#: nativeappconfig.ui:322
+#: nativeappconfig.ui:345
 msgid ""
 "This list should contain targets that the application does not directly "
 "depend on, but for which an action needs to be taken before running the "
@@ -262,17 +281,17 @@ msgstr ""
 "programa."
 
 #. i18n: ectx: property (toolTip), widget (QPushButton, removeDependency)
-#: nativeappconfig.ui:338
+#: nativeappconfig.ui:361
 msgid "Removes the selected dependencies from the list."
 msgstr "Elimina da lista as dependencias escollidas."
 
 #. i18n: ectx: property (toolTip), widget (QPushButton, moveDepUp)
-#: nativeappconfig.ui:351
+#: nativeappconfig.ui:374
 msgid "Move a dependency up in the list."
 msgstr "Sobe unha dependencia na lista."
 
 #. i18n: ectx: property (toolTip), widget (QPushButton, moveDepDown)
-#: nativeappconfig.ui:364
+#: nativeappconfig.ui:387
 msgid "Moves the selected dependency down in the list."
 msgstr "Baixa unha dependencia na lista."
 
@@ -299,12 +318,12 @@ msgstr "*** Programa matado ***"
 msgid "*** Exited normally ***"
 msgstr "*** Saíu con normalidade ***"
 
-#: nativeappjob.cpp:167
+#: nativeappjob.cpp:166
 #, kde-format
 msgid "*** Exited with return code: %1 ***"
 msgstr "*** Saíu co código de retorno: %1 ***"
 
-#: nativeappjob.cpp:170
+#: nativeappjob.cpp:169
 msgid "*** Process aborted ***"
 msgstr "*** Cancelouse o proceso ***"
 
@@ -313,7 +332,7 @@ msgstr "*** Cancelouse o proceso ***"
 msgid "*** Crashed with return code: %1 ***"
 msgstr "*** Pechouse inesperadamente co código de retorno: %1 ***"
 
-#: nativeappjob.cpp:182
+#: nativeappjob.cpp:184
 #, kde-format
 msgid ""
 "Could not start program '%1'. Make sure that the path is specified correctly."
@@ -321,33 +340,6 @@ msgstr ""
 "Non foi posíbel iniciar o programa «%1». Verifique que se especificase "
 "correctamente a rota."
 
-#: nativeappjob.cpp:184
+#: nativeappjob.cpp:186
 msgid "Could not start application"
 msgstr "Non foi posíbel iniciar o programa"
-
-#~ msgid "Enter a project target as path in the tree"
-#~ msgstr "Introduza un destino de proxecto como rota na árbore"
-
-#~ msgid "Installing via sudo is not yet implemented"
-#~ msgstr "Aínda non é posíbel instalar mediante sudo"
-
-#~ msgid "Not implemented"
-#~ msgstr "Aínda non é posíbel"
-
-#~ msgid "Build and Install (as Superuser)"
-#~ msgstr "Construír e instalar (como superusuario)"
-
-#~ msgid "When enabled, runs the application in an external terminal."
-#~ msgstr "Cando se activa executa o programa nun terminal externo."
-
-#~ msgid "Enter the path to an item from the projects tree"
-#~ msgstr "Introduza a ruta a un elemento da árbore de proxectos"
-
-#~ msgid "Run"
-#~ msgstr "Executar"
-
-#~ msgid "Run in external konsole"
-#~ msgstr "Executar nunha konsole externa"
-
-#~ msgid "Unsupported instrumentor"
-#~ msgstr "Intrumentador non soportado"

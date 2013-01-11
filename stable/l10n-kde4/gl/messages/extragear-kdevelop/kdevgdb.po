@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdevcppdebugger\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2012-09-01 13:05+0200\n"
+"POT-Creation-Date: 2012-12-30 02:16+0100\n"
 "PO-Revision-Date: 2009-11-15 12:24+0100\n"
 "Last-Translator: Marce Villarino <mvillarino@gmail.com>\n"
 "Language-Team: Galician <proxecto@trasno.net>\n"
@@ -31,14 +31,6 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "mvillarino@gmail.com"
 
-#: _watchitem.cpp:41
-msgid "Watches"
-msgstr "Vixías"
-
-#: _watchitem.cpp:59
-msgid "Recent"
-msgstr "Recente"
-
 #: breakpointcontroller.cpp:505
 #, kde-format
 msgid "<br>Old value: %1"
@@ -54,23 +46,23 @@ msgstr "<br>Valor novo: %1"
 msgid "Debugger Configuration"
 msgstr "Configuración do depurador"
 
-#. i18n: ectx: property (text), widget (QLabel, gdbPath_label)
-#: debuggerconfigwidget.ui:32
-msgid "Debugger executable:"
-msgstr "Executábel do depurador:"
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_3)
+#: debuggerconfigwidget.ui:26 debuggerplugin.cpp:429
+msgid "Debugger"
+msgstr "Depurador"
 
 #. i18n: ectx: property (toolTip), widget (KUrlRequester, kcfg_gdbPath)
-#: debuggerconfigwidget.ui:45
+#: debuggerconfigwidget.ui:32
 msgid "Gdb executable"
 msgstr "Executábel de gdb"
 
 #. i18n: ectx: property (whatsThis), widget (KUrlRequester, kcfg_gdbPath)
-#: debuggerconfigwidget.ui:48
+#: debuggerconfigwidget.ui:35
 msgid ""
 "To run \"gdb\" binary from $PATH, leave this field empty. To run custom gdb, "
 "for example, for a different architecture, enter the executable name here. "
-"You can either run gdb from $PATH, but with a different name (say, \"arm-gdb"
-"\"), by typing the name here, or specify full path to the gdb executable."
+"You can either run gdb from $PATH, but with a different name (say, \"arm-"
+"gdb\"), by typing the name here, or specify full path to the gdb executable."
 msgstr ""
 "Para executar o binario «gdb» desde a $PATH, deixe este campo baleiro. Para "
 "executar un gdb personalizado, por exemplo, para unha arquitectura "
@@ -78,33 +70,16 @@ msgstr ""
 "$PATH, pero cun nome diferente (por exemplo, «arm-gdb»), escribindo aquí o "
 "nome, ou indicar unha rota completa para o executábel gdb."
 
-#. i18n: ectx: property (toolTip), widget (QLabel, debuggingShell_label)
 #. i18n: ectx: property (toolTip), widget (KUrlRequester, kcfg_debuggingShell)
-#: debuggerconfigwidget.ui:61 debuggerconfigwidget.ui:80
+#. i18n: ectx: property (toolTip), widget (QLabel, debuggingShell_label)
+#: debuggerconfigwidget.ui:42 debuggerconfigwidget.ui:77
 msgid "Run gdb in a special shell (mainly for automake projects)"
 msgstr ""
 "Executar gdb nunha shell especial (principalmente para proxectos con "
 "automake)"
 
-#. i18n: ectx: property (whatsThis), widget (QLabel, debuggingShell_label)
-#: debuggerconfigwidget.ui:64
-msgid ""
-"If you want gdb to be executed by a special shell or tool insert it here. "
-"The main use-case is for Automake based projects where the application is "
-"actually only a script and libtool is needed to get it to run inside gdb."
-msgstr ""
-"Se quer que gdb sexa executado nunha shell ou ferramenta especial indíquea "
-"aquí. O principal caso de uso é para proxectos baseados en Automake onde o "
-"programa realmente só é un script e precísase libtool para que se execute "
-"dentro de gdb."
-
-#. i18n: ectx: property (text), widget (QLabel, debuggingShell_label)
-#: debuggerconfigwidget.ui:67
-msgid "Debugging &shell:"
-msgstr "&Shell de depuración:"
-
 #. i18n: ectx: property (whatsThis), widget (KUrlRequester, kcfg_debuggingShell)
-#: debuggerconfigwidget.ui:83
+#: debuggerconfigwidget.ui:45
 msgid ""
 "If you want gdb to be executed by a special shell or tool insert it here. "
 "The main use-case is for Automake based projects where the application is "
@@ -116,19 +91,42 @@ msgstr ""
 "programa realmente só é un script e precísase <b>libtool</b> para que se "
 "execute dentro de gdb."
 
+#. i18n: ectx: property (text), widget (QLabel, gdbPath_label)
+#: debuggerconfigwidget.ui:58
+msgid "Debugger executable:"
+msgstr "Executábel do depurador:"
+
+#. i18n: ectx: property (whatsThis), widget (QLabel, debuggingShell_label)
+#: debuggerconfigwidget.ui:80
+msgid ""
+"If you want gdb to be executed by a special shell or tool insert it here. "
+"The main use-case is for Automake based projects where the application is "
+"actually only a script and libtool is needed to get it to run inside gdb."
+msgstr ""
+"Se quer que gdb sexa executado nunha shell ou ferramenta especial indíquea "
+"aquí. O principal caso de uso é para proxectos baseados en Automake onde o "
+"programa realmente só é un script e precísase libtool para que se execute "
+"dentro de gdb."
+
+#. i18n: ectx: property (text), widget (QLabel, debuggingShell_label)
+#: debuggerconfigwidget.ui:83
+msgid "Debugging &shell:"
+msgstr "&Shell de depuración:"
+
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
-#: debuggerconfigwidget.ui:92
+#: debuggerconfigwidget.ui:99
 msgid "Options"
 msgstr "Opcións"
 
 #. i18n: ectx: property (text), widget (QLabel, label_3)
-#: debuggerconfigwidget.ui:101
+#: debuggerconfigwidget.ui:108
 #, fuzzy
+#| msgid "Display static &members"
 msgid "Display static &members:"
 msgstr "Mostrar os &membros estáticos"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, kcfg_displayStaticMembers)
-#: debuggerconfigwidget.ui:116
+#: debuggerconfigwidget.ui:123
 msgid ""
 "Displaying static members makes GDB slower in\n"
 "producing data within KDE and Qt.\n"
@@ -145,13 +143,14 @@ msgstr ""
 "sinale esta opción."
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
-#: debuggerconfigwidget.ui:126
+#: debuggerconfigwidget.ui:133
 #, fuzzy
+#| msgid "Display &demangled names"
 msgid "Display &demangled names:"
 msgstr "Mostrar os nomes &descodificados"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, kcfg_asmDemangle)
-#: debuggerconfigwidget.ui:138
+#: debuggerconfigwidget.ui:145
 msgid ""
 "When displaying the disassembled code you\n"
 "can select to see the methods' mangled names.\n"
@@ -162,29 +161,29 @@ msgstr ""
 "Porén, os nomes non descodificados son máis fáciles de ler."
 
 #. i18n: ectx: property (text), widget (QLabel, label)
-#: debuggerconfigwidget.ui:148
-#, fuzzy
+#: debuggerconfigwidget.ui:155
 msgid "Start Debugger with:"
-msgstr "Iniciar o depurador con"
+msgstr ""
 
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_startWith)
-#: debuggerconfigwidget.ui:159
+#: debuggerconfigwidget.ui:166
 #, fuzzy
+#| msgid "Application interrupted"
 msgid "Application Output"
 msgstr "O programa interrompeuse"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_startWith)
-#: debuggerconfigwidget.ui:164
+#: debuggerconfigwidget.ui:171
 msgid "GDB Console"
 msgstr ""
 
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_startWith)
-#: debuggerconfigwidget.ui:169
+#: debuggerconfigwidget.ui:176
 msgid "Frame Stack"
-msgstr "Pila de chamadas"
+msgstr ""
 
 #. i18n: ectx: property (whatsThis), widget (QGroupBox, groupBox)
-#: debuggerconfigwidget.ui:185
+#: debuggerconfigwidget.ui:190
 msgid ""
 "This script is intended for the actual commands needed to connect to a "
 "remotely running executable.\n"
@@ -199,41 +198,26 @@ msgstr ""
 "\tcontinue\t[opcional] executa a depuración até o primeiro punto de parada"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
-#: debuggerconfigwidget.ui:188
+#: debuggerconfigwidget.ui:193
 msgid "Remote Debugging"
 msgstr "Depuración remota"
 
-#. i18n: ectx: property (text), widget (QLabel, configGdbScript_label)
-#: debuggerconfigwidget.ui:194
-msgid "&Config gdb script:"
-msgstr "Script de &configuración de gdb:"
-
-#. i18n: ectx: property (toolTip), widget (KUrlRequester, kcfg_configGdbScript)
-#: debuggerconfigwidget.ui:207
-msgid "Gdb configure script"
-msgstr "Script de configuración de GDB"
-
-#. i18n: ectx: property (whatsThis), widget (KUrlRequester, kcfg_configGdbScript)
-#: debuggerconfigwidget.ui:210
-msgid "This script is sourced by gdb when the debugging starts."
-msgstr "Este script é usado como fonte por gdb cando comeza a depuración."
-
 #. i18n: ectx: property (text), widget (QLabel, runShellScript_label)
-#: debuggerconfigwidget.ui:220
+#: debuggerconfigwidget.ui:202
 msgctxt "Shell script to be executed at run time"
 msgid "R&un shell script:"
 msgstr "Executar o script de &shell:"
 
 #. i18n: ectx: property (toolTip), widget (KUrlRequester, kcfg_runShellScript)
-#: debuggerconfigwidget.ui:233
+#: debuggerconfigwidget.ui:215
 msgid "Script to start remote application"
 msgstr "Script para iniciar o programa remoto"
 
 #. i18n: ectx: property (whatsThis), widget (KUrlRequester, kcfg_runShellScript)
-#: debuggerconfigwidget.ui:242
+#: debuggerconfigwidget.ui:224
 msgid ""
-"This shell script is run after the Config gdb script has been sourced by "
-"gdb.\n"
+"This shell script is run after the Config gdb script has been sourced by gdb."
+"\n"
 "When debugging remotely this script is intended to actually start the remote "
 "process.\n"
 "[It is expected that the debug executable can be reached on the target, "
@@ -254,19 +238,18 @@ msgstr ""
 "ou se o seu executábel contén a matriz de gdb.\n"
 "2b) Execute «programa» no obxectivo."
 
-#. i18n: ectx: property (text), widget (QLabel, runGdbScript_label)
-#: debuggerconfigwidget.ui:249
-msgctxt "Gdb script to be executed at run time."
-msgid "Run &gdb script:"
-msgstr "Executar o script de &gdb:"
+#. i18n: ectx: property (text), widget (QLabel, configGdbScript_label)
+#: debuggerconfigwidget.ui:231
+msgid "&Config gdb script:"
+msgstr "Script de &configuración de gdb:"
 
 #. i18n: ectx: property (toolTip), widget (KUrlRequester, kcfg_runGdbScript)
-#: debuggerconfigwidget.ui:262
+#: debuggerconfigwidget.ui:244
 msgid "Script to connect with remote application"
 msgstr "O script para conectar cun programa remoto"
 
 #. i18n: ectx: property (whatsThis), widget (KUrlRequester, kcfg_runGdbScript)
-#: debuggerconfigwidget.ui:269
+#: debuggerconfigwidget.ui:251
 msgid ""
 "This script is sourced by gdb after the two preceding scripts have been "
 "executed.\n"
@@ -283,6 +266,22 @@ msgstr ""
 "\tshell sleep 5\tagarda o inicio do programa remoto\n"
 "\ttarget remote ...\tconecta co depurador remoto\n"
 "\tcontinue\t[opcional] executa a depuración até o primeiro punto de parada."
+
+#. i18n: ectx: property (text), widget (QLabel, runGdbScript_label)
+#: debuggerconfigwidget.ui:258
+msgctxt "Gdb script to be executed at run time."
+msgid "Run &gdb script:"
+msgstr "Executar o script de &gdb:"
+
+#. i18n: ectx: property (toolTip), widget (KUrlRequester, kcfg_configGdbScript)
+#: debuggerconfigwidget.ui:271
+msgid "Gdb configure script"
+msgstr "Script de configuración de GDB"
+
+#. i18n: ectx: property (whatsThis), widget (KUrlRequester, kcfg_configGdbScript)
+#: debuggerconfigwidget.ui:274
+msgid "This script is sourced by gdb when the debugging starts."
+msgstr "Este script é usado como fonte por gdb cando comeza a depuración."
 
 #: debuggerplugin.cpp:93
 msgid "GDB Support"
@@ -376,6 +375,7 @@ msgstr "A examinar o ficheiro core %1"
 
 #: debuggerplugin.cpp:382
 #, fuzzy
+#| msgid "Examine core file"
 msgid "Debug core file"
 msgstr "Examina un ficheiro core"
 
@@ -396,12 +396,9 @@ msgstr "A xuntar co proceso %1"
 
 #: debuggerplugin.cpp:413
 #, fuzzy, kde-format
+#| msgid "Attaching to process %1"
 msgid "Debug process %1"
 msgstr "A xuntar co proceso %1"
-
-#: debuggerplugin.cpp:429
-msgid "Debugger"
-msgstr "Depurador"
 
 #. i18n: ectx: property (windowTitle), widget (QDialog, DebuggerTracingDialog)
 #: debuggertracingdialog.ui:13
@@ -616,6 +613,7 @@ msgstr "Estado do depurador"
 
 #: debugsession.cpp:1437
 #, fuzzy, kde-format
+#| msgid "<b>You need gdb 7.0.0 or higher.</b><br />You are using: %1"
 msgid "<b>You need gdb 7.0.0 or higher.</b><br />You are using: %1"
 msgstr "<b>Precisa o gdb 7.0.0 ou superior.</b><br />Está a empregar: %1"
 
@@ -625,6 +623,7 @@ msgstr "Erro de gdb"
 
 #: debugsession.cpp:1450
 #, fuzzy
+#| msgid "Could not start debugger"
 msgid "<b>Could not start debugger:</b><br />"
 msgstr "Non foi posíbel iniciar o depurador"
 
@@ -634,11 +633,13 @@ msgstr ""
 
 #: debugsession.cpp:1462
 #, fuzzy
+#| msgid "Could not start debugger"
 msgid "<b>Could not attach debugger:</b><br />"
 msgstr "Non foi posíbel iniciar o depurador"
 
 #: disassemblewidget.cpp:60
 #, fuzzy
+#| msgid "Address"
 msgid "Address Selector"
 msgstr "Enderezo"
 
@@ -648,6 +649,7 @@ msgstr ""
 
 #: disassemblewidget.cpp:112
 #, fuzzy
+#| msgid "Address"
 msgid "End Address:"
 msgstr "Enderezo"
 
@@ -660,35 +662,35 @@ msgstr ""
 msgid ""
 "<b>Machine code display</b><p>A machine code view into your running "
 "executable with the current instruction highlighted. You can step "
-"instruction by instruction using the debuggers toolbar buttons of \"step over"
-"\" instruction and \"step into\" instruction."
+"instruction by instruction using the debuggers toolbar buttons of \"step "
+"over\" instruction and \"step into\" instruction."
 msgstr ""
 "<b>Pantalla do código-máquina</b><p>Unha vista do código-máquina no "
 "executábel a correr coa instrución actual realzada. Pode pasar instrución "
 "por instrución usando os botóns de «pasar sobre» e «pasar a» da barra de "
 "ferramentas de depuración."
 
-#: disassemblewidget.cpp:162
+#: disassemblewidget.cpp:163
 msgid "Address"
 msgstr "Enderezo"
 
-#: disassemblewidget.cpp:162
+#: disassemblewidget.cpp:163
 msgid "Function"
 msgstr "Función"
 
-#: disassemblewidget.cpp:163
+#: disassemblewidget.cpp:164
 msgid "Offset"
 msgstr "Desprazamento"
 
-#: disassemblewidget.cpp:163
+#: disassemblewidget.cpp:164
 msgid "Instruction"
 msgstr "Instrución"
 
-#: disassemblewidget.cpp:173
+#: disassemblewidget.cpp:174
 msgid "Disassemble View"
 msgstr "Vista do desensamblado"
 
-#: disassemblewidget.cpp:185
+#: disassemblewidget.cpp:186
 msgid "Change &address"
 msgstr ""
 
@@ -701,7 +703,7 @@ msgstr "Non foi posíbel localizar a shell de depuración «%1»."
 msgid "Debugging Shell Not Found"
 msgstr "Non se atopou a shell de depuración"
 
-#: gdb.cpp:330
+#: gdb.cpp:331
 msgctxt "<b>Internal debugger error</b>"
 msgid ""
 "<p>The debugger component encountered internal error while processing reply "
@@ -710,7 +712,7 @@ msgstr ""
 "<p>A compoñente de depuración atopou un erro interno ao procesar a resposta "
 "de gdb. Por favor, envíe un informe de erro"
 
-#: gdb.cpp:332
+#: gdb.cpp:333
 #, kde-format
 msgid ""
 "The exception is: %1\n"
@@ -719,11 +721,11 @@ msgstr ""
 "A excepción é: %1\n"
 "A resposta MI é: %2"
 
-#: gdb.cpp:335
+#: gdb.cpp:336
 msgid "Internal debugger error"
 msgstr "Erro interno do depurador"
 
-#: gdb.cpp:387
+#: gdb.cpp:388
 #, kde-format
 msgid ""
 "<b>Could not start debugger.</b><p>Could not run '%1'. Make sure that the "
@@ -732,17 +734,17 @@ msgstr ""
 "<b>Non foi posíbel iniciar o depurador.</b><p>Non foi posíbel executar «%1». "
 "Verifique que o nome da rota é correcto."
 
-#: gdb.cpp:391
+#: gdb.cpp:392
 msgid "Could not start debugger"
 msgstr "Non foi posíbel iniciar o depurador"
 
-#: gdb.cpp:408
+#: gdb.cpp:409
 msgid ""
 "<b>Gdb crashed.</b><p>Because of that the debug session has to be ended."
 "<br>Try to reproduce the crash with plain gdb and report a bug.<br>"
 msgstr ""
 
-#: gdb.cpp:411
+#: gdb.cpp:412
 msgid "Gdb crashed"
 msgstr ""
 
@@ -845,6 +847,7 @@ msgstr "Xuntar cun proceso"
 #. i18n: ectx: property (windowTitle), widget (QWidget, SelectAddress)
 #: selectaddress.ui:20
 #, fuzzy
+#| msgid "Address"
 msgid "Address selector"
 msgstr "Enderezo"
 
@@ -872,718 +875,6 @@ msgstr "Ficheiro core:"
 msgid "Select Core File"
 msgstr "Escoller un ficheiro core"
 
-#: stty.cpp:333
+#: stty.cpp:332
 msgid "kdevelop: Debug application console"
 msgstr "kdevelop: Consola de depuración de programa"
-
-#~ msgid ""
-#~ "This allows you to enter terminal input when your\n"
-#~ "application contains terminal input code (e.g. cin, fgets, etc.).\n"
-#~ "If you use terminal input in your application then check this option.\n"
-#~ "Otherwise leave it unchecked."
-#~ msgstr ""
-#~ "Isto permítelle introducir entradas de terminal cando o seu\n"
-#~ "programa conteña código de entrada por terminal (por ex. cin, fgets "
-#~ "etc.).\n"
-#~ "Se usa entradas por terminal no seu programa entón sinale esta opción.\n"
-#~ "Caso contrario déixea sen sinalar."
-
-#~ msgid "Enable separate terminal for application &IO"
-#~ msgstr "Activar unha terminal separada para a &E/S do programa"
-
-#~ msgid ""
-#~ "If GDB has not seen a library that will be loaded via\n"
-#~ "\"dlopen\" then it will refuse to set a breakpoint in that code.\n"
-#~ "With this option, GDB will stop on a library load and hence\n"
-#~ "try to set the pending breakpoints. See the documentation\n"
-#~ "for more details relating to this behavior.\n"
-#~ "\n"
-#~ "If you are not \"dlopen\"ing libs then leave this unchecked."
-#~ msgstr ""
-#~ "Se GDB non viu unha biblioteca que será cargada mediante\n"
-#~ "«dlopen» entón rexeitará un punto de parada nese código.\n"
-#~ "Con esta opción GDB deterase ao cargar unha biblioteca e\n"
-#~ "en consecuencia tente estabelecer os puntos de parada pendentes.\n"
-#~ "Consulte a documentación para máis detalles acerca deste\n"
-#~ "comportamento.\n"
-#~ "\n"
-#~ "Se non está a usar «dlopen» coas bibliotecas non o sinale."
-
-#~ msgid "Try setting &breakpoints on library loading"
-#~ msgstr "Tentar estabelecer &puntos de parada ao cargar bibliotecas"
-
-#~ msgid ""
-#~ "Use the floating toolbar. This toolbar always stays\n"
-#~ "on top of all windows so that if the app covers KDevelop\n"
-#~ "you have control of the app through the small toolbar. It\n"
-#~ "can also be docked into the panel.\n"
-#~ "\n"
-#~ "This toolbar is in addition to the toolbar in KDevelop."
-#~ msgstr ""
-#~ "Empregar a barra de ferramentas flutuante. Esta barra sempre\n"
-#~ "fica sobre as demais fiestras polo que se o programa cobre\n"
-#~ "a KDevelop terá o control do programa mediante esa barra.\n"
-#~ "Tamén pode ser acoplada no panel.\n"
-#~ "\n"
-#~ "Esta barra é a maiores da barra de ferramentas de KDevelop."
-
-#~ msgid "E&nable floating toolbar"
-#~ msgstr "Activar a barra de ferramentas &flutuante"
-
-#~ msgid "Debug views"
-#~ msgstr "Vistas de depuración"
-
-#~ msgid "Viewers"
-#~ msgstr "Visores"
-
-#~ msgid "Debugger viewers"
-#~ msgstr "Visores do depurador"
-
-#~ msgid ""
-#~ "<b>Debugger viewers</b><p>Various information about application being "
-#~ "executed. There are 4 views available:<br><b>Memory</"
-#~ "b><br><b>Disassemble</b><br><b>Registers</b><br><b>Libraries</b>"
-#~ msgstr ""
-#~ "<b>Visores do depurador</b><p>Diversas informacións acerca do programa "
-#~ "que se está a executar. Hai 4 vistas dispoñíbeis:<br><b>Memoria</"
-#~ "b><br><b>Desemsamblado</b><br><b>Rexistro</b><br><b>Bibliotecas</b>"
-
-#~ msgid ""
-#~ "<b>Application does not exist</b><p>The application you are trying to "
-#~ "debug,<br>    %1\n"
-#~ "<br>does not exist. Check that you have specified the right application "
-#~ "in the debugger configuration."
-#~ msgstr ""
-#~ "<b>O programa non existe</b><p>O programa que está a tentar depurar, "
-#~ "<br>    %1\n"
-#~ "<br>non existe. Verifique que indicase o programa correcto na "
-#~ "configuración do depurador."
-
-#~ msgid "Application does not exist"
-#~ msgstr "O programa non existe"
-
-#~ msgid ""
-#~ "<b>Could not run application '%1'.</b><p>The application does not have "
-#~ "the executable bit set. Try rebuilding the project, or change permissions "
-#~ "manually."
-#~ msgstr ""
-#~ "<b>Non foi posíbel executar o programa «%1».</b><p>O programa non ten "
-#~ "activado o bit de executábel. Probe a reconstruír o proxecto, ou a mudar "
-#~ "manualmente os permisos."
-
-#~ msgid "Could not run application"
-#~ msgstr "Non foi posíbel executar o programa"
-
-#~ msgid "Received signal"
-#~ msgstr "Recibeuse un sinal"
-
-#~ msgid ""
-#~ "gdb message:\n"
-#~ "%1"
-#~ msgstr ""
-#~ "mensaxe de gdb:\n"
-#~ "%1"
-
-#~ msgid "<%1 items>"
-#~ msgstr "<%1 itens>"
-
-#~ msgid "<a href=add_watch>Watch this</a>"
-#~ msgstr "<a href=add_watch>Vixiar isto</a>"
-
-#~ msgid "<a href=watchpoint>Stop on change</a>"
-#~ msgstr "<a href=watchpoint>Deter en caso de modificación</a>"
-
-#~ msgid "Debugger Variables"
-#~ msgstr "Variábeis do depurador"
-
-#, fuzzy
-#~ msgid ""
-#~ "<b>Variable tree</b><p>The variable tree allows you to see the values of "
-#~ "local variables and arbitrary expressions.</p><p>Local variables are "
-#~ "displayed automatically and are updated as you step through your program. "
-#~ "For each expression you enter, you can either evaluate it once, or \"watch"
-#~ "\" it (make it auto-updated). Expressions that are not auto-updated can "
-#~ "be updated manually from the context menu. Expressions can be renamed to "
-#~ "more descriptive names by clicking on the name column.</p><p>To change "
-#~ "the value of a variable or an expression, click on the value.</p>"
-#~ msgstr ""
-#~ "<b>Árbore da variábeis</b><p>A árbore de variábeis permítelle ver os "
-#~ "valores das variábeis locais e expresións arbitrarias.<p>As variábeis "
-#~ "locais son mostradas automaticamente e son actualizadas mentres circula "
-#~ "polo programa. Por cada expresión que introduza, pode ou avaliala unha "
-#~ "vez, ou «vixiala» (facer que se actualice automaticamente). As expresións "
-#~ "que non sexan actualizadas automaticamente poden ser actualizadas "
-#~ "manualmente no menú contextual. Pode mudar o nome das expresións para "
-#~ "darlles nomes máis descritivos premendo na coluna do nome.<p>Para mudar o "
-#~ "valor dunha variábel ou expresión, prema no valor."
-
-#, fuzzy
-#~ msgid "<b>Expression entry</b><p>Type in expression to watch.</p>"
-#~ msgstr "<b>Entrada de expresión</b><p>Escreba unha expresión para vixiar."
-
-#~ msgid "Recent Expressions"
-#~ msgstr "Expresións recentes"
-
-#~ msgid "Remove All"
-#~ msgstr "Eliminar todo"
-
-#~ msgid "Re-evaluate All"
-#~ msgstr "Avaliar todo de novo"
-
-#~ msgid "Format"
-#~ msgstr "Formato"
-
-#~ msgid "Natural"
-#~ msgstr "Natural"
-
-#~ msgid "Hexadecimal"
-#~ msgstr "Hexadecimal"
-
-#~ msgid "Decimal"
-#~ msgstr "Decimal"
-
-#~ msgid "Character"
-#~ msgstr "Caracter"
-
-#~ msgid "Binary"
-#~ msgstr "Binario"
-
-#~ msgid "Remember Value"
-#~ msgstr "Lembrar o valor"
-
-#~ msgid "Remove Watch Variable"
-#~ msgstr "Eliminar o vixilante da variábel"
-
-#~ msgid "Watch Variable"
-#~ msgstr "Vixiar a variábel"
-
-#~ msgid "Reevaluate Expression"
-#~ msgstr "Avaliar de novo a expresión"
-
-#~ msgid "Remove Expression"
-#~ msgstr "Eliminar a expresión"
-
-#~ msgid "Data write breakpoint"
-#~ msgstr "Ponto de parada de escrita de datos"
-
-#~ msgid "Copy Value"
-#~ msgstr "Copiar o valor"
-
-#~ msgid "Variables"
-#~ msgstr "Variábeis"
-
-#~ msgid "Variable"
-#~ msgstr "Variábel"
-
-#~ msgid "Value"
-#~ msgstr "Valor"
-
-#~ msgid "Type"
-#~ msgstr "Tipo"
-
-#, fuzzy
-#~ msgid "Form"
-#~ msgstr "Formato"
-
-#~ msgid "Framestack"
-#~ msgstr "Pila de chamadas"
-
-#~ msgid "Pid"
-#~ msgstr "Pid"
-
-#~ msgid "TTY"
-#~ msgstr "TTY"
-
-#~ msgid "Stat"
-#~ msgstr "Estado"
-
-#~ msgid "Time"
-#~ msgstr "Tempo"
-
-#~ msgid "Command"
-#~ msgstr "Comando"
-
-#~ msgid ""
-#~ "Debug arguments can be set on the Run Options page\n"
-#~ " or directly in the project manager"
-#~ msgstr ""
-#~ "Os argumentos de depuración poden ser estabelecidos na páxina de\n"
-#~ "Opcións de execución ou directamente no xestor de proxecto"
-
-#~ msgid ""
-#~ "<b>Invalid gdb reply</b><p>The 'stopped' packet does not include the "
-#~ "'reason' field."
-#~ msgstr ""
-#~ "<b>Resposta non válida de gdb</b><p>O paquete «parado» non inclúe o campo "
-#~ "«motivo»."
-
-#~ msgid "The gdb reply is: invalid"
-#~ msgstr "A reposta de gdb é: non válido"
-
-#~ msgid "Invalid gdb reply"
-#~ msgstr "Resposta de gdb non válida"
-
-#, fuzzy
-#~ msgctxt "Process Niceness"
-#~ msgid "Normal"
-#~ msgstr "Formato"
-
-#, fuzzy
-#~ msgctxt "Priority Class"
-#~ msgid "Real Time"
-#~ msgstr "Tempo"
-
-#, fuzzy
-#~ msgctxt "process status"
-#~ msgid "running"
-#~ msgstr "Aviso"
-
-#, fuzzy
-#~ msgctxt "process status"
-#~ msgid "stopped"
-#~ msgstr "Depurador detido"
-
-#, fuzzy
-#~ msgctxt "process status"
-#~ msgid "paging"
-#~ msgstr "Aviso"
-
-#, fuzzy
-#~ msgctxt "Scheduler"
-#~ msgid "Batch"
-#~ msgstr "Vixías"
-
-#, fuzzy
-#~ msgid "Show Application Window"
-#~ msgstr "O programa non existe"
-
-#, fuzzy
-#~ msgid "Continue (CONT)"
-#~ msgstr "&Continuar"
-
-#, fuzzy
-#~ msgid "Interrupt (INT)"
-#~ msgstr "Interromper"
-
-#, fuzzy
-#~ msgid "Send Signal"
-#~ msgstr "Recibeuse un sinal"
-
-#, fuzzy
-#~ msgid "Percentage"
-#~ msgstr "Recente"
-
-#, fuzzy
-#~ msgid "Display command line options"
-#~ msgstr "Mostrar os nomes non &pranchados"
-
-#, fuzzy
-#~ msgid "<br/>Command: %1"
-#~ msgstr "Comando"
-
-#, fuzzy
-#~ msgctxt "process heading"
-#~ msgid "Name"
-#~ msgstr "Marco"
-
-#, fuzzy
-#~ msgctxt "process heading"
-#~ msgid "TTY"
-#~ msgstr "TTY"
-
-#, fuzzy
-#~ msgctxt "process heading"
-#~ msgid "Memory"
-#~ msgstr "Vista da memoria"
-
-#, fuzzy
-#~ msgctxt "process heading"
-#~ msgid "Command"
-#~ msgstr "Comando"
-
-#, fuzzy
-#~ msgid "All Processes"
-#~ msgstr "Anexar ao proceso"
-
-#, fuzzy
-#~ msgid "All Processes, Tree"
-#~ msgstr "O proceso saiu"
-
-#, fuzzy
-#~ msgid "Normal"
-#~ msgstr "Formato"
-
-#, fuzzy
-#~ msgid "Batch"
-#~ msgstr "Vixías"
-
-#, fuzzy
-#~ msgid "Stop monitoring the process"
-#~ msgstr "A xuntar co proceso %1"
-
-#~ msgid "Start in debugger"
-#~ msgstr "Iniciar no depurador"
-
-#~ msgid ""
-#~ "<b>Start in debugger</b><p>Starts the debugger with the project's main "
-#~ "executable. You may set some breakpoints before this, or you can "
-#~ "interrupt the program while it is running, in order to get information "
-#~ "about variables, frame stack, and so on."
-#~ msgstr ""
-#~ "<b>Iniciar no depurador</b><p>Inicia o depurador co executábel principal "
-#~ "do proxecto. Pode estabelecer algúns pontos de parada antes de isto, ou "
-#~ "pode interromper o programa mentres está a executarse, para obter "
-#~ "información acerca das variábeis, pila de chamadas e cousas así."
-
-#~ msgid "Breakpoints"
-#~ msgstr "Pontos de parada"
-
-#, fuzzy
-#~ msgid ""
-#~ "<b>Frame stack</b><p>Often referred to as the \"call stack\", this is a "
-#~ "list showing which function is currently active, and what called each "
-#~ "function to get to this point in your program. By clicking on an item you "
-#~ "can see the values in any of the previous calling functions."
-#~ msgstr ""
-#~ "<b>Pila de chamadas</b><p>Esta é unha lista que mostra a función que está "
-#~ "activa e quen chamou a cada función para acadar este ponto do programa. "
-#~ "Se preme nun ítem poderá ver os valores en calquera das funcións "
-#~ "chamadoras."
-
-#~ msgid "Double-click to create new code breakpoint"
-#~ msgstr "Faga un duplo-clic para pór un novo ponto de parada no código"
-
-#~ msgid "Breakpoint is active"
-#~ msgstr "O punto de parada está activo"
-
-#~ msgid "Not hit yet"
-#~ msgstr "Aínda non acadado"
-
-#~ msgid "Ignore"
-#~ msgstr "Ignorar"
-
-#~ msgid "next hits"
-#~ msgstr "seguintes pasadas"
-
-#~ msgid "Breakpoint is %1"
-#~ msgstr "O punto de parada está %1"
-
-#~ msgid "Hit %1 time"
-#~ msgid_plural "Hit %1 times"
-#~ msgstr[0] "Atinxiuse %1 vez"
-#~ msgstr[1] "Atinxiuse %1 veces"
-
-#, fuzzy
-#~ msgid ""
-#~ "<b>Breakpoint is pending</b><p>Pending breakpoints are those that are "
-#~ "communucated to GDB, but which are not yet installed in the target, "
-#~ "because GDB cannot find the function or the file the breakpoint refers "
-#~ "to. The most common case is a breakpoint in a shared library: GDB will "
-#~ "insert this breakpoint only when the library is loaded."
-#~ msgstr ""
-#~ "<b>O punto de parada está pendente</b><p>Os puntos de parada pendentes "
-#~ "son aqueles que foron comunicados a GDB, pero que aínda non están "
-#~ "instalados no obxectivo, porque GDB non é capaz de achar a función ou o "
-#~ "ficheiro ao que se refire o punto de parada. O caso máis frecuente é que "
-#~ "o punto de parada estexa nunha biblioteca compartida. GDB inserirá este "
-#~ "punto de parada só cando se cargue a biblioteca."
-
-#~ msgid ""
-#~ "<b>Breakpoint is dirty</b><p>The breakpoint is not yet communicated to "
-#~ "GDB."
-#~ msgstr ""
-#~ "<b>O punto de parada está suxo</b><p>O punto de parada non foi comunicado "
-#~ "aínda a GDB."
-
-#~ msgid "Debugger Breakpoints"
-#~ msgstr "Pontos de parada do depurador"
-
-#~ msgid ""
-#~ "<b>Breakpoint list</b><p>Displays a list of breakpoints with their "
-#~ "current status. Clicking on a breakpoint item allows you to change the "
-#~ "breakpoint and will take you to the source in the editor window."
-#~ msgstr ""
-#~ "<b>Lista de pontos de parada</b><p>Mostra unha lista dos pontos de parada "
-#~ "co estado actual. Se preme nun ponto poderá mudar o ponto de parada e "
-#~ "levaráo á fonte na fiestra de edición."
-
-#~ msgctxt "New breakpoint"
-#~ msgid "New"
-#~ msgstr "Novo"
-
-#~ msgctxt "Code breakpoint"
-#~ msgid "Code"
-#~ msgstr "Código"
-
-#~ msgctxt "Data breakpoint"
-#~ msgid "Data write"
-#~ msgstr "Escrita de datos"
-
-#~ msgctxt "Data read breakpoint"
-#~ msgid "Data read"
-#~ msgstr "Leitura de datos"
-
-#~ msgid "Show text"
-#~ msgstr "Mostrar o texto"
-
-#~ msgid "Edit"
-#~ msgstr "Editar"
-
-#~ msgid "Disable"
-#~ msgstr "Deshabilitar"
-
-#~ msgid "Delete"
-#~ msgstr "Borrar"
-
-#~ msgid "Disable all"
-#~ msgstr "Deshabilitar todos"
-
-#~ msgid "Enable all"
-#~ msgstr "Habilitar todos"
-
-#~ msgid "Delete all"
-#~ msgstr "Borrar todos"
-
-#~ msgid "Enable"
-#~ msgstr "Habilitar"
-
-#~ msgid "&Start"
-#~ msgstr "&Iniciar"
-
-#~ msgid "&Restart"
-#~ msgstr "&Reiniciar"
-
-#~ msgid "Restart program"
-#~ msgstr "Reinicia o programa"
-
-#~ msgid ""
-#~ "<b>Restarts application</b><p>Restarts applications from the beginning."
-#~ msgstr ""
-#~ "<b>Reiniciar o programa</b><p>Comeza o programa de novo desde o principio."
-
-#~ msgid "Sto&p"
-#~ msgstr "&Deter"
-
-#~ msgid "Stop debugger"
-#~ msgstr "Detén o depurador"
-
-#~ msgid "<b>Stop debugger</b><p>Kills the executable and exits the debugger."
-#~ msgstr "<b>Deter o depurador</b><p>Mata o executábel e sae do depurador."
-
-#~ msgid "Interrupt application"
-#~ msgstr "Interrompe o programa"
-
-#~ msgid ""
-#~ "<b>Interrupt application</b><p>Interrupts the debugged process or current "
-#~ "GDB command."
-#~ msgstr ""
-#~ "<b>Interromper o programa</b><p>Interrompe o proceso de depurado ou o "
-#~ "comando actual de GDB."
-
-#~ msgid "Run to &Cursor"
-#~ msgstr "Executar até o &cursor"
-
-#~ msgid "Run to cursor"
-#~ msgstr "Executar até o cursor"
-
-#~ msgid ""
-#~ "<b>Run to cursor</b><p>Continues execution until the cursor position is "
-#~ "reached."
-#~ msgstr ""
-#~ "<b>Executar até o cursor</b><p>Continúa a execución até acadar a posición "
-#~ "do cursor."
-
-#~ msgid "Set E&xecution Position to Cursor"
-#~ msgstr "Pór o &ponto de execución no cursor"
-
-#~ msgid "Jump to cursor"
-#~ msgstr "Salta até o cursor"
-
-#~ msgid ""
-#~ "<b>Set Execution Position </b><p>Set the execution pointer to the current "
-#~ "cursor position."
-#~ msgstr ""
-#~ "<b>Pór o ponto de execución</b><p>Leva o ponteiro de execución á posición "
-#~ "actual do cursor."
-
-#~ msgid "Step &Over"
-#~ msgstr "Executar a &seguinte"
-
-#~ msgid "Step over the next line"
-#~ msgstr "Salta á seguinte liña"
-
-#~ msgid ""
-#~ "<b>Step over</b><p>Executes one line of source in the current source "
-#~ "file. If the source line is a call to a function the whole function is "
-#~ "executed and the app will stop at the line following the function call."
-#~ msgstr ""
-#~ "<b>Executar a seguinte</b><p>Executa unha liña do ficheiro de fontes "
-#~ "actual. Se a liña de fonte é unha chamada a unha función execútase toda a "
-#~ "función e o programa deterase na liña que segue á chamada."
-
-#~ msgid "Step over Ins&truction"
-#~ msgstr "Executar a seguinte &instrución"
-
-#~ msgid "Step over instruction"
-#~ msgstr "Executa a seguinte instrución"
-
-#~ msgid ""
-#~ "<b>Step over instruction</b><p>Steps over the next assembly instruction."
-#~ msgstr ""
-#~ "<b>Executar a seguinte instrución</b><p>Executa a seguinte instrución do "
-#~ "ensamblador."
-
-#~ msgid "Step &Into"
-#~ msgstr "Executar &unha liña"
-
-#~ msgid "Step into the next statement"
-#~ msgstr "Executa a seguinte sentenza"
-
-#~ msgid ""
-#~ "<b>Step into</b><p>Executes exactly one line of source. If the source "
-#~ "line is a call to a function then execution will stop after the function "
-#~ "has been entered."
-#~ msgstr ""
-#~ "<b>Executar unha liña</b><p>Executa exactamente unha liña de fontes. Se a "
-#~ "liña é unha chamada a unha función entón a execución deterase xusto tras "
-#~ "entrar na función."
-
-#~ msgid "Step into I&nstruction"
-#~ msgstr "Executar unha ins&trución"
-
-#~ msgid "Step into instruction"
-#~ msgstr "Executa unha instrución"
-
-#~ msgid ""
-#~ "<b>Step into instruction</b><p>Steps into the next assembly instruction."
-#~ msgstr ""
-#~ "<b>Executar unha instrución</b><p>Executa a seguinte instrución de "
-#~ "ensamblador."
-
-#~ msgid "Step O&ut"
-#~ msgstr "Executar até &sair"
-
-#~ msgid "Steps out of the current function"
-#~ msgstr "Executa até sair da función actual"
-
-#~ msgid ""
-#~ "<b>Step out</b><p>Executes the application until the currently executing "
-#~ "function is completed. The debugger will then display the line after the "
-#~ "original call to that function. If program execution is in the outermost "
-#~ "frame (i.e. in main()) then this operation has no effect."
-#~ msgstr ""
-#~ "<b>Executar até saír</b><p>Executa o programa até que se complete a "
-#~ "función que se está a executar. Entón o depurador mostrará a liña tras da "
-#~ "chamada orixinal á función. Se a execución do programa está na pila máis "
-#~ "externa (i.e. en main()) entón esta operación non ten efeito nengún."
-
-#~ msgid "Toggle Breakpoint"
-#~ msgstr "Comutar o ponto de parada"
-
-#~ msgid "Toggle breakpoint"
-#~ msgstr "Comutar o ponto de parada"
-
-#~ msgid ""
-#~ "<b>Toggle breakpoint</b><p>Toggles the breakpoint at the current line in "
-#~ "editor."
-#~ msgstr ""
-#~ "<b>Comutar o ponto de parada</b><p>Comuta o ponto de parada na liña "
-#~ "actual do editor."
-
-#~ msgid "Runs the program in the debugger"
-#~ msgstr "Executa o programa no depurador"
-
-#~ msgid ""
-#~ "Start in debugger\n"
-#~ "\n"
-#~ "Starts the debugger with the project's main executable. You may set some "
-#~ "breakpoints before this, or you can interrupt the program while it is "
-#~ "running, in order to get information about variables, frame stack, and so "
-#~ "on."
-#~ msgstr ""
-#~ "Iniciar no depurador\n"
-#~ "\n"
-#~ "Inicia o depurador co executábel principal do programa. Pode estabelecer "
-#~ "algúns pontos de parada antes disto, ou pode interromper o programa "
-#~ "mentres está a executarse, para obter información acerca de variábeis, "
-#~ "pila de chamada, etc."
-
-#~ msgid "Continues the application execution"
-#~ msgstr "Continúa coa execución do programa"
-
-#~ msgid ""
-#~ "Continue application execution\n"
-#~ "\n"
-#~ "Continues the execution of your application in the debugger. This only "
-#~ "takes effect when the application has been halted by the debugger (i.e. a "
-#~ "breakpoint has been activated or the interrupt was pressed)."
-#~ msgstr ""
-#~ "Continuar a execución do programa\n"
-#~ "\n"
-#~ "Continúa a execución do programa no depurador. Isto só ten efeito cando o "
-#~ "programa fose detido polo depurador (i.e. un ponto de parada foi activado "
-#~ "ou premeuse en interromper)."
-
-#~ msgid "Breakpoint"
-#~ msgstr "Ponto de parada"
-
-#~ msgid " temporary"
-#~ msgstr " temporal"
-
-#~ msgid " hw"
-#~ msgstr " hw"
-
-#~ msgid "Enabled"
-#~ msgstr "Habilitado"
-
-#~ msgid "Disabled"
-#~ msgstr "Deshabilitado"
-
-#~ msgid "Status"
-#~ msgstr "Estado"
-
-#~ msgid "Location"
-#~ msgstr "Lugar"
-
-#~ msgid "Condition"
-#~ msgstr "Condición"
-
-#~ msgid "Ignore Count"
-#~ msgstr "Ignorar a cantidade"
-
-#~ msgid "Hits"
-#~ msgstr "Acesos"
-
-#~ msgid "Tracing"
-#~ msgstr "Trazado"
-
-#~ msgid "Pending (add)"
-#~ msgstr "Pendentes (engadir)"
-
-#~ msgid "Pending (clear)"
-#~ msgstr "Pendentes (limpar)"
-
-#~ msgid "Pending (modify)"
-#~ msgstr "Pendentes (modificar)"
-
-#~ msgid "Active"
-#~ msgstr "Activo"
-
-#~ msgid ""
-#~ "<b>Data write breakpoint</b><br>Expression: %1<br>Address: 0x%2<br>Old "
-#~ "value: %3<br>New value: %4"
-#~ msgstr ""
-#~ "<b>Ponto de parada de escrita de datos</b><br>Expresión: %1<br>Enderezo: "
-#~ "0x%2<br>Valor antigo: %3<br>Novo valor: %4"
-
-#~ msgid "Invalid"
-#~ msgstr "Non válido"
-
-#~ msgid "Watchpoint"
-#~ msgstr "Ponto de vixiancia"
-
-#~ msgid "Read Watchpoint"
-#~ msgstr "Ler o ponto de vixía"
-
-#~ msgid "C++ Debugger"
-#~ msgstr "Depurador de C++"
