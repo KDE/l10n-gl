@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2013-01-08 12:44+0100\n"
+"POT-Creation-Date: 2013-01-27 04:03+0100\n"
 "PO-Revision-Date: 2009-12-14 23:52+0100\n"
 "Last-Translator: Xosé <xosecalvo@gmail.com>\n"
 "Language-Team: Galego <proxecto@trasno.net>\n"
@@ -1241,7 +1241,7 @@ msgstr "unicode"
 
 #. i18n: ectx: label, entry (UserID), group (Samba)
 #: core/smb4k.kcfg:530 core/smb4kcustomoptionsmanager_p.cpp:272
-#: smb4k/configdlg/smb4ksambaoptions.cpp:809
+#: smb4k/configdlg/smb4kcustomoptionspage.cpp:182
 msgid "User ID:"
 msgstr "Identificador do usuario:"
 
@@ -1259,7 +1259,7 @@ msgstr ""
 
 #. i18n: ectx: label, entry (GroupID), group (Samba)
 #: core/smb4k.kcfg:535 core/smb4kcustomoptionsmanager_p.cpp:294
-#: smb4k/configdlg/smb4ksambaoptions.cpp:823
+#: smb4k/configdlg/smb4kcustomoptionspage.cpp:196
 msgid "Group ID:"
 msgstr "Identificador do grupo:"
 
@@ -2655,7 +2655,7 @@ msgstr ""
 "caso hai que desmontar as comparticións manualmente antes de suspender o "
 "computador."
 
-#: core/smb4kbookmarkhandler.cpp:315 core/smb4kcustomoptionsmanager.cpp:304
+#: core/smb4kbookmarkhandler.cpp:315 core/smb4kcustomoptionsmanager.cpp:301
 #, kde-format
 msgid "The format of %1 is not supported."
 msgstr ""
@@ -2700,7 +2700,7 @@ msgstr ""
 
 #: core/smb4kbookmarkhandler_p.cpp:501
 #: smb4k/configdlg/smb4kauthoptions.cpp:167
-#: smb4k/configdlg/smb4ksambaoptions.cpp:721
+#: smb4k/configdlg/smb4kcustomoptionspage.cpp:67
 msgid "Remove"
 msgstr "Eliminar"
 
@@ -2726,7 +2726,7 @@ msgid "Group name:"
 msgstr "Identificador do grupo:"
 
 #: core/smb4kcustomoptionsmanager_p.cpp:50
-#: smb4k/configdlg/smb4ksambaoptions.cpp:878
+#: smb4k/configdlg/smb4kconfigdialog.cpp:160
 msgid "Custom Options"
 msgstr "Opcións personalizadas"
 
@@ -2744,7 +2744,7 @@ msgid "<p>Define custom options for share <b>%1</b> at host <b>%2</b>.</p>"
 msgstr "Non foi posíbel desmontar a compartición."
 
 #: core/smb4kcustomoptionsmanager_p.cpp:126 core/smb4kmounter_p.cpp:1252
-#: core/smb4kprint_p.cpp:409 smb4k/configdlg/smb4ksambaoptions.cpp:752
+#: core/smb4kprint_p.cpp:409 smb4k/configdlg/smb4kcustomoptionspage.cpp:104
 #, fuzzy
 #| msgid "IP Address:"
 msgid "UNC Address:"
@@ -2757,21 +2757,21 @@ msgid "SMB Port:"
 msgstr "Porto SMB:"
 
 #: core/smb4kcustomoptionsmanager_p.cpp:138
-#: smb4k/configdlg/smb4ksambaoptions.cpp:769
+#: smb4k/configdlg/smb4kcustomoptionspage.cpp:142
 #, fuzzy
 #| msgid "File system port:"
 msgid "Filesystem Port:"
 msgstr "Porto do sistema de ficheiros:"
 
 #: core/smb4kcustomoptionsmanager_p.cpp:145
-#: smb4k/configdlg/smb4ksambaoptions.cpp:778
+#: smb4k/configdlg/smb4kcustomoptionspage.cpp:151
 #, fuzzy
 #| msgid "Write Access"
 msgid "Write Access:"
 msgstr "Acceso de escrita"
 
 #: core/smb4kcustomoptionsmanager_p.cpp:196
-#: smb4k/configdlg/smb4ksambaoptions.cpp:791
+#: smb4k/configdlg/smb4kcustomoptionspage.cpp:164
 #, fuzzy
 #| msgid "Protocol hint:"
 msgid "Protocol Hint:"
@@ -2788,7 +2788,7 @@ msgstr "Indicar o usuario"
 
 #: core/smb4khomesshareshandler_p.cpp:83
 #: smb4k/configdlg/smb4kauthoptions.cpp:168
-#: smb4k/configdlg/smb4ksambaoptions.cpp:725
+#: smb4k/configdlg/smb4kcustomoptionspage.cpp:71
 msgid "Clear List"
 msgstr "Limpar a lista"
 
@@ -3318,7 +3318,7 @@ msgstr "Fonte:"
 msgid "Destination"
 msgstr "Destino:"
 
-#: core/smb4ksynchronizer_p.cpp:820 smb4k/configdlg/smb4kconfigdialog.cpp:151
+#: core/smb4ksynchronizer_p.cpp:820 smb4k/configdlg/smb4kconfigdialog.cpp:158
 msgid "Synchronization"
 msgstr "Sincronización"
 
@@ -3424,7 +3424,7 @@ msgstr "Non foi posíbel crear o navegador de rede."
 #: smb4k/browser/smb4knetworkbrowser.cpp:67
 #: smb4k/browser/smb4knetworkbrowser_part.cpp:289
 #: smb4k/browser/smb4knetworkbrowser_part.cpp:440
-#: smb4k/configdlg/smb4kconfigdialog.cpp:147
+#: smb4k/configdlg/smb4kconfigdialog.cpp:154
 msgid "Network"
 msgstr "Rede"
 
@@ -3566,7 +3566,7 @@ msgid "Default Login"
 msgstr "Inicio de sesión por omisión"
 
 #: smb4k/configdlg/smb4kauthoptions.cpp:115
-#: smb4k/configdlg/smb4ksambaoptions.cpp:202
+#: smb4k/configdlg/smb4ksambaoptions.cpp:194
 #: smb4k/configdlg/smb4kuserinterfaceoptions.cpp:88
 msgid "General Settings"
 msgstr "Configuración xeral"
@@ -3621,13 +3621,13 @@ msgid ""
 msgstr ""
 
 #: smb4k/configdlg/smb4kauthoptions.cpp:169
-#: smb4k/configdlg/smb4ksambaoptions.cpp:717
+#: smb4k/configdlg/smb4kcustomoptionspage.cpp:63
 msgid "Edit"
 msgstr "Modificar"
 
 #: smb4k/configdlg/smb4kauthoptions.cpp:170
 #: smb4k/configdlg/smb4kauthoptions.cpp:171
-#: smb4k/configdlg/smb4ksambaoptions.cpp:729
+#: smb4k/configdlg/smb4kcustomoptionspage.cpp:75
 #, fuzzy
 #| msgid "no"
 msgid "Undo"
@@ -3663,32 +3663,33 @@ msgstr "Inicio de sesión"
 msgid "Password"
 msgstr "Contrasinal:"
 
-#: smb4k/configdlg/smb4kconfigdialog.cpp:146
+#: smb4k/configdlg/smb4kconfigdialog.cpp:153
 msgid "User Interface"
 msgstr "Interface do usuario"
 
-#: smb4k/configdlg/smb4kconfigdialog.cpp:148
+#: smb4k/configdlg/smb4kconfigdialog.cpp:155
 #: smb4k/sharesview/smb4ksharesview_part.cpp:367
 #: smb4k/sharesview/smb4ksharesview_part.cpp:634
 #: smb4k/sharesview/smb4ksharesview_part.cpp:655
 msgid "Shares"
 msgstr "Comparticións"
 
-#: smb4k/configdlg/smb4kconfigdialog.cpp:149
+#: smb4k/configdlg/smb4kconfigdialog.cpp:156
 #: smb4k/configdlg/smb4knetworkoptions.cpp:105
-#: smb4k/configdlg/smb4ksambaoptions.cpp:149
+#: smb4k/configdlg/smb4ksambaoptions.cpp:141
 msgid "Authentication"
 msgstr "Autenticación"
 
-#: smb4k/configdlg/smb4kconfigdialog.cpp:150
+#: smb4k/configdlg/smb4kconfigdialog.cpp:157
+#: smb4k/configdlg/smb4kcustomoptionspage.cpp:123
 msgid "Samba"
 msgstr "Samba"
 
-#: smb4k/configdlg/smb4kconfigdialog.cpp:152
+#: smb4k/configdlg/smb4kconfigdialog.cpp:159
 msgid "Laptop Support"
 msgstr "Funcionamento en portátiles"
 
-#: smb4k/configdlg/smb4kconfigdialog.cpp:222
+#: smb4k/configdlg/smb4kconfigdialog.cpp:230
 #, fuzzy
 #| msgid "A custom master browser that is to be queried"
 msgid ""
@@ -3696,37 +3697,37 @@ msgid ""
 "Please enter it now."
 msgstr "Un navegador mestre personalizado ao que consultar"
 
-#: smb4k/configdlg/smb4kconfigdialog.cpp:238
+#: smb4k/configdlg/smb4kconfigdialog.cpp:246
 msgid ""
 "The broadcast areas that are to be scanned have not been filled in.\n"
 "Please enter them now."
 msgstr ""
 
-#: smb4k/configdlg/smb4kconfigdialog.cpp:255
+#: smb4k/configdlg/smb4kconfigdialog.cpp:263
 msgid ""
 "The mount prefix has not been filled in.\n"
 "Please enter it now."
 msgstr ""
 
-#: smb4k/configdlg/smb4kconfigdialog.cpp:279
+#: smb4k/configdlg/smb4kconfigdialog.cpp:287
 msgid ""
 "The file mask has not been filled in.\n"
 "Please enter it now."
 msgstr ""
 
-#: smb4k/configdlg/smb4kconfigdialog.cpp:297
+#: smb4k/configdlg/smb4kconfigdialog.cpp:305
 msgid ""
 "The directory mask has not been filled in.\n"
 "Please enter it now."
 msgstr ""
 
-#: smb4k/configdlg/smb4kconfigdialog.cpp:318
+#: smb4k/configdlg/smb4kconfigdialog.cpp:326
 msgid ""
 "The synchronization prefix has not been filled in.\n"
 "Please enter it now."
 msgstr ""
 
-#: smb4k/configdlg/smb4kconfigdialog.cpp:338
+#: smb4k/configdlg/smb4kconfigdialog.cpp:346
 #, fuzzy
 #| msgid ""
 #| "[Synchronization] The directory where partially transferred files should "
@@ -3739,46 +3740,77 @@ msgstr ""
 "[Sincronización] O directorio no que se deben almacenar os ficheiros "
 "transferidos parcialmente está baleiro."
 
-#: smb4k/configdlg/smb4kconfigdialog.cpp:360
+#: smb4k/configdlg/smb4kconfigdialog.cpp:368
 msgid ""
 "The exclude pattern for synchronization has not been filled in.\n"
 "Please enter it now."
 msgstr ""
 
-#: smb4k/configdlg/smb4kconfigdialog.cpp:381
+#: smb4k/configdlg/smb4kconfigdialog.cpp:389
 msgid ""
 "The file from which the exclude pattern for synchronization are to be read\n"
 "has not been filled in.\n"
 "Please enter it now."
 msgstr ""
 
-#: smb4k/configdlg/smb4kconfigdialog.cpp:402
+#: smb4k/configdlg/smb4kconfigdialog.cpp:410
 msgid ""
 "The include pattern for synchronization has not been filled in.\n"
 "Please enter it now."
 msgstr ""
 
-#: smb4k/configdlg/smb4kconfigdialog.cpp:423
+#: smb4k/configdlg/smb4kconfigdialog.cpp:431
 msgid ""
 "The file from which the include pattern for synchronization are to be read\n"
 "has not been filled in.\n"
 "Please enter it now."
 msgstr ""
 
-#: smb4k/configdlg/smb4kconfigdialog.cpp:448
+#: smb4k/configdlg/smb4kconfigdialog.cpp:456
 msgid ""
 "The backup suffix for synchronization has not been filled in.\n"
 "Please enter it now."
 msgstr ""
 
-#: smb4k/configdlg/smb4kconfigdialog.cpp:468
+#: smb4k/configdlg/smb4kconfigdialog.cpp:476
 msgid ""
 "The backup directory for synchronization has not been filled in.\n"
 "Please enter it now."
 msgstr ""
 
-#: smb4k/configdlg/smb4kconfigdialog.cpp:594
+#: smb4k/configdlg/smb4kconfigdialog.cpp:602
 msgid "Enter the default login information."
+msgstr ""
+
+#: smb4k/configdlg/smb4kcustomoptionspage.cpp:95
+#: smb4k/configdlg/smb4krsyncoptions.cpp:79
+#: smb4k/configdlg/smb4krsyncoptions.cpp:342
+#: smb4k/configdlg/smb4krsyncoptions.cpp:439
+msgid "General"
+msgstr "Xeral"
+
+#: smb4k/configdlg/smb4kcustomoptionspage.cpp:111
+#, fuzzy
+#| msgid "IP Address:"
+msgid "IP address:"
+msgstr "Enderezo IP:"
+
+#: smb4k/configdlg/smb4kcustomoptionspage.cpp:240
+msgid "Wake On LAN"
+msgstr ""
+
+#: smb4k/configdlg/smb4kcustomoptionspage.cpp:249
+#, fuzzy
+#| msgid "IP Address:"
+msgid "MAC address:"
+msgstr "Enderezo IP:"
+
+#: smb4k/configdlg/smb4kcustomoptionspage.cpp:256
+msgid "Send magic package before the first scan of the network neighborhood"
+msgstr ""
+
+#: smb4k/configdlg/smb4kcustomoptionspage.cpp:258
+msgid "Send magic package before a mount attempt"
 msgstr ""
 
 #: smb4k/configdlg/smb4klaptopsupportoptions.cpp:54
@@ -3806,12 +3838,6 @@ msgstr ""
 #: smb4k/configdlg/smb4krsyncoptions.cpp:61
 msgid "Default Destination"
 msgstr "Destino por omisión"
-
-#: smb4k/configdlg/smb4krsyncoptions.cpp:79
-#: smb4k/configdlg/smb4krsyncoptions.cpp:342
-#: smb4k/configdlg/smb4krsyncoptions.cpp:439
-msgid "General"
-msgstr "Xeral"
 
 #: smb4k/configdlg/smb4krsyncoptions.cpp:126
 msgid "Links"
@@ -3869,59 +3895,59 @@ msgstr "Sumas de verificación"
 msgid "Advanced Settings"
 msgstr "Opcións avanzadas"
 
-#: smb4k/configdlg/smb4ksambaoptions.cpp:82
+#: smb4k/configdlg/smb4ksambaoptions.cpp:74
 msgid "General Options"
 msgstr "Opcións xerais"
 
-#: smb4k/configdlg/smb4ksambaoptions.cpp:121
+#: smb4k/configdlg/smb4ksambaoptions.cpp:113
 msgid "Remote Ports"
 msgstr "Portos remotos"
 
-#: smb4k/configdlg/smb4ksambaoptions.cpp:170
+#: smb4k/configdlg/smb4ksambaoptions.cpp:162
 msgid "Security"
 msgstr ""
 
-#: smb4k/configdlg/smb4ksambaoptions.cpp:214
+#: smb4k/configdlg/smb4ksambaoptions.cpp:206
 msgid "Common Options"
 msgstr "Opcións comúns"
 
-#: smb4k/configdlg/smb4ksambaoptions.cpp:235
+#: smb4k/configdlg/smb4ksambaoptions.cpp:227
 msgid "Choose a different user"
 msgstr "Escoller un usuario diferente"
 
-#: smb4k/configdlg/smb4ksambaoptions.cpp:282
+#: smb4k/configdlg/smb4ksambaoptions.cpp:274
 msgid "Choose a different group"
 msgstr "Escoller un grupo diferente"
 
-#: smb4k/configdlg/smb4ksambaoptions.cpp:506
+#: smb4k/configdlg/smb4ksambaoptions.cpp:498
 msgid "Advanced Options"
 msgstr "Opcións avanzadas"
 
-#: smb4k/configdlg/smb4ksambaoptions.cpp:593
+#: smb4k/configdlg/smb4ksambaoptions.cpp:585
 msgid "Mounting"
 msgstr "Montaxe"
 
-#: smb4k/configdlg/smb4ksambaoptions.cpp:605
+#: smb4k/configdlg/smb4ksambaoptions.cpp:597
 msgid "net"
 msgstr "rede"
 
-#: smb4k/configdlg/smb4ksambaoptions.cpp:630
+#: smb4k/configdlg/smb4ksambaoptions.cpp:622
 msgid "smbclient"
 msgstr "smbclient"
 
-#: smb4k/configdlg/smb4ksambaoptions.cpp:648
+#: smb4k/configdlg/smb4ksambaoptions.cpp:640
 msgid " Bytes"
 msgstr " Bytes"
 
-#: smb4k/configdlg/smb4ksambaoptions.cpp:659
+#: smb4k/configdlg/smb4ksambaoptions.cpp:651
 msgid "nmblookup"
 msgstr "nmblookup"
 
-#: smb4k/configdlg/smb4ksambaoptions.cpp:681
+#: smb4k/configdlg/smb4ksambaoptions.cpp:673
 msgid "smbtree"
 msgstr "smbtree"
 
-#: smb4k/configdlg/smb4ksambaoptions.cpp:698
+#: smb4k/configdlg/smb4ksambaoptions.cpp:690
 #, fuzzy
 #| msgid "Client Programs"
 msgid "Utility Programs"
