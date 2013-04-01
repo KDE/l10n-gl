@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdenlive\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2013-03-31 04:03+0200\n"
+"POT-Creation-Date: 2013-04-01 03:18+0200\n"
 "PO-Revision-Date: 2012-12-29 23:20+0100\n"
 "Last-Translator: Adrian Chaves Fernandez <adriyetichaves@gmail.com>\n"
 "Language-Team: Galician <proxecto@trasno.net>\n"
@@ -3378,10 +3378,10 @@ msgstr "Non foi posíbel crear o ficheiro temporal"
 #: src/dvdwizard.cpp:959 src/kdenlivedoc.cpp:797 src/kdenlivedoc.cpp:803
 #: src/mainwindow.cpp:4285 src/mainwindow.cpp:4290 src/profilesdialog.cpp:219
 #: src/profilesdialog.cpp:225 src/profilesdialog.cpp:551
-#: src/profilesdialog.cpp:557 src/renderwidget.cpp:562
-#: src/renderwidget.cpp:701 src/renderwidget.cpp:707 src/renderwidget.cpp:767
-#: src/renderwidget.cpp:998 src/renderwidget.cpp:1010
-#: src/renderwidget.cpp:2049 src/renderwidget.cpp:2072
+#: src/profilesdialog.cpp:557 src/renderwidget.cpp:575
+#: src/renderwidget.cpp:727 src/renderwidget.cpp:733 src/renderwidget.cpp:793
+#: src/renderwidget.cpp:1024 src/renderwidget.cpp:1036
+#: src/renderwidget.cpp:2075 src/renderwidget.cpp:2098
 #: src/titlewidget.cpp:1887
 #, kde-format
 msgid "Cannot write to file %1"
@@ -3797,7 +3797,7 @@ msgstr "%1°"
 msgid "%1 px"
 msgstr "%1 px"
 
-#: src/colorplaneexport.cpp:166 src/renderwidget.cpp:850
+#: src/colorplaneexport.cpp:166 src/renderwidget.cpp:876
 #, kde-format
 msgid "File has no extension. Add extension (%1)?"
 msgstr "O ficheiro non ten extensión. Engadir unha extensión (%1)?"
@@ -4578,7 +4578,7 @@ msgid "Cannot change grouped clips"
 msgstr "Non se poden cambiar fragmentos agrupados"
 
 #. i18n: ectx: property (text), widget (QCheckBox, profile_audioonly)
-#: src/customtrackview.cpp:6974 src/renderwidget.cpp:1495
+#: src/customtrackview.cpp:6974 src/renderwidget.cpp:1521
 #: src/widgets/configtranscode_ui.ui:100
 msgid "Audio only"
 msgstr "Só o son"
@@ -5131,13 +5131,14 @@ msgstr "Miscelánea"
 #. i18n: ectx: property (text), widget (QCheckBox, rec_audio)
 #. i18n: ectx: attribute (title), widget (QWidget, tab_audio)
 #. i18n: ectx: property (text), widget (QCheckBox, audio_thumbs)
+#. i18n: ectx: property (title), widget (QGroupBox, abitrates)
 #: src/effectslistwidget.cpp:102 src/effectslistwidget.cpp:131
 #: src/effectslistwidget.cpp:133 src/tracksconfigdialog.cpp:37
 #: src/tracksconfigdialog.cpp:112 src/tracksconfigdialog.cpp:144
 #: src/tracksconfigdialog.cpp:178 src/widgets/clipproperties_ui.ui:131
 #: src/widgets/configtimeline_ui.ui:38 src/widgets/effectlist_ui.ui:66
 #: src/widgets/projectsettings_ui.ui:224 src/widgets/recmonitor_ui.ui:92
-#: src/widgets/renderwidget_ui.ui:199
+#: src/widgets/renderwidget_ui.ui:199 src/widgets/saveprofile_ui.ui:124
 msgid "Audio"
 msgstr "Son"
 
@@ -5632,7 +5633,7 @@ msgstr ""
 "O ficheiro %1 non é un ficheiro de proxecto válido.\n"
 "Desexa abrir unha copia de seguranza?"
 
-#: src/kdenlivedoc.cpp:210 src/projectlist.cpp:788 src/renderwidget.cpp:2111
+#: src/kdenlivedoc.cpp:210 src/projectlist.cpp:788 src/renderwidget.cpp:2137
 msgid "Check missing clips"
 msgstr "Comprobar os fragmentos que faltan"
 
@@ -5657,7 +5658,7 @@ msgstr "A engadir fragmentos"
 msgid "Project directory %1 does not exist. Create it?"
 msgstr "Non existe o directorio de proxectos %1. Desexa crealo?"
 
-#: src/kdenlivedoc.cpp:363 src/renderwidget.cpp:830
+#: src/kdenlivedoc.cpp:363 src/renderwidget.cpp:856
 #, kde-format
 msgid ""
 "The directory %1, could not be created.\n"
@@ -7754,11 +7755,11 @@ msgstr ""
 msgid "There is no clip, cannot extract frame."
 msgstr "Non hai fragmento, non se pode extraer o fotograma."
 
-#: src/renderer.cpp:4732
+#: src/renderer.cpp:4744
 msgid "Import selected clips"
 msgstr "Importar os fragmentos escollidos"
 
-#: src/renderer.cpp:4736
+#: src/renderer.cpp:4748
 #, kde-format
 msgid ""
 "Additional streams for clip\n"
@@ -7767,17 +7768,17 @@ msgstr ""
 "Fluxos adicionais para o fragmento\n"
 " %1"
 
-#: src/renderer.cpp:4745
+#: src/renderer.cpp:4757
 #, kde-format
 msgid "Video stream %1"
 msgstr "Fluxo de vídeo %1"
 
-#: src/renderer.cpp:4757
+#: src/renderer.cpp:4769
 #, kde-format
 msgid "Audio stream %1"
 msgstr "Fluxo de son %1"
 
-#: src/renderwidget.cpp:99 src/renderwidget.cpp:1066 src/renderwidget.cpp:1968
+#: src/renderwidget.cpp:99 src/renderwidget.cpp:1092 src/renderwidget.cpp:1994
 msgid "Waiting..."
 msgstr "A agardar..."
 
@@ -7826,45 +7827,45 @@ msgstr "Ficheiros de script"
 msgid "Beginning"
 msgstr "Comezo"
 
-#: src/renderwidget.cpp:460 src/renderwidget.cpp:471 src/renderwidget.cpp:615
-#: src/renderwidget.cpp:651
+#: src/renderwidget.cpp:460 src/renderwidget.cpp:490 src/renderwidget.cpp:628
+#: src/renderwidget.cpp:683
 msgctxt "Group Name"
 msgid "Custom"
 msgstr "Personalizado"
 
-#: src/renderwidget.cpp:541 src/renderwidget.cpp:662
+#: src/renderwidget.cpp:554 src/renderwidget.cpp:694
 msgid "Profile already exists"
 msgstr "O perfil xa existe"
 
-#: src/renderwidget.cpp:541 src/renderwidget.cpp:662
+#: src/renderwidget.cpp:554 src/renderwidget.cpp:694
 msgid ""
 "This profile name already exists. Change the name if you don't want to "
 "overwrite it."
 msgstr ""
 "Este nome de perfil xa existe. Cambie o nome se non o quere substituír."
 
-#: src/renderwidget.cpp:556 src/renderwidget.cpp:761 src/renderwidget.cpp:1568
+#: src/renderwidget.cpp:569 src/renderwidget.cpp:787 src/renderwidget.cpp:1594
 #, kde-format
 msgid "Unable to write to file %1"
 msgstr "Non foi posíbel escribir no ficheiro %1"
 
-#: src/renderwidget.cpp:581 src/renderwidget.cpp:1554
-#: src/renderwidget.cpp:1599
+#: src/renderwidget.cpp:594 src/renderwidget.cpp:1580
+#: src/renderwidget.cpp:1625
 msgctxt "Category Name"
 msgid "Custom"
 msgstr "Personalizado"
 
-#: src/renderwidget.cpp:622
+#: src/renderwidget.cpp:654
 msgid "Edit Profile"
 msgstr "Editar o perfil"
 
-#: src/renderwidget.cpp:819
+#: src/renderwidget.cpp:845
 msgid "Cannot find the melt program required for rendering (part of Mlt)"
 msgstr ""
 "Non é posíbel atopar o programa de fundido requirido para renderizar (parte "
 "de Mlt)"
 
-#: src/renderwidget.cpp:823
+#: src/renderwidget.cpp:849
 msgid ""
 "Cannot play video after rendering because the default video player "
 "application is not set.\n"
@@ -7874,11 +7875,11 @@ msgstr ""
 "estabeleceu un reprodutor de vídeo predeterminado.\n"
 "Indíqueo no diálogo de preferencias do Kdenlive."
 
-#: src/renderwidget.cpp:857
+#: src/renderwidget.cpp:883
 msgid "Output file already exists. Do you want to overwrite it?"
 msgstr "O ficheiro de saída xa existe. Quéreo substituír?"
 
-#: src/renderwidget.cpp:1055 src/renderwidget.cpp:1956
+#: src/renderwidget.cpp:1081 src/renderwidget.cpp:1982
 #, kde-format
 msgid ""
 "There is already a job writing file:<br /><b>%1</b><br />Abort the job if "
@@ -7887,41 +7888,41 @@ msgstr ""
 "Xa existe un traballo escribindo no ficheiro:<br /><b>%1</b><br />Cancele o "
 "traballo se desexa sobreescribilo..."
 
-#: src/renderwidget.cpp:1055 src/renderwidget.cpp:1956
+#: src/renderwidget.cpp:1081 src/renderwidget.cpp:1982
 msgid "Already running"
 msgstr "Xa se está executando"
 
-#: src/renderwidget.cpp:1096
+#: src/renderwidget.cpp:1122
 msgid "Video without audio track"
 msgstr "Vídeo sen pista de son"
 
-#: src/renderwidget.cpp:1138
+#: src/renderwidget.cpp:1164
 #, kde-format
 msgid "Rendering <i>%1</i> started"
 msgstr "Renderizado <i>%1</i> iniciado"
 
-#: src/renderwidget.cpp:1291
+#: src/renderwidget.cpp:1317
 #, kde-format
 msgid "Frame rate (%1) not compatible with project profile (%2)"
 msgstr ""
 "A frecuencia de fotogramas (%1) non é compatíbel co perfil do proxecto (%2)"
 
-#: src/renderwidget.cpp:1309
+#: src/renderwidget.cpp:1335
 #, kde-format
 msgid "Unsupported video format: %1"
 msgstr "Formato de vídeo non admitido: %1"
 
-#: src/renderwidget.cpp:1325
+#: src/renderwidget.cpp:1351
 #, kde-format
 msgid "Unsupported audio codec: %1"
 msgstr "Códec de son non admitido: %1"
 
-#: src/renderwidget.cpp:1342
+#: src/renderwidget.cpp:1368
 #, kde-format
 msgid "Unsupported video codec: %1"
 msgstr "Códec de video non admitido: %1"
 
-#: src/renderwidget.cpp:1351
+#: src/renderwidget.cpp:1377
 msgid ""
 "This render profile uses a 'profile' parameter.<br />Unless you know what "
 "you are doing you will probably have to change it to 'mlt_profile'."
@@ -7930,86 +7931,86 @@ msgstr ""
 "saiba ben o que anda a facer, probabelmente o teña que cambiar a "
 "«mlt_profile»."
 
-#: src/renderwidget.cpp:1364 src/renderwidget.cpp:1397
+#: src/renderwidget.cpp:1390 src/renderwidget.cpp:1423
 msgid "No matching profile"
 msgstr "Non coincide ningún perfil"
 
-#: src/renderwidget.cpp:1379
+#: src/renderwidget.cpp:1405
 msgid "untitled"
 msgstr "sen título"
 
-#: src/renderwidget.cpp:1492
+#: src/renderwidget.cpp:1518
 msgid "File rendering"
 msgstr "Renderizado de ficheiro"
 
-#: src/renderwidget.cpp:1493
+#: src/renderwidget.cpp:1519
 msgid "Favorites"
 msgstr "Favoritos"
 
-#: src/renderwidget.cpp:1494
+#: src/renderwidget.cpp:1520
 msgid "DVD"
 msgstr "DVD"
 
-#: src/renderwidget.cpp:1496
+#: src/renderwidget.cpp:1522
 msgid "Web sites"
 msgstr "Sitios web"
 
-#: src/renderwidget.cpp:1497
+#: src/renderwidget.cpp:1523
 msgid "Media players"
 msgstr "Reprodutores de multimedia"
 
-#: src/renderwidget.cpp:1498
+#: src/renderwidget.cpp:1524
 msgid "Lossless / HQ"
 msgstr "Sen perda / HQ"
 
-#: src/renderwidget.cpp:1499
+#: src/renderwidget.cpp:1525
 msgid "Mobile devices"
 msgstr "Dispositivos móbiles"
 
-#: src/renderwidget.cpp:1684
+#: src/renderwidget.cpp:1710
 msgctxt "Attribute Name"
 msgid "Custom"
 msgstr "Personalizado"
 
-#: src/renderwidget.cpp:1769
+#: src/renderwidget.cpp:1795
 #, kde-format
 msgid "Estimated time %1"
 msgstr "Tempo estimado %1"
 
-#: src/renderwidget.cpp:1788
+#: src/renderwidget.cpp:1814
 #, kde-format
 msgid "Rendering finished in %1"
 msgstr "O renderizado rematou en %1"
 
-#: src/renderwidget.cpp:1800
+#: src/renderwidget.cpp:1826
 #, kde-format
 msgid "<strong>Rendering of %1 crashed</strong><br />"
 msgstr "<strong>Fallou o renderizado de %1</strong><br />"
 
 #. i18n: ectx: property (text), widget (QPushButton, abort_job)
-#: src/renderwidget.cpp:1840 src/widgets/renderwidget_ui.ui:561
+#: src/renderwidget.cpp:1866 src/widgets/renderwidget_ui.ui:561
 msgid "Abort Job"
 msgstr "Cancelar este traballo"
 
-#: src/renderwidget.cpp:1843
+#: src/renderwidget.cpp:1869
 msgid "Remove Job"
 msgstr "Eliminar este traballo"
 
-#: src/renderwidget.cpp:1910 src/renderwidget.cpp:1914
+#: src/renderwidget.cpp:1936 src/renderwidget.cpp:1940
 #, kde-format
 msgid "Script contains wrong command: %1"
 msgstr "O script contén un comando erróneo: %1"
 
-#: src/renderwidget.cpp:2090
+#: src/renderwidget.cpp:2116
 msgid "script"
 msgstr "script"
 
-#: src/renderwidget.cpp:2188
+#: src/renderwidget.cpp:2214
 msgid "Export audio (automatic)"
 msgstr "Exportar o son (automático)"
 
 #. i18n: ectx: property (text), widget (QCheckBox, export_audio)
-#: src/renderwidget.cpp:2190 src/widgets/renderwidget_ui.ui:233
+#: src/renderwidget.cpp:2216 src/widgets/renderwidget_ui.ui:233
 msgid "Export audio"
 msgstr "Exportar o son"
 
@@ -8597,11 +8598,12 @@ msgstr "Final"
 #. i18n: ectx: property (text), widget (QCheckBox, rec_video)
 #. i18n: ectx: attribute (title), widget (QWidget, tab_video)
 #. i18n: ectx: property (text), widget (QCheckBox, video_thumbs)
+#. i18n: ectx: property (title), widget (QGroupBox, vbitrates)
 #: src/tracksconfigdialog.cpp:36 src/tracksconfigdialog.cpp:142
 #: src/widgets/clipproperties_ui.ui:86 src/widgets/configtimeline_ui.ui:29
 #: src/widgets/dvdwizardmenu_ui.ui:207 src/widgets/effectlist_ui.ui:61
 #: src/widgets/projectsettings_ui.ui:217 src/widgets/recmonitor_ui.ui:85
-#: src/widgets/renderwidget_ui.ui:176
+#: src/widgets/renderwidget_ui.ui:176 src/widgets/saveprofile_ui.ui:27
 msgid "Video"
 msgstr "Vídeo"
 
@@ -9461,8 +9463,8 @@ msgid "Transparent"
 msgstr "Transparente"
 
 #. i18n: ectx: property (text), widget (QLabel, label_6)
-#. i18n: ectx: property (text), widget (QLabel, label_5)
 #. i18n: ectx: property (text), widget (QLabel, label_dest)
+#. i18n: ectx: property (text), widget (QLabel, label_5)
 #: src/widgets/clipstabilize_ui.ui:20 src/widgets/cliptranscode_ui.ui:30
 #: src/widgets/renderwidget_ui.ui:36 src/widgets/saveprofile_ui.ui:20
 msgid "Destination"
@@ -10168,13 +10170,13 @@ msgstr "Borrar o perfil"
 
 #. i18n: ectx: property (text), widget (QLabel, label_3)
 #. i18n: ectx: property (text), widget (QLabel, label_4)
-#: src/widgets/configtranscode_ui.ui:90 src/widgets/saveprofile_ui.ui:50
+#: src/widgets/configtranscode_ui.ui:90 src/widgets/saveprofile_ui.ui:107
 msgid "Extension"
 msgstr "Extensión"
 
 #. i18n: ectx: property (text), widget (QLabel, label_4)
 #. i18n: ectx: property (text), widget (QLabel, label)
-#: src/widgets/configtranscode_ui.ui:107 src/widgets/saveprofile_ui.ui:64
+#: src/widgets/configtranscode_ui.ui:107 src/widgets/saveprofile_ui.ui:97
 msgid "Parameters"
 msgstr "Parámetros"
 
@@ -10829,13 +10831,29 @@ msgstr "Modo de pintado"
 msgid "Save Profile"
 msgstr "Gardar o perfil"
 
+#. i18n: ectx: property (text), widget (QLabel, label_7)
+#. i18n: ectx: property (text), widget (QLabel, label_9)
+#: src/widgets/saveprofile_ui.ui:33 src/widgets/saveprofile_ui.ui:137
+#, fuzzy
+#| msgid "Default Durations"
+msgid "Default bitrate"
+msgstr "Duracións predeterminadas"
+
+#. i18n: ectx: property (text), widget (QLabel, label_6)
+#. i18n: ectx: property (text), widget (QLabel, label_8)
+#: src/widgets/saveprofile_ui.ui:43 src/widgets/saveprofile_ui.ui:130
+#, fuzzy
+#| msgid "Bitrate"
+msgid "Bitrates"
+msgstr "Taxa de bits"
+
 #. i18n: ectx: property (text), widget (QLabel, label_2)
-#: src/widgets/saveprofile_ui.ui:30
+#: src/widgets/saveprofile_ui.ui:80
 msgid "Group"
 msgstr "Grupo"
 
 #. i18n: ectx: property (text), widget (QLabel, label_3)
-#: src/widgets/saveprofile_ui.ui:40
+#: src/widgets/saveprofile_ui.ui:87
 msgid "Profile name"
 msgstr "Nome do perfil"
 
