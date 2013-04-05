@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2013-03-31 03:26+0200\n"
+"POT-Creation-Date: 2013-04-05 02:14+0200\n"
 "PO-Revision-Date: 2013-01-25 06:48+0100\n"
 "Last-Translator: Adrián Chaves Fernández <adriyetichaves@gmail.com>\n"
 "Language-Team: Galician <proxecto@trasno.net>\n"
@@ -201,39 +201,56 @@ msgid "Background Service"
 msgstr "Servizo en segundo plano"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, enableService)
-#: src/kcm/configfetcher.ui:169
+#: src/kcm/configfetcher.ui:177
 msgid "If enabled the metadata extractor is called on newly indexed files."
 msgstr ""
 "Se marca esta opción, o extractor de metadatos executarase para os ficheiros "
 "que se acaben de indexar."
 
 #. i18n: ectx: property (text), widget (QCheckBox, enableService)
-#: src/kcm/configfetcher.ui:172
+#: src/kcm/configfetcher.ui:180
 msgid "Enable Service"
 msgstr "Activar o servizo"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, kcfg_FetchDocuments)
 #. i18n: ectx: property (toolTip), widget (QCheckBox, kcfg_FetchMusic)
 #. i18n: ectx: property (toolTip), widget (QCheckBox, kcfg_FetchVideos)
-#: src/kcm/configfetcher.ui:179 src/kcm/configfetcher.ui:189
-#: src/kcm/configfetcher.ui:199
+#: src/kcm/configfetcher.ui:187 src/kcm/configfetcher.ui:197
+#: src/kcm/configfetcher.ui:207
 msgid "Service needs to be restarted to take effect."
 msgstr "Debe reiniciarse o servizo para que os cambios xurdan efecto."
 
 #. i18n: ectx: property (text), widget (QCheckBox, kcfg_FetchDocuments)
-#: src/kcm/configfetcher.ui:182
+#: src/kcm/configfetcher.ui:190
 msgid "Fetch document information"
 msgstr "Obter información sobre o documento"
 
 #. i18n: ectx: property (text), widget (QCheckBox, kcfg_FetchMusic)
-#: src/kcm/configfetcher.ui:192
+#: src/kcm/configfetcher.ui:200
 msgid "Fetch music information"
 msgstr "Obter información sobre a música"
 
 #. i18n: ectx: property (text), widget (QCheckBox, kcfg_FetchVideos)
-#: src/kcm/configfetcher.ui:202
+#: src/kcm/configfetcher.ui:210
 msgid "Fetch video information"
 msgstr "Obter información sobre o vídeo"
+
+#. i18n: ectx: property (toolTip), widget (QCheckBox, kcfg_UseWhiteList)
+#: src/kcm/configfetcher.ui:253
+msgid ""
+"If enabled, only the folders specified in the whitelist are used for the "
+"metadata lookup."
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QCheckBox, kcfg_UseWhiteList)
+#: src/kcm/configfetcher.ui:256
+msgid "Use Folder Whitelist"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (KPushButton, whitelistButton)
+#: src/kcm/configfetcher.ui:263
+msgid "Customize Folders"
+msgstr ""
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
 #: src/kcm/configregexp.ui:29
@@ -300,6 +317,53 @@ msgstr ""
 msgid ""
 "Add regular expressions to extract <b>Author</b>, <b>Title</b>, <b>Year</b> "
 "for the document search."
+msgstr ""
+
+#: src/kcm/folderselectionmodel.cpp:108
+#, kde-format
+msgctxt "@info:tooltip %1 is the path of the folder in a listview"
+msgid "<filename>%1</filename><nl/>(will be indexed for desktop search)"
+msgstr ""
+
+#: src/kcm/folderselectionmodel.cpp:112
+#, kde-format
+msgctxt "@info:tooltip %1 is the path of the folder in a listview"
+msgid ""
+"<filename>%1</filename><nl/> (will <emphasis>not</emphasis> be indexed for "
+"desktop search)"
+msgstr ""
+
+#: src/kcm/indexfolderselectiondialog.cpp:63
+msgctxt ""
+"@title:window Referring to the folders which will be used for the WebMiner "
+"lookup"
+msgid "Customizing Lookup Folders"
+msgstr ""
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_3)
+#: src/kcm/indexfolderselectionwidget.ui:10
+msgid "Folders to index"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: src/kcm/indexfolderselectionwidget.ui:16
+#, fuzzy
+#| msgid ""
+#| "Read additional information from files.\n"
+#| "Load the list of files that will be used for the WebMiner"
+msgid "Select the local folders that will be used for the WebMiner lookup"
+msgstr ""
+"Ler información adicional dos ficheiros.\n"
+"Cargar a lista de ficheiros que se empregarán para o WebMiner."
+
+#. i18n: ectx: property (toolTip), widget (QCheckBox, m_checkShowHiddenFolders)
+#: src/kcm/indexfolderselectionwidget.ui:29
+msgid "Check to be able to select hidden folders"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_checkShowHiddenFolders)
+#: src/kcm/indexfolderselectionwidget.ui:32
+msgid "Show hidden folders"
 msgstr ""
 
 #: src/kcm/nepomukwebminerkcm.cpp:51
@@ -1038,19 +1102,33 @@ msgstr ""
 "Emprégase para desactivar o servizo durante a primeira execución que segue á "
 "instalación, por cuestións de protección da intimidade."
 
+#. i18n: ectx: label, entry (UseWhiteList), group (Service)
+#: src/lib/nepomuk-webminer.kcfg:65
+msgid ""
+"Defines if a whitelist for automatic background folders should be used "
+"instead of all nepomuk files."
+msgstr ""
+
+#. i18n: ectx: label, entry (WhiteList), group (Service)
+#: src/lib/nepomuk-webminer.kcfg:69
+msgid ""
+"List of folders that should be used for the automatic metadata search "
+"instead of all known files."
+msgstr ""
+
 #. i18n: ectx: label, entry (PreferFileParsing), group (FilenameAnalyzer)
-#: src/lib/nepomuk-webminer.kcfg:68
+#: src/lib/nepomuk-webminer.kcfg:75
 msgid ""
 "Prefer data extracted from filename over data from the Nepomuk FileIndexer."
 msgstr ""
 
 #. i18n: ectx: label, entry (StripNames), group (FilenameAnalyzer)
-#: src/lib/nepomuk-webminer.kcfg:72
+#: src/lib/nepomuk-webminer.kcfg:79
 msgid "Regular expressions that remove the matched text from any filename."
 msgstr ""
 
 #. i18n: ectx: label, entry (RegExpTvShow), group (FilenameAnalyzer)
-#: src/lib/nepomuk-webminer.kcfg:75
+#: src/lib/nepomuk-webminer.kcfg:82
 #, fuzzy
 #| msgid ""
 #| "Regular expressions that will detect and extract a music file. Valid "
@@ -1062,7 +1140,7 @@ msgstr ""
 "ningún símbolo para empregar."
 
 #. i18n: ectx: label, entry (RegExpMovie), group (FilenameAnalyzer)
-#: src/lib/nepomuk-webminer.kcfg:79
+#: src/lib/nepomuk-webminer.kcfg:86
 #, fuzzy
 #| msgid ""
 #| "Regular expressions that will detect and extract a music file. Valid "
@@ -1074,7 +1152,7 @@ msgstr ""
 "ningún símbolo para empregar."
 
 #. i18n: ectx: label, entry (RegExpMusic), group (FilenameAnalyzer)
-#: src/lib/nepomuk-webminer.kcfg:83
+#: src/lib/nepomuk-webminer.kcfg:90
 #, fuzzy
 #| msgid ""
 #| "Regular expressions that will detect and extract a music file. Valid "
@@ -1086,7 +1164,7 @@ msgstr ""
 "ningún símbolo para empregar."
 
 #. i18n: ectx: label, entry (RegExpDocument), group (FilenameAnalyzer)
-#: src/lib/nepomuk-webminer.kcfg:87
+#: src/lib/nepomuk-webminer.kcfg:94
 #, fuzzy
 #| msgid ""
 #| "Regular expressions that will detect and extract a music file. Valid "
