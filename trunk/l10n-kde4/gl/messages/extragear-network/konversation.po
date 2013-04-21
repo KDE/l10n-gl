@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: konversation\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2013-04-16 03:49+0200\n"
-"PO-Revision-Date: 2013-01-14 00:57+0100\n"
+"PO-Revision-Date: 2013-04-21 09:58+0200\n"
 "Last-Translator: Marce Villarino <mvillarino@kde-espana.es>\n"
 "Language-Team: Galician <proxecto@trasno.net>\n"
 "Language: gl\n"
@@ -78,7 +78,6 @@ msgid "No running video players found."
 msgstr "Non se atopou ningún reprodutor de vídeo en execución."
 
 #: data/scripts/media:194
-#, fuzzy
 #| msgid "%1 is not running."
 msgid "\"%1\" is not running."
 msgstr "«%1» non se está a executar."
@@ -139,7 +138,6 @@ msgstr ""
 "atope."
 
 #: data/scripts/media:318
-#, fuzzy
 #| msgid ""
 #| "\"/media [ 'audio' | 'video' ]\" - report what is playing in a supported "
 #| "audio or video player."
@@ -148,10 +146,9 @@ msgid ""
 "or video player."
 msgstr ""
 "\"/media [ 'audio' | 'video' ]\" - informa do que se está a reproducir nun "
-"reprodutor de son ou vídeo soportado."
+"reprodutor de son ou vídeo coñecido."
 
 #: data/scripts/media:319
-#, fuzzy
 #| msgid ""
 #| "\"/media { Player }\" - report what is playing in the specified player if "
 #| "it is supported."
@@ -159,7 +156,7 @@ msgid ""
 "\"/media { Player }\" - report what is playing in the specified player if it "
 "is found."
 msgstr ""
-"\"/media { Player }\" - informar do que se está a reproducir no reproducir "
+"\"/media { Player }\" - informa do que se está a reproducir no reprodutor "
 "indicado, se se atopa."
 
 #: src/application.cpp:359 src/irc/server.cpp:1675 src/irc/server.cpp:3694
@@ -1603,7 +1600,7 @@ msgstr "Metapalabras dispoñíbeis"
 
 #. i18n: ectx: property (text), widget (QLabel, placeholderHelpLabel)
 #: src/config/quickbuttons_configui.ui:45
-#, fuzzy, no-c-format
+#, no-c-format
 #| msgid ""
 #| "%o: Current nickname\n"
 #| "%c: Current channel\n"
@@ -1621,13 +1618,15 @@ msgid ""
 "%s<term>%: term used to separate nicknames in %u\n"
 "%u: List of selected nicknames"
 msgstr ""
-"%c: Alcume actual\n"
-"%k: Canle actual\n"
+"%c: Canle actual\n"
+"%i: Contido do campo de entrada\n"
+"%k: Chave da canle\n"
 "%K: Contrasinal do servidor\n"
-"%u: Lista de alcumes escollidos\n"
-"%s&lt;term>%: termo usado para separar os alcumes en %u\n"
-"%n: Enviar o comando directamente ao servidor no canto de á súa liña de "
-"entrada"
+"%n: Enviar o comando directamente ao servidor no canto de á liña de "
+"entrada\n"
+"%o: Alcume actual\n"
+"%s<termo>%: termo usado para separar alcumes en %u\n"
+"%u: Lista de alcumes escollidos"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, buttonListView)
 #: src/config/quickbuttons_configui.ui:74
@@ -3897,47 +3896,45 @@ msgid "Join"
 msgstr "Unirse"
 
 #: src/irc/channel.cpp:1079
-#, fuzzy, kde-format
+#, kde-format
 #| msgctxt "%1 is the channel and %2 is our hostmask"
 #| msgid "You have joined the channel %1 (%2)."
 msgctxt "%1 = our hostmask, %2 = channel"
 msgid "You (%1) have joined the channel %2."
-msgstr "Uniuse á canle %1 (%2)."
+msgstr "Uniuse (como %1) á canle %2."
 
 #: src/irc/channel.cpp:1107
-#, fuzzy, kde-format
+#, kde-format
 #| msgctxt "%1 is the nick joining and %2 the hostmask of that nick"
 #| msgid "%1 has joined this channel (%2)."
 msgctxt "%1 is the nick joining and %2 the hostmask of that nick"
 msgid "%1 (%2) has joined this channel."
-msgstr "%1 uniuse a esta canle (%2)."
+msgstr "%1 (%2) uniuse a esta canle."
 
 #: src/irc/channel.cpp:1133 src/irc/channel.cpp:1135 src/irc/channel.cpp:1157
 #: src/irc/channel.cpp:1160 src/irc/query.cpp:514 src/irc/query.cpp:522
 #: src/viewer/ircview.cpp:774
-#, fuzzy
 #| msgid "Quit"
 msgctxt "Message type"
 msgid "Quit"
 msgstr "Saír"
 
 #: src/irc/channel.cpp:1133
-#, fuzzy, kde-format
+#, kde-format
 #| msgid "You have left this server."
 msgid "You (%1) have left this server."
-msgstr "Abandonou este servidor."
+msgstr "Abandonou (%1) este servidor."
 
 #: src/irc/channel.cpp:1135
-#, fuzzy, kde-format
+#, kde-format
 #| msgctxt "%1 adds the reason"
 #| msgid "You have left this server (%1)."
 msgctxt "%1 = our hostmask, %2 = reason"
 msgid "You (%1) have left this server (%2)."
-msgstr "Abandonou este servidor (%1)."
+msgstr "Abandonou (%1) este servidor (%2)."
 
 #: src/irc/channel.cpp:1141 src/irc/channel.cpp:1143 src/irc/channel.cpp:1166
 #: src/irc/channel.cpp:1169 src/viewer/ircview.cpp:774
-#, fuzzy
 #| msgid "Part"
 msgctxt "Message type"
 msgid "Part"
@@ -3955,14 +3952,14 @@ msgid "You (%1) have left channel %2 (%3)."
 msgstr "Vostede (%1) deixou o canal %2 (%3)."
 
 #: src/irc/channel.cpp:1157
-#, fuzzy, kde-format
+#, kde-format
 #| msgctxt "%1 = nick, %2 = hostmask"
 #| msgid "%1 (%2) has left this server."
 msgid "%1 (%2) has left this server."
 msgstr "%1 (%2) marchou deste servidor."
 
 #: src/irc/channel.cpp:1161
-#, fuzzy, kde-format
+#, kde-format
 #| msgctxt "%1 = nick, %2 = hostmask, %3 = reason"
 #| msgid "%1 (%2) has left this server (%3)."
 msgctxt "%1 = nick, %2 = hostname, %3 = reason"
@@ -3970,18 +3967,18 @@ msgid "%1 (%2) has left this server (%3)."
 msgstr "%1 (%2) marchou deste servidor (%3)."
 
 #: src/irc/channel.cpp:1166
-#, fuzzy, kde-format
+#, kde-format
 #| msgid "%1 has left this channel."
 msgid "%1 (%2) has left this channel."
-msgstr "%1 deixou esta canle."
+msgstr "%1 (%2) deixou esta canle."
 
 #: src/irc/channel.cpp:1170
-#, fuzzy, kde-format
+#, kde-format
 #| msgctxt "%1 adds the nick and %2 the reason"
 #| msgid "%1 has left this channel (%2)."
 msgctxt "%1 = nick, %2 = hostmask, %3 = reason"
 msgid "%1 (%2) has left this channel (%3)."
-msgstr "%1 deixou esta canle (%2)."
+msgstr "%1 (%2) deixou esta canle (%3)."
 
 #: src/irc/channel.cpp:1218 src/irc/channel.cpp:1220 src/irc/channel.cpp:1227
 #: src/irc/channel.cpp:1232 src/irc/channel.cpp:1253 src/irc/channel.cpp:1255
@@ -5487,7 +5484,7 @@ msgstr ""
 "</p></qt>"
 
 #: src/irc/nicklistview.cpp:140
-#, fuzzy, kde-format
+#, kde-format
 #| msgid ""
 #| "<qt><p>This shows all the people in the channel.  The nick for each "
 #| "person is shown, with a picture showing their status.</"
@@ -5521,19 +5518,19 @@ msgid ""
 "Handbook for more information.</p></qt>"
 msgstr ""
 "<qt><p>Isto mostra todas as persoas da canle. Aparece o alcume de cada "
-"persoa cunha imaxe que mostra o seu estado. </p><table><tr><th><img src="
-"\"admin\"/></th><td>Esta persoa ten privilexios de administrador.</td></"
-"tr><tr><th><img src=\"owner\"/></th><td>Esta persoa é o dono da canle.</td></"
-"tr><tr><th><img src=\"op\"/></th><td>Esta persoa é un operador da canle.</"
-"td></tr><tr><th><img src=\"halfop\"/></th><td>Esta  persoa é un subornador "
-"da canle.</td></tr> <tr><th><img src=\"voice\"/></th><td>Esta persoa ten "
+"persoa cunha imaxe que mostra o seu estado.<br /></p><table><tr><th><img src="
+"\"%1\"/></th><td>Esta persoa ten privilexios de administrador.</td></"
+"tr><tr><th><img src=\"%2\"/></th><td>Esta persoa é o dono da canle.</td></"
+"tr><tr><th><img src=\"%3\"/></th><td>Esta persoa é un operador da canle.</"
+"td></tr><tr><th><img src=\"%4\"/></th><td>Esta  persoa é un suboperador "
+"da canle.</td></tr> <tr><th><img src=\"%5\"/></th><td>Esta persoa ten "
 "voz, polo que pode falar nunha canle moderada.</td></tr> <tr><th><img src="
-"\"normal\"/></th><td>Esta persoa non ten privilexios especiais.</td></tr> "
-"<tr><th><img src=\"normalaway\"/></th><td>Isto indica que a persoa está "
-"ausente.</td></tr></table><p>O significado de administrador, dono e "
-"semioperador varía entre os diferentes servidores de IRC.</p><p>Se pasar o "
-"rato por cima dun alcume aparece o seu estado actual. Consulte o Manual de "
-"Konversation para máis informacións.</p></qt>"
+"\"%6\"/></th><td>Esta persoa non ten privilexios especiais.</td></tr> "
+"<tr><th><img src=\"%7\"/></th><td>Isto, sobreposta a calquera das anteriores, "
+"indica que a persoa está ausente.</td></tr></table><p>O significado de "
+"administrador, dono e semioperador varía entre os diferentes servidores de "
+"IRC.</p><p>Se pasa o rato por riba dun alcume aparece o seu estado actual. "
+"Consulte o Manual de Konversation para máis informacións.</p></qt>"
 
 #: src/irc/nicksonline.cpp:42
 msgid "Watched Nicks Online"
@@ -5932,7 +5929,6 @@ msgstr "Lista de notificacións actual: %1."
 
 #: src/irc/outputfilter.cpp:1317 src/irc/server.cpp:3016
 #: src/irc/server.cpp:3033
-#, fuzzy
 #| msgid "Notify"
 msgctxt "Message type"
 msgid "Notify"
@@ -7192,13 +7188,11 @@ msgid "A user-friendly IRC client"
 msgstr "Un cliente de IRC doado de utilizar"
 
 #: src/main.cpp:41
-#, fuzzy
 #| msgid "(C) 2002-2012 by the Konversation team"
 msgid "(C) 2002-2013 by the Konversation team"
-msgstr "(C) 2002-2012 pola equipa do Konversation"
+msgstr "(C) 2002-2013 pola equipa do Konversation"
 
 #: src/main.cpp:42
-#, fuzzy
 #| msgid ""
 #| "Konversation is a client for the Internet Relay Chat (IRC) protocol.\n"
 #| "Meet friends on the net, make new acquaintances and lose yourself in\n"
@@ -7722,10 +7716,9 @@ msgid "Join on Connect"
 msgstr "Unirse ao conectarse"
 
 #: src/mainwindow.cpp:376
-#, fuzzy
 #| msgid "Co&nnect on application start up"
 msgid "Connect at Startup"
-msgstr "Co&nectar no arranque do aplicativo"
+msgstr "Conectar ao iniciar o programa"
 
 #: src/mainwindow.cpp:381
 msgid "Default"
@@ -9203,7 +9196,7 @@ msgid "&Options"
 msgstr "&Opcións"
 
 #: src/viewer/statuspanel.cpp:227
-#, fuzzy, kde-format
+#, kde-format
 #| msgid ""
 #| "Do you really want to close '%1'?\n"
 #| "\n"
@@ -9213,7 +9206,7 @@ msgid ""
 "\n"
 "All associated tabs will be closed as well."
 msgstr ""
-"Seguro que quere pechar «%1»?\n"
+"Desexa realmente pechar «%1»?\n"
 "\n"
 "Tamén se pecharán todas as lapelas asociadas."
 
@@ -9222,7 +9215,7 @@ msgid "Close Tab"
 msgstr "Fechar a lapela"
 
 #: src/viewer/statuspanel.cpp:237
-#, fuzzy, kde-format
+#, kde-format
 #| msgid ""
 #| "Do you want to disconnect from '%1'?\n"
 #| "\n"
@@ -9232,7 +9225,7 @@ msgid ""
 "\n"
 "All associated tabs will be closed as well."
 msgstr ""
-"Seguro que quere desconectarse de «%1»?\n"
+"Desexa realmente desconectarse de «%1»?\n"
 "\n"
 "Tamén se pecharán todas as lapelas asociadas."
 
