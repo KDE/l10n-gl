@@ -1,4 +1,5 @@
 #! /usr/bin/env python
+# -*- coding: UTF-8 -*-
 # Copyright (c) 2013 Marcelino Villarino Aguiar
 # All rights reserved.
 # Redistribution and use in source and binary forms, with or without modification,
@@ -71,17 +72,17 @@ if __name__ == '__main__':
   opars = ColorOptionParser (usage=usage, description=desc, version=ver)
   
   opars.add_option( "-m", "--msgmerge",
-          dest="commonPot",
+          action="store", dest="commonPot",
           metavar="POT",
           help="Apply msgmerge on po files before merging using POT as reference.")
   opars.add_option( "-f", "--accept-fuzzy",
         action="store_true", dest="acceptFuzzy", default=False,
         help="Do not discard fuzzy messages for merging into")
   opars.add_option( "-d", "--discarder-message",
-        dest="discarderComment", type="s1tring",
+        dest="discarderComment", type="string",
         help="Discard for merging any translation unit containing this translator comment")          
   opars.add_option( "-s", "--svn-base",
-       action="store_true", dest="svnBase", default="False",
+       action="store_true", dest="svnBase", default=False,
        help="Use as old file the non locally modified version from the working copy (must use with --msgmerge)")          
   
   (options, free_args) = opars.parse_args(str_to_unicode(sys.argv[1:]))             
@@ -91,12 +92,12 @@ if __name__ == '__main__':
   proceed = True
   from os.path import exists
   from tempfile import NamedTemporaryFile
-  if len(free_args) = 3 and not options.svnBase:
+  if len(free_args) == 3 and not options.svnBase:
     for path in free_args:
       if not exists(path):
         proceed = False
         opars.error("There is not file: %path" % path)
-  elif len(free_args) = 2 and options.svnBase:
+  elif len(free_args) == 2 and options.svnBase:
     for path in free_args:
       if not exists(path):
         proceed = False
@@ -112,12 +113,12 @@ if __name__ == '__main__':
   else:
     opars.error("Incorrect number of parameters issued")
     
-  from pology.merge import merge_pofile  
+  from pology.merge import merge_pofil
   if options.commonPot and not options.svnBase:
-    (mine, old, yours) = [merge_pofile(path, commonPot, getcat= True, abort = True) for path in free_args]
+    (mine, old, yours) = [merge_pofile(path, options.commonPot, getcat= True, abort = True) for path in free_args]
   elif options.commonPot and options.svnBase:
-    (mine, yours) = [merge_pofile(path, commonPot, getcat = True, abort = True) for path in free_args]
-    old = merge_pofile(tmpf.name ,commonPot, getcat = True, abort = True)
+    (mine, yours) = [merge_pofile(path, options.commonPot, getcat = True, abort = True) for path in free_args]
+    old = merge_pofile(tmpf.name, options.commonPot, getcat = True, abort = True)
     tmpf.close()
   else:
     (mine, old, yours) = [Catalog(path) for path in free_args]
