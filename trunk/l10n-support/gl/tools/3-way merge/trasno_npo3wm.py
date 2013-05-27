@@ -49,11 +49,24 @@ opars.add_option( "-f", "--accept-fuzzy",
       action="store_true", dest="acceptFuzzy", default=False,
       help="Do not discard fuzzy messages for merging into")
 opars.add_option( "-d", "--discarder-message",
-      dest="discarderComment", type="string",
+      dest="discarderComment", type="s1tring",
       help="Discard for merging any translation unit containing this translator comment")          
+#opars.add_option( "-s", "--svn-base",
+      #action="store_true", dest="base", default="False",
+      #help="Use as old file the non locally modified version from the working copy")          
 
 (options, free_args) = opars.parse_args(str_to_unicode(sys.argv[1:]))             
-               
+
+# USAR SO PARA o caso de xuntar consigo mesmo
+#import pysvn
+ #client = pysvn.Client()
+#number = pysvn.Client().log("/home/marce/Traducion/KDE/trunk/l10n-kde4/gl/messages/kdelibs/kdelibs4.po", limit=1)[0].revision.number    
+ #texto = client.cat("/home/marce/Traducion/KDE/trunk/l10n-kde4/gl/messages/kdelibs/kdelibs4.po", pysvn.Revision( pysvn.opt_revision_kind.number, number )
+#import StringIO
+#aaa = StringIO.StringIO ( texto )
+f#my = Catalog("", readfh = aaa)
+
+
 if len(free_args) < 3:
   opars.error("Less than three arguments issued")
 elif len(free_args) > 3:
@@ -69,13 +82,6 @@ if options.commonPot:
   (mine, old, yours) = [merge_pofile(path, commonPot) for path in free_args]
 else:
   (mine, old, yours) = [Catalog(path) for path in free_args]
-  #for catpath in free_args:
-    #merge_pofile(catpath, commonPot, update=True)
-
-#(minePath, oldPath, yoursPath) = free_args 
-#new = Catalog (yoursPath)
-#old = Catalog (oldPath)
-#mine = Catalog (minePath)
 
 for oldMsg in old:
   oldPosition = old.find(oldMsg)
