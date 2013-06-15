@@ -31,8 +31,6 @@ except:
     sys.path.insert(0, "/home/marce/Traducion/KDE/trunk/l10n-support/pology")
 
 from pology.catalog import Catalog
-from pology.colors import ColorOptionParser
-from pology.fsops import str_to_unicode
 
 def naive3WMerger ( mine, old, yours, acceptDubious, rejectionMark):
   assert isinstance(mine, Catalog),  "parameter «mine» is not a pology Catalog"
@@ -66,6 +64,8 @@ def naive3WMerger ( mine, old, yours, acceptDubious, rejectionMark):
     print msg.to_string(),
 
 if __name__ == '__main__':
+  from pology.colors import ColorOptionParser
+  from pology.fsops import str_to_unicode
   usage="%prog% [options] file.po.mine file.po.rOLDREV file.po.rNEWREV"
   desc="does a naive three way merge given three po files"
   ver="'0.1"
@@ -86,9 +86,8 @@ if __name__ == '__main__':
        help="Use as old file the non locally modified version from the working copy (must use with --msgmerge)")          
   
   (options, free_args) = opars.parse_args(str_to_unicode(sys.argv[1:]))             
-  
-  #ISTO HAI QUE TRABALLALO: SE OPTIONS.BASE TEN O VALOR TRUE, A ORDE DOS PARÁMETROS É MINE, YOURS
-  # E NECESARIAMENTE HAI QUE FACER O MERGE_POFILE
+  del str_to_unicode
+
   proceed = True
   from os.path import exists
   from tempfile import NamedTemporaryFile
