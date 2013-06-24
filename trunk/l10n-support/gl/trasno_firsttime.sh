@@ -36,22 +36,6 @@ else
    user=$2
 fi
 
-if [ -f "${HOME}/.ssh/${user}_rsa" ]; then
-    ssh_key=${user}"_rsa"
-elif [ -f "${HOME}/.ssh/${user}_dsa" ]; then
-    ssh_key=${user}"_dsa"
-fi
-
-echo ${ssh_key}
-
-if [ ! -f "${HOME}/.ssh/${ssh_key}" ]; then
-    echo "There is no ${HOME}/.ssh/${ssh_key}, exiting"
-    exit 1
-elif [ "$ssh_key" ]; then
-    ssh-add ${HOME}/.ssh/${ssh_key}
-fi
-
-
 #primeiro, modifica o .bashrc, se non o foi xa.
 export BASE_REPO=$HOME/Traducion/KDE
 export PATH=$BASE_REPO/trunk/l10n-support/pology/scripts:$BASE_REPO/trunk/l10n-support/gl/coordinator_helper_scripts:$PATH
@@ -62,11 +46,23 @@ if [ ! `cat $HOME/.bashrc | grep '$PATH' | grep '$BASE_REPO' | wc -m` == 0 ]; th
     exit 2
 fi
 
+if [ -f "${HOME}/.ssh/${user}_rsa" ]; then
+    ssh_key=${user}"_rsa"
+elif [ -f "${HOME}/.ssh/${user}_dsa" ]; then
+    ssh_key=${user}"_dsa"
+else 
+    echo "There is no ${HOME}/.ssh/${ssh_key}, exiting"
+    exit 1
+fi
+
+echo ${ssh_key}
+ssh-add ${HOME}/.ssh/${ssh_key}
+
 # #criamos os cartafoles base
 #creamos os cartafoles segundo se reflicte na estrutura citada en axuda.txt. Imos pór só o esencial. Comente as liñas nos desexadas.
-mkdir -p $BASE_REPO/trunk/l10n-kde4/{$code,scripts,templates}
-mkdir -p $BASE_REPO/trunk/l10n-support/{$code,pology,scripts}
+mkdir -p $BASE_REPO/trunk/l10n-kde4/{$code,templates,scripts}
 mkdir -p $BASE_REPO/branches/stable/l10n-kde4/{$code,templates,scripts}
+mkdir -p $BASE_REPO/trunk/l10n-support/{$code,pology,scripts}
 
 #agora os svn checkout
 if [ $# -eq 2 ]; then
@@ -74,7 +70,9 @@ if [ $# -eq 2 ]; then
     for place in trunk/{l10n-kde4,l10n-support}/{scripts,templates,$code,pology}; do
         if [ -d $BASE_REPO/$place -a ! -d $BASE_REPO/$place/.svn ]; then
             echo $BASE_REPO/$place
-            svn checkout svn+ssh://${user}@svn.kde.org/home/kde/$place $BASE_REPO/$place
+            svn checkout svn+ssh://svn@svn.kde.org/home/kde/${place} ${BASE_REPO}/${place}
+# este era o antigo url            
+# svn checkout svn+ssh://${user}@svn.kde.org/home/kde/$place $BASE_REPO/$place
         else
             echo "non: ${BASE_REPO}/${place}"
         fi
@@ -82,7 +80,7 @@ if [ $# -eq 2 ]; then
     for place in branches/stable/l10n-kde4/{scripts,templates,$code}; do
         if [ -d $BASE_REPO/$place -a ! -d $BASE_REPO/$place/.svn ]; then
             echo $BASE_REPO/$place
-            svn checkout svn+ssh://${user}@svn.kde.org/home/kde/$place $BASE_REPO/$place
+            svn checkout svn+ssh://svn@svn.kde.org/home/kde/$place $BASE_REPO/$place
         else
             echo "non: " $BASE_REPO/$place
 #             echo "lembrar: en .ssh/config ter"
