@@ -28,12 +28,6 @@
 # ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
 # POSSIBILITY OF SUCH DAMAGE.
 
-function usage()
-{
-  echo "Usage: trasno_firsttime.sh lang_code [svnUser]"
-  exit 2
-}
-
 function getThem()
 {
   local -r url=$1
@@ -55,25 +49,13 @@ if [ ! `cat $HOME/.bashrc | grep '$PATH' | grep '$BASE_REPO' | wc -m` == 0 ]; th
     exit 2
 fi
 
-declare code=""
-declare user=""
+declare code=`kdialog --title "Language code" --inputbox "Please enter the language code you want to translate to (e.g. \"gl\" or \"x-test\")"`
+declare user=`kdialog --title "KDE developer identity" --inputbox "What is you KDE identity?"`
+
 declare -r devSvn="svn+ssh://svn@svn.kde.org/home/kde"
 declare -r usrSvn="svn://anonsvn.kde.org/home/kde"
-export BASE_REPO=$HOME/Traducion/KDE
-export PATH=$BASE_REPO/trunk/l10n-support/pology/scripts:$BASE_REPO/trunk/l10n-support/gl/coordinator_helper_scripts:$PATH
-
-case $# in
-  1)
-    code=$1
-    ;;
-  2)
-    code=$1
-    user=$2
-    ;;
-  *)
-    usage
-    ;;
-esac
+declare -xr BASE_REPO=$HOME/Traducion/KDE
+declare -xr PATH=$BASE_REPO/trunk/l10n-support/pology/scripts:$BASE_REPO/trunk/l10n-support/gl/coordinator_helper_scripts:$PATH
 
 # #criamos os cartafoles base
 #creamos os cartafoles segundo se reflicte na estrutura citada en axuda.txt. Imos pór só o esencial. Comente as liñas nos desexadas.
@@ -91,7 +73,10 @@ if [ user ]; then
     echo "There is no ${HOME}/.ssh/${ssh_key}, exiting"
     exit 1
   fi
-  ssh-add ${HOME}/.ssh/${ssh_key}
+  if [ -x "/usr/bin/ksshaskpass" ]; then
+    export SSH_ASKPASS=/usr/bin/ksshaskpass
+  fi
+  ssh-add ${HOME}/.ssh/${ssh_key} < /dev/null
   getThem ${devSvn} ${code}
 else
   echo "WARNING: Using anonsvn"
