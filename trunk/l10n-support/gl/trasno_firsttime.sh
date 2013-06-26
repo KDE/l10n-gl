@@ -35,27 +35,41 @@ function getThem()
   
   for place in trunk/l10n-kde4/{scripts,templates,${lang}} trunk/l10n-support/{${lang},pology} branches/stable/l10n-kde4/{scripts,templates,${lang}}; do
     if [ -d ${BASE_REPO}/${place} -a ! -d ${BASE_REPO}/${place}/.svn ]; then
-        echo ${BASE_REPO}/${place}
+        kdialog --title "trasno_firsttime.sh" --passivepopup "Checking out ${place}" 3
         svn checkout ${url}/${place} ${BASE_REPO}/${place}
     else
-        echo "non: ${BASE_REPO}/${place}"
+        kdialog --title "trasno_firsttime.sh" --passivepopup "Not checking out: ${place}\nThere is a .svn dir there!" 5
     fi
   done
 }
 
 if [ ! `cat $HOME/.bashrc | grep '$PATH' | grep '$BASE_REPO' | wc -m` == 0 ]; then
-    echo 'Environment variable $BASE_REPO is already present into your .bashrc'
-    echo 'This may indicate that trasno_firsttime.sh has already been run for you!!!'
+    kdialog --title "trasno_firsttime.sh" --error 'Environment variable $BASE_REPO is already present into your .bashrc\nThis may indicate that trasno_firsttime.sh has already been run for you!!!'
     exit 2
 fi
 
 declare code=`kdialog --title "Language code" --inputbox "Please enter the language code you want to translate to (e.g. \"gl\" or \"x-test\")"`
 declare user=`kdialog --title "KDE developer identity" --inputbox "What is you KDE identity?"`
 
+if [ "${user}" != "" ]; then
+  if [ -f "${HOME}/.ssh/${user}_rsa" ]; then
+    ssh_key=${user}"_rsa"
+  elif [ -f "${HOME}/.ssh/${user}_dsa" ]; then
+    ssh_key=${user}"_dsa"
+  else 
+    kdialog --sorry "There is no ${HOME}/.ssh/${ssh_key}, exiting"
+    exit 1
+  fi
+  if [ -x "/usr/bin/ksshaskpass" ]; then
+    export SSH_ASKPASS=/usr/bin/ksshaskpass
+  fi
+  ssh-add ${HOME}/.ssh/${ssh_key} < /dev/null
+fi
+
 declare -r devSvn="svn+ssh://svn@svn.kde.org/home/kde"
 declare -r usrSvn="svn://anonsvn.kde.org/home/kde"
-declare -xr BASE_REPO=$HOME/Traducion/KDE
-declare -xr PATH=$BASE_REPO/trunk/l10n-support/pology/scripts:$BASE_REPO/trunk/l10n-support/gl/coordinator_helper_scripts:$PATH
+declare -xr BASE_REPO=${HOME}/Traducion/KDE
+declare -xr PATH=${BASE_REPO}/trunk/l10n-support/pology/scripts:$BASE_REPO/trunk/l10n-support/gl/coordinator_helper_scripts:$PATH
 
 # #criamos os cartafoles base
 #creamos os cartafoles segundo se reflicte na estrutura citada en axuda.txt. Imos pór só o esencial. Comente as liñas nos desexadas.
@@ -65,21 +79,10 @@ mkdir -p $BASE_REPO/trunk/l10n-support/{${code},pology}
 
 #agora os svn checkout
 if [ user ]; then
-  if [ -f "${HOME}/.ssh/${user}_rsa" ]; then
-    ssh_key=${user}"_rsa"
-  elif [ -f "${HOME}/.ssh/${user}_dsa" ]; then
-    ssh_key=${user}"_dsa"
-  else 
-    echo "There is no ${HOME}/.ssh/${ssh_key}, exiting"
-    exit 1
-  fi
-  if [ -x "/usr/bin/ksshaskpass" ]; then
-    export SSH_ASKPASS=/usr/bin/ksshaskpass
-  fi
-  ssh-add ${HOME}/.ssh/${ssh_key} < /dev/null
+  kdialog --title "trasno_firsttime.sh" --passivepopup "Using svn with user ${user}" 5
   getThem ${devSvn} ${code}
 else
-  echo "WARNING: Using anonsvn"
+  kdialog --title "trasno_firsttime.sh" --passivepopup "Using anonsvn" 5
   getThem ${usrSvn} ${code}
 fi
 
