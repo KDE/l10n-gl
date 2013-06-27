@@ -3,7 +3,7 @@
 #versións, procesar os orfos e algunha cousa máis.
 #LER O FICHEIRO AXUDA.TXT ANTES DE UTILIZAR!!!!!
 
-# Copyright (c) 2008, 2010, 2011 Marcelino Villarino Aguiar
+# Copyright (c) 2008, 2010, 2013 Marcelino Villarino Aguiar
 # All rights reserved.
 # Redistribution and use in source and binary forms, with or without modification,
 # are permitted provided that the following conditions are met: Redistributions
@@ -25,55 +25,76 @@
 # CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
 # ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
 # POSSIBILITY OF SUCH DAMAGE.
+
+function resolveConflicts()
+{
+  local -r repository=$1
+  local -r commonPath=`dirname ${repository}`
+  local -r marca="mine"
+
+  for ficheiro in `svn status ${repository} | grep "^C " | cut -d" " -f8`;do
+    declare directorio=`dirname ${ficheiro}`
+    declare  nome=`basename ${ficheiro} ."${marca}"`
+    kdialog -title "anovar.sh" --passivepopup "Solving conflicts and forwarding: ${directorio}/${nome}" 1
+    svn resolve --accept mine-full ${directorio}/${nome}
+    ${commonPath}/scripts/merge.sh ${directorio}/${nome} ${commonPath}/templates${directorio##"${commonPath}/${lang}"}/${nome}t
+  done    
+}
+
 if [ -z "$BASE_REPO" ] ; then
    echo "BASE_REPO not set, please run trasno_firsttime.sh first" >&2
    exit 1
 fi
 
-if [ $# -lt 1 -o $# -gt 2 ]; then
-   echo "Usage: anovar.sh lang_code [svn_user]" >&2
+if [ $# -ne 0 ]; then
+   kdialog --title "anovar.sh usage error" --error "This script accepts no parameters" >&2
    exit 1
 fi
 
-code=$1
+declare -r code=`kdialog --title "Language code" --inputbox "Please enter the language code you want to update (e.g. \"gl\" or \"x-test\")"`
+declare -r user=`kdialog --title "KDE developer identity" --inputbox "What is you KDE identity?"` 
+declare ssh_key=""
 
-if [ -f "${HOME}/.ssh/$2_rsa" ]; then
-    ssh_key=$2"_rsa"
-elif [ -f "${HOME}/.ssh/$2_dsa" ]; then
-    ssh_key=$2"_dsa"
-else
-    echo "There is neither ${HOME}/.ssh/$2_rsa, nor ${HOME}/.ssh/$2_dsa, exiting"
+if [ "${user}" != "" ]; then
+  if [ -f "${HOME}/.ssh/${user}_rsa" ]; then
+      ssh_key=${user}"_rsa"
+  elif [ -f "${HOME}/.ssh/${user}_dsa" ]; then
+      ssh_key=${user}"_dsa"
+  else
+      kdialog --title "anovar.sh" --sorry "There is neither ${HOME}/.ssh/${user}_rsa, nor ${HOME}/.ssh/${user}_dsa, exiting"
+      exit 1
+  fi
+  if [ -x "/usr/bin/ksshaskpass" ]; then
+    export SSH_ASKPASS=/usr/bin/ksshaskpass
+  fi
+  ssh-add ${HOME}/.ssh/${ssh_key} < /dev/null
 fi
-ssh-add ${HOME}/.ssh/${ssh_key}
 
-auxiliar="pt"
-
-
-# antes que nada, facemos unha copia de seguranza da bbdd de traduzón
-#tar cvf $BASE_REPO/db_backup`date +%F`.tar $HOME/.kde/share/apps/kbabeldict/dbsearchengine/
-
-for lugar in {trunk/l10n-kde4,branches/stable/l10n-kde4,trunk/l10n-support}/{scripts,templates,$code,$auxiliar,documentation,pology}; do #anovamos a galla
-    if [ -d $BASE_REPO/$lugar/.svn ]; then
-        echo "$lugar"
-        svn update --non-interactive --quiet $BASE_REPO/$lugar
+#REPOSITORIES UPDATES
+for lugar in {trunk/l10n-kde4,branches/stable/l10n-kde4}/{scripts,templates} trunk/l10n-support/pology; do #anovamos o resto
+    if [ -d ${BASE_REPO}/${lugar}/.svn ]; then
+        kdialog --title "anovar.sh" --passivepopup "Updating: ${lugar}" 3
+        svn update --non-interactive --quiet --accept theirs-full ${BASE_REPO}/${lugar}
     fi
 done
-echo "END OF REPOSITORIES UPDATES, going to second stage"
-
-for galla in trunk branches/stable; do #arranxamos os conflitos (mediante trad_colisions.sh)
-    if [ -d $BASE_REPO/$galla/l10n-kde4/$code ] ; then
-        trad_colisions.sh `echo $galla | cut -d"/" -f1` $code
-    else
-        echo "Language $code is not present under branch $galla"
-    fi
-
-    if [ -x $BASE_REPO/$galla/l10n-kde4/scripts/process_orphans.sh ]; then #procésanse os orfos e vese cais po non teñen pot
-        echo "...will now process orphans of $galla"
-        cd $BASE_REPO/$galla/l10n-kde4/
-        $BASE_REPO/$galla/l10n-kde4/scripts/process_orphans.sh &> /dev/null
-        if [ -x $BASE_REPO/$galla/l10n-kde4/scripts/find_po_without_pot.sh ]; then
-            echo "...checking for po files without associated po file on $galla"
-            $BASE_REPO/$galla/l10n-kde4/scripts/find_po_without_pot.sh $code
-        fi
+for galla in trunk/l10n-kde4 branches/stable/l10n-kde4 trunk/l10n-support; do #anovamos as traducións
+    if [ -d ${BASE_REPO}/${galla}/${code}/.svn ]; then
+        kdialog --title "anovar.sh" --passivepopup "Updating: ${galla}/${code}" 3
+        svn update --non-interactive --quiet --accept postpone ${BASE_REPO}/${galla}/${code}
+        resolveConflicts ${BASE_REPO}/${galla}/${code}
     fi
 done
+kdialog --title "anovar.sh" --passivepopup "END OF REPOSITORIES UPDATES, going to second stage" 2
+
+for galla in trunk branches/stable; do
+    if [ -x ${BASE_REPO}/${galla}/l10n-kde4/scripts/process_orphans.sh ]; then #procésanse os orfos e vese cais po non teñen pot
+        kdialog -title "anovar.sh" --passivepopup "Processing orphans of ${galla}" 5
+        cd ${BASE_REPO}/${galla}/l10n-kde4/ #ISTO DEBERÏA IR NUNHA SUBSHELL
+        ${BASE_REPO}/${galla}/l10n-kde4/scripts/process_orphans.sh &> /dev/null
+    fi
+    if [ -x ${BASE_REPO}/${galla}/l10n-kde4/scripts/find_po_without_pot.sh ]; then
+        kdialog -title "anovar.sh" --passivepopup "Checking for po files without associated po file on ${galla}" 5
+        ${BASE_REPO}/${galla}/l10n-kde4/scripts/find_po_without_pot.sh ${code}
+    fi
+done
+kdialog --title "anovar.sh" --msgbox "Anovar.sh done!"
