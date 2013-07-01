@@ -1,4 +1,5 @@
 #! /usr/bin/env bash
+# -*- coding: UTF-8 -*-
 #Este script serve para actualizar os repositorios, resolver os conflitos entre
 #versións, procesar os orfos e algunha cousa máis.
 #LER O FICHEIRO AXUDA.TXT ANTES DE UTILIZAR!!!!!
@@ -54,7 +55,6 @@ fi
 declare -r code=`kdialog --title "Language code" --inputbox "Please enter the language code you want to update (e.g. \"gl\" or \"x-test\")"`
 declare -r user=`kdialog --title "KDE developer identity" --inputbox "What is you KDE identity?"` 
 declare ssh_key=""
-
 if [ "${user}" != "" ]; then
   if [ -f "${HOME}/.ssh/${user}_rsa" ]; then
       ssh_key=${user}"_rsa"
@@ -70,6 +70,8 @@ if [ "${user}" != "" ]; then
   ssh-add ${HOME}/.ssh/${ssh_key} < /dev/null
 fi
 
+declare -r merger=${BASE_REPO}/trunk/l10n-support/gl/coordinator_helper_scripts/internal/trasno_npo3wm.py
+
 #REPOSITORIES UPDATES
 for lugar in {trunk/l10n-kde4,branches/stable/l10n-kde4}/{scripts,templates} trunk/l10n-support/pology; do #anovamos o resto
     if [ -d ${BASE_REPO}/${lugar}/.svn ]; then
@@ -80,8 +82,9 @@ done
 for galla in trunk/l10n-kde4 branches/stable/l10n-kde4 trunk/l10n-support; do #anovamos as traducións
     if [ -d ${BASE_REPO}/${galla}/${code}/.svn ]; then
         kdialog --title "anovar.sh" --passivepopup "Updating: ${galla}/${code}" 3
-        svn update --non-interactive --quiet --accept postpone ${BASE_REPO}/${galla}/${code}
-        resolveConflicts ${BASE_REPO}/${galla}/${code}
+#         svn update --non-interactive --quiet --accept postpone ${BASE_REPO}/${galla}/${code}
+#         resolveConflicts ${BASE_REPO}/${galla}/${code}
+          svn update --quiet --diff3-cmd ${merger} --accept launch ${BASE_REPO}/${galla}/${code}
     fi
 done
 kdialog --title "anovar.sh" --passivepopup "END OF REPOSITORIES UPDATES, going to second stage" 2

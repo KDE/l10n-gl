@@ -42,9 +42,9 @@ def naive3WMerger ( mine, old, yours, acceptDubious, rejectionMark):
     newPosition = yours.find(oldMsg)
     if newPosition > -1:
       newMsg = yours.__getitem__(newPosition)
-      old.__setitem__(oldPosition, newMsg)
       if newMsg.translated or (acceptDubious and not newMsg.untranslated) and (rejectionMark not in newMsg.manual_comment) and newMsg._msgstr != oldMsg._msgstr:
         #print msg._msgstr , new.get(msg)._msgstr , mine.get(msg)._msgstr
+        old.__setitem__(oldPosition, newMsg)
         continue
       
     minePosition = mine.find(oldMsg)
