@@ -25,12 +25,13 @@
 
 
 try:
-    import fallback_import_paths
+  import fallback_import_paths
 except:
-    import sys
-    sys.path.insert(0, "~/Traducion/KDE/trunk/l10n-support/pology")
+  import sys
+  sys.path.insert(0, "/home/test/Traducion/KDE/trunk/l10n-support/pology")
 
 from pology.catalog import Catalog
+
 
 def naive3WMerger ( mine, old, yours, acceptDubious, rejectionMark):
   assert isinstance(mine, Catalog),  "parameter «mine» is not a pology Catalog"
@@ -66,29 +67,36 @@ def naive3WMerger ( mine, old, yours, acceptDubious, rejectionMark):
 
 if __name__ == '__main__':
   
-# Trátase de facer unha versión limitada para ser usada por anovar.sh
-  if len(sys.argv) != 5:
-    sys.exit("Incorrect number of args")
-  else:
-    from os.path import exists
-    if not all(exists(path) for path in sys.argv[1:5]):
-      sys.exit("There is not file: %path" % path)
-    del exists
-    ## Get the paths provided by Subversion.
-    for i in range(1, 6)
-      print sys.argv[i]
-    exit 0
-    from pology.merge import merge_pofile
-    BASE = merge_pofile(sys.argv[1], options.commonPot, getcat= True,
+  # Put the paths as provided by svn update --quiet --diff3-cmd ${merger} --non-interactive ${BASE_REPO}/${galla}/${code} into the right (tm) variables
+  #            gl/messages/playground-base/.svn/tmp/svn-WXB1HK (MINE)
+  #            gl/messages/playground-base/.svn/text-base/file.po.svn-base (OLDER)
+  #            gl/messages/playground-base/.svn/tmp/text-base/file.po.svn-base (YOURS)
+  from pology.merge import merge_pofile
+  import os.path
+  #poido coller o nome o ficheiro de sys.argv[-2] (vai despois de .svn/text-base, e hai que quitarlle un .svn-base final)
+  nomeCompletoFicheiroMINE = os.path.abspath(sys.argv[-3])
+  nomeCompletoFicheiroBASE = os.path.abspath(sys.argv[-2])
+  nomeCompletoFicheiroTHEIRS = os.path.abspath(sys.argv[-1])
+  
+  nomeTemplate = os.path.basename(os.path.splitext(nomeCompletoFicheiroBASE)[0])+"t"  
+  nomeModuloTMP   = os.path.dirname(os.path.dirname(os.path.commonprefix([nomeCompletoFicheiroBASE, nomeCompletoFicheiroMINE])))
+  modulo = os.path.basename(nomeModuloTMP)
+  seccion = os.path.basename(os.path.dirname(nomeModuloTMP))
+  base = os.path.expandvars("${BASE_REPO}/${galla}") 
+  commonPot = os.path.join(base,"templates",seccion, modulo, nomeTemplate)
+  
+  MINE = merge_pofile(sys.argv[-3], commonPot, getcat= True,
                       abort = True)
-    THEIRS = Catalog(sys.argv[2])
-    MINE = merge_pofile(sys.argv[3], options.commonPot, getcat= True,
-                        abort = True)
-    MERGED = Catalog(sys.argv[4])
-    WCPATH = sys.argv[5]
-    del merge_pofile
+  BASE = merge_pofile(sys.argv[-2], commonPot, getcat= True,
+                    abort = True)
+  THEIRS = Catalog(sys.argv[-1])
+  
+  del merge_pofile
 
-    # necesito a ruta ao pot !!!!!
   discarderComment ="Trasno: rejected"
   
-  #naive3WMerger ( MINE, BASE, THEIRS, True, discarderComment)
+  naive3WMerger ( MINE, BASE, THEIRS, True, discarderComment)
+  # After performing the merge, this script needs to print the contents
+  # of the merged file to stdout.  Do that in whatever way you see fit.
+  # Return an errorcode of 0 on successful merge, 1 if unresolved conflicts
+  # remain in the result.  Any other errorcode will be treated as fatal.

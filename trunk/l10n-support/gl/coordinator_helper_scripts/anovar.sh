@@ -27,23 +27,23 @@
 # ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
 # POSSIBILITY OF SUCH DAMAGE.
 
-function resolveConflicts()
-{
-  local -r repository=$1
-  local -r commonPath=`dirname ${repository}`
-  local -r marca="mine"
-
-  for ficheiro in `svn status ${repository} | grep "^C " | cut -d" " -f8`;do
-    declare directorio=`dirname ${ficheiro}`
-    declare  nome=`basename ${ficheiro} ."${marca}"`
-    kdialog -title "anovar.sh" --passivepopup "Solving conflicts and forwarding: ${directorio}/${nome}" 1
-    svn resolve --accept mine-full ${directorio}/${nome}
-    ${commonPath}/scripts/merge.sh ${directorio}/${nome} ${commonPath}/templates${directorio##"${commonPath}/${lang}"}/${nome}t
-  done    
-}
+# function resolveConflicts()
+# {
+#   local -r repository=$1
+#   local -r commonPath=`dirname ${repository}`
+#   local -r marca="mine"
+# 
+#   for ficheiro in `svn status ${repository} | grep "^C " | cut -d" " -f8`;do
+#     declare directorio=`dirname ${ficheiro}`
+#     declare  nome=`basename ${ficheiro} ."${marca}"`
+#     kdialog -title "anovar.sh" --passivepopup "Solving conflicts and forwarding: ${directorio}/${nome}" 1
+#     svn resolve --accept mine-full ${directorio}/${nome}
+#     ${commonPath}/scripts/merge.sh ${directorio}/${nome} ${commonPath}/templates${directorio##"${commonPath}/${lang}"}/${nome}t
+#   done    
+# }
 
 if [ -z "$BASE_REPO" ] ; then
-   echo "BASE_REPO not set, please run trasno_firsttime.sh first" >&2
+   kdialog --title "Unset environment variable" --error "BASE_REPO not set, please run trasno_firsttime.sh first"
    exit 1
 fi
 
@@ -73,18 +73,31 @@ fi
 declare -r merger=${BASE_REPO}/trunk/l10n-support/gl/coordinator_helper_scripts/internal/trasno_npo3wm.py
 
 #REPOSITORIES UPDATES
-for lugar in {trunk/l10n-kde4,branches/stable/l10n-kde4}/{scripts,templates} trunk/l10n-support/pology; do #anovamos o resto
+for lugar in {trunk/l10n-kde4,branches/stable/l10n-kde4}/{scripts,templates} trunk/l10n-support/pology; do #anovamos
     if [ -d ${BASE_REPO}/${lugar}/.svn ]; then
         kdialog --title "anovar.sh" --passivepopup "Updating: ${lugar}" 3
         svn update --non-interactive --quiet --accept theirs-full ${BASE_REPO}/${lugar}
     fi
 done
+declare -x galla
 for galla in trunk/l10n-kde4 branches/stable/l10n-kde4 trunk/l10n-support; do #anovamos as traducións
     if [ -d ${BASE_REPO}/${galla}/${code}/.svn ]; then
         kdialog --title "anovar.sh" --passivepopup "Updating: ${galla}/${code}" 3
 #         svn update --non-interactive --quiet --accept postpone ${BASE_REPO}/${galla}/${code}
 #         resolveConflicts ${BASE_REPO}/${galla}/${code}
-          svn update --quiet --diff3-cmd ${merger} --accept launch ${BASE_REPO}/${galla}/${code}
+          svn update --quiet --diff3-cmd ${merger} --non-interactive ${BASE_REPO}/${galla}/${code}
+          #pasa os seguintes parámetros:
+#           -E
+#           -m
+#           -L
+#            .mine
+#            -L
+#            .r12000000 (old revision example)
+#            -L
+#            .r14567899 (new revision example)
+#            gl/messages/playground-base/.svn/tmp/svn-WXB1HK (MINE)
+#            gl/messages/playground-base/.svn/text-base/file.po.svn-base (OLDER)
+#            gl/messages/playground-base/.svn/tmp/text-base/file.po.svn-base (YOURS)
     fi
 done
 kdialog --title "anovar.sh" --passivepopup "END OF REPOSITORIES UPDATES, going to second stage" 2
