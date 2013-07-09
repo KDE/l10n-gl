@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: rekonq\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2013-06-27 01:29+0000\n"
+"POT-Creation-Date: 2013-07-09 21:13+0000\n"
 "PO-Revision-Date: 2013-01-13 06:51+0100\n"
 "Last-Translator: Miguel Branco <mgl.branco@gmail.com>\n"
 "Language-Team: Galician <proxecto@trasno.net>\n"
@@ -1608,38 +1608,38 @@ msgstr "Activa a funcionalidade de HTML 5 da caché dos aplicativos web."
 msgid "Enables support for the HTML 5 local storage feature."
 msgstr "Activa a funcionalidade de HTML 5 de almacenamento local."
 
-#: sync/ftpsynchandler.cpp:148
+#: sync/ftpsynchandler.cpp:148 sync/sshsynchandler.cpp:149
 #, fuzzy
 #| msgid "Remote bookmarks file does NOT exists. Exporting local copy..."
 msgid "Remote bookmarks file does not exists. Exporting local copy..."
 msgstr "O ficheiro remoto dos marcadores non existe. Exportando a copia local…"
 
-#: sync/ftpsynchandler.cpp:161
+#: sync/ftpsynchandler.cpp:161 sync/sshsynchandler.cpp:162
 #, fuzzy
 #| msgid "Remote bookmarks file exists! Syncing local copy..."
 msgid "Remote bookmarks file exists. Syncing local copy..."
 msgstr "O ficheiro remoto dos marcadores existe! Sincronizando a copia local…"
 
-#: sync/ftpsynchandler.cpp:204
+#: sync/ftpsynchandler.cpp:204 sync/sshsynchandler.cpp:205
 #, fuzzy
 #| msgid "Remote history file does NOT exists. Exporting local copy..."
 msgid "Remote history file does not exists. Exporting local copy..."
 msgstr "O ficheiro remoto do historial non existe. Exportando a copia local…"
 
-#: sync/ftpsynchandler.cpp:217
+#: sync/ftpsynchandler.cpp:217 sync/sshsynchandler.cpp:218
 #, fuzzy
 #| msgid "Remote history file exists! Syncing local copy..."
 msgid "Remote history file exists. Syncing local copy..."
 msgstr "O ficheiro remoto do historial existe! Sincronizando a copia local…"
 
-#: sync/ftpsynchandler.cpp:260
+#: sync/ftpsynchandler.cpp:260 sync/sshsynchandler.cpp:261
 #, fuzzy
 #| msgid "Remote passwords file does NOT exists. Exporting local copy..."
 msgid "Remote passwords file does not exists. Exporting local copy..."
 msgstr ""
 "O ficheiro remoto dos contrasinais non existe. Exportando a copia local…"
 
-#: sync/ftpsynchandler.cpp:273
+#: sync/ftpsynchandler.cpp:273 sync/sshsynchandler.cpp:274
 #, fuzzy
 #| msgid "Remote passwords file exists! Syncing local copy..."
 msgid "Remote passwords file exists. Syncing local copy..."
@@ -1756,29 +1756,29 @@ msgid "Remote FTP Host Settings"
 msgstr "Configuración do servidor FTP remoto"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
-#: sync/sync_ftp_settings.ui:23
+#: sync/sync_ftp_settings.ui:23 sync/sync_ssh_settings.ui:26
 msgid "Server:"
 msgstr "Servidor:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: sync/sync_ftp_settings.ui:33 sync/sync_google_settings.ui:26
-#: sync/sync_opera_settings.ui:26
+#: sync/sync_opera_settings.ui:26 sync/sync_ssh_settings.ui:36
 msgid "Username:"
 msgstr "Usuario:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_3)
 #: sync/sync_ftp_settings.ui:43 sync/sync_google_settings.ui:36
-#: sync/sync_opera_settings.ui:36
+#: sync/sync_opera_settings.ui:36 sync/sync_ssh_settings.ui:46
 msgid "Password:"
 msgstr "Contrasinal:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_4)
-#: sync/sync_ftp_settings.ui:56
+#: sync/sync_ftp_settings.ui:56 sync/sync_ssh_settings.ui:63
 msgid "Path:"
 msgstr "Ruta:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_5)
-#: sync/sync_ftp_settings.ui:66
+#: sync/sync_ftp_settings.ui:66 sync/sync_ssh_settings.ui:73
 msgid "Port:"
 msgstr "Porto:"
 
@@ -1812,20 +1812,28 @@ msgstr "Tipo de servidor de sincronización"
 msgid "FTP"
 msgstr "FTP."
 
+#. i18n: ectx: property (text), widget (QRadioButton, sshRadioButton)
+#: sync/sync_host_type.ui:37 sync/synccheckwidget.cpp:73
+#, fuzzy
+#| msgctxt "Secure Sockets Layer"
+#| msgid "SSL"
+msgid "SSH"
+msgstr "SSL"
+
 #. i18n: ectx: property (text), widget (QRadioButton, googleRadioButton)
-#: sync/sync_host_type.ui:37
+#: sync/sync_host_type.ui:44
 msgid "Google Sync"
 msgstr ""
 
 #. i18n: ectx: property (text), widget (QRadioButton, operaRadioButton)
-#: sync/sync_host_type.ui:44
+#: sync/sync_host_type.ui:51
 #, fuzzy
 #| msgid "Opera"
 msgid "Opera Sync"
 msgstr "Opera"
 
 #. i18n: ectx: property (text), widget (QRadioButton, nullRadioButton)
-#: sync/sync_host_type.ui:51
+#: sync/sync_host_type.ui:58
 msgid "/dev/null"
 msgstr "Ningún."
 
@@ -1837,7 +1845,19 @@ msgstr "Ningún."
 msgid "Opera Account Settings"
 msgstr "Configuración dos axentes"
 
-#: sync/syncassistant.cpp:44
+#. i18n: ectx: property (title), widget (QGroupBox, sshGroupBox)
+#: sync/sync_ssh_settings.ui:17
+#, fuzzy
+#| msgid "remote FTP host settings"
+msgid "SSH Host Settings"
+msgstr "Configuración do servidor FTP remoto"
+
+#. i18n: ectx: property (text), widget (QCheckBox, syncWithSSHKeys)
+#: sync/sync_ssh_settings.ui:56
+msgid "Use system ssh keys to login"
+msgstr ""
+
+#: sync/syncassistant.cpp:45
 #, fuzzy
 #| msgid "sync assistant"
 msgid "Sync Assistant"
@@ -1853,11 +1873,11 @@ msgstr "Google Reader"
 msgid "Opera"
 msgstr "Opera"
 
-#: sync/synccheckwidget.cpp:73
+#: sync/synccheckwidget.cpp:78
 msgid "No sync"
 msgstr "Non sincronizar"
 
-#: sync/synccheckwidget.cpp:74
+#: sync/synccheckwidget.cpp:79
 msgctxt "no host"
 msgid "None"
 msgstr ""
