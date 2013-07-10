@@ -23,12 +23,14 @@
 # ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
 # POSSIBILITY OF SUCH DAMAGE.
 
-
+import sys
 try:
   import fallback_import_paths
 except:
-  import sys
-  sys.path.insert(0, "/home/test/Traducion/KDE/trunk/l10n-support/pology")
+  import os.path
+  libPath= os.path.join(os.path.expandvars("${BASE_REPO}"), "trunk/l10n-support/pology")
+  sys.path.insert(0, libPath)
+  del os.path
 
 from pology.catalog import Catalog
 
@@ -66,34 +68,34 @@ def naive3WMerger ( mine, old, yours, acceptDubious, rejectionMark):
     print msg.to_string(),
 
 if __name__ == '__main__':
+    
+  # A rather complex way to guess the template path...
+  import os.path
+  nomeCompletoFicheiroMINE = os.path.abspath(sys.argv[-3])
+  nomeCompletoFicheiroBASE = os.path.abspath(sys.argv[-2])
+  nomeTemplate = os.path.basename(os.path.splitext(nomeCompletoFicheiroBASE)[0])+"t"  
+  nomeModuloTMP   = os.path.dirname(os.path.dirname(os.path.commonprefix([nomeCompletoFicheiroBASE, nomeCompletoFicheiroMINE])))
+  modulo = os.path.basename(nomeModuloTMP)
+  seccion = os.path.basename(os.path.dirname(nomeModuloTMP))
+ 
+  commonPot = os.path.join(os.path.expandvars("${BASE_REPO}/${galla}"),"templates",seccion, modulo, nomeTemplate)
+  del os.path
   
   # Put the paths as provided by svn update --quiet --diff3-cmd ${merger} --non-interactive ${BASE_REPO}/${galla}/${code} into the right (tm) variables
   #            gl/messages/playground-base/.svn/tmp/svn-WXB1HK (MINE)
   #            gl/messages/playground-base/.svn/text-base/file.po.svn-base (OLDER)
   #            gl/messages/playground-base/.svn/tmp/text-base/file.po.svn-base (YOURS)
   from pology.merge import merge_pofile
-  import os.path
-  #poido coller o nome o ficheiro de sys.argv[-2] (vai despois de .svn/text-base, e hai que quitarlle un .svn-base final)
-  nomeCompletoFicheiroMINE = os.path.abspath(sys.argv[-3])
-  nomeCompletoFicheiroBASE = os.path.abspath(sys.argv[-2])
-  nomeCompletoFicheiroTHEIRS = os.path.abspath(sys.argv[-1])
-  
-  nomeTemplate = os.path.basename(os.path.splitext(nomeCompletoFicheiroBASE)[0])+"t"  
-  nomeModuloTMP   = os.path.dirname(os.path.dirname(os.path.commonprefix([nomeCompletoFicheiroBASE, nomeCompletoFicheiroMINE])))
-  modulo = os.path.basename(nomeModuloTMP)
-  seccion = os.path.basename(os.path.dirname(nomeModuloTMP))
-  base = os.path.expandvars("${BASE_REPO}/${galla}") 
-  commonPot = os.path.join(base,"templates",seccion, modulo, nomeTemplate)
-  
-  MINE = merge_pofile(sys.argv[-3], commonPot, getcat= True,
-                      abort = True)
-  BASE = merge_pofile(sys.argv[-2], commonPot, getcat= True,
-                    abort = True)
+  MINE = merge_pofile(sys.argv[-3], commonPot, getcat= True, abort = True)
+  BASE = merge_pofile(sys.argv[-2], commonPot, getcat= True, abort = True)
   THEIRS = Catalog(sys.argv[-1])
   
   del merge_pofile
-
+  del sys
+  
+  #OK, this is a piece of shit...
   discarderComment ="Trasno: rejected"
+  #end of shit
   
   naive3WMerger ( MINE, BASE, THEIRS, True, discarderComment)
   # After performing the merge, this script needs to print the contents

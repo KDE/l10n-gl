@@ -79,6 +79,7 @@ for lugar in {trunk/l10n-kde4,branches/stable/l10n-kde4}/{scripts,templates} tru
         svn update --non-interactive --quiet --accept theirs-full ${BASE_REPO}/${lugar}
     fi
 done
+
 declare -x galla
 for galla in trunk/l10n-kde4 branches/stable/l10n-kde4 trunk/l10n-support; do #anovamos as traducións
     if [ -d ${BASE_REPO}/${galla}/${code}/.svn ]; then
@@ -86,20 +87,9 @@ for galla in trunk/l10n-kde4 branches/stable/l10n-kde4 trunk/l10n-support; do #a
 #         svn update --non-interactive --quiet --accept postpone ${BASE_REPO}/${galla}/${code}
 #         resolveConflicts ${BASE_REPO}/${galla}/${code}
           svn update --quiet --diff3-cmd ${merger} --non-interactive ${BASE_REPO}/${galla}/${code}
-          #pasa os seguintes parámetros:
-#           -E
-#           -m
-#           -L
-#            .mine
-#            -L
-#            .r12000000 (old revision example)
-#            -L
-#            .r14567899 (new revision example)
-#            gl/messages/playground-base/.svn/tmp/svn-WXB1HK (MINE)
-#            gl/messages/playground-base/.svn/text-base/file.po.svn-base (OLDER)
-#            gl/messages/playground-base/.svn/tmp/text-base/file.po.svn-base (YOURS)
     fi
 done
+unset galla
 kdialog --title "anovar.sh" --passivepopup "END OF REPOSITORIES UPDATES, going to second stage" 2
 
 for galla in trunk branches/stable; do
