@@ -21,18 +21,15 @@
 # OF THE POSSIBILITY OF SUCH DAMAGE.
 
 if [ -z "$BASE_REPO" ] ; then
- kdialog --title "Unset environment variable" --error "BASE_REPO not set, please run trasno_firsttime.sh first"
+ kdialog --title "Unset environment variable" \
+         --error "BASE_REPO not set, please run trasno_firsttime.sh first"
  exit 1
 fi
 
-declare proceed
-
 declare version
-version=`kdialog --title "Version selection" --combobox "Select a version:" "trunk" "stable" --default "trunk"`
-proceed=$?
-if [ ${proceed} -eq 1 ]; then
-  exit 1
-fi
+version=$(kdialog --title "Version selection" \
+         --combobox "Select a version:" "trunk" "stable" --default "trunk") \
+        || (kdialog --error "Exiting because version not chosen" && exit 1)
 
 declare repo=$(case ${version} in
                  stable)
@@ -45,35 +42,40 @@ declare repo=$(case ${version} in
                )
 
 declare possibleLang
-possibleLang=`kdialog --getexistingdirectory ${repo}`
-proceed=$?
-if [ ${proceed} -eq 1 ]; then
-  exit 1
-fi
+possibleLang=$(kdialog --getexistingdirectory ${repo}) \
+             || (kdialog --error "Language directory not chosen" && exit 1)
 
-declare -r svnUrl=`svn info ${possibleLang} | grep "^Repository Root: " | cut -d" " -f3`
+declare -r svnUrl=$(svn info ${possibleLang} \
+                  | grep "^Repository Root: " \
+                  | cut -d" " -f3 )
 
 case ${svnUrl} in
   svn+ssh://svn@svn.kde.org/home/kde*)
-    if [ `svn status ${possibleLang} | grep "^\?" | cut -d" " -f8 | wc -l` -ne  0 ] ; then
+    if [ $(svn status ${possibleLang} | grep "^\?" | cut -d" " -f8 | wc -l) \
+         -ne  0 ] ; then
       svn add `svn status ${possibleLang}  | grep "^\?" | cut -d" " -f8`
     fi
     svn commit ${possibleLang}/ --editor-cmd kwrite
     ;;
   svn://anonsvn.kde.org/home/kde*)
     #aqui a parte de empaquetar 
-    declare -r tradutor=`kdialog --title "Your nickname" --inputbox "Please enter your nickname, preferably a single word."`
-    proceed=$?
-    if [ ${proceed} -eq 1 ] || [ -z ${tradutor} ]; then
+    declare -r tradutor=$(kdialog --title "Your nickname" \
+                        --inputbox "Please enter your nickname, preferably a single word.")
+    if [ -z ${tradutor} ]; then
       kdialog --title "Nickname needed" --error "A nickname is required in order to proceed"
       exit 1
     fi
     declare -r entrega="entrega_"${tradutor}_${version}_`date +%F`.tar.bz2
-    declare -r ficheiros=`svn status ${possibleLang} | grep [MC?] | cut -d" " -f8 | sed -e s:^"${possibleLang}/"::
+    declare -r ficheiros=$(svn status ${possibleLang} \
+                         | grep [MC?] \
+                         | cut -d" " -f8 \
+                         | sed -e s:^"${possibleLang}/":: )
     tar -cjvf  ${entrega} -C ${possibleLang} ${ficheiros}
     ;;
   *)
-    kdialog --title "Unexpected repository" --error "Given directory does not report any expected repository root."
+    kdialog --title "Unexpected repository" \
+            --error "Given directory does not report any expected repository root."
     exit 1
     ;;
 esac
+kdialog --title "trasno_submit.sh" --msgbox "trasno_submit.sh done!"
