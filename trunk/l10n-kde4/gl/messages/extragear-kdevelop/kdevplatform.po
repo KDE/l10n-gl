@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdevplatform\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2013-07-13 01:32+0000\n"
+"POT-Creation-Date: 2013-07-17 01:33+0000\n"
 "PO-Revision-Date: 2013-03-10 10:24+0100\n"
 "Last-Translator: Marce Villarino <mvillarino@kde-espana.es>\n"
 "Language-Team: Galician <proxecto@trasno.net>\n"
@@ -145,8 +145,7 @@ msgstr "Condición"
 msgid "Active status"
 msgstr "Estado activo"
 
-#: debugger/breakpoint/breakpointmodel.cpp:176
-#: shell/sessioncontroller.cpp:1010
+#: debugger/breakpoint/breakpointmodel.cpp:176 shell/sessioncontroller.cpp:854
 msgid "State"
 msgstr "Estado"
 
@@ -916,25 +915,34 @@ msgstr "Expandir todo"
 msgid "Collapse all"
 msgstr "Contraer todo"
 
-#: language/duchain/repositories/itemrepository.cpp:265
+#: language/duchain/repositories/itemrepository.h:214
+#: language/duchain/repositories/itemrepository.h:2133
+#, kde-format
+msgid "Failed writing to %1, probably the disk is full"
+msgstr "Non foi posíbel escribir en %1; probabelmente o disco estea cheo"
+
+#: language/duchain/repositories/itemrepositoryregistry.cpp:262
 #, kde-format
 msgid "Session crashed %1 time in a row"
 msgid_plural "Session crashed %1 times in a row"
 msgstr[0] "A sesión quebrou %1 vez seguida"
 msgstr[1] "A sesión quebrou %1 veces seguidas"
 
-#: language/duchain/repositories/itemrepository.cpp:270
-msgid "Clear cache: [Y/n] "
+#: language/duchain/repositories/itemrepositoryregistry.cpp:263
+#, fuzzy
+#| msgid "Clear cache: [Y/n] "
+msgctxt "@action"
+msgid "Clear cache"
 msgstr "Limpar a caché: [S/n]"
 
-#: language/duchain/repositories/itemrepository.cpp:282
-#, kde-format
-msgid "The Session crashed once."
-msgid_plural "The Session crashed %1 times in a row."
-msgstr[0] "A sesión quebrou unha vez."
-msgstr[1] "A sesión quebrou %1 veces seguidas."
+#: language/duchain/repositories/itemrepositoryregistry.cpp:264
+#, fuzzy
+#| msgid "Session crashed"
+msgctxt "@title"
+msgid "Session crashed"
+msgstr "A sesión quebrou"
 
-#: language/duchain/repositories/itemrepository.cpp:282
+#: language/duchain/repositories/itemrepositoryregistry.cpp:265
 msgid ""
 "The crash may be caused by a corruption of cached data.\n"
 "\n"
@@ -945,16 +953,6 @@ msgstr ""
 "\n"
 "Prema Aceptar se desexa que o KDevelop limpe a caché ou prema Cancelar se "
 "ten a certeza de que a quebra ten outra causa."
-
-#: language/duchain/repositories/itemrepository.cpp:283
-msgid "Session crashed"
-msgstr "A sesión quebrou"
-
-#: language/duchain/repositories/itemrepository.h:424
-#: language/duchain/repositories/itemrepository.h:2343
-#, kde-format
-msgid "Failed writing to %1, probably the disk is full"
-msgstr "Non foi posíbel escribir en %1; probabelmente o disco estea cheo"
 
 #: language/interfaces/iproblem.cpp:132
 msgid "Disk"
@@ -1271,9 +1269,10 @@ msgstr "Escolla o elemento do que desexa obter a ruta."
 msgid "Select an item..."
 msgstr "Escoller un elemento..."
 
-#: project/projectproxymodel.cpp:69
-#, kde-format
-msgid "%1 (%2 Filtered)"
+#: project/projectproxymodel.cpp:70
+#, fuzzy, kde-format
+#| msgid "%1 (%2 Filtered)"
+msgid "%1 (%2 hidden)"
 msgstr "%1 (%2 filtradas)"
 
 #: project/projectutils.cpp:87
@@ -2740,11 +2739,69 @@ msgstr "&Non gardar ningún"
 msgid "Discard all modifications"
 msgstr "Esquecer todas as modificacións"
 
-#: shell/session.cpp:172
+#: shell/session.cpp:173
 msgid "(no projects)"
 msgstr "(ningún proxecto)"
 
-#: shell/sessioncontroller.cpp:189
+#: shell/sessionchooserdialog.cpp:48
+msgctxt "@info"
+msgid "Delete session"
+msgstr "Eliminar a sesión..."
+
+#: shell/sessionchooserdialog.cpp:61
+#, fuzzy
+#| msgid "Pick a session"
+msgid "Pick a Session"
+msgstr "Escoller unha sesión"
+
+#: shell/sessionchooserdialog.cpp:63
+msgid "Run"
+msgstr "Executar"
+
+#: shell/sessionchooserdialog.cpp:95
+#, kde-format
+msgid ""
+"Active session.\n"
+"pid %1, app %2, host %3"
+msgstr ""
+"Sesión activa.\n"
+"pid %1, app %2, máquina %3"
+
+#: shell/sessionchooserdialog.cpp:97
+msgid "Running"
+msgstr "En execución"
+
+#: shell/sessionchooserdialog.cpp:182
+msgctxt "@title"
+msgid "Cannot Delete Session"
+msgstr "Non é posíbel eliminar esta sesión"
+
+#: shell/sessionchooserdialog.cpp:183
+msgctxt "@info"
+msgid "<p>Cannot delete a locked session."
+msgstr "<p>Non é posíbel eliminar unha sesión bloqueada."
+
+#: shell/sessionchooserdialog.cpp:186
+#, kde-format
+msgctxt "@info"
+msgid "<p>The session is locked by %1 on %2 (PID %3)."
+msgstr "<p>A sesión está bloqueada por %1 en %2 (PID %3)."
+
+#: shell/sessionchooserdialog.cpp:194
+msgctxt "@info"
+msgid ""
+"The session and all contained settings will be deleted. The projects will "
+"stay unaffected. Do you really want to continue?"
+msgstr ""
+"Vanse eliminar esta sesión e todas as opcións que contén. Os proxectos non "
+"se verán afectados. Desexa realmente continuar?"
+
+#: shell/sessionchooserdialog.cpp:195
+msgctxt "@title"
+msgid "Delete Session"
+msgstr "Eliminar a sesión"
+
+#: shell/sessioncontroller.cpp:187
 msgid ""
 "The current session and all contained settings will be deleted. The projects "
 "will stay unaffected. Do you really want to continue?"
@@ -2752,19 +2809,19 @@ msgstr ""
 "Vanse eliminar esta sesión e todas as opcións que contén. Os proxectos non "
 "se verán afectados. Desexa realmente continuar?"
 
-#: shell/sessioncontroller.cpp:201
+#: shell/sessioncontroller.cpp:199
 msgid "Rename Session"
 msgstr "Mudar o nome da sesión"
 
-#: shell/sessioncontroller.cpp:205
+#: shell/sessioncontroller.cpp:203
 msgid "New Session Name"
 msgstr "Novo nome da sesión"
 
-#: shell/sessioncontroller.cpp:415
+#: shell/sessioncontroller.cpp:384
 msgid "Recover"
 msgstr "Recuperar"
 
-#: shell/sessioncontroller.cpp:419
+#: shell/sessioncontroller.cpp:388
 #, kde-format
 msgctxt "%1: date of the last snapshot"
 msgid ""
@@ -2774,20 +2831,20 @@ msgstr ""
 "A sesión quebrou a última vez que se empregou. Os ficheiros sen modificar "
 "seguintes pódense recuperar dunha copia de seguranza de %1."
 
-#: shell/sessioncontroller.cpp:421
+#: shell/sessioncontroller.cpp:390
 msgid "Crash Recovery"
 msgstr "Recuperación de quebras"
 
-#: shell/sessioncontroller.cpp:441
+#: shell/sessioncontroller.cpp:410
 #, kde-format
 msgid "Could not recover %1, the recovery file is empty"
 msgstr "Non foi posíbel recuperar %1, o ficheiro de recuperación está baleiro"
 
-#: shell/sessioncontroller.cpp:441
+#: shell/sessioncontroller.cpp:410
 msgid "Recovery"
 msgstr "Recuperación"
 
-#: shell/sessioncontroller.cpp:550
+#: shell/sessioncontroller.cpp:519
 #, kde-format
 msgid ""
 "Failed to write recovery copies to %1. Please make sure that your home "
@@ -2801,232 +2858,71 @@ msgstr ""
 "ser estábel. Pode que o aplicativo se quebre até que se libere algo de "
 "espazo."
 
-#: shell/sessioncontroller.cpp:551
+#: shell/sessioncontroller.cpp:520
 msgid "Recovery Error"
 msgstr "Erro de recuperación"
 
-#: shell/sessioncontroller.cpp:596
+#: shell/sessioncontroller.cpp:565
 msgctxt "@action:inmenu"
 msgid "Start New Session"
 msgstr "Comezar unha sesión nova"
 
-#: shell/sessioncontroller.cpp:597
+#: shell/sessioncontroller.cpp:566
 msgctxt "@info:tooltip"
 msgid "Start a new KDevelop instance with an empty session"
 msgstr "Comezar unha instancia do KDevelop cunha sesión baleira"
 
-#: shell/sessioncontroller.cpp:601
+#: shell/sessioncontroller.cpp:570
 msgid "Rename Current Session..."
 msgstr "Mudar o nome da sesión..."
 
-#: shell/sessioncontroller.cpp:605
+#: shell/sessioncontroller.cpp:574
 msgid "Delete Current Session..."
 msgstr "Eliminar a sesión..."
 
-#: shell/sessioncontroller.cpp:609
+#: shell/sessioncontroller.cpp:578
 msgid "Quit"
 msgstr "Saír"
 
-#: shell/sessioncontroller.cpp:615
+#: shell/sessioncontroller.cpp:584
 msgid "Configure Sessions..."
 msgstr "Configurar as sesións..."
 
-#: shell/sessioncontroller.cpp:616
+#: shell/sessioncontroller.cpp:585
 msgid "Create/Delete/Activate Sessions"
 msgstr "Crear/Eliminar/Activar sesións"
 
-#: shell/sessioncontroller.cpp:617
+#: shell/sessioncontroller.cpp:586
 msgid "Shows a dialog to Create/Delete Sessions and set a new active session."
 msgstr ""
 "Mostra un diálogo para crear ou eliminar sesións e activar unha nova sesión."
 
-#: shell/sessioncontroller.cpp:786
+#: shell/sessioncontroller.cpp:774
 #, kde-format
 msgid "Copy of %1"
 msgstr "Copia de %1"
 
-#: shell/sessioncontroller.cpp:918
-msgctxt "@info"
-msgid "Delete session"
-msgstr "Eliminar a sesión..."
-
-#: shell/sessioncontroller.cpp:931
-#, fuzzy
-#| msgid "Pick a session"
-msgid "Pick a Session"
-msgstr "Escoller unha sesión"
-
-#: shell/sessioncontroller.cpp:933
-msgid "Run"
-msgstr "Executar"
-
-#: shell/sessioncontroller.cpp:965
-#, kde-format
-msgid ""
-"Active session.\n"
-"pid %1, app %2, host %3"
-msgstr ""
-"Sesión activa.\n"
-"pid %1, app %2, máquina %3"
-
-#: shell/sessioncontroller.cpp:966
-msgid "Running"
-msgstr "En execución"
-
-#: shell/sessioncontroller.cpp:985
+#: shell/sessioncontroller.cpp:829
 msgid "Search"
 msgstr "Buscar"
 
-#: shell/sessioncontroller.cpp:1008
+#: shell/sessioncontroller.cpp:852
 msgid "Identity"
 msgstr "Identidade"
 
-#: shell/sessioncontroller.cpp:1009
+#: shell/sessioncontroller.cpp:853
 msgid "Contents"
 msgstr "Contido"
 
-#: shell/sessioncontroller.cpp:1016
+#: shell/sessioncontroller.cpp:860
 msgid "Filter:"
 msgstr "Filtro:"
 
-#: shell/sessioncontroller.cpp:1056
+#: shell/sessioncontroller.cpp:900
 msgid "Create New Session"
 msgstr "Crear unha sesión nova"
 
-#: shell/sessioncontroller.cpp:1105
-msgctxt "@info"
-msgid "The session lock-file is stale."
-msgstr "O ficheiro de bloqueo da sesión é antigo."
-
-#: shell/sessioncontroller.cpp:1109
-msgctxt "@info"
-msgid "Error while taking the session lock-file."
-msgstr "Produciuse un erro ao coller o ficheiro de bloqueo da sesión."
-
-#: shell/sessioncontroller.cpp:1113
-msgctxt "@info"
-msgid "The session lock-file is owned."
-msgstr "O ficheiro de bloqueo da sesión ten dono."
-
-#: shell/sessioncontroller.cpp:1135
-#, kde-format
-msgctxt "@info:shell"
-msgid "made running %1 instance (PID: %2) visible"
-msgstr "facer que a instancia en execución de %1 (PID: %2) sexa visíbel"
-
-#: shell/sessioncontroller.cpp:1138
-#, kde-format
-msgctxt "@info:shell"
-msgid "running %1 instance (PID: %2) is apparently hung"
-msgstr "aparentemente, a instancia en execución de %1 (PID: %2) esta «colgada»"
-
-#: shell/sessioncontroller.cpp:1142
-msgctxt "@info"
-msgid ""
-"The given application did not respond to a DBUS call, it may have crashed or "
-"is hanging."
-msgstr ""
-"O aplicativo mencionado non respondeu a unha chamada de DBUS; pode que "
-"quebrase ou que estea «colgado»."
-
-#: shell/sessioncontroller.cpp:1148
-#, kde-format
-msgctxt "@info"
-msgid ""
-"Failed to lock the session <em>%1</em>, already locked by %2 on %3 (PID %4)."
-msgstr ""
-"Non foi posíbel bloquear a sesión <em>%1</em>; xa está bloqueada por %2 en "
-"%3 (PID %4)."
-
-#: shell/sessioncontroller.cpp:1152
-#, kde-format
-msgctxt "@info"
-msgid "Failed to lock the session <em>%1</em> (lock-file unavailable)."
-msgstr ""
-"Non foi posíbel bloquear a sesión <em>%1</em> (o ficheiro de bloqueo non "
-"está dispoñíbel)."
-
-#: shell/sessioncontroller.cpp:1159
-#, kde-format
-msgctxt "@info %1 is program name"
-msgid ""
-"<p>Do you want to remove the lock file and force a new %1 instance?<br/"
-"><strong>Beware:</strong> Only do this if you are sure there is no running "
-"process using this session.</p><p>Otherwise, close the offending application "
-"instance or choose another session to launch.</p>"
-msgstr ""
-"<p>Desexa retirar o ficheiro de bloqueo e forzar unha instancia nova de %1?"
-"<br/><strong>Coidado:</strong> Faga isto só se ten a certeza de que non haxa "
-"ningún proceso en execución que use esta sesión.</p><p>Caso contrario, feche "
-"a instancia do aplicativo ofensor ou escolla outra sesión para iniciar.</p>"
-
-#: shell/sessioncontroller.cpp:1167
-msgctxt "@info"
-msgid ""
-"<p>Please, close the offending application instance or choose another "
-"session to launch.</p>"
-msgstr ""
-"<p>Feche a instancia do aplicativo ofensor ou escolla outra sesión para "
-"iniciar.</p>"
-
-#: shell/sessioncontroller.cpp:1180
-msgctxt "@action:button"
-msgid "Remove lock file"
-msgstr "Eliminar o ficheiro de boqueo"
-
-#: shell/sessioncontroller.cpp:1182
-msgctxt "@action:button"
-msgid "Retry startup"
-msgstr "Tentar iniciar de novo"
-
-#: shell/sessioncontroller.cpp:1185
-msgctxt "@action:button"
-msgid "Choose another session"
-msgstr "Escoller outra sesión"
-
-#: shell/sessioncontroller.cpp:1187
-#, kde-format
-msgctxt "@title:window"
-msgid "Failed to Lock Session %1"
-msgstr "Non foi posíbel bloquear a sesión %1"
-
-#: shell/sessioncontroller.cpp:1198
-#, kde-format
-msgctxt "@info"
-msgid "The session %1 is already active in another running instance."
-msgstr "A sesión de %1 xa está activa noutra instancia en execución"
-
-#: shell/sessioncontroller.cpp:1285
-msgctxt "@title"
-msgid "Cannot Delete Session"
-msgstr "Non é posíbel eliminar esta sesión"
-
-#: shell/sessioncontroller.cpp:1286
-msgctxt "@info"
-msgid "<p>Cannot delete a locked session."
-msgstr "<p>Non é posíbel eliminar unha sesión bloqueada."
-
-#: shell/sessioncontroller.cpp:1289
-#, kde-format
-msgctxt "@info"
-msgid "<p>The session is locked by %1 on %2 (PID %3)."
-msgstr "<p>A sesión está bloqueada por %1 en %2 (PID %3)."
-
-#: shell/sessioncontroller.cpp:1298
-msgctxt "@info"
-msgid ""
-"The session and all contained settings will be deleted. The projects will "
-"stay unaffected. Do you really want to continue?"
-msgstr ""
-"Vanse eliminar esta sesión e todas as opcións que contén. Os proxectos non "
-"se verán afectados. Desexa realmente continuar?"
-
-#: shell/sessioncontroller.cpp:1299
-msgctxt "@title"
-msgid "Delete Session"
-msgstr "Eliminar a sesión"
-
-#: shell/sessiondialog.cpp:183
+#: shell/sessiondialog.cpp:186
 msgid "Configure Sessions"
 msgstr "Configuración das sesións"
 
@@ -3046,6 +2942,75 @@ msgstr "Clonar"
 #: shell/sessiondialog.ui:59
 msgid "Make Active"
 msgstr "Tornar activo"
+
+#: shell/sessionlock.cpp:167
+#, kde-format
+msgctxt "@info:shell"
+msgid "made running %1 instance (PID: %2) visible"
+msgstr "facer que a instancia en execución de %1 (PID: %2) sexa visíbel"
+
+#: shell/sessionlock.cpp:170
+#, kde-format
+msgctxt "@info:shell"
+msgid "running %1 instance (PID: %2) is apparently hung"
+msgstr "aparentemente, a instancia en execución de %1 (PID: %2) esta «colgada»"
+
+#: shell/sessionlock.cpp:176
+msgctxt "@info"
+msgid ""
+"The given application did not respond to a DBUS call, it may have crashed or "
+"is hanging."
+msgstr ""
+"O aplicativo mencionado non respondeu a unha chamada de DBUS; pode que "
+"quebrase ou que estea «colgado»."
+
+#: shell/sessionlock.cpp:181
+#, kde-format
+msgctxt "@info"
+msgid ""
+"Failed to lock the session <em>%1</em>, already locked by %2 on %3 (PID %4)."
+msgstr ""
+"Non foi posíbel bloquear a sesión <em>%1</em>; xa está bloqueada por %2 en "
+"%3 (PID %4)."
+
+#: shell/sessionlock.cpp:185
+#, kde-format
+msgctxt "@info"
+msgid "Failed to lock the session <em>%1</em> (lock-file unavailable)."
+msgstr ""
+"Non foi posíbel bloquear a sesión <em>%1</em> (o ficheiro de bloqueo non "
+"está dispoñíbel)."
+
+#: shell/sessionlock.cpp:189
+msgctxt "@info"
+msgid ""
+"<p>Please, close the offending application instance or choose another "
+"session to launch.</p>"
+msgstr ""
+"<p>Feche a instancia do aplicativo ofensor ou escolla outra sesión para "
+"iniciar.</p>"
+
+#: shell/sessionlock.cpp:195
+msgctxt "@action:button"
+msgid "Retry startup"
+msgstr "Tentar iniciar de novo"
+
+#: shell/sessionlock.cpp:198
+msgctxt "@action:button"
+msgid "Choose another session"
+msgstr "Escoller outra sesión"
+
+#: shell/sessionlock.cpp:201
+#, kde-format
+msgctxt "@title:window"
+msgid "Failed to Lock Session %1"
+msgstr "Non foi posíbel bloquear a sesión %1"
+
+#: shell/sessionlock.cpp:209
+#, kde-format
+msgctxt "@info"
+msgid "The session %1 is already active in another running instance."
+msgstr "A sesión de %1 xa está activa noutra instancia en execución"
 
 #: shell/settings/bgpreferences.cpp:40
 msgid "Parser Background Settings"
@@ -4616,6 +4581,40 @@ msgstr "Detalles do evento:"
 #: vcs/widgets/vcseventwidget.ui:74
 msgid "Message:"
 msgstr "Mensaxe:"
+
+#~ msgid "The Session crashed once."
+#~ msgid_plural "The Session crashed %1 times in a row."
+#~ msgstr[0] "A sesión quebrou unha vez."
+#~ msgstr[1] "A sesión quebrou %1 veces seguidas."
+
+#~ msgctxt "@info"
+#~ msgid "The session lock-file is stale."
+#~ msgstr "O ficheiro de bloqueo da sesión é antigo."
+
+#~ msgctxt "@info"
+#~ msgid "Error while taking the session lock-file."
+#~ msgstr "Produciuse un erro ao coller o ficheiro de bloqueo da sesión."
+
+#~ msgctxt "@info"
+#~ msgid "The session lock-file is owned."
+#~ msgstr "O ficheiro de bloqueo da sesión ten dono."
+
+#~ msgctxt "@info %1 is program name"
+#~ msgid ""
+#~ "<p>Do you want to remove the lock file and force a new %1 instance?<br/"
+#~ "><strong>Beware:</strong> Only do this if you are sure there is no "
+#~ "running process using this session.</p><p>Otherwise, close the offending "
+#~ "application instance or choose another session to launch.</p>"
+#~ msgstr ""
+#~ "<p>Desexa retirar o ficheiro de bloqueo e forzar unha instancia nova de "
+#~ "%1?<br/><strong>Coidado:</strong> Faga isto só se ten a certeza de que "
+#~ "non haxa ningún proceso en execución que use esta sesión.</p><p>Caso "
+#~ "contrario, feche a instancia do aplicativo ofensor ou escolla outra "
+#~ "sesión para iniciar.</p>"
+
+#~ msgctxt "@action:button"
+#~ msgid "Remove lock file"
+#~ msgstr "Eliminar o ficheiro de boqueo"
 
 #~ msgid "Do not obtain"
 #~ msgstr "Non obter"
