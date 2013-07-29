@@ -1,4 +1,5 @@
 #! /usr/bin/env python
+# -*- coding: UTF-8 -*-
 # Copyright (c) 2013 Marcelino Villarino Aguiar
 # All rights reserved.
 # Redistribution and use in source and binary forms, with or without modification,
@@ -59,7 +60,6 @@ if len(free_args) < 2:
 elif len(free_args) > 2:
   opars.error("More than two arguments issued")
 else:
-  pass
   for path in free_args:
     if not exists(path):
       opars.error("There is not file: %path" % path)
