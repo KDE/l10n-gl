@@ -8,16 +8,16 @@
 # Xosé <xosecalvo@gmail.com>, 2009.
 # Marce Villarino <mvillarino@kde-espana.es>, 2009.
 # Xosé <xosecalvo@edu.xunta.es>, 2009.
-# Marce Villarino <mvillarino@kde-espana.es>, 2012.
+# Marce Villarino <mvillarino@kde-espana.es>, 2012, 2013.
 # Adrián Chaves Fernández <adriyetichaves@gmail.com>, 2012.
 # Miguel Branco <mgl.branco@gmail.com>, 2013.
 msgid ""
 msgstr ""
 "Project-Id-Version: ktorrent\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2013-08-02 01:55+0000\n"
-"PO-Revision-Date: 2013-01-13 16:49+0100\n"
-"Last-Translator: Miguel Branco <mgl.branco@gmail.com>\n"
+"POT-Creation-Date: 2013-05-21 01:44+0000\n"
+"PO-Revision-Date: 2013-08-01 21:11+0200\n"
+"Last-Translator: Marce Villarino <mvillarino@kde-espana.org>\n"
 "Language-Team: Galician <proxecto@trasno.net>\n"
 "Language: gl\n"
 "MIME-Version: 1.0\n"
@@ -1341,7 +1341,7 @@ msgstr "Principal"
 #. i18n: ectx: Menu (Torrents)
 #. i18n: ectx: ToolBar (TorrentsToolBar)
 #: ktorrent/kttorrentactivityui.rc:7 ktorrent/kttorrentactivityui.rc:83
-#: ktorrent/torrentactivity.cpp:51 libktcore/interfaces/functions.cpp:177
+#: ktorrent/torrentactivity.cpp:51 libktcore/interfaces/functions.cpp:179
 msgid "Torrents"
 msgstr "torrents"
 
@@ -1382,7 +1382,9 @@ msgstr "Configurar as columnas"
 msgid "Columns"
 msgstr "Columnas"
 
-#: ktorrent/main.cpp:95 plugins/search/webview.cpp:175
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_eta)
+#: ktorrent/main.cpp:95 ktorrent/pref/advancedpref.ui:158
+#: plugins/search/webview.cpp:175
 msgid "KTorrent"
 msgstr "KTorrent"
 
@@ -1847,13 +1849,65 @@ msgstr ""
 msgid "Miscellaneous"
 msgstr "Diversos"
 
-#. i18n: ectx: property (text), widget (QLabel, label_2)
+#. i18n: ectx: property (text), widget (QLabel, label)
 #: ktorrent/pref/advancedpref.ui:142
+msgid "Time estimation algorithm:"
+msgstr "Algarismo de estimación do tempo:"
+
+#. i18n: ectx: property (toolTip), widget (QComboBox, kcfg_eta)
+#: ktorrent/pref/advancedpref.ui:154
+msgid ""
+"<p>Select which algorithm to use for estimating the time left :</p>\n"
+"<p><span style=\" font-weight:600;\">KTorrent:</span> Mix of other "
+"algorithms, we use the one which fits best in the current situation.</p>\n"
+"<p><span style=\" font-weight:600;\">Current speed:</span> Bytes left to "
+"download / current speed</p>\n"
+"<p><span style=\" font-weight:600;\">Average speed: </span>Bytes left to "
+"download / average speed</p>\n"
+"<p><span style=\" font-weight:600;\">Window of X:</span> Average of the last "
+"X samples (X = 20)</p>\n"
+"<p><span style=\" font-weight:600;\">Moving average:</span>  Moving average "
+"of the last 20 samples</p>"
+msgstr ""
+"<p>Escolla o algoritmo a empregar para calcular o tempo restante:</p>\n"
+"<p><span style=\" font-weight:600;\">KTorrent:</span> mestura de outros "
+"algoritmos, úsase o que mellor cadre en cada situación.</p>\n"
+"<p><span style=\" font-weight:600;\">Velocidade actual:</span> bytes que "
+"faltan / velocidade actual.</p>\n"
+"<p><span style=\" font-weight:600;\">Velocidade media:</span> bytes que "
+"faltan / velocidade prometio.</p>\n"
+"<p><span style=\" font-weight:600;\">Xanela de X:</span> prometio da últimas "
+"X mostras (X = 20).</p>\n"
+"<p><span style=\" font-weight:600;\">Media móbil:</span> media móbil das "
+"últimas 20 mostras.</p>"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_eta)
+#: ktorrent/pref/advancedpref.ui:163
+msgid "Current speed"
+msgstr "Velocidade actual"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_eta)
+#: ktorrent/pref/advancedpref.ui:168
+msgid "Average speed"
+msgstr "Velocidade media"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_eta)
+#: ktorrent/pref/advancedpref.ui:173
+msgid "Window of X"
+msgstr "Xanela de X"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_eta)
+#: ktorrent/pref/advancedpref.ui:178
+msgid "Moving average"
+msgstr "Media móbil"
+
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: ktorrent/pref/advancedpref.ui:186
 msgid "Preview size for audio files:"
 msgstr "Tamaño da vista previa dos ficheiros de son:"
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, kcfg_previewSizeAudio)
-#: ktorrent/pref/advancedpref.ui:149
+#: ktorrent/pref/advancedpref.ui:193
 msgid ""
 "<p>The amount of data at the beginning and end of an audio file, which will "
 "be prioritized for previewing.</p>"
@@ -1863,17 +1917,17 @@ msgstr ""
 
 #. i18n: ectx: property (suffix), widget (QSpinBox, kcfg_previewSizeAudio)
 #. i18n: ectx: property (suffix), widget (QSpinBox, kcfg_previewSizeVideo)
-#: ktorrent/pref/advancedpref.ui:152 ktorrent/pref/advancedpref.ui:175
+#: ktorrent/pref/advancedpref.ui:196 ktorrent/pref/advancedpref.ui:219
 msgid " KiB"
 msgstr " KiB"
 
 #. i18n: ectx: property (text), widget (QLabel, label_3)
-#: ktorrent/pref/advancedpref.ui:165
+#: ktorrent/pref/advancedpref.ui:209
 msgid "Preview size for video files:"
 msgstr "Tamaño da vista previa dos ficheiros de vídeo:"
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, kcfg_previewSizeVideo)
-#: ktorrent/pref/advancedpref.ui:172
+#: ktorrent/pref/advancedpref.ui:216
 msgid ""
 "<p>The amount of data at the beginning and end of a video file, which will "
 "be prioritized for previewing.</p>"
@@ -1882,7 +1936,7 @@ msgstr ""
 "dará prioridade para dispor dunha vista previa.</p>"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, kcfg_useQHttpAnnounce)
-#: ktorrent/pref/advancedpref.ui:207
+#: ktorrent/pref/advancedpref.ui:251
 msgid ""
 "Disables the use of KDE's KIO library for tracker announces.\n"
 "\n"
@@ -1896,12 +1950,12 @@ msgstr ""
 "de conexión ou de servidor estragado."
 
 #. i18n: ectx: property (text), widget (QCheckBox, kcfg_useQHttpAnnounce)
-#: ktorrent/pref/advancedpref.ui:210
+#: ktorrent/pref/advancedpref.ui:254
 msgid "Do not use KIO for tracker announces"
 msgstr "Non empregar KIO para os anuncios dos localizadores."
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, kcfg_lookUpHostnameOfPeers)
-#: ktorrent/pref/advancedpref.ui:219
+#: ktorrent/pref/advancedpref.ui:263
 msgid ""
 "Resolve the hostname of each peer. This will result in the hostname of a "
 "peer being displayed instead of the IP address. \n"
@@ -1915,7 +1969,7 @@ msgstr ""
 "Pódese desactivar fará aforrar algo de tráfico."
 
 #. i18n: ectx: property (text), widget (QCheckBox, kcfg_lookUpHostnameOfPeers)
-#: ktorrent/pref/advancedpref.ui:222
+#: ktorrent/pref/advancedpref.ui:266
 msgid "Resolve hostnames of peers"
 msgstr "Resolver os nomes dos computadores dos parceiros."
 
@@ -2201,10 +2255,10 @@ msgstr ""
 
 #. i18n: ectx: property (text), widget (QCheckBox, kcfg_autoRenameSingleFileTorrents)
 #: ktorrent/pref/generalpref.ui:160
-#, fuzzy
 #| msgid "Rename single file torrents with the name its only file"
 msgid "Rename single file torrents with the name of its only file"
-msgstr "Renomear os torrents dun só ficheiro co nome do ficheiro que conteñen."
+msgstr ""
+"Renomear os torrentes dun só ficheiro co nome do ficheiro que conteñen."
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, kcfg_highlightNewTorrents)
 #: ktorrent/pref/generalpref.ui:167
@@ -2426,13 +2480,12 @@ msgstr "HTTP"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, kcfg_useKDEProxySettings)
 #: ktorrent/pref/proxypref.ui:23
-#, fuzzy
 #| msgid ""
 #| "<p>Use the HTTP proxy settings configured in the settings of KDE.</p>"
 msgid "Use the HTTP proxy settings configured in the settings of KDE."
 msgstr ""
-"<p>Empregar a configuración do proxy de HTTP tal como está definida na "
-"configuración de KDE.</p>"
+"Empregar a configuración do proxy de HTTP tal como está definida na "
+"configuración de KDE."
 
 #. i18n: ectx: property (text), widget (QCheckBox, kcfg_useKDEProxySettings)
 #: ktorrent/pref/proxypref.ui:26
@@ -2467,11 +2520,10 @@ msgstr "Usar o proxy para as conexións de espalladores web."
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, kcfg_useProxyForTracker)
 #: ktorrent/pref/proxypref.ui:84
-#, fuzzy
 #| msgid "Whether or not to use the HTTP proxy for webseed connections."
 msgid "Whether or not to use the HTTP proxy for tracker connections."
 msgstr ""
-"Indica se debe empregar o proxy HTTP para as conexións de espalladores web."
+"Marque esta opción para usar o proxy HTTP para as conexións cos localizadores."
 
 #. i18n: ectx: property (text), widget (QCheckBox, kcfg_useProxyForTracker)
 #: ktorrent/pref/proxypref.ui:87
@@ -2507,14 +2559,12 @@ msgstr "Servidor:"
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, kcfg_socksProxy)
 #: ktorrent/pref/proxypref.ui:123
-#, fuzzy
 #| msgid "<p>IP address or hostname of the SOCKS server</p>"
 msgid "IP address or hostname of the SOCKS server."
-msgstr "<p>O enderezo IP ou nome do servidor SOCKS.</p>"
+msgstr "O enderezo IP ou nome do servidor SOCKS."
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, kcfg_socksPort)
 #: ktorrent/pref/proxypref.ui:137
-#, fuzzy
 #| msgid "Port used by the SOCKS server"
 msgid "Port used by the SOCKS server."
 msgstr "Porto empregado polo servidor proxy SOCKS."
@@ -3327,6 +3377,8 @@ msgstr "Atopados:"
 msgid ""
 "The number of chunks which were not downloaded but have been found anyway."
 msgstr ""
+"O número de anacos que non se descargaron pero que se atoparon xa dispoñíbeis "
+"no almacenamento."
 
 #. i18n: ectx: property (text), widget (QLabel, chunks_found)
 #. i18n: ectx: property (text), widget (QLabel, chunks_failed)
@@ -3345,7 +3397,7 @@ msgstr "Corruptos:"
 #. i18n: ectx: property (toolTip), widget (QLabel, chunks_failed)
 #: ktorrent/view/scanextender.ui:82
 msgid "The number of chunks which have been downloaded, and which are not OK."
-msgstr ""
+msgstr "O número de anacos que se descargaron pero que están corruptos."
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: ktorrent/view/scanextender.ui:108
@@ -3355,7 +3407,7 @@ msgstr "Non descargados:"
 #. i18n: ectx: property (toolTip), widget (QLabel, chunks_not_downloaded)
 #: ktorrent/view/scanextender.ui:127
 msgid "The number of chunks which have not been downloaded."
-msgstr ""
+msgstr "O número de anacos que non se descargaron."
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #. i18n: ectx: property (text), widget (QLabel, textLabel3)
@@ -3367,7 +3419,7 @@ msgstr "Descargados:"
 #. i18n: ectx: property (toolTip), widget (QLabel, chunks_downloaded)
 #: ktorrent/view/scanextender.ui:166
 msgid "The number of chunks which have been downloaded, and which are OK."
-msgstr ""
+msgstr "O número de anacos que se descargaron correctamente."
 
 #. i18n: ectx: property (text), widget (QLabel, error_msg)
 #: ktorrent/view/scanextender.ui:230
@@ -3815,7 +3867,7 @@ msgstr "Envíos pasivos"
 msgid "Ungrouped Torrents"
 msgstr "torrents non agrupados"
 
-#: libktcore/interfaces/functions.cpp:179
+#: libktcore/interfaces/functions.cpp:181
 #: plugins/bwscheduler/scheduleeditor.cpp:141
 #: plugins/scripting/scriptingplugin.cpp:186
 msgid "All files"
@@ -3959,8 +4011,13 @@ msgstr "Número de envíos concomitantes"
 msgid "Columns shown in KTorrentView"
 msgstr "Columnas que aparecen en KTorrentView"
 
+#. i18n: ectx: label, entry (eta), group (downloads)
+#: libktcore/ktorrent.kcfg:219
+msgid "Algorithm to estimate the time when a torrent is finished"
+msgstr "Algoritmo para calcular o tempo que tardará un torrent en rematar"
+
 #. i18n: ectx: label, entry (minDiskSpace), group (downloads)
-#: libktcore/ktorrent.kcfg:225
+#: libktcore/ktorrent.kcfg:231
 msgid ""
 "When there is no space left to complete download, and the available disk "
 "space is less than this value, the torrent will be stopped."
@@ -3969,17 +4026,17 @@ msgstr ""
 "inferior ao indicado, o torrent deterase."
 
 #. i18n: ectx: label, entry (useCompletedDir), group (downloads)
-#: libktcore/ktorrent.kcfg:236
+#: libktcore/ktorrent.kcfg:242
 msgid "Whether to automatically move completed downloads to completedDir"
 msgstr "Marcar para mover automaticamente o que se descargue a «completeddir»."
 
 #. i18n: ectx: label, entry (completedDir), group (downloads)
-#: libktcore/ktorrent.kcfg:240
+#: libktcore/ktorrent.kcfg:246
 msgid "Folder to move completed downloaded files to"
 msgstr "Cartafol ao que mover os ficheiros completados"
 
 #. i18n: ectx: label, entry (maxSeedTime), group (downloads)
-#: libktcore/ktorrent.kcfg:243
+#: libktcore/ktorrent.kcfg:249
 msgid "Maximum seed time in hours (0 = no limit)"
 msgstr "Tempo máximo de espallamento en horas (0 = sen límites)"
 
@@ -5199,39 +5256,35 @@ msgstr "Non hai enderezos IP para converter en %1"
 
 #: plugins/ipfilter/downloadandconvertjob.cpp:82
 #: plugins/ipfilter/downloadandconvertjob.cpp:104
-#: plugins/ipfilter/downloadandconvertjob.cpp:170
-#: plugins/ipfilter/downloadandconvertjob.cpp:246
+#: plugins/ipfilter/downloadandconvertjob.cpp:158
+#: plugins/ipfilter/downloadandconvertjob.cpp:234
 #, kde-format
 msgid "Automatic update of IP filter failed: %1"
 msgstr "Non foi posíbel actualizar automaticamente o filtro IP: %1"
 
-#: plugins/ipfilter/downloadandconvertjob.cpp:125
-msgid "7z files are not supported"
-msgstr ""
-
-#: plugins/ipfilter/downloadandconvertjob.cpp:147
+#: plugins/ipfilter/downloadandconvertjob.cpp:135
 #, kde-format
 msgid "Cannot determine file type of <b>%1</b>"
-msgstr ""
+msgstr "Non é posíbel determinar o tipo de ficheiro que é <b>%1</b>."
 
-#: plugins/ipfilter/downloadandconvertjob.cpp:185
+#: plugins/ipfilter/downloadandconvertjob.cpp:173
 #, kde-format
 msgid "Cannot open zip file %1."
 msgstr "non é posíbel abrir o arquivo «%1»."
 
-#: plugins/ipfilter/downloadandconvertjob.cpp:189
+#: plugins/ipfilter/downloadandconvertjob.cpp:177
 #, kde-format
 msgid "Automatic update of IP filter failed: cannot open zip file %1"
 msgstr ""
 "Non se puido actualizar automaticamente o filtro IP: non é posíbel abrir o "
 "arquivo «%1»."
 
-#: plugins/ipfilter/downloadandconvertjob.cpp:213
+#: plugins/ipfilter/downloadandconvertjob.cpp:201
 #, kde-format
 msgid "Cannot find blocklist in zip file %1."
 msgstr "Non é posíbel atopar a lista de bloqueos no arquivo «%1»."
 
-#: plugins/ipfilter/downloadandconvertjob.cpp:217
+#: plugins/ipfilter/downloadandconvertjob.cpp:205
 #, kde-format
 msgid ""
 "Automatic update of IP filter failed: cannot find blocklist in zip file %1"
@@ -5317,7 +5370,6 @@ msgstr "&Descargar/converter"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel1_2)
 #: plugins/ipfilter/ipblockingprefpage.ui:94
-#, fuzzy
 #| msgid ""
 #| "Download PeerGuardian filter from bluetack.co.uk or blocklist.org.\n"
 #| "NOTE: ZIP file from bluetack.co.uk is supported."
@@ -5326,7 +5378,7 @@ msgid ""
 "NOTE: archive files like zip and tar.gz or tar.bz2 are supported."
 msgstr ""
 "Obter o filtro PeerGuardian de bluetack.co.uk ou de iblocklist.org.\n"
-"Nota: admítese arquivos ZIP de bluetack.co.uk."
+"Nota: admítese arquivos «.zip», «.tar.gz» ou «.tar.bz2»."
 
 #. i18n: ectx: property (title), widget (QGroupBox, m_auto_update_group_box)
 #: plugins/ipfilter/ipblockingprefpage.ui:117
@@ -6514,7 +6566,6 @@ msgstr "Nodos"
 
 #. i18n: ectx: property (text), widget (QLabel, label_23)
 #: plugins/stats/ConnsTabPage.cc:60 plugins/stats/DisplaySettings.ui:513
-#, fuzzy
 #| msgid "Leechers connected"
 msgctxt "Name of a line on chart"
 msgid "Leechers connected"
@@ -6523,7 +6574,6 @@ msgstr "Parceiros incompletos conectados"
 #. i18n: ectx: property (text), widget (QLabel, label_24)
 #: plugins/stats/ConnsTabPage.cc:65 plugins/stats/ConnsTabPage.cc:118
 #: plugins/stats/DisplaySettings.ui:548
-#, fuzzy
 #| msgid "Leechers in swarms"
 msgctxt "Name of a line on chart"
 msgid "Leechers in swarms"
@@ -6531,7 +6581,6 @@ msgstr "Parceiros incompletos en enxames"
 
 #. i18n: ectx: property (text), widget (QLabel, label_25)
 #: plugins/stats/ConnsTabPage.cc:69 plugins/stats/DisplaySettings.ui:583
-#, fuzzy
 #| msgid "Seeds connected"
 msgctxt "Name of a line on chart"
 msgid "Seeds connected"
@@ -6540,41 +6589,36 @@ msgstr "Parceiros conectados"
 #. i18n: ectx: property (text), widget (QLabel, label_26)
 #: plugins/stats/ConnsTabPage.cc:74 plugins/stats/ConnsTabPage.cc:132
 #: plugins/stats/ConnsTabPage.cc:136 plugins/stats/DisplaySettings.ui:618
-#, fuzzy
 #| msgid "Seeds in swarms"
 msgctxt "Name of a line on chart"
 msgid "Seeds in swarms"
-msgstr "Parceiros en enxames"
+msgstr "Sementes en enxames"
 
 #. i18n: ectx: property (text), widget (QLabel, label_27)
 #: plugins/stats/ConnsTabPage.cc:78 plugins/stats/DisplaySettings.ui:653
-#, fuzzy
 #| msgid "Average leechers connected per torrent"
 msgctxt "Name of a line on chart"
 msgid "Average leechers connected per torrent"
-msgstr "Media de parceiros incompletos conectados por torrent"
+msgstr "Media de parceiros incompletos conectados por torrente"
 
 #. i18n: ectx: property (text), widget (QLabel, label_28)
 #: plugins/stats/ConnsTabPage.cc:81 plugins/stats/DisplaySettings.ui:688
-#, fuzzy
 #| msgid "Average seeds connected per torrent"
 msgctxt "Name of a line on chart"
 msgid "Average seeds connected per torrent"
-msgstr "Media de parceiros conectados por torrent"
+msgstr "Media de parceiros conectados por torrente"
 
 #: plugins/stats/ConnsTabPage.cc:84
-#, fuzzy
 #| msgid "Average leechers connected per running torrent"
 msgctxt "Name of a line on chart"
 msgid "Average leechers connected per running torrent"
-msgstr "Media de parceiros incompletos conectados por torrent activo"
+msgstr "Media de parceiros incompletos conectados por torrente activo"
 
 #: plugins/stats/ConnsTabPage.cc:87
-#, fuzzy
 #| msgid "Average seeds connected per running torrent"
 msgctxt "Name of a line on chart"
 msgid "Average seeds connected per running torrent"
-msgstr "Media de parceiros conectados por torrent activo"
+msgstr "Media de parceiros conectados por torrente activo"
 
 #. i18n: ectx: property (text), widget (QLabel, label_31)
 #: plugins/stats/ConnsTabPage.cc:93 plugins/stats/DisplaySettings.ui:806
@@ -6584,7 +6628,6 @@ msgstr "Nodos"
 
 #. i18n: ectx: property (text), widget (QLabel, label_32)
 #: plugins/stats/ConnsTabPage.cc:94 plugins/stats/DisplaySettings.ui:845
-#, fuzzy
 #| msgid "Tasks"
 msgctxt "Name of a line on chart"
 msgid "Tasks"
@@ -6607,15 +6650,13 @@ msgstr "Velocidade actual"
 
 #. i18n: ectx: property (text), widget (QLabel, label_9)
 #: plugins/stats/DisplaySettings.ui:73
-#, fuzzy
 #| msgid "Average"
 msgctxt "Name of a line on download chart"
 msgid "Average"
-msgstr "Media"
+msgstr "Media:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_13)
 #: plugins/stats/DisplaySettings.ui:112
-#, fuzzy
 #| msgid "Limit"
 msgctxt "Name of a line on download chart"
 msgid "Limit"
@@ -6632,7 +6673,6 @@ msgstr "Pares"
 
 #. i18n: ectx: property (text), widget (QLabel, label_14)
 #: plugins/stats/DisplaySettings.ui:173 plugins/stats/SpdTabPage.cc:76
-#, fuzzy
 #| msgid "Average from leechers"
 msgctxt "Name of a line on chart"
 msgid "Average from leechers"
@@ -6640,15 +6680,13 @@ msgstr "Media desde os parceiros incompletos"
 
 #. i18n: ectx: property (text), widget (QLabel, label_19)
 #: plugins/stats/DisplaySettings.ui:208 plugins/stats/SpdTabPage.cc:77
-#, fuzzy
 #| msgid "Average to leechers"
 msgctxt "Name of a line on chart"
 msgid "Average to leechers"
-msgstr "Media aos parceiros incompletos"
+msgstr "Velocidade media de recepción"
 
 #. i18n: ectx: property (text), widget (QLabel, label_20)
 #: plugins/stats/DisplaySettings.ui:243 plugins/stats/SpdTabPage.cc:78
-#, fuzzy
 #| msgid "Average from seeds"
 msgctxt "Name of a line on chart"
 msgid "Average from seeds"
@@ -6656,7 +6694,6 @@ msgstr "Media desde os parceiros"
 
 #. i18n: ectx: property (text), widget (QLabel, label_21)
 #: plugins/stats/DisplaySettings.ui:278 plugins/stats/SpdTabPage.cc:79
-#, fuzzy
 #| msgid "From leechers"
 msgctxt "Name of a line on chart"
 msgid "From leechers"
@@ -6664,7 +6701,6 @@ msgstr "Desde os parceiros incompletos"
 
 #. i18n: ectx: property (text), widget (QLabel, label_22)
 #: plugins/stats/DisplaySettings.ui:313 plugins/stats/SpdTabPage.cc:80
-#, fuzzy
 #| msgid "From seeds"
 msgctxt "Name of a line on chart"
 msgid "From seeds"
@@ -6675,7 +6711,6 @@ msgstr "Desde os parceiros"
 #. i18n: ectx: property (text), widget (QLabel, label_10)
 #: plugins/stats/DisplaySettings.ui:364 plugins/stats/Settings.ui:192
 #: plugins/stats/Spd.ui:43
-#, fuzzy
 #| msgid "Upload"
 msgctxt "Chart name"
 msgid "Upload"
@@ -6701,19 +6736,17 @@ msgstr "Límite"
 
 #. i18n: ectx: property (text), widget (QLabel, label_29)
 #: plugins/stats/DisplaySettings.ui:723
-#, fuzzy
 #| msgid "Avg. leechers connected per running torr."
 msgctxt "Name of a line on chart"
 msgid "Avg. leechers connected per running torr."
-msgstr "Media de parceiros incompletos conectados por torrent activo"
+msgstr "Media de parceiros incompletos conectados por torrente activo"
 
 #. i18n: ectx: property (text), widget (QLabel, label_30)
 #: plugins/stats/DisplaySettings.ui:758
-#, fuzzy
 #| msgid "Avg. seeds connected per running torrent"
 msgctxt "Name of a line on chart"
 msgid "Avg. seeds connected per running torrent"
-msgstr "Media de parceiros conectados por torrent activo"
+msgstr "Media de parceiros conectados por torrente activo"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_3)
 #: plugins/stats/DisplaySettings.ui:904
@@ -6732,11 +6765,10 @@ msgstr "Mostrar unha grella de fondo"
 
 #. i18n: ectx: property (text), widget (QLabel, label_18)
 #: plugins/stats/DisplaySettings.ui:932
-#, fuzzy
 #| msgid "Widget type:"
 msgctxt "@label:listbox"
 msgid "Widget type:"
-msgstr "Tipo de trebello:"
+msgstr "Tipo de widget:"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_WidgetType)
 #: plugins/stats/DisplaySettings.ui:940
@@ -6787,7 +6819,6 @@ msgstr ""
 
 #: plugins/stats/drawer/KPlotWgtDrawer.cc:396
 #: plugins/stats/drawer/PlainChartDrawer.cc:337
-#, fuzzy
 #| msgid "Save as image…"
 msgctxt "@action:inmenu"
 msgid "Save as image…"
@@ -6795,7 +6826,6 @@ msgstr "Gardar como imaxe…"
 
 #: plugins/stats/drawer/KPlotWgtDrawer.cc:400
 #: plugins/stats/drawer/PlainChartDrawer.cc:341
-#, fuzzy
 #| msgid "Rescale"
 msgctxt "@action:inmenu Recalculate the 0Y axis and then redraw the chart"
 msgid "Rescale"
@@ -6803,11 +6833,10 @@ msgstr "Cambiar a escala"
 
 #: plugins/stats/drawer/KPlotWgtDrawer.cc:404
 #: plugins/stats/drawer/PlainChartDrawer.cc:345
-#, fuzzy
 #| msgid "Reset"
 msgctxt "@action:inmenu"
 msgid "Reset"
-msgstr "Restabelecer"
+msgstr "Restaurar"
 
 #: plugins/stats/drawer/KPlotWgtDrawer.cc:416
 #: plugins/stats/drawer/PlainChartDrawer.cc:357
@@ -6995,7 +7024,6 @@ msgstr "Tipo de trebello empregado para amosar as gráficas."
 
 #. i18n: ectx: property (title), widget (QGroupBox, UpdateGbw)
 #: plugins/stats/Settings.ui:19
-#, fuzzy
 #| msgid "Update"
 msgctxt "@title:group"
 msgid "Update"
@@ -7003,15 +7031,13 @@ msgstr "Actualizar"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: plugins/stats/Settings.ui:25
-#, fuzzy
 #| msgid "Update charts every"
 msgctxt "Continues with: [number field] GUI updates"
 msgid "Update charts every"
-msgstr "Actualizar os gráficos cada"
+msgstr "Actualizar os gráficos a cada"
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: plugins/stats/Settings.ui:50
-#, fuzzy
 #| msgid "GUI updates"
 msgctxt "Continuation of: Update charts every [number field]"
 msgid "GUI updates"
@@ -7019,7 +7045,6 @@ msgstr "Actualizacións da interface"
 
 #. i18n: ectx: property (text), widget (QLabel, label_3)
 #: plugins/stats/Settings.ui:69
-#, fuzzy
 #| msgid "Gather data every"
 msgctxt "Continues with: [number field] milliseconds"
 msgid "Gather data every"
@@ -7027,7 +7052,6 @@ msgstr "Recoller datos cada"
 
 #. i18n: ectx: property (text), widget (QLabel, label_4)
 #: plugins/stats/Settings.ui:95
-#, fuzzy
 #| msgid "milliseconds"
 msgctxt "Continuation of: Gather data every [number field]"
 msgid "milliseconds"
@@ -7047,11 +7071,10 @@ msgstr "Máximo"
 #. i18n: The way the maximum of 0Y axis is calculated
 #. i18n: ectx: property (text), widget (QLabel, label_5)
 #: plugins/stats/Settings.ui:255
-#, fuzzy
 #| msgid "Maximum speed scale mode: "
 msgctxt "@label:listbox"
 msgid "Maximum speed scale mode: "
-msgstr "Modo da escala da velocidade máxima: "
+msgstr "Modo da escala da velocidade máxima:"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_MaxMode)
 #: plugins/stats/Settings.ui:272
@@ -7065,11 +7088,10 @@ msgstr "Máxima visíbel na gráfica"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
 #: plugins/stats/Settings.ui:290
-#, fuzzy
 #| msgid "Peers connections"
 msgctxt "@title:group"
 msgid "Peers connections"
-msgstr "Conexións de parceiros"
+msgstr "Conexións de pares"
 
 #. i18n: ectx: property (text), widget (QCheckBox, kcfg_ShowSeedsInSwarms)
 #: plugins/stats/Settings.ui:296
@@ -7082,7 +7104,6 @@ msgid "Show leechers in swarms"
 msgstr "Amosar os parceiros incompletos en enxames."
 
 #: plugins/stats/SettingsPage.cc:27
-#, fuzzy
 #| msgid "Statistics"
 msgctxt "@title:window"
 msgid "Statistics"
@@ -7110,7 +7131,6 @@ msgid "Average speed"
 msgstr "Velocidade media"
 
 #: plugins/stats/SpdTabPage.cc:73
-#, fuzzy
 #| msgid "Speed limit"
 msgctxt "Name of a line on download chart"
 msgid "Speed limit"
@@ -7840,49 +7860,6 @@ msgstr " s"
 #: plugins/zeroconf/zeroconfplugin.cpp:68
 msgid "ZeroConf"
 msgstr "Zeroconf"
-
-#~ msgid "Time estimation algorithm:"
-#~ msgstr "Algarismo de estimación do tempo:"
-
-#~ msgid ""
-#~ "<p>Select which algorithm to use for estimating the time left :</p>\n"
-#~ "<p><span style=\" font-weight:600;\">KTorrent:</span> Mix of other "
-#~ "algorithms, we use the one which fits best in the current situation.</p>\n"
-#~ "<p><span style=\" font-weight:600;\">Current speed:</span> Bytes left to "
-#~ "download / current speed</p>\n"
-#~ "<p><span style=\" font-weight:600;\">Average speed: </span>Bytes left to "
-#~ "download / average speed</p>\n"
-#~ "<p><span style=\" font-weight:600;\">Window of X:</span> Average of the "
-#~ "last X samples (X = 20)</p>\n"
-#~ "<p><span style=\" font-weight:600;\">Moving average:</span>  Moving "
-#~ "average of the last 20 samples</p>"
-#~ msgstr ""
-#~ "<p>Escolla o algoritmo a empregar para calcular o tempo restante:</p>\n"
-#~ "<p><span style=\" font-weight:600;\">KTorrent:</span> mestura de outros "
-#~ "algoritmos, úsase o que mellor cadre en cada situación.</p>\n"
-#~ "<p><span style=\" font-weight:600;\">Velocidade actual:</span> bytes que "
-#~ "faltan / velocidade actual.</p>\n"
-#~ "<p><span style=\" font-weight:600;\">Velocidade media:</span> bytes que "
-#~ "faltan / velocidade prometio.</p>\n"
-#~ "<p><span style=\" font-weight:600;\">Xanela de X:</span> prometio da "
-#~ "últimas X mostras (X = 20).</p>\n"
-#~ "<p><span style=\" font-weight:600;\">Media móbil:</span> media móbil das "
-#~ "últimas 20 mostras.</p>"
-
-#~ msgid "Current speed"
-#~ msgstr "Velocidade actual"
-
-#~ msgid "Average speed"
-#~ msgstr "Velocidade media"
-
-#~ msgid "Window of X"
-#~ msgstr "Xanela de X"
-
-#~ msgid "Moving average"
-#~ msgstr "Media móbil"
-
-#~ msgid "Algorithm to estimate the time when a torrent is finished"
-#~ msgstr "Algoritmo para calcular o tempo que tardará un torrent en rematar"
 
 #~ msgid ""
 #~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
