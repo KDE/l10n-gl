@@ -84,9 +84,9 @@ declare -x galla
 for galla in trunk/l10n-kde4 branches/stable/l10n-kde4 trunk/l10n-support; do #anovamos as traducións
     if [ -d ${BASE_REPO}/${galla}/${code}/.svn ]; then
         kdialog --title "anovar.sh" --passivepopup "Updating: ${galla}/${code}" 3
-#         svn update --non-interactive --quiet --accept postpone ${BASE_REPO}/${galla}/${code}
-#         resolveConflicts ${BASE_REPO}/${galla}/${code}
-          svn update --quiet --diff3-cmd ${merger} --non-interactive ${BASE_REPO}/${galla}/${code}
+         svn update --non-interactive --quiet --accept mine-full ${BASE_REPO}/${galla}/${code}
+#          resolveConflicts ${BASE_REPO}/${galla}/${code}
+#           svn update --quiet --diff3-cmd ${merger} --non-interactive ${BASE_REPO}/${galla}/${code}
     fi
 done
 unset galla
