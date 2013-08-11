@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: krossmodulekplato\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2013-08-10 05:22+0000\n"
+"POT-Creation-Date: 2013-08-11 05:27+0000\n"
 "PO-Revision-Date: 2013-06-08 21:30+0200\n"
 "Last-Translator: Marce Villarino <mvillarino@kde-espana.es>\n"
 "Language-Team: Galician <kde-i18n-doc@kde.org>\n"
@@ -56,7 +56,7 @@ msgctxt "(qtundo_format)"
 msgid "Clear all external appointments"
 msgstr "Limpar tódalas listas externas"
 
-#: Resource.cpp:104
+#: Resource.cpp:102
 msgctxt "(qtundo_format)"
 msgid "Set resource team members"
 msgstr "Marcar os membros do equipo de recursos "
@@ -104,7 +104,8 @@ msgstr "Limpar todas as citas externas"
 msgid "Busy Information Export"
 msgstr "Exportar a información de ocupación"
 
-#: scripts/busyinfoexport.py:30
+#: scripts/busyinfoexport.py:30 scripts/plan2csvexport.py:94
+#: scripts/plan2odsexport.py:106
 msgid "Schedules"
 msgstr "Axendas"
 
@@ -112,7 +113,8 @@ msgstr "Axendas"
 msgid "Export Selected Schedule"
 msgstr "Exportar a axenda escollida"
 
-#: scripts/busyinfoexport.py:33
+#: scripts/busyinfoexport.py:33 scripts/plan2csvexport.py:100
+#: scripts/plan2odsexport.py:112
 msgid "Save"
 msgstr "Gardar"
 
@@ -127,6 +129,7 @@ msgid "Resource Busy Information"
 msgstr "Información do recurso de ocupación"
 
 #: scripts/busyinfoexport.py:36 scripts/busyinfoimport.py:25
+#: scripts/plan2csvexport.py:103 scripts/plan2odsexport.py:115
 #: scripts/resourcesimport.py:26
 msgid "All Files"
 msgstr "Todos os ficheiros"
@@ -134,6 +137,8 @@ msgstr "Todos os ficheiros"
 #: scripts/busyinfoexport.py:42 scripts/busyinfoexport.py:47
 #: scripts/busyinfoexport.py:51 scripts/busyinfoimport.py:34
 #: scripts/busyinfoimport.py:39 scripts/busyinfoimport.py:49
+#: scripts/plan2csvexport.py:29 scripts/plan2csvexport.py:31
+#: scripts/plan2odsexport.py:28 scripts/plan2odsexport.py:30
 #: scripts/resourcesimport.py:35 scripts/resourcesimport.py:44
 #: scripts/resourcesimport.py:48 scripts/resourcesimport.py:51
 #: scripts/resourcesimport.py:69 scripts/resourcesimport.py:74
@@ -171,6 +176,82 @@ msgstr "Importar información do recurso de ocupación"
 #: scripts/busyinfoimport.py:49
 msgid "Cannot load data from project with the same identity"
 msgstr "Non se pode importar a información dun proxecto coa mesma identidade"
+
+#: scripts/plan2csvexport.py:18 scripts/plan2odsexport.py:17
+msgid "Failed to start Sheets. Is Sheets installed?"
+msgstr "Non foi posíbel iniciar Sheets. Ten o programa instalado?"
+
+#: scripts/plan2csvexport.py:39 scripts/plan2odsexport.py:49
+msgid "No data to export"
+msgstr "Non hai datos que exportar."
+
+#: scripts/plan2csvexport.py:43 scripts/plan2odsexport.py:53
+msgid "You must select a file to write to"
+msgstr "Debe escoller un ficheiro no que escribir."
+
+#: scripts/plan2csvexport.py:50 scripts/plan2odsexport.py:60
+msgid "Information"
+msgstr "Información"
+
+#: scripts/plan2csvexport.py:50 scripts/plan2odsexport.py:60
+msgid ""
+"Data saved to file:\n"
+"%1"
+msgstr ""
+"Os datos gardáronse no ficheiro:\n"
+"%1"
+
+#: scripts/plan2csvexport.py:58 scripts/plan2odsexport.py:68
+msgid "No properties to export"
+msgstr "Non hai ningunha propiedade para exportar."
+
+#: scripts/plan2csvexport.py:94 scripts/plan2odsexport.py:106
+msgid "Select schedule"
+msgstr "Escoller o programa"
+
+#: scripts/plan2csvexport.py:97 scripts/plan2odsexport.py:109
+msgid "Data"
+msgstr "Datos"
+
+#: scripts/plan2csvexport.py:97 scripts/plan2odsexport.py:109
+msgid "Select data"
+msgstr "Seleccionar datos"
+
+#: scripts/plan2csvexport.py:100 scripts/plan2odsexport.py:112
+msgid "Export ods file"
+msgstr "Exportar a ODS"
+
+#: scripts/plan2csvexport.py:103 scripts/plan2odsexport.py:115
+msgid "Spreadsheet"
+msgstr "Folla de cálculo"
+
+#: scripts/plan2odsexport.py:37
+msgid "No current sheet."
+msgstr "Non hai ningunha folla escollida."
+
+#: scripts/plan2odsexport.py:39
+msgid "Invalid sheet '%1' defined."
+msgstr "Hai definida unha folla incorrecta, «%1»."
+
+#: scripts/plan2odsexport.py:42
+msgid "Could not select cell 'A1'"
+msgstr "Non foi posíbel seleccionar a cela «A1»."
+
+#: scripts/plan2odsexport.py:58
+msgid ""
+"Could not write to file:\n"
+"%1"
+msgstr ""
+"Non foi posíbel escribir no ficheiro:\n"
+"%1"
+
+#: scripts/plan2odsexport.py:76 scripts/plan2odsexport.py:95
+msgid "Warning"
+msgstr "Aviso"
+
+#: scripts/plan2odsexport.py:76 scripts/plan2odsexport.py:95
+msgid "Failed to set all properties of '%1' to cell '%2'"
+msgstr "Non foi posíbel definir todas as propiedades de «%1» na cela «%2»."
 
 #: scripts/resourcesimport.py:17
 msgid "Resources Import"
@@ -288,26 +369,46 @@ msgstr "Exportar"
 
 #. i18n: tag collection attribute comment
 #: scripts/scripts.rc:31
-msgid "Export busy info"
-msgstr "Exportar información de ocupado"
+msgid "Export content"
+msgstr "Exportar o contido."
+
+#. i18n: tag script attribute text
+#: scripts/scripts.rc:32
+msgid "To csv"
+msgstr "A CSV"
+
+#. i18n: tag script attribute comment
+#: scripts/scripts.rc:32
+msgid "Export data as comma separated values"
+msgstr "Exportar os datos como valores separados por comas."
+
+#. i18n: tag script attribute text
+#: scripts/scripts.rc:36
+msgid "To ods"
+msgstr "A ODS"
+
+#. i18n: tag script attribute comment
+#: scripts/scripts.rc:36
+msgid "Export data to Open Spreadsheet document"
+msgstr "Exportar os datos a un documento de Open Spreadsheet."
 
 #. i18n: tag collection attribute text
-#: scripts/scripts.rc:38
+#: scripts/scripts.rc:46
 msgid "Tools"
 msgstr "Ferramentas"
 
 #. i18n: tag collection attribute comment
-#: scripts/scripts.rc:38
+#: scripts/scripts.rc:46
 msgid "Miscellaneous scripts"
 msgstr "Scripts diversos"
 
 #. i18n: tag script attribute text
-#: scripts/scripts.rc:39
+#: scripts/scripts.rc:47
 msgid "Online Help"
 msgstr "Axuda en liña"
 
 #. i18n: tag script attribute comment
-#: scripts/scripts.rc:39
+#: scripts/scripts.rc:47
 msgid ""
 "Python script that uses the KHTML Part to display the Plan Scripting online "
 "help"
@@ -316,106 +417,35 @@ msgstr ""
 "a construción de guións de Plan Scripting"
 
 #. i18n: tag collection attribute text
-#: scripts/scripts.rc:50
+#: scripts/scripts.rc:58
 msgid "Samples"
 msgstr "Mostras"
 
 #. i18n: tag collection attribute comment
-#: scripts/scripts.rc:50
+#: scripts/scripts.rc:58
 msgid "Samples to demonstrate scripting with Plan"
 msgstr "Mostras que ensinan como se fan scripts con Plan"
 
 #. i18n: tag script attribute text
-#: scripts/scripts.rc:51
+#: scripts/scripts.rc:59
 msgid "Print Project Information..."
 msgstr "Imprimir información do Proxecto..."
 
 #. i18n: tag script attribute comment
-#: scripts/scripts.rc:51
+#: scripts/scripts.rc:59
 msgid "Example python script that print project information"
 msgstr "Script de exemplo en python para imprimir información de proxecto"
 
 #. i18n: tag script attribute text
-#: scripts/scripts.rc:55
+#: scripts/scripts.rc:63
 msgid "Print Resource busy Information..."
 msgstr "Imprimir a información do recurso de ocupación..."
 
 #. i18n: tag script attribute comment
-#: scripts/scripts.rc:55
+#: scripts/scripts.rc:63
 msgid "Example python script that print resource busy information"
 msgstr ""
 "Script en python de exemplo de como se imprime a información de ocupación"
 
-#~ msgid "Failed to start Sheets. Is Sheets installed?"
-#~ msgstr "Non foi posíbel iniciar Sheets. Ten o programa instalado?"
-
-#~ msgid "No data to export"
-#~ msgstr "Non hai datos que exportar."
-
-#~ msgid "You must select a file to write to"
-#~ msgstr "Debe escoller un ficheiro no que escribir."
-
-#~ msgid "Information"
-#~ msgstr "Información"
-
-#~ msgid ""
-#~ "Data saved to file:\n"
-#~ "%1"
-#~ msgstr ""
-#~ "Os datos gardáronse no ficheiro:\n"
-#~ "%1"
-
-#~ msgid "No properties to export"
-#~ msgstr "Non hai ningunha propiedade para exportar."
-
-#~ msgid "Select schedule"
-#~ msgstr "Escoller o programa"
-
-#~ msgid "Data"
-#~ msgstr "Datos"
-
-#~ msgid "Select data"
-#~ msgstr "Seleccionar datos"
-
-#~ msgid "Export ods file"
-#~ msgstr "Exportar a ODS"
-
-#~ msgid "Spreadsheet"
-#~ msgstr "Folla de cálculo"
-
-#~ msgid "No current sheet."
-#~ msgstr "Non hai ningunha folla escollida."
-
-#~ msgid "Invalid sheet '%1' defined."
-#~ msgstr "Hai definida unha folla incorrecta, «%1»."
-
-#~ msgid "Could not select cell 'A1'"
-#~ msgstr "Non foi posíbel seleccionar a cela «A1»."
-
-#~ msgid ""
-#~ "Could not write to file:\n"
-#~ "%1"
-#~ msgstr ""
-#~ "Non foi posíbel escribir no ficheiro:\n"
-#~ "%1"
-
-#~ msgid "Warning"
-#~ msgstr "Aviso"
-
-#~ msgid "Failed to set all properties of '%1' to cell '%2'"
-#~ msgstr "Non foi posíbel definir todas as propiedades de «%1» na cela «%2»."
-
-#~ msgid "Export content"
-#~ msgstr "Exportar o contido."
-
-#~ msgid "To csv"
-#~ msgstr "A CSV"
-
-#~ msgid "Export data as comma separated values"
-#~ msgstr "Exportar os datos como valores separados por comas."
-
-#~ msgid "To ods"
-#~ msgstr "A ODS"
-
-#~ msgid "Export data to Open Spreadsheet document"
-#~ msgstr "Exportar os datos a un documento de Open Spreadsheet."
+#~ msgid "Export busy info"
+#~ msgstr "Exportar información de ocupado"
