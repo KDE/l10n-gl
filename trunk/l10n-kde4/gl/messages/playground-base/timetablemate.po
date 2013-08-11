@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2013-01-17 03:41+0100\n"
-"PO-Revision-Date: 2013-02-01 15:17+0100\n"
-"Last-Translator: Miguel Branco <mgl.branco@gmail.com>\n"
+"PO-Revision-Date: 2013-08-11 09:36+0200\n"
+"Last-Translator: Marce Villarino <mvillarino@kde-espana.org>\n"
 "Language-Team: Galician <proxecto@trasno.net>\n"
 "Language: gl\n"
 "MIME-Version: 1.0\n"
@@ -23,11 +23,13 @@ msgstr ""
 
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "Marce Villarino, Miguel Branco"
+msgstr "Marce Villarino, Miguel Branco, Adrián Chaves Fernández"
 
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr "mvillarino@users.sourceforge.net, mgl.branco@gmail.com"
+msgstr ""
+"mvillarino@users.sourceforge.net, mgl.branco@gmail.com, "
+"adriyetichaves@gmail.com"
 
 #: changelogwidget.cpp:76
 msgctxt "@info Label for the author of a changelog entry (short author name)"
@@ -73,7 +75,7 @@ msgstr "Mostrar a documentación sobre %1"
 #: javascriptcompletionmodel.cpp:174
 msgctxt "@info The description for the 'helper' object"
 msgid "The <emphasis>helper</emphasis> object contains some useful functions."
-msgstr ""
+msgstr "O obxecto <emphasis>helper</emphasis> contén algunhas funcións útiles."
 
 #: javascriptcompletionmodel.cpp:179
 msgctxt "@info The description for the 'network' object"
@@ -81,6 +83,8 @@ msgid ""
 "The <emphasis>network</emphasis> object is used request documents from the "
 "internet.<nl/>"
 msgstr ""
+"O obxecto <emphasis>network</emphasis> úsase para solicitar documentos de "
+"internet.<nl/>"
 
 #: javascriptcompletionmodel.cpp:184
 msgctxt "@info The description for the 'storage' object"
@@ -88,6 +92,8 @@ msgid ""
 "The <emphasis>storage</emphasis> object can be used to store some script "
 "specific values in memory or on disk.<nl/>"
 msgstr ""
+"O obxecto <emphasis>storage</emphasis> úsase para almacenar valores "
+"específicos dun script, ben en memoria ben en disco.<nl/>"
 
 #: javascriptcompletionmodel.cpp:189
 msgctxt "@info The description for the 'result' object"
@@ -96,6 +102,10 @@ msgid ""
 "items. Call <emphasis>result.addData({Target: 'Sample', DepartureDateTime: "
 "new Date()})</emphasis> to add new data."
 msgstr ""
+"O obxecto <emphasis>result</emphasis> úsase para almacenar todos os elementos "
+"analizados de saídas, chegadas e rutas de viaxe. Execute <emphasis>"
+"result.addData({Target: 'Exemplo', DepartureDateTime: "
+"new Date()})</emphasis> para engadir datos novos."
 
 #: javascriptcompletionmodel.cpp:251
 msgctxt "@info The description for the 'features' function"
@@ -103,6 +113,8 @@ msgid ""
 "Should be implemented to tell which features the script supports.<nl/>This "
 "function is called by the data engine."
 msgstr ""
+"Debería definirse para informar de que funcionalidades fornece o script.<nl/> "
+"O motor de datos encárgase de chamar a esta función."
 
 #: javascriptcompletionmodel.cpp:269
 msgctxt "@info The description for the 'getTimetable' function"
@@ -124,6 +136,28 @@ msgid ""
 "timeout for the next data update. When delay information is available "
 "updates are done more often, because delays may change.</note>"
 msgstr ""
+"Solicita e analiza documentos de saídas e chegadas. O argumento conta coas "
+"seguintes propiedades: stop («parada»), dateTime («data e hora», obxecto de "
+"tipo Date), count («número»), dataType («tipo de datos», pode ser "
+"'departures' para saídas ou 'arrivals' para chegadas) e city («cidade»).<nl/> "
+"O motor de datos executa a función. O seguinte exemplo demostra como "
+"facilitarlle ao motor de datos as saídas e chegadas que se atopen:<nl/> "
+"<icode>  // Engádense os datos da táboa de horarios ao grupo de resultados.<"
+"/icode><nl/> "
+"<icode>  result.addData( {TransportLine: '603',</icode><nl/> "
+"<icode>                   TypeOfVehicle: 'bus',</icode><nl/> "
+"<icode>                   Target: 'Rúa de exemplo',</icode><nl/> "
+"<icode>                   DepartureDateTime: new Date(),</icode><nl/> "
+"<icode>                   Delay: 4} );</icode><nl/> "
+"<nl/> "
+"<note><emphasis>Pode</emphasis> devolver unha lista de datos con palabras "
+"clave que afecten a todas as saídas e chegadas. Actualmente só se pode usar "
+"unha palabra clave, <emphasis>'no delays'</emphasis>, coa que pode indicar "
+"que a parada indicada non fornece información sobre os atrasos. O motor de "
+"datos pode entón usar un límite de tempo maior para a seguinte actualización "
+"de datos. Cando si que hai dispoñíbel información sobre os atrasos, as "
+"actualizacións prodúcense con maior frecuencia, dado que os atrasos poden "
+"cambiar.</note>"
 
 #: javascriptcompletionmodel.cpp:321
 msgctxt "@info The description for the 'getJourneys' function"
@@ -140,6 +174,22 @@ msgid ""
 "><icode>                   Changes: 3,</icode><nl/><icode>                   "
 "Pricing: '2,30 €'} );</icode><nl/><nl/>"
 msgstr ""
+"Solicita e analiza documentos de rutas de viaxe. O argumento conta coas "
+"seguintes propiedades: originStop («parada de orixe»), targetStop («parada de "
+"destino»), dateTime («data e hora», obxecto de tipo Date), count («número»), "
+"dataType («tipo de datos») e city («cidade»).<nl/> "
+"O motor de datos executa a función. O seguinte exemplo demostra como "
+"facilitarlle ao motor de datos as rutas de viaxe que se atopen:<nl/> "
+"<icode>  // Engádense os datos da táboa de horarios ao grupo de resultados.<"
+"/icode><nl/> "
+"<icode>  result.addData( {StartStopName: 'A',</icode><nl/> "
+"<icode>                   TargetStopName: 'B',</icode><nl/> "
+"<icode>                   Target: 'Rúa de exemplo',</icode><nl/> "
+"<icode>                   DepartureDateTime: new Date(),</icode><nl/> "
+"<icode>                   ArrivalDateTime: new Date(),</icode><nl/> "
+"<icode>                   Changes: 3,</icode><nl/> "
+"<icode>                   Pricing: '2,30 €'} );</icode><nl/> "
+"<nl/>"
 
 #: javascriptcompletionmodel.cpp:346
 msgctxt "@info The description for the 'getStopSuggestions' function"
@@ -151,6 +201,15 @@ msgid ""
 "Add timetable data to the result set</icode><nl/><icode>  result.addData"
 "( {StopName: 'TestName', StopID: 100} );</icode>"
 msgstr ""
+"Solicita e analiza documentos de suxestións de paradas. O argumento conta "
+"coas seguintes propiedades: stop («parada»), count («número») e city "
+"(«cidade»).<nl/> "
+"O motor de datos executa a función. O parámetro inclúe o contido do corpo do "
+"documento. O seguinte exemplo demostra como facilitarlle ao motor de datos os "
+"datos da parada:<nl/> "
+"<icode>  // Engádense os datos da táboa de horarios ao grupo de resultados.<"
+"/icode><nl/> "
+"<icode>  result.addData( {StopName: 'Nome de proba', StopID: 100} );</icode>"
 
 #: javascriptcompletionmodel.cpp:365
 msgctxt "@info The description for the 'DepartureDateTime' info"
@@ -158,6 +217,8 @@ msgid ""
 "The date and time of the departure. Can be a ECMAScript Date object. Use "
 "this information instead of DepartureDate and DepartureTime if possible."
 msgstr ""
+"A data e hora de saída. Pode ser un obxecto ECMAScript de tipo Date. Use esta "
+"información en vez de «DepartureDate» e «DepartureTime» cando sexa posíbel."
 
 #: javascriptcompletionmodel.cpp:368
 msgctxt "@info/plain"
@@ -194,7 +255,7 @@ msgstr "Precísase para as saídas"
 #: javascriptcompletionmodel.cpp:387
 msgctxt "@info The description for the 'FlightNumber' info"
 msgid "Same as TransportLine, used for flights."
-msgstr ""
+msgstr "O mesmo que «TransportLine», para voos."
 
 #: javascriptcompletionmodel.cpp:391
 msgctxt "@info The description for the 'Target' info"
@@ -233,11 +294,15 @@ msgid ""
 "provider is prepended, if a relative path has been matched (starting with "
 "'/').</note>"
 msgstr ""
+"Unha ligazón a unha páxina HTML con información actual sobre as rutas de "
+"viaxe.<nl/> "
+"<note>Se a ligazón comeza por «/» entenderase que é relativa ao enderezo URL "
+"do fornecedor de servizos.</note>"
 
 #: javascriptcompletionmodel.cpp:422
 msgctxt "@info The description for the 'Operator' info"
 msgid "The company that is responsible for the journey."
-msgstr "A compaía que é responsábel da ruta de viaxe."
+msgstr "A compañía que é responsábel da ruta de viaxe."
 
 #: javascriptcompletionmodel.cpp:425
 msgctxt "@info The description for the 'Status' info"
@@ -267,6 +332,15 @@ msgid ""
 "<emphasis>RouteTimesArrival</emphasis> should be used instead of "
 "<emphasis>RouteTimes</emphasis>.</note>"
 msgstr ""
+"Unha lista de paradas da saídas ou a chegada ao lugar de destino, ou unha "
+"lista de paradas al longo dunha ruta de viaxe.<nl/> "
+"Se tanto <emphasis>RouteStops</emphasis> como <emphasis>RouteTimes</emphasis> "
+"están definidos, deberían conter o mesmo número de elementos. Os elementos "
+"que teñan o mesmo índice deberían estar asociados (as horas á que o vehículo "
+"pasa polas paradas).<nl/> "
+"<note>Para rutas de viaxe debería usar <emphasis>RouteTimesDeparture<"
+"/emphasis> e <emphasis>RouteTimesArrival</emphasis> en vez de <emphasis>"
+"RouteTimes</emphasis>.</note>"
 
 #: javascriptcompletionmodel.cpp:446
 msgctxt "@info The description for the 'RouteTimes' info"
@@ -277,6 +351,11 @@ msgid ""
 "equal indices should be associated (the times at which the vehicle is at the "
 "stops)."
 msgstr ""
+"Unha lista de horas da saídas ou a chegada ao lugar de destino.<nl/> "
+"Se tanto <emphasis>RouteStops</emphasis> como <emphasis>RouteTimes</emphasis> "
+"están definidos, deberían conter o mesmo número de elementos. Os elementos "
+"que teñan o mesmo índice deberían estar asociados (as horas á que o vehículo "
+"pasa polas paradas)."
 
 #: javascriptcompletionmodel.cpp:457
 msgctxt "@info The description for the 'RouteTimesDeparture' info"
@@ -287,6 +366,12 @@ msgid ""
 "departure, only an arrival time). Elements with equal indices should be "
 "associated (the times at which the vehicle departs from the stops)."
 msgstr ""
+"Unha lista de horas de saída da ruta de viaxe.<nl/> "
+"Se tanto <emphasis>RouteStops</emphasis> como <emphasis>RouteTimesDeparture<"
+"/emphasis> están definidos, o segundo debería conter un elemento menos, dado "
+"que non hai data de saída para a última parada, só de chegada. Os elementos "
+"que teñan o mesmo índice deberían estar asociados (as horas á que o vehículo "
+"sae das paradas)."
 
 #: javascriptcompletionmodel.cpp:466
 msgctxt "@info The description for the 'RouteTimesArrival' info"
@@ -297,6 +382,12 @@ msgid ""
 "arrival, only a departure time). Elements with equal indices should be "
 "associated (the times at which the vehicle arrives at the stops)."
 msgstr ""
+"Unha lista de horas de chegada da ruta de viaxe.<nl/> "
+"Se tanto <emphasis>RouteStops</emphasis> como <emphasis>RouteTimesArrival<"
+"/emphasis> están definidos, o segundo debería conter un elemento menos, dado "
+"que non hai data de chegada para a primeira parada, só de saída. Os elementos "
+"que teñan o mesmo índice deberían estar asociados (as horas á que o vehículo "
+"chega ás paradas)."
 
 #: javascriptcompletionmodel.cpp:474
 msgctxt "@info The description for the 'RouteExactStops' info"
@@ -305,16 +396,19 @@ msgid ""
 "<emphasis>RouteStops</emphasis> is not complete from the last exact route "
 "stop."
 msgstr ""
+"O número exacto de paradas da ruta.<nl/> "
+"A lista de paradas da ruta en <emphasis>RouteStops</emphasis> non está "
+"completa desde a última parada exacta da ruta."
 
 #: javascriptcompletionmodel.cpp:480
 msgctxt "@info The description for the 'RouteTypesOfVehicles' info"
 msgid "The types of vehicles used for each 'sub-journey' of a journey."
-msgstr ""
+msgstr "Os tipos de vehículos usados para cada tramo dunha ruta de viaxe."
 
 #: javascriptcompletionmodel.cpp:485
 msgctxt "@info The description for the 'RouteTransportLines' info"
 msgid "The transport lines used for each 'sub-journey' of a journey."
-msgstr ""
+msgstr "As liñas de transporte empregaras para cada tramo dunha ruta de viaxe."
 
 #: javascriptcompletionmodel.cpp:490
 msgctxt "@info The description for the 'RoutePlatformsDeparture' info"
@@ -326,6 +420,12 @@ msgid ""
 "equal indices should be associated (the platforms from which the vehicle "
 "departs from the stops)."
 msgstr ""
+"As plataformas de saída empregaras para cada tramo dunha ruta de viaxe.<nl/> "
+"Se tanto <emphasis>RouteStops</emphasis> como <emphasis>"
+"RoutePlatformsDeparture</emphasis> están definidos, o segundo debería conter "
+"un elemento menos, dado que non hai data de saída para a última parada, só de "
+"chegada. Os elementos que teñan o mesmo índice deberían estar asociados (as "
+"plataformas das que sae o vehículo nas paradas)."
 
 #: javascriptcompletionmodel.cpp:500
 msgctxt "@info The description for the 'RoutePlatformsArrival' info"
@@ -337,6 +437,13 @@ msgid ""
 "equal indices should be associated (the platforms at which the vehicle "
 "arrives at the stops)"
 msgstr ""
+"As plataformas de chegada empregaras para cada tramo dunha ruta de viaxe.<nl/>"
+" "
+"Se tanto <emphasis>RouteStops</emphasis> como <emphasis>"
+"RoutePlatformsArrival</emphasis> están definidos, o segundo debería conter un "
+"elemento menos, dado que non hai data de chegada para a primeira parada, só "
+"de saída. Os elementos que teñan o mesmo índice deberían estar asociados (as "
+"plataformas ás que chega o vehículo nas paradas)."
 
 #: javascriptcompletionmodel.cpp:510
 msgctxt "@info The description for the 'RouteTimesDepartureDelay' info"
@@ -345,6 +452,10 @@ msgid ""
 "<emphasis>RouteTimesDeparture</emphasis>).<nl/>If set it should contain the "
 "same number of elements as 'RouteTimesDeparture'."
 msgstr ""
+"Unha lista de atrasos en minutos para cada hora de saída dunha ruta de viaxe "
+"(véxase <emphasis>RouteTimesDeparture</emphasis>).<nl/> "
+"En caso de definir este valor, debería conter o mesmo número de elementos que "
+"<emphasis>RouteTimesDeparture</emphasis>."
 
 #: javascriptcompletionmodel.cpp:517
 msgctxt "@info The description for the 'RouteTimesArrivalDelay' info"
@@ -353,6 +464,10 @@ msgid ""
 "<emphasis>RouteTimesArrival</emphasis>).<nl/>If set it should contain the "
 "same number of elements as 'RouteTimesArrival'."
 msgstr ""
+"Unha lista de atrasos en minutos para cada hora de chegada dunha ruta de "
+"viaxe (véxase <emphasis>RouteTimesArrival</emphasis>).<nl/> "
+"En caso de definir este valor, debería conter o mesmo número de elementos que "
+"<emphasis>RouteTimesArrival</emphasis>."
 
 #: javascriptcompletionmodel.cpp:523
 msgctxt "@info The description for the 'Duration' info"
@@ -382,7 +497,7 @@ msgstr "O nome da parada de destino dunha ruta de viaxe."
 #: javascriptcompletionmodel.cpp:540
 msgctxt "@info The description for the 'TargetStopID' info"
 msgid "The ID of the target stop of a journey."
-msgstr "A ID dunha parada de viaxe dunha ruta."
+msgstr "O identificador dunha parada de viaxe dunha ruta."
 
 #: javascriptcompletionmodel.cpp:544
 msgctxt "@info The description for the 'ArrivalDateTime' info"
@@ -390,6 +505,8 @@ msgid ""
 "The date and time of the arrival. Can be a ECMAScript Date object. Use this "
 "information instead of ArrivalDate and ArrivalTime if possible."
 msgstr ""
+"A data e hora de chegada. Pode ser un obxecto ECMAScript de tipo Date. Use "
+"esta información en vez de «ArrivalDate» e «ArrivalTime» cando sexa posíbel."
 
 #: javascriptcompletionmodel.cpp:549
 msgctxt "@info The description for the 'ArrivalDate' info"
@@ -404,27 +521,28 @@ msgstr "A hora da chegada."
 #: javascriptcompletionmodel.cpp:555
 msgctxt "@info/plain"
 msgid "This or ArrivalDateTime is needed for journeys"
-msgstr ""
+msgstr "As rutas de viaxe necesitan isto ou «ArrivalDateTime»."
 
 #: javascriptcompletionmodel.cpp:558
 msgctxt "@info The description for the 'Changes' info"
 msgid "The number of changes between different vehicles in a journey."
 msgstr ""
+"O número de cambios entre distintos vehículos ao longo dunha ruta de viaxe.7"
 
 #: javascriptcompletionmodel.cpp:563
 msgctxt "@info The description for the 'TypesOfVehicleInJourney' info"
 msgid "A list of vehicle types used in a journey."
-msgstr ""
+msgstr "Unha lista de tipos de vehículo empregados nunha ruta de viaxe."
 
 #: javascriptcompletionmodel.cpp:567
 msgctxt "@info The description for the 'Pricing' info"
 msgid "Information about the pricing of a journey."
-msgstr ""
+msgstr "Información sobre o prezo dunha ruta de viaxe."
 
 #: javascriptcompletionmodel.cpp:573
 msgctxt "@info The description for the 'StopName' info"
 msgid "The name of a stop/station."
-msgstr ""
+msgstr "O nome dunha parada ou estación."
 
 #: javascriptcompletionmodel.cpp:574
 msgctxt "@info/plain"
@@ -434,17 +552,17 @@ msgstr "Precísase para as suxestións de parada"
 #: javascriptcompletionmodel.cpp:577
 msgctxt "@info The description for the 'StopID' info"
 msgid "The ID of a stop/station."
-msgstr ""
+msgstr "O identificador dunha parada ou estación."
 
 #: javascriptcompletionmodel.cpp:581
 msgctxt "@info The description for the 'StopWeight' info"
 msgid "The weight of a stop suggestion."
-msgstr ""
+msgstr "A relevancia dunha suxestión de parada."
 
 #: javascriptmodel.cpp:44
 msgctxt "info"
 msgid "Unknown code element"
-msgstr ""
+msgstr "Elemento de código descoñecido"
 
 #: javascriptmodel.cpp:46
 msgctxt "info"
@@ -479,26 +597,26 @@ msgstr "Cadea"
 #: javascriptmodel.cpp:58
 msgctxt "info"
 msgid "Function call"
-msgstr ""
+msgstr "Chamada a unha función"
 
 #: javascriptmodel.cpp:60
 msgctxt "info"
 msgid "Bracketed region"
-msgstr ""
+msgstr "Rexión entre corchetes"
 
 #: javascriptmodel.cpp:89
 #, kde-format
 msgctxt "@info"
 msgid "Parent %1 (line %2): "
-msgstr ""
+msgstr "Pai %1 (liña %2): "
 
 #: javascriptmodel.cpp:98
 #, kde-format
 msgctxt "@info"
 msgid "%1 child element"
 msgid_plural "%1 child elements"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%1 elemento fillo"
+msgstr[1] "%1 elementos fillos"
 
 #: javascriptmodel.cpp:111
 msgid "Function: "
@@ -507,7 +625,7 @@ msgstr "Función:"
 #: javascriptmodel.cpp:476
 msgctxt "@info/plain"
 msgid "(no functions)"
-msgstr ""
+msgstr "(sen funcións)"
 
 #: javascriptmodel.cpp:478
 #, kde-format
@@ -526,46 +644,47 @@ msgstr "Fin inesperado do ficheiro."
 #: javascriptparser.cpp:170
 msgctxt "@info/plain"
 msgid "Unclosed multiline comment"
-msgstr ""
+msgstr "Comentario de varias liñas sen pechar"
 
 #: javascriptparser.cpp:235 javascriptparser.cpp:260
 #, kde-format
 msgctxt "@info/plain"
 msgid "Unclosed bracket, expected '%1'."
-msgstr ""
+msgstr "Corchetes sen pechar, esperábase «%1»."
 
 #: javascriptparser.cpp:308
 #, kde-format
 msgctxt "@info/plain"
 msgid "Unclosed regular expression, missing %1 at end."
-msgstr ""
+msgstr "Expresión regular sen pechar, falta un «%1» ao final."
 
 #: javascriptparser.cpp:312
 #, kde-format
 msgctxt "@info/plain"
 msgid "Unclosed string, missing %1 at end."
-msgstr ""
+msgstr "Cadea sen pechar, falta un «%1» ao final."
 
 #: javascriptparser.cpp:355
 #, kde-format
 msgctxt "@info/plain"
 msgid "The object '%1' has no method '%2' (available methods: %3)."
 msgstr ""
+"O obxecto «%1» non ten ningún método chamado «%2» (métodos dispoñíbeis: %3)."
 
 #: javascriptparser.cpp:581 javascriptparser.cpp:603
 msgctxt "@info/plain"
 msgid "Expected argument or ')'."
-msgstr ""
+msgstr "Agardábase un argumento ou «)»."
 
 #: javascriptparser.cpp:590
 msgctxt "@info/plain"
 msgid "Expected ',' or ')'."
-msgstr ""
+msgstr "Agardábase «,» ou «)»."
 
 #: javascriptparser.cpp:614
 msgctxt "@info/plain"
 msgid "Function definition is missing."
-msgstr ""
+msgstr "Falta a definición da función."
 
 #: javascriptparser.cpp:621
 msgctxt "@info/plain"
@@ -575,24 +694,25 @@ msgstr "Agardábase «(»."
 #: javascriptparser.cpp:658 javascriptparser.cpp:738
 msgctxt "@info/plain"
 msgid "Internal JavaScript parser error"
-msgstr ""
+msgstr "Erro interno de análise de JavaScript."
 
 #: javascriptparser.cpp:673
 #, kde-format
 msgctxt "@info/plain"
 msgid "Unclosed block, missing '}'. Block started at line %1."
-msgstr ""
+msgstr "Bloque sen pechar, falta un «}». O bloque comeza na liña %1."
 
 #: javascriptparser.cpp:764
 #, kde-format
 msgctxt "@info/plain"
 msgid "Multiple definitions of function '%1', previously defined at line %2"
 msgstr ""
+"Existe máis dunha definición para a función «%1», tamén definida na liña %2."
 
 #: javascriptparser.cpp:892
 msgctxt "@info/plain Display name for anonymous JavaScript functions"
 msgid "[anonymous]"
-msgstr "[Anónimo]"
+msgstr "(anónimo)"
 
 #. i18n: ectx: Menu (file)
 #: katepartui.rc:4
@@ -637,23 +757,27 @@ msgstr "Barra de ferramentas principal"
 #: linkchecker.cpp:45
 msgctxt "@info"
 msgid "The URL is invalid"
-msgstr ""
+msgstr "O URL é incorrecto."
 
 #: linkchecker.cpp:67
 msgctxt "@info/plain"
 msgid "Seems to be ok, could not get only the header values for the URL"
 msgstr ""
+"Parece correcto, pero non foi posíbel obter unicamente os valores da "
+"cabeceira para o URL."
 
 #: linkchecker.cpp:106
 msgctxt "@info/plain"
 msgid "Empty reply"
-msgstr ""
+msgstr "Resposta baleira"
 
 #: main.cpp:29
 msgid ""
 "A little IDE for adding support for new service providers to the plasma data "
 "engine 'PublicTransport'."
 msgstr ""
+"Un pequeno ambiente de desenvolvemento para engadir novas fontes de liñas de "
+"servizos ao motor de transporte público."
 
 #: main.cpp:36
 msgid "TimetableMate"
@@ -673,7 +797,7 @@ msgstr "Desenvolvedor principal"
 
 #: main.cpp:44
 msgid "Project to open"
-msgstr ""
+msgstr "Proxecto para abrir"
 
 #: networkmonitormodel.cpp:165
 msgctxt "@title:column"
@@ -703,17 +827,17 @@ msgstr "Datos"
 #: networkmonitormodel.cpp:459
 msgctxt "@info/plain"
 msgid "Request (GET)"
-msgstr ""
+msgstr "Solicitude (GET)"
 
 #: networkmonitormodel.cpp:461
 msgctxt "@info/plain"
 msgid "Request (POST)"
-msgstr ""
+msgstr "Solicitude (POST)"
 
 #: networkmonitormodel.cpp:463
 msgctxt "@info/plain"
 msgid "Reply"
-msgstr "Responder"
+msgstr "Resposta"
 
 #: networkmonitormodel.cpp:474
 msgctxt "@info/plain"
@@ -759,13 +883,15 @@ msgstr "Descoñecido"
 #, kde-format
 msgctxt "@info"
 msgid "The project file <filename>%1</filename> could not be found."
-msgstr ""
+msgstr "Non foi posíbel atopar o ficheiro <filename>%1</filename> do proxecto."
 
 #: project.cpp:624
 #, kde-format
 msgctxt "@info"
 msgid "Could not open project source document <filename>%1</filename>."
 msgstr ""
+"Non foi posíbel abrir o documento de fontes <filename>%1</filename> do "
+"proxecto."
 
 #: project.cpp:710
 msgctxt "@info/plain"
@@ -775,39 +901,39 @@ msgstr "Novo proxecto"
 #: project.cpp:794
 msgctxt "@info:tooltip"
 msgid "also installed globally"
-msgstr ""
+msgstr "tamén instalado globalmente"
 
 #: project.cpp:799
 msgctxt "@info:tooltip"
 msgid "also installed locally"
-msgstr ""
+msgstr "tamén instalado localmente"
 
 #: project.cpp:805
 msgctxt "@info:tooltip"
 msgid "installed locally and globally"
-msgstr ""
+msgstr "instalado global e localmente"
 
 #: project.cpp:807
 msgctxt "@info:tooltip"
 msgid "installed locally"
-msgstr ""
+msgstr "instalado localmente"
 
 #: project.cpp:809
 msgctxt "@info:tooltip"
 msgid "installed globally"
-msgstr ""
+msgstr "instalado globalmente"
 
 #: project.cpp:945
 #, kde-format
 msgctxt "@info"
 msgid "The script file <filename>%1</filename> could not be found."
-msgstr ""
+msgstr "Non foi posíbel atopar o ficheiro de script <filename>%1</filename>."
 
 #: project.cpp:972
 #, kde-format
 msgctxt "@info"
 msgid "Syntax error at line %1: <message>%2</message>"
-msgstr ""
+msgstr "Erro de sintaxe na liña %1: <message>%2</message>"
 
 #: project.cpp:1004
 #, kde-format
@@ -816,6 +942,8 @@ msgid ""
 "Could not open project source document <filename>%1</filename> could not be "
 "found."
 msgstr ""
+"Non foi posíbel atopar o documento de fontes <filename>%1</filename> do "
+"proxecto."
 
 #: project.cpp:1328
 msgctxt "@info"
@@ -823,6 +951,9 @@ msgid ""
 "Test results cannot be seen for non-active projects.<nl />Do you want to "
 "make this project active now?"
 msgstr ""
+"Non é posíbel ver os resultados dar probas de proxectos que non están "
+"activos.<nl /> "
+"Quere activar o proxecto?"
 
 #: project.cpp:1333
 msgctxt "@info"
@@ -833,57 +964,63 @@ msgid ""
 "project context menu can be used to eg. control the debugger of an inactive "
 "project.<nl />Do you want to make this project active now?"
 msgstr ""
+"As docas como <interface>Variábeis</interface>, <interface>Traza inversa<"
+"/interface> ou <interface>Saída</interface> só mostran datos do proxecto "
+"activo. As accións da barra de ferramentas e do menú só controlan o proxecto "
+"activo, pero pode usar o menú de contexto do proxecto; por exemplo, para "
+"controlar o depurador dun proxecto inactivo.<nl /> "
+"Quere activar o proxecto?"
 
 #: project.cpp:1347
 msgctxt "@title:window"
 msgid "Activate Project?"
-msgstr ""
+msgstr "Activar o proxecto?"
 
 #: project.cpp:1441
 msgctxt "@info"
 msgid "Test started"
-msgstr ""
+msgstr "Comezou a proba"
 
 #: project.cpp:1469
 #, kde-format
 msgctxt "@info"
 msgid "Test of %1 finished successfully"
-msgstr ""
+msgstr "A proba de «%1» rematou satisfactoriamente."
 
 #: project.cpp:1475
 #, kde-format
 msgctxt "@info"
 msgid "Test of %1 finished with errors"
-msgstr ""
+msgstr "A proba de «%1» rematou con erros."
 
 #: project.cpp:1480
 #, kde-format
 msgctxt "@info"
 msgid "Test of %1 finished with warnings"
-msgstr ""
+msgstr "A proba de «%1» rematou con avisos."
 
 #: project.cpp:1485
 #, kde-format
 msgctxt "@info"
 msgid "Test of %1 could not be started"
-msgstr ""
+msgstr "Non foi posíbel comezar a proba de «%1»."
 
 #: project.cpp:1490
 #, kde-format
 msgctxt "@info"
 msgid "Test of %1 was aborted"
-msgstr ""
+msgstr "Interrompeuse a proba de «%1»."
 
 #: project.cpp:1494
 #, kde-format
 msgctxt "@info"
 msgid "Test of %1 case not finished"
-msgstr ""
+msgstr "Non rematou o caso da proba de «%1»."
 
 #: project.cpp:1535
 msgctxt "@info/plain"
 msgid "Test was aborted"
-msgstr ""
+msgstr "Interrompeuse a proba"
 
 #: project.cpp:1536
 msgctxt "@info"
@@ -891,11 +1028,14 @@ msgid ""
 "<title>Test was aborted</title> <para>The test was aborted while it was "
 "running, no results available.</para>"
 msgstr ""
+"<title>Interrompeuse a proba</title> "
+"<para>Interrompeuse a proba durante a súa execución, non se dispón dos "
+"resultados.</para>"
 
 #: project.cpp:1554
 msgctxt "@info/plain"
 msgid "Missing sample coordinates"
-msgstr ""
+msgstr "Faltan coordenadas de exemplo"
 
 #: project.cpp:1555
 msgctxt "@info"
@@ -904,11 +1044,16 @@ msgid ""
 "execution tests for stops by geo position. Open the project settings and add "
 "one or more <interface>Sample Stop Coordinates</interface></para>"
 msgstr ""
+"<title>Faltan coordenadas de paradas de exemplo</title> "
+"<para>Non é posíbel comezar as probas de execución do script de paradas dada "
+"a unha localización. Abra a configuración do proxecto e engada polo menos "
+"unha parella de <interface>Coordenadas de paradas de exemplo</interface>.<"
+"/para>"
 
 #: project.cpp:1578
 msgctxt "@info/plain"
 msgid "Missing sample stop name"
-msgstr ""
+msgstr "Faltan nomes de parada de exemplo"
 
 #: project.cpp:1579
 msgctxt "@info"
@@ -917,11 +1062,15 @@ msgid ""
 "sample data. Open the project settings and add one or more <interface>Sample "
 "Stop Names</interface></para>"
 msgstr ""
+"<title>Faltan nomes de parada de exemplo</title> "
+"<para>Non é posíbel comezar as probas sen datos de exemplo. Abra a "
+"configuración do proxecto e engada polo menos un <interface>Nome de parada de "
+"exemplo</interface>.</para>"
 
 #: project.cpp:1589
 msgctxt "@info/plain"
 msgid "Missing sample city"
-msgstr ""
+msgstr "Faltan cidades de exemplo"
 
 #: project.cpp:1590
 msgctxt "@info"
@@ -930,11 +1079,17 @@ msgid ""
 "data. Open the project settings and add a <interface>Sample City</"
 "interface></para>"
 msgstr ""
+"<title>Faltan cidades de exemplo</title> "
+"<para>Non é posíbel comezar as probas sen datos de exemplo. Abra a "
+"configuración do proxecto e engada polo menos unha <interface>Cidade de "
+"exemplo</interface>.</para>"
 
 #: project.cpp:1609
 msgctxt "@info/plain"
 msgid "To test journeys at least two sample stop names are needed"
 msgstr ""
+"Para probar rutas de viaxe necesítanse polo menos dous nomes de parada de "
+"exemplo."
 
 #: project.cpp:1610
 msgctxt "@info"
@@ -943,18 +1098,23 @@ msgid ""
 "<para>Cannot run journey test. Open the project settings and add another "
 "stop name to the <interface>Sample Stop Names</interface></para>"
 msgstr ""
+"<title>Para probar rutas de viaxe necesítanse polo menos dous nomes de parada "
+"de exemplo</title> "
+"<para>Non é posíbel executar a proba da ruta de viaxe. Abra a configuración "
+"do proxecto e engada outro nome de parada á lista de <interface>Nomes de "
+"parada de exemplo</interface>.</para>"
 
 #: project.cpp:1650
 #, kde-format
 msgctxt "@info/plain"
 msgid "Waiting for required test \"%1\""
-msgstr ""
+msgstr "Agardando pola proba solicitada, «%1»."
 
 #: project.cpp:1669
 #, kde-format
 msgctxt "@info/plain"
 msgid "Required test \"%1\" was not successful"
-msgstr ""
+msgstr "A proba solicitada, «%1», non rematou satisfactoriamente."
 
 #: project.cpp:1671
 #, kde-format
@@ -963,12 +1123,15 @@ msgid ""
 "<title>Dependency not met</title> <para>This test depends on the \"%1\" "
 "test, but it was not successful.</para>"
 msgstr ""
+"<title>Non se cumpriu co requisito</title> "
+"<para>Esta proba precisa da proba «%1», pero esta última non rematou "
+"satisfactoriamente.</para>"
 
 #: project.cpp:1700 project.cpp:1743
 #, kde-format
 msgctxt "@info/plain"
 msgid "You need to implement a '%1' script function"
-msgstr ""
+msgstr "Ten que definir unha función de script chamada «%1»."
 
 #: project.cpp:1701
 #, kde-format
@@ -978,17 +1141,21 @@ msgid ""
 "provider plugins that only support journeys are currently not accepted by "
 "the data engine, but that may change.</para>"
 msgstr ""
+"<title>Ten que definir unha función de script chamada «%1»</title> "
+"<para>Actualmente o motor de datos non permite complementos de fornecedores "
+"de servizos que só fornecen rutas de viaxe, aínda que pode que iso cambie no "
+"futuro.</para>"
 
 #: project.cpp:1716
 msgctxt "@info/plain"
 msgid "No results in departure test"
-msgstr ""
+msgstr "A proba de saídas non forneceu resultados."
 
 #: project.cpp:1723
 #, kde-format
 msgctxt "@info/plain"
 msgid "'%1' script function not implemented"
-msgstr ""
+msgstr "A función de script «%1» non está definida."
 
 #: project.cpp:1724
 #, kde-format
@@ -997,6 +1164,9 @@ msgid ""
 "<title>You can implement a '%1' script function</title> <para>This can be "
 "used to load additional data for single departures or arrivals.</para>"
 msgstr ""
+"<title>Pode definir unha función de script chamada «%1»</title> "
+"<para>Isto permite cargar datos adicionais para saídas ou chegadas "
+"individuais.</para>"
 
 #: project.cpp:1744
 #, kde-format
@@ -1006,12 +1176,16 @@ msgid ""
 "stop suggestions it can be very hard for users to find a valid stop name. "
 "Therefore this function is needed.</para>"
 msgstr ""
+"<title>Debe definir unha función de script chamada «%1»</title> "
+"<para>Sen suxestións de paradas pode resultar moi difícil para os usuarios "
+"atopar un nome de parada correcto. É por iso que esta función é necesaria.<"
+"/para>"
 
 #: project.cpp:1751
 #, kde-format
 msgctxt "@info/plain"
 msgid "For journeys, you need to implement a '%1' script function"
-msgstr ""
+msgstr "Nas rutas de viaxe debe definir a función de script «%1»."
 
 #: project.cpp:1752
 #, kde-format
@@ -1021,12 +1195,15 @@ msgid ""
 "<para>If you do not implement the function, journeys will not work with the "
 "plugin.</para>"
 msgstr ""
+"<title>Nas rutas de viaxe debe definir a función de script «%1»</title> "
+"<para>Se non define esta función, as rutas de viaxe non funcionarán co "
+"complemento.</para>"
 
 #: project.cpp:1758
 #, kde-format
 msgctxt "@info/plain"
 msgid "You should implement a '%1' script function"
-msgstr ""
+msgstr "Debería definir unha función de script chamada «%1»."
 
 #: project.cpp:1759
 #, kde-format
@@ -1041,16 +1218,25 @@ msgid ""
 "parses route stops or stop IDs, add 'RouteStops' or 'StopID' to the return "
 "value, etc.</para>"
 msgstr ""
+"<title>Debería definir unha función de script chamada «%1»</title> "
+"<para>Esta función emprégase para saber que información obteñen dos "
+"documentos os complementos. Se non engade os nomes «TimetableInformation» "
+"necesarios no valor que devolve a función, non se usarán os datos asociados, "
+"ou desactivaranse as funcionalidades relacionadas.</para> "
+"<para>Por exemplo, se o script pode analizar as chegadas, engada «Arrivals» "
+"ao valor que devolve a función. Se o script analiza paradas de rutas ou "
+"identificadores de paradas, engada «RouteStops» ou «StopID» ao valor que "
+"devolve a función. E así co resto.</para>"
 
 #: project.cpp:1823
 msgctxt "@info/plain"
 msgid "Script successfully loaded"
-msgstr ""
+msgstr "O script cargouse correctamente."
 
 #: project.cpp:1961
 msgctxt "@info/plain"
 msgid "No GTFS feed URL given"
-msgstr ""
+msgstr "Non se indicou ningún URL de fonte de novas GTFS."
 
 #: project.cpp:1968
 msgctxt "@info/plain"
@@ -1061,7 +1247,7 @@ msgstr "Sen uso"
 #, kde-format
 msgctxt "@info/plain"
 msgid "Redirected to: <link>%1</link>"
-msgstr ""
+msgstr "Dirixido a: <link>%1</link>"
 
 #: project.cpp:1992
 #, kde-format
@@ -1082,6 +1268,8 @@ msgid ""
 "Could not write the script file to <filename>%1</filename>: <message>%2</"
 "message>"
 msgstr ""
+"Non foi posíbel escribir o ficheiro de script en <filename>%1</filename>: <"
+"message>%2</message>"
 
 #: project.cpp:2169
 msgctxt "@title:window"
@@ -1091,29 +1279,32 @@ msgstr "Gardar o proxecto"
 #: project.cpp:2195
 msgctxt "@info"
 msgid "Project successfully installed locally"
-msgstr ""
+msgstr "O proxecto instalouse localmente."
 
 #: project.cpp:2201
 #, kde-format
 msgctxt "@info"
 msgid "Project could not be installed locally as <filename>%1</filename>"
 msgstr ""
+"Non foi posíbel instalar o proxecto localmente como <filename>%1</filename>."
 
 #: project.cpp:2211 project.cpp:2217
 #, kde-format
 msgctxt "@info"
 msgid "Project could not be uninstalled locally, file <filename>%1</filename>"
 msgstr ""
+"Non foi posíbel desinstalar o ficheiro local do proxecto, <filename>%1<"
+"/filename>."
 
 #: project.cpp:2223
 msgctxt "@info"
 msgid "Project successfully uninstalled locally"
-msgstr ""
+msgstr "O proxecto desinstalouse localmente."
 
 #: project.cpp:2234
 msgctxt "@info"
 msgid "Project is not installed locally"
-msgstr ""
+msgstr "O proxecto non está instalado localmente."
 
 #: project.cpp:2275
 #, kde-format
@@ -1122,6 +1313,8 @@ msgid ""
 "Service provider plugin could not be installed globally in <filename>%1</"
 "filename>: %2 <message>%3</message>"
 msgstr ""
+"Non foi posíbel instalar globalmente o complemento de fornecedor de servizos "
+"en <filename>%1</filename>: %2 <message>%3</message>"
 
 #: project.cpp:2278
 #, kde-format
@@ -1130,6 +1323,8 @@ msgid ""
 "Service provider plugin could not be uninstalled globally from <filename>%1</"
 "filename>: %2 <message>%3</message>"
 msgstr ""
+"Non foi posíbel desinstalar globalmente o complemento de fornecedor de "
+"servizos instalador en <filename>%1</filename>: %2 <message>%3</message>"
 
 #: project.cpp:2289
 msgctxt "@info"
@@ -1137,32 +1332,34 @@ msgid ""
 "Could not find the authentication action. If you just installed "
 "TimetableMate, you might need to restart D-Bus."
 msgstr ""
+"Non foi posíbel atopar a acción de autenticación. Se acaba de instalar "
+"TimetableMate, pode que teña que reiniciar D-Bus."
 
 #: project.cpp:2295
 msgctxt "@info"
 msgid "The action is currently being performed. Please try again later."
-msgstr ""
+msgstr "A acción está en marcha. Vólvao internar máis tarde."
 
 #: project.cpp:2300
 #, kde-format
 msgctxt "@info"
 msgid "Unable to authenticate the action: %1 <message>%2</message>"
-msgstr ""
+msgstr "Non foi posíbel autenticar a acción: %1 <message>%2</message>"
 
 #: project.cpp:2308
 msgctxt "@info"
 msgid "Service provider plugin successfully installed globally"
-msgstr ""
+msgstr "O complemento de fornecedor de servizos instalouse globalmente."
 
 #: project.cpp:2314
 msgctxt "@info"
 msgid "Service provider plugin successfully uninstalled globally"
-msgstr ""
+msgstr "O complemento de fornecedor de servizos desinstalouse globalmente."
 
 #: project.cpp:2372
 msgctxt "@info/plain"
 msgid "Feature function needed"
-msgstr ""
+msgstr "Precísase a función de funcionalidades"
 
 #: project.cpp:2373
 #, kde-format
@@ -1172,12 +1369,16 @@ msgid ""
 "function is needed to indicate support for this test. It should return at "
 "least these features for this test to run: %1.</para>"
 msgstr ""
+"<title>Precísase a función de funcionalidades</title> "
+"<para>Precísase a función <icode>features()</icode> para indicar a "
+"compatibilidade con esta proba. Debería devolver polo menos as seguintes "
+"funcionalidades para poder comezar a proba: %1.</para>"
 
 #: project.cpp:2398
 #, kde-format
 msgctxt "@info/plain"
 msgid "Feature \"%1\" not supported"
-msgstr ""
+msgstr "Carécese da funcionalidade «%1»"
 
 #: project.cpp:2399
 #, kde-format
@@ -1186,6 +1387,9 @@ msgid ""
 "<title>Feature \"%1\" not supported</title> <para>The <icode>features()</"
 "icode> function did not return <icode>PublicTransport.%1</icode>.</para>"
 msgstr ""
+"<title>Carécese da funcionalidade «%1»</title> "
+"<para>A función <icode>features()</icode> non devolveu <icode>"
+"PublicTransport.%1</icode>.</para>"
 
 #: project.cpp:2679
 #, kde-format
@@ -1258,7 +1462,7 @@ msgstr "Gardar o proxecto"
 #: project.cpp:3473
 msgctxt "@action"
 msgid "Save Project As..."
-msgstr ""
+msgstr "Gardar o proxecto como…"
 
 #: project.cpp:3475
 msgctxt "@action"
@@ -1273,12 +1477,12 @@ msgstr "&Desinstalar"
 #: project.cpp:3479
 msgctxt "@action"
 msgid "Install &Globally"
-msgstr ""
+msgstr "Instalar &globalmente"
 
 #: project.cpp:3481
 msgctxt "@action"
 msgid "Uninstall &Globally"
-msgstr ""
+msgstr "Desinstalar &globalmente"
 
 #: project.cpp:3483
 msgctxt "@action"
@@ -1303,7 +1507,7 @@ msgstr "Mostrar o &cadro de control"
 #: project.cpp:3491
 msgctxt "@action"
 msgid "Show &Web Page"
-msgstr ""
+msgstr "Mostrar a páxina &web"
 
 #: project.cpp:3494
 msgctxt "@action"
@@ -1313,18 +1517,18 @@ msgstr "Abrir un &script"
 #: project.cpp:3497
 msgctxt "@action"
 msgid "Open External Script..."
-msgstr ""
+msgstr "Abrir un script externo…"
 
 #: project.cpp:3498
 #, kde-format
 msgctxt "@action"
 msgid "Open External Script <filename>%1</filename>"
-msgstr ""
+msgstr "Abrir o script externo <filename>%1</filename>"
 
 #: project.cpp:3504
 msgctxt "@action"
 msgid "Open GTFS &Database"
-msgstr ""
+msgstr "Abrir a &base de datos de GTFS"
 
 #: project.cpp:3506
 msgctxt "@action"
@@ -1334,37 +1538,37 @@ msgstr "&Importar a fonte de GTFS"
 #: project.cpp:3508
 msgctxt "@action"
 msgid "&Update GTFS Database"
-msgstr ""
+msgstr "&Actualizar a base de datos de GFTS"
 
 #: project.cpp:3510
 msgctxt "@action"
 msgid "&Delete GTFS Database"
-msgstr ""
+msgstr "&Eliminar a base de datos de GTFS"
 
 #: project.cpp:3513
 msgctxt "@action"
 msgid "Open Project &Source"
-msgstr ""
+msgstr "Abrir as &fontes do proxecto"
 
 #: project.cpp:3515
 msgctxt "@action"
 msgid "Show &Plasma Preview"
-msgstr ""
+msgstr "Mostrar a vista previa de &Plasma"
 
 #: project.cpp:3518
 msgctxt "@action"
 msgid "&Run All Tests"
-msgstr ""
+msgstr "&Executar todas as probas"
 
 #: project.cpp:3520
 msgctxt "@action"
 msgid "&Abort Running Tests"
-msgstr ""
+msgstr "&Interromper as probas en marcha"
 
 #: project.cpp:3522
 msgctxt "@action"
 msgid "&Clear All Test Results"
-msgstr ""
+msgstr "&Borrar os resultados das probas"
 
 #: project.cpp:3529
 #, kde-format
@@ -1375,12 +1579,12 @@ msgstr "Executar %1"
 #: project.cpp:3532
 msgctxt "@action"
 msgid "&Run Complete Test Case"
-msgstr ""
+msgstr "&Executar o caso de proba completo"
 
 #: project.cpp:3544
 msgctxt "@action"
 msgid "Set as Active Project"
-msgstr ""
+msgstr "Activar"
 
 #: project.cpp:3548
 msgctxt "@action"
@@ -1390,12 +1594,12 @@ msgstr "Entrar &en"
 #: project.cpp:3550
 msgctxt "@action"
 msgid "Step &Over"
-msgstr ""
+msgstr "Executar a &seguinte"
 
 #: project.cpp:3552
 msgctxt "@action"
 msgid "Step Ou&t"
-msgstr ""
+msgstr "Executar ata &saír"
 
 #: project.cpp:3554
 msgctxt "@action"
@@ -1415,7 +1619,7 @@ msgstr "&Continuar"
 #: project.cpp:3560
 msgctxt "@action"
 msgid "&Abort Debugger"
-msgstr ""
+msgstr "&Interromper o depurador"
 
 #: project.cpp:3562
 msgctxt "@action"
@@ -1425,7 +1629,7 @@ msgstr "Conmutar o &punto de parada"
 #: project.cpp:3564
 msgctxt "@action"
 msgid "&Remove all Breakpoints"
-msgstr ""
+msgstr "&Eliminar os puntos de parada"
 
 #: project.cpp:3567
 msgctxt "@action"
@@ -1435,22 +1639,22 @@ msgstr "&Executar"
 #: project.cpp:3569
 msgctxt "@action"
 msgid "Run get&Timetable()"
-msgstr ""
+msgstr "Executar get&Timetable()"
 
 #: project.cpp:3571
 msgctxt "@action"
 msgid "Run get&StopSuggestions()"
-msgstr ""
+msgstr "Executar get&StopSuggestions()"
 
 #: project.cpp:3573
 msgctxt "@action"
 msgid "Run get&StopSuggestions(), Geo Position"
-msgstr ""
+msgstr "Executar get&StopSuggestions(), localización"
 
 #: project.cpp:3575
 msgctxt "@action"
 msgid "Run get&Journeys()"
-msgstr ""
+msgstr "Executar get&Journeys()"
 
 #: project.cpp:3578
 msgctxt "@action"
@@ -1460,57 +1664,57 @@ msgstr "&Depurar"
 #: project.cpp:3580
 msgctxt "@action"
 msgid "Debug get&Timetable()"
-msgstr ""
+msgstr "Depurar get&Timetable()"
 
 #: project.cpp:3582
 msgctxt "@action"
 msgid "Debug get&StopSuggestions()"
-msgstr ""
+msgstr "Depurar get&StopSuggestions()"
 
 #: project.cpp:3584
 msgctxt "@action"
 msgid "Debug get&StopSuggestions(), Geo Position"
-msgstr ""
+msgstr "Depurar get&StopSuggestions(), localización"
 
 #: project.cpp:3586
 msgctxt "@action"
 msgid "Debug get&Journeys()"
-msgstr ""
+msgstr "Depurar get&Journeys()"
 
 #: project.cpp:3603
 msgctxt "@info:tooltip"
 msgid "Save changes in the project"
-msgstr ""
+msgstr "Gardar os cambios do proxecto."
 
 #: project.cpp:3609
 msgctxt "@info:tooltip"
 msgid "Save changes in the project under a new file name"
-msgstr ""
+msgstr "Gardar os cambios do proxecto cun novo nome."
 
 #: project.cpp:3613
 msgctxt "@info:tooltip"
 msgid "Install the project locally"
-msgstr ""
+msgstr "Instalar o proxecto localmente."
 
 #: project.cpp:3618
 msgctxt "@info:tooltip"
 msgid "Uninstall a locally installed version of the project"
-msgstr ""
+msgstr "Desinstalar unha versión do proxecto instalada localmente."
 
 #: project.cpp:3622
 msgctxt "@info:tooltip"
 msgid "Install the project globally"
-msgstr ""
+msgstr "Instalar o proxecto globalmente."
 
 #: project.cpp:3627
 msgctxt "@info:tooltip"
 msgid "Uninstall a globally installed version of the project"
-msgstr ""
+msgstr "Desinstalar unha versión do proxecto instalada globalmente."
 
 #: project.cpp:3632
 msgctxt "@info:tooltip"
 msgid "Publish the plugin project at openDesktop.org"
-msgstr ""
+msgstr "Publicar o proxecto de complemento en openDesktop.org."
 
 #: project.cpp:3636
 msgctxt "@info:tooltip"
@@ -1520,38 +1724,40 @@ msgstr "Pechar este proxecto"
 #: project.cpp:3641
 msgctxt "@info:tooltip"
 msgid "Opens a dialog to modify the projects settings"
-msgstr ""
+msgstr "Abre un diálogo para cambiar a configuración do proxecto."
 
 #: project.cpp:3645
 msgctxt "@info:tooltip"
 msgid "Shows the dashboard tab of the project."
-msgstr ""
+msgstr "Mostra unha lapela de cadro de control do proxecto."
 
 #: project.cpp:3650
 msgctxt "@info:tooltip"
 msgid ""
 "Opens the <emphasis>home page</emphasis> of the service provider in a tab."
 msgstr ""
+"Abre a <emphasis>páxina principal</emphasis> do fornecedor de servizos nunha "
+"lapela."
 
 #: project.cpp:3655
 msgctxt "@info:tooltip"
 msgid "Opens the main <emphasis>script</emphasis> in a tab."
-msgstr ""
+msgstr "Abre o <emphasis>script</emphasis> principal nunha lapela."
 
 #: project.cpp:3659
 msgctxt "@info:tooltip"
 msgid "Opens an external <emphasis>script</emphasis> in a tab."
-msgstr ""
+msgstr "Abre un <emphasis>script</emphasis> externo nunha lapela."
 
 #: project.cpp:3665
 msgctxt "@info:tooltip"
 msgid "Opens the <emphasis>GTFS database</emphasis> in a tab."
-msgstr ""
+msgstr "Abre a <emphasis>base de datos de GTFS</emphasis> nunha lapela."
 
 #: project.cpp:3669
 msgctxt "@info:tooltip"
 msgid "Downloads the GTFS feed and imports it into the GTFS database."
-msgstr ""
+msgstr "Descarga a fonte de novas de GTFS e impórtaa na base de datos de GTFS."
 
 #: project.cpp:3673
 msgctxt "@info:tooltip"
@@ -1559,16 +1765,19 @@ msgid ""
 "Updates the GTFS database by downloading and importing a new version of the "
 "GTFS feed."
 msgstr ""
+"Actualiza a base de datos de GTFS descargando e importando unha nova versión "
+"da fonte de novas de GTFS."
 
 #: project.cpp:3678
 msgctxt "@info:tooltip"
 msgid "Deletes the GTFS database."
-msgstr ""
+msgstr "Elimina a base de datos de GTFS."
 
 #: project.cpp:3683
 msgctxt "@info:tooltip"
 msgid "Opens the <emphasis>project source</emphasis> document in a tab."
 msgstr ""
+"Abre o documento das <emphasis>fontes do proxecto</emphasis> nunha lapela."
 
 #: project.cpp:3688
 msgctxt "@info:tooltip"
@@ -1576,22 +1785,26 @@ msgid ""
 "Opens the project in a PublicTransport applet in a <emphasis>Plasma preview</"
 "emphasis> tab."
 msgstr ""
+"Abre o proxecto nun trebello de transporte público na lapela de <emphasis>"
+"vista previa de Plasma</emphasis>."
 
 #: project.cpp:3695
 msgctxt "@info:tooltip"
 msgid ""
 "Runs all tests for the active project, eg. syntax errors, correct results."
 msgstr ""
+"Executa todas as probas para o proxecto activo; as probas poden permitir a "
+"detección de erros de sintaxe ou resultados inesperados."
 
 #: project.cpp:3699
 msgctxt "@info:tooltip"
 msgid "Aborts all currently running tests."
-msgstr ""
+msgstr "Interrompe todas as probas que haxa en marcha."
 
 #: project.cpp:3703
 msgctxt "@info:tooltip"
 msgid "Clears all results of a previous test run."
-msgstr ""
+msgstr "Borra todos os resultados da última execución da proba."
 
 #: project.cpp:3711
 #, kde-format
@@ -1602,37 +1815,39 @@ msgstr "Executar %1"
 #: project.cpp:3722
 msgctxt "@action:inmenu"
 msgid "&Run Complete Test Case"
-msgstr ""
+msgstr "&Executar o caso de proba completo"
 
 #: project.cpp:3750
 msgctxt "@info:tooltip"
 msgid "Use this project as the active project"
-msgstr ""
+msgstr "Converter este proxecto no proxecto activo."
 
 #: project.cpp:3759
 msgctxt "@info:tooltip"
 msgid "Continue script execution until the next statement"
-msgstr ""
+msgstr "Continuar a execución do script ata a seguinte instrución."
 
 #: project.cpp:3766
 msgctxt "@info:tooltip"
 msgid "Continue script execution until the next statement in the same context."
 msgstr ""
+"Continuar a execución do script ata a seguinte instrución no mesmo contexto."
 
 #: project.cpp:3773
 msgctxt "@info:tooltip"
 msgid "Continue script execution until the current function gets left."
-msgstr ""
+msgstr "Continuar a execución do script ata saír da función actual."
 
 #: project.cpp:3779
 msgctxt "@info:tooltip"
 msgid "Interrupt script execution."
-msgstr ""
+msgstr "Interromper a execución do script."
 
 #: project.cpp:3787
 msgctxt "@info:tooltip"
 msgid "Continue script execution until the current cursor position is reached"
 msgstr ""
+"Continuar a execución do script ata acadar a posición actual do cursor."
 
 #: project.cpp:3794
 msgctxt "@info:tooltip"
@@ -1640,36 +1855,38 @@ msgid ""
 "Continue script execution, only interrupt on breakpoints or uncaught "
 "exceptions."
 msgstr ""
+"Continuar a execución do script, interromper só nos puntos de parada ou "
+"excepcións non manexadas."
 
 #: project.cpp:3800
 msgctxt "@info:tooltip"
 msgid "Abort script execution"
-msgstr ""
+msgstr "Interromper a execución do script."
 
 #: project.cpp:3806
 msgctxt "@info:tooltip"
 msgid "Toggle breakpoint for the current line"
-msgstr ""
+msgstr "Activar ou desactivar o punto de parada da liña actual."
 
 #: project.cpp:3811
 msgctxt "@info:tooltip"
 msgid "Removes all breakpoints"
-msgstr ""
+msgstr "Elimina todos os puntos de parada."
 
 #: project.cpp:3817
 msgctxt "@info:tooltip"
 msgid "Runs a function of the script."
-msgstr ""
+msgstr "Executa unha función do script."
 
 #: project.cpp:3827
 msgctxt "@info:tooltip"
 msgid "Runs the script function 'getTimetable()'"
-msgstr ""
+msgstr "Executa a función «getTimetable()» do script."
 
 #: project.cpp:3832
 msgctxt "@info:tooltip"
 msgid "Runs the script function 'getStopSuggestions()'"
-msgstr ""
+msgstr "Executa a función «getStopSuggestions()» do script."
 
 #: project.cpp:3837
 msgctxt "@info:tooltip"
@@ -1677,26 +1894,28 @@ msgid ""
 "Runs the script function 'getStopSuggestions()' with a geo position as "
 "argument"
 msgstr ""
+"Executa a función «getStopSuggestions()» do script, cunha localización como "
+"argumento."
 
 #: project.cpp:3843
 msgctxt "@info:tooltip"
 msgid "Runs the script function 'getJourneys()'"
-msgstr ""
+msgstr "Executa a función «getJourneys()» do script."
 
 #: project.cpp:3849
 msgctxt "@info:tooltip"
 msgid "Runs a function of the script in a debugger."
-msgstr ""
+msgstr "Executa unha función do script nun depurador."
 
 #: project.cpp:3859
 msgctxt "@info:tooltip"
 msgid "Runs the script function 'getTimetable()' in a debugger"
-msgstr ""
+msgstr "Executa a función «getTimetable()» do script nun depurador."
 
 #: project.cpp:3865
 msgctxt "@info:tooltip"
 msgid "Runs the script function 'getStopSuggestions()' in a debugger"
-msgstr ""
+msgstr "Executa a función «getStopSuggestions()» do script nun depurador."
 
 #: project.cpp:3871
 msgctxt "@info:tooltip"
@@ -1704,16 +1923,20 @@ msgid ""
 "Runs the script function 'getStopSuggestions()' in a debugger with a geo "
 "position as argument"
 msgstr ""
+"Executa a función «getStopSuggestions()» do script nun depurador, cunha "
+"localización como argumento."
 
 #: project.cpp:3877
 msgctxt "@info:tooltip"
 msgid "Runs the script function 'getJourneys()' in a debugger"
-msgstr ""
+msgstr "Executa a función «getJourneys()» do script nun depurador."
 
 #: project.cpp:4316
 msgctxt "@ịnfo"
 msgid "The provider must be installed before the GTFS feed can be imported."
 msgstr ""
+"O fornecedor de servizos debe estar instalador antes de poder importar a "
+"fonte de novas de GTFS."
 
 #: project.cpp:4384
 #, kde-format
@@ -1733,31 +1956,31 @@ msgstr ""
 #, kde-format
 msgctxt "@info"
 msgid "Test \"%1\" was aborted for %2."
-msgstr ""
+msgstr "Interrompeuse a proba «%1» para «%2»."
 
 #: project.cpp:4655
 #, kde-format
 msgctxt "@info"
 msgid "Test \"%1\" finished with warnings for %2."
-msgstr ""
+msgstr "A proba «%1» rematou con avisos para «%2»."
 
 #: project.cpp:4659
 #, kde-format
 msgctxt "@info"
 msgid "Test \"%1\" was successful for %2."
-msgstr ""
+msgstr "A proba «%1» rematou satisfactoriamente para «%2»."
 
 #: project.cpp:4664
 #, kde-format
 msgctxt "@info"
 msgid "Test \"%1\" failed for %2."
-msgstr ""
+msgstr "A proba «%1» non rematou satisfactoriamente para «%2»."
 
 #: project.cpp:4685
 #, kde-format
 msgctxt "@info"
 msgid "<para><emphasis>Begin child job:</emphasis> %1 (%2)</para>"
-msgstr ""
+msgstr "<para><emphasis>Comezo da tarefa filla:</emphasis> %1 (%2)</para>"
 
 #: project.cpp:4689
 #, kde-format
@@ -1770,12 +1993,15 @@ msgstr "<para><emphasis strong='1'>Comezo:</emphasis> %1 (%2)</para>"
 msgctxt "@info"
 msgid "<para><emphasis>End child job:</emphasis> %1, result: %2 (%3)</para>"
 msgstr ""
+"<para><emphasis>Remate da tarefa filla:</emphasis> %1, resultado: %2 (%3)<"
+"/para>"
 
 #: project.cpp:4724
 #, kde-format
 msgctxt "@info"
 msgid "<para><emphasis strong='1'>End:</emphasis> %1, result: %2 (%3)</para>"
 msgstr ""
+"<para><emphasis strong='1'>Remate:</emphasis> %1, resultado: %2 (%3)</para>"
 
 #: project.cpp:4733
 #, kde-format
@@ -1788,6 +2014,8 @@ msgstr "Erro: <message>%1</message>"
 msgctxt "@info"
 msgid "Error: <message>%1</message><nl />Backtrace: <message>%2</message>"
 msgstr ""
+"Erro: <message>%1</message><nl /> "
+"Traza inversa: <message>%2</message>"
 
 #: project.cpp:4759
 #, kde-format
@@ -1795,11 +2023,12 @@ msgctxt "@info"
 msgid ""
 "Script execution has finished without results and returned <icode>%1</icode>."
 msgstr ""
+"A execución do script rematou sen resultados e devolveu <icode>%1</icode>."
 
 #: project.cpp:4763
 msgctxt "@info"
 msgid "Script execution has finished without results."
-msgstr ""
+msgstr "A execución do script rematou sen resultados."
 
 #: project.cpp:4768
 #, kde-format
@@ -1809,15 +2038,17 @@ msgid ""
 msgid_plural ""
 "Script execution has finished with %1 results and returned <icode>%2</icode>."
 msgstr[0] ""
+"A execución do script rematou cun resultado e devolveu <icode>%2</icode>."
 msgstr[1] ""
+"A execución do script rematou con %1 resultados e devolveu <icode>%2</icode>."
 
 #: project.cpp:4774
 #, kde-format
 msgctxt "@info"
 msgid "Script execution has finished with %1 result."
 msgid_plural "Script execution has finished with %1 results."
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "A execución do script rematou cun resultado."
+msgstr[1] "A execución do script rematou con %1 resultados."
 
 #: project.cpp:4902
 msgctxt "@info/plain"
@@ -1837,7 +2068,7 @@ msgstr "Cidade:"
 #: project.cpp:4908
 msgctxt "@info"
 msgid "Stop Name:"
-msgstr ""
+msgstr "Nome da parada:"
 
 #: project.cpp:4909
 msgctxt "@info"
@@ -1852,7 +2083,7 @@ msgstr "Tempo:"
 #: project.cpp:4955
 msgctxt "@info"
 msgid "Partial Stop Name:"
-msgstr ""
+msgstr "Nome parcial da parada:"
 
 #: project.cpp:4990
 msgctxt "@info"
@@ -1873,31 +2104,33 @@ msgstr "Distancia:"
 msgctxt "@info"
 msgid "Cannot use Marble widgets for latitude/longitude input."
 msgstr ""
+"Non é posíbel usar os widgets de Marble para introducir a latitude e maila "
+"lonxitude."
 
 #: project.cpp:5031
 msgctxt "@info/plain"
 msgid "Departing at Given Time"
-msgstr ""
+msgstr "Sairá segundo o previsto"
 
 #: project.cpp:5032
 msgctxt "@info/plain"
 msgid "Arriving at Given Time"
-msgstr ""
+msgstr "Chegará segundo o previsto"
 
 #: project.cpp:5037
 msgctxt "@info"
 msgid "Start Stop Name:"
-msgstr ""
+msgstr "Nome da parada inicial:"
 
 #: project.cpp:5038
 msgctxt "@info"
 msgid "Target Stop Name:"
-msgstr ""
+msgstr "Nome da parada de destino:"
 
 #: project.cpp:5040
 msgctxt "@info"
 msgid "Meaning of Time:"
-msgstr ""
+msgstr "Significado da hora:"
 
 #: project.cpp:5170
 msgctxt "@info Shown in project output, %1: Current time"
@@ -1908,49 +2141,51 @@ msgstr "<emphasis>Estatísticas:</emphasis>"
 #, kde-format
 msgctxt "@info %1 is a formatted duration string"
 msgid "- %1 spent for script execution"
-msgstr ""
+msgstr "• A execución do script durou %1."
 
 #: project.cpp:5178
 #, kde-format
 msgctxt "@info %1 is a formatted duration string"
 msgid "- %1 interrupted"
-msgstr "- %1 interrompido"
+msgstr "• Interrompido tras %1."
 
 #: project.cpp:5184
 #, kde-format
 msgctxt "@info %1 is a formatted duration string"
 msgid "- %1 spent waiting for signals (eg. asynchronous network requests)"
 msgstr ""
+"• Estívose agardando por sinais (por exemplo, solicitudes de rede asíncronas) "
+"durante %1."
 
 #: project.cpp:5190
 #, kde-format
 msgctxt "@info %1 is a formatted duration string"
 msgid "- %1 spent for synchronous downloads"
-msgstr ""
+msgstr "• As descargas síncronas duraron %1."
 
 #: project.cpp:5199
 #, kde-format
 msgctxt "@info %1 is a formatted byte size string"
 msgid "- %1 downloaded in asynchronous requests"
-msgstr ""
+msgstr "• Descargáronse %1 mediante solicitudes asíncronas."
 
 #: project.cpp:5203
 #, kde-format
 msgctxt "@info %1 is a formatted byte size string"
 msgid "- %1 downloaded in synchronous requests"
-msgstr ""
+msgstr "• Descargáronse %1 mediante solicitudes síncronas."
 
 #: project.cpp:5209
 #, kde-format
 msgctxt "@info %1 is a formatted byte size string"
 msgid "%1 in asynchronous requests"
-msgstr ""
+msgstr "%1 mediante solicitudes asíncronas"
 
 #: project.cpp:5217
 #, kde-format
 msgctxt "@info 1 is a formatted byte size string"
 msgid "%1 in synchronous requests"
-msgstr ""
+msgstr "%1 mediante solicitudes síncronas"
 
 #: project.cpp:5222
 #, kde-format
@@ -1958,24 +2193,24 @@ msgctxt ""
 "@info %1 is a formatted byte size string, %2 a translated details string "
 "(how much was downloaded in synchronous/asynchronous requests)"
 msgid "- %1 downloaded (%2)"
-msgstr "- %1 descargado (%2)"
+msgstr "• Descargáronse %1 (%2)."
 
 #: project.cpp:5239
 msgctxt "@info"
 msgid "(Debugger aborted)"
-msgstr ""
+msgstr "(interrompeuse o depurador)"
 
 #: project.cpp:5245
 #, kde-format
 msgctxt "@info"
 msgid "Waiting for a signal (%1)"
-msgstr ""
+msgstr "Estase a agardar por un sinal (%1)."
 
 #: project.cpp:5251
 #, kde-format
 msgctxt "@info"
 msgid "Signal received, waiting time: %1 (%2)"
-msgstr ""
+msgstr "Recibiuse o sinal, tempo de espera: %1 (%2)"
 
 #: project.cpp:5262
 #, kde-format
@@ -1984,6 +2219,8 @@ msgid ""
 "<emphasis strong='1'>Uncaught exception at %1:</emphasis> <message>%2</"
 "message>"
 msgstr ""
+"<emphasis strong='1'>Excepción non manexada en %1:</emphasis> <message>%2<"
+"/message>"
 
 #: project.cpp:5268
 #, kde-format
@@ -1992,88 +2229,92 @@ msgid ""
 "<emphasis strong='1'>Uncaught exception in script <filename>%1</filename> at "
 "%2:</emphasis> <message>%3</message>"
 msgstr ""
+"<emphasis strong='1'>Excepción non manexada no script <filename>%1</filename> "
+"en %2:</emphasis> <message>%3</message>"
 
 #: project.cpp:5486
 msgctxt "@info"
 msgid "Cannot create Plasma preview"
-msgstr ""
+msgstr "Non é posíbel crear a vista previa de Plasma."
 
 #: project.cpp:5510
 msgctxt "@info"
 msgid "Cannot create web widget"
-msgstr ""
+msgstr "Non é posíbel crear o widget web."
 
 #: project.cpp:5531
 msgctxt "@info"
 msgid "Cannot create dashboard widget"
-msgstr ""
+msgstr "Non é posíbel crear o widget do cadro de control."
 
 #: project.cpp:5553 project.cpp:5632 project.cpp:5680
 msgctxt "@info"
 msgid "Service katepart.desktop not found"
-msgstr ""
+msgstr "Non se atopou o servizo «katepart.desktop»."
 
 #: project.cpp:5597
 msgctxt "@info"
 msgid "Could not create GTFS database tab"
-msgstr ""
+msgstr "Non foi posíbel crear a lapela da base de datos de GTFS."
 
 #: project.cpp:5684
 #, kde-format
 msgctxt "@info"
 msgid "The external script file <filename>%1</filename> could not be found."
 msgstr ""
+"Non foi posíbel atopar o ficheiro de script externo <filename>%1</filename>."
 
 #: project.cpp:5690
 #, kde-format
 msgctxt "@info"
 msgid "The external script file <filename>%1</filename> could not be opened."
 msgstr ""
+"Non foi posíbel abrir o ficheiro de script externo <filename>%1</filename>."
 
 #: project.cpp:5997
 msgctxt "@info/plain"
 msgid "JavaScript Template"
-msgstr ""
+msgstr "Modelo de JavaScript"
 
 #: project.cpp:5998
 msgctxt "@info/plain"
 msgid "JavaScript HAFAS Template"
-msgstr ""
+msgstr "Modelo HAFAS de JavaScript"
 
 #: project.cpp:5999
 msgctxt "@info/plain"
 msgid "Simple Ruby Template"
-msgstr ""
+msgstr "Modelo simple de Ruby"
 
 #: project.cpp:6000
 msgctxt "@info/plain"
 msgid "Simple Python Template"
-msgstr ""
+msgstr "Modelo simple de Python"
 
 #: project.cpp:6002
 msgctxt "@title:window"
 msgid "Script Template"
-msgstr ""
+msgstr "Modelo de script"
 
 #: project.cpp:6003
 msgctxt "@info"
 msgid "Choose a template for the new script"
-msgstr ""
+msgstr "Escolla un modelo para o novo script."
 
 #: project.cpp:6107
 msgctxt "@info"
 msgid "Rendering Provider Preview..."
-msgstr ""
+msgstr "Debuxando a vista previa do fornecedor…"
 
 #: project.cpp:6171
 msgctxt "@ịnfo"
 msgid "The provider must be installed before publishing it."
-msgstr ""
+msgstr "Para poder publicar o fornecedor antes ten que instalalo."
 
 #: project.cpp:6177
 msgctxt "@ịnfo"
 msgid "Cannot publish while tests are running"
-msgstr ""
+msgstr "Non é posíbel publicar o fornecedor durante a execución das probas."
 
 #: project.cpp:6187
 msgctxt "@ịnfo"
@@ -2081,6 +2322,8 @@ msgid ""
 "An updated version of the GTFS feed is available. Please import the new "
 "version into the database before publishing your plugin."
 msgstr ""
+"Hai dispoñíbel unha versión actualizada da fonte de novas de GTFS. Importe a "
+"nova versión na base de datos antes de publicar o complemento."
 
 #: project.cpp:6194
 #, kde-format
@@ -2088,6 +2331,8 @@ msgctxt "@ịnfo"
 msgid ""
 "Wait for the GTFS feed import to finish before publishing your plugin (%1%)."
 msgstr ""
+"Agarde a que remate a importación da fonte de novas de GTFS para publicar o "
+"complemento (%1%)."
 
 #: project.cpp:6200
 #, kde-format
@@ -2096,11 +2341,13 @@ msgid ""
 "There was an error importing the GTFS feed: <message>%1</message>. Fix this "
 "before publishing your plugin."
 msgstr ""
+"Produciuse un erro ao importar a fonte de novas de GTFS: <message>%1</message>"
+". Solucione o erro antes de publicar o complemento."
 
 #: project.cpp:6207
 msgctxt "@ịnfo"
 msgid "Please import the GTFS feed before publishing your plugin."
-msgstr ""
+msgstr "Importe a fonte de novas de GTFS antes de publicar o complemento."
 
 #: project.cpp:6231
 #, kde-format
@@ -2109,6 +2356,9 @@ msgid ""
 "The %1 test case did not finish successfully. Please fix it using the "
 "<interface>Project Settings</interface> dialog before publishing your plugin."
 msgstr ""
+"O caso de proba «%1» non rematou satisfactoriamente. Solucione o problema "
+"mediante o diálogo de <interface>Configuración do proxecto</interface> antes "
+"de publicar o complemento."
 
 #: project.cpp:6244
 msgctxt "@ịnfo"
@@ -2118,6 +2368,10 @@ msgid ""
 "using the <interface>Project Settings</interface> dialog before publishing "
 "your plugin."
 msgstr ""
+"Necesítase unha parada de proba para xerar a vista previa do fornecedor usado "
+"dentro do trebello de transporte público. Engada polo menos unha parada de "
+"proba desde o diálogo de <interface>Configuración do proxecto</interface> "
+"antes de publicar o complemento."
 
 #: project.cpp:6269
 msgctxt "@info"
@@ -2130,17 +2384,26 @@ msgid ""
 "need to install the provider and make it ready (eg. import the GTFS feed) "
 "for the preview image to be generated correctly.</warning></para>"
 msgstr ""
+"<title>Publicar o complemento de fornecedor</title> "
+"<para>Asegúrese de que o complemento funciona e execute todas as probas con "
+"el antes de publicalo.</para> "
+"<para>A primeira vista previa debería ser un mapa que mostre as rexións "
+"compatíbeis. A segunda debería xerarse automaticamente e mostrar o trebello "
+"de transporte público usando este complemento de fornecedor de servizos. <"
+"warning>Ten que instalar e preparar o fornecedor (por exemplo, importar a "
+"fonte de novas de GTFS) para que a vista previa poida xerarse correctamente.<"
+"/warning></para>"
 
 #: project.cpp:6299 project.cpp:6320
 #, kde-format
 msgctxt "@info"
 msgid "Could not create upload file <filename>%1</filename>"
-msgstr ""
+msgstr "Non foi posíbel crear o ficheiro <filename>%1</filename> para enviar."
 
 #: project.cpp:6442
 msgctxt "@info:tooltip"
 msgid "Project not saved"
-msgstr ""
+msgstr "Non se gardou o proxecto."
 
 #: project.cpp:6448
 #, kde-format
@@ -2149,6 +2412,8 @@ msgid ""
 "Project is opened from local installation directory at <filename>%1</"
 "filename>"
 msgstr ""
+"O proxecto abriuse no cartafol da instalación local, en <filename>%1<"
+"/filename>."
 
 #: project.cpp:6451
 #, kde-format
@@ -2157,22 +2422,24 @@ msgid ""
 "Project is opened from global installation directory at <filename>%1</"
 "filename>"
 msgstr ""
+"O proxecto abriuse no cartafol da instalación global, en <filename>%1<"
+"/filename>."
 
 #: project.cpp:6455
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Project saved at <filename>%1</filename>"
-msgstr ""
+msgstr "O proxecto gardouse en <filename>%1</filename>."
 
 #: project.cpp:6485
 msgctxt "@info"
 msgid "Syntax errors resolved"
-msgstr ""
+msgstr "Solucionouse o erro de sintaxe."
 
 #: projectmodel.cpp:152
 msgctxt "@info/plain"
 msgid "Dashboard"
-msgstr "Taboleiro"
+msgstr "Cadro de control"
 
 #: projectmodel.cpp:156
 msgctxt "@info/plain"
@@ -2182,51 +2449,53 @@ msgstr "Ficheiro do script"
 #: projectmodel.cpp:165
 msgctxt "@info/plain"
 msgid "GTFS database"
-msgstr ""
+msgstr "Base de datos de GTFS"
 
 #: projectmodel.cpp:169
 msgctxt "@info/plain"
 msgid "Project Source XML File (experts)"
-msgstr ""
+msgstr "Ficheiro XML das fontes do proxecto (para expertos)"
 
 #: projectmodel.cpp:170
 #, kde-format
 msgctxt "@info/plain"
 msgid "%1 (experts)"
-msgstr ""
+msgstr "%1 (para expertos)"
 
 #: projectmodel.cpp:176
 msgctxt "@info/plain"
 msgid "Plasma Preview"
-msgstr ""
+msgstr "Vista previa de Plasma"
 
 #: projectmodel.cpp:178
 msgctxt "@info/plain"
 msgid "Service Provider Home Page"
-msgstr ""
+msgstr "Páxina principal do fornecedor de servizos"
 
 #: projectmodel.cpp:220
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "The dashboard of the project %1."
-msgstr ""
+msgstr "O cadro de control do proxecto «%1»."
 
 #: projectmodel.cpp:224
 msgctxt "@info:tooltip"
 msgid "Create/edit the projects script."
-msgstr ""
+msgstr "Crear ou editar os scripts do proxecto."
 
 #: projectmodel.cpp:226
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "View/edit included script <filename>%1</filename>."
-msgstr ""
+msgstr "Ver ou editar o script incluído, <filename>%1</filename>."
 
 #: projectmodel.cpp:235
 msgctxt "@info:tooltip"
 msgid ""
 "Shows the GTFS database and allows to start its import from the GTFS feed."
 msgstr ""
+"Mostra a base de datos de GTFS e permite iniciar a súa importación a partir "
+"da fonte de novas de GTFS."
 
 #: projectmodel.cpp:242
 msgctxt "@info:tooltip"
@@ -2234,16 +2503,20 @@ msgid ""
 "Edit project settings directly in the XML source document. Intended for "
 "experts, normally the settings dialog should be used instead."
 msgstr ""
+"Editar a configuración do proxecto directamente no documento XML das fontes. "
+"Só para expertos, recoméndase empregar o diálogo de configuración."
 
 #: projectmodel.cpp:246
 msgctxt "@info:tooltip"
 msgid "Test the project in a PublicTransport applet in a Plasma preview"
 msgstr ""
+"Probar o proxecto nun trebello de transporte público na lapela de vista "
+"previa de Plasma."
 
 #: projectmodel.cpp:250
 msgctxt "@info:tooltip"
 msgid "Show the service providers home page."
-msgstr ""
+msgstr "Mostrar a páxina principal do fornecedor de servizos."
 
 #: projectsettingsdialog.cpp:85
 msgctxt "@title:window"
@@ -2338,17 +2611,17 @@ msgstr "Plano"
 #: projectsettingsdialog.cpp:262
 msgctxt "@info"
 msgid "Sample &Longitude:"
-msgstr ""
+msgstr "L&onxitude de exemplo:"
 
 #: projectsettingsdialog.cpp:263
 msgctxt "@info"
 msgid "Sample &Latitude:"
-msgstr ""
+msgstr "L&atitude de exemplo:"
 
 #: projectsettingsdialog.cpp:382
 msgctxt "@info"
 msgid "All settings are valid"
-msgstr ""
+msgstr "Todas as opcións son correctas."
 
 #: projectsettingsdialog.cpp:630
 #, kde-format
@@ -2357,11 +2630,13 @@ msgid ""
 "The new changelog entry references a newer version than the current project "
 "version. Do you want to update the project version to %1?"
 msgstr ""
+"A nova entrada da lista de cambios fai referencia a unha versión máis nova "
+"que a do proxecto actual. Quere anovar a versión do proxecto á «%1»?"
 
 #: projectsettingsdialog.cpp:647
 msgctxt "@info/plain Default changelog entry for the first version"
 msgid "Initial version"
-msgstr ""
+msgstr "Versión inicial"
 
 #: projectsettingsdialog.cpp:747 projectsettingsdialog.cpp:812
 msgctxt "@info/plain"
@@ -2369,6 +2644,8 @@ msgid ""
 "Please save the XML file first. The script file needs to be in the same "
 "folder."
 msgstr ""
+"Primeiro garde o ficheiro XML. O ficheiro de script debe estar no mesmo "
+"cartafol."
 
 #: projectsettingsdialog.cpp:763
 #, kde-format
@@ -2377,6 +2654,8 @@ msgid ""
 "The script file <filename>%1</filename> already exists.<nl/>Do you want to "
 "overwrite it or open and use it as script file?"
 msgstr ""
+"O ficheiro de script <filename>%1</filename> xa existe.<nl/> "
+"Quere substituílo ou abrilo e usalo como ficheiro de script?"
 
 #: projectsettingsdialog.cpp:765
 msgctxt "@title:window"
@@ -2388,12 +2667,12 @@ msgstr "O ficheiro xa existe"
 msgctxt "@info/plain"
 msgid ""
 "A new script file with the name <filename>%1</filename> could not be created."
-msgstr ""
+msgstr "Non foi posíbel crear un novo ficheiro en <filename>%1</filename>."
 
 #: projectsettingsdialog.cpp:785
 msgctxt "@title:window"
 msgid "Choose Script Type"
-msgstr ""
+msgstr "Escolla o tipo de script"
 
 #: projectsettingsdialog.cpp:785
 msgctxt "@info"
@@ -2403,12 +2682,12 @@ msgstr "Tipo de script"
 #: projectsettingsdialog.cpp:839
 msgctxt "@title:window"
 msgid "Choose Script File"
-msgstr ""
+msgstr "Escolla o ficheiro de script"
 
 #: projectsettingsdialog.cpp:840
 msgctxt "@info"
 msgid "Script File for Parsing Documents"
-msgstr ""
+msgstr "Ficheiro de script para analizar documentos"
 
 #: projectsettingsdialog.cpp:876
 #, kde-format
@@ -2421,6 +2700,15 @@ msgid ""
 "version and update it if necessary.</para><para><note>You can cancel the "
 "settings dialog to not change anything.</note></para>"
 msgstr ""
+"<title>A versión do formato do complemento de fornecedor de servizos é "
+"incompatíbel</title> "
+"<para>A versión do formato do complemento de fornecedor de servizos debe ser "
+"<emphasize strong='1'>1.1</emphasize>, porque a versión <emphasize strong='1'>"
+"%1</emphasize> non é compatíbel.</para> "
+"<para>Asegúrese de que o complemento se axusta a dita versión, e actualíceo "
+"en caso contrario.</para> "
+"<para><note>Pode cancelar o diálogo de configuración para evitar calquera "
+"cambio.</note></para>"
 
 #: projectsettingsdialog.cpp:975
 msgid "Settings changed"
@@ -2429,7 +2717,7 @@ msgstr "Cambiáronse as configuracións"
 #: serviceproviderdatatester.cpp:137
 msgctxt "@info/plain"
 msgid "You need to specify a name for your project"
-msgstr ""
+msgstr "Debe indicar un nome para o proxecto."
 
 #: serviceproviderdatatester.cpp:141
 msgctxt "@info"
@@ -2438,11 +2726,14 @@ msgid ""
 "title> <para>Applets show this name in a service provider selector widget.</"
 "para>"
 msgstr ""
+"<title>Debe indicar un nome para o proxecto na súa configuración</title> "
+"<para>Os trebellos mostran o nome no trebello de selección de fornecedor de "
+"servizos.</para>"
 
 #: serviceproviderdatatester.cpp:159
 msgctxt "@info/plain"
 msgid "You should specify a version of your project"
-msgstr ""
+msgstr "Debería indicar a versión do proxecto."
 
 #: serviceproviderdatatester.cpp:162
 msgctxt "@info"
@@ -2453,21 +2744,29 @@ msgid ""
 "to work\". Open the project settings to add a <interface>Version</interface>."
 "</para>"
 msgstr ""
+"<title>Falta a versión do proxecto</title> "
+"<para>A versión do proxecto axuda a distinguir entre distintas versións e "
+"permite dicir cousas como que «se necesita polo menos a versión 1.3 do "
+"complemento de fornecedor de servizos para usar esa funcionalidade». Abra a "
+"configuración do proxecto para engadir unha <interface>Versión</interface>.<"
+"/para>"
 
 #: serviceproviderdatatester.cpp:177 serviceproviderdatatester.cpp:216
 msgctxt "@info/plain"
 msgid "The version string is invalid"
-msgstr ""
+msgstr "O valor da versión é incorrecto."
 
 #: serviceproviderdatatester.cpp:180 serviceproviderdatatester.cpp:219
 msgctxt "@info"
 msgid "<title>The version string is invalid</title>"
-msgstr ""
+msgstr "<title>O valor da versión é incorrecto</title>"
 
 #: serviceproviderdatatester.cpp:199
 msgctxt "@info/plain"
 msgid "Only provider plugin format version 1.1 is currently supported."
 msgstr ""
+"De momento só se permite a versión 1.1 do formato de complemento de "
+"fornecedor de servizos."
 
 #: serviceproviderdatatester.cpp:203
 msgctxt "@info"
@@ -2475,11 +2774,15 @@ msgid ""
 "<title>Unsupported Plugin Format Version</title><para>The only currently "
 "supported provider plugin format version is 1.1.</para>"
 msgstr ""
+"<title>Versión incompatíbel do formato do complemento</title> "
+"<para>De momento só se permite a versión 1.1 do formato de complemento de "
+"fornecedor de servizos.</para>"
 
 #: serviceproviderdatatester.cpp:236
 msgctxt "@info/plain"
 msgid "You should provide your email address as author of the project"
 msgstr ""
+"Debería fornecer o seu enderezo de correo electrónico como autor do proxecto."
 
 #: serviceproviderdatatester.cpp:241
 msgctxt "@info"
@@ -2490,21 +2793,28 @@ msgid ""
 "is wrong with your project. Open the project settings and specify your "
 "<interface>E-Mail</interface> address.</para>"
 msgstr ""
+"<title>Debería fornecer o seu enderezo de correo electrónico como autor do "
+"proxecto</title> "
+"<para>Pode crear un novo enderezo de correo electrónico se non quere empregar "
+"o seu enderezo privado. Sen un enderezo de correo electrónico, ninguén poderá "
+"contactar con vostede en caso de que haxa algún problema co proxecto. Abra a "
+"configuración do proxecto e indique o seu <interface>Enderezo de correo "
+"electrónico</interface>.</para>"
 
 #: serviceproviderdatatester.cpp:257
 msgctxt "@info/plain"
 msgid "The email address is invalid"
-msgstr ""
+msgstr "O enderezo de correo electrónico é incorrecto."
 
 #: serviceproviderdatatester.cpp:260
 msgctxt "@info"
 msgid "<title>The email address is invalid</title>"
-msgstr ""
+msgstr "<title>O enderezo de correo electrónico é incorrecto.</title>"
 
 #: serviceproviderdatatester.cpp:277
 msgctxt "@info/plain"
 msgid "You should provide your name as author of the project"
-msgstr ""
+msgstr "Debería fornecer o seu nome como autor do proxecto."
 
 #: serviceproviderdatatester.cpp:282
 msgctxt "@info"
@@ -2513,12 +2823,16 @@ msgid ""
 "<para>Open the project settings and specify an <interface>Author</interface>."
 "</para>"
 msgstr ""
+"<title>Debería fornecer o seu nome como autor do proxecto</title> "
+"<para>Abra a configuración do proxecto e indique o seu nome no campo <"
+"interface>Autor</interface>.</para>"
 
 #: serviceproviderdatatester.cpp:301
 msgctxt "@info/plain"
 msgid ""
 "You should provide a short version of your name as author of the project"
 msgstr ""
+"Debería fornecer unha versión acurtada do seu nome como autor do proxecto."
 
 #: serviceproviderdatatester.cpp:306
 msgctxt "@info"
@@ -2527,11 +2841,15 @@ msgid ""
 "project</title> <para>Open the project settings and specify a "
 "<interface>Short Author Name</interface>.</para>"
 msgstr ""
+"<title>Debería fornecer unha versión acurtada do seu nome como autor do "
+"proxecto</title> "
+"<para>Abra a configuración do proxecto e indique unha versión acurtada do seu "
+"nome no campo <interface>Nome curto do autor</interface>.</para>"
 
 #: serviceproviderdatatester.cpp:324
 msgctxt "@info/plain"
 msgid "You should provide the URL to the home page of the service provider"
-msgstr ""
+msgstr "Debería fornecer o URL da páxina principal do fornecedor de servizos"
 
 #: serviceproviderdatatester.cpp:329
 msgctxt "@info"
@@ -2542,6 +2860,13 @@ msgid ""
 "link to the home page. Open the project settings and add a <interface>Home "
 "Page URL</interface>.</para>"
 msgstr ""
+"<title>Debería fornecer o URL da páxina principal do fornecedor de servizos<"
+"/title> "
+"<para>Dado que os fornecedores de servizos teñen servidores en marcha para "
+"fornecer as táboas de horarios, quererán que se recoñeza o seu papel. Os "
+"trebellos deberían mostrar unha ligazón á páxina principal. Abra a "
+"configuración do proxecto e engada o <interface>URL da páxina principal<"
+"/interface>.</para>"
 
 #: serviceproviderdatatester.cpp:348
 msgctxt "@info/plain"
@@ -2549,6 +2874,8 @@ msgid ""
 "You should provide a short version of the URL to the home page of the "
 "service provider"
 msgstr ""
+"Debería fornecer unha versión acurtada do URL da páxina principal do "
+"fornecedor de servizos"
 
 #: serviceproviderdatatester.cpp:353
 msgctxt "@info"
@@ -2559,11 +2886,18 @@ msgid ""
 "nothing is shown. Open the project settings to add a <interface>Short URL</"
 "interface>.</para>"
 msgstr ""
+"<title>Debería fornecer unha versión acurtada do URL da páxina principal do "
+"fornecedor de servizos</title> "
+"<para>Os trebellos poderían queres mostrar a versión acurtada do URL como "
+"texto visíbel en lugar do URL completo á páxina principal, para aforrar "
+"espazo. O resultado sería que non se mostraría nada. Abra a configuración do "
+"proxecto e engada unha versión acurtada do URL no campo <interface>URL curta<"
+"/interface>.</para>"
 
 #: serviceproviderdatatester.cpp:373
 msgctxt "@info/plain"
 msgid "You should give a description for your project"
-msgstr ""
+msgstr "Debería fornecer unha descrición do proxecto"
 
 #: serviceproviderdatatester.cpp:377
 msgctxt "@info/plain"
@@ -2573,11 +2907,15 @@ msgid ""
 "possibly are when using the service provider. Open the project settings to "
 "add a <interface>Description</interface>.</para>"
 msgstr ""
+"<title>Debería fornecer unha descrición do proxecto</title> "
+"<para>Describa que cidades, países ou vehículos están incluídos, e que "
+"posíbeis limitacións pode haber ao usar o fornecedor de servizos. Abra a "
+"configuración do proxecto e engada a <interface>Descrición</interface>.</para>"
 
 #: serviceproviderdatatester.cpp:395
 msgctxt "@info/plain"
 msgid "No script file created for the project"
-msgstr ""
+msgstr "Non se creou ningún ficheiro de script para o proxecto."
 
 #: serviceproviderdatatester.cpp:399
 msgctxt "@info/plain"
@@ -3356,3 +3694,5 @@ msgstr "&Configuracións"
 #: timetablemateui.rc:118
 msgid "Debugger"
 msgstr "Depurador"
+
+
