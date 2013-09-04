@@ -33,7 +33,6 @@ msgstr "Adrián Chaves Fernández (Gallaecio) &lt;adriyetichaves@gmail.com&gt;"
 #. Tag: title
 #: development.docbook:8
 #, no-c-format
-#| msgid "Extending &kappname; with Scripts"
 msgid "Extending &kate;"
 msgstr "Ampliar a funcionalidade de &kate;"
 
@@ -59,15 +58,15 @@ msgid ""
 "enhancements with the world!"
 msgstr ""
 "Como calquera editor de textos avanzado, &kate; ofrece unha variedade de "
-"formas de ampliar a súa funcionalidade. Pode <link linkend=\"dev-scripting\">"
-"escribir simples scripts para ampliar a súa funcionalidade empregando "
-"JavaScript</link>, engadir melloras á funcionalidade do compoñente de edición "
-"mediante <link linkend=\"dev-part\">complementos</link>, ou engadir aínda "
-"máis funcionalidade ao propio editor con <link linkend=\"dev-app\">"
-"complementos de &kate; escritos en C++</link> ou <link linkend=\"dev-pate\">"
-"complementos &pate; escritos en Python</link>. Ademais, unha vez ampliada a "
-"funcionalidade de &kate;, pode <ulink url=\"http://kate-editor.org/join-us/\">"
-"unirse a nós</ulink> e compartir as súas melloras co resto do mundo!"
+"formas de ampliar a súa funcionalidade. Pode <link linkend=\"dev-scripting"
+"\">escribir simples scripts para ampliar a súa funcionalidade empregando "
+"JavaScript</link>, engadir melloras á funcionalidade do compoñente de "
+"edición mediante <link linkend=\"dev-part\">complementos</link>, ou engadir "
+"aínda máis funcionalidade ao propio editor con <link linkend=\"dev-app"
+"\">complementos de &kate; escritos en C++</link> ou <link linkend=\"dev-pate"
+"\">complementos &pate; escritos en Python</link>. Ademais, unha vez ampliada "
+"a funcionalidade de &kate;, pode <ulink url=\"http://kate-editor.org/join-us/"
+"\">unirse a nós</ulink> e compartir as súas melloras co resto do mundo!"
 
 #. Tag: title
 #: development.docbook:27
@@ -111,12 +110,6 @@ msgstr ""
 #. Tag: para
 #: development.docbook:44
 #, no-c-format
-#| msgid ""
-#| "The following sections describe step by step how to create the skeleton "
-#| "for a simple indenter. As first step, create a new <filename>*.js</"
-#| "filename> file called e.g. <filename>javascript.js</filename> in the "
-#| "local home folder <filename>$KDEHOME/share/apps/katepart/script</"
-#| "filename>."
 msgid ""
 "The following sections describe step by step how to create the skeleton for "
 "a simple indenter. As first step, create a new <filename>*.js</filename> "
@@ -137,26 +130,6 @@ msgstr "Cabeceira"
 #. Tag: para
 #: development.docbook:53
 #, no-c-format
-#| msgid ""
-#| "The header of the file <filename>javascript.js</filename> is embedded in "
-#| "a comment and is of the following form <programlisting>\n"
-#| "/* kate-script\n"
-#| " * name: JavaScript\n"
-#| " * author: Example Name &lt;example.name@some.address.org&gt;\n"
-#| " * license: BSD\n"
-#| " * revision: 1\n"
-#| " * kate-version: 3.4\n"
-#| " * type: indentation\n"
-#| " * required-syntax-style: javascript\n"
-#| " * indent-languages: javascript\n"
-#| " * priority: 0\n"
-#| " * i18n-catalog: mycatalog\n"
-#| " *\n"
-#| " * A line without colon ':' stops header parsing. That is, you can add "
-#| "optional\n"
-#| " * text here such as a detailed license.\n"
-#| " */\n"
-#| "</programlisting> Each entry is explained in detail now:"
 msgid ""
 "The header of the file <filename>javascript.js</filename> is embedded in a "
 "comment and is of the following form <programlisting>\n"
@@ -345,50 +318,6 @@ msgstr "Código"
 #. Tag: para
 #: development.docbook:105
 #, no-c-format
-#| msgid ""
-#| "Having specified the header this section explains how the indentation "
-#| "scripting itself works. The basic skeleton of the body looks like this: "
-#| "<programlisting>\n"
-#| "triggerCharacters = \"{}/:;\";\n"
-#| "function indent(line, indentWidth, ch)\n"
-#| "{\n"
-#| "    // called for each newline (ch == '\\n') and all characters specified "
-#| "in\n"
-#| "    // the global variable triggerCharacters. When calling "
-#| "<menuchoice><guimenu>Tools</guimenu><guimenuitem>Align</guimenuitem></"
-#| "menuchoice>\n"
-#| "    // the variable ch is empty, i.e. ch == ''.\n"
-#| "    //\n"
-#| "    // see also: Scripting API\n"
-#| "    return -2;\n"
-#| "}\n"
-#| "</programlisting> The function <function>indent()</function> has three "
-#| "parameters: <itemizedlist> <listitem><para><literal>line</literal>: the "
-#| "line that has to be indented</para></listitem> "
-#| "<listitem><para><literal>indentWidth</literal>: the indentation width in "
-#| "amount of spaces</para></listitem> <listitem><para><literal>ch</literal>: "
-#| "either a newline character (<literal>ch == '\\n'</literal>), the trigger "
-#| "character specified in <literal>triggerCharacters</literal> or empty if "
-#| "the user invoked the action <menuchoice><guimenu>Tools</"
-#| "guimenu><guimenuitem>Align</guimenuitem></menuchoice>.</para></listitem> "
-#| "</itemizedlist> The return value of the <function>indent()</function> "
-#| "function specifies how the line will be indented. If the return value is "
-#| "a simple integer number, it is interpreted as follows: <itemizedlist> "
-#| "<listitem><para>return value <literal>-2</literal>: do nothing</para></"
-#| "listitem> <listitem><para>return value <literal>-1</literal>: keep "
-#| "indentation (searches for previous non-blank line)</para></listitem> "
-#| "<listitem><para>return value <literal> 0</literal>: numbers &gt;= 0 "
-#| "specify the indentation depth in spaces</para></listitem> </itemizedlist> "
-#| "Alternatively, an array of two elements can be returned: <itemizedlist> "
-#| "<listitem><para><literal>return [ indent, align ];</literal></para></"
-#| "listitem> </itemizedlist> In this case, the first element is the "
-#| "indentation depth like above with the same meaning of the special values. "
-#| "However, the second element is an absolute value representing a column "
-#| "for <quote>alignment</quote>. If this value is higher than the indent "
-#| "value, the difference represents a number of spaces to be added after the "
-#| "indentation of the first parameter. Otherwise, the second number is "
-#| "ignored. Using tabs and spaces for indentation is often referred to as "
-#| "<quote>mixed mode</quote>."
 msgid ""
 "Having specified the header this section explains how the indentation "
 "scripting itself works. The basic skeleton of the body looks like this: "
@@ -509,10 +438,6 @@ msgstr ""
 #. Tag: para
 #: development.docbook:147
 #, no-c-format
-#| msgid ""
-#| "A default KDE installation ships &kappname; with several indenters. The "
-#| "corresponding JavaScript source code can be found in <filename>$KDEDIR/"
-#| "share/apps/katepart/script</filename>."
 msgid ""
 "A default KDE installation ships &kappname; with several indenters. The "
 "corresponding JavaScript source code can be found in <filename>$KDEDIR/share/"
@@ -576,11 +501,6 @@ msgstr ""
 #. Tag: para
 #: development.docbook:178
 #, no-c-format
-#| msgid ""
-#| "Command line scripts are located in the same folder as indentation "
-#| "scripts. So as first step, create a new <filename>*.js</filename> file "
-#| "called <filename>myutils.js</filename> in the local home folder <filename>"
-#| "$KDEHOME/share/apps/katepart/script</filename>."
 msgid ""
 "Command line scripts are located in the same folder as indentation scripts. "
 "So as first step, create a new <filename>*.js</filename> file called "
@@ -601,23 +521,6 @@ msgstr "Cabeceira"
 #. Tag: para
 #: development.docbook:187
 #, no-c-format
-#| msgid ""
-#| "The header of each command line script is embedded in a comment and is of "
-#| "the following form <programlisting>\n"
-#| "/* kate-script\n"
-#| " * author: Example Name &lt;example.name@some.address.org&gt;\n"
-#| " * license: BSD\n"
-#| " * revision: 1\n"
-#| " * kate-version: 3.4\n"
-#| " * type: commands\n"
-#| " * functions: sort, format-paragraph\n"
-#| " * i18n-catalog: mycatalog\n"
-#| " *\n"
-#| " * A line without colon ':' stops header parsing. That is, you can add "
-#| "optional\n"
-#| " * text here such as a detailed license.\n"
-#| " */\n"
-#| "</programlisting> Each entry is explained in detail now:"
 msgid ""
 "The header of each command line script is embedded in a comment and is of "
 "the following form <programlisting>\n"
@@ -721,11 +624,6 @@ msgstr ""
 #. Tag: programlisting
 #: development.docbook:226
 #, no-c-format
-#| msgid ""
-#| "function &lt;name&gt;(arg1, arg2, ...)\n"
-#| "{\n"
-#| "    // ... implementation, see also: Scripting API\n"
-#| "}"
 msgid ""
 "// required katepart js libraries, e.g. range.js if you use Range\n"
 "require (\"range.js\");\n"
@@ -744,25 +642,6 @@ msgstr ""
 #. Tag: para
 #: development.docbook:229
 #, no-c-format
-#| msgid ""
-#| "Arguments in the command line are passed to the function as "
-#| "<parameter>arg1</parameter>, <parameter>arg2</parameter>, etc. In order "
-#| "to provide documentation for each command, simply implement the "
-#| "'<function>help</function>' function as follows: <programlisting>\n"
-#| "function help(cmd)\n"
-#| "{\n"
-#| "    if (cmd == \"sort\") {\n"
-#| "        return i18n(\"Sort the selected text.\");\n"
-#| "    } else if (cmd == \"...\") {\n"
-#| "        // ...\n"
-#| "    }\n"
-#| "}\n"
-#| "</programlisting> Executing <command>help sort</command> in the command "
-#| "line then calls this help function with the argument <parameter>cmd</"
-#| "parameter> set to the given command, i.e. <parameter>cmd == \"sort\"</"
-#| "parameter>. &kappname; then presents the returned text as documentation "
-#| "to the user. Make sure to <link linkend=\"advanced-editing-tools-"
-#| "scripting-api-i18n\">translate the strings</link>."
 msgid ""
 "Arguments in the command line are passed to the function as <parameter>arg1</"
 "parameter>, <parameter>arg2</parameter>, etc. In order to provide "
@@ -799,8 +678,8 @@ msgstr ""
 "chámase a esta función co argumento <parameter>cmd</parameter> contendo o "
 "nome do parámetro (<parameter>cmd == \"sort\"</parameter>). &kappname; "
 "presenta entón o texto devolto como documentación, que o usuario pode ler. "
-"Asegúrese de <link linkend=\"dev-scripting-api-i18n"
-"\">internacionalizar as cadeas</link>."
+"Asegúrese de <link linkend=\"dev-scripting-api-i18n\">internacionalizar as "
+"cadeas</link>."
 
 #. Tag: title
 #: development.docbook:245
@@ -901,11 +780,6 @@ msgstr ""
 #. Tag: para
 #: development.docbook:257
 #, no-c-format
-#| msgid ""
-#| "<literal>a.shortcut</literal> [optional]: The shortcut given here is the "
-#| "default shortcut. Example: Ctrl+Alt+t. See the <ulink url=\"http://doc.qt."
-#| "nokia.com/latest/qt.html#Key-enum\">Qt documentation</ulink> for further "
-#| "details."
 msgid ""
 "<literal>a.shortcut</literal> [optional]: The shortcut given here is the "
 "default shortcut. Example: Ctrl+Alt+t. See the <ulink url=\"http://qt-"
@@ -949,23 +823,18 @@ msgid ""
 "<classname>Document</classname> or <classname>View</classname> functions, "
 "please include the needed library by using:"
 msgstr ""
-"A API de scripts aquí presentada está dispoñíbel en todos os scripts, como os "
-"scripts de sangrado ou as ordes da liña de ordes. As clases <classname>"
-"Cursor</classname> (cursor) e <classname>Range</classname> (intervalo) "
-"fornécenas ficheiros de biblioteca de <filename>"
-"$KDEDIR/share/apps/katepart/libraries</filename>. Para usalos nun script, o "
-"cal é necesario para usar algunhas das funcións das clases <classname>"
-"Document</classname> (documento) ou <classname>View</classname> (vista), "
-"inclúa a biblioteca necesaria do seguinte xeito:"
+"A API de scripts aquí presentada está dispoñíbel en todos os scripts, como "
+"os scripts de sangrado ou as ordes da liña de ordes. As clases "
+"<classname>Cursor</classname> (cursor) e <classname>Range</classname> "
+"(intervalo) fornécenas ficheiros de biblioteca de <filename>$KDEDIR/share/"
+"apps/katepart/libraries</filename>. Para usalos nun script, o cal é "
+"necesario para usar algunhas das funcións das clases <classname>Document</"
+"classname> (documento) ou <classname>View</classname> (vista), inclúa a "
+"biblioteca necesaria do seguinte xeito:"
 
 #. Tag: programlisting
 #: development.docbook:286
 #, no-c-format
-#| msgid ""
-#| "function &lt;name&gt;(arg1, arg2, ...)\n"
-#| "{\n"
-#| "    // ... implementation, see also: Scripting API\n"
-#| "}"
 msgid ""
 "// required katepart js libraries, e.g. range.js if you use Range\n"
 "require (\"range.js\");"
@@ -977,15 +846,6 @@ msgstr ""
 #. Tag: para
 #: development.docbook:289
 #, no-c-format
-#| msgid ""
-#| "To extend the standard scripting API with own functions and prototypes "
-#| "simply create a new file in the KDE's local configuration folder "
-#| "<filename>$KDEHOME/share/apps/katepart/api</filename> and make sure it "
-#| "has a greater number (execution order) than the other <filename>*.js</"
-#| "filename> files in the global folder <filename>$KDEDIR/share/apps/"
-#| "katepart/api</filename>. &kappname; automatically searches in both "
-#| "folders for <filename>*.js</filename> files and executes them in the "
-#| "correct order."
 msgid ""
 "To extend the standard scripting API with own functions and prototypes "
 "simply create a new file in the KDE's local configuration folder <filename>"
@@ -1009,13 +869,6 @@ msgstr "require (\"omeuscript.js\");"
 #. Tag: para
 #: development.docbook:298
 #, no-c-format
-#| msgid ""
-#| "To extend existing prototypes like <classname>Cursor</classname> or "
-#| "<classname>Range</classname>, the recommended way is to <emphasis>not</"
-#| "emphasis> modify the global <filename>*.js</filename> files. Instead, "
-#| "create a <filename>*.js</filename> file in the local folder that is being "
-#| "executed later than the <filename>05_cursor.js</filename> and then change "
-#| "the <classname>Cursor</classname> prototype in JavaScript."
 msgid ""
 "To extend existing prototypes like <classname>Cursor</classname> or "
 "<classname>Range</classname>, the recommended way is to <emphasis>not</"
@@ -1146,34 +999,26 @@ msgstr "Por exemplo: <function>var clon = cursor.clone();</function>"
 #. Tag: synopsis
 #: development.docbook:359
 #, no-c-format
-#| msgid ""
-#| "Cursor(<parameter>int <replaceable>line</replaceable></parameter>, "
-#| "<parameter>int <replaceable>column</replaceable></parameter>);"
 msgid ""
 "Cursor.setPosition(<parameter>int <replaceable>line</replaceable></"
 "parameter>, <parameter>int <replaceable>column</replaceable></parameter>);"
 msgstr ""
-"Cursor.setPosition(<parameter>int <replaceable>liña</replaceable></parameter>"
-", "
-"<parameter>int <replaceable>columna</replaceable></parameter>);"
+"Cursor.setPosition(<parameter>int <replaceable>liña</replaceable></"
+"parameter>, <parameter>int <replaceable>columna</replaceable></parameter>);"
 
 #. Tag: para
 #: development.docbook:360
 #, no-c-format
-#| msgid ""
-#| "Cursor(<parameter>int <replaceable>line</replaceable></parameter>, "
-#| "<parameter>int <replaceable>column</replaceable></parameter>);"
 msgid ""
 "Sets the cursor position to <replaceable>line</replaceable> and "
 "<replaceable>column</replaceable>."
 msgstr ""
-"Sitúa o cursor na <replaceable>liña</replaceable> e <replaceable>columna<"
-"/replaceable> indicadas."
+"Sitúa o cursor na <replaceable>liña</replaceable> e <replaceable>columna</"
+"replaceable> indicadas."
 
 #. Tag: para
 #: development.docbook:362 development.docbook:474
 #, no-c-format
-#| msgid "Since: KDE 4.8"
 msgid "Since: KDE 4.11"
 msgstr "Dispoñíbel desde a versión 4.11 da colección de software de KDE."
 
@@ -1412,16 +1257,12 @@ msgstr "Por exemplo: <function>var clon = intervalo.clone();</function>"
 #. Tag: synopsis
 #: development.docbook:468
 #, no-c-format
-#| msgid "bool Range.isValid();"
 msgid "bool Range.isEmpty();"
 msgstr "bool Range.isEmpty();"
 
 #. Tag: para
 #: development.docbook:469
 #, no-c-format
-#| msgid ""
-#| "Returns <literal>true</literal>, if both start and end cursor are valid, "
-#| "otherwise <literal>false</literal>."
 msgid ""
 "Returns <literal>true</literal>, if the start and end cursors are equal."
 msgstr ""
@@ -1431,7 +1272,6 @@ msgstr ""
 #. Tag: para
 #: development.docbook:472
 #, no-c-format
-#| msgid "Example: <function>var valid = range.isValid();</function>"
 msgid "Example: <function>var empty = range.isEmpty();</function>"
 msgstr "Por exemplo: <function>var baleiro = range.isEmpty();</function>"
 
@@ -1461,7 +1301,6 @@ msgstr "Por exemplo: <function>var valido = range.isValid();</function>"
 #. Tag: synopsis
 #: development.docbook:491
 #, no-c-format
-#| msgid "bool Range.invalid();"
 msgid "Range Range.invalid();"
 msgstr "Range Range.invalid();"
 
@@ -1625,16 +1464,12 @@ msgstr ""
 #. Tag: synopsis
 #: development.docbook:561
 #, no-c-format
-#| msgid "bool Range.invalid();"
 msgid "bool Range.onSingleLine();"
 msgstr "bool Range.onSingleLine();"
 
 #. Tag: para
 #: development.docbook:562
 #, no-c-format
-#| msgid ""
-#| "Returns <literal>true</literal>, if both start and end cursor are valid, "
-#| "otherwise <literal>false</literal>."
 msgid ""
 "Returns <literal>true</literal>, if the range starts and ends at the same "
 "line, i.e. if <replaceable>Range.start.line == Range.end.line</replaceable>."
@@ -1646,7 +1481,6 @@ msgstr ""
 #. Tag: para
 #: development.docbook:566 development.docbook:905 development.docbook:1044
 #, no-c-format
-#| msgid "Since: KDE 4.8"
 msgid "Since: KDE 4.9"
 msgstr "Dispoñíbel desde a versión 4.9 da colección de software de KDE."
 
@@ -1708,13 +1542,11 @@ msgstr "Lectura e inclusión de ficheiros"
 #. Tag: synopsis
 #: development.docbook:600
 #, no-c-format
-#| msgid ""
-#| "void debug(<parameter>String <replaceable>text</replaceable></parameter>);"
 msgid ""
 "String read(<parameter>String <replaceable>file</replaceable></parameter>);"
 msgstr ""
-"String read(<parameter>String <replaceable>ficheiro</replaceable></parameter>"
-");"
+"String read(<parameter>String <replaceable>ficheiro</replaceable></"
+"parameter>);"
 
 #. Tag: para
 #: development.docbook:601
@@ -1724,19 +1556,17 @@ msgid ""
 "<literal>katepart/script/files</literal> directory and return its content as "
 "a string."
 msgstr ""
-"Busca o <replaceable>ficheiro</replaceable> indicado relativo ao cartafol <"
-"literal>katepart/script/files</literal> e devolve o seu contido nunha cadea."
+"Busca o <replaceable>ficheiro</replaceable> indicado relativo ao cartafol "
+"<literal>katepart/script/files</literal> e devolve o seu contido nunha cadea."
 
 #. Tag: synopsis
 #: development.docbook:607
 #, no-c-format
-#| msgid ""
-#| "void debug(<parameter>String <replaceable>text</replaceable></parameter>);"
 msgid ""
 "void require(<parameter>String <replaceable>file</replaceable></parameter>);"
 msgstr ""
-"void require(<parameter>String <replaceable>ficheiro</replaceable></parameter>"
-");"
+"void require(<parameter>String <replaceable>ficheiro</replaceable></"
+"parameter>);"
 
 #. Tag: para
 #: development.docbook:608
@@ -1747,15 +1577,14 @@ msgid ""
 "<literal>require</literal> is internally guarded against multiple inclusions "
 "of the same <replaceable>file</replaceable>."
 msgstr ""
-"Busca o <replaceable>ficheiro</replaceable> indicado relativo ao cartafol <"
-"literal>katepart/script/libraries</literal> e o avalía. <literal>require<"
-"/literal> está protexido internamente contra múltiples inclusións dun mesmo <"
-"replaceable>ficheiro</replaceable>."
+"Busca o <replaceable>ficheiro</replaceable> indicado relativo ao cartafol "
+"<literal>katepart/script/libraries</literal> e o avalía. <literal>require</"
+"literal> está protexido internamente contra múltiples inclusións dun mesmo "
+"<replaceable>ficheiro</replaceable>."
 
 #. Tag: para
 #: development.docbook:612
 #, no-c-format
-#| msgid "Since: KDE 4.8"
 msgid "Since: KDE 4.10"
 msgstr "Dispoñíbel desde a versión 4.10 da colección de software de KDE."
 
@@ -2398,12 +2227,6 @@ msgstr "Devolve a palabra na posición indicada do cursor."
 #. Tag: synopsis
 #: development.docbook:898
 #, no-c-format
-#| msgid ""
-#| "String document.wordAt(<parameter>int <replaceable>line</replaceable></"
-#| "parameter>, <parameter>int <replaceable>column</replaceable></"
-#| "parameter>);\n"
-#| "String document.wordAt(<parameter>Cursor <replaceable>cursor</"
-#| "replaceable></parameter>);"
 msgid ""
 "Range document.wordRangeAt(<parameter>int <replaceable>line</replaceable></"
 "parameter>, <parameter>int <replaceable>column</replaceable></parameter>);\n"
@@ -2520,14 +2343,6 @@ msgstr ""
 #. Tag: synopsis
 #: development.docbook:951
 #, no-c-format
-#| msgid ""
-#| "bool document.isAttributeName(<parameter>int <replaceable>line</"
-#| "replaceable></parameter>, <parameter>int <replaceable>column</"
-#| "replaceable></parameter>, <parameter>String <replaceable>name</"
-#| "replaceable></parameter>);\n"
-#| "bool document.isAttributeName(<parameter>Cursor <replaceable>cursor</"
-#| "replaceable></parameter>, <parameter>String <replaceable>name</"
-#| "replaceable></parameter>);"
 msgid ""
 "bool document.matchesAt(<parameter>int <replaceable>line</replaceable></"
 "parameter>, <parameter>int <replaceable>column</replaceable></parameter>, "
@@ -2665,14 +2480,6 @@ msgstr ""
 #. Tag: synopsis
 #: development.docbook:1003
 #, no-c-format
-#| msgid ""
-#| "bool document.isAttributeName(<parameter>int <replaceable>line</"
-#| "replaceable></parameter>, <parameter>int <replaceable>column</"
-#| "replaceable></parameter>, <parameter>String <replaceable>name</"
-#| "replaceable></parameter>);\n"
-#| "bool document.isAttributeName(<parameter>Cursor <replaceable>cursor</"
-#| "replaceable></parameter>, <parameter>String <replaceable>name</"
-#| "replaceable></parameter>);"
 msgid ""
 "bool document.insertText(<parameter>int <replaceable>line</replaceable></"
 "parameter>, <parameter>int <replaceable>column</replaceable></parameter>, "
@@ -2784,12 +2591,6 @@ msgstr ""
 #. Tag: synopsis
 #: development.docbook:1039
 #, no-c-format
-#| msgid ""
-#| "bool document.truncate(<parameter>int <replaceable>line</replaceable></"
-#| "parameter>, <parameter>int <replaceable>column</replaceable></"
-#| "parameter>);\n"
-#| "bool document.truncate(<parameter>Cursor <replaceable>cursor</"
-#| "replaceable></parameter>);"
 msgid ""
 "bool document.wrapLine(<parameter>int <replaceable>line</replaceable></"
 "parameter>, <parameter>int <replaceable>column</replaceable></parameter>);\n"
@@ -2804,10 +2605,6 @@ msgstr ""
 #. Tag: para
 #: development.docbook:1040
 #, no-c-format
-#| msgid ""
-#| "Truncate the given line at the given column or cursor position. Returns "
-#| "<literal>true</literal> on success, or <literal>false</literal> if the "
-#| "given line is not part of the document range."
 msgid ""
 "Wraps the line at the given cursor position. Returns <literal>true</literal> "
 "on success, otherwise <literal>false</literal>, e.g. if line &lt; 0."
@@ -3702,7 +3499,6 @@ msgstr ""
 #. Tag: title
 #: development.docbook:1402
 #, no-c-format
-#| msgid "The Editor Component Command Line"
 msgid "Editor Component Extensions"
 msgstr "Complementos do compoñente de edición"
 
@@ -3732,12 +3528,11 @@ msgid ""
 "org/Development/Tutorials/Kate/KTextEditor_Plugins_Advanced\"> Advanced "
 "Tutorial, also on TechBase</ulink>."
 msgstr ""
-"Para dar os primeiros pasos, véxase a <ulink "
-"url=\"http://techbase.kde.org/Development/Tutorials/Kate/KTextEditor_Plugins\""
-"> aprendizaxe de complementos de KTextEditor en &kde; TechBase</ulink>. Para "
-"máis información, véxase a <ulink url=\"http://techbase.kde."
-"org/Development/Tutorials/Kate/KTextEditor_Plugins_Advanced\">aprendizaxe "
-"avanzada</ulink>."
+"Para dar os primeiros pasos, véxase a <ulink url=\"http://techbase.kde.org/"
+"Development/Tutorials/Kate/KTextEditor_Plugins\"> aprendizaxe de "
+"complementos de KTextEditor en &kde; TechBase</ulink>. Para máis "
+"información, véxase a <ulink url=\"http://techbase.kde.org/Development/"
+"Tutorials/Kate/KTextEditor_Plugins_Advanced\">aprendizaxe avanzada</ulink>."
 
 #. Tag: para
 #: development.docbook:1416
@@ -3747,8 +3542,8 @@ msgid ""
 "interfaces/ktexteditor/html/\"> complete API documentation in the &kde; API "
 "Reference</ulink>."
 msgstr ""
-"Véxase tamén a <ulink url=\"http://api.kde.org/4.10-api/kdelibs-apidocs/interf"
-"aces/ktexteditor/html/\">documentación completa da API</ulink>."
+"Véxase tamén a <ulink url=\"http://api.kde.org/4.10-api/kdelibs-apidocs/"
+"interfaces/ktexteditor/html/\">documentación completa da API</ulink>."
 
 #. Tag: title
 #: development.docbook:1423
@@ -3778,13 +3573,12 @@ msgid ""
 "git&amp;a=tree&amp;f=addons%2Fkate%2Fhelloworld\"> a classic <quote>Hello, "
 "world!</quote> example plugin included with the &kate; source code</ulink>."
 msgstr ""
-"Para dar os primeiros pasos, véxase a <ulink "
-"url=\"http://kate-editor.org/2004/01/06/"
-"writing-a-kate-plugin/\">aprendizaxe para escribir un complemento de &kate; "
-"no sitio web de &kate;</ulink>. No código fonte tamén se inclúe <ulink "
-"url=\"http://quickgit.kde.org/?p=kate."
-"git&amp;a=tree&amp;f=addons%2Fkate%2Fhelloworld\">un clásico exemplo de "
-"complemento <quote>Ola, mundo!</quote></ulink>."
+"Para dar os primeiros pasos, véxase a <ulink url=\"http://kate-editor."
+"org/2004/01/06/writing-a-kate-plugin/\">aprendizaxe para escribir un "
+"complemento de &kate; no sitio web de &kate;</ulink>. No código fonte tamén "
+"se inclúe <ulink url=\"http://quickgit.kde.org/?p=kate.git&amp;a=tree&amp;"
+"f=addons%2Fkate%2Fhelloworld\">un clásico exemplo de complemento <quote>Ola, "
+"mundo!</quote></ulink>."
 
 #. Tag: title
 #: development.docbook:1439
@@ -3800,9 +3594,9 @@ msgid ""
 "functionality of &kate; in any way you like, using the Python programming "
 "language."
 msgstr ""
-"Os <link linkend=\"pate\">complementos &pate;</link> tamén permiten ampliar a "
-"funcionalidade de &kate; de calquera xeito, neste caso empregando a linguaxe "
-"de programación Python."
+"Os <link linkend=\"pate\">complementos &pate;</link> tamén permiten ampliar "
+"a funcionalidade de &kate; de calquera xeito, neste caso empregando a "
+"linguaxe de programación Python."
 
 #. Tag: para
 #: development.docbook:1445
@@ -3812,10 +3606,10 @@ msgid ""
 "python-plugin-developer-guide-part-1/\"> Python plugin developer guide on "
 "the &kate; website</ulink>."
 msgstr ""
-"Para dar os primeiros pasos, véxase a <ulink "
-"url=\"http://kate-editor.org/2012/07/01/python-plugin-developer-guide-part-1/"
-"\">guía para desenvolvedores de complementos en Python que atopará no sitio "
-"web de &kate;</ulink>."
+"Para dar os primeiros pasos, véxase a <ulink url=\"http://kate-editor."
+"org/2012/07/01/python-plugin-developer-guide-part-1/\">guía para "
+"desenvolvedores de complementos en Python que atopará no sitio web de &kate;"
+"</ulink>."
 
 #. Tag: para
 #: development.docbook:1449
@@ -3824,8 +3618,8 @@ msgid ""
 "You can also access the API reference in the <link linkend=\"pate-config"
 "\">&pate; Configuration</link> screen."
 msgstr ""
-"Tamén pode acceder á documentación da API na <link linkend=\"pate-config\">"
-"pantalla de configuración de &pate;</link>."
+"Tamén pode acceder á documentación da API na <link linkend=\"pate-config"
+"\">pantalla de configuración de &pate;</link>."
 
 #~ msgid "&Anders.Lund; &Anders.Lund.mail;"
 #~ msgstr "&Anders.Lund; &Anders.Lund.mail;"
