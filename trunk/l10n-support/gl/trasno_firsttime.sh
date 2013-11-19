@@ -1,9 +1,4 @@
 #! /usr/bin/env bash
-
-# usage: trasno_firsttime.sh <lang> <user>
-# fai a configuración inicial dun proxecto de tradución, para ser empregado por
-# tradutores, ou coordinadores (acede a anonsvn.kde.org ou a svn+ssh)
-
 # Copyright (c) 2008, 2011, 2013 Marcelino Villarino Aguiar
 # All rights reserved.
 # Redistribution and use in source and binary forms, with or without
@@ -48,6 +43,7 @@ if [ ! `cat $HOME/.bashrc | grep '$PATH' | grep '$BASE_REPO' | wc -m` == 0 ]; th
     exit 2
 fi
 
+#TODO: Check that "Cancel" button was not pressed.
 declare code=`kdialog --title "Language code" --inputbox "Please enter the language code you want to translate to (e.g. \"gl\" or \"x-test\")"`
 declare user=`kdialog --title "KDE developer identity" --inputbox "What is you KDE identity?"`
 
