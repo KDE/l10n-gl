@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: amarok\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2014-02-10 01:29+0000\n"
+"POT-Creation-Date: 2014-02-27 01:33+0000\n"
 "PO-Revision-Date: 2013-12-24 10:33+0100\n"
 "Last-Translator: Marce Villarino <mvillarino@kde-espana.org>\n"
 "Language-Team: Galician <proxecto@trasno.net>\n"
@@ -361,7 +361,7 @@ msgstr "Lista de reprodución actual"
 msgid "Selected Tracks"
 msgstr "Pistas seleccionadas"
 
-#: ActionClasses.cpp:421
+#: ActionClasses.cpp:421 scripting/scriptconsole/ScriptConsole.cpp:100
 msgid "Stop"
 msgstr "Deter"
 
@@ -378,7 +378,7 @@ msgid "Stop after current track: On"
 msgstr "Deter despois da pista actual: activado"
 
 #: ActionClasses.cpp:493 context/engines/current/CurrentEngine.cpp:143
-#: EngineController.cpp:1452 mac/GrowlInterface.cpp:43 widgets/Osd.cpp:668
+#: EngineController.cpp:1327 mac/GrowlInterface.cpp:43 widgets/Osd.cpp:668
 msgid "No track playing"
 msgstr "Non se está a reproducir ningunha pista"
 
@@ -1434,8 +1434,30 @@ msgstr "Se debe tentar actualizar automaticamente os scripts incrustados"
 msgid "Enable/Disable automatic update for built-in scripts."
 msgstr "Activar/desactivar a actualización automática dos scripts incrustados."
 
+#. i18n: ectx: label, entry, group (ScriptManager)
+#. i18n: ectx: whatsthis, entry, group (ScriptManager)
+#: amarokconfig.kcfg:592 amarokconfig.kcfg:593
+#, fuzzy
+#| msgid "Whether to enable Amarok's scripting module."
+msgid "Whether to enable the script console."
+msgstr "Indica se debe activarse o módulo de scripts de Amarok."
+
+#. i18n: ectx: label, entry, group (ScriptManager)
+#. i18n: ectx: whatsthis, entry, group (ScriptManager)
+#: amarokconfig.kcfg:597 amarokconfig.kcfg:598
+msgid "Whether to display a warning about scripts accessing deprecated APIs."
+msgstr ""
+
+#. i18n: ectx: label, entry, group (ScriptConsole)
+#. i18n: ectx: whatsthis, entry, group (ScriptConsole)
+#: amarokconfig.kcfg:605 amarokconfig.kcfg:606
+#, fuzzy
+#| msgid "Whether to hide the context view."
+msgid "Whether to save the current session on exit."
+msgstr "Se debe agocharse a vista de contexto."
+
 #. i18n: ectx: label, entry, group (Moodbar)
-#: amarokconfig.kcfg:595
+#: amarokconfig.kcfg:613
 msgid ""
 "Whether to show the moodbar of the current track, if available, in the "
 "progress slider"
@@ -1444,24 +1466,24 @@ msgstr ""
 "esvarador de progreso"
 
 #. i18n: ectx: whatsthis, entry, group (Moodbar)
-#: amarokconfig.kcfg:596
+#: amarokconfig.kcfg:614
 msgid "Enable/Disable showing moodbar, if available, in the progress slider."
 msgstr ""
 "Activar/Desactivar a visualización da barra ánimo, se está dispoñíbel, na "
 "barra de progreso."
 
 #. i18n: ectx: label, entry, group (Moodbar)
-#: amarokconfig.kcfg:600
+#: amarokconfig.kcfg:618
 msgid "The style to use when painting the moodbar"
 msgstr "O estilo a utilizar cando se debuxe a barra de ánimo"
 
 #. i18n: ectx: label, entry, group (PlaylistGenerator)
-#: amarokconfig.kcfg:607
+#: amarokconfig.kcfg:625
 msgid "Quality factor for Automated Playlist Generator"
 msgstr "Factor de calidade para o xerador automático de listas de reprodución"
 
 #. i18n: ectx: whatsthis, entry, group (PlaylistGenerator)
-#: amarokconfig.kcfg:608
+#: amarokconfig.kcfg:626
 msgid ""
 "A value between 0 and 10 that controls whether the Automated Playlist "
 "Generator tries to optimize for speed (0) or accuracy (10)."
@@ -1631,76 +1653,76 @@ msgctxt ""
 msgid "Play"
 msgstr "Reproducir"
 
-#: App.cpp:356
+#: App.cpp:357
 msgid "Files/URLs to open"
 msgstr "Ficheiros/URLs para abrir"
 
-#: App.cpp:357
+#: App.cpp:358
 msgid "Immediately start playing an audio cd"
 msgstr "Comezar a reproducir inmediatamente un CD de son"
 
-#: App.cpp:359
+#: App.cpp:360
 msgid "Skip backwards in playlist"
 msgstr "Saltar cara atrás na lista de reprodución"
 
-#: App.cpp:361
+#: App.cpp:362
 msgid "Start playing current playlist"
 msgstr "Comezar a reproducir esta lista de reprodución"
 
-#: App.cpp:363
+#: App.cpp:364
 msgid "Play if stopped, pause if playing"
 msgstr "Reproducir se está detido, pausar se está a reproducir"
 
-#: App.cpp:364
+#: App.cpp:365
 msgid "Pause playback"
 msgstr "Pausar a reprodución"
 
-#: App.cpp:366
+#: App.cpp:367
 msgid "Stop playback"
 msgstr "Deter a reprodución"
 
-#: App.cpp:368
+#: App.cpp:369
 msgid "Skip forwards in playlist"
 msgstr "Saltar cara adiante na lista de reprodución"
 
-#: App.cpp:369
+#: App.cpp:370
 msgid "Additional options:"
 msgstr "Opcións adicionais:"
 
-#: App.cpp:371
+#: App.cpp:372
 msgid "Append files/URLs to playlist"
 msgstr "Engadir ficheiros/URLs á lista de reprodución"
 
-#: App.cpp:372
+#: App.cpp:373
 msgid "Queue URLs after the currently playing track"
 msgstr "Pór os URL a continuación da pista que se está reproducindo"
 
-#: App.cpp:374
+#: App.cpp:375
 msgid "Load URLs, replacing current playlist"
 msgstr "Cargar os URLs, substituíndo a lista de reprodución actual"
 
-#: App.cpp:376
+#: App.cpp:377
 msgid "Print verbose debugging information"
 msgstr "Mostrar información de depuración detallada"
 
-#: App.cpp:377
+#: App.cpp:378
 msgid "Print verbose debugging information from the audio system"
 msgstr ""
 "Imprimir información detallada de depuración xerada polo sistema de son."
 
-#: App.cpp:379
+#: App.cpp:380
 msgid "Disable colorization for debug output."
 msgstr "Desactivar o coloreado para a saída de depuración"
 
-#: App.cpp:381
+#: App.cpp:382
 msgid "Allow running multiple Amarok instances"
 msgstr "Permitir a execución de varias instancias de Amarok"
 
-#: App.cpp:382
+#: App.cpp:383
 msgid "Base for relative filenames/URLs"
 msgstr "Base para os nomes de ficheiro e URL relativos"
 
-#: App.cpp:510
+#: App.cpp:516
 msgid ""
 "The embedded database was not found; you must set up a database server "
 "connection.\n"
@@ -1710,7 +1732,7 @@ msgstr ""
 "un servidor de base de datos.\n"
 "Debe reiniciar o Amarok despois de facelo."
 
-#: App.cpp:511
+#: App.cpp:517
 msgid ""
 "The connection details for the database server were invalid.\n"
 "You must enter correct settings and restart Amarok after doing this."
@@ -1719,15 +1741,15 @@ msgstr ""
 "Debe introducir a configuración correcta e reiniciar o Amarok despois de "
 "facelo."
 
-#: App.cpp:512
+#: App.cpp:518
 msgid "Database Error"
 msgstr "Erro da base de datos"
 
-#: App.cpp:557
+#: App.cpp:563
 msgid "Moving files to trash"
 msgstr "Movendo os ficheiros para o lixo"
 
-#: App.cpp:624
+#: App.cpp:630
 #, kde-format
 msgid ""
 "A music path, %1, is set in System Settings.\n"
@@ -1862,7 +1884,7 @@ msgid "Various Artists"
 msgstr "Varios intérpretes"
 
 #: browsers/CollectionTreeItemModelBase.cpp:987
-#: browsers/CollectionTreeView.cpp:218
+#: browsers/CollectionTreeView.cpp:219
 #: context/applets/albums/AlbumsView.cpp:256
 #: context/applets/wikipedia/WikipediaApplet.cpp:634
 #: dialogs/transferdialog.cpp:89 musicbrainz/MusicBrainzTagsModel.cpp:38
@@ -1911,38 +1933,38 @@ msgstr "Etiqueta"
 msgid "None"
 msgstr "Ningún"
 
-#: browsers/CollectionTreeView.cpp:238
+#: browsers/CollectionTreeView.cpp:239
 msgid "Collection"
 msgstr "Colección"
 
-#: browsers/CollectionTreeView.cpp:262 browsers/filebrowser/FileView.cpp:117
+#: browsers/CollectionTreeView.cpp:263 browsers/filebrowser/FileView.cpp:117
 msgid "Copy to Collection"
 msgstr "Copiar na colección"
 
-#: browsers/CollectionTreeView.cpp:271 browsers/filebrowser/FileView.cpp:127
+#: browsers/CollectionTreeView.cpp:272 browsers/filebrowser/FileView.cpp:127
 msgid "Move to Collection"
 msgstr "Mover á colección"
 
-#: browsers/CollectionTreeView.cpp:285
+#: browsers/CollectionTreeView.cpp:286
 msgid "Move Tracks to Trash"
 msgstr "Mover as pistas para o lixo"
 
-#: browsers/CollectionTreeView.cpp:296
+#: browsers/CollectionTreeView.cpp:297
 msgid "Delete Tracks"
 msgstr "Eliminar pistas"
 
-#: browsers/CollectionTreeView.cpp:573 services/lastfm/LastFmTreeView.cpp:187
+#: browsers/CollectionTreeView.cpp:575 services/lastfm/LastFmTreeView.cpp:187
 msgid "More..."
 msgstr "Máis..."
 
-#: browsers/CollectionTreeView.cpp:944 browsers/filebrowser/FileView.cpp:384
+#: browsers/CollectionTreeView.cpp:946 browsers/filebrowser/FileView.cpp:384
 #: browsers/playlistbrowser/PlaylistBrowserView.cpp:71
 #: context/applets/albums/AlbumsView.cpp:241
 #: services/lastfm/LastFmTreeView.cpp:97
 msgid "&Add to Playlist"
 msgstr "&Engadir á lista de reprodución"
 
-#: browsers/CollectionTreeView.cpp:955 browsers/filebrowser/FileView.cpp:395
+#: browsers/CollectionTreeView.cpp:957 browsers/filebrowser/FileView.cpp:395
 #: browsers/playlistbrowser/PlaylistBrowserView.cpp:76
 #: context/applets/albums/AlbumsView.cpp:242
 #: services/lastfm/LastFmTreeView.cpp:106
@@ -1950,12 +1972,12 @@ msgctxt "Replace the currently loaded tracks with these"
 msgid "&Replace Playlist"
 msgstr "&Substituír a lista de reprodución"
 
-#: browsers/CollectionTreeView.cpp:1004
+#: browsers/CollectionTreeView.cpp:1006
 msgctxt "Organize Files"
 msgid "Organize Files"
 msgstr "Organizar os ficheiros"
 
-#: browsers/CollectionTreeView.cpp:1037 browsers/filebrowser/FileView.cpp:428
+#: browsers/CollectionTreeView.cpp:1039 browsers/filebrowser/FileView.cpp:428
 msgid "&Edit Track Details"
 msgstr "Editar os &detalles da pista"
 
@@ -2547,6 +2569,7 @@ msgid "Configure Plugins"
 msgstr "Configurar os engadidos"
 
 #: configdialog/ConfigDialog.cpp:65
+#: scripting/scriptconsole/ScriptConsole.cpp:345
 msgid "Scripts"
 msgstr "Scripts"
 
@@ -3268,40 +3291,79 @@ msgstr "Servizos en internet"
 msgid "Statistics importers"
 msgstr "Estatísticas"
 
-#: configdialog/dialogs/ScriptsConfig.cpp:50
+#: configdialog/dialogs/ScriptsConfig.cpp:126
+msgid "Manually installed scripts cannot be automatically updated, continue?"
+msgstr ""
+
+#: configdialog/dialogs/ScriptsConfig.cpp:132
+#, fuzzy
+#| msgid "Search Scripts"
+msgid "Select Archived Script"
+msgstr "Scripts de busca"
+
+#: configdialog/dialogs/ScriptsConfig.cpp:146
+#, fuzzy
+#| msgid "Invalid encoder"
+msgid "Invalid Archive"
+msgstr "O codificador non é válido"
+
+#: configdialog/dialogs/ScriptsConfig.cpp:156
+#: configdialog/dialogs/ScriptsConfig.cpp:170
+msgid "Invalid Script File"
+msgstr ""
+
+#: configdialog/dialogs/ScriptsConfig.cpp:177
+#, kde-format
+msgid ""
+"Another script with the name %1 already exists\n"
+"Existing Script's Version: %1\n"
+"Selected Script's Version: %2"
+msgstr ""
+
+#: configdialog/dialogs/ScriptsConfig.cpp:188
+#, fuzzy, kde-format
+#| msgid "The iPod was successfully initialized."
+msgid "The script %1 was successfully installed"
+msgstr "O iPod inicializouse satisfactoriamente."
+
+#: configdialog/dialogs/ScriptsConfig.cpp:200
 msgid "Generic"
 msgstr "Xenérico"
 
-#: configdialog/dialogs/ScriptsConfig.cpp:54
+#: configdialog/dialogs/ScriptsConfig.cpp:204
 #: context/applets/lyrics/LyricsApplet.cpp:441
 #: context/applets/lyrics/LyricsApplet.cpp:567 dialogs/TagDialog.cpp:502
 msgid "Lyrics"
 msgstr "Letras"
 
-#: configdialog/dialogs/ScriptsConfig.cpp:58
+#: configdialog/dialogs/ScriptsConfig.cpp:208
 msgid "Scriptable Service"
 msgstr "Servizo mediante scripts"
 
-#: configdialog/dialogs/ScriptsConfig.cpp:76
+#: configdialog/dialogs/ScriptsConfig.cpp:242
 msgid ""
-"<p>Script successfully installed.</p><p>Please restart Amarok to start the "
-"script.</p>"
+"You are advised to only uninstall manually installed scripts using this "
+"button."
 msgstr ""
-"<p>Script instalado correctamente.</p><p>Reinicie o Amarok para inicializar "
-"o script.</p>"
 
-#: configdialog/dialogs/ScriptsConfig.cpp:79
-msgid ""
-"<p>Script successfully uninstalled.</p><p>Please restart Amarok to totally "
-"remove the script.</p>"
-msgstr ""
-"<p>Script desinstalado correctamente.</p><p>Reinicie o Amarok para retirar "
-"totalmente o script.</p>"
+#. i18n: ectx: property (text), widget (KPushButton, uninstallButton)
+#: configdialog/dialogs/ScriptsConfig.ui:36
+#, fuzzy
+#| msgid "Manage Scripts"
+msgid "Uninstall Script"
+msgstr "Xestionar os scripts"
+
+#. i18n: ectx: property (text), widget (KPushButton, installButton)
+#: configdialog/dialogs/ScriptsConfig.ui:43
+#, fuzzy
+#| msgid "Install MP3 Support"
+msgid "Install Local Script"
+msgstr "Instalar o soporte de MP3"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, kcfg_AutoUpdateScripts)
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, kcfg_AutoUpdateScripts)
-#: configdialog/dialogs/ScriptsConfig.ui:36
-#: configdialog/dialogs/ScriptsConfig.ui:39
+#: configdialog/dialogs/ScriptsConfig.ui:54
+#: configdialog/dialogs/ScriptsConfig.ui:57
 msgid ""
 "Automatically download and install updates for the built-in scripts from the "
 "Amarok website if available"
@@ -3310,21 +3372,43 @@ msgstr ""
 "incrustados desde a páxina web de Amarok cando estean dispoñíbeis"
 
 #. i18n: ectx: property (text), widget (QCheckBox, kcfg_AutoUpdateScripts)
-#: configdialog/dialogs/ScriptsConfig.ui:42
+#: configdialog/dialogs/ScriptsConfig.ui:60
 msgid "Automatically update built-in scripts"
 msgstr "Actualizar automaticamente os scripts incrustados"
 
 #. i18n: ectx: property (toolTip), widget (QPushButton, manageButton)
-#: configdialog/dialogs/ScriptsConfig.ui:62
+#: configdialog/dialogs/ScriptsConfig.ui:80
 msgid "Browse, install, and uninstall scripts"
 msgstr "Navegar, instalar e desinstalar scripts"
 
 #. i18n: ectx: property (text), widget (QPushButton, manageButton)
-#: configdialog/dialogs/ScriptsConfig.ui:65
+#: configdialog/dialogs/ScriptsConfig.ui:83
 msgid "Manage Scripts"
 msgstr "Xestionar os scripts"
 
-#: configdialog/dialogs/ScriptSelector.cpp:30
+#. i18n: ectx: property (title), widget (QGroupBox, m_scriptConsoleGroup)
+#: configdialog/dialogs/ScriptsConfig.ui:107
+#: scripting/scriptconsole/ScriptConsole.cpp:73
+#, fuzzy
+#| msgid "Scripts"
+msgid "Script Console"
+msgstr "Scripts"
+
+#. i18n: ectx: property (statusTip), widget (QCheckBox, kcfg_EnableScriptConsole)
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, kcfg_EnableScriptConsole)
+#: configdialog/dialogs/ScriptsConfig.ui:116
+#: configdialog/dialogs/ScriptsConfig.ui:119
+msgid "Enable the script console."
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QCheckBox, kcfg_EnableScriptConsole)
+#: configdialog/dialogs/ScriptsConfig.ui:122
+#, fuzzy
+#| msgid "Manage Scripts"
+msgid "Enable Script Console"
+msgstr "Xestionar os scripts"
+
+#: configdialog/dialogs/ScriptSelector.cpp:36
 msgid "Search Scripts"
 msgstr "Scripts de busca"
 
@@ -4973,7 +5057,7 @@ msgstr "Colección descoñecida"
 
 #: core-impl/collections/ipodcollection/IpodMeta.cpp:183
 #: core-impl/collections/mediadevicecollection/MediaDeviceMeta.cpp:93
-#: EngineController.cpp:1430
+#: EngineController.cpp:1305
 msgid "Unknown track"
 msgstr "Pista descoñecida"
 
@@ -8041,7 +8125,7 @@ msgstr "Filtro de busca"
 msgid "Configure Equalizer"
 msgstr "Configurar o ecualizador"
 
-#: dialogs/EqualizerDialog.cpp:92
+#: dialogs/EqualizerDialog.cpp:93
 msgid ""
 "%0\n"
 "dB"
@@ -9292,12 +9376,12 @@ msgctxt "Inverted condition in tag match bias"
 msgid "Not %1"
 msgstr "Non %1"
 
-#: dynamic/BiasFactory.cpp:50
+#: dynamic/BiasFactory.cpp:51
 msgctxt "Name of the random bias"
 msgid "Random"
 msgstr "Ao chou"
 
-#: dynamic/BiasFactory.cpp:57
+#: dynamic/BiasFactory.cpp:58
 msgctxt "Description of the random bias"
 msgid ""
 "The random bias adds random tracks from the\n"
@@ -9306,12 +9390,12 @@ msgstr ""
 "A tendencia aleatoria engade pistas ao chou das da\n"
 "colección completa sen ningunha tendencia."
 
-#: dynamic/BiasFactory.cpp:68
+#: dynamic/BiasFactory.cpp:69
 msgctxt "Name of the \"And\" bias"
 msgid "And"
 msgstr "e"
 
-#: dynamic/BiasFactory.cpp:75
+#: dynamic/BiasFactory.cpp:76
 msgctxt "Description of the \"And\" bias"
 msgid ""
 "The \"And\" bias adds tracks that match all\n"
@@ -9320,12 +9404,12 @@ msgstr ""
 "A tendencia «E» engade pistas que coincidan con\n"
 "todas as sub-tendencias."
 
-#: dynamic/BiasFactory.cpp:86
+#: dynamic/BiasFactory.cpp:87
 msgctxt "Name of the \"Or\" bias"
 msgid "Or"
 msgstr "Ou"
 
-#: dynamic/BiasFactory.cpp:93
+#: dynamic/BiasFactory.cpp:94
 msgctxt "Description of the \"Or\" bias"
 msgid ""
 "The \"Or\" bias adds tracks that match at\n"
@@ -9334,7 +9418,7 @@ msgstr ""
 "A tendencia «A» engade pistas que coincidan con\n"
 "ao menos unha das sub-tendencias."
 
-#: dynamic/BiasFactory.cpp:182 dynamic/BiasFactory.cpp:188
+#: dynamic/BiasFactory.cpp:183 dynamic/BiasFactory.cpp:189
 #, kde-format
 msgid "Replacement for bias %1"
 msgstr "Substitución da tendencia %1"
@@ -9348,11 +9432,11 @@ msgstr "Nova lista de reprodución"
 msgid "Rock and Pop"
 msgstr "Rock e pop"
 
-#: dynamic/DynamicModel.cpp:920 equalizer/EqualizerPresets.cpp:98
+#: dynamic/DynamicModel.cpp:920 equalizer/EqualizerPresets.cpp:93
 msgid "Rock"
 msgstr "Rock"
 
-#: dynamic/DynamicModel.cpp:924 equalizer/EqualizerPresets.cpp:96
+#: dynamic/DynamicModel.cpp:924 equalizer/EqualizerPresets.cpp:91
 msgid "Pop"
 msgstr "Pop"
 
@@ -9365,117 +9449,101 @@ msgctxt "Name of a dynamic playlist"
 msgid "Rating"
 msgstr "Cualificación"
 
-#: EngineController.cpp:856
-msgid ""
-"%0\n"
-"Hz"
-msgstr ""
-"%0\n"
-"Hz"
-
-#: EngineController.cpp:858
-msgid ""
-"%0\n"
-"kHz"
-msgstr ""
-"%0\n"
-"kHz"
-
-#: EngineController.cpp:1219
+#: EngineController.cpp:1094
 msgid "Too many errors encountered in playlist. Playback stopped."
 msgstr ""
 "Atopáronse demasiados erros na lista de reprodución. Suspéndese a "
 "reprodución."
 
-#: EngineController.cpp:1420
+#: EngineController.cpp:1295
 #, kde-format
 msgctxt "track by artist on album"
 msgid "<b>%1</b> by <b>%2</b> on <b>%3</b>"
 msgstr "<b>%1</b> de <b>%2</b> en <b>%3</b>"
 
-#: EngineController.cpp:1422
+#: EngineController.cpp:1297
 #, kde-format
 msgctxt "track by artist"
 msgid "<b>%1</b> by <b>%2</b>"
 msgstr "<b>%1</b> de <b>%2</b>"
 
-#: EngineController.cpp:1425
+#: EngineController.cpp:1300
 #, kde-format
 msgctxt "track on album"
 msgid "<b>%1</b> on <b>%2</b>"
 msgstr "<b>%1</b> en <b>%2</b>"
 
-#: EngineController.cpp:1437
+#: EngineController.cpp:1312
 #, kde-format
 msgctxt "track from source"
 msgid "from <b>%1</b>"
 msgstr "de <b>%1</b>"
 
-#: equalizer/EqualizerPresets.cpp:85
+#: equalizer/EqualizerPresets.cpp:80
 msgid "Manual"
 msgstr "Manual"
 
-#: equalizer/EqualizerPresets.cpp:86
+#: equalizer/EqualizerPresets.cpp:81
 msgid "Classical"
 msgstr "Clásica"
 
-#: equalizer/EqualizerPresets.cpp:87
+#: equalizer/EqualizerPresets.cpp:82
 msgid "Club"
 msgstr "Club"
 
-#: equalizer/EqualizerPresets.cpp:88
+#: equalizer/EqualizerPresets.cpp:83
 msgid "Dance"
 msgstr "Dance"
 
-#: equalizer/EqualizerPresets.cpp:89
+#: equalizer/EqualizerPresets.cpp:84
 msgid "Full Bass"
 msgstr "Baixos ao máximo"
 
-#: equalizer/EqualizerPresets.cpp:90
+#: equalizer/EqualizerPresets.cpp:85
 msgid "Full Treble"
 msgstr "Agudos ao máximo"
 
-#: equalizer/EqualizerPresets.cpp:91
+#: equalizer/EqualizerPresets.cpp:86
 msgid "Full Bass + Treble"
 msgstr "Baixos e agudos ao máximo"
 
-#: equalizer/EqualizerPresets.cpp:92
+#: equalizer/EqualizerPresets.cpp:87
 msgid "Laptop/Headphones"
 msgstr "Portátil/Auriculares"
 
-#: equalizer/EqualizerPresets.cpp:93
+#: equalizer/EqualizerPresets.cpp:88
 msgid "Large Hall"
 msgstr "Sala grande"
 
-#: equalizer/EqualizerPresets.cpp:94
+#: equalizer/EqualizerPresets.cpp:89
 msgid "Live"
 msgstr "Ao vivo"
 
-#: equalizer/EqualizerPresets.cpp:95
+#: equalizer/EqualizerPresets.cpp:90
 msgid "Party"
 msgstr "Festa"
 
-#: equalizer/EqualizerPresets.cpp:97
+#: equalizer/EqualizerPresets.cpp:92
 msgid "Reggae"
 msgstr "Reggae"
 
-#: equalizer/EqualizerPresets.cpp:99
+#: equalizer/EqualizerPresets.cpp:94
 msgid "Soft"
 msgstr "Brando"
 
-#: equalizer/EqualizerPresets.cpp:100
+#: equalizer/EqualizerPresets.cpp:95
 msgid "Ska"
 msgstr "Ska"
 
-#: equalizer/EqualizerPresets.cpp:101
+#: equalizer/EqualizerPresets.cpp:96
 msgid "Soft Rock"
 msgstr "Rock suave"
 
-#: equalizer/EqualizerPresets.cpp:102
+#: equalizer/EqualizerPresets.cpp:97
 msgid "Techno"
 msgstr "Techno"
 
-#: equalizer/EqualizerPresets.cpp:103
+#: equalizer/EqualizerPresets.cpp:98
 msgid "Zero"
 msgstr "Cero"
 
@@ -10735,6 +10803,22 @@ msgstr "Valor"
 #, kde-format
 msgid "Reading OPML podcast from %1 failed with error:\n"
 msgstr "A lectura do podcast de OPML desde %1 fallou, co erro:\n"
+
+#: playback/EqualizerController.cpp:133
+msgid ""
+"%0\n"
+"Hz"
+msgstr ""
+"%0\n"
+"Hz"
+
+#: playback/EqualizerController.cpp:135
+msgid ""
+"%0\n"
+"kHz"
+msgstr ""
+"%0\n"
+"kHz"
 
 #: playback/PowerManager.cpp:79
 msgid "Amarok is currently playing a track"
@@ -12610,12 +12694,151 @@ msgstr ""
 "\n"
 "%2"
 
-#: scriptengine/AmarokNetworkScript.cpp:64
+#: scripting/scriptconsole/ScriptConsole.cpp:63
+msgid ""
+"A KDE text-editor component could not be found.\n"
+"Please check your KDE installation.  Exiting the console!"
+msgstr ""
+
+#: scripting/scriptconsole/ScriptConsole.cpp:79
+msgid "Console"
+msgstr ""
+
+#: scripting/scriptconsole/ScriptConsole.cpp:80
+msgid "Error"
+msgstr ""
+
+#: scripting/scriptconsole/ScriptConsole.cpp:81
+msgid "Debug Output"
+msgstr ""
+
+#: scripting/scriptconsole/ScriptConsole.cpp:82
+#, fuzzy
+#| msgid "Manage Scripts"
+msgid "Loaded Scripts"
+msgstr "Xestionar os scripts"
+
+#: scripting/scriptconsole/ScriptConsole.cpp:83
+#, fuzzy
+#| msgid "Checkpoint"
+msgid "Breakpoints"
+msgstr "Punto de control"
+
+#: scripting/scriptconsole/ScriptConsole.cpp:84
+msgid "Stack"
+msgstr ""
+
+#: scripting/scriptconsole/ScriptConsole.cpp:85
+#, fuzzy
+#| msgid "Local Music"
+msgid "Locals"
+msgstr "Música local"
+
+#: scripting/scriptconsole/ScriptConsole.cpp:104
+#, fuzzy
+#| msgid "Search Scripts"
+msgid "Execute Script"
+msgstr "Scripts de busca"
+
+#: scripting/scriptconsole/ScriptConsole.cpp:108
+#, fuzzy
+#| msgid "Scripts"
+msgid "&New Script"
+msgstr "Scripts"
+
+#: scripting/scriptconsole/ScriptConsole.cpp:112
+#, fuzzy
+#| msgid "&Delete bias"
+msgid "&Delete Script"
+msgstr "Elimina&r a tendencia"
+
+#: scripting/scriptconsole/ScriptConsole.cpp:115
+#, fuzzy
+#| msgid "Search Scripts"
+msgid "&Clear All Scripts"
+msgstr "Scripts de busca"
+
+#: scripting/scriptconsole/ScriptConsole.cpp:118
+#, fuzzy
+#| msgid "Previous Track"
+msgid "Previous Script"
+msgstr "Pista anterior"
+
+#: scripting/scriptconsole/ScriptConsole.cpp:122
+#, fuzzy
+#| msgid "Scripts"
+msgid "Next Script"
+msgstr "Scripts"
+
+#: scripting/scriptconsole/ScriptConsole.cpp:130
+#, fuzzy
+#| msgctxt "@item:inmenu"
+#| msgid "&View"
+msgid "&View"
+msgstr "&Ver"
+
+#: scripting/scriptconsole/ScriptConsole.cpp:185
+#, kde-format
+msgid ""
+"Syntax error at line %1, continue anyway?\n"
+"Error: %2"
+msgstr ""
+
+#: scripting/scriptconsole/ScriptConsole.cpp:187
+#, fuzzy
+#| msgid "Database Error"
+msgid "Syntax Error"
+msgstr "Erro da base de datos"
+
+#: scripting/scriptconsole/ScriptConsole.cpp:213
+msgid "This will stop this script! Continue?"
+msgstr ""
+
+#: scripting/scriptconsole/ScriptConsole.cpp:225
+msgid "Choose where to save your scripts"
+msgstr ""
+
+#: scripting/scriptconsole/ScriptConsole.cpp:370
+#, fuzzy
+#| msgid "Remove empty folders?"
+msgid "Remove script file from disk?"
+msgstr "Retirar os cartafoles baleiros?"
+
+#: scripting/scriptconsole/ScriptConsole.cpp:370
+#, fuzzy
+#| msgid "&Remove Subscription"
+msgid "Remove Script"
+msgstr "&Retirar a subscrición"
+
+#: scripting/scriptconsole/ScriptConsole.cpp:400
+msgid "Are you absolutely certain?"
+msgstr ""
+
+#: scripting/scriptengine/AmarokNetworkScript.cpp:57
 msgctxt "do not translate 'DataDownloader' or 'qt.core'"
 msgid "qt.core must be loaded to use DataDownloader"
 msgstr "Debe cargarse qt.core para usar DataDownloader"
 
-#: ScriptManager.cpp:82
+#: scripting/scriptmanager/ScriptItem.cpp:90
+msgid "Terminate"
+msgstr ""
+
+#: scripting/scriptmanager/ScriptItem.cpp:175
+#, kde-format
+msgid "Script %1 has been evaluating for over 5 seconds now, terminate?"
+msgstr ""
+
+#: scripting/scriptmanager/ScriptItem.cpp:317
+#, kde-format
+msgctxt ""
+"%1 is the name of the offending script, %2 the name of the script author, "
+"and %3 the author's email"
+msgid ""
+"The script %1 uses deprecated scripting API calls. Please contact the script "
+"author, %2 at %3, and ask him to upgrade it before the next Amarok release."
+msgstr ""
+
+#: scripting/scriptmanager/ScriptManager.cpp:62
 msgid ""
 "Scripts have been disabled since you are missing the QtScriptQtBindings "
 "package. Please install the package and restart Amarok for scripts to work."
@@ -12623,11 +12846,11 @@ msgstr ""
 "Desactiváronse os scripts porque falta o paquete QtScriptQtBindings. Instale "
 "ese paquete e reinicie Amarok para que funcionen os scripts."
 
-#: ScriptManager.cpp:84
+#: scripting/scriptmanager/ScriptManager.cpp:64
 msgid "Scripts Disabled!"
 msgstr "Os scripts están desactivados!"
 
-#: ScriptManager.cpp:339
+#: scripting/scriptmanager/ScriptManager.cpp:277
 #, kde-format
 msgid ""
 "Script error reported by: %1\n"
@@ -15489,6 +15712,20 @@ msgstr "baleiro"
 msgid "Volume: %1%"
 msgstr "Volume: %1%"
 
+#~ msgid ""
+#~ "<p>Script successfully installed.</p><p>Please restart Amarok to start "
+#~ "the script.</p>"
+#~ msgstr ""
+#~ "<p>Script instalado correctamente.</p><p>Reinicie o Amarok para "
+#~ "inicializar o script.</p>"
+
+#~ msgid ""
+#~ "<p>Script successfully uninstalled.</p><p>Please restart Amarok to "
+#~ "totally remove the script.</p>"
+#~ msgstr ""
+#~ "<p>Script desinstalado correctamente.</p><p>Reinicie o Amarok para "
+#~ "retirar totalmente o script.</p>"
+
 #~ msgid "Forget about Selected Collections"
 #~ msgstr "Esquecer as coleccións seleccionadas"
 
@@ -16230,9 +16467,6 @@ msgstr "Volume: %1%"
 #~ msgid "print() takes one argument"
 #~ msgstr "print() require un argumento"
 
-#~ msgid "Invalid encoder"
-#~ msgstr "O codificador non é válido"
-
 #~ msgctxt "%1 example: 'MP3' %2 example: 'VBR 175kb/s'"
 #~ msgid "%1, %2"
 #~ msgstr "%1, %2"
@@ -16807,9 +17041,6 @@ msgstr "Volume: %1%"
 #~ "atopar información útil na sección <i>FAQ</i> do <i>Manual de Amarok</i>."
 #~ "</p>"
 
-#~ msgid "Install MP3 Support"
-#~ msgstr "Instalar o soporte de MP3"
-
 #~ msgid ""
 #~ "Amarok currently cannot play MP3 files. Do you want to install support "
 #~ "for MP3?"
@@ -16937,9 +17168,6 @@ msgstr "Volume: %1%"
 
 #~ msgid "%1 failed to initialize the iPod"
 #~ msgstr "%1 non se puido inicializar o iPod"
-
-#~ msgid "The iPod was successfully initialized."
-#~ msgstr "O iPod inicializouse satisfactoriamente."
 
 #~ msgid "iPod Initialized"
 #~ msgstr "O iPod está inicializado"
