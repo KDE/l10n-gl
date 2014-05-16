@@ -1,5 +1,5 @@
 #! /usr/bin/env bash
-# Copyright (c) 2008, 2011, 2013 Marcelino Villarino Aguiar
+# Copyright (c) 2008 - 2014 Marcelino Villarino Aguiar
 # All rights reserved.
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are met:
@@ -28,7 +28,7 @@ function getThem()
   local -r url=$1
   local -r lang=$2
   
-  for place in trunk/l10n-kde4/{scripts,templates,${lang}} trunk/l10n-support/{${lang},pology} branches/stable/l10n-kde4/{scripts,templates,${lang}}; do
+  for place in trunk/l10n-kde4/{scripts,templates,${lang}} trunk/l10n-kf5/{scripts,templates,${lang}} trunk/l10n-support/{${lang},pology} branches/stable/l10n-kde4/{scripts,templates,${lang}}; do
     if [ -d ${BASE_REPO}/${place} -a ! -d ${BASE_REPO}/${place}/.svn ]; then
         kdialog --title "trasno_firsttime.sh" --passivepopup "Checking out ${place}" 3
         svn checkout ${url}/${place} ${BASE_REPO}/${place}
@@ -70,6 +70,7 @@ declare -xr PATH=${BASE_REPO}/trunk/l10n-support/pology/scripts:$BASE_REPO/trunk
 # #criamos os cartafoles base
 #creamos os cartafoles segundo se reflicte na estrutura citada en axuda.txt. Imos pór só o esencial. Comente as liñas nos desexadas.
 mkdir -p $BASE_REPO/trunk/l10n-kde4/{${code},templates,scripts}
+mkdir -p $BASE_REPO/trunk/l10n-kf5/{${code},templates,scripts}
 mkdir -p $BASE_REPO/branches/stable/l10n-kde4/{${code},templates,scripts}
 mkdir -p $BASE_REPO/trunk/l10n-support/{${code},pology}
 

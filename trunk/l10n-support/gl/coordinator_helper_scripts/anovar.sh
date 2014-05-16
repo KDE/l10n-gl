@@ -4,7 +4,7 @@
 #versións, procesar os orfos e algunha cousa máis.
 #LER O FICHEIRO AXUDA.TXT ANTES DE UTILIZAR!!!!!
 
-# Copyright (c) 2008, 2010, 2013 Marcelino Villarino Aguiar
+# Copyright (c) 2008 - 2014 Marcelino Villarino Aguiar
 # All rights reserved.
 # Redistribution and use in source and binary forms, with or without modification,
 # are permitted provided that the following conditions are met: Redistributions
@@ -73,7 +73,7 @@ fi
 declare -r merger=${BASE_REPO}/trunk/l10n-support/gl/coordinator_helper_scripts/internal/trasno_npo3wm.py
 
 #REPOSITORIES UPDATES
-for lugar in {trunk/l10n-kde4,branches/stable/l10n-kde4}/{scripts,templates} trunk/l10n-support/pology; do #anovamos
+for lugar in {trunk/l10n-kde4,trunk/l10n-kf5,branches/stable/l10n-kde4}/{scripts,templates} trunk/l10n-support/pology; do #anovamos
     if [ -d ${BASE_REPO}/${lugar}/.svn ]; then
         kdialog --title "anovar.sh" --passivepopup "Updating: ${lugar}" 3
         svn update --non-interactive --quiet --accept theirs-full ${BASE_REPO}/${lugar}
@@ -81,7 +81,7 @@ for lugar in {trunk/l10n-kde4,branches/stable/l10n-kde4}/{scripts,templates} tru
 done
 
 declare -x galla
-for galla in trunk/l10n-kde4 branches/stable/l10n-kde4 trunk/l10n-support; do #anovamos as traducións
+for galla in trunk/l10n-kde4 trunk/l10n-kf5 branches/stable/l10n-kde4 trunk/l10n-support; do #anovamos as traducións
     if [ -d ${BASE_REPO}/${galla}/${code}/.svn ]; then
         kdialog --title "anovar.sh" --passivepopup "Updating: ${galla}/${code}" 3
          svn update --non-interactive --quiet --accept mine-full ${BASE_REPO}/${galla}/${code}
@@ -92,15 +92,15 @@ done
 unset galla
 kdialog --title "anovar.sh" --passivepopup "END OF REPOSITORIES UPDATES, going to second stage" 2
 
-for galla in trunk branches/stable; do
-    if [ -x ${BASE_REPO}/${galla}/l10n-kde4/scripts/process_orphans.sh ]; then #procésanse os orfos e vese cais po non teñen pot
+for galla in trunk/l10n-kde4 trunk/l10n-kf5 branches/stable/l10n-kde4; do
+    if [ -x ${BASE_REPO}/${galla}/scripts/process_orphans.sh ]; then #procésanse os orfos e vese cais po non teñen pot
         kdialog -title "anovar.sh" --passivepopup "Processing orphans of ${galla}" 5
-        cd ${BASE_REPO}/${galla}/l10n-kde4/ #ISTO DEBERÏA IR NUNHA SUBSHELL
-        ${BASE_REPO}/${galla}/l10n-kde4/scripts/process_orphans.sh &> /dev/null
+        cd ${BASE_REPO}/${galla} #ISTO DEBERÏA IR NUNHA SUBSHELL
+        ${BASE_REPO}/${galla}/scripts/process_orphans.sh &> /dev/null
     fi
-    if [ -x ${BASE_REPO}/${galla}/l10n-kde4/scripts/find_po_without_pot.sh ]; then
+    if [ -x ${BASE_REPO}/${galla}/scripts/find_po_without_pot.sh ]; then
         kdialog -title "anovar.sh" --passivepopup "Checking for po files without associated po file on ${galla}" 5
-        ${BASE_REPO}/${galla}/l10n-kde4/scripts/find_po_without_pot.sh ${code}
+        ${BASE_REPO}/${galla}/scripts/find_po_without_pot.sh ${code}
     fi
 done
 kdialog --title "anovar.sh" --msgbox "Anovar.sh done!"
