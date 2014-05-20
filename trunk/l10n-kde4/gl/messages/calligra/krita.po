@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: krita\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2014-05-19 01:27+0000\n"
+"POT-Creation-Date: 2014-05-20 01:29+0000\n"
 "PO-Revision-Date: 2014-01-19 09:08+0100\n"
 "Last-Translator: Marce Villarino <mvillarino@kde-espana.org>\n"
 "Language-Team: Galician <proxecto@trasno.net>\n"
@@ -1562,11 +1562,6 @@ msgstr "HR Papel de parede"
 
 #: image/brushengine/kis_paintop_factory.cpp:66
 msgctxt "Category of brush engines"
-msgid "Experimental"
-msgstr "Experimental"
-
-#: image/brushengine/kis_paintop_factory.cpp:71
-msgctxt "Category of brush engines"
 msgid "Stable"
 msgstr "Estábel"
 
@@ -1705,7 +1700,7 @@ msgid "Generator"
 msgstr "Xerador"
 
 #. i18n: ectx: property (text), widget (QLabel, label_10)
-#: image/kis_adjustment_layer.cc:127
+#: image/kis_adjustment_layer.cc:127 plugins/paintops/filterop/filterop.cpp:45
 #: plugins/paintops/libpaintop/kis_filter_option.cpp:50
 #: plugins/tools/tool_transform2/wdg_tool_transform.ui:844
 #: ui/dialogs/kis_dlg_filter.cpp:105
@@ -1724,13 +1719,20 @@ msgstr ""
 msgid "Default"
 msgstr "Predeterminado"
 
+#. i18n: ectx: property (text), item, widget (QComboBox, editSharpness)
+#. i18n: ectx: property (text), item, widget (QComboBox, editContrast)
 #: image/kis_base_mask_generator.h:33
-msgid "Soft brush"
-msgstr "Pincel suave"
+#: plugins/extensions/metadataeditor/editors/exif.ui:860
+#: plugins/extensions/metadataeditor/editors/exif.ui:892
+#: plugins/paintops/libpaintop/kis_pressure_softness_option.cpp:31
+msgid "Soft"
+msgstr "Suave"
 
 #: image/kis_base_mask_generator.h:34
-msgid "Gaussian brush"
-msgstr "Pincel Gausiano"
+#, fuzzy
+#| msgid "Gaussian Blur"
+msgid "Gaussian"
+msgstr "Desenfoque Gausiano"
 
 #: image/kis_base_node.cpp:141 ui/kis_node_model.cpp:420
 msgid "Visible"
@@ -2811,6 +2813,7 @@ msgstr "Tipo"
 
 #. i18n: ectx: property (text), widget (QRadioButton, shadeSelectorTypeMyPaint)
 #: plugins/extensions/dockers/advancedcolorselector/wdg_color_selector_settings.ui:234
+#: plugins/paintops/mypaint/mypaint_paintop_factory.h:55
 msgid "MyPaint"
 msgstr "MyPaint"
 
@@ -3636,7 +3639,7 @@ msgstr "Nome do grupo de tarefas"
 #. i18n: ectx: property (text), widget (QLabel, label)
 #. i18n: ectx: property (text), widget (QLabel, brushNameLbl)
 #: plugins/extensions/dockers/tasksetdocker/tasksetdocker_dock.cpp:188
-#: plugins/paintops/libpaintop/forms/wdgcustombrush.ui:31
+#: plugins/paintops/libpaintop/forms/wdgcustombrush.ui:22
 #: ui/forms/wdgfilternodecreation.ui:17 ui/forms/wdgflipbookselector.ui:28
 #: ui/forms/wdgpaintopsettings.ui:93
 msgid "Name:"
@@ -4147,6 +4150,7 @@ msgstr "Modo de exposición:"
 #: plugins/extensions/metadataeditor/editors/exif.ui:101
 #: plugins/extensions/metadataeditor/editors/exif.ui:919
 #: plugins/paintops/libpaintop/forms/wdgbrushchooser.ui:88
+#: plugins/paintops/libpaintop/kis_brush_selection_widget.cpp:58
 msgid "Auto"
 msgstr "Pincel automático"
 
@@ -4573,14 +4577,6 @@ msgstr "Normal"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, editSharpness)
 #. i18n: ectx: property (text), item, widget (QComboBox, editContrast)
-#: plugins/extensions/metadataeditor/editors/exif.ui:860
-#: plugins/extensions/metadataeditor/editors/exif.ui:892
-#: plugins/paintops/libpaintop/kis_pressure_softness_option.cpp:31
-msgid "Soft"
-msgstr "Suave"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, editSharpness)
-#. i18n: ectx: property (text), item, widget (QComboBox, editContrast)
 #: plugins/extensions/metadataeditor/editors/exif.ui:865
 #: plugins/extensions/metadataeditor/editors/exif.ui:897
 #: plugins/paintops/libpaintop/kis_pressure_softness_option.cpp:32
@@ -4600,6 +4596,8 @@ msgstr "Balance de brancos:"
 #. i18n: ectx: property (text), item, widget (QComboBox, editWhiteBalance)
 #. i18n: ectx: property (text), widget (QRadioButton, customRadioButton)
 #: plugins/extensions/metadataeditor/editors/exif.ui:924
+#: plugins/paintops/libpaintop/kis_brush_selection_widget.cpp:64
+#: plugins/paintops/libpaintop/kis_brush_selection_widget.cpp:66
 #: plugins/tools/tool_transform2/wdg_tool_transform.ui:1037
 msgid "Custom"
 msgstr "Personalizado:"
@@ -6823,7 +6821,9 @@ msgid "Color"
 msgstr "Cor"
 
 #: plugins/paintops/chalk/chalk_paintop_plugin.cpp:43
-msgid "Chalk brush"
+#, fuzzy
+#| msgid "Chalk brush"
+msgid "Chalk"
 msgstr "Pincel de xiz"
 
 #. i18n: ectx: attribute (title), widget (QWidget, inkTab)
@@ -6845,7 +6845,9 @@ msgid "Saturation decrease"
 msgstr "Diminución da saturación"
 
 #: plugins/paintops/colorsmudge/colorsmudge_paintop_plugin.cpp:44
-msgid "Color Smudge Brush"
+#, fuzzy
+#| msgid "Color Smudge Brush"
+msgid "Color Smudge"
 msgstr " Pincel de borrancho de cor"
 
 #: plugins/paintops/colorsmudge/kis_colorsmudgeop_settings_widget.cpp:52
@@ -6910,8 +6912,10 @@ msgid "Smudge mode:"
 msgstr "Pincel viscoso:"
 
 #: plugins/paintops/curvebrush/curve_paintop_plugin.cpp:43
-msgid "Curve brush"
-msgstr "Pincel curvo"
+#, fuzzy
+#| msgid "Curved"
+msgid "Curve"
+msgstr "Curvo"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, selectMainStyle)
 #. i18n: ectx: property (text), item, widget (KComboBox, selectSubdivisionStyle)
@@ -6971,14 +6975,19 @@ msgstr "Pintar a liña de conexión"
 msgid "Smoothing"
 msgstr "Suavizado"
 
+#. i18n: ectx: property (text), item, widget (QComboBox, shapeBox)
+#. i18n: ectx: property (text), item, widget (QComboBox, shapeCBox)
 #: plugins/paintops/defaultpaintops/defaultpaintops_plugin.cc:47
-msgid "Pixel Brush"
-msgstr "Pincel de píxeles"
+#: plugins/paintops/experiment/wdgshapeoptions.ui:75
+#: plugins/paintops/gridbrush/wdgshapeoptions.ui:51
+#: plugins/paintops/spray/wdgshapeoptions.ui:75
+msgid "Pixel"
+msgstr "Pixel"
 
 #: plugins/paintops/defaultpaintops/duplicate/kis_duplicateop_factory.h:50
-msgctxt "duplicate paintbrush"
-msgid "Duplicate"
-msgstr "Duplicar"
+msgctxt "clone paintbrush (previously \"Duplicate\")"
+msgid "Clone"
+msgstr ""
 
 #: plugins/paintops/defaultpaintops/duplicate/kis_duplicateop_option.cpp:45
 #: plugins/paintops/libpaintop/kis_paint_action_type_option.cpp:37
@@ -7005,8 +7014,10 @@ msgid "Deform Options"
 msgstr "Opcións de deformación"
 
 #: plugins/paintops/deform/kis_deform_paintop_factory.h:45
-msgid "Deform brush"
-msgstr "Pincel de deformación"
+#, fuzzy
+#| msgid "Deform Mode"
+msgid "Deform"
+msgstr "Modo de deformación"
 
 #. i18n: ectx: property (text), widget (QLabel, deformLabel)
 #: plugins/paintops/deform/wdgdeformoptions.ui:35
@@ -7076,8 +7087,11 @@ msgid "Use undeformed image"
 msgstr "Empregar a imaxe sen deformar"
 
 #: plugins/paintops/dynadraw/dyna_paintop_plugin.cpp:41
-msgid "Dyna brush"
-msgstr "Pincel dinámico"
+#, fuzzy
+#| msgctxt "(qtundo-format)"
+#| msgid "Dyna"
+msgid "Dyna"
+msgstr "Dinámico"
 
 #. i18n: ectx: attribute (title), widget (QWidget, tab)
 #: plugins/paintops/dynadraw/wdgdynaoptions.ui:51
@@ -7111,6 +7125,7 @@ msgstr "Rango de largura:"
 #. i18n: ectx: attribute (title), widget (QWidget, ShapeTab)
 #. i18n: ectx: property (title), widget (QGroupBox, shapeGroup)
 #: plugins/paintops/dynadraw/wdgdynaoptions.ui:160
+#: plugins/paintops/experiment/experiment_paintop_plugin.cpp:45
 #: plugins/paintops/hairy/wdghairyeoptions.ui:43
 #: plugins/paintops/hairy/wdgshapeoptions.ui:84
 msgid "Shape"
@@ -7161,10 +7176,6 @@ msgstr "Diámetro."
 #: plugins/paintops/dynadraw/wdgdynaoptions.ui:296
 msgid "Fixed angle"
 msgstr "Ángulo fixo"
-
-#: plugins/paintops/experiment/experiment_paintop_plugin.cpp:42
-msgid "Experiment brush"
-msgstr "Pincel experimental"
 
 #: plugins/paintops/experiment/kis_experiment_shape_option.cpp:36
 #: plugins/paintops/gridbrush/kis_grid_shape_option.cpp:33
@@ -7224,14 +7235,6 @@ msgstr "Duro"
 msgid "Anti-aliased pixel"
 msgstr "Píxel suavizado"
 
-#. i18n: ectx: property (text), item, widget (QComboBox, shapeBox)
-#. i18n: ectx: property (text), item, widget (QComboBox, shapeCBox)
-#: plugins/paintops/experiment/wdgshapeoptions.ui:75
-#: plugins/paintops/gridbrush/wdgshapeoptions.ui:51
-#: plugins/paintops/spray/wdgshapeoptions.ui:75
-msgid "Pixel"
-msgstr "Pixel"
-
 #. i18n: ectx: property (text), widget (QCheckBox, proportionalBox)
 #: plugins/paintops/experiment/wdgshapeoptions.ui:213
 #: plugins/paintops/spray/wdgshapeoptions.ui:218
@@ -7257,7 +7260,7 @@ msgstr "Rotación "
 #. i18n: ectx: property (text), widget (QCheckBox, fixedRotation)
 #. i18n: ectx: property (text), item, widget (QComboBox, comboBox2)
 #: plugins/paintops/experiment/wdgshapeoptions.ui:241
-#: plugins/paintops/libpaintop/forms/wdgcustombrush.ui:77
+#: plugins/paintops/libpaintop/forms/wdgcustombrush.ui:59
 #: plugins/paintops/spray/wdgshapedynamicsoptions.ui:48
 msgid "Constant"
 msgstr "Constante"
@@ -7265,7 +7268,7 @@ msgstr "Constante"
 #. i18n: ectx: property (text), widget (QCheckBox, randomRotation)
 #. i18n: ectx: property (text), item, widget (QComboBox, comboBox2)
 #: plugins/paintops/experiment/wdgshapeoptions.ui:289
-#: plugins/paintops/libpaintop/forms/wdgcustombrush.ui:82
+#: plugins/paintops/libpaintop/forms/wdgcustombrush.ui:64
 #: plugins/paintops/spray/wdgshapedynamicsoptions.ui:58
 msgid "Random"
 msgstr "Aleatorio"
@@ -7282,13 +7285,11 @@ msgstr "Seguir o cursor"
 msgid "Texture:"
 msgstr "Textura:"
 
-#: plugins/paintops/filterop/filterop.cpp:45
-msgid "Filter Brush"
-msgstr "Filtro de Pincel"
-
 #: plugins/paintops/gridbrush/grid_paintop_plugin.cpp:41
-msgid "Grid brush"
-msgstr "Pincel de grella"
+#: ui/canvas/kis_grid_manager.cpp:47 ui/dialogs/kis_dlg_preferences.cc:673
+#: ui/dialogs/kis_dlg_preferences.cc:674
+msgid "Grid"
+msgstr "Grella"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: plugins/paintops/gridbrush/wdggridoptions.ui:38
@@ -7343,7 +7344,9 @@ msgid "Line"
 msgstr "Liña"
 
 #: plugins/paintops/hairy/hairy_paintop_plugin.cpp:44
-msgid "Hairy brush"
+#, fuzzy
+#| msgid "Hairy brush"
+msgid "Hairy"
 msgstr "Pincel de pelo"
 
 #: plugins/paintops/hairy/kis_hairy_bristle_option.cpp:46
@@ -7518,7 +7521,9 @@ msgid "Soak ink"
 msgstr "Tinta pegañenta"
 
 #: plugins/paintops/hatching/hatching_paintop_plugin.cpp:43
-msgid "Hatching brush"
+#, fuzzy
+#| msgid "Hatching brush"
+msgid "Hatching"
 msgstr "Pincel de hachura"
 
 #: plugins/paintops/hatching/kis_hatching_options.cpp:57
@@ -7668,7 +7673,7 @@ msgstr "Aleatoriedade:"
 #: plugins/paintops/libpaintop/forms/wdgautobrush.ui:266
 #: plugins/paintops/libpaintop/forms/wdgBrushSizeOptions.ui:152
 #: plugins/paintops/libpaintop/forms/wdgclipboardbrush.ui:85
-#: plugins/paintops/libpaintop/forms/wdgcustombrush.ui:207
+#: plugins/paintops/libpaintop/forms/wdgcustombrush.ui:180
 #: plugins/paintops/libpaintop/forms/wdgtextbrush.ui:72
 #: plugins/paintops/libpaintop/kis_brush_chooser.cpp:112
 #: plugins/paintops/spray/wdgsprayoptions.ui:204
@@ -7731,7 +7736,7 @@ msgstr "Movemento de axitación"
 #. i18n: ectx: property (text), widget (QCheckBox, colorAsMask)
 #. i18n: ectx: property (text), widget (QCheckBox, colorAsmask)
 #: plugins/paintops/libpaintop/forms/wdgclipboardbrush.ui:19
-#: plugins/paintops/libpaintop/forms/wdgcustombrush.ui:131
+#: plugins/paintops/libpaintop/forms/wdgcustombrush.ui:113
 #: plugins/paintops/libpaintop/kis_brush_chooser.cpp:119
 msgid "Use color as mask"
 msgstr "Empregar a cor como máscara"
@@ -7739,9 +7744,9 @@ msgstr "Empregar a cor como máscara"
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: plugins/paintops/libpaintop/forms/wdgclipboardbrush.ui:102
 #, fuzzy
-#| msgid "Curve brush"
-msgid "Save brush:"
-msgstr "Pincel curvo"
+#| msgid "Save macro"
+msgid "Save Tip:"
+msgstr "Gardar macro"
 
 #. i18n: ectx: property (text), widget (QPushButton, saveBrush)
 #. i18n: ectx: property (text), widget (QPushButton, bnSave)
@@ -7822,51 +7827,55 @@ msgstr "Empregar a curva"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel2)
 #. i18n: ectx: property (text), widget (QLabel, labelStyle)
-#: plugins/paintops/libpaintop/forms/wdgcustombrush.ui:60
+#: plugins/paintops/libpaintop/forms/wdgcustombrush.ui:42
 #: plugins/tools/tool_text/wdgtextoptions.ui:71
 msgid "Style:"
 msgstr "Estilo:"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, comboBox2)
-#: plugins/paintops/libpaintop/forms/wdgcustombrush.ui:87
+#: plugins/paintops/libpaintop/forms/wdgcustombrush.ui:69
 msgid "Incremental"
 msgstr "Incremento"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, comboBox2)
-#: plugins/paintops/libpaintop/forms/wdgcustombrush.ui:92
+#: plugins/paintops/libpaintop/forms/wdgcustombrush.ui:74
 #: plugins/paintops/libpaintop/kis_dynamic_sensor.h:47
 #: plugins/tools/defaulttools/kis_tool_line.cc:70
 msgid "Pressure"
 msgstr "Presión"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, comboBox2)
-#: plugins/paintops/libpaintop/forms/wdgcustombrush.ui:97
+#: plugins/paintops/libpaintop/forms/wdgcustombrush.ui:79
 msgid "Angular"
 msgstr "Angular"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel3)
-#: plugins/paintops/libpaintop/forms/wdgcustombrush.ui:105
+#: plugins/paintops/libpaintop/forms/wdgcustombrush.ui:87
 msgid "Selection mode:"
 msgstr "Modo de selección:"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, brushStyle)
-#: plugins/paintops/libpaintop/forms/wdgcustombrush.ui:116
+#: plugins/paintops/libpaintop/forms/wdgcustombrush.ui:98
 msgid "Regular"
 msgstr "Normal"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, brushStyle)
-#: plugins/paintops/libpaintop/forms/wdgcustombrush.ui:121
+#: plugins/paintops/libpaintop/forms/wdgcustombrush.ui:103
 msgid "Animated"
 msgstr "Animado"
 
 #. i18n: ectx: property (text), widget (QPushButton, brushButton)
-#: plugins/paintops/libpaintop/forms/wdgcustombrush.ui:236
-msgid "Use as Brush"
+#: plugins/paintops/libpaintop/forms/wdgcustombrush.ui:200
+#, fuzzy
+#| msgid "Use as Brush"
+msgid "Use as Tip"
 msgstr "Usar como pincel"
 
 #. i18n: ectx: property (text), widget (QPushButton, addButton)
-#: plugins/paintops/libpaintop/forms/wdgcustombrush.ui:243
-msgid "Add to Predefined Brushes"
+#: plugins/paintops/libpaintop/forms/wdgcustombrush.ui:207
+#, fuzzy
+#| msgid "Add to Predefined Brushes"
+msgid "Add to Predefined Tips"
 msgstr "Engadir aos pinceis predefinidos"
 
 #. i18n: ectx: property (text), widget (QCheckBox, checkBoxSmudgeMode)
@@ -7979,9 +7988,9 @@ msgstr ""
 
 #: plugins/paintops/libpaintop/kis_brush_chooser.cpp:156
 #, fuzzy
-#| msgid "Text Brush"
-msgid "Reset Brush"
-msgstr "Pincel de texto"
+#| msgid "Predefined Brushes"
+msgid "Reset Predefined Tip"
+msgstr "Pinceis predefinidos"
 
 #: plugins/paintops/libpaintop/kis_brush_chooser.cpp:157
 msgid ""
@@ -7994,30 +8003,24 @@ msgstr ""
 msgid "Brush Tip"
 msgstr "Punta do pincel"
 
-#: plugins/paintops/libpaintop/kis_brush_selection_widget.cpp:58
-msgid "Autobrush"
-msgstr "Pincel automático"
-
 #: plugins/paintops/libpaintop/kis_brush_selection_widget.cpp:62
-msgid "Predefined Brushes"
-msgstr "Pinceis predefinidos"
+#, fuzzy
+#| msgid "&Predefined:"
+msgid "Predefined"
+msgstr "&Predefinido:"
 
-#: plugins/paintops/libpaintop/kis_brush_selection_widget.cpp:64
-#: plugins/paintops/libpaintop/kis_brush_selection_widget.cpp:66
-msgid "Custom Brush"
-msgstr "Pincel personalizado"
-
+#. i18n: ectx: property (title), widget (QGroupBox, grpClipboard)
 #: plugins/paintops/libpaintop/kis_brush_selection_widget.cpp:68
 #: plugins/paintops/libpaintop/kis_brush_selection_widget.cpp:70
+#: ui/forms/wdgnewimage.ui:331
 #, fuzzy
-#| msgid "Color Smudge Brush"
-msgid "Clipboard Brush"
-msgstr " Pincel de borrancho de cor"
+msgid "Clipboard"
+msgstr "Portarretallos"
 
 #: plugins/paintops/libpaintop/kis_brush_selection_widget.cpp:72
 #: plugins/paintops/libpaintop/kis_brush_selection_widget.cpp:74
-msgid "Text Brush"
-msgstr "Pincel de texto"
+msgid "Text"
+msgstr "Texto"
 
 #: plugins/paintops/libpaintop/kis_brush_selection_widget.cpp:98
 msgid ""
@@ -9101,13 +9104,11 @@ msgstr ""
 "un valor baixo fai que a dirección de entrada se adapte máis rapidamente, un "
 "valor maior farao máis suave"
 
-#: plugins/paintops/mypaint/mypaint_paintop_factory.h:55
-msgid "MyPaint brush"
-msgstr "Pincel MyPaint"
-
 #: plugins/paintops/particle/particle_paintop_plugin.cpp:42
-msgid "Particle brush"
-msgstr "Pincel de partículas "
+#, fuzzy
+#| msgid "Particles"
+msgid "Particle"
+msgstr "Partículas"
 
 #. i18n: ectx: property (text), widget (QLabel, particlesLbl)
 #: plugins/paintops/particle/wdgparticleoptions.ui:50
@@ -9483,7 +9484,9 @@ msgid "Offset scale"
 msgstr "Escala de desprazamento"
 
 #: plugins/paintops/sketch/sketch_paintop_plugin.cpp:43
-msgid "Sketch brush"
+#, fuzzy
+#| msgid "Sketch brush"
+msgid "Sketch"
 msgstr "Pincel de esbozo"
 
 #. i18n: ectx: property (suffix), widget (KDoubleNumInput, lineWidthSPBox)
@@ -9544,8 +9547,10 @@ msgid "Spray area"
 msgstr "Forma de spray"
 
 #: plugins/paintops/spray/spray_paintop_plugin.cpp:41
-msgid "Spray brush"
-msgstr "Pincel de spray"
+#, fuzzy
+#| msgid "Spray shape"
+msgid "Spray"
+msgstr "Forma de spray"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
 #: plugins/paintops/spray/wdgsprayoptions.ui:239
@@ -10463,11 +10468,6 @@ msgid ""
 "You are activating wrap-around mode, but have not enabled OpenGL.\n"
 "To visualize wrap-around mode, enable OpenGL."
 msgstr ""
-
-#: ui/canvas/kis_grid_manager.cpp:47 ui/dialogs/kis_dlg_preferences.cc:673
-#: ui/dialogs/kis_dlg_preferences.cc:674
-msgid "Grid"
-msgstr "Grella"
 
 #: ui/canvas/kis_grid_manager.cpp:70
 msgid "Snap To Grid"
@@ -11731,12 +11731,6 @@ msgstr "&Gardar"
 msgid "&Predefined:"
 msgstr "&Predefinido:"
 
-#. i18n: ectx: property (title), widget (QGroupBox, grpClipboard)
-#: ui/forms/wdgnewimage.ui:331
-#, fuzzy
-msgid "Clipboard"
-msgstr "Portarretallos"
-
 #. i18n: ectx: property (title), widget (QGroupBox, grpContents)
 #: ui/forms/wdgnewimage.ui:373
 msgid "Contents"
@@ -11918,7 +11912,7 @@ msgid "No Outline"
 msgstr "Sen contorno"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbOutline)
-#: ui/forms/wdgshapeoptions.ui:38 ui/kis_paintop_option.cpp:26
+#: ui/forms/wdgshapeoptions.ui:38
 msgid "Brush"
 msgstr "Pincel"
 
@@ -13198,6 +13192,10 @@ msgstr "Ir á predefinición anterior"
 msgid "Select Favorite Presets..."
 msgstr "Seguinte predefinicións favorita"
 
+#: ui/kis_paintop_option.cpp:26
+msgid "Common"
+msgstr ""
+
 #: ui/kis_paintop_option.cpp:36
 msgid "Texture"
 msgstr "Textura"
@@ -13724,11 +13722,11 @@ msgstr "A selección local está bloqueada."
 msgid "Freehand Stroke"
 msgstr "Trazo a man alzada"
 
-#: ui/tool/kis_tool_paint.cc:89
+#: ui/tool/kis_tool_paint.cc:105
 msgid "Increase Brush Size"
 msgstr "Aumentar o tamaño do pincel"
 
-#: ui/tool/kis_tool_paint.cc:95
+#: ui/tool/kis_tool_paint.cc:111
 msgid "Decrease Brush Size"
 msgstr "Diminuír o tamaño do pincel"
 
@@ -13857,6 +13855,77 @@ msgstr ""
 #| msgid "Close"
 msgid "&Close"
 msgstr "Pechar"
+
+#~ msgctxt "Category of brush engines"
+#~ msgid "Experimental"
+#~ msgstr "Experimental"
+
+#~ msgid "Soft brush"
+#~ msgstr "Pincel suave"
+
+#~ msgid "Gaussian brush"
+#~ msgstr "Pincel Gausiano"
+
+#~ msgid "Curve brush"
+#~ msgstr "Pincel curvo"
+
+#~ msgid "Pixel Brush"
+#~ msgstr "Pincel de píxeles"
+
+#~ msgctxt "duplicate paintbrush"
+#~ msgid "Duplicate"
+#~ msgstr "Duplicar"
+
+#~ msgid "Deform brush"
+#~ msgstr "Pincel de deformación"
+
+#~ msgid "Dyna brush"
+#~ msgstr "Pincel dinámico"
+
+#~ msgid "Experiment brush"
+#~ msgstr "Pincel experimental"
+
+#~ msgid "Filter Brush"
+#~ msgstr "Filtro de Pincel"
+
+#~ msgid "Grid brush"
+#~ msgstr "Pincel de grella"
+
+#, fuzzy
+#~| msgid "Curve brush"
+#~ msgid "Save brush:"
+#~ msgstr "Pincel curvo"
+
+#, fuzzy
+#~| msgid "Text Brush"
+#~ msgid "Reset Brush"
+#~ msgstr "Pincel de texto"
+
+#~ msgid "Autobrush"
+#~ msgstr "Pincel automático"
+
+#~ msgid "Predefined Brushes"
+#~ msgstr "Pinceis predefinidos"
+
+#~ msgid "Custom Brush"
+#~ msgstr "Pincel personalizado"
+
+#, fuzzy
+#~| msgid "Color Smudge Brush"
+#~ msgid "Clipboard Brush"
+#~ msgstr " Pincel de borrancho de cor"
+
+#~ msgid "Text Brush"
+#~ msgstr "Pincel de texto"
+
+#~ msgid "MyPaint brush"
+#~ msgstr "Pincel MyPaint"
+
+#~ msgid "Particle brush"
+#~ msgstr "Pincel de partículas "
+
+#~ msgid "Spray brush"
+#~ msgstr "Pincel de spray"
 
 #~ msgid "Total Refresh"
 #~ msgstr "Reinicio total"
@@ -14424,9 +14493,6 @@ msgstr "Pechar"
 
 #~ msgid "A -99ZZ END"
 #~ msgstr "A -99ZZ END"
-
-#~ msgid "Text"
-#~ msgstr "Texto"
 
 #~ msgid "Initial width"
 #~ msgstr "Ancho inicial"
