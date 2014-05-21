@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kstars\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2014-05-09 08:51+0000\n"
+"POT-Creation-Date: 2014-05-21 01:50+0000\n"
 "PO-Revision-Date: 2014-01-14 23:23+0100\n"
 "Last-Translator: Marce Villarino <mvillarino@kde-espana.org>\n"
 "Language-Team: Galician <proxecto@trasno.net>\n"
@@ -4450,69 +4450,73 @@ msgstr "O solucionador fallou. Ténteo de novo."
 msgid "WCS header missing or corrupted. Solver failed."
 msgstr "Falta unha cabeceira WCS ou está danada. O solucionador fallou."
 
-#: ekos/offlineastrometryparser.cpp:258 ekos/onlineastrometryparser.cpp:398
+#: ekos/offlineastrometryparser.cpp:258 ekos/onlineastrometryparser.cpp:460
 #, kde-format
 msgid "Solver completed in %1 second."
 msgid_plural "Solver completed in %1 seconds."
 msgstr[0] "O solucionador completouse en %1 segundo."
 msgstr[1] "O solucionador completouse en %1 segundos."
 
-#: ekos/onlineastrometryparser.cpp:71
+#: ekos/onlineastrometryparser.cpp:73
 #, fuzzy
 #| msgid "Error: Lost connection to Focuser."
 msgid "Error: No connection to the internet."
 msgstr "Erro: Perdeuse a conexión ao focalizador."
 
-#: ekos/onlineastrometryparser.cpp:144
+#: ekos/onlineastrometryparser.cpp:86 ekos/onlineastrometryparser.cpp:207
 #, fuzzy, kde-format
 #| msgid "Could not open file %1."
 msgid "Failed to open file %1. %2"
 msgstr "Non foi posíbel abrir o ficheiro %1."
 
-#: ekos/onlineastrometryparser.cpp:189
+#: ekos/onlineastrometryparser.cpp:133
+msgid "Warning: Converting FITS to JPEG failed. Uploading original FITS image."
+msgstr ""
+
+#: ekos/onlineastrometryparser.cpp:252
 #, fuzzy
 #| msgid "Loading images..."
 msgid "Uploading file..."
 msgstr "A cargar as imaxes..."
 
-#: ekos/onlineastrometryparser.cpp:276
+#: ekos/onlineastrometryparser.cpp:337
 msgid ""
 "Astrometry.net authentication failed. Check the validity of the Astrometry."
 "net API Key."
 msgstr ""
 
-#: ekos/onlineastrometryparser.cpp:284
+#: ekos/onlineastrometryparser.cpp:345
 #, kde-format
 msgid "Authentication to astrometry.net is successful. Session: %1"
 msgstr ""
 
-#: ekos/onlineastrometryparser.cpp:293
+#: ekos/onlineastrometryparser.cpp:354
 #, fuzzy
 #| msgid "Upload"
 msgid "Upload failed."
 msgstr "Enviar"
 
-#: ekos/onlineastrometryparser.cpp:302
+#: ekos/onlineastrometryparser.cpp:363
 msgid "Parsing submission ID failed."
 msgstr ""
 
-#: ekos/onlineastrometryparser.cpp:307
+#: ekos/onlineastrometryparser.cpp:368
 #, fuzzy
 #| msgid "Path to astrometry.net solver location."
 msgid "Upload complete. Waiting for astrometry.net solver to complete..."
 msgstr "A ruta ao solucionador de astrometry.net."
 
-#: ekos/onlineastrometryparser.cpp:328
+#: ekos/onlineastrometryparser.cpp:390
 #, fuzzy
 #| msgid "Failed to set sub frame."
 msgid "Failed to retrieve job ID."
 msgstr "Fallou a configuración do sub-fotograma."
 
-#: ekos/onlineastrometryparser.cpp:351
+#: ekos/onlineastrometryparser.cpp:413
 msgid "Solver timed out."
 msgstr ""
 
-#: ekos/onlineastrometryparser.cpp:359
+#: ekos/onlineastrometryparser.cpp:421
 #, fuzzy, kde-format
 #| msgid "Solver aborted after %1 second."
 #| msgid_plural "Solver aborted after %1 seconds"
@@ -4521,25 +4525,25 @@ msgid_plural "Solver failed after %1 seconds."
 msgstr[0] "O solucionador interrompeuse despois de %1 segundo."
 msgstr[1] "O solucionador interrompeuse despois de %1 segundos"
 
-#: ekos/onlineastrometryparser.cpp:370
+#: ekos/onlineastrometryparser.cpp:432
 #, fuzzy
 #| msgid "Error opening file"
 msgid "Error parsing parity."
 msgstr "Aconteceu un erro ao abrir o ficheiro"
 
-#: ekos/onlineastrometryparser.cpp:377
+#: ekos/onlineastrometryparser.cpp:439
 #, fuzzy
 #| msgid "Chart orientation:"
 msgid "Error parsing orientation."
 msgstr "Orientación da lenda:"
 
-#: ekos/onlineastrometryparser.cpp:385
+#: ekos/onlineastrometryparser.cpp:447
 #, fuzzy
 #| msgid "Error opening file"
 msgid "Error parsing RA."
 msgstr "Aconteceu un erro ao abrir o ficheiro"
 
-#: ekos/onlineastrometryparser.cpp:392
+#: ekos/onlineastrometryparser.cpp:454
 #, fuzzy
 #| msgid "Error opening file"
 msgid "Error parsing DEC."
@@ -4677,6 +4681,18 @@ msgstr "Tecla:"
 #| msgid "URL:"
 msgid "API URL:"
 msgstr "URL:"
+
+#. i18n: ectx: property (toolTip), widget (QCheckBox, kcfg_astrometryUseJPEG)
+#: ekos/opsekos.ui:353
+msgid ""
+"Use JPEG format, instead of FITS, to upload images to the online astromenety."
+"net service"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QCheckBox, kcfg_astrometryUseJPEG)
+#: ekos/opsekos.ui:356
+msgid "Use JPG for upload"
+msgstr ""
 
 #. i18n: ectx: Menu (file)
 #: fitsviewer.rc:5 kstarsui-indi.rc:5 kstarsui-win.rc:5 kstarsui.rc:5
@@ -8870,57 +8886,64 @@ msgstr ""
 msgid "astrometry.net API URL"
 msgstr "Astrometry.net"
 
+#. i18n: ectx: label, entry (astrometryUseJPEG), group (Ekos)
+#: kstars.kcfg:1314
+msgid ""
+"Use JPEG format, instead of FITS, to upload images to the astrometry.net "
+"online service."
+msgstr ""
+
 #. i18n: ectx: label, entry (GuideDeviation), group (Capture)
-#: kstars.kcfg:1316
+#: kstars.kcfg:1320
 msgid "Default maximum permittable guide deviation"
 msgstr ""
 
 #. i18n: ectx: whatsthis, entry (GuideDeviation), group (Capture)
-#: kstars.kcfg:1317
+#: kstars.kcfg:1321
 msgid ""
 "If guide deviation exceeds this limit, the exposure will be automatically "
 "aborted and only resumed when the deviation is within this limit."
 msgstr ""
 
 #. i18n: ectx: label, entry (HFRDeviation), group (Capture)
-#: kstars.kcfg:1321
+#: kstars.kcfg:1325
 msgid "Default maximum permittable HFR deviation"
 msgstr ""
 
 #. i18n: ectx: whatsthis, entry (HFRDeviation), group (Capture)
-#: kstars.kcfg:1322
+#: kstars.kcfg:1326
 msgid ""
 "If HFR deviation exceeds this limit, the autofocus routine will be "
 "automatically started."
 msgstr ""
 
 #. i18n: ectx: label, entry (EnforceGuideDeviation), group (Capture)
-#: kstars.kcfg:1326
+#: kstars.kcfg:1330
 msgid "Enforce guiding deviation limit."
 msgstr ""
 
 #. i18n: ectx: label, entry (EnforceAutofocus), group (Capture)
-#: kstars.kcfg:1330
+#: kstars.kcfg:1334
 msgid "Enforce Autofocus HFR limit."
 msgstr ""
 
 #. i18n: ectx: label, entry (AutoMeridianFlip), group (Capture)
-#: kstars.kcfg:1334
+#: kstars.kcfg:1338
 msgid "Flips the mount when reaching the meridian, if supported."
 msgstr ""
 
 #. i18n: ectx: label, entry (AutoParkTelescope), group (Capture)
-#: kstars.kcfg:1338
+#: kstars.kcfg:1342
 msgid "Parks the telescope when the sequence jobs are complete, if supported."
 msgstr ""
 
 #. i18n: ectx: label, entry (FocusTicks), group (Focus)
-#: kstars.kcfg:1344
+#: kstars.kcfg:1348
 msgid "Default Focuser step ticks"
 msgstr "Tics de paso do focalizador predeterminado"
 
 #. i18n: ectx: whatsthis, entry (FocusTicks), group (Focus)
-#: kstars.kcfg:1345
+#: kstars.kcfg:1349
 msgid ""
 "Step size of the absolute focuser. The step size TICKS should be adjusted so "
 "that when the focuser moves TICKS steps, the difference in HFR is more than "
@@ -8932,12 +8955,12 @@ msgstr ""
 "óptimo."
 
 #. i18n: ectx: label, entry (FocusTolerance), group (Focus)
-#: kstars.kcfg:1349
+#: kstars.kcfg:1353
 msgid "Default Focuser tolerance value"
 msgstr "Valor predeterminado da tolerancia do focalizador"
 
 #. i18n: ectx: whatsthis, entry (FocusTolerance), group (Focus)
-#: kstars.kcfg:1350
+#: kstars.kcfg:1354
 msgid ""
 "The tolerance specifies the percentage difference between the current "
 "focusing position and the minimum obtained during the focusing run. "
@@ -8949,22 +8972,22 @@ msgstr ""
 "para evitar que o algarismo de enfoque oscile para diante e para atrás."
 
 #. i18n: ectx: label, entry (FocusMaxTravel), group (Focus)
-#: kstars.kcfg:1354
+#: kstars.kcfg:1358
 msgid "Maximum Focus Travel Distance"
 msgstr "Distancia máxima de viaxe do foco"
 
 #. i18n: ectx: whatsthis, entry (FocusMaxTravel), group (Focus)
-#: kstars.kcfg:1355
+#: kstars.kcfg:1359
 msgid "Set the maximum travel distance of an absolute focuser."
 msgstr "Define a distancia máxima viaxada por un focalizador absoluto."
 
 #. i18n: ectx: label, entry (FocusExposure), group (Focus)
-#: kstars.kcfg:1359
+#: kstars.kcfg:1363
 msgid "Default Focuser exposure value"
 msgstr "Valor predeterminado de exposición do focalizador"
 
 #. i18n: ectx: whatsthis, entry (FocusExposure), group (Focus)
-#: kstars.kcfg:1360
+#: kstars.kcfg:1364
 msgid ""
 "Specifies exposure value of CCD when performing focusing. Lower this value "
 "to avoid saturation of bright stars which adversely affects HFR measurement. "
@@ -8975,94 +8998,94 @@ msgstr ""
 "de HFR. Aumenta o valor se non se detecta ningunha estrela."
 
 #. i18n: ectx: label, entry (FocusBoxSize), group (Focus)
-#: kstars.kcfg:1364
+#: kstars.kcfg:1368
 msgid "Default Focuser star selection box size"
 msgstr "Tamaño da caixa de escolla de estrela do focalizador predeterminado"
 
 #. i18n: ectx: whatsthis, entry (FocusBoxSize), group (Focus)
-#: kstars.kcfg:1365
+#: kstars.kcfg:1369
 msgid "Set box size to select a focus star."
 msgstr "Define o tamaño da caixa para escoller unha estrela para enfocar."
 
 #. i18n: ectx: label, entry (FocusXBin), group (Focus)
-#: kstars.kcfg:1369
+#: kstars.kcfg:1373
 msgid "Default CCD X binning in focus mode"
 msgstr "Binning en X predeterminado do CCD no modo focalizar "
 
 #. i18n: ectx: whatsthis, entry (FocusXBin), group (Focus)
-#: kstars.kcfg:1370
+#: kstars.kcfg:1374
 msgid "Set horizontal binning of CCD camera while in focus mode."
 msgstr ""
 "Define o binning horizontal da cámara CCD cando se está no modo de focalizar."
 
 #. i18n: ectx: label, entry (FocusYBin), group (Focus)
-#: kstars.kcfg:1374
+#: kstars.kcfg:1378
 msgid "Default CCD Y binning in focus mode"
 msgstr "Binning predeterminado do CCD en Y no modo focalizar"
 
 #. i18n: ectx: whatsthis, entry (FocusYBin), group (Focus)
-#: kstars.kcfg:1375
+#: kstars.kcfg:1379
 msgid "Set vertical binning of CCD camera while in focus mode."
 msgstr ""
 "Define o binning vertical da cámara CCD cando se está no modo de focalizar."
 
 #. i18n: ectx: label, entry (FocusSubFrame), group (Focus)
-#: kstars.kcfg:1379
+#: kstars.kcfg:1383
 msgid "Subframe the focus star during the autofocus procedure."
 msgstr "Toma un subfotograma da estrela focalizada durante a autofocalización."
 
 #. i18n: ectx: label, entry (AutoSelectStar), group (Focus)
-#: kstars.kcfg:1383
+#: kstars.kcfg:1387
 msgid "Automatically select a star to focus."
 msgstr "Escoller automaticamente unha estrela para enfocala."
 
 #. i18n: ectx: label, entry (SuspendGuiding), group (Focus)
-#: kstars.kcfg:1387
+#: kstars.kcfg:1391
 #, fuzzy
 #| msgid "Autofocus in progress..."
 msgid "Suspend guiding while autofocus in progress."
 msgstr "Enfoque automático en proceso..."
 
 #. i18n: ectx: label, entry (AlignExposure), group (Align)
-#: kstars.kcfg:1393
+#: kstars.kcfg:1397
 msgid "Default alignment exposure value"
 msgstr "Valor predeterminado de exposición do aliñamento"
 
 #. i18n: ectx: whatsthis, entry (AlignExposure), group (Align)
-#: kstars.kcfg:1394
+#: kstars.kcfg:1398
 msgid ""
 "Specifies exposure value of CCD in seconds when performing plate solving."
 msgstr "Indica a exposición do CCD en segundos, cando se solucionan fotos."
 
 #. i18n: ectx: label, entry (SolverXBin), group (Align)
-#: kstars.kcfg:1398
+#: kstars.kcfg:1402
 msgid "Default CCD X binning while in alignment mode"
 msgstr "Binning do CCD en X predeterminado no modo aliñar"
 
 #. i18n: ectx: whatsthis, entry (SolverXBin), group (Align)
-#: kstars.kcfg:1399
+#: kstars.kcfg:1403
 msgid "Set horizontal binning of CCD camera while in alignment mode."
 msgstr ""
 "Define o binning horizontal da cámara CCD cando se está no modo de aliñar."
 
 #. i18n: ectx: label, entry (SolverYBin), group (Align)
-#: kstars.kcfg:1403
+#: kstars.kcfg:1407
 msgid "Default CCD Y binning while in alignment mode"
 msgstr "Binning predeterminado en Y do CCD no modo aliñar"
 
 #. i18n: ectx: whatsthis, entry (SolverYBin), group (Align)
-#: kstars.kcfg:1404
+#: kstars.kcfg:1408
 msgid "Set vertical binning of CCD camera while in alignment mode."
 msgstr ""
 "Define o binning vertical da cámara CCD cando se está no modo de aliñar."
 
 #. i18n: ectx: label, entry (SolverUpdateCoords), group (Align)
-#: kstars.kcfg:1408
+#: kstars.kcfg:1412
 msgid "Update Solver RA and DEC search coordinates."
 msgstr "Actualizar as coordenadas de busca da AR e DEC do resolvedor."
 
 #. i18n: ectx: whatsthis, entry (SolverUpdateCoords), group (Align)
-#: kstars.kcfg:1409
+#: kstars.kcfg:1413
 msgid ""
 "Automatically update the solver RA and Declination coordinates after "
 "telescope slew is completed."
@@ -9071,26 +9094,26 @@ msgstr ""
 "tras completar o desprazamento do telescopio."
 
 #. i18n: ectx: label, entry (SolverOnline), group (Align)
-#: kstars.kcfg:1413
+#: kstars.kcfg:1417
 #, fuzzy
 #| msgid "astrometry.net configuration file"
 msgid "Use astrometry.net online solver."
 msgstr "Ficheiro de configuración de astrometry.net"
 
 #. i18n: ectx: label, entry (UseDither), group (Guide)
-#: kstars.kcfg:1419
+#: kstars.kcfg:1423
 msgid "Use Auto Dithering when guiding."
 msgstr ""
 
 #. i18n: ectx: label, entry (DitherPixels), group (Guide)
-#: kstars.kcfg:1423
+#: kstars.kcfg:1427
 msgid ""
 "How many pixels to move between subsequent exposures under auto dithering "
 "mode."
 msgstr ""
 
 #. i18n: ectx: label, entry (AOLimit), group (Guide)
-#: kstars.kcfg:1427
+#: kstars.kcfg:1431
 msgid ""
 "The Adaptive Optics unit is utilized if the guiding deviation is less than "
 "this limit in arcseconds. Once exceeded, mechanical guiding is utilized."
