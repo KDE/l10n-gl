@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TextShape\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2014-07-16 01:52+0000\n"
+"POT-Creation-Date: 2014-07-25 01:50+0000\n"
 "PO-Revision-Date: 2014-01-13 14:33+0100\n"
 "Last-Translator: Marce Villarino <mvillarino@kde-espana.org>\n"
 "Language-Team: Galician <proxecto@trasno.net>\n"
@@ -284,6 +284,8 @@ msgstr "Cor de fondo"
 #. i18n: ectx: property (text), widget (QToolButton, customCharacter)
 #. i18n: ectx: property (text), widget (QToolButton, resetBackgroundColor)
 #. i18n: ectx: property (text), widget (QToolButton, toolAutoSpellCheck)
+#. i18n: ectx: property (text), widget (QToolButton, configureSection)
+#. i18n: ectx: property (text), widget (QToolButton, insertSection)
 #. i18n: ectx: property (text), widget (QuickTableButton, quickTable)
 #. i18n: ectx: property (text), widget (QToolButton, insertVariable)
 #. i18n: ectx: property (text), widget (QToolButton, insertSpecialChar)
@@ -305,8 +307,9 @@ msgstr "Cor de fondo"
 #: dialogs/FontDecorations.ui:174 dialogs/FontDecorations.ui:187
 #: dialogs/FontDecorations.ui:200 dialogs/ParagraphBulletsNumbers.ui:221
 #: dialogs/ParagraphDecorations.ui:55 dialogs/SimpleCharacterWidget.ui:167
-#: dialogs/SimpleInsertWidget.ui:40 dialogs/SimpleInsertWidget.ui:72
-#: dialogs/SimpleInsertWidget.ui:91 dialogs/SimpleInsertWidget.ui:107
+#: dialogs/SimpleInsertWidget.ui:40 dialogs/SimpleInsertWidget.ui:59
+#: dialogs/SimpleInsertWidget.ui:78 dialogs/SimpleInsertWidget.ui:110
+#: dialogs/SimpleInsertWidget.ui:129 dialogs/SimpleInsertWidget.ui:145
 #: dialogs/SimpleParagraphWidget.ui:65 dialogs/SimpleParagraphWidget.ui:189
 #: dialogs/SimpleSpellCheckingWidget.ui:23 dialogs/SimpleTableWidget.ui:128
 #: dialogs/SimpleTableWidget.ui:144 dialogs/SimpleTableWidget.ui:176
@@ -489,11 +492,11 @@ msgstr "Minúsculas"
 msgid "Capitalize"
 msgstr "Pór en maiúsculas"
 
-#: dialogs/CharacterHighlighting.cpp:293 TextTool.cpp:287
+#: dialogs/CharacterHighlighting.cpp:293 TextTool.cpp:297
 msgid "Superscript"
 msgstr "Superíndice"
 
-#: dialogs/CharacterHighlighting.cpp:294 TextTool.cpp:293
+#: dialogs/CharacterHighlighting.cpp:294 TextTool.cpp:303
 msgid "Subscript"
 msgstr "Subíndice"
 
@@ -1014,7 +1017,7 @@ msgstr "Caracteres especiais"
 
 #. i18n: ectx: property (text), widget (QPushButton, buttonInsert)
 #: dialogs/InsertCharacter.cpp:39 dialogs/ManageBookmark.ui:34
-#: ReferencesTool.cpp:125 TextTool.cpp:2175
+#: ReferencesTool.cpp:125 TextTool.cpp:2186
 msgid "Insert"
 msgstr "Inserir"
 
@@ -1398,7 +1401,7 @@ msgid "Browse..."
 msgstr "Buscar..."
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
-#: dialogs/ParagraphDecorations.ui:31 TextTool.cpp:395
+#: dialogs/ParagraphDecorations.ui:31 TextTool.cpp:405
 msgid "Background"
 msgstr "Fondo"
 
@@ -1606,6 +1609,26 @@ msgstr "Formato do parágrafo "
 msgid "Insert a table"
 msgstr "Inserir unha táboa"
 
+#: dialogs/SectionFormatDialog.cpp:58
+#, fuzzy
+#| msgid "Configure Settings"
+msgid "Configure sections"
+msgstr "Xestor da configuración"
+
+#: dialogs/SectionFormatDialog.cpp:109
+msgid "Invalid characters or section with such name exists."
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: dialogs/SectionFormatDialog.ui:29
+msgid "Section name:"
+msgstr ""
+
+#. i18n: ectx: property (placeholderText), widget (KLineEdit, sectionNameLineEdit)
+#: dialogs/SectionFormatDialog.ui:39
+msgid "Enter section name here"
+msgstr ""
+
 #. i18n: ectx: property (text), widget (QToolButton, insertAnnotation)
 #: dialogs/SimpleAnnotationWidget.ui:23
 msgid "Insert Note"
@@ -1722,12 +1745,12 @@ msgid "Another style named '%1' already exist. Please choose another name."
 msgstr "Xa existe outro estilo co nome «%1». Escóllelle outro nome."
 
 #. i18n: ectx: attribute (title), widget (QListView, paragraphStylesListView)
-#: dialogs/StyleManager.ui:39 TextTool.cpp:2167
+#: dialogs/StyleManager.ui:39 TextTool.cpp:2178
 msgid "Paragraph"
 msgstr "Parágrafo"
 
 #. i18n: ectx: attribute (title), widget (QListView, characterStylesListView)
-#: dialogs/StyleManager.ui:53 TextTool.cpp:2165
+#: dialogs/StyleManager.ui:53 TextTool.cpp:2176
 msgid "Character"
 msgstr "Carácter"
 
@@ -1737,7 +1760,7 @@ msgid "&New"
 msgstr "&Novo"
 
 #. i18n: ectx: property (text), widget (QPushButton, bDelete)
-#: dialogs/StyleManager.ui:84 TextTool.cpp:2503
+#: dialogs/StyleManager.ui:84 TextTool.cpp:2535
 msgid "Delete"
 msgstr "Eliminar"
 
@@ -1940,7 +1963,7 @@ msgstr "Táboa de contidos"
 msgid "Insert a Table of Contents into the document."
 msgstr "Inserir unha táboa de contidos no documento."
 
-#: ReferencesTool.cpp:129 TextTool.cpp:415
+#: ReferencesTool.cpp:129 TextTool.cpp:425
 msgid "Insert Custom..."
 msgstr "Inserir unha personalizada..."
 
@@ -2097,226 +2120,238 @@ msgstr "Unha forma que contén texto"
 msgid "Text Shape"
 msgstr "Forma de texto"
 
-#: TextTool.cpp:222
+#: TextTool.cpp:224
+#, fuzzy
+#| msgid "Configure Settings"
+msgid "Configure current section"
+msgstr "Xestor da configuración"
+
+#: TextTool.cpp:228
+#, fuzzy
+#| msgid "Insert Citation"
+msgid "Insert new section"
+msgstr "Inserir unha citación"
+
+#: TextTool.cpp:232
 msgid "Paste As Text"
 msgstr "Pegar como texto"
 
-#: TextTool.cpp:227
+#: TextTool.cpp:237
 msgid "Bold"
 msgstr "Negriña"
 
-#: TextTool.cpp:233
+#: TextTool.cpp:243
 msgid "Italic"
 msgstr "Cursiva"
 
-#: TextTool.cpp:239
+#: TextTool.cpp:249
 msgctxt "Text formatting"
 msgid "Underline"
 msgstr "Subliñado"
 
-#: TextTool.cpp:245
+#: TextTool.cpp:255
 msgid "Strikethrough"
 msgstr "Riscada"
 
-#: TextTool.cpp:251
+#: TextTool.cpp:261
 msgid "Align Left"
 msgstr "Aliñar á Esquerda"
 
-#: TextTool.cpp:258
+#: TextTool.cpp:268
 msgid "Align Right"
 msgstr "Aliñar á Dereita"
 
-#: TextTool.cpp:265
+#: TextTool.cpp:275
 msgid "Align Center"
 msgstr "Aliñar ao centro"
 
-#: TextTool.cpp:272
+#: TextTool.cpp:282
 msgid "Align Block"
 msgstr "Aliñar Bloque"
 
-#: TextTool.cpp:279
+#: TextTool.cpp:289
 msgid "Change text direction"
 msgstr "Cambiar a a dirección do texto"
 
-#: TextTool.cpp:281
+#: TextTool.cpp:291
 msgid "Change writing direction"
 msgstr "Cambiar a dirección da escritura"
 
-#: TextTool.cpp:303
+#: TextTool.cpp:313
 msgid "Increase Indent"
 msgstr "Aumentar a indentación"
 
-#: TextTool.cpp:310
+#: TextTool.cpp:320
 msgid "Decrease Indent"
 msgstr "Diminuír a indentación"
 
-#: TextTool.cpp:314
+#: TextTool.cpp:324
 msgid "Bullet list"
 msgstr "Lista de viñetas"
 
-#: TextTool.cpp:317
+#: TextTool.cpp:327
 msgid "Numbered list"
 msgstr "Lista numerada"
 
-#: TextTool.cpp:320
+#: TextTool.cpp:330
 msgid "Increase Font Size"
 msgstr "Aumentar Tamaño de Letra"
 
-#: TextTool.cpp:325
+#: TextTool.cpp:335
 msgid "Decrease Font Size"
 msgstr "Reducir Tamaño de Letra"
 
-#: TextTool.cpp:331
+#: TextTool.cpp:341
 msgid "Font Family"
 msgstr "Familia tipográfica"
 
-#: TextTool.cpp:336
+#: TextTool.cpp:346
 msgid "Variable"
 msgstr "Variábel"
 
-#: TextTool.cpp:340
+#: TextTool.cpp:350
 msgid "Insert Non-Breaking Space"
 msgstr "Inserir Espazo Non-Quebrable"
 
-#: TextTool.cpp:345
+#: TextTool.cpp:355
 msgid "Insert Non-Breaking Hyphen"
 msgstr "Inserir guionización non quebrabel"
 
-#: TextTool.cpp:350
+#: TextTool.cpp:360
 msgid "Insert Index"
 msgstr "Inserir Índice"
 
-#: TextTool.cpp:355
+#: TextTool.cpp:365
 msgid "Insert Soft Hyphen"
 msgstr "Inserir guión suave"
 
-#: TextTool.cpp:361
+#: TextTool.cpp:371
 msgid "Line Break"
 msgstr "Salto de Liña"
 
-#: TextTool.cpp:366
+#: TextTool.cpp:376
 msgid "Page Break"
 msgstr "Quebra de páxina"
 
-#: TextTool.cpp:370
+#: TextTool.cpp:380
 msgid "Insert a page break"
 msgstr "Inserir unha quebra de páxina"
 
-#: TextTool.cpp:371
+#: TextTool.cpp:381
 msgid "All text after this point will be moved into the next page."
 msgstr "Todo o texto tras este punto moverase á seguinte páxina."
 
-#: TextTool.cpp:374
+#: TextTool.cpp:384
 msgid "Font..."
 msgstr "Tipografía..."
 
-#: TextTool.cpp:377
+#: TextTool.cpp:387
 msgid "Change character size, font, boldface, italics etc."
 msgstr "Cambiar tamaño de letra, tipografía, negriñas, cursivas etc."
 
-#: TextTool.cpp:378
+#: TextTool.cpp:388
 msgid "Change the attributes of the currently selected characters."
 msgstr "Cambia os atributos dos caracteres actualmente seleccionados."
 
-#: TextTool.cpp:381
+#: TextTool.cpp:391
 msgid "Font Size"
 msgstr "Tamaño de Letra"
 
-#: TextTool.cpp:387
+#: TextTool.cpp:397
 msgid "Text Color..."
 msgstr "Cor do texto..."
 
-#: TextTool.cpp:388
+#: TextTool.cpp:398
 msgid "Text Color"
 msgstr "Cor do texto"
 
-#: TextTool.cpp:394
+#: TextTool.cpp:404
 msgid "Background Color..."
 msgstr "Cor do fondo..."
 
-#: TextTool.cpp:399
+#: TextTool.cpp:409
 msgid "Grow To Fit Width"
 msgstr "Aumentar para axustar ao ancho"
 
-#: TextTool.cpp:404
+#: TextTool.cpp:414
 msgid "Grow To Fit Height"
 msgstr "Aumentar para axustar ao alto"
 
-#: TextTool.cpp:409
+#: TextTool.cpp:419
 msgid "Shrink To Fit"
 msgstr "Reducir para axustar"
 
-#: TextTool.cpp:417
+#: TextTool.cpp:427
 msgid "Insert a table into the document."
 msgstr "Inserir unha táboa no documento."
 
-#: TextTool.cpp:420
+#: TextTool.cpp:430
 msgid "Row Above"
 msgstr "Fila superior"
 
-#: TextTool.cpp:421
+#: TextTool.cpp:431
 msgid "Insert Row Above"
 msgstr "Inserir unha fila enriba"
 
-#: TextTool.cpp:425
+#: TextTool.cpp:435
 msgid "Row Below"
 msgstr "Fila debaixo"
 
-#: TextTool.cpp:426
+#: TextTool.cpp:436
 msgid "Insert Row Below"
 msgstr "Inserir unha fila debaixo"
 
-#: TextTool.cpp:430
+#: TextTool.cpp:440
 msgid "Column Left"
 msgstr "Columna á esquerda"
 
-#: TextTool.cpp:431
+#: TextTool.cpp:441
 msgid "Insert Column Left"
 msgstr "Inserir unha columna á esquerda"
 
-#: TextTool.cpp:435
+#: TextTool.cpp:445
 msgid "Column Right"
 msgstr "Columna á dereita"
 
-#: TextTool.cpp:436
+#: TextTool.cpp:446
 msgid "Insert Column Right"
 msgstr "Inserir unha columna á dereita"
 
-#: TextTool.cpp:440
+#: TextTool.cpp:450
 msgid "Column"
 msgstr "Columna"
 
-#: TextTool.cpp:441
+#: TextTool.cpp:451
 msgid "Delete Column"
 msgstr "Eliminar a columna"
 
-#: TextTool.cpp:445
+#: TextTool.cpp:455
 msgid "Row"
 msgstr "Fila"
 
-#: TextTool.cpp:446
+#: TextTool.cpp:456
 msgid "Delete Row"
 msgstr "Eliminar a fila"
 
-#: TextTool.cpp:450
+#: TextTool.cpp:460
 msgid "Merge Cells"
 msgstr "Xuntar as celas"
 
-#: TextTool.cpp:454
+#: TextTool.cpp:464
 msgid "Split Cells"
 msgstr "Dividir as celas"
 
-#: TextTool.cpp:459
+#: TextTool.cpp:469
 msgid "Paragraph..."
 msgstr "Parágrafo..."
 
-#: TextTool.cpp:462
+#: TextTool.cpp:472
 msgid "Change paragraph margins, text flow, borders, bullets, numbering etc."
 msgstr ""
 "Cambiar as marxes dos parágrafos, fluxo de texto, bordos, viñetas, "
 "numeración etc."
 
-#: TextTool.cpp:463
+#: TextTool.cpp:473
 msgid ""
 "Change paragraph margins, text flow, borders, bullets, numbering etc."
 "<p>Select text in multiple paragraphs to change the formatting of all "
@@ -2328,15 +2363,15 @@ msgstr ""
 "vez o formato deles.<p>De non se seleccionar ningún texto cambiarase o "
 "parágrafo onde estea situado o cursor.</p>"
 
-#: TextTool.cpp:466
+#: TextTool.cpp:476
 msgid "Style Manager..."
 msgstr "Xestor de estilos..."
 
-#: TextTool.cpp:468
+#: TextTool.cpp:478
 msgid "Change attributes of styles"
 msgstr "Cambia os atributos dos estilos"
 
-#: TextTool.cpp:469
+#: TextTool.cpp:479
 msgid ""
 "Change font and paragraph attributes of styles.<p>Multiple styles can be "
 "changed using the dialog box."
@@ -2344,93 +2379,93 @@ msgstr ""
 "Cambia os estilos de tipografía e dos atributos dos parágrafos. <p>Pódense "
 "cambiar múltiples estilos empregando as caixa de diálogo."
 
-#: TextTool.cpp:476
+#: TextTool.cpp:486
 msgid "Special Character..."
 msgstr "Caracteres Especiais..."
 
-#: TextTool.cpp:480
+#: TextTool.cpp:490
 msgid "Insert one or more symbols or characters not found on the keyboard"
 msgstr ""
 "Inserir un ou máis símbolos ou caracteres que non se atopan nos teclados"
 
-#: TextTool.cpp:481
+#: TextTool.cpp:491
 msgid "Insert one or more symbols or characters not found on the keyboard."
 msgstr ""
 "Inserir un ou máis símbolos ou caracteres que non te atopan no teclado."
 
-#: TextTool.cpp:484
+#: TextTool.cpp:494
 msgid "Repaint"
 msgstr "Repintar"
 
-#: TextTool.cpp:489
+#: TextTool.cpp:499
 msgid "Insert Comment"
 msgstr "Inserir un comentario"
 
-#: TextTool.cpp:573
+#: TextTool.cpp:584
 msgid "Insertion"
 msgstr "Inserción"
 
-#: TextTool.cpp:575
+#: TextTool.cpp:586
 msgid "Deletion"
 msgstr "Eliminación"
 
-#: TextTool.cpp:577
+#: TextTool.cpp:588
 msgid "Formatting"
 msgstr "Formatado"
 
-#: TextTool.cpp:592
+#: TextTool.cpp:603
 msgid "Ctrl+click to go to link "
 msgstr "Ctrl+clic para ir á ligazón"
 
-#: TextTool.cpp:599
+#: TextTool.cpp:610
 msgid "Ctrl+click to go to the note "
 msgstr "Ctrl+clic para ir á nota"
 
-#: TextTool.cpp:605
+#: TextTool.cpp:616
 msgid "Ctrl+click to go to the note reference"
 msgstr "Ctrl+clic para ir á referencia da nota"
 
-#: TextTool.cpp:706
+#: TextTool.cpp:717
 msgid "follows along"
 msgstr "seguir ao longo"
 
-#: TextTool.cpp:736
+#: TextTool.cpp:747
 msgid "Press shift to not resize this"
 msgstr "Preme shift para non redimensionar isto"
 
-#: TextTool.cpp:930
+#: TextTool.cpp:941
 msgctxt "(qtundo-format)"
 msgid "Change Border Formatting"
 msgstr "Cambiar o formato do bordo"
 
-#: TextTool.cpp:1123
+#: TextTool.cpp:1134
 msgctxt "(qtundo-format)"
 msgid "Cut"
 msgstr "Cortar"
 
-#: TextTool.cpp:1383
+#: TextTool.cpp:1394
 msgctxt "(qtundo-format)"
 msgid "Adjust Column Width"
 msgstr "Axustar o ancho das columnas"
 
-#: TextTool.cpp:1426
+#: TextTool.cpp:1437
 msgctxt "(qtundo-format)"
 msgid "Adjust Row Height"
 msgstr "Axustar o alto das filas"
 
-#: TextTool.cpp:2173
+#: TextTool.cpp:2184
 msgid "Table"
 msgstr "Táboa"
 
-#: TextTool.cpp:2498 TextTool.cpp:2503
+#: TextTool.cpp:2530 TextTool.cpp:2535
 msgid "Autocorrection"
 msgstr "Autocorreción"
 
-#: TextTool.cpp:2498
+#: TextTool.cpp:2530
 msgid "Key Press"
 msgstr "Presión de Tecla"
 
-#: TextTool.cpp:2779
+#: TextTool.cpp:2811
 #, kde-format
 msgid ""
 "This link points to the program or script '%1'.\n"
@@ -2441,7 +2476,7 @@ msgstr ""
 "Hai programas maliciosos que poden danar o ordenador. Desexa realmente "
 "executar este programa?"
 
-#: TextTool.cpp:2784
+#: TextTool.cpp:2816
 msgid "Open Link?"
 msgstr "Abrir enlace?"
 
