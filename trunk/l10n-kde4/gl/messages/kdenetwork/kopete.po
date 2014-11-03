@@ -17,7 +17,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kopete\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2014-10-29 01:48+0000\n"
+"POT-Creation-Date: 2014-11-03 01:46+0000\n"
 "PO-Revision-Date: 2014-01-19 11:08+0100\n"
 "Last-Translator: Marce Villarino <mvillarino@kde-espana.org>\n"
 "Language-Team: Galician <proxecto@trasno.net>\n"
@@ -2751,13 +2751,13 @@ msgstr ""
 msgid "Meta Contact Merge"
 msgstr "Fusión de metacontactos"
 
-#: kopete/contactlist/contactlistmodel.cpp:514
+#: kopete/contactlist/contactlistmodel.cpp:530
 #, kde-format
 msgctxt "%1 is display name, %2 is status (connected/away/etc.)"
 msgid "%1 (%2)"
 msgstr "%1 (%2)"
 
-#: kopete/contactlist/contactlistmodel.cpp:517
+#: kopete/contactlist/contactlistmodel.cpp:533
 #, kde-format
 msgctxt "%1 is display name, %2 is status and %3 is status message"
 msgid ""
@@ -2767,7 +2767,7 @@ msgstr ""
 "%1 (%2)\n"
 "%3"
 
-#: kopete/contactlist/contactlistmodel.cpp:679
+#: kopete/contactlist/contactlistmodel.cpp:695
 #, kde-format
 msgctxt ""
 "<tr><td>STATUS ICON <b>PROTOCOL NAME</b> (ACCOUNT NAME)</td><td>STATUS "
@@ -2779,7 +2779,7 @@ msgstr ""
 "<tr style='white-space:pre'><td><img src=\"%1\">&nbsp;</td><td><b>%2</"
 "b>&nbsp;(%3)</td><td align=\"right\">%4</td></tr>"
 
-#: kopete/contactlist/contactlistmodel.cpp:690
+#: kopete/contactlist/contactlistmodel.cpp:706
 #, kde-format
 msgctxt "<tr><td><small><i>STATUS MESSAGE</i></small></td></tr>"
 msgid "<tr><td>&nbsp;</td><td colspan='2'><small><i>%1</i></small></td></tr>"
@@ -6890,14 +6890,20 @@ msgstr "Cancelar a análise"
 msgid "Parsing history"
 msgstr "Estase a analizar o historial"
 
-#: plugins/history/historyimport.cpp:299
+#: plugins/history/historyimport.cpp:301
+#: plugins/history2/history2import.cpp:360
+#, kde-format
+msgid "WARNING: There is no equivalent for protocol %1 in kopete.\n"
+msgstr "Aviso: en Kopete non existe ningún equivalente ao protocolo «%1».\n"
+
+#: plugins/history/historyimport.cpp:319
 #: plugins/history2/history2import.cpp:387
 #, kde-format
 msgid "WARNING: Cannot find matching account for %1 (%2).\n"
 msgstr ""
 "ADVERTENCIA: Non foi posíbel atopar unha conta que cadre con %1 (%2).\n"
 
-#: plugins/history/historyimport.cpp:311
+#: plugins/history/historyimport.cpp:331
 #: plugins/history2/history2import.cpp:399
 #, kde-format
 msgid ""
@@ -6907,22 +6913,13 @@ msgstr ""
 "ADVERTENCIA: Non foi posíbel atopar %1 (%2) na lista de contactos. Os "
 "rexistros que se atoparon non se han de importar.\n"
 
-#: plugins/history/historyimport.cpp:326
+#: plugins/history/historyimport.cpp:346
 #: plugins/history2/history2import.cpp:413
 #, kde-format
 msgid "WARNING: Cannot open file %1. Skipping.\n"
 msgstr "ADVERTENCIA: Non foi posíbel abrir o ficheiro %1. Ignórase.\n"
 
-#: plugins/history/historyimport.cpp:375
-msgid "Cannot Map Nickname to Account"
-msgstr "Non é posíbel asociar o alcume coa conta."
-
-#: plugins/history/historyimport.cpp:376
-#, kde-format
-msgid "Did you use \"%1\" as nickname in history?"
-msgstr "Empregou «%1» como alcume no historial?"
-
-#: plugins/history/historyimport.cpp:423
+#: plugins/history/historyimport.cpp:411
 #: plugins/history2/history2import.cpp:478
 #, kde-format
 msgid ""
@@ -6933,14 +6930,37 @@ msgstr ""
 "manualmente o ficheiro que a contén (un exemplo de formato de data "
 "recoñecido sería «%2»).\n"
 
-#: plugins/history/historyimport.cpp:546
+#: plugins/history/historyimport.cpp:511
+#: plugins/history2/history2import.cpp:573
+#, kde-format
+msgid "INFORMATION: Guessed %1 to be one of your nicks.\n"
+msgstr "Información: supúxose que «%1» é un dos alcumes que usa vostede.\n"
+
+#: plugins/history/historyimport.cpp:513
+#: plugins/history2/history2import.cpp:575
+#, kde-format
+msgid "INFORMATION: Guessed %1 to be one of your buddys nicks.\n"
+msgstr "Información: supúxose que «%1» é un dos alcumes dos seus contactos.\n"
+
+#: plugins/history/historyimport.cpp:530
+#: plugins/history2/history2import.cpp:589
+msgid "Cannot map Nickname to Account"
+msgstr "Non é posíbel asociar o alcume coa conta"
+
+#: plugins/history/historyimport.cpp:531
+#: plugins/history2/history2import.cpp:590
+#, kde-format
+msgid "Did you ever use \"%1\" as nickname in your history?"
+msgstr "Empregou algunha vez «%1» como alcume no seu historial?"
+
+#: plugins/history/historyimport.cpp:612
 #: plugins/history2/history2import.cpp:670
 #, kde-format
 msgid "WARNING: XML parser error in %1 at line %2, character %3: %4"
 msgstr ""
 "ADVERTENCIA: O analizador XML deu un erro en %1 na liña %2, carácter %3: %4"
 
-#: plugins/history/historyimport.cpp:549
+#: plugins/history/historyimport.cpp:615
 #: plugins/history2/history2import.cpp:673
 #, kde-format
 msgid "\t%1"
@@ -7100,30 +7120,6 @@ msgstr "Obter o historial desde &Kopete…"
 #: plugins/history2/history2import.cpp:272
 msgid "Parsing history from kopete ..."
 msgstr "Estase a interpretar o historial de Kopete…"
-
-#: plugins/history2/history2import.cpp:360
-#, kde-format
-msgid "WARNING: There is no equivalent for protocol %1 in kopete.\n"
-msgstr "Aviso: en Kopete non existe ningún equivalente ao protocolo «%1».\n"
-
-#: plugins/history2/history2import.cpp:573
-#, kde-format
-msgid "INFORMATION: Guessed %1 to be one of your nicks.\n"
-msgstr "Información: supúxose que «%1» é un dos alcumes que usa vostede.\n"
-
-#: plugins/history2/history2import.cpp:575
-#, kde-format
-msgid "INFORMATION: Guessed %1 to be one of your buddys nicks.\n"
-msgstr "Información: supúxose que «%1» é un dos alcumes dos seus contactos.\n"
-
-#: plugins/history2/history2import.cpp:589
-msgid "Cannot map Nickname to Account"
-msgstr "Non é posíbel asociar o alcume coa conta"
-
-#: plugins/history2/history2import.cpp:590
-#, kde-format
-msgid "Did you ever use \"%1\" as nickname in your history?"
-msgstr "Empregou algunha vez «%1» como alcume no seu historial?"
 
 #: plugins/history2/history2plugin.cpp:47
 msgid "History2"
@@ -21458,6 +21454,12 @@ msgstr "Adicional 4"
 #: protocols/yahoo/yahooverifyaccount.cpp:44
 msgid "Account Verification - Yahoo"
 msgstr "Verificación da conta - Yahoo"
+
+#~ msgid "Cannot Map Nickname to Account"
+#~ msgstr "Non é posíbel asociar o alcume coa conta."
+
+#~ msgid "Did you use \"%1\" as nickname in history?"
+#~ msgstr "Empregou «%1» como alcume no historial?"
 
 #~ msgid "Use old inline PGP format for signed and encrypted messages"
 #~ msgstr "Empregar o vello formato en liña PGP para asinar mensaxes cifradas."
