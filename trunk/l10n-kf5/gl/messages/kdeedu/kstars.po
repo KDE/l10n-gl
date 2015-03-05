@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kstars\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2015-03-03 13:21+0000\n"
+"POT-Creation-Date: 2015-03-05 09:28+0000\n"
 "PO-Revision-Date: 2014-01-14 23:23+0100\n"
 "Last-Translator: Marce Villarino <mvillarino@kde-espana.org>\n"
 "Language-Team: Galician <proxecto@trasno.net>\n"
@@ -304,7 +304,7 @@ msgstr "Non foi posíbel abrir o ficheiro «fov.dat»."
 msgid "KStars Exported Sky Image"
 msgstr "Imaxe do ceo exportada polo KStars"
 
-#: auxiliary/imageexporter.cpp:84 main.cpp:104
+#: auxiliary/imageexporter.cpp:84 main.cpp:105
 #: printing/foveditordialog.cpp:163
 #, kde-format
 msgid "Could not parse image format of %1; assuming PNG."
@@ -348,9 +348,8 @@ msgstr ""
 "Inverter as cores da imaxe. Ás veces isto é útil para realzar o contraste. "
 "Só afecta como se mostra, non como se grava."
 
-#. i18n: ectx: property (text), widget (QPushButton, saveB)
 #. i18n: ectx: property (text), widget (QPushButton, SaveImage)
-#: auxiliary/imageviewer.cpp:133 ekos/mount.ui:222 tools/observinglist.ui:580
+#: auxiliary/imageviewer.cpp:133 tools/observinglist.ui:580
 msgid "Save"
 msgstr "Gardar"
 
@@ -2931,7 +2930,7 @@ msgstr[0] "O solucionador interrompeuse despois de %1 segundo."
 msgstr[1] "O solucionador interrompeuse despois de %1 segundos"
 
 #: ekos/align.cpp:742 ekos/capture.cpp:1226 ekos/ekosmanager.cpp:1674
-#: ekos/focus.cpp:1501 ekos/guide.cpp:449 ekos/mount.cpp:211
+#: ekos/focus.cpp:1501 ekos/guide.cpp:449 ekos/mount.cpp:298
 #, kde-format
 msgctxt "log entry; %1 is the date, %2 is the text"
 msgid "%1 %2"
@@ -4262,7 +4261,7 @@ msgstr "Detivéronse os servizos de INDI"
 msgid "Remote devices established. Please connect devices."
 msgstr "Establecéronse os servizos remotos. Conecte os dispositivos."
 
-#: ekos/ekosmanager.cpp:1270 ekos/ekosmanager.cpp:1317 indi/indistd.cpp:409
+#: ekos/ekosmanager.cpp:1270 ekos/ekosmanager.cpp:1317 indi/indistd.cpp:414
 #, kde-format
 msgid "%1 is online."
 msgstr "%1 está conectado."
@@ -5253,35 +5252,48 @@ msgstr "retícula-Ángulo"
 msgid "Auto mode"
 msgstr "Modo automático"
 
-#: ekos/mount.cpp:113 ekos/mount.cpp:277
+#: ekos/mount.cpp:134 ekos/mount.cpp:375
 #, kde-format
 msgid "%1 guide scope"
 msgstr ""
 
-#: ekos/mount.cpp:186
+#: ekos/mount.cpp:228
+#, kde-format
+msgid ""
+"Telescope altitude is below minimum altitude limit of %1, aborting motion."
+msgstr ""
+
+#: ekos/mount.cpp:239
+#, kde-format
+msgid ""
+"Telescope altitude is above maximum altitude limit of %1, aborting motion."
+msgstr ""
+
+#: ekos/mount.cpp:264
 msgid ""
 "Error syncing telescope info. Please fill telescope aperture and focal "
 "length."
 msgstr ""
 
-#: ekos/mount.cpp:188
+#: ekos/mount.cpp:266
 msgid ""
 "Error syncing telescope info. Check INDI control panel for more details."
 msgstr ""
 
-#: ekos/mount.cpp:198
+#: ekos/mount.cpp:276
 #, fuzzy
 #| msgid "Telescope Wizard completed successfully."
 msgid "Telescope info updated successfully."
 msgstr "O Asistente para Telescopios rematou satisfactoriamente."
 
-#: ekos/mount.cpp:300
-#, fuzzy
-#| msgid "Failed to set binning."
-msgid "Saving telescope information..."
-msgstr "Foi imposíbel configurar a cuantización tipo binning"
+#: ekos/mount.cpp:309
+#, fuzzy, kde-format
+#| msgid "%1"
+msgctxt "Message shown in Ekos Mount module"
+msgid "%1"
+msgstr "%1"
 
-#: ekos/mount.cpp:304
+#: ekos/mount.cpp:402
 #, fuzzy
 #| msgid "Failed to set binning."
 msgid "Failed to save telescope information."
@@ -5353,6 +5365,13 @@ msgstr "Gravar o telescopio"
 msgid "Save telescope information in configuration file"
 msgstr "Empregar o ficheiro de configuración indicado"
 
+#. i18n: ectx: property (text), widget (QPushButton, saveB)
+#: ekos/mount.ui:222
+#, fuzzy
+#| msgid "Save Telescope"
+msgid "Save Telescope Info"
+msgstr "Gravar o telescopio"
+
 #. i18n: ectx: property (text), widget (QPushButton, parkB)
 #: ekos/mount.ui:232
 #, fuzzy
@@ -5361,13 +5380,71 @@ msgstr "Empregar o ficheiro de configuración indicado"
 msgid "Park"
 msgstr "Parque"
 
+#. i18n: ectx: property (text), widget (QPushButton, unparkB)
+#: ekos/mount.ui:242
+#, fuzzy
+#| msgctxt "string from libindi, used in the config dialog"
+#| msgid "Park"
+msgid "UnPark"
+msgstr "Parque"
+
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_4)
-#: ekos/mount.ui:264
+#: ekos/mount.ui:281
 #, fuzzy
 #| msgctxt "string from libindi, used in the config dialog"
 #| msgid "Motion"
 msgid "Motion"
 msgstr "Movemento"
+
+#. i18n: ectx: property (toolTip), widget (QComboBox, slewSpeedCombo)
+#: ekos/mount.ui:421
+#, fuzzy
+#| msgid "Adjust time step"
+msgid "Slew speed"
+msgstr "Axustar o paso de tempo"
+
+#. i18n: ectx: property (title), widget (QGroupBox, LimitGroup)
+#: ekos/mount.ui:430 tools/scriptbuilder.cpp:653
+msgid "Limits"
+msgstr "Límites"
+
+#. i18n: ectx: property (toolTip), widget (QLabel, minAltLabel)
+#. i18n: ectx: whatsthis, entry (MinimumAltLimit), group (Mount)
+#: ekos/mount.ui:441 kstars.kcfg:1382
+msgid ""
+"Minimum telescope altitude limit. If the telescope is below this limit, it "
+"will be commanded to stop."
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QLabel, minAltLabel)
+#: ekos/mount.ui:444
+#, fuzzy
+#| msgctxt "string from libindi, used in the config dialog"
+#| msgid "min Alt"
+msgid "Min. Alt:"
+msgstr "Altitude mínima"
+
+#. i18n: ectx: property (toolTip), widget (QLabel, maxAltLabel)
+#: ekos/mount.ui:467
+msgid ""
+"Maximum telescope altitude limit. If the telescope is above than this limit, "
+"it will be commanded to stop."
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QLabel, maxAltLabel)
+#: ekos/mount.ui:470
+#, fuzzy
+#| msgctxt "string from libindi, used in the config dialog"
+#| msgid "max Alt"
+msgid "Max. Alt:"
+msgstr "Altitude máxima"
+
+#. i18n: ectx: property (text), widget (QCheckBox, enableLimitsCheck)
+#: ekos/mount.ui:492
+#, fuzzy
+#| msgid "Enable directions"
+msgid "Enable Limits"
+msgstr "Activar as direccións"
 
 #: ekos/offlineastrometryparser.cpp:63
 msgid ""
@@ -6519,10 +6596,32 @@ msgstr ""
 msgid "Upload"
 msgstr "Enviar"
 
-#: indi/indistd.cpp:353
+#: indi/indistd.cpp:358
 #, kde-format
 msgid "Data file saved to %1"
 msgstr "O ficheiro de datos gardouse en %1"
+
+#: indi/inditelescope.cpp:371
+#, kde-format
+msgid "Requested altitude %1 is outside the specificed boundary (%2,%3)."
+msgstr ""
+
+#: indi/inditelescope.cpp:372 indi/inditelescope.cpp:379
+#, fuzzy
+#| msgid "Telescope port:"
+msgid "Telescope Motion"
+msgstr "Porto do telescopio:"
+
+#: indi/inditelescope.cpp:379
+#, fuzzy
+#| msgid ""
+#| "The requested position is below the horizon.\n"
+#| "Would you like to go there anyway?"
+msgid ""
+"Requested altitude is below the horizon. Are you sure you want to proceed?"
+msgstr ""
+"A posición pedida está abaixo do horizonte.\n"
+"Queres aínda así apuntar cara ela?"
 
 #: indi/opsindi.cpp:58
 #, fuzzy
@@ -10152,74 +10251,96 @@ msgid ""
 "online service."
 msgstr ""
 
-#. i18n: ectx: label, entry (GuideDeviation), group (Capture)
+#. i18n: ectx: label, entry (MinimumAltLimit), group (Mount)
 #: kstars.kcfg:1381
+msgid "Default minimum mount altitude limit"
+msgstr ""
+
+#. i18n: ectx: label, entry (MaximumAltLimit), group (Mount)
+#: kstars.kcfg:1386
+msgid "Default maximum mount altitude limit."
+msgstr ""
+
+#. i18n: ectx: whatsthis, entry (MaximumAltLimit), group (Mount)
+#: kstars.kcfg:1387
+msgid ""
+"Maximum telescope altitude limit. If the telescope is above this limit, it "
+"will be commanded to stop."
+msgstr ""
+
+#. i18n: ectx: label, entry (EnableAltitudeLimits), group (Mount)
+#: kstars.kcfg:1391
+msgid "Enable mount altitude limits."
+msgstr ""
+
+#. i18n: ectx: label, entry (GuideDeviation), group (Capture)
+#: kstars.kcfg:1397
 msgid "Default maximum permittable guide deviation"
 msgstr ""
 
 #. i18n: ectx: whatsthis, entry (GuideDeviation), group (Capture)
-#: kstars.kcfg:1382
+#: kstars.kcfg:1398
 msgid ""
 "If guide deviation exceeds this limit, the exposure will be automatically "
 "aborted and only resumed when the deviation is within this limit."
 msgstr ""
 
 #. i18n: ectx: label, entry (HFRDeviation), group (Capture)
-#: kstars.kcfg:1386
+#: kstars.kcfg:1402
 msgid "Default maximum permittable HFR deviation"
 msgstr ""
 
 #. i18n: ectx: whatsthis, entry (HFRDeviation), group (Capture)
-#: kstars.kcfg:1387
+#: kstars.kcfg:1403
 msgid ""
 "If HFR deviation exceeds this limit, the autofocus routine will be "
 "automatically started."
 msgstr ""
 
 #. i18n: ectx: label, entry (EnforceGuideDeviation), group (Capture)
-#: kstars.kcfg:1391
+#: kstars.kcfg:1407
 msgid "Enforce guiding deviation limit."
 msgstr ""
 
 #. i18n: ectx: label, entry (EnforceAutofocus), group (Capture)
-#: kstars.kcfg:1395
+#: kstars.kcfg:1411
 msgid "Enforce Autofocus HFR limit."
 msgstr ""
 
 #. i18n: ectx: label, entry (EnforceTemperatureControl), group (Capture)
-#: kstars.kcfg:1399
+#: kstars.kcfg:1415
 msgid "Enforce temperature settings when taking an image"
 msgstr ""
 
 #. i18n: ectx: label, entry (AutoMeridianHours), group (Capture)
-#: kstars.kcfg:1403
+#: kstars.kcfg:1419
 msgid "Default hour angle to perform meridian flip"
 msgstr ""
 
 #. i18n: ectx: whatsthis, entry (AutoMeridianHours), group (Capture)
-#: kstars.kcfg:1404
+#: kstars.kcfg:1420
 msgid ""
 "If the target hour angle exceeds this value, Ekos will command a meridian "
 "flip and if successful it will resume guiding and capture operations."
 msgstr ""
 
 #. i18n: ectx: label, entry (AutoMeridianFlip), group (Capture)
-#: kstars.kcfg:1407
+#: kstars.kcfg:1423
 msgid "Flips the mount when reaching the meridian, if supported."
 msgstr ""
 
 #. i18n: ectx: label, entry (AutoParkTelescope), group (Capture)
-#: kstars.kcfg:1411
+#: kstars.kcfg:1427
 msgid "Parks the telescope when the sequence jobs are complete, if supported."
 msgstr ""
 
 #. i18n: ectx: label, entry (FocusTicks), group (Focus)
-#: kstars.kcfg:1417
+#: kstars.kcfg:1433
 msgid "Default Focuser step ticks"
 msgstr "Tics de paso do focalizador predeterminado"
 
 #. i18n: ectx: whatsthis, entry (FocusTicks), group (Focus)
-#: kstars.kcfg:1418
+#: kstars.kcfg:1434
 msgid ""
 "Step size of the absolute focuser. The step size TICKS should be adjusted so "
 "that when the focuser moves TICKS steps, the difference in HFR is more than "
@@ -10231,12 +10352,12 @@ msgstr ""
 "óptimo."
 
 #. i18n: ectx: label, entry (FocusTolerance), group (Focus)
-#: kstars.kcfg:1422
+#: kstars.kcfg:1438
 msgid "Default Focuser tolerance value"
 msgstr "Valor predeterminado da tolerancia do focalizador"
 
 #. i18n: ectx: whatsthis, entry (FocusTolerance), group (Focus)
-#: kstars.kcfg:1423
+#: kstars.kcfg:1439
 msgid ""
 "The tolerance specifies the percentage difference between the current "
 "focusing position and the minimum obtained during the focusing run. "
@@ -10248,22 +10369,22 @@ msgstr ""
 "para evitar que o algarismo de enfoque oscile para diante e para atrás."
 
 #. i18n: ectx: label, entry (FocusMaxTravel), group (Focus)
-#: kstars.kcfg:1427
+#: kstars.kcfg:1443
 msgid "Maximum Focus Travel Distance"
 msgstr "Distancia máxima de viaxe do foco"
 
 #. i18n: ectx: whatsthis, entry (FocusMaxTravel), group (Focus)
-#: kstars.kcfg:1428
+#: kstars.kcfg:1444
 msgid "Set the maximum travel distance of an absolute focuser."
 msgstr "Define a distancia máxima viaxada por un focalizador absoluto."
 
 #. i18n: ectx: label, entry (FocusExposure), group (Focus)
-#: kstars.kcfg:1432
+#: kstars.kcfg:1448
 msgid "Default Focuser exposure value"
 msgstr "Valor predeterminado de exposición do focalizador"
 
 #. i18n: ectx: whatsthis, entry (FocusExposure), group (Focus)
-#: kstars.kcfg:1433
+#: kstars.kcfg:1449
 msgid ""
 "Specifies exposure value of CCD when performing focusing. Lower this value "
 "to avoid saturation of bright stars which adversely affects HFR measurement. "
@@ -10274,101 +10395,101 @@ msgstr ""
 "de HFR. Aumenta o valor se non se detecta ningunha estrela."
 
 #. i18n: ectx: label, entry (FocusBoxSize), group (Focus)
-#: kstars.kcfg:1437
+#: kstars.kcfg:1453
 msgid "Default Focuser star selection box size"
 msgstr "Tamaño da caixa de escolla de estrela do focalizador predeterminado"
 
 #. i18n: ectx: whatsthis, entry (FocusBoxSize), group (Focus)
-#: kstars.kcfg:1438
+#: kstars.kcfg:1454
 msgid "Set box size to select a focus star."
 msgstr "Define o tamaño da caixa para escoller unha estrela para enfocar."
 
 #. i18n: ectx: label, entry (FocusXBin), group (Focus)
-#: kstars.kcfg:1442
+#: kstars.kcfg:1458
 msgid "Default CCD X binning in focus mode"
 msgstr "Binning en X predeterminado do CCD no modo focalizar "
 
 #. i18n: ectx: whatsthis, entry (FocusXBin), group (Focus)
-#: kstars.kcfg:1443
+#: kstars.kcfg:1459
 msgid "Set horizontal binning of CCD camera while in focus mode."
 msgstr ""
 "Define o binning horizontal da cámara CCD cando se está no modo de focalizar."
 
 #. i18n: ectx: label, entry (FocusYBin), group (Focus)
-#: kstars.kcfg:1447
+#: kstars.kcfg:1463
 msgid "Default CCD Y binning in focus mode"
 msgstr "Binning predeterminado do CCD en Y no modo focalizar"
 
 #. i18n: ectx: whatsthis, entry (FocusYBin), group (Focus)
-#: kstars.kcfg:1448
+#: kstars.kcfg:1464
 msgid "Set vertical binning of CCD camera while in focus mode."
 msgstr ""
 "Define o binning vertical da cámara CCD cando se está no modo de focalizar."
 
 #. i18n: ectx: label, entry (FocusSubFrame), group (Focus)
-#: kstars.kcfg:1452
+#: kstars.kcfg:1468
 msgid "Subframe the focus star during the autofocus procedure."
 msgstr "Toma un subfotograma da estrela focalizada durante a autofocalización."
 
 #. i18n: ectx: label, entry (AutoSelectStar), group (Focus)
-#: kstars.kcfg:1456
+#: kstars.kcfg:1472
 msgid "Automatically select a star to focus."
 msgstr "Escoller automaticamente unha estrela para enfocala."
 
 #. i18n: ectx: label, entry (SuspendGuiding), group (Focus)
-#: kstars.kcfg:1460
+#: kstars.kcfg:1476
 #, fuzzy
 #| msgid "Autofocus in progress..."
 msgid "Suspend guiding while autofocus in progress."
 msgstr "Enfoque automático en proceso..."
 
 #. i18n: ectx: label, entry (LockFocusFilter), group (Focus)
-#: kstars.kcfg:1464
+#: kstars.kcfg:1480
 msgid ""
 "Use specified filter when performing focus regardless of current filter "
 "settings."
 msgstr ""
 
 #. i18n: ectx: label, entry (AlignExposure), group (Align)
-#: kstars.kcfg:1470
+#: kstars.kcfg:1486
 msgid "Default alignment exposure value"
 msgstr "Valor predeterminado de exposición do aliñamento"
 
 #. i18n: ectx: whatsthis, entry (AlignExposure), group (Align)
-#: kstars.kcfg:1471
+#: kstars.kcfg:1487
 msgid ""
 "Specifies exposure value of CCD in seconds when performing plate solving."
 msgstr "Indica a exposición do CCD en segundos, cando se solucionan fotos."
 
 #. i18n: ectx: label, entry (SolverXBin), group (Align)
-#: kstars.kcfg:1475
+#: kstars.kcfg:1491
 msgid "Default CCD X binning while in alignment mode"
 msgstr "Binning do CCD en X predeterminado no modo aliñar"
 
 #. i18n: ectx: whatsthis, entry (SolverXBin), group (Align)
-#: kstars.kcfg:1476
+#: kstars.kcfg:1492
 msgid "Set horizontal binning of CCD camera while in alignment mode."
 msgstr ""
 "Define o binning horizontal da cámara CCD cando se está no modo de aliñar."
 
 #. i18n: ectx: label, entry (SolverYBin), group (Align)
-#: kstars.kcfg:1480
+#: kstars.kcfg:1496
 msgid "Default CCD Y binning while in alignment mode"
 msgstr "Binning predeterminado en Y do CCD no modo aliñar"
 
 #. i18n: ectx: whatsthis, entry (SolverYBin), group (Align)
-#: kstars.kcfg:1481
+#: kstars.kcfg:1497
 msgid "Set vertical binning of CCD camera while in alignment mode."
 msgstr ""
 "Define o binning vertical da cámara CCD cando se está no modo de aliñar."
 
 #. i18n: ectx: label, entry (SolverUpdateCoords), group (Align)
-#: kstars.kcfg:1485
+#: kstars.kcfg:1501
 msgid "Update Solver RA and DEC search coordinates."
 msgstr "Actualizar as coordenadas de busca da AR e DEC do resolvedor."
 
 #. i18n: ectx: whatsthis, entry (SolverUpdateCoords), group (Align)
-#: kstars.kcfg:1486
+#: kstars.kcfg:1502
 msgid ""
 "Automatically update the solver RA and Declination coordinates after "
 "telescope slew is completed."
@@ -10377,103 +10498,103 @@ msgstr ""
 "tras completar o desprazamento do telescopio."
 
 #. i18n: ectx: label, entry (SolverPreview), group (Align)
-#: kstars.kcfg:1490
+#: kstars.kcfg:1506
 #, fuzzy
 #| msgid "Display in FITS Viewer"
 msgid "Display image in FITS Viewer."
 msgstr "Mostrar no visor de FITS"
 
 #. i18n: ectx: whatsthis, entry (SolverPreview), group (Align)
-#: kstars.kcfg:1491
+#: kstars.kcfg:1507
 msgid ""
 "Display captured image in FITS Viewer before starting the plate solving "
 "process."
 msgstr ""
 
 #. i18n: ectx: label, entry (SolverOnline), group (Align)
-#: kstars.kcfg:1495
+#: kstars.kcfg:1511
 #, fuzzy
 #| msgid "astrometry.net configuration file"
 msgid "Use astrometry.net online solver."
 msgstr "Ficheiro de configuración de astrometry.net"
 
 #. i18n: ectx: label, entry (SolverOptions), group (Align)
-#: kstars.kcfg:1499
+#: kstars.kcfg:1515
 msgid "Options passed to the astrometry solver."
 msgstr ""
 
 #. i18n: ectx: label, entry (SolverOTA), group (Align)
-#: kstars.kcfg:1502
+#: kstars.kcfg:1518
 msgid "Use Off-Axis Guide Telescope for Alignment FOV calculations"
 msgstr ""
 
 #. i18n: ectx: label, entry (SolverGotoOption), group (Align)
-#: kstars.kcfg:1506
+#: kstars.kcfg:1522
 msgid "Action to take if solver if successful (Sync, Slew to Target, or None)"
 msgstr ""
 
 #. i18n: ectx: label, entry (CalibrationPulseDuration), group (Guide)
-#: kstars.kcfg:1512
+#: kstars.kcfg:1528
 msgid ""
 "Pulse duration in milliseconds used for guiding pulses during calibration "
 "stage."
 msgstr ""
 
 #. i18n: ectx: label, entry (UseAutoMode), group (Guide)
-#: kstars.kcfg:1516
+#: kstars.kcfg:1532
 #, fuzzy
 #| msgid "Automatically updates time and date?"
 msgid "Automatically calibrate selected axes."
 msgstr "Queres actualizar automaticamente a data e a hora?"
 
 #. i18n: ectx: label, entry (AutoCalibration), group (Guide)
-#: kstars.kcfg:1520
+#: kstars.kcfg:1536
 #, fuzzy
 #| msgid "Automatically select a star to focus."
 msgid "Automatically select calibration star and perform calibration."
 msgstr "Escoller automaticamente unha estrela para enfocala."
 
 #. i18n: ectx: label, entry (AutoModeIterations), group (Guide)
-#: kstars.kcfg:1524
+#: kstars.kcfg:1540
 msgid "Number of automode iterations for calibration process."
 msgstr ""
 
 #. i18n: ectx: label, entry (UseTwoAxis), group (Guide)
-#: kstars.kcfg:1528
+#: kstars.kcfg:1544
 msgid "Use both axes to perform calibration."
 msgstr ""
 
 #. i18n: ectx: label, entry (UseDarkFrame), group (Guide)
-#: kstars.kcfg:1532
+#: kstars.kcfg:1548
 msgid "Take dark frame for autoguider images."
 msgstr ""
 
 #. i18n: ectx: label, entry (DitherPixels), group (Guide)
-#: kstars.kcfg:1536
+#: kstars.kcfg:1552
 msgid ""
 "How many pixels to move between subsequent exposures under auto dithering "
 "mode."
 msgstr ""
 
 #. i18n: ectx: label, entry (UseDither), group (Guide)
-#: kstars.kcfg:1540
+#: kstars.kcfg:1556
 msgid "Use Auto Dithering when guiding."
 msgstr ""
 
 #. i18n: ectx: label, entry (AOLimit), group (Guide)
-#: kstars.kcfg:1544
+#: kstars.kcfg:1560
 msgid ""
 "The Adaptive Optics unit is utilized if the guiding deviation is less than "
 "this limit in arcseconds. Once exceeded, mechanical guiding is utilized."
 msgstr ""
 
 #. i18n: ectx: label, entry (EnableRAGuide), group (Guide)
-#: kstars.kcfg:1548
+#: kstars.kcfg:1564
 msgid "Enable autoguiding in the RA axis."
 msgstr ""
 
 #. i18n: ectx: label, entry (EnableDECGuide), group (Guide)
-#: kstars.kcfg:1552
+#: kstars.kcfg:1568
 msgid "Enable autoguiding in the DEC axis."
 msgstr ""
 
@@ -47028,7 +47149,7 @@ msgstr ""
 "Algunhas imaxes do KStars son para uso exclusivamente non comercial. "
 "Consulta o ficheiro «README.images» para máis información."
 
-#: main.cpp:47 main.cpp:89
+#: main.cpp:47 main.cpp:90
 msgid "KStars"
 msgstr "KStars"
 
@@ -47164,57 +47285,68 @@ msgstr "Akarsh Simha"
 msgid "Improvements to observation plan execution, star hopper etc."
 msgstr ""
 
-#: main.cpp:79
+#: main.cpp:73
+#, fuzzy
+#| msgctxt "City in Newfoundland Canada"
+#| msgid "Daniel's Harbour"
+msgid "Daniel Holler"
+msgstr "Daniel's Harbour"
+
+#: main.cpp:73
+msgid "Extensive testing and suggestions for Ekos/INDI."
+msgstr ""
+
+#: main.cpp:80
 msgid "Dump sky image to file"
 msgstr "Envorcar a imaxe do ceo nun ficheiro"
 
-#: main.cpp:80
+#: main.cpp:81
 msgid "Script to execute"
 msgstr "Script para executar"
 
-#: main.cpp:81
+#: main.cpp:82
 msgid "Width of sky image"
 msgstr "Largo da imaxe do ceo"
 
-#: main.cpp:82
+#: main.cpp:83
 msgid "Height of sky image"
 msgstr "Altura da imaxe do ceo"
 
-#: main.cpp:83
+#: main.cpp:84
 msgid "Filename for sky image"
 msgstr "Nome do ficheiro da imaxe do ceo"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, InputComboBatch)
-#: main.cpp:84 tools/modcalcjd.ui:120
+#: main.cpp:85 tools/modcalcjd.ui:120
 msgid "Date and time"
 msgstr "Data e hora"
 
-#: main.cpp:85
+#: main.cpp:86
 msgid "Start with clock paused"
 msgstr "Comezar co reloxo parado"
 
-#: main.cpp:93
+#: main.cpp:94
 msgid "Dumping sky image"
 msgstr "Estase a gardar a imaxe do ceo"
 
-#: main.cpp:147 main.cpp:201
+#: main.cpp:148 main.cpp:202
 msgid "Using CPU date/time instead."
 msgstr "Utilízase no canto a data/hora da CPU."
 
-#: main.cpp:173
+#: main.cpp:174
 msgid "Script executed."
 msgstr "Executouse o script."
 
-#: main.cpp:175
+#: main.cpp:176
 msgid "Could not execute script."
 msgstr "Non foi posíbel executar o script."
 
-#: main.cpp:184
+#: main.cpp:185
 #, kde-format
 msgid "Unable to save image: %1 "
 msgstr "Non foi posíbel gardar a imaxe: %1"
 
-#: main.cpp:185
+#: main.cpp:186
 #, kde-format
 msgid "Saved to file: %1"
 msgstr "Gardada no ficheiro: %1"
@@ -54261,10 +54393,6 @@ msgstr ""
 "Queres esvaer o rastro dos planetas á cor do ceo? (caso contrario é "
 "constante)"
 
-#: tools/scriptbuilder.cpp:653
-msgid "Limits"
-msgstr "Límites"
-
 #: tools/scriptbuilder.cpp:674
 msgid "magnitude of faintest star labeled on map"
 msgstr "a magnitude da estrela menos visíbel con nome no mapa"
@@ -55877,6 +56005,11 @@ msgid "Set the color for the background."
 msgstr "Indicar a cor do fondo."
 
 #, fuzzy
+#~| msgid "Failed to set binning."
+#~ msgid "Saving telescope information..."
+#~ msgstr "Foi imposíbel configurar a cuantización tipo binning"
+
+#, fuzzy
 #~| msgid "Telescope Coordinates"
 #~ msgid "Telescope information saved."
 #~ msgstr "Coordenadas do telescopio"
@@ -56073,11 +56206,6 @@ msgstr "Indicar a cor do fondo."
 
 #~ msgid "FITS image is saturated and cannot be displayed."
 #~ msgstr "A imaxe do FITS está saturada e non se pode mostrar."
-
-#, fuzzy
-#~| msgid "Adjust time step"
-#~ msgid "Adjust slew speed"
-#~ msgstr "Axustar o paso de tempo"
 
 #~ msgid "Active filter slot"
 #~ msgstr "Rañura de filtro activo"
