@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: krita\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2015-04-17 02:52+0000\n"
+"POT-Creation-Date: 2015-04-19 01:58+0000\n"
 "PO-Revision-Date: 2014-01-19 09:08+0100\n"
 "Last-Translator: Marce Villarino <mvillarino@kde-espana.org>\n"
 "Language-Team: Galician <proxecto@trasno.net>\n"
@@ -84,17 +84,17 @@ msgstr "Mantedor"
 #: plugins/tools/defaulttools/kis_tool_colorpicker.cc:243
 #: plugins/tools/defaulttools/kis_tool_colorpicker.cc:284
 #: plugins/tools/tool_transform2/kis_free_transform_strategy_gsl_helpers.cpp:338
-#: ui/dialogs/kis_dlg_preferences.cc:198 ui/input/kis_input_manager.cpp:545
+#: ui/dialogs/kis_dlg_preferences.cc:205 ui/input/kis_input_manager.cpp:545
 #: ui/kis_filter_manager.cc:217 ui/kis_filter_manager.cc:226
-#: ui/kis_layer_manager.cc:642 ui/kis_layer_manager.cc:893
+#: ui/kis_layer_manager.cc:658 ui/kis_layer_manager.cc:909
 #: ui/KisApplication.cpp:356 ui/KisApplication.cpp:361
 #: ui/KisApplication.cpp:391 ui/KisDocument.cpp:746 ui/KisDocument.cpp:748
 #: ui/KisDocument.cpp:1214 ui/KisDocument.cpp:1258 ui/KisDocument.cpp:1398
 #: ui/KisDocument.cpp:2028 ui/KisDocument.cpp:2031
 #: ui/KisImportExportManager.cpp:230 ui/KisImportExportManager.cpp:241
 #: ui/KisImportExportManager.cpp:531 ui/KisMainWindow.cpp:658
-#: ui/KisMainWindow.cpp:709 ui/KisMainWindow.cpp:723 ui/KisMainWindow.cpp:1371
-#: ui/KisMainWindow.cpp:1554 ui/KisMainWindow.cpp:1566
+#: ui/KisMainWindow.cpp:709 ui/KisMainWindow.cpp:723 ui/KisMainWindow.cpp:1376
+#: ui/KisMainWindow.cpp:1559 ui/KisMainWindow.cpp:1571
 #: ui/KisTemplateCreateDia.cpp:324 ui/KisView.cpp:792
 #: ui/opengl/kis_opengl.cpp:91 ui/opengl/kis_opengl_canvas2.cpp:504
 #: ui/thememanager.cpp:271 ui/widgets/kis_custom_image_widget.cc:245
@@ -247,7 +247,7 @@ msgstr "Converter"
 
 #. i18n: ectx: property (text), widget (QPushButton, bnSelect)
 #. i18n: ectx: Menu (Select)
-#: gemini/kritagemini.rc:126 krita.rc:193
+#: gemini/kritagemini.rc:126 krita.rc:194
 #: plugins/extensions/colorrange/wdg_colorrange.ui:131
 #: plugins/extensions/imagesize/imagesize.rc:12
 #: plugins/extensions/modify_selection/modify_selection.rc:4
@@ -256,12 +256,12 @@ msgid "&Select"
 msgstr "&Escoller"
 
 #. i18n: ectx: Menu (Filter)
-#: gemini/kritagemini.rc:139 krita.rc:218 sketch/kritasketch.rc:139
+#: gemini/kritagemini.rc:139 krita.rc:219 sketch/kritasketch.rc:139
 msgid "Filte&r"
 msgstr "Filtra&r"
 
 #. i18n: ectx: Menu (tools)
-#: gemini/kritagemini.rc:156 krita.rc:238
+#: gemini/kritagemini.rc:156 krita.rc:239
 #: plugins/extensions/bigbrother/bigbrother.rc:4 sketch/kritasketch.rc:156
 msgid "&Tools"
 msgstr "&Ferramentas"
@@ -275,7 +275,7 @@ msgid "Settings"
 msgstr "Configuracións"
 
 #. i18n: ectx: ToolBar (BrushesAndStuff)
-#: gemini/kritagemini.rc:172 krita.rc:294 sketch/kritasketch.rc:172
+#: gemini/kritagemini.rc:172 krita.rc:295 sketch/kritasketch.rc:172
 msgid "Brushes and Stuff"
 msgstr "Pinceis e Outras Cousas"
 
@@ -1701,7 +1701,7 @@ msgctxt "(qtundo-format)"
 msgid "Reselect"
 msgstr "Volver a escoller"
 
-#: image/commands_new/kis_image_resize_command.cpp:28 image/kis_image.cc:423
+#: image/commands_new/kis_image_resize_command.cpp:28 image/kis_image.cc:425
 msgctxt "(qtundo-format)"
 msgid "Resize Image"
 msgstr "Redimensionar a imaxe"
@@ -1716,6 +1716,13 @@ msgstr "Definir a resolución da imaxe"
 msgctxt "(qtundo-format)"
 msgid "Move"
 msgstr "Mover"
+
+#: image/commands_new/kis_set_layer_style_command.cpp:26
+#, fuzzy
+#| msgid "Convert Layer Type"
+msgctxt "(qtundo-format)"
+msgid "Change Layer Style"
+msgstr "Converter o tipo de capa"
 
 #: image/filter/kis_filter.cc:35
 msgid "Adjust"
@@ -1738,7 +1745,8 @@ msgstr "Cores"
 msgid "Edge Detection"
 msgstr "Detección de Contornos"
 
-#: image/filter/kis_filter.cc:60
+#. i18n: ectx: property (text), item, widget (QComboBox, cmbStyle)
+#: image/filter/kis_filter.cc:60 ui/layerstyles/wdgBevelAndEmboss.ui:59
 msgid "Emboss"
 msgstr "Moldear"
 
@@ -1800,11 +1808,11 @@ msgstr "Suave"
 msgid "Gaussian"
 msgstr "Desenfoque Gausiano"
 
-#: image/kis_base_node.cpp:141 ui/kis_node_model.cpp:467
+#: image/kis_base_node.cpp:139 ui/kis_node_model.cpp:467
 msgid "Visible"
 msgstr "Visíbel"
 
-#: image/kis_base_node.cpp:142
+#: image/kis_base_node.cpp:140
 #: plugins/extensions/dockers/channeldocker/channelmodel.cpp:68
 #: ui/kis_node_model.cpp:468
 msgid "Locked"
@@ -1814,12 +1822,12 @@ msgstr "Bloqueado"
 msgid "Copy From"
 msgstr "Copiar de"
 
-#: image/kis_dom_utils.cpp:152
+#: image/kis_dom_utils.cpp:104
 #, kde-format
 msgid "Could not find \"%1\" XML tag in \"%2\""
 msgstr ""
 
-#: image/kis_dom_utils.cpp:171
+#: image/kis_dom_utils.cpp:123
 #, kde-format
 msgid "Error: incorrect type (%2) for value %1. Expected %3"
 msgstr ""
@@ -1881,134 +1889,134 @@ msgstr ""
 msgid "Mitchell"
 msgstr "Mitchell"
 
-#: image/kis_image.cc:324
+#: image/kis_image.cc:326
 msgid "background"
 msgstr "fondo"
 
-#: image/kis_image.cc:327
+#: image/kis_image.cc:329
 #, kde-format
 msgid "Layer %1"
 msgstr "Capa %1"
 
-#: image/kis_image.cc:422
+#: image/kis_image.cc:424
 #, fuzzy
 #| msgid "Crop Image"
 msgctxt "(qtundo-format)"
 msgid "Crop Image"
 msgstr "Cortar a imaxe"
 
-#: image/kis_image.cc:458
+#: image/kis_image.cc:460
 #, fuzzy
 #| msgid "&Group Layer"
 msgctxt "(qtundo-format)"
 msgid "Crop Layer"
 msgstr "&Grupo de capas"
 
-#: image/kis_image.cc:459
+#: image/kis_image.cc:461
 #, fuzzy
 #| msgid "Unsharp Mask"
 msgctxt "(qtundo-format)"
 msgid "Crop Mask"
 msgstr "Máscara de desfocalización"
 
-#: image/kis_image.cc:487
+#: image/kis_image.cc:489
 #, fuzzy
 #| msgid "Scale Image"
 msgctxt "(qtundo-format)"
 msgid "Scale Image"
 msgstr "Escalar a imaxe"
 
-#: image/kis_image.cc:488
+#: image/kis_image.cc:490
 #, fuzzy
 #| msgid "Change Image Resolution"
 msgctxt "(qtundo-format)"
 msgid "Change Image Resolution"
 msgstr "Cambiar a resolución da imaxe"
 
-#: image/kis_image.cc:535
+#: image/kis_image.cc:537
 #, fuzzy
 #| msgid "Scale Layer"
 msgctxt "(qtundo-format)"
 msgid "Scale Layer"
 msgstr "Redimensionar a capa"
 
-#: image/kis_image.cc:623
+#: image/kis_image.cc:625
 #, fuzzy
 #| msgid "Rotate Image"
 msgctxt "(qtundo-format)"
 msgid "Rotate Image"
 msgstr "Rotar a imaxe"
 
-#: image/kis_image.cc:628
+#: image/kis_image.cc:630
 #, fuzzy
 #| msgid "Rotate Layer"
 msgctxt "(qtundo-format)"
 msgid "Rotate Layer"
 msgstr "Rodar a capa"
 
-#: image/kis_image.cc:695
+#: image/kis_image.cc:697
 #, fuzzy
 #| msgid "Shear layer"
 msgctxt "(qtundo-format)"
 msgid "Shear layer"
 msgstr "Tallar a capa"
 
-#: image/kis_image.cc:701
+#: image/kis_image.cc:703
 #, fuzzy
 #| msgid "Shear Image"
 msgctxt "(qtundo-format)"
 msgid "Shear Image"
 msgstr "Tallar a imaxe"
 
-#: image/kis_image.cc:713
+#: image/kis_image.cc:715
 #, fuzzy
 #| msgid "Convert Image Color Space"
 msgctxt "(qtundo-format)"
 msgid "Convert Image Color Space"
 msgstr "Converter o espazo de cores da imaxe"
 
-#: image/kis_image.cc:746
+#: image/kis_image.cc:748
 #, fuzzy
 #| msgid "Convert Projection Color Space"
 msgctxt "(qtundo-format)"
 msgid "Convert Projection Color Space"
 msgstr "Converter o espazo de cores de proxección"
 
-#: image/kis_image.cc:925
+#: image/kis_image.cc:927
 #, fuzzy
 #| msgid "Flatten Image"
 msgctxt "(qtundo-format)"
 msgid "Flatten Image"
 msgstr "Achatar a imaxe"
 
-#: image/kis_image.cc:972
+#: image/kis_image.cc:974
 #, fuzzy
 #| msgid "Merge with Layer Below"
 msgctxt "(qtundo-format)"
 msgid "Merge with Layer Below"
 msgstr "Xuntar coa capa de abaixo"
 
-#: image/kis_image.cc:1018
+#: image/kis_image.cc:1020
 #, fuzzy
 #| msgid "Flatten Layer"
 msgctxt "(qtundo-format)"
 msgid "Flatten Layer"
 msgstr "Achatar a capa"
 
-#: image/kis_image.cc:1581
+#: image/kis_image.cc:1583
 #, fuzzy
 #| msgid "Grow Selection"
 msgctxt "(qtundo-format)"
 msgid "Crop Selections"
 msgstr "Aumentar a selección"
 
-#: image/kis_layer.cc:175
+#: image/kis_layer.cc:209
 #, kde-format
 msgid "%1%"
 msgstr "%1%"
 
 #. i18n: ectx: property (text), widget (QCheckBox, opacityCBox)
-#: image/kis_layer.cc:175
+#: image/kis_layer.cc:209
 #: plugins/extensions/dockers/defaultdockers/kis_layer_box.cpp:230
 #: plugins/paintops/hairy/wdghairyeoptions.ui:297
 #: plugins/paintops/hairy/wdgInkOptions.ui:58
@@ -2017,7 +2025,7 @@ msgstr "%1%"
 msgid "Opacity"
 msgstr "Opacidade"
 
-#: image/kis_layer.cc:177
+#: image/kis_layer.cc:211
 msgid "Composite Mode"
 msgstr "Modo de composición"
 
@@ -2035,6 +2043,13 @@ msgstr "Herdar a canle alfa"
 #| msgid "Postprocessing"
 msgid "Processing"
 msgstr "Procesando"
+
+#. i18n: ectx: property (text), widget (QLineEdit, palettename)
+#: image/kis_psd_layer_style.cpp:101 ui/forms/wdgcustompalette.ui:18
+#: ui/KisDocument.cpp:2480 ui/KisMainWindow.cpp:841 ui/KisPart.cpp:593
+#: ui/KisPart.cpp:609
+msgid "Unnamed"
+msgstr "Sen nome"
 
 #: image/kis_selection_filters.cpp:120
 #, fuzzy
@@ -2187,7 +2202,9 @@ msgstr "Executar macro"
 msgid "Playing back macro"
 msgstr "Executar macro"
 
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_3)
 #: image/recorder/kis_recorded_fill_paint_action.cpp:42
+#: ui/layerstyles/WdgStroke.ui:130
 msgid "Fill"
 msgstr "Encher"
 
@@ -2264,29 +2281,29 @@ msgid "S&plit Alpha"
 msgstr "Herdar a canle alfa"
 
 #. i18n: ectx: Menu (Recording)
-#: krita.rc:240 plugins/extensions/bigbrother/bigbrother.rc:5
+#: krita.rc:241 plugins/extensions/bigbrother/bigbrother.rc:5
 msgid "Recording"
 msgstr "Gravando"
 
 #. i18n: ectx: Menu (Macros)
-#: krita.rc:245 plugins/extensions/bigbrother/bigbrother.rc:9
+#: krita.rc:246 plugins/extensions/bigbrother/bigbrother.rc:9
 msgid "Macros"
 msgstr "Macros"
 
 #. i18n: ectx: Menu (settings)
-#: krita.rc:251
+#: krita.rc:252
 #, fuzzy
 #| msgid "Settings"
 msgid "Setti&ngs"
 msgstr "Configuracións"
 
 #. i18n: ectx: Menu (help)
-#: krita.rc:271
+#: krita.rc:272
 msgid "&Help"
 msgstr "&Axuda"
 
 #. i18n: ectx: ToolBar (mainToolBar)
-#: krita.rc:285 ui/kis_file_layer.cpp:89
+#: krita.rc:286 ui/kis_file_layer.cpp:89
 msgid "File"
 msgstr "Ficheiro"
 
@@ -2521,7 +2538,6 @@ msgstr ""
 #. i18n: ectx: Menu (Layer)
 #: plugins/extensions/clonesarray/clonesarray.rc:5
 #: plugins/extensions/colorspaceconversion/colorspaceconversion.rc:7
-#: plugins/extensions/dropshadow/dropshadow.rc:4
 #: plugins/extensions/gmic/gmic.rc:5
 #: plugins/extensions/metadataeditor/metadataeditor.rc:4
 #: plugins/extensions/offsetimage/offsetimage.rc:10
@@ -2591,10 +2607,12 @@ msgstr "Desprazamento Y "
 msgid "Distance"
 msgstr "Distancia"
 
+#. i18n: ectx: property (text), item, widget (QComboBox, cmbStyle)
 #. i18n: ectx: property (title), widget (QGroupBox, grpAngle)
 #. i18n: ectx: property (text), widget (QLabel, label_7)
 #: plugins/extensions/clonesarray/wdg_clonesarray.ui:108
 #: plugins/extensions/rotateimage/wdg_rotateimage.ui:46
+#: ui/layerstyles/WdgGradientOverlay.ui:147 ui/layerstyles/WdgStroke.ui:240
 msgid "Angle"
 msgstr "Ángulo"
 
@@ -2605,6 +2623,7 @@ msgstr "Ángulo"
 msgid "Columns:"
 msgstr "Columnas:"
 
+#. i18n: ectx: property (suffix), widget (KisSliderSpinBox, intSize)
 #. i18n: ectx: property (suffix), widget (QSpinBox, intWidth)
 #. i18n: ectx: property (suffix), widget (QSpinBox, intXOffset)
 #. i18n: ectx: property (suffix), widget (QSpinBox, intHeight)
@@ -2633,6 +2652,7 @@ msgstr "Columnas:"
 #: ui/input/wintab/kis_screen_size_choice_dialog.ui:108
 #: ui/input/wintab/kis_screen_size_choice_dialog.ui:128
 #: ui/input/wintab/kis_screen_size_choice_dialog.ui:145
+#: ui/layerstyles/wdgInnerGlow.ui:245
 msgid "px"
 msgstr "px"
 
@@ -2747,7 +2767,8 @@ msgstr "Fóra da gama"
 
 #. i18n: ectx: property (text), widget (QCheckBox, chkInvert)
 #: plugins/extensions/colorrange/wdg_colorrange.ui:89
-#: plugins/filters/example/example.cpp:52
+#: plugins/filters/example/example.cpp:52 ui/layerstyles/WdgSatin.ui:198
+#: ui/layerstyles/wdgTexture.ui:118
 msgid "&Invert"
 msgstr "&Inverter"
 
@@ -2974,7 +2995,7 @@ msgstr "Shift: "
 
 #. i18n: ectx: attribute (title), widget (QWidget, tab_general)
 #: plugins/extensions/dockers/advancedcolorselector/wdg_color_selector_settings.ui:24
-#: ui/dialogs/kis_dlg_preferences.cc:716 ui/dialogs/kis_dlg_preferences.cc:717
+#: ui/dialogs/kis_dlg_preferences.cc:739 ui/dialogs/kis_dlg_preferences.cc:740
 #: ui/kis_paintop_option.cpp:26
 msgid "General"
 msgstr "Xeral"
@@ -3373,9 +3394,6 @@ msgstr "Tamaño:"
 #. i18n: ectx: property (suffix), widget (QSpinBox, lastUsedColorsHeight)
 #. i18n: ectx: property (suffix), widget (QSpinBox, offsetXspinBox)
 #. i18n: ectx: property (suffix), widget (QSpinBox, offsetYspinBox)
-#. i18n: ectx: property (suffix), widget (QSpinBox, xOffsetSpinBox)
-#. i18n: ectx: property (suffix), widget (QSpinBox, yOffsetSpinBox)
-#. i18n: ectx: property (suffix), widget (QSpinBox, blurRadiusSpinBox)
 #. i18n: ectx: property (suffix), widget (QDoubleSpinBox, sizeToStartFromSpinBox)
 #. i18n: ectx: property (suffix), widget (QDoubleSpinBox, deltaValueSpinBox)
 #. i18n: ectx: property (suffix), widget (KIntSpinBox, intX)
@@ -3386,9 +3404,6 @@ msgstr "Tamaño:"
 #: plugins/extensions/dockers/advancedcolorselector/wdg_color_selector_settings.ui:834
 #: plugins/extensions/dockers/advancedcolorselector/wdg_color_selector_settings.ui:1038
 #: plugins/extensions/dockers/advancedcolorselector/wdg_color_selector_settings.ui:1051
-#: plugins/extensions/dropshadow/wdg_dropshadow.ui:103
-#: plugins/extensions/dropshadow/wdg_dropshadow.ui:132
-#: plugins/extensions/dropshadow/wdg_dropshadow.ui:161
 #: plugins/extensions/offsetimage/wdg_offsetimage.ui:50
 #: plugins/extensions/offsetimage/wdg_offsetimage.ui:74
 #: plugins/paintops/experiment/kis_experimentop_option.cpp:36
@@ -3411,10 +3426,12 @@ msgstr "px"
 msgid "Patch count:"
 msgstr "Conta de aplicacións:"
 
+#. i18n: ectx: property (text), widget (QLabel, label_4)
 #. i18n: ectx: property (text), widget (QLabel, label_13)
 #. i18n: ectx: property (text), widget (QLabel, label_8)
 #: plugins/extensions/dockers/advancedcolorselector/wdg_color_selector_settings.ui:885
 #: plugins/extensions/dockers/advancedcolorselector/wdg_color_selector_settings.ui:1102
+#: ui/layerstyles/wdgBevelAndEmboss.ui:132
 msgid "Direction:"
 msgstr "Dirección:"
 
@@ -3605,7 +3622,9 @@ msgstr "Inverter a saturación"
 msgid "Reset to Default"
 msgstr "Restaurar ao predeterminado"
 
+#. i18n: ectx: property (text), widget (QLabel, label_9)
 #: plugins/extensions/dockers/channeldocker/channeldocker_dock.cpp:37
+#: ui/layerstyles/wdgblendingoptions.ui:128
 msgid "Channels"
 msgstr "Canles"
 
@@ -3731,22 +3750,25 @@ msgid ""
 msgstr ""
 
 #: plugins/extensions/dockers/defaultdockers/kis_layer_box.cpp:506
-#: ui/kis_layer_manager.cc:290
+#: ui/kis_layer_manager.cc:300
 msgid "&Merge with Layer Below"
 msgstr "&Xuntar coa capa de abaixo"
 
 #. i18n: ectx: property (toolTip), widget (KisCompositeOpComboBox, cmbComposite)
-#: plugins/extensions/dockers/defaultdockers/wdglayerbox.ui:40
+#: plugins/extensions/dockers/defaultdockers/wdglayerbox.ui:44
 #: plugins/paintops/libpaintop/kis_compositeop_option.cpp:34
 #: ui/widgets/kis_cmb_composite.cc:70
 msgid "Blending Mode"
 msgstr "Método de mistura"
 
 #. i18n: ectx: property (whatsThis), widget (KisCompositeOpComboBox, cmbComposite)
-#: plugins/extensions/dockers/defaultdockers/wdglayerbox.ui:43
+#: plugins/extensions/dockers/defaultdockers/wdglayerbox.ui:47
 msgid "Select the blending mode for the layer."
 msgstr "Selecciona o método de mestura para a capa."
 
+#. i18n: ectx: property (text), widget (KColorButton, bnColor)
+#. i18n: ectx: property (text), widget (KColorButton, bnHighlightColor)
+#. i18n: ectx: property (text), widget (KColorButton, bnShadowColor)
 #. i18n: ectx: property (text), widget (KoGroupButton, intersect)
 #. i18n: ectx: property (text), widget (KoGroupButton, shape)
 #. i18n: ectx: property (text), widget (KoGroupButton, replace)
@@ -3778,15 +3800,15 @@ msgstr "Selecciona o método de mestura para a capa."
 #. i18n: ectx: property (text), widget (QToolButton, bnSelectSaveLocation)
 #. i18n: ectx: property (text), widget (QToolButton, bnGetPreview)
 #. i18n: ectx: property (text), widget (QToolButton, bnFont)
-#: plugins/extensions/dockers/defaultdockers/wdglayerbox.ui:62
-#: plugins/extensions/dockers/defaultdockers/wdglayerbox.ui:111
-#: plugins/extensions/dockers/defaultdockers/wdglayerbox.ui:130
-#: plugins/extensions/dockers/defaultdockers/wdglayerbox.ui:155
-#: plugins/extensions/dockers/defaultdockers/wdglayerbox.ui:180
-#: plugins/extensions/dockers/defaultdockers/wdglayerbox.ui:205
-#: plugins/extensions/dockers/defaultdockers/wdglayerbox.ui:230
-#: plugins/extensions/dockers/defaultdockers/wdglayerbox.ui:255
-#: plugins/extensions/dockers/defaultdockers/wdglayerbox.ui:296
+#: plugins/extensions/dockers/defaultdockers/wdglayerbox.ui:66
+#: plugins/extensions/dockers/defaultdockers/wdglayerbox.ui:151
+#: plugins/extensions/dockers/defaultdockers/wdglayerbox.ui:170
+#: plugins/extensions/dockers/defaultdockers/wdglayerbox.ui:195
+#: plugins/extensions/dockers/defaultdockers/wdglayerbox.ui:220
+#: plugins/extensions/dockers/defaultdockers/wdglayerbox.ui:245
+#: plugins/extensions/dockers/defaultdockers/wdglayerbox.ui:270
+#: plugins/extensions/dockers/defaultdockers/wdglayerbox.ui:295
+#: plugins/extensions/dockers/defaultdockers/wdglayerbox.ui:336
 #: plugins/extensions/dockers/lut/wdglut.ui:148
 #: plugins/extensions/dockers/lut/wdglut.ui:179
 #: plugins/extensions/dockers/palettedocker/wdgpalettedock.ui:38
@@ -3806,50 +3828,17 @@ msgstr "Selecciona o método de mestura para a capa."
 #: ui/forms/wdgselectionoptions.ui:40 ui/forms/wdgselectionoptions.ui:56
 #: ui/forms/wdgselectionoptions.ui:72 ui/forms/wdgselectionoptions.ui:91
 #: ui/forms/wdgselectionoptions.ui:130 ui/forms/wdgselectionoptions.ui:149
+#: ui/layerstyles/wdgBevelAndEmboss.ui:318
+#: ui/layerstyles/wdgBevelAndEmboss.ui:371
+#: ui/layerstyles/WdgColorOverlay.ui:60 ui/layerstyles/wdgInnerGlow.ui:128
+#: ui/layerstyles/WdgSatin.ui:57 ui/layerstyles/WdgStroke.ui:169
 msgid "..."
 msgstr "..."
-
-#. i18n: ectx: property (toolTip), widget (QToolButton, bnDuplicate)
-#: plugins/extensions/dockers/defaultdockers/wdglayerbox.ui:127
-msgid "Duplicate layer or mask"
-msgstr "Duplicar capa ou máscara"
-
-#. i18n: ectx: property (toolTip), widget (QToolButton, bnLower)
-#: plugins/extensions/dockers/defaultdockers/wdglayerbox.ui:152
-msgid "Move layer or mask down"
-msgstr "Baixar a capa ou máscara"
-
-#. i18n: ectx: property (toolTip), widget (QToolButton, bnRaise)
-#: plugins/extensions/dockers/defaultdockers/wdglayerbox.ui:177
-msgid "Move layer or mask up"
-msgstr "Subir a capa ou máscara"
-
-#. i18n: ectx: property (toolTip), widget (QToolButton, bnLeft)
-#: plugins/extensions/dockers/defaultdockers/wdglayerbox.ui:202
-msgid "Move layer out of group"
-msgstr "Mover a capa fóra deste grupo"
-
-#. i18n: ectx: property (toolTip), widget (QToolButton, bnRight)
-#: plugins/extensions/dockers/defaultdockers/wdglayerbox.ui:227
-msgid "Move layer into group"
-msgstr "Mover a capa a este grupo"
-
-#. i18n: ectx: property (toolTip), widget (QToolButton, bnProperties)
-#: plugins/extensions/dockers/defaultdockers/wdglayerbox.ui:252
-msgid "View or change the layer properties"
-msgstr "Ver ou alterar as propiedades da capa"
-
-#. i18n: ectx: property (toolTip), widget (QToolButton, bnDelete)
-#: plugins/extensions/dockers/defaultdockers/wdglayerbox.ui:293
-msgid "Delete the layer or mask"
-msgstr "Eliminar a capa ou máscara"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel2)
 #. i18n: ectx: property (text), widget (QLabel, label_3)
 #. i18n: ectx: property (text), widget (QLabel, opacityLabel)
-#. i18n: ectx: property (text), widget (QLabel, textLabel4)
-#: plugins/extensions/dockers/defaultdockers/wdglayerbox.ui:322
-#: plugins/extensions/dropshadow/wdg_dropshadow.ui:57
+#: plugins/extensions/dockers/defaultdockers/wdglayerbox.ui:92
 #: plugins/filters/noisefilter/wdgnoiseoptions.ui:29
 #: plugins/filters/randompickfilter/wdgrandompickoptions.ui:65
 #: plugins/paintops/libpaintop/forms/wdgflowopacityoption.ui:59
@@ -3859,14 +3848,61 @@ msgid "Opacity:"
 msgstr "Opacidade:"
 
 #. i18n: ectx: property (toolTip), widget (KisDoubleSliderSpinBox, doubleOpacity)
-#: plugins/extensions/dockers/defaultdockers/wdglayerbox.ui:341
+#: plugins/extensions/dockers/defaultdockers/wdglayerbox.ui:105
 msgid "Layer Opacity"
 msgstr "Opacidade da capa"
 
+#. i18n: ectx: property (whatsThis), widget (KisSliderSpinBox, intOpacity)
+#. i18n: ectx: property (whatsThis), widget (KisSliderSpinBox, intFillOpacity)
+#. i18n: ectx: property (whatsThis), widget (KisSliderSpinBox, intNoise)
+#. i18n: ectx: property (whatsThis), widget (KisSliderSpinBox, intOpacity2)
 #. i18n: ectx: property (whatsThis), widget (KisDoubleSliderSpinBox, doubleOpacity)
-#: plugins/extensions/dockers/defaultdockers/wdglayerbox.ui:344
+#: plugins/extensions/dockers/defaultdockers/wdglayerbox.ui:108
+#: ui/layerstyles/wdgBevelAndEmboss.ui:355
+#: ui/layerstyles/wdgBevelAndEmboss.ui:408
+#: ui/layerstyles/wdgblendingoptions.ui:80
+#: ui/layerstyles/wdgblendingoptions.ui:121
+#: ui/layerstyles/WdgColorOverlay.ui:94 ui/layerstyles/wdgdropshadow.ui:156
+#: ui/layerstyles/WdgGradientOverlay.ui:80 ui/layerstyles/wdgInnerGlow.ui:80
+#: ui/layerstyles/wdgInnerGlow.ui:112 ui/layerstyles/WdgPatternOverlay.ui:83
+#: ui/layerstyles/WdgSatin.ui:91
 msgid "Adjust the transparency of the layer"
 msgstr "Axustar a transparencia da capa"
+
+#. i18n: ectx: property (toolTip), widget (QToolButton, bnDuplicate)
+#: plugins/extensions/dockers/defaultdockers/wdglayerbox.ui:167
+msgid "Duplicate layer or mask"
+msgstr "Duplicar capa ou máscara"
+
+#. i18n: ectx: property (toolTip), widget (QToolButton, bnLower)
+#: plugins/extensions/dockers/defaultdockers/wdglayerbox.ui:192
+msgid "Move layer or mask down"
+msgstr "Baixar a capa ou máscara"
+
+#. i18n: ectx: property (toolTip), widget (QToolButton, bnRaise)
+#: plugins/extensions/dockers/defaultdockers/wdglayerbox.ui:217
+msgid "Move layer or mask up"
+msgstr "Subir a capa ou máscara"
+
+#. i18n: ectx: property (toolTip), widget (QToolButton, bnLeft)
+#: plugins/extensions/dockers/defaultdockers/wdglayerbox.ui:242
+msgid "Move layer out of group"
+msgstr "Mover a capa fóra deste grupo"
+
+#. i18n: ectx: property (toolTip), widget (QToolButton, bnRight)
+#: plugins/extensions/dockers/defaultdockers/wdglayerbox.ui:267
+msgid "Move layer into group"
+msgstr "Mover a capa a este grupo"
+
+#. i18n: ectx: property (toolTip), widget (QToolButton, bnProperties)
+#: plugins/extensions/dockers/defaultdockers/wdglayerbox.ui:292
+msgid "View or change the layer properties"
+msgstr "Ver ou alterar as propiedades da capa"
+
+#. i18n: ectx: property (toolTip), widget (QToolButton, bnDelete)
+#: plugins/extensions/dockers/defaultdockers/wdglayerbox.ui:333
+msgid "Delete the layer or mask"
+msgstr "Eliminar a capa ou máscara"
 
 #: plugins/extensions/dockers/digitalmixer/digitalmixer_dock.cc:43
 msgid "Digital Colors Mixer"
@@ -3898,8 +3934,10 @@ msgstr "Explorar"
 msgid "Back"
 msgstr "Atrás"
 
+#. i18n: ectx: property (text), item, widget (QComboBox, cmbDirection)
 #. i18n: ectx: property (text), widget (QToolButton, bnUp)
 #: plugins/extensions/dockers/imagedocker/forms/wdgimagedocker.ui:80
+#: ui/layerstyles/wdgBevelAndEmboss.ui:146
 msgid "Up"
 msgstr "Arriba"
 
@@ -4250,73 +4288,6 @@ msgstr "Grupo de tarefas %1"
 msgid "Task"
 msgstr "Tarefa"
 
-#: plugins/extensions/dropshadow/dlg_dropshadow.cc:41
-#: plugins/extensions/dropshadow/kis_dropshadow.cc:130
-#: plugins/extensions/dropshadow/kis_dropshadow_plugin.cc:69
-#: plugins/extensions/dropshadow/kis_dropshadow_plugin.cc:76
-msgid "Drop Shadow"
-msgstr "Sombreado"
-
-#. i18n: ectx: Menu (layerEffects)
-#: plugins/extensions/dropshadow/dropshadow.rc:6
-msgid "Layer Effects"
-msgstr "Efectos das capas"
-
-#: plugins/extensions/dropshadow/kis_dropshadow.cc:125
-#, fuzzy
-#| msgid "Add Drop Shadow"
-msgctxt "(qtundo-format)"
-msgid "Add Drop Shadow"
-msgstr "Engadir un sombreado"
-
-#: plugins/extensions/dropshadow/kis_dropshadow_plugin.cc:46
-msgid "Add Drop Shadow..."
-msgstr "Engadir un sombreado..."
-
-#. i18n: ectx: property (text), widget (QLabel, textLabel1)
-#: plugins/extensions/dropshadow/wdg_dropshadow.ui:17
-msgid "Offset X:"
-msgstr "Desprazamento en X:"
-
-#. i18n: ectx: property (text), widget (QLabel, textLabel1_2)
-#: plugins/extensions/dropshadow/wdg_dropshadow.ui:27
-msgid "Offset Y:"
-msgstr "Desprazamento en Y:"
-
-#. i18n: ectx: property (text), widget (QLabel, textLabel2)
-#: plugins/extensions/dropshadow/wdg_dropshadow.ui:37
-msgid "Blur radius:"
-msgstr "Radio do desenfoque:"
-
-#. i18n: ectx: property (text), widget (QLabel, lblCanvasBorderColor)
-#. i18n: ectx: property (text), widget (QLabel, label_2)
-#. i18n: ectx: property (text), widget (QLabel, textLabel3)
-#. i18n: ectx: property (text), widget (QLabel, colorLabel4)
-#. i18n: ectx: property (text), widget (QLabel, colorLabel2)
-#. i18n: ectx: property (text), widget (QLabel, colorLabel1)
-#. i18n: ectx: property (text), widget (QLabel, colorLabel3)
-#. i18n: ectx: property (text), widget (QLabel, textLabel1)
-#: plugins/extensions/dropshadow/wdg_dropshadow.ui:47
-#: plugins/filters/colors/wdgcolortoalphabase.ui:40
-#: plugins/filters/phongbumpmap/wdgphongbumpmap.ui:435
-#: plugins/filters/phongbumpmap/wdgphongbumpmap.ui:615
-#: plugins/filters/phongbumpmap/wdgphongbumpmap.ui:807
-#: plugins/filters/phongbumpmap/wdgphongbumpmap.ui:993
-#: ui/forms/wdgdisplaysettings.ui:290 ui/forms/wdgdisplaysettings.ui:335
-msgid "Color:"
-msgstr "Cor:"
-
-#. i18n: ectx: property (suffix), widget (QSpinBox, opacitySpinBox)
-#: plugins/extensions/dropshadow/wdg_dropshadow.ui:80
-#, no-c-format
-msgid "%"
-msgstr "%"
-
-#. i18n: ectx: property (text), widget (QCheckBox, allowResizingCheckBox)
-#: plugins/extensions/dropshadow/wdg_dropshadow.ui:93
-msgid "Grow image to make drop shadow fit if needed"
-msgstr "Cando sexa preciso, aumentar a imaxe para facer o sombreado"
-
 #: plugins/extensions/gmic/kis_gmic_input_output_widget.cpp:62
 msgid "In place (default)"
 msgstr ""
@@ -4339,6 +4310,7 @@ msgstr "Nova capa de filtro"
 msgid "New image"
 msgstr "Nova imaxe"
 
+#. i18n: ectx: property (text), item, widget (QComboBox, cmbKnockout)
 #. i18n: ectx: property (text), item, widget (QComboBox, editGainControl)
 #. i18n: ectx: property (text), item, widget (KComboBox, kComboBoxCompressionType)
 #. i18n: ectx: property (text), item, widget (KComboBox, kComboBoxPredictor)
@@ -4348,6 +4320,7 @@ msgstr "Nova imaxe"
 #: plugins/formats/tiff/kis_wdg_options_tiff.ui:66
 #: plugins/formats/tiff/kis_wdg_options_tiff.ui:138
 #: plugins/tools/tool_crop/wdg_tool_crop.ui:286
+#: ui/layerstyles/wdgblendingoptions.ui:219
 msgid "None"
 msgstr "Ningún"
 
@@ -4928,11 +4901,14 @@ msgctxt "(qtundo-format)"
 msgid "Split Layer"
 msgstr "Redimensionar a capa"
 
+#. i18n: ectx: property (text), item, widget (QComboBox, cmbFillType)
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
 #. i18n: ectx: property (title), widget (QGroupBox, grpMode)
 #: plugins/extensions/layersplit/layersplit.cpp:198
 #: plugins/generators/solid/colorgenerator.h:53
-#: ui/dialogs/kis_dlg_preferences.cc:733 ui/forms/wdgnewimage.ui:361
-#: ui/kis_paintop_option.cpp:31
+#: ui/dialogs/kis_dlg_preferences.cc:756 ui/forms/wdgnewimage.ui:361
+#: ui/kis_paintop_option.cpp:31 ui/layerstyles/WdgColorOverlay.ui:26
+#: ui/layerstyles/WdgStroke.ui:137
 msgid "Color"
 msgstr "Cor"
 
@@ -5204,6 +5180,8 @@ msgstr "Punto"
 msgid "Multi spot"
 msgstr "Puntos múltiples"
 
+#. i18n: ectx: property (text), item, widget (QComboBox, cmbFillType)
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
 #. i18n: ectx: property (text), widget (QCheckBox, cbRemovePattern)
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbFill)
 #. i18n: ectx: property (text), item, widget (QComboBox, editMeteringMode)
@@ -5214,6 +5192,7 @@ msgstr "Puntos múltiples"
 #: plugins/paintops/libpaintop/kis_texture_option.cpp:138
 #: plugins/tools/tool_text/wdgtextoptions.ui:48
 #: ui/forms/wdgdlgblacklistcleanup.ui:83 ui/forms/wdggeometryoptions.ui:72
+#: ui/layerstyles/WdgPatternOverlay.ui:26 ui/layerstyles/WdgStroke.ui:147
 msgid "Pattern"
 msgstr "Patrón"
 
@@ -5620,7 +5599,12 @@ msgstr "Lista alternativa"
 msgid "Language array"
 msgstr "Lista de linguas"
 
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_3)
 #: plugins/extensions/metadataeditor/kis_meta_data_model.cpp:84
+#: ui/layerstyles/wdgBevelAndEmboss.ui:26 ui/layerstyles/wdgdropshadow.ui:99
+#: ui/layerstyles/wdgInnerGlow.ui:26 ui/layerstyles/WdgSatin.ui:26
+#: ui/layerstyles/WdgStroke.ui:26
 msgid "Structure"
 msgstr "Estrutura"
 
@@ -6523,6 +6507,24 @@ msgstr "Maximizar a canle"
 msgid "Minimize Channel"
 msgstr "Minimizar a canle"
 
+#. i18n: ectx: property (text), widget (QLabel, label_5)
+#. i18n: ectx: property (text), widget (QLabel, lblCanvasBorderColor)
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#. i18n: ectx: property (text), widget (QLabel, colorLabel4)
+#. i18n: ectx: property (text), widget (QLabel, colorLabel2)
+#. i18n: ectx: property (text), widget (QLabel, colorLabel1)
+#. i18n: ectx: property (text), widget (QLabel, colorLabel3)
+#. i18n: ectx: property (text), widget (QLabel, textLabel1)
+#: plugins/filters/colors/wdgcolortoalphabase.ui:40
+#: plugins/filters/phongbumpmap/wdgphongbumpmap.ui:435
+#: plugins/filters/phongbumpmap/wdgphongbumpmap.ui:615
+#: plugins/filters/phongbumpmap/wdgphongbumpmap.ui:807
+#: plugins/filters/phongbumpmap/wdgphongbumpmap.ui:993
+#: ui/forms/wdgdisplaysettings.ui:290 ui/forms/wdgdisplaysettings.ui:335
+#: ui/layerstyles/WdgStroke.ui:162
+msgid "Color:"
+msgstr "Cor:"
+
 #. i18n: ectx: property (text), widget (QLabel, textLabel2)
 #. i18n: ectx: property (text), widget (QLabel, textLabel1_2)
 #. i18n: ectx: property (text), widget (QLabel, label_5)
@@ -7019,11 +7021,15 @@ msgstr ""
 msgid "Color count:"
 msgstr "Cor do fondo"
 
+#. i18n: ectx: property (text), widget (QLabel, lblThisMin_2)
+#. i18n: ectx: property (text), widget (QLabel, lblUnderMin_2)
 #. i18n: ectx: property (text), widget (QLabel, colorCount)
 #. i18n: ectx: property (text), widget (QLabel, lblPrecisionValue)
 #: plugins/filters/indexcolors/kiswdgindexcolors.ui:137
 #: plugins/paintops/libpaintop/forms/wdgbrushchooser.ui:135
 #: plugins/paintops/libpaintop/sensors/kis_dynamic_sensor_fade.cpp:31
+#: ui/layerstyles/wdgblendingoptions.ui:308
+#: ui/layerstyles/wdgblendingoptions.ui:336
 msgid "0"
 msgstr "0"
 
@@ -7055,6 +7061,29 @@ msgstr ""
 #| msgid "Alpha Options"
 msgid "Alpha Steps"
 msgstr "Opcións da canle Alfa"
+
+#: plugins/filters/layerstyles/kis_ls_bevel_emboss_filter.cpp:59
+#: plugins/filters/layerstyles/kis_ls_stroke_filter.cpp:50
+msgid "Stroke (style)"
+msgstr ""
+
+#: plugins/filters/layerstyles/kis_ls_drop_shadow_filter.cpp:45
+#, fuzzy
+#| msgid "Drop Shadow"
+msgid "Drop Shadow (style)"
+msgstr "Sombreado"
+
+#: plugins/filters/layerstyles/kis_ls_overlay_filter.cpp:50
+#, fuzzy
+#| msgid "Overlay Mode"
+msgid "Overlay (style)"
+msgstr "Modo de superposición"
+
+#: plugins/filters/layerstyles/kis_ls_satin_filter.cpp:46
+#, fuzzy
+#| msgid "Separation Style"
+msgid "Satin (style)"
+msgstr "Estilo de separación"
 
 #: plugins/filters/levelfilter/kis_level_filter.cpp:46
 msgid "&Levels..."
@@ -8161,16 +8190,16 @@ msgstr ""
 "O formato de Photoshop só soporta imaxes que sexan máis pequenas que "
 "30000x3000 píxeles."
 
-#: plugins/formats/psd/psd_loader.cpp:156
+#: plugins/formats/psd/psd_loader.cpp:159
 msgid "Duotone Colormode Block"
 msgstr "Bloque de modos de cor duotono"
 
-#: plugins/formats/psd/psd_loader.cpp:169
+#: plugins/formats/psd/psd_loader.cpp:172
 #: plugins/paintops/libpaintop/kis_pressure_mix_option.cpp:28
 msgid "Background"
 msgstr "Fondo"
 
-#: plugins/formats/psd/psd_resource_block.h:73
+#: plugins/formats/psd/psd_resource_block.h:82
 #, fuzzy
 #| msgid "&Resources"
 msgid "Unparsed Resource Block"
@@ -9748,10 +9777,13 @@ msgstr "Opcións de cor"
 msgid "Plain color"
 msgstr "Cor simple"
 
+#. i18n: ectx: property (text), item, widget (QComboBox, cmbFillType)
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbStyle)
 #: plugins/paintops/libpaintop/kis_color_source_option.cpp:56
 #: plugins/paintops/libpaintop/kis_pressure_gradient_option.cpp:26
 #: plugins/tools/tool_text/wdgtextoptions.ui:53
+#: ui/layerstyles/WdgGradientOverlay.ui:26 ui/layerstyles/WdgStroke.ui:142
 msgid "Gradient"
 msgstr "Gradiente"
 
@@ -11020,8 +11052,11 @@ msgstr "Posición vertical"
 msgid "Resize keeping center fixed"
 msgstr ""
 
+#. i18n: ectx: property (text), item, widget (QComboBox, cmbPosition)
+#. i18n: ectx: property (text), item, widget (QComboBox, cmbSource)
 #. i18n: ectx: property (text), widget (QCheckBox, boolCenter)
 #: plugins/tools/tool_crop/wdg_tool_crop.ui:107
+#: ui/layerstyles/wdgInnerGlow.ui:262 ui/layerstyles/WdgStroke.ui:79
 #, fuzzy
 #| msgid "Percent"
 msgid "Center"
@@ -12062,7 +12097,7 @@ msgid "Image Properties"
 msgstr "Propiedades da imaxe"
 
 #: ui/dialogs/kis_dlg_image_properties.cc:72
-#: ui/dialogs/kis_dlg_preferences.cc:527 ui/kis_image_manager.cc:90
+#: ui/dialogs/kis_dlg_preferences.cc:536 ui/kis_image_manager.cc:90
 #, fuzzy
 #| msgid "background color change"
 msgid "Change the background color of the image"
@@ -12071,6 +12106,42 @@ msgstr "cambio na cor de fondo"
 #: ui/dialogs/kis_dlg_layer_properties.cc:78
 msgid "Layer Properties"
 msgstr "Propiedades da capa"
+
+#: ui/dialogs/kis_dlg_layer_style.cpp:61
+#, fuzzy
+#| msgid "Layer Size"
+msgid "Layer Styles"
+msgstr "Tamaño da capa"
+
+#: ui/dialogs/kis_dlg_layer_style.cpp:170
+#: ui/dialogs/kis_dlg_layer_style.cpp:197
+#, fuzzy
+#| msgid "Select LUT file"
+msgid "Select ASL file"
+msgstr "Escoller o ficheiro LUT"
+
+#: ui/dialogs/kis_dlg_layer_style.cpp:172
+#: ui/dialogs/kis_dlg_layer_style.cpp:199
+#, fuzzy
+#| msgid "OpenColorIO configuration path:"
+msgid "Layer style configuration (*.asl)"
+msgstr "Ruta de configuración de OpenColorIO:"
+
+#. i18n: ectx: property (text), item, widget (QListWidget, lstStyleSelector)
+#: ui/dialogs/kis_dlg_layer_style.cpp:620 ui/layerstyles/wdglayerstyles.ui:39
+#, fuzzy
+#| msgid "Drop Shadow"
+msgid "Inner Shadow"
+msgstr "Sombreado"
+
+#: ui/dialogs/kis_dlg_layer_style.cpp:621
+msgid "Choke"
+msgstr ""
+
+#: ui/dialogs/kis_dlg_layer_style.cpp:814
+msgctxt "layer styles parameter"
+msgid "Spread"
+msgstr ""
 
 #: ui/dialogs/kis_dlg_preferences.cc:87
 msgid "Tool Icon"
@@ -12122,92 +12193,92 @@ msgstr "Contorno do pincel"
 msgid "Brush Outline with Triangle Lefthanded"
 msgstr "Contorno do pincel"
 
-#: ui/dialogs/kis_dlg_preferences.cc:192
+#: ui/dialogs/kis_dlg_preferences.cc:199
 #, fuzzy
 #| msgid "Select a Background"
 msgid "Select a Background Image"
 msgstr "Escoller un fondo"
 
-#: ui/dialogs/kis_dlg_preferences.cc:198
+#: ui/dialogs/kis_dlg_preferences.cc:205
 #, fuzzy, kde-format
 #| msgid "Group not editable."
 msgid "%1 is not a valid image file!"
 msgstr "Grupo non editábel."
 
-#: ui/dialogs/kis_dlg_preferences.cc:241
+#: ui/dialogs/kis_dlg_preferences.cc:248
 #: ui/widgets/kis_color_space_selector.cc:62
 msgid "Open Color Profile"
 msgstr "Abrir o perfil da cor"
 
-#: ui/dialogs/kis_dlg_preferences.cc:251 ui/dialogs/kis_dlg_preferences.cc:409
+#: ui/dialogs/kis_dlg_preferences.cc:258 ui/dialogs/kis_dlg_preferences.cc:417
 #, fuzzy, kde-format
 #| msgid "&Screen size"
 msgctxt "The number of the screen"
 msgid "Screen: %1"
 msgstr "&Tamaño de pantalla"
 
-#: ui/dialogs/kis_dlg_preferences.cc:297
+#: ui/dialogs/kis_dlg_preferences.cc:304
 #: ui/widgets/kis_color_space_selector.cc:180
 #, fuzzy
 #| msgid "Open Color Profile"
 msgid "Install Color Profiles"
 msgstr "Abrir o perfil da cor"
 
-#: ui/dialogs/kis_dlg_preferences.cc:343
+#: ui/dialogs/kis_dlg_preferences.cc:350
 #, fuzzy, kde-format
 #| msgid "&Screen size"
 msgctxt "The display/screen we got from Qt"
 msgid "Screen %1:"
 msgstr "&Tamaño de pantalla"
 
-#: ui/dialogs/kis_dlg_preferences.cc:708
+#: ui/dialogs/kis_dlg_preferences.cc:731
 msgid "Preferences"
 msgstr "Preferencias"
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, WdgDisplayBlacklist)
 #. i18n: ectx: property (windowTitle), widget (QWidget, WdgDisplaySettings)
 #. i18n: ectx: property (title), widget (QGroupBox, grpDisplay)
-#: ui/dialogs/kis_dlg_preferences.cc:724 ui/dialogs/kis_dlg_preferences.cc:725
+#: ui/dialogs/kis_dlg_preferences.cc:747 ui/dialogs/kis_dlg_preferences.cc:748
 #: ui/forms/wdgcolorsettings.ui:53 ui/forms/wdgdisplaysettings.ui:20
 #: ui/forms/wdgdlgblacklistcleanup.ui:20
 msgid "Display"
 msgstr "Mostrar"
 
-#: ui/dialogs/kis_dlg_preferences.cc:732
+#: ui/dialogs/kis_dlg_preferences.cc:755
 msgid "Color Management"
 msgstr "Xestión de cores"
 
-#: ui/dialogs/kis_dlg_preferences.cc:741 ui/dialogs/kis_dlg_preferences.cc:742
+#: ui/dialogs/kis_dlg_preferences.cc:764 ui/dialogs/kis_dlg_preferences.cc:765
 msgid "Performance"
 msgstr "Rendemento"
 
-#: ui/dialogs/kis_dlg_preferences.cc:750 ui/dialogs/kis_dlg_preferences.cc:751
+#: ui/dialogs/kis_dlg_preferences.cc:773 ui/dialogs/kis_dlg_preferences.cc:774
 msgid "Grid"
 msgstr "Grella"
 
-#: ui/dialogs/kis_dlg_preferences.cc:758
+#: ui/dialogs/kis_dlg_preferences.cc:781
 msgid "Tablet settings"
 msgstr "Configuración da tableta"
 
-#: ui/dialogs/kis_dlg_preferences.cc:759
+#: ui/dialogs/kis_dlg_preferences.cc:782
 msgid "Tablet"
 msgstr "Tableta"
 
-#: ui/dialogs/kis_dlg_preferences.cc:767
+#: ui/dialogs/kis_dlg_preferences.cc:790
 msgid "Canvas-only settings"
 msgstr "Configuración para só o lenzo"
 
-#: ui/dialogs/kis_dlg_preferences.cc:768
+#: ui/dialogs/kis_dlg_preferences.cc:791
 msgid "Canvas-only"
 msgstr "Soamente o lenzo"
 
-#: ui/dialogs/kis_dlg_preferences.cc:776
+#: ui/dialogs/kis_dlg_preferences.cc:799
 #, fuzzy
 #| msgid "Canvas-only settings"
 msgid "Canvas Input Settings"
 msgstr "Configuración para só o lenzo"
 
-#: ui/dialogs/kis_dlg_preferences.cc:777
+#: ui/dialogs/kis_dlg_preferences.cc:800
 #, fuzzy
 #| msgid "Canvas 01"
 msgid "Canvas Input"
@@ -12417,8 +12488,10 @@ msgstr "Esquerda:"
 msgid "Right:"
 msgstr "Dereita:"
 
+#. i18n: ectx: property (text), item, widget (QComboBox, cmbStyle)
 #. i18n: ectx: property (text), item, widget (QComboBox, comboBoxInterpolationType)
-#: ui/forms/wdgautogradient.ui:299
+#: ui/forms/wdgautogradient.ui:299 ui/layerstyles/WdgGradientOverlay.ui:137
+#: ui/layerstyles/WdgStroke.ui:230
 msgid "Linear"
 msgstr "Linear"
 
@@ -12573,7 +12646,7 @@ msgid "Depth:"
 msgstr "Profundidade:"
 
 #. i18n: ectx: property (text), widget (QLabel, lblProfiles)
-#: ui/forms/wdgcolorspaceselector.ui:81 ui/forms/wdglayerproperties.ui:87
+#: ui/forms/wdgcolorspaceselector.ui:81 ui/forms/wdglayerproperties.ui:111
 msgid "Profile:"
 msgstr "Perfil:"
 
@@ -12592,12 +12665,6 @@ msgstr "Instalar un novo perfil desde un ficheiro"
 #: ui/forms/wdgcolorspaceselector.ui:135
 msgid "Install a new profile from a file."
 msgstr "Instalar un novo perfil desde un ficheiro."
-
-#. i18n: ectx: property (text), widget (QLineEdit, palettename)
-#: ui/forms/wdgcustompalette.ui:18 ui/KisDocument.cpp:2480
-#: ui/KisMainWindow.cpp:836 ui/KisPart.cpp:593 ui/KisPart.cpp:609
-msgid "Unnamed"
-msgstr "Sen nome"
 
 #. i18n: ectx: property (text), widget (QPushButton, addColor)
 #: ui/forms/wdgcustompalette.ui:30
@@ -13045,6 +13112,11 @@ msgstr ""
 msgid "Show on-canvas popup messages"
 msgstr ""
 
+#. i18n: ectx: property (text), widget (QCheckBox, m_chkCompressKra)
+#: ui/forms/wdggeneralsettings.ui:281
+msgid "Compress .kra files more (slows loading/saving)"
+msgstr ""
+
 #. i18n: ectx: property (windowTitle), widget (QWidget, WdgGeometryOptions)
 #: ui/forms/wdggeometryoptions.ui:14
 msgid "Geometry Options"
@@ -13173,32 +13245,35 @@ msgstr "Rotación "
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel1)
 #. i18n: ectx: property (text), widget (QLabel, lblName)
-#: ui/forms/wdglayerproperties.ui:25 ui/forms/wdgnewimage.ui:22
+#: ui/forms/wdglayerproperties.ui:28 ui/forms/wdgnewimage.ui:22
 msgid "&Name:"
 msgstr "&Nome:"
 
+#. i18n: ectx: property (text), widget (QLabel, label_14)
+#. i18n: ectx: property (text), widget (QLabel, label_15)
 #. i18n: ectx: property (text), widget (QLabel, textLabel3)
-#: ui/forms/wdglayerproperties.ui:41
+#: ui/forms/wdglayerproperties.ui:51 ui/layerstyles/wdgBevelAndEmboss.ui:327
+#: ui/layerstyles/wdgBevelAndEmboss.ui:380
 msgid "&Opacity:"
 msgstr "&Opacidade:"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel4)
-#: ui/forms/wdglayerproperties.ui:57
+#: ui/forms/wdglayerproperties.ui:74
 msgid "Composite mode:"
 msgstr "Modo de composición:"
 
 #. i18n: ectx: property (text), widget (QLabel, lblColorSpaces)
-#: ui/forms/wdglayerproperties.ui:70
+#: ui/forms/wdglayerproperties.ui:94
 msgid "Color space:"
 msgstr "Espazo de cor:"
 
 #. i18n: ectx: property (toolTip), widget (QGroupBox, grpActiveChannels)
-#: ui/forms/wdglayerproperties.ui:118
+#: ui/forms/wdglayerproperties.ui:136
 msgid "Select the set of active channels."
 msgstr "Selecciona un conxunto de canles activas."
 
 #. i18n: ectx: property (whatsThis), widget (QGroupBox, grpActiveChannels)
-#: ui/forms/wdglayerproperties.ui:121
+#: ui/forms/wdglayerproperties.ui:139
 msgid ""
 "Select the set of active channels. Only active channels will be visible, "
 "filtered or affected by painting."
@@ -13207,12 +13282,12 @@ msgstr ""
 "visíbeis han ser filtradas ou veranse afectadas polo pintado."
 
 #. i18n: ectx: property (title), widget (QGroupBox, grpActiveChannels)
-#: ui/forms/wdglayerproperties.ui:124
+#: ui/forms/wdglayerproperties.ui:142
 msgid "&Active Channels"
 msgstr "&Canles activas"
 
 #. i18n: ectx: property (text), widget (QCheckBox, checkBoxPreview)
-#: ui/forms/wdglayerproperties.ui:144 ui/KisTemplateCreateDia.cpp:163
+#: ui/forms/wdglayerproperties.ui:164 ui/KisTemplateCreateDia.cpp:163
 msgid "&Preview"
 msgstr "Pre&visualizar"
 
@@ -16938,74 +17013,80 @@ msgstr "Cor de fondo"
 msgid "Import Image"
 msgstr "Importar a imaxe"
 
-#: ui/kis_layer_manager.cc:284
+#: ui/kis_layer_manager.cc:294
 msgid "&Flatten image"
 msgstr "A&chatar a imaxe"
 
-#: ui/kis_layer_manager.cc:296
+#: ui/kis_layer_manager.cc:306
 msgid "&Flatten Layer"
 msgstr "A&chatar a capa"
 
-#: ui/kis_layer_manager.cc:301
+#: ui/kis_layer_manager.cc:311
 #, fuzzy
 #| msgid "Delete current layer"
 msgid "Rename current layer"
 msgstr "Eliminar a capa actual"
 
-#: ui/kis_layer_manager.cc:307
+#: ui/kis_layer_manager.cc:317
 msgid "Rasterize Layer"
 msgstr "Rasterizar a capa"
 
-#: ui/kis_layer_manager.cc:313
+#: ui/kis_layer_manager.cc:323
 msgid "Save Group Layers..."
 msgstr "Gardar o grupo de capas..."
 
-#: ui/kis_layer_manager.cc:318
+#: ui/kis_layer_manager.cc:328
 #, fuzzy
 #| msgid "Limit to Current Layer"
 msgid "Trim to Current Layer"
 msgstr "Limitar á capa actual"
 
-#: ui/kis_layer_manager.cc:357
+#: ui/kis_layer_manager.cc:333
+#, fuzzy
+#| msgid "Layer Size"
+msgid "Layer Style..."
+msgstr "Tamaño da capa"
+
+#: ui/kis_layer_manager.cc:374
 #, fuzzy
 #| msgid "Layer is locked."
 msgctxt "floating message in layer manager"
 msgid "Layer is empty "
 msgstr "A capa está bloqueada."
 
-#: ui/kis_layer_manager.cc:376
+#: ui/kis_layer_manager.cc:393
 msgid "Filter Layer Properties"
 msgstr "Propiedades da capa de filtro"
 
-#: ui/kis_layer_manager.cc:421
+#: ui/kis_layer_manager.cc:438
 #, fuzzy
 #| msgid "Filter Layer Properties"
 msgid "Fill Layer Properties"
 msgstr "Propiedades da capa de filtro"
 
-#: ui/kis_layer_manager.cc:501
+#: ui/kis_layer_manager.cc:517
 #, fuzzy
 #| msgid "Convert Current Layer From"
 msgctxt "(qtundo-format)"
 msgid "Convert to a Paint Layer"
 msgstr "Converter a capa actual de"
 
-#: ui/kis_layer_manager.cc:580
+#: ui/kis_layer_manager.cc:596
 msgid "New Filter Layer"
 msgstr "Nova capa de filtro"
 
-#: ui/kis_layer_manager.cc:643
+#: ui/kis_layer_manager.cc:659
 msgid "Could not add layer to image."
 msgstr "Non foi posíbel engadir capa á imaxe."
 
-#: ui/kis_layer_manager.cc:729
+#: ui/kis_layer_manager.cc:745
 #, fuzzy
 #| msgid "Flatten Image"
 msgctxt "@title:window"
 msgid "Flatten Image"
 msgstr "Achatar a imaxe"
 
-#: ui/kis_layer_manager.cc:730
+#: ui/kis_layer_manager.cc:746
 #, fuzzy
 #| msgid "The image contains hidden layers that will be lost."
 msgid ""
@@ -17013,22 +17094,22 @@ msgid ""
 "the image?"
 msgstr "A imaxe contén capas agochadas que se perderán."
 
-#: ui/kis_layer_manager.cc:797
+#: ui/kis_layer_manager.cc:813
 #, fuzzy
 #| msgid "Rasterize Layer"
 msgctxt "(qtundo-format)"
 msgid "Rasterize Layer"
 msgstr "Rasterizar a capa"
 
-#: ui/kis_layer_manager.cc:833
+#: ui/kis_layer_manager.cc:849
 msgid "Convert Invisible Groups"
 msgstr "Converter os grupos ocultos"
 
-#: ui/kis_layer_manager.cc:836
+#: ui/kis_layer_manager.cc:852
 msgid "Export Only Toplevel Groups"
 msgstr "Exportar só os grupos superiores"
 
-#: ui/kis_layer_manager.cc:893
+#: ui/kis_layer_manager.cc:909
 #, fuzzy
 #| msgid "No file name specified."
 msgid "No file name specified"
@@ -17403,7 +17484,10 @@ msgstr "Predefinición favorita anterior"
 msgid "Switch to Previous Preset"
 msgstr "Ir á predefinición anterior"
 
-#: ui/kis_paintop_option.cpp:36
+#. i18n: ectx: property (text), item, widget (QListWidget, lstStyleSelector)
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
+#: ui/kis_paintop_option.cpp:36 ui/layerstyles/wdglayerstyles.ui:79
+#: ui/layerstyles/wdgTexture.ui:20
 msgid "Texture"
 msgstr "Textura"
 
@@ -17840,9 +17924,10 @@ msgid ""
 msgstr ""
 
 #: ui/KisDocument.cpp:1617
-#, kde-format
-msgid "Not a valid Calligra file: %1"
-msgstr ""
+#, fuzzy, kde-format
+#| msgid "Group not editable."
+msgid "Not a valid Krita file: %1"
+msgstr "Grupo non editábel."
 
 #: ui/KisDocument.cpp:1682
 msgid "Invalid document: no file 'maindoc.xml'."
@@ -17998,69 +18083,69 @@ msgstr ""
 msgid "Save as %1"
 msgstr "Gardar macro"
 
-#: ui/KisMainWindow.cpp:821
+#: ui/KisMainWindow.cpp:822
 #, fuzzy
 #| msgid "untitled-1"
 msgid "untitled"
 msgstr "sen-nome-1"
 
-#: ui/KisMainWindow.cpp:1126
+#: ui/KisMainWindow.cpp:1131
 #, fuzzy
 #| msgid "Import Image"
 msgid "Import Images"
 msgstr "Importar a imaxe"
 
-#: ui/KisMainWindow.cpp:1126
+#: ui/KisMainWindow.cpp:1131
 #, fuzzy
 #| msgid "Images"
 msgid "Open Images"
 msgstr "Imaxes"
 
-#: ui/KisMainWindow.cpp:1329
+#: ui/KisMainWindow.cpp:1334
 #, fuzzy
 #| msgid "Export Layer"
 msgid "Export as PDF"
 msgstr "Exportar a capa"
 
-#: ui/KisMainWindow.cpp:1371
+#: ui/KisMainWindow.cpp:1376
 msgid "Cannot export to the specified file"
 msgstr ""
 
-#: ui/KisMainWindow.cpp:1524
+#: ui/KisMainWindow.cpp:1529
 #, fuzzy
 #| msgid "Open in New Documents"
 msgid "Document"
 msgstr "Abrir un documento"
 
-#: ui/KisMainWindow.cpp:1532
+#: ui/KisMainWindow.cpp:1537
 #, fuzzy, kde-format
 #| msgid "Open in New Documents"
 msgid "Document - %1"
 msgstr "Abrir un documento"
 
-#: ui/KisMainWindow.cpp:1555
+#: ui/KisMainWindow.cpp:1560
 msgid ""
 "You will lose all changes made since your last save\n"
 "Do you want to continue?"
 msgstr ""
 
-#: ui/KisMainWindow.cpp:1566
+#: ui/KisMainWindow.cpp:1571
 #, fuzzy
 #| msgid "Could not add layer to image."
 msgid "Error: Could not reload this document"
 msgstr "Non foi posíbel engadir capa á imaxe."
 
-#: ui/KisMainWindow.cpp:1827
+#: ui/KisMainWindow.cpp:1832
 #, kde-format
 msgid "&%1 %2"
 msgstr ""
 
-#: ui/KisMainWindow.cpp:1831
+#: ui/KisMainWindow.cpp:1836
 #, kde-format
 msgid "%1 %2"
 msgstr ""
 
-#: ui/KisMainWindow.cpp:1917
+#: ui/KisMainWindow.cpp:1922
 msgid ""
 "The Calligra LittleCMS color management plugin is not installed. Krita will "
 "quit now."
@@ -18068,118 +18153,118 @@ msgstr ""
 "Non está instalado o engadido de xestión de cor Calligra LittleCMS. Krita "
 "pecharase agora mesmo."
 
-#: ui/KisMainWindow.cpp:1925
+#: ui/KisMainWindow.cpp:1930
 #, fuzzy
 #| msgid "ColorSpace %1 is not available, please check your installation."
 msgid "Krita cannot find any brush presets! Krita will quit now."
 msgstr "Non está dispoñible o Espazo de Cores %1, comprobe a súa instalación."
 
-#: ui/KisMainWindow.cpp:1934
+#: ui/KisMainWindow.cpp:1939
 #, fuzzy
 #| msgid "Installation error"
 msgctxt "@title:window"
 msgid "Installation error"
 msgstr "Erro de instalación"
 
-#: ui/KisMainWindow.cpp:1993
+#: ui/KisMainWindow.cpp:1998
 #, kde-format
 msgid "%1 unsaved document (%2)"
 msgstr ""
 
-#: ui/KisMainWindow.cpp:2029
+#: ui/KisMainWindow.cpp:2034
 #, fuzzy
 #| msgid "Export Layer"
 msgctxt "@action:inmenu"
 msgid "Export as PDF..."
 msgstr "Exportar a capa"
 
-#: ui/KisMainWindow.cpp:2037
+#: ui/KisMainWindow.cpp:2042
 #, fuzzy
 #| msgid "Close"
 msgctxt "@action:inmenu"
 msgid "Close All"
 msgstr "Pechar"
 
-#: ui/KisMainWindow.cpp:2048
+#: ui/KisMainWindow.cpp:2053
 #, fuzzy
 #| msgid "Open in New Document"
 msgctxt "@action:inmenu"
 msgid "Open ex&isting Document as Untitled Document..."
 msgstr "Abrir nun documento novo"
 
-#: ui/KisMainWindow.cpp:2052
+#: ui/KisMainWindow.cpp:2057
 #, fuzzy
 #| msgid "Exposure"
 msgctxt "@action:inmenu"
 msgid "E&xport..."
 msgstr "Exposición"
 
-#: ui/KisMainWindow.cpp:2059
+#: ui/KisMainWindow.cpp:2064
 #, fuzzy
 #| msgid "Tool information"
 msgctxt "@action:inmenu"
 msgid "Document Information"
 msgstr "Ferramenta de información"
 
-#: ui/KisMainWindow.cpp:2067
+#: ui/KisMainWindow.cpp:2072
 #, fuzzy
 msgctxt "@action:inmenu"
 msgid "&Themes"
 msgstr "&Temas"
 
-#: ui/KisMainWindow.cpp:2073
+#: ui/KisMainWindow.cpp:2078
 #, fuzzy
 #| msgid "Dockers"
 msgctxt "@action:inmenu"
 msgid "Show Dockers"
 msgstr "Dockers"
 
-#: ui/KisMainWindow.cpp:2079
+#: ui/KisMainWindow.cpp:2084
 #, fuzzy
 #| msgid "Dockers"
 msgctxt "@action:inmenu"
 msgid "Show Docker Titlebars"
 msgstr "Dockers"
 
-#: ui/KisMainWindow.cpp:2089
+#: ui/KisMainWindow.cpp:2094
 msgctxt "@action:inmenu"
 msgid "Cascade"
 msgstr ""
 
-#: ui/KisMainWindow.cpp:2094
+#: ui/KisMainWindow.cpp:2099
 msgctxt "@action:inmenu"
 msgid "Tile"
 msgstr ""
 
-#: ui/KisMainWindow.cpp:2099
+#: ui/KisMainWindow.cpp:2104
 #, fuzzy
 #| msgid "Next"
 msgctxt "@action:inmenu"
 msgid "Next"
 msgstr "Seguinte"
 
-#: ui/KisMainWindow.cpp:2104
+#: ui/KisMainWindow.cpp:2109
 #, fuzzy
 #| msgid "Previous Favourite Preset"
 msgctxt "@action:inmenu"
 msgid "Previous"
 msgstr "Predefinición favorita anterior"
 
-#: ui/KisMainWindow.cpp:2109
+#: ui/KisMainWindow.cpp:2114
 #, fuzzy
 #| msgid "Maintainer"
 msgctxt "@action:inmenu"
 msgid "&New Window"
 msgstr "Mantedor"
 
-#: ui/KisMainWindow.cpp:2113
+#: ui/KisMainWindow.cpp:2118
 #, fuzzy
 #| msgid "Close"
 msgctxt "@action:inmenu"
 msgid "Close"
 msgstr "Pechar"
 
-#: ui/KisMainWindow.cpp:2121
+#: ui/KisMainWindow.cpp:2126
 msgid "Expanding Spacer"
 msgstr ""
 
@@ -18594,73 +18679,889 @@ msgctxt "@title:window"
 msgid "File not found"
 msgstr "Índice fóra das restriccións"
 
-#: ui/kra/kis_kra_save_visitor.cpp:85 ui/kra/kis_kra_save_visitor.cpp:111
-#: ui/kra/kis_kra_save_visitor.cpp:120 ui/kra/kis_kra_save_visitor.cpp:141
-#: ui/kra/kis_kra_save_visitor.cpp:162 ui/kra/kis_kra_save_visitor.cpp:172
+#: ui/kra/kis_kra_save_visitor.cpp:86 ui/kra/kis_kra_save_visitor.cpp:112
+#: ui/kra/kis_kra_save_visitor.cpp:121 ui/kra/kis_kra_save_visitor.cpp:142
+#: ui/kra/kis_kra_save_visitor.cpp:163 ui/kra/kis_kra_save_visitor.cpp:173
 #, kde-format
 msgid "Failed to save the metadata for layer %1."
 msgstr ""
 
-#: ui/kra/kis_kra_save_visitor.cpp:103
+#: ui/kra/kis_kra_save_visitor.cpp:104
 #, kde-format
 msgid "Failed to save the pixel data for layer %1."
 msgstr ""
 
-#: ui/kra/kis_kra_save_visitor.cpp:107 ui/kra/kis_kra_save_visitor.cpp:154
+#: ui/kra/kis_kra_save_visitor.cpp:108 ui/kra/kis_kra_save_visitor.cpp:155
 #, fuzzy, kde-format
 #| msgid "Failed to create an action."
 msgid "Failed to save the annotations for layer %1."
 msgstr "Fallou a creación da acción."
 
-#: ui/kra/kis_kra_save_visitor.cpp:129
+#: ui/kra/kis_kra_save_visitor.cpp:130
 #, kde-format
 msgid "Failed to save the filter layer %1: it has no filter."
 msgstr ""
 
-#: ui/kra/kis_kra_save_visitor.cpp:133
+#: ui/kra/kis_kra_save_visitor.cpp:134
 #, kde-format
 msgid "Failed to save the selection for filter layer %1."
 msgstr ""
 
-#: ui/kra/kis_kra_save_visitor.cpp:137
+#: ui/kra/kis_kra_save_visitor.cpp:138
 #, kde-format
 msgid "Failed to save the filter configuration for filter layer %1."
 msgstr ""
 
-#: ui/kra/kis_kra_save_visitor.cpp:150
+#: ui/kra/kis_kra_save_visitor.cpp:151
 #, kde-format
 msgid "Failed to save the selection for layer %1."
 msgstr ""
 
-#: ui/kra/kis_kra_save_visitor.cpp:158
+#: ui/kra/kis_kra_save_visitor.cpp:159
 #, kde-format
 msgid "Failed to save the generator configuration for layer %1."
 msgstr ""
 
-#: ui/kra/kis_kra_save_visitor.cpp:181
+#: ui/kra/kis_kra_save_visitor.cpp:182
 #, kde-format
 msgid "Failed to save filter mask %1. It has no filter"
 msgstr ""
 
-#: ui/kra/kis_kra_save_visitor.cpp:185
+#: ui/kra/kis_kra_save_visitor.cpp:186
 #, kde-format
 msgid "Failed to save the selection for filter mask %1."
 msgstr ""
 
-#: ui/kra/kis_kra_save_visitor.cpp:189
+#: ui/kra/kis_kra_save_visitor.cpp:190
 #, kde-format
 msgid "Failed to save the filter configuration for filter mask %1."
 msgstr ""
 
-#: ui/kra/kis_kra_save_visitor.cpp:224
+#: ui/kra/kis_kra_save_visitor.cpp:225
 #, kde-format
 msgid "Failed to save the selection for transparency mask %1."
 msgstr ""
 
-#: ui/kra/kis_kra_save_visitor.cpp:233
+#: ui/kra/kis_kra_save_visitor.cpp:234
 #, kde-format
 msgid "Failed to save the selection for local selection %1."
 msgstr ""
+
+#. i18n: ectx: property (windowTitle), widget (QWidget, WdgStroke)
+#. i18n: ectx: property (windowTitle), widget (QWidget, WdgColorOverlay)
+#. i18n: ectx: property (windowTitle), widget (QWidget, WdgBlendingOptions)
+#. i18n: ectx: property (windowTitle), widget (QWidget, WdgSatin)
+#. i18n: ectx: property (windowTitle), widget (QWidget, WdgStylesSelector)
+#. i18n: ectx: property (windowTitle), widget (QWidget, WdgStylesDialog)
+#. i18n: ectx: property (windowTitle), widget (QWidget, WdgGradientOverlay)
+#. i18n: ectx: property (windowTitle), widget (QWidget, WdgPatternOverlay)
+#. i18n: ectx: property (windowTitle), widget (QWidget, WdgContour)
+#. i18n: ectx: property (windowTitle), widget (QWidget, WdgDropShadow)
+#. i18n: ectx: property (windowTitle), widget (QWidget, WdgInnerGlow)
+#. i18n: ectx: property (windowTitle), widget (QWidget, WdgTexture)
+#. i18n: ectx: property (windowTitle), widget (QWidget, WdgBevelAndEmboss)
+#: ui/layerstyles/wdgBevelAndEmboss.ui:14
+#: ui/layerstyles/wdgblendingoptions.ui:14
+#: ui/layerstyles/WdgColorOverlay.ui:14 ui/layerstyles/wdgContour.ui:14
+#: ui/layerstyles/wdgdropshadow.ui:14 ui/layerstyles/WdgGradientOverlay.ui:14
+#: ui/layerstyles/wdgInnerGlow.ui:14 ui/layerstyles/wdglayerstyles.ui:14
+#: ui/layerstyles/WdgPatternOverlay.ui:14 ui/layerstyles/WdgSatin.ui:14
+#: ui/layerstyles/WdgStroke.ui:14 ui/layerstyles/wdgstylesselector.ui:14
+#: ui/layerstyles/wdgTexture.ui:14
+#, fuzzy
+#| msgid "Formats:"
+msgid "Form"
+msgstr "Formatos:"
+
+#. i18n: ectx: property (text), item, widget (QListWidget, lstStyleSelector)
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
+#: ui/layerstyles/wdgBevelAndEmboss.ui:20 ui/layerstyles/wdglayerstyles.ui:63
+msgid "Bevel and Emboss"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: ui/layerstyles/wdgBevelAndEmboss.ui:32
+#, fuzzy
+#| msgid "Style:"
+msgid "&Style:"
+msgstr "Estilo:"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, cmbStyle)
+#: ui/layerstyles/wdgBevelAndEmboss.ui:49
+#, fuzzy
+#| msgid "&Water level:"
+msgid "Outer Bevel"
+msgstr "&Nivel da auga:"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, cmbStyle)
+#: ui/layerstyles/wdgBevelAndEmboss.ui:54
+msgid "Inner Bevel"
+msgstr ""
+
+#. i18n: ectx: property (text), item, widget (QComboBox, cmbStyle)
+#: ui/layerstyles/wdgBevelAndEmboss.ui:64
+#, fuzzy
+#| msgid "Emboss"
+msgid "Pillow Emboss"
+msgstr "Moldear"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, cmbStyle)
+#: ui/layerstyles/wdgBevelAndEmboss.ui:69
+#, fuzzy
+#| msgid "Emboss"
+msgid "Stroke Emboss"
+msgstr "Moldear"
+
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: ui/layerstyles/wdgBevelAndEmboss.ui:77 ui/layerstyles/wdgInnerGlow.ui:163
+msgid "&Technique:"
+msgstr ""
+
+#. i18n: ectx: property (text), item, widget (QComboBox, cmbTechnique)
+#: ui/layerstyles/wdgBevelAndEmboss.ui:94
+#, fuzzy
+#| msgid "Smooth"
+msgid "Smooth"
+msgstr "Suave"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, cmbTechnique)
+#: ui/layerstyles/wdgBevelAndEmboss.ui:99
+msgid "Chisel Hard"
+msgstr ""
+
+#. i18n: ectx: property (text), item, widget (QComboBox, cmbTechnique)
+#: ui/layerstyles/wdgBevelAndEmboss.ui:104
+#, fuzzy
+#| msgid "O_Oil Soft"
+msgid "Chisel Soft"
+msgstr "O_Óleo suave"
+
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#: ui/layerstyles/wdgBevelAndEmboss.ui:112
+msgid "&Depth:"
+msgstr "Pro&fundidade:"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, cmbDirection)
+#: ui/layerstyles/wdgBevelAndEmboss.ui:151
+#, fuzzy
+#| msgid "Pan Down"
+msgid "Down"
+msgstr "Desviar a abaixo"
+
+#. i18n: ectx: property (text), widget (QLabel, label_5)
+#: ui/layerstyles/wdgBevelAndEmboss.ui:159
+msgid "Si&ze:"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QLabel, label_6)
+#: ui/layerstyles/wdgBevelAndEmboss.ui:179
+msgid "Sof&ten:"
+msgstr ""
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_3)
+#: ui/layerstyles/wdgBevelAndEmboss.ui:202
+#, fuzzy
+#| msgid "Shade"
+msgid "Shading"
+msgstr "Sombra"
+
+#. i18n: ectx: property (text), widget (QLabel, label_9)
+#. i18n: ectx: property (text), widget (QLabel, label_7)
+#: ui/layerstyles/wdgBevelAndEmboss.ui:210
+#: ui/layerstyles/WdgGradientOverlay.ui:174 ui/layerstyles/WdgStroke.ui:267
+#, fuzzy
+#| msgid "Angle:"
+msgid "&Angle:"
+msgstr "Ángulo:"
+
+#. i18n: ectx: property (toolTip), widget (QDial, dialAngle)
+#: ui/layerstyles/wdgBevelAndEmboss.ui:220 ui/layerstyles/wdgdropshadow.ui:175
+#: ui/layerstyles/WdgGradientOverlay.ui:186 ui/layerstyles/WdgSatin.ui:113
+#: ui/layerstyles/WdgStroke.ui:279
+#, fuzzy
+#| msgid "Select an area of the image with curves"
+msgid "Set the angle of the light source"
+msgstr "Escolle áreas da imaxe con curvas"
+
+#. i18n: ectx: property (text), widget (QCheckBox, chkUseGlobalLight)
+#: ui/layerstyles/wdgBevelAndEmboss.ui:256
+msgid "Use &Global Light"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QLabel, label_9)
+#: ui/layerstyles/wdgBevelAndEmboss.ui:275
+msgid "Gloss Contour:"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QCheckBox, chkAntiAliased)
+#: ui/layerstyles/wdgBevelAndEmboss.ui:290 ui/layerstyles/wdgContour.ui:47
+#: ui/layerstyles/wdgdropshadow.ui:64 ui/layerstyles/wdgInnerGlow.ui:296
+#: ui/layerstyles/WdgSatin.ui:191
+#, fuzzy
+#| msgid "Anti-aliasing"
+msgid "Anti-aliased"
+msgstr "Suavizado das curvas"
+
+#. i18n: ectx: property (text), widget (QLabel, label_10)
+#: ui/layerstyles/wdgBevelAndEmboss.ui:299
+#, fuzzy
+#| msgid "Highlights"
+msgid "H&ighlight Mode:"
+msgstr "Realces"
+
+#. i18n: ectx: property (toolTip), widget (KisCompositeOpComboBox, cmbCompositeOp)
+#. i18n: ectx: property (toolTip), widget (KisCompositeOpComboBox, cmbHighlightMode)
+#. i18n: ectx: property (toolTip), widget (KisCompositeOpComboBox, cmbShadowMode)
+#: ui/layerstyles/wdgBevelAndEmboss.ui:311
+#: ui/layerstyles/wdgBevelAndEmboss.ui:364
+#: ui/layerstyles/wdgblendingoptions.ui:48
+#: ui/layerstyles/WdgColorOverlay.ui:53 ui/layerstyles/wdgdropshadow.ui:121
+#: ui/layerstyles/WdgGradientOverlay.ui:48 ui/layerstyles/wdgInnerGlow.ui:48
+#: ui/layerstyles/WdgPatternOverlay.ui:51 ui/layerstyles/WdgSatin.ui:50
+#, fuzzy
+#| msgid "Select the blending mode for the layer."
+msgid "Set the blend mode for the layer"
+msgstr "Selecciona o método de mestura para a capa."
+
+#. i18n: ectx: property (toolTip), widget (KisSliderSpinBox, intOpacity)
+#. i18n: ectx: property (toolTip), widget (KisSliderSpinBox, intNoise)
+#. i18n: ectx: property (toolTip), widget (KisSliderSpinBox, intOpacity2)
+#: ui/layerstyles/wdgBevelAndEmboss.ui:352
+#: ui/layerstyles/wdgBevelAndEmboss.ui:405
+#: ui/layerstyles/wdgblendingoptions.ui:77
+#: ui/layerstyles/WdgColorOverlay.ui:91 ui/layerstyles/wdgdropshadow.ui:153
+#: ui/layerstyles/WdgGradientOverlay.ui:77 ui/layerstyles/wdgInnerGlow.ui:77
+#: ui/layerstyles/wdgInnerGlow.ui:109 ui/layerstyles/WdgPatternOverlay.ui:80
+#: ui/layerstyles/WdgSatin.ui:88
+#, fuzzy
+#| msgid "Select the blending mode for the layer."
+msgid "Set the master opacity for the layer"
+msgstr "Selecciona o método de mestura para a capa."
+
+#. i18n: ectx: property (text), widget (QLabel, label_8)
+#: ui/layerstyles/wdgBevelAndEmboss.ui:415
+#, fuzzy
+#| msgid "Amplitude:"
+msgid "Altitude:"
+msgstr "Amplitude:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_11)
+#: ui/layerstyles/wdgBevelAndEmboss.ui:428
+#, fuzzy
+#| msgid "Shadows"
+msgid "Sh&adow Mode:"
+msgstr "Sombras"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
+#. i18n: ectx: property (text), item, widget (QListWidget, lstStyleSelector)
+#: ui/layerstyles/wdgblendingoptions.ui:20 ui/layerstyles/wdglayerstyles.ui:26
+#, fuzzy
+#| msgid "Hatching options"
+msgid "Blending Options"
+msgstr "Opcións de hachura"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_4)
+#: ui/layerstyles/wdgblendingoptions.ui:26
+#, fuzzy
+#| msgid "General settings"
+msgid "General Blending"
+msgstr "Configuración xeral"
+
+#. i18n: ectx: property (text), widget (QLabel, label_13)
+#: ui/layerstyles/wdgblendingoptions.ui:32
+#: ui/layerstyles/WdgColorOverlay.ui:35 ui/layerstyles/wdgdropshadow.ui:105
+#: ui/layerstyles/WdgGradientOverlay.ui:32 ui/layerstyles/wdgInnerGlow.ui:32
+#: ui/layerstyles/WdgPatternOverlay.ui:35 ui/layerstyles/WdgSatin.ui:32
+#, fuzzy
+#| msgid "Blend mode:"
+msgid "Ble&nd Mode:"
+msgstr "Modo de mistura:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_14)
+#: ui/layerstyles/wdgblendingoptions.ui:55
+#: ui/layerstyles/WdgColorOverlay.ui:69 ui/layerstyles/wdgdropshadow.ui:131
+#: ui/layerstyles/WdgGradientOverlay.ui:55 ui/layerstyles/wdgInnerGlow.ui:55
+#: ui/layerstyles/WdgPatternOverlay.ui:58 ui/layerstyles/WdgSatin.ui:66
+#, fuzzy
+#| msgid "&Opacity:"
+msgid "&Opacity"
+msgstr "&Opacidade:"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
+#: ui/layerstyles/wdgblendingoptions.ui:90
+#, fuzzy
+#| msgid "Advanced quality"
+msgid "Advanced Blending"
+msgstr "Calidade avanzada"
+
+#. i18n: ectx: property (text), widget (QLabel, label_8)
+#: ui/layerstyles/wdgblendingoptions.ui:96
+#, fuzzy
+#| msgid "&Opacity:"
+msgid "&Fill Opacity:"
+msgstr "&Opacidade:"
+
+#. i18n: ectx: property (toolTip), widget (KisSliderSpinBox, intFillOpacity)
+#: ui/layerstyles/wdgblendingoptions.ui:118
+#, fuzzy
+#| msgid "Select the blending mode for the layer."
+msgid "Set the interior opacity for the layer"
+msgstr "Selecciona o método de mestura para a capa."
+
+#. i18n: ectx: property (toolTip), widget (QCheckBox, chkChannel1_2)
+#. i18n: ectx: property (toolTip), widget (QCheckBox, chkChannel2_2)
+#. i18n: ectx: property (toolTip), widget (QCheckBox, chkChannel3_2)
+#. i18n: ectx: property (toolTip), widget (QCheckBox, chkChannel4_2)
+#. i18n: ectx: property (toolTip), widget (QCheckBox, chkChannel5_2)
+#. i18n: ectx: property (toolTip), widget (QCheckBox, chkChannel6_2)
+#: ui/layerstyles/wdgblendingoptions.ui:137
+#: ui/layerstyles/wdgblendingoptions.ui:147
+#: ui/layerstyles/wdgblendingoptions.ui:157
+#: ui/layerstyles/wdgblendingoptions.ui:167
+#: ui/layerstyles/wdgblendingoptions.ui:177
+#: ui/layerstyles/wdgblendingoptions.ui:187
+msgid "Choose channels to blend"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QCheckBox, chkChannel1_2)
+#. i18n: ectx: property (text), widget (QCheckBox, chkChannel2_2)
+#. i18n: ectx: property (text), widget (QCheckBox, chkChannel3_2)
+#. i18n: ectx: property (text), widget (QCheckBox, chkChannel4_2)
+#. i18n: ectx: property (text), widget (QCheckBox, chkChannel5_2)
+#. i18n: ectx: property (text), widget (QCheckBox, chkChannel6_2)
+#: ui/layerstyles/wdgblendingoptions.ui:140
+#: ui/layerstyles/wdgblendingoptions.ui:150
+#: ui/layerstyles/wdgblendingoptions.ui:160
+#: ui/layerstyles/wdgblendingoptions.ui:170
+#: ui/layerstyles/wdgblendingoptions.ui:180
+#: ui/layerstyles/wdgblendingoptions.ui:190
+#, fuzzy
+#| msgid "1D"
+msgid "1"
+msgstr "1D"
+
+#. i18n: ectx: property (text), widget (QLabel, label_10)
+#: ui/layerstyles/wdgblendingoptions.ui:199
+msgid "K&nockout"
+msgstr ""
+
+#. i18n: ectx: property (toolTip), widget (QComboBox, cmbKnockout)
+#: ui/layerstyles/wdgblendingoptions.ui:215
+msgid "Set the interior transparency. Shallow = Group, Deep = Background"
+msgstr ""
+
+#. i18n: ectx: property (text), item, widget (QComboBox, cmbKnockout)
+#: ui/layerstyles/wdgblendingoptions.ui:224
+#, fuzzy
+#| msgid "Yellows"
+msgid "Shallow"
+msgstr "Amarelo"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, cmbKnockout)
+#: ui/layerstyles/wdgblendingoptions.ui:229
+msgid "Deep"
+msgstr ""
+
+#. i18n: ectx: property (toolTip), widget (QCheckBox, checkBox_7)
+#: ui/layerstyles/wdgblendingoptions.ui:237
+msgid ""
+"Blend inner glow, satin, and overlay with layer before blending with "
+"document."
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QCheckBox, checkBox_7)
+#: ui/layerstyles/wdgblendingoptions.ui:240
+msgid "Blend &Interior Effects as Group"
+msgstr ""
+
+#. i18n: ectx: property (toolTip), widget (QCheckBox, checkBox_8)
+#: ui/layerstyles/wdgblendingoptions.ui:247
+msgid "Blend clipping group before blending with document"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QCheckBox, checkBox_8)
+#: ui/layerstyles/wdgblendingoptions.ui:250
+msgid "Blend Cl&ipped Layers as Group"
+msgstr ""
+
+#. i18n: ectx: property (toolTip), widget (QCheckBox, checkBox_9)
+#: ui/layerstyles/wdgblendingoptions.ui:257
+msgid ""
+"Use layer transparency in determining the shape of the interior and the "
+"effects"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QCheckBox, checkBox_9)
+#: ui/layerstyles/wdgblendingoptions.ui:260
+#, fuzzy
+#| msgid "&Transparency Mask"
+msgid "&Transparency Shapes Layer"
+msgstr "Máscara de &transparencia "
+
+#. i18n: ectx: property (toolTip), widget (QCheckBox, checkBox_10)
+#. i18n: ectx: property (toolTip), widget (QCheckBox, checkBox_11)
+#: ui/layerstyles/wdgblendingoptions.ui:267
+#: ui/layerstyles/wdgblendingoptions.ui:277
+msgid ""
+"Use layer mask t hide layer and effects rather than shaping the layer and "
+"effects"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QCheckBox, checkBox_10)
+#: ui/layerstyles/wdgblendingoptions.ui:270
+#, fuzzy
+#| msgid "Create Mask Effect"
+msgid "Layer Mask Hid&es Effect"
+msgstr "Crear efecto de máscara"
+
+#. i18n: ectx: property (text), widget (QCheckBox, checkBox_11)
+#: ui/layerstyles/wdgblendingoptions.ui:280
+#, fuzzy
+#| msgid "Create Mask Effect"
+msgid "Vector Mask &Hides Effect"
+msgstr "Crear efecto de máscara"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_3)
+#: ui/layerstyles/wdgblendingoptions.ui:290
+#, fuzzy
+#| msgid "Blend mode:"
+msgid "Blend If"
+msgstr "Modo de mistura:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_11)
+#: ui/layerstyles/wdgblendingoptions.ui:301
+#, fuzzy
+#| msgid "Scale Layer"
+msgid "This Layer"
+msgstr "Redimensionar a capa"
+
+#. i18n: ectx: property (text), widget (QLabel, lblThisMax_2)
+#. i18n: ectx: property (text), widget (QLabel, lblUnderMax_2)
+#: ui/layerstyles/wdgblendingoptions.ui:315
+#: ui/layerstyles/wdgblendingoptions.ui:343
+#, fuzzy
+#| msgid "25%"
+msgid "255"
+msgstr "25%"
+
+#. i18n: ectx: property (text), widget (QLabel, label_12)
+#: ui/layerstyles/wdgblendingoptions.ui:329
+msgid "Underlying Layer"
+msgstr ""
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
+#. i18n: ectx: property (text), item, widget (QListWidget, lstStyleSelector)
+#: ui/layerstyles/WdgColorOverlay.ui:20 ui/layerstyles/wdglayerstyles.ui:95
+#, fuzzy
+#| msgid "Selection Mode"
+msgid "Color Overlay"
+msgstr "Modo de selección"
+
+#. i18n: ectx: property (text), widget (QLabel, label_6)
+#. i18n: ectx: property (text), item, widget (QListWidget, lstStyleSelector)
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
+#. i18n: ectx: property (text), widget (QLabel, label_5)
+#: ui/layerstyles/wdgContour.ui:20 ui/layerstyles/wdgContour.ui:32
+#: ui/layerstyles/wdgdropshadow.ui:42 ui/layerstyles/wdglayerstyles.ui:71
+#: ui/layerstyles/WdgSatin.ui:178
+#, fuzzy
+#| msgid "Contrast"
+msgid "Contour"
+msgstr "Contraste"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_3)
+#: ui/layerstyles/wdgContour.ui:26 ui/layerstyles/wdgInnerGlow.ui:157
+#: ui/layerstyles/wdgTexture.ui:26
+#, fuzzy
+#| msgid "Placement"
+msgid "Elements"
+msgstr "Elementos"
+
+#. i18n: ectx: property (toolTip), widget (QCheckBox, chkAntiAliased)
+#: ui/layerstyles/wdgContour.ui:44 ui/layerstyles/wdgdropshadow.ui:61
+#: ui/layerstyles/WdgSatin.ui:188
+#, fuzzy
+#| msgid "Smooth Selection"
+msgid "Smooth the contour"
+msgstr "Suavizar a selección"
+
+#. i18n: ectx: property (text), widget (QLabel, label_6)
+#: ui/layerstyles/wdgContour.ui:56
+#, fuzzy
+#| msgid "Range:"
+msgid "&Range"
+msgstr "Rango:"
+
+#. i18n: ectx: property (toolTip), widget (KisSliderSpinBox, intRange)
+#. i18n: ectx: property (toolTip), widget (KisSliderSpinBox, intNoise)
+#: ui/layerstyles/wdgContour.ui:72 ui/layerstyles/wdgdropshadow.ui:89
+#, fuzzy
+#| msgid "Add Drop Shadow"
+msgid "Add noise to shadow"
+msgstr "Engadir un sombreado"
+
+#. i18n: ectx: property (text), item, widget (QListWidget, lstStyleSelector)
+#. i18n: ectx: property (title), widget (QGroupBox, grpMain)
+#: ui/layerstyles/wdgdropshadow.ui:20 ui/layerstyles/wdglayerstyles.ui:31
+msgid "Drop Shadow"
+msgstr "Sombreado"
+
+#. i18n: ectx: property (toolTip), widget (QCheckBox, chkLayerKnocksOutDropShadow)
+#: ui/layerstyles/wdgdropshadow.ui:26
+msgid "Use to obscure the shadow when fill is transparent"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QCheckBox, chkLayerKnocksOutDropShadow)
+#: ui/layerstyles/wdgdropshadow.ui:29
+msgid "Layer knocks O&ut Drop Shadow"
+msgstr ""
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_4)
+#: ui/layerstyles/wdgdropshadow.ui:36 ui/layerstyles/wdgInnerGlow.ui:278
+#, fuzzy
+#| msgid "Quality:"
+msgid "Quality"
+msgstr "Calidade:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_6)
+#: ui/layerstyles/wdgdropshadow.ui:73
+#, fuzzy
+#| msgid "Noise"
+msgid "&Noise"
+msgstr "Ruído"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: ui/layerstyles/wdgdropshadow.ui:163 ui/layerstyles/WdgSatin.ui:101
+#, fuzzy
+#| msgid "Angle"
+msgid "&Angle"
+msgstr "Ángulo"
+
+#. i18n: ectx: property (toolTip), widget (QCheckBox, chkUseGlobalLight)
+#: ui/layerstyles/wdgdropshadow.ui:198
+msgid "Use current setting for global light source"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QCheckBox, chkUseGlobalLight)
+#: ui/layerstyles/wdgdropshadow.ui:201
+msgid "Use &Global light"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: ui/layerstyles/wdgdropshadow.ui:210 ui/layerstyles/WdgSatin.ui:138
+#, fuzzy
+#| msgid "Distance"
+msgid "&Distance"
+msgstr "Distancia"
+
+#. i18n: ectx: property (text), widget (QLabel, lblSpread)
+#: ui/layerstyles/wdgdropshadow.ui:230
+msgid "Sp&read"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#: ui/layerstyles/wdgdropshadow.ui:250 ui/layerstyles/WdgSatin.ui:158
+#, fuzzy
+#| msgid "Size"
+msgid "&Size"
+msgstr "Tamaño"
+
+#. i18n: ectx: property (text), item, widget (QListWidget, lstStyleSelector)
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
+#: ui/layerstyles/WdgGradientOverlay.ui:20
+#: ui/layerstyles/wdglayerstyles.ui:103
+#, fuzzy
+#| msgid "Gradient Fill"
+msgid "Gradient Overlay"
+msgstr "Recheo de gradiente"
+
+#. i18n: ectx: property (text), widget (QLabel, label_7)
+#: ui/layerstyles/WdgGradientOverlay.ui:87 ui/layerstyles/WdgStroke.ui:180
+#, fuzzy
+#| msgid "Gradient"
+msgid "Gradient:"
+msgstr "Gradiente"
+
+#. i18n: ectx: property (text), widget (QCheckBox, chkReverse)
+#: ui/layerstyles/WdgGradientOverlay.ui:109 ui/layerstyles/WdgStroke.ui:202
+#, fuzzy
+#| msgctxt "the gradient will be drawn with the color order reversed"
+#| msgid "Reverse"
+msgid "&Reverse"
+msgstr "Inverter "
+
+#. i18n: ectx: property (text), widget (QLabel, label_6)
+#: ui/layerstyles/WdgGradientOverlay.ui:118 ui/layerstyles/WdgStroke.ui:211
+#, fuzzy
+#| msgid "Style:"
+msgid "St&yle:"
+msgstr "Estilo:"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, cmbStyle)
+#: ui/layerstyles/WdgGradientOverlay.ui:142 ui/layerstyles/WdgStroke.ui:235
+#, fuzzy
+#| msgctxt "the gradient will be drawn radially"
+#| msgid "Radial"
+msgid "Radial"
+msgstr "Radial "
+
+#. i18n: ectx: property (text), item, widget (QComboBox, cmbStyle)
+#: ui/layerstyles/WdgGradientOverlay.ui:152 ui/layerstyles/WdgStroke.ui:245
+#, fuzzy
+#| msgid "Select"
+msgid "Reflected"
+msgstr "Seleccionar"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, cmbStyle)
+#: ui/layerstyles/WdgGradientOverlay.ui:157 ui/layerstyles/WdgStroke.ui:250
+msgid "Diamond"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QCheckBox, chkAlignWithLayer)
+#: ui/layerstyles/WdgGradientOverlay.ui:165 ui/layerstyles/WdgStroke.ui:258
+#, fuzzy
+#| msgid "&Merge with Layer Below"
+msgid "Ali&gn with Layer"
+msgstr "&Xuntar coa capa de abaixo"
+
+#. i18n: ectx: property (text), widget (QLabel, label_8)
+#. i18n: ectx: property (text), widget (QLabel, label_10)
+#: ui/layerstyles/WdgGradientOverlay.ui:211
+#: ui/layerstyles/WdgPatternOverlay.ui:130 ui/layerstyles/WdgStroke.ui:304
+#: ui/layerstyles/WdgStroke.ui:371 ui/layerstyles/wdgTexture.ui:72
+#, fuzzy
+#| msgid "Scale:"
+msgid "S&cale:"
+msgstr "Escala:"
+
+#. i18n: ectx: property (toolTip), widget (KisSliderSpinBox, intScale)
+#. i18n: ectx: property (toolTip), widget (KisSliderSpinBox, intScale_2)
+#. i18n: ectx: property (toolTip), widget (KisSliderSpinBox, intDepth)
+#: ui/layerstyles/WdgGradientOverlay.ui:227
+#: ui/layerstyles/WdgPatternOverlay.ui:140 ui/layerstyles/WdgStroke.ui:320
+#: ui/layerstyles/WdgStroke.ui:381 ui/layerstyles/wdgTexture.ui:88
+#: ui/layerstyles/wdgTexture.ui:111
+msgid "Set size of gradation"
+msgstr ""
+
+#. i18n: ectx: property (text), item, widget (QListWidget, lstStyleSelector)
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
+#: ui/layerstyles/wdgInnerGlow.ui:20 ui/layerstyles/wdglayerstyles.ui:55
+msgid "Inner Glow"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: ui/layerstyles/wdgInnerGlow.ui:87
+#, fuzzy
+#| msgid "Noise"
+msgid "&Noise:"
+msgstr "Ruído"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, cmbTechnique)
+#: ui/layerstyles/wdgInnerGlow.ui:180
+#, fuzzy
+#| msgid "Soft"
+msgid "Softer"
+msgstr "Suave"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, cmbTechnique)
+#: ui/layerstyles/wdgInnerGlow.ui:185
+#, fuzzy
+#| msgid "Precision:"
+msgid "Precise"
+msgstr "Precisión:"
+
+#. i18n: ectx: property (text), widget (QLabel, lblSource)
+#: ui/layerstyles/wdgInnerGlow.ui:193
+#, fuzzy
+#| msgid "Source:"
+msgid "&Source:"
+msgstr "Orixe:"
+
+#. i18n: ectx: property (text), widget (QLabel, lblChoke)
+#: ui/layerstyles/wdgInnerGlow.ui:203
+msgid "&Choke:"
+msgstr ""
+
+#. i18n: ectx: property (suffix), widget (KisSliderSpinBox, intChoke)
+#. i18n: ectx: property (suffix), widget (KisSliderSpinBox, intRange)
+#. i18n: ectx: property (suffix), widget (KisSliderSpinBox, intJitter)
+#: ui/layerstyles/wdgInnerGlow.ui:219 ui/layerstyles/wdgInnerGlow.ui:321
+#: ui/layerstyles/wdgInnerGlow.ui:350
+#, no-c-format
+msgid "%"
+msgstr "%"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#. i18n: ectx: property (text), widget (QLabel, label_5)
+#: ui/layerstyles/wdgInnerGlow.ui:229 ui/layerstyles/WdgStroke.ui:32
+#, fuzzy
+#| msgid "Size:"
+msgid "&Size:"
+msgstr "Tamaño:"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, cmbSource)
+#: ui/layerstyles/wdgInnerGlow.ui:267
+msgid "Edge"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QLabel, label_6)
+#: ui/layerstyles/wdgInnerGlow.ui:284
+#, fuzzy
+#| msgid "Contrast:"
+msgid "Contour:"
+msgstr "Contraste:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_7)
+#: ui/layerstyles/wdgInnerGlow.ui:305
+#, fuzzy
+#| msgid "Range:"
+msgid "&Range:"
+msgstr "Rango:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_8)
+#: ui/layerstyles/wdgInnerGlow.ui:334
+#, fuzzy
+#| msgid "&Filter:"
+msgid "&Jitter:"
+msgstr "&Filtro:"
+
+#. i18n: ectx: property (title), widget (QGroupBox, grpStyleSelector)
+#. i18n: ectx: property (text), item, widget (QListWidget, lstStyleSelector)
+#: ui/layerstyles/wdglayerstyles.ui:21 ui/layerstyles/wdgstylesselector.ui:20
+#, fuzzy
+#| msgid "Style"
+msgid "Styles"
+msgstr "Estilo"
+
+#. i18n: ectx: property (text), item, widget (QListWidget, lstStyleSelector)
+#: ui/layerstyles/wdglayerstyles.ui:47
+msgid "Outer Glow"
+msgstr ""
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
+#. i18n: ectx: property (text), item, widget (QListWidget, lstStyleSelector)
+#: ui/layerstyles/wdglayerstyles.ui:87 ui/layerstyles/WdgSatin.ui:20
+msgid "Satin"
+msgstr ""
+
+#. i18n: ectx: property (text), item, widget (QListWidget, lstStyleSelector)
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
+#: ui/layerstyles/wdglayerstyles.ui:111 ui/layerstyles/WdgPatternOverlay.ui:20
+#, fuzzy
+#| msgid "Pattern"
+msgid "Pattern Overlay"
+msgstr "Patrón"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
+#. i18n: ectx: property (text), item, widget (QListWidget, lstStyleSelector)
+#: ui/layerstyles/wdglayerstyles.ui:119 ui/layerstyles/WdgStroke.ui:20
+#, fuzzy
+#| msgid "Move Stroke"
+msgid "Stroke"
+msgstr "Trazo de mover"
+
+#. i18n: ectx: property (text), widget (QPushButton, bnNewStyle)
+#: ui/layerstyles/wdglayerstyles.ui:135
+msgid "Ne&w Style ..."
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QPushButton, btnLoadStyle)
+#: ui/layerstyles/wdglayerstyles.ui:142
+#, fuzzy
+#| msgid "&Scale..."
+msgid "&Load Style..."
+msgstr "&Escala"
+
+#. i18n: ectx: property (text), widget (QPushButton, btnSaveStyle)
+#: ui/layerstyles/wdglayerstyles.ui:149
+#, fuzzy
+#| msgid "&Scale..."
+msgid "&Save Style..."
+msgstr "&Escala"
+
+#. i18n: ectx: property (text), widget (QCheckBox, chkPreview)
+#: ui/layerstyles/wdglayerstyles.ui:156
+#, fuzzy
+#| msgid "Preview"
+msgid "Pre&view"
+msgstr "Previsualización"
+
+#. i18n: ectx: property (text), widget (QLabel, label_11)
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: ui/layerstyles/WdgPatternOverlay.ui:90 ui/layerstyles/WdgStroke.ui:331
+#: ui/layerstyles/wdgTexture.ui:32
+#, fuzzy
+#| msgid "&Patterns"
+msgid "Pattern:"
+msgstr "Patrón"
+
+#. i18n: ectx: property (text), widget (QPushButton, bnSnapToOrigin)
+#: ui/layerstyles/WdgPatternOverlay.ui:121 ui/layerstyles/WdgStroke.ui:362
+#: ui/layerstyles/wdgTexture.ui:63
+msgid "Sn&ap to Origin"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QCheckBox, chkLinkWithLayer)
+#: ui/layerstyles/WdgPatternOverlay.ui:147
+#, fuzzy
+#| msgid "Layer"
+msgid "Li&nk with layer"
+msgstr "Capa"
+
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: ui/layerstyles/WdgStroke.ui:52
+#, fuzzy
+#| msgid "Composition"
+msgid "&Position:"
+msgstr "Composición"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, cmbPosition)
+#: ui/layerstyles/WdgStroke.ui:69
+msgid "Outside"
+msgstr ""
+
+#. i18n: ectx: property (text), item, widget (QComboBox, cmbPosition)
+#: ui/layerstyles/WdgStroke.ui:74
+msgid "Inside"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#: ui/layerstyles/WdgStroke.ui:87
+#, fuzzy
+#| msgid "Blend mode:"
+msgid "&Blend Mode:"
+msgstr "Modo de mistura:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#: ui/layerstyles/WdgStroke.ui:107
+#, fuzzy
+#| msgid "Opacity:"
+msgid "O&pacity:"
+msgstr "Opacidade:"
+
+#. i18n: ectx: property (text), widget (QCheckBox, chkLinkWithLayer)
+#: ui/layerstyles/WdgStroke.ui:388
+#, fuzzy
+#| msgid "&Paint Layer"
+msgid "Lin&k with Layer"
+msgstr "Capa de &pintura"
+
+#. i18n: ectx: property (text), widget (QLabel, label_10)
+#: ui/layerstyles/wdgTexture.ui:95
+#, fuzzy
+#| msgid "&Depth:"
+msgid "&Depth"
+msgstr "Pro&fundidade:"
+
+#. i18n: ectx: property (text), widget (QCheckBox, chkLinkWithLayer)
+#: ui/layerstyles/wdgTexture.ui:125
+#, fuzzy
+#| msgid "&Paint Layer"
+msgid "Li&nk with Layer"
+msgstr "Capa de &pintura"
 
 #: ui/opengl/kis_opengl.cpp:91
 msgid "Cannot use OpenGL: Krita needs at least OpenGL 2.0 or ES 2.0."
@@ -19006,6 +19907,12 @@ msgstr "Método de mistura"
 msgid "Select Luminosity Blending Mode"
 msgstr "Modo de selección"
 
+#: ui/widgets/kis_cmb_contour.cpp:25
+#, fuzzy
+#| msgid "Not Filled"
+msgid "Not Implemented Yet"
+msgstr "Sen recheo"
+
 #: ui/widgets/kis_color_space_selector.cc:65
 msgid "Download Color Profile"
 msgstr "Descargar o perfil da cor"
@@ -19044,7 +19951,7 @@ msgstr ""
 msgid "Edit..."
 msgstr "Editar"
 
-#: ui/widgets/kis_gradient_chooser.cc:129
+#: ui/widgets/kis_gradient_chooser.cc:134
 msgid "unnamed"
 msgstr "Sen nome"
 
@@ -19133,6 +20040,24 @@ msgstr "Espazo de traballo"
 #, kde-format
 msgid "Workspace %1"
 msgstr "Espazo de traballo %1"
+
+#~ msgid "Layer Effects"
+#~ msgstr "Efectos das capas"
+
+#~ msgid "Add Drop Shadow..."
+#~ msgstr "Engadir un sombreado..."
+
+#~ msgid "Offset X:"
+#~ msgstr "Desprazamento en X:"
+
+#~ msgid "Offset Y:"
+#~ msgstr "Desprazamento en Y:"
+
+#~ msgid "Blur radius:"
+#~ msgstr "Radio do desenfoque:"
+
+#~ msgid "Grow image to make drop shadow fit if needed"
+#~ msgstr "Cando sexa preciso, aumentar a imaxe para facer o sombreado"
 
 #~ msgid "Mode: "
 #~ msgstr "Modo:"
@@ -19471,11 +20396,6 @@ msgstr "Espazo de traballo %1"
 #~| msgid "Blending Mode"
 #~ msgid "Previous Blending Mode"
 #~ msgstr "Método de mistura"
-
-#, fuzzy
-#~| msgid "Formats:"
-#~ msgid "Form"
-#~ msgstr "Formatos:"
 
 #~ msgid ""
 #~ "Filename of the image whose tones and color you want to transfer to the "
@@ -20430,9 +21350,6 @@ msgstr "Espazo de traballo %1"
 #~ msgid "Tangential Pressure"
 #~ msgstr "Presión tanxencial"
 
-#~ msgid "Gradient Fill"
-#~ msgstr "Recheo de gradiente"
-
 #~ msgctxt "(qtundo-format)"
 #~ msgid "Node Composite Mode"
 #~ msgstr "Modo de composición en nós"
@@ -20478,9 +21395,6 @@ msgstr "Espazo de traballo %1"
 
 #~ msgid "Move Selection Stroke"
 #~ msgstr "Trazo de mover selección"
-
-#~ msgid "Move Stroke"
-#~ msgstr "Trazo de mover"
 
 #~ msgid "Select an elliptical area"
 #~ msgstr "Selecciona unha área elíptica"
@@ -20936,9 +21850,6 @@ msgstr "Espazo de traballo %1"
 #~ "algunhas veces mellor ca o bilinear inda que por veces pode dar algo "
 #~ "desenfocado.</p></body></html>"
 
-#~ msgid "&Filter:"
-#~ msgstr "&Filtro:"
-
 #~ msgid ""
 #~ "Uncheck to ignore diffuse reflectivity from computations and increase "
 #~ "performance."
@@ -21026,9 +21937,6 @@ msgstr "Espazo de traballo %1"
 #~ msgid "&Convert Layer Type..."
 #~ msgstr "&Converter o tipo de capa..."
 
-#~ msgid "Create Mask Effect"
-#~ msgstr "Crear efecto de máscara"
-
 #~ msgid "Zoom with mouse wheel"
 #~ msgstr "Ampliar ca roda do rato"
 
@@ -21087,9 +21995,6 @@ msgstr "Espazo de traballo %1"
 
 #~ msgid "Opacity: "
 #~ msgstr "Opacidade:"
-
-#~ msgid "Blend mode:"
-#~ msgstr "Modo de mistura:"
 
 #~ msgid "Channel Sources"
 #~ msgstr "Fontes da canle"
@@ -21548,9 +22453,6 @@ msgstr "Espazo de traballo %1"
 #~ msgid "Phi:"
 #~ msgstr "Phi:"
 
-#~ msgid "Range:"
-#~ msgstr "Rango:"
-
 #~ msgid "Lower:"
 #~ msgstr "Baixar:"
 
@@ -21607,12 +22509,6 @@ msgstr "Espazo de traballo %1"
 
 #~ msgid "&Y offset:"
 #~ msgstr "Desprazamento en &Y:"
-
-#~ msgid "&Depth:"
-#~ msgstr "Pro&fundidade:"
-
-#~ msgid "&Water level:"
-#~ msgstr "&Nivel da auga:"
 
 #~ msgid "Custom Curves"
 #~ msgstr "Curvas Persoalizadas"
@@ -21900,9 +22796,6 @@ msgstr "Espazo de traballo %1"
 
 #~ msgid "Select areas of the image with Bezier paths."
 #~ msgstr "Escolle áreas da imaxe con curvas de Bezier. "
-
-#~ msgid "Select an area of the image with curves"
-#~ msgstr "Escolle áreas da imaxe con curvas"
 
 #~ msgid "Tool for Curves - Example"
 #~ msgstr "Ferramenta para Curvas - Exemplo"
