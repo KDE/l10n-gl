@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcachegrind_qt\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-10-15 01:53+0000\n"
+"POT-Creation-Date: 2015-06-13 02:03+0000\n"
 "PO-Revision-Date: 2014-01-14 23:35+0100\n"
 "Last-Translator: Marce Villarino <mvillarino@kde-espana.org>\n"
 "Language-Team: Galician <proxecto@trasno.net>\n"
@@ -270,11 +270,11 @@ msgstr "(sen chamado)"
 msgid "(global)"
 msgstr "(global)"
 
-#: libcore/tracedata.cpp:3152
+#: libcore/tracedata.cpp:3154
 msgid "(not found)"
 msgstr "(non atopado)"
 
-#: libcore/tracedata.cpp:3694
+#: libcore/tracedata.cpp:3696
 msgid "Recalculating Function Cycles..."
 msgstr "Estanse a recalcular os ciclos das funcións..."
 
@@ -515,7 +515,7 @@ msgstr "Circular"
 #: libviews/callgraphview.cpp:2950 libviews/callgraphview.cpp:2955
 #: libviews/callgraphview.cpp:2975 libviews/callview.cpp:128
 #: libviews/callview.cpp:133 libviews/coverageview.cpp:170
-#: libviews/functionselection.cpp:295 libviews/instrview.cpp:240
+#: libviews/functionselection.cpp:295 libviews/instrview.cpp:265
 #: libviews/partselection.cpp:371 libviews/sourceview.cpp:121
 #, qt-format
 msgid "Go to '%1'"
@@ -596,7 +596,7 @@ msgid "A thing's name"
 msgstr "O nome dunha cousa"
 
 #: libviews/callmapview.cpp:63 libviews/callview.cpp:47
-#: libviews/instrview.cpp:169 libviews/partselection.cpp:72
+#: libviews/instrview.cpp:194 libviews/partselection.cpp:72
 #: libviews/sourceview.cpp:63 libviews/stackselection.cpp:54
 msgid "Cost"
 msgstr "Custo"
@@ -818,7 +818,7 @@ msgstr "(sen chamada)"
 msgid "Cost per call"
 msgstr "Custo por chamada"
 
-#: libviews/callview.cpp:49 libviews/instrview.cpp:170
+#: libviews/callview.cpp:49 libviews/instrview.cpp:195
 #: libviews/sourceview.cpp:64
 msgid "Cost 2"
 msgstr "Custo 2"
@@ -1055,7 +1055,7 @@ msgstr "&Procurar:"
 msgid "Group"
 msgstr "Grupo"
 
-#: libviews/functionselection.cpp:167
+#: libviews/functionselection.cpp:167 libviews/functionselection.cpp:505
 msgid "(No Grouping)"
 msgstr "(Sen grupos)"
 
@@ -1104,23 +1104,23 @@ msgstr "Saltar %1 veces a 0x%2"
 msgid "(cycle)"
 msgstr "(ciclar)"
 
-#: libviews/instrview.cpp:168 libviews/sourceview.cpp:62
+#: libviews/instrview.cpp:193 libviews/sourceview.cpp:62
 msgid "#"
 msgstr "N.º"
 
-#: libviews/instrview.cpp:172
+#: libviews/instrview.cpp:197
 msgid "Hex"
 msgstr "Hex"
 
-#: libviews/instrview.cpp:174
+#: libviews/instrview.cpp:199
 msgid "Assembly Instructions"
 msgstr "Instrucións en ensamblador"
 
-#: libviews/instrview.cpp:175
+#: libviews/instrview.cpp:200
 msgid "Source Position"
 msgstr "Posición da fonte"
 
-#: libviews/instrview.cpp:211
+#: libviews/instrview.cpp:236
 msgid ""
 "<b>Annotated Machine Code</b><p>The annotated machine code list shows the "
 "assembly instructions of the current selected function together with (self) "
@@ -1140,82 +1140,86 @@ msgstr ""
 "«binutils».</p> <p>Escolla unha liña con información de chamada para facer a "
 "actual a función de destino desa chamada.</p>"
 
-#: libviews/instrview.cpp:245
+#: libviews/instrview.cpp:270
 #, qt-format
 msgid "Go to Address %1"
 msgstr "Ir ao enderezo %1"
 
-#: libviews/instrview.cpp:257
+#: libviews/instrview.cpp:282
 msgid "Hex Code"
 msgstr "Código hex"
 
-#: libviews/instrview.cpp:551
+#: libviews/instrview.cpp:576
 msgid "There is no instruction info in the profile data file."
 msgstr ""
 "Non hai información da instrución no ficheiro de datos do tracexamento."
 
-#: libviews/instrview.cpp:553
+#: libviews/instrview.cpp:578
 msgid "Tip: For Callgrind, rerun with option"
 msgstr "Axuda: con Callgrind, execúteo de novo coa opción"
 
-#: libviews/instrview.cpp:554
+#: libviews/instrview.cpp:579
 msgid "      --dump-instr=yes"
 msgstr "      --dump-instr=yes"
 
-#: libviews/instrview.cpp:555
+#: libviews/instrview.cpp:580
 msgid "To see (conditional) jumps, additionally specify"
 msgstr "Para ver os saltos (condicionais), indique ademáis"
 
-#: libviews/instrview.cpp:556
+#: libviews/instrview.cpp:581
 msgid "      --collect-jumps=yes"
 msgstr "      --collect-jumps=yes"
 
-#: libviews/instrview.cpp:776
+#: libviews/instrview.cpp:819
 msgid "For annotated machine code, the following object file is needed:"
 msgstr ""
 "Para ver o código-máquina anotado precísase ademais o seguinte ficheiro:"
 
-#: libviews/instrview.cpp:781
+#: libviews/instrview.cpp:824
 msgid "This file can not be found."
 msgstr "Non se atopou ese ficheiro."
 
-#: libviews/instrview.cpp:804
+#: libviews/instrview.cpp:827
+msgid "If cross-compiled, set SYSROOT variable."
+msgstr ""
+
+#: libviews/instrview.cpp:850
 msgid "There is an error trying to execute the command"
 msgstr "Produciuse un erro ao tentar executar a orde"
 
-#: libviews/instrview.cpp:808 libviews/instrview.cpp:1098
+#: libviews/instrview.cpp:854 libviews/instrview.cpp:1146
 msgid "Check that you have installed 'objdump'."
 msgstr "Verifique que ten instalado «objdump»."
 
-#: libviews/instrview.cpp:810 libviews/instrview.cpp:1100
+#: libviews/instrview.cpp:856 libviews/instrview.cpp:1148
 msgid "This utility can be found in the 'binutils' package."
 msgstr "Esta utilidade atópase no paquete «binutils»."
 
-#: libviews/instrview.cpp:910
+#: libviews/instrview.cpp:958
 msgid "(No Instruction)"
 msgstr "(Sen instrución)"
 
-#: libviews/instrview.cpp:1076
+#: libviews/instrview.cpp:1124
 msgid "This happens because the code of"
 msgstr "Isto acontece porque o código de"
 
-#: libviews/instrview.cpp:1079
+#: libviews/instrview.cpp:1127
 msgid "does not seem to match the profile data file."
 msgstr "non semella coincidir co ficheiro de datos do tracexamento."
 
-#: libviews/instrview.cpp:1082
+#: libviews/instrview.cpp:1130
 msgid "Are you using an old profile data file or is the above mentioned"
 msgstr "Está a usar un ficheiro de datos de tracexamento vello ou é que tal"
 
-#: libviews/instrview.cpp:1084
+#: libviews/instrview.cpp:1132
 msgid "ELF object from an updated installation/another machine?"
 msgstr "obxecto ELF dunha instalación actualizada ou de outra máquina?"
 
-#: libviews/instrview.cpp:1092
+#: libviews/instrview.cpp:1140
 msgid "There seems to be an error trying to execute the command"
 msgstr "Semella haber un erro ao tentar executar a orde"
 
-#: libviews/instrview.cpp:1096
+#: libviews/instrview.cpp:1144
 msgid "Check that the ELF object used in the command exists."
 msgstr "Verifique que exista o objecto ELF empregado na orde."
 
