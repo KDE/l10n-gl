@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libakonadi\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2015-06-08 08:43+0000\n"
+"POT-Creation-Date: 2015-06-26 08:54+0000\n"
 "PO-Revision-Date: 2015-04-18 06:51+0200\n"
 "Last-Translator: Adrián Chaves Fernández <adriyetichaves@gmail.com>\n"
 "Language-Team: Galician <kde-i18n-doc@kde.org>\n"
@@ -204,31 +204,60 @@ msgstr "Non foi posíbel obter a interface D-Bus para o recurso «%1»"
 msgid "Collection attributes synchronization timed out."
 msgstr "A sincronización dos atributos da colección esgotou o tempo límite."
 
+#: core/jobs/collectioncopyjob.cpp:62
+#, fuzzy
+#| msgid "Invalid collection"
+msgid "Invalid collection to copy"
+msgstr "A colección non é válida"
+
+#: core/jobs/collectioncopyjob.cpp:68
+#, fuzzy
+#| msgid "Invalid collection"
+msgid "Invalid destination collection"
+msgstr "A colección non é válida"
+
 #: core/jobs/collectioncreatejob.cpp:58
 msgid "Invalid parent"
 msgstr "O pai non é válido"
 
-#: core/jobs/collectiondeletejob.cpp:59
+#: core/jobs/collectioncreatejob.cpp:105
+#, fuzzy
+#| msgid "Failed to retrieve collection for sync."
+msgid "Failed to parse Collection from response"
+msgstr "Fallou a obtención da colección para sincronización."
+
+#: core/jobs/collectiondeletejob.cpp:60
 msgid "Invalid collection"
 msgstr "A colección non é válida"
 
-#: core/jobs/collectionfetchjob.cpp:231
+#: core/jobs/collectionfetchjob.cpp:233
 msgid "Invalid collection given."
 msgstr "Deuse unha colección que non é válida."
 
-#: core/jobs/collectionselectjob.cpp:73
-msgid "Invalid collection specified"
-msgstr "Especificouse unha colección que non é válida"
+#: core/jobs/collectionmovejob.cpp:59 core/jobs/itemmovejob.cpp:85
+msgid "No objects specified for moving"
+msgstr "Non se indicou que obxectos mover"
+
+#: core/jobs/collectionmovejob.cpp:66 core/jobs/itemmovejob.cpp:92
+#: core/jobs/linkjobimpl_p.h:54
+msgid "No valid destination specified"
+msgstr "Non se especificou ningún destino válido"
 
 #: core/jobs/invalidatecachejob.cpp:65
 msgid "Invalid collection."
 msgstr "A colección non é válida."
 
-#: core/jobs/job.cpp:308
+#: core/jobs/itemcreatejob.cpp:100
+#, fuzzy
+#| msgid "Invalid collection"
+msgid "Invalid parent collection"
+msgstr "A colección non é válida"
+
+#: core/jobs/job.cpp:304
 msgid "Cannot connect to the Akonadi service."
 msgstr "Non foi posíbel conectar co servizo Akonadi."
 
-#: core/jobs/job.cpp:311
+#: core/jobs/job.cpp:307
 msgid ""
 "The protocol version of the Akonadi server is incompatible. Make sure you "
 "have a compatible version installed."
@@ -236,23 +265,15 @@ msgstr ""
 "A versión do protocolo do servizo Akonadi non é compatíbel. Verifique que "
 "ten instalada unha versión compatíbel."
 
-#: core/jobs/job.cpp:314
+#: core/jobs/job.cpp:310
 msgid "User canceled operation."
 msgstr "O usuario cancelou a operación."
 
-#: core/jobs/job.cpp:319
+#: core/jobs/job.cpp:315
 msgid "Unknown error."
 msgstr "Erro descoñecido."
 
-#: core/jobs/linkjobimpl_p.h:52 core/jobs/movejobimpl_p.h:52
-msgid "No valid destination specified"
-msgstr "Non se especificou ningún destino válido"
-
-#: core/jobs/movejobimpl_p.h:46
-msgid "No objects specified for moving"
-msgstr "Non se indicou que obxectos mover"
-
-#: core/jobs/relationcreatejob.cpp:52 core/jobs/relationdeletejob.cpp:52
+#: core/jobs/relationcreatejob.cpp:54 core/jobs/relationdeletejob.cpp:54
 msgid "Failed to create relation."
 msgstr "Non foi posíbel crear a relación."
 
@@ -456,10 +477,19 @@ msgstr "Engadido sen nome"
 msgid "No description available"
 msgstr "Non se dispón de descrición"
 
-#: core/session.cpp:292
+#: core/session.cpp:307
 #, kde-format
-msgid "Protocol version %1 found, expected at least %2"
-msgstr "Atopouse a versión %1 do protocolo; agardábase polo menos a %2"
+msgid ""
+"Protocol version mismatch. Server version is newer (%1) than ours (%2). If "
+"you updated your system recently please restart the Akonadi server."
+msgstr ""
+
+#: core/session.cpp:313
+#, kde-format
+msgid ""
+"Protocol version mismatch. Server version is older (%1) than ours (%2). If "
+"you updated your system recently please restart all KDE PIM applications."
+msgstr ""
 
 #: selftest/main.cpp:31
 msgid "Akonadi Self Test"
@@ -1219,41 +1249,50 @@ msgstr ""
 msgid "Server protocol version is too old."
 msgstr "A versión do protocolo do servidor é vella de máis."
 
-#: widgets/selftestdialog.cpp:446
-#, kde-format
+#: widgets/selftestdialog.cpp:446 widgets/selftestdialog.cpp:452
+#, fuzzy, kde-format
+#| msgid ""
+#| "The server protocol version is %1, but at least version %2 is required. "
+#| "Install a newer version of the Akonadi server."
 msgid ""
-"The server protocol version is %1, but at least version %2 is required. "
-"Install a newer version of the Akonadi server."
+"The server protocol version is %1, but version %2 is required by the client. "
+"If you recently updated KDE PIM, please make sure to restart both Akonadi "
+"and KDE PIM applications."
 msgstr ""
 "A versión do protocolo do servidor é %1, pero requírese polo menos a versión "
 "%2. Instale unha versión máis recente do servidor Akonadi."
 
 #: widgets/selftestdialog.cpp:451
-msgid "Server protocol version is recent enough."
-msgstr "A versión do protocolo do servidor é recente de abondo."
+#, fuzzy
+#| msgid "Server protocol version is too old."
+msgid "Server protocol version is too new."
+msgstr "A versión do protocolo do servidor é vella de máis."
 
-#: widgets/selftestdialog.cpp:452
-#, kde-format
-msgid ""
-"The server Protocol version is %1, which equal or newer than the required "
-"version %2."
-msgstr ""
-"A versión do protocolo do servidor é %1, que é igual ou máis nova que a "
-"versión requirida %2."
+#: widgets/selftestdialog.cpp:457
+#, fuzzy
+#| msgid "Server protocol version is too old."
+msgid "Server protocol version matches."
+msgstr "A versión do protocolo do servidor é vella de máis."
 
-#: widgets/selftestdialog.cpp:472
+#: widgets/selftestdialog.cpp:458
+#, fuzzy, kde-format
+#| msgid "Server protocol version is too old."
+msgid "The current Protocol version is %1."
+msgstr "A versión do protocolo do servidor é vella de máis."
+
+#: widgets/selftestdialog.cpp:477
 msgid "Resource agents found."
 msgstr "Atopáronse clientes de recurso."
 
-#: widgets/selftestdialog.cpp:472
+#: widgets/selftestdialog.cpp:477
 msgid "At least one resource agent has been found."
 msgstr "Atopouse polo menos un cliente de recurso."
 
-#: widgets/selftestdialog.cpp:474
+#: widgets/selftestdialog.cpp:479
 msgid "No resource agents found."
 msgstr "Non se atopou ningún cliente de recurso."
 
-#: widgets/selftestdialog.cpp:475
+#: widgets/selftestdialog.cpp:480
 #, kde-format
 msgid ""
 "No resource agents have been found, Akonadi is not usable without at least "
@@ -1269,20 +1308,20 @@ msgstr ""
 "verifique que isto inclúe todas as rutas nas que estean instalados os "
 "axentes de Akonadi."
 
-#: widgets/selftestdialog.cpp:493
+#: widgets/selftestdialog.cpp:498
 msgid "No current Akonadi server error log found."
 msgstr "Non se atopou ningún rexistro do servidor Akonadi actual."
 
-#: widgets/selftestdialog.cpp:494
+#: widgets/selftestdialog.cpp:499
 msgid ""
 "The Akonadi server did not report any errors during its current startup."
 msgstr "O servidor Akonadi non informou de ningún erro durante esta arrancada."
 
-#: widgets/selftestdialog.cpp:496
+#: widgets/selftestdialog.cpp:501
 msgid "Current Akonadi server error log found."
 msgstr "Atopouse un rexistro de erro do servidor Akonadi actual."
 
-#: widgets/selftestdialog.cpp:497
+#: widgets/selftestdialog.cpp:502
 #, kde-format
 msgid ""
 "The Akonadi server reported errors during its current startup. The log can "
@@ -1291,21 +1330,21 @@ msgstr ""
 "O servidor Akonadi informou de erros durante esta arrancada. Pódese atopar o "
 "rexistro en %1."
 
-#: widgets/selftestdialog.cpp:504
+#: widgets/selftestdialog.cpp:509
 msgid "No previous Akonadi server error log found."
 msgstr "Non se atopou ningún rexistro anterior de erros do servidor Akonadi"
 
-#: widgets/selftestdialog.cpp:505
+#: widgets/selftestdialog.cpp:510
 msgid ""
 "The Akonadi server did not report any errors during its previous startup."
 msgstr ""
 "O servidor Akonadi non informou de ningún erro durante a arrancada anterior."
 
-#: widgets/selftestdialog.cpp:507
+#: widgets/selftestdialog.cpp:512
 msgid "Previous Akonadi server error log found."
 msgstr "Atopouse un rexistro previo de erros do servidor Akonadi."
 
-#: widgets/selftestdialog.cpp:508
+#: widgets/selftestdialog.cpp:513
 #, kde-format
 msgid ""
 "The Akonadi server reported errors during its previous startup. The log can "
@@ -1314,11 +1353,11 @@ msgstr ""
 "O servidor Akonadi informou de erros durante o arranque anterior. Pódese "
 "atopar o rexistro en %1."
 
-#: widgets/selftestdialog.cpp:519
+#: widgets/selftestdialog.cpp:524
 msgid "No current Akonadi control error log found."
 msgstr "Non se atopou ningún rexistro actual de erros de Akonadi."
 
-#: widgets/selftestdialog.cpp:520
+#: widgets/selftestdialog.cpp:525
 msgid ""
 "The Akonadi control process did not report any errors during its current "
 "startup."
@@ -1326,11 +1365,11 @@ msgstr ""
 "O proceso de control de Akonadi non informou de ningún erro durante esta "
 "arrancada."
 
-#: widgets/selftestdialog.cpp:522
+#: widgets/selftestdialog.cpp:527
 msgid "Current Akonadi control error log found."
 msgstr "Atopouse o rexistro actual de erros de Akonadi."
 
-#: widgets/selftestdialog.cpp:523
+#: widgets/selftestdialog.cpp:528
 #, kde-format
 msgid ""
 "The Akonadi control process reported errors during its current startup. The "
@@ -1339,11 +1378,11 @@ msgstr ""
 "O proceso de control de Akonadi informou de erros durante esta arrancada. "
 "Pódese atopar o rexistro en %1."
 
-#: widgets/selftestdialog.cpp:530
+#: widgets/selftestdialog.cpp:535
 msgid "No previous Akonadi control error log found."
 msgstr "Non se atopou ningún rexistro anterior de erros de Akonadi."
 
-#: widgets/selftestdialog.cpp:531
+#: widgets/selftestdialog.cpp:536
 msgid ""
 "The Akonadi control process did not report any errors during its previous "
 "startup."
@@ -1351,11 +1390,11 @@ msgstr ""
 "O proceso de control de Akonadi non informou de ningún erro durante a "
 "anterior arrancada."
 
-#: widgets/selftestdialog.cpp:533
+#: widgets/selftestdialog.cpp:538
 msgid "Previous Akonadi control error log found."
 msgstr "Atopouse un rexistro previo de erros do control de Akonadi."
 
-#: widgets/selftestdialog.cpp:534
+#: widgets/selftestdialog.cpp:539
 #, kde-format
 msgid ""
 "The Akonadi control process reported errors during its previous startup. The "
@@ -1364,11 +1403,11 @@ msgstr ""
 "O proceso de control de Akonadi informou en %1 de erros durante o anterior "
 "arranque. Pódese atopar o rexistro en %1."
 
-#: widgets/selftestdialog.cpp:543
+#: widgets/selftestdialog.cpp:548
 msgid "Akonadi was started as root"
 msgstr "Akonadi foi iniciado como usuario root"
 
-#: widgets/selftestdialog.cpp:543
+#: widgets/selftestdialog.cpp:548
 msgid ""
 "Running Internet-facing applications as root/administrator exposes you to "
 "many security risks. MySQL, used by this Akonadi installation, will not "
@@ -1379,11 +1418,11 @@ msgstr ""
 "Akonadi non permite ser executado como root para protexer fronte a estes "
 "riscos."
 
-#: widgets/selftestdialog.cpp:545
+#: widgets/selftestdialog.cpp:550
 msgid "Akonadi is not running as root"
 msgstr "Akonadi non se está a executar como root"
 
-#: widgets/selftestdialog.cpp:545
+#: widgets/selftestdialog.cpp:550
 msgid ""
 "Akonadi is not running as a root/administrator user, which is the "
 "recommended setup for a secure system."
@@ -1391,11 +1430,11 @@ msgstr ""
 "O Akonadi non se está a executar como usuario root ou administrador, que é a "
 "configuración recomendada para un sistema seguro."
 
-#: widgets/selftestdialog.cpp:623
+#: widgets/selftestdialog.cpp:628
 msgid "Save Test Report"
 msgstr "Gardar o informe da proba"
 
-#: widgets/selftestdialog.cpp:630
+#: widgets/selftestdialog.cpp:635
 #, kde-format
 msgid "Could not open file '%1'"
 msgstr "Non foi posíbel abrir o ficheiro «%1»"
@@ -2003,6 +2042,22 @@ msgstr "Non foi posíbel procesar o ficheiro de datos: %1"
 #, kde-format
 msgid "Unable to find collection %1"
 msgstr "Non foi posíbel atopar a colección %1"
+
+#~ msgid "Invalid collection specified"
+#~ msgstr "Especificouse unha colección que non é válida"
+
+#~ msgid "Protocol version %1 found, expected at least %2"
+#~ msgstr "Atopouse a versión %1 do protocolo; agardábase polo menos a %2"
+
+#~ msgid "Server protocol version is recent enough."
+#~ msgstr "A versión do protocolo do servidor é recente de abondo."
+
+#~ msgid ""
+#~ "The server Protocol version is %1, which equal or newer than the required "
+#~ "version %2."
+#~ msgstr ""
+#~ "A versión do protocolo do servidor é %1, que é igual ou máis nova que a "
+#~ "versión requirida %2."
 
 #~ msgid "Inconsistent local collection tree detected."
 #~ msgstr "Detectouse unha árbore de coleccións local que é inconsistente."
