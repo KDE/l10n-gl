@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2015-10-08 09:05+0000\n"
+"POT-Creation-Date: 2015-10-23 08:12+0000\n"
 "PO-Revision-Date: 2015-08-07 08:24+0200\n"
 "Last-Translator: Adrián Chaves Fernández (Gallaecio) <adriyetichaves@gmail."
 "com>\n"
@@ -188,7 +188,7 @@ msgstr "Mostrar os favoritos"
 msgid "Configure Toolbars"
 msgstr "Configurar as barras de ferramentas"
 
-#: src/actioncollection.cpp:183 src/widgets/historydock.cpp:261
+#: src/actioncollection.cpp:183 src/menu/call.cpp:86
 msgid "Add new contact"
 msgstr "Engadir un novo contacto"
 
@@ -196,7 +196,7 @@ msgstr "Engadir un novo contacto"
 msgid "Configure Shortcut"
 msgstr "Configurar o atallo de teclado…"
 
-#: src/canvasobjectmanager.cpp:227 src/mainwindow.cpp:193
+#: src/canvasobjectmanager.cpp:227 src/mainwindow.cpp:194
 msgid "Ring"
 msgstr "Ring"
 
@@ -260,7 +260,7 @@ msgctxt "Add new account"
 msgid "Add"
 msgstr "Engadir"
 
-#. i18n: ectx: property (whatsThis), widget (QTreeView, m_pAccountList)
+#. i18n: ectx: property (whatsThis), widget (CategorizedTree, m_pAccountList)
 #: src/conf/account/accountdlg.ui:121
 msgid ""
 "By default, when you place a call, Ring will use the first account in this "
@@ -1097,6 +1097,7 @@ msgstr "Tons de chamada"
 
 #. i18n: ectx: attribute (title), widget (QWidget, tab_8)
 #: src/conf/account/accountpages/tabs.ui:91
+#: src/conf/account/model/extendedprotocolmodel.cpp:42
 msgid "Profile"
 msgstr "Perfil"
 
@@ -1229,7 +1230,7 @@ msgstr "Macro"
 #. i18n: ectx: property (text), widget (RightToolButton, m_pRemoveTB)
 #. i18n: ectx: property (text), widget (RightToolButton, m_pRemove)
 #: src/conf/dlgaccessibility.ui:115 src/conf/dlgpresence.ui:81
-#: src/widgets/historydock.cpp:240
+#: src/menu/call.cpp:65
 msgid "Remove"
 msgstr "Eliminar"
 
@@ -1631,6 +1632,39 @@ msgstr "Configuración do dispositivo"
 #: src/delegates/historydelegate.cpp:303
 msgid "Conference"
 msgstr "Conferencia"
+
+#: src/dock.cpp:81
+msgctxt "Contact tab"
+msgid "Contact"
+msgstr "Contacto"
+
+#: src/dock.cpp:117
+msgctxt "History tab"
+msgid "History"
+msgstr "Historial"
+
+#: src/dock.cpp:145
+#, fuzzy
+#| msgid "Bookmark"
+msgctxt "Bookmark tab"
+msgid "Bookmark"
+msgstr "Favoritos"
+
+#: src/dock.cpp:226 src/mainwindow.cpp:515
+msgid "Call"
+msgstr "Chamada"
+
+#: src/dock.cpp:229 src/menu/call.cpp:69 src/menu/person.cpp:78
+msgid "Bookmark"
+msgstr "Favoritos"
+
+#: src/dock.cpp:232
+msgid "Contact"
+msgstr "Contacto"
+
+#: src/dock.cpp:235
+msgid "History"
+msgstr "Historial"
 
 #: src/errormessage.cpp:22
 msgid ""
@@ -2164,29 +2198,29 @@ msgstr "Busca"
 msgid "Preferred"
 msgstr "Preferido"
 
-#: src/mainwindow.cpp:208
+#: src/mainwindow.cpp:209
 msgctxt "Call tab"
 msgid "Call"
 msgstr "Chamar"
 
-#: src/mainwindow.cpp:326
+#: src/mainwindow.cpp:295
 msgctxt "The presence state is \"Online\""
 msgid "Online"
 msgstr "Conectado"
 
-#: src/mainwindow.cpp:336
+#: src/mainwindow.cpp:305
 msgid "Your Ring ID:"
 msgstr "Identificador de Ring:"
 
-#: src/mainwindow.cpp:343
+#: src/mainwindow.cpp:312
 msgid "None"
 msgstr "Ningún"
 
-#: src/mainwindow.cpp:356
+#: src/mainwindow.cpp:325
 msgid "Account:"
 msgstr "Conta:"
 
-#: src/mainwindow.cpp:373
+#: src/mainwindow.cpp:342
 msgid ""
 "The Ring daemon (dring) is not available. Please be sure it is installed "
 "correctly or launch it manually"
@@ -2194,22 +2228,52 @@ msgstr ""
 "O servizo de Ring (dring) non está dispoñíbel. Asegúrese de que está "
 "correctamente instalado, ou inícieo manualmente."
 
-#: src/mainwindow.cpp:527 src/mainwindow.cpp:597
-msgid "Call"
-msgstr "Chamada"
+#: src/menu/call.cpp:52 src/menu/contactmethod.cpp:44 src/menu/person.cpp:50
+msgid "Call Again"
+msgstr "Chamar de novo"
 
-#: src/mainwindow.cpp:530 src/widgets/contactdock.cpp:236
-#: src/widgets/historydock.cpp:244 src/widgets/historydock.cpp:246
-msgid "Bookmark"
-msgstr "Favoritos"
+#. i18n: ectx: property (text), widget (QPushButton, m_pCopy)
+#: src/menu/call.cpp:56 src/menu/contactmethod.cpp:52 src/menu/person.cpp:61
+#: src/widgets/ui/share.ui:72
+msgid "Copy"
+msgstr "Copiar"
 
-#: src/mainwindow.cpp:533
-msgid "Contact"
-msgstr "Contacto"
+#: src/menu/call.cpp:60 src/menu/contactmethod.cpp:56 src/menu/person.cpp:66
+msgid "Send Email"
+msgstr "Enviar un correo"
 
-#: src/mainwindow.cpp:536
-msgid "History"
-msgstr "Historial"
+#: src/menu/contactmethod.cpp:48 src/menu/person.cpp:55
+msgid "Edit contact"
+msgstr "Editar o contacto"
+
+#: src/menu/contactmethod.cpp:61 src/menu/person.cpp:72
+msgid "Add Phone Number"
+msgstr "Engadir un número de teléfono"
+
+#: src/menu/contactmethod.cpp:66
+msgid "Remove Bookmark"
+msgstr "Retirar dos favoritos"
+
+#: src/menu/contactmethod.cpp:172 src/menu/person.cpp:165
+msgid "Enter a new number"
+msgstr "Marcar un número novo"
+
+#: src/menu/contactmethod.cpp:172 src/menu/person.cpp:165
+msgid "New number:"
+msgstr "Número novo:"
+
+#: src/menu/person.cpp:83
+msgid "Delete"
+msgstr "Eliminar"
+
+#: src/menu/person.cpp:185
+#, kde-format
+msgid "Are you sure you want to permanently delete %1?"
+msgstr "Está seguro de que quere eliminar %1 de maneira permanente?"
+
+#: src/menu/person.cpp:186
+msgid "Delete contact"
+msgstr "Eliminar o contacto"
 
 #. i18n: ectx: property (placeholderText), widget (QLineEdit, m_pSendMessageLE)
 #: src/ui/View_base.ui:69
@@ -2231,87 +2295,9 @@ msgstr "Volume do micrófono"
 msgid "Speakers volume"
 msgstr "Volume dos altofalantes"
 
-#: src/widgets/autocompletion.cpp:119
+#: src/widgets/autocompletion.cpp:47
 msgid "Use ⬆ up and ⬇ down arrows to select one of these numbers"
 msgstr "Use as teclas de ⬆ arriba e ⬇ abaixo para seleccionar un número."
-
-#. i18n: ectx: property (placeholderText), widget (FilterLineEdit, m_pFilterLE)
-#: src/widgets/bookmarkdock.cpp:88 src/widgets/ui/contactdock.ui:20
-#: src/widgets/ui/dockbase.ui:56
-msgid "Filter"
-msgstr "Filtro"
-
-#: src/widgets/bookmarkdock.cpp:94
-msgid "Show most called contacts"
-msgstr "Mostrar os contactos aos que chama con maior frecuencia."
-
-#: src/widgets/bookmarkdock.cpp:99
-msgctxt "Bookmark dock"
-msgid "Bookmark"
-msgstr "Favoritos"
-
-#: src/widgets/bookmarkdock.cpp:154 src/widgets/contactdock.cpp:208
-#: src/widgets/historydock.cpp:227
-msgid "Call Again"
-msgstr "Chamar de novo"
-
-#: src/widgets/bookmarkdock.cpp:158 src/widgets/contactdock.cpp:213
-msgid "Edit contact"
-msgstr "Editar o contacto"
-
-#. i18n: ectx: property (text), widget (QPushButton, m_pCopy)
-#: src/widgets/bookmarkdock.cpp:162 src/widgets/contactdock.cpp:219
-#: src/widgets/historydock.cpp:231 src/widgets/ui/share.ui:72
-msgid "Copy"
-msgstr "Copiar"
-
-#: src/widgets/bookmarkdock.cpp:166 src/widgets/contactdock.cpp:224
-#: src/widgets/historydock.cpp:235
-msgid "Send Email"
-msgstr "Enviar un correo"
-
-#: src/widgets/bookmarkdock.cpp:171 src/widgets/contactdock.cpp:230
-msgid "Add Phone Number"
-msgstr "Engadir un número de teléfono"
-
-#: src/widgets/bookmarkdock.cpp:176
-msgid "Remove Bookmark"
-msgstr "Retirar dos favoritos"
-
-#: src/widgets/bookmarkdock.cpp:290 src/widgets/contactdock.cpp:353
-msgid "Enter a new number"
-msgstr "Marcar un número novo"
-
-#: src/widgets/bookmarkdock.cpp:290 src/widgets/contactdock.cpp:353
-msgid "New number:"
-msgstr "Número novo:"
-
-#: src/widgets/contactdock.cpp:118
-msgctxt "Contact tab"
-msgid "Contact"
-msgstr "Contacto"
-
-#: src/widgets/contactdock.cpp:241
-msgid "Delete"
-msgstr "Eliminar"
-
-#: src/widgets/contactdock.cpp:373
-#, kde-format
-msgid "Are you sure you want to permanently delete %1?"
-msgstr "Está seguro de que quere eliminar %1 de maneira permanente?"
-
-#: src/widgets/contactdock.cpp:374
-msgid "Delete contact"
-msgstr "Eliminar o contacto"
-
-#: src/widgets/historydock.cpp:152
-msgctxt "History tab"
-msgid "History"
-msgstr "Historial"
-
-#: src/widgets/historydock.cpp:250
-msgid "Remove bookmark"
-msgstr "Retirar dos favoritos"
 
 #: src/widgets/kphonenumberselector.cpp:47
 msgid "Select phone number"
@@ -2362,10 +2348,14 @@ msgid "An account went down"
 msgstr "Caeu unha conta"
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, ContactDock)
-#. i18n: ectx: property (windowTitle), widget (QWidget, DockBase)
-#: src/widgets/ui/contactdock.ui:14 src/widgets/ui/dockbase.ui:14
+#: src/widgets/ui/contactdock.ui:14
 msgid "Dock"
 msgstr "Acoplar"
+
+#. i18n: ectx: property (placeholderText), widget (FilterLineEdit, m_pFilterLE)
+#: src/widgets/ui/contactdock.ui:63
+msgid "Filter"
+msgstr "Filtro"
 
 #. i18n: ectx: property (text), widget (QLabel, m_pElapsed)
 #. i18n: ectx: property (text), widget (QLabel, m_pLeft)
@@ -2503,9 +2493,19 @@ msgstr "Seguinte"
 msgid "Device:"
 msgstr "Dispositivo:"
 
-#: src/widgets/videodock.cpp:257
+#: src/widgets/videodock.cpp:254
 msgid "Full screen video"
 msgstr "Vídeo a pantalla completa"
+
+#~ msgid "Show most called contacts"
+#~ msgstr "Mostrar os contactos aos que chama con maior frecuencia."
+
+#~ msgctxt "Bookmark dock"
+#~ msgid "Bookmark"
+#~ msgstr "Favoritos"
+
+#~ msgid "Remove bookmark"
+#~ msgstr "Retirar dos favoritos"
 
 #~ msgid ""
 #~ "To add an account, press the \"Add\" button below. Use the ⬆ up and ⬇ "
