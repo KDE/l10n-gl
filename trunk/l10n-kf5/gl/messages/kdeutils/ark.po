@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ark\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2015-10-20 10:17+0000\n"
+"POT-Creation-Date: 2015-10-26 08:07+0000\n"
 "PO-Revision-Date: 2015-10-24 11:30+0100\n"
 "Last-Translator: Adrián Chaves Fernández (Gallaecio) <adriyetichaves@gmail."
 "com>\n"
@@ -186,7 +186,12 @@ msgid ""
 msgstr ""
 "Cartafol no que extraer. Se non se especifica, usarase o cartafol actual."
 
-#: app/main.cpp:140
+#. i18n: ectx: label, entry (openDestinationFolderAfterExtraction), group (Extraction)
+#: app/main.cpp:140 kerfuffle/ark.kcfg:9
+msgid "Open destination folder after extraction."
+msgstr "Abrir o cartafol de destino despois da extracción."
+
+#: app/main.cpp:143
 msgid ""
 "Query the user for an archive filename and add specified files to it. Quit "
 "when finished."
@@ -194,7 +199,7 @@ msgstr ""
 "Pedirlle ao usuario a ruta dun arquivo, e engadir os ficheiros indicados a "
 "el. Ao rematar, saír."
 
-#: app/main.cpp:143
+#: app/main.cpp:146
 msgid ""
 "Add the specified files to 'filename'. Create archive if it does not exist. "
 "Quit when finished."
@@ -202,7 +207,7 @@ msgstr ""
 "Engadir os ficheiros especificados á ruta “filename”. Crear un arquivo se "
 "non existe xa un. Ao rematar, saír."
 
-#: app/main.cpp:147
+#: app/main.cpp:150
 msgid ""
 "Change the current dir to the first entry and add all other entries relative "
 "to this one."
@@ -210,7 +215,7 @@ msgstr ""
 "Cambiar o directorio actual á primeira entrada, e o resto das entradas "
 "relativas a el."
 
-#: app/main.cpp:150
+#: app/main.cpp:153
 msgid ""
 "Automatically choose a filename, with the selected suffix (for example rar, "
 "tar.gz, zip or any other supported types)"
@@ -218,7 +223,7 @@ msgstr ""
 "Escoller automaticamente un nome de ficheiro, co sufixo seleccionado. "
 "Posíbeis valores: «rar», «tar.gz», «zip», etc."
 
-#: app/main.cpp:154
+#: app/main.cpp:157
 msgid ""
 "Use the batch interface instead of the usual dialog. This option is implied "
 "if more than one url is specified."
@@ -226,12 +231,12 @@ msgstr ""
 "Usar a interface por lotes en vez de o diálogo habitual. Esta opción vai "
 "implícita se se indica máis dun URL."
 
-#: app/main.cpp:157
+#: app/main.cpp:160
 msgid ""
 "The destination argument will be set to the path of the first file supplied."
 msgstr "O argumento de destino será a primeira ruta fornecida."
 
-#: app/main.cpp:160
+#: app/main.cpp:163
 msgid ""
 "Archive contents will be read, and if detected to not be a single folder "
 "archive, a subfolder with the name of the archive will be created."
@@ -302,11 +307,6 @@ msgstr ""
 #: kerfuffle/addtoarchive.cpp:186
 msgid "It is not possible to create archives of this type."
 msgstr "Non é posíbel crear arquivos deste tipo."
-
-#. i18n: ectx: label, entry (openDestinationFolderAfterExtraction), group (Extraction)
-#: kerfuffle/ark.kcfg:9
-msgid "Open destination folder after extraction."
-msgstr "Abrir o cartafol de destino despois da extracción."
 
 #. i18n: ectx: label, entry (closeAfterExtraction), group (Extraction)
 #: kerfuffle/ark.kcfg:13
@@ -946,7 +946,7 @@ msgctxt "@info"
 msgid "The archive <filename>%1</filename> was not found."
 msgstr "Non se atopou o arquivo <filename>%1</filename>."
 
-#: part/part.cpp:439 part/part.cpp:495 part/part.cpp:557
+#: part/part.cpp:439 part/part.cpp:458 part/part.cpp:465 part/part.cpp:530
 msgctxt "@title:window"
 msgid "Error Opening Archive"
 msgstr "Erro ao abrir o arquivo"
@@ -961,53 +961,44 @@ msgstr ""
 "Non foi posíbel cargar o arquivo <filename>%1</filename>, non foi posíbel "
 "ler o seu contido."
 
-#: part/part.cpp:477
-msgctxt "@title:window"
-msgid "Invalid Archive Type"
-msgstr "Tipo de arquivo incompatíbel"
-
-#: part/part.cpp:478
+#: part/part.cpp:455
+#, fuzzy, kde-format
+#| msgctxt "@info"
+#| msgid ""
+#| "Ark was not able to open the archive <filename>%1</filename>. No plugin "
+#| "capable of handling the file was found."
 msgctxt "@info"
 msgid ""
-"Ark cannot create archives of the type you have chosen.<br />Please choose "
-"another archive type below."
-msgstr ""
-"Ark non pode crear arquivos do tipo escollido.<br />Escolla un tipo distinto "
-"a continuación."
-
-#: part/part.cpp:481
-msgctxt "@title:window"
-msgid "Unable to Determine Archive Type"
-msgstr "Imposíbel determinar o tipo de arquivo"
-
-#: part/part.cpp:482
-msgctxt "@info"
-msgid ""
-"Ark was unable to determine the archive type of the filename.<br />Please "
-"choose the correct archive type below."
-msgstr ""
-"Ark non puido determinar o tipo de arquivo do ficheiro.<br />Escolla o tipo "
-"correcto da seguinte lista."
-
-#: part/part.cpp:495
-#, kde-format
-msgctxt "@info"
-msgid ""
-"Ark was not able to open the archive <filename>%1</filename>. No plugin "
-"capable of handling the file was found."
+"Ark was not able to open <filename>%1</filename>. No suitable plugin found."
+"<nl/><nl/>Ark does not seem to support this file type."
 msgstr ""
 "Ark non puido abrir o arquivo <filename>%1</filename>. Non se atopou ningún "
 "complemento capaz de manexar o ficheiro."
 
-#: part/part.cpp:538
+#: part/part.cpp:462
+#, fuzzy, kde-format
+#| msgctxt "@info"
+#| msgid ""
+#| "Ark was not able to open the archive <filename>%1</filename>. No plugin "
+#| "capable of handling the file was found."
+msgctxt "@info"
+msgid ""
+"Ark was not able to open <filename>%1</filename>. Failed to load a suitable "
+"plugin.<nl/><nl/>Make sure any executables needed to handle the archive type "
+"are installed."
+msgstr ""
+"Ark non puido abrir o arquivo <filename>%1</filename>. Non se atopou ningún "
+"complemento capaz de manexar o ficheiro."
+
+#: part/part.cpp:511
 msgid "Extraction settings"
 msgstr "Configuración da extracción"
 
-#: part/part.cpp:539
+#: part/part.cpp:512
 msgid "Preview settings"
 msgstr "Configuración da vista previa"
 
-#: part/part.cpp:554
+#: part/part.cpp:527
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -1017,11 +1008,11 @@ msgstr ""
 "Non foi posíbel cargar o arguivo <filename>%1</filename>. Mensaxe de erro: "
 "<nl/><nl/><message>%2</message>"
 
-#: part/part.cpp:619
+#: part/part.cpp:592
 msgid "Ark cannot open symlinks."
 msgstr "Ark non pode abrir ligazóns simbólicas."
 
-#: part/part.cpp:731
+#: part/part.cpp:704
 #, kde-format
 msgid ""
 "The file <filename>%1</filename> was modified. Do you want to update the "
@@ -1029,37 +1020,37 @@ msgid ""
 msgstr ""
 "Modificouse o ficheiro <filename>%1</filename>. Quere actualizar o arquivo?"
 
-#: part/part.cpp:733
+#: part/part.cpp:706
 msgid "File modified"
 msgstr "Modificouse o ficheiro"
 
-#: part/part.cpp:992
+#: part/part.cpp:965
 msgctxt "@title:window"
 msgid "Add Files"
 msgstr "Engadir ficheiros"
 
-#: part/part.cpp:999
+#: part/part.cpp:972
 msgctxt "@title:window"
 msgid "Add Folder"
 msgstr "Engadir un cartafol"
 
-#: part/part.cpp:1024
+#: part/part.cpp:997
 msgid "Deleting these files is not undoable. Are you sure you want to do this?"
 msgstr ""
 "Unha vez eliminados os ficheiros, non será posíbel recuperalos. Desexa "
 "realmente continuar?"
 
-#: part/part.cpp:1025
+#: part/part.cpp:998
 msgctxt "@title:window"
 msgid "Delete files"
 msgstr "Eliminalos"
 
-#: part/part.cpp:1057
+#: part/part.cpp:1030
 msgctxt "@title:window"
 msgid "Save Archive As"
 msgstr "Gardar o arquivo como"
 
-#: part/part.cpp:1064
+#: part/part.cpp:1037
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -1069,7 +1060,7 @@ msgstr ""
 "Xa existe un arquivo chamado <filename>%1</filename>. Desexa realmente "
 "substituílo?"
 
-#: part/part.cpp:1078
+#: part/part.cpp:1051
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -1079,7 +1070,7 @@ msgstr ""
 "Non é posíbel copiar o arquivo <filename>%1</filename> ao lugar indicado. O "
 "arquivo xa non existe."
 
-#: part/part.cpp:1092
+#: part/part.cpp:1065
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -1241,6 +1232,30 @@ msgid ""
 "There was an error while reading <filename>%1</filename> during extraction."
 msgstr ""
 "Produciuse un erro ao ler <filename>%1</filename> durante a extracción."
+
+#~ msgctxt "@title:window"
+#~ msgid "Invalid Archive Type"
+#~ msgstr "Tipo de arquivo incompatíbel"
+
+#~ msgctxt "@info"
+#~ msgid ""
+#~ "Ark cannot create archives of the type you have chosen.<br />Please "
+#~ "choose another archive type below."
+#~ msgstr ""
+#~ "Ark non pode crear arquivos do tipo escollido.<br />Escolla un tipo "
+#~ "distinto a continuación."
+
+#~ msgctxt "@title:window"
+#~ msgid "Unable to Determine Archive Type"
+#~ msgstr "Imposíbel determinar o tipo de arquivo"
+
+#~ msgctxt "@info"
+#~ msgid ""
+#~ "Ark was unable to determine the archive type of the filename.<br />Please "
+#~ "choose the correct archive type below."
+#~ msgstr ""
+#~ "Ark non puido determinar o tipo de arquivo do ficheiro.<br />Escolla o "
+#~ "tipo correcto da seguinte lista."
 
 #~ msgid "Preview is not possible for symlinks."
 #~ msgstr "Non pode obterse unha vista previa de ligazóns simbólicas."
