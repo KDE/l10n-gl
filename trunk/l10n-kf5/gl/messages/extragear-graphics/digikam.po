@@ -63,7 +63,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2015-11-21 08:33+0000\n"
+"POT-Creation-Date: 2015-11-22 07:46+0000\n"
 "PO-Revision-Date: 2015-11-21 09:40+0100\n"
 "Last-Translator: Adrián Chaves Fernández (Gallaecio) <adriyetichaves@gmail."
 "com>\n"
@@ -1833,7 +1833,7 @@ msgstr "%1 (%2)"
 #: app/utils/tooltipfiller.cpp:107 imageplugins/decorate/texturetool.cpp:117
 #: imageplugins/filters/blurfxtool.cpp:118
 #: imageplugins/filters/distortionfxtool.cpp:120
-#: libs/database/utils/dbsettingswidget.cpp:116
+#: libs/database/utils/dbsettingswidget.cpp:105
 #: libs/dimg/filters/decorate/bordersettings.cpp:128
 #: libs/dimg/filters/fx/colorfxsettings.cpp:80
 #: showfoto/thumbbar/showfototooltipfiller.cpp:92
@@ -2862,17 +2862,19 @@ msgstr ""
 msgid "Welcome to digiKam %1"
 msgstr "Benvida/o a digiKam %1"
 
-#: databaseserver/databaseserver.cpp:161
+#: databaseserver/databaseserver.cpp:159
 msgid "No path to mysqld set in server configuration."
 msgstr "Non está configurada a ruta ao mysqld na configuración do servidor."
 
-#: databaseserver/databaseserver.cpp:208
-msgid "Did not find MySQL server default configuration (mysql-global.conf)."
+#: databaseserver/databaseserver.cpp:207
+#, fuzzy
+#| msgid "Did not find MySQL server default configuration (mysql-global.conf)."
+msgid "Cannot find MySQL server default configuration (mysql-global.conf)."
 msgstr ""
 "Non se atopou a configuración predeterminada do servidor de MySQL (mysql-"
 "global.conf)."
 
-#: databaseserver/databaseserver.cpp:240
+#: databaseserver/databaseserver.cpp:239
 msgid ""
 "Unable to create MySQL server configuration file.\n"
 "This means that either the default configuration file (mysql-global.conf) "
@@ -2884,25 +2886,25 @@ msgstr ""
 "omisión (mysql-global.conf), ora non se podía escribir no ficheiro de "
 "destino (mysql.conf)."
 
-#: databaseserver/databaseserver.cpp:264
+#: databaseserver/databaseserver.cpp:263
 msgid "Digikam server was not able to create database data directory"
 msgstr ""
 "O servidor de digiKam non foi quen de crear o directorio de datos da base de "
 "datos"
 
-#: databaseserver/databaseserver.cpp:271
+#: databaseserver/databaseserver.cpp:270
 msgid "Digikam server was not able to create database log directory"
 msgstr ""
 "O servidor de digiKam non foi quen de crear o directorio de rexistro da base "
 "de datos"
 
-#: databaseserver/databaseserver.cpp:278
+#: databaseserver/databaseserver.cpp:277
 msgid "Digikam server was not able to create database misc directory"
 msgstr ""
 "O servidor de digiKam non foi quen de crear o directorio de diversos da base "
 "de datos"
 
-#: databaseserver/databaseserver.cpp:329
+#: databaseserver/databaseserver.cpp:328
 #, kde-format
 msgid ""
 "Could not start database init command.\n"
@@ -2913,26 +2915,26 @@ msgstr ""
 "Executábel: %1\n"
 "Erro do proceso:%2"
 
-#: databaseserver/databaseserver.cpp:351
+#: databaseserver/databaseserver.cpp:350
 msgid "Could not start database server."
 msgstr "Non foi posíbel iniciar o servidor da base de datos."
 
-#: databaseserver/databaseserver.cpp:352
+#: databaseserver/databaseserver.cpp:351
 #, kde-format
 msgid "<p>Executable: %1</p>"
 msgstr "<p>Executábel: %1</p>"
 
-#: databaseserver/databaseserver.cpp:353
+#: databaseserver/databaseserver.cpp:352
 #, kde-format
 msgid "<p>Arguments: %1</p>"
 msgstr "<p>Parámetros: %1</p>"
 
-#: databaseserver/databaseserver.cpp:354
+#: databaseserver/databaseserver.cpp:353
 #, kde-format
 msgid "<p>Process error: %1</p>"
 msgstr "<p>Erro no proceso: %1</p>"
 
-#: databaseserver/databaseserver.cpp:398
+#: databaseserver/databaseserver.cpp:397
 #, kde-format
 msgid ""
 "Database process exited unexpectedly during initial connection."
@@ -2941,7 +2943,7 @@ msgstr ""
 "O proceso da base de datos saíu inesperadamente durante a conexión inicial. "
 "<p>Executábel: %1</p>”<p>Erro do proceso: %2</p>"
 
-#: databaseserver/databaseserver.cpp:422 databaseserver/databaseserver.cpp:476
+#: databaseserver/databaseserver.cpp:421 databaseserver/databaseserver.cpp:476
 #, kde-format
 msgid ""
 "Failed to create database<p>Query error: %1</p><p>Database error: %2</p>"
@@ -6744,13 +6746,13 @@ msgstr "Cancelouse a conversión da base de datos."
 msgid "Step Progress (%1)"
 msgstr "Paso do progreso (%1)"
 
-#: libs/database/utils/dbsettingswidget.cpp:97
+#: libs/database/utils/dbsettingswidget.cpp:99
 #, fuzzy
 #| msgid "Database Migration..."
 msgid "Database Configuration"
 msgstr "Migración da base de datos..."
 
-#: libs/database/utils/dbsettingswidget.cpp:99
+#: libs/database/utils/dbsettingswidget.cpp:109
 #, fuzzy
 #| msgid ""
 #| "<p>The location where the database file will be stored on your system. "
@@ -6759,80 +6761,81 @@ msgstr "Migración da base de datos..."
 #| "file system, such as NFS, cannot be used here.</p><p></p>"
 msgid ""
 "<p>Set here the location where the database files will be stored on your "
-"system. There are 3 database files : one for all root albums, one for "
-"thumnails, and one for faces recognition.<br/>Write access is required to be "
-"able to edit image properties.</p>Databases are digiKam core engines. Take a "
-"care to use a place hosted by a fast hardware (as SSD) with enough free "
-"space especially for thumbnails database.</p><p>Note: a remote file system "
-"such as NFS, cannot be used here. For performance reasons, it's also "
-"recommended to not use a removable media.</p><p></p>"
+"system. There are 3 databases : one for all collections properties, one to "
+"store compressed thumbnails, and one to store faces recognition metadata.<br/"
+">Write access is required to be able to edit image properties.</"
+"p><p>Databases are digiKam core engines. Take a care to use a place hosted "
+"by a fast hardware (as SSD) with enough free space especially for thumbnails "
+"database.</p><p>Note: a remote file system such as NFS, cannot be used here. "
+"For performance reasons, it's also recommended to not use a removable media."
+"</p><p></p>"
 msgstr ""
 "<p>O lugar do ordenador no que se gardará o ficheiro da base de datos. Só "
 "hai un ficheiro común a todos os álbums raíz.<br/>Requírese acceso de "
 "escrita para poder editar as propiedades das imaxes.</p><p>Nota: aquí non "
 "pode usar usar un sistema de ficheiro remoto, como NFS.</p><p></p>"
 
-#: libs/database/utils/dbsettingswidget.cpp:118
+#: libs/database/utils/dbsettingswidget.cpp:125
 #, fuzzy
 #| msgid "Core<br>Database Name"
 msgid "Core Db Name:"
 msgstr "Núcleo<br> Nome da base de datos."
 
-#: libs/database/utils/dbsettingswidget.cpp:120
+#: libs/database/utils/dbsettingswidget.cpp:127
 #, fuzzy
 #| msgid "Thumbnails<br>Database Name"
 msgid "Thumbs Db Name:"
 msgstr "Miniaturas<br> Nome da base de datos."
 
-#: libs/database/utils/dbsettingswidget.cpp:122
+#: libs/database/utils/dbsettingswidget.cpp:129
 #, fuzzy
 #| msgid "Face<br>Database Name"
 msgid "Face Db Name:"
 msgstr "Cara<br> Nome da base de datos."
 
-#: libs/database/utils/dbsettingswidget.cpp:124
+#: libs/database/utils/dbsettingswidget.cpp:131
 #, fuzzy
 #| msgid "Host Name"
 msgid "Host Name:"
 msgstr "Nome do servidor"
 
-#: libs/database/utils/dbsettingswidget.cpp:126
+#: libs/database/utils/dbsettingswidget.cpp:133
 #, fuzzy
 #| msgid "Host Port"
 msgid "Host Port:"
 msgstr "Porto do servidor"
 
-#: libs/database/utils/dbsettingswidget.cpp:130
+#: libs/database/utils/dbsettingswidget.cpp:137
 #, fuzzy
 #| msgid "More options"
 msgid "Connect options:"
 msgstr "Máis opcións"
 
-#: libs/database/utils/dbsettingswidget.cpp:133
+#: libs/database/utils/dbsettingswidget.cpp:140
 #, fuzzy
 #| msgid "User"
 msgid "User:"
 msgstr "Usuario"
 
-#: libs/database/utils/dbsettingswidget.cpp:136
+#: libs/database/utils/dbsettingswidget.cpp:143
 #, fuzzy
 #| msgid "Password"
 msgid "Password:"
 msgstr "Contrasinal"
 
-#: libs/database/utils/dbsettingswidget.cpp:140
+#: libs/database/utils/dbsettingswidget.cpp:147
 #, fuzzy
 #| msgid "Check DB Connection"
 msgid "Check Database Connection"
 msgstr "Verificar a conexión á base de datos"
 
-#: libs/database/utils/dbsettingswidget.cpp:168
+#: libs/database/utils/dbsettingswidget.cpp:175
 #, fuzzy
 #| msgid "Database connection test"
-msgid "Database Server Intructions"
+msgid "Database Server Instructions"
 msgstr "Proba de conexión coa base de datos"
 
-#: libs/database/utils/dbsettingswidget.cpp:170
+#: libs/database/utils/dbsettingswidget.cpp:177
 msgid ""
 "<p>digiKam expects the above database and user account to already exists. "
 "This user also require full access to the database.<br>If your database is "
@@ -6840,23 +6843,23 @@ msgid ""
 "the password with the correct one)."
 msgstr ""
 
-#: libs/database/utils/dbsettingswidget.cpp:196
+#: libs/database/utils/dbsettingswidget.cpp:203
 msgid "SQLite"
 msgstr "SQLite"
 
-#: libs/database/utils/dbsettingswidget.cpp:201
+#: libs/database/utils/dbsettingswidget.cpp:208
 #, fuzzy
 #| msgid "MySQL (experimental)"
 msgid "MySQL Internal (experimental)"
 msgstr "MySQL (experimental)"
 
-#: libs/database/utils/dbsettingswidget.cpp:204
+#: libs/database/utils/dbsettingswidget.cpp:211
 #, fuzzy
 #| msgid "MySQL (experimental)"
 msgid "MySQL Server (experimental)"
 msgstr "MySQL (experimental)"
 
-#: libs/database/utils/dbsettingswidget.cpp:207
+#: libs/database/utils/dbsettingswidget.cpp:214
 #, fuzzy
 #| msgid ""
 #| "<p>Select here the type of database backend.</p><p><b>SQlite</b> backend "
@@ -6883,7 +6886,7 @@ msgstr ""
 "Tamén é máis eficiente para manexar coleccións inmensas. Teña coidado, esta "
 "infraestrutura aínda está en fase experimental.</p>"
 
-#: libs/database/utils/dbsettingswidget.cpp:283
+#: libs/database/utils/dbsettingswidget.cpp:290
 msgid ""
 "You do not seem to have write access to this database folder.\n"
 "Without this access, the caption and tag features will not work."
@@ -6891,16 +6894,16 @@ msgstr ""
 "Semella que non ten permiso de escrita neste cartafol de base de datos.\n"
 "Sen este acceso, as funcionalidades de lendas e etiquetaxe non funcionan."
 
-#: libs/database/utils/dbsettingswidget.cpp:434
-#: libs/database/utils/dbsettingswidget.cpp:439
+#: libs/database/utils/dbsettingswidget.cpp:433
+#: libs/database/utils/dbsettingswidget.cpp:438
 msgid "Database connection test"
 msgstr "Proba de conexión coa base de datos"
 
-#: libs/database/utils/dbsettingswidget.cpp:435
+#: libs/database/utils/dbsettingswidget.cpp:434
 msgid "Database connection test successful."
 msgstr "A proba de conexión coa base de datos foi satisfactoria."
 
-#: libs/database/utils/dbsettingswidget.cpp:440
+#: libs/database/utils/dbsettingswidget.cpp:439
 #, kde-format
 msgid "Database connection test was not successful. <p>Error was: %1</p>"
 msgstr ""
