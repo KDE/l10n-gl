@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2015-12-07 02:06+0000\n"
-"PO-Revision-Date: 2015-12-13 16:10+0100\n"
+"PO-Revision-Date: 2015-12-14 05:27+0100\n"
 "Last-Translator: Adrián Chaves Fernández (Gallaecio) <adriyetichaves@gmail."
 "com>\n"
 "Language-Team: Galician <proxecto@trasno.net>\n"
@@ -1294,9 +1294,9 @@ msgstr ""
 "<b><tt>&lt;programa&gt; &lt;opcións do programa&gt; %s1 %s2 %t</tt></b>\n"
 "</p>\n"
 "Os códigos de substitución son:<br>\n"
-"<b><tt>%s1</tt></b> é a primeira fonte para fusionar.<br>\n"
-"<b><tt>%s2</tt></b> é a segunda fonte para fusionar, se é unha revisión "
-"distinta da da primeira fonte.<br>\n"
+"<b><tt>%s1</tt></b> é a primeira orixe para fusionar.<br>\n"
+"<b><tt>%s2</tt></b> é a segunda orixe para fusionar, se é unha revisión "
+"distinta da da primeira orixe.<br>\n"
 "<b><tt>%t</tt></b> é o destino local para a fusión.\n"
 "</p>"
 
@@ -2012,6 +2012,18 @@ msgid ""
 "like Subversion does but put it into an encrypted storage like KDE Wallet or "
 "do not save passwords.</p>"
 msgstr ""
+"<p>Indica se os contrasinais definidos en kdesvn deberían almacenarse na "
+"carteira de KDE en vez de no almacenamento de texto simple de Subversion.</p>"
+"\n"
+"<p>Isto sería un pouco máis seguro porque a carteira de KDE está (case "
+"completamente) cifrada cun contrasinal. Pola outra banda, cando use outros "
+"clientes de Subversion que non sexan compatíbeis coa carteira de KDE, como a "
+"orde «svn», rapidsvn, etc.) terá que introducir de novo o contrasinal.</p>\n"
+"<p>Se o cartafol de configuración de Subversion está nun cartafol compartido "
+"na rede ou remoto, debería considerar seriamente non almacenar os "
+"contrasinais en texto simple como fai Subversion, e usar un almacenamendo "
+"cifrado como o da carteira de KDE ou simplemente non almacenar os "
+"contrasinais.</p>"
 
 #. i18n: ectx: property (text), widget (QCheckBox, kcfg_passwords_in_wallet)
 #: src/settings/subversion_settings.ui:125
@@ -2026,7 +2038,7 @@ msgstr "Usar una caché interna para os contrasinais."
 #. i18n: ectx: property (toolTip), widget (QCheckBox, kcfg_log_always_list_changed_files)
 #: src/settings/subversion_settings.ui:155
 msgid "Read detailed change lists"
-msgstr ""
+msgstr "Ler as listas de cambios detallados."
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, kcfg_log_always_list_changed_files)
 #: src/settings/subversion_settings.ui:158
@@ -2035,6 +2047,9 @@ msgid ""
 "But if this feature is switched off, kdesvn may fail generating differences "
 "between node changes from within the log viewer."
 msgstr ""
+"Ler as listas dos ficheiros modificados pode reducir a velocidade das "
+"operacións. Pero se desmarca esta opción, kdesvn podería non ser capaz de "
+"xerar as diferenzas entre cambios dun nodo desde o visor do historial."
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, kcfg_review_commit)
 #: src/settings/subversion_settings.ui:171
@@ -2060,11 +2075,15 @@ msgid ""
 "incoming addition of the same node kind results in a normal node with a "
 "possible local modification, instead of a tree conflict.</p></body></html>"
 msgstr ""
+"<html><head/><body><p>Marque esta opción que cando se engada un recurso "
+"localmente na mesma ruta que un novo recurso remoto do mesmo tipo de nodo, o "
+"resultado sexa un nodo normal cunha posíbel modificación local, en vez de un "
+"conflito de árbore.</p></body></html>"
 
 #. i18n: ectx: property (text), widget (QCheckBox, kcfg_update_add_as_modification)
 #: src/settings/subversion_settings.ui:200
 msgid "Update modifies instead of conflicts"
-msgstr ""
+msgstr "Actualizar xera modificacións en vez de conflitos."
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, kcfg_update_make_parents)
 #: src/settings/subversion_settings.ui:207
@@ -2078,36 +2097,38 @@ msgstr ""
 #. i18n: ectx: property (text), widget (QCheckBox, kcfg_update_make_parents)
 #: src/settings/subversion_settings.ui:210
 msgid "Update makes missing parents"
-msgstr ""
+msgstr "Actualizar xera pais que faltan."
 
 #: src/svnfrontend/background/fillcachethread.cpp:71
 msgid ""
 "Not filling log cache because it is disabled due setting for this repository."
 msgstr ""
+"Non se encherá a caché do historial porque está desactivada na configuración "
+"para o repositorio."
 
 #: src/svnfrontend/background/fillcachethread.cpp:73
 msgid "Filling log cache in background."
-msgstr ""
+msgstr "Enchendo a caché do historial en segundo plano."
 
 #: src/svnfrontend/background/fillcachethread.cpp:96
 msgid "Filling cache canceled."
-msgstr ""
+msgstr "Cancelouse o enchemento da caché."
 
 #: src/svnfrontend/background/fillcachethread.cpp:112
 #, kde-format
 msgid "Cache filled up to revision %1."
-msgstr ""
+msgstr "A caché encheuse ata a revisión %1."
 
 #: src/svnfrontend/background/tcontextlistener.cpp:189
 #, kde-format
 msgid "%1 of %2 transferred."
-msgstr ""
+msgstr "%1 de %2 transferido."
 
 #: src/svnfrontend/background/tcontextlistener.cpp:191
 #: src/svnfrontend/stopdlg.cpp:197
 #, kde-format
 msgid "%1 transferred."
-msgstr ""
+msgstr "%1 transferido."
 
 #. i18n: ectx: property (text), widget (QTreeWidget, m_BlameTree)
 #: src/svnfrontend/blamedisplay.ui:40
@@ -2144,7 +2165,7 @@ msgstr "Contido"
 #: src/svnfrontend/blamedisplay_impl.cpp:222
 #: src/svnfrontend/blamedisplay_impl.cpp:436
 msgid "Log message for revision"
-msgstr ""
+msgstr "Mensaxe de rexistro da revisión"
 
 #: src/svnfrontend/blamedisplay_impl.cpp:357
 msgid "Show line"
@@ -2169,11 +2190,11 @@ msgstr "Engadir ao control de revisións"
 
 #: src/svnfrontend/ccontextlistener.cpp:68
 msgid "Restore missing"
-msgstr ""
+msgstr "Restaurar o que falta"
 
 #: src/svnfrontend/ccontextlistener.cpp:70
 msgid "Revert failed"
-msgstr ""
+msgstr "A operación de reverter fallou"
 
 #: src/svnfrontend/ccontextlistener.cpp:71
 msgid "Resolved"
@@ -2201,11 +2222,11 @@ msgstr "Completouse a actualización."
 
 #: src/svnfrontend/ccontextlistener.cpp:77
 msgid "Update external module"
-msgstr ""
+msgstr "Actualizar o módulo externo"
 
 #: src/svnfrontend/ccontextlistener.cpp:79
 msgid "Status on external"
-msgstr ""
+msgstr "Estado no externo"
 
 #: src/svnfrontend/ccontextlistener.cpp:80
 msgid "Commit Modified"
@@ -2229,15 +2250,15 @@ msgstr "Bloqueo"
 
 #: src/svnfrontend/ccontextlistener.cpp:87
 msgid "Unlocked"
-msgstr ""
+msgstr "Desbloqueado"
 
 #: src/svnfrontend/ccontextlistener.cpp:88
 msgid "Lock failed"
-msgstr ""
+msgstr "Bloquear fallou"
 
 #: src/svnfrontend/ccontextlistener.cpp:89
 msgid "Unlock failed"
-msgstr ""
+msgstr "Desbloquear fallou"
 
 #: src/svnfrontend/ccontextlistener.cpp:95
 msgid "unchanged"
@@ -2245,7 +2266,7 @@ msgstr "non modificada "
 
 #: src/svnfrontend/ccontextlistener.cpp:96
 msgid "item wasn't present"
-msgstr ""
+msgstr "o elemento non estaba presente"
 
 #: src/svnfrontend/ccontextlistener.cpp:97
 msgid "unversioned item obstructed work"
@@ -2253,21 +2274,23 @@ msgstr "un elemento alleo ao repositorio impediu o traballo"
 
 #: src/svnfrontend/ccontextlistener.cpp:100
 msgid "Modified state had mods merged in."
-msgstr ""
+msgstr "Algunhas das modificacións do estado modificado fusionáronse."
 
 #: src/svnfrontend/ccontextlistener.cpp:101
 msgid "Modified state got conflicting mods."
-msgstr ""
+msgstr "O estado modificado ten modificacións conflitivas."
 
 #: src/svnfrontend/ccontextlistener.cpp:347
 msgid ""
 "The certificate is not issued by a trusted authority. Use the fingerprint to "
 "validate the certificate manually."
 msgstr ""
+"O certificado non foi emitido por unha autoridade de confianza. Use a pegada "
+"dixital para validar o certificado manualmente."
 
 #: src/svnfrontend/ccontextlistener.cpp:350
 msgid "The certificate hostname does not match."
-msgstr ""
+msgstr "O nome da máquina do certificado non coincide."
 
 #: src/svnfrontend/ccontextlistener.cpp:353
 msgid "The certificate is not yet valid."
@@ -2279,7 +2302,7 @@ msgstr "O certificado caducou."
 
 #: src/svnfrontend/ccontextlistener.cpp:359
 msgid "The certificate has an unknown error."
-msgstr ""
+msgstr "O certificado ten un erro descoñecido."
 
 #: src/svnfrontend/ccontextlistener.cpp:381
 #, kde-format
@@ -2287,6 +2310,8 @@ msgid ""
 "%1\n"
 "Really store password as plain text?"
 msgstr ""
+"%1\n"
+"Está seguro de que quere gardar o contrasinal en texto simple?"
 
 #: src/svnfrontend/ccontextlistener.cpp:382
 msgid "Save password"
@@ -2295,7 +2320,7 @@ msgstr "Garda o contrasinal"
 #: src/svnfrontend/commandexec.cpp:219
 #, kde-format
 msgid "Command \"%1\" not implemented or known"
-msgstr ""
+msgstr "A orde «%1» non existe ou non se coñece"
 
 #: src/svnfrontend/commandexec.cpp:220 src/svnfrontend/commandexec.cpp:336
 #: src/svnfrontend/graphtree/revgraphview.cpp:1005
@@ -2303,25 +2328,25 @@ msgstr ""
 #: src/svnfrontend/maintreewidget.cpp:2153
 #: src/svnfrontend/maintreewidget.cpp:2337
 msgid "SVN Error"
-msgstr ""
+msgstr "Erro de SVN"
 
 #: src/svnfrontend/commandexec.cpp:422
 msgid "\"GET\" requires output file"
-msgstr ""
+msgstr "«GET» require un ficheiro de saída"
 
 #: src/svnfrontend/commandexec.cpp:618
 msgid "May only switch one URL at time"
-msgstr ""
+msgstr "Só pode cambiarse un URL de cada vez"
 
 #: src/svnfrontend/commandexec.cpp:622
 msgid "Switch only on working copies"
-msgstr ""
+msgstr "Cambiar só nas copias de traballo"
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, CopyMoveView)
 #: src/svnfrontend/copymoveview.ui:14 src/svnfrontend/svnactions.cpp:2316
 #: src/svnfrontend/svnactions.cpp:2342
 msgid "Copy / Move"
-msgstr ""
+msgstr "Copiar ou mover"
 
 #. i18n: ectx: property (text), widget (QLabel, m_HeadOneLabel)
 #: src/svnfrontend/copymoveview.ui:20
@@ -2341,55 +2366,60 @@ msgstr "ata"
 
 #: src/svnfrontend/copymoveview_impl.cpp:51
 msgid "Rename/move"
-msgstr ""
+msgstr "Cambiar de nome ou mover"
 
 #: src/svnfrontend/copymoveview_impl.cpp:89
 msgid "Move/Rename file/directory"
-msgstr ""
+msgstr "Mover ou renomear o ficheiro ou cartafol"
 
 #: src/svnfrontend/copymoveview_impl.cpp:89
 msgid "Copy file/directory"
-msgstr ""
+msgstr "Copiar o ficheiro ou cartafol"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, m_svn15compat)
 #: src/svnfrontend/createrepo_dlg.ui:17
 msgid "Is created repository compatible to Subversion prior 1.6"
 msgstr ""
+"Marque esta opción para que o repositorio creado sexa compatíbel con versións "
+"de Subversion anteriores á 1.6."
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_svn15compat)
 #: src/svnfrontend/createrepo_dlg.ui:20
 msgid "Compatible to Subversion prior 1.6"
-msgstr ""
+msgstr "Compatíbel con versións de Subversion anteriores á 1.6."
 
 #. i18n: ectx: property (toolTip), widget (KComboBox, m_FilesystemSelector)
 #: src/svnfrontend/createrepo_dlg.ui:27
 msgid "Select type of storage"
-msgstr ""
+msgstr "Seleccione o tipo de almacenamento."
 
 #. i18n: ectx: property (whatsThis), widget (KComboBox, m_FilesystemSelector)
 #: src/svnfrontend/createrepo_dlg.ui:30
 msgid "Select the storage type of repository (FSFS or Berkely DB)"
 msgstr ""
+"Seleccione o tipo de almacenamento do repositorio (FSFS ou Berkely DB)."
 
 #. i18n: ectx: property (text), item, widget (KComboBox, m_FilesystemSelector)
 #: src/svnfrontend/createrepo_dlg.ui:34
 msgid "FSFS"
-msgstr ""
+msgstr "FSFS"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, m_FilesystemSelector)
 #: src/svnfrontend/createrepo_dlg.ui:39
 msgid "BDB"
-msgstr ""
+msgstr "BDB"
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_LogKeep)
 #: src/svnfrontend/createrepo_dlg.ui:47
 msgid "Disable automatic log file removal (BDB only)"
-msgstr ""
+msgstr "Desactivar a eliminación automática do ficheiro do historial (só BDB)."
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, m_svn14compat)
 #: src/svnfrontend/createrepo_dlg.ui:60
 msgid "Is created repository compatible to Subversion prior 1.5"
 msgstr ""
+"Marque esta opción para que o repositorio creado sexa compatíbel con versións "
+"de Subversion anteriores á 1.5."
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, m_svn14compat)
 #: src/svnfrontend/createrepo_dlg.ui:63
@@ -2397,16 +2427,20 @@ msgid ""
 "If set, the repository created will compatible to Subversion prior 1.5. This "
 "is only useful when svnqt is running with Subversion 1.5 or above."
 msgstr ""
+"Marque esta opción para que o repositorio creado sexa compatíbel con versións "
+"de Subversion anteriores á 1.5. Isto só é útil cando svnqt está a executarse "
+"con Subversion 1.5 ou unha versión superior."
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_svn14compat)
 #: src/svnfrontend/createrepo_dlg.ui:66
 msgid "Compatible to Subversion prior 1.5"
-msgstr ""
+msgstr "Compatíbel con versións de Subversion anteriores á 1.5."
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, m_CreateMainDirs)
 #: src/svnfrontend/createrepo_dlg.ui:73
 msgid "Create trunk, tags and branches folders"
 msgstr ""
+"Crear os cartafoles da rama principal (trunk), das etiquetas e das ramas."
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, m_CreateMainDirs)
 #: src/svnfrontend/createrepo_dlg.ui:76
@@ -2414,16 +2448,19 @@ msgid ""
 "If this is set then the base layout (<tt>/trunk</tt>,<tt>/branches</tt> and "
 "<tt>/tags</tt>) will created after opening the fresh repository."
 msgstr ""
+"Marque esta opción para crear os cartafoles principais (<tt>/trunk</tt>,<tt>"
+"/branches</tt> e "
+"<tt>/tags</tt>) ao abrir un repositorio novo."
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_CreateMainDirs)
 #: src/svnfrontend/createrepo_dlg.ui:79
 msgid "Create main folders"
-msgstr ""
+msgstr "Crear os cartafoles principais."
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel1)
 #: src/svnfrontend/createrepo_dlg.ui:92
 msgid "Path to repository:"
-msgstr ""
+msgstr "Ruta do repositorio:"
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_DisableFsync)
 #: src/svnfrontend/createrepo_dlg.ui:105
@@ -2434,6 +2471,8 @@ msgstr "Desactivar fsync na remisión (só BDB)."
 #: src/svnfrontend/createrepo_dlg.ui:118
 msgid "Is created repository compatible to Subversion prior 1.4"
 msgstr ""
+"Marque esta opción para que o repositorio creado sexa compatíbel con versións "
+"de Subversion anteriores á 1.4."
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, m_svn13compat)
 #: src/svnfrontend/createrepo_dlg.ui:121
@@ -2441,25 +2480,28 @@ msgid ""
 "If set, the repository created will compatible to Subversion prior 1.4. This "
 "is only useful when svnqt is running with Subversion 1.4 or above."
 msgstr ""
+"Marque esta opción para que o repositorio creado sexa compatíbel con versións "
+"de Subversion anteriores á 1.4. Isto só é útil cando svnqt está a executarse "
+"con Subversion 1.4 ou unha versión superior."
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_svn13compat)
 #: src/svnfrontend/createrepo_dlg.ui:124
 msgid "Compatible to Subversion prior 1.4"
-msgstr ""
+msgstr "Compatíbel con versións de Subversion anteriores á 1.4."
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel2)
 #: src/svnfrontend/createrepo_dlg.ui:134
 msgid "Type of repository:"
-msgstr ""
+msgstr "Tipo de repositorio:"
 
 #: src/svnfrontend/database/dboverview.cpp:90
 msgid "Overview about cache database content"
-msgstr ""
+msgstr "Resumo do contido da base de datos da caché"
 
 #: src/svnfrontend/database/dboverview.cpp:131
 #, kde-format
 msgid "Log cache holds %1 log entries and consumes %2 on disk."
-msgstr ""
+msgstr "A caché do historial contén %1 entradas e consume %2 de almacenamento."
 
 #: src/svnfrontend/database/dboverview.cpp:146
 #, kde-format
@@ -2467,10 +2509,12 @@ msgid ""
 "Really clean cache for repository\n"
 "%1?"
 msgstr ""
+"Está seguro de que quere limpar a caché do repositorio\n"
+"%1?"
 
 #: src/svnfrontend/database/dboverview.cpp:146
 msgid "Clean repository cache"
-msgstr ""
+msgstr "Limpar a caché do repositorio"
 
 #: src/svnfrontend/database/dboverview.cpp:161
 #, kde-format
@@ -2478,6 +2522,8 @@ msgid ""
 "Really clean cache and data for repository\n"
 "%1?"
 msgstr ""
+"Está seguro de que quere limpar a caché e mailos datos do repositorio\n"
+"%1?"
 
 #. i18n: ectx: property (text), widget (QPushButton, m_DeleteRepositoryButton)
 #: src/svnfrontend/database/dboverview.cpp:161
@@ -2488,7 +2534,7 @@ msgstr "Eliminar o repositorio"
 #. i18n: ectx: property (text), widget (QLabel, m_RepositoryLabel)
 #: src/svnfrontend/database/dboverview.ui:24
 msgid "Known repositories"
-msgstr ""
+msgstr "Repositorios coñecidos"
 
 #. i18n: ectx: property (toolTip), widget (QPushButton, m_DeleteCacheButton)
 #. i18n: ectx: property (statusTip), widget (QPushButton, m_DeleteCacheButton)
@@ -2496,18 +2542,19 @@ msgstr ""
 #: src/svnfrontend/database/dboverview.ui:44
 msgid "Delete cache entries for current selected repository"
 msgstr ""
+"Eliminar as entradas da caché correspondentes ao repositorio seleccionado."
 
 #. i18n: ectx: property (text), widget (QPushButton, m_DeleteCacheButton)
 #: src/svnfrontend/database/dboverview.ui:47
 msgid "Delete cache"
-msgstr ""
+msgstr "Eliminar a caché"
 
 #. i18n: ectx: property (toolTip), widget (QPushButton, m_DeleteRepositoryButton)
 #. i18n: ectx: property (statusTip), widget (QPushButton, m_DeleteRepositoryButton)
 #: src/svnfrontend/database/dboverview.ui:54
 #: src/svnfrontend/database/dboverview.ui:57
 msgid "Delete all entries and settings for selected repository"
-msgstr ""
+msgstr "Eliminar todas as entradas e opcións do repositorio seleccionado."
 
 #. i18n: ectx: property (text), widget (QPushButton, m_SettingsButton)
 #: src/svnfrontend/database/dboverview.ui:67
@@ -2517,7 +2564,7 @@ msgstr "Configuración do repositorio"
 #. i18n: ectx: property (text), widget (QPushButton, m_StatisticButton)
 #: src/svnfrontend/database/dboverview.ui:74
 msgid "Statistics for repository"
-msgstr ""
+msgstr "Estatísticas do repositorio"
 
 #: src/svnfrontend/database/dbsettings.cpp:94
 #, kde-format
@@ -2527,27 +2574,27 @@ msgstr "Configuración para %1"
 #. i18n: ectx: attribute (title), widget (QWidget, tab)
 #: src/svnfrontend/database/dbsettings.ui:21
 msgid "Log cache settings"
-msgstr ""
+msgstr "Configuración da caché do historial"
 
 #. i18n: ectx: property (text), widget (QCheckBox, dbcfg_noCacheUpdate)
 #: src/svnfrontend/database/dbsettings.ui:27
 msgid "Do not update log cache on open"
-msgstr ""
+msgstr "Non actualizar a caché do historial ao abrir."
 
 #. i18n: ectx: property (text), widget (QLabel, m_exclude_label)
 #: src/svnfrontend/database/dbsettings.ui:36
 msgid "Prefixes to filter out in revision tree"
-msgstr ""
+msgstr "Prefixos para excluír na árbore de revisións"
 
 #. i18n: ectx: attribute (title), widget (QWidget, tab_2)
 #: src/svnfrontend/database/dbsettings.ui:53
 msgid "Log and statistics setting"
-msgstr ""
+msgstr "Configuración do historial e das estatísticas"
 
 #. i18n: ectx: property (text), widget (QLabel, m_logpattern_label)
 #: src/svnfrontend/database/dbsettings.ui:61
 msgid "Hide logs containing following words"
-msgstr ""
+msgstr "Ocultar as entradas que conteñan estas palabras"
 
 #. i18n: ectx: property (toolTip), widget (KEditListBox, dbcfg_exclude_log_pattern)
 #: src/svnfrontend/database/dbsettings.ui:68
@@ -2555,6 +2602,9 @@ msgid ""
 "This is a list which words/substrings a log entry must contain so it will be "
 "hidden from log and statistics"
 msgstr ""
+"Esta é unha lista de palabra ou subcadeas que as entradas do historial poden "
+"conter. Se unha entrada do historial contén unha delas, a entrada ocúltase do "
+"historial e das estatísticas."
 
 #. i18n: ectx: property (toolTip), widget (KEditListBox, dbcfg_exclude_userslog)
 #: src/svnfrontend/database/dbsettings.ui:82
@@ -2582,12 +2632,12 @@ msgstr "Envorcar o repositorio"
 #. i18n: ectx: property (text), widget (QCheckBox, m_UseDeltas)
 #: src/svnfrontend/dumprepo_dlg.ui:35
 msgid "Use deltas"
-msgstr ""
+msgstr "Usar deltas."
 
 #. i18n: ectx: property (toolTip), widget (KIntNumInput, m_StartNumber)
 #: src/svnfrontend/dumprepo_dlg.ui:54
 msgid "-1 for START"
-msgstr ""
+msgstr "-1 para o comezo."
 
 #. i18n: ectx: property (text), widget (QLabel, m_lblEnd)
 #: src/svnfrontend/dumprepo_dlg.ui:67
@@ -2612,7 +2662,7 @@ msgstr "Envorcar en:"
 #. i18n: ectx: property (toolTip), widget (KIntNumInput, m_EndNumber)
 #: src/svnfrontend/dumprepo_dlg.ui:136
 msgid "-1 for HEAD"
-msgstr ""
+msgstr "-1 para a cabeceira."
 
 #. i18n: ectx: property (text), widget (QLabel, m_lblStart)
 #: src/svnfrontend/dumprepo_dlg.ui:149
@@ -2627,22 +2677,22 @@ msgstr "Repositorio para envorcar:"
 #. i18n: ectx: property (text), widget (QLabel, m_PatternLabel)
 #: src/svnfrontend/editignorepattern.ui:19
 msgid "Patterns to add or remove:"
-msgstr ""
+msgstr "Padróns para engadir ou eliminar:"
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_RemoveCheckBox)
 #: src/svnfrontend/editignorepattern.ui:35
 msgid "Remove patterns"
-msgstr ""
+msgstr "Eliminar os padróns."
 
 #. i18n: ectx: property (text), widget (QLabel, m_DepthLabel)
 #: src/svnfrontend/editignorepattern.ui:44
 msgid "Depth for ignore"
-msgstr ""
+msgstr "Profuncidade para ignorar"
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, EditPropsWidget)
 #: src/svnfrontend/editpropsdlg.ui:20
 msgid "Edit property"
-msgstr ""
+msgstr "Editar a propiedade"
 
 #. i18n: ectx: property (text), widget (QLabel, m_NameLabel)
 #: src/svnfrontend/editpropsdlg.ui:28
@@ -2652,17 +2702,20 @@ msgstr "Nome da propiedade:"
 #. i18n: ectx: property (text), widget (QLabel, m_ValueLabel)
 #: src/svnfrontend/editpropsdlg.ui:48
 msgid "Property value:"
-msgstr ""
+msgstr "Valor da propiedade:"
 
 #. i18n: ectx: property (toolTip), widget (QPushButton, helpButton)
 #: src/svnfrontend/editpropsdlg.ui:71
 msgid "Click for short info about pre-defined property name"
 msgstr ""
+"Prema para obter información básica sobre o nome de propiedade predefinido."
 
 #: src/svnfrontend/editpropswidget.cpp:47
 #: src/svnfrontend/editpropswidget.cpp:83
 msgid "One of <b>'native'</b>, <b>'LF'</b>, <b>'CR'</b>, <b>'CRLF'</b>."
 msgstr ""
+"Un dos seguintes: <b>'native'</b> (nativo), <b>'LF'</b>, <b>'CR'</b> ou <b>"
+"'CRLF'</b>."
 
 #: src/svnfrontend/editpropswidget.cpp:48
 #: src/svnfrontend/editpropswidget.cpp:84
@@ -2671,6 +2724,10 @@ msgid ""
 "directory. A non-recursive attempt will fail, and a recursive attempt will "
 "set the property only on the file children of the folder."
 msgstr ""
+"Se está presente, fai que o ficheiro sexa executábel.<br> "
+"Esta propiedade non pode asignarse a un cartafol. Se intenta aplicarlla a un "
+"cartafol de maneira non recursiva, non funcionará. Se o aplica de maneira "
+"recursiva, a propiedade asignarase a todos os ficheiros que contén o cartafol."
 
 #: src/svnfrontend/editpropswidget.cpp:52
 msgid ""
@@ -2683,6 +2740,17 @@ msgid ""
 "the object changed.<br><b>Id</b> A compressed summary of the previous 4 "
 "keywords."
 msgstr ""
+"Palabras clave para substituír por valores reais no contido dun ficheiro.<br> "
+"Poden inserirse en documentos usando a sintaxe $NomeDaPalabraClave$.<br> "
+"Pode usar calquera das seguintes palabras clave:<br> "
+"<b>URL</b> ou <b>HeadURL</b>, o URL da revisión de cabeceira do proxecto.<br> "
+"<b>Author</b> ou <b>LastChangedBy</b>, a última persoa que modificou o "
+"ficheiro.<br> "
+"<b>Date</b> ou <b>LastChangedDate</b>, a data e hora da última modificación "
+"do obxecto.<br> "
+"<b>Revision</b>, <b>Rev</b> ou <b>LastChangedRevision</b>, a última revisión "
+"que modificou o obxecto.<br> "
+"<b>Id</b>, un resumo comprimido do resto de palabras clave."
 
 #: src/svnfrontend/editpropswidget.cpp:61
 msgid ""
@@ -2703,6 +2771,10 @@ msgid ""
 "how to serve it from Apache. A mimetype beginning with <b>'text/'</b> (or an "
 "absent mimetype) is treated as text. Anything else is treated as binary."
 msgstr ""
+"O tipo MIME do ficheiro. Úsase para determinar se fusionar ou non o ficheiro, "
+"e como servilo desde Apache. Se o tipo MIME está baleiro ou comeza por «<b>"
+"text/</b>», o ficheiro trátase como un ficheiro de texto; senón, o ficheiro "
+"trátase como un ficheiro binario."
 
 #: src/svnfrontend/editpropswidget.cpp:90
 msgid ""
@@ -2712,15 +2784,22 @@ msgid ""
 "nobr><br><nobr><b>foo/bar -r 1234 http://example.com/repos/projectB</b></"
 "nobr>"
 msgstr ""
+"Unha lista de indicadores de módulos cun módulo por cada liña. Cada indicador "
+"de módulo consiste nunha ruta relativa de cartafol, marcas de revisión "
+"opcionais, e un URL. Por exemplo:<br> "
+"<nobr><b>foo http://example.com/repos/proxectoA</b></nobr><br> "
+"<nobr><b>foo/bar -r 1234 http://example.com/repos/proxectoB</b></nobr>"
 
 #: src/svnfrontend/editpropswidget.cpp:95
 msgid "A newline separated list of file patterns to ignore."
-msgstr ""
+msgstr "Unha lista de padróns de ficheiro para ignorar, cun padrón por liña."
 
 #: src/svnfrontend/editpropswidget.cpp:100
 msgid ""
 "Label text to show for the edit box where the user enters the issue number."
 msgstr ""
+"Texto de guía para mostrar na caixa de edición onde o usuario indica o número "
+"da incidencia."
 
 #: src/svnfrontend/editpropswidget.cpp:103
 msgid ""
@@ -2728,6 +2807,9 @@ msgid ""
 "replaced with the bug issue number. Example:<br><nobr><b>http://example.com/"
 "mantis/view.php?id=%BUGID%</b></nobr>"
 msgstr ""
+"URL que apunta ao sistema de seguimento de incidencias. Debe conter <b>%BUGID%"
+"</b>, que se substitúe polo número da incidencia. Por exemplo:<br> "
+"<nobr><b>http://example.com/mantis/view.php?id=%BUGID%</b></nobr>"
 
 #: src/svnfrontend/editpropswidget.cpp:106
 msgid ""
@@ -2735,6 +2817,9 @@ msgid ""
 "The string must contain <b>%BUGID%</b> which gets replaced with the bug "
 "issue number."
 msgstr ""
+"Cadea que se engade a unha mensaxe de rexistro ao indicar un número de "
+"incidencia. A cadea debe conter <b>%BUGID%</b>, que se substitúe polo número "
+"da incidencia."
 
 #: src/svnfrontend/editpropswidget.cpp:109
 msgid ""
@@ -2753,6 +2838,9 @@ msgid ""
 "referenced not by numbers.<br>Possible values: <b>'true'</b> or <b>'false'</"
 "b>."
 msgstr ""
+"Use <b>'false'</b> se o seu sistema de seguimento de incidencias non usa "
+"números para identificar as incidencias.<br> "
+"Pode usar <b>'true'</b> ou <b>'false'</b>."
 
 #: src/svnfrontend/editpropswidget.cpp:115
 msgid ""
@@ -2760,6 +2848,9 @@ msgid ""
 "top of the log message. The default is <b>'true'</b> which means the "
 "bugtracking ID is appended to the log message."
 msgstr ""
+"Use <b>'false'</b> se quere que o identificador da incidencia se inclúa ao "
+"comezo da mensaxe de rexistro. O valor predeterminado é <b>'true'</b>, "
+"engadir o identificador da incidencia ao final da mensaxe de rexistro."
 
 #: src/svnfrontend/editpropswidget.cpp:119
 msgid ""
@@ -2767,16 +2858,20 @@ msgid ""
 "used to find a string referring to an issue, the second expression is used "
 "to extract the bare bug ID from that string."
 msgstr ""
+"Dúas expresións regulares, unha en cada liña.<br> "
+"A primeira expresión úsase para atopar unha cadea que fai referencia a unha "
+"incidencia, e a segunda para extraer o identificador da incidencia de dita "
+"cadea."
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, CheckoutInfo)
 #: src/svnfrontend/fronthelpers/checkoutinfo.ui:13
 msgid "Checkout info"
-msgstr ""
+msgstr "Información da descarga"
 
 #. i18n: ectx: property (text), widget (QLabel, m_TargetLabel)
 #: src/svnfrontend/fronthelpers/checkoutinfo.ui:28
 msgid "Select target directory:"
-msgstr ""
+msgstr "Seleccione o cartafol de destino:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_UrlLabel)
 #: src/svnfrontend/fronthelpers/checkoutinfo.ui:45
@@ -2786,7 +2881,7 @@ msgstr "Introduza o URL:"
 #. i18n: ectx: property (text), widget (QCheckBox, m_CreateDirButton)
 #: src/svnfrontend/fronthelpers/checkoutinfo.ui:70
 msgid "Append source URL name to subfolder"
-msgstr ""
+msgstr "Engadir o nome do URL de orixe ao subcartafol."
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, m_overwriteButton)
 #: src/svnfrontend/fronthelpers/checkoutinfo.ui:82
@@ -2804,21 +2899,21 @@ msgstr "Substituír existentes."
 #. i18n: ectx: property (toolTip), widget (QCheckBox, m_ignoreExternals)
 #: src/svnfrontend/fronthelpers/checkoutinfo.ui:98
 msgid "Ignore externals while operation"
-msgstr ""
+msgstr "Ignorar os externos durante a operación."
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_ignoreExternals)
 #: src/svnfrontend/fronthelpers/checkoutinfo.ui:101
 msgid "Ignore externals"
-msgstr ""
+msgstr "Ignorar os externos."
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_ShowExplorer)
 #: src/svnfrontend/fronthelpers/checkoutinfo.ui:122
 msgid "Open after job"
-msgstr ""
+msgstr "Abrir despois da tarefa."
 
 #: src/svnfrontend/fronthelpers/checkoutinfo_impl.cpp:109
 msgid "Make operation recursive"
-msgstr ""
+msgstr "Usar recursividade"
 
 #: src/svnfrontend/fronthelpers/propertylist.cpp:36
 msgid "Property"
@@ -2834,11 +2929,13 @@ msgid ""
 "This property may not set by users.\n"
 "Rejecting it."
 msgstr ""
+"Os usuarios non poden asignar esta propiedade.\n"
+"Rexeitouse."
 
 #: src/svnfrontend/fronthelpers/propertylist.cpp:112
 #: src/svnfrontend/propertiesdlg.cpp:191 src/svnfrontend/propertiesdlg.cpp:250
 msgid "Protected property"
-msgstr ""
+msgstr "Propiedade protexida"
 
 #: src/svnfrontend/fronthelpers/propertylist.cpp:117
 #: src/svnfrontend/propertiesdlg.cpp:195 src/svnfrontend/propertiesdlg.cpp:254
@@ -2846,11 +2943,13 @@ msgid ""
 "A property with that name exists.\n"
 "Rejecting it."
 msgstr ""
+"Xa existe unha propiedade con ese nome.\n"
+"Rexeitouse."
 
 #: src/svnfrontend/fronthelpers/propertylist.cpp:117
 #: src/svnfrontend/propertiesdlg.cpp:195 src/svnfrontend/propertiesdlg.cpp:254
 msgid "Double property"
-msgstr ""
+msgstr "Propiedade duplicada"
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, RangeInput)
 #: src/svnfrontend/fronthelpers/rangeinput.ui:20
@@ -2860,13 +2959,13 @@ msgstr ""
 #: src/svnfrontend/maintreewidget.cpp:1528
 #: src/svnfrontend/maintreewidget.cpp:1599 src/svnfrontend/svnactions.cpp:1506
 msgid "Revisions"
-msgstr ""
+msgstr "Revisións"
 
 #. i18n: ectx: property (title), widget (QGroupBox, m_startRevBox)
 #: src/svnfrontend/fronthelpers/rangeinput.ui:26
 #: src/svnfrontend/fronthelpers/rangeinput_impl.cpp:181
 msgid "Start with revision"
-msgstr ""
+msgstr "Comezar coa revisión"
 
 #. i18n: ectx: property (text), widget (QRadioButton, m_startNumberButton)
 #: src/svnfrontend/fronthelpers/rangeinput.ui:37
@@ -2890,7 +2989,7 @@ msgstr "&CABECEIRA"
 #: src/svnfrontend/fronthelpers/rangeinput.ui:84
 #: src/svnfrontend/fronthelpers/rangeinput.ui:154
 msgid "Select current working copy changes"
-msgstr ""
+msgstr "Seleccionar os cambios da copia de traballo actual."
 
 #. i18n: ectx: property (text), widget (QRadioButton, m_startWorkingButton)
 #. i18n: ectx: property (text), widget (QRadioButton, m_stopWorkingButton)
@@ -2902,7 +3001,7 @@ msgstr "DE TRABALLO"
 #. i18n: ectx: property (title), widget (QGroupBox, m_stopRevBox)
 #: src/svnfrontend/fronthelpers/rangeinput.ui:99
 msgid "Stop with revision"
-msgstr ""
+msgstr "Rematar coa revisión"
 
 #. i18n: ectx: property (text), widget (QRadioButton, m_stopNumberButton)
 #: src/svnfrontend/fronthelpers/rangeinput.ui:107
@@ -2922,7 +3021,7 @@ msgstr "Escolla a revisión"
 #. i18n: ectx: property (text), widget (KPushButton, m_RevisionButton)
 #: src/svnfrontend/fronthelpers/revisionbutton.ui:22
 msgid "-1"
-msgstr ""
+msgstr "-1"
 
 #: src/svnfrontend/graphtree/revgraphview.cpp:145
 #, kde-format
@@ -2932,6 +3031,10 @@ msgid ""
 "Process stopped with message:\n"
 "%2"
 msgstr ""
+"Non foi posíbel executar o proceso «%1».\n"
+"\n"
+"O proceso detívose coa seguinte mensaxe:\n"
+"%2"
 
 #: src/svnfrontend/graphtree/revgraphview.cpp:330
 msgid "Error running the graph layouting tool.\n"
@@ -2945,32 +3048,32 @@ msgstr "Comprobe que «dot» está instalado (paquete GraphViz)."
 #: src/svnfrontend/graphtree/revgraphview.cpp:420
 #, kde-format
 msgid "Deleted at revision %1"
-msgstr ""
+msgstr "Eliminouse na revisión %1"
 
 #: src/svnfrontend/graphtree/revgraphview.cpp:423
 #, kde-format
 msgid "Added at revision %1 as %2"
-msgstr ""
+msgstr "Engadiouse na revisión %1 como %2"
 
 #: src/svnfrontend/graphtree/revgraphview.cpp:429
 #, kde-format
 msgid "Copied to %1 at revision %2"
-msgstr ""
+msgstr "Copiouse a %1 na revisión %2"
 
 #: src/svnfrontend/graphtree/revgraphview.cpp:432
 #, kde-format
 msgid "Renamed to %1 at revision %2"
-msgstr ""
+msgstr "Cambiouse o nome a %1 na revisión %2"
 
 #: src/svnfrontend/graphtree/revgraphview.cpp:435
 #, kde-format
 msgid "Modified at revision %1"
-msgstr ""
+msgstr "Modificouse na revisión %1"
 
 #: src/svnfrontend/graphtree/revgraphview.cpp:438
 #, kde-format
 msgid "Replaced at revision %1"
-msgstr ""
+msgstr "Substituiuse na revisión %1"
 
 #: src/svnfrontend/graphtree/revgraphview.cpp:441
 #, kde-format
@@ -2980,12 +3083,17 @@ msgstr "Revisión %1"
 #: src/svnfrontend/graphtree/revgraphview.cpp:461
 #, kde-format
 msgid "Could not open temporary file %1 for writing."
-msgstr ""
+msgstr "Non foi posíbel abrir o ficheiro temporal %1 para escribir."
 
 #: src/svnfrontend/graphtree/revgraphview.cpp:557
 #, kde-format
 msgid "<br>Revision: %1<br>Author: %2<br>Date: %3<br>Log: %4</html>"
 msgstr ""
+"<br> "
+"Revisión: %1<br> "
+"Autor: %2<br> "
+"Data: %3<br> "
+"Rexistro: %4</html>"
 
 #: src/svnfrontend/graphtree/revgraphview.cpp:565
 #, kde-format
@@ -3009,20 +3117,20 @@ msgstr "<b>Historial</b>%1%2%3"
 
 #: src/svnfrontend/graphtree/revgraphview.cpp:838
 msgid "Diff to previous"
-msgstr ""
+msgstr "Diferenzas coa anterior"
 
 #: src/svnfrontend/graphtree/revgraphview.cpp:842
 msgid "Diff to selected item"
-msgstr ""
+msgstr "Diferenzas co elemento seleccionado"
 
 #: src/svnfrontend/graphtree/revgraphview.cpp:845
 #: src/svnfrontend/svnlogdlgimp.cpp:525
 msgid "Cat this version"
-msgstr ""
+msgstr "Obter esta versión"
 
 #: src/svnfrontend/graphtree/revgraphview.cpp:848
 msgid "Unselect item"
-msgstr ""
+msgstr "Anular a selección do elemento"
 
 #: src/svnfrontend/graphtree/revgraphview.cpp:850
 msgid "Select item"
@@ -3030,7 +3138,7 @@ msgstr "Escoller un elemento"
 
 #: src/svnfrontend/graphtree/revgraphview.cpp:853
 msgid "Display details"
-msgstr ""
+msgstr "Mostrar os detalles"
 
 #: src/svnfrontend/graphtree/revgraphview.cpp:856
 msgid "Rotate counter-clockwise"
@@ -3042,7 +3150,7 @@ msgstr "Xirar en sentido horario"
 
 #: src/svnfrontend/graphtree/revgraphview.cpp:863
 msgid "Save tree as PNG"
-msgstr ""
+msgstr "Gardar a árbore como PNG"
 
 #: src/svnfrontend/graphtree/revisiontree.cpp:96
 #: src/svnfrontend/svnactions.cpp:308
@@ -3052,11 +3160,13 @@ msgstr "Historial"
 #: src/svnfrontend/graphtree/revisiontree.cpp:96
 #: src/svnfrontend/svnactions.cpp:308
 msgid "Getting logs - hit Cancel for abort"
-msgstr ""
+msgstr "Obtendo o historial. Prema «Cancelar» para interromper a operación."
 
 #: src/svnfrontend/graphtree/revisiontree.cpp:106
 msgid "No log cache possible due broken database and networking not allowed."
 msgstr ""
+"Non é posíbel gardar o historial na caché porque a base de datos está danada "
+"e non se permite usar a rede."
 
 #: src/svnfrontend/graphtree/revisiontree.cpp:106
 #: src/svnfrontend/graphtree/revisiontree.cpp:111
@@ -3065,15 +3175,17 @@ msgid ""
 "Could not retrieve logs, reason:\n"
 "%1"
 msgstr ""
+"Non foi posíbel obter o historial polo seguinte motivo:\n"
+"%1"
 
 #: src/svnfrontend/graphtree/revisiontree.cpp:137
 msgid "Scanning logs"
-msgstr ""
+msgstr "Analizando o historial"
 
 #: src/svnfrontend/graphtree/revisiontree.cpp:137
 #, kde-format
 msgid "Scanning the logs for %1"
-msgstr ""
+msgstr "Analizando o historial de %1"
 
 #: src/svnfrontend/graphtree/revisiontree.cpp:229
 #: src/svnfrontend/graphtree/revisiontree.cpp:268
@@ -3081,11 +3193,13 @@ msgstr ""
 #, kde-format
 msgid "%1<br>Check change entry %2 of %3"
 msgstr ""
+"%1<br> "
+"Revise a entrada de cambio %2 de %3"
 
 #. i18n: ectx: property (text), widget (QLabel, m_Srclabel)
 #: src/svnfrontend/hotcopydlg.ui:11
 msgid "Repository to copy:"
-msgstr ""
+msgstr "Repositorio para copiar:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_Destlabel)
 #: src/svnfrontend/hotcopydlg.ui:31
@@ -3095,29 +3209,33 @@ msgstr "Cartafol de destino:"
 #. i18n: ectx: property (text), widget (QCheckBox, m_Cleanlogs)
 #: src/svnfrontend/hotcopydlg.ui:51
 msgid "Clean logs"
-msgstr ""
+msgstr "Limpar o historial"
 
 #: src/svnfrontend/importdir_logmsg.cpp:41
 msgid "No ignore"
-msgstr ""
+msgstr "Non ignorar"
 
 #: src/svnfrontend/importdir_logmsg.cpp:42
 msgid "If set, add files or directories that match ignore patterns."
 msgstr ""
+"Marque esta opción para engadir os ficheiros ou cartafoles que coincidan con "
+"padróns de ignorar."
 
 #: src/svnfrontend/importdir_logmsg.cpp:47
 msgid "Ignore unknown node types"
-msgstr ""
+msgstr "Ignorar os tipos de nodo descoñecidos"
 
 #: src/svnfrontend/importdir_logmsg.cpp:48
 msgid "Should files with unknown node types be ignored"
-msgstr ""
+msgstr "Indica se ignorar os ficheiros cun tipo de nodo descoñecido"
 
 #: src/svnfrontend/importdir_logmsg.cpp:49
 msgid ""
 "Ignore files of which the node type is unknown, such as device files and "
 "pipes."
 msgstr ""
+"Ignorar os ficheiros cuxo tipo de nodo non é coñecido, como ficheiros de "
+"dispositivo ou canalizacións."
 
 #: src/svnfrontend/importdir_logmsg.cpp:83
 msgid "(Last part)"
@@ -3126,17 +3244,17 @@ msgstr "(última parte)"
 #: src/svnfrontend/importdir_logmsg.cpp:83
 #, kde-format
 msgid "Create subdirectory %1 on import"
-msgstr ""
+msgstr "Crear o subcartafol %1 ao importar"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel4)
 #: src/svnfrontend/loaddmpdlg.ui:11
 msgid "Load into repository:"
-msgstr ""
+msgstr "Cargar no repositorio:"
 
 #. i18n: ectx: property (title), widget (QGroupBox, m_UuidGroup)
 #: src/svnfrontend/loaddmpdlg.ui:24
 msgid "Uuid action"
-msgstr ""
+msgstr "Acción de UUID"
 
 #. i18n: ectx: property (text), widget (QRadioButton, m_UUidForce)
 #. i18n: ectx: property (text), widget (QCheckBox, m_ForceCheck)
@@ -3184,7 +3302,7 @@ msgstr ""
 #. i18n: ectx: property (text), widget (QLabel, textLabel5)
 #: src/svnfrontend/loaddmpdlg.ui:92
 msgid "Load into folder:"
-msgstr ""
+msgstr "Cargar no cartafol:"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel3)
 #: src/svnfrontend/loaddmpdlg.ui:105
@@ -3195,19 +3313,22 @@ msgstr "Ficheiro de envorcado:"
 #: src/svnfrontend/loaddmpdlg.ui:118
 msgid "Validate the properties on load (only Subversion 1.7 or newer)"
 msgstr ""
+"Validar as propiedades ao cargar (só con Subversion 1.7 ou versións "
+"posteriores)."
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_validateProps)
 #: src/svnfrontend/loaddmpdlg.ui:121
 msgid "Validate properties"
-msgstr ""
+msgstr "Validas as propiedades."
 
 #: src/svnfrontend/maintreewidget.cpp:269
 msgid "Networked URL to open but networking is disabled."
 msgstr ""
+"Solicitouse abrir un URL de internet pero o uso da rede está desactivado."
 
 #: src/svnfrontend/maintreewidget.cpp:495
 msgid "History of item"
-msgstr ""
+msgstr "Historial do elemento"
 
 #: src/svnfrontend/maintreewidget.cpp:496
 #: src/svnfrontend/maintreewidget.cpp:499
@@ -3217,33 +3338,36 @@ msgstr "Historial"
 
 #: src/svnfrontend/maintreewidget.cpp:497
 msgid "Displays the history log of selected item"
-msgstr ""
+msgstr "Mostra o rexistro do historial do elemento seleccionado"
 
 #: src/svnfrontend/maintreewidget.cpp:498
 #: src/svnfrontend/maintreewidget.cpp:502
 msgid "History of item ignoring copies"
-msgstr ""
+msgstr "Historial do elemento ignorando as copias"
 
 #: src/svnfrontend/maintreewidget.cpp:500
 #: src/svnfrontend/maintreewidget.cpp:504
 msgid "Displays the history log of selected item without following copies"
 msgstr ""
+"Mostra o rexistro do historial do elemento seleccionado sen seguir as copias"
 
 #: src/svnfrontend/maintreewidget.cpp:506
 msgid "Full revision tree"
-msgstr ""
+msgstr "Árbore de revisións completa"
 
 #: src/svnfrontend/maintreewidget.cpp:507
 msgid "Shows history of item as linked tree"
-msgstr ""
+msgstr "Mostrar o historial do elemento en forma de árbore ligada"
 
 #: src/svnfrontend/maintreewidget.cpp:508
 msgid "Partial revision tree"
-msgstr ""
+msgstr "Árbore de revisións parcial"
 
 #: src/svnfrontend/maintreewidget.cpp:509
 msgid "Shows history of item as linked tree for a revision range"
 msgstr ""
+"Mostrar o historial do elemento en forma de árbore ligada para un intervalo "
+"de revisións"
 
 #: src/svnfrontend/maintreewidget.cpp:511
 #: src/svnfrontend/maintreewidget.cpp:512
@@ -3256,7 +3380,7 @@ msgstr "Mostrar as propiedades"
 
 #: src/svnfrontend/maintreewidget.cpp:514
 msgid "Display last changes"
-msgstr ""
+msgstr "Mostrar os últimos cambios"
 
 #: src/svnfrontend/maintreewidget.cpp:515
 msgid "Display last changes as difference to previous commit."
@@ -3268,7 +3392,7 @@ msgstr "Detalles"
 
 #: src/svnfrontend/maintreewidget.cpp:517
 msgid "Show details about selected item"
-msgstr ""
+msgstr "Mostrar detalles sobre o elemento seleccionado"
 
 #: src/svnfrontend/maintreewidget.cpp:518 src/svnfrontend/svnactions.cpp:2268
 #: src/svnfrontend/svnactions.cpp:2286
@@ -3277,11 +3401,11 @@ msgstr "Mover"
 
 #: src/svnfrontend/maintreewidget.cpp:519
 msgid "Moves or renames current item"
-msgstr ""
+msgstr "Move ou cambia o nome do elemento actual"
 
 #: src/svnfrontend/maintreewidget.cpp:521
 msgid "Create a copy of current item"
-msgstr ""
+msgstr "Crear unha copia do elemento actual"
 
 #: src/svnfrontend/maintreewidget.cpp:522
 msgid "Check for updates"
@@ -3291,10 +3415,12 @@ msgstr "Comprobar se hai actualizacións"
 msgid ""
 "Check if current working copy has items with newer version in repository"
 msgstr ""
+"Comprobar se a copia de traballo actual ten elementos cunha versión máis nova "
+"no repositorio"
 
 #: src/svnfrontend/maintreewidget.cpp:525
 msgid "Check updates"
-msgstr ""
+msgstr "Comprobar se hai actualizacións"
 
 #: src/svnfrontend/maintreewidget.cpp:528
 msgid "Blame"
@@ -3306,6 +3432,8 @@ msgid ""
 "Output the content of specified files or URLs with revision and author "
 "information in-line."
 msgstr ""
+"Obter o contido dos ficheiros ou enderezos URL indicados con información "
+"sobre as revisións e os autores incluída en cada liña."
 
 #: src/svnfrontend/maintreewidget.cpp:531
 msgid "Blame range"
@@ -3313,35 +3441,39 @@ msgstr "Intervalo de autorías"
 
 #: src/svnfrontend/maintreewidget.cpp:535
 msgid "Cat head"
-msgstr ""
+msgstr "Obter a cabeceira"
 
 #: src/svnfrontend/maintreewidget.cpp:536
 msgid "Output the content of specified files or URLs."
-msgstr ""
+msgstr "Obter o contido dos ficheiros ou enderezos URL indicados."
 
 #: src/svnfrontend/maintreewidget.cpp:538
 msgid "Cat revision..."
-msgstr ""
+msgstr "Obter unha revisión…"
 
 #: src/svnfrontend/maintreewidget.cpp:539
 msgid "Output the content of specified files or URLs at specific revision."
 msgstr ""
+"Obter o contido dos ficheiros ou enderezos URL indicados nunha revisión "
+"concreta."
 
 #: src/svnfrontend/maintreewidget.cpp:542
 msgid "Lock current items"
-msgstr ""
+msgstr "Bloquear os elementos actuais"
 
 #: src/svnfrontend/maintreewidget.cpp:543
 msgid "Try lock current item against changes from other users"
 msgstr ""
+"Intentar bloquear o elemento actual para que non poidan modificalo outros "
+"usuarios"
 
 #: src/svnfrontend/maintreewidget.cpp:545
 msgid "Unlock current items"
-msgstr ""
+msgstr "Desbloquear os elementos actuais"
 
 #: src/svnfrontend/maintreewidget.cpp:546
 msgid "Free existing lock on current item"
-msgstr ""
+msgstr "Retirar o bloqueo do elemento actual"
 
 #: src/svnfrontend/maintreewidget.cpp:550 src/svnfrontend/svnactions.cpp:669
 msgid "New folder"
@@ -3349,23 +3481,25 @@ msgstr "Novo cartafol"
 
 #: src/svnfrontend/maintreewidget.cpp:551
 msgid "Create a new folder"
-msgstr ""
+msgstr "Crear un cartafol novo"
 
 #: src/svnfrontend/maintreewidget.cpp:552
 msgid "Switch repository"
-msgstr ""
+msgstr "Cambiar de repositorio"
 
 #: src/svnfrontend/maintreewidget.cpp:553
 msgid "Switch repository path of current working copy path (\"svn switch\")"
 msgstr ""
+"Cambiar a ruta do repositorio da ruta da copia de traballo actual («svn "
+"switch»)."
 
 #: src/svnfrontend/maintreewidget.cpp:556
 msgid "Relocate current working copy URL"
-msgstr ""
+msgstr "Cambiar o URL da copia de traballo actual"
 
 #: src/svnfrontend/maintreewidget.cpp:557
 msgid "Relocate URL of current working copy path to other URL"
-msgstr ""
+msgstr "Cambiar o URL da copia de traballo actual por outro URL"
 
 #: src/svnfrontend/maintreewidget.cpp:560
 msgid "Check for unversioned items"
@@ -3383,11 +3517,11 @@ msgstr ""
 
 #: src/svnfrontend/maintreewidget.cpp:565
 msgid "Open repository of working copy"
-msgstr ""
+msgstr "Abrir o repositorio da copia de traballo"
 
 #: src/svnfrontend/maintreewidget.cpp:567
 msgid "Opens the repository the current working copy was checked out from"
-msgstr ""
+msgstr "Abre o repositorio do que se descargou a copia de traballo actual"
 
 #: src/svnfrontend/maintreewidget.cpp:569 src/svnfrontend/svnactions.cpp:1942
 msgid "Cleanup"
@@ -3398,73 +3532,77 @@ msgid ""
 "Recursively clean up the working copy, removing locks, resuming unfinished "
 "operations, etc."
 msgstr ""
+"Limpar recursivamente a copia de traballo, eliminando bloqueos, continuando "
+"operacións sen rematar, etc."
 
 #: src/svnfrontend/maintreewidget.cpp:571
 msgid "Import folders into current"
-msgstr ""
+msgstr "Importar cartafoles no actual"
 
 #: src/svnfrontend/maintreewidget.cpp:573
 msgid "Import folder content into current URL"
-msgstr ""
+msgstr "Importar o contido do cartafol no URL actual"
 
 #: src/svnfrontend/maintreewidget.cpp:577
 msgid "Add selected files/dirs"
-msgstr ""
+msgstr "Engadir os ficheiros e cartafoles seleccionados"
 
 #: src/svnfrontend/maintreewidget.cpp:578
 msgid "Adding selected files and/or directories to repository"
-msgstr ""
+msgstr "Engadindo os ficheiros e cartafoles seleccionados ao repositorio"
 
 #: src/svnfrontend/maintreewidget.cpp:580
 msgid "Add selected files/dirs recursive"
-msgstr ""
+msgstr "Engadir os ficheiros e cartafoles seleccionados recursivamente"
 
 #: src/svnfrontend/maintreewidget.cpp:582
 msgid ""
 "Adding selected files and/or directories to repository and all subitems of "
 "folders"
 msgstr ""
+"Engadindo os ficheiros e cartafoles seleccionados, así como o contido dos "
+"cartafoles, ao repositorio"
 
 #: src/svnfrontend/maintreewidget.cpp:584
 msgid "Delete selected files/dirs"
-msgstr ""
+msgstr "Borrar os ficheiros e cartafoles seleccionados"
 
 #: src/svnfrontend/maintreewidget.cpp:586
 msgid "Deleting selected files and/or directories from repository"
-msgstr ""
+msgstr "Eliminando os ficheiros e cartafoles seleccionados do repositorio"
 
 #: src/svnfrontend/maintreewidget.cpp:587
 msgid "Delete folder"
-msgstr "Borrar cartafol"
+msgstr "Eliminar o cartafol"
 
 #: src/svnfrontend/maintreewidget.cpp:588
 msgid "Deleting selected directories from repository"
-msgstr ""
+msgstr "Eliminando os cartafoles seleccionados do repositorio"
 
 #: src/svnfrontend/maintreewidget.cpp:590
 msgid "Revert current changes"
-msgstr ""
+msgstr "Anular as modificacións actuais"
 
 #: src/svnfrontend/maintreewidget.cpp:592
 msgid "Mark resolved"
-msgstr ""
+msgstr "Marcar como resolto"
 
 #: src/svnfrontend/maintreewidget.cpp:593
 msgid "Marking files or dirs resolved"
-msgstr ""
+msgstr "Marcar os ficheiros e cartafoles como resoltos"
 
 #: src/svnfrontend/maintreewidget.cpp:595
 msgid "Resolve conflicts"
-msgstr ""
+msgstr "Resolver os conflitos"
 
 #: src/svnfrontend/maintreewidget.cpp:597
 msgid "Ignore/Unignore current item"
-msgstr ""
+msgstr "Ignorar ou deixar de ignorar o elemento actual"
 
 #: src/svnfrontend/maintreewidget.cpp:598
 #: src/svnfrontend/maintreewidget.cpp:599
 msgid "Add or Remove ignore pattern"
-msgstr ""
+msgstr "Engadir ou eliminar un padrón de ignorar"
 
 #: src/svnfrontend/maintreewidget.cpp:601
 #: src/svnfrontend/maintreewidget.cpp:663
@@ -3478,7 +3616,7 @@ msgstr "Actualizar"
 
 #: src/svnfrontend/maintreewidget.cpp:603
 msgid "Update to revision..."
-msgstr ""
+msgstr "Actualizar á revisión…"
 
 #: src/svnfrontend/maintreewidget.cpp:604
 #: src/svnfrontend/maintreewidget.cpp:605
@@ -3490,7 +3628,7 @@ msgstr "Remitir"
 #: src/svnfrontend/maintreewidget.cpp:607
 #: src/svnfrontend/maintreewidget.cpp:609
 msgid "Diff local changes"
-msgstr ""
+msgstr "Diferenzas cos cambios locais"
 
 #: src/svnfrontend/maintreewidget.cpp:608
 #: src/svnfrontend/maintreewidget.cpp:610
@@ -3498,30 +3636,34 @@ msgid ""
 "Diff working copy against BASE (last checked out version) - does not require "
 "access to repository"
 msgstr ""
+"Diferenzas entre a copia de traballo e a base (a última versión descargada). "
+"Non require acceso ao repositorio."
 
 #: src/svnfrontend/maintreewidget.cpp:613
 msgid "Diff against HEAD"
-msgstr ""
+msgstr "Diferenzas coa cabeceira"
 
 #: src/svnfrontend/maintreewidget.cpp:614
 msgid ""
 "Diff working copy against HEAD (last checked in version)- requires access to "
 "repository"
 msgstr ""
+"Diferenzas entre a copia de traballo e a cabeceira (a última versión "
+"remitida). Require acceso ao repositorio."
 
 #: src/svnfrontend/maintreewidget.cpp:617
 #: src/svnfrontend/maintreewidget.cpp:620
 msgid "Diff items"
-msgstr ""
+msgstr "Diferenzas entre os elementos"
 
 #: src/svnfrontend/maintreewidget.cpp:618
 #: src/svnfrontend/maintreewidget.cpp:621
 msgid "Diff two items"
-msgstr ""
+msgstr "Diferenzas entre dous elementos"
 
 #: src/svnfrontend/maintreewidget.cpp:624
 msgid "Merge two revisions"
-msgstr ""
+msgstr "Fusionar dúas revisións"
 
 #: src/svnfrontend/maintreewidget.cpp:625
 #: src/svnfrontend/maintreewidget.cpp:1958 src/svnfrontend/svnactions.cpp:2241
@@ -3530,7 +3672,7 @@ msgstr "Fusionar"
 
 #: src/svnfrontend/maintreewidget.cpp:626
 msgid "Merge two revisions of this entry into itself"
-msgstr ""
+msgstr "Fusionar dúas revisións desta entrada coa propia entrada"
 
 #: src/svnfrontend/maintreewidget.cpp:629
 msgid "Merge..."
@@ -3541,6 +3683,8 @@ msgid ""
 "Merge repository path into current working copy path or current repository "
 "path into a target"
 msgstr ""
+"Fusionar unha ruta do repositorio coa ruta da copia de traballo actual, ou a "
+"ruta actual do repositorio co destino"
 
 #: src/svnfrontend/maintreewidget.cpp:631
 #: src/svnfrontend/maintreewidget.cpp:1118
@@ -3550,7 +3694,7 @@ msgstr "Abrir con…"
 
 #: src/svnfrontend/maintreewidget.cpp:635
 msgid "Checkout current repository path"
-msgstr ""
+msgstr "Descargar a ruta actual do repositorio"
 
 #: src/svnfrontend/maintreewidget.cpp:636
 #: src/svnfrontend/maintreewidget.cpp:644 src/svnfrontend/svnactions.cpp:1741
@@ -3559,20 +3703,20 @@ msgstr "Obtención"
 
 #: src/svnfrontend/maintreewidget.cpp:638
 msgid "Export current repository path"
-msgstr ""
+msgstr "Exportar a ruta actual do repositorio"
 
 #: src/svnfrontend/maintreewidget.cpp:639
 msgid "Select browse revision"
-msgstr ""
+msgstr "Seleccionar a revisión para examinar"
 
 #: src/svnfrontend/maintreewidget.cpp:643 src/svnfrontend/svnactions.cpp:1650
 #: src/svnfrontend/svnactions.cpp:1675
 msgid "Checkout a repository"
-msgstr ""
+msgstr "Descargar un repositorio"
 
 #: src/svnfrontend/maintreewidget.cpp:645 src/svnfrontend/svnactions.cpp:1675
 msgid "Export a repository"
-msgstr ""
+msgstr "Exportar un repositorio"
 
 #: src/svnfrontend/maintreewidget.cpp:646 src/svnfrontend/svnactions.cpp:1741
 msgid "Export"
@@ -3589,7 +3733,7 @@ msgstr "Actualizar"
 #. i18n: ectx: property (text), widget (KPushButton, m_DispSpecDiff)
 #: src/svnfrontend/maintreewidget.cpp:650 src/svnfrontend/svnlogdlg.ui:211
 msgid "Diff revisions"
-msgstr ""
+msgstr "Diferenzas entre revisións"
 
 #: src/svnfrontend/maintreewidget.cpp:653
 msgid "Unfold File Tree"
@@ -3612,83 +3756,83 @@ msgstr "Pecha todas as gallas da árbore de ficheiros"
 #: src/svnfrontend/maintreewidget.cpp:1803
 #: src/svnfrontend/maintreewidget.cpp:1819
 msgid "Update log cache"
-msgstr ""
+msgstr "Actualizar a caché do historial"
 
 #: src/svnfrontend/maintreewidget.cpp:660
 msgid "Update the log cache for current repository"
-msgstr ""
+msgstr "Actualizar a caché do historial para o repositorio actual"
 
 #: src/svnfrontend/maintreewidget.cpp:664
 msgid "Set property recursive"
-msgstr ""
+msgstr "Asignar a propiedade recursivamente"
 
 #: src/svnfrontend/maintreewidget.cpp:666
 msgid "Settings for current repository"
-msgstr ""
+msgstr "Configuración do repositorio actual"
 
 #: src/svnfrontend/maintreewidget.cpp:804
 #: src/svnfrontend/maintreewidget.cpp:1814
 msgid "Stop updating the log cache"
-msgstr ""
+msgstr "Deter a actualización da caché do historial"
 
 #: src/svnfrontend/maintreewidget.cpp:1003
 #, kde-format
 msgid "Edit pattern to ignore for \"%1\""
-msgstr ""
+msgstr "Editar o padrón para ignorar para «%1»"
 
 #: src/svnfrontend/maintreewidget.cpp:1294
 #: src/svnfrontend/maintreewidget.cpp:1336
 msgid "Nothing selected for unlock"
-msgstr ""
+msgstr "Non seleccionou nada para desbloquear"
 
 #: src/svnfrontend/maintreewidget.cpp:1298
 msgid "Lock message"
-msgstr ""
+msgstr "Mensaxe de bloqueo"
 
 #: src/svnfrontend/maintreewidget.cpp:1303
 msgid "Steal lock?"
-msgstr ""
+msgstr "Roubar o bloqueo?"
 
 #: src/svnfrontend/maintreewidget.cpp:1339
 msgid "Break lock or ignore missing locks?"
-msgstr ""
+msgstr "Romper o bloqueo ou ignorar os bloqueos que faltan?"
 
 #: src/svnfrontend/maintreewidget.cpp:1339
 msgid "Unlocking items"
-msgstr ""
+msgstr "Desbloqueando os elementos"
 
 #: src/svnfrontend/maintreewidget.cpp:1651
 msgid "Nothing selected for delete"
-msgstr ""
+msgstr "Non seleccionou nada para eliminar"
 
 #: src/svnfrontend/maintreewidget.cpp:1669 src/svnfrontend/svnactions.cpp:1597
 msgid "Really delete these entries?"
-msgstr ""
+msgstr "Está seguro de que quere eliminar estas entradas?"
 
 #: src/svnfrontend/maintreewidget.cpp:1836
 msgid "Automatic generated base layout by kdesvn"
-msgstr ""
+msgstr "Cartafoles principais xerados automaticamente por kdesvn"
 
 #: src/svnfrontend/maintreewidget.cpp:1849
 msgid "May not make subdirectories of a file"
-msgstr ""
+msgstr "Non pode crear subcartafoles dun ficheiro"
 
 #: src/svnfrontend/maintreewidget.cpp:2012
 msgid "Error getting entry to relocate"
-msgstr ""
+msgstr "Erro ao obter a entrada para cambiar de lugar"
 
 #: src/svnfrontend/maintreewidget.cpp:2019
 #, kde-format
 msgid "Relocate path %1"
-msgstr ""
+msgstr "Cambiar de lugar a ruta %1"
 
 #: src/svnfrontend/maintreewidget.cpp:2056
 msgid "Cannot import into multiple targets"
-msgstr ""
+msgstr "Non é posíbel importar para varios destinos"
 
 #: src/svnfrontend/maintreewidget.cpp:2067
 msgid "Import files from folder"
-msgstr ""
+msgstr "Importar ficheiros dun cartafol"
 
 #: src/svnfrontend/maintreewidget.cpp:2069
 msgid "Import file"
@@ -3696,20 +3840,20 @@ msgstr "Importar un ficheiro"
 
 #: src/svnfrontend/maintreewidget.cpp:2087
 msgid "Cannot import remote URLs"
-msgstr ""
+msgstr "Non é posíbel importar enderezos URL remotos"
 
 #: src/svnfrontend/maintreewidget.cpp:2096
 #: src/svnfrontend/maintreewidget.cpp:2100
 msgid "Import log"
-msgstr ""
+msgstr "Importar o historial"
 
 #: src/svnfrontend/maintreewidget.cpp:2153
 msgid "Could not retrieve repository of working copy."
-msgstr ""
+msgstr "Non foi posíbel obter o repositorio da copia de traballo."
 
 #: src/svnfrontend/maintreewidget.cpp:2162
 msgid "Only in working copy possible."
-msgstr ""
+msgstr "Só é posíbel nunha copia de traballo."
 
 #: src/svnfrontend/maintreewidget.cpp:2162
 #: src/svnfrontend/maintreewidget.cpp:2166
@@ -3719,26 +3863,28 @@ msgstr "Erro"
 
 #: src/svnfrontend/maintreewidget.cpp:2166
 msgid "Only on single folder possible"
-msgstr ""
+msgstr "Só é posíbel nun único cartafol."
 
 #: src/svnfrontend/maintreewidget.cpp:2171
 msgid "Sorry - internal error"
-msgstr ""
+msgstr "Erro interno"
 
 #: src/svnfrontend/maintreewidget.cpp:2235
 msgid "Hold Ctrl key while click on selected item for unselect"
 msgstr ""
+"Manteña premida a tecla Ctrl mentre preme sobre o elemento seleccionado para "
+"anular a súa selección."
 
 #. i18n: ectx: property (toolTip), widget (QTreeView, m_LogTreeView)
 #. i18n: ectx: property (toolTip), widget (QTreeWidget, m_ChangedList)
 #: src/svnfrontend/maintreewidget.cpp:2238 src/svnfrontend/svnlogdlg.ui:120
 #: src/svnfrontend/svnlogdlg.ui:154
 msgid "See context menu for more actions"
-msgstr ""
+msgstr "Atopará máis accións no menú de contexto."
 
 #: src/svnfrontend/maintreewidget.cpp:2241
 msgid "Click for navigate"
-msgstr ""
+msgstr "Prema para examinar"
 
 #: src/svnfrontend/maintreewidget.cpp:2244
 msgid "Navigation"
@@ -3746,16 +3892,16 @@ msgstr "Navegación"
 
 #: src/svnfrontend/maintreewidget.cpp:2337
 msgid "Could not retrieve repository."
-msgstr ""
+msgstr "Non foi posíbel obter o repositorio."
 
 #: src/svnfrontend/maintreewidget.cpp:2368
 msgid "Set/add property recursive"
-msgstr ""
+msgstr "Asignar a propiedade recursivamente"
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, MergeDlg)
 #: src/svnfrontend/merge_dlg.ui:14
 msgid "MergeSettings"
-msgstr ""
+msgstr "Configuración de fusión"
 
 #. i18n: ectx: property (text), widget (QLabel, m_SrcOneLabel)
 #: src/svnfrontend/merge_dlg.ui:22
@@ -3775,17 +3921,17 @@ msgstr "Saída a:"
 #. i18n: ectx: property (title), widget (QGroupBox, m_MergeParameter)
 #: src/svnfrontend/merge_dlg.ui:72
 msgid "Merge parameter"
-msgstr ""
+msgstr "Parámetro de fusión"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, m_RelatedCheck)
 #: src/svnfrontend/merge_dlg.ui:103
 msgid "Handle unrelated as related items"
-msgstr ""
+msgstr "Xestionar os elementos non relacionados como relacionados."
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_RelatedCheck)
 #: src/svnfrontend/merge_dlg.ui:106
 msgid "Ignore ancestry"
-msgstr ""
+msgstr "Ignorar a antecedencia."
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, m_ForceCheck)
 #: src/svnfrontend/merge_dlg.ui:113
@@ -3797,16 +3943,18 @@ msgstr ""
 #: src/svnfrontend/merge_dlg.ui:126
 msgid "lump-merge all of source URL's unmerged changes"
 msgstr ""
+"Desfacer a fusión de todos os cambios do URL de orixe para os que se desfixo "
+"a fusión."
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_Reintegrate)
 #: src/svnfrontend/merge_dlg.ui:132
 msgid "Reintegrate merge"
-msgstr ""
+msgstr "Aplicar de novo a fusión."
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, m_DryCheck)
 #: src/svnfrontend/merge_dlg.ui:139
 msgid "Just dry run without modifications"
-msgstr ""
+msgstr "Comprobar se é posíbel aplicar os cambios."
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_DryCheck)
 #: src/svnfrontend/merge_dlg.ui:142
@@ -3816,7 +3964,7 @@ msgstr "Simulación"
 #. i18n: ectx: property (toolTip), widget (QCheckBox, m_RecordOnly)
 #: src/svnfrontend/merge_dlg.ui:152
 msgid "Only write mergeinfo"
-msgstr ""
+msgstr "Só escribir a información de fusión."
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, m_RecordOnly)
 #: src/svnfrontend/merge_dlg.ui:155
@@ -3824,25 +3972,27 @@ msgid ""
 "The merge is not actually performed, but the mergeinfo for the revisions "
 "which would have been merged is recorded in the working copy"
 msgstr ""
+"A fusión non se realiza, pero a información sobre as revisións que se "
+"fusionarían rexístrase na copia de traballo."
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_RecordOnly)
 #: src/svnfrontend/merge_dlg.ui:158
 msgid "Record only"
-msgstr ""
+msgstr "Só rexistrar."
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, m_useExternMerge)
 #: src/svnfrontend/merge_dlg.ui:165
 msgid "Use external merge not Subversion's merge"
-msgstr ""
+msgstr "Usar un «merge» externo en vez de o de Subversion."
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_useExternMerge)
 #: src/svnfrontend/merge_dlg.ui:168
 msgid "Use external merge"
-msgstr ""
+msgstr "Usar un «merge» externo."
 
 #: src/svnfrontend/mergedlg_impl.cpp:188
 msgid "Enter merge range"
-msgstr ""
+msgstr "Escriba o intervalo de fusión"
 
 #: src/svnfrontend/models/logitemmodel.cpp:217
 msgid "Message"
@@ -3864,12 +4014,12 @@ msgstr "Estado"
 
 #: src/svnfrontend/models/svnitemmodel.cpp:325
 msgid "Last changed Revision"
-msgstr ""
+msgstr "Última revisión modificada"
 
 #: src/svnfrontend/models/svnitemmodel.cpp:327
 #: src/svnfrontend/svnactions.cpp:808
 msgid "Last author"
-msgstr ""
+msgstr "Último autor"
 
 #: src/svnfrontend/models/svnitemmodel.cpp:329
 msgid "Last change date"
@@ -3877,7 +4027,7 @@ msgstr "Última data de cambio"
 
 #: src/svnfrontend/models/svnitemmodel.cpp:331
 msgid "Locked by"
-msgstr ""
+msgstr "Bloqueado por"
 
 #: src/svnfrontend/opencontextmenu.cpp:61
 msgid "Other..."
@@ -3885,15 +4035,15 @@ msgstr "Outro…"
 
 #: src/svnfrontend/propertiesdlg.cpp:47
 msgid "Modify properties"
-msgstr ""
+msgstr "Propiedades modificadas"
 
 #: src/svnfrontend/propertiesdlg.cpp:105
 msgid "View and modify properties"
-msgstr ""
+msgstr "Ver e modificar propiedades"
 
 #: src/svnfrontend/propertiesdlg.cpp:106
 msgid "List of properties set"
-msgstr ""
+msgstr "Lista de propiedades asignadas"
 
 #: src/svnfrontend/propertiesdlg.cpp:107
 msgid "Add property"
@@ -3902,24 +4052,24 @@ msgstr "Engadir unha propiedade"
 #: src/svnfrontend/propertiesdlg.cpp:108 src/svnfrontend/propertiesdlg.cpp:186
 #: src/svnfrontend/propertiesdlg.cpp:243
 msgid "Modify property"
-msgstr ""
+msgstr "Modificar a propiedade"
 
 #: src/svnfrontend/propertiesdlg.cpp:109 src/svnfrontend/propertiesdlg.cpp:133
 msgid "Delete property"
-msgstr ""
+msgstr "Eliminar a propiedade"
 
 #: src/svnfrontend/propertiesdlg.cpp:131
 msgid "Undelete property"
-msgstr ""
+msgstr "Recuperar a propiedade"
 
 #: src/svnfrontend/propertiesdlg.cpp:143
 msgid "Missing SVN link"
-msgstr ""
+msgstr "Falta a ligazón de SVN"
 
 #: src/svnfrontend/stopdlg.cpp:192
 #, kde-format
 msgid "%p% of %1"
-msgstr ""
+msgstr "%p% de %1"
 
 #: src/svnfrontend/stopdlg.cpp:200
 #, kde-format
@@ -3932,16 +4082,16 @@ msgstr "Rematado"
 
 #: src/svnfrontend/svnactions.cpp:337
 msgid "Got no logs"
-msgstr ""
+msgstr "Obtívose un historial baleiro."
 
 #: src/svnfrontend/svnactions.cpp:458
 msgid "Got no info."
-msgstr ""
+msgstr "Non se obtivo información."
 
 #: src/svnfrontend/svnactions.cpp:495
 #, kde-format
 msgid "History of %1"
-msgstr ""
+msgstr "Historial de %1"
 
 #. i18n: ectx: property (text), widget (KPushButton, buttonBlame)
 #: src/svnfrontend/svnactions.cpp:548 src/svnfrontend/svnlogdlg.ui:249
@@ -3951,36 +4101,36 @@ msgstr "Anotar"
 
 #: src/svnfrontend/svnactions.cpp:548
 msgid "Annotate lines - hit Cancel for abort"
-msgstr ""
+msgstr "Anotar as liñas. Prema «Cancelar» para interromper a operación."
 
 #: src/svnfrontend/svnactions.cpp:556
 msgid "Got no annotate"
-msgstr ""
+msgstr "Non se obtiveron anotacións."
 
 #: src/svnfrontend/svnactions.cpp:575
 msgid "Content get"
-msgstr ""
+msgstr "Obter o contido"
 
 #: src/svnfrontend/svnactions.cpp:575
 msgid "Getting content - hit Cancel for abort"
-msgstr ""
+msgstr "Obtendo o contido. Prema «Cancelar» para interromper a operación."
 
 #: src/svnfrontend/svnactions.cpp:582
 msgid "Error getting content"
-msgstr ""
+msgstr "Erro ao obter o contido"
 
 #: src/svnfrontend/svnactions.cpp:595
 msgid "Error while open temporary file"
-msgstr ""
+msgstr "Erro ao abrir o ficheiro temporal"
 
 #: src/svnfrontend/svnactions.cpp:631
 #, kde-format
 msgid "Content of %1"
-msgstr ""
+msgstr "Contido de %1"
 
 #: src/svnfrontend/svnactions.cpp:644
 msgid "Got no content."
-msgstr ""
+msgstr "Non se obtivo ningún contido."
 
 #: src/svnfrontend/svnactions.cpp:669
 msgid "Enter folder name:"
@@ -3988,7 +4138,7 @@ msgstr "Escriba o nome do cartafol:"
 
 #: src/svnfrontend/svnactions.cpp:709
 msgid "Retrieving information - hit Cancel for abort"
-msgstr ""
+msgstr "Obtendo información. Prema «Cancelar» para interromper a operación."
 
 #: src/svnfrontend/svnactions.cpp:752
 msgid "URL"
@@ -3996,7 +4146,7 @@ msgstr "URL"
 
 #: src/svnfrontend/svnactions.cpp:754
 msgid "Canonical repository URL"
-msgstr ""
+msgstr "URL canónico do repositorio"
 
 #: src/svnfrontend/svnactions.cpp:757
 msgid "Checksum"
@@ -4052,39 +4202,39 @@ msgstr "Última remisión"
 
 #: src/svnfrontend/svnactions.cpp:812
 msgid "Last revision"
-msgstr ""
+msgstr "Última revisión"
 
 #: src/svnfrontend/svnactions.cpp:814
 msgid "Content last changed"
-msgstr ""
+msgstr "Último contido modificado"
 
 #: src/svnfrontend/svnactions.cpp:818
 msgid "Property last changed"
-msgstr ""
+msgstr "Última propiedade modificada"
 
 #: src/svnfrontend/svnactions.cpp:821
 msgid "New version of conflicted file"
-msgstr ""
+msgstr "Nova versión do ficheiro en conflito"
 
 #: src/svnfrontend/svnactions.cpp:824
 msgid "Old version of conflicted file"
-msgstr ""
+msgstr "Versión anterior do ficheiro en conflito"
 
 #: src/svnfrontend/svnactions.cpp:827
 msgid "Working version of conflicted file"
-msgstr ""
+msgstr "Versión de traballo do ficheiro en conflito"
 
 #: src/svnfrontend/svnactions.cpp:831
 msgid "Property reject file"
-msgstr ""
+msgstr "Ficheiro de propiedades rexeitadas"
 
 #: src/svnfrontend/svnactions.cpp:836
 msgid "Copy from URL"
-msgstr ""
+msgstr "Copiar do URL"
 
 #: src/svnfrontend/svnactions.cpp:839 src/svnfrontend/svnactions.cpp:849
 msgid "Lock token"
-msgstr ""
+msgstr "Código do bloqueo"
 
 #: src/svnfrontend/svnactions.cpp:840 src/svnfrontend/svnactions.cpp:850
 msgid "Owner"
@@ -4092,28 +4242,30 @@ msgstr "Propietario"
 
 #: src/svnfrontend/svnactions.cpp:841 src/svnfrontend/svnactions.cpp:851
 msgid "Locked on"
-msgstr ""
+msgstr "Bloqueado o"
 
 #: src/svnfrontend/svnactions.cpp:844 src/svnfrontend/svnactions.cpp:854
 msgid "Lock comment"
-msgstr ""
+msgstr "Comentario do bloqueo"
 
 #: src/svnfrontend/svnactions.cpp:878 src/svnfrontend/svnactions.cpp:900
 msgid "Infolist"
-msgstr ""
+msgstr "Lista de información"
 
 #: src/svnfrontend/svnactions.cpp:942
 msgid "Applying properties"
-msgstr ""
+msgstr "Aplicando as propiedades"
 
 #: src/svnfrontend/svnactions.cpp:942
 msgid "<center>Applying<br>hit cancel for abort</center>"
 msgstr ""
+"<center>Aplicando<br> "
+"Prema «Cancelar» para interromper a operación.</center>"
 
 #: src/svnfrontend/svnactions.cpp:982
 #, kde-format
 msgid "Could not change to folder %1\n"
-msgstr ""
+msgstr "Non foi posíbel cambiar ao cartafol %1\n"
 
 #: src/svnfrontend/svnactions.cpp:1001
 msgid "Not commit because networking is disabled"
@@ -4121,11 +4273,11 @@ msgstr "Non se remitiu porque o uso da rede está desacivado."
 
 #: src/svnfrontend/svnactions.cpp:1023 src/svnfrontend/svnactions.cpp:2422
 msgid "Status / List"
-msgstr ""
+msgstr "Estado ou lista"
 
 #: src/svnfrontend/svnactions.cpp:1023 src/svnfrontend/svnactions.cpp:2422
 msgid "Creating list / check status"
-msgstr ""
+msgstr "Creando a lista ou comprobando o estado"
 
 #: src/svnfrontend/svnactions.cpp:1044
 msgid "Delete and Commit"
@@ -4150,50 +4302,53 @@ msgstr "Descargar (prema «Cancelar» para interromper)"
 #: src/svnfrontend/svnactions.cpp:1131
 msgid "Can not do this diff because networking is disabled."
 msgstr ""
+"Non é posíbel xerar as diferenzas porque o uso da rede está desacivado."
 
 #: src/svnfrontend/svnactions.cpp:1183
 msgid "Both entries seems to be the same, can not diff."
-msgstr ""
+msgstr "Ambas entradas parecen idénticas, non se poden xerar as diferenzas."
 
 #: src/svnfrontend/svnactions.cpp:1246
 msgid "Diff-process could not started, check command."
 msgstr ""
+"Non foi posíbel iniciar o proceso de xeración de diferenzas, revise a orde."
 
 #: src/svnfrontend/svnactions.cpp:1290 src/svnfrontend/svnactions.cpp:1343
 msgid "Diffing"
-msgstr ""
+msgstr "Xerando as diferenzas"
 
 #: src/svnfrontend/svnactions.cpp:1290
 msgid "Diffing - hit Cancel for abort"
-msgstr ""
+msgstr "Xerando as diferenzas. Prema «Cancelar» para interromper a operación."
 
 #: src/svnfrontend/svnactions.cpp:1303 src/svnfrontend/svnactions.cpp:1352
 msgid "No difference to display"
-msgstr ""
+msgstr "Non hai diferenzas para mostrar"
 
 #: src/svnfrontend/svnactions.cpp:1343
 msgid "Diffing - hit cancel for abort"
-msgstr ""
+msgstr "Xerando as diferenzas. Prema «Cancelar» para interromper a operación."
 
 #: src/svnfrontend/svnactions.cpp:1401
 msgid "Display process could not started, check command."
-msgstr ""
+msgstr "Non foi posíbel iniciar o proceso de visualización, revise a orde."
 
 #: src/svnfrontend/svnactions.cpp:1411
 msgid "Diff display"
-msgstr ""
+msgstr "Visualización das diferenzas"
 
 #: src/svnfrontend/svnactions.cpp:1459
 msgid "Making update"
-msgstr ""
+msgstr "Realizando unha actualización"
 
 #: src/svnfrontend/svnactions.cpp:1459
 msgid "Making update - hit Cancel for abort"
 msgstr ""
+"Realizando unha actualización. Prema «Cancelar» para interromper a operación."
 
 #: src/svnfrontend/svnactions.cpp:1554
 msgid "Which files or directories should I add?"
-msgstr ""
+msgstr "Que ficheiros e cartafoles quere engadir?"
 
 #: src/svnfrontend/svnactions.cpp:1562
 #, kde-format
@@ -4207,15 +4362,15 @@ msgstr "Eliminar do repositorio"
 
 #: src/svnfrontend/svnactions.cpp:1650
 msgid "Export repository"
-msgstr ""
+msgstr "Exportar o repositorio"
 
 #: src/svnfrontend/svnactions.cpp:1699
 msgid "Exporting a file?"
-msgstr ""
+msgstr "Exportar un ficheiro?"
 
 #: src/svnfrontend/svnactions.cpp:1699
 msgid "Checking out a file?"
-msgstr ""
+msgstr "Descargar un ficheiro?"
 
 #: src/svnfrontend/svnactions.cpp:1741
 msgid "Exporting"
@@ -4232,39 +4387,39 @@ msgstr "<center>A entrada<br>%1<br>é allea ao repositorio - pausa.</center>"
 
 #: src/svnfrontend/svnactions.cpp:1800
 msgid "Revert entries"
-msgstr ""
+msgstr "Reverter as entradas"
 
 #: src/svnfrontend/svnactions.cpp:1817
 msgid "Reverting items"
-msgstr ""
+msgstr "Revertendo os elementos"
 
 #: src/svnfrontend/svnactions.cpp:1845 src/svnfrontend/svnactions.cpp:1915
 msgid "Switch URL"
-msgstr ""
+msgstr "Cambiar o URL"
 
 #: src/svnfrontend/svnactions.cpp:1845
 msgid "Switching URL"
-msgstr ""
+msgstr "Cambiando o URL"
 
 #: src/svnfrontend/svnactions.cpp:1873
 msgid "Relocate Repository"
-msgstr ""
+msgstr "Cambiar de lugar o repositorio"
 
 #: src/svnfrontend/svnactions.cpp:1873
 msgid "Relocate repository to new URL"
-msgstr ""
+msgstr "Cambiar o URL do repositorio"
 
 #: src/svnfrontend/svnactions.cpp:1896
 msgid "Can only switch one item at time"
-msgstr ""
+msgstr "Só pode cambiar un elemento de cada vez"
 
 #: src/svnfrontend/svnactions.cpp:1902
 msgid "Error getting entry to switch"
-msgstr ""
+msgstr "Erro ao obter a entrada para cambiar"
 
 #: src/svnfrontend/svnactions.cpp:1942
 msgid "Cleaning up folder"
-msgstr ""
+msgstr "Limpando o cartafol"
 
 #: src/svnfrontend/svnactions.cpp:1959
 msgid "Resolve"
@@ -4272,15 +4427,18 @@ msgstr "Resolver"
 
 #: src/svnfrontend/svnactions.cpp:1959
 msgid "Marking resolved"
-msgstr ""
+msgstr "Marcando como resolto"
 
 #: src/svnfrontend/svnactions.cpp:1991
 msgid "Could not retrieve conflict information - giving up."
 msgstr ""
+"Non foi posíbel obter a información sobre o conflito. Interrompeuse a "
+"operación."
 
 #: src/svnfrontend/svnactions.cpp:2018
 msgid "Resolve-process could not started, check command."
 msgstr ""
+"Non foi posíbel iniciar o proceso de resolución do conflito, revise a orde."
 
 #: src/svnfrontend/svnactions.cpp:2030
 msgid "Import"
@@ -4288,7 +4446,7 @@ msgstr "Importar"
 
 #: src/svnfrontend/svnactions.cpp:2030
 msgid "Importing items"
-msgstr ""
+msgstr "Importando elementos"
 
 #: src/svnfrontend/svnactions.cpp:2054
 msgid "Nothing to merge."
@@ -4296,43 +4454,43 @@ msgstr "Non hai nada para fusionar."
 
 #: src/svnfrontend/svnactions.cpp:2058
 msgid "No destination to merge."
-msgstr ""
+msgstr "Non indicou un destino para a fusión."
 
 #: src/svnfrontend/svnactions.cpp:2064
 msgid "Target for merge must be local."
-msgstr ""
+msgstr "O destino para a fusión debe ser local."
 
 #: src/svnfrontend/svnactions.cpp:2083
 msgid "Both sources must be same type."
-msgstr ""
+msgstr "Ambas orixes deben ser do mesmo tipo."
 
 #: src/svnfrontend/svnactions.cpp:2091
 msgid "Target for merge must same type like sources."
-msgstr ""
+msgstr "O destino para a fusión debe ser do mesmo tipo que as orixes."
 
 #: src/svnfrontend/svnactions.cpp:2114
 msgid "Both entries seems to be the same, will not do a merge."
-msgstr ""
+msgstr "Ambas entradas parecen idénticas, non se fusionarán."
 
 #: src/svnfrontend/svnactions.cpp:2181
 msgid "Merge process could not started, check command."
-msgstr ""
+msgstr "Non foi posíbel iniciar o proceso de fusión, revise a orde."
 
 #: src/svnfrontend/svnactions.cpp:2241
 msgid "Merging items"
-msgstr ""
+msgstr "Fusionando os elementos"
 
 #: src/svnfrontend/svnactions.cpp:2268
 msgid "Moving/Rename item"
-msgstr ""
+msgstr "Movendo ou cambiando de nome o elemento"
 
 #: src/svnfrontend/svnactions.cpp:2286
 msgid "Moving entries"
-msgstr ""
+msgstr "Movendo as entradas"
 
 #: src/svnfrontend/svnactions.cpp:2316 src/svnfrontend/svnactions.cpp:2342
 msgid "Copy or Moving entries"
-msgstr ""
+msgstr "Copiando ou movendo as entradas"
 
 #: src/svnfrontend/svnactions.cpp:2454
 msgid "No unversioned items found."
@@ -4346,32 +4504,34 @@ msgstr "Engadir os elementos alleos"
 #, kde-format
 msgid "Found %1 modified item"
 msgid_plural "Found %1 modified items"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Atopouse %1 elemento modificado"
+msgstr[1] "Atopáronse %1 elementos modificados"
 
 #: src/svnfrontend/svnactions.cpp:2612
 msgid "Checking for updates finished"
-msgstr ""
+msgstr "Completouse a comprobación de actualizacións"
 
 #: src/svnfrontend/svnactions.cpp:2614
 msgid "There are new items in repository"
-msgstr ""
+msgstr "Hai elementos novos no repositorio"
 
 #: src/svnfrontend/svnactions.cpp:2682
 msgid "Not filling log cache because networking is disabled"
 msgstr ""
+"Non se encheou a caché do historial porque o uso da rede está desacivado."
 
 #: src/svnfrontend/svnactions.cpp:2715
 msgid "Filling log cache in background finished."
-msgstr ""
+msgstr "Completouse o enchemento da caché do historial en segundo plano."
 
 #: src/svnfrontend/svnactions.cpp:2737
 msgid "Not checking for updates because networking is disabled"
 msgstr ""
+"Non se comprobou se hai actualizacións porque o uso da rede está desacivado."
 
 #: src/svnfrontend/svnactions.cpp:2742
 msgid "Checking for updates started in background"
-msgstr ""
+msgstr "Comezouse a comprobación de actualizacións en segundo plano"
 
 #: src/svnfrontend/svnitem.cpp:404
 msgid "Not versioned"
@@ -4379,7 +4539,7 @@ msgstr "Alleo"
 
 #: src/svnfrontend/svnitem.cpp:407
 msgid "Added in repository"
-msgstr ""
+msgstr "Engadido no repositorio"
 
 #: src/svnfrontend/svnitem.cpp:409
 msgid "Needs update"
@@ -4423,12 +4583,12 @@ msgstr "Incompleta"
 
 #: src/svnfrontend/svnitem.cpp:449
 msgid "Property modified"
-msgstr ""
+msgstr "Propiedade modificada"
 
 #. i18n: ectx: property (windowTitle), widget (KDialog, LogDialog)
 #: src/svnfrontend/svnlogdlg.ui:18 src/svnfrontend/svnlogdlgimp.cpp:123
 msgid "SVN Log"
-msgstr ""
+msgstr "Historial de SVN"
 
 #. i18n: ectx: property (text), widget (QLabel, startLabel)
 #: src/svnfrontend/svnlogdlg.ui:37
@@ -4443,17 +4603,17 @@ msgstr "Revisión final"
 #. i18n: ectx: property (text), widget (KPushButton, m_goButton)
 #: src/svnfrontend/svnlogdlg.ui:63
 msgid "Get Logs"
-msgstr ""
+msgstr "Obter o historial"
 
 #. i18n: ectx: property (text), widget (QPushButton, m_PrevFiftyButton)
 #: src/svnfrontend/svnlogdlg.ui:70
 msgid "Previous entries"
-msgstr ""
+msgstr "Entradas anteriores"
 
 #. i18n: ectx: property (text), widget (QPushButton, m_NextFiftyButton)
 #: src/svnfrontend/svnlogdlg.ui:77
 msgid "Show from HEAD"
-msgstr ""
+msgstr "Mostrar desde a cabeceira"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, m_ChangedList)
 #: src/svnfrontend/svnlogdlg.ui:163
@@ -4468,34 +4628,34 @@ msgstr "Copiar de"
 #. i18n: ectx: property (text), widget (KPushButton, m_DispPrevButton)
 #: src/svnfrontend/svnlogdlg.ui:189 src/svnfrontend/svnlogdlgimp.cpp:520
 msgid "Diff previous"
-msgstr ""
+msgstr "Diferenzas coa anterior"
 
 #. i18n: ectx: property (toolTip), widget (KPushButton, m_DispSpecDiff)
 #: src/svnfrontend/svnlogdlg.ui:208
 msgid "Select second revision with right mouse button"
-msgstr ""
+msgstr "Seleccione a segunda revisión co botón secundario do rato"
 
 #. i18n: ectx: property (text), widget (KPushButton, buttonListFiles)
 #: src/svnfrontend/svnlogdlg.ui:230
 msgid "List entries"
-msgstr ""
+msgstr "Listar as entradas"
 
 #: src/svnfrontend/svnlogdlgimp.cpp:121
 #, kde-format
 msgid "SVN Log of %1"
-msgstr ""
+msgstr "Historial de SVN de %1"
 
 #: src/svnfrontend/svnlogdlgimp.cpp:443
 msgid "Set version as right side of diff"
-msgstr ""
+msgstr "Seleccionar a versión para a parte dereita das diferenzas"
 
 #: src/svnfrontend/svnlogdlgimp.cpp:449
 msgid "Set version as left side of diff"
-msgstr ""
+msgstr "Seleccionar a versión para a parte esquerda das diferenzas"
 
 #: src/svnfrontend/svnlogdlgimp.cpp:455
 msgid "Unset version for diff"
-msgstr ""
+msgstr "Anular a selección da versión para as diferenzas"
 
 #: src/svnfrontend/svnlogdlgimp.cpp:459
 msgid "Revert this commit"
@@ -4515,7 +4675,7 @@ msgstr "C&ancelar"
 
 #: src/urldlg.cpp:57
 msgid "Open repository or working copy"
-msgstr ""
+msgstr "Abrir un repositorio ou unha copia de traballo"
 
 #: src/urldlg.cpp:80
 msgid "Clear"
@@ -4524,3 +4684,5 @@ msgstr "Limpar"
 #: src/urldlg.cpp:139
 msgid "Open"
 msgstr "Abrir"
+
+
