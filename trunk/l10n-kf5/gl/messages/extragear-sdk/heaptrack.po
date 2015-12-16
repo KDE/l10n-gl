@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2015-12-11 06:57+0000\n"
+"POT-Creation-Date: 2015-12-16 06:59+0000\n"
 "PO-Revision-Date: 2015-12-11 11:01+0100\n"
 "Last-Translator: Adrián Chaves Fernández (Gallaecio) <adriyetichaves@gmail."
 "com>\n"
@@ -63,7 +63,7 @@ msgctxt "%1: number of allocations, %2: function label"
 msgid "%1 allocations in %2 and below."
 msgstr "%1 asignacións en %2 ou menos."
 
-#: gui/flamegraph.cpp:224
+#: gui/flamegraph.cpp:224 gui/histogrammodel.cpp:75
 #, kde-format
 msgid "%1 allocations in total"
 msgstr "%1 asignacións en total"
@@ -104,26 +104,50 @@ msgstr "Ficheiro a cargar"
 msgid "[FILE...]"
 msgstr "[FICHEIRO…]"
 
-#: gui/mainwindow.cpp:114
+#: gui/histogrammodel.cpp:78
+#, fuzzy, kde-format
+#| msgctxt "%1: number of allocations, %2: function label"
+#| msgid "%1 allocations in %2 and below."
+msgid "%1 allocations from %2 at %3:%4 in %5"
+msgstr "%1 asignacións en %2 ou menos."
+
+#: gui/histogrammodel.cpp:82
+#, fuzzy, kde-format
+#| msgctxt "%1: number of allocations, %2: function label"
+#| msgid "%1 allocations in %2 and below."
+msgid "%1 allocations from %2 in %3"
+msgstr "%1 asignacións en %2 ou menos."
+
+#: gui/histogramwidget.cpp:113
+msgid "Requested Allocation Size"
+msgstr ""
+
+#: gui/histogramwidget.cpp:119
+#, fuzzy
+#| msgid "Memory Allocations"
+msgid "Number of Allocations"
+msgstr "Asignacións de memoria"
+
+#: gui/mainwindow.cpp:119
 msgid "Heaptrack"
 msgstr "Heaptrack"
 
-#: gui/mainwindow.cpp:123
+#: gui/mainwindow.cpp:128
 #, kde-format
 msgid "Loading file %1, please wait..."
 msgstr "Cargando o ficheiro %1…"
 
-#: gui/mainwindow.cpp:124
+#: gui/mainwindow.cpp:129
 #, kde-format
 msgctxt "%1: file name that is open"
 msgid "Heaptrack - %1"
 msgstr "Heaptrack - %1"
 
-#: gui/mainwindow.cpp:131
+#: gui/mainwindow.cpp:136
 msgid "Open Heaptrack Output File"
 msgstr "Abrir o ficheiro de saída de Heaptrack"
 
-#: gui/mainwindow.cpp:131
+#: gui/mainwindow.cpp:136
 msgid "Heaptrack data files (heaptrack.*)"
 msgstr "Ficheiros de datos de Heaptrack (heaptrack.*)"
 
@@ -175,26 +199,32 @@ msgstr "Asignacións"
 msgid "Allocated"
 msgstr "Asignado"
 
-#. i18n: ectx: attribute (title), widget (FlameGraph, flameGraphTab)
+#. i18n: ectx: attribute (title), widget (HistogramWidget, sizesTab)
 #: gui/mainwindow.ui:247
+msgid "Sizes"
+msgstr ""
+
+#. i18n: ectx: attribute (title), widget (FlameGraph, flameGraphTab)
+#: gui/mainwindow.ui:252
 msgid "Flame Graph"
 msgstr "Gráfico de chamas"
 
-#: gui/parser.cpp:144 gui/parser.cpp:145 gui/parser.cpp:146 gui/parser.cpp:147
+#: gui/parser.cpp:145 gui/parser.cpp:146 gui/parser.cpp:147 gui/parser.cpp:148
+#: gui/parser.cpp:428
 msgid "total"
 msgstr "Total"
 
-#: gui/parser.cpp:285
+#: gui/parser.cpp:303
 #, kde-format
 msgid "<strong>debuggee</strong>: <code>%1</code>"
 msgstr "<strong>depurado</strong>: <code>%1</code>"
 
-#: gui/parser.cpp:287
+#: gui/parser.cpp:305
 #, no-c-format, kde-format
 msgid "<strong>total runtime</strong>: %1s"
 msgstr "<strong>tempo total de execución</strong>: %1s"
 
-#: gui/parser.cpp:288
+#: gui/parser.cpp:306
 #, kde-format
 msgid ""
 "<strong>bytes allocated in total</strong> (ignoring deallocations): %1 (%2/s)"
@@ -202,25 +232,61 @@ msgstr ""
 "<strong>bytes totais asignados</strong> (sen contar desasignacións): %1 (%2/"
 "s)"
 
-#: gui/parser.cpp:290
+#: gui/parser.cpp:308
 #, kde-format
 msgid "<strong>calls to allocation functions</strong>: %1 (%2/s)"
 msgstr "<strong>chamadas a funcións de asignación</strong>: %1 (%2/s)"
 
-#: gui/parser.cpp:292
+#: gui/parser.cpp:310
 #, kde-format
 msgid "<strong>temporary allocations</strong>: %1 (%2%, %3/s)"
 msgstr "<strong>asignacións temporais</strong>: %1 (%2, %3/s)"
 
-#: gui/parser.cpp:295
+#: gui/parser.cpp:313
 #, kde-format
 msgid "<strong>peak heap memory consumption</strong>: %1"
 msgstr "<strong>pico de consumo de memoria dinámica</strong>: %1"
 
-#: gui/parser.cpp:296
+#: gui/parser.cpp:314
 #, kde-format
 msgid "<strong>total memory leaked</strong>: %1"
 msgstr "<strong>memoria total perdida</strong>: %1"
+
+#: gui/parser.cpp:431
+msgid "0B to 8B"
+msgstr ""
+
+#: gui/parser.cpp:432
+msgid "9B to 16B"
+msgstr ""
+
+#: gui/parser.cpp:433
+msgid "17B to 32B"
+msgstr ""
+
+#: gui/parser.cpp:434
+msgid "33B to 64B"
+msgstr ""
+
+#: gui/parser.cpp:435
+msgid "65B to 128B"
+msgstr ""
+
+#: gui/parser.cpp:436
+msgid "129B to 256B"
+msgstr ""
+
+#: gui/parser.cpp:437
+msgid "257B to 512B"
+msgstr ""
+
+#: gui/parser.cpp:438
+msgid "512B to 1KB"
+msgstr ""
+
+#: gui/parser.cpp:439
+msgid "more than 1KB"
+msgstr ""
 
 #: gui/treemodel.cpp:65
 msgid "File"
