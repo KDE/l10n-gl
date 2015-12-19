@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: krita\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2015-12-17 07:23+0000\n"
+"POT-Creation-Date: 2015-12-19 07:06+0000\n"
 "PO-Revision-Date: 2015-12-13 14:26+0100\n"
 "Last-Translator: Adrián Chaves Fernández (Gallaecio) <adriyetichaves@gmail."
 "com>\n"
@@ -2975,7 +2975,7 @@ msgid "Layer Style"
 msgstr "Estilo da capa"
 
 #: image/kis_layer_properties_icons.cpp:34 image/kis_paint_layer.cc:208
-#: plugins/extensions/dockers/animation/animation_docker.cpp:126
+#: plugins/extensions/dockers/animation/animation_docker.cpp:148
 #: plugins/extensions/dockers/animation/onion_skins_docker.cpp:37
 msgid "Onion Skins"
 msgstr "Peles de cebola"
@@ -8424,37 +8424,54 @@ msgstr "Barras de HSY' para mostrar"
 msgid "Luma"
 msgstr "Luminancia"
 
-#: plugins/extensions/dockers/animation/animation_docker.cpp:43
+#: plugins/extensions/dockers/animation/animation_docker.cpp:57
 msgid "Animation"
 msgstr "Animación"
 
-#: plugins/extensions/dockers/animation/animation_docker.cpp:54
+#: plugins/extensions/dockers/animation/animation_docker.cpp:68
+#: ui/input/kis_change_frame_action.cpp:43
 msgid "Previous Frame"
 msgstr "Fotograma anterior"
 
-#: plugins/extensions/dockers/animation/animation_docker.cpp:58
+#: plugins/extensions/dockers/animation/animation_docker.cpp:72
+#: ui/input/kis_change_frame_action.cpp:42
 msgid "Next Frame"
 msgstr "Seguinte fotograma"
 
-#: plugins/extensions/dockers/animation/animation_docker.cpp:62
+#: plugins/extensions/dockers/animation/animation_docker.cpp:76
 msgid "Previous Key Frame"
 msgstr "Fotograma clave anterior"
 
-#: plugins/extensions/dockers/animation/animation_docker.cpp:66
+#: plugins/extensions/dockers/animation/animation_docker.cpp:80
 msgid "Next Key Frame"
 msgstr "Seguinte fotograma clave"
 
-#: plugins/extensions/dockers/animation/animation_docker.cpp:70
+#: plugins/extensions/dockers/animation/animation_docker.cpp:84
 msgid "First Frame"
 msgstr "Primeiro fotograma"
 
-#: plugins/extensions/dockers/animation/animation_docker.cpp:74
+#: plugins/extensions/dockers/animation/animation_docker.cpp:88
 msgid "Last Frame"
 msgstr "Último fotograma"
 
-#: plugins/extensions/dockers/animation/animation_docker.cpp:78
+#: plugins/extensions/dockers/animation/animation_docker.cpp:92
 msgid "Play / Pause"
 msgstr "Reproducir / Pausar"
+
+#: plugins/extensions/dockers/animation/animation_docker.cpp:497
+#, kde-format
+msgid "Effective FPS:\t%1"
+msgstr ""
+
+#: plugins/extensions/dockers/animation/animation_docker.cpp:498
+#, kde-format
+msgid "Real FPS:\t%1"
+msgstr ""
+
+#: plugins/extensions/dockers/animation/animation_docker.cpp:499
+#, kde-format
+msgid "Frames dropped:\t%1\\%"
+msgstr ""
 
 #: plugins/extensions/dockers/animation/kis_animation_utils.cpp:32
 msgid "New Frame"
@@ -8477,30 +8494,36 @@ msgid "Auto Frame Mode"
 msgstr "Modo de fotogramas automáticos"
 
 #: plugins/extensions/dockers/animation/kis_animation_utils.cpp:37
+#, fuzzy
+#| msgid "Copy Frame"
+msgid "Drop Frames"
+msgstr "Copiar o fotograma"
+
+#: plugins/extensions/dockers/animation/kis_animation_utils.cpp:38
 msgid "Show in Timeline"
 msgstr "Mostrar na liña temporal"
 
-#: plugins/extensions/dockers/animation/kis_animation_utils.cpp:54
-#: plugins/extensions/dockers/animation/kis_animation_utils.cpp:146
+#: plugins/extensions/dockers/animation/kis_animation_utils.cpp:55
+#: plugins/extensions/dockers/animation/kis_animation_utils.cpp:147
 msgctxt "(qtundo-format)"
 msgid "Copy Keyframe"
 msgid_plural "Copy Keyframes"
 msgstr[0] "Copiar o fotograma clave"
 msgstr[1] "Copiar os fotogramas clave"
 
-#: plugins/extensions/dockers/animation/kis_animation_utils.cpp:62
+#: plugins/extensions/dockers/animation/kis_animation_utils.cpp:63
 msgctxt "(qtundo-format)"
 msgid "Add Keyframe"
 msgstr "Engadir un fotograma clave"
 
-#: plugins/extensions/dockers/animation/kis_animation_utils.cpp:74
+#: plugins/extensions/dockers/animation/kis_animation_utils.cpp:75
 msgctxt "(qtundo-format)"
 msgid "Remove Keyframe"
 msgid_plural "Remove Keyframes"
 msgstr[0] "Eliminar o fotograma clave"
 msgstr[1] "Eliminar os fotogramas clave"
 
-#: plugins/extensions/dockers/animation/kis_animation_utils.cpp:143
+#: plugins/extensions/dockers/animation/kis_animation_utils.cpp:144
 msgctxt "(qtundo-format)"
 msgid "Move Keyframe"
 msgid_plural "Move Keyframes"
@@ -8608,6 +8631,7 @@ msgstr "Fin:"
 #. i18n: ectx: property (text), widget (QToolButton, btnDeleteKeyframe)
 #. i18n: ectx: property (text), widget (QToolButton, btnOnionSkinOptions)
 #. i18n: ectx: property (text), widget (QToolButton, btnLazyFrame)
+#. i18n: ectx: property (text), widget (QToolButton, btnDropFrames)
 #. i18n: ectx: property (text), widget (QToolButton, m_bnSelectConfigurationFile)
 #. i18n: ectx: property (text), widget (QToolButton, m_bnSelectLut)
 #. i18n: ectx: property (text), widget (QToolButton, bnViewMode)
@@ -8637,6 +8661,7 @@ msgstr "Fin:"
 #: plugins/extensions/dockers/animation/wdg_animation.ui:411
 #: plugins/extensions/dockers/animation/wdg_animation.ui:428
 #: plugins/extensions/dockers/animation/wdg_animation.ui:438
+#: plugins/extensions/dockers/animation/wdg_animation.ui:448
 #: plugins/extensions/dockers/defaultdockers/wdglayerbox.ui:66
 #: plugins/extensions/dockers/defaultdockers/wdglayerbox.ui:151
 #: plugins/extensions/dockers/defaultdockers/wdglayerbox.ui:170
@@ -8673,12 +8698,12 @@ msgid "..."
 msgstr "…"
 
 #. i18n: ectx: property (text), widget (QLabel, lblPlaySpeed)
-#: plugins/extensions/dockers/animation/wdg_animation.ui:470
+#: plugins/extensions/dockers/animation/wdg_animation.ui:480
 msgid "Play Speed:"
 msgstr "Velocidade de reprodución:"
 
 #. i18n: ectx: property (text), widget (QLabel, lblFramerate)
-#: plugins/extensions/dockers/animation/wdg_animation.ui:493
+#: plugins/extensions/dockers/animation/wdg_animation.ui:503
 msgid "Frame Rate:"
 msgstr "Taxa de fotogramas:"
 
@@ -19586,6 +19611,22 @@ msgstr "Seleccionar a cor principal da imaxe combinada"
 #: ui/input/kis_alternate_invocation_action.cpp:50
 msgid "Pick Background Color from Merged Image"
 msgstr "Seleccionar a cor de fondo da imaxe combinada"
+
+#: ui/input/kis_change_frame_action.cpp:38
+#, fuzzy
+#| msgctxt "(qtundo-format)"
+#| msgid "Switch current time"
+msgid "Switch Time"
+msgstr "Cambiar a hora actual"
+
+#: ui/input/kis_change_frame_action.cpp:39
+#, fuzzy
+#| msgid ""
+#| "The <i>Exposure and Gamma</i> action changes the display mode of the "
+#| "canvas."
+msgid "The <i>Switch Time</i> action changes the current time of the image."
+msgstr ""
+"A acción <i>Exposición e gamma</i> cambia o modo de visualización do lenzo."
 
 #: ui/input/kis_change_primary_setting_action.cpp:34
 msgid "Change Primary Setting"
