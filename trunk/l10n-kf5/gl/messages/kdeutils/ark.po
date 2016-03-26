@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ark\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2016-03-20 07:35+0000\n"
+"POT-Creation-Date: 2016-03-26 07:49+0000\n"
 "PO-Revision-Date: 2016-01-30 13:00+0100\n"
 "Last-Translator: Adrián Chaves Fernández (Gallaecio) <adriyetichaves@gmail."
 "com>\n"
@@ -348,14 +348,20 @@ msgstr "Se limitar a vista previa segundo o tamaño do ficheiro."
 msgid "Preview file size limit in megabytes."
 msgstr "Límite do tamaño do ficheiro da vista previa en megabytes."
 
-#: kerfuffle/cliinterface.cpp:303
+#: kerfuffle/cliinterface.cpp:197
 #, fuzzy
 #| msgctxt "@info"
 #| msgid "Extraction failed: Incorrect password"
-msgid "Extraction failed due to a wrong password."
+msgid "Extraction failed. Make sure that enough space is available."
 msgstr "A extracción fallou: o contrasinal é incorrecto."
 
-#: kerfuffle/cliinterface.cpp:313 kerfuffle/cliinterface.cpp:327
+#: kerfuffle/cliinterface.cpp:200
+msgid ""
+"Extraction failed. Make sure you provided the correct password and that "
+"enough space is available."
+msgstr ""
+
+#: kerfuffle/cliinterface.cpp:215 kerfuffle/cliinterface.cpp:229
 #, fuzzy
 #| msgid "Click to open the selected file with the associated application"
 msgctxt "@info"
@@ -364,7 +370,7 @@ msgid_plural "Could not move the extracted files to the destination directory."
 msgstr[0] "Premer para abrir o ficheiro seleccionado co programa asociado."
 msgstr[1] "Premer para abrir o ficheiro seleccionado co programa asociado."
 
-#: kerfuffle/cliinterface.cpp:495
+#: kerfuffle/cliinterface.cpp:397
 #, kde-format
 msgctxt "@info"
 msgid "Failed to locate program <filename>%2</filename> on disk."
@@ -372,43 +378,50 @@ msgid_plural "Failed to locate programs <filename>%2</filename> on disk."
 msgstr[0] "Non foi posíbel atopar o programa <filename>%2</filename>."
 msgstr[1] "Non foi posíbel atopar os programas <filename>%2</filename>."
 
-#: kerfuffle/cliinterface.cpp:866
+#: kerfuffle/cliinterface.cpp:891
+#, fuzzy
+#| msgid "Extraction failed because of an unexpected error."
+msgctxt "@info"
+msgid "Extraction failed because the disk is full."
+msgstr "Non foi posíbel realizar a extracción por mor dun erro inesperado."
+
+#: kerfuffle/cliinterface.cpp:899
 msgctxt "@info"
 msgid "Extraction failed: Incorrect password"
 msgstr "A extracción fallou: o contrasinal é incorrecto."
 
-#: kerfuffle/cliinterface.cpp:873 kerfuffle/cliinterface.cpp:915
+#: kerfuffle/cliinterface.cpp:906 kerfuffle/cliinterface.cpp:948
 msgid "Extraction failed because of an unexpected error."
 msgstr "Non foi posíbel realizar a extracción por mor dun erro inesperado."
 
-#: kerfuffle/cliinterface.cpp:908
+#: kerfuffle/cliinterface.cpp:941
 msgid "Incorrect password."
 msgstr "O contrasinal é incorrecto."
 
-#: kerfuffle/createdialog.cpp:166
+#: kerfuffle/createdialog.cpp:165
 msgid "The chosen password does not match the given verification password."
 msgstr "O contrasinal indicado non coincide co contrasinal de verificación."
 
-#: kerfuffle/createdialog.cpp:169
+#: kerfuffle/createdialog.cpp:168
 msgid "The password cannot be empty."
 msgstr ""
 
-#: kerfuffle/createdialog.cpp:188
+#: kerfuffle/createdialog.cpp:187
 #, kde-format
 msgid ""
 "Protection of the archive with password is not possible with the %1 format."
 msgstr "O formato %1 non permite protexer o arquivo cun contrasinal."
 
-#: kerfuffle/createdialog.cpp:201
+#: kerfuffle/createdialog.cpp:200
 #, kde-format
 msgid "Protection of the list of files is not possible with the %1 format."
 msgstr "O formato %1 non permite protexer a lista de ficheiros."
 
-#: kerfuffle/createdialog.cpp:227
+#: kerfuffle/createdialog.cpp:226
 msgid "Please select a filename for the archive."
 msgstr "Escolla un nome de ficheiro para o arquivo."
 
-#: kerfuffle/createdialog.cpp:227
+#: kerfuffle/createdialog.cpp:226
 msgid "No file selected"
 msgstr "Non seleccionou ningún ficheiro."
 
@@ -1203,24 +1216,21 @@ msgctxt "@info"
 msgid "<filename>%1</filename> is a directory."
 msgstr "<filename>%1</filename> é un directorio."
 
-#: part/part.cpp:592
-#, kde-format
+#: part/part.cpp:594
+#, fuzzy, kde-format
+#| msgctxt "@info"
+#| msgid ""
+#| "Could not open the archive <filename>%1</filename>.<nl/>Check whether you "
+#| "have sufficient permissions."
 msgctxt "@info"
 msgid ""
-"The archive <filename>%1</filename> already exists. Would you like to open "
-"it instead?"
-msgstr "O arquivo <filename>%1</filename> xa existe. Prefire abrilo?"
+"Could not overwrite <filename>%1</filename>. Check whether you have write "
+"permission."
+msgstr ""
+"Non foi posíbel abrir o arquivo <filename>%1</filename>.<nl/> Asegúrese de "
+"que ten permisos de abondo."
 
-#: part/part.cpp:592
-msgctxt "@title:window"
-msgid "File Exists"
-msgstr "O ficheiro xa existe"
-
-#: part/part.cpp:592
-msgid "Open File"
-msgstr "Abrir o ficheiro"
-
-#: part/part.cpp:598
+#: part/part.cpp:600
 #, fuzzy, kde-format
 #| msgctxt "@info"
 #| msgid "The archive <filename>%1</filename> was not found."
@@ -1230,13 +1240,13 @@ msgid ""
 "file."
 msgstr "Non se atopou o arquivo <filename>%1</filename>."
 
-#: part/part.cpp:601
+#: part/part.cpp:603
 #, kde-format
 msgctxt "@info"
 msgid "The archive <filename>%1</filename> was not found."
 msgstr "Non se atopou o arquivo <filename>%1</filename>."
 
-#: part/part.cpp:606
+#: part/part.cpp:608
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -1246,7 +1256,29 @@ msgstr ""
 "Non foi posíbel cargar o arquivo <filename>%1</filename>, non foi posíbel "
 "ler o seu contido."
 
+#: part/part.cpp:621
+#, fuzzy, kde-format
+#| msgctxt "@info"
+#| msgid ""
+#| "The archive <filename>%1</filename> already exists. Would you like to "
+#| "open it instead?"
+msgctxt "@info"
+msgid ""
+"The archive <filename>%1</filename> already exists. Do you wish to overwrite "
+"it?"
+msgstr "O arquivo <filename>%1</filename> xa existe. Prefire abrilo?"
+
 #: part/part.cpp:623
+msgctxt "@title:window"
+msgid "File Exists"
+msgstr "O ficheiro xa existe"
+
+#: part/part.cpp:624
+msgctxt "@action:button"
+msgid "Overwrite"
+msgstr ""
+
+#: part/part.cpp:645
 #, fuzzy, kde-format
 #| msgctxt "@info"
 #| msgid ""
@@ -1260,23 +1292,23 @@ msgstr ""
 "Non foi posíbel cargar o arguivo <filename>%1</filename>. Mensaxe de erro: "
 "<nl/><nl/><message>%2</message>"
 
-#: part/part.cpp:666
+#: part/part.cpp:688
 msgctxt "@info"
 msgid "The archive is empty or Ark could not open its content."
 msgstr "O arquivo está baleiro ou Ark non puido abrir o seu contido."
 
-#: part/part.cpp:671
+#: part/part.cpp:693
 msgctxt "@info"
 msgid "Ark does not currently support ISO files with UDF filesystem."
 msgstr ""
 "Actualmente Ark non é compatíbel con ficheiros ISO cun sistema de ficheiros "
 "UDF."
 
-#: part/part.cpp:718
+#: part/part.cpp:748
 msgid "Ark cannot open symlinks."
 msgstr "Ark non pode abrir ligazóns simbólicas."
 
-#: part/part.cpp:830
+#: part/part.cpp:860
 #, kde-format
 msgid ""
 "The file <filename>%1</filename> was modified. Do you want to update the "
@@ -1284,24 +1316,24 @@ msgid ""
 msgstr ""
 "Modificouse o ficheiro <filename>%1</filename>. Quere actualizar o arquivo?"
 
-#: part/part.cpp:832
+#: part/part.cpp:862
 #, fuzzy
 #| msgid "File modified"
 msgctxt "@title:window"
 msgid "File Modified"
 msgstr "Modificouse o ficheiro"
 
-#: part/part.cpp:1101
+#: part/part.cpp:1131
 msgctxt "@title:window"
 msgid "Add Files"
 msgstr "Engadir ficheiros"
 
-#: part/part.cpp:1108
+#: part/part.cpp:1138
 msgctxt "@title:window"
 msgid "Add Folder"
 msgstr "Engadir un cartafol"
 
-#: part/part.cpp:1135
+#: part/part.cpp:1165
 #, fuzzy
 #| msgid ""
 #| "Deleting these files is not undoable. Are you sure you want to do this?"
@@ -1316,7 +1348,7 @@ msgstr[1] ""
 "Unha vez eliminados os ficheiros, non será posíbel recuperalos. Desexa "
 "realmente continuar?"
 
-#: part/part.cpp:1138
+#: part/part.cpp:1168
 #, fuzzy
 #| msgctxt "@title:window"
 #| msgid "Delete files"
@@ -1326,12 +1358,12 @@ msgid_plural "Delete Files"
 msgstr[0] "Eliminalos"
 msgstr[1] "Eliminalos"
 
-#: part/part.cpp:1177
+#: part/part.cpp:1207
 msgctxt "@title:window"
 msgid "Save Archive As"
 msgstr "Gardar o arquivo como"
 
-#: part/part.cpp:1184
+#: part/part.cpp:1214
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -1341,7 +1373,7 @@ msgstr ""
 "Xa existe un arquivo chamado <filename>%1</filename>. Desexa realmente "
 "substituílo?"
 
-#: part/part.cpp:1198
+#: part/part.cpp:1228
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -1351,7 +1383,7 @@ msgstr ""
 "Non é posíbel copiar o arquivo <filename>%1</filename> ao lugar indicado. O "
 "arquivo xa non existe."
 
-#: part/part.cpp:1212
+#: part/part.cpp:1242
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -1493,6 +1525,9 @@ msgid ""
 "There was an error while reading <filename>%1</filename> during extraction."
 msgstr ""
 "Produciuse un erro ao ler <filename>%1</filename> durante a extracción."
+
+#~ msgid "Open File"
+#~ msgstr "Abrir o ficheiro"
 
 #~ msgid "Main Toolbar"
 #~ msgstr "Barra de ferramentas principal"

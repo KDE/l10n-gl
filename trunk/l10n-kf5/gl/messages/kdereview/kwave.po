@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2016-03-17 07:58+0000\n"
+"POT-Creation-Date: 2016-03-26 07:49+0000\n"
 "PO-Revision-Date: 2016-01-30 12:31+0100\n"
 "Last-Translator: Adrián Chaves Fernández (Gallaecio) <adriyetichaves@gmail."
 "com>\n"
@@ -996,8 +996,8 @@ msgstr "Cargando o ficheiro «%1»…"
 #: plugins/codec_wav/WavDecoder.cpp:365 plugins/codec_wav/WavEncoder.cpp:427
 #: plugins/playback/PlayBack-OSS.cpp:245 plugins/playback/PlayBack-OSS.cpp:253
 #: plugins/playback/PlayBack-Qt.cpp:172 plugins/playback/PlayBack-Qt.cpp:177
-#: plugins/record/RecordPlugin.cpp:877 plugins/record/RecordPlugin.cpp:893
-#: plugins/record/RecordPlugin.cpp:963
+#: plugins/record/RecordPlugin.cpp:860 plugins/record/RecordPlugin.cpp:876
+#: plugins/record/RecordPlugin.cpp:946
 msgid "Out of memory"
 msgstr "Esgotouse a memoria"
 
@@ -2774,15 +2774,15 @@ msgstr "Non foi posíbel abrir o ficheiro de historial «%1» para escritura."
 msgid "Unable to open '%1'"
 msgstr "Non foi posíbel abrir «%1»"
 
-#: libkwave/PlayBackTypesMap.cpp:34 plugins/record/RecordTypesMap.cpp:35
+#: libkwave/PlayBackTypesMap.cpp:34 plugins/record/RecordTypesMap.cpp:36
 msgid "ALSA (Advanced Linux Sound Architecture)"
 msgstr "ALSA (arquitectura avanzada de son de Linux)"
 
-#: libkwave/PlayBackTypesMap.cpp:39 plugins/record/RecordTypesMap.cpp:41
+#: libkwave/PlayBackTypesMap.cpp:39 plugins/record/RecordTypesMap.cpp:42
 msgid "OSS (Open Sound System)"
 msgstr "OSS (sistema de son aberto)"
 
-#: libkwave/PlayBackTypesMap.cpp:44 plugins/record/RecordTypesMap.cpp:47
+#: libkwave/PlayBackTypesMap.cpp:44 plugins/record/RecordTypesMap.cpp:48
 msgid "Pulse Audio"
 msgstr "Pulse Audio"
 
@@ -2842,7 +2842,7 @@ msgstr ""
 "Quere continuar aínda así?"
 
 #: libkwave/SignalManager.cpp:402 plugins/about/AboutDialog.cpp:75
-#: plugins/record/RecordPlugin.cpp:984
+#: plugins/record/RecordPlugin.cpp:967
 #, kde-format
 msgid "(built for KDE Frameworks %1)"
 msgstr "(construído para a versión %1 das infraestruturas de KDE)"
@@ -5157,20 +5157,20 @@ msgid "Opening the device '%1' failed: %2"
 msgstr "Non foi posíbel abrir o dispositivo «%1»: %2"
 
 #: plugins/playback/PlayBack-ALSA.cpp:830
-#: plugins/playback/PlayBack-ALSA.cpp:844 plugins/record/Record-ALSA.cpp:1046
-#: plugins/record/Record-ALSA.cpp:1059
+#: plugins/playback/PlayBack-ALSA.cpp:844 plugins/record/Record-ALSA.cpp:1068
+#: plugins/record/Record-ALSA.cpp:1081
 #, kde-format
 msgid "Card %1: "
 msgstr "Carta %1: "
 
 #: plugins/playback/PlayBack-ALSA.cpp:832
-#: plugins/playback/PlayBack-ALSA.cpp:846 plugins/record/Record-ALSA.cpp:1048
-#: plugins/record/Record-ALSA.cpp:1061
+#: plugins/playback/PlayBack-ALSA.cpp:846 plugins/record/Record-ALSA.cpp:1070
+#: plugins/record/Record-ALSA.cpp:1083
 #, kde-format
 msgid "Device %1: "
 msgstr "Dispositivo %1: "
 
-#: plugins/playback/PlayBack-ALSA.cpp:834 plugins/record/Record-ALSA.cpp:1050
+#: plugins/playback/PlayBack-ALSA.cpp:834 plugins/record/Record-ALSA.cpp:1072
 #, kde-format
 msgid "Subdevice %1: "
 msgstr "Subdispositivo %1: "
@@ -5189,12 +5189,12 @@ msgstr "Non é posíbel abrir o dispositivo «%1» no modo correcto."
 msgid "%1 bits per sample are not supported"
 msgstr "Non é posíbel usar %1 bits por mostra."
 
-#: plugins/playback/PlayBack-OSS.cpp:191 plugins/playback/PlayBack-Qt.cpp:160
+#: plugins/playback/PlayBack-OSS.cpp:191
 #, kde-format
 msgid "%1 channels playback is not supported"
 msgstr "Non é posíbel reproducir %1 canles."
 
-#: plugins/playback/PlayBack-OSS.cpp:198 plugins/playback/PlayBack-Qt.cpp:163
+#: plugins/playback/PlayBack-OSS.cpp:198
 #, kde-format
 msgid "Playback rate %1 Hz is not supported"
 msgstr "Non é posíbel usar unha taxa de reprodución de %1 Hz."
@@ -5212,7 +5212,7 @@ msgstr "Dispositivo de reprodución de OSS (dsp*)"
 msgid "ALSA playback device (adsp*)"
 msgstr "Dispositivo de reprodución de ALSA (adsp*)"
 
-#: plugins/playback/PlayBack-OSS.cpp:407 plugins/record/Record-OSS.cpp:297
+#: plugins/playback/PlayBack-OSS.cpp:407 plugins/record/Record-OSS.cpp:319
 #: plugins/record/RecordDialog.cpp:610
 msgid "Any device (*)"
 msgstr "Calquera dispositivo (*)"
@@ -5259,11 +5259,27 @@ msgstr ""
 "conectado."
 
 #: plugins/playback/PlayBack-Qt.cpp:154
-msgid "PCM playback is not supported"
+#, fuzzy
+#| msgid "PCM playback is not supported"
+msgid "PCM encoding is not supported"
 msgstr "Non é posíbel usar a reprodución mediante PCM."
 
+#: plugins/playback/PlayBack-Qt.cpp:160
+#, fuzzy, kde-format
+#| msgid "Playback rate %1 Hz is not supported"
+msgid "playback with %1 channels is not supported"
+msgstr "Non é posíbel usar unha taxa de reprodución de %1 Hz."
+
+#: plugins/playback/PlayBack-Qt.cpp:163
+#, fuzzy, kde-format
+#| msgid "Playback rate %1 Hz is not supported"
+msgid "sample rate %1 Hz is not supported"
+msgstr "Non é posíbel usar unha taxa de reprodución de %1 Hz."
+
 #: plugins/playback/PlayBack-Qt.cpp:167
-msgid "Integer sample format is not supported"
+#, fuzzy
+#| msgid "Integer sample format is not supported"
+msgid "integer sample format is not supported"
 msgstr "O formato de mostras de números enteiros non é compatíbel."
 
 #: plugins/playback/PlayBack-Qt.cpp:212
@@ -5526,21 +5542,53 @@ msgstr "%1 dB"
 msgid "DSNOOP plugin"
 msgstr "Complemento de DSNOOP"
 
-#: plugins/record/Record-OSS.cpp:290
+#: plugins/record/Record-ALSA.cpp:310 plugins/record/Record-OSS.cpp:109
+#, fuzzy
+#| msgid ""
+#| "Kwave was unable to open the device '%1'.\n"
+#| "Maybe your system lacks support for the corresponding hardware or the "
+#| "hardware is not connected."
+msgid ""
+"Maybe your system lacks support for the corresponding hardware or the "
+"hardware is not connected."
+msgstr ""
+"Non foi posíbel abrir o dispositivo «%1».\n"
+"Pode que o sistema non sexa compatíbel co hardware correspondente ou que o "
+"hardware non estea conectado."
+
+#: plugins/record/Record-ALSA.cpp:316 plugins/record/Record-OSS.cpp:115
+#, fuzzy
+#| msgid ""
+#| "The device '%1' seems to be occupied by another application.\n"
+#| "Please try again later."
+msgid "The audio device seems to be occupied by another application."
+msgstr ""
+"Parece que outro programa ten ocupado o dispositivo «%1».\n"
+"Volva intentalo máis tarde."
+
+#: plugins/record/Record-OSS.cpp:312
 msgid "OSS recording device (audio*)"
 msgstr "Dispositivo de gravación de OSS (audio*)"
 
-#: plugins/record/Record-OSS.cpp:291
+#: plugins/record/Record-OSS.cpp:313
 msgid "OSS recording device (dsp*)"
 msgstr "Dispositivo de gravación de OSS (dsp*)"
 
-#: plugins/record/Record-OSS.cpp:294
+#: plugins/record/Record-OSS.cpp:316
 msgid "ALSA recording device (adsp*)"
 msgstr "Dispositivo de gravación de ALSA (adsp*)"
 
-#: plugins/record/Record-PulseAudio.cpp:210
+#: plugins/record/Record-PulseAudio.cpp:223
 msgid "Kwave record"
 msgstr "Gravación de Kwave"
+
+#: plugins/record/Record-PulseAudio.cpp:829
+#, fuzzy
+#| msgid "The audio device '%1' is unknown or no longer connected"
+msgid "The device is unknown or no longer connected!"
+msgstr ""
+"O dispositivo de son «%1» é un dispositivo descoñecido ou xa non está "
+"conectado."
 
 #: plugins/record/RecordDialog.cpp:311
 msgid "&Done"
@@ -5558,18 +5606,18 @@ msgstr "Dispositivo de gravación de ALSA (adsp*)"
 msgid "Select Record Device"
 msgstr "Seleccionar un dispositivo de gravación"
 
-#: plugins/record/RecordDialog.cpp:705 plugins/record/RecordPlugin.cpp:465
-#: plugins/record/RecordPlugin.cpp:473
+#: plugins/record/RecordDialog.cpp:705 plugins/record/RecordPlugin.cpp:448
+#: plugins/record/RecordPlugin.cpp:456
 msgid "Mono"
 msgstr "Mono"
 
-#: plugins/record/RecordDialog.cpp:708 plugins/record/RecordPlugin.cpp:466
-#: plugins/record/RecordPlugin.cpp:474
+#: plugins/record/RecordDialog.cpp:708 plugins/record/RecordPlugin.cpp:449
+#: plugins/record/RecordPlugin.cpp:457
 msgid "Stereo"
 msgstr "Estéreo"
 
-#: plugins/record/RecordDialog.cpp:711 plugins/record/RecordPlugin.cpp:467
-#: plugins/record/RecordPlugin.cpp:475
+#: plugins/record/RecordDialog.cpp:711 plugins/record/RecordPlugin.cpp:450
+#: plugins/record/RecordPlugin.cpp:458
 msgid "Quadro"
 msgstr "Cuadrafónico"
 
@@ -5953,106 +6001,89 @@ msgstr "Búfer:"
 msgid "Level:"
 msgstr "Nivel:"
 
-#: plugins/record/RecordPlugin.cpp:398
-#, kde-format
-msgid ""
-"Kwave was unable to open the device '%1'.\n"
-"Maybe your system lacks support for the corresponding hardware or the "
-"hardware is not connected."
-msgstr ""
-"Non foi posíbel abrir o dispositivo «%1».\n"
-"Pode que o sistema non sexa compatíbel co hardware correspondente ou que o "
-"hardware non estea conectado."
-
-#: plugins/record/RecordPlugin.cpp:405
-#, kde-format
-msgid ""
-"The device '%1' seems to be occupied by another application.\n"
-"Please try again later."
-msgstr ""
-"Parece que outro programa ten ocupado o dispositivo «%1».\n"
-"Volva intentalo máis tarde."
-
-#: plugins/record/RecordPlugin.cpp:413
-msgid "Unable to open the recording device"
+#: plugins/record/RecordPlugin.cpp:395
+#, fuzzy, kde-format
+#| msgid "Unable to open the recording device"
+msgctxt "%1 = a device name"
+msgid "Unable to open the recording device (%1)"
 msgstr "Non é posíbel abrir o dispositivo de gravación."
 
-#: plugins/record/RecordPlugin.cpp:469 plugins/record/RecordPlugin.cpp:477
+#: plugins/record/RecordPlugin.cpp:452 plugins/record/RecordPlugin.cpp:460
 #, kde-format
 msgid "%1 channels"
 msgstr "%1 canles"
 
-#: plugins/record/RecordPlugin.cpp:480
+#: plugins/record/RecordPlugin.cpp:463
 #, kde-format
 msgid "%1 is not supported, using %2"
 msgstr "%1 non é compatíbel, usarase %2."
 
-#: plugins/record/RecordPlugin.cpp:503
+#: plugins/record/RecordPlugin.cpp:486
 #, kde-format
 msgid "Recording with %1 channel(s) failed, using %2 channel(s)"
 msgstr "Non foi posíbel gravar con %1 canles, usaranse %2 canles."
 
-#: plugins/record/RecordPlugin.cpp:548
+#: plugins/record/RecordPlugin.cpp:531
 #, kde-format
 msgid "%1 Hz is not supported, using %2 Hz"
 msgstr "O hardware non é compatíbel con %1 Hz, usaranse %2 Hz."
 
-#: plugins/record/RecordPlugin.cpp:565
+#: plugins/record/RecordPlugin.cpp:548
 #, kde-format
 msgid "%1 Hz failed, using %2 Hz"
 msgstr "Non foi posíbel usar %1 Hz, usaranse %2 Hz."
 
-#: plugins/record/RecordPlugin.cpp:608
+#: plugins/record/RecordPlugin.cpp:591
 #, kde-format
 msgid "Compression '%1' not supported, using '%2'"
 msgstr "O hardware non é compatíbel coa compresión «%1», usarase «%2»."
 
-#: plugins/record/RecordPlugin.cpp:620
+#: plugins/record/RecordPlugin.cpp:603
 #, kde-format
 msgid "Compression '%1' failed, using '%2'."
 msgstr "Non foi posíbel comprimir usando «%1», usarase «%2»."
 
-#: plugins/record/RecordPlugin.cpp:659
+#: plugins/record/RecordPlugin.cpp:642
 #, kde-format
 msgid "%1 bits per sample is not supported, using %2 bits per sample"
 msgstr ""
 "O hardware non permite usar %1 bits por mostra, usaranse %2 bits por mostra."
 
-#: plugins/record/RecordPlugin.cpp:672
+#: plugins/record/RecordPlugin.cpp:655
 #, kde-format
 msgid "%1 bits per sample failed, using %2 bits per sample"
 msgstr "Non foi posíbel usar %1 bits por mostra, usaranse %2 bits por mostra."
 
-#: plugins/record/RecordPlugin.cpp:715
+#: plugins/record/RecordPlugin.cpp:698
 #, kde-format
 msgid "Sample format '%1' is not supported, using '%2'"
 msgstr "O hardware non é compatíbel co formato de mostra «%1», usarase «%2»."
 
-#: plugins/record/RecordPlugin.cpp:731
+#: plugins/record/RecordPlugin.cpp:714
 #, kde-format
 msgid "Sample format '%1' failed, using '%2'"
 msgstr "Non foi posíble usar o formato de mostra «%1», usarase «%2»."
 
-#: plugins/record/RecordPlugin.cpp:864
+#: plugins/record/RecordPlugin.cpp:847
 msgid "The current sample format is not supported!"
 msgstr "O hardware non é compatíbel co formato de mostra actual!"
 
-#: plugins/record/RecordPlugin.cpp:870
+#: plugins/record/RecordPlugin.cpp:853
 msgid "The current compression type is not supported!"
 msgstr "O hardware non é compatíbel co tipo de compresión actual!"
 
-#: plugins/record/RecordPlugin.cpp:1012
+#: plugins/record/RecordPlugin.cpp:995
 msgid ""
 "Buffer overrun. Please increase the number and/or size of the record buffers."
 msgstr ""
 "Desbordamento do búfer. Aumente o número de búferes de gravación ou o tamaño "
 "dos mesmos."
 
-#: plugins/record/RecordPlugin.cpp:1016
+#: plugins/record/RecordPlugin.cpp:999
 msgid "The recording device seems to be busy."
 msgstr "O dispositivo de gravación parece estar ocupado."
 
-#: plugins/record/RecordPlugin.cpp:1019
+#: plugins/record/RecordPlugin.cpp:1002
 #, kde-format
 msgid "Reading from the recording device failed. Error number = %1 (%2)"
 msgstr ""
