@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2016-03-25 07:39+0000\n"
+"POT-Creation-Date: 2016-04-06 07:27+0000\n"
 "PO-Revision-Date: 2016-01-21 07:27+0100\n"
 "Last-Translator: Adrián Chaves Fernández (Gallaecio) <adriyetichaves@gmail."
 "com>\n"
@@ -266,7 +266,7 @@ msgstr "%1 en ?? (%2)"
 msgid "%1 in %2:%3 (%4)"
 msgstr "%1 en %2:%3 (%4)"
 
-#: gui/callercalleemodel.cpp:222 gui/treemodel.cpp:199 gui/treemodel.cpp:222
+#: gui/callercalleemodel.cpp:222 gui/treemodel.cpp:199 gui/treemodel.cpp:231
 #, kde-format
 msgctxt "1: function, 2: file, 3: line, 4: module"
 msgid ""
@@ -278,7 +278,7 @@ msgstr ""
 "  en %2:%3\n"
 "  en %4"
 
-#: gui/callercalleemodel.cpp:226 gui/treemodel.cpp:203 gui/treemodel.cpp:227
+#: gui/callercalleemodel.cpp:227 gui/treemodel.cpp:203 gui/treemodel.cpp:236
 #, fuzzy, kde-format
 #| msgid "%1 in ?? (%2)"
 msgctxt "1: function, 2: module"
@@ -287,7 +287,7 @@ msgid ""
 "  in %2"
 msgstr "%1 en ?? (%2)"
 
-#: gui/callercalleemodel.cpp:230
+#: gui/callercalleemodel.cpp:232
 #, fuzzy, kde-format
 #| msgid ""
 #| "allocated %1 over %2 calls (%3 temporary, i.e. %4%), peak at %5, leaked %6"
@@ -298,7 +298,7 @@ msgstr ""
 "asignou %1 mediante %2 chamadas (%3 temporais, o %4), cun pico de %5, perdeu "
 "%6."
 
-#: gui/callercalleemodel.cpp:235
+#: gui/callercalleemodel.cpp:237
 #, fuzzy, kde-format
 #| msgid ""
 #| "allocated %1 over %2 calls (%3 temporary, i.e. %4%), peak at %5, leaked %6"
@@ -326,7 +326,7 @@ msgid "Memory Consumed"
 msgstr "Memoria consumida"
 
 #. i18n: ectx: attribute (title), widget (ChartWidget, temporaryTab)
-#: gui/chartmodel.cpp:74 gui/flamegraph.cpp:329 gui/mainwindow.ui:544
+#: gui/chartmodel.cpp:74 gui/flamegraph.cpp:342 gui/mainwindow.ui:544
 msgid "Temporary Allocations"
 msgstr "Asignacións temporais"
 
@@ -360,96 +360,113 @@ msgid "<qt>%2 allocated after %3 from:<p style='margin-left:10px'>%1</p></qt>"
 msgstr ""
 "<qt>%2 asignadas despois de %3 desde:<p style='margin-left:10px;'>%1</p></qt>"
 
-#: gui/flamegraph.cpp:156
-#, kde-format
-msgctxt "%1: number of allocations, %2: function label"
-msgid "%1 allocations in %2 and below."
-msgstr "%1 asignacións en %2 ou menos."
-
-#: gui/flamegraph.cpp:160
+#: gui/flamegraph.cpp:166
 #, fuzzy, kde-format
 #| msgctxt "%1: number of allocations, %2: function label"
 #| msgid "%1 allocations in %2 and below."
-msgctxt "%1: number of temporary allocations, %2: function label"
-msgid "%1 temporary allocations in %2 and below."
+msgctxt "%1: number of allocations, %2: relative number, %3: function label"
+msgid "%1 (%2%) allocations in %3 and below."
 msgstr "%1 asignacións en %2 ou menos."
 
-#: gui/flamegraph.cpp:164
+#: gui/flamegraph.cpp:170
 #, fuzzy, kde-format
 #| msgctxt "%1: number of allocations, %2: function label"
 #| msgid "%1 allocations in %2 and below."
-msgctxt "%1: peak consumption in bytes, %2: function label"
-msgid "%1 peak consumption in %2 and below."
+msgctxt ""
+"%1: number of temporary allocations, %2: relative number, %3 function label"
+msgid "%1 (%2%) temporary allocations in %3 and below."
 msgstr "%1 asignacións en %2 ou menos."
 
-#: gui/flamegraph.cpp:168
+#: gui/flamegraph.cpp:174
 #, fuzzy, kde-format
 #| msgctxt "%1: number of allocations, %2: function label"
 #| msgid "%1 allocations in %2 and below."
-msgctxt "%1: leaked bytes, %2: function label"
-msgid "%1 leaked in %2 and below."
+msgctxt ""
+"%1: peak consumption in bytes, %2: relative number, %3: function label"
+msgid "%1 (%2%) peak consumption in %3 and below."
 msgstr "%1 asignacións en %2 ou menos."
 
-#: gui/flamegraph.cpp:172
+#: gui/flamegraph.cpp:178
 #, fuzzy, kde-format
 #| msgctxt "%1: number of allocations, %2: function label"
 #| msgid "%1 allocations in %2 and below."
-msgctxt "%1: allocated bytes, %2: function label"
-msgid "%1 allocated in %2 and below."
+msgctxt "%1: leaked bytes, %2: relative number, %3: function label"
+msgid "%1 (%2%) leaked in %3 and below."
 msgstr "%1 asignacións en %2 ou menos."
 
-#: gui/flamegraph.cpp:293 gui/histogrammodel.cpp:75
+#: gui/flamegraph.cpp:182
+#, fuzzy, kde-format
+#| msgctxt "%1: number of allocations, %2: function label"
+#| msgid "%1 allocations in %2 and below."
+msgctxt "%1: allocated bytes, %2: relative number, %3: function label"
+msgid "%1 (%2%) allocated in %3 and below."
+msgstr "%1 asignacións en %2 ou menos."
+
+#: gui/flamegraph.cpp:306 gui/histogrammodel.cpp:75
 #, kde-format
 msgid "%1 allocations in total"
 msgstr "%1 asignacións en total"
 
-#: gui/flamegraph.cpp:296
+#: gui/flamegraph.cpp:309
 #, fuzzy, kde-format
 #| msgid "%1 allocations in total"
 msgid "%1 temporary allocations in total"
 msgstr "%1 asignacións en total"
 
-#: gui/flamegraph.cpp:299
+#: gui/flamegraph.cpp:312
 #, fuzzy, kde-format
 #| msgid "%1 allocations in total"
 msgid "%1 peak consumption in total"
 msgstr "%1 asignacións en total"
 
-#: gui/flamegraph.cpp:302
+#: gui/flamegraph.cpp:315
 #, fuzzy, kde-format
 #| msgid "%1 allocations in total"
 msgid "%1 leaked in total"
 msgstr "%1 asignacións en total"
 
-#: gui/flamegraph.cpp:305
+#: gui/flamegraph.cpp:318
 #, fuzzy, kde-format
 #| msgid "%1 allocations in total"
 msgid "%1 allocated in total"
 msgstr "%1 asignacións en total"
 
 #. i18n: ectx: attribute (title), widget (ChartWidget, allocationsTab)
-#: gui/flamegraph.cpp:328 gui/mainwindow.ui:539 gui/treemodel.cpp:93
+#: gui/flamegraph.cpp:341 gui/mainwindow.ui:539 gui/treemodel.cpp:93
 msgid "Allocations"
 msgstr "Asignacións"
 
-#: gui/flamegraph.cpp:330
+#: gui/flamegraph.cpp:343
 msgid "Peak Consumption"
 msgstr ""
 
-#: gui/flamegraph.cpp:331 gui/treemodel.cpp:99
+#: gui/flamegraph.cpp:344 gui/treemodel.cpp:99
 msgid "Leaked"
 msgstr "Perdido"
 
 #. i18n: ectx: attribute (title), widget (ChartWidget, allocatedTab)
-#: gui/flamegraph.cpp:332 gui/mainwindow.ui:549 gui/treemodel.cpp:101
+#: gui/flamegraph.cpp:345 gui/mainwindow.ui:549 gui/treemodel.cpp:101
 msgid "Allocated"
 msgstr "Asignado"
 
-#: gui/flamegraph.cpp:342
+#: gui/flamegraph.cpp:356
 msgid "Bottom-Down View"
 msgstr "Vista de abaixo a abaixo"
 
-#: gui/flamegraph.cpp:415
+#: gui/flamegraph.cpp:366
+msgid "Cost Threshold: "
+msgstr ""
+
+#: gui/flamegraph.cpp:370
+msgid ""
+"<qt>The cost threshold defines a fractional cut-off value. Items with a "
+"relative cost below this value will not be shown in the flame graph. This is "
+"done as an optimization to quickly generate graphs for large data set with "
+"low memory overhead. If you need more details, decrease the threshold value, "
+"or set it to zero.</qt>"
+msgstr ""
+
+#: gui/flamegraph.cpp:449
 msgid "generating flame graph..."
 msgstr "Xerando o gráfico de chamas…"
 
@@ -830,24 +847,50 @@ msgstr ""
 "<qt>A suma de todos os bytes asignados desde aquí, ignorando as "
 "desasignacións.</qt>"
 
-#: gui/treemodel.cpp:208
-#, kde-format
-msgid ""
-"allocated %1 over %2 calls (%3 temporary, i.e. %4%), peak at %5, leaked %6"
-msgstr ""
-"asignou %1 mediante %2 chamadas (%3 temporais, o %4), cun pico de %5, perdeu "
-"%6."
+#: gui/treemodel.cpp:215
+#, fuzzy, kde-format
+#| msgid "%1 allocations in total"
+msgid "allocated: %1 (%2% of total)\n"
+msgstr "%1 asignacións en total"
 
 #: gui/treemodel.cpp:217
+#, kde-format
+msgid "peak: %1 (%2% of total)\n"
+msgstr ""
+
+#: gui/treemodel.cpp:218
+#, kde-format
+msgid "leaked: %1 (%2% of total)\n"
+msgstr ""
+
+#: gui/treemodel.cpp:219
+#, fuzzy, kde-format
+#| msgid "%1 allocations in total"
+msgid "allocations: %1 (%2% of total)\n"
+msgstr "%1 asignacións en total"
+
+#: gui/treemodel.cpp:220
+#, fuzzy, kde-format
+#| msgid "%1 allocations in total"
+msgid "temporary: %1 (%2% of allocations, %3% of total)\n"
+msgstr "%1 asignacións en total"
+
+#: gui/treemodel.cpp:226
 msgid "backtrace:"
 msgstr "trazado inverso:"
 
-#: gui/treemodel.cpp:234
+#: gui/treemodel.cpp:243
 #, kde-format
 msgid "called from one location"
 msgid_plural "called from %1 locations"
 msgstr[0] "chamado desde un lugar"
 msgstr[1] "chamado desde %1 lugares"
+
+#~ msgid ""
+#~ "allocated %1 over %2 calls (%3 temporary, i.e. %4%), peak at %5, leaked %6"
+#~ msgstr ""
+#~ "asignou %1 mediante %2 chamadas (%3 temporais, o %4), cun pico de %5, "
+#~ "perdeu %6."
 
 #~ msgid "<strong>debuggee</strong>: <code>%1</code>"
 #~ msgstr "<strong>depurado</strong>: <code>%1</code>"
