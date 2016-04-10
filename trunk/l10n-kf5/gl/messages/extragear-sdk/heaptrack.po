@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2016-04-07 07:53+0000\n"
+"POT-Creation-Date: 2016-04-10 07:26+0000\n"
 "PO-Revision-Date: 2016-01-21 07:27+0100\n"
 "Last-Translator: Adrián Chaves Fernández (Gallaecio) <adriyetichaves@gmail."
 "com>\n"
@@ -326,7 +326,7 @@ msgid "Memory Consumed"
 msgstr "Memoria consumida"
 
 #. i18n: ectx: attribute (title), widget (ChartWidget, temporaryTab)
-#: gui/chartmodel.cpp:74 gui/flamegraph.cpp:342 gui/mainwindow.ui:541
+#: gui/chartmodel.cpp:74 gui/flamegraph.cpp:344 gui/mainwindow.ui:541
 msgid "Temporary Allocations"
 msgstr "Asignacións temporais"
 
@@ -360,7 +360,7 @@ msgid "<qt>%2 allocated after %3 from:<p style='margin-left:10px'>%1</p></qt>"
 msgstr ""
 "<qt>%2 asignadas despois de %3 desde:<p style='margin-left:10px;'>%1</p></qt>"
 
-#: gui/flamegraph.cpp:166
+#: gui/flamegraph.cpp:169
 #, fuzzy, kde-format
 #| msgctxt "%1: number of allocations, %2: function label"
 #| msgid "%1 allocations in %2 and below."
@@ -368,7 +368,7 @@ msgctxt "%1: number of allocations, %2: relative number, %3: function label"
 msgid "%1 (%2%) allocations in %3 and below."
 msgstr "%1 asignacións en %2 ou menos."
 
-#: gui/flamegraph.cpp:170
+#: gui/flamegraph.cpp:173
 #, fuzzy, kde-format
 #| msgctxt "%1: number of allocations, %2: function label"
 #| msgid "%1 allocations in %2 and below."
@@ -377,7 +377,7 @@ msgctxt ""
 msgid "%1 (%2%) temporary allocations in %3 and below."
 msgstr "%1 asignacións en %2 ou menos."
 
-#: gui/flamegraph.cpp:174
+#: gui/flamegraph.cpp:177
 #, fuzzy, kde-format
 #| msgctxt "%1: number of allocations, %2: function label"
 #| msgid "%1 allocations in %2 and below."
@@ -386,7 +386,7 @@ msgctxt ""
 msgid "%1 (%2%) peak consumption in %3 and below."
 msgstr "%1 asignacións en %2 ou menos."
 
-#: gui/flamegraph.cpp:178
+#: gui/flamegraph.cpp:181
 #, fuzzy, kde-format
 #| msgctxt "%1: number of allocations, %2: function label"
 #| msgid "%1 allocations in %2 and below."
@@ -394,7 +394,7 @@ msgctxt "%1: leaked bytes, %2: relative number, %3: function label"
 msgid "%1 (%2%) leaked in %3 and below."
 msgstr "%1 asignacións en %2 ou menos."
 
-#: gui/flamegraph.cpp:182
+#: gui/flamegraph.cpp:185
 #, fuzzy, kde-format
 #| msgctxt "%1: number of allocations, %2: function label"
 #| msgid "%1 allocations in %2 and below."
@@ -432,41 +432,81 @@ msgid "%1 allocated in total"
 msgstr "%1 asignacións en total"
 
 #. i18n: ectx: attribute (title), widget (ChartWidget, allocationsTab)
-#: gui/flamegraph.cpp:341 gui/mainwindow.ui:536 gui/treemodel.cpp:93
+#: gui/flamegraph.cpp:342 gui/mainwindow.ui:536 gui/treemodel.cpp:93
 msgid "Allocations"
 msgstr "Asignacións"
 
 #: gui/flamegraph.cpp:343
+msgid ""
+"Show a flame graph over the number of allocations triggered by functions in "
+"your code."
+msgstr ""
+
+#: gui/flamegraph.cpp:345
+msgid ""
+"Show a flame graph over the number of temporary allocations triggered by "
+"functions in your code. Allocations are marked as temporary when they are "
+"immediately followed by their deallocation."
+msgstr ""
+
+#: gui/flamegraph.cpp:347
 msgid "Peak Consumption"
 msgstr ""
 
-#: gui/flamegraph.cpp:344 gui/treemodel.cpp:99
+#: gui/flamegraph.cpp:348
+msgid ""
+"Show a flame graph over the peak heap memory consumption of your application."
+msgstr ""
+
+#: gui/flamegraph.cpp:349 gui/treemodel.cpp:99
 msgid "Leaked"
 msgstr "Perdido"
 
+#: gui/flamegraph.cpp:350
+msgid ""
+"Show a flame graph over the leaked heap memory of your application. Memory "
+"is considered to be leaked when it never got deallocated. "
+msgstr ""
+
 #. i18n: ectx: attribute (title), widget (ChartWidget, allocatedTab)
-#: gui/flamegraph.cpp:345 gui/mainwindow.ui:546 gui/treemodel.cpp:101
+#: gui/flamegraph.cpp:352 gui/mainwindow.ui:546 gui/treemodel.cpp:101
 msgid "Allocated"
 msgstr "Asignado"
 
-#: gui/flamegraph.cpp:356
+#: gui/flamegraph.cpp:353
+msgid ""
+"Show a flame graph over the total memory allocated by functions in your "
+"code. This aggregates all memory allocations and ignores deallocations."
+msgstr ""
+
+#: gui/flamegraph.cpp:357
+msgid "Select the data source that should be visualized in the flame graph."
+msgstr ""
+
+#: gui/flamegraph.cpp:366
 msgid "Bottom-Down View"
 msgstr "Vista de abaixo a abaixo"
 
-#: gui/flamegraph.cpp:366
+#: gui/flamegraph.cpp:367
+msgid ""
+"Enable the bottom-down flame graph view. When this is unchecked, the top-"
+"down view is enabled by default."
+msgstr ""
+
+#: gui/flamegraph.cpp:377
 msgid "Cost Threshold: "
 msgstr ""
 
-#: gui/flamegraph.cpp:370
+#: gui/flamegraph.cpp:381
 msgid ""
 "<qt>The cost threshold defines a fractional cut-off value. Items with a "
 "relative cost below this value will not be shown in the flame graph. This is "
-"done as an optimization to quickly generate graphs for large data set with "
+"done as an optimization to quickly generate graphs for large data sets with "
 "low memory overhead. If you need more details, decrease the threshold value, "
 "or set it to zero.</qt>"
 msgstr ""
 
-#: gui/flamegraph.cpp:449
+#: gui/flamegraph.cpp:478
 msgid "generating flame graph..."
 msgstr "Xerando o gráfico de chamas…"
 
