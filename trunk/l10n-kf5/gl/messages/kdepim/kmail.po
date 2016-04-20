@@ -18,7 +18,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2016-04-18 08:17+0000\n"
+"POT-Creation-Date: 2016-04-20 07:36+0000\n"
 "PO-Revision-Date: 2016-02-09 19:34+0100\n"
 "Last-Translator: Adrián Chaves Fernández (Gallaecio) <adriyetichaves@gmail."
 "com>\n"
@@ -3573,6 +3573,7 @@ msgstr "&Ferramentas"
 #. i18n: ectx: Menu (settings)
 #: src/kmail_part.rc:200 src/kmcomposerui.rc:108 src/kmmainwin.rc:200
 #: src/kmreadermainwin.rc:72
+#: src/kontactplugin/summary/kontactsummary_part.rc:5
 msgid "&Settings"
 msgstr "&Configuración"
 
@@ -4738,32 +4739,34 @@ msgid_plural "%1 unread messages"
 msgstr[0] "Unha mensaxe sen ler"
 msgstr[1] "%1 mensaxes sen ler"
 
-#: src/kontactplugin/kcmkmailsummary.cpp:67
+#: src/kontactplugin/kmail/kcmkmailsummary.cpp:67
 msgid "kcmkmailsummary"
 msgstr "kcmkmailsummary"
 
-#: src/kontactplugin/kcmkmailsummary.cpp:69
+#: src/kontactplugin/kmail/kcmkmailsummary.cpp:69
 msgid "Mail Summary Configuration Dialog"
 msgstr "Diálogo de configuración do resumo do correo electrónico"
 
-#: src/kontactplugin/kcmkmailsummary.cpp:71
+#: src/kontactplugin/kmail/kcmkmailsummary.cpp:71
 msgid "Copyright © 2004–2010 Tobias Koenig"
 msgstr "© 2004–2010 Tobias Koenig"
 
-#: src/kontactplugin/kcmkmailsummary.cpp:72
+#: src/kontactplugin/kmail/kcmkmailsummary.cpp:72
+#: src/kontactplugin/summary/kcmkontactsummary.cpp:119
+#: src/kontactplugin/summary/summaryview_plugin.cpp:121
 msgid "Tobias Koenig"
 msgstr "Tobias Koenig"
 
-#: src/kontactplugin/kcmkmailsummary.cpp:88
+#: src/kontactplugin/kmail/kcmkmailsummary.cpp:88
 msgid "Show full path for folders"
 msgstr "Mostrar a ruta completa aos cartafoles."
 
-#: src/kontactplugin/kcmkmailsummary.cpp:90
+#: src/kontactplugin/kmail/kcmkmailsummary.cpp:90
 msgctxt "@info:tooltip"
 msgid "Show full path for each folder"
 msgstr "Mostrar a ruta completa a cada cartafol."
 
-#: src/kontactplugin/kcmkmailsummary.cpp:93
+#: src/kontactplugin/kmail/kcmkmailsummary.cpp:93
 msgctxt "@info:whatsthis"
 msgid ""
 "Enable this option if you want to see the full path for each folder listed "
@@ -4773,12 +4776,12 @@ msgstr ""
 "Active esta opción se desexa ver a ruta completa a cada un dos cartafoles "
 "que se lista no resumo. Se está desactivada só se mostra o cartafol base."
 
-#: src/kontactplugin/kmail_plugin.cpp:59
+#: src/kontactplugin/kmail/kmail_plugin.cpp:59
 msgctxt "@action:inmenu"
 msgid "New Message..."
 msgstr "Nova mensaxe…"
 
-#: src/kontactplugin/kmail_plugin.cpp:66
+#: src/kontactplugin/kmail/kmail_plugin.cpp:66
 msgctxt "@info:whatsthis"
 msgid ""
 "You will be presented with a dialog where you can create and send a new "
@@ -4787,39 +4790,128 @@ msgstr ""
 "Aparece un diálogo no que se pode crear e enviar unha mensaxe de correo "
 "electrónico nova."
 
-#: src/kontactplugin/kmail_plugin.cpp:73
+#: src/kontactplugin/kmail/kmail_plugin.cpp:73
 msgctxt "@action:inmenu"
 msgid "Sync Mail"
 msgstr "Sincronizar o correo"
 
-#: src/kontactplugin/kmail_plugin.cpp:78
+#: src/kontactplugin/kmail/kmail_plugin.cpp:78
 msgctxt "@info:whatsthis"
 msgid "Choose this option to synchronize your groupware email."
 msgstr "Escolla esta opción para sincronizar o correo de traballo en grupo."
 
-#: src/kontactplugin/summarywidget.cpp:63
+#: src/kontactplugin/kmail/summarywidget.cpp:63
 msgid "New Messages"
 msgstr "Mensaxes novas"
 
-#: src/kontactplugin/summarywidget.cpp:158
+#: src/kontactplugin/kmail/summarywidget.cpp:158
 #, kde-format
 msgid "<qt><b>%1</b><br/>Total: %2<br/>Unread: %3</qt>"
 msgstr "<qt><b>%1</b><br/>Total: %2<br/>Sen ler: %3</qt>"
 
-#: src/kontactplugin/summarywidget.cpp:170
+#: src/kontactplugin/kmail/summarywidget.cpp:170
 #, kde-format
 msgctxt "%1: number of unread messages %2: total number of messages"
 msgid "%1 / %2"
 msgstr "%1 / %2"
 
-#: src/kontactplugin/summarywidget.cpp:208
+#: src/kontactplugin/kmail/summarywidget.cpp:208
 msgid "No unread messages in your monitored folders"
 msgstr "Non hai mensaxes sen ler nos cartafoles vixiados."
 
-#: src/kontactplugin/summarywidget.cpp:226
+#: src/kontactplugin/kmail/summarywidget.cpp:226
 #, kde-format
 msgid "Open Folder: \"%1\""
 msgstr "Abrir un cartafol: «%1»"
+
+#: src/kontactplugin/summary/kcmkontactsummary.cpp:85
+msgctxt "@title:column plugin name"
+msgid "Summary Plugin Name"
+msgstr ""
+
+#: src/kontactplugin/summary/kcmkontactsummary.cpp:101
+msgid "Select the plugin summaries to show on the summary page."
+msgstr ""
+
+#: src/kontactplugin/summary/kcmkontactsummary.cpp:114
+#, fuzzy
+#| msgid "kcmkmailsummary"
+msgid "kontactsummary"
+msgstr "kcmkmailsummary"
+
+#: src/kontactplugin/summary/kcmkontactsummary.cpp:116
+msgid "KDE Kontact Summary"
+msgstr ""
+
+#: src/kontactplugin/summary/kcmkontactsummary.cpp:118
+#, fuzzy
+#| msgid "Tobias Koenig"
+msgid "(c), 2004 Tobias Koenig"
+msgstr "Tobias Koenig"
+
+#: src/kontactplugin/summary/summaryview_part.cpp:67
+#, fuzzy
+#| msgid "&Configure KMail..."
+msgid "&Configure Summary View..."
+msgstr "&Configurar o KMail..."
+
+#: src/kontactplugin/summary/summaryview_part.cpp:70
+msgid "Configure the summary view"
+msgstr ""
+
+#: src/kontactplugin/summary/summaryview_part.cpp:75
+msgctxt "@info:whatsthis"
+msgid ""
+"Choosing this will show a dialog where you can select which summaries you "
+"want to see and also allow you to configure the summaries to your liking."
+msgstr ""
+
+#: src/kontactplugin/summary/summaryview_part.cpp:123
+#, fuzzy, kde-format
+#| msgid "Smart for&mat (%1)"
+msgid "Summary for %1"
+msgstr "For&mato elegante (%1)"
+
+#: src/kontactplugin/summary/summaryview_part.cpp:390
+msgid "What's next?"
+msgstr ""
+
+#: src/kontactplugin/summary/summaryview_plugin.cpp:42
+#, fuzzy
+#| msgctxt "@action:inmenu"
+#| msgid "Sync Mail"
+msgid "Sync All"
+msgstr "Sincronizar o correo"
+
+#: src/kontactplugin/summary/summaryview_plugin.cpp:54
+msgctxt "@action:inmenu sync everything"
+msgid "All"
+msgstr ""
+
+#: src/kontactplugin/summary/summaryview_plugin.cpp:68
+msgctxt "sync everything"
+msgid "All"
+msgstr ""
+
+#: src/kontactplugin/summary/summaryview_plugin.cpp:111
+msgid "Kontact Summary"
+msgstr ""
+
+#: src/kontactplugin/summary/summaryview_plugin.cpp:113
+msgid "Kontact Summary View"
+msgstr ""
+
+#: src/kontactplugin/summary/summaryview_plugin.cpp:115
+msgid "(c) 2003-2016 The Kontact developers"
+msgstr ""
+
+#: src/kontactplugin/summary/summaryview_plugin.cpp:117
+msgid "Sven Lueppken"
+msgstr ""
+
+#: src/kontactplugin/summary/summaryview_plugin.cpp:119
+msgid "Cornelius Schumacher"
+msgstr ""
 
 #: src/mailmerge/mailmergedialog.cpp:31
 msgid "Mail Merge"
