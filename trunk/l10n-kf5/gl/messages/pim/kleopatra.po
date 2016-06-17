@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kleopatra\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2016-06-16 08:06+0000\n"
+"POT-Creation-Date: 2016-06-17 07:50+0000\n"
 "PO-Revision-Date: 2016-04-29 07:29+0100\n"
 "Last-Translator: Adrián Chaves Fernández (Gallaecio) <adriyetichaves@gmail."
 "com>\n"
@@ -1915,7 +1915,7 @@ msgid "Status and progress of the crypto operations is shown here."
 msgstr "Aquí aparecen o estado e a evolución das operacións de cifrado."
 
 #: src/crypto/decryptverifyemailcontroller.cpp:167
-#: src/crypto/decryptverifyfilescontroller.cpp:209
+#: src/crypto/decryptverifyfilescontroller.cpp:200
 msgid "User canceled"
 msgstr "Cancelado polo usuario"
 
@@ -1957,30 +1957,13 @@ msgstr "Non hai infraestrutura de soporte para %1"
 msgid "Cannot determine whether input data is OpenPGP or CMS"
 msgstr "Non é posíbel determinar se os datos de entrada son OpenPGP ou CMS"
 
-#: src/crypto/decryptverifyfilescontroller.cpp:198
-#, kde-format
-msgid ""
-"Caught unexpected exception in DecryptVerifyFilesController::Private::"
-"slotWizardOperationPrepared: %1"
-msgstr ""
-"Recolleuse unha excepción inesperada en DecryptVerifyFilesController::"
-"Private::slotWizardOperationPrepared: %1"
-
-#: src/crypto/decryptverifyfilescontroller.cpp:202
-msgid ""
-"Caught unknown exception in DecryptVerifyFilesController::Private::"
-"slotWizardOperationPrepared"
-msgstr ""
-"Recolleuse unha excepción descoñecida en DecryptVerifyFilesController::"
-"Private::slotWizardOperationPrepared"
-
-#: src/crypto/decryptverifyfilescontroller.cpp:257
-msgid "Decrypt/Verify Files"
-msgstr "Descifrar/Comprobar ficheiros"
-
-#: src/crypto/decryptverifyfilescontroller.cpp:394
+#: src/crypto/decryptverifyfilescontroller.cpp:182
 msgid "No usable inputs found"
 msgstr "Non se atoparon entradas utilizábeis"
+
+#: src/crypto/decryptverifyfilescontroller.cpp:248
+msgid "Decrypt/Verify Files"
+msgstr "Descifrar/Comprobar ficheiros"
 
 #: src/crypto/decryptverifytask.cpp:198
 msgid "Error: Signature not verified"
@@ -2244,7 +2227,7 @@ msgstr "%1: %2"
 #: src/crypto/decryptverifytask.cpp:921 src/crypto/decryptverifytask.cpp:1019
 #: src/crypto/decryptverifytask.cpp:1074 src/crypto/decryptverifytask.cpp:1175
 #: src/crypto/decryptverifytask.cpp:1229 src/crypto/decryptverifytask.cpp:1329
-#: src/crypto/decryptverifytask.cpp:1378 src/crypto/decryptverifytask.cpp:1466
+#: src/crypto/decryptverifytask.cpp:1378 src/crypto/decryptverifytask.cpp:1482
 #, kde-format
 msgid "Caught exception: %1"
 msgstr "Recolleuse unha excepción: %1"
@@ -2252,7 +2235,7 @@ msgstr "Recolleuse unha excepción: %1"
 #: src/crypto/decryptverifytask.cpp:924 src/crypto/decryptverifytask.cpp:1021
 #: src/crypto/decryptverifytask.cpp:1077 src/crypto/decryptverifytask.cpp:1177
 #: src/crypto/decryptverifytask.cpp:1232 src/crypto/decryptverifytask.cpp:1331
-#: src/crypto/decryptverifytask.cpp:1380 src/crypto/decryptverifytask.cpp:1468
+#: src/crypto/decryptverifytask.cpp:1380 src/crypto/decryptverifytask.cpp:1484
 #: src/uiserver/assuanserverconnection.cpp:1584
 #: src/uiserver/assuanserverconnection.cpp:1635
 msgid "Caught unknown exception"
@@ -2292,10 +2275,38 @@ msgstr ""
 msgid "Verifying: %1..."
 msgstr "Estase a comprobar : %1..."
 
-#: src/crypto/decryptverifytask.cpp:1431
+#: src/crypto/decryptverifytask.cpp:1434
+#, fuzzy, kde-format
+#| msgctxt "@info"
+#| msgid ""
+#| "Could not copy temporary file <filename>%1</filename> to file <filename>"
+#| "%2</filename>: <message>%3</message>"
+msgctxt ""
+"Verification of a detached signature in progress. The first file contains "
+"the data.The second file is the signature file."
+msgid "Verifying: <filename>%1</filename> with <filename>%2</filename>..."
+msgstr ""
+"Non foi posíbel copiar o ficheiro temporal <filename>%1</filename> no "
+"ficheiro <filename>%2</filename>: <message>%3</message>"
+
+#: src/crypto/decryptverifytask.cpp:1439
 #, kde-format
 msgid "Verifying signature: %1..."
 msgstr "Estase a comprobar a sinatura: %1..."
+
+#: src/crypto/decryptverifytask.cpp:1447
+#, fuzzy, kde-format
+#| msgctxt "@info"
+#| msgid ""
+#| "Could not copy temporary file <filename>%1</filename> to file <filename>"
+#| "%2</filename>: <message>%3</message>"
+msgctxt ""
+"Verification of a detached signature summary. The first file contains the "
+"data.The second file is signature."
+msgid "Verified <filename>%1</filename> with <filename>%2</filename>"
+msgstr ""
+"Non foi posíbel copiar o ficheiro temporal <filename>%1</filename> no "
+"ficheiro <filename>%2</filename>: <message>%3</message>"
 
 #: src/crypto/encryptemailcontroller.cpp:155
 msgid "Call to EncryptEMailController::protocolAsString() is ambiguous."
@@ -4214,17 +4225,17 @@ msgstr "Non indicou in texto de busca para «--search»."
 msgid "No fingerprint argument specified for --query"
 msgstr "Non se forneceu un argumento de pegada dixital para «--query»."
 
-#: src/kleopatraapplication.cpp:338
+#: src/kleopatraapplication.cpp:337
 #, kde-format
 msgid "Ambiguous commands \"%1\" and \"%2\""
 msgstr "As ordes «%1» e «%2» son ambiguas."
 
-#: src/kleopatraapplication.cpp:344
+#: src/kleopatraapplication.cpp:343
 #, kde-format
 msgid "No files specified for \"%1\" command"
 msgstr "Non se indicaron ficheiros para a orde «%1»."
 
-#: src/kleopatraapplication.cpp:362
+#: src/kleopatraapplication.cpp:361
 #, kde-format
 msgid "Cannot read \"%1\""
 msgstr "Non foi posíbel ler «%1»"
@@ -6650,6 +6661,20 @@ msgstr "Mover esta lapela á dereita"
 #: src/view/tabwidget.cpp:787
 msgid "Hierarchical Certificate List"
 msgstr "Lista xerárquica dos certificados"
+
+#~ msgid ""
+#~ "Caught unexpected exception in DecryptVerifyFilesController::Private::"
+#~ "slotWizardOperationPrepared: %1"
+#~ msgstr ""
+#~ "Recolleuse unha excepción inesperada en DecryptVerifyFilesController::"
+#~ "Private::slotWizardOperationPrepared: %1"
+
+#~ msgid ""
+#~ "Caught unknown exception in DecryptVerifyFilesController::Private::"
+#~ "slotWizardOperationPrepared"
+#~ msgstr ""
+#~ "Recolleuse unha excepción descoñecida en DecryptVerifyFilesController::"
+#~ "Private::slotWizardOperationPrepared"
 
 #~ msgid "Performing Self-Check..."
 #~ msgstr "Estase a realizar a comprobación automática..."
