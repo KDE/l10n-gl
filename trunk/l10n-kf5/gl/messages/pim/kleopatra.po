@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kleopatra\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2016-08-10 07:21+0000\n"
+"POT-Creation-Date: 2016-08-11 07:41+0000\n"
 "PO-Revision-Date: 2016-04-29 07:29+0100\n"
 "Last-Translator: Adrián Chaves Fernández (Gallaecio) <adriyetichaves@gmail."
 "com>\n"
@@ -1413,20 +1413,36 @@ msgstr ""
 "Crear ficheiros cifrados con OpenPGP con extensións de ficheiro «.pgp» no "
 "canto de «.gpg»"
 
-#. i18n: ectx: label, entry (AutoDecryptVerify), group (FileOperations)
+#. i18n: ectx: label, entry (AddASCIIArmor), group (FileOperations)
 #: src/conf/cryptooperationsconfigwidget.cpp:87
+#: src/kcfg/fileoperationspreferences.kcfg:25
+#, fuzzy
+#| msgid "Sign and/or encrypt file(s)"
+msgid "Create signed and or encrypted files as text files."
+msgstr "Asinar ou cifrar ficheiro(s)"
+
+#: src/conf/cryptooperationsconfigwidget.cpp:88
+msgctxt "@info"
+msgid ""
+"Set this option to encode encrypted and or signed files as base64 encoded "
+"text. So that they can be opened with an editor or sent in a mail body. This "
+"will increase file size by one third."
+msgstr ""
+
+#. i18n: ectx: label, entry (AutoDecryptVerify), group (FileOperations)
+#: src/conf/cryptooperationsconfigwidget.cpp:91
 #: src/kcfg/fileoperationspreferences.kcfg:15
 msgid ""
 "Automatically start operation based on input detection for decrypt/verify."
 msgstr ""
 
-#: src/conf/cryptooperationsconfigwidget.cpp:92
+#: src/conf/cryptooperationsconfigwidget.cpp:97
 #, fuzzy
 #| msgid "Checksum program to use:"
 msgid "Checksum program to use when creating checksum files:"
 msgstr "Programa de suma de comprobación que empregar:"
 
-#: src/conf/cryptooperationsconfigwidget.cpp:97
+#: src/conf/cryptooperationsconfigwidget.cpp:102
 msgid "Archive command to use when archiving files:"
 msgstr ""
 
@@ -2356,7 +2372,7 @@ msgstr "A chamada a EncryptEMailController::protocolAsString() é ambigua."
 #: src/crypto/encryptemailcontroller.cpp:178
 #: src/crypto/newsignencryptemailcontroller.cpp:419
 #: src/crypto/signemailcontroller.cpp:191
-#: src/crypto/signencryptfilescontroller.cpp:348
+#: src/crypto/signencryptfilescontroller.cpp:351
 msgid "User cancel"
 msgstr "Cancelación polo usuario"
 
@@ -2749,7 +2765,7 @@ msgctxt "@title:window"
 msgid "Unusual Signature Warning"
 msgstr "Advertencia de sinatura infrecuente"
 
-#: src/crypto/gui/signencryptfileswizard.cpp:156
+#: src/crypto/gui/signencryptfileswizard.cpp:155
 msgctxt "@info"
 msgid ""
 "<para>None of the recipients you are encrypting to seems to be your own.</"
@@ -2762,54 +2778,54 @@ msgstr ""
 "vez que se cifren.</para><para>Quere continuar ou cancelar para modificar a "
 "selección de destinatarios?</para>"
 
-#: src/crypto/gui/signencryptfileswizard.cpp:159
+#: src/crypto/gui/signencryptfileswizard.cpp:158
 msgctxt "@title:window"
 msgid "Encrypt-To-Self Warning"
 msgstr "Advertencia de cifrado para si mesmo"
 
-#: src/crypto/gui/signencryptfileswizard.cpp:197
+#: src/crypto/gui/signencryptfileswizard.cpp:196
 #, fuzzy
 #| msgid "The signature is bad."
 msgid "The S/MIME signature."
 msgstr "A sinatura é errónea."
 
-#: src/crypto/gui/signencryptfileswizard.cpp:198
+#: src/crypto/gui/signencryptfileswizard.cpp:197
 #, fuzzy
 #| msgid "The signature is bad."
 msgid "The signature."
 msgstr "A sinatura é errónea."
 
-#: src/crypto/gui/signencryptfileswizard.cpp:199
+#: src/crypto/gui/signencryptfileswizard.cpp:198
 #, fuzzy
 #| msgid "Sign and/or encrypt file(s)"
 msgid "The signed and encrypted file."
 msgstr "Asinar ou cifrar ficheiro(s)"
 
-#: src/crypto/gui/signencryptfileswizard.cpp:200
+#: src/crypto/gui/signencryptfileswizard.cpp:199
 #, fuzzy
 #| msgid "Selected file:"
 #| msgid_plural "Selected files:"
 msgid "The encrypted file."
 msgstr "Ficheiro seleccionado:"
 
-#: src/crypto/gui/signencryptfileswizard.cpp:201
+#: src/crypto/gui/signencryptfileswizard.cpp:200
 #, fuzzy
 #| msgid "S/MIME export file:"
 msgid "The S/MIME encrypted file."
 msgstr "Ficheiro de exportación de S/MIME:"
 
-#: src/crypto/gui/signencryptfileswizard.cpp:244
+#: src/crypto/gui/signencryptfileswizard.cpp:248
 #, fuzzy
 #| msgid "&Next"
 msgid "Next"
 msgstr "Segui&nte"
 
-#: src/crypto/gui/signencryptfileswizard.cpp:295
+#: src/crypto/gui/signencryptfileswizard.cpp:299
 msgctxt "@title"
 msgid "Results"
 msgstr "Resultados"
 
-#: src/crypto/gui/signencryptfileswizard.cpp:297
+#: src/crypto/gui/signencryptfileswizard.cpp:301
 msgctxt "@title"
 msgid "Status and progress of the crypto operations is shown here."
 msgstr "Aquí aparecen o estado e a evolución das operacións de cifrado."
@@ -2825,7 +2841,7 @@ msgid "Sign as:"
 msgstr "Asinar ficheiros"
 
 #: src/crypto/gui/signencryptwidget.cpp:125
-#: src/crypto/gui/signencryptwidget.cpp:285
+#: src/crypto/gui/signencryptwidget.cpp:284
 msgctxt "@action"
 msgid "Encrypt"
 msgstr "Cifrar"
@@ -2856,7 +2872,7 @@ msgid ""
 "Even if you pick a very strong password."
 msgstr ""
 
-#: src/crypto/gui/signencryptwidget.cpp:283
+#: src/crypto/gui/signencryptwidget.cpp:282
 #, fuzzy
 #| msgctxt "@action"
 #| msgid "Sign && Encrypt"
@@ -2864,7 +2880,7 @@ msgctxt "@action"
 msgid "Sign / Encrypt"
 msgstr "Asinar e cifrar"
 
-#: src/crypto/gui/signencryptwidget.cpp:287
+#: src/crypto/gui/signencryptwidget.cpp:286
 msgctxt "@action"
 msgid "Sign"
 msgstr "Asinar"
@@ -3024,7 +3040,7 @@ msgctxt "base name of an archive file, e.g. archive.zip or archive.tar.gz"
 msgid "archive"
 msgstr "arquivo"
 
-#: src/crypto/signencryptfilescontroller.cpp:585
+#: src/crypto/signencryptfilescontroller.cpp:599
 #, kde-format
 msgid ""
 "Caught unexpected exception in SignEncryptFilesController::Private::"
@@ -3033,7 +3049,7 @@ msgstr ""
 "Recolleuse unha excepción inesperada en SignEncryptFilesController::Private::"
 "slotWizardOperationPrepared: %1"
 
-#: src/crypto/signencryptfilescontroller.cpp:589
+#: src/crypto/signencryptfilescontroller.cpp:603
 msgid ""
 "Caught unknown exception in SignEncryptFilesController::Private::"
 "slotWizardOperationPrepared"
@@ -3079,7 +3095,7 @@ msgctxt "label: result. Example: foo -> foo.gpg: Encryption failed."
 msgid "%1: <b>%2</b>"
 msgstr "%1: <b>%2</b>"
 
-#: src/crypto/signencryptfilestask.cpp:438
+#: src/crypto/signencryptfilestask.cpp:445
 msgid "Cannot determine protocol for task"
 msgstr "Non é posíbel determinar o protocolo para a tarefa"
 
@@ -4162,6 +4178,14 @@ msgstr ""
 msgid ""
 "When encrypting multiple files or a folder Kleopatra creates an encrypted "
 "archive with this command."
+msgstr ""
+
+#. i18n: ectx: whatsthis, entry (AddASCIIArmor), group (FileOperations)
+#: src/kcfg/fileoperationspreferences.kcfg:26
+msgid ""
+"Set this option to encode encrypted and or signed files as base64 encoded "
+"text. So that they can be opened with an editor or sent in a mail body. This "
+"will increase file size by one third."
 msgstr ""
 
 #. i18n: ectx: label, entry (RefreshInterval), group (SMime Validation)
