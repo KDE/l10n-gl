@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdevcppdebugger\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2016-09-03 07:12+0000\n"
+"POT-Creation-Date: 2016-09-06 07:56+0000\n"
 "PO-Revision-Date: 2015-08-04 07:48+0200\n"
 "Last-Translator: Adrián Chaves Fernández (Gallaecio) <adriyetichaves@gmail."
 "com>\n"
@@ -111,22 +111,31 @@ msgstr ""
 "configuración corrompida, comprobe a configuración de execución «%1». "
 "Empregarase o grupo de ambiente predeterminado."
 
-#: debugsession.cpp:280
+#: debugsession.cpp:294
 #, kde-format
 msgid "<b>You need gdb 7.0.0 or higher.</b><br />You are using: %1"
 msgstr "<b>Precisa o gdb 7.0.0 ou superior.</b><br />Está a empregar: %1"
 
-#: debugsession.cpp:282
+#: debugsession.cpp:296
 msgid "gdb error"
 msgstr "Erro de gdb"
 
-#: debugsession.cpp:292
+#: debugsession.cpp:306
 msgid "<b>Could not start debugger:</b><br />"
 msgstr "<b>Non foi posíbel iniciar o depurador:</b><br />"
 
-#: debugsession.cpp:294
+#: debugsession.cpp:308 debugsession.cpp:324
 msgid "Startup error"
 msgstr "Erro de inicio"
+
+#: debugsession.cpp:320
+#, kde-format
+msgid ""
+"<b>Failed to load core file</b><p>Debugger reported the following error:"
+"<p><tt>%1"
+msgstr ""
+"<b>Non foi posíbel cargar o ficheiro principal.</b><p>O depurador informou "
+"do seguinte erro:<p><tt>%1"
 
 #: gdb.cpp:79
 #, kde-format
@@ -187,9 +196,14 @@ msgstr ""
 "$PATH, pero cun nome diferente (por exemplo, «arm-gdb»), escribindo aquí o "
 "nome, ou indicar unha rota completa para o executábel gdb."
 
+#. i18n: ectx: property (placeholderText), widget (KUrlRequester, kcfg_gdbPath)
+#: gdbconfigpage.ui:57
+msgid "Override path to gdb executable"
+msgstr ""
+
 #. i18n: ectx: property (toolTip), widget (QLabel, debuggingShell_label)
 #. i18n: ectx: property (toolTip), widget (KUrlRequester, kcfg_debuggingShell)
-#: gdbconfigpage.ui:67 gdbconfigpage.ui:86
+#: gdbconfigpage.ui:70 gdbconfigpage.ui:89
 msgid ""
 "<html><head/><body><p>If you want gdb to be executed by a special shell "
 "script, which for example properly sets the library path, insert it here e."
@@ -207,27 +221,27 @@ msgstr ""
 "«depurador» manualmente.</p></body></html>"
 
 #. i18n: ectx: property (text), widget (QLabel, debuggingShell_label)
-#: gdbconfigpage.ui:73
+#: gdbconfigpage.ui:76
 msgid "She&ll script:"
 msgstr "Script de she&ll:"
 
 #. i18n: ectx: property (whatsThis), widget (KUrlRequester, kcfg_debuggingShell)
-#: gdbconfigpage.ui:89
+#: gdbconfigpage.ui:92
 msgid "<html><head/><body><p><br/></p></body></html>"
 msgstr "<html><head/><body><p><br/></p></body></html>"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
-#: gdbconfigpage.ui:99
+#: gdbconfigpage.ui:102
 msgid "Options"
 msgstr "Opcións"
 
 #. i18n: ectx: property (text), widget (QLabel, label_3)
-#: gdbconfigpage.ui:108
+#: gdbconfigpage.ui:111
 msgid "Display static &members:"
 msgstr "Mostrar os &membros estáticos:"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, kcfg_displayStaticMembers)
-#: gdbconfigpage.ui:123
+#: gdbconfigpage.ui:126
 msgid ""
 "Displaying static members makes GDB slower in\n"
 "producing data within KDE and Qt.\n"
@@ -244,12 +258,12 @@ msgstr ""
 "sinale esta opción."
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
-#: gdbconfigpage.ui:133
+#: gdbconfigpage.ui:136
 msgid "Display &demangled names:"
 msgstr "Mostrar os nomes &descodificados:"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, kcfg_asmDemangle)
-#: gdbconfigpage.ui:145
+#: gdbconfigpage.ui:148
 msgid ""
 "When displaying the disassembled code you\n"
 "can select to see the methods' mangled names.\n"
@@ -260,27 +274,27 @@ msgstr ""
 "Porén, os nomes non descodificados son máis fáciles de ler."
 
 #. i18n: ectx: property (text), widget (QLabel, label)
-#: gdbconfigpage.ui:155
+#: gdbconfigpage.ui:158
 msgid "S&tart Debugger with:"
 msgstr "I&niciar o depurador con:"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_startWith)
-#: gdbconfigpage.ui:166
+#: gdbconfigpage.ui:169
 msgid "Application Output"
 msgstr "Saída do aplicativo"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_startWith)
-#: gdbconfigpage.ui:171
+#: gdbconfigpage.ui:174
 msgid "GDB Console"
 msgstr "Consola de GDB"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_startWith)
-#: gdbconfigpage.ui:176
+#: gdbconfigpage.ui:179
 msgid "Frame Stack"
 msgstr "Pila de chamadas"
 
 #. i18n: ectx: property (whatsThis), widget (QGroupBox, groupBox)
-#: gdbconfigpage.ui:190
+#: gdbconfigpage.ui:193
 msgid ""
 "This script is intended for the actual commands needed to connect to a "
 "remotely running executable.\n"
@@ -295,13 +309,13 @@ msgstr ""
 "\tcontinue\t[opcional] executa a depuración até o primeiro punto de parada"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
-#: gdbconfigpage.ui:193
+#: gdbconfigpage.ui:196
 msgid "Remote Debugging"
 msgstr "Depuración remota"
 
 #. i18n: ectx: property (toolTip), widget (QLabel, runShellScript_label)
 #. i18n: ectx: property (toolTip), widget (KUrlRequester, kcfg_runShellScript)
-#: gdbconfigpage.ui:199 gdbconfigpage.ui:215
+#: gdbconfigpage.ui:202 gdbconfigpage.ui:218
 msgid ""
 "<html><head/><body><p>Script to start remote application</p><p></p><p>This "
 "shell script is run after the Gdb Config script has been sourced by gdb.</"
@@ -320,14 +334,14 @@ msgstr ""
 "</p> <p>2b) Execute «programa» no obxectivo.</p></body></html>"
 
 #. i18n: ectx: property (text), widget (QLabel, runShellScript_label)
-#: gdbconfigpage.ui:202
+#: gdbconfigpage.ui:205
 msgctxt "Shell script to be executed at run time"
 msgid "R&un shell script:"
 msgstr "Executar o script de &shell:"
 
 #. i18n: ectx: property (toolTip), widget (QLabel, configGdbScript_label)
 #. i18n: ectx: property (toolTip), widget (KUrlRequester, kcfg_configGdbScript)
-#: gdbconfigpage.ui:225 gdbconfigpage.ui:267
+#: gdbconfigpage.ui:228 gdbconfigpage.ui:270
 msgid ""
 "<html><head/><body><p>This script is sourced by gdb when the debugging "
 "starts.</p></body></html>"
@@ -336,13 +350,13 @@ msgstr ""
 "p></body></html>"
 
 #. i18n: ectx: property (text), widget (QLabel, configGdbScript_label)
-#: gdbconfigpage.ui:228
+#: gdbconfigpage.ui:231
 msgid "Gdb &config script:"
 msgstr "Script de &configuración de GDB:"
 
 #. i18n: ectx: property (toolTip), widget (KUrlRequester, kcfg_runGdbScript)
 #. i18n: ectx: property (toolTip), widget (QLabel, runGdbScript_label)
-#: gdbconfigpage.ui:241 gdbconfigpage.ui:251
+#: gdbconfigpage.ui:244 gdbconfigpage.ui:254
 msgid ""
 "<html><head/><body><p>Script to connect with remote application</p><p>For "
 "example:</p><p>\tshell sleep 5\t #wait for remote program to start</p><p>"
@@ -356,7 +370,7 @@ msgstr ""
 "</body></html>"
 
 #. i18n: ectx: property (text), widget (QLabel, runGdbScript_label)
-#: gdbconfigpage.ui:254
+#: gdbconfigpage.ui:257
 msgctxt "Gdb script to be executed at run time."
 msgid "Run &gdb script:"
 msgstr "Executar o script de &gdb:"
@@ -721,13 +735,6 @@ msgstr "Abre un novo visor da memoria."
 
 #~ msgid "Application is paused"
 #~ msgstr "O programa está en pausa"
-
-#~ msgid ""
-#~ "<b>Failed to load core file</b><p>Debugger reported the following error:"
-#~ "<p><tt>%1"
-#~ msgstr ""
-#~ "<b>Non foi posíbel cargar o ficheiro principal.</b><p>O depurador "
-#~ "informou do seguinte erro:<p><tt>%1"
 
 #~ msgid "Debugger error"
 #~ msgstr "Erro do depurador"
