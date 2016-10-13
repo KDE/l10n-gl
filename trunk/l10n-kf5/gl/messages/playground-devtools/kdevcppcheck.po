@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2016-10-12 07:18+0000\n"
+"POT-Creation-Date: 2016-10-13 07:37+0000\n"
 "PO-Revision-Date: 2016-04-18 12:49+0100\n"
 "Last-Translator: Adrián Chaves Fernández (Gallaecio) <adriyetichaves@gmail."
 "com>\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Lokalize 2.0\n"
 
-#: config/genericconfigpage.cpp:51 config/globalconfigpage.cpp:47
+#: config/globalconfigpage.cpp:47 config/projectconfigpage.cpp:71
 msgid "Cppcheck"
 msgstr "Cppcheck"
 
@@ -56,115 +56,273 @@ msgstr ""
 msgid "Show cppcheck XML output in the output view"
 msgstr ""
 
-#. i18n: ectx: property (text), widget (QLabel, label_3)
-#: config/ui/genericconfig.ui:20
-msgid "Extra &Parameters:"
-msgstr "&Parámetros adicionais:"
+#. i18n: ectx: attribute (title), widget (QWidget, tabChecks)
+#: config/projectconfigpage.ui:27
+#, fuzzy
+#| msgid "CppCheck"
+msgid "Checks"
+msgstr "CppCheck"
 
-#. i18n: ectx: property (toolTip), widget (QGroupBox, AdditionalChecksGroupBox)
-#: config/ui/genericconfig.ui:46
-msgid "Enable additional checks"
-msgstr "Activar comprobacións adicionais."
+#. i18n: ectx: property (toolTip), widget (QCheckBox, kcfg_checkUnusedFunction)
+#: config/projectconfigpage.ui:35
+msgid ""
+"<html><head/><body><p>Check for unused functions. It is recommend to only "
+"enable this when the whole program is scanned</p></body></html>"
+msgstr ""
 
-#. i18n: ectx: property (title), widget (QGroupBox, AdditionalChecksGroupBox)
-#: config/ui/genericconfig.ui:49
-msgid "Additional checks "
-msgstr "Comprobacións adicionais "
-
-#. i18n: ectx: property (toolTip), widget (QCheckBox, styleCheckBox)
-#: config/ui/genericconfig.ui:55
-msgid "Check coding style"
-msgstr "Comprobar o estilo do código."
-
-#. i18n: ectx: property (text), widget (QCheckBox, styleCheckBox)
-#: config/ui/genericconfig.ui:58
-msgid "style"
-msgstr "estilo"
-
-#. i18n: ectx: property (toolTip), widget (QCheckBox, performanceCheckBox)
-#: config/ui/genericconfig.ui:68
-msgid "Enable performance messages"
-msgstr "Activar as mensaxes de rendemento."
-
-#. i18n: ectx: property (text), widget (QCheckBox, performanceCheckBox)
-#: config/ui/genericconfig.ui:71
-msgid "performance"
-msgstr "rendemento"
-
-#. i18n: ectx: property (toolTip), widget (QCheckBox, portabilityCheckBox)
-#: config/ui/genericconfig.ui:81
-msgid "Enable portability messages"
-msgstr "Activar as mensaxes de adaptabilidade."
-
-#. i18n: ectx: property (text), widget (QCheckBox, portabilityCheckBox)
-#: config/ui/genericconfig.ui:84
-msgid "portability"
-msgstr "adaptabilidade"
-
-#. i18n: ectx: property (toolTip), widget (QCheckBox, informationCheckBox)
-#: config/ui/genericconfig.ui:94
-msgid "Enable information messages"
-msgstr "Activar as mensaxes de información."
-
-#. i18n: ectx: property (text), widget (QCheckBox, informationCheckBox)
-#: config/ui/genericconfig.ui:97
-msgid "information"
-msgstr "información"
-
-#. i18n: ectx: property (toolTip), widget (QCheckBox, unusedFunctionCheckBox)
-#: config/ui/genericconfig.ui:107
-msgid "Check for unused functions"
-msgstr "Comprobar se hai funcións sen usar."
-
-#. i18n: ectx: property (text), widget (QCheckBox, unusedFunctionCheckBox)
-#: config/ui/genericconfig.ui:110
-msgid "unused function"
+#. i18n: ectx: property (text), widget (QCheckBox, kcfg_checkUnusedFunction)
+#: config/projectconfigpage.ui:38
+#, fuzzy
+#| msgid "unused function"
+msgid "Unused function"
 msgstr "funcións sen usar"
 
-#. i18n: ectx: property (toolTip), widget (QCheckBox, missingIncludeCheckBox)
-#: config/ui/genericconfig.ui:120
-msgid "Warn if there are missing includes"
-msgstr "Avisar se faltan inclusións."
+#. i18n: ectx: property (toolTip), widget (QCheckBox, kcfg_inconclusiveAnalysis)
+#: config/projectconfigpage.ui:48
+msgid ""
+"<html><head/><body><p>Allow that Cppcheck reports even though the analysis "
+"is inconclusive. There are false positives with this option. Each result "
+"must be carefully investigated before you know if it is good or bad.</p></"
+"body></html>"
+msgstr ""
 
-#. i18n: ectx: property (text), widget (QCheckBox, missingIncludeCheckBox)
-#: config/ui/genericconfig.ui:123
-msgid "missingInclude"
+#. i18n: ectx: property (text), widget (QCheckBox, kcfg_inconclusiveAnalysis)
+#: config/projectconfigpage.ui:51
+msgid "Inconclusive analysis"
+msgstr ""
+
+#. i18n: ectx: property (toolTip), widget (QCheckBox, kcfg_checkInformation)
+#: config/projectconfigpage.ui:58
+msgid "<html><head/><body><p>Enable information messages</p></body></html>"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QCheckBox, kcfg_checkInformation)
+#: config/projectconfigpage.ui:61
+#, fuzzy
+#| msgid "information"
+msgid "Information"
+msgstr "información"
+
+#. i18n: ectx: property (toolTip), widget (QCheckBox, kcfg_checkMissingInclude)
+#: config/projectconfigpage.ui:71
+msgid ""
+"<html><head/><body><p>Warn if there are missing includes. For detailed "
+"information use 'check-config'</p></body></html>"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QCheckBox, kcfg_checkMissingInclude)
+#: config/projectconfigpage.ui:74
+#, fuzzy
+#| msgid "missingInclude"
+msgid "Missing include"
 msgstr "faltaInclusion"
 
-#: job.cpp:49
-msgid "Cppcheck output"
-msgstr "Saída de Cppcheck"
+#. i18n: ectx: property (toolTip), widget (QCheckBox, kcfg_checkPerformance)
+#: config/projectconfigpage.ui:84
+msgid "<html><head/><body><p>Enable performance messages</p></body></html>"
+msgstr ""
 
-#: job.cpp:181
+#. i18n: ectx: property (text), widget (QCheckBox, kcfg_checkPerformance)
+#: config/projectconfigpage.ui:87
+#, fuzzy
+#| msgid "performance"
+msgid "Performance"
+msgstr "rendemento"
+
+#. i18n: ectx: property (toolTip), widget (QCheckBox, kcfg_forceCheck)
+#: config/projectconfigpage.ui:97
+msgid ""
+"<html><head/><body><p>Force checking of files that have a lot of "
+"configurations. Error is printed if such a file is found so there is no "
+"reason to use this by default. If used together with '--max-configs=', the "
+"last option is the one that is effective.</p><p>Be careful with using this "
+"option - it can dramatically slow checking.</p></body></html>"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QCheckBox, kcfg_forceCheck)
+#: config/projectconfigpage.ui:100
+msgid "Force checking"
+msgstr ""
+
+#. i18n: ectx: property (toolTip), widget (QCheckBox, kcfg_checkPortability)
+#: config/projectconfigpage.ui:107
+msgid "<html><head/><body><p>Enable portability messages</p></body></html>"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QCheckBox, kcfg_checkPortability)
+#: config/projectconfigpage.ui:110
+#, fuzzy
+#| msgid "portability"
+msgid "Portability"
+msgstr "adaptabilidade"
+
+#. i18n: ectx: property (toolTip), widget (QCheckBox, kcfg_checkStyle)
+#: config/projectconfigpage.ui:120
+msgid ""
+"<html><head/><body><p>Enable all coding style checks. All messages with the "
+"severities 'style', 'performance' and 'portability' are enabled.</p></body></"
+"html>"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QCheckBox, kcfg_checkStyle)
+#: config/projectconfigpage.ui:123
+#, fuzzy
+#| msgid "style"
+msgid "Style"
+msgstr "estilo"
+
+#. i18n: ectx: property (toolTip), widget (QCheckBox, kcfg_checkConfig)
+#: config/projectconfigpage.ui:133
+msgid ""
+"<html><head/><body><p>Check Cppcheck configuration. The normal code analysis "
+"is disabled by this flag.</p></body></html>"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QCheckBox, kcfg_checkConfig)
+#: config/projectconfigpage.ui:136
+#, fuzzy
+#| msgid "Check coding style"
+msgid "Check config"
+msgstr "Comprobar o estilo do código."
+
+#. i18n: ectx: attribute (title), widget (QWidget, tabIncludes)
+#: config/projectconfigpage.ui:146
+msgid "Include directories"
+msgstr ""
+
+#. i18n: ectx: property (toolTip), widget (QCheckBox, kcfg_useProjectIncludes)
+#: config/projectconfigpage.ui:152
+msgid ""
+"<html><head/><body><p>Add 'project' include directories to cppcheck "
+"arguments. This option adds only paths related with project's root and build "
+"directories.</p></body></html>"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QCheckBox, kcfg_useProjectIncludes)
+#: config/projectconfigpage.ui:155
+msgid "Use 'project' include dirs"
+msgstr ""
+
+#. i18n: ectx: property (toolTip), widget (QCheckBox, kcfg_useSystemIncludes)
+#: config/projectconfigpage.ui:168
+msgid ""
+"<html><head/><body><p>Add other, 'system' include directories to cppcheck "
+"arguments. </p><p>Be careful with using this option - it can dramatically "
+"slow checking.</p></body></html>"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QCheckBox, kcfg_useSystemIncludes)
+#: config/projectconfigpage.ui:171
+msgid "Use 'system' include dirs"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: config/projectconfigpage.ui:186
+msgid "&Ignored includes:"
+msgstr ""
+
+#. i18n: ectx: property (toolTip), widget (QLineEdit, kcfg_ignoredIncludes)
+#: config/projectconfigpage.ui:206
+#, no-c-format
+msgid ""
+"<html>\n"
+"\n"
+"<p>Defines semicolon-separated list of ignored include directories.</p>\n"
+"\n"
+"<p>You can use the following placeholders:</p>\n"
+"\n"
+"<p><b><tt>%p</tt></b> - Gets replaced by the URL of the project's root "
+"directory.</p>\n"
+"\n"
+"<p><b><tt>%b</tt></b> - Gets replaced by the URL of the project's build "
+"directory.</p>\n"
+"\n"
+"</html>"
+msgstr ""
+
+#. i18n: ectx: attribute (title), widget (QWidget, tabExtra)
+#: config/projectconfigpage.ui:229
+#, fuzzy
+#| msgid "Extra &Parameters:"
+msgid "Extra parameters"
+msgstr "&Parámetros adicionais:"
+
+#. i18n: ectx: property (text), widget (QLabel, extraLabel)
+#: config/projectconfigpage.ui:242
+#, fuzzy
+#| msgid "Extra &Parameters:"
+msgid "&Extra parameters:"
+msgstr "&Parámetros adicionais:"
+
+#. i18n: ectx: property (toolTip), widget (QLineEdit, kcfg_extraParameters)
+#: config/projectconfigpage.ui:262
+#, no-c-format
+msgid ""
+"<html>\n"
+"\n"
+"<p>Defines additional parameters for cppcheck (see documentation).</p>\n"
+"\n"
+"<p>You can use the following placeholders:</p>\n"
+"\n"
+"<p><b><tt>%p</tt></b> - Gets replaced by the URL of the project's root "
+"directory.</p>\n"
+"\n"
+"<p><b><tt>%b</tt></b> - Gets replaced by the URL of the project's build "
+"directory.</p>\n"
+"\n"
+"</html>"
+msgstr ""
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
+#: config/projectconfigpage.ui:296
+msgid "Command line"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QCheckBox, commandLineBreaks)
+#: config/projectconfigpage.ui:307
+msgid "Break lines"
+msgstr ""
+
+#: job.cpp:152
 #, kde-format
 msgid "Failed to start Cppcheck from \"%1\"."
 msgstr "Non foi posíbel iniciar Cppcheck desde «%1»."
 
-#: job.cpp:186
+#: job.cpp:157
 msgid "Cppcheck crashed."
 msgstr "Cppcheck quebrou."
 
-#: job.cpp:190
+#: job.cpp:161
 msgid "Cppcheck process timed out."
 msgstr "O proceso de Cppcheck esgotou o tempo límite."
 
-#: job.cpp:194
+#: job.cpp:165
 msgid "Write to Cppcheck process failed."
 msgstr "Non foi posíbel escribir no proceso de Cppcheck."
 
-#: job.cpp:198
+#: job.cpp:169
 msgid "Read from Cppcheck process failed."
 msgstr "Non foi posíbel ler do proceso de Cppcheck."
 
-#: job.cpp:208 parser.cpp:216
+#: job.cpp:179 parser.cpp:216
 msgid "Cppcheck Error"
 msgstr "Erro de Cppcheck"
 
-#. i18n: ectx: Menu (run)
+#. i18n: ectx: Menu (analyze)
 #: kdevcppcheck.rc:5
 msgctxt "@title:menu"
-msgid "Run"
-msgstr "Executar"
+msgid "Analyze"
+msgstr ""
+
+#: parameters.cpp:126
+msgid ""
+"It seems that this project uses Qt library. For correctly work of cppcheck "
+"the value for define Q_MOC_OUTPUT_REVISION must be set. Unfortunatly, the "
+"plugin is unable to find this value automatically - you should set it "
+"manually by adding '-DQ_MOC_OUTPUT_REVISION=XX' to extra parameters. The "
+"'XX' value can be found in any project's moc-generated file or in the "
+"<QtCore/qobjectdefs.h> header file."
+msgstr ""
 
 #: parser.cpp:215
 #, kde-format
@@ -188,7 +346,7 @@ msgctxt "@title:window"
 msgid "Test"
 msgstr ""
 
-#: plugin.cpp:116 plugin.cpp:124 plugin.cpp:141
+#: plugin.cpp:116 plugin.cpp:124
 msgid "Error starting Cppcheck"
 msgstr "Non foi posíbel iniciar Cppcheck."
 
@@ -200,11 +358,38 @@ msgstr "Non hai ningún ficheiro activo, non pode deducirse o proxecto."
 msgid "Active file isn't in a project"
 msgstr "O ficheiro activo non é un proxecto."
 
-#: plugin.cpp:142
-msgid "Can't load parameters. They must be set in the project settings."
-msgstr ""
-"Non é posíbel cargar os parámetros. Debe definilos na configuración do "
-"proxecto."
+#~ msgid "Enable additional checks"
+#~ msgstr "Activar comprobacións adicionais."
+
+#~ msgid "Additional checks "
+#~ msgstr "Comprobacións adicionais "
+
+#~ msgid "Enable performance messages"
+#~ msgstr "Activar as mensaxes de rendemento."
+
+#~ msgid "Enable portability messages"
+#~ msgstr "Activar as mensaxes de adaptabilidade."
+
+#~ msgid "Enable information messages"
+#~ msgstr "Activar as mensaxes de información."
+
+#~ msgid "Check for unused functions"
+#~ msgstr "Comprobar se hai funcións sen usar."
+
+#~ msgid "Warn if there are missing includes"
+#~ msgstr "Avisar se faltan inclusións."
+
+#~ msgid "Cppcheck output"
+#~ msgstr "Saída de Cppcheck"
+
+#~ msgctxt "@title:menu"
+#~ msgid "Run"
+#~ msgstr "Executar"
+
+#~ msgid "Can't load parameters. They must be set in the project settings."
+#~ msgstr ""
+#~ "Non é posíbel cargar os parámetros. Debe definilos na configuración do "
+#~ "proxecto."
 
 #~ msgid "Launches Cppcheck for current file"
 #~ msgstr "Inicia Cppcheck para o ficheiro actual"
@@ -226,9 +411,6 @@ msgstr ""
 
 #~ msgid "job failed"
 #~ msgstr "a tarefa fallou"
-
-#~ msgid "CppCheck"
-#~ msgstr "CppCheck"
 
 #~ msgid "File"
 #~ msgstr "Ficheiro"
