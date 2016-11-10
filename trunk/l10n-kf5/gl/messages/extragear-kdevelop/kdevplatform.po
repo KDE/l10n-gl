@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdevplatform\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2016-11-07 07:10+0000\n"
+"POT-Creation-Date: 2016-11-10 07:10+0000\n"
 "PO-Revision-Date: 2016-04-20 07:16+0100\n"
 "Last-Translator: Adrián Chaves Fernández (Gallaecio) <adriyetichaves@gmail."
 "com>\n"
@@ -659,7 +659,7 @@ msgstr "Fallou a aplicación das modificacións: %1"
 
 #. i18n: ectx: property (windowTitle), widget (QDialog, RenameDialog)
 #. i18n: ectx: property (text), widget (QPushButton, renameButton)
-#: language/codegen/basicrefactoring.ui:14 vcs/dvcs/ui/branchmanager.ui:55
+#: language/codegen/basicrefactoring.ui:14 vcs/dvcs/ui/branchmanager.ui:39
 msgid "Rename"
 msgstr "Renomear"
 
@@ -4414,25 +4414,25 @@ msgstr "Gallas..."
 msgid "Revision Graph..."
 msgstr "Gráfica de revisións..."
 
-#: vcs/dvcs/ui/branchmanager.cpp:50
+#: vcs/dvcs/ui/branchmanager.cpp:52
 msgid "Branch Manager"
 msgstr "Xestor de gallas"
 
-#: vcs/dvcs/ui/branchmanager.cpp:103
+#: vcs/dvcs/ui/branchmanager.cpp:107
 msgid ""
 "You must select a base branch from the list before creating a new branch."
 msgstr ""
 "Hai que escoller unha galla de base da lista antes de crear unha galla nova."
 
-#: vcs/dvcs/ui/branchmanager.cpp:108
+#: vcs/dvcs/ui/branchmanager.cpp:112
 msgid "New branch"
 msgstr "Nova galla"
 
-#: vcs/dvcs/ui/branchmanager.cpp:108
+#: vcs/dvcs/ui/branchmanager.cpp:112
 msgid "Name of the new branch:"
 msgstr "Nome da galla nova:"
 
-#: vcs/dvcs/ui/branchmanager.cpp:116
+#: vcs/dvcs/ui/branchmanager.cpp:120
 #, kde-format
 msgid ""
 "Branch \"%1\" already exists.\n"
@@ -4441,7 +4441,7 @@ msgstr ""
 "Xa existe unha galla chamada «%1».\n"
 "Escolla outro nome."
 
-#: vcs/dvcs/ui/branchmanager.cpp:131
+#: vcs/dvcs/ui/branchmanager.cpp:135
 #, kde-format
 msgid ""
 "Currently at the branch \"%1\".\n"
@@ -4450,17 +4450,17 @@ msgstr ""
 "Está na galla «%1».\n"
 "Para eliminala debe pasar a outra galla."
 
-#: vcs/dvcs/ui/branchmanager.cpp:138
+#: vcs/dvcs/ui/branchmanager.cpp:142
 #, kde-format
 msgid "Are you sure you want to irreversibly remove the branch '%1'?"
 msgstr "Desexa realmente borrar irreversibelmente a galla «%1»?"
 
-#: vcs/dvcs/ui/branchmanager.cpp:158
+#: vcs/dvcs/ui/branchmanager.cpp:162 vcs/dvcs/ui/branchmanager.cpp:202
 #, kde-format
 msgid "Already on branch \"%1\"\n"
 msgstr "Xa está na galla «%1»\n"
 
-#: vcs/dvcs/ui/branchmanager.cpp:179
+#: vcs/dvcs/ui/branchmanager.cpp:183
 #, fuzzy, kde-format
 #| msgid ""
 #| "Branch \"%1\" already exists.\n"
@@ -4472,13 +4472,29 @@ msgstr ""
 "Xa existe unha galla chamada «%1».\n"
 "Escolla outro nome."
 
-#: vcs/dvcs/ui/branchmanager.cpp:189
+#: vcs/dvcs/ui/branchmanager.cpp:193
 #, fuzzy
 #| msgid ""
 #| "You must select a base branch from the list before creating a new branch."
 msgid "You must select a branch to merge into current one from the list."
 msgstr ""
 "Hai que escoller unha galla de base da lista antes de crear unha galla nova."
+
+#: vcs/dvcs/ui/branchmanager.cpp:225
+#, fuzzy
+#| msgid "Unable to get difference."
+msgid "Unable to retrieve diff."
+msgstr "Non foi posíbel obter as diferenzas."
+
+#: vcs/dvcs/ui/branchmanager.cpp:232
+#, fuzzy
+#| msgid "There are no differences."
+msgid "There are no committed differences."
+msgstr "Non hai diferenzas."
+
+#: vcs/dvcs/ui/branchmanager.cpp:233 vcs/vcspluginhelper.cpp:277
+msgid "VCS support"
+msgstr "Soporte de VCS"
 
 #. i18n: ectx: property (toolTip), widget (QPushButton, newButton)
 #: vcs/dvcs/ui/branchmanager.ui:19
@@ -4490,18 +4506,31 @@ msgstr "Crea unha galla nova baseada na escollida"
 msgid "The same as git branch -D"
 msgstr "O mesmo que git branch -D"
 
-#. i18n: ectx: property (toolTip), widget (QPushButton, checkoutButton)
+#. i18n: ectx: property (toolTip), widget (QPushButton, diffButton)
 #: vcs/dvcs/ui/branchmanager.ui:62
+msgid ""
+"<p>Show changes between the <span style=\" font-style:italic;\">staging "
+"area</span> (if not clean or last commit on current branch, otherwise) and "
+"the last commit on the selected branch.</p>"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QPushButton, diffButton)
+#: vcs/dvcs/ui/branchmanager.ui:65
+msgid "Compare to Branch"
+msgstr ""
+
+#. i18n: ectx: property (toolTip), widget (QPushButton, checkoutButton)
+#: vcs/dvcs/ui/branchmanager.ui:88
 msgid "Checkout to the selected branch"
 msgstr "Obter a galla escollida"
 
 #. i18n: ectx: property (text), widget (QPushButton, checkoutButton)
-#: vcs/dvcs/ui/branchmanager.ui:65
+#: vcs/dvcs/ui/branchmanager.ui:91
 msgid "Checkout"
 msgstr "Obter"
 
 #. i18n: ectx: property (text), widget (QPushButton, mergeButton)
-#: vcs/dvcs/ui/branchmanager.ui:72
+#: vcs/dvcs/ui/branchmanager.ui:98
 msgid "Merge"
 msgstr ""
 
@@ -4675,10 +4704,6 @@ msgstr "Tirar"
 #: vcs/vcspluginhelper.cpp:276
 msgid "There are no differences."
 msgstr "Non hai diferenzas."
-
-#: vcs/vcspluginhelper.cpp:277
-msgid "VCS support"
-msgstr "Soporte de VCS"
 
 #: vcs/vcspluginhelper.cpp:283
 msgid "Unable to get difference."
