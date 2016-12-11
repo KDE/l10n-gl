@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: skrooge\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2016-12-09 02:32+0100\n"
+"POT-Creation-Date: 2016-12-11 02:36+0100\n"
 "PO-Revision-Date: 2016-05-17 06:40+0100\n"
 "Last-Translator: Adrián Chaves Fernández (Gallaecio) <adriyetichaves@gmail."
 "com>\n"
@@ -4350,7 +4350,7 @@ msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, kAccountLabel)
 #: plugins/skrooge/skrooge_calculator/skgcalculatorpluginwidget_base.ui:79
-#: plugins/skrooge/skrooge_importexport/skgimportexportpluginwidget_pref.ui:436
+#: plugins/skrooge/skrooge_importexport/skgimportexportpluginwidget_pref.ui:448
 #, kde-format
 msgctxt "Noun, an account as in a bank account"
 msgid "Account:"
@@ -5044,10 +5044,8 @@ msgstr "Aplicar as regras sobre as operacións importadas."
 msgid "Open operations after import or processing"
 msgstr "Abrir as operacións despois de importalas ou procesalas."
 
-#. i18n: ectx: property (text), widget (QCheckBox, kcfg_since_last_import)
 #. i18n: ectx: label, entry (since_last_import), group (skrooge_importexport)
 #: plugins/skrooge/skrooge_importexport/skgimportexport_settings.kcfg:21
-#: plugins/skrooge/skrooge_importexport/skgimportexportpluginwidget_pref.ui:90
 #, kde-format
 msgid "Import only operations since the last imported one"
 msgstr "Importar só as operacións posteriores á última importada."
@@ -5055,7 +5053,7 @@ msgstr "Importar só as operacións posteriores á última importada."
 #. i18n: ectx: property (text), widget (QCheckBox, kcfg_automatic_search_header)
 #. i18n: ectx: label, entry (automatic_search_header), group (skrooge_importexport)
 #: plugins/skrooge/skrooge_importexport/skgimportexport_settings.kcfg:25
-#: plugins/skrooge/skrooge_importexport/skgimportexportpluginwidget_pref.ui:243
+#: plugins/skrooge/skrooge_importexport/skgimportexportpluginwidget_pref.ui:255
 #, kde-format
 msgid "Automatic search of the header"
 msgstr "Busca automática da cabeceira."
@@ -5063,7 +5061,7 @@ msgstr "Busca automática da cabeceira."
 #. i18n: ectx: property (text), widget (QCheckBox, kcfg_automatic_search_columns)
 #. i18n: ectx: label, entry (automatic_search_columns), group (skrooge_importexport)
 #: plugins/skrooge/skrooge_importexport/skgimportexport_settings.kcfg:29
-#: plugins/skrooge/skrooge_importexport/skgimportexportpluginwidget_pref.ui:253
+#: plugins/skrooge/skrooge_importexport/skgimportexportpluginwidget_pref.ui:265
 #, kde-format
 msgid "Automatic search of the columns"
 msgstr "Busca automática das columnas."
@@ -5717,38 +5715,78 @@ msgstr "Configuración xeral de importación"
 msgid "After import"
 msgstr "Despois da importación"
 
-#. i18n: ectx: property (text), widget (QCheckBox, kcfg_apply_rules)
+#. i18n: ectx: property (toolTip), widget (QCheckBox, kcfg_apply_rules)
 #: plugins/skrooge/skrooge_importexport/skgimportexportpluginwidget_pref.ui:69
+#, kde-format
+msgid ""
+"This option allows to apply all rules defined in \"Search and process\" on "
+"all imported operations"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QCheckBox, kcfg_apply_rules)
+#: plugins/skrooge/skrooge_importexport/skgimportexportpluginwidget_pref.ui:72
 #, kde-format
 msgid "Apply rules on imported operations"
 msgstr "Aplicar as regras sobre as operacións importadas."
 
+#. i18n: ectx: property (toolTip), widget (QCheckBox, kcfg_automatic_validation)
+#: plugins/skrooge/skrooge_importexport/skgimportexportpluginwidget_pref.ui:79
+#, fuzzy, kde-format
+#| msgid "Auto point all imported operations"
+msgid "This option allows to validate all imported operations"
+msgstr "Marcar automaticamente as operacións importadas."
+
 #. i18n: ectx: property (text), widget (QCheckBox, kcfg_automatic_validation)
-#: plugins/skrooge/skrooge_importexport/skgimportexportpluginwidget_pref.ui:76
+#: plugins/skrooge/skrooge_importexport/skgimportexportpluginwidget_pref.ui:82
 #, kde-format
 msgid "Automatic validation"
 msgstr "Validación automática."
 
+#. i18n: ectx: property (toolTip), widget (QCheckBox, kcfg_open_after_import_or_processing)
+#: plugins/skrooge/skrooge_importexport/skgimportexportpluginwidget_pref.ui:89
+#, kde-format
+msgid ""
+"This option allows to open all imported operations at the end of the import"
+msgstr ""
+
 #. i18n: ectx: property (text), widget (QCheckBox, kcfg_open_after_import_or_processing)
-#: plugins/skrooge/skrooge_importexport/skgimportexportpluginwidget_pref.ui:83
+#: plugins/skrooge/skrooge_importexport/skgimportexportpluginwidget_pref.ui:92
 #, kde-format
 msgid "Open operations"
 msgstr "Abrir as operacións."
 
+#. i18n: ectx: property (toolTip), widget (QCheckBox, kcfg_since_last_import)
+#: plugins/skrooge/skrooge_importexport/skgimportexportpluginwidget_pref.ui:99
+#, kde-format
+msgid ""
+"<html><head/><body><p><span style=\" font-weight:600; color:#ff0000;"
+"\">WARNING: </span>In some conditions, this option can cause missing "
+"operations. </p><p>This option is mainly interesting with OFX import when "
+"your bank is not able to generate real unique identifier for operations.</"
+"p></body></html>"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QCheckBox, kcfg_since_last_import)
+#: plugins/skrooge/skrooge_importexport/skgimportexportpluginwidget_pref.ui:102
+#, fuzzy, kde-format
+#| msgid "Import only operations since the last imported one"
+msgid "Import only operations since the last imported one (not recommanded)"
+msgstr "Importar só as operacións posteriores á última importada."
+
 #. i18n: ectx: attribute (toolTip), widget (QWidget, kCsv)
-#: plugins/skrooge/skrooge_importexport/skgimportexportpluginwidget_pref.ui:117
+#: plugins/skrooge/skrooge_importexport/skgimportexportpluginwidget_pref.ui:129
 #, kde-format
 msgid "Settings for CSV import"
 msgstr "Configuración da importación de CSV"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
-#: plugins/skrooge/skrooge_importexport/skgimportexportpluginwidget_pref.ui:200
+#: plugins/skrooge/skrooge_importexport/skgimportexportpluginwidget_pref.ui:212
 #, kde-format
 msgid "Header position:"
 msgstr "Posición da cabeceira:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_7)
-#: plugins/skrooge/skrooge_importexport/skgimportexportpluginwidget_pref.ui:220
+#: plugins/skrooge/skrooge_importexport/skgimportexportpluginwidget_pref.ui:232
 #, kde-format
 msgid "0 if CSV file does not have header"
 msgstr "0 se o ficheiro CSV non ten cabeceira."
@@ -5756,22 +5794,22 @@ msgstr "0 se o ficheiro CSV non ten cabeceira."
 #. i18n: ectx: property (toolTip), widget (QLabel, kDateLbl)
 #. i18n: ectx: property (statusTip), widget (QLabel, kDateLbl)
 #. i18n: ectx: property (statusTip), widget (SKGDateEdit, kDateEdit)
-#: plugins/skrooge/skrooge_importexport/skgimportexportpluginwidget_pref.ui:289
-#: plugins/skrooge/skrooge_importexport/skgimportexportpluginwidget_pref.ui:292
+#: plugins/skrooge/skrooge_importexport/skgimportexportpluginwidget_pref.ui:301
+#: plugins/skrooge/skrooge_importexport/skgimportexportpluginwidget_pref.ui:304
 #: plugins/skrooge/skrooge_operation/skgoperationpluginwidget_base.ui:440
 #, kde-format
 msgid "Date of the operation"
 msgstr "Data da operación"
 
 #. i18n: ectx: property (text), widget (QLabel, kDateLbl)
-#: plugins/skrooge/skrooge_importexport/skgimportexportpluginwidget_pref.ui:295
+#: plugins/skrooge/skrooge_importexport/skgimportexportpluginwidget_pref.ui:307
 #, kde-format
 msgid "Date:"
 msgstr "Data:"
 
 #. i18n: ectx: property (toolTip), widget (QLabel, kNumberLbl)
 #. i18n: ectx: property (toolTip), widget (QLineEdit, kNumberEdit)
-#: plugins/skrooge/skrooge_importexport/skgimportexportpluginwidget_pref.ui:308
+#: plugins/skrooge/skrooge_importexport/skgimportexportpluginwidget_pref.ui:320
 #: plugins/skrooge/skrooge_operation/skgoperationpluginwidget_base.ui:666
 #, kde-format
 msgid ""
@@ -5783,20 +5821,20 @@ msgstr ""
 
 #. i18n: ectx: property (statusTip), widget (QLabel, kNumberLbl)
 #. i18n: ectx: property (statusTip), widget (QLineEdit, kNumberEdit)
-#: plugins/skrooge/skrooge_importexport/skgimportexportpluginwidget_pref.ui:311
+#: plugins/skrooge/skrooge_importexport/skgimportexportpluginwidget_pref.ui:323
 #: plugins/skrooge/skrooge_operation/skgoperationpluginwidget_base.ui:669
 #, kde-format
 msgid "Number of the operation"
 msgstr "Número da operación"
 
 #. i18n: ectx: property (text), widget (QLabel, kNumberLbl)
-#: plugins/skrooge/skrooge_importexport/skgimportexportpluginwidget_pref.ui:314
+#: plugins/skrooge/skrooge_importexport/skgimportexportpluginwidget_pref.ui:326
 #, kde-format
 msgid "Number:"
 msgstr "Número:"
 
 #. i18n: ectx: property (toolTip), widget (QLabel, kTypeLabel)
-#: plugins/skrooge/skrooge_importexport/skgimportexportpluginwidget_pref.ui:329
+#: plugins/skrooge/skrooge_importexport/skgimportexportpluginwidget_pref.ui:341
 #, kde-format
 msgid ""
 "Operation mode (how you made the operation).\n"
@@ -5807,14 +5845,14 @@ msgstr ""
 
 #. i18n: ectx: property (statusTip), widget (QLabel, kTypeLabel)
 #. i18n: ectx: property (statusTip), widget (SKGComboBox, kTypeEdit)
-#: plugins/skrooge/skrooge_importexport/skgimportexportpluginwidget_pref.ui:332
+#: plugins/skrooge/skrooge_importexport/skgimportexportpluginwidget_pref.ui:344
 #: plugins/skrooge/skrooge_operation/skgoperationpluginwidget_base.ui:641
 #, kde-format
 msgid "Operation mode"
 msgstr "Método de pagamento"
 
 #. i18n: ectx: property (text), widget (QLabel, kTypeLabel)
-#: plugins/skrooge/skrooge_importexport/skgimportexportpluginwidget_pref.ui:335
+#: plugins/skrooge/skrooge_importexport/skgimportexportpluginwidget_pref.ui:347
 #, kde-format
 msgctxt ""
 "Noun, the mode used for payment of the operation (Credit Card, Cheque, "
@@ -5826,8 +5864,8 @@ msgstr "Método:"
 #. i18n: ectx: property (statusTip), widget (QLabel, kPayeeLabel)
 #. i18n: ectx: property (toolTip), widget (SKGComboBox, kPayeeEdit)
 #. i18n: ectx: property (statusTip), widget (SKGComboBox, kPayeeEdit)
-#: plugins/skrooge/skrooge_importexport/skgimportexportpluginwidget_pref.ui:348
-#: plugins/skrooge/skrooge_importexport/skgimportexportpluginwidget_pref.ui:351
+#: plugins/skrooge/skrooge_importexport/skgimportexportpluginwidget_pref.ui:360
+#: plugins/skrooge/skrooge_importexport/skgimportexportpluginwidget_pref.ui:363
 #: plugins/skrooge/skrooge_operation/skgoperationpluginwidget_base.ui:596
 #: plugins/skrooge/skrooge_operation/skgoperationpluginwidget_base.ui:599
 #, kde-format
@@ -5835,19 +5873,22 @@ msgid "Payee of the operation"
 msgstr "Parte contraria da operación, beneficiario ou prexudicado."
 
 #. i18n: ectx: property (text), widget (QLabel, kPayeeLabel)
-#: plugins/skrooge/skrooge_importexport/skgimportexportpluginwidget_pref.ui:354
-#, kde-format
+#: plugins/skrooge/skrooge_importexport/skgimportexportpluginwidget_pref.ui:366
+#, fuzzy, kde-format
+#| msgctxt ""
+#| "Noun, a person or institution receiving a payment, or paying the operation"
+#| msgid "Payee:"
 msgctxt ""
 "Noun, a person or institution receiving a payment, or paying the operation"
-msgid "Payee:"
+msgid "Pa&yee:"
 msgstr "Parte contraria:"
 
 #. i18n: ectx: property (toolTip), widget (QLabel, kCommentLabel)
 #. i18n: ectx: property (statusTip), widget (QLabel, kCommentLabel)
 #. i18n: ectx: property (toolTip), widget (SKGComboBox, kCommentEdit)
 #. i18n: ectx: property (statusTip), widget (SKGComboBox, kCommentEdit)
-#: plugins/skrooge/skrooge_importexport/skgimportexportpluginwidget_pref.ui:373
-#: plugins/skrooge/skrooge_importexport/skgimportexportpluginwidget_pref.ui:376
+#: plugins/skrooge/skrooge_importexport/skgimportexportpluginwidget_pref.ui:385
+#: plugins/skrooge/skrooge_importexport/skgimportexportpluginwidget_pref.ui:388
 #: plugins/skrooge/skrooge_operation/skgoperationpluginwidget_base.ui:760
 #: plugins/skrooge/skrooge_operation/skgoperationpluginwidget_base.ui:763
 #, kde-format
@@ -5855,50 +5896,51 @@ msgid "Comment of the operation"
 msgstr "Comentario sobre a operación"
 
 #. i18n: ectx: property (text), widget (QLabel, kCommentLabel)
-#: plugins/skrooge/skrooge_importexport/skgimportexportpluginwidget_pref.ui:379
+#: plugins/skrooge/skrooge_importexport/skgimportexportpluginwidget_pref.ui:391
 #, kde-format
 msgctxt "Noun, a user comment on an item"
 msgid "Comment:"
 msgstr "Comentario:"
 
 #. i18n: ectx: property (toolTip), widget (QLabel, kStatusLbl)
-#: plugins/skrooge/skrooge_importexport/skgimportexportpluginwidget_pref.ui:392
+#: plugins/skrooge/skrooge_importexport/skgimportexportpluginwidget_pref.ui:404
 #, kde-format
 msgid "Status of the operation (reconciled or not)"
 msgstr "Estado da operación (conciliada ou non)."
 
 #. i18n: ectx: property (statusTip), widget (QLabel, kStatusLbl)
-#: plugins/skrooge/skrooge_importexport/skgimportexportpluginwidget_pref.ui:395
+#: plugins/skrooge/skrooge_importexport/skgimportexportpluginwidget_pref.ui:407
 #, kde-format
 msgid "Status of the operation"
 msgstr "Estado da operación"
 
 #. i18n: ectx: property (text), widget (QLabel, kStatusLbl)
-#: plugins/skrooge/skrooge_importexport/skgimportexportpluginwidget_pref.ui:398
+#: plugins/skrooge/skrooge_importexport/skgimportexportpluginwidget_pref.ui:410
 #, kde-format
 msgid "Status:"
 msgstr "Estado:"
 
 #. i18n: ectx: property (toolTip), widget (QLabel, kBookmarkedLbl)
 #. i18n: ectx: property (statusTip), widget (QLabel, kBookmarkedLbl)
-#: plugins/skrooge/skrooge_importexport/skgimportexportpluginwidget_pref.ui:411
-#: plugins/skrooge/skrooge_importexport/skgimportexportpluginwidget_pref.ui:414
+#: plugins/skrooge/skrooge_importexport/skgimportexportpluginwidget_pref.ui:423
+#: plugins/skrooge/skrooge_importexport/skgimportexportpluginwidget_pref.ui:426
 #, kde-format
 msgid "Bookmark of the operation"
 msgstr "Marcador da operación"
 
 #. i18n: ectx: property (text), widget (QLabel, kBookmarkedLbl)
-#: plugins/skrooge/skrooge_importexport/skgimportexportpluginwidget_pref.ui:417
-#, kde-format
-msgid "Bookmarked:"
+#: plugins/skrooge/skrooge_importexport/skgimportexportpluginwidget_pref.ui:429
+#, fuzzy, kde-format
+#| msgid "Bookmarked:"
+msgid "Boo&kmarked:"
 msgstr "Marcada:"
 
 #. i18n: ectx: property (toolTip), widget (QLabel, kAccountLabel)
 #. i18n: ectx: property (statusTip), widget (QLabel, kAccountLabel)
 #. i18n: ectx: property (toolTip), widget (SKGComboBox, kAccountEdit)
 #. i18n: ectx: property (statusTip), widget (SKGComboBox, kAccountEdit)
-#: plugins/skrooge/skrooge_importexport/skgimportexportpluginwidget_pref.ui:430
-#: plugins/skrooge/skrooge_importexport/skgimportexportpluginwidget_pref.ui:433
+#: plugins/skrooge/skrooge_importexport/skgimportexportpluginwidget_pref.ui:442
+#: plugins/skrooge/skrooge_importexport/skgimportexportpluginwidget_pref.ui:445
 #: plugins/skrooge/skrooge_operation/skgoperationpluginwidget_base.ui:390
 #: plugins/skrooge/skrooge_operation/skgoperationpluginwidget_base.ui:393
 #, kde-format
@@ -5908,15 +5950,15 @@ msgstr "Conta da operación"
 #. i18n: ectx: property (toolTip), widget (QLabel, kCategoryLabel)
 #. i18n: ectx: property (statusTip), widget (QLabel, kCategoryLabel)
 #. i18n: ectx: property (statusTip), widget (SKGComboBox, kCategoryEdit)
-#: plugins/skrooge/skrooge_importexport/skgimportexportpluginwidget_pref.ui:455
-#: plugins/skrooge/skrooge_importexport/skgimportexportpluginwidget_pref.ui:458
+#: plugins/skrooge/skrooge_importexport/skgimportexportpluginwidget_pref.ui:467
+#: plugins/skrooge/skrooge_importexport/skgimportexportpluginwidget_pref.ui:470
 #: plugins/skrooge/skrooge_operation/skgoperationpluginwidget_base.ui:841
 #, kde-format
 msgid "Category of the operation"
 msgstr "Categoría da operación"
 
 #. i18n: ectx: property (text), widget (QLabel, kCategoryLabel)
-#: plugins/skrooge/skrooge_importexport/skgimportexportpluginwidget_pref.ui:461
+#: plugins/skrooge/skrooge_importexport/skgimportexportpluginwidget_pref.ui:473
 #, kde-format
 msgctxt "Noun, the category of an item"
 msgid "Category:"
@@ -5927,38 +5969,38 @@ msgstr "Categoría:"
 #. i18n: ectx: property (toolTip), widget (QLabel, kQuantityLbl)
 #. i18n: ectx: property (statusTip), widget (QLabel, kQuantityLbl)
 #. i18n: ectx: property (statusTip), widget (SKGCalculatorEdit, kAmountEdit)
-#: plugins/skrooge/skrooge_importexport/skgimportexportpluginwidget_pref.ui:485
-#: plugins/skrooge/skrooge_importexport/skgimportexportpluginwidget_pref.ui:488
-#: plugins/skrooge/skrooge_importexport/skgimportexportpluginwidget_pref.ui:504
-#: plugins/skrooge/skrooge_importexport/skgimportexportpluginwidget_pref.ui:507
+#: plugins/skrooge/skrooge_importexport/skgimportexportpluginwidget_pref.ui:497
+#: plugins/skrooge/skrooge_importexport/skgimportexportpluginwidget_pref.ui:500
+#: plugins/skrooge/skrooge_importexport/skgimportexportpluginwidget_pref.ui:516
+#: plugins/skrooge/skrooge_importexport/skgimportexportpluginwidget_pref.ui:519
 #: plugins/skrooge/skrooge_operation/skgoperationpluginwidget_base.ui:501
 #, kde-format
 msgid "Amount of the operation"
 msgstr "Importe da operación"
 
 #. i18n: ectx: property (text), widget (QLabel, kAmountLabel)
-#: plugins/skrooge/skrooge_importexport/skgimportexportpluginwidget_pref.ui:491
+#: plugins/skrooge/skrooge_importexport/skgimportexportpluginwidget_pref.ui:503
 #, kde-format
 msgctxt "Noun, a numerical quantity"
 msgid "Amount:"
 msgstr "Importe:"
 
 #. i18n: ectx: property (text), widget (QLabel, kQuantityLbl)
-#: plugins/skrooge/skrooge_importexport/skgimportexportpluginwidget_pref.ui:510
+#: plugins/skrooge/skrooge_importexport/skgimportexportpluginwidget_pref.ui:522
 #, kde-format
 msgid "Quantity:"
 msgstr "Cantidade:"
 
 #. i18n: ectx: property (toolTip), widget (QLabel, kSignLbl)
 #. i18n: ectx: property (statusTip), widget (QLabel, kSignLbl)
-#: plugins/skrooge/skrooge_importexport/skgimportexportpluginwidget_pref.ui:523
-#: plugins/skrooge/skrooge_importexport/skgimportexportpluginwidget_pref.ui:526
+#: plugins/skrooge/skrooge_importexport/skgimportexportpluginwidget_pref.ui:535
+#: plugins/skrooge/skrooge_importexport/skgimportexportpluginwidget_pref.ui:538
 #, kde-format
 msgid "Sign of the operation"
 msgstr "Signo da operación"
 
 #. i18n: ectx: property (text), widget (QLabel, kSignLbl)
-#: plugins/skrooge/skrooge_importexport/skgimportexportpluginwidget_pref.ui:529
+#: plugins/skrooge/skrooge_importexport/skgimportexportpluginwidget_pref.ui:541
 #, kde-format
 msgid "Sign:"
 msgstr "Signo:"
@@ -5967,8 +6009,8 @@ msgstr "Signo:"
 #. i18n: ectx: property (statusTip), widget (QLabel, kUnitLbl)
 #. i18n: ectx: property (toolTip), widget (SKGUnitComboBox, kUnitEdit)
 #. i18n: ectx: property (statusTip), widget (SKGUnitComboBox, kUnitEdit)
-#: plugins/skrooge/skrooge_importexport/skgimportexportpluginwidget_pref.ui:542
-#: plugins/skrooge/skrooge_importexport/skgimportexportpluginwidget_pref.ui:545
+#: plugins/skrooge/skrooge_importexport/skgimportexportpluginwidget_pref.ui:554
+#: plugins/skrooge/skrooge_importexport/skgimportexportpluginwidget_pref.ui:557
 #: plugins/skrooge/skrooge_operation/skgoperationpluginwidget_base.ui:529
 #: plugins/skrooge/skrooge_operation/skgoperationpluginwidget_base.ui:532
 #, kde-format
@@ -5976,55 +6018,55 @@ msgid "Unit of the operation"
 msgstr "Unidade da operación"
 
 #. i18n: ectx: property (text), widget (QLabel, kUnitLbl)
-#: plugins/skrooge/skrooge_importexport/skgimportexportpluginwidget_pref.ui:548
+#: plugins/skrooge/skrooge_importexport/skgimportexportpluginwidget_pref.ui:560
 #, kde-format
 msgid "Unit:"
 msgstr "Unidade:"
 
 #. i18n: ectx: property (statusTip), widget (QLabel, kidtransaction)
 #. i18n: ectx: property (whatsThis), widget (QLabel, kidtransaction)
-#: plugins/skrooge/skrooge_importexport/skgimportexportpluginwidget_pref.ui:561
-#: plugins/skrooge/skrooge_importexport/skgimportexportpluginwidget_pref.ui:564
+#: plugins/skrooge/skrooge_importexport/skgimportexportpluginwidget_pref.ui:573
+#: plugins/skrooge/skrooge_importexport/skgimportexportpluginwidget_pref.ui:576
 #, kde-format
 msgid "Id to join all operations as a split operation"
 msgstr "Identificador para unir as operacións como unha operación múltiple."
 
 #. i18n: ectx: property (text), widget (QLabel, kidtransaction)
-#: plugins/skrooge/skrooge_importexport/skgimportexportpluginwidget_pref.ui:567
+#: plugins/skrooge/skrooge_importexport/skgimportexportpluginwidget_pref.ui:579
 #, kde-format
 msgid "Idtransaction:"
 msgstr "Identificador da transacción:"
 
 #. i18n: ectx: property (statusTip), widget (QLabel, label_8)
 #. i18n: ectx: property (whatsThis), widget (QLabel, label_8)
-#: plugins/skrooge/skrooge_importexport/skgimportexportpluginwidget_pref.ui:580
-#: plugins/skrooge/skrooge_importexport/skgimportexportpluginwidget_pref.ui:583
+#: plugins/skrooge/skrooge_importexport/skgimportexportpluginwidget_pref.ui:592
+#: plugins/skrooge/skrooge_importexport/skgimportexportpluginwidget_pref.ui:595
 #, kde-format
 msgid "Id to join all operations as a transfer"
 msgstr "Identificador para unir as operacións como unha transferencia."
 
 #. i18n: ectx: property (text), widget (QLabel, label_8)
-#: plugins/skrooge/skrooge_importexport/skgimportexportpluginwidget_pref.ui:586
+#: plugins/skrooge/skrooge_importexport/skgimportexportpluginwidget_pref.ui:598
 #, kde-format
 msgid "Idgroup:"
 msgstr "Identificador do grupo:"
 
 #. i18n: ectx: property (statusTip), widget (QLabel, label_9)
 #. i18n: ectx: property (whatsThis), widget (QLabel, label_9)
-#: plugins/skrooge/skrooge_importexport/skgimportexportpluginwidget_pref.ui:599
-#: plugins/skrooge/skrooge_importexport/skgimportexportpluginwidget_pref.ui:602
+#: plugins/skrooge/skrooge_importexport/skgimportexportpluginwidget_pref.ui:611
+#: plugins/skrooge/skrooge_importexport/skgimportexportpluginwidget_pref.ui:614
 #, kde-format
 msgid "To identify column to import as properties"
 msgstr "Identificar a columna que importar como propiedade."
 
 #. i18n: ectx: property (text), widget (QLabel, label_9)
-#: plugins/skrooge/skrooge_importexport/skgimportexportpluginwidget_pref.ui:605
+#: plugins/skrooge/skrooge_importexport/skgimportexportpluginwidget_pref.ui:617
 #, kde-format
 msgid "Property:"
 msgstr "Propiedade:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_6)
-#: plugins/skrooge/skrooge_importexport/skgimportexportpluginwidget_pref.ui:622
+#: plugins/skrooge/skrooge_importexport/skgimportexportpluginwidget_pref.ui:634
 #, kde-format
 msgid ""
 "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
@@ -6054,13 +6096,13 @@ msgstr ""
 "asociar automaticamente os atributos.</p></body></html>"
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
-#: plugins/skrooge/skrooge_importexport/skgimportexportpluginwidget_pref.ui:710
+#: plugins/skrooge/skrooge_importexport/skgimportexportpluginwidget_pref.ui:722
 #, kde-format
 msgid "Column positions:"
 msgstr "Posición das columnas:"
 
 #. i18n: ectx: property (text), widget (QLabel, kLabelColumns)
-#: plugins/skrooge/skrooge_importexport/skgimportexportpluginwidget_pref.ui:732
+#: plugins/skrooge/skrooge_importexport/skgimportexportpluginwidget_pref.ui:744
 #, kde-format
 msgid ""
 "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
@@ -6088,7 +6130,7 @@ msgstr ""
 "font-weight:600;\">|</span>):</p></body></html>"
 
 #. i18n: ectx: property (text), widget (QLabel, label_4)
-#: plugins/skrooge/skrooge_importexport/skgimportexportpluginwidget_pref.ui:758
+#: plugins/skrooge/skrooge_importexport/skgimportexportpluginwidget_pref.ui:770
 #, kde-format
 msgid ""
 "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
@@ -6138,71 +6180,86 @@ msgstr ""
 "underline;\">Exemplo:</span></p></body></html>"
 
 #. i18n: ectx: property (text), widget (QPushButton, More)
-#: plugins/skrooge/skrooge_importexport/skgimportexportpluginwidget_pref.ui:778
+#: plugins/skrooge/skrooge_importexport/skgimportexportpluginwidget_pref.ui:790
 #, kde-format
 msgid "Edit regular expressions..."
 msgstr "Editar as expresións regulares:"
 
 #. i18n: ectx: property (toolTip), widget (QLabel, kSignLbl_2)
 #. i18n: ectx: property (statusTip), widget (QLabel, kSignLbl_2)
-#: plugins/skrooge/skrooge_importexport/skgimportexportpluginwidget_pref.ui:790
-#: plugins/skrooge/skrooge_importexport/skgimportexportpluginwidget_pref.ui:793
+#: plugins/skrooge/skrooge_importexport/skgimportexportpluginwidget_pref.ui:802
+#: plugins/skrooge/skrooge_importexport/skgimportexportpluginwidget_pref.ui:805
 #, kde-format
 msgid "How to identify a debit"
 msgstr "Como identificar un débito."
 
 #. i18n: ectx: property (text), widget (QLabel, kSignLbl_2)
-#: plugins/skrooge/skrooge_importexport/skgimportexportpluginwidget_pref.ui:796
+#: plugins/skrooge/skrooge_importexport/skgimportexportpluginwidget_pref.ui:808
 #, kde-format
 msgid "Debit values of \"sign\" column:"
 msgstr "Valores de débito da columna do «signo»:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_12)
 #. i18n: ectx: property (text), widget (QLabel, label_11)
-#: plugins/skrooge/skrooge_importexport/skgimportexportpluginwidget_pref.ui:840
-#: plugins/skrooge/skrooge_importexport/skgimportexportpluginwidget_pref.ui:884
+#: plugins/skrooge/skrooge_importexport/skgimportexportpluginwidget_pref.ui:852
+#: plugins/skrooge/skrooge_importexport/skgimportexportpluginwidget_pref.ui:899
 #, kde-format
 msgid "Date format:"
 msgstr "Formato da data:"
 
+#. i18n: ectx: attribute (toolTip), widget (QWidget, kQif)
+#: plugins/skrooge/skrooge_importexport/skgimportexportpluginwidget_pref.ui:878
+#, fuzzy, kde-format
+#| msgid "Settings for CSV import"
+msgid "Settings for QIF import"
+msgstr "Configuración da importación de CSV"
+
 #. i18n: ectx: attribute (title), widget (QWidget, kBackends)
-#: plugins/skrooge/skrooge_importexport/skgimportexportpluginwidget_pref.ui:927
+#: plugins/skrooge/skrooge_importexport/skgimportexportpluginwidget_pref.ui:942
 #, kde-format
 msgid "Backends"
 msgstr "Infraestruturas"
 
+#. i18n: ectx: attribute (toolTip), widget (QWidget, kBackends)
+#: plugins/skrooge/skrooge_importexport/skgimportexportpluginwidget_pref.ui:945
+#, fuzzy, kde-format
+#| msgid "Settings for CSV import"
+msgid "Settings for import by backends"
+msgstr "Configuración da importación de CSV"
+
 #. i18n: ectx: property (text), widget (QCheckBox, kcfg_download_on_open)
-#: plugins/skrooge/skrooge_importexport/skgimportexportpluginwidget_pref.ui:969
+#: plugins/skrooge/skrooge_importexport/skgimportexportpluginwidget_pref.ui:987
 #: plugins/skrooge/skrooge_unit/skgunitpluginwidget_pref.ui:22
 #, kde-format
 msgid "Download on open"
 msgstr "Obter ao abrir"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, kcfg_download_frequency)
-#: plugins/skrooge/skrooge_importexport/skgimportexportpluginwidget_pref.ui:980
+#: plugins/skrooge/skrooge_importexport/skgimportexportpluginwidget_pref.ui:998
 #: plugins/skrooge/skrooge_unit/skgunitpluginwidget_pref.ui:33
 #, kde-format
 msgid "Once a day"
 msgstr "Unha vez ao día"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, kcfg_download_frequency)
-#: plugins/skrooge/skrooge_importexport/skgimportexportpluginwidget_pref.ui:985
+#: plugins/skrooge/skrooge_importexport/skgimportexportpluginwidget_pref.ui:1003
 #: plugins/skrooge/skrooge_unit/skgunitpluginwidget_pref.ui:38
 #, kde-format
 msgid "Once a week"
 msgstr "Unha vez á semana"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, kcfg_download_frequency)
-#: plugins/skrooge/skrooge_importexport/skgimportexportpluginwidget_pref.ui:990
+#: plugins/skrooge/skrooge_importexport/skgimportexportpluginwidget_pref.ui:1008
 #: plugins/skrooge/skrooge_unit/skgunitpluginwidget_pref.ui:43
 #, kde-format
 msgid "Once a month"
 msgstr "Unha vez ao mes"
 
 #. i18n: ectx: property (text), widget (QLabel, label_10)
-#: plugins/skrooge/skrooge_importexport/skgimportexportpluginwidget_pref.ui:1013
-#, kde-format
-msgid "List of backends used:"
+#: plugins/skrooge/skrooge_importexport/skgimportexportpluginwidget_pref.ui:1031
+#, fuzzy, kde-format
+#| msgid "List of backends used:"
+msgid "List of bac&kends used:"
 msgstr "Lista de infraestruturas utilizadas:"
 
 #. i18n: ectx: label, entry (fontFutureColor), group (skrooge_operation)
