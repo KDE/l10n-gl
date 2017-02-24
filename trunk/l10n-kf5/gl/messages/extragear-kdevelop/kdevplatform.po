@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdevplatform\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2017-02-21 08:43+0100\n"
+"POT-Creation-Date: 2017-02-24 03:55+0100\n"
 "PO-Revision-Date: 2017-02-04 13:57+0100\n"
 "Last-Translator: Adrián Chaves Fernández (Gallaecio) <adriyetichaves@gmail."
 "com>\n"
@@ -385,7 +385,7 @@ msgstr "Nome"
 
 #: debugger/variable/variablecollection.cpp:422
 #: debugger/variable/variabletooltip.cpp:102
-#: shell/settings/environmentgroupmodel.cpp:98
+#: shell/settings/environmentprofilemodel.cpp:106
 #, kde-format
 msgid "Value"
 msgstr "Valor"
@@ -1161,7 +1161,7 @@ msgid "Class"
 msgstr "Clase"
 
 #: language/duchain/navigation/abstractnavigationcontext.cpp:403
-#: shell/settings/environmentgroupmodel.cpp:95
+#: shell/settings/environmentprofilemodel.cpp:104
 #, kde-format
 msgid "Variable"
 msgstr "Variábel"
@@ -3223,7 +3223,7 @@ msgid "Provide a name for the project"
 msgstr "Indique un nome para o proxecto"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
-#: shell/projectinfopage.ui:30
+#: shell/projectinfopage.ui:30 shell/settings/environmentwidget.cpp:188
 #, kde-format
 msgid "Name:"
 msgstr "Nome:"
@@ -3837,66 +3837,80 @@ msgstr "Non se dispón de ningún formatador de fonte"
 msgid "Preview"
 msgstr "Vista previa"
 
-#: shell/settings/environmentpreferences.cpp:84
+#: shell/settings/environmentpreferences.cpp:86
 #, kde-format
 msgid "Environment"
 msgstr "Ambiente"
 
-#: shell/settings/environmentpreferences.cpp:89
+#: shell/settings/environmentpreferences.cpp:91
 #, kde-format
 msgid "Configure Environment Variables"
 msgstr "Configurar as variábeis do ambiente"
 
-#: shell/settings/environmentwidget.cpp:53
-#, kde-format
-msgid "Enter variable ..."
+#: shell/settings/environmentprofilelistmodel.cpp:61
+#, fuzzy, kde-format
+#| msgctxt "@item:inlistbox"
+#| msgid "Use default profile (currently: %1)"
+msgid "%1 (default profile)"
+msgstr "Empregar o perfil predeterminado (actual: %1)"
+
+#: shell/settings/environmentwidget.cpp:94
+#, fuzzy, kde-format
+#| msgid "Enter variable ..."
+msgid "Enter variable..."
 msgstr "Introduza unha variable…"
 
+#: shell/settings/environmentwidget.cpp:182
+#, fuzzy, kde-format
+#| msgid "New Environment Variable"
+msgid "Enter Name of New Environment Profile"
+msgstr "Nova variábel de contorna"
+
 #. i18n: ectx: property (toolTip), widget (QPushButton, batchModeEditButton)
-#: shell/settings/environmentwidget.cpp:154
-#: shell/settings/environmentwidget.ui:115
+#: shell/settings/environmentwidget.cpp:245
+#: shell/settings/environmentwidget.ui:130
 #, kde-format
 msgid "Batch Edit Mode"
 msgstr "Modo de edición en lote"
 
-#: shell/settings/environmentwidget.cpp:202
-#, kde-format
-msgctxt "a copy of the existing environment was created"
-msgid "%1 (Cloned %2)"
-msgstr "%1 (clonou %2)"
-
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: shell/settings/environmentwidget.ui:22
-#, kde-format
-msgid "Environment group:"
+#, fuzzy, kde-format
+#| msgid "Environment group:"
+msgid "Environment profile:"
 msgstr "Grupo de ambiente:"
 
-#. i18n: ectx: property (text), widget (QPushButton, addgrpBtn)
-#: shell/settings/environmentwidget.ui:42
-#, kde-format
-msgid "Add Group"
-msgstr "Engadir un grupo"
+#. i18n: ectx: property (toolTip), widget (QPushButton, addProfileButton)
+#: shell/settings/environmentwidget.ui:39
+#, fuzzy, kde-format
+#| msgid "Add New..."
+msgid "Add profile..."
+msgstr "Engadir un novo…"
 
-#. i18n: ectx: property (text), widget (QPushButton, clonegrpBtn)
+#. i18n: ectx: property (toolTip), widget (QPushButton, cloneProfileButton)
 #: shell/settings/environmentwidget.ui:49
-#, kde-format
-msgid "Clone Group"
-msgstr "Clonar o grupo"
+#, fuzzy, kde-format
+#| msgid "Close file"
+msgid "Clone profile..."
+msgstr "Pechar o ficheiro"
 
-#. i18n: ectx: property (text), widget (QPushButton, removegrpBtn)
-#: shell/settings/environmentwidget.ui:56
-#, kde-format
-msgid "Remove Group"
-msgstr "Eliminar o grupo"
+#. i18n: ectx: property (toolTip), widget (QPushButton, removeProfileButton)
+#: shell/settings/environmentwidget.ui:59
+#, fuzzy, kde-format
+#| msgctxt "@action:button"
+#| msgid "Remove lock file"
+msgid "Remove profile"
+msgstr "Eliminar o ficheiro de boqueo"
 
-#. i18n: ectx: property (text), widget (QPushButton, setAsDefaultBtn)
-#: shell/settings/environmentwidget.ui:63
-#, kde-format
-msgid "Set As Default Group"
+#. i18n: ectx: property (toolTip), widget (QPushButton, setAsDefaultProfileButton)
+#: shell/settings/environmentwidget.ui:69
+#, fuzzy, kde-format
+#| msgid "Set As Default Group"
+msgid "Set as default"
 msgstr "Estabelecer como grupo predeterminado"
 
-#. i18n: ectx: property (toolTip), widget (QPushButton, deleteButton)
-#: shell/settings/environmentwidget.ui:102
+#. i18n: ectx: property (toolTip), widget (QPushButton, removeVariableButton)
+#: shell/settings/environmentwidget.ui:114
 #, kde-format
 msgid "Remove variable"
 msgstr "Eliminar a variábel"
@@ -5637,8 +5651,18 @@ msgstr "Diferenzas entre revisións"
 msgid "Logview"
 msgstr "Vista do rexistro"
 
-#~ msgid "Add New..."
-#~ msgstr "Engadir un novo…"
+#~ msgctxt "a copy of the existing environment was created"
+#~ msgid "%1 (Cloned %2)"
+#~ msgstr "%1 (clonou %2)"
+
+#~ msgid "Add Group"
+#~ msgstr "Engadir un grupo"
+
+#~ msgid "Clone Group"
+#~ msgstr "Clonar o grupo"
+
+#~ msgid "Remove Group"
+#~ msgstr "Eliminar o grupo"
 
 #~ msgid "Remove Selected"
 #~ msgstr "Eliminar o escollido"
@@ -6082,9 +6106,6 @@ msgstr "Vista do rexistro"
 #~ msgstr[0] "A sesión quebrou %1 vez seguida"
 #~ msgstr[1] "A sesión quebrou %1 veces seguidas"
 
-#~ msgid "New Environment Variable"
-#~ msgstr "Nova variábel de contorna"
-
 #~ msgctxt "Name of an environment variable"
 #~ msgid "Variable Name:"
 #~ msgstr "Nome da variábel:"
@@ -6185,10 +6206,6 @@ msgstr "Vista do rexistro"
 #~ "non haxa ningún proceso en execución que use esta sesión.</p><p>Caso "
 #~ "contrario, feche a instancia do aplicativo ofensor ou escolla outra "
 #~ "sesión para iniciar.</p>"
-
-#~ msgctxt "@action:button"
-#~ msgid "Remove lock file"
-#~ msgstr "Eliminar o ficheiro de boqueo"
 
 #~ msgid "Do not obtain"
 #~ msgstr "Non obter"
