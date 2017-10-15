@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2017-08-02 07:03+0200\n"
+"POT-Creation-Date: 2017-10-15 03:24+0200\n"
 "PO-Revision-Date: 2017-10-14 09:43+0100\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Galician <kde-i18n-doc@kde.org>\n"
@@ -3687,7 +3687,7 @@ msgstr "O complemento «%1» non se recoñece ou é incorrecto."
 msgid "Error On Loading Plugin"
 msgstr "Erro ao cargar o complemento"
 
-#: libkwave/PluginManager.cpp:658
+#: libkwave/PluginManager.cpp:656
 #, kde-format
 msgid "Loading plugin %1..."
 msgstr "Cargando o complemento %1…"
@@ -3851,7 +3851,7 @@ msgstr ""
 "<b>Consello</b>: pode configurar a cantidade de memoria<br>dispoñíbel para a "
 "funcionalidade de desfacer en «%1 → %2»."
 
-#: libkwave/SignalManager.cpp:1397 plugins/stringenter/StringEnterPlugin.cpp:53
+#: libkwave/SignalManager.cpp:1397
 #, kde-format
 msgid "Settings"
 msgstr "Configuración"
@@ -4117,16 +4117,16 @@ msgid "Fade Leadout"
 msgstr "Esvaer o final"
 
 #. i18n: ectx: property (suffix), widget (QSpinBox, spinbox_2)
-#: plugins/band_pass/BandPassDialog.cpp:60
-#: plugins/band_pass/BandPassDlg.ui:117 plugins/lowpass/LowPassDialog.cpp:59
+#: plugins/band_pass/BandPassDialog.cpp:60 plugins/band_pass/BandPassDlg.ui:117
+#: plugins/lowpass/LowPassDialog.cpp:59
 #: plugins/notch_filter/NotchFilterDialog.cpp:63
 #: plugins/sonagram/SonagramWindow.cpp:166
 #, kde-format
 msgid "Hz"
 msgstr "Hz"
 
-#: plugins/band_pass/BandPassDialog.cpp:65
-#: plugins/lowpass/LowPassDialog.cpp:64 plugins/noise/NoiseDialog.cpp:276
+#: plugins/band_pass/BandPassDialog.cpp:65 plugins/lowpass/LowPassDialog.cpp:64
+#: plugins/noise/NoiseDialog.cpp:276
 #: plugins/notch_filter/NotchFilterDialog.cpp:68
 #: plugins/volume/VolumeDialog.cpp:262
 #, kde-format
@@ -4145,8 +4145,7 @@ msgstr "&Deter"
 #: plugins/band_pass/BandPassDialog.cpp:198
 #: plugins/band_pass/BandPassDlg.ui:161 plugins/lowpass/LowPassDialog.cpp:174
 #: plugins/lowpass/LowPassDlg.ui:154 plugins/noise/NoiseDialog.cpp:365
-#: plugins/noise/NoiseDlg.ui:238
-#: plugins/notch_filter/NotchFilterDialog.cpp:202
+#: plugins/noise/NoiseDlg.ui:238 plugins/notch_filter/NotchFilterDialog.cpp:202
 #: plugins/notch_filter/NotchFilterDlg.ui:193
 #: plugins/pitch_shift/PitchShiftDialog.cpp:329
 #: plugins/pitch_shift/PitchShiftDlg.ui:63
@@ -4320,8 +4319,10 @@ msgstr "Produciuse un erro ao procesar os metadatos de FLAC (%s)."
 msgid "Unable to open the FLAC encoder."
 msgstr "Non foi posíbel abrir o codificador de FLAC."
 
-#: plugins/codec_mp3/MP3CodecPlugin.cpp:49
-#, kde-format
+#: plugins/codec_mp3/MP3CodecPlugin.cpp:50
+#, fuzzy, kde-format
+#| msgid "MP3 Encoder Setup"
+msgctxt "menu: /Settings/MP3 Encoder Setup"
 msgid "MP3 Encoder Setup"
 msgstr "Configuración do codificador de MP3"
 
@@ -4439,12 +4440,60 @@ msgstr ""
 msgid "(user defined)"
 msgstr "(definido polo usuario)"
 
-#: plugins/codec_mp3/MP3EncoderDialog.cpp:579
+#: plugins/codec_mp3/MP3EncoderDialog.cpp:341
+#, fuzzy, kde-format
+#| msgid ""
+#| "sample rate in Hz (use %1 as placeholder)\n"
+#| "or kHz (use [%khz] as placeholder)"
+msgid ""
+"sample rate in Hz (use %1 as placeholder)\n"
+"or kHz (use %2 as placeholder)"
+msgstr ""
+"Taxa de mostraxe en Hz (use %1 como elemento de substitución)\n"
+"ou kHz (use [%khz] como elemento de substitución)."
+
+#: plugins/codec_mp3/MP3EncoderDialog.cpp:345
+#, kde-format
+msgid ""
+"bits per sample,\n"
+"use %1 as placeholder"
+msgstr ""
+"Bits por mostra,\n"
+"use %1 como elemento de substitución."
+
+#: plugins/codec_mp3/MP3EncoderDialog.cpp:349
+#, kde-format
+msgid ""
+"parameter for minimum bitrate in bits/sec\n"
+"(use %1 as placeholder)"
+msgstr ""
+"Parámetro para a taxa de bits mínima en bit/s\n"
+"(use %1 como elemento de substitución)."
+
+#: plugins/codec_mp3/MP3EncoderDialog.cpp:353
+#, kde-format
+msgid ""
+"parameter for maximum bitrate in bits/sec\n"
+"(use %1 as placeholder)"
+msgstr ""
+"Parámetro para a taxa de bits máxima en bit/s\n"
+"(use %1 como elemento de substitución)."
+
+#: plugins/codec_mp3/MP3EncoderDialog.cpp:357
+#, kde-format
+msgid ""
+"parameter for average bitrate in bits/sec\n"
+"(use %1 as placeholder)"
+msgstr ""
+"Parámetro para a taxa de bits media en bit/s\n"
+"(use %1 como elemento de substitución)."
+
+#: plugins/codec_mp3/MP3EncoderDialog.cpp:603
 #, kde-format
 msgid "Select MP3 Encoder"
 msgstr "Seleccionar un codificador de MP3"
 
-#: plugins/codec_mp3/MP3EncoderDialog.cpp:633
+#: plugins/codec_mp3/MP3EncoderDialog.cpp:657
 #, kde-format
 msgid "Congratulation, the test was successful!"
 msgstr "Parabéns, a proba completouse correctamente."
@@ -4594,60 +4643,40 @@ msgstr "Formato"
 msgid "Sample Rate:"
 msgstr "Taxa de mostraxe:"
 
-#. i18n: ectx: property (toolTip), widget (QLineEdit, edSampleRate)
-#: plugins/codec_mp3/MP3EncoderDialogBase.ui:296
-#, no-c-format, kde-format
-msgid ""
-"sample rate in Hz (use %1 as placeholder)\n"
-"or kHz (use [%khz] as placeholder)"
-msgstr ""
-"Taxa de mostraxe en Hz (use %1 como elemento de substitución)\n"
-"ou kHz (use [%khz] como elemento de substitución)."
-
 #. i18n: ectx: property (text), widget (QLabel, lblBitsPerSample)
-#: plugins/codec_mp3/MP3EncoderDialogBase.ui:306
+#: plugins/codec_mp3/MP3EncoderDialogBase.ui:302
 #, kde-format
 msgid "Bits per Sample:"
 msgstr "Bits por mostra:"
 
-#. i18n: ectx: property (toolTip), widget (QLineEdit, edBitsPerSample)
-#: plugins/codec_mp3/MP3EncoderDialogBase.ui:326
-#, no-c-format, kde-format
-msgid ""
-"bits per sample,\n"
-"use %1 as placeholder"
-msgstr ""
-"Bits por mostra,\n"
-"use %1 como elemento de substitución."
-
 #. i18n: ectx: property (text), widget (QLabel, lblChannels)
 #. i18n: ectx: property (text), widget (QLabel, textLabel4)
-#: plugins/codec_mp3/MP3EncoderDialogBase.ui:336
+#: plugins/codec_mp3/MP3EncoderDialogBase.ui:328
 #: plugins/playback/PlayBackDlg.ui:246
 #, kde-format
 msgid "Channels:"
 msgstr "Canles:"
 
 #. i18n: ectx: property (text), widget (QLabel, lblMono)
-#: plugins/codec_mp3/MP3EncoderDialogBase.ui:349
+#: plugins/codec_mp3/MP3EncoderDialogBase.ui:341
 #, kde-format
 msgid "mono:"
 msgstr "mono:"
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, edMono)
-#: plugins/codec_mp3/MP3EncoderDialogBase.ui:368
+#: plugins/codec_mp3/MP3EncoderDialogBase.ui:360
 #, kde-format
 msgid "parameter for single channel files (mono)"
 msgstr "Parámetro para ficheiro dunha única canle (mono)."
 
 #. i18n: ectx: property (text), widget (QLabel, lblStereo)
-#: plugins/codec_mp3/MP3EncoderDialogBase.ui:384
+#: plugins/codec_mp3/MP3EncoderDialogBase.ui:376
 #, kde-format
 msgid "stereo:"
 msgstr "estéreo:"
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, edStereo)
-#: plugins/codec_mp3/MP3EncoderDialogBase.ui:404
+#: plugins/codec_mp3/MP3EncoderDialogBase.ui:396
 #, kde-format
 msgid ""
 "parameter for multi channel files\n"
@@ -4655,244 +4684,214 @@ msgid ""
 msgstr "Parámetro para ficheiros de 2 (estéreo) ou máis canles."
 
 #. i18n: ectx: attribute (title), widget (QWidget, tabQuality)
-#: plugins/codec_mp3/MP3EncoderDialogBase.ui:428
+#: plugins/codec_mp3/MP3EncoderDialogBase.ui:420
 #, kde-format
 msgid "Quality"
 msgstr "Calidade"
 
 #. i18n: ectx: property (text), widget (QLabel, lblBitrateMax)
-#: plugins/codec_mp3/MP3EncoderDialogBase.ui:440
+#: plugins/codec_mp3/MP3EncoderDialogBase.ui:432
 #, kde-format
 msgid "max"
 msgstr "máx"
 
 #. i18n: ectx: property (text), widget (QLabel, lblBitrateMin)
-#: plugins/codec_mp3/MP3EncoderDialogBase.ui:453
+#: plugins/codec_mp3/MP3EncoderDialogBase.ui:445
 #, kde-format
 msgid "min"
 msgstr "mín"
 
-#. i18n: ectx: property (toolTip), widget (QLineEdit, edBitrateMin)
-#: plugins/codec_mp3/MP3EncoderDialogBase.ui:486
-#, no-c-format, kde-format
-msgid ""
-"parameter for minimum bitrate in bits/sec\n"
-"(use %1 as placeholder)"
-msgstr ""
-"Parámetro para a taxa de bits mínima en bit/s\n"
-"(use %1 como elemento de substitución)."
-
-#. i18n: ectx: property (toolTip), widget (QLineEdit, edBitrateMax)
-#: plugins/codec_mp3/MP3EncoderDialogBase.ui:509
-#, no-c-format, kde-format
-msgid ""
-"parameter for maximum bitrate in bits/sec\n"
-"(use %1 as placeholder)"
-msgstr ""
-"Parámetro para a taxa de bits máxima en bit/s\n"
-"(use %1 como elemento de substitución)."
-
 #. i18n: ectx: property (text), widget (QLabel, lblBitrate)
-#: plugins/codec_mp3/MP3EncoderDialogBase.ui:519
+#: plugins/codec_mp3/MP3EncoderDialogBase.ui:503
 #, kde-format
 msgid "Bitrate:"
 msgstr "Taxa de bits:"
 
 #. i18n: ectx: property (text), widget (QLabel, lblBitrateAvg)
-#: plugins/codec_mp3/MP3EncoderDialogBase.ui:532
+#: plugins/codec_mp3/MP3EncoderDialogBase.ui:516
 #, kde-format
 msgid "avg"
 msgstr "Media"
 
-#. i18n: ectx: property (toolTip), widget (QLineEdit, edBitrateAvg)
-#: plugins/codec_mp3/MP3EncoderDialogBase.ui:552
-#, no-c-format, kde-format
-msgid ""
-"parameter for average bitrate in bits/sec\n"
-"(use %1 as placeholder)"
-msgstr ""
-"Parámetro para a taxa de bits media en bit/s\n"
-"(use %1 como elemento de substitución)."
-
 #. i18n: ectx: attribute (title), widget (QWidget, tabEncoding)
-#: plugins/codec_mp3/MP3EncoderDialogBase.ui:563
+#: plugins/codec_mp3/MP3EncoderDialogBase.ui:543
 #, kde-format
 msgid "Encoding"
 msgstr "Codificación"
 
 #. i18n: ectx: property (text), widget (QLabel, lblEmphasis)
-#: plugins/codec_mp3/MP3EncoderDialogBase.ui:569
+#: plugins/codec_mp3/MP3EncoderDialogBase.ui:549
 #, kde-format
 msgid "Emphasis:"
 msgstr "Énfase:"
 
 #. i18n: ectx: property (text), widget (QLabel, lblEmphasisNone)
-#: plugins/codec_mp3/MP3EncoderDialogBase.ui:582
+#: plugins/codec_mp3/MP3EncoderDialogBase.ui:562
 #, kde-format
 msgid "none"
 msgstr "ningún"
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, edEmphasisNone)
-#: plugins/codec_mp3/MP3EncoderDialogBase.ui:607
+#: plugins/codec_mp3/MP3EncoderDialogBase.ui:587
 #, kde-format
 msgid "parameter for no emphasis"
 msgstr "Parámetro para non usar énfase."
 
 #. i18n: ectx: property (text), widget (QLabel, lblEmphasis5015ms)
 #. i18n: ectx: property (text), item, widget (KComboBox, cbMpegEmphasis)
-#: plugins/codec_mp3/MP3EncoderDialogBase.ui:623
+#: plugins/codec_mp3/MP3EncoderDialogBase.ui:603
 #: plugins/fileinfo/FileInfoDlg.ui:992
 #, kde-format
 msgid "50/15ms"
 msgstr "50/15 ms"
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, edEmphasis5015ms)
-#: plugins/codec_mp3/MP3EncoderDialogBase.ui:642
+#: plugins/codec_mp3/MP3EncoderDialogBase.ui:622
 #, kde-format
 msgid "parameter for 50/15ms emphasis"
 msgstr "Parámetro para usar un énfase de 50/15ms."
 
 #. i18n: ectx: property (text), widget (QLabel, lblEmphasisCCIT_J17)
-#: plugins/codec_mp3/MP3EncoderDialogBase.ui:658
+#: plugins/codec_mp3/MP3EncoderDialogBase.ui:638
 #, kde-format
 msgid "CCIT J17"
 msgstr "CCIT J17"
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, edEmphasisCCIT_J17)
-#: plugins/codec_mp3/MP3EncoderDialogBase.ui:677
+#: plugins/codec_mp3/MP3EncoderDialogBase.ui:657
 #, kde-format
 msgid "parameter for CCIT J17 emphasis"
 msgstr "Parámetro para usar un énfase CCIT J17."
 
 #. i18n: ectx: property (text), widget (QLabel, lblNoiseShaping)
-#: plugins/codec_mp3/MP3EncoderDialogBase.ui:687
+#: plugins/codec_mp3/MP3EncoderDialogBase.ui:667
 #, kde-format
 msgid "Noise Shaping:"
 msgstr "Modelado de ruído:"
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, edNoiseShaping)
-#: plugins/codec_mp3/MP3EncoderDialogBase.ui:706
+#: plugins/codec_mp3/MP3EncoderDialogBase.ui:686
 #, kde-format
 msgid "parameters for configuring noise shaping"
 msgstr "Parámetros para configurar o modelado de ruído."
 
 #. i18n: ectx: property (text), widget (QLabel, lblCompatibility)
-#: plugins/codec_mp3/MP3EncoderDialogBase.ui:716
+#: plugins/codec_mp3/MP3EncoderDialogBase.ui:696
 #, kde-format
 msgid "Compatibility:"
 msgstr "Compatibilidade:"
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, edCompatibility)
-#: plugins/codec_mp3/MP3EncoderDialogBase.ui:735
+#: plugins/codec_mp3/MP3EncoderDialogBase.ui:715
 #, kde-format
 msgid "parameters for compatibility settings"
 msgstr "Parámetros para configurar a compatibilidade."
 
 #. i18n: ectx: attribute (title), widget (QWidget, tabFlags)
-#: plugins/codec_mp3/MP3EncoderDialogBase.ui:759
+#: plugins/codec_mp3/MP3EncoderDialogBase.ui:739
 #, kde-format
 msgid "Flags"
 msgstr "Bandeiras"
 
 #. i18n: ectx: property (text), widget (QLabel, lblCopyright)
-#: plugins/codec_mp3/MP3EncoderDialogBase.ui:771
+#: plugins/codec_mp3/MP3EncoderDialogBase.ui:751
 #, kde-format
 msgid "Copyright:"
 msgstr "Dereitos de copia:"
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, edCopyright)
-#: plugins/codec_mp3/MP3EncoderDialogBase.ui:790
+#: plugins/codec_mp3/MP3EncoderDialogBase.ui:770
 #, kde-format
 msgid "parameter for marking the file as copyrighted"
 msgstr ""
 "Parámetro para indicar que o ficheiro está protexido por dereitos de autor."
 
 #. i18n: ectx: property (text), widget (QLabel, lblOriginal)
-#: plugins/codec_mp3/MP3EncoderDialogBase.ui:806
+#: plugins/codec_mp3/MP3EncoderDialogBase.ui:786
 #, kde-format
 msgid "Original:"
 msgstr "Orixinal:"
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, edOriginal)
-#: plugins/codec_mp3/MP3EncoderDialogBase.ui:825
+#: plugins/codec_mp3/MP3EncoderDialogBase.ui:805
 #, kde-format
 msgid "parameter for marking the signal as original (not a copy)"
 msgstr "Parámetro para indicar que o sinal é o orixinal, e non unha copia."
 
 #. i18n: ectx: property (text), widget (QLabel, lblProtect)
-#: plugins/codec_mp3/MP3EncoderDialogBase.ui:841
+#: plugins/codec_mp3/MP3EncoderDialogBase.ui:821
 #, kde-format
 msgid "Protect:"
 msgstr "Protexer:"
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, edProtect)
-#: plugins/codec_mp3/MP3EncoderDialogBase.ui:860
+#: plugins/codec_mp3/MP3EncoderDialogBase.ui:840
 #, kde-format
 msgid "parameter to enable CRC protection"
 msgstr "Parámetro para activar a protección CRC."
 
 #. i18n: ectx: property (text), widget (QLabel, lblPrepend)
-#: plugins/codec_mp3/MP3EncoderDialogBase.ui:886
+#: plugins/codec_mp3/MP3EncoderDialogBase.ui:866
 #, kde-format
 msgid "Prepend:"
 msgstr "Engadir ao comezo:"
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, edPrepend)
-#: plugins/codec_mp3/MP3EncoderDialogBase.ui:899
+#: plugins/codec_mp3/MP3EncoderDialogBase.ui:879
 #, kde-format
 msgid "additional parameters to put at the start of the encoder command line"
 msgstr "Parámetros adicionais para colocar ao comezo da orde do codificador."
 
 #. i18n: ectx: property (text), widget (QLabel, lblAppend)
-#: plugins/codec_mp3/MP3EncoderDialogBase.ui:909
+#: plugins/codec_mp3/MP3EncoderDialogBase.ui:889
 #, kde-format
 msgid "Append:"
 msgstr "Engadir ao final:"
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, edAppend)
-#: plugins/codec_mp3/MP3EncoderDialogBase.ui:922
+#: plugins/codec_mp3/MP3EncoderDialogBase.ui:902
 #, kde-format
 msgid "additional parameters to append at the end of the encoder command line"
 msgstr "Parámetros adicionais para colocar ao final da orde do codificador."
 
 #. i18n: ectx: attribute (title), widget (QWidget, tab)
-#: plugins/codec_mp3/MP3EncoderDialogBase.ui:946
+#: plugins/codec_mp3/MP3EncoderDialogBase.ui:926
 #, kde-format
 msgid "Info"
 msgstr "Información"
 
 #. i18n: ectx: property (text), widget (QLabel, lblHelp)
-#: plugins/codec_mp3/MP3EncoderDialogBase.ui:952
+#: plugins/codec_mp3/MP3EncoderDialogBase.ui:932
 #, kde-format
 msgid "Encoder Help:"
 msgstr "Axuda do codificador:"
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, edEncoderHelp)
-#: plugins/codec_mp3/MP3EncoderDialogBase.ui:977
+#: plugins/codec_mp3/MP3EncoderDialogBase.ui:957
 #, kde-format
 msgid "parameter for getting usage information of the encoder"
 msgstr "Parámetro para obter información sobre o uso do codificador."
 
 #. i18n: ectx: property (text), widget (QLabel, lblEncoderInfo)
-#: plugins/codec_mp3/MP3EncoderDialogBase.ui:987
+#: plugins/codec_mp3/MP3EncoderDialogBase.ui:967
 #, kde-format
 msgid "Version Info:"
 msgstr "Información da versión:"
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, edVersionInfo)
-#: plugins/codec_mp3/MP3EncoderDialogBase.ui:1025
+#: plugins/codec_mp3/MP3EncoderDialogBase.ui:1005
 #, kde-format
 msgid "parameter for getting the encoder version information"
 msgstr "Parámetro para obter información sobre a versión do codificador."
 
 #. i18n: ectx: property (toolTip), widget (QPushButton, btTest)
-#: plugins/codec_mp3/MP3EncoderDialogBase.ui:1067
+#: plugins/codec_mp3/MP3EncoderDialogBase.ui:1047
 #, kde-format
 msgid "try to encode some short test signal with the current settings"
 msgstr "Intentar codificar un sinal curto de proba coa configuración actual."
 
 #. i18n: ectx: property (text), widget (QPushButton, btTest)
-#: plugins/codec_mp3/MP3EncoderDialogBase.ui:1070
+#: plugins/codec_mp3/MP3EncoderDialogBase.ui:1050
 #, kde-format
 msgid "Test..."
 msgstr "Probar…"
@@ -5333,16 +5332,16 @@ msgstr "Formato das etiquetas:"
 #, no-c-format, kde-format
 msgid ""
 "<html><head/><body><p>Select a pattern for detecting title and artist from "
-"the text of a label.<br/>It currently understands the following "
-"placeholders:</p><ul style=\"margin-top: 0px; margin-bottom: 0px; margin-"
-"left: 0px; margin-right: 0px; -qt-list-indent: 1;\"><li style=\" margin-"
-"top:12px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-"
+"the text of a label.<br/>It currently understands the following placeholders:"
+"</p><ul style=\"margin-top: 0px; margin-bottom: 0px; margin-left: 0px; "
+"margin-right: 0px; -qt-list-indent: 1;\"><li style=\" margin-top:12px; "
+"margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; "
+"text-indent:0px;\"><span style=\" font-family:'Courier New,courier'; font-"
+"weight:600;\">[%title] </span>title of the song</li><li style=\" margin-"
+"top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-"
 "indent:0; text-indent:0px;\"><span style=\" font-family:'Courier New,"
-"courier'; font-weight:600;\">[%title] </span>title of the song</li><li "
-"style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
-"family:'Courier New,courier'; font-weight:600;\">[%artist]</span> name of "
-"the artist</li></ul></body></html>"
+"courier'; font-weight:600;\">[%artist]</span> name of the artist</li></ul></"
+"body></html>"
 msgstr ""
 "<html><head/><body><p>Seleccionar un padrón para detectar o título e mailo "
 "intérprete a partir do texto dunha etiqueta.<br/>Actualmente admite as "
@@ -6960,8 +6959,8 @@ msgstr "Reproducir un son curto de proba"
 #: plugins/playback/PlayBackDlg.ui:461
 #, kde-format
 msgid ""
-"<b>Test</b><p>Try to play a short sound using the current settings.</p><p><i>"
-"(Sorry, not implemented yet!)</i></p>"
+"<b>Test</b><p>Try to play a short sound using the current settings.</"
+"p><p><i>(Sorry, not implemented yet!)</i></p>"
 msgstr ""
 "<b>Probar</b> <p>Intentar reproducir un son curto usando a configuración "
 "actual.</p> <p><i>(Esta funcionalidade aínda non está lista!)</i></p>"
@@ -8017,8 +8016,10 @@ msgstr "Insira unha orde:"
 msgid "please enter a text command here..."
 msgstr "Insira o texto da orde."
 
-#: plugins/stringenter/StringEnterPlugin.cpp:53
-#, kde-format
+#: plugins/stringenter/StringEnterPlugin.cpp:54
+#, fuzzy, kde-format
+#| msgid "Enter Command"
+msgctxt "menu: /Settings/Enter Command"
 msgid "Enter Command"
 msgstr "Insira unha orde"
 
