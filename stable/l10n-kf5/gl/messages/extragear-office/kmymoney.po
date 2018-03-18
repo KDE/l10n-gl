@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gl\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2018-03-13 06:01+0100\n"
+"POT-Creation-Date: 2018-03-18 05:48+0100\n"
 "PO-Revision-Date: 2018-02-01 20:38+0100\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Galician <kde-i18n-doc@kde.org>\n"
@@ -1126,13 +1126,13 @@ msgid "Name"
 msgstr "Nome"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, m_currencyList)
-#. i18n: ectx: property (text), widget (QTreeWidget, accountsList)
 #. i18n: ectx: property (text), widget (QLabel, label)
+#. i18n: ectx: property (text), widget (QTreeWidget, accountsList)
 #: kmymoney/dialogs/kavailablecurrencydlg.ui:47
 #: kmymoney/dialogs/kcurrencyeditdlg.ui:47
 #: kmymoney/dialogs/kequitypriceupdatedlg.cpp:92
-#: kmymoney/plugins/weboob/dialogs/mapaccount.ui:63
-#: kmymoney/plugins/weboob/dialogs/webaccount.ui:26
+#: kmymoney/plugins/weboob/dialogs/accountsettings.ui:26
+#: kmymoney/plugins/weboob/dialogs/mapaccountwizard.ui:63
 #, kde-format
 msgid "ID"
 msgstr "Identificador"
@@ -2298,7 +2298,7 @@ msgstr "Valor"
 #. i18n: ectx: property (text), widget (QTreeWidget, accountsList)
 #: kmymoney/dialogs/kenterscheduledlg.ui:180
 #: kmymoney/models/ledgermodel.cpp:143 kmymoney/models/splitmodel.cpp:146
-#: kmymoney/plugins/weboob/dialogs/mapaccount.ui:73
+#: kmymoney/plugins/weboob/dialogs/mapaccountwizard.ui:73
 #: kmymoney/reports/kreportchartview.cpp:171 kmymoney/reports/listtable.cpp:686
 #: kmymoney/widgets/register.cpp:170
 #: kmymoney/widgets/reporttabrowcolquery.ui:313
@@ -5563,8 +5563,8 @@ msgstr "Número de identificación"
 #: kmymoney/plugins/csv/import/investmentwizardpage.cpp:71
 #: kmymoney/plugins/csv/import/investmentwizardpage.ui:332
 #: kmymoney/plugins/csv/import/securitiesdlg.ui:82
-#: kmymoney/plugins/weboob/dialogs/mapaccount.ui:28
-#: kmymoney/plugins/weboob/dialogs/mapaccount.ui:68
+#: kmymoney/plugins/weboob/dialogs/mapaccountwizard.ui:28
+#: kmymoney/plugins/weboob/dialogs/mapaccountwizard.ui:68
 #, kde-format
 msgid "Name"
 msgstr "Nome"
@@ -13606,10 +13606,10 @@ msgstr "Primeira posíbel"
 msgid "Default start date for statement download"
 msgstr "Data inicial para a descarga do extracto de conta"
 
-#. i18n: ectx: property (windowTitle), widget (QWizard, WbMapAccountDialog)
+#. i18n: ectx: property (windowTitle), widget (QWizard, MapAccountWizard)
 #. i18n: ectx: property (windowTitle), widget (QDialog, KBMapAccount)
 #: kmymoney/plugins/kbanking/dialogs/kbmapaccount.ui:14
-#: kmymoney/plugins/weboob/dialogs/mapaccount.ui:14
+#: kmymoney/plugins/weboob/dialogs/mapaccountwizard.ui:14
 #, kde-format
 msgid "Account Mapping"
 msgstr "Asociación de contas"
@@ -14075,7 +14075,7 @@ msgstr "Entidade"
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: kmymoney/plugins/kbanking/widgets/kbjoblist.cpp:185
-#: kmymoney/plugins/weboob/dialogs/webaccount.ui:39
+#: kmymoney/plugins/weboob/dialogs/accountsettings.ui:39
 #, kde-format
 msgid "Backend"
 msgstr "Infraestrutura"
@@ -14316,7 +14316,7 @@ msgstr "Identificador único de cliente"
 #. i18n: ectx: property (title), widget (QWizardPage, pageAccounts)
 #. i18n: ectx: property (title), widget (QWizardPage, AccountPage)
 #: kmymoney/plugins/ofx/import/dialogs/konlinebankingsetupwizard.ui:293
-#: kmymoney/plugins/weboob/dialogs/mapaccount.ui:53
+#: kmymoney/plugins/weboob/dialogs/mapaccountwizard.ui:53
 #, kde-format
 msgid "Select Account"
 msgstr "Escolla unha conta"
@@ -15678,53 +15678,79 @@ msgid_plural "Total of %1 outstanding deposits amounting to"
 msgstr[0] "Unha imposición en man de"
 msgstr[1] "Un total de %1 imposicións en man por un importe total de"
 
-#: kmymoney/plugins/weboob/dialogs/mapaccount.cpp:96
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#: kmymoney/plugins/weboob/dialogs/accountsettings.ui:46
+#, kde-format
+msgid "History"
+msgstr "Historial"
+
+#: kmymoney/plugins/weboob/dialogs/mapaccountwizard.cpp:141
 #, kde-format
 msgid "Loading Weboob backend..."
 msgstr "Cargando a infraestrutura de Weboob…"
 
-#: kmymoney/plugins/weboob/dialogs/mapaccount.cpp:97
+#: kmymoney/plugins/weboob/dialogs/mapaccountwizard.cpp:142
 #, kde-format
 msgid "Getting list of backends."
 msgstr "Obtendo a lista de infraestruturas."
 
-#: kmymoney/plugins/weboob/dialogs/mapaccount.cpp:108
-#: kmymoney/plugins/weboob/weboob.cpp:127
+#: kmymoney/plugins/weboob/dialogs/mapaccountwizard.cpp:151
+#: kmymoney/plugins/weboob/weboob.cpp:157
 #, kde-format
 msgid "Connecting to bank..."
 msgstr "Conectando ao banco…"
 
-#: kmymoney/plugins/weboob/dialogs/mapaccount.cpp:109
+#: kmymoney/plugins/weboob/dialogs/mapaccountwizard.cpp:152
 #, kde-format
 msgid "Getting list of accounts from your bank."
 msgstr "Obtendo a lista de contas do banco."
 
+#: kmymoney/plugins/weboob/dialogs/mapaccountwizard.cpp:179
+#, kde-format
+msgid ""
+"No backends available.\n"
+"Add one using weboob-config-qt."
+msgstr ""
+
+#: kmymoney/plugins/weboob/dialogs/mapaccountwizard.cpp:194
+#, kde-format
+msgid ""
+"No accounts available.\n"
+"Check your backend configuration in weboob-config-qt."
+msgstr ""
+
+#: kmymoney/plugins/weboob/dialogs/mapaccountwizard.cpp:203
+#, fuzzy, kde-format
+#| msgid "Store password"
+msgid "Incorrect password."
+msgstr "Gardar o contrasinal"
+
 #. i18n: ectx: property (title), widget (QWizardPage, pageBackends)
-#: kmymoney/plugins/weboob/dialogs/mapaccount.ui:18
+#: kmymoney/plugins/weboob/dialogs/mapaccountwizard.ui:18
 #, kde-format
 msgid "Select Backend"
 msgstr "Escoller unha infraestrutura"
 
 #. i18n: ectx: property (subTitle), widget (QWizardPage, pageBackends)
-#: kmymoney/plugins/weboob/dialogs/mapaccount.ui:21
+#: kmymoney/plugins/weboob/dialogs/mapaccountwizard.ui:21
 #, kde-format
 msgid "Please select a backend from the list below..."
 msgstr "Escolla unha infraestrutura da seguinte lista…"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, backendsList)
-#: kmymoney/plugins/weboob/dialogs/mapaccount.ui:33
+#: kmymoney/plugins/weboob/dialogs/mapaccountwizard.ui:33
 #, kde-format
 msgid "Module"
 msgstr "Módulo"
 
 #. i18n: ectx: property (text), widget (QPushButton, addBackendButton)
-#: kmymoney/plugins/weboob/dialogs/mapaccount.ui:43
+#: kmymoney/plugins/weboob/dialogs/mapaccountwizard.ui:43
 #, kde-format
 msgid "Select a backend"
 msgstr "Escolla unha infraestrutura"
 
 #. i18n: ectx: property (subTitle), widget (QWizardPage, pageAccounts)
-#: kmymoney/plugins/weboob/dialogs/mapaccount.ui:56
+#: kmymoney/plugins/weboob/dialogs/mapaccountwizard.ui:56
 #, kde-format
 msgid ""
 "Select what <b>online</b> account you want to map to the <b>application</b> "
@@ -15733,23 +15759,17 @@ msgstr ""
 "Escolla a conta <b>en internet</b> coa que quere asociar a conta do "
 "<b>aplicativo</b>…"
 
-#. i18n: ectx: property (text), widget (QLabel, label_3)
-#: kmymoney/plugins/weboob/dialogs/webaccount.ui:46
-#, kde-format
-msgid "History"
-msgstr "Historial"
-
-#: kmymoney/plugins/weboob/weboob.cpp:50
+#: kmymoney/plugins/weboob/weboob.cpp:74
 #, kde-format
 msgid "Weboob"
 msgstr "Weboob"
 
-#: kmymoney/plugins/weboob/weboob.cpp:84
+#: kmymoney/plugins/weboob/weboob.cpp:113
 #, kde-format
 msgid "Weboob configuration"
 msgstr "Configuración de Weboob"
 
-#: kmymoney/plugins/weboob/weboob.cpp:128
+#: kmymoney/plugins/weboob/weboob.cpp:158
 #, kde-format
 msgid "Retrieving transactions..."
 msgstr "Obtendo os asentos…"
