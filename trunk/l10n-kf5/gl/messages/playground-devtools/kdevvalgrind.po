@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: kdevvalgrind\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2017-10-06 03:33+0200\n"
-"PO-Revision-Date: 2018-04-22 08:45+0100\n"
+"PO-Revision-Date: 2018-04-27 16:57+0100\n"
 "Last-Translator: Adrian Chaves <adrian@chaves.io>\n"
 "Language-Team: Galician <kde-i18n-doc@kde.org>\n"
 "Language: gl\n"
@@ -1144,7 +1144,7 @@ msgstr "aproximado"
 #: tools/helgrind/configpage.ui:49 tools/memcheck/configpage.ui:122
 #, kde-format
 msgid "none"
-msgstr "ningún"
+msgstr "ningunha"
 
 #. i18n: ectx: property (text), widget (QLabel, conflictCacheSizeLabel)
 #: tools/helgrind/configpage.ui:57
@@ -1751,6 +1751,53 @@ msgid ""
 "for the option <span style=\" font-family:'Monospace'; font-weight:600; font-"
 "style:italic;\">--num-callers</span>. </p></body></html>"
 msgstr ""
+"<html><head/><body> "
+"<p>Controla que trazas de rima manter para bloques afectados por malloc ou"
+" free.</p> "
+"<p>Con <span style=\" font-family:'Monospace'; font-"
+"weight:600; font-style:italic;\">asignar-logo-liberar</span> grávase unha"
+" traza de rima no momento da asignación e asóciase co bloque. Cando se libera"
+" o bloque grávase unha segunda traza de rima que substitúe a de asignación."
+" Como resultado, calquera erro de uso tras liberar relacionado co bloque só"
+" pode mostrar unha traza de rima do lugar onde se liberou o bloque.</p> "
+"<p>Con <span style=\" font-family:'Monospace'; font-weight:600; font-"
+"style:italic;\">asignar-e-liberar</span>, almacénanse as trazas de rima tanto"
+" da asignación como da liberación do bloque. Polo tanto os erros de uso tras"
+" liberar mostrarán as dúas, o que podería facilitar a diagnose do erro. En"
+" comparación con <span "
+"style=\" font-family:'Monospace'; font-weight:600; font-style:italic;"
+"\">asignar-logo-liberar</span>, esta opción aumenta lixeiramente o uso de"
+" memoria de Valgrind, xa que o bloque contén dúas referencias en vez de"
+" unha.</p> "
+"<p>Con <span "
+"style=\" font-family:'Monospace'; font-weight:600; font-style:italic;"
+"\">asignar</span> só se grava (e se informa de) a traza de rima da"
+" asignación. Con <span style=\" font-family:'Monospace'; font-weight:600;"
+" font-style:"
+"italic;\">liberar</span> só se grava (e se informa de) a traza de rima da"
+" liberación. Estes valores diminúen lixeiramente o uso de memoria e"
+" procesador de Valgrind. Poden ser útiles segundo o tipo de erros que busque"
+" e o nivel de detalle que necesite para analizalos. Por exemplo, se só lle"
+" interesan os erros de perdas de memoria, abonda con gravar as trazas de rima"
+" das asignacións.</p> "
+"<p>Con <span style=\" font-family:'Monospace'; font-"
+"weight:600; font-style:italic;\">ningunha</span> non se grava ningunha traza"
+" de rima para operacións de malloc e de free. Se o seu programa asigna unha"
+" morea de bloques ou asigna ou libera desde moitas trazas de rima distintas,"
+" isto pode diminuír de maneira significativa as necesidades de procesador e"
+" de memoria. Por suposto, non se fornecerán moitos detalles sobre erros"
+" relacionados cos bloques do monte (heap).</p> "
+"<p>Teña en conta que unha vez se grava unha traza de rima Valgrind mantena en"
+" memoria incluso cando non hai ningún bloque con referencia a ela. Algúns"
+" programas (por exemplo, algoritmos recursivos) poden xerar un número enorme"
+" de trazas de rima. Se Valgrind usa demasiada memoria nesas circunstancias,"
+" pode reducir a memoria necesaria coas opcións <span style=\""
+" font-family:'Monospace'; font-weight:600; font-"
+"style:italic;\">--keep-stacktraces</span> (manter as trazas de rima) ou"
+" usando un valor menor para a opción <span style=\" font-family:'Monospace';"
+" font-weight:600; font-"
+"style:italic;\">--num-callers</span> (número de chamadores). </p></body><"
+"/html>"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, keepStacktraces)
 #: tools/memcheck/configpage.ui:102
@@ -1762,7 +1809,7 @@ msgstr "asignar"
 #: tools/memcheck/configpage.ui:107
 #, kde-format
 msgid "free"
-msgstr "libre"
+msgstr "liberar"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, keepStacktraces)
 #: tools/memcheck/configpage.ui:112
@@ -1778,10 +1825,10 @@ msgstr "asignar-logo-liberar"
 
 #. i18n: ectx: property (text), widget (QLabel, freelistVolLabel)
 #: tools/memcheck/configpage.ui:130
-#, fuzzy, kde-format
+#, kde-format
 #| msgid "Freelist si&ze"
 msgid "Freelist maximum size:"
-msgstr "&Tamaño da lista de bloques libres:"
+msgstr "Tamaño máximo da lista de bloques libres:"
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, freelistVol)
 #: tools/memcheck/configpage.ui:140
@@ -1807,10 +1854,10 @@ msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, freelistBigBlocksLabel)
 #: tools/memcheck/configpage.ui:153
-#, fuzzy, kde-format
+#, kde-format
 #| msgid "Freelist si&ze"
 msgid "Freelist big-blocks:"
-msgstr "&Tamaño da lista de bloques libres:"
+msgstr "Bloques grandes da lista de bloques libres:"
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, freelistBigBlocks)
 #: tools/memcheck/configpage.ui:160
@@ -1843,10 +1890,10 @@ msgstr ""
 
 #. i18n: ectx: property (text), widget (QCheckBox, undefValueErrors)
 #: tools/memcheck/configpage.ui:208
-#, fuzzy, kde-format
+#, kde-format
 #| msgid "Show uninitialized values"
 msgid "Show undefined values usage"
-msgstr "Mostrar os valores non preparados."
+msgstr "Mostrar o uso de valores non definidos."
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, showMismatchedFrees)
 #: tools/memcheck/configpage.ui:218
@@ -1920,7 +1967,7 @@ msgstr ""
 #: tools/memcheck/configpage.ui:231
 #, kde-format
 msgid "Allow partial loads"
-msgstr ""
+msgstr "Permitir cargas parciais."
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, trackOrigins)
 #: tools/memcheck/configpage.ui:238
@@ -1961,10 +2008,10 @@ msgstr ""
 
 #. i18n: ectx: property (text), widget (QCheckBox, trackOrigins)
 #: tools/memcheck/configpage.ui:241
-#, fuzzy, kde-format
+#, kde-format
 #| msgid "Show uninitialized values"
 msgid "Track origins of all uninitialised values"
-msgstr "Mostrar os valores non preparados."
+msgstr "Facer un seguimento da orixe de todos os valores non inicializados."
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, expensiveDefinednessChecks)
 #: tools/memcheck/configpage.ui:248
@@ -1985,7 +2032,7 @@ msgstr ""
 #: tools/memcheck/configpage.ui:251
 #, kde-format
 msgid "Expensive definedness checks"
-msgstr ""
+msgstr "Comprobacións caras de estado de definición."
 
 #: tools/memcheck/tool.cpp:38
 #, kde-format
@@ -1995,7 +2042,7 @@ msgstr "Memcheck"
 #: tools/memcheck/tool.cpp:39
 #, kde-format
 msgid "Memcheck (Memory Error Detector)"
-msgstr ""
+msgstr "Memcheck (detector de erros de memoria)"
 
 #: toolviewfactory.cpp:47
 #, kde-format
