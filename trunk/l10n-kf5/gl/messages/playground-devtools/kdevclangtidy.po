@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2018-08-03 03:40+0200\n"
+"POT-Creation-Date: 2018-08-06 03:39+0200\n"
 "PO-Revision-Date: 2018-01-31 22:02+0100\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Galician <kde-i18n-doc@kde.org>\n"
@@ -17,60 +17,44 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Lokalize 2.0\n"
 
-#: src/config/clangtidypreferences.cpp:48
-#: src/config/perprojectconfigpage.cpp:75 src/plugin.cpp:103 src/plugin.cpp:277
-#: src/plugin.cpp:298
+#: config/clangtidypreferences.cpp:48 config/clangtidyprojectconfigpage.cpp:59
+#: plugin.cpp:103 plugin.cpp:265 plugin.cpp:286
 #, kde-format
 msgid "Clang-Tidy"
 msgstr "Clang-Tidy"
 
-#: src/config/clangtidypreferences.cpp:53
+#: config/clangtidypreferences.cpp:53
 #, kde-format
 msgid "Configure Clang-Tidy Settings"
 msgstr "Configurar as opcións de Clang-Tidy"
 
 #. i18n: ectx: property (title), widget (QGroupBox, pathsGroupBox)
-#: src/config/clangtidypreferences.ui:29
+#: config/clangtidypreferences.ui:29
 #, kde-format
 msgid "Paths"
 msgstr "Rutas"
 
 #. i18n: ectx: property (text), widget (QLabel, clangtidyLabel)
-#: src/config/clangtidypreferences.ui:37
+#: config/clangtidypreferences.ui:37
 #, kde-format
 msgid "Clang-&tidy executable:"
 msgstr "Executábel de clang-&tidy:"
 
+#. i18n: ectx: property (toolTip), widget (KUrlRequester, kcfg_clangtidyPath)
+#: config/clangtidypreferences.ui:54
+#, fuzzy, kde-format
+#| msgid "Clang-&tidy executable:"
+msgid "The full path to the clang-tidy executable"
+msgstr "Executábel de clang-&tidy:"
+
 #. i18n: ectx: property (text), widget (QLabel, label)
-#: src/config/perprojectconfig.ui:19
-#, kde-format
-msgid "Header filter regex:"
-msgstr "Expresión regular do filtro de cabeceiras:"
-
-#. i18n: ectx: property (toolTip), widget (QLineEdit, headerFilterText)
-#: src/config/perprojectconfig.ui:26
-#, kde-format
-msgid ""
-"<html><head/><body><p>Regular expression matching the names of the headers "
-"to output diagnostics from. Diagnostics from the main file of each "
-"translation unit are always displayed. Can be used together with -line-"
-"filter. This option overrides the value read from a .clang-tidy file.</p></"
-"body></html>"
-msgstr ""
-"<html><head/><body><p>Expresión regular que coincide cos nomes das "
-"cabeceiras das que obter diagnósticos. Os diagnósticos do ficheiro principal "
-"de cada unidade de tradución sempre se mostran. Pode usarse xunto co filtro -"
-"line-. Esta opción sobrescribe o valor que se lee dun ficheiro .clang-tidy.</"
-"p></body></html>"
-
-#. i18n: ectx: property (text), widget (QLabel, label_3)
-#: src/config/perprojectconfig.ui:36
+#: config/clangtidyprojectconfigpage.ui:19
 #, kde-format
 msgid "E&xtra parameters:"
 msgstr "&Parámetros adicionais:"
 
-#. i18n: ectx: property (toolTip), widget (QLineEdit, clangtidyParameters)
-#: src/config/perprojectconfig.ui:46
+#. i18n: ectx: property (toolTip), widget (QLineEdit, kcfg_additionalParameters)
+#: config/clangtidyprojectconfigpage.ui:29
 #, kde-format
 msgid ""
 "<html><head/><body><p>Additional command line options to pass to clang-tidy."
@@ -79,103 +63,137 @@ msgstr ""
 "<html><head/><body><p>Opcións adicionais da liña de ordes para pasar a clang-"
 "tidy.</p></body></html>"
 
-#. i18n: ectx: property (text), widget (QCheckBox, sysHeadersCheckBox)
-#: src/config/perprojectconfig.ui:56
-#, kde-format
-msgid "Check system headers"
+#. i18n: ectx: property (text), widget (QLabel)
+#: config/clangtidyprojectconfigpage.ui:39
+#, fuzzy, kde-format
+#| msgid "Check system headers"
+msgid "&Check system headers:"
 msgstr "Comprobar as cabeceiras do sistema."
 
-#. i18n: ectx: property (text), widget (QCheckBox, overrideConfigFileCheckBox)
-#: src/config/perprojectconfig.ui:63
-#, kde-format
-msgid "Override .clang-tidy file options"
+#. i18n: ectx: property (text), widget (QLabel)
+#: config/clangtidyprojectconfigpage.ui:52
+#, fuzzy, kde-format
+#| msgid "Override .clang-tidy file options"
+msgid "&Use .clang-tidy file(s):"
 msgstr "Sobrepor as opcións do ficheiro .clang-tidy."
 
-#. i18n: ectx: property (toolTip), widget (QGroupBox, checkListGroupBox)
-#: src/config/perprojectconfig.ui:72
+#. i18n: ectx: property (title), widget (QGroupBox, generalGroupBox)
+#: config/clangtidyprojectconfigpage.ui:74
 #, kde-format
-msgid "Enable additional checks"
-msgstr "Activar comprobacións adicionais."
+msgid "General"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QLabel)
+#: config/clangtidyprojectconfigpage.ui:80
+#, fuzzy, kde-format
+#| msgid "Header filter regex:"
+msgid "Header fi&lter regex:"
+msgstr "Expresión regular do filtro de cabeceiras:"
+
+#. i18n: ectx: property (toolTip), widget (QLineEdit, kcfg_headerFilter)
+#: config/clangtidyprojectconfigpage.ui:90
+#, fuzzy, kde-format
+#| msgid ""
+#| "<html><head/><body><p>Regular expression matching the names of the "
+#| "headers to output diagnostics from. Diagnostics from the main file of "
+#| "each translation unit are always displayed. Can be used together with -"
+#| "line-filter. This option overrides the value read from a .clang-tidy file."
+#| "</p></body></html>"
+msgid ""
+"<html><head/><body><p>Regular expression matching the names of the headers "
+"to output diagnostics from. Diagnostics from the main file of each "
+"translation unit are always displayed. Can be used together with -line-"
+"filter.</p></body></html>"
+msgstr ""
+"<html><head/><body><p>Expresión regular que coincide cos nomes das "
+"cabeceiras das que obter diagnósticos. Os diagnósticos do ficheiro principal "
+"de cada unidade de tradución sempre se mostran. Pode usarse xunto co filtro -"
+"line-. Esta opción sobrescribe o valor que se lee dun ficheiro .clang-tidy.</"
+"p></body></html>"
 
 #. i18n: ectx: property (title), widget (QGroupBox, checkListGroupBox)
-#: src/config/perprojectconfig.ui:75
-#, fuzzy, kde-format
-#| msgid "Available checks "
-msgid "Available Checks"
-msgstr "Comprobacións dispoñíbeis"
-
-#. i18n: ectx: property (text), widget (QCheckBox, dumpCheckBox)
-#: src/config/perprojectconfig.ui:97
+#: config/clangtidyprojectconfigpage.ui:106
 #, kde-format
-msgid "Dump active configuration to .clang-tidy file"
-msgstr "Baleirar a configuración activa no ficheiro .clang-tidy."
+msgid "Checks"
+msgstr ""
 
-#: src/job.cpp:40
+#: job.cpp:54
 #, kde-format
 msgid "Clang-tidy output"
 msgstr "Saída de clang-tidy."
 
-#: src/job.cpp:154
+#: job.cpp:153
 #, kde-format
 msgid "Failed to find clang-tidy binary."
 msgstr "Non se atopou o binario de clang-tidy."
 
-#: src/job.cpp:156
+#: job.cpp:155
 #, kde-format
 msgid "Failed to start clang-tidy from %1."
 msgstr "Non se puido iniciar clang-tidy desde %1."
 
-#: src/job.cpp:162
+#: job.cpp:161
 #, kde-format
 msgid "Clang-tidy crashed."
 msgstr "Clang-tidy quebrou."
 
-#: src/job.cpp:166
+#: job.cpp:165
 #, kde-format
 msgid "Clang-tidy process timed out."
 msgstr "O proceso de clang-tidy superou o tempo límite de execución."
 
-#: src/job.cpp:170
+#: job.cpp:169
 #, kde-format
 msgid "Write to Clang-tidy process failed."
 msgstr "A escrita no proceso de Clang-tidy fallou."
 
-#: src/job.cpp:174
+#: job.cpp:173
 #, kde-format
 msgid "Read from Clang-tidy process failed."
 msgstr "A lectura do proceso de Clang-tidy fallou."
 
-#: src/job.cpp:184
+#: job.cpp:183
 #, kde-format
 msgid "Clang-tidy Error"
 msgstr "Erro de clang-tidy"
 
-#: src/plugin.cpp:83
+#: plugin.cpp:83
 #, kde-format
 msgid "Analyze Current File with Clang-Tidy"
 msgstr ""
 
-#: src/plugin.cpp:162 src/plugin.cpp:174
+#: plugin.cpp:162 plugin.cpp:174
 #, kde-format
 msgid "Error starting clang-tidy"
 msgstr "Erro ao iniciar clang-tidy."
 
-#: src/plugin.cpp:163
+#: plugin.cpp:163
 #, kde-format
 msgid "No suitable active file, unable to deduce project."
 msgstr ""
 "Non hai ningún ficheiro activo axeitado, non pode deducirse o proxecto."
 
-#: src/plugin.cpp:174
+#: plugin.cpp:174
 #, kde-format
 msgid "Active file isn't in a project"
 msgstr "O ficheiro activo non é un proxecto."
 
-#: src/plugin.cpp:263
+#: plugin.cpp:251
 #, kde-format
 msgctxt "@title:window"
 msgid "Test"
 msgstr ""
+
+#~ msgid "Enable additional checks"
+#~ msgstr "Activar comprobacións adicionais."
+
+#, fuzzy
+#~| msgid "Available checks "
+#~ msgid "Available Checks"
+#~ msgstr "Comprobacións dispoñíbeis"
+
+#~ msgid "Dump active configuration to .clang-tidy file"
+#~ msgstr "Baleirar a configuración activa no ficheiro .clang-tidy."
 
 #~ msgid "Can't load parameters. They must be set in the project settings."
 #~ msgstr ""
