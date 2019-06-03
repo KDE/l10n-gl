@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mathematik\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2019-06-02 02:58+0200\n"
+"POT-Creation-Date: 2019-06-03 03:04+0200\n"
 "PO-Revision-Date: 2019-03-19 08:42+0100\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Galician <kde-i18n-doc@kde.org>\n"
@@ -332,7 +332,7 @@ msgstr "Escolla a infraestrutura que desexe utilizar:"
 msgid "Make this the default backend"
 msgstr "Empregar esta infraestrutura de maneira predeterminada"
 
-#: backends/julia/juliabackend.cpp:71
+#: backends/julia/juliabackend.cpp:74
 #, kde-format
 msgid ""
 "<p><b>Julia</b> is a high-level, high-performance dynamic programming "
@@ -347,7 +347,7 @@ msgstr ""
 "compilador sofisticado, execución distribuída en paralelo, precisión "
 "numérica, e unha extensa biblioteca de funcións matemáticas.</p>"
 
-#: backends/julia/juliabackend.cpp:84
+#: backends/julia/juliabackend.cpp:87
 #, kde-format
 msgctxt ""
 "The url to the documentation of Julia, please check if there is a translated "
@@ -355,11 +355,31 @@ msgctxt ""
 msgid "http://docs.julialang.org/en/latest/"
 msgstr "http://docs.julialang.org/en/latest/"
 
-#: backends/julia/juliabackend.cpp:97
+#: backends/julia/juliabackend.cpp:98
+#, kde-format
+msgid "You should set path to Julia executable"
+msgstr ""
+
+#: backends/julia/juliabackend.cpp:105
 #, kde-format
 msgid ""
-"Julia backend uses special binary file - %1 (installed with Julia backend), "
-"which must be executable"
+"Path to Julia should points direct to binary julia executable, symlink not "
+"allowed"
+msgstr ""
+
+#: backends/julia/juliabackend.cpp:124
+#, kde-format
+msgid ""
+"Сantor couldn’t determine the version of Julia for %1. Please specify the "
+"correct path to Julia executable (no symlinks allowed) and try again."
+msgstr ""
+
+#: backends/julia/juliabackend.cpp:135
+#, kde-format
+msgid ""
+"You are trying to use Cantor with Julia v%1.%2.%3. This version of Cantor "
+"was compiled with the support of Julia v%4.%5.*. Please points to this "
+"version of Julia or recompile Cantor using the version %1.%2.*."
 msgstr ""
 
 #. i18n: ectx: label, entry (replPath), group (JuliaBackend)
@@ -375,7 +395,7 @@ msgstr "Ruta da REPL nativa de Julia"
 #. i18n: ectx: label, entry (variableManagement), group (OctaveBackend)
 #. i18n: ectx: label, entry (variableManagement), group (Python2Backend)
 #. i18n: ectx: label, entry (variableManagement), group (Python3Backend)
-#: backends/julia/juliabackend.kcfg:16 backends/julia/settings.ui:28
+#: backends/julia/juliabackend.kcfg:16 backends/julia/settings.ui:26
 #: backends/maxima/maximabackend.kcfg:21 backends/maxima/settings.ui:55
 #: backends/octave/octavebackend.kcfg:21 backends/octave/settings.ui:55
 #: backends/python/settings.ui:41 backends/python2/python2backend.kcfg:16
@@ -406,14 +426,31 @@ msgstr "Intercalar as gráficas na folla de traballo"
 msgid "Julia script file (*.jl)"
 msgstr "Ficheiro de script de Julia (*.jl)"
 
-#. i18n: ectx: property (text), widget (QLabel, label)
-#: backends/julia/settings.ui:12
+#: backends/julia/juliasession.cpp:218
 #, kde-format
-msgid "Path to Julia REPL:"
+msgid "Julia process stopped working."
+msgstr ""
+
+#: backends/julia/juliasession.cpp:222
+#, fuzzy, kde-format
+#| msgid "Failed to start Sage"
+msgid "Failed to start Julia process."
+msgstr "Non se puido iniciar Sage"
+
+#: backends/julia/juliasession.cpp:226
+#, kde-format
+msgid "Communication with Julia process failed for unknown reasons."
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: backends/julia/settings.ui:11
+#, fuzzy, kde-format
+#| msgid "Path to Julia REPL:"
+msgid "Path to Julia:"
 msgstr "Ruta da REPL de Julia:"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, kcfg_variableManagement)
-#: backends/julia/settings.ui:25 backends/maxima/settings.ui:52
+#: backends/julia/settings.ui:23 backends/maxima/settings.ui:52
 #: backends/octave/settings.ui:52 backends/python/settings.ui:38
 #: backends/R/settings.ui:38
 #, kde-format
@@ -421,7 +458,7 @@ msgid "Let Cantor follow the creation/destruction of variables"
 msgstr "Permite que Cantor siga a construción e destrución de variábeis"
 
 #. i18n: ectx: property (text), widget (QCheckBox, kcfg_integratePlots)
-#: backends/julia/settings.ui:35
+#: backends/julia/settings.ui:33
 #, kde-format
 msgid "Integrate Plots in Worksheet (start a new session when changed)"
 msgstr ""
@@ -429,7 +466,7 @@ msgstr ""
 "cambia)"
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
-#: backends/julia/settings.ui:44
+#: backends/julia/settings.ui:42
 #, kde-format
 msgid "Inline Plots Intermediate Format:"
 msgstr "Formato intermedio das gráficas intercaladas:"
