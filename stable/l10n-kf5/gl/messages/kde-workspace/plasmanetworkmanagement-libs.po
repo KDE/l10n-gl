@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2019-05-20 07:46+0200\n"
-"PO-Revision-Date: 2019-05-28 22:05+0200\n"
+"PO-Revision-Date: 2019-07-06 20:40+0200\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Galician <kde-i18n-doc@kde.org>\n"
 "Language: gl\n"
@@ -1856,13 +1856,20 @@ msgid ""
 "            may be specified for matching all IPv4 addresses, \n"
 "            and ::/0 may be specified for matching all IPv6 addresses."
 msgstr ""
+"Necesario.\n"
+"            Unha lista de enderezos IP (v4 ou v6) separados por\n"
+"            comas con máscaras CIDR desde os que se permite\n"
+"            tráfico entrante deste parceiro e ao que se dirixe\n"
+"            o tráfico saínte para este parceiro. Pode indicarse a\n"
+"            0.0.0.0/0 para referirse a todos os enderezos IPv4 e\n"
+"            ::/0 para referirse a todos os enderezos IPv6."
 
 #. i18n: ectx: property (text), widget (QLabel, endpointAddressLabel)
 #: editor/settings/ui/wireguardpeerwidget.ui:55
-#, fuzzy, kde-format
+#, kde-format
 #| msgid "Cloned MAC address:"
 msgid "Endpoint address:"
-msgstr "Enderezo MAC clonado:"
+msgstr "Enderezo do extremo:"
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, endpointAddressLineEdit)
 #: editor/settings/ui/wireguardpeerwidget.ui:66
@@ -1874,12 +1881,18 @@ msgid ""
 "            qualified domain name such as abc.com). If\n"
 "            present, Endpoint port must also be set."
 msgstr ""
+"Opcional.\n"
+"            Un extremo para a conexión. Pode ser un\n"
+"            enderezo IPv4 ou IPv6, ou FQDN (un nome\n"
+"            de dominio completamente cualificado como\n"
+"            example.com). Se está presente, debe\n"
+"            estabelecerse tamén o porto do extremo."
 
 #. i18n: ectx: property (text), widget (QLabel, endpointPortLabel)
 #: editor/settings/ui/wireguardpeerwidget.ui:74
 #, kde-format
 msgid "Endpoint port:"
-msgstr ""
+msgstr "Porto do extremo:"
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, endpointPortLineEdit)
 #: editor/settings/ui/wireguardpeerwidget.ui:83
@@ -1889,13 +1902,16 @@ msgid ""
 "            The port number of an endpoint. If present Endpoint\n"
 "            Address must also be set."
 msgstr ""
+"Opcional.\n"
+"            O número de porto dun extremo. Se está presente\n"
+"            debe indicarse tamén o enderezo do extremo."
 
 #. i18n: ectx: property (text), widget (QLabel, presharedKeyLabel)
 #: editor/settings/ui/wireguardpeerwidget.ui:91
-#, fuzzy, kde-format
+#, kde-format
 #| msgid "Private key:"
 msgid "Preshared key:"
-msgstr "Chave privada:"
+msgstr "Chave compartida previamente:"
 
 #. i18n: ectx: property (toolTip), widget (PasswordField, presharedKeyLineEdit)
 #: editor/settings/ui/wireguardpeerwidget.ui:102
@@ -1907,12 +1923,18 @@ msgid ""
 "            cryptography to be mixed into the already existing\n"
 "            public-key cryptography, for post-quantum resistance."
 msgstr ""
+"Opcional.\n"
+"            Unha chave base64 compartida previamente xerada\n"
+"            con «wg genpsk».\n"
+"            Esta opción engade unha capa adicional de criptografía\n"
+"            de chaves simétricas á criptografía de chave pública\n"
+"            existente, para resistencia post-cuántica."
 
 #. i18n: ectx: property (text), widget (QLabel, keepaliveLabel)
 #: editor/settings/ui/wireguardpeerwidget.ui:109
 #, kde-format
 msgid "Persistent keepalive:"
-msgstr ""
+msgstr "Manter a conexión persistente:"
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, keepaliveLineEdit)
 #: editor/settings/ui/wireguardpeerwidget.ui:127
@@ -1931,24 +1953,38 @@ msgid ""
 "            when unspecified, this option is off. Most users will not\n"
 "            need this."
 msgstr ""
+"Opcional.\n"
+"            Un segundo intervalo, entre 1 e 65535 (ambos\n"
+"            incluídos), que defina a frecuencia coa que enviar un\n"
+"            paquete baleiro autenticado ao parceiro para manter\n"
+"            de maneira persistente unha devasa con estado ou\n"
+"            unha asociación de NAT. Por exemplo, se a interface\n"
+"            envía tráfico con pouca frecuencia, pero podería\n"
+"            recibir tráfico dun parceiro en calquera momento, e\n"
+"            está detrás dun NAT, a interface podería beneficiarse\n"
+"            dun intervalo de manter a conexión persistente de 25\n"
+"            segundos. Os valores 0 e «off» desactivan a opción. De\n"
+"            maneira predeterminada ou en caso de omitila, a\n"
+"            opción está desactivada. A meirande parte dos usuarios\n"
+"            non necesitarán esta opción."
 
 #. i18n: ectx: attribute (title), widget (QWidget, tab)
 #: editor/settings/ui/wireguardtabwidget.ui:24
 #, kde-format
 msgid "Peer 1"
-msgstr ""
+msgstr "Parceiro 1"
 
 #. i18n: ectx: property (text), widget (QPushButton, btnAdd)
 #: editor/settings/ui/wireguardtabwidget.ui:37
 #, kde-format
 msgid "Add new Peer"
-msgstr ""
+msgstr "Engadir un novo parceiro"
 
 #. i18n: ectx: property (text), widget (QPushButton, btnRemove)
 #: editor/settings/ui/wireguardtabwidget.ui:44
 #, kde-format
 msgid "Remove this Peer"
-msgstr ""
+msgstr "Retirar este parceiro"
 
 #: editor/settings/wificonnectionwidget.cpp:197
 #, kde-format
@@ -1960,7 +1996,7 @@ msgstr "%1 (%2 MHz)"
 #, kde-format
 msgctxt "@title: window wireguard peers properties"
 msgid "WireGuard peers properties"
-msgstr ""
+msgstr "Propiedades dos parceiros de WireGuard"
 
 #: editor/vpnuiplugin.cpp:53
 #, kde-format
@@ -2700,7 +2736,7 @@ msgstr "Mesh OLPC"
 #: uiutils.cpp:254
 #, kde-format
 msgid "WireGuard VPN"
-msgstr ""
+msgstr "VPN de WireGuard"
 
 #: uiutils.cpp:258
 #, kde-format
