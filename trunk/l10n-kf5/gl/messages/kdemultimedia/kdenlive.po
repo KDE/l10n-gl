@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdenlive\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2019-07-12 03:07+0200\n"
+"POT-Creation-Date: 2019-07-13 02:59+0200\n"
 "PO-Revision-Date: 2019-04-14 09:04+0200\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Galician <kde-i18n-doc@kde.org>\n"
@@ -104,11 +104,13 @@ msgstr "Anchura da liña"
 #: data/effects/audiowaveform.xml:15 data/effects/movit_rect.xml:6
 #: data/effects/pan_zoom.xml:7 data/effects/qtblend.xml:8
 #: data/effects/qtblend.xml:26 data/effects/tracker.xml:7
+#: data/transitions/affine.xml:7 data/transitions/composite.xml:7
+#: data/transitions/qtblend.xml:7 data/transitions/region.xml:10
 #, kde-format
 msgid "Rectangle"
 msgstr "Rectángulo"
 
-#: data/effects/audiowaveform.xml:18
+#: data/effects/audiowaveform.xml:18 data/transitions/region.xml:20
 #, kde-format
 msgid "Fill"
 msgstr "Encher"
@@ -265,7 +267,9 @@ msgstr "Mestura"
 #: data/effects/charcoal.xml:19 data/effects/frei0r_alpha0ps.xml:31
 #: data/effects/frei0r_alpha0ps.xml:63 data/effects/frei0r_mask0mate.xml:19
 #: data/effects/invert.xml:3 data/effects/mirror.xml:11
-#: data/effects/rotoscoping.xml:19
+#: data/effects/rotoscoping.xml:19 data/transitions/composite.xml:16
+#: data/transitions/region.xml:33 data/transitions/slide.xml:19
+#: data/transitions/wipe.xml:14
 #, kde-format
 msgid "Invert"
 msgstr "Inverter"
@@ -1314,6 +1318,8 @@ msgstr ""
 
 #: data/effects/frei0r_distort0r.xml:3 data/effects/pan_zoom.xml:10
 #: data/effects/qtblend.xml:18 data/effects/qtblend.xml:36
+#: data/transitions/affine.xml:19 data/transitions/affine.xml:22
+#: data/transitions/qtblend.xml:17 data/transitions/region.xml:23
 #, kde-format
 msgid "Distort"
 msgstr "Distorsionar"
@@ -2895,7 +2901,8 @@ msgid "Clear center size"
 msgstr "Tamaño do centro limpo"
 
 #. i18n: ectx: property (text), widget (QLabel, label_softness)
-#: data/effects/frei0r_vignette.xml:13 src/ui/clipproperties_ui.ui:302
+#: data/effects/frei0r_vignette.xml:13 data/transitions/region.xml:30
+#: data/transitions/wipe.xml:7 src/ui/clipproperties_ui.ui:302
 #: src/ui/slideshowclip_ui.ui:220
 #, kde-format
 msgid "Softness"
@@ -3434,6 +3441,8 @@ msgid "Opacity (GPU)"
 msgstr "Opacidade (GPU)"
 
 #: data/effects/movit_opacity.xml:6
+#: data/transitions/frei0r_cairoaffineblend.xml:22
+#: data/transitions/frei0r_cairoblend.xml:7
 #: src/assets/view/widgets/animationwidget.cpp:852
 #: src/widgets/geometrywidget.cpp:89
 #, kde-format
@@ -3576,6 +3585,7 @@ msgid "Adjust size and position of clip"
 msgstr "Axustar o tamaño e a posición do fragmento"
 
 #: data/effects/qtblend.xml:4 data/effects/qtblend.xml:22
+#: data/transitions/affine.xml:3
 #, kde-format
 msgid "Transform"
 msgstr "Transformar"
@@ -3586,11 +3596,14 @@ msgid "Position, scale and opacity."
 msgstr "Posición, escala e opacidade."
 
 #: data/effects/qtblend.xml:11 data/effects/qtblend.xml:29
+#: data/transitions/frei0r_cairoaffineblend.xml:19
+#: data/transitions/qtblend.xml:10
 #, kde-format
 msgid "Rotation"
 msgstr "Xiro"
 
 #: data/effects/qtblend.xml:14 data/effects/qtblend.xml:32
+#: data/transitions/qtblend.xml:13
 #, kde-format
 msgid ""
 "Alpha blend,Xor,Plus,Multiply,Screen,Overlay,Darken,Lighten,Color dodge,"
@@ -3604,16 +3617,17 @@ msgstr ""
 "Saída de destino"
 
 #: data/effects/qtblend.xml:15 data/effects/qtblend.xml:33
+#: data/transitions/qtblend.xml:14
 #, kde-format
 msgid "Compositing"
 msgstr "Composición"
 
-#: data/effects/qtblend.xml:39
+#: data/effects/qtblend.xml:39 data/transitions/qtblend.xml:20
 #, kde-format
 msgid "Rotate from center"
 msgstr "Rotar desde o centro"
 
-#: data/effects/region.xml:3
+#: data/effects/region.xml:3 data/transitions/region.xml:3
 #, kde-format
 msgid "Regionalize"
 msgstr "Rexionalizar"
@@ -3645,16 +3659,19 @@ msgid "Rotate clip in any 3 directions"
 msgstr "Rotar o fragmento en calquera das 3 direccións"
 
 #: data/effects/rotation.xml:7 data/effects/rotation_keyframable.xml:7
+#: data/transitions/affine.xml:10
 #, kde-format
 msgid "Rotate X"
 msgstr "Rotar X"
 
 #: data/effects/rotation.xml:10 data/effects/rotation_keyframable.xml:10
+#: data/transitions/affine.xml:13
 #, kde-format
 msgid "Rotate Y"
 msgstr "Rotar Y"
 
 #: data/effects/rotation.xml:13 data/effects/rotation_keyframable.xml:13
+#: data/transitions/affine.xml:16
 #, kde-format
 msgid "Rotate Z"
 msgstr "Rotar Z"
@@ -4310,6 +4327,221 @@ msgstr "Alfa e transformar"
 #, kde-format
 msgid "GPU effects"
 msgstr "Efectos da GPU"
+
+#: data/transitions/affine.xml:4
+#, kde-format
+msgid "Perform an affine transform on for compositing."
+msgstr ""
+
+#: data/transitions/composite.xml:3
+#: src/timeline2/view/dialogs/tracksconfigdialog.cpp:75
+#, kde-format
+msgid "Composite"
+msgstr "Composición"
+
+#: data/transitions/composite.xml:4
+#, kde-format
+msgid "A key-framable alpha-channel compositor for two frames."
+msgstr ""
+"Un compositor da canle alfa que admite fotogramas clave para dous fotogramas."
+
+#. i18n: ectx: property (text), widget (QLabel, label_25)
+#: data/transitions/composite.xml:10 data/transitions/region.xml:17
+#: data/transitions/slide.xml:10 src/ui/titlewidget_ui.ui:708
+#, kde-format
+msgid "Align"
+msgstr "Aliñar"
+
+#: data/transitions/composite.xml:13 data/transitions/region.xml:36
+#: data/transitions/slide.xml:13
+#, kde-format
+msgid "Force Progressive Rendering"
+msgstr "Forzar a renderización progresiva"
+
+#. i18n: ectx: property (text), widget (QCheckBox, slide_fade)
+#: data/transitions/dissolve.xml:3 src/ui/clipproperties_ui.ui:262
+#: src/ui/slideshowclip_ui.ui:167
+#, kde-format
+msgid "Dissolve"
+msgstr "Disolver"
+
+#: data/transitions/dissolve.xml:4
+#, kde-format
+msgid "Fade out one video while fading in the other video."
+msgstr "Fundir a saída dun vídeo mentres se funde a entrada doutro."
+
+#: data/transitions/dissolve.xml:6
+#, kde-format
+msgid "Reverse"
+msgstr "Inverter"
+
+#: data/transitions/frei0r_cairoaffineblend.xml:3
+#, kde-format
+msgid "Cairo Affine Blend"
+msgstr ""
+
+#: data/transitions/frei0r_cairoaffineblend.xml:4
+#, kde-format
+msgid ""
+"Composites second input on first input applying user-defined transformation, "
+"opacity and blend mode."
+msgstr ""
+
+#: data/transitions/frei0r_cairoaffineblend.xml:7
+#, fuzzy, kde-format
+#| msgid "Tab position"
+msgid "X position"
+msgstr "Posición da lapela"
+
+#: data/transitions/frei0r_cairoaffineblend.xml:10
+#, fuzzy, kde-format
+#| msgid "Tab position"
+msgid "Y position"
+msgstr "Posición da lapela"
+
+#: data/transitions/frei0r_cairoaffineblend.xml:13
+#, fuzzy, kde-format
+#| msgid "256 scale"
+msgid "X scale"
+msgstr "Escala 256"
+
+#: data/transitions/frei0r_cairoaffineblend.xml:16
+#, fuzzy, kde-format
+#| msgid "256 scale"
+msgid "Y scale"
+msgstr "Escala 256"
+
+#: data/transitions/frei0r_cairoaffineblend.xml:25
+#: data/transitions/frei0r_cairoblend.xml:10
+#, fuzzy, kde-format
+#| msgid ""
+#| "Alpha blend,Xor,Plus,Multiply,Screen,Overlay,Darken,Lighten,Color dodge,"
+#| "Color burn,Hard light,Soft light,Difference,Exclusion,Bitwise or,Bitwise "
+#| "and,Bitwise xor,Bitwise nor,Bitwise nand,Bitwise not xor,Destination in,"
+#| "Destination out"
+msgid ""
+"Normal,Add,Saturate,Multiply,Screen,Overlay,Darken,Lighten,Color dodge,Color "
+"burn,Hard light,Soft light,Difference,Exclusion,HSL hue,HSL saturation,HSL "
+"color,HSL luminosity"
+msgstr ""
+"Fusión alfa,XOR,Máis,Multiplicar,Pantalla,Capa,Escurecer,Aclarar,Esquivación "
+"de cor,Queimado de cor,Luz forte,Luz suave,Diferenza,Exclusión,OU de bits,E "
+"de bits,XOR de bits,NOR de bits,NAND de bits,!XOR de bits,Entrada de destino,"
+"Saída de destino"
+
+#: data/transitions/frei0r_cairoaffineblend.xml:26
+#: data/transitions/frei0r_cairoblend.xml:11
+#, fuzzy, kde-format
+#| msgid "Title module"
+msgid "Blend mode"
+msgstr "Módulo de título"
+
+#: data/transitions/frei0r_cairoaffineblend.xml:29
+#, fuzzy, kde-format
+#| msgid "Rotate from center"
+msgid "Rotation X center"
+msgstr "Rotar desde o centro"
+
+#: data/transitions/frei0r_cairoaffineblend.xml:32
+#, fuzzy, kde-format
+#| msgid "Rotate from center"
+msgid "Rotation Y center"
+msgstr "Rotar desde o centro"
+
+#: data/transitions/frei0r_cairoblend.xml:3
+#, kde-format
+msgid "Cairo Blend"
+msgstr ""
+
+#: data/transitions/frei0r_cairoblend.xml:4
+#, kde-format
+msgid ""
+"Composites second input on the first input with user-defined blend mode and "
+"opacity."
+msgstr ""
+
+#: data/transitions/qtblend.xml:3
+#, fuzzy, kde-format
+#| msgid "Crop and transform"
+msgid "Composite and transform"
+msgstr "Recortar e transformar"
+
+#: data/transitions/qtblend.xml:4
+#, kde-format
+msgid ""
+"Composites second input on the first input with user-defined blend mode, "
+"opacity and scale."
+msgstr ""
+
+#: data/transitions/region.xml:4
+#, kde-format
+msgid "Use alpha channel of another clip to create a transition."
+msgstr "Empregar a canle alfa doutro fragmento para crear unha transición."
+
+#: data/transitions/region.xml:7
+#, fuzzy, kde-format
+#| msgid "Paste clips"
+msgid "Mask clip"
+msgstr "Pegar os fragmentos"
+
+#: data/transitions/region.xml:13
+#, kde-format
+msgid "Over,And,Or,Xor"
+msgstr "Sobre,E,Ou,Xou"
+
+#: data/transitions/region.xml:14
+#, kde-format
+msgid "Alpha Channel Operation"
+msgstr "Operación sobre a canle alfa"
+
+#: data/transitions/region.xml:26 data/transitions/wipe.xml:10
+#, no-c-format, kde-format
+msgid "%lumaNames"
+msgstr ""
+
+#: data/transitions/region.xml:27 data/transitions/wipe.xml:11
+#, kde-format
+msgid "Wipe Method"
+msgstr "Método de limpeza"
+
+#: data/transitions/region.xml:39 data/transitions/slide.xml:16
+#, kde-format
+msgid "Force Deinterlace Overlay"
+msgstr "Forzar o solapamento do entrelazado"
+
+#: data/transitions/slide.xml:3 src/monitor/view/kdenlivemonitorripple.qml:83
+#, kde-format
+msgid "Slide"
+msgstr "Diapositiva"
+
+#: data/transitions/slide.xml:4
+#, kde-format
+msgid "Slide image from one side to another."
+msgstr "Imaxe de diapositiva dun lado a outro."
+
+#: data/transitions/slide.xml:7
+#, kde-format
+msgid "Direction"
+msgstr "Dirección"
+
+#. i18n: ectx: property (text), widget (QCheckBox, luma_fade)
+#. i18n: ectx: property (text), widget (QCheckBox, slide_luma)
+#: data/transitions/wipe.xml:3 src/ui/clipproperties_ui.ui:292
+#: src/ui/slideshowclip_ui.ui:203
+#, kde-format
+msgid "Wipe"
+msgstr "Limpar"
+
+#: data/transitions/wipe.xml:4
+#, kde-format
+msgid "Applies a stationary transition between the current and next frames."
+msgstr "Aplica unha transición estática entre o fotograma actual e o seguinte."
+
+#: data/transitions/wipe.xml:17
+#, fuzzy, kde-format
+#| msgid "Reverb"
+msgid "Revert"
+msgstr "Reverberación"
 
 #. i18n: ectx: property (windowTitle), widget (QDialog, CountDown_UI)
 #. i18n: ectx: property (windowTitle), widget (QDialog, ColorClip_UI)
@@ -9988,11 +10220,6 @@ msgstr " Rodaxe "
 msgid "Slip"
 msgstr " Esvaramento "
 
-#: src/monitor/view/kdenlivemonitorripple.qml:83
-#, kde-format
-msgid "Slide"
-msgstr "Diapositiva"
-
 #: src/monitor/view/kdenlivemonitorripple.qml:117
 #, fuzzy, kde-format
 #| msgid "Close"
@@ -11580,11 +11807,6 @@ msgstr "Silenciado"
 msgid "Locked"
 msgstr "Bloqueado"
 
-#: src/timeline2/view/dialogs/tracksconfigdialog.cpp:75
-#, kde-format
-msgid "Composite"
-msgstr "Composición"
-
 #: src/timeline2/view/dialogs/tracksconfigdialog.cpp:93
 #, kde-format
 msgid "Move Track upwards"
@@ -12967,19 +13189,6 @@ msgstr "Duración do fotograma"
 #, kde-format
 msgid "Loop"
 msgstr "Bucle"
-
-#. i18n: ectx: property (text), widget (QCheckBox, slide_fade)
-#: src/ui/clipproperties_ui.ui:262 src/ui/slideshowclip_ui.ui:167
-#, kde-format
-msgid "Dissolve"
-msgstr "Disolver"
-
-#. i18n: ectx: property (text), widget (QCheckBox, luma_fade)
-#. i18n: ectx: property (text), widget (QCheckBox, slide_luma)
-#: src/ui/clipproperties_ui.ui:292 src/ui/slideshowclip_ui.ui:203
-#, kde-format
-msgid "Wipe"
-msgstr "Limpar"
 
 #. i18n: ectx: property (text), widget (QCheckBox, slide_crop)
 #: src/ui/clipproperties_ui.ui:339 src/ui/slideshowclip_ui.ui:284
@@ -15133,12 +15342,6 @@ msgstr "Cor só&lida"
 msgid "Line Spacing"
 msgstr "Espazado de Texto"
 
-#. i18n: ectx: property (text), widget (QLabel, label_25)
-#: src/ui/titlewidget_ui.ui:708
-#, kde-format
-msgid "Align"
-msgstr "Aliñar"
-
 #. i18n: ectx: property (text), widget (QRadioButton, gradient_color)
 #. i18n: ectx: property (text), widget (QRadioButton, gradient_rect)
 #: src/ui/titlewidget_ui.ui:788 src/ui/titlewidget_ui.ui:948
@@ -15595,9 +15798,6 @@ msgstr "%1h"
 #~ msgid "Colour correction"
 #~ msgstr "Corrección da cor"
 
-#~ msgid "Crop and transform"
-#~ msgstr "Recortar e transformar"
-
 #~ msgid "Artistic"
 #~ msgstr "Artístico"
 
@@ -15779,31 +15979,11 @@ msgstr "%1h"
 #~ msgid "Group %1"
 #~ msgstr "Grupo %1"
 
-#~ msgid "A key-framable alpha-channel compositor for two frames."
-#~ msgstr ""
-#~ "Un compositor da canle alfa que admite fotogramas clave para dous "
-#~ "fotogramas."
-
-#~ msgid "Alpha Channel Operation"
-#~ msgstr "Operación sobre a canle alfa"
-
-#~ msgid "Over,And,Or,Xor"
-#~ msgstr "Sobre,E,Ou,Xou"
-
-#~ msgid "Wipe Method"
-#~ msgstr "Método de limpeza"
-
 #~ msgid "Wipe Softness"
 #~ msgstr "Suavidade da limpeza"
 
 #~ msgid "Wipe Invert"
 #~ msgstr "Inverter a limpeza"
-
-#~ msgid "Force Progressive Rendering"
-#~ msgstr "Forzar a renderización progresiva"
-
-#~ msgid "Force Deinterlace Overlay"
-#~ msgstr "Forzar o solapamento do entrelazado"
 
 #~ msgid "Affine"
 #~ msgstr "Afín"
@@ -15817,29 +15997,14 @@ msgstr "%1h"
 #~ msgid "Fix Shear Z"
 #~ msgstr "Amañar Tensionar Z"
 
-#~ msgid "Use alpha channel of another clip to create a transition."
-#~ msgstr "Empregar a canle alfa doutro fragmento para crear unha transición."
-
 #~ msgid "Transparency clip"
 #~ msgstr "Fragmento de transparencia"
 
 #~ msgid "Wipe File"
 #~ msgstr "Ficheiro de limpeza"
 
-#~ msgid "Slide image from one side to another."
-#~ msgstr "Imaxe de diapositiva dun lado a outro."
-
-#~ msgid "Direction"
-#~ msgstr "Dirección"
-
 #~ msgctxt "@property: means that the image is inverted"
 #~ msgid "Invert"
-#~ msgstr "Inverter"
-
-#~ msgid "Fade out one video while fading in the other video."
-#~ msgstr "Fundir a saída dun vídeo mentres se funde a entrada doutro."
-
-#~ msgid "Reverse"
 #~ msgstr "Inverter"
 
 #~ msgid "Effect Group"
@@ -17001,9 +17166,6 @@ msgstr "%1h"
 #~ msgid "Pixbuf module"
 #~ msgstr "Módulo Pixbuf"
 
-#~ msgid "Title module"
-#~ msgstr "Módulo de título"
-
 #~ msgid "Required to work with titles"
 #~ msgstr "Necesario para traballar con títulos"
 
@@ -17345,10 +17507,6 @@ msgstr "%1h"
 
 #~ msgid "Size/Speed"
 #~ msgstr "Tamaño ou velocidade"
-
-#~ msgid "Applies a stationary transition between the current and next frames."
-#~ msgstr ""
-#~ "Aplica unha transición estática entre o fotograma actual e o seguinte."
 
 #~ msgid "Reverse Transition"
 #~ msgstr "Inverter a transición"
