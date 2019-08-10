@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2019-02-20 02:46+0000\n"
+"POT-Creation-Date: 2019-08-10 01:32+0000\n"
 "PO-Revision-Date: 2018-01-28 05:57+0100\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Galician <kde-i18n-doc@kde.org>\n"
@@ -597,6 +597,21 @@ msgstr ""
 #: development.docbook:285
 #, no-c-format
 msgid ""
+"Since &kde-frameworks; 5.53, a list can include keywords from another list "
+"or language/file, using the <userinput>include</userinput> element. "
+"<userinput>##</userinput> is used to separate the list name and the language "
+"definition name, in the same way as in the <userinput>IncludeRules</"
+"userinput> rule. This is useful to avoid duplicating keyword lists, if you "
+"need to include the keywords of another language/file. For example, the "
+"<emphasis>othername</emphasis> list contains the <emphasis>str</emphasis> "
+"keyword and all the keywords of the <emphasis>types</emphasis> list, which "
+"belongs to the <emphasis>ISO C++</emphasis> language."
+msgstr ""
+
+#. Tag: para
+#: development.docbook:294
+#, no-c-format
+msgid ""
 "The <userinput>contexts</userinput> element contains all contexts. The first "
 "context is by default the start of the highlighting. There are two rules in "
 "the context <emphasis>Normal Text</emphasis>, which match the list of "
@@ -606,7 +621,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: development.docbook:291
+#: development.docbook:300
 #, no-c-format
 msgid ""
 "The third part is the <userinput>itemDatas</userinput> element. It contains "
@@ -616,19 +631,25 @@ msgid ""
 msgstr ""
 
 #. Tag: programlisting
-#: development.docbook:296
+#: development.docbook:305
 #, no-c-format
 msgid ""
 "&lt;highlighting&gt;\n"
 "    &lt;list name=&quot;somename&quot;&gt;\n"
-"      &lt;item&gt; class &lt;/item&gt;\n"
-"      &lt;item&gt; const &lt;/item&gt;\n"
+"      &lt;item&gt;class&lt;/item&gt;\n"
+"      &lt;item&gt;const&lt;/item&gt;\n"
+"    &lt;/list&gt;\n"
+"    &lt;list name=&quot;othername&quot;&gt;\n"
+"      &lt;item&gt;str&lt;/item&gt;\n"
+"      &lt;include&gt;types##ISO C++&lt;/include&gt;\n"
 "    &lt;/list&gt;\n"
 "    &lt;contexts&gt;\n"
 "      &lt;context attribute=&quot;Normal Text&quot; lineEndContext=&quot;"
 "#pop&quot; name=&quot;Normal Text&quot; &gt;\n"
 "        &lt;keyword attribute=&quot;Keyword&quot; context=&quot;#stay&quot; "
 "String=&quot;somename&quot; /&gt;\n"
+"        &lt;keyword attribute=&quot;Keyword&quot; context=&quot;#stay&quot; "
+"String=&quot;othername&quot; /&gt;\n"
 "        &lt;DetectChar attribute=&quot;String&quot; context=&quot;"
 "string&quot; char=&quot;&amp;quot;&quot; /&gt;\n"
 "      &lt;/context&gt;\n"
@@ -650,7 +671,7 @@ msgid ""
 msgstr ""
 
 #. Tag: term
-#: development.docbook:301
+#: development.docbook:310
 #, no-c-format
 msgid ""
 "The last part of a highlight definition is the optional <userinput>general</"
@@ -659,7 +680,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: development.docbook:306
+#: development.docbook:315
 #, no-c-format
 msgid ""
 "The <userinput>comment</userinput> section defines with what string a single "
@@ -670,7 +691,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: development.docbook:311
+#: development.docbook:320
 #, no-c-format
 msgid ""
 "The <userinput>keywords</userinput> section defines whether keyword lists "
@@ -678,7 +699,7 @@ msgid ""
 msgstr ""
 
 #. Tag: programlisting
-#: development.docbook:314
+#: development.docbook:323
 #, no-c-format
 msgid ""
 "&lt;general&gt;\n"
@@ -691,13 +712,13 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: development.docbook:324
+#: development.docbook:333
 #, no-c-format
 msgid "The Sections in Detail"
 msgstr ""
 
 #. Tag: para
-#: development.docbook:325
+#: development.docbook:334
 #, no-c-format
 msgid ""
 "This part will describe all available attributes for contexts, itemDatas, "
@@ -705,7 +726,7 @@ msgid ""
 msgstr ""
 
 #. Tag: term
-#: development.docbook:330
+#: development.docbook:339
 #, no-c-format
 msgid ""
 "The element <userinput>context</userinput> belongs in the group "
@@ -715,7 +736,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: development.docbook:337
+#: development.docbook:346
 #, no-c-format
 msgid ""
 "<userinput>name</userinput> states the context name. Rules will use this "
@@ -723,7 +744,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: development.docbook:339
+#: development.docbook:348
 #, no-c-format
 msgid ""
 "<userinput>lineEndContext</userinput> defines the context the highlight "
@@ -737,7 +758,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: development.docbook:346
+#: development.docbook:355
 #, no-c-format
 msgid ""
 "<userinput>lineEmptyContext</userinput> defines the context if an empty line "
@@ -745,7 +766,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: development.docbook:348
+#: development.docbook:357
 #, no-c-format
 msgid ""
 "<userinput>fallthrough</userinput> defines if the highlight system switches "
@@ -754,7 +775,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: development.docbook:351
+#: development.docbook:360
 #, no-c-format
 msgid ""
 "<userinput>fallthroughContext</userinput> specifies the next context if no "
@@ -762,7 +783,7 @@ msgid ""
 msgstr ""
 
 #. Tag: term
-#: development.docbook:358
+#: development.docbook:367
 #, no-c-format
 msgid ""
 "The element <userinput>itemData</userinput> is in the group "
@@ -776,7 +797,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: development.docbook:368
+#: development.docbook:377
 #, no-c-format
 msgid ""
 "<userinput>name</userinput> sets the name of the itemData. Contexts and "
@@ -785,7 +806,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: development.docbook:371
+#: development.docbook:380
 #, no-c-format
 msgid ""
 "<userinput>defStyleNum</userinput> defines which default style to use. "
@@ -793,7 +814,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: development.docbook:373
+#: development.docbook:382
 #, no-c-format
 msgid ""
 "<userinput>color</userinput> defines a color. Valid formats are '#rrggbb' or "
@@ -801,13 +822,13 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: development.docbook:375
+#: development.docbook:384
 #, no-c-format
 msgid "<userinput>selColor</userinput> defines the selection color."
 msgstr ""
 
 #. Tag: para
-#: development.docbook:376
+#: development.docbook:385
 #, no-c-format
 msgid ""
 "<userinput>italic</userinput> if <emphasis>true</emphasis>, the text will be "
@@ -815,7 +836,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: development.docbook:377
+#: development.docbook:386
 #, no-c-format
 msgid ""
 "<userinput>bold</userinput> if <emphasis>true</emphasis>, the text will be "
@@ -823,7 +844,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: development.docbook:378
+#: development.docbook:387
 #, no-c-format
 msgid ""
 "<userinput>underline</userinput> if <emphasis>true</emphasis>, the text will "
@@ -831,7 +852,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: development.docbook:379
+#: development.docbook:388
 #, no-c-format
 msgid ""
 "<userinput>strikeout</userinput> if <emphasis>true</emphasis>, the text will "
@@ -839,7 +860,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: development.docbook:380
+#: development.docbook:389
 #, no-c-format
 msgid ""
 "<userinput>spellChecking</userinput> if <emphasis>true</emphasis>, the text "
@@ -847,7 +868,7 @@ msgid ""
 msgstr ""
 
 #. Tag: term
-#: development.docbook:386
+#: development.docbook:395
 #, no-c-format
 msgid ""
 "The element <userinput>keywords</userinput> in the group <userinput>general</"
@@ -855,7 +876,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: development.docbook:390
+#: development.docbook:399
 #, no-c-format
 msgid ""
 "<userinput>casesensitive</userinput> may be <emphasis>true</emphasis> or "
@@ -864,7 +885,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: development.docbook:393
+#: development.docbook:402
 #, no-c-format
 msgid ""
 "<userinput>weakDeliminator</userinput> is a list of characters that do not "
@@ -874,14 +895,14 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: development.docbook:397
+#: development.docbook:406
 #, no-c-format
 msgid ""
 "<userinput>additionalDeliminator</userinput> defines additional delimiters."
 msgstr ""
 
 #. Tag: para
-#: development.docbook:398
+#: development.docbook:407
 #, no-c-format
 msgid ""
 "<userinput>wordWrapDeliminator</userinput> defines characters after which a "
@@ -889,7 +910,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: development.docbook:400
+#: development.docbook:409
 #, no-c-format
 msgid ""
 "Default delimiters and word wrap delimiters are the characters <userinput>."
@@ -898,7 +919,7 @@ msgid ""
 msgstr ""
 
 #. Tag: term
-#: development.docbook:408
+#: development.docbook:417
 #, no-c-format
 msgid ""
 "The element <userinput>comment</userinput> in the group <userinput>comments</"
@@ -909,7 +930,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: development.docbook:415
+#: development.docbook:424
 #, no-c-format
 msgid ""
 "<userinput>name</userinput> is either <emphasis>singleLine</emphasis> or "
@@ -919,7 +940,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: development.docbook:419
+#: development.docbook:428
 #, no-c-format
 msgid ""
 "<userinput>start</userinput> defines the string used to start a comment. In C"
@@ -927,7 +948,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: development.docbook:421
+#: development.docbook:430
 #, no-c-format
 msgid ""
 "<userinput>end</userinput> defines the string used to close a comment. In C+"
@@ -935,7 +956,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: development.docbook:423
+#: development.docbook:432
 #, no-c-format
 msgid ""
 "<userinput>region</userinput> should be the name of the foldable multiline "
@@ -947,7 +968,7 @@ msgid ""
 msgstr ""
 
 #. Tag: term
-#: development.docbook:434
+#: development.docbook:443
 #, no-c-format
 msgid ""
 "The element <userinput>folding</userinput> in the group <userinput>general</"
@@ -955,7 +976,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: development.docbook:439
+#: development.docbook:448
 #, no-c-format
 msgid ""
 "<userinput>indentationsensitive</userinput> if <emphasis>true</emphasis>, "
@@ -965,13 +986,13 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: development.docbook:452
+#: development.docbook:461
 #, no-c-format
 msgid "Available Default Styles"
 msgstr ""
 
 #. Tag: para
-#: development.docbook:453
+#: development.docbook:462
 #, no-c-format
 msgid ""
 "Default Styles were <link linkend=\"kate-highlight-system-default-styles"
@@ -980,13 +1001,13 @@ msgid ""
 msgstr ""
 
 #. Tag: term
-#: development.docbook:457
+#: development.docbook:466
 #, no-c-format
 msgid "General default styles:"
 msgstr ""
 
 #. Tag: para
-#: development.docbook:459
+#: development.docbook:468
 #, fuzzy, no-c-format
 #| msgid "<userinput>r</userinput>"
 msgid ""
@@ -994,21 +1015,21 @@ msgid ""
 msgstr "<userinput>r</userinput>"
 
 #. Tag: para
-#: development.docbook:460
+#: development.docbook:469
 #, fuzzy, no-c-format
 #| msgid "<userinput>e</userinput>"
 msgid "<userinput>dsKeyword</userinput>, built-in language keywords."
 msgstr "<userinput>e</userinput>"
 
 #. Tag: para
-#: development.docbook:461
+#: development.docbook:470
 #, fuzzy, no-c-format
 #| msgid "<userinput>r</userinput>"
 msgid "<userinput>dsFunction</userinput>, function calls and definitions."
 msgstr "<userinput>r</userinput>"
 
 #. Tag: para
-#: development.docbook:462
+#: development.docbook:471
 #, no-c-format
 msgid ""
 "<userinput>dsVariable</userinput>, if applicable: variable names (e.g. "
@@ -1016,7 +1037,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: development.docbook:463
+#: development.docbook:472
 #, no-c-format
 msgid ""
 "<userinput>dsControlFlow</userinput>, control flow keywords like if, else, "
@@ -1024,13 +1045,13 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: development.docbook:464
+#: development.docbook:473
 #, no-c-format
 msgid "<userinput>dsOperator</userinput>, operators like + - * / :: &lt; &gt;"
 msgstr ""
 
 #. Tag: para
-#: development.docbook:465
+#: development.docbook:474
 #, fuzzy, no-c-format
 #| msgid "<userinput>s</userinput>"
 msgid ""
@@ -1038,7 +1059,7 @@ msgid ""
 msgstr "<userinput>s</userinput>"
 
 #. Tag: para
-#: development.docbook:466
+#: development.docbook:475
 #, no-c-format
 msgid ""
 "<userinput>dsExtension</userinput>, common extensions, such as Qt classes "
@@ -1046,7 +1067,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: development.docbook:467
+#: development.docbook:476
 #, fuzzy, no-c-format
 #| msgid "<userinput>e</userinput>"
 msgid ""
@@ -1055,7 +1076,7 @@ msgid ""
 msgstr "<userinput>e</userinput>"
 
 #. Tag: para
-#: development.docbook:468
+#: development.docbook:477
 #, no-c-format
 msgid ""
 "<userinput>dsAttribute</userinput>, annotations such as @override and "
@@ -1063,20 +1084,20 @@ msgid ""
 msgstr ""
 
 #. Tag: term
-#: development.docbook:473
+#: development.docbook:482
 #, no-c-format
 msgid "String-related default styles:"
 msgstr ""
 
 #. Tag: para
-#: development.docbook:475
+#: development.docbook:484
 #, fuzzy, no-c-format
 #| msgid "<userinput>r</userinput>"
 msgid "<userinput>dsChar</userinput>, single characters, such as 'x'."
 msgstr "<userinput>r</userinput>"
 
 #. Tag: para
-#: development.docbook:476
+#: development.docbook:485
 #, no-c-format
 msgid ""
 "<userinput>dsSpecialChar</userinput>, chars with special meaning in strings "
@@ -1084,14 +1105,14 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: development.docbook:477
+#: development.docbook:486
 #, fuzzy, no-c-format
 #| msgid "<userinput>r</userinput>"
 msgid "<userinput>dsString</userinput>, strings like \"hello world\"."
 msgstr "<userinput>r</userinput>"
 
 #. Tag: para
-#: development.docbook:478
+#: development.docbook:487
 #, no-c-format
 msgid ""
 "<userinput>dsVerbatimString</userinput>, verbatim or raw strings like 'raw "
@@ -1099,7 +1120,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: development.docbook:479
+#: development.docbook:488
 #, no-c-format
 msgid ""
 "<userinput>dsSpecialString</userinput>, SQL, regexes, HERE docs, LaTeX math "
@@ -1107,20 +1128,20 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: development.docbook:480
+#: development.docbook:489
 #, fuzzy, no-c-format
 #| msgid "<userinput>s</userinput>"
 msgid "<userinput>dsImport</userinput>, import, include, require of modules."
 msgstr "<userinput>s</userinput>"
 
 #. Tag: term
-#: development.docbook:485
+#: development.docbook:494
 #, no-c-format
 msgid "Number-related default styles:"
 msgstr ""
 
 #. Tag: para
-#: development.docbook:487
+#: development.docbook:496
 #, fuzzy, no-c-format
 #| msgid "<userinput>e</userinput>"
 msgid ""
@@ -1128,28 +1149,28 @@ msgid ""
 msgstr "<userinput>e</userinput>"
 
 #. Tag: para
-#: development.docbook:488
+#: development.docbook:497
 #, fuzzy, no-c-format
 #| msgid "<userinput>s</userinput>"
 msgid "<userinput>dsDecVal</userinput>, decimal values."
 msgstr "<userinput>s</userinput>"
 
 #. Tag: para
-#: development.docbook:489
+#: development.docbook:498
 #, fuzzy, no-c-format
 #| msgid "<userinput>e</userinput>"
 msgid "<userinput>dsBaseN</userinput>, values with a base other than 10."
 msgstr "<userinput>e</userinput>"
 
 #. Tag: para
-#: development.docbook:490
+#: development.docbook:499
 #, fuzzy, no-c-format
 #| msgid "<userinput>s</userinput>"
 msgid "<userinput>dsFloat</userinput>, floating point values."
 msgstr "<userinput>s</userinput>"
 
 #. Tag: para
-#: development.docbook:491
+#: development.docbook:500
 #, fuzzy, no-c-format
 #| msgid "<userinput>e</userinput>"
 msgid ""
@@ -1158,20 +1179,20 @@ msgid ""
 msgstr "<userinput>e</userinput>"
 
 #. Tag: term
-#: development.docbook:496
+#: development.docbook:505
 #, no-c-format
 msgid "Comment and documentation-related default styles:"
 msgstr ""
 
 #. Tag: para
-#: development.docbook:498
+#: development.docbook:507
 #, fuzzy, no-c-format
 #| msgid "<userinput>e</userinput>"
 msgid "<userinput>dsComment</userinput>, comments."
 msgstr "<userinput>e</userinput>"
 
 #. Tag: para
-#: development.docbook:499
+#: development.docbook:508
 #, fuzzy, no-c-format
 #| msgid "<userinput>e</userinput>"
 msgid ""
@@ -1180,7 +1201,7 @@ msgid ""
 msgstr "<userinput>e</userinput>"
 
 #. Tag: para
-#: development.docbook:500
+#: development.docbook:509
 #, fuzzy, no-c-format
 #| msgid "<userinput>e</userinput>"
 msgid ""
@@ -1189,7 +1210,7 @@ msgid ""
 msgstr "<userinput>e</userinput>"
 
 #. Tag: para
-#: development.docbook:501
+#: development.docbook:510
 #, no-c-format
 msgid ""
 "<userinput>dsCommentVar</userinput>, the variable names used in above "
@@ -1197,7 +1218,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: development.docbook:502
+#: development.docbook:511
 #, fuzzy, no-c-format
 #| msgid "<userinput>e</userinput>"
 msgid ""
@@ -1206,13 +1227,13 @@ msgid ""
 msgstr "<userinput>e</userinput>"
 
 #. Tag: term
-#: development.docbook:507
+#: development.docbook:516
 #, no-c-format
 msgid "Other default styles:"
 msgstr ""
 
 #. Tag: para
-#: development.docbook:509
+#: development.docbook:518
 #, fuzzy, no-c-format
 #| msgid "<userinput>r</userinput>"
 msgid ""
@@ -1220,47 +1241,47 @@ msgid ""
 msgstr "<userinput>r</userinput>"
 
 #. Tag: para
-#: development.docbook:510
+#: development.docbook:519
 #, fuzzy, no-c-format
 #| msgid "<userinput>r</userinput>"
 msgid "<userinput>dsWarning</userinput>, warnings like @warning in doxygen."
 msgstr "<userinput>r</userinput>"
 
 #. Tag: para
-#: development.docbook:511
+#: development.docbook:520
 #, fuzzy, no-c-format
 #| msgid "<userinput>e</userinput>"
 msgid "<userinput>dsAlert</userinput>, special words like TODO, FIXME, XXXX."
 msgstr "<userinput>e</userinput>"
 
 #. Tag: para
-#: development.docbook:512
+#: development.docbook:521
 #, fuzzy, no-c-format
 #| msgid "<userinput>r</userinput>"
 msgid "<userinput>dsError</userinput>, error highlighting and wrong syntax."
 msgstr "<userinput>r</userinput>"
 
 #. Tag: para
-#: development.docbook:513
+#: development.docbook:522
 #, fuzzy, no-c-format
 #| msgid "<userinput>r</userinput>"
 msgid "<userinput>dsOthers</userinput>, when nothing else fits."
 msgstr "<userinput>r</userinput>"
 
 #. Tag: title
-#: development.docbook:523
+#: development.docbook:532
 #, no-c-format
 msgid "Highlight Detection Rules"
 msgstr ""
 
 #. Tag: para
-#: development.docbook:525
+#: development.docbook:534
 #, no-c-format
 msgid "This section describes the syntax detection rules."
 msgstr ""
 
 #. Tag: para
-#: development.docbook:527
+#: development.docbook:536
 #, no-c-format
 msgid ""
 "Each rule can match zero or more characters at the beginning of the string "
@@ -1270,13 +1291,13 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: development.docbook:533
+#: development.docbook:542
 #, no-c-format
 msgid "A rule looks like this:"
 msgstr ""
 
 #. Tag: programlisting
-#: development.docbook:535
+#: development.docbook:544
 #, no-c-format
 msgid ""
 "&lt;RuleName attribute=&quot;(identifier)&quot; context=&quot;"
@@ -1284,7 +1305,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: development.docbook:537
+#: development.docbook:546
 #, no-c-format
 msgid ""
 "The <emphasis>attribute</emphasis> identifies the style to use for matched "
@@ -1293,20 +1314,20 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: development.docbook:541
+#: development.docbook:550
 #, no-c-format
 msgid "The <emphasis>context</emphasis> can be identified by:"
 msgstr ""
 
 #. Tag: para
-#: development.docbook:545
+#: development.docbook:554
 #, no-c-format
 msgid ""
 "An <emphasis>identifier</emphasis>, which is the name of the other context."
 msgstr ""
 
 #. Tag: para
-#: development.docbook:549
+#: development.docbook:558
 #, no-c-format
 msgid ""
 "An <emphasis>order</emphasis> telling the engine to stay in the current "
@@ -1315,7 +1336,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: development.docbook:552
+#: development.docbook:561
 #, no-c-format
 msgid ""
 "To go back more steps, the #pop keyword can be repeated: "
@@ -1323,7 +1344,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: development.docbook:556
+#: development.docbook:565
 #, no-c-format
 msgid ""
 "An <emphasis>order</emphasis> followed by an exclamation mark (<emphasis>!</"
@@ -1333,20 +1354,20 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: development.docbook:563
+#: development.docbook:572
 #, no-c-format
 msgid ""
 "Rule specific attributes varies and are described in the following sections."
 msgstr ""
 
 #. Tag: title
-#: development.docbook:567
+#: development.docbook:576
 #, no-c-format
 msgid "Common attributes"
 msgstr ""
 
 #. Tag: para
-#: development.docbook:568
+#: development.docbook:577
 #, no-c-format
 msgid ""
 "All rules have the following attributes in common and are available whenever "
@@ -1356,7 +1377,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: development.docbook:575
+#: development.docbook:584
 #, no-c-format
 msgid ""
 "<emphasis>attribute</emphasis>: An attribute maps to a defined "
@@ -1364,7 +1385,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: development.docbook:578
+#: development.docbook:587
 #, no-c-format
 msgid ""
 "<emphasis>context</emphasis>: Specify the context to which the highlighting "
@@ -1372,21 +1393,21 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: development.docbook:581
+#: development.docbook:590
 #, no-c-format
 msgid ""
 "<emphasis>beginRegion</emphasis>: Start a code folding block. Default: unset."
 msgstr ""
 
 #. Tag: para
-#: development.docbook:584
+#: development.docbook:593
 #, no-c-format
 msgid ""
 "<emphasis>endRegion</emphasis>: Close a code folding block. Default: unset."
 msgstr ""
 
 #. Tag: para
-#: development.docbook:587
+#: development.docbook:596
 #, no-c-format
 msgid ""
 "<emphasis>lookAhead</emphasis>: If <emphasis>true</emphasis>, the "
@@ -1395,7 +1416,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: development.docbook:592
+#: development.docbook:601
 #, no-c-format
 msgid ""
 "<emphasis>firstNonSpace</emphasis>: Match only, if the string is the first "
@@ -1403,7 +1424,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: development.docbook:596
+#: development.docbook:605
 #, no-c-format
 msgid ""
 "<emphasis>column</emphasis>: Match only, if the column matches. Default: "
@@ -1411,13 +1432,13 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: development.docbook:601
+#: development.docbook:610
 #, no-c-format
 msgid "Dynamic rules"
 msgstr ""
 
 #. Tag: para
-#: development.docbook:602
+#: development.docbook:611
 #, no-c-format
 msgid ""
 "Some rules allow the optional attribute <userinput>dynamic</userinput> of "
@@ -1436,25 +1457,25 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: development.docbook:618
+#: development.docbook:627
 #, no-c-format
 msgid "<emphasis>dynamic</emphasis>: may be <emphasis>(true|false)</emphasis>."
 msgstr ""
 
 #. Tag: title
-#: development.docbook:623
+#: development.docbook:632
 #, no-c-format
 msgid "The Rules in Detail"
 msgstr ""
 
 #. Tag: term
-#: development.docbook:627
+#: development.docbook:636
 #, no-c-format
 msgid "DetectChar"
 msgstr ""
 
 #. Tag: para
-#: development.docbook:629
+#: development.docbook:638
 #, no-c-format
 msgid ""
 "Detect a single specific character. Commonly used for example to find the "
@@ -1462,7 +1483,7 @@ msgid ""
 msgstr ""
 
 #. Tag: programlisting
-#: development.docbook:631
+#: development.docbook:640
 #, no-c-format
 msgid ""
 "&lt;DetectChar char=&quot;(character)&quot; (common attributes) (dynamic) /"
@@ -1470,26 +1491,26 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: development.docbook:632
+#: development.docbook:641
 #, no-c-format
 msgid ""
 "The <userinput>char</userinput> attribute defines the character to match."
 msgstr ""
 
 #. Tag: term
-#: development.docbook:638
+#: development.docbook:647
 #, no-c-format
 msgid "Detect2Chars"
 msgstr ""
 
 #. Tag: para
-#: development.docbook:640
+#: development.docbook:649
 #, no-c-format
 msgid "Detect two specific characters in a defined order."
 msgstr ""
 
 #. Tag: programlisting
-#: development.docbook:641
+#: development.docbook:650
 #, no-c-format
 msgid ""
 "&lt;Detect2Chars char=&quot;(character)&quot; char1=&quot;(character)&quot; "
@@ -1497,7 +1518,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: development.docbook:642
+#: development.docbook:651
 #, no-c-format
 msgid ""
 "The <userinput>char</userinput> attribute defines the first character to "
@@ -1505,44 +1526,44 @@ msgid ""
 msgstr ""
 
 #. Tag: term
-#: development.docbook:648
+#: development.docbook:657
 #, no-c-format
 msgid "AnyChar"
 msgstr ""
 
 #. Tag: para
-#: development.docbook:650
+#: development.docbook:659
 #, no-c-format
 msgid "Detect one character of a set of specified characters."
 msgstr ""
 
 #. Tag: programlisting
-#: development.docbook:651
+#: development.docbook:660
 #, no-c-format
 msgid "&lt;AnyChar String=&quot;(string)&quot; (common attributes) /&gt;"
 msgstr ""
 
 #. Tag: para
-#: development.docbook:652
+#: development.docbook:661
 #, no-c-format
 msgid ""
 "The <userinput>String</userinput> attribute defines the set of characters."
 msgstr ""
 
 #. Tag: term
-#: development.docbook:658
+#: development.docbook:667
 #, no-c-format
 msgid "StringDetect"
 msgstr ""
 
 #. Tag: para
-#: development.docbook:660
+#: development.docbook:669
 #, no-c-format
 msgid "Detect an exact string."
 msgstr ""
 
 #. Tag: programlisting
-#: development.docbook:661
+#: development.docbook:670
 #, no-c-format
 msgid ""
 "&lt;StringDetect String=&quot;(string)&quot; [insensitive=&quot;true|"
@@ -1550,7 +1571,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: development.docbook:662 development.docbook:678
+#: development.docbook:671 development.docbook:687
 #, no-c-format
 msgid ""
 "The <userinput>String</userinput> attribute defines the string to match. The "
@@ -1560,13 +1581,13 @@ msgid ""
 msgstr ""
 
 #. Tag: term
-#: development.docbook:671
+#: development.docbook:680
 #, no-c-format
 msgid "WordDetect"
 msgstr ""
 
 #. Tag: para
-#: development.docbook:673
+#: development.docbook:682
 #, no-c-format
 msgid ""
 "Detect an exact string but additionally require word boundaries such as a "
@@ -1577,7 +1598,7 @@ msgid ""
 msgstr ""
 
 #. Tag: programlisting
-#: development.docbook:677
+#: development.docbook:686
 #, no-c-format
 msgid ""
 "&lt;WordDetect String=&quot;(string)&quot; [insensitive=&quot;true|"
@@ -1585,26 +1606,26 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: development.docbook:683
+#: development.docbook:692
 #, no-c-format
 msgid "Since: Kate 3.5 (KDE 4.5)"
 msgstr ""
 
 #. Tag: term
-#: development.docbook:688
+#: development.docbook:697
 #, no-c-format
 msgid "RegExpr"
 msgstr ""
 
 #. Tag: para
-#: development.docbook:690
+#: development.docbook:699
 #, fuzzy, no-c-format
 #| msgid "Do regular expression search."
 msgid "Matches against a regular expression."
 msgstr "Buscar empregando expresións regulares."
 
 #. Tag: programlisting
-#: development.docbook:691
+#: development.docbook:700
 #, no-c-format
 msgid ""
 "&lt;RegExpr String=&quot;(string)&quot; [insensitive=&quot;true|false&quot;] "
@@ -1612,14 +1633,14 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: development.docbook:692
+#: development.docbook:701
 #, no-c-format
 msgid ""
 "The <userinput>String</userinput> attribute defines the regular expression."
 msgstr ""
 
 #. Tag: para
-#: development.docbook:694
+#: development.docbook:703
 #, no-c-format
 msgid ""
 "<userinput>insensitive</userinput> defaults to <emphasis>false</emphasis> "
@@ -1627,7 +1648,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: development.docbook:697
+#: development.docbook:706
 #, no-c-format
 msgid ""
 "<userinput>minimal</userinput> defaults to <emphasis>false</emphasis> and is "
@@ -1635,7 +1656,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: development.docbook:700
+#: development.docbook:709
 #, no-c-format
 msgid ""
 "Because the rules are always matched against the beginning of the current "
@@ -1644,7 +1665,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: development.docbook:704
+#: development.docbook:713
 #, no-c-format
 msgid ""
 "See <link linkend=\"regular-expressions\">Regular Expressions</link> for "
@@ -1652,25 +1673,25 @@ msgid ""
 msgstr ""
 
 #. Tag: term
-#: development.docbook:710
+#: development.docbook:719
 #, no-c-format
 msgid "keyword"
 msgstr ""
 
 #. Tag: para
-#: development.docbook:712
+#: development.docbook:721
 #, no-c-format
 msgid "Detect a keyword from a specified list."
 msgstr ""
 
 #. Tag: programlisting
-#: development.docbook:713
+#: development.docbook:722
 #, no-c-format
 msgid "&lt;keyword String=&quot;(list name)&quot; (common attributes) /&gt;"
 msgstr ""
 
 #. Tag: para
-#: development.docbook:714
+#: development.docbook:723
 #, no-c-format
 msgid ""
 "The <userinput>String</userinput> attribute identifies the keyword list by "
@@ -1678,7 +1699,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: development.docbook:716
+#: development.docbook:725
 #, no-c-format
 msgid ""
 "The highlighting system processes keyword rules in a very optimized way. "
@@ -1690,7 +1711,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: development.docbook:721
+#: development.docbook:730
 #, no-c-format
 msgid ""
 "If a keyword to be matched shall contain a delimiter character, this "
@@ -1701,106 +1722,106 @@ msgid ""
 msgstr ""
 
 #. Tag: term
-#: development.docbook:729
+#: development.docbook:738
 #, no-c-format
 msgid "<term>Int</term>"
 msgstr ""
 
 #. Tag: para
-#: development.docbook:731
+#: development.docbook:740
 #, fuzzy, no-c-format
 #| msgid "An integer number."
 msgid "Detect an integer number."
 msgstr "Un número enteiro."
 
 #. Tag: programlisting
-#: development.docbook:732
+#: development.docbook:741
 #, no-c-format
 msgid "&lt;Int (common attributes) /&gt;"
 msgstr ""
 
 #. Tag: para
-#: development.docbook:733 development.docbook:742 development.docbook:751
-#: development.docbook:760 development.docbook:769 development.docbook:790
-#: development.docbook:857 development.docbook:872
+#: development.docbook:742 development.docbook:751 development.docbook:760
+#: development.docbook:769 development.docbook:778 development.docbook:799
+#: development.docbook:866 development.docbook:881
 #, no-c-format
 msgid "This rule has no specific attributes."
 msgstr ""
 
 #. Tag: term
-#: development.docbook:738
+#: development.docbook:747
 #, no-c-format
 msgid "Float"
 msgstr ""
 
 #. Tag: para
-#: development.docbook:740
+#: development.docbook:749
 #, no-c-format
 msgid "Detect a floating point number."
 msgstr ""
 
 #. Tag: programlisting
-#: development.docbook:741
+#: development.docbook:750
 #, no-c-format
 msgid "&lt;Float (common attributes) /&gt;"
 msgstr ""
 
 #. Tag: term
-#: development.docbook:747
+#: development.docbook:756
 #, no-c-format
 msgid "HlCOct"
 msgstr ""
 
 #. Tag: para
-#: development.docbook:749
+#: development.docbook:758
 #, no-c-format
 msgid "Detect an octal point number representation."
 msgstr ""
 
 #. Tag: programlisting
-#: development.docbook:750
+#: development.docbook:759
 #, no-c-format
 msgid "&lt;HlCOct (common attributes) /&gt;"
 msgstr ""
 
 #. Tag: term
-#: development.docbook:756
+#: development.docbook:765
 #, no-c-format
 msgid "HlCHex"
 msgstr ""
 
 #. Tag: para
-#: development.docbook:758
+#: development.docbook:767
 #, no-c-format
 msgid "Detect a hexadecimal number representation."
 msgstr ""
 
 #. Tag: programlisting
-#: development.docbook:759
+#: development.docbook:768
 #, no-c-format
 msgid "&lt;HlCHex (common attributes) /&gt;"
 msgstr ""
 
 #. Tag: term
-#: development.docbook:765
+#: development.docbook:774
 #, no-c-format
 msgid "HlCStringChar"
 msgstr ""
 
 #. Tag: para
-#: development.docbook:767
+#: development.docbook:776
 #, no-c-format
 msgid "Detect an escaped character."
 msgstr ""
 
 #. Tag: programlisting
-#: development.docbook:768
+#: development.docbook:777
 #, no-c-format
 msgid "&lt;HlCStringChar (common attributes) /&gt;"
 msgstr ""
 
 #. Tag: para
-#: development.docbook:771
+#: development.docbook:780
 #, no-c-format
 msgid ""
 "It matches literal representations of characters commonly used in program "
@@ -1809,7 +1830,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: development.docbook:775
+#: development.docbook:784
 #, no-c-format
 msgid ""
 "The following characters will match if they follow a backslash (<literal>\\</"
@@ -1819,25 +1840,25 @@ msgid ""
 msgstr ""
 
 #. Tag: term
-#: development.docbook:786
+#: development.docbook:795
 #, no-c-format
 msgid "HlCChar"
 msgstr ""
 
 #. Tag: para
-#: development.docbook:788
+#: development.docbook:797
 #, no-c-format
 msgid "Detect an C character."
 msgstr ""
 
 #. Tag: programlisting
-#: development.docbook:789
+#: development.docbook:798
 #, no-c-format
 msgid "&lt;HlCChar (common attributes) /&gt;"
 msgstr ""
 
 #. Tag: para
-#: development.docbook:792
+#: development.docbook:801
 #, no-c-format
 msgid ""
 "It matches C characters enclosed in a tick (Example: <userinput>'c'</"
@@ -1846,19 +1867,19 @@ msgid ""
 msgstr ""
 
 #. Tag: term
-#: development.docbook:800
+#: development.docbook:809
 #, no-c-format
 msgid "RangeDetect"
 msgstr ""
 
 #. Tag: para
-#: development.docbook:802
+#: development.docbook:811
 #, no-c-format
 msgid "Detect a string with defined start and end characters."
 msgstr ""
 
 #. Tag: programlisting
-#: development.docbook:803
+#: development.docbook:812
 #, no-c-format
 msgid ""
 "&lt;RangeDetect char=&quot;(character)&quot;  char1=&quot;(character)&quot; "
@@ -1866,7 +1887,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: development.docbook:804
+#: development.docbook:813
 #, no-c-format
 msgid ""
 "<userinput>char</userinput> defines the character starting the range, "
@@ -1874,7 +1895,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: development.docbook:806
+#: development.docbook:815
 #, no-c-format
 msgid ""
 "Useful to detect for example small quoted strings and the like, but note "
@@ -1883,25 +1904,25 @@ msgid ""
 msgstr ""
 
 #. Tag: term
-#: development.docbook:813
+#: development.docbook:822
 #, no-c-format
 msgid "LineContinue"
 msgstr ""
 
 #. Tag: para
-#: development.docbook:815
+#: development.docbook:824
 #, no-c-format
 msgid "Matches a specified char at the end of a line."
 msgstr ""
 
 #. Tag: programlisting
-#: development.docbook:816
+#: development.docbook:825
 #, no-c-format
 msgid "&lt;LineContinue (common attributes) [char=\"\\\"] /&gt;"
 msgstr ""
 
 #. Tag: para
-#: development.docbook:817
+#: development.docbook:826
 #, no-c-format
 msgid ""
 "<userinput>char</userinput> optional character to match, default is "
@@ -1909,7 +1930,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: development.docbook:819
+#: development.docbook:828
 #, no-c-format
 msgid ""
 "This rule is useful for switching context at end of line. This is needed for "
@@ -1917,19 +1938,19 @@ msgid ""
 msgstr ""
 
 #. Tag: term
-#: development.docbook:825
+#: development.docbook:834
 #, no-c-format
 msgid "IncludeRules"
 msgstr ""
 
 #. Tag: para
-#: development.docbook:827
+#: development.docbook:836
 #, no-c-format
 msgid "Include rules from another context or language/file."
 msgstr ""
 
 #. Tag: programlisting
-#: development.docbook:828
+#: development.docbook:837
 #, no-c-format
 msgid ""
 "&lt;IncludeRules context=&quot;contextlink&quot; [includeAttrib=&quot;true|"
@@ -1937,7 +1958,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: development.docbook:830
+#: development.docbook:839
 #, no-c-format
 msgid ""
 "The <userinput>context</userinput> attribute defines which context to "
@@ -1945,7 +1966,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: development.docbook:831
+#: development.docbook:840
 #, no-c-format
 msgid ""
 "If it is a simple string it includes all defined rules into the current "
@@ -1953,13 +1974,13 @@ msgid ""
 msgstr ""
 
 #. Tag: programlisting
-#: development.docbook:832
+#: development.docbook:841
 #, no-c-format
 msgid "&lt;IncludeRules context=&quot;anotherContext&quot; /&gt;"
 msgstr ""
 
 #. Tag: para
-#: development.docbook:834
+#: development.docbook:843
 #, no-c-format
 msgid ""
 "If the string contains a <userinput>##</userinput> the highlight system will "
@@ -1970,7 +1991,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: development.docbook:841
+#: development.docbook:850
 #, no-c-format
 msgid ""
 "If <userinput>includeAttrib</userinput> attribute is <emphasis>true</"
@@ -1980,25 +2001,25 @@ msgid ""
 msgstr ""
 
 #. Tag: term
-#: development.docbook:852
+#: development.docbook:861
 #, no-c-format
 msgid "DetectSpaces"
 msgstr ""
 
 #. Tag: para
-#: development.docbook:854
+#: development.docbook:863
 #, no-c-format
 msgid "Detect whitespaces."
 msgstr ""
 
 #. Tag: programlisting
-#: development.docbook:855
+#: development.docbook:864
 #, no-c-format
 msgid "&lt;DetectSpaces (common attributes) /&gt;"
 msgstr ""
 
 #. Tag: para
-#: development.docbook:858
+#: development.docbook:867
 #, no-c-format
 msgid ""
 "Use this rule if you know that there can be several whitespaces ahead, for "
@@ -2008,26 +2029,26 @@ msgid ""
 msgstr ""
 
 #. Tag: term
-#: development.docbook:867
+#: development.docbook:876
 #, no-c-format
 msgid "DetectIdentifier"
 msgstr ""
 
 #. Tag: para
-#: development.docbook:869
+#: development.docbook:878
 #, no-c-format
 msgid ""
 "Detect identifier strings (as a regular expression: [a-zA-Z_][a-zA-Z0-9_]*)."
 msgstr ""
 
 #. Tag: programlisting
-#: development.docbook:870
+#: development.docbook:879
 #, no-c-format
 msgid "&lt;DetectIdentifier (common attributes) /&gt;"
 msgstr ""
 
 #. Tag: para
-#: development.docbook:873
+#: development.docbook:882
 #, no-c-format
 msgid ""
 "Use this rule to skip a string of word characters at once, rather than "
@@ -2035,13 +2056,13 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: development.docbook:882
+#: development.docbook:891
 #, no-c-format
 msgid "Tips &amp; Tricks"
 msgstr ""
 
 #. Tag: para
-#: development.docbook:885
+#: development.docbook:894
 #, no-c-format
 msgid ""
 "Once you have understood how the context switching works it will be easy to "
@@ -2051,7 +2072,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: development.docbook:893
+#: development.docbook:902
 #, no-c-format
 msgid ""
 "If you only match two characters use <userinput>Detect2Chars</userinput> "
@@ -2060,7 +2081,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: development.docbook:898
+#: development.docbook:907
 #, no-c-format
 msgid ""
 "Regular expressions are easy to use but often there is another much faster "
@@ -2080,7 +2101,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: development.docbook:911
+#: development.docbook:920
 #, no-c-format
 msgid ""
 "You can switch contexts without processing characters. Assume that you want "
@@ -2091,7 +2112,7 @@ msgid ""
 msgstr ""
 
 #. Tag: programlisting
-#: development.docbook:916
+#: development.docbook:925
 #, no-c-format
 msgid ""
 "&lt;Detect2Chars attribute=&quot;Comment&quot; context=&quot;#pop&quot; "
@@ -2099,7 +2120,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: development.docbook:920
+#: development.docbook:929
 #, no-c-format
 msgid ""
 "Use <userinput>DetectSpaces</userinput> if you know that many whitespaces "
@@ -2107,7 +2128,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: development.docbook:923
+#: development.docbook:932
 #, no-c-format
 msgid ""
 "Use <userinput>DetectIdentifier</userinput> instead of the regular "
@@ -2115,7 +2136,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: development.docbook:926
+#: development.docbook:935
 #, no-c-format
 msgid ""
 "Use default styles whenever you can. This way the user will find a familiar "
@@ -2123,14 +2144,14 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: development.docbook:929
+#: development.docbook:938
 #, no-c-format
 msgid ""
 "Look into other XML-files to see how other people implement tricky rules."
 msgstr ""
 
 #. Tag: para
-#: development.docbook:932
+#: development.docbook:941
 #, no-c-format
 msgid ""
 "You can validate every XML file by using the command <command>validatehl.sh "
@@ -2141,7 +2162,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: development.docbook:940
+#: development.docbook:949
 #, no-c-format
 msgid ""
 "If you repeat complex regular expression very often you can use "
@@ -2149,7 +2170,7 @@ msgid ""
 msgstr ""
 
 #. Tag: programlisting
-#: development.docbook:942
+#: development.docbook:951
 #, no-c-format
 msgid ""
 "&lt;?xml version=\"1.0\" encoding=\"UTF-8\"?&gt;\n"
@@ -2160,7 +2181,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: development.docbook:943
+#: development.docbook:952
 #, no-c-format
 msgid ""
 "Now you can use <emphasis>&amp;myref;</emphasis> instead of the regular "
@@ -2168,13 +2189,13 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: development.docbook:955
+#: development.docbook:964
 #, no-c-format
 msgid "Scripting with JavaScript"
 msgstr ""
 
 #. Tag: para
-#: development.docbook:957
+#: development.docbook:966
 #, fuzzy, no-c-format
 #| msgid ""
 #| "Since &kappname; 3.4 in KDE 4.4 the &kappname; editor component is easily "
@@ -2193,13 +2214,13 @@ msgstr ""
 "scripts: de sangrado e da liña de ordes."
 
 #. Tag: title
-#: development.docbook:964
+#: development.docbook:973
 #, no-c-format
 msgid "Indentation Scripts"
 msgstr "Scripts de sangrado"
 
 #. Tag: para
-#: development.docbook:966
+#: development.docbook:975
 #, fuzzy, no-c-format
 #| msgid ""
 #| "Indentation scripts - also referred as indenters - automatically indent "
@@ -2215,7 +2236,7 @@ msgstr ""
 "nivel de sangrado."
 
 #. Tag: para
-#: development.docbook:972
+#: development.docbook:981
 #, fuzzy, no-c-format
 #| msgid ""
 #| "The following sections describe step by step how to create the skeleton "
@@ -2238,7 +2259,7 @@ msgstr ""
 "no cartafol <filename>$KDEHOME/share/apps/katepart/script</filename>."
 
 #. Tag: para
-#: development.docbook:980
+#: development.docbook:989
 #, no-c-format
 msgid ""
 "On &Windows; these files are located in <filename>%USER%\\AppData\\Local"
@@ -2248,13 +2269,13 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: development.docbook:984
+#: development.docbook:993
 #, no-c-format
 msgid "The Indentation Script Header"
 msgstr "Cabeceira"
 
 #. Tag: para
-#: development.docbook:985
+#: development.docbook:994
 #, fuzzy, no-c-format
 #| msgid ""
 #| "The header of the file <filename>javascript.js</filename> is embedded in "
@@ -2314,7 +2335,7 @@ msgstr ""
 "entradas definidas na cabeceira:"
 
 #. Tag: para
-#: development.docbook:992
+#: development.docbook:1001
 #, no-c-format
 msgid ""
 "<literal>name</literal> [required]: This is the indenter name that appears "
@@ -2327,7 +2348,7 @@ msgstr ""
 "configuración."
 
 #. Tag: para
-#: development.docbook:997 development.docbook:1120
+#: development.docbook:1006 development.docbook:1129
 #, no-c-format
 msgid ""
 "<literal>author</literal> [optional]: The author's name and contact "
@@ -2337,7 +2358,7 @@ msgstr ""
 "contacto."
 
 #. Tag: para
-#: development.docbook:1000
+#: development.docbook:1009
 #, fuzzy, no-c-format
 #| msgid ""
 #| "<literal>license</literal> [optional]: Short form of the license, such as "
@@ -2350,7 +2371,7 @@ msgstr ""
 "BSD ou LGPLv3."
 
 #. Tag: para
-#: development.docbook:1003 development.docbook:1122
+#: development.docbook:1012 development.docbook:1131
 #, no-c-format
 msgid ""
 "<literal>revision</literal> [required]: The revision of the script. This "
@@ -2360,7 +2381,7 @@ msgstr ""
 "Este número debería aumentarse cada vez que se modifique o script."
 
 #. Tag: para
-#: development.docbook:1006 development.docbook:1123
+#: development.docbook:1015 development.docbook:1132
 #, fuzzy, no-c-format
 #| msgid ""
 #| "<literal>kate-version</literal> [required]: Minimal required &kappname; "
@@ -2373,7 +2394,7 @@ msgstr ""
 "&kappname; necesaria para empregar o script."
 
 #. Tag: para
-#: development.docbook:1009
+#: development.docbook:1018
 #, fuzzy, no-c-format
 #| msgid ""
 #| "<literal>required-syntax-style</literal> [optional]: Comma separated list "
@@ -2406,7 +2427,7 @@ msgstr ""
 "ficheiros <filename>ruby.js</filename> e <filename>ruby.xml</filename>."
 
 #. Tag: para
-#: development.docbook:1012
+#: development.docbook:1021
 #, fuzzy, no-c-format
 #| msgid ""
 #| "<literal>indent-languages</literal> [optional]: Comma separated list of "
@@ -2421,7 +2442,7 @@ msgstr ""
 "c++, java."
 
 #. Tag: para
-#: development.docbook:1015
+#: development.docbook:1024
 #, no-c-format
 msgid ""
 "<literal>priority</literal> [optional]: If several indenters are suited for "
@@ -2434,13 +2455,13 @@ msgstr ""
 "maneira predeterminada."
 
 #. Tag: title
-#: development.docbook:1024
+#: development.docbook:1033
 #, no-c-format
 msgid "The Indenter Source Code"
 msgstr "Código"
 
 #. Tag: para
-#: development.docbook:1025
+#: development.docbook:1034
 #, fuzzy, no-c-format
 #| msgid ""
 #| "Having specified the header this section explains how the indentation "
@@ -2577,7 +2598,7 @@ msgstr ""
 "adoita chamárselle <quote>modo mixto</quote>."
 
 #. Tag: para
-#: development.docbook:1057
+#: development.docbook:1066
 #, no-c-format
 msgid ""
 "Consider the following example: Assume using tabs to indent, and tab width "
@@ -2604,7 +2625,7 @@ msgstr ""
 "cos que se abra o ficheiro empreguen para as tabulacións."
 
 #. Tag: para
-#: development.docbook:1067
+#: development.docbook:1076
 #, fuzzy, no-c-format
 #| msgid ""
 #| "A default KDE installation ships &kappname; with several indenters. The "
@@ -2620,7 +2641,7 @@ msgstr ""
 "cartafol <filename>$KDEDIR/share/apps/katepart/script</filename>."
 
 #. Tag: para
-#: development.docbook:1070
+#: development.docbook:1079
 #, no-c-format
 msgid ""
 "On &Windows; these files are located in <filename>%USER%\\AppData\\Local"
@@ -2630,7 +2651,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: development.docbook:1074
+#: development.docbook:1083
 #, fuzzy, no-c-format
 #| msgid ""
 #| "Developing an indenter requires to reload the scripts to see whether the "
@@ -2649,7 +2670,7 @@ msgstr ""
 "command> desde a liña de ordes."
 
 #. Tag: para
-#: development.docbook:1080 development.docbook:1186
+#: development.docbook:1089 development.docbook:1195
 #, no-c-format
 msgid ""
 "If you develop useful scripts please consider contributing to the &kappname; "
@@ -2661,13 +2682,13 @@ msgstr ""
 "\"mailto:kwrite-devel@kde.org\">lista de correo</ulink>."
 
 #. Tag: title
-#: development.docbook:1089
+#: development.docbook:1098
 #, no-c-format
 msgid "Command Line Scripts"
 msgstr "Scripts da liña de ordes"
 
 #. Tag: para
-#: development.docbook:1091
+#: development.docbook:1100
 #, fuzzy, no-c-format
 #| msgid ""
 #| "As it is hard to satisfy everyone's needs, &kappname; supports little "
@@ -2693,7 +2714,7 @@ msgstr ""
 "adicionais."
 
 #. Tag: para
-#: development.docbook:1100
+#: development.docbook:1109
 #, fuzzy, no-c-format
 #| msgid ""
 #| "Command line scripts are located in the same folder as indentation "
@@ -2714,7 +2735,7 @@ msgstr ""
 "no cartafol <filename>$KDEHOME/share/apps/katepart/script</filename>."
 
 #. Tag: para
-#: development.docbook:1107
+#: development.docbook:1116
 #, no-c-format
 msgid ""
 "On &Windows; these files are located in <filename>%USER%\\AppData\\Local"
@@ -2724,13 +2745,13 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: development.docbook:1112
+#: development.docbook:1121
 #, no-c-format
 msgid "The Command Line Script Header"
 msgstr "A cabeceira do script da liña de ordes"
 
 #. Tag: para
-#: development.docbook:1113
+#: development.docbook:1122
 #, fuzzy, no-c-format
 #| msgid ""
 #| "The header of the file <filename>javascript.js</filename> is embedded in "
@@ -2800,7 +2821,7 @@ msgstr ""
 "entradas definidas na cabeceira:"
 
 #. Tag: para
-#: development.docbook:1121
+#: development.docbook:1130
 #, fuzzy, no-c-format
 #| msgid ""
 #| "<literal>license</literal> [optional]: Short form of the license, such as "
@@ -2813,7 +2834,7 @@ msgstr ""
 "BSD ou LGPLv3."
 
 #. Tag: para
-#: development.docbook:1124
+#: development.docbook:1133
 #, fuzzy, no-c-format
 #| msgid ""
 #| "<literal>functions</literal> [required]: Comma separated list of commands "
@@ -2826,7 +2847,7 @@ msgstr ""
 "script, separadas por comas."
 
 #. Tag: para
-#: development.docbook:1125
+#: development.docbook:1134
 #, no-c-format
 msgid ""
 "<literal>actions</literal> [optional]: JSON Array of JSON objects that "
@@ -2836,7 +2857,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: development.docbook:1129
+#: development.docbook:1138
 #, no-c-format
 msgid ""
 "Since the value of <literal>functions</literal> is a JSON array, a single "
@@ -2846,13 +2867,13 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: development.docbook:1137
+#: development.docbook:1146
 #, no-c-format
 msgid "The Script Source Code"
 msgstr "Código"
 
 #. Tag: para
-#: development.docbook:1139
+#: development.docbook:1148
 #, fuzzy, no-c-format
 #| msgid ""
 #| "All functions specified in the header have to be implemented in the "
@@ -2871,7 +2892,7 @@ msgstr ""
 "Todas as funcións empregan a seguinte sintaxe:"
 
 #. Tag: programlisting
-#: development.docbook:1145
+#: development.docbook:1154
 #, fuzzy, no-c-format
 #| msgid ""
 #| "function &lt;name&gt;(arg1, arg2, ...)\n"
@@ -2894,7 +2915,7 @@ msgstr ""
 "}"
 
 #. Tag: para
-#: development.docbook:1148
+#: development.docbook:1157
 #, fuzzy, no-c-format
 #| msgid ""
 #| "Arguments in the command line are passed to the function as "
@@ -2955,7 +2976,7 @@ msgstr ""
 "\">internacionalizar as cadeas</link>."
 
 #. Tag: para
-#: development.docbook:1163
+#: development.docbook:1172
 #, fuzzy, no-c-format
 #| msgid ""
 #| "Developing a command line script requires to reload the scripts to see "
@@ -2974,13 +2995,13 @@ msgstr ""
 "command> desde a liña de ordes."
 
 #. Tag: title
-#: development.docbook:1170
+#: development.docbook:1179
 #, no-c-format
 msgid "Binding Shortcuts"
 msgstr "Asignación de atallos"
 
 #. Tag: para
-#: development.docbook:1171
+#: development.docbook:1180
 #, no-c-format
 msgid ""
 "In order to make the scripts accessible in the application menu and assign "
@@ -3010,7 +3031,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: development.docbook:1177
+#: development.docbook:1186
 #, fuzzy, no-c-format
 #| msgid ""
 #| "<literal>a.text</literal> [required]: The text appears in the menu "
@@ -3027,7 +3048,7 @@ msgstr ""
 "súa tradución."
 
 #. Tag: para
-#: development.docbook:1178
+#: development.docbook:1187
 #, fuzzy, no-c-format
 #| msgid ""
 #| "<literal>functions</literal> [required]: Comma separated list of commands "
@@ -3039,7 +3060,7 @@ msgstr ""
 "script, separadas por comas."
 
 #. Tag: para
-#: development.docbook:1179
+#: development.docbook:1188
 #, fuzzy, no-c-format
 #| msgid ""
 #| "<literal>a.icon</literal> [optional]: The icon appears next to the text "
@@ -3052,7 +3073,7 @@ msgstr ""
 "Pode empregar calquera dos nomes de iconas de KDE."
 
 #. Tag: para
-#: development.docbook:1180
+#: development.docbook:1189
 #, fuzzy, no-c-format
 #| msgid ""
 #| "<literal>a.category</literal> [optional]: If a category is specified, the "
@@ -3067,7 +3088,7 @@ msgstr ""
 "para permitir a súa tradución."
 
 #. Tag: para
-#: development.docbook:1181
+#: development.docbook:1190
 #, fuzzy, no-c-format
 #| msgid ""
 #| "<literal>a.shortcut</literal> [optional]: The shortcut given here is the "
@@ -3086,7 +3107,7 @@ msgstr ""
 "ulink>."
 
 #. Tag: para
-#: development.docbook:1182
+#: development.docbook:1191
 #, fuzzy, no-c-format
 #| msgid ""
 #| "<literal>a.interactive</literal> [optional]: If the script needs user "
@@ -3100,13 +3121,13 @@ msgstr ""
 "<literal>true</literal>."
 
 #. Tag: title
-#: development.docbook:1196
+#: development.docbook:1205
 #, no-c-format
 msgid "Scripting API"
 msgstr "API para scripts"
 
 #. Tag: para
-#: development.docbook:1198
+#: development.docbook:1207
 #, no-c-format
 msgid ""
 "The scripting API presented here is available to all scripts, &ie; "
@@ -3119,7 +3140,7 @@ msgid ""
 msgstr ""
 
 #. Tag: programlisting
-#: development.docbook:1204
+#: development.docbook:1213
 #, fuzzy, no-c-format
 #| msgid ""
 #| "function &lt;name&gt;(arg1, arg2, ...)\n"
@@ -3137,7 +3158,7 @@ msgstr ""
 "}"
 
 #. Tag: para
-#: development.docbook:1207
+#: development.docbook:1216
 #, fuzzy, no-c-format
 #| msgid ""
 #| "To extend the standard scripting API with own functions and prototypes "
@@ -3163,13 +3184,13 @@ msgstr ""
 "e os executa na orde correcta."
 
 #. Tag: programlisting
-#: development.docbook:1212
+#: development.docbook:1221
 #, no-c-format
 msgid "require (\"myscriptnamehere.js\");"
 msgstr ""
 
 #. Tag: para
-#: development.docbook:1216
+#: development.docbook:1225
 #, no-c-format
 msgid ""
 "On &Windows; these files are located in <filename>%USER%\\AppData\\Local"
@@ -3179,7 +3200,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: development.docbook:1219
+#: development.docbook:1228
 #, fuzzy, no-c-format
 #| msgid ""
 #| "To extend existing prototypes like <classname>Cursor</classname> or "
@@ -3206,13 +3227,13 @@ msgstr ""
 "<classname>Cursor</classname> mediante JavaScript."
 
 #. Tag: title
-#: development.docbook:1228
+#: development.docbook:1237
 #, no-c-format
 msgid "Cursors and Ranges"
 msgstr "Cursores e intervalos"
 
 #. Tag: para
-#: development.docbook:1230
+#: development.docbook:1239
 #, no-c-format
 msgid ""
 "As &kappname; is a text editor, all the scripting API is based on cursors "
@@ -3229,31 +3250,31 @@ msgstr ""
 "cursor final. As seguintes seccións explican en detalle o contido da API."
 
 #. Tag: title
-#: development.docbook:1239
+#: development.docbook:1248
 #, no-c-format
 msgid "The Cursor Prototype"
 msgstr "O prototipo Cursor"
 
 #. Tag: synopsis
-#: development.docbook:1242
+#: development.docbook:1251
 #, no-c-format
 msgid "Cursor();"
 msgstr "Cursor();"
 
 #. Tag: para
-#: development.docbook:1243
+#: development.docbook:1252
 #, no-c-format
 msgid "Constructor. Returns a Cursor at position <literal>(0, 0)</literal>."
 msgstr "Construtor. Devolve un cursor na posición <literal>(0, 0)</literal>."
 
 #. Tag: para
-#: development.docbook:1245
+#: development.docbook:1254
 #, no-c-format
 msgid "Example: <function>var cursor = new Cursor();</function>"
 msgstr "Por exemplo: <function>var cursor = new Cursor();</function>"
 
 #. Tag: synopsis
-#: development.docbook:1251
+#: development.docbook:1260
 #, no-c-format
 msgid ""
 "Cursor(<parameter>int <replaceable>line</replaceable></parameter>, "
@@ -3263,26 +3284,26 @@ msgstr ""
 "<parameter>int <replaceable>columna</replaceable></parameter>);"
 
 #. Tag: para
-#: development.docbook:1252
+#: development.docbook:1261
 #, no-c-format
 msgid "Constructor. Returns a Cursor at position (line, column)."
 msgstr "Construtor. Devolve un cursor na posición (liña, columna)."
 
 #. Tag: para
-#: development.docbook:1255
+#: development.docbook:1264
 #, no-c-format
 msgid "Example: <function>var cursor = new Cursor(3, 42);</function>"
 msgstr "Por exemplo: <function>var cursor = new Cursor(3, 42);</function>"
 
 #. Tag: synopsis
-#: development.docbook:1261
+#: development.docbook:1270
 #, no-c-format
 msgid "Cursor(<parameter>Cursor <replaceable>other</replaceable></parameter>);"
 msgstr ""
 "Cursor(<parameter>Cursor <replaceable>outro</replaceable></parameter>);"
 
 #. Tag: para
-#: development.docbook:1262
+#: development.docbook:1271
 #, no-c-format
 msgid ""
 "Copy constructor. Returns a copy of the cursor <replaceable>other</"
@@ -3292,31 +3313,31 @@ msgstr ""
 "cursor."
 
 #. Tag: para
-#: development.docbook:1265
+#: development.docbook:1274
 #, no-c-format
 msgid "Example: <function>var copy = new Cursor(other);</function>"
 msgstr "Por exemplo: <function>var copia = new Cursor(outro);</function>"
 
 #. Tag: synopsis
-#: development.docbook:1271
+#: development.docbook:1280
 #, no-c-format
 msgid "Cursor Cursor.clone();"
 msgstr "Cursor Cursor.clone();"
 
 #. Tag: para
-#: development.docbook:1272
+#: development.docbook:1281
 #, no-c-format
 msgid "Returns a clone of the cursor."
 msgstr "Devolve un clon do cursor."
 
 #. Tag: para
-#: development.docbook:1274
+#: development.docbook:1283
 #, no-c-format
 msgid "Example: <function>var clone = cursor.clone();</function>"
 msgstr "Por exemplo: <function>var clon = cursor.clone();</function>"
 
 #. Tag: synopsis
-#: development.docbook:1280
+#: development.docbook:1289
 #, fuzzy, no-c-format
 #| msgid ""
 #| "Cursor(<parameter>int <replaceable>line</replaceable></parameter>, "
@@ -3329,7 +3350,7 @@ msgstr ""
 "<parameter>int <replaceable>columna</replaceable></parameter>);"
 
 #. Tag: para
-#: development.docbook:1281
+#: development.docbook:1290
 #, fuzzy, no-c-format
 #| msgid ""
 #| "Cursor(<parameter>int <replaceable>line</replaceable></parameter>, "
@@ -3342,20 +3363,20 @@ msgstr ""
 "<parameter>int <replaceable>columna</replaceable></parameter>);"
 
 #. Tag: para
-#: development.docbook:1283 development.docbook:1395
+#: development.docbook:1292 development.docbook:1404
 #, fuzzy, no-c-format
 #| msgid "Since: KDE 4.8"
 msgid "Since: &kde; 4.11"
 msgstr "Dispoñíbel desde a versión 4.8 da colección de software de KDE."
 
 #. Tag: synopsis
-#: development.docbook:1290
+#: development.docbook:1299
 #, no-c-format
 msgid "bool Cursor.isValid();"
 msgstr "bool Cursor.isValid();"
 
 #. Tag: para
-#: development.docbook:1291
+#: development.docbook:1300
 #, no-c-format
 msgid ""
 "Check whether the cursor is valid. The cursor is invalid, if line and/or "
@@ -3365,19 +3386,19 @@ msgstr ""
 "que a liña ou a columna teñen o valor <literal>-1</literal>."
 
 #. Tag: para
-#: development.docbook:1295
+#: development.docbook:1304
 #, no-c-format
 msgid "Example: <function>var valid = cursor.isValid();</function>"
 msgstr "Por exemplo: <function>var correcto = cursor.isValid();</function>"
 
 #. Tag: synopsis
-#: development.docbook:1302
+#: development.docbook:1311
 #, no-c-format
 msgid "Cursor Cursor.invalid();"
 msgstr "Cursor Cursor.invalid();"
 
 #. Tag: para
-#: development.docbook:1303
+#: development.docbook:1312
 #, fuzzy, no-c-format
 #| msgid ""
 #| "Returns an new invalid cursor located at <literal>(-1, -1)</literal>."
@@ -3386,14 +3407,14 @@ msgstr ""
 "Devolve un novo cursor na posición <literal>(-1, -1)</literal> (non válido)."
 
 #. Tag: para
-#: development.docbook:1306
+#: development.docbook:1315
 #, no-c-format
 msgid "Example: <function>var invalidCursor = cursor.invalid();</function>"
 msgstr ""
 "Por exemplo: <function>var cursorNonVálido = cursor.invalid();</function>"
 
 #. Tag: synopsis
-#: development.docbook:1311
+#: development.docbook:1320
 #, no-c-format
 msgid ""
 "int Cursor.compareTo(<parameter>Cursor <replaceable>other</replaceable></"
@@ -3403,14 +3424,14 @@ msgstr ""
 "parameter>);"
 
 #. Tag: para
-#: development.docbook:1312
+#: development.docbook:1321
 #, no-c-format
 msgid ""
 "Compares this cursor to the cursor <replaceable>other</replaceable>. Returns"
 msgstr "Compara este cursor con <replaceable>outro</replaceable>. Devolve:"
 
 #. Tag: para
-#: development.docbook:1315
+#: development.docbook:1324
 #, no-c-format
 msgid ""
 "<literal>-1</literal>, if this cursor is located before the cursor "
@@ -3420,13 +3441,13 @@ msgstr ""
 "<replaceable>outro</replaceable>,"
 
 #. Tag: para
-#: development.docbook:1316
+#: development.docbook:1325
 #, no-c-format
 msgid "<literal>0</literal>, if both cursors equal and"
 msgstr "<literal>0</literal> se están os dous na mesma posición, ou"
 
 #. Tag: para
-#: development.docbook:1317
+#: development.docbook:1326
 #, no-c-format
 msgid ""
 "<literal>+1</literal>, if this cursor is located after the cursor "
@@ -3436,7 +3457,7 @@ msgstr ""
 "<replaceable>outro</replaceable>."
 
 #. Tag: synopsis
-#: development.docbook:1324
+#: development.docbook:1333
 #, no-c-format
 msgid ""
 "bool Cursor.equals(<parameter>Cursor <replaceable>other</replaceable></"
@@ -3446,7 +3467,7 @@ msgstr ""
 "parameter>);"
 
 #. Tag: para
-#: development.docbook:1325
+#: development.docbook:1334
 #, no-c-format
 msgid ""
 "Returns <literal>true</literal>, if this cursor and the cursor "
@@ -3457,13 +3478,13 @@ msgstr ""
 "ou <literal>false</literal> en caso contrario."
 
 #. Tag: synopsis
-#: development.docbook:1333
+#: development.docbook:1342
 #, no-c-format
 msgid "String Cursor.toString();"
 msgstr "String Cursor.toString();"
 
 #. Tag: para
-#: development.docbook:1334
+#: development.docbook:1343
 #, no-c-format
 msgid ""
 "Returns the cursor as a string of the form <quote><literal>Cursor(line, "
@@ -3473,19 +3494,19 @@ msgstr ""
 "<quote><literal>Cursor(liña, columna)</literal></quote>."
 
 #. Tag: title
-#: development.docbook:1343
+#: development.docbook:1352
 #, no-c-format
 msgid "The Range Prototype"
 msgstr "O prototipo Range"
 
 #. Tag: synopsis
-#: development.docbook:1346
+#: development.docbook:1355
 #, no-c-format
 msgid "Range();"
 msgstr "Range();"
 
 #. Tag: para
-#: development.docbook:1347
+#: development.docbook:1356
 #, no-c-format
 msgid ""
 "Constructor. Calling <literal>new Range()</literal> returns a Range at (0, "
@@ -3495,7 +3516,7 @@ msgstr ""
 "intervalo (0, 0) - (0, 0)."
 
 #. Tag: synopsis
-#: development.docbook:1354
+#: development.docbook:1363
 #, no-c-format
 msgid ""
 "Range(<parameter>Cursor <replaceable>start</replaceable></parameter>, "
@@ -3505,7 +3526,7 @@ msgstr ""
 "<parameter>Cursor <replaceable>final</replaceable></parameter>);"
 
 #. Tag: para
-#: development.docbook:1355
+#: development.docbook:1364
 #, no-c-format
 msgid ""
 "Constructor. Calling <literal>new Range(<replaceable>start</replaceable>, "
@@ -3517,7 +3538,7 @@ msgstr ""
 "intervalo <replaceable>start</replaceable> - <replaceable>end</replaceable>."
 
 #. Tag: synopsis
-#: development.docbook:1362
+#: development.docbook:1371
 #, no-c-format
 msgid ""
 "Range(<parameter>int <replaceable>startLine</replaceable></parameter>, "
@@ -3531,7 +3552,7 @@ msgstr ""
 "<parameter>int <replaceable>columnaFinal</replaceable></parameter>);"
 
 #. Tag: para
-#: development.docbook:1363
+#: development.docbook:1372
 #, no-c-format
 msgid ""
 "Constructor. Calling <literal>new Range(<replaceable>startLine</"
@@ -3550,13 +3571,13 @@ msgstr ""
 "replaceable>)."
 
 #. Tag: synopsis
-#: development.docbook:1371
+#: development.docbook:1380
 #, no-c-format
 msgid "Range(<parameter>Range <replaceable>other</replaceable></parameter>);"
 msgstr "Range(<parameter>Range <replaceable>outro</replaceable></parameter>);"
 
 #. Tag: para
-#: development.docbook:1372
+#: development.docbook:1381
 #, no-c-format
 msgid ""
 "Copy constructor. Returns a copy of Range <replaceable>other</replaceable>."
@@ -3565,32 +3586,32 @@ msgstr ""
 "intervalo."
 
 #. Tag: synopsis
-#: development.docbook:1379
+#: development.docbook:1388
 #, no-c-format
 msgid "Range Range.clone();"
 msgstr "Range Range.clone();"
 
 #. Tag: para
-#: development.docbook:1380
+#: development.docbook:1389
 #, no-c-format
 msgid "Returns a clone of the range."
 msgstr "Devolve un clon do intervalo."
 
 #. Tag: para
-#: development.docbook:1383
+#: development.docbook:1392
 #, no-c-format
 msgid "Example: <function>var clone = range.clone();</function>"
 msgstr "Por exemplo: <function>var clon = intervalo.clone();</function>"
 
 #. Tag: synopsis
-#: development.docbook:1389
+#: development.docbook:1398
 #, fuzzy, no-c-format
 #| msgid "bool Range.isValid();"
 msgid "bool Range.isEmpty();"
 msgstr "bool Range.isValid();"
 
 #. Tag: para
-#: development.docbook:1390
+#: development.docbook:1399
 #, fuzzy, no-c-format
 #| msgid ""
 #| "Returns <literal>true</literal>, if both start and end cursor are valid, "
@@ -3603,20 +3624,20 @@ msgstr ""
 "literal>."
 
 #. Tag: para
-#: development.docbook:1393
+#: development.docbook:1402
 #, fuzzy, no-c-format
 #| msgid "Example: <function>var valid = range.isValid();</function>"
 msgid "Example: <function>var empty = range.isEmpty();</function>"
 msgstr "Por exemplo: <function>var valido = range.isValid();</function>"
 
 #. Tag: synopsis
-#: development.docbook:1402
+#: development.docbook:1411
 #, no-c-format
 msgid "bool Range.isValid();"
 msgstr "bool Range.isValid();"
 
 #. Tag: para
-#: development.docbook:1403
+#: development.docbook:1412
 #, no-c-format
 msgid ""
 "Returns <literal>true</literal>, if both start and end cursor are valid, "
@@ -3627,26 +3648,26 @@ msgstr ""
 "literal>."
 
 #. Tag: para
-#: development.docbook:1406
+#: development.docbook:1415
 #, no-c-format
 msgid "Example: <function>var valid = range.isValid();</function>"
 msgstr "Por exemplo: <function>var correcto = range.isValid();</function>"
 
 #. Tag: synopsis
-#: development.docbook:1412
+#: development.docbook:1421
 #, fuzzy, no-c-format
 #| msgid "bool Range.invalid();"
 msgid "Range Range.invalid();"
 msgstr "bool Range.invalid();"
 
 #. Tag: para
-#: development.docbook:1413
+#: development.docbook:1422
 #, no-c-format
 msgid "Returns the Range from (-1, -1) to (-1, -1)."
 msgstr "Devolve un intervalo de (-1, -1) a (-1, -1)."
 
 #. Tag: synopsis
-#: development.docbook:1420
+#: development.docbook:1429
 #, no-c-format
 msgid ""
 "bool Range.contains(<parameter>Cursor <replaceable>cursor</replaceable></"
@@ -3656,7 +3677,7 @@ msgstr ""
 "parameter>);"
 
 #. Tag: para
-#: development.docbook:1421
+#: development.docbook:1430
 #, no-c-format
 msgid ""
 "Returns <literal>true</literal>, if this range contains the cursor position, "
@@ -3666,7 +3687,7 @@ msgstr ""
 "ou <literal>false</literal> en caso contrario."
 
 #. Tag: synopsis
-#: development.docbook:1428
+#: development.docbook:1437
 #, no-c-format
 msgid ""
 "bool Range.contains(<parameter>Range <replaceable>other</replaceable></"
@@ -3676,7 +3697,7 @@ msgstr ""
 "parameter>);"
 
 #. Tag: para
-#: development.docbook:1429
+#: development.docbook:1438
 #, no-c-format
 msgid ""
 "Returns <literal>true</literal>, if this range contains the Range "
@@ -3687,7 +3708,7 @@ msgstr ""
 "contrario."
 
 #. Tag: synopsis
-#: development.docbook:1437
+#: development.docbook:1446
 #, no-c-format
 msgid ""
 "bool Range.containsColumn(<parameter>int <replaceable>column</replaceable></"
@@ -3697,7 +3718,7 @@ msgstr ""
 "parameter>);"
 
 #. Tag: para
-#: development.docbook:1438
+#: development.docbook:1447
 #, no-c-format
 msgid ""
 "Returns <literal>true</literal>, if <replaceable>column</replaceable> is in "
@@ -3709,7 +3730,7 @@ msgstr ""
 "ou <literal>false</literal> en caso contrario."
 
 #. Tag: synopsis
-#: development.docbook:1446
+#: development.docbook:1455
 #, no-c-format
 msgid ""
 "bool Range.containsLine(<parameter>int <replaceable>line</replaceable></"
@@ -3719,7 +3740,7 @@ msgstr ""
 "parameter>);"
 
 #. Tag: para
-#: development.docbook:1447
+#: development.docbook:1456
 #, no-c-format
 msgid ""
 "Returns <literal>true</literal>, if <replaceable>line</replaceable> is in "
@@ -3731,7 +3752,7 @@ msgstr ""
 "<literal>false</literal> en caos contrario."
 
 #. Tag: synopsis
-#: development.docbook:1455
+#: development.docbook:1464
 #, no-c-format
 msgid ""
 "bool Range.overlaps(<parameter>Range <replaceable>other</replaceable></"
@@ -3741,7 +3762,7 @@ msgstr ""
 "parameter>);"
 
 #. Tag: para
-#: development.docbook:1456
+#: development.docbook:1465
 #, no-c-format
 msgid ""
 "Returns <literal>true</literal>, if this range and the range "
@@ -3753,7 +3774,7 @@ msgstr ""
 "caso contrario."
 
 #. Tag: synopsis
-#: development.docbook:1464
+#: development.docbook:1473
 #, no-c-format
 msgid ""
 "bool Range.overlapsLine(<parameter>int <replaceable>line</replaceable></"
@@ -3763,7 +3784,7 @@ msgstr ""
 "parameter>);"
 
 #. Tag: para
-#: development.docbook:1465
+#: development.docbook:1474
 #, no-c-format
 msgid ""
 "Returns <literal>true</literal>, if <replaceable>line</replaceable> is in "
@@ -3775,7 +3796,7 @@ msgstr ""
 "literal> en caso contrario."
 
 #. Tag: synopsis
-#: development.docbook:1473
+#: development.docbook:1482
 #, no-c-format
 msgid ""
 "bool Range.overlapsColumn(<parameter>int <replaceable>column</replaceable></"
@@ -3785,7 +3806,7 @@ msgstr ""
 "parameter>);"
 
 #. Tag: para
-#: development.docbook:1474
+#: development.docbook:1483
 #, no-c-format
 msgid ""
 "Returns <literal>true</literal>, if <replaceable>column</replaceable> is in "
@@ -3797,14 +3818,14 @@ msgstr ""
 "<literal>false</literal> en caso contrario."
 
 #. Tag: synopsis
-#: development.docbook:1482
+#: development.docbook:1491
 #, fuzzy, no-c-format
 #| msgid "bool Range.invalid();"
 msgid "bool Range.onSingleLine();"
 msgstr "bool Range.invalid();"
 
 #. Tag: para
-#: development.docbook:1483
+#: development.docbook:1492
 #, fuzzy, no-c-format
 #| msgid ""
 #| "Returns <literal>true</literal>, if both start and end cursor are valid, "
@@ -3818,14 +3839,14 @@ msgstr ""
 "literal>."
 
 #. Tag: para
-#: development.docbook:1487 development.docbook:1844 development.docbook:1983
+#: development.docbook:1496 development.docbook:1853 development.docbook:1992
 #, fuzzy, no-c-format
 #| msgid "Since: KDE 4.8"
 msgid "Since: &kde; 4.9"
 msgstr "Dispoñíbel desde a versión 4.8 da colección de software de KDE."
 
 #. Tag: synopsis
-#: development.docbook:1494
+#: development.docbook:1503
 #, no-c-format
 msgid ""
 "bool Range.equals(<parameter>Range <replaceable>other</replaceable></"
@@ -3835,7 +3856,7 @@ msgstr ""
 "parameter>);"
 
 #. Tag: para
-#: development.docbook:1495
+#: development.docbook:1504
 #, no-c-format
 msgid ""
 "Returns <literal>true</literal>, if this range and the Range "
@@ -3846,13 +3867,13 @@ msgstr ""
 "replaceable> son idénticos, ou <literal>false</literal> en caso contrario."
 
 #. Tag: synopsis
-#: development.docbook:1503
+#: development.docbook:1512
 #, no-c-format
 msgid "String Range.toString();"
 msgstr "String Range.toString();"
 
 #. Tag: para
-#: development.docbook:1504
+#: development.docbook:1513
 #, no-c-format
 msgid ""
 "Returns the range as a string of the form <quote><literal>Range(Cursor(line, "
@@ -3863,25 +3884,25 @@ msgstr ""
 "literal></quote>."
 
 #. Tag: title
-#: development.docbook:1513
+#: development.docbook:1522
 #, no-c-format
 msgid "Global Functions"
 msgstr "Funcións globais"
 
 #. Tag: para
-#: development.docbook:1514
+#: development.docbook:1523
 #, no-c-format
 msgid "This section lists all global functions."
 msgstr "A continuación lístanse todas as funcións globais dispoñíbeis."
 
 #. Tag: title
-#: development.docbook:1518
+#: development.docbook:1527
 #, no-c-format
 msgid "Reading &amp; Including Files"
 msgstr ""
 
 #. Tag: synopsis
-#: development.docbook:1521
+#: development.docbook:1530
 #, fuzzy, no-c-format
 #| msgid ""
 #| "void debug(<parameter>String <replaceable>text</replaceable></parameter>);"
@@ -3891,7 +3912,7 @@ msgstr ""
 "void debug(<parameter>String <replaceable>texto</replaceable></parameter>);"
 
 #. Tag: para
-#: development.docbook:1522
+#: development.docbook:1531
 #, no-c-format
 msgid ""
 "Will search the given <replaceable>file</replaceable> relative to the "
@@ -3900,7 +3921,7 @@ msgid ""
 msgstr ""
 
 #. Tag: synopsis
-#: development.docbook:1528
+#: development.docbook:1537
 #, fuzzy, no-c-format
 #| msgid ""
 #| "void debug(<parameter>String <replaceable>text</replaceable></parameter>);"
@@ -3910,7 +3931,7 @@ msgstr ""
 "void debug(<parameter>String <replaceable>texto</replaceable></parameter>);"
 
 #. Tag: para
-#: development.docbook:1529
+#: development.docbook:1538
 #, no-c-format
 msgid ""
 "Will search the given <replaceable>file</replaceable> relative to the "
@@ -3920,20 +3941,20 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: development.docbook:1533
+#: development.docbook:1542
 #, fuzzy, no-c-format
 #| msgid "Since: KDE 4.8"
 msgid "Since: &kde; 4.10"
 msgstr "Dispoñíbel desde a versión 4.8 da colección de software de KDE."
 
 #. Tag: title
-#: development.docbook:1542
+#: development.docbook:1551
 #, no-c-format
 msgid "Debugging"
 msgstr "Depuración"
 
 #. Tag: synopsis
-#: development.docbook:1545
+#: development.docbook:1554
 #, no-c-format
 msgid ""
 "void debug(<parameter>String <replaceable>text</replaceable></parameter>);"
@@ -3941,7 +3962,7 @@ msgstr ""
 "void debug(<parameter>String <replaceable>texto</replaceable></parameter>);"
 
 #. Tag: para
-#: development.docbook:1546
+#: development.docbook:1555
 #, no-c-format
 msgid ""
 "Prints <replaceable>text</replaceable> to <literal>stdout</literal> in the "
@@ -3951,13 +3972,13 @@ msgstr ""
 "saída de texto estándar da consola desde a que se iniciou o aplicativo."
 
 #. Tag: title
-#: development.docbook:1555
+#: development.docbook:1564
 #, no-c-format
 msgid "Translation"
 msgstr "Internacionalización"
 
 #. Tag: para
-#: development.docbook:1557
+#: development.docbook:1566
 #, fuzzy, no-c-format
 #| msgid ""
 #| "In order to support full localization, there are several functions to "
@@ -3981,7 +4002,7 @@ msgstr ""
 "i18n\">funcións de internacionalización de KDE</ulink>."
 
 #. Tag: para
-#: development.docbook:1564
+#: development.docbook:1573
 #, fuzzy, no-c-format
 #| msgid ""
 #| "The translation functions translate the wrapped strings through KDE's "
@@ -4017,7 +4038,7 @@ msgstr ""
 "catalog</literal>."
 
 #. Tag: synopsis
-#: development.docbook:1576
+#: development.docbook:1585
 #, no-c-format
 msgid ""
 "void i18n(<parameter>String <replaceable>text</replaceable></parameter>, "
@@ -4027,7 +4048,7 @@ msgstr ""
 "<replaceable>argumento1</replaceable>, …);"
 
 #. Tag: para
-#: development.docbook:1577
+#: development.docbook:1586
 #, no-c-format
 msgid ""
 "Translates <replaceable>text</replaceable> into the language used by the "
@@ -4045,7 +4066,7 @@ msgstr ""
 "posición na que aparecen."
 
 #. Tag: synopsis
-#: development.docbook:1584
+#: development.docbook:1593
 #, no-c-format
 msgid ""
 "void i18nc(<parameter>String <replaceable>context</replaceable></parameter>, "
@@ -4057,7 +4078,7 @@ msgstr ""
 "<replaceable>argumento1</replaceable>, …);"
 
 #. Tag: para
-#: development.docbook:1585
+#: development.docbook:1594
 #, no-c-format
 msgid ""
 "Translates <replaceable>text</replaceable> into the language used by the "
@@ -4074,7 +4095,7 @@ msgstr ""
 "literal>, etc."
 
 #. Tag: synopsis
-#: development.docbook:1594
+#: development.docbook:1603
 #, no-c-format
 msgid ""
 "void i18np(<parameter>String <replaceable>singular</replaceable></"
@@ -4088,7 +4109,7 @@ msgstr ""
 "<replaceable>argumento1</replaceable>, …);"
 
 #. Tag: para
-#: development.docbook:1595
+#: development.docbook:1604
 #, no-c-format
 msgid ""
 "Translates either <replaceable>singular</replaceable> or "
@@ -4109,7 +4130,7 @@ msgstr ""
 "posición na que aparecen."
 
 #. Tag: synopsis
-#: development.docbook:1604
+#: development.docbook:1613
 #, no-c-format
 msgid ""
 "void i18ncp(<parameter>String <replaceable>context</replaceable></"
@@ -4125,7 +4146,7 @@ msgstr ""
 "<replaceable>argumento1</replaceable>, …);"
 
 #. Tag: para
-#: development.docbook:1605
+#: development.docbook:1614
 #, no-c-format
 msgid ""
 "Translates either <replaceable>singular</replaceable> or "
@@ -4146,13 +4167,13 @@ msgstr ""
 "literal>, etc."
 
 #. Tag: title
-#: development.docbook:1619
+#: development.docbook:1628
 #, no-c-format
 msgid "The View API"
 msgstr "A API da vista"
 
 #. Tag: para
-#: development.docbook:1620
+#: development.docbook:1629
 #, no-c-format
 msgid ""
 "Whenever a script is being executed, there is a global variable "
@@ -4164,19 +4185,19 @@ msgstr ""
 "editor actual. A variábel fornece os métodos da seguinte lista."
 
 #. Tag: synopsis
-#: development.docbook:1627
+#: development.docbook:1636
 #, no-c-format
 msgid "<function>Cursor view.cursorPosition()</function>"
 msgstr "<function>Cursor view.cursorPosition()</function>"
 
 #. Tag: para
-#: development.docbook:1628
+#: development.docbook:1637
 #, no-c-format
 msgid "Returns the current cursor position in the view."
 msgstr "Devolve a posición actual do cursor na vista."
 
 #. Tag: synopsis
-#: development.docbook:1633
+#: development.docbook:1642
 #, no-c-format
 msgid ""
 "void view.setCursorPosition(<parameter>int <replaceable>line</replaceable></"
@@ -4190,7 +4211,7 @@ msgstr ""
 "replaceable></parameter>);"
 
 #. Tag: para
-#: development.docbook:1634
+#: development.docbook:1643
 #, no-c-format
 msgid ""
 "Set the current cursor position to either (line, column) or to the given "
@@ -4199,13 +4220,13 @@ msgstr ""
 "Situar o cursor actual na posición (liña, columna) ou o cursor indicado."
 
 #. Tag: synopsis
-#: development.docbook:1641
+#: development.docbook:1650
 #, no-c-format
 msgid "Cursor view.virtualCursorPosition();"
 msgstr "Cursor view.virtualCursorPosition();"
 
 #. Tag: para
-#: development.docbook:1642
+#: development.docbook:1651
 #, no-c-format
 msgid ""
 "Returns the virtual cursor position with each tab counting the corresponding "
@@ -4216,7 +4237,7 @@ msgstr ""
 "tabulacións."
 
 #. Tag: synopsis
-#: development.docbook:1649
+#: development.docbook:1658
 #, no-c-format
 msgid ""
 "void view.setVirtualCursorPosition(<parameter>int <replaceable>line</"
@@ -4232,7 +4253,7 @@ msgstr ""
 "replaceable></parameter>);"
 
 #. Tag: para
-#: development.docbook:1650
+#: development.docbook:1659
 #, no-c-format
 msgid ""
 "Set the current virtual cursor position to (line, column) or to the given "
@@ -4241,13 +4262,13 @@ msgstr ""
 "Situar o cursor virtual na posición (liña, columna) ou o cursor indicado."
 
 #. Tag: synopsis
-#: development.docbook:1657
+#: development.docbook:1666
 #, no-c-format
 msgid "String view.selectedText();"
 msgstr "String view.selectedText();"
 
 #. Tag: para
-#: development.docbook:1658
+#: development.docbook:1667
 #, no-c-format
 msgid ""
 "Returns the selected text. If no text is selected, the returned string is "
@@ -4257,13 +4278,13 @@ msgstr ""
 "estará baleira."
 
 #. Tag: synopsis
-#: development.docbook:1665
+#: development.docbook:1674
 #, no-c-format
 msgid "bool view.hasSelection();"
 msgstr "bool view.hasSelection();"
 
 #. Tag: para
-#: development.docbook:1666
+#: development.docbook:1675
 #, no-c-format
 msgid ""
 "Returns <literal>true</literal>, if the view has selected text, otherwise "
@@ -4273,13 +4294,13 @@ msgstr ""
 "<literal>false</literal> en caso contrario."
 
 #. Tag: synopsis
-#: development.docbook:1673
+#: development.docbook:1682
 #, no-c-format
 msgid "Range view.selection();"
 msgstr "Range view.selection();"
 
 #. Tag: para
-#: development.docbook:1674
+#: development.docbook:1683
 #, no-c-format
 msgid ""
 "Returns the selected text range. The returned range is invalid if there is "
@@ -4289,7 +4310,7 @@ msgstr ""
 "intervalo será incorrecto."
 
 #. Tag: synopsis
-#: development.docbook:1682
+#: development.docbook:1691
 #, no-c-format
 msgid ""
 "void view.setSelection(<parameter>Range <replaceable>range</replaceable></"
@@ -4299,19 +4320,19 @@ msgstr ""
 "replaceable></parameter>);"
 
 #. Tag: para
-#: development.docbook:1683
+#: development.docbook:1692
 #, no-c-format
 msgid "Set the selected text to the given range."
 msgstr "Seleccionar o texto do intervalo indicado."
 
 #. Tag: synopsis
-#: development.docbook:1690
+#: development.docbook:1699
 #, no-c-format
 msgid "void view.removeSelectedText();"
 msgstr "void view.removeSelectedText();"
 
 #. Tag: para
-#: development.docbook:1691
+#: development.docbook:1700
 #, no-c-format
 msgid ""
 "Remove the selected text. If the view does not have any selected text, this "
@@ -4321,31 +4342,31 @@ msgstr ""
 "ten ningún efecto."
 
 #. Tag: synopsis
-#: development.docbook:1699
+#: development.docbook:1708
 #, no-c-format
 msgid "void view.selectAll();"
 msgstr "void view.selectAll();"
 
 #. Tag: para
-#: development.docbook:1700
+#: development.docbook:1709
 #, no-c-format
 msgid "Selects the entire text in the document."
 msgstr "Selecciona todo o texto do documento."
 
 #. Tag: synopsis
-#: development.docbook:1707
+#: development.docbook:1716
 #, no-c-format
 msgid "void view.clearSelection();"
 msgstr "void view.clearSelection();"
 
 #. Tag: para
-#: development.docbook:1708
+#: development.docbook:1717
 #, no-c-format
 msgid "Clears the text selection without removing the text."
 msgstr "Retira a selección sen retirar o texto seleccionado."
 
 #. Tag: synopsis
-#: development.docbook:1714
+#: development.docbook:1723
 #, fuzzy, no-c-format
 #| msgid ""
 #| "bool document.endsWith(<parameter>int <replaceable>line</replaceable></"
@@ -4365,7 +4386,7 @@ msgstr ""
 "<parameter>bool <replaceable>saltarseOsEspazos</replaceable></parameter>);"
 
 #. Tag: para
-#: development.docbook:1715
+#: development.docbook:1724
 #, no-c-format
 msgid ""
 "Executes the <link linkend=\"advanced-editing-tools-commandline\">command "
@@ -4379,21 +4400,21 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: development.docbook:1722 development.docbook:2424 development.docbook:2434
-#: development.docbook:2444
+#: development.docbook:1731 development.docbook:2433 development.docbook:2443
+#: development.docbook:2453
 #, fuzzy, no-c-format
 #| msgid "Since: KDE 4.8"
 msgid "Since: &kde-frameworks; 5.50"
 msgstr "Dispoñíbel desde a versión 4.8 da colección de software de KDE."
 
 #. Tag: title
-#: development.docbook:1731
+#: development.docbook:1740
 #, no-c-format
 msgid "The Document API"
 msgstr "A API do documento"
 
 #. Tag: para
-#: development.docbook:1732
+#: development.docbook:1741
 #, no-c-format
 msgid ""
 "Whenever a script is being executed, there is a global variable "
@@ -4405,13 +4426,13 @@ msgstr ""
 "document activo. A variábel fornece os métodos da seguinte lista."
 
 #. Tag: synopsis
-#: development.docbook:1740
+#: development.docbook:1749
 #, no-c-format
 msgid "String document.fileName();"
 msgstr "String document.fileName();"
 
 #. Tag: para
-#: development.docbook:1741
+#: development.docbook:1750
 #, no-c-format
 msgid ""
 "Returns the document's filename or an empty string for unsaved text buffers."
@@ -4420,13 +4441,13 @@ msgstr ""
 "baleira no caso de búferes de texto sen gardar."
 
 #. Tag: synopsis
-#: development.docbook:1748
+#: development.docbook:1757
 #, no-c-format
 msgid "String document.url();"
 msgstr "String document.url();"
 
 #. Tag: para
-#: development.docbook:1749
+#: development.docbook:1758
 #, no-c-format
 msgid ""
 "Returns the document's full url or an empty string for unsaved text buffers."
@@ -4435,13 +4456,13 @@ msgstr ""
 "cadea baleira no caso de búferes de texto sen gardar."
 
 #. Tag: synopsis
-#: development.docbook:1756
+#: development.docbook:1765
 #, no-c-format
 msgid "String document.mimeType();"
 msgstr "String document.mimeType();"
 
 #. Tag: para
-#: development.docbook:1757
+#: development.docbook:1766
 #, no-c-format
 msgid ""
 "Returns the document's mime type or the mime type <literal>application/octet-"
@@ -4451,31 +4472,31 @@ msgstr ""
 "literal> de non ser posíbel atopar o tipo MIME axeitado."
 
 #. Tag: synopsis
-#: development.docbook:1765
+#: development.docbook:1774
 #, no-c-format
 msgid "String document.encoding();"
 msgstr "String document.encoding();"
 
 #. Tag: para
-#: development.docbook:1766
+#: development.docbook:1775
 #, no-c-format
 msgid "Returns the currently used encoding to save the file."
 msgstr "Devolve a codificación de caracteres empregada para gardar o ficheiro."
 
 #. Tag: synopsis
-#: development.docbook:1772
+#: development.docbook:1781
 #, no-c-format
 msgid "String document.highlightingMode();"
 msgstr "String document.highlightingMode();"
 
 #. Tag: para
-#: development.docbook:1773
+#: development.docbook:1782
 #, no-c-format
 msgid "Returns the global highlighting mode used for the whole document."
 msgstr "Devolve o modo de realzado global empregado para todo o documento."
 
 #. Tag: synopsis
-#: development.docbook:1779
+#: development.docbook:1788
 #, no-c-format
 msgid ""
 "String document.highlightingModeAt(<parameter>Cursor <replaceable>pos</"
@@ -4485,7 +4506,7 @@ msgstr ""
 "replaceable></parameter>);"
 
 #. Tag: para
-#: development.docbook:1780
+#: development.docbook:1789
 #, no-c-format
 msgid ""
 "Returns the highlighting mode used at the given position in the document."
@@ -4493,25 +4514,25 @@ msgstr ""
 "Devolve o modo de realzado empregado na posición do documento indicada."
 
 #. Tag: synopsis
-#: development.docbook:1786
+#: development.docbook:1795
 #, no-c-format
 msgid "Array document.embeddedHighlightingModes();"
 msgstr "Array document.embeddedHighlightingModes();"
 
 #. Tag: para
-#: development.docbook:1787
+#: development.docbook:1796
 #, no-c-format
 msgid "Returns an array of highlighting modes embedded in this document."
 msgstr "Devolve unha matriz de modos de realzado empregados no documento."
 
 #. Tag: synopsis
-#: development.docbook:1793
+#: development.docbook:1802
 #, no-c-format
 msgid "bool document.isModified();"
 msgstr "bool document.isModified();"
 
 #. Tag: para
-#: development.docbook:1794
+#: development.docbook:1803
 #, no-c-format
 msgid ""
 "Returns <literal>true</literal>, if the document has unsaved changes "
@@ -4521,13 +4542,13 @@ msgstr ""
 "(modificado), ou <literal>false</literal> en caso contrario."
 
 #. Tag: synopsis
-#: development.docbook:1801
+#: development.docbook:1810
 #, no-c-format
 msgid "String document.text();"
 msgstr "String document.text();"
 
 #. Tag: para
-#: development.docbook:1802
+#: development.docbook:1811
 #, no-c-format
 msgid ""
 "Returns the entire content of the document in a single text string. Newlines "
@@ -4538,7 +4559,7 @@ msgstr ""
 "quote>."
 
 #. Tag: synopsis
-#: development.docbook:1810
+#: development.docbook:1819
 #, no-c-format
 msgid ""
 "String document.text(<parameter>int <replaceable>fromLine</replaceable></"
@@ -4561,7 +4582,7 @@ msgstr ""
 "parameter>);"
 
 #. Tag: para
-#: development.docbook:1811
+#: development.docbook:1820
 #, no-c-format
 msgid ""
 "Returns the text in the given range. It is recommended to use the cursor and "
@@ -4572,7 +4593,7 @@ msgstr ""
 "intervalo como parámetros."
 
 #. Tag: synopsis
-#: development.docbook:1819
+#: development.docbook:1828
 #, no-c-format
 msgid ""
 "String document.line(<parameter>int <replaceable>line</replaceable></"
@@ -4582,7 +4603,7 @@ msgstr ""
 "parameter>);"
 
 #. Tag: para
-#: development.docbook:1820
+#: development.docbook:1829
 #, no-c-format
 msgid ""
 "Returns the given text line as string. The string is empty if the requested "
@@ -4592,7 +4613,7 @@ msgstr ""
 "existe, a cadea devolta estará baleira."
 
 #. Tag: synopsis
-#: development.docbook:1828
+#: development.docbook:1837
 #, no-c-format
 msgid ""
 "String document.wordAt(<parameter>int <replaceable>line</replaceable></"
@@ -4606,13 +4627,13 @@ msgstr ""
 "parameter>);"
 
 #. Tag: para
-#: development.docbook:1829
+#: development.docbook:1838
 #, no-c-format
 msgid "Returns the word at the given cursor position."
 msgstr "Devolve a palabra na posición indicada do cursor."
 
 #. Tag: synopsis
-#: development.docbook:1837
+#: development.docbook:1846
 #, fuzzy, no-c-format
 #| msgid ""
 #| "String document.wordAt(<parameter>int <replaceable>line</replaceable></"
@@ -4632,7 +4653,7 @@ msgstr ""
 "parameter>);"
 
 #. Tag: para
-#: development.docbook:1839
+#: development.docbook:1848
 #, no-c-format
 msgid ""
 "Return the range of the word at the given cursor position. The returned "
@@ -4642,7 +4663,7 @@ msgid ""
 msgstr ""
 
 #. Tag: synopsis
-#: development.docbook:1852
+#: development.docbook:1861
 #, no-c-format
 msgid ""
 "String document.charAt(<parameter>int <replaceable>line</replaceable></"
@@ -4656,13 +4677,13 @@ msgstr ""
 "parameter>);"
 
 #. Tag: para
-#: development.docbook:1853
+#: development.docbook:1862
 #, no-c-format
 msgid "Returns the character at the given cursor position."
 msgstr "Devolve o carácter na posición do cursor indicada."
 
 #. Tag: synopsis
-#: development.docbook:1860
+#: development.docbook:1869
 #, no-c-format
 msgid ""
 "String document.firstChar(<parameter>int <replaceable>line</replaceable></"
@@ -4672,7 +4693,7 @@ msgstr ""
 "parameter>);"
 
 #. Tag: para
-#: development.docbook:1861
+#: development.docbook:1870
 #, no-c-format
 msgid ""
 "Returns the first character in the given <replaceable>line</replaceable> "
@@ -4684,7 +4705,7 @@ msgstr ""
 "baleira ou só contén espazos, a cadea devolta estará baleira."
 
 #. Tag: synopsis
-#: development.docbook:1871
+#: development.docbook:1880
 #, no-c-format
 msgid ""
 "String document.lastChar(<parameter>int <replaceable>line</replaceable></"
@@ -4694,7 +4715,7 @@ msgstr ""
 "parameter>);"
 
 #. Tag: para
-#: development.docbook:1872
+#: development.docbook:1881
 #, no-c-format
 msgid ""
 "Returns the last character in the given <replaceable>line</replaceable> that "
@@ -4706,7 +4727,7 @@ msgstr ""
 "devolta estará baleira."
 
 #. Tag: synopsis
-#: development.docbook:1881
+#: development.docbook:1890
 #, no-c-format
 msgid ""
 "bool document.isSpace(<parameter>int <replaceable>line</replaceable></"
@@ -4720,7 +4741,7 @@ msgstr ""
 "parameter>);"
 
 #. Tag: para
-#: development.docbook:1882
+#: development.docbook:1891
 #, no-c-format
 msgid ""
 "Returns <literal>true</literal>, if the character at the given cursor "
@@ -4730,7 +4751,7 @@ msgstr ""
 "é un espazo, ou <literal>false</literal> en caso contrario."
 
 #. Tag: synopsis
-#: development.docbook:1890
+#: development.docbook:1899
 #, fuzzy, no-c-format
 #| msgid ""
 #| "bool document.isAttributeName(<parameter>int <replaceable>line</"
@@ -4755,7 +4776,7 @@ msgstr ""
 "parameter>);"
 
 #. Tag: para
-#: development.docbook:1891
+#: development.docbook:1900
 #, no-c-format
 msgid ""
 "Returns <literal>true</literal>, if the given <replaceable>text</"
@@ -4767,7 +4788,7 @@ msgstr ""
 "caso contrario.."
 
 #. Tag: synopsis
-#: development.docbook:1899
+#: development.docbook:1908
 #, no-c-format
 msgid ""
 "bool document.startsWith(<parameter>int <replaceable>line</replaceable></"
@@ -4779,7 +4800,7 @@ msgstr ""
 "<parameter>bool <replaceable>saltarseOsEspazos</replaceable></parameter>);"
 
 #. Tag: para
-#: development.docbook:1900
+#: development.docbook:1909
 #, no-c-format
 msgid ""
 "Returns <literal>true</literal>, if the line starts with <replaceable>text</"
@@ -4794,7 +4815,7 @@ msgstr ""
 "ignorarse ou non."
 
 #. Tag: synopsis
-#: development.docbook:1908
+#: development.docbook:1917
 #, no-c-format
 msgid ""
 "bool document.endsWith(<parameter>int <replaceable>line</replaceable></"
@@ -4806,7 +4827,7 @@ msgstr ""
 "<parameter>bool <replaceable>saltarseOsEspazos</replaceable></parameter>);"
 
 #. Tag: para
-#: development.docbook:1909
+#: development.docbook:1918
 #, no-c-format
 msgid ""
 "Returns <literal>true</literal>, if the line ends with <replaceable>text</"
@@ -4821,7 +4842,7 @@ msgstr ""
 "ignorarse ou non."
 
 #. Tag: synopsis
-#: development.docbook:1917
+#: development.docbook:1926
 #, no-c-format
 msgid ""
 "bool document.setText(<parameter>String <replaceable>text</replaceable></"
@@ -4831,25 +4852,25 @@ msgstr ""
 "parameter>);"
 
 #. Tag: para
-#: development.docbook:1918
+#: development.docbook:1927
 #, no-c-format
 msgid "Sets the entire document text."
 msgstr "Define o texto de todo o documento."
 
 #. Tag: synopsis
-#: development.docbook:1925
+#: development.docbook:1934
 #, no-c-format
 msgid "bool document.clear();"
 msgstr "bool document.clear();"
 
 #. Tag: para
-#: development.docbook:1926
+#: development.docbook:1935
 #, no-c-format
 msgid "Removes the entire text in the document."
 msgstr "Retira todo o texto do documento."
 
 #. Tag: synopsis
-#: development.docbook:1933
+#: development.docbook:1942
 #, no-c-format
 msgid ""
 "bool document.truncate(<parameter>int <replaceable>line</replaceable></"
@@ -4863,7 +4884,7 @@ msgstr ""
 "parameter>);"
 
 #. Tag: para
-#: development.docbook:1934
+#: development.docbook:1943
 #, no-c-format
 msgid ""
 "Truncate the given line at the given column or cursor position. Returns "
@@ -4875,7 +4896,7 @@ msgstr ""
 "<literal>false</literal> se a liña non forma parte do intervalo do documento."
 
 #. Tag: synopsis
-#: development.docbook:1942
+#: development.docbook:1951
 #, fuzzy, no-c-format
 #| msgid ""
 #| "bool document.isAttributeName(<parameter>int <replaceable>line</"
@@ -4901,7 +4922,7 @@ msgstr ""
 "parameter>);"
 
 #. Tag: para
-#: development.docbook:1943
+#: development.docbook:1952
 #, no-c-format
 msgid ""
 "Inserts the <replaceable>text</replaceable> at the given cursor position. "
@@ -4913,7 +4934,7 @@ msgstr ""
 "literal> se o documento está en modo de só lectura."
 
 #. Tag: synopsis
-#: development.docbook:1951
+#: development.docbook:1960
 #, no-c-format
 msgid ""
 "bool document.removeText(<parameter>int <replaceable>fromLine</replaceable></"
@@ -4937,7 +4958,7 @@ msgstr ""
 "replaceable></parameter>);"
 
 #. Tag: para
-#: development.docbook:1952
+#: development.docbook:1961
 #, no-c-format
 msgid ""
 "Removes the text in the given range. Returns <literal>true</literal> on "
@@ -4948,7 +4969,7 @@ msgstr ""
 "só lectura."
 
 #. Tag: synopsis
-#: development.docbook:1960
+#: development.docbook:1969
 #, no-c-format
 msgid ""
 "bool document.insertLine(<parameter>int <replaceable>line</replaceable></"
@@ -4958,7 +4979,7 @@ msgstr ""
 "parameter>, <parameter>String <replaceable>texto</replaceable></parameter>);"
 
 #. Tag: para
-#: development.docbook:1961
+#: development.docbook:1970
 #, no-c-format
 msgid ""
 "Inserts text in the given line. Returns <literal>true</literal> on success, "
@@ -4971,7 +4992,7 @@ msgstr ""
 "comprendida no intervalo do documento."
 
 #. Tag: synopsis
-#: development.docbook:1969
+#: development.docbook:1978
 #, no-c-format
 msgid ""
 "bool document.removeLine(<parameter>int <replaceable>line</replaceable></"
@@ -4981,7 +5002,7 @@ msgstr ""
 "parameter>);"
 
 #. Tag: para
-#: development.docbook:1970
+#: development.docbook:1979
 #, no-c-format
 msgid ""
 "Removes the given text line. Returns <literal>true</literal> on success, or "
@@ -4994,7 +5015,7 @@ msgstr ""
 "documento."
 
 #. Tag: synopsis
-#: development.docbook:1978
+#: development.docbook:1987
 #, fuzzy, no-c-format
 #| msgid ""
 #| "bool document.truncate(<parameter>int <replaceable>line</replaceable></"
@@ -5014,7 +5035,7 @@ msgstr ""
 "parameter>);"
 
 #. Tag: para
-#: development.docbook:1979
+#: development.docbook:1988
 #, fuzzy, no-c-format
 #| msgid ""
 #| "Truncate the given line at the given column or cursor position. Returns "
@@ -5029,7 +5050,7 @@ msgstr ""
 "<literal>false</literal> se a liña non forma parte do intervalo do documento."
 
 #. Tag: synopsis
-#: development.docbook:1991
+#: development.docbook:2000
 #, no-c-format
 msgid ""
 "void document.joinLines(<parameter>int <replaceable>startLine</replaceable></"
@@ -5040,7 +5061,7 @@ msgstr ""
 "replaceable></parameter>);"
 
 #. Tag: para
-#: development.docbook:1992
+#: development.docbook:2001
 #, no-c-format
 msgid ""
 "Joins the lines from <replaceable>startLine</replaceable> to "
@@ -5052,20 +5073,20 @@ msgstr ""
 "separado por espazos en vez de por saltos de liña."
 
 #. Tag: synopsis
-#: development.docbook:2000
+#: development.docbook:2009
 #, no-c-format
 msgid "int document.lines();"
 msgstr "int document.lines();"
 
 #. Tag: para
-#: development.docbook:2001
+#: development.docbook:2010
 #, fuzzy, no-c-format
 #| msgid "Returns the amount of lines in the document."
 msgid "Returns the number of lines in the document."
 msgstr "Devolve o número de liñas que contén o documento."
 
 #. Tag: synopsis
-#: development.docbook:2008
+#: development.docbook:2017
 #, fuzzy, no-c-format
 #| msgid ""
 #| "bool document.removeLine(<parameter>int <replaceable>line</replaceable></"
@@ -5078,7 +5099,7 @@ msgstr ""
 "parameter>);"
 
 #. Tag: para
-#: development.docbook:2009
+#: development.docbook:2018
 #, fuzzy, no-c-format
 #| msgid ""
 #| "Returns <literal>true</literal>, if this range and the Range "
@@ -5092,15 +5113,15 @@ msgstr ""
 "replaceable> son idénticos, ou <literal>false</literal> en caso contrario."
 
 #. Tag: para
-#: development.docbook:2012 development.docbook:2024 development.docbook:2035
-#: development.docbook:2047 development.docbook:2221
+#: development.docbook:2021 development.docbook:2033 development.docbook:2044
+#: development.docbook:2056 development.docbook:2230
 #, fuzzy, no-c-format
 #| msgid "Since: KDE 4.8"
 msgid "Since: &kde; 5.0"
 msgstr "Dispoñíbel desde a versión 4.8 da colección de software de KDE."
 
 #. Tag: synopsis
-#: development.docbook:2019
+#: development.docbook:2028
 #, fuzzy, no-c-format
 #| msgid ""
 #| "bool document.removeLine(<parameter>int <replaceable>line</replaceable></"
@@ -5113,7 +5134,7 @@ msgstr ""
 "parameter>);"
 
 #. Tag: para
-#: development.docbook:2020
+#: development.docbook:2029
 #, fuzzy, no-c-format
 #| msgid ""
 #| "Returns <literal>true</literal>, if <replaceable>line</replaceable> is in "
@@ -5129,7 +5150,7 @@ msgstr ""
 "literal> en caso contrario."
 
 #. Tag: synopsis
-#: development.docbook:2031
+#: development.docbook:2040
 #, fuzzy, no-c-format
 #| msgid ""
 #| "bool document.removeLine(<parameter>int <replaceable>line</replaceable></"
@@ -5142,7 +5163,7 @@ msgstr ""
 "parameter>);"
 
 #. Tag: para
-#: development.docbook:2032
+#: development.docbook:2041
 #, fuzzy, no-c-format
 #| msgid ""
 #| "Returns <literal>true</literal>, if <replaceable>line</replaceable> is in "
@@ -5157,7 +5178,7 @@ msgstr ""
 "literal> en caso contrario."
 
 #. Tag: synopsis
-#: development.docbook:2042
+#: development.docbook:2051
 #, fuzzy, no-c-format
 #| msgid ""
 #| "void document.joinLines(<parameter>int <replaceable>startLine</"
@@ -5173,7 +5194,7 @@ msgstr ""
 "replaceable></parameter>);"
 
 #. Tag: para
-#: development.docbook:2043
+#: development.docbook:2052
 #, no-c-format
 msgid ""
 "Search for the next touched line starting at <replaceable>line</"
@@ -5182,19 +5203,19 @@ msgid ""
 msgstr ""
 
 #. Tag: synopsis
-#: development.docbook:2054
+#: development.docbook:2063
 #, no-c-format
 msgid "int document.length();"
 msgstr "int document.length();"
 
 #. Tag: para
-#: development.docbook:2055
+#: development.docbook:2064
 #, no-c-format
 msgid "Returns the number of characters in the document."
 msgstr "Devolve o número de caracteres do documento."
 
 #. Tag: synopsis
-#: development.docbook:2062
+#: development.docbook:2071
 #, no-c-format
 msgid ""
 "int document.lineLength(<parameter>int <replaceable>line</replaceable></"
@@ -5204,20 +5225,20 @@ msgstr ""
 "parameter>);"
 
 #. Tag: para
-#: development.docbook:2063
+#: development.docbook:2072
 #, no-c-format
 msgid "Returns the <replaceable>line</replaceable>'s length."
 msgstr ""
 "Devolve o número de caracteres da <replaceable>liña</replaceable> indicada."
 
 #. Tag: synopsis
-#: development.docbook:2070
+#: development.docbook:2079
 #, no-c-format
 msgid "void document.editBegin();"
 msgstr "void document.editBegin();"
 
 #. Tag: para
-#: development.docbook:2071
+#: development.docbook:2080
 #, fuzzy, no-c-format
 #| msgid ""
 #| "Starts an edit group for undo/redo grouping. Make sure to always call "
@@ -5238,13 +5259,13 @@ msgstr ""
 "se poden aniñas as chamadas."
 
 #. Tag: synopsis
-#: development.docbook:2081
+#: development.docbook:2090
 #, no-c-format
 msgid "void document.editEnd();"
 msgstr "void document.editEnd();"
 
 #. Tag: para
-#: development.docbook:2082
+#: development.docbook:2091
 #, fuzzy, no-c-format
 #| msgid ""
 #| "Ends an edit group. The last call of <function>editEnd()</function> (i.e. "
@@ -5260,7 +5281,7 @@ msgstr ""
 "<function>editBegin()</function>) ponlle fin ao paso de edición."
 
 #. Tag: synopsis
-#: development.docbook:2091
+#: development.docbook:2100
 #, no-c-format
 msgid ""
 "int document.firstColumn(<parameter>int <replaceable>line</replaceable></"
@@ -5270,7 +5291,7 @@ msgstr ""
 "parameter>);"
 
 #. Tag: para
-#: development.docbook:2092
+#: development.docbook:2101
 #, no-c-format
 msgid ""
 "Returns the first non-whitespace column in the given <replaceable>line</"
@@ -5282,7 +5303,7 @@ msgstr ""
 "valor devolto será <literal>-1</literal>."
 
 #. Tag: synopsis
-#: development.docbook:2100
+#: development.docbook:2109
 #, no-c-format
 msgid ""
 "int document.lastColumn(<parameter>int <replaceable>line</replaceable></"
@@ -5292,7 +5313,7 @@ msgstr ""
 "parameter>);"
 
 #. Tag: para
-#: development.docbook:2101
+#: development.docbook:2110
 #, no-c-format
 msgid ""
 "Returns the last non-whitespace column in the given <replaceable>line</"
@@ -5304,7 +5325,7 @@ msgstr ""
 "valor devolto será <literal>-1</literal>."
 
 #. Tag: synopsis
-#: development.docbook:2109
+#: development.docbook:2118
 #, no-c-format
 msgid ""
 "int document.prevNonSpaceColumn(<parameter>int <replaceable>line</"
@@ -5320,7 +5341,7 @@ msgstr ""
 "replaceable></parameter>);"
 
 #. Tag: para
-#: development.docbook:2110
+#: development.docbook:2119
 #, fuzzy, no-c-format
 #| msgid ""
 #| "Returns the column with a non-whitespace characters starting at the given "
@@ -5333,7 +5354,7 @@ msgstr ""
 "posición do cursor indicado, buscando cara atrás."
 
 #. Tag: synopsis
-#: development.docbook:2118
+#: development.docbook:2127
 #, no-c-format
 msgid ""
 "int document.nextNonSpaceColumn(<parameter>int <replaceable>line</"
@@ -5349,7 +5370,7 @@ msgstr ""
 "replaceable></parameter>);"
 
 #. Tag: para
-#: development.docbook:2119
+#: development.docbook:2128
 #, fuzzy, no-c-format
 #| msgid ""
 #| "Returns the column with a non-whitespace characters starting at the given "
@@ -5362,7 +5383,7 @@ msgstr ""
 "posición do cursor indicado, buscando cara adiante."
 
 #. Tag: synopsis
-#: development.docbook:2127
+#: development.docbook:2136
 #, no-c-format
 msgid ""
 "int document.prevNonEmptyLine(<parameter>int <replaceable>line</"
@@ -5372,7 +5393,7 @@ msgstr ""
 "replaceable></parameter>);"
 
 #. Tag: para
-#: development.docbook:2128
+#: development.docbook:2137
 #, no-c-format
 msgid ""
 "Returns the next non-empty line containing non-whitespace characters "
@@ -5382,7 +5403,7 @@ msgstr ""
 "baleiros—, buscando cara atrás."
 
 #. Tag: synopsis
-#: development.docbook:2136
+#: development.docbook:2145
 #, no-c-format
 msgid ""
 "int document.nextNonEmptyLine(<parameter>int <replaceable>line</"
@@ -5392,7 +5413,7 @@ msgstr ""
 "replaceable></parameter>);"
 
 #. Tag: para
-#: development.docbook:2137
+#: development.docbook:2146
 #, no-c-format
 msgid ""
 "Returns the next non-empty line containing non-whitespace characters "
@@ -5402,7 +5423,7 @@ msgstr ""
 "baleiros—, buscando cara adiante."
 
 #. Tag: synopsis
-#: development.docbook:2145
+#: development.docbook:2154
 #, no-c-format
 msgid ""
 "bool document.isInWord(<parameter>String <replaceable>character</"
@@ -5414,7 +5435,7 @@ msgstr ""
 "replaceable></parameter>);"
 
 #. Tag: para
-#: development.docbook:2146
+#: development.docbook:2155
 #, no-c-format
 msgid ""
 "Returns <literal>true</literal>, if the given <replaceable>character</"
@@ -5426,7 +5447,7 @@ msgstr ""
 "dunha palabra, ou <literal>false</literal> en caso contrario."
 
 #. Tag: synopsis
-#: development.docbook:2155
+#: development.docbook:2164
 #, no-c-format
 msgid ""
 "bool document.canBreakAt(<parameter>String <replaceable>character</"
@@ -5438,7 +5459,7 @@ msgstr ""
 "replaceable></parameter>);"
 
 #. Tag: para
-#: development.docbook:2156
+#: development.docbook:2165
 #, no-c-format
 msgid ""
 "Returns <literal>true</literal>, if the given <replaceable>character</"
@@ -5450,7 +5471,7 @@ msgstr ""
 "romper a liña, ou <literal>false</literal> en caso contrario."
 
 #. Tag: synopsis
-#: development.docbook:2165
+#: development.docbook:2174
 #, no-c-format
 msgid ""
 "bool document.canComment(<parameter>int <replaceable>startAttribute</"
@@ -5462,7 +5483,7 @@ msgstr ""
 "replaceable></parameter>);"
 
 #. Tag: para
-#: development.docbook:2166
+#: development.docbook:2175
 #, no-c-format
 msgid ""
 "Returns <literal>true</literal>, if a range starting and ending with the "
@@ -5474,7 +5495,7 @@ msgstr ""
 "literal> en caso contrario."
 
 #. Tag: synopsis
-#: development.docbook:2174
+#: development.docbook:2183
 #, no-c-format
 msgid ""
 "String document.commentMarker(<parameter>int <replaceable>attribute</"
@@ -5484,7 +5505,7 @@ msgstr ""
 "replaceable></parameter>);"
 
 #. Tag: para
-#: development.docbook:2175
+#: development.docbook:2184
 #, no-c-format
 msgid ""
 "Returns the comment marker for single line comments for a given "
@@ -5494,7 +5515,7 @@ msgstr ""
 "<replaceable>atributo</replaceable> indicado."
 
 #. Tag: synopsis
-#: development.docbook:2182
+#: development.docbook:2191
 #, no-c-format
 msgid ""
 "String document.commentStart(<parameter>int <replaceable>attribute</"
@@ -5504,7 +5525,7 @@ msgstr ""
 "replaceable></parameter>);"
 
 #. Tag: para
-#: development.docbook:2183
+#: development.docbook:2192
 #, no-c-format
 msgid ""
 "Returns the comment marker for the start of multi-line comments for a given "
@@ -5514,7 +5535,7 @@ msgstr ""
 "para o <replaceable>atributo</replaceable> indicado."
 
 #. Tag: synopsis
-#: development.docbook:2191
+#: development.docbook:2200
 #, no-c-format
 msgid ""
 "String document.commentEnd(<parameter>int <replaceable>attribute</"
@@ -5524,7 +5545,7 @@ msgstr ""
 "replaceable></parameter>);"
 
 #. Tag: para
-#: development.docbook:2192
+#: development.docbook:2201
 #, no-c-format
 msgid ""
 "Returns the comment marker for the end of multi-line comments for a given "
@@ -5534,28 +5555,28 @@ msgstr ""
 "para o <replaceable>atributo</replaceable> indicado."
 
 #. Tag: synopsis
-#: development.docbook:2200
+#: development.docbook:2209
 #, fuzzy, no-c-format
 #| msgid "String document.encoding();"
 msgid "Range document.documentRange();"
 msgstr "String document.encoding();"
 
 #. Tag: para
-#: development.docbook:2201
+#: development.docbook:2210
 #, fuzzy, no-c-format
 #| msgid "Returns the global highlighting mode used for the whole document."
 msgid "Returns a range that encompasses the whole document."
 msgstr "Devolve o modo de realzado global empregado para todo o documento."
 
 #. Tag: synopsis
-#: development.docbook:2208
+#: development.docbook:2217
 #, fuzzy, no-c-format
 #| msgid "void document.editEnd();"
 msgid "Cursor documentEnd();"
 msgstr "void document.editEnd();"
 
 #. Tag: para
-#: development.docbook:2209
+#: development.docbook:2218
 #, fuzzy, no-c-format
 #| msgid "Returns the amount of lines in the document."
 msgid ""
@@ -5564,7 +5585,7 @@ msgid ""
 msgstr "Devolve o número de liñas que contén o documento."
 
 #. Tag: synopsis
-#: development.docbook:2216
+#: development.docbook:2225
 #, fuzzy, no-c-format
 #| msgid ""
 #| "bool document.isString(<parameter>int <replaceable>line</replaceable></"
@@ -5584,7 +5605,7 @@ msgstr ""
 "parameter>);"
 
 #. Tag: para
-#: development.docbook:2217
+#: development.docbook:2226
 #, no-c-format
 msgid ""
 "Returns <literal>true</literal>, if the given cursor position is positioned "
@@ -5594,7 +5615,7 @@ msgid ""
 msgstr ""
 
 #. Tag: synopsis
-#: development.docbook:2228
+#: development.docbook:2237
 #, no-c-format
 msgid ""
 "int document.attribute(<parameter>int <replaceable>line</replaceable></"
@@ -5608,13 +5629,13 @@ msgstr ""
 "parameter>);"
 
 #. Tag: para
-#: development.docbook:2229
+#: development.docbook:2238
 #, no-c-format
 msgid "Returns the attribute at the given cursor position."
 msgstr "Devolve o atributo na posición do cursor indicado."
 
 #. Tag: synopsis
-#: development.docbook:2236
+#: development.docbook:2245
 #, no-c-format
 msgid ""
 "bool document.isAttribute(<parameter>int <replaceable>line</replaceable></"
@@ -5632,7 +5653,7 @@ msgstr ""
 "replaceable></parameter>);"
 
 #. Tag: para
-#: development.docbook:2237
+#: development.docbook:2246
 #, no-c-format
 msgid ""
 "Returns <literal>true</literal>, if the attribute at the given cursor "
@@ -5644,7 +5665,7 @@ msgstr ""
 "literal> en caso contrario."
 
 #. Tag: synopsis
-#: development.docbook:2245
+#: development.docbook:2254
 #, no-c-format
 msgid ""
 "String document.attributeName(<parameter>int <replaceable>line</"
@@ -5660,7 +5681,7 @@ msgstr ""
 "replaceable></parameter>);"
 
 #. Tag: para
-#: development.docbook:2246
+#: development.docbook:2255
 #, fuzzy, no-c-format
 #| msgid ""
 #| "Returns the attribute name as human readable text. This equals to the "
@@ -5673,7 +5694,7 @@ msgstr ""
 "nome <literal>itemData</literal> nos ficheiros de realzado da sintaxe."
 
 #. Tag: synopsis
-#: development.docbook:2254
+#: development.docbook:2263
 #, no-c-format
 msgid ""
 "bool document.isAttributeName(<parameter>int <replaceable>line</"
@@ -5691,7 +5712,7 @@ msgstr ""
 "parameter>);"
 
 #. Tag: para
-#: development.docbook:2255
+#: development.docbook:2264
 #, no-c-format
 msgid ""
 "Returns <literal>true</literal>, if the attribute name at a certain cursor "
@@ -5704,7 +5725,7 @@ msgstr ""
 
 # skip-rule: normalization-ble
 #. Tag: synopsis
-#: development.docbook:2263
+#: development.docbook:2272
 #, no-c-format
 msgid ""
 "String document.variable(<parameter>String <replaceable>key</replaceable></"
@@ -5714,7 +5735,7 @@ msgstr ""
 "parameter>);"
 
 #. Tag: para
-#: development.docbook:2264
+#: development.docbook:2273
 #, no-c-format
 msgid ""
 "Returns the value of the requested document variable <replaceable>key</"
@@ -5726,7 +5747,7 @@ msgstr ""
 "cadea baleira."
 
 #. Tag: synopsis
-#: development.docbook:2272
+#: development.docbook:2281
 #, fuzzy, no-c-format
 #| msgid ""
 #| "String document.setVariable(<parameter>String <replaceable>key</"
@@ -5741,7 +5762,7 @@ msgstr ""
 "replaceable></parameter>);"
 
 #. Tag: para
-#: development.docbook:2273
+#: development.docbook:2282
 #, fuzzy, no-c-format
 #| msgid ""
 #| "Set the value of the requested document variable <replaceable>key</"
@@ -5755,7 +5776,7 @@ msgstr ""
 
 # skip-rule: normalization-ble
 #. Tag: para
-#: development.docbook:2276
+#: development.docbook:2285
 #, no-c-format
 msgid ""
 "See also: <link linkend=\"config-variables\">Kate document variables</link>"
@@ -5764,14 +5785,14 @@ msgstr ""
 "Kate</link>."
 
 #. Tag: para
-#: development.docbook:2279
+#: development.docbook:2288
 #, fuzzy, no-c-format
 #| msgid "Since: KDE 4.8"
 msgid "Since: &kde; 4.8"
 msgstr "Dispoñíbel desde a versión 4.8 da colección de software de KDE."
 
 #. Tag: synopsis
-#: development.docbook:2286
+#: development.docbook:2295
 #, no-c-format
 msgid ""
 "int document.firstVirtualColumn(<parameter>int <replaceable>line</"
@@ -5781,7 +5802,7 @@ msgstr ""
 "replaceable></parameter>);"
 
 #. Tag: para
-#: development.docbook:2287
+#: development.docbook:2296
 #, no-c-format
 msgid ""
 "Returns the virtual column of the first non-whitespace character in the "
@@ -5793,7 +5814,7 @@ msgstr ""
 "de que a liña estea baleira ou só conteña espazos en branco."
 
 #. Tag: synopsis
-#: development.docbook:2295
+#: development.docbook:2304
 #, no-c-format
 msgid ""
 "int document.lastVirtualColumn(<parameter>int <replaceable>line</"
@@ -5803,7 +5824,7 @@ msgstr ""
 "replaceable></parameter>);"
 
 #. Tag: para
-#: development.docbook:2296
+#: development.docbook:2305
 #, no-c-format
 msgid ""
 "Returns the virtual column of the last non-whitespace character in the given "
@@ -5815,7 +5836,7 @@ msgstr ""
 "de que a liña estea baleira ou só conteña espazos en branco."
 
 #. Tag: synopsis
-#: development.docbook:2304
+#: development.docbook:2313
 #, no-c-format
 msgid ""
 "int document.toVirtualColumn(<parameter>int <replaceable>line</replaceable></"
@@ -5833,7 +5854,7 @@ msgstr ""
 "replaceable></parameter>);"
 
 #. Tag: para
-#: development.docbook:2305
+#: development.docbook:2314
 #, no-c-format
 msgid ""
 "Converts the given <quote>real</quote> cursor position to a virtual cursor "
@@ -5843,7 +5864,7 @@ msgstr ""
 "cursor virtual, devolvendo ou un número enteiro ou un obxecto de tipo Cursor."
 
 #. Tag: synopsis
-#: development.docbook:2313
+#: development.docbook:2322
 #, no-c-format
 msgid ""
 "int document.fromVirtualColumn(<parameter>int <replaceable>line</"
@@ -5863,7 +5884,7 @@ msgstr ""
 "<replaceable>cursorVirtual</replaceable></parameter>);"
 
 #. Tag: para
-#: development.docbook:2314
+#: development.docbook:2323
 #, no-c-format
 msgid ""
 "Converts the given virtual cursor position to a <quote>real</quote> cursor "
@@ -5874,7 +5895,7 @@ msgstr ""
 "Cursor."
 
 #. Tag: synopsis
-#: development.docbook:2322
+#: development.docbook:2331
 #, no-c-format
 msgid ""
 "Cursor document.anchor(<parameter>int <replaceable>line</replaceable></"
@@ -5891,7 +5912,7 @@ msgstr ""
 "parameter>, <parameter>Char <replaceable>carácter</replaceable></parameter>);"
 
 #. Tag: para
-#: development.docbook:2323
+#: development.docbook:2332
 #, fuzzy, no-c-format
 #| msgid ""
 #| "Searches backward for the given character starting from the given cursor. "
@@ -5910,7 +5931,7 @@ msgstr ""
 "ignoradas."
 
 #. Tag: synopsis
-#: development.docbook:2333
+#: development.docbook:2342
 #, no-c-format
 msgid ""
 "Cursor document.rfind(<parameter>int <replaceable>line</replaceable></"
@@ -5930,7 +5951,7 @@ msgstr ""
 "<parameter>int <replaceable>atributo</replaceable> = -1</parameter>);"
 
 #. Tag: para
-#: development.docbook:2334
+#: development.docbook:2343
 #, fuzzy, no-c-format
 #| msgid ""
 #| "Find backward the given text with the appropriate <replaceable>attribute</"
@@ -5949,7 +5970,7 @@ msgstr ""
 "literal>. Se non se atopa o texto, o cursor devolto non será válido."
 
 #. Tag: synopsis
-#: development.docbook:2343
+#: development.docbook:2352
 #, no-c-format
 msgid ""
 "int document.defStyleNum(<parameter>int <replaceable>line</replaceable></"
@@ -5963,14 +5984,14 @@ msgstr ""
 "replaceable></parameter>);"
 
 #. Tag: para
-#: development.docbook:2344
+#: development.docbook:2353
 #, no-c-format
 msgid "Returns the default style used at the given cursor position."
 msgstr ""
 "Devolve o estilo predeterminado empregado na posición do cursor indicado."
 
 #. Tag: synopsis
-#: development.docbook:2351
+#: development.docbook:2360
 #, no-c-format
 msgid ""
 "bool document.isCode(<parameter>int <replaceable>line</replaceable></"
@@ -5984,7 +6005,7 @@ msgstr ""
 "parameter>);"
 
 #. Tag: para
-#: development.docbook:2352
+#: development.docbook:2361
 #, no-c-format
 msgid ""
 "Returns <literal>true</literal>, if the attribute at the given cursor "
@@ -5998,7 +6019,7 @@ msgstr ""
 "<literal>dsChar</literal>, <literal>dsOthers</literal>."
 
 #. Tag: synopsis
-#: development.docbook:2363
+#: development.docbook:2372
 #, no-c-format
 msgid ""
 "bool document.isComment(<parameter>int <replaceable>line</replaceable></"
@@ -6012,7 +6033,7 @@ msgstr ""
 "parameter>);"
 
 #. Tag: para
-#: development.docbook:2364
+#: development.docbook:2373
 #, no-c-format
 msgid ""
 "Returns <literal>true</literal>, if the attribute of the character at the "
@@ -6024,7 +6045,7 @@ msgstr ""
 "en caso contrario."
 
 #. Tag: synopsis
-#: development.docbook:2372
+#: development.docbook:2381
 #, no-c-format
 msgid ""
 "bool document.isString(<parameter>int <replaceable>line</replaceable></"
@@ -6038,7 +6059,7 @@ msgstr ""
 "parameter>);"
 
 #. Tag: para
-#: development.docbook:2373
+#: development.docbook:2382
 #, no-c-format
 msgid ""
 "Returns <literal>true</literal>, if the attribute of the character at the "
@@ -6050,7 +6071,7 @@ msgstr ""
 "en caso contrario."
 
 #. Tag: synopsis
-#: development.docbook:2381
+#: development.docbook:2390
 #, no-c-format
 msgid ""
 "bool document.isRegionMarker(<parameter>int <replaceable>line</replaceable></"
@@ -6064,7 +6085,7 @@ msgstr ""
 "replaceable></parameter>);"
 
 #. Tag: para
-#: development.docbook:2382
+#: development.docbook:2391
 #, no-c-format
 msgid ""
 "Returns <literal>true</literal>, if the attribute of the character at the "
@@ -6076,7 +6097,7 @@ msgstr ""
 "literal> en caso contrario."
 
 #. Tag: synopsis
-#: development.docbook:2390
+#: development.docbook:2399
 #, no-c-format
 msgid ""
 "bool document.isChar(<parameter>int <replaceable>line</replaceable></"
@@ -6090,7 +6111,7 @@ msgstr ""
 "parameter>);"
 
 #. Tag: para
-#: development.docbook:2391
+#: development.docbook:2400
 #, no-c-format
 msgid ""
 "Returns <literal>true</literal>, if the attribute of the character at the "
@@ -6102,7 +6123,7 @@ msgstr ""
 "caso contrario."
 
 #. Tag: synopsis
-#: development.docbook:2399
+#: development.docbook:2408
 #, no-c-format
 msgid ""
 "bool document.isOthers(<parameter>int <replaceable>line</replaceable></"
@@ -6116,7 +6137,7 @@ msgstr ""
 "parameter>);"
 
 #. Tag: para
-#: development.docbook:2400
+#: development.docbook:2409
 #, no-c-format
 msgid ""
 "Returns <literal>true</literal>, if the attribute of the character at the "
@@ -6128,14 +6149,14 @@ msgstr ""
 "en caso contrario."
 
 #. Tag: title
-#: development.docbook:2412
+#: development.docbook:2421
 #, fuzzy, no-c-format
 #| msgid "The View API"
 msgid "The Editor API"
 msgstr "A API da vista"
 
 #. Tag: para
-#: development.docbook:2413
+#: development.docbook:2422
 #, no-c-format
 msgid ""
 "In addition to the document and view API, there is a general editor API that "
@@ -6143,26 +6164,26 @@ msgid ""
 msgstr ""
 
 #. Tag: synopsis
-#: development.docbook:2420
+#: development.docbook:2429
 #, fuzzy, no-c-format
 #| msgid "String view.selectedText();"
 msgid "String editor.clipboardText();"
 msgstr "String view.selectedText();"
 
 #. Tag: para
-#: development.docbook:2421
+#: development.docbook:2430
 #, no-c-format
 msgid "Returns the text that currently is in the global clipboard."
 msgstr ""
 
 #. Tag: synopsis
-#: development.docbook:2429
+#: development.docbook:2438
 #, no-c-format
 msgid "String editor.clipboardHistory();"
 msgstr ""
 
 #. Tag: para
-#: development.docbook:2430
+#: development.docbook:2439
 #, no-c-format
 msgid ""
 "The editor holds a clipboard history that contains up to 10 clipboard "
@@ -6171,7 +6192,7 @@ msgid ""
 msgstr ""
 
 #. Tag: synopsis
-#: development.docbook:2439
+#: development.docbook:2448
 #, fuzzy, no-c-format
 #| msgid ""
 #| "void debug(<parameter>String <replaceable>text</replaceable></parameter>);"
@@ -6182,7 +6203,7 @@ msgstr ""
 "void debug(<parameter>String <replaceable>texto</replaceable></parameter>);"
 
 #. Tag: para
-#: development.docbook:2440
+#: development.docbook:2449
 #, fuzzy, no-c-format
 #| msgid ""
 #| "Cursor(<parameter>int <replaceable>line</replaceable></parameter>, "
