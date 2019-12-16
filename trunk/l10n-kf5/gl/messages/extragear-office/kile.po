@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kile\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2019-12-02 02:48+0100\n"
+"POT-Creation-Date: 2019-12-16 02:46+0100\n"
 "PO-Revision-Date: 2019-07-21 10:46+0200\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Galician <kde-i18n-doc@kde.org>\n"
@@ -529,7 +529,7 @@ msgstr "Nome:"
 msgid "Directory:"
 msgstr "Directorio:"
 
-#: dialogs/findfilesdialog.cpp:119 dialogs/texdocumentationdialog.cpp:70
+#: dialogs/findfilesdialog.cpp:119 dialogs/texdocumentationdialog.cpp:69
 #, kde-format
 msgid "Search"
 msgstr "Buscar"
@@ -609,7 +609,7 @@ msgid "Scan directories recursively"
 msgstr "Examinar os directorios recursivamente"
 
 #: dialogs/findfilesdialog.cpp:216 dialogs/findfilesdialog.cpp:586
-#: dialogs/texdocumentationdialog.cpp:79
+#: dialogs/texdocumentationdialog.cpp:78
 #, kde-format
 msgid "&Search"
 msgstr "&Buscar"
@@ -2454,13 +2454,13 @@ msgid "The password should be at least 6 characters long."
 msgstr "O contrasinal debe ter un mínimo de seis caracteres."
 
 #: dialogs/pdf-wizard/pdfdialog.cpp:1773 dialogs/postscriptdialog.cpp:513
-#: dialogs/texdocumentationdialog.cpp:550
+#: dialogs/texdocumentationdialog.cpp:431
 #, kde-format
 msgid "<center>"
 msgstr "<center>"
 
 #: dialogs/pdf-wizard/pdfdialog.cpp:1773 dialogs/postscriptdialog.cpp:513
-#: dialogs/texdocumentationdialog.cpp:550
+#: dialogs/texdocumentationdialog.cpp:432
 #, kde-format
 msgid "</center>"
 msgstr "</center>"
@@ -2840,8 +2840,7 @@ msgstr "Feito"
 msgid "Execute"
 msgstr "Executar"
 
-#: dialogs/postscriptdialog.cpp:197 dialogs/texdocumentationdialog.cpp:291
-#: dialogs/texdocumentationdialog.cpp:325 quickpreview.cpp:339
+#: dialogs/postscriptdialog.cpp:197 quickpreview.cpp:339
 #, kde-format
 msgid "Could not create a temporary file."
 msgstr "Non se puido crear un ficheiro temporal."
@@ -4713,29 +4712,27 @@ msgstr ""
 msgid "Empty Clipboard"
 msgstr "O portapapeis está baleiro"
 
-#: dialogs/texdocumentationdialog.cpp:58 kile.cpp:1025
+#: dialogs/texdocumentationdialog.cpp:57 kile.cpp:1025
 #, kde-format
 msgid "Documentation Browser"
 msgstr "Navegador da documentación"
 
-#: dialogs/texdocumentationdialog.cpp:67 dialogs/texdocumentationdialog.cpp:500
+#: dialogs/texdocumentationdialog.cpp:66 dialogs/texdocumentationdialog.cpp:381
 #: kilestdactions.cpp:42
 #, kde-format
 msgid "Table of Contents"
 msgstr "Índice"
 
-#: dialogs/texdocumentationdialog.cpp:84
+#: dialogs/texdocumentationdialog.cpp:83
 #, kde-format
 msgid ""
-"A list of available documents, which are listed in 'texdoctk.dat', that come "
-"with TexLive/teTeX. Double clicking with the mouse or pressing the space key "
-"will open a viewer to show this file."
+"<p>A list of the documentation provided by the installed TeX distribution."
+"<br/><p>Double clicking on an item or pressing the space key will open a "
+"viewer to show the corresponding file.</p><p>Items that are grayed out are "
+"not installed.</p>"
 msgstr ""
-"Unha lista dos documentos dispoñíbeis, que están listados en «texdoctk.dat», "
-"que vén con TexLive/teTeX. Cun duplo-clique co rato ou premendo a tecla de "
-"espazo abrirá un visor para mostrar este ficheiro."
 
-#: dialogs/texdocumentationdialog.cpp:85
+#: dialogs/texdocumentationdialog.cpp:86
 #, kde-format
 msgid ""
 "You can choose a keyword to show only document files that are related to "
@@ -4744,76 +4741,79 @@ msgstr ""
 "Pode escoller unha palabra clave para mostrar só ficheiros de documentación "
 "relacionados con ela."
 
-#: dialogs/texdocumentationdialog.cpp:86
+#: dialogs/texdocumentationdialog.cpp:87
 #, kde-format
 msgid "Start the search for the chosen keyword."
 msgstr "Iniciar a busca para a palabra clave escollida."
 
-#: dialogs/texdocumentationdialog.cpp:88
+#: dialogs/texdocumentationdialog.cpp:89
 #, kde-format
 msgid "Reset list to all available documentation files."
 msgstr "Reiniciar a lista de todos os ficheiros de documentación dispoñíbeis."
 
-#: dialogs/texdocumentationdialog.cpp:89
+#: dialogs/texdocumentationdialog.cpp:90
 #, kde-format
 msgid "Cancel &Search"
 msgstr "Cancelar a &busca"
 
-#: dialogs/texdocumentationdialog.cpp:136
+#: dialogs/texdocumentationdialog.cpp:137
 #, kde-format
 msgid "Could not read 'texdoctk.dat'."
 msgstr "Non se puido ler «texdoctk.dat»."
 
-#: dialogs/texdocumentationdialog.cpp:313
-#, kde-format
-msgid "Could not read the style file."
-msgstr "Non se puido ler o ficheiro de estilo."
-
-#: dialogs/texdocumentationdialog.cpp:394
+#: dialogs/texdocumentationdialog.cpp:300
 #, kde-format
 msgid "No KDE service found for this file."
 msgstr "Non se atopou un servizo de KDE para este ficheiro."
 
-#: dialogs/texdocumentationdialog.cpp:428
-#, kde-format
-msgid "Could not find '%1'"
-msgstr "Non se puido atopar «%1»"
+#: dialogs/texdocumentationdialog.cpp:328
+#, fuzzy, kde-format
+#| msgid "Could not find template: %1"
+msgid "Could not find the documentation file '%1'"
+msgstr "Non se puido atopar o modelo: %1"
 
-#: dialogs/texdocumentationdialog.cpp:463
+#: dialogs/texdocumentationdialog.cpp:344
 #, kde-format
 msgid "No keyword given."
 msgstr "Non se indicou ningunha palabra clave."
 
-#: dialogs/texdocumentationdialog.cpp:489
+#: dialogs/texdocumentationdialog.cpp:370
 #, kde-format
 msgid "Search results for keyword '%1'"
 msgstr "Resultados da busca para a palabra clave «%1»"
 
-#: dialogs/texdocumentationdialog.cpp:492
+#: dialogs/texdocumentationdialog.cpp:373
 #, kde-format
 msgid "No documents found for keyword '%1'."
 msgstr "Non se atoparon documentos para a palabra clave «%1»."
 
-#: dialogs/texdocumentationdialog.cpp:550
-#, kde-format
+#: dialogs/texdocumentationdialog.cpp:431
+#, fuzzy, kde-format
+#| msgid ""
+#| "Could not determine the search paths of TexLive/teTeX or file 'texdoctk."
+#| "dat'.<br> Hence, this dialog is unable to provide any useful information."
 msgid ""
 "Could not determine the search paths of TexLive/teTeX or file 'texdoctk.dat'."
-"<br> Hence, this dialog is unable to provide any useful information."
+"<br/>Unfortunately, Kile cannot show any useful information."
 msgstr ""
 "Non se puideron determinar as rutas de busca de TexLive/teTex nin o ficheiro "
 "«texdoctk.dat». <br>Polo tanto este diálogo non pode fornecer información "
 "útil."
 
-#: dialogs/texdocumentationdialog.cpp:550
+#: dialogs/texdocumentationdialog.cpp:432
 #, kde-format
 msgid "TexDoc Dialog"
 msgstr "Diálogo de TexDoc"
 
-#: dialogs/texdocumentationdialog.cpp:562
-#, kde-format
+#: dialogs/texdocumentationdialog.cpp:444
+#, fuzzy, kde-format
+#| msgid ""
+#| "Could not determine the search paths of TexLive or file 'texdoctk.dat'."
+#| "<br> Hence, this dialog is unable to provide any useful information."
 msgid ""
-"Could not determine the search paths of TexLive or file 'texdoctk.dat'.<br> "
-"Hence, this dialog is unable to provide any useful information."
+"Could not determine the installation path of your TeX distribution or find "
+"the file 'texdoctk.dat'.<br>Hence, we cannot provide you with an overview of "
+"the installed TeX documentation."
 msgstr ""
 "Non se puideron determinar as rutas de busca de TexLive nin o ficheiro "
 "«texdoctk.dat». <br>Polo tanto este diálogo non pode fornecer información "
@@ -13209,6 +13209,21 @@ msgstr "Mos&trar o menú do usuario no menú de LaTeX"
 #, kde-format
 msgid "Show the &user menu in the menu bar"
 msgstr "Mostrar o menú do &usuario na barra de menú"
+
+#~ msgid ""
+#~ "A list of available documents, which are listed in 'texdoctk.dat', that "
+#~ "come with TexLive/teTeX. Double clicking with the mouse or pressing the "
+#~ "space key will open a viewer to show this file."
+#~ msgstr ""
+#~ "Unha lista dos documentos dispoñíbeis, que están listados en «texdoctk."
+#~ "dat», que vén con TexLive/teTeX. Cun duplo-clique co rato ou premendo a "
+#~ "tecla de espazo abrirá un visor para mostrar este ficheiro."
+
+#~ msgid "Could not read the style file."
+#~ msgstr "Non se puido ler o ficheiro de estilo."
+
+#~ msgid "Could not find '%1'"
+#~ msgstr "Non se puido atopar «%1»"
 
 #~ msgid ""
 #~ "Sorry, but you do not have the necessary permissions to remove the "
