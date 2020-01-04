@@ -64,7 +64,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2020-01-03 02:37+0100\n"
+"POT-Creation-Date: 2020-01-04 02:48+0100\n"
 "PO-Revision-Date: 2019-11-03 13:36+0100\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Galician <proxecto@trasno.gal>\n"
@@ -499,6 +499,7 @@ msgid "Reference Image"
 msgstr "Imaxe de referencia"
 
 #: core/app/items/overlays/facerejectionoverlay.cpp:60
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:201
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "If this is not a face, click to reject it."
@@ -2694,7 +2695,7 @@ msgid "Albums"
 msgstr "Álbums"
 
 #: core/app/views/sidebar/datefolderviewsidebarwidget.cpp:130
-#: core/libs/models/albummodel.cpp:288
+#: core/libs/models/albummodel.cpp:294
 #, kde-format
 msgid "Dates"
 msgstr "Datas"
@@ -2775,7 +2776,7 @@ msgstr "Álbum sen etiquetas"
 #: core/libs/album/widgets/albumselecttabs.cpp:197
 #: core/libs/database/utils/widgets/dbstatdlg.cpp:74
 #: core/libs/metadataengine/dmetadata/dmetadatasettingscontainer.cpp:42
-#: core/libs/models/albummodel.cpp:109
+#: core/libs/models/albummodel.cpp:112
 #: core/libs/properties/captions/itemdescedittab.cpp:326
 #: core/libs/tags/widgets/tagfolderview.cpp:104
 #: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:545
@@ -16201,7 +16202,7 @@ msgstr "Fotos por páxina"
 #. i18n: ectx: property (text), widget (QPushButton, m_doneButton)
 #: core/dplugins/generic/tools/printcreator/ui/advprintcustomlayout.ui:388
 #: core/dplugins/generic/webservices/google/gswindow.cpp:1055
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:181
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:184
 #: core/utilities/imageeditor/editor/editortoolsettings.cpp:203
 #: core/utilities/imageeditor/editor/editorwindow.cpp:635
 #: core/utilities/maintenance/facesdetector.cpp:72
@@ -16457,7 +16458,7 @@ msgid "Add again"
 msgstr "Engadir de novo"
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:478
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:195
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:199
 #: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:364
 #, kde-format
 msgid "Remove"
@@ -22397,7 +22398,7 @@ msgstr "Insira o nome novo do álbum:"
 
 #: core/libs/album/manager/albummanager.cpp:164
 #: core/libs/album/widgets/albumselecttabs.cpp:198
-#: core/libs/models/albummodel.cpp:182
+#: core/libs/models/albummodel.cpp:188
 #: core/utilities/searchwindow/editablesearchtreeview.cpp:85
 #, kde-format
 msgid "Searches"
@@ -23827,7 +23828,7 @@ msgstr ""
 "recente de digiKam que usase con anterioridade. "
 
 #: core/libs/database/tags/facetags.cpp:377
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:283
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:285
 #, kde-format
 msgctxt "People on your photos"
 msgid "People"
@@ -32165,19 +32166,19 @@ msgstr "Por facer"
 msgid "Miscellaneous"
 msgstr "Diversos"
 
-#: core/libs/tags/engine/taggingactionfactory.cpp:388
+#: core/libs/tags/engine/taggingactionfactory.cpp:392
 #, kde-format
 msgctxt "<tag name> in <tag path>"
 msgid "%1 in %2"
 msgstr "%1 en %2"
 
-#: core/libs/tags/engine/taggingactionfactory.cpp:396
+#: core/libs/tags/engine/taggingactionfactory.cpp:400
 #, kde-format
 msgctxt "Create New Tag <tag name> in <parent tag path>"
 msgid "Create \"%1\" in %2"
 msgstr "Crear «%1» en %2"
 
-#: core/libs/tags/engine/taggingactionfactory.cpp:401
+#: core/libs/tags/engine/taggingactionfactory.cpp:405
 #, kde-format
 msgid "Create \"%1\""
 msgstr "Crear «%1»"
@@ -34596,7 +34597,7 @@ msgid_plural "%1 Images"
 msgstr[0] "Unha imaxe"
 msgstr[1] "%1 imaxes"
 
-#: core/libs/widgets/itemview/itemdelegateoverlay.cpp:343
+#: core/libs/widgets/itemview/itemdelegateoverlay.cpp:344
 #, kde-format
 msgctxt "@info"
 msgid "<i>Applying operation to<br/>the selected picture</i>"
@@ -39460,12 +39461,18 @@ msgstr "BalooTags"
 msgid "Applying face changes"
 msgstr "Aplicar os cambios faciais"
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:185
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:188
 #, kde-format
 msgid "Confirm"
 msgstr "Confirmar"
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:458
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:191
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Confirm that the selected person is shown here"
+msgstr ""
+
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:464
 #, kde-format
 msgid "Who is this?"
 msgstr "Quen é?"
@@ -39526,66 +39533,75 @@ msgid "Detect and recognize faces"
 msgstr "Detectar e recoñecer caras (experimental)."
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:171
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@info"
+#| msgid ""
+#| "Find all faces in your photos and try to recognize which person is "
+#| "depicted"
 msgctxt "@info"
 msgid ""
-"Find all faces in your photos and try to recognize which person is depicted"
+"Find all faces in your photos and\n"
+"try to recognize which person is depicted"
 msgstr ""
 "Atope todas as caras que haxa nas fotos e tente recoñecer quen veñen sendo"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:174
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:175
 #, fuzzy, kde-format
 #| msgid "Recognize"
 msgctxt "@option:radio"
 msgid "Recognize faces"
 msgstr "Recoñecer"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:175
-#, kde-format
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:176
+#, fuzzy, kde-format
+#| msgctxt "@info"
+#| msgid ""
+#| "Try again to recognize the people depicted on marked but yet unconfirmed "
+#| "faces."
 msgctxt "@info"
 msgid ""
-"Try again to recognize the people depicted on marked but yet unconfirmed "
-"faces."
+"Try again to recognize the people depicted\n"
+"on marked but yet unconfirmed faces."
 msgstr ""
 "Intentar recoñecer de novo as persoas que aparezan nas caras marcadas pero "
 "non confirmadas aínda."
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:194
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:196
 #, fuzzy, kde-format
 #| msgid "Workflow"
 msgctxt "@title:tab"
 msgid "Workflow"
 msgstr "Fluxo de traballo"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:199
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:201
 #, fuzzy, kde-format
 #| msgid "Search in:"
 msgctxt "@title:tab"
 msgid "Search in"
 msgstr "Buscar en:"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:206
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:208
 #, fuzzy, kde-format
 #| msgid "Accuracy:"
 msgctxt "@groupbox"
 msgid "Face Accuracy"
 msgstr "Corrección:"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:209
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:211
 #, fuzzy, kde-format
 #| msgid "Sensitivity"
 msgctxt "@label left extremities of a scale"
 msgid "Sensitivity"
 msgstr "Sensibilidade"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:212
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:214
 #, fuzzy, kde-format
 #| msgid "Specific Location"
 msgctxt "@label right extremities of a scale"
 msgid "Specificity"
 msgstr "Lugar específico"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:219
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:221
 #, fuzzy, kde-format
 #| msgctxt "@info:tooltip"
 #| msgid ""
@@ -39595,21 +39611,22 @@ msgstr "Lugar específico"
 msgctxt "@info:tooltip"
 msgid ""
 "Adjust sensitivity versus specificity: the higher the value, the more "
-"accurately faces will be recognized, but less faces will be recognized (only "
-"faces that are very similar to pre-tagged faces are recognized)."
+"accurately faces will\n"
+"be recognized, but less faces will be recognized\n"
+"(only faces that are very similar to pre-tagged faces are recognized)."
 msgstr ""
 "Axuste a sensibilidade ou especificidade: a maior valor, maior será a "
 "precisión do recoñecemento de caras, pero recoñeceranse menos caras (só se "
 "recoñecerán as caras moi semellantes ás previamente etiquetadas)"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:229
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:231
 #: core/utilities/queuemanager/views/queuesettingsview.cpp:235
 #, kde-format
 msgctxt "@option:check"
 msgid "Work on all processor cores"
 msgstr "Traballador con todos os núcleos de procesador"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:231
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:233
 #, fuzzy, kde-format
 #| msgctxt "@info"
 #| msgid ""
@@ -39618,15 +39635,15 @@ msgstr "Traballador con todos os núcleos de procesador"
 #| "on one core."
 msgctxt "@info:tooltip"
 msgid ""
-"Face detection and recognition are time-consuming tasks. You can choose if "
-"you wish to employ all processor cores on your system, or work in the "
-"background only on one core."
+"Face detection and recognition are time-consuming tasks.\n"
+"You can choose if you wish to employ all processor cores\n"
+"on your system, or work in the background only on one core."
 msgstr ""
 "A detección facial é unha tarefa que consume tempo. Pode escoller se desexa "
 "empregar todos os núcelos de procesador do sistema ou traballar no fondo só "
 "cun núcleo."
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:239
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:241
 #, fuzzy, kde-format
 #| msgid "Settings"
 msgctxt "@title:tab"
