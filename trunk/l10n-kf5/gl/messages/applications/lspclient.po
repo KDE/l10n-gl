@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kate\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2020-01-01 02:31+0100\n"
+"POT-Creation-Date: 2020-01-05 02:38+0100\n"
 "PO-Revision-Date: 2019-09-01 09:56+0200\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Galician <proxecto@trasno.gal>\n"
@@ -18,12 +18,32 @@ msgstr ""
 "X-Generator: Lokalize 19.04.3\n"
 
 #. i18n: ectx: Menu (LSPClient Menubar)
-#: lspclientconfigpage.cpp:72 lspclientconfigpage.cpp:77
+#: lspclientconfigpage.cpp:110 lspclientconfigpage.cpp:115
 #: lspclientpluginview.cpp:363 lspclientpluginview.cpp:392
 #: lspclientpluginview.cpp:1792 ui.rc:6
 #, kde-format
 msgid "LSP Client"
 msgstr "Cliente de LSP"
+
+#: lspclientconfigpage.cpp:202
+#, kde-format
+msgid "No JSON data to validate."
+msgstr ""
+
+#: lspclientconfigpage.cpp:211
+#, kde-format
+msgid "JSON data is valid."
+msgstr ""
+
+#: lspclientconfigpage.cpp:213
+#, kde-format
+msgid "JSON data is invalid: no JSON object"
+msgstr ""
+
+#: lspclientconfigpage.cpp:216
+#, kde-format
+msgid "JSON data is invalid: %1"
+msgstr ""
 
 #: lspclientpluginview.cpp:308
 #, kde-format
@@ -61,37 +81,37 @@ msgid "Rename"
 msgstr "Cambiar de nome"
 
 #. i18n: ectx: property (text), widget (QCheckBox, chkComplDoc)
-#: lspclientpluginview.cpp:326 lspconfigwidget.ui:72
+#: lspclientpluginview.cpp:326 lspconfigwidget.ui:47
 #, kde-format
 msgid "Show selected completion documentation"
 msgstr "Mostrar a documentación do completado seleccionado"
 
 #. i18n: ectx: property (text), widget (QCheckBox, chkRefDeclaration)
-#: lspclientpluginview.cpp:329 lspconfigwidget.ui:79
+#: lspclientpluginview.cpp:329 lspconfigwidget.ui:54
 #, kde-format
 msgid "Include declaration in references"
 msgstr "Incluír a declaración nas referencias"
 
 #. i18n: ectx: property (text), widget (QCheckBox, chkAutoHover)
-#: lspclientpluginview.cpp:332 lspconfigwidget.ui:86
+#: lspclientpluginview.cpp:332 lspconfigwidget.ui:61
 #, kde-format
 msgid "Show hover information"
 msgstr "Mostrar información ao cubrir"
 
 #. i18n: ectx: property (text), widget (QCheckBox, chkOnTypeFormatting)
-#: lspclientpluginview.cpp:335 lspconfigwidget.ui:93
+#: lspclientpluginview.cpp:335 lspconfigwidget.ui:68
 #, kde-format
 msgid "Format on typing"
 msgstr "Formatar ao escribir"
 
 #. i18n: ectx: property (text), widget (QCheckBox, chkIncrementalSync)
-#: lspclientpluginview.cpp:338 lspconfigwidget.ui:100
+#: lspclientpluginview.cpp:338 lspconfigwidget.ui:75
 #, kde-format
 msgid "Incremental document synchronization"
 msgstr "Sincronización incremental dos documentos"
 
 #. i18n: ectx: property (text), widget (QCheckBox, chkDiagnostics)
-#: lspclientpluginview.cpp:343 lspconfigwidget.ui:116
+#: lspclientpluginview.cpp:343 lspconfigwidget.ui:91
 #, kde-format
 msgid "Show diagnostics notifications"
 msgstr "Mostrar notificacións do diagnóstico"
@@ -213,28 +233,35 @@ msgctxt "@label:textbox"
 msgid "New name (caution: not all references may be replaced)"
 msgstr "Novo nome (ollo: poden non substituírse todas as referencias)"
 
-#: lspclientservermanager.cpp:425
+#: lspclientservermanager.cpp:426
 #, kde-kuit-format
 msgctxt "@info"
 msgid "<b>LSP Client:</b> %1"
 msgstr "<b>Cliente de LSP:</b> %1"
 
-#: lspclientservermanager.cpp:482
+#: lspclientservermanager.cpp:483
 #, kde-format
 msgid "Server terminated unexpectedly: %1"
 msgstr "O servidor rematou inesperadamente: %1"
 
-#: lspclientservermanager.cpp:587
+#: lspclientservermanager.cpp:588
 #, kde-format
 msgid "Failed to start server: %1"
 msgstr "Non se puido iniciar o servidor: %1"
 
-#: lspclientservermanager.cpp:612
-#, kde-format
-msgid "Failed to parse server configuration: %1"
+#: lspclientservermanager.cpp:616
+#, fuzzy, kde-format
+#| msgid "Failed to parse server configuration: %1"
+msgid "Failed to parse server configuration '%1': no JSON object"
 msgstr "Non se puido analizar a configuración do servidor: %1"
 
-#: lspclientservermanager.cpp:615
+#: lspclientservermanager.cpp:619
+#, fuzzy, kde-format
+#| msgid "Failed to parse server configuration: %1"
+msgid "Failed to parse server configuration '%1': %2"
+msgstr "Non se puido analizar a configuración do servidor: %1"
+
+#: lspclientservermanager.cpp:623
 #, kde-format
 msgid "Failed to read server configuration: %1"
 msgstr "Non se puido ler a configuración do servidor: %1"
@@ -279,65 +306,86 @@ msgstr "Símbolos"
 msgid "No LSP server for this document."
 msgstr "Non hai un servidor de LSP para este documento."
 
-#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
-#: lspconfigwidget.ui:29
+#. i18n: ectx: attribute (title), widget (QWidget, tab)
+#: lspconfigwidget.ui:33
 #, kde-format
-msgid "Symbol Outline Options"
-msgstr "Opcións do contorno dos símbolos"
-
-#. i18n: ectx: property (text), widget (QCheckBox, chkSymbolDetails)
-#: lspconfigwidget.ui:35
-#, kde-format
-msgid "Display symbol details"
-msgstr "Mostrar os detalles dos símbolos"
-
-#. i18n: ectx: property (text), widget (QCheckBox, chkSymbolTree)
-#: lspconfigwidget.ui:42
-#, kde-format
-msgid "Tree mode outline"
-msgstr "Contorno en modo de árbore"
-
-#. i18n: ectx: property (text), widget (QCheckBox, chkSymbolExpand)
-#: lspconfigwidget.ui:49
-#, kde-format
-msgid "Automatically expand nodes in tree mode"
-msgstr "Expandir automaticamente os nodos no modo en árbore"
-
-#. i18n: ectx: property (text), widget (QCheckBox, chkSymbolSort)
-#: lspconfigwidget.ui:56
-#, kde-format
-msgid "Sort symbols alphabetically"
-msgstr "Ordenar os símbolos alfabeticamente"
+msgid "Client Settings"
+msgstr ""
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
-#: lspconfigwidget.ui:66
+#: lspconfigwidget.ui:41
 #, kde-format
 msgid "General Options"
 msgstr "Opcións xerais"
 
 #. i18n: ectx: property (text), widget (QCheckBox, chkSemanticHighlighting)
-#: lspconfigwidget.ui:107
+#: lspconfigwidget.ui:82
 #, kde-format
 msgid "Enable semantic highlighting"
 msgstr ""
 
 #. i18n: ectx: property (text), widget (QCheckBox, chkDiagnosticsHighlight)
-#: lspconfigwidget.ui:123
+#: lspconfigwidget.ui:98
 #, kde-format
 msgid "Add highlights"
 msgstr "Engadir realces"
 
 #. i18n: ectx: property (text), widget (QCheckBox, chkDiagnosticsMark)
-#: lspconfigwidget.ui:130
+#: lspconfigwidget.ui:105
 #, kde-format
 msgid "Add markers"
 msgstr "Engadir marcadores"
 
-#. i18n: ectx: property (title), widget (QGroupBox, groupBox_3)
-#: lspconfigwidget.ui:142
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
+#: lspconfigwidget.ui:117
 #, kde-format
-msgid "Server Configuration"
-msgstr "Configuración do servidor"
+msgid "Symbol Outline Options"
+msgstr "Opcións do contorno dos símbolos"
+
+#. i18n: ectx: property (text), widget (QCheckBox, chkSymbolDetails)
+#: lspconfigwidget.ui:123
+#, kde-format
+msgid "Display symbol details"
+msgstr "Mostrar os detalles dos símbolos"
+
+#. i18n: ectx: property (text), widget (QCheckBox, chkSymbolTree)
+#: lspconfigwidget.ui:130
+#, kde-format
+msgid "Tree mode outline"
+msgstr "Contorno en modo de árbore"
+
+#. i18n: ectx: property (text), widget (QCheckBox, chkSymbolExpand)
+#: lspconfigwidget.ui:137
+#, kde-format
+msgid "Automatically expand nodes in tree mode"
+msgstr "Expandir automaticamente os nodos no modo en árbore"
+
+#. i18n: ectx: property (text), widget (QCheckBox, chkSymbolSort)
+#: lspconfigwidget.ui:144
+#, kde-format
+msgid "Sort symbols alphabetically"
+msgstr "Ordenar os símbolos alfabeticamente"
+
+#. i18n: ectx: attribute (title), widget (QWidget, tab_2)
+#: lspconfigwidget.ui:170
+#, kde-format
+msgid "User Server Settings"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: lspconfigwidget.ui:178
+#, kde-format
+msgid "Settings File:"
+msgstr ""
+
+#. i18n: ectx: attribute (title), widget (QWidget, tab_3)
+#: lspconfigwidget.ui:212
+#, kde-format
+msgid "Default Server Settings"
+msgstr ""
+
+#~ msgid "Server Configuration"
+#~ msgstr "Configuración do servidor"
 
 #, fuzzy
 #~| msgid "Format"
