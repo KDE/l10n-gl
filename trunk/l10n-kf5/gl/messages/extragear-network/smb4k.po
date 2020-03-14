@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2020-01-09 02:41+0100\n"
+"POT-Creation-Date: 2020-03-14 02:48+0100\n"
 "PO-Revision-Date: 2019-10-19 22:40+0200\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Galician <proxecto@trasno.gal>\n"
@@ -154,7 +154,7 @@ msgstr "Montar todos os marcadores"
 msgid "User Interface"
 msgstr "Interface do usuario"
 
-#: smb4k/smb4kconfigdialog.cpp:144 smb4k/smb4knetworkbrowser.cpp:64
+#: smb4k/smb4kconfigdialog.cpp:144 smb4k/smb4knetworkbrowser.cpp:60
 #, kde-format
 msgid "Network"
 msgstr "Rede"
@@ -274,14 +274,14 @@ msgstr "Inicio de sesión por omisión"
 msgid "Entry"
 msgstr "Entrada"
 
-#: smb4k/smb4kconfigpageauthentication.cpp:330 smb4k/smb4ktooltip.cpp:330
-#: smb4k/smb4ktooltip.cpp:405
+#: smb4k/smb4kconfigpageauthentication.cpp:330
+#: smb4k/smb4knetworkbrowseritem.cpp:410
 #, kde-format
 msgid "Workgroup"
 msgstr "Grupo de traballo"
 
 #: smb4k/smb4kconfigpageauthentication.cpp:334
-#: smb4k/smb4kconfigpageauthentication.cpp:366 smb4k/smb4ktooltip.cpp:570
+#: smb4k/smb4kconfigpageauthentication.cpp:366
 #, kde-format
 msgid "Login"
 msgstr "Acceso"
@@ -303,16 +303,19 @@ msgid "Identification"
 msgstr "Identificación"
 
 #: smb4k/smb4kconfigpagecustomoptions.cpp:120
+#: smb4k/smb4knetworkbrowseritem.cpp:468
 #, kde-format
 msgid "Workgroup:"
 msgstr "Grupo de traballo:"
 
 #: smb4k/smb4kconfigpagecustomoptions.cpp:130
+#: smb4k/smb4knetworkbrowseritem.cpp:546 smb4k/smb4ksharesviewitem.cpp:171
 #, kde-format
 msgid "Location:"
 msgstr "Lugar:"
 
 #: smb4k/smb4kconfigpagecustomoptions.cpp:140
+#: smb4k/smb4knetworkbrowseritem.cpp:456 smb4k/smb4knetworkbrowseritem.cpp:534
 #, kde-format
 msgid "IP Address:"
 msgstr "Enderezo IP:"
@@ -743,20 +746,17 @@ msgstr "%1 desmontouse correctamente."
 msgid "Synchronizing %1"
 msgstr "Sincronizando %1"
 
-#: smb4k/smb4knetworkbrowser.cpp:65 smb4k/smb4ktooltip.cpp:326
-#: smb4k/smb4ktooltip.cpp:367 smb4k/smb4ktooltip.cpp:430
+#: smb4k/smb4knetworkbrowser.cpp:61
 #, kde-format
 msgid "Type"
 msgstr "Tipo"
 
-#: smb4k/smb4knetworkbrowser.cpp:66 smb4k/smb4ktooltip.cpp:389
-#: smb4k/smb4ktooltip.cpp:482
+#: smb4k/smb4knetworkbrowser.cpp:62
 #, kde-format
 msgid "IP Address"
 msgstr "Enderezo IP"
 
-#: smb4k/smb4knetworkbrowser.cpp:67 smb4k/smb4ktooltip.cpp:373
-#: smb4k/smb4ktooltip.cpp:436
+#: smb4k/smb4knetworkbrowser.cpp:63
 #, kde-format
 msgid "Comment"
 msgstr "Comentario"
@@ -824,6 +824,56 @@ msgstr "Examina&r o computador"
 #, kde-format
 msgid "Scan Wo&rkgroup"
 msgstr "Examinar o g&rupo de traballo"
+
+#: smb4k/smb4knetworkbrowseritem.cpp:347 smb4k/smb4knetworkbrowseritem.cpp:510
+#, kde-format
+msgid "yes"
+msgstr "si"
+
+#: smb4k/smb4knetworkbrowseritem.cpp:347 smb4k/smb4knetworkbrowseritem.cpp:510
+#, kde-format
+msgid "no"
+msgstr "non"
+
+#: smb4k/smb4knetworkbrowseritem.cpp:393
+#, fuzzy, kde-format
+#| msgid "Type"
+msgid "Type:"
+msgstr "Tipo"
+
+#: smb4k/smb4knetworkbrowseritem.cpp:413
+#, fuzzy, kde-format
+#| msgid "Master browser"
+msgid "Master Browser:"
+msgstr "Navegador mestre"
+
+#: smb4k/smb4knetworkbrowseritem.cpp:441
+#, kde-format
+msgid "Host"
+msgstr "Máquina"
+
+#: smb4k/smb4knetworkbrowseritem.cpp:444 smb4k/smb4knetworkbrowseritem.cpp:489
+#, fuzzy, kde-format
+#| msgid "Comment"
+msgid "Comment:"
+msgstr "Comentario"
+
+#: smb4k/smb4knetworkbrowseritem.cpp:486
+#, kde-format
+msgid "Share (%1)"
+msgstr "Compartición (%1)"
+
+#: smb4k/smb4knetworkbrowseritem.cpp:501
+#, fuzzy, kde-format
+#| msgid "Mounted"
+msgid "Mounted:"
+msgstr "Montada"
+
+#: smb4k/smb4knetworkbrowseritem.cpp:523
+#, fuzzy, kde-format
+#| msgid "Host"
+msgid "Host:"
+msgstr "Máquina"
 
 #: smb4k/smb4knetworksearchtoolbar.cpp:59
 #, kde-format
@@ -924,80 +974,52 @@ msgstr ""
 "<qt>Non hai ningunha conexión activa á compartición <b>%1</b>. Non pode "
 "soltar ningún ficheiro nela.</qt>"
 
-#: smb4k/smb4ktooltip.cpp:182 smb4k/smb4ktooltip.cpp:461
-#: smb4k/smb4ktooltip.cpp:726
-#, kde-format
-msgid "yes"
-msgstr "si"
-
-#: smb4k/smb4ktooltip.cpp:186 smb4k/smb4ktooltip.cpp:466
-#: smb4k/smb4ktooltip.cpp:730
-#, kde-format
-msgid "no"
-msgstr "non"
-
-#: smb4k/smb4ktooltip.cpp:218
-#, kde-format
-msgid "%1 of %2 free (%3 used)"
-msgstr "%1 de %2 libres (%3 usado)"
-
-#: smb4k/smb4ktooltip.cpp:225 smb4k/smb4ktooltip.cpp:581
-#: smb4k/smb4ktooltip.cpp:589 smb4k/smb4ktooltip.cpp:590
-#: smb4k/smb4ktooltip.cpp:616 smb4k/smb4ktooltip.cpp:772
-#: smb4k/smb4ktooltip.cpp:787
+#: smb4k/smb4ksharesviewitem.cpp:123 smb4k/smb4ksharesviewitem.cpp:133
+#: smb4k/smb4ksharesviewitem.cpp:198 smb4k/smb4ksharesviewitem.cpp:210
+#: smb4k/smb4ksharesviewitem.cpp:211 smb4k/smb4ksharesviewitem.cpp:243
 #, kde-format
 msgid "unknown"
 msgstr "descoñecido"
 
-#: smb4k/smb4ktooltip.cpp:332
-#, kde-format
-msgid "Master browser"
-msgstr "Navegador mestre"
-
-#: smb4k/smb4ktooltip.cpp:371 smb4k/smb4ktooltip.cpp:476
-#, kde-format
-msgid "Host"
-msgstr "Máquina"
-
-#: smb4k/smb4ktooltip.cpp:434
-#, kde-format
-msgid "Share (%1)"
-msgstr "Compartición (%1)"
-
-#: smb4k/smb4ktooltip.cpp:452
-#, kde-format
-msgid "Mounted"
-msgstr "Montada"
-
-#: smb4k/smb4ktooltip.cpp:498 smb4k/smb4ktooltip.cpp:558
-#, kde-format
-msgid "Location"
-msgstr "Lugar"
-
-#: smb4k/smb4ktooltip.cpp:564
-#, kde-format
-msgid "Mountpoint"
-msgstr "Punto de montaxe"
-
-#: smb4k/smb4ktooltip.cpp:584
-#, kde-format
-msgid "Owner"
-msgstr "Propietario"
-
-#: smb4k/smb4ktooltip.cpp:595
-#, kde-format
-msgid "File system"
-msgstr "Sistema de ficheiros"
-
-#: smb4k/smb4ktooltip.cpp:601
-#, kde-format
-msgid "Size"
-msgstr "Tamaño"
-
-#: smb4k/smb4ktooltip.cpp:608 smb4k/smb4ktooltip.cpp:780
+#: smb4k/smb4ksharesviewitem.cpp:129 smb4k/smb4ksharesviewitem.cpp:239
 #, kde-format
 msgid "%1 free of %2 (%3 used)"
 msgstr "%1 de %2 libres (%3 empregado)"
+
+#: smb4k/smb4ksharesviewitem.cpp:182
+#, fuzzy, kde-format
+#| msgid "Mountpoint"
+msgid "Mountpoint:"
+msgstr "Punto de montaxe"
+
+#: smb4k/smb4ksharesviewitem.cpp:193
+#, kde-format
+msgid "Login:"
+msgstr "Inicio de sesión:"
+
+#: smb4k/smb4ksharesviewitem.cpp:205
+#, fuzzy, kde-format
+#| msgid "Owner"
+msgid "Owner:"
+msgstr "Propietario"
+
+#: smb4k/smb4ksharesviewitem.cpp:219
+#, fuzzy, kde-format
+#| msgid "File system"
+msgid "File system:"
+msgstr "Sistema de ficheiros"
+
+#: smb4k/smb4ksharesviewitem.cpp:230
+#, fuzzy, kde-format
+#| msgid "Size"
+msgid "Size:"
+msgstr "Tamaño"
+
+#~ msgid "%1 of %2 free (%3 used)"
+#~ msgstr "%1 de %2 libres (%3 usado)"
+
+#~ msgid "Location"
+#~ msgstr "Lugar"
 
 #~ msgid "The selected entry is removed from the wallet."
 #~ msgstr "A entrada seleccionada retirouse da carteira."
@@ -1131,9 +1153,6 @@ msgstr "%1 de %2 libres (%3 empregado)"
 
 #~ msgid "Label:"
 #~ msgstr "Etiqueta:"
-
-#~ msgid "Login:"
-#~ msgstr "Inicio de sesión:"
 
 #~ msgid "Group:"
 #~ msgstr "Grupo:"
