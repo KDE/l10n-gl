@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2020-04-25 04:08+0200\n"
+"POT-Creation-Date: 2020-05-13 03:58+0200\n"
 "PO-Revision-Date: 2019-10-19 21:46+0200\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Galician <proxecto@trasno.gal>\n"
@@ -29,7 +29,7 @@ msgctxt "@action Action to mount a vault"
 msgid "Open this Plasma Vault"
 msgstr "Abrir esta caixa forte de Plasma"
 
-#: kded/engine/backend_p.cpp:76
+#: kded/engine/backend_p.cpp:78
 #, kde-format
 msgctxt "formatting the message for a command, as in encfs: not found"
 msgid "%1: %2"
@@ -37,6 +37,7 @@ msgstr "%1: %2"
 
 #: kded/engine/backends/cryfs/cryfsbackend.cpp:118
 #: kded/engine/backends/encfs/encfsbackend.cpp:74
+#: kded/engine/backends/gocryptfs/gocryptfsbackend.cpp:100
 #, kde-format
 msgid "Failed to create directories, check your permissions"
 msgstr "Non se puideron crear os directorios, comprobe os seus permisos."
@@ -93,9 +94,30 @@ msgstr ""
 "A versión instalada de cryfs é vella de máis para abrir esta caixa forte."
 
 #: kded/engine/backends/cryfs/cryfsbackend.cpp:196
+#: kded/engine/backends/gocryptfs/gocryptfsbackend.cpp:143
 #, kde-format
 msgid "Unable to perform the operation (error code %1)."
 msgstr "Non se pode realizar a operación (código de erro: %1)."
+
+#: kded/engine/backends/gocryptfs/gocryptfsbackend.cpp:131
+#, fuzzy, kde-format
+#| msgid "The mount point directory is not empty, refusing to open the vault"
+msgid "The cipher directory is not empty, cannot initialise the vault."
+msgstr ""
+"O directorio de punto de montaxe non está baleiro, non se abrirá a caixa "
+"forte."
+
+#: kded/engine/backends/gocryptfs/gocryptfsbackend.cpp:135
+#, kde-format
+msgid "The password is empty, cannot initialise the vault."
+msgstr ""
+
+#: kded/engine/backends/gocryptfs/gocryptfsbackend.cpp:139
+#, fuzzy, kde-format
+#| msgid "Failed to create directories, check your permissions"
+msgid ""
+"Cannot write gocryptfs.conf inside cipher directory, check your permissions."
+msgstr "Non se puideron crear os directorios, comprobe os seus permisos."
 
 #: kded/engine/fusebackend_p.cpp:69
 #, kde-format
@@ -446,7 +468,13 @@ msgstr "EncFS"
 msgid "CryFS"
 msgstr "CryFS"
 
-#: kded/ui/vaultconfigurationdialog.cpp:176
+#: kded/ui/vaultconfigurationdialog.cpp:87 kded/ui/vaultcreationwizard.cpp:115
+#: kded/ui/vaultimportingwizard.cpp:82
+#, kde-format
+msgid "gocryptfs"
+msgstr ""
+
+#: kded/ui/vaultconfigurationdialog.cpp:180
 #, kde-format
 msgid "Configure"
 msgstr "Configurar"
@@ -563,7 +591,65 @@ msgstr ""
 "                             non existe ningunha auditoría independente que "
 "poida confirmalo."
 
-#: kded/ui/vaultcreationwizard.cpp:162
+#: kded/ui/vaultcreationwizard.cpp:118
+#, fuzzy, kde-format
+#| msgid ""
+#| "<b>Security notice:</b>\n"
+#| "                             CryFS encrypts your files, so you can safely "
+#| "store them anywhere.\n"
+#| "                             It works well together with cloud services "
+#| "like Dropbox, iCloud, OneDrive and others.\n"
+#| "                             <br /><br />\n"
+#| "                             Unlike some other file-system overlay "
+#| "solutions,\n"
+#| "                             it does not expose the directory structure,\n"
+#| "                             the number of files nor the file sizes\n"
+#| "                             through the encrypted data format.\n"
+#| "                             <br /><br />\n"
+#| "                             One important thing to note is that,\n"
+#| "                             while CryFS is considered safe,\n"
+#| "                             there is no independent security audit\n"
+#| "                             which confirms this."
+msgid ""
+"<b>Security notice:</b>\n"
+"                             Gocryptfs encrypts your files, so you can "
+"safely store them anywhere.\n"
+"                             It works well together with cloud services like "
+"Dropbox, iCloud, OneDrive and others.\n"
+"                             <br /><br />\n"
+"                             A threat model for gocryptfs is provided by the "
+"author at                              <a href='https://nuetzlich.net/"
+"gocryptfs/threat_model'>nuetzlich.net/gocryptfs/threat_model</"
+"a>.                              <br /><br />\n"
+"                             According to a security audit performed in 2017 "
+"by Taylor Hornby (Defuse Security),\n"
+"                             gocryptfs keeps file contents secret against an "
+"adversary that can read and modify the                              "
+"ciphertext.                              <br /><br />\n"
+"                             See <a href='https://defuse.ca/audits/gocryptfs."
+"htm'>defuse.ca/audits/gocryptfs.htm</a> for more information."
+msgstr ""
+"<b>Nota de seguranza:</b>\n"
+"                             CryFS cifra os ficheiros, así que pode "
+"almacenalos con seguranza\n"
+"                             en calquera lugar.\n"
+"                             Funciona ben en combinación con servizos na "
+"nube como Dropbox,\n"
+"                             iCloud, OneDrive, etc.\n"
+"                             <br /><br />\n"
+"                             A diferenza dalgunhas outras solucións de capa "
+"de sistema de\n"
+"                             ficheiros, non expón nin a estrutura de "
+"directorios, nin o número                              de ficheiros nin os "
+"seus tamaños a través do formato de cifraxe de\n"
+"                             datos.\n"
+"                             <br /><br />\n"
+"                             Porén, cómpre ter en conta que aínda que CryFS "
+"se considera seguro,\n"
+"                             non existe ningunha auditoría independente que "
+"poida confirmalo."
+
+#: kded/ui/vaultcreationwizard.cpp:193
 #, kde-format
 msgctxt "@title:window"
 msgid "Create a New Vault"
@@ -591,39 +677,39 @@ msgstr "Escriba o nome da caixa forte para confirmar:"
 msgid "Delete this vault"
 msgstr "Eliminar a caixa forte"
 
-#: kded/ui/vaultimportingwizard.cpp:86
+#: kded/ui/vaultimportingwizard.cpp:102
 #, kde-format
 msgid "Import"
 msgstr "Importar"
 
-#: kded/ui/vaultimportingwizard.cpp:126
+#: kded/ui/vaultimportingwizard.cpp:142
 #, kde-format
 msgctxt "@title:window"
 msgid "Import an Existing Vault"
 msgstr "Importar unha caixa forte existente"
 
-#: kded/ui/vaultwizardbase.h:50 kded/ui/vaultwizardbase.h:102
+#: kded/ui/vaultwizardbase.h:50 kded/ui/vaultwizardbase.h:103
 #, kde-format
 msgid "Next"
 msgstr "Seguinte"
 
-#: kded/ui/vaultwizardbase.h:93
+#: kded/ui/vaultwizardbase.h:94
 #, kde-format
 msgid "Create"
 msgstr "Crear"
 
-#: kded/ui/vaultwizardbase.h:100
+#: kded/ui/vaultwizardbase.h:101
 #, kde-format
 msgid "Previous"
 msgstr "Anterior"
 
-#: plasma/package/contents/ui/main.qml:90
+#: plasma/package/contents/ui/main.qml:88
 #, kde-format
 msgid "No Vaults have been set up"
 msgstr ""
 
-#: plasma/package/contents/ui/main.qml:93
-#: plasma/package/contents/ui/main.qml:105
+#: plasma/package/contents/ui/main.qml:91
+#: plasma/package/contents/ui/main.qml:103
 #, kde-format
 msgid "Create a New Vault..."
 msgstr "Crear unha nova caixa forte…"
