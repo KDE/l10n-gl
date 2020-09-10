@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kleopatra\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2020-09-09 02:35+0200\n"
+"POT-Creation-Date: 2020-09-10 02:29+0200\n"
 "PO-Revision-Date: 2020-01-12 11:14+0100\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Galician <proxecto@trasno.gal>\n"
@@ -177,8 +177,9 @@ msgid "Authenticating to the card failed: %1"
 msgstr "O movemento da chave á tarxeta fallou: %1"
 
 #: src/commands/authenticatepivcardapplicationcommand.cpp:132
-#: src/commands/changepincommand.cpp:157 src/commands/keytocardcommand.cpp:330
-#: src/commands/keytocardcommand.cpp:364 src/commands/keytocardcommand.cpp:378
+#: src/commands/changepincommand.cpp:157 src/commands/keytocardcommand.cpp:313
+#: src/commands/keytocardcommand.cpp:388 src/commands/keytocardcommand.cpp:427
+#: src/commands/keytocardcommand.cpp:446 src/commands/keytocardcommand.cpp:461
 #: src/commands/pivgeneratecardkeycommand.cpp:198
 #: src/commands/setpivcardapplicationadministrationkeycommand.cpp:174
 #: src/commands/setpivcardapplicationadministrationkeycommand.cpp:197
@@ -378,8 +379,8 @@ msgctxt "@info"
 msgid "PIN changed successfully."
 msgstr "O PIN configurouse correctamente."
 
-#: src/commands/changepincommand.cpp:159 src/commands/keytocardcommand.cpp:346
-#: src/commands/keytocardcommand.cpp:368
+#: src/commands/changepincommand.cpp:159 src/commands/keytocardcommand.cpp:404
+#: src/commands/keytocardcommand.cpp:450
 #: src/commands/pivgeneratecardkeycommand.cpp:200
 #: src/commands/setpivcardapplicationadministrationkeycommand.cpp:199
 #: src/view/pgpcardwidget.cpp:302 src/view/pgpcardwidget.cpp:393
@@ -1461,67 +1462,68 @@ msgstr ""
 "<para>A saída de <command>%1</command> foi:</para><para><message>%2</"
 "message></para>"
 
-#: src/commands/keytocardcommand.cpp:100
+#: src/commands/keytocardcommand.cpp:107
 #: src/commands/pivgeneratecardkeycommand.cpp:115
 #, kde-format
 msgid "Failed to find the card with the serial number: %1"
 msgstr "Non se puido atopar a tarxeta co número de serie: %1"
 
-#: src/commands/keytocardcommand.cpp:111
+#: src/commands/keytocardcommand.cpp:118
 #, kde-format
 msgid "Sorry! This key cannot be transferred to an OpenPGP card."
 msgstr ""
 
-#: src/commands/keytocardcommand.cpp:120
+#: src/commands/keytocardcommand.cpp:127
 #, kde-format
 msgid "Sorry! This key cannot be transferred to a PIV card."
 msgstr ""
 
-#: src/commands/keytocardcommand.cpp:126
+#: src/commands/keytocardcommand.cpp:133
 #, kde-format
 msgid "Sorry! Transferring keys to this card is not supported."
 msgstr ""
 
-#: src/commands/keytocardcommand.cpp:152
+#: src/commands/keytocardcommand.cpp:159
 #, fuzzy, kde-format
 #| msgid "Signature"
 msgctxt "Placeholder is the number of a slot on a smart card"
 msgid "Signature (%1)"
 msgstr "Sinatura"
 
-#: src/commands/keytocardcommand.cpp:155
+#: src/commands/keytocardcommand.cpp:162
 #, fuzzy, kde-format
 #| msgid "Encryption"
 msgctxt "Placeholder is the number of a slot on a smart card"
 msgid "Encryption (%1)"
 msgstr "Cifrado"
 
-#: src/commands/keytocardcommand.cpp:158
+#: src/commands/keytocardcommand.cpp:165
 #, fuzzy, kde-format
 #| msgid "Authentication"
 msgctxt "Placeholder is the number of a slot on a smart card"
 msgid "Authentication (%1)"
 msgstr "Autenticación"
 
-#: src/commands/keytocardcommand.cpp:162
+#: src/commands/keytocardcommand.cpp:169
 #, fuzzy, kde-format
 #| msgid "Select All"
 msgid "Select Slot"
 msgstr "Seleccionar todo"
 
-#: src/commands/keytocardcommand.cpp:163
+#: src/commands/keytocardcommand.cpp:170
 #, fuzzy, kde-format
 #| msgid "Please select one of the following certificates:"
 msgid "Please select the slot the key should be written to:"
 msgstr "Seleccione un dos certificados seguintes:"
 
-#: src/commands/keytocardcommand.cpp:174
+#: src/commands/keytocardcommand.cpp:181
 #, fuzzy, kde-format
 #| msgid "Failed to find the card with the serial number: %1"
 msgid "Failed to find the OpenPGP card with the serial number: %1"
 msgstr "Non se puido atopar a tarxeta co número de serie: %1"
 
-#: src/commands/keytocardcommand.cpp:192 src/commands/keytocardcommand.cpp:249
+#: src/commands/keytocardcommand.cpp:199 src/commands/keytocardcommand.cpp:256
+#: src/commands/keytocardcommand.cpp:295
 #: src/commands/pivgeneratecardkeycommand.cpp:127
 #: src/view/pgpcardwidget.cpp:311
 #, kde-format
@@ -1532,7 +1534,8 @@ msgstr ""
 "Non volverá ser posíbel descifrar comunicacións pasadas cifradas para a "
 "chave existente."
 
-#: src/commands/keytocardcommand.cpp:199 src/commands/keytocardcommand.cpp:245
+#: src/commands/keytocardcommand.cpp:206 src/commands/keytocardcommand.cpp:252
+#: src/commands/keytocardcommand.cpp:291
 #: src/commands/pivgeneratecardkeycommand.cpp:123
 #, kde-format
 msgctxt "@info"
@@ -1545,53 +1548,75 @@ msgstr ""
 "<b>sobrescribirá</b> esa chave.</p><p>Se non hai copia de seguranza a chave "
 "existente perderase sen posibilidade de recuperala.</p>"
 
-#: src/commands/keytocardcommand.cpp:201
+#: src/commands/keytocardcommand.cpp:208
 #, kde-format
 msgid "The existing key has the fingerprint:"
 msgstr "A chave existente ten unha pegada:"
 
-#: src/commands/keytocardcommand.cpp:205 src/commands/keytocardcommand.cpp:251
+#: src/commands/keytocardcommand.cpp:212 src/commands/keytocardcommand.cpp:258
+#: src/commands/keytocardcommand.cpp:297
 #: src/commands/pivgeneratecardkeycommand.cpp:130
 #, kde-format
 msgctxt "@title:window"
 msgid "Overwrite existing key"
 msgstr "Sobrescribir a chave existente"
 
-#: src/commands/keytocardcommand.cpp:229
+#: src/commands/keytocardcommand.cpp:236 src/commands/keytocardcommand.cpp:281
 #, fuzzy, kde-format
 #| msgid "Failed to find the card with the serial number: %1"
 msgid "Failed to find the PIV card with the serial number: %1"
 msgstr "Non se puido atopar a tarxeta co número de serie: %1"
 
-#: src/commands/keytocardcommand.cpp:235
+#: src/commands/keytocardcommand.cpp:242
 #, kde-format
 msgid "Sorry! Only encryption keys can be transferred to a PIV card."
 msgstr ""
 
-#: src/commands/keytocardcommand.cpp:247
+#: src/commands/keytocardcommand.cpp:254 src/commands/keytocardcommand.cpp:293
 #, fuzzy, kde-format
 #| msgid "The existing key has the fingerprint:"
 msgid "The existing key has the key grip:"
 msgstr "A chave existente ten unha pegada:"
 
-#: src/commands/keytocardcommand.cpp:329 src/commands/keytocardcommand.cpp:363
+#: src/commands/keytocardcommand.cpp:312
+#, fuzzy, kde-format
+#| msgid "Exporting certificates..."
+msgctxt "@info"
+msgid "Exporting the certificate failed: %1"
+msgstr "Estanse a exportar os certificados…"
+
+#: src/commands/keytocardcommand.cpp:387 src/commands/keytocardcommand.cpp:426
 #, kde-format
 msgctxt "@info"
 msgid "Moving the key to the card failed: %1"
 msgstr "O movemento da chave á tarxeta fallou: %1"
 
-#: src/commands/keytocardcommand.cpp:345 src/commands/keytocardcommand.cpp:367
+#: src/commands/keytocardcommand.cpp:403
 #, kde-format
 msgid "Successfully copied the key to the card."
 msgstr "A chave copiouse á tarxeta."
 
-#: src/commands/keytocardcommand.cpp:377
+#: src/commands/keytocardcommand.cpp:445
+#, fuzzy, kde-format
+#| msgctxt "@info"
+#| msgid "Moving the key to the card failed: %1"
+msgctxt "@info"
+msgid "Writing the certificate to the card failed: %1"
+msgstr "O movemento da chave á tarxeta fallou: %1"
+
+#: src/commands/keytocardcommand.cpp:449
+#, fuzzy, kde-format
+#| msgid "Successfully copied the key to the card."
+msgid "Successfully copied the certificate to the card."
+msgstr "A chave copiouse á tarxeta."
+
+#: src/commands/keytocardcommand.cpp:460
 #, kde-format
 msgctxt "@info"
 msgid "Failed to delete the key: %1"
 msgstr "Non se puido eliminar a chave: %1"
 
-#: src/commands/keytocardcommand.cpp:401
+#: src/commands/keytocardcommand.cpp:484
 #, fuzzy, kde-format
 #| msgctxt "@title"
 #| msgid "Failed to find PaperKey executable."
