@@ -20,7 +20,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: konsole\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2020-09-11 02:34+0200\n"
+"POT-Creation-Date: 2020-09-16 02:40+0200\n"
 "PO-Revision-Date: 2020-01-12 13:00+0100\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Galician <proxecto@trasno.gal>\n"
@@ -1132,14 +1132,14 @@ msgstr "Opcións de saída"
 
 #. i18n: ectx: property (text), widget (QCheckBox, printerFriendly)
 #. i18n: ectx: label, entry (PrinterFriendly), group (PrintOptions)
-#: PrintOptions.ui:39 settings/konsole.kcfg:168
+#: PrintOptions.ui:39 settings/konsole.kcfg:172
 #, kde-format
 msgid "Printer &friendly mode (black text, no background)"
 msgstr "Modo de versión para &imprimir (texto negro, sen fondo)"
 
 #. i18n: ectx: property (text), widget (QCheckBox, scaleOutput)
 #. i18n: ectx: label, entry (ScaleOutput), group (PrintOptions)
-#: PrintOptions.ui:46 settings/konsole.kcfg:172
+#: PrintOptions.ui:46 settings/konsole.kcfg:176
 #, kde-format
 msgid "&Scale output"
 msgstr "&Escala de saída"
@@ -1155,22 +1155,46 @@ msgstr "Predeterminado"
 msgid "Default profile"
 msgstr "Perfil predeterminado"
 
-#: profile/ProfileManager.cpp:348
+#: profile/ProfileManager.cpp:336
 #, kde-format
 msgid "Konsole does not have permission to save this profile to %1"
 msgstr "Konsole non ten permiso para gardar este perfil en %1"
 
-#: profile/ProfileManager.cpp:385
+#: profile/ProfileManager.cpp:373
 #, kde-format
 msgctxt "The default name of a profile"
 msgid "Profile #%1"
 msgstr "Perfil %1"
 
-#: RenameTabDialog.cpp:38
+#: profile/ProfileModel.cpp:52
+#, kde-format
+msgctxt "@title:column Profile name"
+msgid "Name"
+msgstr "Nome"
+
+#: profile/ProfileModel.cpp:53
+#, kde-format
+msgctxt "@title:column Profile keyboard shortcut"
+msgid "Shortcut"
+msgstr "Atallo"
+
+#: profile/ProfileModel.cpp:76
 #, fuzzy, kde-format
-#| msgid "Default Search Settings"
-msgid "Current Tab Settings"
-msgstr "Configuración predeterminada de busca"
+#| msgctxt "Name of the default/builtin profile"
+#| msgid "Default"
+msgid "(Default)"
+msgstr "Predeterminado"
+
+#: profile/ProfileModel.cpp:94
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Double click to change shortcut"
+msgstr "Faga dobre clic para cambiar un atallo do teclado"
+
+#: RenameTabDialog.cpp:38
+#, kde-format
+msgid "Tab Properties"
+msgstr ""
 
 #: SaveHistoryTask.cpp:84
 #, kde-format
@@ -1454,9 +1478,10 @@ msgid "Read-only"
 msgstr "Só lectura"
 
 #: session/SessionController.cpp:745
-#, kde-format
-msgid "&Current Tab Settings..."
-msgstr ""
+#, fuzzy, kde-format
+#| msgid "&Rename Tab..."
+msgid "&Configure or Rename Tab..."
+msgstr "Cambia&r o nome do separador…"
 
 #: session/SessionController.cpp:751
 #, kde-format
@@ -1654,28 +1679,28 @@ msgstr "Configurar"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, kcfg_SearchReverseSearch)
 #. i18n: ectx: tooltip, entry (SearchReverseSearch), group (SearchSettings)
-#: settings/GeneralSettings.ui:61 settings/konsole.kcfg:82
+#: settings/GeneralSettings.ui:61 settings/konsole.kcfg:86
 #, kde-format
 msgid "Sets whether search should start from the bottom"
 msgstr "Estabelece se a busca debe comezar desde o final"
 
 #. i18n: ectx: property (text), widget (QCheckBox, kcfg_SearchReverseSearch)
 #. i18n: ectx: label, entry (SearchReverseSearch), group (SearchSettings)
-#: settings/GeneralSettings.ui:64 settings/konsole.kcfg:81
+#: settings/GeneralSettings.ui:64 settings/konsole.kcfg:85
 #, kde-format
 msgid "Search backwards"
 msgstr "Busca cara atrás"
 
 #. i18n: ectx: property (text), widget (QCheckBox, kcfg_AllowMenuAccelerators)
 #. i18n: ectx: label, entry (AllowMenuAccelerators), group (KonsoleWindow)
-#: settings/GeneralSettings.ui:77 settings/konsole.kcfg:23
+#: settings/GeneralSettings.ui:77 settings/konsole.kcfg:27
 #, kde-format
 msgid "Enable menu accelerators"
 msgstr "Activar os aceleradores de menú"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, kcfg_SearchCaseSensitive)
 #. i18n: ectx: tooltip, entry (SearchCaseSensitive), group (SearchSettings)
-#: settings/GeneralSettings.ui:90 settings/konsole.kcfg:68
+#: settings/GeneralSettings.ui:90 settings/konsole.kcfg:72
 #, kde-format
 msgid "Sets whether the search is case sensitive"
 msgstr "Indica se a busca distingue maiúsculas de minúsculas"
@@ -1706,21 +1731,21 @@ msgstr "Lembrar o tamaño da xanela"
 
 #. i18n: ectx: property (text), widget (QCheckBox, kcfg_ShowWindowTitleOnTitleBar)
 #. i18n: ectx: label, entry (ShowWindowTitleOnTitleBar), group (KonsoleWindow)
-#: settings/GeneralSettings.ui:135 settings/konsole.kcfg:18
+#: settings/GeneralSettings.ui:135 settings/konsole.kcfg:22
 #, kde-format
 msgid "Show window title on the titlebar"
 msgstr "Mostrar o título da xanela na barra de títulos"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, kcfg_UseSingleInstance)
 #. i18n: ectx: tooltip, entry (UseSingleInstance), group (KonsoleWindow)
-#: settings/GeneralSettings.ui:148 settings/konsole.kcfg:39
+#: settings/GeneralSettings.ui:148 settings/konsole.kcfg:43
 #, kde-format
 msgid "When launching Konsole re-use existing process if possible"
 msgstr "Ao iniciar Konsole, reusar cando sexa posíbel un proceso existente"
 
 #. i18n: ectx: property (text), widget (QCheckBox, kcfg_UseSingleInstance)
 #. i18n: ectx: label, entry (UseSingleInstance), group (KonsoleWindow)
-#: settings/GeneralSettings.ui:151 settings/konsole.kcfg:38
+#: settings/GeneralSettings.ui:151 settings/konsole.kcfg:42
 #, kde-format
 msgid "Run all Konsole windows in a single process"
 msgstr "Executar todas as xanelas de Konsole nun mesmo proceso"
@@ -1732,8 +1757,15 @@ msgstr "Executar todas as xanelas de Konsole nun mesmo proceso"
 msgid "Remove window titlebar and frame"
 msgstr "Retirar a barra de título e o marco da xanela"
 
+#. i18n: ectx: property (text), widget (QCheckBox, kcfg_FocusFollowsMouse)
+#. i18n: ectx: label, entry (FocusFollowsMouse), group (KonsoleWindow)
+#: settings/GeneralSettings.ui:165 settings/konsole.kcfg:18
+#, kde-format
+msgid "Focus terminals when the mouse pointer is moved over them"
+msgstr ""
+
 #. i18n: ectx: property (text), widget (QCheckBox, kcfg_SearchHighlightMatches)
-#: settings/GeneralSettings.ui:171
+#: settings/GeneralSettings.ui:178
 #, kde-format
 msgid "Highlight all matches"
 msgstr "Realzar as aparicións"
@@ -1741,7 +1773,7 @@ msgstr "Realzar as aparicións"
 #. i18n: ectx: property (text), widget (QCheckBox, kcfg_ShowTerminalSizeHint)
 #. i18n: ectx: property (text), widget (QCheckBox, showTerminalSizeHintButton)
 #. i18n: ectx: label, entry (ShowTerminalSizeHint), group (KonsoleWindow)
-#: settings/GeneralSettings.ui:184 settings/konsole.kcfg:28
+#: settings/GeneralSettings.ui:191 settings/konsole.kcfg:32
 #: widgets/EditProfileAppearancePage.ui:491
 #, kde-format
 msgid "Show hint for terminal size after resizing"
@@ -1749,39 +1781,39 @@ msgstr ""
 "Mostrar unha indicación do tamaño do terminal despois de o redimensionar"
 
 #. i18n: ectx: property (text), widget (QLabel, label_3)
-#: settings/GeneralSettings.ui:191
+#: settings/GeneralSettings.ui:198
 #, kde-format
 msgid "Notifications:"
 msgstr "Notificacións:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
-#: settings/GeneralSettings.ui:198
+#: settings/GeneralSettings.ui:205
 #, kde-format
 msgctxt "@item:intext Search options"
 msgid "Search:"
 msgstr "Buscar:"
 
 #. i18n: ectx: property (toolTip), widget (QPushButton, enableAllMessagesButton)
-#: settings/GeneralSettings.ui:232
+#: settings/GeneralSettings.ui:239
 #, kde-format
 msgid "All dialogs will be shown again"
 msgstr "Volveranse mostrar todos os diálogos"
 
 #. i18n: ectx: property (text), widget (QPushButton, enableAllMessagesButton)
-#: settings/GeneralSettings.ui:235
+#: settings/GeneralSettings.ui:242
 #, kde-format
 msgid "Enable all \"Don't Ask Again\" messages"
 msgstr "Activar todas as mensaxes de «Non volver preguntar»"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
-#: settings/GeneralSettings.ui:257
+#: settings/GeneralSettings.ui:264
 #, kde-format
 msgid "Process and window:"
 msgstr "Proceso e xanela:"
 
 #. i18n: ectx: property (text), widget (QCheckBox, kcfg_SearchRegExpression)
 #. i18n: ectx: label, entry (SearchRegExpression), group (SearchSettings)
-#: settings/GeneralSettings.ui:273 settings/konsole.kcfg:72
+#: settings/GeneralSettings.ui:280 settings/konsole.kcfg:76
 #, kde-format
 msgid "Match using regular expressions"
 msgstr "Buscar coincidencias mediante expresións regulares"
@@ -1801,7 +1833,7 @@ msgstr ""
 "Konsole"
 
 #. i18n: ectx: tooltip, entry (ShowWindowTitleOnTitleBar), group (KonsoleWindow)
-#: settings/konsole.kcfg:19
+#: settings/konsole.kcfg:23
 #, kde-format
 msgid "Show window title set by escape sequence on the titlebar"
 msgstr ""
@@ -1809,7 +1841,7 @@ msgstr ""
 "títulos"
 
 #. i18n: ectx: tooltip, entry (AllowMenuAccelerators), group (KonsoleWindow)
-#: settings/konsole.kcfg:24
+#: settings/konsole.kcfg:28
 #, kde-format
 msgid "Allow users to access top menu through Alt+Key combination"
 msgstr ""
@@ -1818,7 +1850,7 @@ msgstr ""
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, showTerminalSizeHintButton)
 #. i18n: ectx: tooltip, entry (ShowTerminalSizeHint), group (KonsoleWindow)
-#: settings/konsole.kcfg:29 widgets/EditProfileAppearancePage.ui:488
+#: settings/konsole.kcfg:33 widgets/EditProfileAppearancePage.ui:488
 #, kde-format
 msgid ""
 "Show terminal size in columns and lines in the center of window after "
@@ -1828,140 +1860,140 @@ msgstr ""
 "de o redimensionar"
 
 #. i18n: ectx: label, entry (SaveGeometryOnExit), group (KonsoleWindow)
-#: settings/konsole.kcfg:33
+#: settings/konsole.kcfg:37
 #, kde-format
 msgid "Use current window size on next startup"
 msgstr "Usar o tamaño da xanela actual no seguinte inicio."
 
 #. i18n: ectx: tooltip, entry (SaveGeometryOnExit), group (KonsoleWindow)
-#: settings/konsole.kcfg:34
+#: settings/konsole.kcfg:38
 #, kde-format
 msgid "The window size will be saved upon exiting Konsole"
 msgstr "O tamaño da xanela gardarase tal e como estivera ao saír Konsole"
 
 #. i18n: ectx: label, entry (ThumbnailSize), group (ThumbnailsSettings)
-#: settings/konsole.kcfg:45
+#: settings/konsole.kcfg:49
 #, kde-format
 msgid "Thumbnail Width"
 msgstr ""
 
 #. i18n: ectx: tooltip, entry (ThumbnailSize), group (ThumbnailsSettings)
-#: settings/konsole.kcfg:46
+#: settings/konsole.kcfg:50
 #, kde-format
 msgid "Sets the width of the thumbnail"
 msgstr ""
 
 #. i18n: ectx: label, entry (ThumbnailShift), group (ThumbnailsSettings)
 #. i18n: ectx: tooltip, entry (ThumbnailShift), group (ThumbnailsSettings)
-#: settings/konsole.kcfg:50 settings/konsole.kcfg:51
+#: settings/konsole.kcfg:54 settings/konsole.kcfg:55
 #, kde-format
 msgid "Use Shift to display a thumbnail"
 msgstr ""
 
 #. i18n: ectx: label, entry (ThumbnailAlt), group (ThumbnailsSettings)
 #. i18n: ectx: tooltip, entry (ThumbnailAlt), group (ThumbnailsSettings)
-#: settings/konsole.kcfg:55 settings/konsole.kcfg:56
+#: settings/konsole.kcfg:59 settings/konsole.kcfg:60
 #, kde-format
 msgid "Use Alt to display a thumbnail"
 msgstr ""
 
 #. i18n: ectx: label, entry (ThumbnailCtrl), group (ThumbnailsSettings)
 #. i18n: ectx: tooltip, entry (ThumbnailCtrl), group (ThumbnailsSettings)
-#: settings/konsole.kcfg:60 settings/konsole.kcfg:61
+#: settings/konsole.kcfg:64 settings/konsole.kcfg:65
 #, kde-format
 msgid "Use Ctrl to display a thumbnail"
 msgstr ""
 
 #. i18n: ectx: label, entry (SearchCaseSensitive), group (SearchSettings)
-#: settings/konsole.kcfg:67
+#: settings/konsole.kcfg:71
 #, kde-format
 msgid "Search is case sensitive"
 msgstr "A busca distingue maiúsculas de minúsculas"
 
 #. i18n: ectx: label, entry (SearchHighlightMatches), group (SearchSettings)
-#: settings/konsole.kcfg:76
+#: settings/konsole.kcfg:80
 #, kde-format
 msgid "Highlight all search matches"
 msgstr "Realzar todas as coincidencias da busca"
 
 #. i18n: ectx: tooltip, entry (SearchHighlightMatches), group (SearchSettings)
-#: settings/konsole.kcfg:77
+#: settings/konsole.kcfg:81
 #, kde-format
 msgid "Sets whether matching text should be highlighted"
 msgstr "Indica se os textos atopados deben realzarse"
 
 #. i18n: ectx: label, entry (SplitViewVisibility), group (SplitView)
 #. i18n: ectx: label, entry (TabBarVisibility), group (TabBar)
-#: settings/konsole.kcfg:88 settings/konsole.kcfg:108
+#: settings/konsole.kcfg:92 settings/konsole.kcfg:112
 #, kde-format
 msgid "Control the visibility of the whole tab bar"
 msgstr "Controlar a visibilidade da barra de separadores"
 
 #. i18n: ectx: label, entry (SplitDragHandleSize), group (SplitView)
-#: settings/konsole.kcfg:97
+#: settings/konsole.kcfg:101
 #, fuzzy, kde-format
 #| msgid "Control the visibility of the whole tab bar"
 msgid "Control the size of the handle between panels"
 msgstr "Controlar a visibilidade da barra de separadores"
 
 #. i18n: ectx: label, entry (TabBarPosition), group (TabBar)
-#: settings/konsole.kcfg:117
+#: settings/konsole.kcfg:121
 #, kde-format
 msgid "Control the position of the tab bar"
 msgstr "Controlar a posición da barra de separadores"
 
 #. i18n: ectx: label, entry (TabBarStyleSheet), group (TabBar)
-#: settings/konsole.kcfg:125
+#: settings/konsole.kcfg:129
 #, kde-format
 msgid "Control the visual style of the tab bar"
 msgstr "Controlar o estilo visual da barra de separadores"
 
 #. i18n: ectx: label, entry (TabBarUseUserStyleSheet), group (TabBar)
-#: settings/konsole.kcfg:129
+#: settings/konsole.kcfg:133
 #, kde-format
 msgid "Use a user-defined .css file for the tab bar"
 msgstr ""
 "Usar un ficheiro de CSS definido polo usuario para a barra de separadores"
 
 #. i18n: ectx: label, entry (TabBarUserStyleSheetFile), group (TabBar)
-#: settings/konsole.kcfg:133
+#: settings/konsole.kcfg:137
 #, kde-format
 msgid "The .css file to use for the tab bar style"
 msgstr "O ficheiro de CSS que usar para o estilo da barra de separadores"
 
 #. i18n: ectx: label, entry (CloseTabOnMiddleMouseButton), group (TabBar)
-#: settings/konsole.kcfg:137
+#: settings/konsole.kcfg:141
 #, kde-format
 msgid "Allow middle-clicking on open tabs to close them"
 msgstr "Permitir clic central nos separadores abertos para pechalos"
 
 #. i18n: ectx: label, entry (NewTabButton), group (TabBar)
-#: settings/konsole.kcfg:141
+#: settings/konsole.kcfg:145
 #, kde-format
 msgid "Control the visibility of 'New Tab' button on the tab bar"
 msgstr ""
 "Controlar a visibilidade d botón de «Novo separador» na barra de separadores"
 
 #. i18n: ectx: label, entry (CloseTabButton), group (TabBar)
-#: settings/konsole.kcfg:145
+#: settings/konsole.kcfg:149
 #, kde-format
 msgid "Control where the \"Close tab\" button will be displayed"
 msgstr "Controlar se se mostra o botón de «Pechar o separador»"
 
 #. i18n: ectx: label, entry (NewTabBehavior), group (TabBar)
-#: settings/konsole.kcfg:154
+#: settings/konsole.kcfg:158
 #, kde-format
 msgid "Control where to put the new tab"
 msgstr "Controlar onde se coloca o novo separador"
 
 #. i18n: ectx: label, entry (ExpandTabWidth), group (TabBar)
-#: settings/konsole.kcfg:162
+#: settings/konsole.kcfg:166
 #, kde-format
 msgid "Expand the tab widths"
 msgstr "Expandir a anchura das tabulacións"
 
 #. i18n: ectx: label, entry (scrollbackUseSystemLocation), group (FileLocation)
-#: settings/konsole.kcfg:178
+#: settings/konsole.kcfg:182
 #, kde-format
 msgid "For scrollback files, use system-wide folder location"
 msgstr ""
@@ -1969,7 +2001,7 @@ msgstr ""
 "sistema."
 
 #. i18n: ectx: label, entry (scrollbackUseCacheLocation), group (FileLocation)
-#: settings/konsole.kcfg:182
+#: settings/konsole.kcfg:186
 #, kde-format
 msgid "For scrollback files, use user's specific folder location"
 msgstr ""
@@ -1977,13 +2009,13 @@ msgstr ""
 "usuario."
 
 #. i18n: ectx: label, entry (scrollbackUseSpecifiedLocation), group (FileLocation)
-#: settings/konsole.kcfg:186
+#: settings/konsole.kcfg:190
 #, kde-format
 msgid "For scrollback files, use specified folder location"
 msgstr "Para os ficheiros do historial, usar a ruta do cartafol indicado."
 
 #. i18n: ectx: label, entry (scrollbackUseSpecifiedLocationDirectory), group (FileLocation)
-#: settings/konsole.kcfg:190
+#: settings/konsole.kcfg:194
 #, kde-format
 msgid "For scrollback files, use this folder"
 msgstr "Para os ficheiros do historial, usar este cartafol."
@@ -2006,101 +2038,50 @@ msgstr ""
 "format=guided&product=konsole&component=kpart\">informe do fallo sobre "
 "Konsole</a> se quere para cambiar este comportamento.</body></html>"
 
-#: settings/ProfileSettings.cpp:93
-#, kde-format
-msgctxt "@info:tooltip"
-msgid "Double click to change shortcut"
-msgstr "Faga dobre clic para cambiar un atallo do teclado"
-
-#: settings/ProfileSettings.cpp:96
-#, kde-format
-msgctxt "@info:tooltip"
-msgid "Shortcut won't work while the profile is not marked as visible."
-msgstr ""
-"O atallo non funcionará mentres o perfil non estea marcado como visíbel."
-
-#: settings/ProfileSettings.cpp:144 settings/ProfileSettings.cpp:207
-#, kde-format
-msgctxt ""
-"@info:tooltip List item's checkbox for making item (profile) visible in a "
-"menu"
-msgid "Show profile in menu"
-msgstr "Mostrar o perfil no menú"
-
-#: settings/ProfileSettings.cpp:199
-#, kde-format
-msgctxt "@title:column Profile name"
-msgid "Name"
-msgstr "Nome"
-
-#: settings/ProfileSettings.cpp:200
-#, kde-format
-msgctxt "@title:column Profile keyboard shortcut"
-msgid "Shortcut"
-msgstr "Atallo"
-
-#: settings/ProfileSettings.cpp:262
-#, kde-format
-msgctxt "@item:intable Default list item's name suffix (with separator)"
-msgid " (default)"
-msgstr " (predeterminado)"
-
-#: settings/ProfileSettings.cpp:335
+#: settings/ProfileSettings.cpp:150
 #, kde-format
 msgctxt "@item This will be used as part of the file name"
 msgid "New Profile"
 msgstr "Novo perfil"
 
-#. i18n: ectx: property (text), widget (QLabel, label)
-#: settings/ProfileSettings.ui:29
-#, kde-format
-msgid ""
-"Profiles marked as visible will appear in context and File menu. A shortcut "
-"for creating a new tab can be assigned to each entry. However, only "
-"shortcuts of visible profiles will work."
-msgstr ""
-"Os perfís marcados como visíbeis aparecen nos menús de contexto e de "
-"ficheiro. A cada entrada pode asignárselle un atallo para crear un novo "
-"separador. Porén, só os atallos de perfís visíbeis funcionarán."
-
 #. i18n: ectx: property (toolTip), widget (QPushButton, newProfileButton)
-#: settings/ProfileSettings.ui:49
+#: settings/ProfileSettings.ui:39
 #, kde-format
 msgid "Create a new profile based upon the selected profile"
 msgstr "Crea un novo perfil baseado no escollido"
 
 #. i18n: ectx: property (text), widget (QPushButton, newProfileButton)
-#: settings/ProfileSettings.ui:52
+#: settings/ProfileSettings.ui:42
 #, kde-format
 msgid "&New..."
 msgstr "&Novo…"
 
 #. i18n: ectx: property (toolTip), widget (QPushButton, editProfileButton)
-#: settings/ProfileSettings.ui:62
+#: settings/ProfileSettings.ui:52
 #, kde-format
 msgid "Edit the selected profile(s)"
 msgstr "Edita os perfís escollidos"
 
 #. i18n: ectx: property (text), widget (QPushButton, editProfileButton)
-#: settings/ProfileSettings.ui:65
+#: settings/ProfileSettings.ui:55
 #, kde-format
 msgid "&Edit..."
 msgstr "&Editar…"
 
 #. i18n: ectx: property (toolTip), widget (QPushButton, deleteProfileButton)
-#: settings/ProfileSettings.ui:75
+#: settings/ProfileSettings.ui:65
 #, kde-format
 msgid "Delete the selected profile(s)"
 msgstr "Elimina os perfís escollidos"
 
 #. i18n: ectx: property (text), widget (QPushButton, deleteProfileButton)
-#: settings/ProfileSettings.ui:78
+#: settings/ProfileSettings.ui:68
 #, kde-format
 msgid "&Remove"
 msgstr "&Retirar"
 
 #. i18n: ectx: property (toolTip), widget (QPushButton, setAsDefaultButton)
-#: settings/ProfileSettings.ui:88
+#: settings/ProfileSettings.ui:78
 #, kde-format
 msgid "Set the selected profile as the default for new terminal sessions"
 msgstr ""
@@ -2108,7 +2089,7 @@ msgstr ""
 "de terminal"
 
 #. i18n: ectx: property (text), widget (QPushButton, setAsDefaultButton)
-#: settings/ProfileSettings.ui:91
+#: settings/ProfileSettings.ui:81
 #, kde-format
 msgid "&Set as Default"
 msgstr "&Converter no predeterminado"
@@ -3922,59 +3903,59 @@ msgstr "Tamaño: XXX x XXX"
 msgid "Size: %1 x %2"
 msgstr "Tamaño: %1 x %2"
 
-#: widgets/TerminalDisplay.cpp:3332
+#: widgets/TerminalDisplay.cpp:3336
 #, kde-format
 msgid "Are you sure you want to paste %1 character?"
 msgid_plural "Are you sure you want to paste %1 characters?"
 msgstr[0] "Seguro que quere pegar %1 carácter?"
 msgstr[1] "Seguro que quere pegar %1 caracteres?"
 
-#: widgets/TerminalDisplay.cpp:3335
+#: widgets/TerminalDisplay.cpp:3339
 #, kde-format
 msgid "Confirm Paste"
 msgstr "Confirmar o pegado"
 
-#: widgets/TerminalDisplay.cpp:3367
+#: widgets/TerminalDisplay.cpp:3371
 #, kde-format
 msgid "End Of Text/Interrupt: may exit the current process"
 msgstr "Fin de texto ou interromper: podería saír do proceso actual"
 
-#: widgets/TerminalDisplay.cpp:3368
+#: widgets/TerminalDisplay.cpp:3372
 #, kde-format
 msgid "End Of Transmission: may exit the current process"
 msgstr "Fin da transmisión: podería saír do proceso actual"
 
-#: widgets/TerminalDisplay.cpp:3369
+#: widgets/TerminalDisplay.cpp:3373
 #, kde-format
 msgid "Bell: will try to emit an audible warning"
 msgstr "Campá: intentará emitir un aviso audíbel"
 
-#: widgets/TerminalDisplay.cpp:3370
+#: widgets/TerminalDisplay.cpp:3374
 #, kde-format
 msgid "Backspace"
 msgstr "Retroceso"
 
-#: widgets/TerminalDisplay.cpp:3371
+#: widgets/TerminalDisplay.cpp:3375
 #, kde-format
 msgid "Device Control Three/XOFF: suspends output"
 msgstr "Control de dispositivo tres ou XOFF: suspende a saída"
 
-#: widgets/TerminalDisplay.cpp:3372
+#: widgets/TerminalDisplay.cpp:3376
 #, kde-format
 msgid "Substitute/Suspend: may suspend current process"
 msgstr "Substituír ou suspender: podería suspender o proceso actual"
 
-#: widgets/TerminalDisplay.cpp:3373
+#: widgets/TerminalDisplay.cpp:3377
 #, kde-format
 msgid "Escape: used for manipulating terminal state"
 msgstr "Escape: úsase para manipular o estado do terminal"
 
-#: widgets/TerminalDisplay.cpp:3374
+#: widgets/TerminalDisplay.cpp:3378
 #, kde-format
 msgid "File Separator/Quit: may abort the current process"
 msgstr "Separador de ficheiros ou saír: podería interromper o proceso actual"
 
-#: widgets/TerminalDisplay.cpp:3396
+#: widgets/TerminalDisplay.cpp:3400
 #, kde-format
 msgid ""
 "The text you're trying to paste contains hidden control characters, do you "
@@ -3983,31 +3964,31 @@ msgstr ""
 "O texto que intenta pegar contén caracteres de control agochados, quere "
 "retiralos?"
 
-#: widgets/TerminalDisplay.cpp:3399
+#: widgets/TerminalDisplay.cpp:3403
 #, kde-format
 msgctxt "@title"
 msgid "Confirm Paste"
 msgstr "Confirmar o pegado"
 
-#: widgets/TerminalDisplay.cpp:3401
+#: widgets/TerminalDisplay.cpp:3405
 #, kde-format
 msgctxt "@action:button"
 msgid "Paste &without control characters"
 msgstr "Pegar &sen caracteres de control"
 
-#: widgets/TerminalDisplay.cpp:3404
+#: widgets/TerminalDisplay.cpp:3408
 #, kde-format
 msgctxt "@action:button"
 msgid "&Paste everything"
 msgstr "&Pegalo todo"
 
-#: widgets/TerminalDisplay.cpp:3407
+#: widgets/TerminalDisplay.cpp:3411
 #, kde-format
 msgctxt "@action:button"
 msgid "&Cancel"
 msgstr "&Cancelar"
 
-#: widgets/TerminalDisplay.cpp:3658
+#: widgets/TerminalDisplay.cpp:3662
 #, kde-format
 msgid ""
 "<qt>Output has been <a href=\"https://en.wikipedia.org/wiki/"
@@ -4018,17 +3999,17 @@ msgstr ""
 "\">suspendeuse</a> ao premer Ctrl+S. Prema  <b>Ctrl+Q</b> para continuala.</"
 "qt>"
 
-#: widgets/TerminalDisplay.cpp:3699
+#: widgets/TerminalDisplay.cpp:3703
 #, kde-format
 msgid "This terminal is read-only."
 msgstr "Este terminal é de só lectura."
 
-#: widgets/TerminalDisplay.cpp:4008
+#: widgets/TerminalDisplay.cpp:4012
 #, kde-format
 msgid "Change &Directory To"
 msgstr "Cambiar o &directorio a"
 
-#: widgets/TerminalDisplay.cpp:4040
+#: widgets/TerminalDisplay.cpp:4044
 #, kde-format
 msgid "&Paste Location"
 msgstr "&Pegar a localización"
@@ -4052,16 +4033,46 @@ msgid "&Detach Tab"
 msgstr "&Desprender o separador"
 
 #: widgets/ViewContainer.cpp:122
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "&Rename Tab..."
 msgctxt "@action:inmenu"
-msgid "&Current Tab Settings..."
-msgstr ""
+msgid "&Configure or Rename Tab..."
+msgstr "Cambia&r o nome do separador…"
 
 #: widgets/ViewContainer.cpp:129
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Close Tab"
 msgstr "Pechar o separador"
+
+#, fuzzy
+#~| msgid "Default Search Settings"
+#~ msgid "Current Tab Settings"
+#~ msgstr "Configuración predeterminada de busca"
+
+#~ msgctxt "@info:tooltip"
+#~ msgid "Shortcut won't work while the profile is not marked as visible."
+#~ msgstr ""
+#~ "O atallo non funcionará mentres o perfil non estea marcado como visíbel."
+
+#~ msgctxt ""
+#~ "@info:tooltip List item's checkbox for making item (profile) visible in a "
+#~ "menu"
+#~ msgid "Show profile in menu"
+#~ msgstr "Mostrar o perfil no menú"
+
+#~ msgctxt "@item:intable Default list item's name suffix (with separator)"
+#~ msgid " (default)"
+#~ msgstr " (predeterminado)"
+
+#~ msgid ""
+#~ "Profiles marked as visible will appear in context and File menu. A "
+#~ "shortcut for creating a new tab can be assigned to each entry. However, "
+#~ "only shortcuts of visible profiles will work."
+#~ msgstr ""
+#~ "Os perfís marcados como visíbeis aparecen nos menús de contexto e de "
+#~ "ficheiro. A cada entrada pode asignárselle un atallo para crear un novo "
+#~ "separador. Porén, só os atallos de perfís visíbeis funcionarán."
 
 #~ msgid "Dim the colors when the window loses focus"
 #~ msgstr "Reducir a intensidade das cores cando a xanela perde o foco"
@@ -4072,9 +4083,6 @@ msgstr "Pechar o separador"
 
 #~ msgid "Rename Tab"
 #~ msgstr "Renomear o separador"
-
-#~ msgid "&Rename Tab..."
-#~ msgstr "Cambia&r o nome do separador…"
 
 #~ msgctxt "@action:inmenu"
 #~ msgid "&Rename Tab..."

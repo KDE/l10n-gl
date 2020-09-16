@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kleopatra\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2020-09-15 02:26+0200\n"
+"POT-Creation-Date: 2020-09-16 02:32+0200\n"
 "PO-Revision-Date: 2020-01-12 11:14+0100\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Galician <proxecto@trasno.gal>\n"
@@ -177,9 +177,10 @@ msgid "Authenticating to the card failed: %1"
 msgstr "O movemento da chave á tarxeta fallou: %1"
 
 #: src/commands/authenticatepivcardapplicationcommand.cpp:132
-#: src/commands/changepincommand.cpp:157 src/commands/keytocardcommand.cpp:446
-#: src/commands/keytocardcommand.cpp:525 src/commands/keytocardcommand.cpp:564
-#: src/commands/keytocardcommand.cpp:583 src/commands/keytocardcommand.cpp:598
+#: src/commands/certificatetopivcardcommand.cpp:149
+#: src/commands/certificatetopivcardcommand.cpp:211
+#: src/commands/changepincommand.cpp:157 src/commands/keytocardcommand.cpp:363
+#: src/commands/keytocardcommand.cpp:397 src/commands/keytocardcommand.cpp:407
 #: src/commands/pivgeneratecardkeycommand.cpp:198
 #: src/commands/setpivcardapplicationadministrationkeycommand.cpp:174
 #: src/commands/setpivcardapplicationadministrationkeycommand.cpp:197
@@ -198,6 +199,51 @@ msgstr "Erro"
 msgid ""
 "Please enter the PIV Card Application Administration Key in hex-encoded form."
 msgstr ""
+
+#: src/commands/certificatetopivcardcommand.cpp:124
+#: src/commands/keytocardcommand.cpp:251
+#, fuzzy, kde-format
+#| msgid "Failed to find the card with the serial number: %1"
+msgid "Failed to find the PIV card with the serial number: %1"
+msgstr "Non se puido atopar a tarxeta co número de serie: %1"
+
+#: src/commands/certificatetopivcardcommand.cpp:131
+#: src/commands/keytocardcommand.cpp:266
+#, kde-format
+msgid "Sorry! No suitable certificate to write to this card slot was found."
+msgstr ""
+
+#: src/commands/certificatetopivcardcommand.cpp:148
+#, fuzzy, kde-format
+#| msgid "Exporting certificates..."
+msgctxt "@info"
+msgid "Exporting the certificate failed: %1"
+msgstr "Estanse a exportar os certificados…"
+
+#: src/commands/certificatetopivcardcommand.cpp:210
+#, fuzzy, kde-format
+#| msgctxt "@info"
+#| msgid "Moving the key to the card failed: %1"
+msgctxt "@info"
+msgid "Writing the certificate to the card failed: %1"
+msgstr "O movemento da chave á tarxeta fallou: %1"
+
+#: src/commands/certificatetopivcardcommand.cpp:214
+#, fuzzy, kde-format
+#| msgid "Successfully copied the key to the card."
+msgid "Successfully copied the certificate to the card."
+msgstr "A chave copiouse á tarxeta."
+
+#: src/commands/certificatetopivcardcommand.cpp:215
+#: src/commands/changepincommand.cpp:159 src/commands/keytocardcommand.cpp:379
+#: src/commands/pivgeneratecardkeycommand.cpp:200
+#: src/commands/setpivcardapplicationadministrationkeycommand.cpp:199
+#: src/view/pgpcardwidget.cpp:302 src/view/pgpcardwidget.cpp:393
+#: src/view/pgpcardwidget.cpp:435
+#, kde-format
+msgctxt "@title"
+msgid "Success"
+msgstr "Éxito"
 
 #: src/commands/certifycertificatecommand.cpp:194
 #, kde-kuit-format
@@ -378,17 +424,6 @@ msgstr "Cambiouse a data de caducidade."
 msgctxt "@info"
 msgid "PIN changed successfully."
 msgstr "O PIN configurouse correctamente."
-
-#: src/commands/changepincommand.cpp:159 src/commands/keytocardcommand.cpp:541
-#: src/commands/keytocardcommand.cpp:587
-#: src/commands/pivgeneratecardkeycommand.cpp:200
-#: src/commands/setpivcardapplicationadministrationkeycommand.cpp:199
-#: src/view/pgpcardwidget.cpp:302 src/view/pgpcardwidget.cpp:393
-#: src/view/pgpcardwidget.cpp:435
-#, kde-format
-msgctxt "@title"
-msgid "Success"
-msgstr "Éxito"
 
 #: src/commands/changeroottrustcommand.cpp:77
 #, kde-format
@@ -1462,69 +1497,62 @@ msgstr ""
 "<para>A saída de <command>%1</command> foi:</para><para><message>%2</"
 "message></para>"
 
-#: src/commands/keytocardcommand.cpp:123
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Failed to find PaperKey executable."
-msgid "Failed to find a smart card."
-msgstr "Non se puido atopar o executábel de PaperKey."
-
-#: src/commands/keytocardcommand.cpp:132
+#: src/commands/keytocardcommand.cpp:108
 #: src/commands/pivgeneratecardkeycommand.cpp:115
 #, kde-format
 msgid "Failed to find the card with the serial number: %1"
 msgstr "Non se puido atopar a tarxeta co número de serie: %1"
 
-#: src/commands/keytocardcommand.cpp:147
+#: src/commands/keytocardcommand.cpp:123
 #, kde-format
 msgid "Sorry! Transferring keys to this card is not supported."
 msgstr ""
 
-#: src/commands/keytocardcommand.cpp:182
+#: src/commands/keytocardcommand.cpp:150
 #, fuzzy, kde-format
 #| msgid "Signature"
 msgctxt "Placeholder is the number of a slot on a smart card"
 msgid "Signature (%1)"
 msgstr "Sinatura"
 
-#: src/commands/keytocardcommand.cpp:185
+#: src/commands/keytocardcommand.cpp:153
 #, fuzzy, kde-format
 #| msgid "Encryption"
 msgctxt "Placeholder is the number of a slot on a smart card"
 msgid "Encryption (%1)"
 msgstr "Cifrado"
 
-#: src/commands/keytocardcommand.cpp:188
+#: src/commands/keytocardcommand.cpp:156
 #, fuzzy, kde-format
 #| msgid "Authentication"
 msgctxt "Placeholder is the number of a slot on a smart card"
 msgid "Authentication (%1)"
 msgstr "Autenticación"
 
-#: src/commands/keytocardcommand.cpp:192 src/commands/keytocardcommand.cpp:319
+#: src/commands/keytocardcommand.cpp:160
 #, fuzzy, kde-format
 #| msgid "Select All"
 msgid "Select Card Slot"
 msgstr "Seleccionar todo"
 
-#: src/commands/keytocardcommand.cpp:193
+#: src/commands/keytocardcommand.cpp:161
 #, fuzzy, kde-format
 #| msgid "Please select one of the following certificates:"
 msgid "Please select the card slot the key should be written to:"
 msgstr "Seleccione un dos certificados seguintes:"
 
-#: src/commands/keytocardcommand.cpp:204
+#: src/commands/keytocardcommand.cpp:172
 #, fuzzy, kde-format
 #| msgid "Failed to find the card with the serial number: %1"
 msgid "Failed to find the OpenPGP card with the serial number: %1"
 msgstr "Non se puido atopar a tarxeta co número de serie: %1"
 
-#: src/commands/keytocardcommand.cpp:217
+#: src/commands/keytocardcommand.cpp:182
 #, kde-format
 msgid "Sorry! This key cannot be transferred to an OpenPGP card."
 msgstr ""
 
-#: src/commands/keytocardcommand.cpp:235 src/commands/keytocardcommand.cpp:391
+#: src/commands/keytocardcommand.cpp:200 src/commands/keytocardcommand.cpp:286
 #: src/commands/pivgeneratecardkeycommand.cpp:127
 #: src/view/pgpcardwidget.cpp:311
 #, kde-format
@@ -1535,7 +1563,7 @@ msgstr ""
 "Non volverá ser posíbel descifrar comunicacións pasadas cifradas para a "
 "chave existente."
 
-#: src/commands/keytocardcommand.cpp:242 src/commands/keytocardcommand.cpp:394
+#: src/commands/keytocardcommand.cpp:207 src/commands/keytocardcommand.cpp:289
 #: src/commands/pivgeneratecardkeycommand.cpp:123
 #, kde-format
 msgctxt "@info"
@@ -1548,104 +1576,48 @@ msgstr ""
 "<b>sobrescribirá</b> esa chave.</p><p>Se non hai copia de seguranza a chave "
 "existente perderase sen posibilidade de recuperala.</p>"
 
-#: src/commands/keytocardcommand.cpp:244
+#: src/commands/keytocardcommand.cpp:209
 #, kde-format
 msgid "The existing key has the fingerprint:"
 msgstr "A chave existente ten unha pegada:"
 
-#: src/commands/keytocardcommand.cpp:248 src/commands/keytocardcommand.cpp:400
+#: src/commands/keytocardcommand.cpp:213 src/commands/keytocardcommand.cpp:295
 #: src/commands/pivgeneratecardkeycommand.cpp:130
 #, kde-format
 msgctxt "@title:window"
 msgid "Overwrite existing key"
 msgstr "Sobrescribir a chave existente"
 
-#: src/commands/keytocardcommand.cpp:307 src/commands/keytocardcommand.cpp:313
-#, fuzzy, kde-format
-#| msgctxt "Format string for the labels in the \"Your Personal Data\" page"
-#| msgid "%1 (%2)"
-msgctxt ""
-"Placeholder 1 is the name of a key, e.g. 'Digital Signature Key'; "
-"placeholder 2 is the identifier of a slot on a smart card"
-msgid "%1 (%2)"
-msgstr "%1 (%2)"
-
-#: src/commands/keytocardcommand.cpp:320
-#, fuzzy, kde-format
-#| msgid "Please select one of the following certificates:"
-msgid "Please select the card slot the certificate should be written to:"
-msgstr "Seleccione un dos certificados seguintes:"
-
-#: src/commands/keytocardcommand.cpp:332 src/commands/keytocardcommand.cpp:381
-#: src/commands/keytocardcommand.cpp:422
-#, fuzzy, kde-format
-#| msgid "Failed to find the card with the serial number: %1"
-msgid "Failed to find the PIV card with the serial number: %1"
-msgstr "Non se puido atopar a tarxeta co número de serie: %1"
-
-#: src/commands/keytocardcommand.cpp:342
-#, kde-format
-msgid "Sorry! No suitable certificate to write to this card slot was found."
-msgstr ""
-
-#: src/commands/keytocardcommand.cpp:348
+#: src/commands/keytocardcommand.cpp:271
 #, kde-format
 msgid "Sorry! This key cannot be transferred to a PIV card."
 msgstr ""
 
-#: src/commands/keytocardcommand.cpp:353
+#: src/commands/keytocardcommand.cpp:276
 #, kde-format
 msgid ""
 "Sorry! Only encryption keys and signing keys can be transferred to a PIV "
 "card."
 msgstr ""
 
-#: src/commands/keytocardcommand.cpp:396
+#: src/commands/keytocardcommand.cpp:291
 #, fuzzy, kde-format
 #| msgid "The existing key has the fingerprint:"
 msgid "The existing key has the key grip:"
 msgstr "A chave existente ten unha pegada:"
 
-#: src/commands/keytocardcommand.cpp:431
-#, kde-format
-msgid ""
-"<p>The certificate does not seem to correspond to the key on the card.</"
-"p><p>Public key on card: %1<br>Public key of certificate: %2</p>"
-msgstr ""
-
-#: src/commands/keytocardcommand.cpp:445
-#, fuzzy, kde-format
-#| msgid "Exporting certificates..."
-msgctxt "@info"
-msgid "Exporting the certificate failed: %1"
-msgstr "Estanse a exportar os certificados…"
-
-#: src/commands/keytocardcommand.cpp:524 src/commands/keytocardcommand.cpp:563
+#: src/commands/keytocardcommand.cpp:362 src/commands/keytocardcommand.cpp:396
 #, kde-format
 msgctxt "@info"
 msgid "Moving the key to the card failed: %1"
 msgstr "O movemento da chave á tarxeta fallou: %1"
 
-#: src/commands/keytocardcommand.cpp:540
+#: src/commands/keytocardcommand.cpp:378
 #, kde-format
 msgid "Successfully copied the key to the card."
 msgstr "A chave copiouse á tarxeta."
 
-#: src/commands/keytocardcommand.cpp:582
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Moving the key to the card failed: %1"
-msgctxt "@info"
-msgid "Writing the certificate to the card failed: %1"
-msgstr "O movemento da chave á tarxeta fallou: %1"
-
-#: src/commands/keytocardcommand.cpp:586
-#, fuzzy, kde-format
-#| msgid "Successfully copied the key to the card."
-msgid "Successfully copied the certificate to the card."
-msgstr "A chave copiouse á tarxeta."
-
-#: src/commands/keytocardcommand.cpp:597
+#: src/commands/keytocardcommand.cpp:406
 #, kde-format
 msgctxt "@info"
 msgid "Failed to delete the key: %1"
@@ -4663,7 +4635,7 @@ msgid "Reload"
 msgstr "Recargar"
 
 #: src/dialogs/certificateselectiondialog.cpp:128
-#: src/view/keylistcontroller.cpp:375 src/view/welcomewidget.cpp:64
+#: src/view/keylistcontroller.cpp:373 src/view/welcomewidget.cpp:64
 #, kde-format
 msgid "Import..."
 msgstr "Importar…"
@@ -5302,7 +5274,7 @@ msgid "Show all test results"
 msgstr "Mostrar todos os resultados das probas"
 
 #. i18n: ectx: property (title), widget (QGroupBox, detailsGB)
-#: src/dialogs/selftestdialog.ui:76 src/view/keylistcontroller.cpp:408
+#: src/dialogs/selftestdialog.ui:76 src/view/keylistcontroller.cpp:406
 #, kde-format
 msgid "Details"
 msgstr "Detalles"
@@ -5401,7 +5373,7 @@ msgstr ""
 msgid "(optional) Set Initial PIN (SigG)"
 msgstr "(opcional) Estabelecer o PIN inicial (SigG)"
 
-#: src/dialogs/subkeyswidget.cpp:78 src/view/keylistcontroller.cpp:421
+#: src/dialogs/subkeyswidget.cpp:78 src/view/keylistcontroller.cpp:419
 #, kde-format
 msgid "Change Expiry Date..."
 msgstr "Cambiar a data de caducidade…"
@@ -5765,37 +5737,37 @@ msgstr "&Vista"
 
 #. i18n: ectx: Menu (certMenu)
 #. i18n: ectx: Menu (listview_popup)
-#: src/kleopatra.rc:40 src/kleopatra.rc:109
+#: src/kleopatra.rc:40 src/kleopatra.rc:107
 #, kde-format
 msgid "&Certificates"
 msgstr "&Certificados"
 
 #. i18n: ectx: Menu (tools)
-#: src/kleopatra.rc:55
+#: src/kleopatra.rc:53
 #, kde-format
 msgid "&Tools"
 msgstr "&Ferramentas"
 
 #. i18n: ectx: Menu (settings)
-#: src/kleopatra.rc:73
+#: src/kleopatra.rc:71
 #, kde-format
 msgid "&Settings"
 msgstr "&Configuración"
 
 #. i18n: ectx: Menu (window)
-#: src/kleopatra.rc:77
+#: src/kleopatra.rc:75
 #, kde-format
 msgid "&Window"
 msgstr "&Xanela"
 
 #. i18n: ectx: Menu (help)
-#: src/kleopatra.rc:88
+#: src/kleopatra.rc:86
 #, kde-format
 msgid "&Help"
 msgstr "&Axuda"
 
 #. i18n: ectx: ToolBar (mainToolBar)
-#: src/kleopatra.rc:95 src/kwatchgnupg/kwatchgnupgui.rc:13
+#: src/kleopatra.rc:93 src/kwatchgnupg/kwatchgnupgui.rc:13
 #, kde-format
 msgid "Main Toolbar"
 msgstr "Barra de ferramentas principal"
@@ -6193,13 +6165,13 @@ msgstr ""
 msgid "Ongoing Background Tasks"
 msgstr "Tarefas de fondo en execución"
 
-#: src/mainwindow.cpp:623 src/view/keylistcontroller.cpp:383
+#: src/mainwindow.cpp:623 src/view/keylistcontroller.cpp:381
 #, kde-format
 msgid "Sign/Encrypt..."
 msgstr "Asinar/Cifrar…"
 
 #: src/mainwindow.cpp:624 src/utils/clipboardmenu.cpp:38
-#: src/view/keylistcontroller.cpp:379
+#: src/view/keylistcontroller.cpp:377
 #, kde-format
 msgid "Decrypt/Verify..."
 msgstr "Descifrar ou verificar…"
@@ -6222,7 +6194,7 @@ msgstr "Configuración avanzada"
 
 #. i18n: ectx: attribute (title), widget (QWidget, technicalTab)
 #: src/newcertificatewizard/advancedsettingsdialog.ui:21
-#: src/view/keylistcontroller.cpp:449
+#: src/view/keylistcontroller.cpp:443
 #, kde-format
 msgid "Technical Details"
 msgstr "Detalles técnicos"
@@ -8045,170 +8017,164 @@ msgstr "Non se pode retirar o ficheiro %1: %2"
 msgid "Loading certificate cache..."
 msgstr "Estase a cargar a caché de certificados…"
 
-#: src/view/keylistcontroller.cpp:351 src/view/welcomewidget.cpp:60
+#: src/view/keylistcontroller.cpp:349 src/view/welcomewidget.cpp:60
 #, kde-format
 msgid "New Key Pair..."
 msgstr "Nova parella de chaves…"
 
-#: src/view/keylistcontroller.cpp:355
+#: src/view/keylistcontroller.cpp:353
 #, kde-format
 msgid "Export..."
 msgstr "Exportar…"
 
-#: src/view/keylistcontroller.cpp:355
+#: src/view/keylistcontroller.cpp:353
 #, kde-format
 msgid "Export the selected certificate (public key) to a file"
 msgstr "Exportar o certificado seleccionado (chave pública) a un ficheiro"
 
-#: src/view/keylistcontroller.cpp:359
+#: src/view/keylistcontroller.cpp:357
 #, kde-format
 msgid "Publish on Server..."
 msgstr "Publicar nun servidor…"
 
-#: src/view/keylistcontroller.cpp:359
+#: src/view/keylistcontroller.cpp:357
 #, kde-format
 msgid "Publish the selected certificate (public key) on a public keyserver"
 msgstr ""
 "Publicar o certificado seleccionado (chave pública) nun servidor de chaves "
 "público"
 
-#: src/view/keylistcontroller.cpp:363
+#: src/view/keylistcontroller.cpp:361
 #, kde-format
 msgid "Export Secret Keys..."
 msgstr "Exportar chaves secretas…"
 
-#: src/view/keylistcontroller.cpp:367
+#: src/view/keylistcontroller.cpp:365
 #, kde-format
 msgid "Print Secret Key..."
 msgstr "Imprimir a chave secreta…"
 
-#: src/view/keylistcontroller.cpp:371
+#: src/view/keylistcontroller.cpp:369
 #, kde-format
 msgid "Lookup on Server..."
 msgstr "Buscar no servidor…"
 
-#: src/view/keylistcontroller.cpp:371
+#: src/view/keylistcontroller.cpp:369
 #, kde-format
 msgid "Search for certificates online using a public keyserver"
 msgstr "Buscar certificados por Internet usando un servidor de chaves público."
 
-#: src/view/keylistcontroller.cpp:375
+#: src/view/keylistcontroller.cpp:373
 #, kde-format
 msgid "Import a certificate from a file"
 msgstr "Importar un certificado dun ficheiro"
 
-#: src/view/keylistcontroller.cpp:379
+#: src/view/keylistcontroller.cpp:377
 #, kde-format
 msgid "Decrypt and/or verify files"
 msgstr "Descifrar e/ou verificar ficheiros"
 
-#: src/view/keylistcontroller.cpp:383
+#: src/view/keylistcontroller.cpp:381
 #, kde-format
 msgid "Encrypt and/or sign files"
 msgstr "Cifrar e/ou asinar ficheiros"
 
-#: src/view/keylistcontroller.cpp:387
+#: src/view/keylistcontroller.cpp:385
 #, kde-format
 msgid "Sign/Encrypt Folder..."
 msgstr "Asinar e/ou cifrar o cartafol…"
 
-#: src/view/keylistcontroller.cpp:387
+#: src/view/keylistcontroller.cpp:385
 #, kde-format
 msgid "Encrypt and/or sign folders"
 msgstr "Cifrar e/ou asinar cartafoles"
 
-#: src/view/keylistcontroller.cpp:391
+#: src/view/keylistcontroller.cpp:389
 #, kde-format
 msgid "Create Checksum Files..."
 msgstr "Crear ficheiros de sumas de comprobación…"
 
-#: src/view/keylistcontroller.cpp:395
+#: src/view/keylistcontroller.cpp:393
 #, kde-format
 msgid "Verify Checksum Files..."
 msgstr "Comprobar os ficheiros de sumas de comprobación…"
 
-#: src/view/keylistcontroller.cpp:400
+#: src/view/keylistcontroller.cpp:398
 #, kde-format
 msgid "Redisplay"
 msgstr "Redebuxar"
 
-#: src/view/keylistcontroller.cpp:404
+#: src/view/keylistcontroller.cpp:402
 #, kde-format
 msgid "Stop Operation"
 msgstr "Parar a operación"
 
-#: src/view/keylistcontroller.cpp:413
+#: src/view/keylistcontroller.cpp:411
 #, kde-format
 msgid "Delete"
 msgstr "Eliminar"
 
-#: src/view/keylistcontroller.cpp:413
+#: src/view/keylistcontroller.cpp:411
 #, kde-format
 msgid "Delete selected certificates"
 msgstr "Eliminar os certificados seleccionados"
 
-#: src/view/keylistcontroller.cpp:417
+#: src/view/keylistcontroller.cpp:415
 #, kde-format
 msgid "Certify..."
 msgstr "Certificar…"
 
-#: src/view/keylistcontroller.cpp:417
+#: src/view/keylistcontroller.cpp:415
 #, kde-format
 msgid "Certify the validity of the selected certificate"
 msgstr "Certificar a validez do certificado seleccionado"
 
-#: src/view/keylistcontroller.cpp:425
+#: src/view/keylistcontroller.cpp:423
 #, kde-format
 msgid "Change Certification Trust..."
 msgstr "Cambiar a confianza na certificación…"
 
-#: src/view/keylistcontroller.cpp:429
+#: src/view/keylistcontroller.cpp:427
 #, kde-format
 msgid "Trust Root Certificate"
 msgstr "Confiar no certificado raíz"
 
-#: src/view/keylistcontroller.cpp:433
+#: src/view/keylistcontroller.cpp:431
 #, kde-format
 msgid "Distrust Root Certificate"
 msgstr "Desconfiar do certificado raíz"
 
-#: src/view/keylistcontroller.cpp:437
+#: src/view/keylistcontroller.cpp:435
 #, kde-format
 msgid "Change Passphrase..."
 msgstr "Cambiar a frase de paso…"
 
-#: src/view/keylistcontroller.cpp:441
+#: src/view/keylistcontroller.cpp:439
 #, kde-format
 msgid "Add User-ID..."
 msgstr "Engadir un identificador de usuario…"
 
-#: src/view/keylistcontroller.cpp:445
-#, fuzzy, kde-format
-#| msgid "Transfer to smartcard"
-msgid "Transfer to Smartcard"
-msgstr "Transferir a unha tarxeta intelixente"
-
-#: src/view/keylistcontroller.cpp:454
+#: src/view/keylistcontroller.cpp:448
 #, kde-format
 msgid "Refresh X.509 Certificates"
 msgstr "Anovar os certificados X.509"
 
-#: src/view/keylistcontroller.cpp:458
+#: src/view/keylistcontroller.cpp:452
 #, kde-format
 msgid "Refresh OpenPGP Certificates"
 msgstr "Anovar os certificados OpenPGP"
 
-#: src/view/keylistcontroller.cpp:462
+#: src/view/keylistcontroller.cpp:456
 #, kde-format
 msgid "Clear CRL Cache"
 msgstr "Limpar a caché de CRL"
 
-#: src/view/keylistcontroller.cpp:466
+#: src/view/keylistcontroller.cpp:460
 #, kde-format
 msgid "Dump CRL Cache"
 msgstr "Envorcar a caché de CRL"
 
-#: src/view/keylistcontroller.cpp:470
+#: src/view/keylistcontroller.cpp:464
 #, kde-format
 msgid "Import CRL From File..."
 msgstr "Importar a CRL dun ficheiro…"
@@ -8219,7 +8185,7 @@ msgid "View Columns"
 msgstr "Ver as columnas"
 
 #: src/view/netkeywidget.cpp:68 src/view/pgpcardwidget.cpp:128
-#: src/view/pivcardwidget.cpp:88
+#: src/view/pivcardwidget.cpp:89
 #, kde-format
 msgid "Serial number:"
 msgstr "Número de serie:"
@@ -8394,7 +8360,7 @@ msgctxt ""
 msgid "Pubkey URL:"
 msgstr "URL da chave pública:"
 
-#: src/view/pgpcardwidget.cpp:162 src/view/pivcardwidget.cpp:97
+#: src/view/pgpcardwidget.cpp:162 src/view/pivcardwidget.cpp:98
 #, kde-format
 msgid "Keys:"
 msgstr "Chaves:"
@@ -8424,7 +8390,7 @@ msgstr "Xerar novas chaves"
 msgid "Create a new primary key and generate subkeys on the card."
 msgstr "Crear unha nova chave principal e xerar subchaves nesta tarxeta."
 
-#: src/view/pgpcardwidget.cpp:188 src/view/pivcardwidget.cpp:147
+#: src/view/pgpcardwidget.cpp:188 src/view/pivcardwidget.cpp:153
 #, kde-format
 msgid "Change PIN"
 msgstr "Cambiar o PIN"
@@ -8595,7 +8561,7 @@ msgctxt "@info"
 msgid "URL successfully changed."
 msgstr "Cambiouse o URL."
 
-#: src/view/pgpcardwidget.cpp:445 src/view/pivcardwidget.cpp:198
+#: src/view/pgpcardwidget.cpp:445 src/view/pivcardwidget.cpp:204
 #, kde-format
 msgid "Slot empty"
 msgstr "Rañura baleira"
@@ -8605,76 +8571,76 @@ msgstr "Rañura baleira"
 msgid "Public key not found."
 msgstr "Non se atopou a chave pública."
 
-#: src/view/pivcardwidget.cpp:99
+#: src/view/pivcardwidget.cpp:100
 #, fuzzy, kde-format
 #| msgid "Authentication:"
 msgid "PIV authentication:"
 msgstr "Autenticación:"
 
-#: src/view/pivcardwidget.cpp:102 src/view/pivcardwidget.cpp:111
-#: src/view/pivcardwidget.cpp:120 src/view/pivcardwidget.cpp:134
-#: src/view/pivcardwidget.cpp:199
+#: src/view/pivcardwidget.cpp:103 src/view/pivcardwidget.cpp:112
+#: src/view/pivcardwidget.cpp:121 src/view/pivcardwidget.cpp:135
+#: src/view/pivcardwidget.cpp:205
 #, fuzzy, kde-format
 #| msgctxt "@title:window"
 #| msgid "Generating Keys"
 msgid "Generate"
 msgstr "Xerando as chaves"
 
-#: src/view/pivcardwidget.cpp:108
+#: src/view/pivcardwidget.cpp:109
 #, fuzzy, kde-format
 #| msgid "Authentication:"
 msgid "Card authentication:"
 msgstr "Autenticación:"
 
-#: src/view/pivcardwidget.cpp:117
+#: src/view/pivcardwidget.cpp:118
 #, fuzzy, kde-format
 #| msgid "Bad signature"
 msgid "Digital signature:"
 msgstr "Sinatura incorrecta"
 
-#: src/view/pivcardwidget.cpp:124
+#: src/view/pivcardwidget.cpp:125 src/view/pivcardwidget.cpp:139
 #, fuzzy, kde-format
 #| msgid "With certificate:"
 msgid "Write Certificate"
 msgstr "Co certificado:"
 
-#: src/view/pivcardwidget.cpp:125
+#: src/view/pivcardwidget.cpp:126 src/view/pivcardwidget.cpp:140
 #, fuzzy, kde-format
 #| msgctxt "@info"
 #| msgid "Moving the key to the card failed: %1"
 msgid "Write the certificate corresponding to this key to the card"
 msgstr "O movemento da chave á tarxeta fallou: %1"
 
-#: src/view/pivcardwidget.cpp:131
+#: src/view/pivcardwidget.cpp:132
 #, kde-format
 msgid "Key management:"
 msgstr ""
 
-#: src/view/pivcardwidget.cpp:148
+#: src/view/pivcardwidget.cpp:154
 #, kde-format
 msgid ""
 "Change the PIV Card Application PIN that activates the PIV Card and enables "
 "private key operations using the stored keys."
 msgstr ""
 
-#: src/view/pivcardwidget.cpp:153
+#: src/view/pivcardwidget.cpp:159
 #, fuzzy, kde-format
 #| msgid "Change PIN"
 msgid "Change PUK"
 msgstr "Cambiar o PIN"
 
-#: src/view/pivcardwidget.cpp:154
+#: src/view/pivcardwidget.cpp:160
 #, kde-format
 msgid "Change the PIN Unblocking Key that enables a reset of the PIN."
 msgstr ""
 
-#: src/view/pivcardwidget.cpp:159
+#: src/view/pivcardwidget.cpp:165
 #, fuzzy, kde-format
 #| msgid "Change Admin PIN"
 msgid "Change Admin Key"
 msgstr "Cambiar o PIN de administrador"
 
-#: src/view/pivcardwidget.cpp:160
+#: src/view/pivcardwidget.cpp:166
 #, kde-format
 msgid ""
 "Change the PIV Card Application Administration Key that is used by the PIV "
@@ -8683,19 +8649,19 @@ msgid ""
 "Application."
 msgstr ""
 
-#: src/view/pivcardwidget.cpp:180
+#: src/view/pivcardwidget.cpp:186
 #, kde-format
 msgctxt "Placeholder is a version number"
 msgid "PIV v%1 card"
 msgstr ""
 
-#: src/view/pivcardwidget.cpp:199
+#: src/view/pivcardwidget.cpp:205
 #, fuzzy, kde-format
 #| msgid "Places"
 msgid "Replace"
 msgstr "Lugares"
 
-#: src/view/pivcardwidget.cpp:201
+#: src/view/pivcardwidget.cpp:207
 #, fuzzy, kde-format
 #| msgctxt "@title:window"
 #| msgid "Generating Keys"
@@ -8703,7 +8669,7 @@ msgctxt "Placeholder is the display name of a key"
 msgid "Generate %1"
 msgstr "Xerando as chaves"
 
-#: src/view/pivcardwidget.cpp:202
+#: src/view/pivcardwidget.cpp:208
 #, kde-format
 msgctxt "Placeholder is the display name of a key"
 msgid "Replace %1 with new key"
@@ -8914,6 +8880,31 @@ msgid "To import from a public keyserver use \"Lookup on Server\" instead."
 msgstr ""
 "Para importar dun servidor de chaves público use «Buscar no servidor» no seu "
 "lugar."
+
+#, fuzzy
+#~| msgctxt "@title"
+#~| msgid "Failed to find PaperKey executable."
+#~ msgid "Failed to find a smart card."
+#~ msgstr "Non se puido atopar o executábel de PaperKey."
+
+#, fuzzy
+#~| msgctxt "Format string for the labels in the \"Your Personal Data\" page"
+#~| msgid "%1 (%2)"
+#~ msgctxt ""
+#~ "Placeholder 1 is the name of a key, e.g. 'Digital Signature Key'; "
+#~ "placeholder 2 is the identifier of a slot on a smart card"
+#~ msgid "%1 (%2)"
+#~ msgstr "%1 (%2)"
+
+#, fuzzy
+#~| msgid "Please select one of the following certificates:"
+#~ msgid "Please select the card slot the certificate should be written to:"
+#~ msgstr "Seleccione un dos certificados seguintes:"
+
+#, fuzzy
+#~| msgid "Transfer to smartcard"
+#~ msgid "Transfer to Smartcard"
+#~ msgstr "Transferir a unha tarxeta intelixente"
 
 #~ msgctxt "@info"
 #~ msgid "Code successfully changed."
