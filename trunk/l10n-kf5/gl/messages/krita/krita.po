@@ -79,7 +79,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: krita\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2020-10-27 02:19+0100\n"
+"POT-Creation-Date: 2020-10-28 02:20+0100\n"
 "PO-Revision-Date: 2020-01-12 12:14+0100\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Galician <proxecto@trasno.gal>\n"
@@ -8891,8 +8891,9 @@ msgid "Onion Skins"
 msgstr "Peles de cebola"
 
 #: libs/image/kis_layer_properties_icons.cpp:39
-#: libs/resources/KisStorageModel.cpp:234
-#: libs/resourcewidgets/dbexplorer/DlgDbExplorer.cpp:87
+#: libs/resources/KisResourceModel.cpp:137
+#: libs/resources/KisStorageModel.cpp:287
+#: libs/resourcewidgets/dbexplorer/DlgDbExplorer.cpp:85
 #, kde-format
 msgid "Active"
 msgstr "Activo"
@@ -8981,8 +8982,8 @@ msgid "Processing"
 msgstr "Procesando"
 
 #: libs/image/kis_psd_layer_style.cpp:100
-#: libs/ui/KisApplicationArguments.cpp:349 libs/ui/KisMainWindow.cpp:1347
-#: libs/ui/KisMainWindow.cpp:1615 libs/ui/KisMainWindow.cpp:1634
+#: libs/ui/KisApplicationArguments.cpp:349 libs/ui/KisMainWindow.cpp:1346
+#: libs/ui/KisMainWindow.cpp:1614 libs/ui/KisMainWindow.cpp:1633
 #: plugins/impex/libkra/kis_kra_saver.cpp:93
 #, kde-format
 msgid "Unnamed"
@@ -9196,7 +9197,7 @@ msgstr "Capa clon"
 #. i18n: ectx: property (text), widget (QLabel, label_6)
 #: libs/impex/KisExportCheckRegistry.cpp:103 libs/ui/kis_layer_manager.cc:635
 #: libs/ui/kis_node_manager.cpp:1538 libs/ui/KisPaletteEditor.cpp:421
-#: libs/widgets/kis_palette_view.cpp:126
+#: libs/widgets/kis_palette_view.cpp:125
 #: plugins/dockers/arrangedocker/arrange_docker_widget.ui:226
 #, kde-format
 msgid "Group"
@@ -10581,7 +10582,7 @@ msgstr "flotante de 64 bits/canle"
 #: libs/ui/forms/wdgstrokeselectionproperties.ui:228
 #: libs/ui/KisPaletteEditor.cpp:374 libs/ui/KisPaletteEditor.cpp:424
 #: libs/ui/layerstyles/WdgColorOverlay.ui:23
-#: libs/ui/layerstyles/WdgStroke.ui:134 libs/widgets/kis_palette_view.cpp:129
+#: libs/ui/layerstyles/WdgStroke.ui:134 libs/widgets/kis_palette_view.cpp:128
 #: plugins/extensions/layersplit/layersplit.cpp:211
 #: plugins/generators/solid/colorgenerator.h:53
 #, kde-format
@@ -11665,49 +11666,111 @@ msgstr "Sen título"
 msgid "SVG Gradient"
 msgstr "Gradación de SVG"
 
-#: libs/resources/KisFolderStorage.cpp:234
+#: libs/resources/KisFolderStorage.cpp:240
 #, fuzzy, kde-format
 #| msgid "Loading Resources..."
 msgid "Local Resources"
 msgstr "Cargando os recursos…"
 
-#: libs/resources/KisResourceLocator.cpp:99
+#: libs/resources/KisResourceCacheDb.cpp:149
+#: libs/ui/animation/KisAnimationRender.cpp:60
+#: libs/ui/animation/KisAnimationRender.cpp:112
+#: libs/ui/animation/KisDlgAnimationRenderer.cpp:471
+#: libs/ui/animation/KisDlgAnimationRenderer.cpp:475
+#: libs/ui/animation/KisDlgAnimationRenderer.cpp:483
+#: libs/ui/animation/KisDlgAnimationRenderer.cpp:487
+#: libs/ui/animation/KisDlgAnimationRenderer.cpp:493
+#: libs/ui/animation/KisDlgAnimationRenderer.cpp:496
+#: libs/ui/animation/KisDlgAnimationRenderer.cpp:503
+#: libs/ui/dialogs/kis_dlg_preferences.cc:535
+#: libs/ui/input/kis_tablet_debugger.cpp:104 libs/ui/kis_filter_manager.cc:243
+#: libs/ui/kis_filter_manager.cc:252 libs/ui/kis_layer_manager.cc:317
+#: libs/ui/kis_layer_manager.cc:1001 libs/ui/kis_node_manager.cpp:1226
+#: libs/ui/kis_node_manager.cpp:1289 libs/ui/KisApplication.cpp:931
+#: libs/ui/KisApplication.cpp:934 libs/ui/KisApplication.cpp:959
+#: libs/ui/KisApplication.cpp:991 libs/ui/KisApplication.cpp:1005
+#: libs/ui/KisApplication.cpp:1033 libs/ui/KisDocument.cpp:800
+#: libs/ui/KisDocument.cpp:1553 libs/ui/KisDocument.cpp:1595
+#: libs/ui/KisDocument.cpp:1603 libs/ui/KisMainWindow.cpp:847
+#: libs/ui/KisMainWindow.cpp:1001 libs/ui/KisMainWindow.cpp:1126
+#: libs/ui/KisMainWindow.cpp:1139 libs/ui/KisMainWindow.cpp:1234
+#: libs/ui/KisMainWindow.cpp:1896 libs/ui/KisPart.cpp:549
+#: libs/ui/KisPart.cpp:552 libs/ui/KisReferenceImage.cpp:191
+#: libs/ui/KisRemoteFileFetcher.cpp:54 libs/ui/KisTemplateCreateDia.cpp:297
+#: libs/ui/KisTemplateCreateDia.cpp:403 libs/ui/KisView.cpp:716
+#: libs/ui/KisWelcomePageWidget.cpp:576
+#: libs/ui/opengl/kis_opengl_canvas2.cpp:422
+#: libs/ui/widgets/kis_custom_image_widget.cc:277
+#: plugins/assistants/Assistants/kis_assistant_tool.cc:898
+#: plugins/assistants/Assistants/kis_assistant_tool.cc:901
+#: plugins/dockers/gamutmask/gamutmask_dock.cpp:301
+#: plugins/extensions/imagesplit/imagesplit.cpp:86
+#: plugins/extensions/imagesplit/imagesplit.cpp:88
+#: plugins/extensions/qmic/QMic.cpp:126 plugins/extensions/qmic/QMic.cpp:298
+#: plugins/extensions/qmic/QMic.cpp:327
+#: plugins/extensions/resourcemanager/dlg_create_bundle.cpp:297
+#: plugins/extensions/resourcemanager/resourcemanager.cpp:229
+#: plugins/filters/colorsfilters/kis_multichannel_filter_base.cpp:405
+#: plugins/tools/basictools/kis_tool_colorpicker.cc:157
+#: plugins/tools/basictools/kis_tool_colorpicker.cc:162
+#: plugins/tools/basictools/kis_tool_colorpicker.cc:210
+#: plugins/tools/defaulttool/referenceimagestool/KisReferenceImageCollection.cpp:107
+#: plugins/tools/defaulttool/referenceimagestool/ToolReferenceImages.cpp:134
+#: plugins/tools/defaulttool/referenceimagestool/ToolReferenceImages.cpp:169
+#: plugins/tools/defaulttool/referenceimagestool/ToolReferenceImages.cpp:191
+#: plugins/tools/defaulttool/referenceimagestool/ToolReferenceImages.cpp:218
+#: plugins/tools/defaulttool/referenceimagestool/ToolReferenceImages.cpp:227
+#: plugins/tools/svgtexttool/SvgTextEditor.cpp:1114
+#: plugins/tools/tool_transform2/kis_free_transform_strategy_gsl_helpers.cpp:358
+#, kde-format
+msgctxt "@title:window"
+msgid "Krita"
+msgstr "Krita"
+
+#: libs/resources/KisResourceCacheDb.cpp:149
+#, kde-format
+msgid ""
+"The resource database scheme is changed. Krita will backup your database and "
+"create a new database. Your local tags will be lost."
+msgstr ""
+
+#: libs/resources/KisResourceLocator.cpp:101
 #, fuzzy, kde-format
 #| msgid "Could not create the file for saving"
 msgid "1. Could not create the resource location at %1."
 msgstr "Non se puido crear un ficheiro para gardar"
 
-#: libs/resources/KisResourceLocator.cpp:106
+#: libs/resources/KisResourceLocator.cpp:108
 #, kde-format
 msgid "2. The resource location at %1 is not writable."
 msgstr ""
 
-#: libs/resources/KisResourceLocator.cpp:453
+#: libs/resources/KisResourceLocator.cpp:426
 #, fuzzy, kde-format
 #| msgid "Could not load \"id\" of the transform mask"
 msgid "Could not add %1 to the database"
 msgstr "Non se puido cargar o identificador da máscara de transformación."
 
-#: libs/resources/KisResourceLocator.cpp:471
+#: libs/resources/KisResourceLocator.cpp:443
 #, fuzzy, kde-format
 #| msgid "Couldn't remove bundle \"%1\" from blacklist"
 msgid "Could not remove storage %1 from the database"
 msgstr "Non se puido retirar o paquete «%1» da lista negra"
 
-#: libs/resources/KisResourceLocator.cpp:487
+#: libs/resources/KisResourceLocator.cpp:458
 #, kde-format
 msgid ""
 "Krita is running for the first time. Initialization will take some time."
 msgstr ""
 
-#: libs/resources/KisResourceLocator.cpp:494
+#: libs/resources/KisResourceLocator.cpp:465
 #, fuzzy, kde-format
 #| msgid "Could not create the file for saving"
 msgid "3. Could not create the resource location at %1."
 msgstr "Non se puido crear un ficheiro para gardar"
 
-#: libs/resources/KisResourceLocator.cpp:507
-#: libs/resources/KisResourceLocator.cpp:523
+#: libs/resources/KisResourceLocator.cpp:478
+#: libs/resources/KisResourceLocator.cpp:494
 #, fuzzy, kde-format
 #| msgid ""
 #| "Could not open %1\n"
@@ -11717,67 +11780,67 @@ msgstr ""
 "Non foi posíbel abrir %1\n"
 "Motivo: %2"
 
-#: libs/resources/KisResourceLocator.cpp:519
+#: libs/resources/KisResourceLocator.cpp:490
 #, fuzzy, kde-format
 #| msgid "Could not install the resources for bundle %1."
 msgid "Installing the resources from bundle %1."
 msgstr "Non se puideron instalar os recursos do paquete %1."
 
-#: libs/resources/KisResourceLocator.cpp:541
+#: libs/resources/KisResourceLocator.cpp:512
 #, fuzzy, kde-format
 #| msgid "Manage Resources..."
 msgid "Initializing the resources."
 msgstr "Xestionar os recursos…"
 
-#: libs/resources/KisResourceLocator.cpp:551
+#: libs/resources/KisResourceLocator.cpp:522
 #, kde-format
 msgid "Could not add storage %1 to the cache database"
 msgstr ""
 
-#: libs/resources/KisResourceLocator.cpp:571
+#: libs/resources/KisResourceLocator.cpp:542
 #, fuzzy, kde-format
 #| msgctxt "@info:tooltip"
 #| msgid "Import resource"
 msgid "Temporary Resources"
 msgstr "Importar un recurso"
 
-#: libs/resources/KisResourceLocator.cpp:683
+#: libs/resources/KisResourceLocator.cpp:654
 #, fuzzy, kde-format
 #| msgid "Could not encode or write image."
 msgid "Could not synchronize %1 with the database"
 msgstr "Non se puido codificar ou escribir a imaxe."
 
-#: libs/resources/KisResourceModel.cpp:246
-#: libs/resources/KisStorageModel.cpp:219
-#: libs/resourcewidgets/dbexplorer/DlgDbExplorer.cpp:81
+#: libs/resources/KisResourceModel.cpp:119
+#: libs/resources/KisStorageModel.cpp:277
+#: libs/resourcewidgets/dbexplorer/DlgDbExplorer.cpp:79
 #, kde-format
 msgid "Id"
 msgstr ""
 
-#: libs/resources/KisResourceModel.cpp:249
+#: libs/resources/KisResourceModel.cpp:121
 #, kde-format
 msgid "Storage ID"
 msgstr ""
 
-#: libs/resources/KisResourceModel.cpp:252
-#: libs/resources/KisStorageModel.cpp:240
-#: libs/resourcewidgets/dbexplorer/DlgDbExplorer.cpp:85
+#: libs/resources/KisResourceModel.cpp:123
+#: libs/resources/KisStorageModel.cpp:291
+#: libs/resourcewidgets/dbexplorer/DlgDbExplorer.cpp:83
 #: libs/ui/KisPaletteEditor.cpp:218 libs/ui/KisPaletteEditor.cpp:423
-#: libs/widgets/kis_palette_view.cpp:128
+#: libs/widgets/kis_palette_view.cpp:127
 #: plugins/python/filtermanager/components/filtermanagertreemodel.py:30
 #: plugins/python/scripter/ui_scripter/tabwidgets/debuggerwidget/debuggertable.py:28
 #, kde-format
 msgid "Name"
 msgstr "Nome"
 
-#: libs/resources/KisResourceModel.cpp:255
+#: libs/resources/KisResourceModel.cpp:125
 #, fuzzy, kde-format
 #| msgctxt "Label for line edit to set a palette filename."
 #| msgid "File Name"
 msgid "File Name"
 msgstr "Nome de ficheiro"
 
-#: libs/resources/KisResourceModel.cpp:258
+#: libs/resources/KisResourceModel.cpp:127
 #, fuzzy, kde-format
 #| msgid "Tools"
 msgid "Tooltip"
@@ -11785,7 +11848,7 @@ msgstr "Utilidades"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, shapeBox)
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbType)
-#: libs/resources/KisResourceModel.cpp:261
+#: libs/resources/KisResourceModel.cpp:129
 #: plugins/extensions/imagesize/imagesize.xmlgui:4
 #: plugins/extensions/imagesplit/imagesplit.xmlgui:4
 #: plugins/extensions/separate_channels/imageseparate.xmlgui:4
@@ -11796,26 +11859,32 @@ msgstr "Utilidades"
 msgid "Image"
 msgstr "Imaxe"
 
-#: libs/resources/KisResourceModel.cpp:264
+#: libs/resources/KisResourceModel.cpp:131
 #, fuzzy, kde-format
 #| msgid "Statusbar"
 msgid "Status"
 msgstr "Barra de estado"
 
-#: libs/resources/KisResourceModel.cpp:267
-#: libs/resources/KisStorageModel.cpp:225
+#: libs/resources/KisResourceModel.cpp:133
+#: libs/resources/KisStorageModel.cpp:281
 #, fuzzy, kde-format
 #| msgid "Copy Location"
 msgid "Location"
 msgstr "Copiar a ruta"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
-#: libs/resources/KisResourceModel.cpp:270
+#: libs/resources/KisResourceModel.cpp:135
 #: libs/resourcewidgets/dbexplorer/WdgDbExplorer.ui:45
 #, fuzzy, kde-format
 #| msgid "Resource"
 msgid "Resource Type"
 msgstr "Recurso"
+
+#: libs/resources/KisResourceModel.cpp:139
+#, fuzzy, kde-format
+#| msgid "For images"
+msgid "Storage Active"
+msgstr "Para imaxes"
 
 #. i18n: ectx: attribute (title), widget (QWidget, tab_hsx)
 #. i18n: ectx: property (text), widget (QLabel, lblCurrentRenderer)
@@ -11878,8 +11947,8 @@ msgstr "En memoria"
 msgid "Invalid"
 msgstr "Incorrecto"
 
-#: libs/resources/KisStorageModel.cpp:222
-#: libs/resourcewidgets/dbexplorer/DlgDbExplorer.cpp:82
+#: libs/resources/KisStorageModel.cpp:279
+#: libs/resourcewidgets/dbexplorer/DlgDbExplorer.cpp:80
 #: libs/widgets/KoConfigAuthorPage.cpp:102
 #: plugins/extensions/metadataeditor/kis_meta_data_model.cpp:109
 #: plugins/python/filtermanager/components/filtermanagertreemodel.py:30
@@ -11889,21 +11958,21 @@ msgid "Type"
 msgstr "Tipo"
 
 #. i18n: ectx: property (text), widget (QLabel, label_6)
-#: libs/resources/KisStorageModel.cpp:228
+#: libs/resources/KisStorageModel.cpp:283
 #: libs/resourcewidgets/dbexplorer/WdgDbExplorer.ui:143
 #, fuzzy, kde-format
 #| msgid "Creating template"
 msgid "Creation Date"
 msgstr "Crear un modelo"
 
-#: libs/resources/KisStorageModel.cpp:231
+#: libs/resources/KisStorageModel.cpp:285
 #, fuzzy, kde-format
 #| msgid "Uninstall"
 msgid "Preinstalled"
 msgstr "Desintalar"
 
-#: libs/resources/KisStorageModel.cpp:237
-#: libs/resourcewidgets/dbexplorer/DlgDbExplorer.cpp:88
+#: libs/resources/KisStorageModel.cpp:289
+#: libs/resourcewidgets/dbexplorer/DlgDbExplorer.cpp:86
 #: plugins/python/filtermanager/components/filtermanagertreemodel.py:30
 #, kde-format
 msgid "Thumbnail"
@@ -11911,21 +11980,32 @@ msgstr "Miniatura"
 
 #. i18n: ectx: property (text), widget (QPushButton, deleteAllAssistantsButton)
 #. i18n: ectx: property (text), widget (QPushButton, bnDelete)
-#: libs/resources/KisTagModel.cpp:111 libs/resources/KisTagModel.cpp:212
-#: libs/resources/KisTagModel.cpp:214
-#: libs/ui/widgets/kis_paintop_presets_popup.cpp:624
+#: libs/resources/KisTagModel.cpp:105 libs/resources/KisTagModel.cpp:256
+#: libs/ui/widgets/kis_paintop_presets_popup.cpp:627
 #: plugins/assistants/Assistants/AssistantsToolOptions.ui:221
 #: plugins/tools/defaulttool/referenceimagestool/WdgToolOptions.ui:203
 #, kde-format
 msgid "All"
 msgstr "Todas"
 
-#: libs/resources/KisTagModel.cpp:138 libs/resources/KisTagModel.cpp:220
-#: libs/resources/KisTagModel.cpp:222
+#: libs/resources/KisTagModel.cpp:132 libs/resources/KisTagModel.cpp:264
 #, fuzzy, kde-format
 #| msgid "All pa&ges"
-msgid "All untagged"
+msgid "All Untagged"
 msgstr "Todas as pá&xinas"
+
+#: libs/resources/KisTagModel.cpp:258
+#, fuzzy, kde-format
+#| msgid "Add Resources"
+msgid "All Resources"
+msgstr "Engadir recursos"
+
+#: libs/resources/KisTagModel.cpp:266
+#, fuzzy, kde-format
+#| msgctxt "action"
+#| msgid "Manage Resources"
+msgid "All Untagged Resources"
+msgstr "Xestionar os recursos"
 
 #. i18n: context: Actions (DbExplorer), ActionCollection (DbExplorer)
 #: libs/resourcewidgets/dbexplorer/dbexplorer.action:4
@@ -11949,26 +12029,26 @@ msgctxt "action"
 msgid "Resources Cache Database"
 msgstr ""
 
-#: libs/resourcewidgets/dbexplorer/DlgDbExplorer.cpp:44
+#: libs/resourcewidgets/dbexplorer/DlgDbExplorer.cpp:42
 #, kde-format
 msgid "Resources Cache Database Explorer"
 msgstr ""
 
-#: libs/resourcewidgets/dbexplorer/DlgDbExplorer.cpp:84
-#: libs/resourcewidgets/KisTagChooserWidget.cpp:66
-#: libs/resourcewidgets/KisTagToolButton.cpp:59
+#: libs/resourcewidgets/dbexplorer/DlgDbExplorer.cpp:82
+#: libs/resourcewidgets/KisTagChooserWidget.cpp:59
+#: libs/resourcewidgets/KisTagToolButton.cpp:67
 #, kde-format
 msgid "Tag"
 msgstr "Etiqueta"
 
 #. i18n: ectx: property (text), widget (QLabel, colorComment_2)
-#: libs/resourcewidgets/dbexplorer/DlgDbExplorer.cpp:86
+#: libs/resourcewidgets/dbexplorer/DlgDbExplorer.cpp:84
 #: plugins/tools/svgtexttool/WdgSvgTextSettings.ui:192
 #, kde-format
 msgid "Comment"
 msgstr "Comentario"
 
-#: libs/resourcewidgets/dbexplorer/DlgDbExplorer.cpp:89
+#: libs/resourcewidgets/dbexplorer/DlgDbExplorer.cpp:87
 #, fuzzy, kde-format
 #| msgid "Display Name: %1 %2"
 msgid "Display Name"
@@ -12006,7 +12086,7 @@ msgstr "Versión:"
 
 #. i18n: ectx: attribute (title), widget (QWidget, tabTags)
 #: libs/resourcewidgets/dbexplorer/WdgDbExplorer.ui:88
-#: libs/resourcewidgets/KisIconToolTip.cpp:95
+#: libs/resourcewidgets/KisIconToolTip.cpp:96
 #, kde-format
 msgid "Tags"
 msgstr "Etiquetas"
@@ -12071,47 +12151,41 @@ msgstr "Recurso"
 msgid "Tag:"
 msgstr ""
 
-#: libs/resourcewidgets/KisResourceItemChooser.cpp:184
+#: libs/resourcewidgets/KisResourceItemChooser.cpp:177
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Import resource"
 msgstr "Importar un recurso"
 
-#: libs/resourcewidgets/KisResourceItemChooser.cpp:190
+#: libs/resourcewidgets/KisResourceItemChooser.cpp:183
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Delete resource"
 msgstr "Eliminar o recurso"
 
-#: libs/resourcewidgets/KisResourceItemChooser.cpp:238
+#: libs/resourcewidgets/KisResourceItemChooser.cpp:232
 #: libs/ui/KisMainWindow.cpp:2291
 #, kde-format
 msgctxt "@title:window"
 msgid "Choose File to Add"
 msgstr "Escolla o ficheiro para engadir"
 
-#: libs/resourcewidgets/KisResourceItemChooserContextMenu.cpp:148
-#: libs/resourcewidgets/KisTagToolButton.cpp:68
-#, kde-format
-msgid "New tag"
-msgstr "Nova etiqueta"
-
-#: libs/resourcewidgets/KisResourceItemChooserContextMenu.cpp:239
+#: libs/resourcewidgets/KisResourceItemChooserContextMenu.cpp:98
 #, kde-format
 msgid "Assign to tag"
 msgstr "Asignar a unha etiqueta"
 
-#: libs/resourcewidgets/KisResourceItemChooserContextMenu.cpp:267
+#: libs/resourcewidgets/KisResourceItemChooserContextMenu.cpp:117
 #, kde-format
 msgid "Remove from this tag"
 msgstr "Eliminar desta etiqueta"
 
-#: libs/resourcewidgets/KisResourceItemChooserContextMenu.cpp:276
+#: libs/resourcewidgets/KisResourceItemChooserContextMenu.cpp:126
 #, kde-format
 msgid "Remove from other tag"
 msgstr "Eliminar doutra etiqueta"
 
-#: libs/resourcewidgets/KisTagFilterWidget.cpp:65
+#: libs/resourcewidgets/KisTagFilterWidget.cpp:61
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -12131,7 +12205,7 @@ msgstr ""
 "uso de maiúsculas:<br> <tt>\"BuscaExacta\"</tt> ou <tt>!\"BuscaExacta\"</tt>."
 "</p>"
 
-#: libs/resourcewidgets/KisTagFilterWidget.cpp:75
+#: libs/resourcewidgets/KisTagFilterWidget.cpp:71
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -12145,7 +12219,7 @@ msgstr ""
 "filtro restaura todos os elementos. Cree ou cambie a unha etiqueta distinta "
 "se quere gardar os recursos filtrados en conxuntos con nome.</p>"
 
-#: libs/resourcewidgets/KisTagFilterWidget.cpp:81
+#: libs/resourcewidgets/KisTagFilterWidget.cpp:77
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -12153,38 +12227,44 @@ msgid ""
 "changes.</p>"
 msgstr "<p>Premer <b>Intro</b> ou o botón <b>Gardar</b> garda os cambios.</p>"
 
-#: libs/resourcewidgets/KisTagFilterWidget.cpp:88
+#: libs/resourcewidgets/KisTagFilterWidget.cpp:84
 #, kde-format
 msgid "Search"
 msgstr "Buscar"
 
-#: libs/resourcewidgets/KisTagFilterWidget.cpp:103
+#: libs/resourcewidgets/KisTagFilterWidget.cpp:99
 #, fuzzy, kde-format
-#| msgctxt "(qtundo-format)"
-#| msgid "Set filter stack"
+#| msgid "Filter Manager"
 msgctxt ""
 "It appears in the checkbox next to the filter box in resources dockers; must "
 "be short."
-msgid "filter by tag"
-msgstr "Estabelecer o grupo de efectos"
+msgid "Filter in Tag"
+msgstr "Xestor de filtros"
 
-#: libs/resourcewidgets/KisTagToolButton.cpp:61
+#: libs/resourcewidgets/KisTagToolButton.cpp:69
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "<qt>Show the tag box options.</qt>"
 msgstr "<qt>Mostrar as opcións da caixa de etiquetas.</qt>"
 
-#: libs/resourcewidgets/KisTagToolButton.cpp:77
+#: libs/resourcewidgets/KisTagToolButton.cpp:76
+#: libs/resourcewidgets/TagActions.cpp:150
+#: libs/resourcewidgets/TagActions.cpp:169
+#, kde-format
+msgid "New tag"
+msgstr "Nova etiqueta"
+
+#: libs/resourcewidgets/KisTagToolButton.cpp:84
 #, kde-format
 msgid "Rename tag"
 msgstr "Cambiar o nome da etiqueta"
 
-#: libs/resourcewidgets/KisTagToolButton.cpp:88
+#: libs/resourcewidgets/KisTagToolButton.cpp:94
 #, kde-format
 msgid "Delete this tag"
 msgstr "Eliminar a etiqueta"
 
-#: libs/resourcewidgets/KisTagToolButton.cpp:131
+#: libs/resourcewidgets/KisTagToolButton.cpp:134
 #, kde-format
 msgid "Undelete"
 msgstr "Recuperar"
@@ -12291,60 +12371,6 @@ msgid ""
 msgstr ""
 "%1 require que a anchura e a altura sexan números pares. Cambie de tamaño ou "
 "recorde a imaxe antes de exportala."
-
-#: libs/ui/animation/KisAnimationRender.cpp:60
-#: libs/ui/animation/KisAnimationRender.cpp:112
-#: libs/ui/animation/KisDlgAnimationRenderer.cpp:471
-#: libs/ui/animation/KisDlgAnimationRenderer.cpp:475
-#: libs/ui/animation/KisDlgAnimationRenderer.cpp:483
-#: libs/ui/animation/KisDlgAnimationRenderer.cpp:487
-#: libs/ui/animation/KisDlgAnimationRenderer.cpp:493
-#: libs/ui/animation/KisDlgAnimationRenderer.cpp:496
-#: libs/ui/animation/KisDlgAnimationRenderer.cpp:503
-#: libs/ui/dialogs/kis_dlg_preferences.cc:535
-#: libs/ui/input/kis_tablet_debugger.cpp:104 libs/ui/kis_filter_manager.cc:243
-#: libs/ui/kis_filter_manager.cc:252 libs/ui/kis_layer_manager.cc:317
-#: libs/ui/kis_layer_manager.cc:1001 libs/ui/kis_node_manager.cpp:1226
-#: libs/ui/kis_node_manager.cpp:1289 libs/ui/KisApplication.cpp:931
-#: libs/ui/KisApplication.cpp:934 libs/ui/KisApplication.cpp:959
-#: libs/ui/KisApplication.cpp:991 libs/ui/KisApplication.cpp:1005
-#: libs/ui/KisApplication.cpp:1033 libs/ui/KisDocument.cpp:800
-#: libs/ui/KisDocument.cpp:1553 libs/ui/KisDocument.cpp:1595
-#: libs/ui/KisDocument.cpp:1603 libs/ui/KisMainWindow.cpp:848
-#: libs/ui/KisMainWindow.cpp:1002 libs/ui/KisMainWindow.cpp:1127
-#: libs/ui/KisMainWindow.cpp:1140 libs/ui/KisMainWindow.cpp:1235
-#: libs/ui/KisMainWindow.cpp:1896 libs/ui/KisPart.cpp:549
-#: libs/ui/KisPart.cpp:552 libs/ui/KisReferenceImage.cpp:191
-#: libs/ui/KisRemoteFileFetcher.cpp:54 libs/ui/KisTemplateCreateDia.cpp:297
-#: libs/ui/KisTemplateCreateDia.cpp:403 libs/ui/KisView.cpp:716
-#: libs/ui/KisWelcomePageWidget.cpp:576
-#: libs/ui/opengl/kis_opengl_canvas2.cpp:422
-#: libs/ui/widgets/kis_custom_image_widget.cc:277
-#: plugins/assistants/Assistants/kis_assistant_tool.cc:898
-#: plugins/assistants/Assistants/kis_assistant_tool.cc:901
-#: plugins/dockers/gamutmask/gamutmask_dock.cpp:301
-#: plugins/extensions/imagesplit/imagesplit.cpp:86
-#: plugins/extensions/imagesplit/imagesplit.cpp:88
-#: plugins/extensions/qmic/QMic.cpp:126 plugins/extensions/qmic/QMic.cpp:298
-#: plugins/extensions/qmic/QMic.cpp:327
-#: plugins/extensions/resourcemanager/dlg_create_bundle.cpp:297
-#: plugins/extensions/resourcemanager/resourcemanager.cpp:229
-#: plugins/filters/colorsfilters/kis_multichannel_filter_base.cpp:405
-#: plugins/tools/basictools/kis_tool_colorpicker.cc:157
-#: plugins/tools/basictools/kis_tool_colorpicker.cc:162
-#: plugins/tools/basictools/kis_tool_colorpicker.cc:209
-#: plugins/tools/defaulttool/referenceimagestool/KisReferenceImageCollection.cpp:107
-#: plugins/tools/defaulttool/referenceimagestool/ToolReferenceImages.cpp:134
-#: plugins/tools/defaulttool/referenceimagestool/ToolReferenceImages.cpp:169
-#: plugins/tools/defaulttool/referenceimagestool/ToolReferenceImages.cpp:191
-#: plugins/tools/defaulttool/referenceimagestool/ToolReferenceImages.cpp:218
-#: plugins/tools/defaulttool/referenceimagestool/ToolReferenceImages.cpp:227
-#: plugins/tools/svgtexttool/SvgTextEditor.cpp:1114
-#: plugins/tools/tool_transform2/kis_free_transform_strategy_gsl_helpers.cpp:358
-#, kde-format
-msgctxt "@title:window"
-msgid "Krita"
-msgstr "Krita"
 
 #: libs/ui/animation/KisAnimationRender.cpp:60
 #: libs/ui/animation/KisAnimationRender.cpp:112
@@ -13600,7 +13626,7 @@ msgid "Numerical"
 msgstr "Numérica"
 
 #: libs/ui/dialogs/kis_dlg_import_image_sequence.cpp:136
-#: libs/ui/KisMainWindow.cpp:1104
+#: libs/ui/KisMainWindow.cpp:1103
 #, kde-format
 msgid "Import Images"
 msgstr "Importar imaxes"
@@ -13665,7 +13691,7 @@ msgstr "Propiedades da capa"
 #: plugins/paintops/spray/kis_sprayop_option.cpp:60
 #: plugins/paintops/tangentnormal/kis_tangent_tilt_option.cpp:52
 #: plugins/paintops/tangentnormal/kis_tangent_tilt_option.cpp:56
-#: plugins/tools/basictools/kis_tool_colorpicker.cc:280
+#: plugins/tools/basictools/kis_tool_colorpicker.cc:282
 #: plugins/tools/svgtexttool/SvgTextEditor.cpp:1397
 #, no-c-format, kde-format
 msgid "%"
@@ -16959,11 +16985,11 @@ msgstr "Predefinición actual"
 #. i18n: ectx: property (text), widget (QPushButton, savePresetButton)
 #. i18n: ectx: property (toolTip), widget (QPushButton, bnSaveMask)
 #: libs/ui/forms/wdgpaintopsettings.ui:184
-#: libs/ui/forms/wdgsavebrushpreset.ui:215 libs/ui/KisMainWindow.cpp:984
+#: libs/ui/forms/wdgsavebrushpreset.ui:215 libs/ui/KisMainWindow.cpp:983
 #: libs/ui/widgets/kis_workspace_chooser.cpp:121
 #: plugins/dockers/gamutmask/forms/wdgGamutMaskChooser.ui:210
 #: plugins/extensions/resourcemanager/dlg_create_bundle.cpp:62
-#: plugins/extensions/resourcemanager/dlg_embed_tags.cpp:57
+#: plugins/extensions/resourcemanager/dlg_embed_tags.cpp:58
 #: plugins/generators/seexpr/wdgseexpr.ui:168
 #: plugins/paintops/libpaintop/kis_clipboard_brush_widget.cpp:164
 #: plugins/paintops/libpaintop/kis_custom_brush_widget.cpp:148
@@ -18792,7 +18818,7 @@ msgstr "Ferramentas de &Pintura"
 #: libs/ui/kis_control_frame.cpp:189 libs/ui/KisApplication.cpp:364
 #: plugins/dockers/patterndocker/patterndocker_dock.cpp:32
 #: plugins/extensions/resourcemanager/dlg_create_bundle.cpp:186
-#: plugins/extensions/resourcemanager/dlg_embed_tags.cpp:76
+#: plugins/extensions/resourcemanager/dlg_embed_tags.cpp:77
 #, kde-format
 msgid "Patterns"
 msgstr "Padróns"
@@ -18805,7 +18831,7 @@ msgstr "Padrón personalizado"
 #: libs/ui/kis_control_frame.cpp:236 libs/ui/KisApplication.cpp:341
 #: libs/ui/KisApplication.cpp:342
 #: plugins/extensions/resourcemanager/dlg_create_bundle.cpp:181
-#: plugins/extensions/resourcemanager/dlg_embed_tags.cpp:74
+#: plugins/extensions/resourcemanager/dlg_embed_tags.cpp:75
 #, kde-format
 msgid "Gradients"
 msgstr "Gradacións"
@@ -19288,17 +19314,17 @@ msgctxt "option category"
 msgid "Masked Brush"
 msgstr "Pincel con máscara"
 
-#: libs/ui/kis_popup_palette.cpp:221
+#: libs/ui/kis_popup_palette.cpp:225
 #, kde-format
 msgid "Mirror Canvas"
 msgstr "Reflectir o lenzo"
 
-#: libs/ui/kis_popup_palette.cpp:227
+#: libs/ui/kis_popup_palette.cpp:231
 #, kde-format
 msgid "Canvas Only"
 msgstr "Só o lenzo"
 
-#: libs/ui/kis_popup_palette.cpp:231
+#: libs/ui/kis_popup_palette.cpp:235
 #: plugins/paintops/colorsmudge/kis_colorsmudgeop_settings_widget.cpp:58
 #: plugins/paintops/colorsmudge/kis_colorsmudgeop_settings_widget.cpp:59
 #: plugins/paintops/colorsmudge/kis_colorsmudgeop_settings_widget.cpp:72
@@ -19336,25 +19362,25 @@ msgstr "Só o lenzo"
 msgid "100%"
 msgstr "100%"
 
-#: libs/ui/kis_popup_palette.cpp:234
+#: libs/ui/kis_popup_palette.cpp:238
 #, kde-format
 msgid "Zoom to 100%"
 msgstr "Ampliar ao 100%"
 
-#: libs/ui/kis_popup_palette.cpp:255
+#: libs/ui/kis_popup_palette.cpp:259
 #, fuzzy, kde-format
 #| msgid "Clear %1 columns"
 msgctxt "verb, to clear"
 msgid "Clear colors"
 msgstr "Limpar %1 columnas"
 
-#: libs/ui/kis_popup_palette.cpp:256
+#: libs/ui/kis_popup_palette.cpp:260
 #, fuzzy, kde-format
 #| msgid "Change the color of the line/border"
 msgid "Clear the colors of the popup palette"
 msgstr "Cambiar a cor da liña ou beira"
 
-#: libs/ui/kis_popup_palette.cpp:828
+#: libs/ui/kis_popup_palette.cpp:834
 #, kde-format
 msgid ""
 "There are no tags available to show in this popup. To add presets, you need "
@@ -19608,14 +19634,14 @@ msgstr "Punta do pincel"
 
 #: libs/ui/KisApplication.cpp:344
 #: plugins/extensions/resourcemanager/dlg_create_bundle.cpp:187
-#: plugins/extensions/resourcemanager/dlg_embed_tags.cpp:77
+#: plugins/extensions/resourcemanager/dlg_embed_tags.cpp:78
 #, kde-format
 msgid "Palettes"
 msgstr "Paletas"
 
 #: libs/ui/KisApplication.cpp:365 libs/ui/widgets/kis_workspace_chooser.cpp:88
 #: plugins/extensions/resourcemanager/dlg_create_bundle.cpp:188
-#: plugins/extensions/resourcemanager/dlg_embed_tags.cpp:78
+#: plugins/extensions/resourcemanager/dlg_embed_tags.cpp:79
 #, kde-format
 msgid "Workspaces"
 msgstr "Espazos de traballo"
@@ -20409,80 +20435,80 @@ msgstr "Motivo:"
 msgid "Also save your image as a Krita file."
 msgstr "Tamén gardar a imaxe como ficheiro de Krita."
 
-#: libs/ui/KisMainWindow.cpp:189
+#: libs/ui/KisMainWindow.cpp:188
 #, fuzzy, kde-format
 #| msgid "Styles"
 msgctxt "@action:inmenu"
 msgid "Styles"
 msgstr "Estilos"
 
-#: libs/ui/KisMainWindow.cpp:190
+#: libs/ui/KisMainWindow.cpp:189
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "&Dockers"
 msgstr "&Docas"
 
-#: libs/ui/KisMainWindow.cpp:191
+#: libs/ui/KisMainWindow.cpp:190
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "&Window"
 msgstr "&Xanela"
 
-#: libs/ui/KisMainWindow.cpp:192
+#: libs/ui/KisMainWindow.cpp:191
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "New &View"
 msgstr "Nova &vista"
 
-#: libs/ui/KisMainWindow.cpp:193
+#: libs/ui/KisMainWindow.cpp:192
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Wor&kspace"
 msgstr "Espa&zo de traballo"
 
-#: libs/ui/KisMainWindow.cpp:552
+#: libs/ui/KisMainWindow.cpp:551
 #: plugins/tools/svgtexttool/SvgTextEditor.cpp:315
 #, kde-format
 msgid "Show %1 Toolbar"
 msgstr "Mostrar a barra de ferramentas %1"
 
-#: libs/ui/KisMainWindow.cpp:554
+#: libs/ui/KisMainWindow.cpp:553
 #: plugins/tools/svgtexttool/SvgTextEditor.cpp:317
 #, kde-format
 msgid "Hide %1 Toolbar"
 msgstr "Agochar a barra de ferramentas %1"
 
-#: libs/ui/KisMainWindow.cpp:848
+#: libs/ui/KisMainWindow.cpp:847
 #, kde-format
 msgid "The chosen file's location could not be found. Does it exist?"
 msgstr "Non se puido atopar o lugar do ficheiro seleccionado. Existe?"
 
-#: libs/ui/KisMainWindow.cpp:953
+#: libs/ui/KisMainWindow.cpp:952
 #, kde-format
 msgid "Write Protected"
 msgstr "Protexido contra escritura"
 
-#: libs/ui/KisMainWindow.cpp:957
+#: libs/ui/KisMainWindow.cpp:956
 #, kde-format
 msgid "Recovered"
 msgstr "Recuperado"
 
-#: libs/ui/KisMainWindow.cpp:981
+#: libs/ui/KisMainWindow.cpp:980
 #, kde-format
 msgid "Save as %1"
 msgstr "Garda como %1"
 
-#: libs/ui/KisMainWindow.cpp:1002
+#: libs/ui/KisMainWindow.cpp:1001
 #, kde-format
 msgid "The file %1 does not exist."
 msgstr "O ficheiro %1 non existe."
 
-#: libs/ui/KisMainWindow.cpp:1104
+#: libs/ui/KisMainWindow.cpp:1103
 #, kde-format
 msgid "Open Images"
 msgstr "Abrir imaxes"
 
-#: libs/ui/KisMainWindow.cpp:1236
+#: libs/ui/KisMainWindow.cpp:1235
 #, kde-format
 msgid ""
 "You are saving a file while the image is still rendering. The saved file may "
@@ -20495,28 +20521,28 @@ msgstr ""
 "\n"
 "Seleccione un lugar no que o ficheiro orixinal non se vaia sobrescribir!"
 
-#: libs/ui/KisMainWindow.cpp:1292
+#: libs/ui/KisMainWindow.cpp:1291
 #, kde-format
 msgid "Exporting"
 msgstr "Exportando"
 
-#: libs/ui/KisMainWindow.cpp:1292
+#: libs/ui/KisMainWindow.cpp:1291
 #, kde-format
 msgid "Saving As"
 msgstr "Gardando como"
 
-#: libs/ui/KisMainWindow.cpp:1594
+#: libs/ui/KisMainWindow.cpp:1593
 #: libs/widgetutils/config/kstandardaction_p.h:41
 #, kde-format
 msgid "Create new document"
 msgstr "Crear un novo documento"
 
-#: libs/ui/KisMainWindow.cpp:1618
+#: libs/ui/KisMainWindow.cpp:1617
 #, kde-format
 msgid "Custom Document"
 msgstr "Documento Personalizado"
 
-#: libs/ui/KisMainWindow.cpp:1636
+#: libs/ui/KisMainWindow.cpp:1635
 #, kde-format
 msgid "Create from Clipboard"
 msgstr "Crear do portapapeis"
@@ -20623,7 +20649,7 @@ msgstr "Abrir a paleta"
 msgid "Do you want to store this palette in your current image?"
 msgstr "Quere gardar a paleta na imaxe actual?"
 
-#: libs/ui/KisPaletteEditor.cpp:246 libs/widgets/kis_palette_view.cpp:179
+#: libs/ui/KisPaletteEditor.cpp:246 libs/widgets/kis_palette_view.cpp:178
 #, fuzzy, kde-format
 #| msgctxt "@title:window"
 #| msgid "Removing Group"
@@ -20631,7 +20657,7 @@ msgctxt "@title:dialog"
 msgid "Removing Group"
 msgstr "Retirando o grupo"
 
-#: libs/ui/KisPaletteEditor.cpp:250 libs/widgets/kis_palette_view.cpp:182
+#: libs/ui/KisPaletteEditor.cpp:250 libs/widgets/kis_palette_view.cpp:181
 #, kde-format
 msgctxt "Shows up when deleting a swatch group"
 msgid "Keep the Colors"
@@ -20658,7 +20684,7 @@ msgid "Add a Color"
 msgstr "Engadir unha cor"
 
 #: libs/ui/KisPaletteEditor.cpp:368 libs/ui/KisPaletteEditor.cpp:419
-#: libs/widgets/kis_palette_view.cpp:125
+#: libs/widgets/kis_palette_view.cpp:124
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -20669,7 +20695,7 @@ msgstr ""
 "pinturas que ten á súa disposición. O resto de cores son cores procesadas."
 
 #: libs/ui/KisPaletteEditor.cpp:372 libs/ui/KisPaletteEditor.cpp:422
-#: libs/widgets/kis_palette_view.cpp:127
+#: libs/widgets/kis_palette_view.cpp:126
 #, kde-format
 msgid "ID"
 msgstr "Identificador"
@@ -20686,7 +20712,7 @@ msgstr "Nome da cor:"
 msgid "Spot color"
 msgstr "Cor sólida"
 
-#: libs/ui/KisPaletteEditor.cpp:400 libs/widgets/kis_palette_view.cpp:114
+#: libs/ui/KisPaletteEditor.cpp:400 libs/widgets/kis_palette_view.cpp:113
 #, fuzzy, kde-format
 #| msgctxt "@title:window"
 #| msgid "Add a new Colorset Entry"
@@ -20694,13 +20720,13 @@ msgctxt "@title:dialog"
 msgid "Add a new Colorset Entry"
 msgstr "Engadir unha nova entrada ao grupo de cores"
 
-#: libs/ui/KisPaletteEditor.cpp:425 libs/widgets/kis_palette_view.cpp:130
+#: libs/ui/KisPaletteEditor.cpp:425 libs/widgets/kis_palette_view.cpp:129
 #, kde-format
 msgctxt "Spot color"
 msgid "Spot"
 msgstr "Sólida"
 
-#: libs/ui/KisPaletteEditor.cpp:519 libs/ui/KisPaletteEditor.cpp:522
+#: libs/ui/KisPaletteEditor.cpp:518 libs/ui/KisPaletteEditor.cpp:521
 #, kde-format
 msgctxt "Default new group name"
 msgid "New Group %1"
@@ -23188,7 +23214,7 @@ msgstr "Nivel de medio gris:"
 
 #: libs/ui/widgets/kis_paintop_presets_chooser_popup.cpp:55
 #: libs/ui/widgets/kis_paintop_presets_popup.cpp:139
-#: plugins/dockers/gamutmask/KisGamutMaskChooser.cpp:160
+#: plugins/dockers/gamutmask/KisGamutMaskChooser.cpp:166
 #, kde-format
 msgctxt "@title Which elements to display (e.g., thumbnails or details)"
 msgid "Display"
@@ -23196,14 +23222,14 @@ msgstr "Mostrar"
 
 #: libs/ui/widgets/kis_paintop_presets_chooser_popup.cpp:61
 #: libs/ui/widgets/kis_paintop_presets_popup.cpp:145
-#: plugins/dockers/gamutmask/KisGamutMaskChooser.cpp:168
+#: plugins/dockers/gamutmask/KisGamutMaskChooser.cpp:174
 #, kde-format
 msgid "Thumbnails"
 msgstr "Miniaturas"
 
 #: libs/ui/widgets/kis_paintop_presets_chooser_popup.cpp:66
 #: libs/ui/widgets/kis_paintop_presets_popup.cpp:150
-#: plugins/dockers/gamutmask/KisGamutMaskChooser.cpp:174
+#: plugins/dockers/gamutmask/KisGamutMaskChooser.cpp:180
 #, kde-format
 msgid "Details"
 msgstr "Detalles"
@@ -23773,19 +23799,19 @@ msgstr "Seleccione un ficheiro para cargar…"
 msgid "Select a directory to load..."
 msgstr "Seleccione un directorio para cargar…"
 
-#: libs/widgets/kis_palette_view.cpp:118
+#: libs/widgets/kis_palette_view.cpp:117
 #, kde-format
 msgctxt "Name for default group"
 msgid "Default"
 msgstr "Predeterminado"
 
-#: libs/widgets/kis_palette_view.cpp:132
+#: libs/widgets/kis_palette_view.cpp:131
 #, kde-format
 msgctxt "Part of a default name for a color"
 msgid "Color"
 msgstr "Cor"
 
-#: libs/widgets/kis_palette_view.cpp:158
+#: libs/widgets/kis_palette_view.cpp:157
 #, fuzzy, kde-format
 #| msgctxt "@title:window"
 #| msgid "Add a new group"
@@ -23793,13 +23819,13 @@ msgctxt "@title:dialog"
 msgid "Add a new group"
 msgstr "Engadir un novo grupo"
 
-#: libs/widgets/kis_palette_view.cpp:161
+#: libs/widgets/kis_palette_view.cpp:160
 #, kde-format
 msgctxt "Part of default name for a new group"
 msgid "Color Group"
 msgstr "Grupo de cores"
 
-#: libs/widgets/kis_palette_view.cpp:162
+#: libs/widgets/kis_palette_view.cpp:161
 #, kde-format
 msgctxt "Name for a group"
 msgid "Name"
@@ -23861,7 +23887,7 @@ msgstr "Importar unha nova paleta dun ficheiro"
 msgid "Export current palette to file"
 msgstr "Exportar a paleta actual a un ficheiro"
 
-#: libs/widgets/KisPaletteModel.cpp:429
+#: libs/widgets/KisPaletteModel.cpp:428
 #, kde-format
 msgid "Empty slot"
 msgstr "Rañura baleira"
@@ -23900,7 +23926,7 @@ msgid "Recent:"
 msgstr "Recente:"
 
 #: libs/widgets/KoColorSetWidget.cpp:107
-#: plugins/dockers/palettedocker/palettedocker_dock.cpp:128
+#: plugins/dockers/palettedocker/palettedocker_dock.cpp:129
 #, kde-format
 msgid "Choose palette"
 msgstr "Escoller a paleta"
@@ -24068,7 +24094,7 @@ msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, paletteLabel)
 #: libs/widgets/KoEditColorSetDialog.cpp:215
-#: plugins/dockers/palettedocker/palettedocker_dock.cpp:66
+#: plugins/dockers/palettedocker/palettedocker_dock.cpp:67
 #: plugins/filters/palettize/palettize.ui:35
 #, kde-format
 msgid "Palette"
@@ -27399,7 +27425,7 @@ msgstr "Editar a máscara de gama"
 
 #: plugins/dockers/gamutmask/gamutmask_dock.cpp:68
 #: plugins/extensions/resourcemanager/dlg_create_bundle.cpp:182
-#: plugins/extensions/resourcemanager/dlg_embed_tags.cpp:75
+#: plugins/extensions/resourcemanager/dlg_embed_tags.cpp:76
 #, kde-format
 msgid "Gamut Masks"
 msgstr "Máscaras de gama"
@@ -27722,17 +27748,17 @@ msgctxt "(qtundo-format)"
 msgid "Cancel Quick Selection Mask"
 msgstr "Cancelar a máscara de selección rápida"
 
-#: plugins/dockers/layerdocker/NodeDelegate.cpp:1193
+#: plugins/dockers/layerdocker/NodeDelegate.cpp:1198
 #, kde-format
 msgid "%1 %"
 msgstr "%1 %"
 
-#: plugins/dockers/layerdocker/NodeToolTip.cpp:52
+#: plugins/dockers/layerdocker/NodeToolTip.cpp:54
 #, kde-format
 msgid "No"
 msgstr "Non"
 
-#: plugins/dockers/layerdocker/NodeToolTip.cpp:52
+#: plugins/dockers/layerdocker/NodeToolTip.cpp:54
 #, kde-format
 msgid "Yes"
 msgstr "Si"
@@ -28081,24 +28107,24 @@ msgstr "Configurar os puntos negros e blancos da vista"
 msgid "Overview"
 msgstr "Resumo"
 
-#: plugins/dockers/palettedocker/palettedocker_dock.cpp:75
+#: plugins/dockers/palettedocker/palettedocker_dock.cpp:76
 #, kde-format
 msgid "Add a color"
 msgstr "Engadir unha cor"
 
 #. i18n: ectx: property (toolTip), widget (QToolButton, bnRemove)
-#: plugins/dockers/palettedocker/palettedocker_dock.cpp:76
+#: plugins/dockers/palettedocker/palettedocker_dock.cpp:77
 #: plugins/dockers/palettedocker/wdgpalettedock.ui:57
 #, kde-format
 msgid "Delete color"
 msgstr "Eliminar a cor"
 
-#: plugins/dockers/palettedocker/palettedocker_dock.cpp:77
+#: plugins/dockers/palettedocker/palettedocker_dock.cpp:78
 #, kde-format
 msgid "Modify this spot"
 msgstr "Modificar este punto"
 
-#: plugins/dockers/palettedocker/palettedocker_dock.cpp:78
+#: plugins/dockers/palettedocker/palettedocker_dock.cpp:79
 #, kde-format
 msgid "Edit this palette"
 msgstr "Editar a paleta"
@@ -28111,7 +28137,7 @@ msgstr "Engadir unha cor principal."
 
 #: plugins/dockers/presetdocker/presetdocker_dock.cpp:38
 #: plugins/extensions/resourcemanager/dlg_create_bundle.cpp:180
-#: plugins/extensions/resourcemanager/dlg_embed_tags.cpp:73
+#: plugins/extensions/resourcemanager/dlg_embed_tags.cpp:74
 #, kde-format
 msgid "Brush Presets"
 msgstr "Predefinicións de pinceis"
@@ -30753,7 +30779,7 @@ msgid "Create Resource Bundle"
 msgstr "Crear un paquete de recursos"
 
 #: plugins/extensions/resourcemanager/dlg_create_bundle.cpp:179
-#: plugins/extensions/resourcemanager/dlg_embed_tags.cpp:72
+#: plugins/extensions/resourcemanager/dlg_embed_tags.cpp:73
 #, kde-format
 msgid "Brushes"
 msgstr "Pinceis"
@@ -34403,22 +34429,22 @@ msgstr "Non se puido filtrar a configuración: %1."
 msgid "Could not load metadata for layer %1."
 msgstr "Non se puideron cargar os metadatos da capa %1."
 
-#: plugins/impex/libkra/kis_kra_load_visitor.cpp:747
-#, kde-format
-msgid "Could not load raster selection %1."
-msgstr "Non se puido cargar a selección raster %1."
-
-#: plugins/impex/libkra/kis_kra_load_visitor.cpp:765
+#: plugins/impex/libkra/kis_kra_load_visitor.cpp:768
 #, kde-format
 msgid "Could not load vector selection %1."
 msgstr "Non se puido cargar a selección vectorial %1."
 
-#: plugins/impex/libkra/kis_kra_load_visitor.cpp:792
+#: plugins/impex/libkra/kis_kra_load_visitor.cpp:784
+#, kde-format
+msgid "Could not load raster selection %1."
+msgstr "Non se puido cargar a selección raster %1."
+
+#: plugins/impex/libkra/kis_kra_load_visitor.cpp:814
 #, kde-format
 msgid "Could not load keyframes from %1."
 msgstr "Non se puideron cargar os fotogramas clave de %1."
 
-#: plugins/impex/libkra/kis_kra_load_visitor.cpp:806
+#: plugins/impex/libkra/kis_kra_load_visitor.cpp:828
 #, kde-format
 msgid ""
 "parsing error in the keyframe file %1 at line %2, column %3\n"
@@ -34428,7 +34454,7 @@ msgstr ""
 "columna %3.\n"
 "Mensaxe de erro: %4"
 
-#: plugins/impex/libkra/kis_kra_load_visitor.cpp:819
+#: plugins/impex/libkra/kis_kra_load_visitor.cpp:841
 #, kde-format
 msgid "unknown keyframe channel type: %1 in %2"
 msgstr "Tipo descoñecido de canle de fotograma clave: %1 en %2."
@@ -39087,7 +39113,7 @@ msgid "Percentage:"
 msgstr "Porcentaxe:"
 
 #: plugins/python/comics_project_management_tools/comics_export_dialog.py:220
-#: plugins/python/comics_project_management_tools/comics_project_manager_docker.py:272
+#: plugins/python/comics_project_management_tools/comics_project_manager_docker.py:276
 msgid "Export Settings"
 msgstr "Configuración de exportación"
 
@@ -39793,68 +39819,68 @@ msgstr "Base de datos:"
 msgid "Publisher"
 msgstr "Editor"
 
-#: plugins/python/comics_project_management_tools/comics_project_manager_docker.py:119
+#: plugins/python/comics_project_management_tools/comics_project_manager_docker.py:123
 msgid "No keywords"
 msgstr "Sen palabras clave"
 
-#: plugins/python/comics_project_management_tools/comics_project_manager_docker.py:133
+#: plugins/python/comics_project_management_tools/comics_project_manager_docker.py:137
 msgid "No last edit timestamp"
 msgstr "Non hai marca de hora da última edición"
 
-#: plugins/python/comics_project_management_tools/comics_project_manager_docker.py:153
+#: plugins/python/comics_project_management_tools/comics_project_manager_docker.py:157
 msgid "No description"
 msgstr "Non hai unha descrición."
 
-#: plugins/python/comics_project_management_tools/comics_project_manager_docker.py:198
+#: plugins/python/comics_project_management_tools/comics_project_manager_docker.py:202
 msgid "Comics Manager"
 msgstr "Xestor de cómics"
 
-#: plugins/python/comics_project_management_tools/comics_project_manager_docker.py:254
+#: plugins/python/comics_project_management_tools/comics_project_manager_docker.py:258
 msgid "New Project"
 msgstr "Novo proxecto"
 
-#: plugins/python/comics_project_management_tools/comics_project_manager_docker.py:256
+#: plugins/python/comics_project_management_tools/comics_project_manager_docker.py:260
 msgid "Open Project"
 msgstr "Abrir un proxecto"
 
-#: plugins/python/comics_project_management_tools/comics_project_manager_docker.py:268
+#: plugins/python/comics_project_management_tools/comics_project_manager_docker.py:272
 msgid "Project Settings"
 msgstr "Configuración do proxecto"
 
-#: plugins/python/comics_project_management_tools/comics_project_manager_docker.py:270
+#: plugins/python/comics_project_management_tools/comics_project_manager_docker.py:274
 #: plugins/python/comics_project_management_tools/comics_project_setup_wizard.py:133
 msgid "Meta Data"
 msgstr "Metadatos"
 
-#: plugins/python/comics_project_management_tools/comics_project_manager_docker.py:288
+#: plugins/python/comics_project_management_tools/comics_project_manager_docker.py:292
 msgid "Add Page"
 msgstr "Engadir unha páxina"
 
-#: plugins/python/comics_project_management_tools/comics_project_manager_docker.py:290
+#: plugins/python/comics_project_management_tools/comics_project_manager_docker.py:294
 msgid "Add Page from Template"
 msgstr "Engadir unha páxina a partir dun modelo"
 
-#: plugins/python/comics_project_management_tools/comics_project_manager_docker.py:292
+#: plugins/python/comics_project_management_tools/comics_project_manager_docker.py:296
 msgid "Add Existing Pages"
 msgstr "Engadir páxinas existentes"
 
-#: plugins/python/comics_project_management_tools/comics_project_manager_docker.py:294
+#: plugins/python/comics_project_management_tools/comics_project_manager_docker.py:298
 msgid "Remove Page"
 msgstr "Retirar a páxina"
 
-#: plugins/python/comics_project_management_tools/comics_project_manager_docker.py:296
+#: plugins/python/comics_project_management_tools/comics_project_manager_docker.py:300
 msgid "Batch Resize"
 msgstr "Cambio de tamaño en lote"
 
-#: plugins/python/comics_project_management_tools/comics_project_manager_docker.py:299
+#: plugins/python/comics_project_management_tools/comics_project_manager_docker.py:303
 msgid "View Page In Window"
 msgstr "Ver a páxina nunha xanela"
 
-#: plugins/python/comics_project_management_tools/comics_project_manager_docker.py:301
+#: plugins/python/comics_project_management_tools/comics_project_manager_docker.py:305
 msgid "Scrape Author Info"
 msgstr "Raspar a información do autor"
 
-#: plugins/python/comics_project_management_tools/comics_project_manager_docker.py:302
+#: plugins/python/comics_project_management_tools/comics_project_manager_docker.py:306
 msgid ""
 "Search for author information in documents and add it to the author list. "
 "This does not check for duplicates."
@@ -39862,19 +39888,19 @@ msgstr ""
 "Buscar información do autor en documentos e engadilo á lista de autores. "
 "Isto non comproba se hai duplicados."
 
-#: plugins/python/comics_project_management_tools/comics_project_manager_docker.py:304
+#: plugins/python/comics_project_management_tools/comics_project_manager_docker.py:308
 msgid "Scrape Text for Translation"
 msgstr "Raspar o texto para traducilo"
 
-#: plugins/python/comics_project_management_tools/comics_project_manager_docker.py:325
+#: plugins/python/comics_project_management_tools/comics_project_manager_docker.py:329
 msgid "Export Comic"
 msgstr "Exportar o cómic"
 
-#: plugins/python/comics_project_management_tools/comics_project_manager_docker.py:330
+#: plugins/python/comics_project_management_tools/comics_project_manager_docker.py:334
 msgid "Copy Location"
 msgstr "Copiar a ruta"
 
-#: plugins/python/comics_project_management_tools/comics_project_manager_docker.py:331
+#: plugins/python/comics_project_management_tools/comics_project_manager_docker.py:335
 msgid ""
 "Copies the path of the project to the clipboard. Useful for quickly copying "
 "to a file manager or the like."
@@ -39882,19 +39908,19 @@ msgstr ""
 "Copia a ruta do proxecto no portapapeis. Útil para copiar rapidamente nun "
 "xestor de ficheiros ou similar."
 
-#: plugins/python/comics_project_management_tools/comics_project_manager_docker.py:348
+#: plugins/python/comics_project_management_tools/comics_project_manager_docker.py:352
 msgid "Please select the JSON comic config file."
 msgstr "Seleccionar o ficheiro JSON de configuración de cómic."
 
-#: plugins/python/comics_project_management_tools/comics_project_manager_docker.py:348
+#: plugins/python/comics_project_management_tools/comics_project_manager_docker.py:352
 msgid "JSON files"
 msgstr "Ficheiros JSON"
 
-#: plugins/python/comics_project_management_tools/comics_project_manager_docker.py:351
+#: plugins/python/comics_project_management_tools/comics_project_manager_docker.py:355
 msgid "Config cannot be used"
 msgstr "A configuración non pode usarse"
 
-#: plugins/python/comics_project_management_tools/comics_project_manager_docker.py:351
+#: plugins/python/comics_project_management_tools/comics_project_manager_docker.py:355
 msgid ""
 "Krita doesn't have write access to this folder, so new files cannot be made. "
 "Please configure the folder access or move the project to a folder that can "
@@ -39904,55 +39930,55 @@ msgstr ""
 "crear novos ficheiros. Configure o acceso ao cartafol ou mova o proxecto a "
 "un cartafol no que se poida escribir."
 
-#: plugins/python/comics_project_management_tools/comics_project_manager_docker.py:385
+#: plugins/python/comics_project_management_tools/comics_project_manager_docker.py:389
 msgid "Loading Pages..."
 msgstr "Cargando as páxinas…"
 
-#: plugins/python/comics_project_management_tools/comics_project_manager_docker.py:535
-#: plugins/python/comics_project_management_tools/comics_project_manager_docker.py:655
+#: plugins/python/comics_project_management_tools/comics_project_manager_docker.py:542
+#: plugins/python/comics_project_management_tools/comics_project_manager_docker.py:662
 #: plugins/python/comics_project_management_tools/comics_template_dialog.py:129
 msgid "Krita files"
 msgstr "Ficheiros de Krita"
 
-#: plugins/python/comics_project_management_tools/comics_project_manager_docker.py:535
+#: plugins/python/comics_project_management_tools/comics_project_manager_docker.py:542
 msgid "Which existing pages to add?"
 msgstr "Que páxinas existentes engadir?"
 
-#: plugins/python/comics_project_management_tools/comics_project_manager_docker.py:595
-#: plugins/python/comics_project_management_tools/comics_project_manager_docker.py:614
+#: plugins/python/comics_project_management_tools/comics_project_manager_docker.py:602
+#: plugins/python/comics_project_management_tools/comics_project_manager_docker.py:621
 msgid "Where are the templates located?"
 msgstr "Onde están situados os modelos?"
 
-#: plugins/python/comics_project_management_tools/comics_project_manager_docker.py:638
+#: plugins/python/comics_project_management_tools/comics_project_manager_docker.py:645
 #: plugins/python/comics_project_management_tools/comics_project_settings_dialog.py:124
 msgid "Where should the pages go?"
 msgstr "Onde deberían ir as páxinas?"
 
-#: plugins/python/comics_project_management_tools/comics_project_manager_docker.py:655
+#: plugins/python/comics_project_management_tools/comics_project_manager_docker.py:662
 msgid "Which image should be the basis the new page?"
 msgstr "Que imaxes deberían servir de base para a nova páxina?"
 
-#: plugins/python/comics_project_management_tools/comics_project_manager_docker.py:810
+#: plugins/python/comics_project_management_tools/comics_project_manager_docker.py:817
 msgid "Export success"
 msgstr "Completouse a exportación"
 
-#: plugins/python/comics_project_management_tools/comics_project_manager_docker.py:810
+#: plugins/python/comics_project_management_tools/comics_project_manager_docker.py:817
 msgid "The files have been written to the export folder."
 msgstr "O ficheiros escribíronse no cartafol de exportación."
 
-#: plugins/python/comics_project_management_tools/comics_project_manager_docker.py:887
+#: plugins/python/comics_project_management_tools/comics_project_manager_docker.py:894
 msgid "Resize all Pages"
 msgstr "Cambiar o tamaño de todas as páxinas"
 
-#: plugins/python/comics_project_management_tools/comics_project_manager_docker.py:898
+#: plugins/python/comics_project_management_tools/comics_project_manager_docker.py:905
 msgid "Resizing pages..."
 msgstr "Cambiando o tamaño das páxinas…"
 
-#: plugins/python/comics_project_management_tools/comics_project_manager_docker.py:899
+#: plugins/python/comics_project_management_tools/comics_project_manager_docker.py:906
 msgid "Resizing Pages"
 msgstr "Cambiando o tamaño das páxinas"
 
-#: plugins/python/comics_project_management_tools/comics_project_manager_docker.py:913
+#: plugins/python/comics_project_management_tools/comics_project_manager_docker.py:920
 #, python-brace-format
 msgid ""
 "{pages} of {pagesTotal} done. \n"
@@ -39963,11 +39989,11 @@ msgstr ""
 "Tempo transcorrido: {passedString}:\n"
 " Estimado:{estimated}"
 
-#: plugins/python/comics_project_management_tools/comics_project_manager_docker.py:961
+#: plugins/python/comics_project_management_tools/comics_project_manager_docker.py:968
 msgid "Scraping success"
 msgstr "Completouse o raspado"
 
-#: plugins/python/comics_project_management_tools/comics_project_manager_docker.py:961
+#: plugins/python/comics_project_management_tools/comics_project_manager_docker.py:968
 #, python-brace-format
 msgid "POT file has been written to: {file}"
 msgstr "O ficheiro POT escribiuse en: {file}"
@@ -41413,13 +41439,13 @@ msgid "Cannot pick a color as the active layer is not visible."
 msgstr ""
 "Non se pode seleccionar unha cor porque a capa activa non está visíbel."
 
-#: plugins/tools/basictools/kis_tool_colorpicker.cc:209
+#: plugins/tools/basictools/kis_tool_colorpicker.cc:210
 #, kde-format
 msgid "Cannot write to palette file %1. Maybe it is read-only."
 msgstr ""
 "Non se pode gardar no ficheiro de paleta %1. Quizais sexa só para lectura."
 
-#: plugins/tools/basictools/kis_tool_colorpicker.h:126
+#: plugins/tools/basictools/kis_tool_colorpicker.h:125
 #, kde-format
 msgid "Color Selector Tool"
 msgstr "Ferramenta de selector de cores"
@@ -44371,6 +44397,15 @@ msgstr "Aditivo"
 #, kde-format
 msgid "Work Recursively"
 msgstr "Operar de maneira recursiva"
+
+#, fuzzy
+#~| msgctxt "(qtundo-format)"
+#~| msgid "Set filter stack"
+#~ msgctxt ""
+#~ "It appears in the checkbox next to the filter box in resources dockers; "
+#~ "must be short."
+#~ msgid "filter by tag"
+#~ msgstr "Estabelecer o grupo de efectos"
 
 #~ msgctxt "@info:tooltip"
 #~ msgid "%1"
@@ -85656,9 +85691,6 @@ msgstr "Operar de maneira recursiva"
 
 #~ msgid "Filename to write profiling information into."
 #~ msgstr "Nome do ficheiro para lle rexistrar a información de perfilado."
-
-#~ msgid "Add Resources"
-#~ msgstr "Engadir recursos"
 
 #~ msgid "Krita Brush Presets (*.kpp)"
 #~ msgstr "Predefinicións de pinceis de Krita (*.kpp)"
