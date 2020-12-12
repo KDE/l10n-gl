@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kleopatra\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2020-12-10 02:36+0100\n"
+"POT-Creation-Date: 2020-12-12 02:35+0100\n"
 "PO-Revision-Date: 2020-01-12 11:14+0100\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Galician <proxecto@trasno.gal>\n"
@@ -189,17 +189,19 @@ msgstr "O movemento da chave á tarxeta fallou: %1"
 #: src/commands/certificatetopivcardcommand.cpp:165
 #: src/commands/certificatetopivcardcommand.cpp:234
 #: src/commands/changepincommand.cpp:166
-#: src/commands/createopenpgpkeyfromcardkeyscommand.cpp:188
+#: src/commands/createcsrforcardkeycommand.cpp:179
+#: src/commands/createcsrforcardkeycommand.cpp:195
+#: src/commands/createopenpgpkeyfromcardkeyscommand.cpp:172
 #: src/commands/keytocardcommand.cpp:457 src/commands/keytocardcommand.cpp:493
 #: src/commands/keytocardcommand.cpp:507
 #: src/commands/pivgeneratecardkeycommand.cpp:216
 #: src/commands/setpivcardapplicationadministrationkeycommand.cpp:179
 #: src/commands/setpivcardapplicationadministrationkeycommand.cpp:209
 #: src/view/netkeywidget.cpp:222 src/view/nullpinwidget.cpp:108
-#: src/view/pgpcardwidget.cpp:310 src/view/pgpcardwidget.cpp:325
-#: src/view/pgpcardwidget.cpp:389 src/view/pgpcardwidget.cpp:395
-#: src/view/pgpcardwidget.cpp:401 src/view/pgpcardwidget.cpp:424
-#: src/view/pgpcardwidget.cpp:451 src/view/pgpcardwidget.cpp:471
+#: src/view/pgpcardwidget.cpp:296 src/view/pgpcardwidget.cpp:311
+#: src/view/pgpcardwidget.cpp:375 src/view/pgpcardwidget.cpp:381
+#: src/view/pgpcardwidget.cpp:387 src/view/pgpcardwidget.cpp:410
+#: src/view/pgpcardwidget.cpp:437 src/view/pgpcardwidget.cpp:457
 #, kde-format
 msgctxt "@title"
 msgid "Error"
@@ -218,7 +220,7 @@ msgid "Sorry! No suitable certificate to write to this card slot was found."
 msgstr ""
 
 #: src/commands/certificatetopivcardcommand.cpp:132
-#: src/view/pivcardwidget.cpp:256
+#: src/view/pivcardwidget.cpp:260
 #, kde-format
 msgctxt "X.509 certificate DN (validity, created: date)"
 msgid "%1 (%2, created: %3)"
@@ -271,12 +273,12 @@ msgstr "O movemento da chave á tarxeta fallou: %1"
 
 #: src/commands/certificatetopivcardcommand.cpp:238
 #: src/commands/changepincommand.cpp:168
-#: src/commands/createopenpgpkeyfromcardkeyscommand.cpp:191
+#: src/commands/createopenpgpkeyfromcardkeyscommand.cpp:175
 #: src/commands/keytocardcommand.cpp:472 src/commands/keytocardcommand.cpp:496
 #: src/commands/pivgeneratecardkeycommand.cpp:218
 #: src/commands/setpivcardapplicationadministrationkeycommand.cpp:211
-#: src/view/pgpcardwidget.cpp:333 src/view/pgpcardwidget.cpp:430
-#: src/view/pgpcardwidget.cpp:477
+#: src/view/pgpcardwidget.cpp:319 src/view/pgpcardwidget.cpp:416
+#: src/view/pgpcardwidget.cpp:463
 #, kde-format
 msgctxt "@title"
 msgid "Success"
@@ -404,6 +406,7 @@ msgid "Passphrase Change Succeeded"
 msgstr "Cambiouse a frase de paso"
 
 #: src/commands/changepincommand.cpp:113
+#: src/commands/createcsrforcardkeycommand.cpp:130
 #: src/commands/createopenpgpkeyfromcardkeyscommand.cpp:103
 #, fuzzy, kde-format
 #| msgid "Failed to find the card with the serial number: %1"
@@ -583,6 +586,26 @@ msgstr ""
 msgid "CRL cache cleared successfully."
 msgstr "Caché de CRL limpada satisfactoriamente."
 
+#. i18n: ectx: property (windowTitle), widget (QWidget, CertificateDetailsWidget)
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
+#: src/commands/createcsrforcardkeycommand.cpp:140
+#: src/dialogs/certificatedetailswidget.ui:14
+#: src/dialogs/certificatedetailswidget.ui:76
+#, kde-format
+msgid "Certificate Details"
+msgstr "Detalles do certificado"
+
+#: src/commands/createcsrforcardkeycommand.cpp:178
+#: src/commands/createcsrforcardkeycommand.cpp:194
+#, fuzzy, kde-format
+#| msgctxt "@info"
+#| msgid "Moving the key to the card failed: %1"
+msgctxt "@info"
+msgid ""
+"Creating a CSR for the card key failed:\n"
+"%1"
+msgstr "O movemento da chave á tarxeta fallou: %1"
+
 #: src/commands/createopenpgpkeyfromcardkeyscommand.cpp:112
 #, kde-format
 msgctxt "@info"
@@ -605,7 +628,7 @@ msgstr "Crear unha parella de chaves OpenPGP novas"
 msgid "Enter User ID"
 msgstr "Identificadores de usuario asinados:"
 
-#: src/commands/createopenpgpkeyfromcardkeyscommand.cpp:187
+#: src/commands/createopenpgpkeyfromcardkeyscommand.cpp:171
 #, fuzzy, kde-format
 #| msgctxt "@info"
 #| msgid "Moving the key to the card failed: %1"
@@ -613,7 +636,7 @@ msgctxt "@info"
 msgid "Creating an OpenPGP key from the card keys failed: %1"
 msgstr "O movemento da chave á tarxeta fallou: %1"
 
-#: src/commands/createopenpgpkeyfromcardkeyscommand.cpp:190
+#: src/commands/createopenpgpkeyfromcardkeyscommand.cpp:174
 #, fuzzy, kde-format
 #| msgctxt "@info"
 #| msgid "Successfully generated a new key for this card."
@@ -1667,8 +1690,8 @@ msgstr "Seleccionar todo"
 msgid "Please select the card slot the key should be written to:"
 msgstr "Seleccione un dos certificados seguintes:"
 
-#: src/commands/keytocardcommand.cpp:214 src/view/pgpcardwidget.cpp:411
-#: src/view/pgpcardwidget.cpp:458
+#: src/commands/keytocardcommand.cpp:214 src/view/pgpcardwidget.cpp:397
+#: src/view/pgpcardwidget.cpp:444
 #, fuzzy, kde-format
 #| msgid "Failed to find the card with the serial number: %1"
 msgid "Failed to find the OpenPGP card with the serial number: %1"
@@ -1681,7 +1704,7 @@ msgstr ""
 
 #: src/commands/keytocardcommand.cpp:242 src/commands/keytocardcommand.cpp:370
 #: src/commands/pivgeneratecardkeycommand.cpp:132
-#: src/view/pgpcardwidget.cpp:343
+#: src/view/pgpcardwidget.cpp:329
 #, kde-format
 msgid ""
 "It will no longer be possible to decrypt past communication encrypted for "
@@ -3051,62 +3074,62 @@ msgctxt "@title:window"
 msgid "Decrypt/Verify Files"
 msgstr "Descifrar ou verificar ficheiros"
 
-#: src/crypto/decryptverifytask.cpp:180
+#: src/crypto/decryptverifytask.cpp:175
 #, kde-format
 msgid "Error: Signature not verified"
 msgstr "Erro: A sinatura non está verificada"
 
-#: src/crypto/decryptverifytask.cpp:182
+#: src/crypto/decryptverifytask.cpp:177
 #, kde-format
 msgid "Good signature"
 msgstr "Sinatura boa"
 
-#: src/crypto/decryptverifytask.cpp:184
+#: src/crypto/decryptverifytask.cpp:179
 #, kde-format
 msgid "Signing certificate was revoked"
 msgstr "Revogouse o certificado de sinatura"
 
-#: src/crypto/decryptverifytask.cpp:186
+#: src/crypto/decryptverifytask.cpp:181
 #, kde-format
 msgid "Signing certificate is expired"
 msgstr "O certificado de sinatura caducou"
 
-#: src/crypto/decryptverifytask.cpp:188
+#: src/crypto/decryptverifytask.cpp:183
 #, kde-format
 msgid "Certificate is not available"
 msgstr "O certificado non está dispoñíbel"
 
-#: src/crypto/decryptverifytask.cpp:190
+#: src/crypto/decryptverifytask.cpp:185
 #, kde-format
 msgid "Signature expired"
 msgstr "A sinatura caducou"
 
-#: src/crypto/decryptverifytask.cpp:192
+#: src/crypto/decryptverifytask.cpp:187
 #, kde-format
 msgid "CRL missing"
 msgstr "Falta a CRL"
 
-#: src/crypto/decryptverifytask.cpp:194
+#: src/crypto/decryptverifytask.cpp:189
 #, kde-format
 msgid "CRL too old"
 msgstr "A CRL é demasiado vella"
 
-#: src/crypto/decryptverifytask.cpp:196
+#: src/crypto/decryptverifytask.cpp:191
 #, kde-format
 msgid "Bad policy"
 msgstr "Política mala"
 
-#: src/crypto/decryptverifytask.cpp:198
+#: src/crypto/decryptverifytask.cpp:193
 #, kde-format
 msgid "System error"
 msgstr "Erro do sistema"
 
-#: src/crypto/decryptverifytask.cpp:200
+#: src/crypto/decryptverifytask.cpp:195
 #, kde-format
 msgid "Bad signature"
 msgstr "Sinatura incorrecta"
 
-#: src/crypto/decryptverifytask.cpp:211
+#: src/crypto/decryptverifytask.cpp:206
 #, kde-format
 msgid ""
 "The signature is valid but the trust in the certificate's validity is only "
@@ -3115,20 +3138,20 @@ msgstr ""
 "A sinatura é correcta pero a confianza na validez do certificado é só "
 "marxinal."
 
-#: src/crypto/decryptverifytask.cpp:213
+#: src/crypto/decryptverifytask.cpp:208
 #, kde-format
 msgid "The signature is valid and the certificate's validity is fully trusted."
 msgstr ""
 "A sinatura é correcta e a confianza na validez do certificado é completa."
 
-#: src/crypto/decryptverifytask.cpp:215
+#: src/crypto/decryptverifytask.cpp:210
 #, kde-format
 msgid ""
 "The signature is valid and the certificate's validity is ultimately trusted."
 msgstr ""
 "A sinatura é correcta e a confianza na validez do certificado é definitiva."
 
-#: src/crypto/decryptverifytask.cpp:217
+#: src/crypto/decryptverifytask.cpp:212
 #, kde-format
 msgid ""
 "The signature is valid but the certificate's validity is <em>not trusted</"
@@ -3136,38 +3159,38 @@ msgid ""
 msgstr ""
 "A sinatura é correcta pero <em>non se confía</em> na validez do certificado."
 
-#: src/crypto/decryptverifytask.cpp:219
+#: src/crypto/decryptverifytask.cpp:214
 #, kde-format
 msgid "The signature is valid but the certificate's validity is unknown."
 msgstr "A sinatura é correcta pero descoñécese a validez do certificado."
 
-#: src/crypto/decryptverifytask.cpp:222
+#: src/crypto/decryptverifytask.cpp:217
 #, kde-format
 msgid "The signature is valid but the certificate's validity is undefined."
 msgstr "A sinatura é correcta pero a validez do certificado non está definida."
 
-#: src/crypto/decryptverifytask.cpp:234 src/crypto/decryptverifytask.cpp:249
+#: src/crypto/decryptverifytask.cpp:229 src/crypto/decryptverifytask.cpp:244
 #, kde-format
 msgid "Unknown certificate"
 msgstr "O certificado é descoñecido"
 
-#: src/crypto/decryptverifytask.cpp:269
+#: src/crypto/decryptverifytask.cpp:264
 #, kde-format
 msgctxt "1 is a date"
 msgid "Signature created on %1"
 msgstr "A sinatura creouse o %1"
 
-#: src/crypto/decryptverifytask.cpp:272
+#: src/crypto/decryptverifytask.cpp:267
 #, kde-format
 msgid "With unavailable certificate:"
 msgstr "Co certificado non dispoñíbel:"
 
-#: src/crypto/decryptverifytask.cpp:274
+#: src/crypto/decryptverifytask.cpp:269
 #, kde-format
 msgid "With certificate:"
 msgstr "Co certificado:"
 
-#: src/crypto/decryptverifytask.cpp:281
+#: src/crypto/decryptverifytask.cpp:276
 #, fuzzy, kde-format
 #| msgid "The signature is invalid: %1"
 msgctxt ""
@@ -3176,7 +3199,7 @@ msgctxt ""
 msgid "The signature is %1"
 msgstr "A sinatura é incorrecta: %1"
 
-#: src/crypto/decryptverifytask.cpp:283
+#: src/crypto/decryptverifytask.cpp:278
 #, fuzzy, kde-format
 #| msgctxt ""
 #| "VS-NfD-conforming is a German standard for restricted documents for which "
@@ -3189,47 +3212,47 @@ msgctxt ""
 msgid "The signature <b>is not</b> %1."
 msgstr "A sinatura <b>non</b> cumpre con VS-NfD."
 
-#: src/crypto/decryptverifytask.cpp:299 src/crypto/signencrypttask.cpp:48
+#: src/crypto/decryptverifytask.cpp:294 src/crypto/signencrypttask.cpp:48
 #, kde-format
 msgctxt "Input file --> Output file (rarr is arrow"
 msgid "%1 &rarr; %2"
 msgstr "%1 &rarr; %2"
 
-#: src/crypto/decryptverifytask.cpp:404
+#: src/crypto/decryptverifytask.cpp:399
 #, kde-format
 msgid "<b>Verification canceled.</b>"
 msgstr "<b>Cancelouse a verificación.</b>"
 
-#: src/crypto/decryptverifytask.cpp:406
+#: src/crypto/decryptverifytask.cpp:401
 #, kde-format
 msgid "<b>Verification failed: %1.</b>"
 msgstr "<b>Fallou a verificación: %1.</b>"
 
-#: src/crypto/decryptverifytask.cpp:412
+#: src/crypto/decryptverifytask.cpp:407
 #, kde-format
 msgid "<b>No signatures found.</b>"
 msgstr "<b>Non se atoparon sinaturas.</b>"
 
-#: src/crypto/decryptverifytask.cpp:417
+#: src/crypto/decryptverifytask.cpp:412
 #, kde-format
 msgid "<b>Invalid signature.</b>"
 msgid_plural "<b>%1 invalid signatures.</b>"
 msgstr[0] "<b>A sinatura é incorrecta</b>"
 msgstr[1] "<b>Hai %1 sinaturas que son incorrectas.</b>"
 
-#: src/crypto/decryptverifytask.cpp:421
+#: src/crypto/decryptverifytask.cpp:416
 #, kde-format
 msgid "<b>The data could not be verified.</b>"
 msgid_plural "<b>%1 signatures could not be verified.</b>"
 msgstr[0] "<b>Non se puideron verificar os datos.</b>"
 msgstr[1] "<b>Non se puideron verificar %1 sinaturas.</b>"
 
-#: src/crypto/decryptverifytask.cpp:427
+#: src/crypto/decryptverifytask.cpp:422
 #, kde-format
 msgid "<b>Valid signature by %1</b>"
 msgstr "<b>Sinatura correcta de %1</b>"
 
-#: src/crypto/decryptverifytask.cpp:429
+#: src/crypto/decryptverifytask.cpp:424
 #, kde-format
 msgid ""
 "<br/><b>Warning:</b> The sender's mail address is not stored in the %1 used "
@@ -3238,19 +3261,19 @@ msgstr ""
 "<br/><b>Advertencia:</b> O enderezo do remitente do correo non está na %1 "
 "empregada para asinar."
 
-#: src/crypto/decryptverifytask.cpp:430
+#: src/crypto/decryptverifytask.cpp:425
 #, kde-format
 msgid "certificate"
 msgstr "certificado"
 
-#: src/crypto/decryptverifytask.cpp:432
+#: src/crypto/decryptverifytask.cpp:427
 #, kde-format
 msgid "<b>Valid signature.</b>"
 msgid_plural "<b>%1 valid signatures.</b>"
 msgstr[0] "<b>Sinatura correcta.</b>"
 msgstr[1] "<b>%1 sinaturas correctas.</b>"
 
-#: src/crypto/decryptverifytask.cpp:434
+#: src/crypto/decryptverifytask.cpp:429
 #, kde-format
 msgid ""
 "<br/><b>Warning:</b> The sender's mail address is not stored in the "
@@ -3259,44 +3282,44 @@ msgstr ""
 "<br/><b>Advertencia:</b> O enderezo de correo do remitente non está "
 "almacenado nos certificados empregados para asinar."
 
-#: src/crypto/decryptverifytask.cpp:446
+#: src/crypto/decryptverifytask.cpp:441
 #, kde-format
 msgid "<b>Decryption canceled.</b>"
 msgstr "<b>Cancelouse o descifrado.</b>"
 
-#: src/crypto/decryptverifytask.cpp:449
+#: src/crypto/decryptverifytask.cpp:444
 #, kde-format
 msgid "No integrity protection (MDC)."
 msgstr "Sen protección da integridade (MDC)."
 
-#: src/crypto/decryptverifytask.cpp:449 src/crypto/decryptverifytask.cpp:452
-#: src/crypto/decryptverifytask.cpp:454
+#: src/crypto/decryptverifytask.cpp:444 src/crypto/decryptverifytask.cpp:447
+#: src/crypto/decryptverifytask.cpp:449
 #, kde-format
 msgid "<b>Decryption failed: %1.</b>"
 msgstr "<b>Fallou o descifrado: %1.</b>"
 
-#: src/crypto/decryptverifytask.cpp:456
+#: src/crypto/decryptverifytask.cpp:451
 #, kde-format
 msgid "<b>Decryption succeeded.</b>"
 msgstr "<b>Completouse o descifrado.</b>"
 
-#: src/crypto/decryptverifytask.cpp:476 src/crypto/decryptverifytask.cpp:497
+#: src/crypto/decryptverifytask.cpp:471 src/crypto/decryptverifytask.cpp:492
 #, kde-format
 msgid "The signature is invalid: %1"
 msgstr "A sinatura é incorrecta: %1"
 
-#: src/crypto/decryptverifytask.cpp:485
+#: src/crypto/decryptverifytask.cpp:480
 #, kde-format
 msgid "You can search the certificate on a keyserver or import it from a file."
 msgstr ""
 "Pode buscar o certificado nun servidor de chaves ou importalo dun ficheiro."
 
-#: src/crypto/decryptverifytask.cpp:492
+#: src/crypto/decryptverifytask.cpp:487
 #, kde-format
 msgid "The used key is not certified by you or any trusted person."
 msgstr "Nin vostede nin ningunha persoa de confianza certificou a chave usada."
 
-#: src/crypto/decryptverifytask.cpp:493
+#: src/crypto/decryptverifytask.cpp:488
 #, kde-format
 msgid ""
 "The used certificate is not certified by a trustworthy Certificate Authority "
@@ -3305,7 +3328,7 @@ msgstr ""
 "A autoridade de certificación que certifica o certificado usado non é de "
 "confianza ou non se coñece."
 
-#: src/crypto/decryptverifytask.cpp:517 src/crypto/decryptverifytask.cpp:539
+#: src/crypto/decryptverifytask.cpp:512 src/crypto/decryptverifytask.cpp:534
 #: src/crypto/signencrypttask.cpp:219 src/crypto/signencrypttask.cpp:236
 #: src/crypto/signencrypttask.cpp:553 src/crypto/signencrypttask.cpp:581
 #: src/crypto/signencrypttask.cpp:609
@@ -3313,13 +3336,13 @@ msgstr ""
 msgid "Input error: %1"
 msgstr "Produciuse un erro na entrada: %1"
 
-#: src/crypto/decryptverifytask.cpp:528
+#: src/crypto/decryptverifytask.cpp:523
 #, kde-format
 msgctxt "separator for a list of e-mail addresses"
 msgid ", "
 msgstr ", "
 
-#: src/crypto/decryptverifytask.cpp:528
+#: src/crypto/decryptverifytask.cpp:523
 #, kde-format
 msgid ""
 "<p>The sender's address %1 is not stored in the certificate. Stored: %2</p>"
@@ -3327,7 +3350,7 @@ msgstr ""
 "<p>O enderezo do remitente %1 non está almacenado no certificado. "
 "Almacenado: %2</p>"
 
-#: src/crypto/decryptverifytask.cpp:545
+#: src/crypto/decryptverifytask.cpp:540
 #, fuzzy, kde-format
 #| msgctxt ""
 #| "VS-NfD-conforming is a German standard for restricted documents for which "
@@ -3340,7 +3363,7 @@ msgctxt ""
 msgid "The decryption is %1."
 msgstr "A descifraxe cumpre con VS-NfD."
 
-#: src/crypto/decryptverifytask.cpp:547
+#: src/crypto/decryptverifytask.cpp:542
 #, fuzzy, kde-format
 #| msgctxt ""
 #| "VS-NfD-conforming is a German standard for restricted documents for which "
@@ -3353,12 +3376,12 @@ msgctxt ""
 msgid "The decryption <b>is not</b> %1."
 msgstr "A descifraxe non</b> cumpre con VS-NfD."
 
-#: src/crypto/decryptverifytask.cpp:557
+#: src/crypto/decryptverifytask.cpp:552
 #, kde-format
 msgid "Embedded file name: '%1'"
 msgstr "Nome de ficheiro incrustado: «%1»"
 
-#: src/crypto/decryptverifytask.cpp:565
+#: src/crypto/decryptverifytask.cpp:560
 #, kde-format
 msgid ""
 "<b>Note:</b> You cannot be sure who encrypted this message as it is not "
@@ -3367,14 +3390,14 @@ msgstr ""
 "<b>Nota:</b> Non pode estar seguro de quen cifrou a mensaxe porque non está "
 "asinada."
 
-#: src/crypto/decryptverifytask.cpp:571
+#: src/crypto/decryptverifytask.cpp:566
 #, kde-format
 msgid "One unknown recipient."
 msgid_plural "%1 unknown recipients."
 msgstr[0] "Un destinatario descoñecido."
 msgstr[1] "%1 destinatarios descoñecidos."
 
-#: src/crypto/decryptverifytask.cpp:576
+#: src/crypto/decryptverifytask.cpp:571
 #, kde-format
 msgctxt "Integrity protection was missing because an old cipher was used."
 msgid ""
@@ -3386,7 +3409,7 @@ msgstr ""
 "que sexa ilexítimo. O motivo é que por aquel entón a protección da "
 "integridade apenas se usaba."
 
-#: src/crypto/decryptverifytask.cpp:580
+#: src/crypto/decryptverifytask.cpp:575
 #, kde-format
 msgctxt ""
 "The user is offered to force decrypt a non integrity protected message. With "
@@ -3398,45 +3421,45 @@ msgstr ""
 "Se está seguro de que o ficheiro non o manipularon, debería cifralo de novo "
 "tras forzar o descifrado."
 
-#: src/crypto/decryptverifytask.cpp:585
+#: src/crypto/decryptverifytask.cpp:580
 #, kde-format
 msgid "Recipient:"
 msgid_plural "Recipients:"
 msgstr[0] "Destinatario:"
 msgstr[1] "Destinatarios:"
 
-#: src/crypto/decryptverifytask.cpp:595
+#: src/crypto/decryptverifytask.cpp:590
 #, kde-format
 msgid "One unknown recipient"
 msgid_plural "%1 unknown recipients"
 msgstr[0] "Un destinatario descoñecido"
 msgstr[1] "%1 destinatarios descoñecidos"
 
-#: src/crypto/decryptverifytask.cpp:852
+#: src/crypto/decryptverifytask.cpp:847
 #, kde-format
 msgctxt "label: result example: foo.sig: Verification failed. "
 msgid "%1: %2"
 msgstr "%1: %2"
 
-#: src/crypto/decryptverifytask.cpp:984 src/crypto/decryptverifytask.cpp:1113
-#: src/crypto/decryptverifytask.cpp:1168 src/crypto/decryptverifytask.cpp:1271
-#: src/crypto/decryptverifytask.cpp:1326 src/crypto/decryptverifytask.cpp:1429
-#: src/crypto/decryptverifytask.cpp:1479 src/crypto/decryptverifytask.cpp:1584
+#: src/crypto/decryptverifytask.cpp:979 src/crypto/decryptverifytask.cpp:1108
+#: src/crypto/decryptverifytask.cpp:1163 src/crypto/decryptverifytask.cpp:1266
+#: src/crypto/decryptverifytask.cpp:1321 src/crypto/decryptverifytask.cpp:1424
+#: src/crypto/decryptverifytask.cpp:1474 src/crypto/decryptverifytask.cpp:1579
 #, kde-format
 msgid "Caught exception: %1"
 msgstr "Recolleuse unha excepción: %1"
 
-#: src/crypto/decryptverifytask.cpp:987 src/crypto/decryptverifytask.cpp:1115
-#: src/crypto/decryptverifytask.cpp:1171 src/crypto/decryptverifytask.cpp:1273
-#: src/crypto/decryptverifytask.cpp:1329 src/crypto/decryptverifytask.cpp:1431
-#: src/crypto/decryptverifytask.cpp:1481 src/crypto/decryptverifytask.cpp:1586
+#: src/crypto/decryptverifytask.cpp:982 src/crypto/decryptverifytask.cpp:1110
+#: src/crypto/decryptverifytask.cpp:1166 src/crypto/decryptverifytask.cpp:1268
+#: src/crypto/decryptverifytask.cpp:1324 src/crypto/decryptverifytask.cpp:1426
+#: src/crypto/decryptverifytask.cpp:1476 src/crypto/decryptverifytask.cpp:1581
 #: src/uiserver/assuanserverconnection.cpp:1554
 #: src/uiserver/assuanserverconnection.cpp:1605
 #, kde-format
 msgid "Caught unknown exception"
 msgstr "Recolleuse unha excepción descoñecida"
 
-#: src/crypto/decryptverifytask.cpp:1038
+#: src/crypto/decryptverifytask.cpp:1033
 #, kde-format
 msgid ""
 "Could not determine whether this is an S/MIME or an OpenPGP signature/"
@@ -3445,12 +3468,12 @@ msgstr ""
 "Non se puido determinar se esta é unha sinatura/cifrado S/MIME ou OpenPGP - "
 "pode non ser un cifrado ou unha sinatura?"
 
-#: src/crypto/decryptverifytask.cpp:1045 src/crypto/decryptverifytask.cpp:1230
+#: src/crypto/decryptverifytask.cpp:1040 src/crypto/decryptverifytask.cpp:1225
 #, kde-format
 msgid "Decrypting: %1..."
 msgstr "Está a descifrar: %1…"
 
-#: src/crypto/decryptverifytask.cpp:1223
+#: src/crypto/decryptverifytask.cpp:1218
 #, kde-format
 msgid ""
 "Could not determine whether this was S/MIME- or OpenPGP-encrypted - maybe it "
@@ -3459,7 +3482,7 @@ msgstr ""
 "Non se puido determinar se se cifrou con S/MIME ou con OpenPGP. É posíbel "
 "que non estea cifrado?"
 
-#: src/crypto/decryptverifytask.cpp:1381 src/crypto/decryptverifytask.cpp:1520
+#: src/crypto/decryptverifytask.cpp:1376 src/crypto/decryptverifytask.cpp:1515
 #, kde-format
 msgid ""
 "Could not determine whether this is an S/MIME or an OpenPGP signature - "
@@ -3468,12 +3491,12 @@ msgstr ""
 "Non se puido determinar se se trata dunha sinatura S/MIME ou OpenPGP - "
 "podería ser que non se trate dunha sinatura?"
 
-#: src/crypto/decryptverifytask.cpp:1388
+#: src/crypto/decryptverifytask.cpp:1383
 #, kde-format
 msgid "Verifying: %1..."
 msgstr "Verificando: %1…"
 
-#: src/crypto/decryptverifytask.cpp:1535
+#: src/crypto/decryptverifytask.cpp:1530
 #, kde-kuit-format
 msgctxt ""
 "Verification of a detached signature in progress. The first file contains "
@@ -3481,12 +3504,12 @@ msgctxt ""
 msgid "Verifying: <filename>%1</filename> with <filename>%2</filename>..."
 msgstr "Verificando: <filename>%1</filename> con <filename>%2</filename>…"
 
-#: src/crypto/decryptverifytask.cpp:1540
+#: src/crypto/decryptverifytask.cpp:1535
 #, kde-format
 msgid "Verifying signature: %1..."
 msgstr "Verificando a sinatura: %1…"
 
-#: src/crypto/decryptverifytask.cpp:1548
+#: src/crypto/decryptverifytask.cpp:1543
 #, kde-kuit-format
 msgctxt ""
 "Verification of a detached signature summary. The first file contains the "
@@ -4690,14 +4713,6 @@ msgctxt "@title:window"
 msgid "Certificate Details"
 msgstr "Detalles do certificado"
 
-#. i18n: ectx: property (windowTitle), widget (QWidget, CertificateDetailsWidget)
-#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
-#: src/dialogs/certificatedetailswidget.ui:14
-#: src/dialogs/certificatedetailswidget.ui:76
-#, kde-format
-msgid "Certificate Details"
-msgstr "Detalles do certificado"
-
 #. i18n: ectx: property (text), widget (QPushButton, addUserIDBtn)
 #: src/dialogs/certificatedetailswidget.ui:34
 #, kde-format
@@ -4984,6 +4999,26 @@ msgid "<i>Only the fingerprint clearly identifies the key and its owner.</i>"
 msgstr ""
 "<i>Só a pegada  dixital identifica claramente a chave e o seu dono.</i>"
 
+#: src/dialogs/csrcreationresultdialog.cpp:47
+#, fuzzy, kde-format
+#| msgid ""
+#| "Your new key pair was created successfully. Please find details on the "
+#| "result and some suggested next steps below."
+msgid ""
+"The certificate signing request was created successfully. Please find the "
+"result and suggested next steps below."
+msgstr ""
+"Creouse a súa nova parella de chaves. A continuación atopará detalles sobre "
+"o resultado e algunhas suxestións sobre pasos a seguir."
+
+#: src/dialogs/csrcreationresultdialog.cpp:102
+#, fuzzy, kde-format
+#| msgctxt "@action"
+#| msgid "Create"
+msgctxt "@title:window"
+msgid "CSR Created"
+msgstr "Crear"
+
 #: src/dialogs/deletecertificatesdialog.cpp:88
 #, kde-format
 msgid "These are the certificates you have selected for deletion:"
@@ -5068,7 +5103,7 @@ msgstr[1] ""
 "chaves privadas, que resulta necesario para descifrar comunicacións pasadas "
 "cifradas con eses certificados e non se deberían, polo tanto, eliminar."
 
-#: src/dialogs/deletecertificatesdialog.cpp:218 src/view/pgpcardwidget.cpp:345
+#: src/dialogs/deletecertificatesdialog.cpp:218 src/view/pgpcardwidget.cpp:331
 #, kde-format
 msgid "Secret Key Deletion"
 msgstr "Eliminación de chave secreta"
@@ -7481,56 +7516,56 @@ msgid ""
 msgstr ""
 "Saia doutras <application>Kleopatra</application> que estea a executar."
 
-#: src/smartcard/pivcard.cpp:83
+#: src/smartcard/pivcard.cpp:84
 #, fuzzy, kde-format
 #| msgid "Authentication:"
 msgid "PIV Authentication Key"
 msgstr "Autenticación:"
 
-#: src/smartcard/pivcard.cpp:84
+#: src/smartcard/pivcard.cpp:85
 #, fuzzy, kde-format
 #| msgid "Authentication:"
 msgid "Card Authentication Key"
 msgstr "Autenticación:"
 
-#: src/smartcard/pivcard.cpp:85
+#: src/smartcard/pivcard.cpp:86
 #, fuzzy, kde-format
 #| msgid "Bad signature"
 msgid "Digital Signature Key"
 msgstr "Sinatura incorrecta"
 
-#: src/smartcard/pivcard.cpp:86
+#: src/smartcard/pivcard.cpp:87
 #, fuzzy, kde-format
 #| msgid "Generate new Keys"
 msgid "Key Management Key"
 msgstr "Xerar novas chaves"
 
-#: src/smartcard/pivcard.cpp:97
+#: src/smartcard/pivcard.cpp:98
 #, kde-format
 msgid "RSA key transport (2048 bits)"
 msgstr ""
 
-#: src/smartcard/pivcard.cpp:98
+#: src/smartcard/pivcard.cpp:99
 #, kde-format
 msgid "ECDH (Curve P-256)"
 msgstr ""
 
-#: src/smartcard/pivcard.cpp:99
+#: src/smartcard/pivcard.cpp:100
 #, kde-format
 msgid "ECDH (Curve P-384)"
 msgstr ""
 
-#: src/smartcard/pivcard.cpp:103 src/smartcard/pivcard.cpp:111
+#: src/smartcard/pivcard.cpp:104 src/smartcard/pivcard.cpp:112
 #, kde-format
 msgid "RSA (2048 bits)"
 msgstr ""
 
-#: src/smartcard/pivcard.cpp:104 src/smartcard/pivcard.cpp:112
+#: src/smartcard/pivcard.cpp:105 src/smartcard/pivcard.cpp:113
 #, kde-format
 msgid "ECDSA (Curve P-256)"
 msgstr ""
 
-#: src/smartcard/pivcard.cpp:105
+#: src/smartcard/pivcard.cpp:106
 #, kde-format
 msgid "ECDSA (Curve P-384)"
 msgstr ""
@@ -8523,7 +8558,7 @@ msgid "View Columns"
 msgstr "Ver as columnas"
 
 #: src/view/netkeywidget.cpp:71 src/view/pgpcardwidget.cpp:129
-#: src/view/pivcardwidget.cpp:107
+#: src/view/pivcardwidget.cpp:112
 #, kde-format
 msgid "Serial number:"
 msgstr "Número de serie:"
@@ -8549,14 +8584,14 @@ msgstr "Cargar certificados"
 msgid "Actions:"
 msgstr "Accións:"
 
-#: src/view/netkeywidget.cpp:139 src/view/pivcardwidget.cpp:148
+#: src/view/netkeywidget.cpp:139 src/view/pivcardwidget.cpp:141
 #, fuzzy, kde-format
 #| msgid "Create a new OpenPGP key pair"
 msgctxt "@action:button"
 msgid "Create OpenPGP Key"
 msgstr "Crear unha parella de chaves OpenPGP novas"
 
-#: src/view/netkeywidget.cpp:140 src/view/pivcardwidget.cpp:149
+#: src/view/netkeywidget.cpp:140 src/view/pivcardwidget.cpp:142
 #, fuzzy, kde-format
 #| msgid "Create a new primary key and generate subkeys on the card."
 msgctxt "@info:tooltip"
@@ -8712,7 +8747,7 @@ msgctxt ""
 msgid "Pubkey URL:"
 msgstr "URL da chave pública:"
 
-#: src/view/pgpcardwidget.cpp:163 src/view/pivcardwidget.cpp:118
+#: src/view/pgpcardwidget.cpp:163 src/view/pivcardwidget.cpp:123
 #, kde-format
 msgid "Keys:"
 msgstr "Chaves:"
@@ -8807,34 +8842,34 @@ msgstr "Tarxeta %1 de OpenPGP v%2"
 msgid "not set"
 msgstr "non definido"
 
-#: src/view/pgpcardwidget.cpp:292
+#: src/view/pgpcardwidget.cpp:278
 #, kde-format
 msgctxt "@title:window"
 msgid "Generating Keys"
 msgstr "Xerando as chaves"
 
-#: src/view/pgpcardwidget.cpp:293
+#: src/view/pgpcardwidget.cpp:279
 #, kde-format
 msgid "This may take several minutes..."
 msgstr "Isto podería levar varios minutos…"
 
-#: src/view/pgpcardwidget.cpp:309
+#: src/view/pgpcardwidget.cpp:295
 #, kde-format
 msgctxt "@info"
 msgid "Failed to generate new key: %1"
 msgstr "Non se puido xerar a nova chave: %1"
 
-#: src/view/pgpcardwidget.cpp:319
+#: src/view/pgpcardwidget.cpp:305
 #, kde-format
 msgid "Save backup of encryption key"
 msgstr "Gardar unha copia de seguranza da chave de cifraxe"
 
-#: src/view/pgpcardwidget.cpp:321
+#: src/view/pgpcardwidget.cpp:307
 #, kde-format
 msgid "Backup Key"
 msgstr "Facer unha copia de seguranza da chave"
 
-#: src/view/pgpcardwidget.cpp:324
+#: src/view/pgpcardwidget.cpp:310
 #, kde-format
 msgctxt "@info"
 msgid "Failed to move backup. The backup key is still stored under: %1"
@@ -8842,13 +8877,13 @@ msgstr ""
 "Non se puido mover a copia de seguranza. A copia de seguranza da chave "
 "continúa almacenada dentro de: %1"
 
-#: src/view/pgpcardwidget.cpp:332
+#: src/view/pgpcardwidget.cpp:318
 #, kde-format
 msgctxt "@info"
 msgid "Successfully generated a new key for this card."
 msgstr "Xerouse unha nova chave para esta tarxeta."
 
-#: src/view/pgpcardwidget.cpp:341
+#: src/view/pgpcardwidget.cpp:327
 #, kde-format
 msgid ""
 "The existing keys on this card will be <b>deleted</b> and replaced by new "
@@ -8857,115 +8892,92 @@ msgstr ""
 "As chaves existentes nesta tarxeta <b>eliminaranse</b> e substituirase por "
 "novas chaves."
 
-#: src/view/pgpcardwidget.cpp:378
+#: src/view/pgpcardwidget.cpp:364
 #, kde-format
 msgid "Change cardholder"
 msgstr "Cambiar o dono da tarxeta"
 
-#: src/view/pgpcardwidget.cpp:379
+#: src/view/pgpcardwidget.cpp:365
 #, kde-format
 msgid "New name:"
 msgstr "Novo nome:"
 
-#: src/view/pgpcardwidget.cpp:388
+#: src/view/pgpcardwidget.cpp:374
 #, kde-format
 msgctxt "@info"
 msgid "The \"<\" character may not be used."
 msgstr "O carácter «<» non pode usarse."
 
-#: src/view/pgpcardwidget.cpp:394
+#: src/view/pgpcardwidget.cpp:380
 #, kde-format
 msgctxt "@info"
 msgid "Double spaces are not allowed"
 msgstr "Os espazos dobres non se permiten"
 
-#: src/view/pgpcardwidget.cpp:400
+#: src/view/pgpcardwidget.cpp:386
 #, kde-format
 msgctxt "@info"
 msgid "The size of the name may not exceed 38 characters."
 msgstr "O tamaño do nome non pode superar os 38 caracteres."
 
-#: src/view/pgpcardwidget.cpp:423
+#: src/view/pgpcardwidget.cpp:409
 #, kde-format
 msgctxt "@info"
 msgid "Name change failed: %1"
 msgstr "O cambio de nome fallou: %1"
 
-#: src/view/pgpcardwidget.cpp:429
+#: src/view/pgpcardwidget.cpp:415
 #, kde-format
 msgctxt "@info"
 msgid "Name successfully changed."
 msgstr "Cambiouse o nome."
 
-#: src/view/pgpcardwidget.cpp:440
+#: src/view/pgpcardwidget.cpp:426
 #, kde-format
 msgid "Change the URL where the pubkey can be found"
 msgstr "Cambiar o URL onde se pode atopar a chave pública"
 
-#: src/view/pgpcardwidget.cpp:441
+#: src/view/pgpcardwidget.cpp:427
 #, kde-format
 msgid "New pubkey URL:"
 msgstr "Novo URL da chave pública:"
 
-#: src/view/pgpcardwidget.cpp:450
+#: src/view/pgpcardwidget.cpp:436
 #, kde-format
 msgctxt "@info"
 msgid "The size of the URL may not exceed 254 characters."
 msgstr "O tamaño do URL non pode superar os 254 caracteres."
 
-#: src/view/pgpcardwidget.cpp:470
+#: src/view/pgpcardwidget.cpp:456
 #, kde-format
 msgctxt "@info"
 msgid "URL change failed: %1"
 msgstr "O cambio de URL fallou: %1"
 
-#: src/view/pgpcardwidget.cpp:476
+#: src/view/pgpcardwidget.cpp:462
 #, kde-format
 msgctxt "@info"
 msgid "URL successfully changed."
 msgstr "Cambiouse o URL."
 
-#: src/view/pgpcardwidget.cpp:498
+#: src/view/pgpcardwidget.cpp:484
 #, kde-format
 msgid "Slot empty"
 msgstr "Rañura baleira"
 
-#: src/view/pgpcardwidget.cpp:508
+#: src/view/pgpcardwidget.cpp:494
 #, kde-format
 msgid "Public key not found."
 msgstr "Non se atopou a chave pública."
 
-#: src/view/pivcardwidget.cpp:122
-#, fuzzy, kde-format
-#| msgid "Authentication:"
-msgid "PIV authentication:"
-msgstr "Autenticación:"
-
-#: src/view/pivcardwidget.cpp:126
-#, fuzzy, kde-format
-#| msgid "Authentication:"
-msgid "Card authentication:"
-msgstr "Autenticación:"
-
-#: src/view/pivcardwidget.cpp:130
-#, fuzzy, kde-format
-#| msgid "Bad signature"
-msgid "Digital signature:"
-msgstr "Sinatura incorrecta"
-
-#: src/view/pivcardwidget.cpp:134
-#, kde-format
-msgid "Key management:"
-msgstr ""
-
-#: src/view/pivcardwidget.cpp:155
+#: src/view/pivcardwidget.cpp:148
 #, fuzzy, kde-format
 #| msgid "Change PIN"
 msgctxt "@action:button"
 msgid "Change PIN"
 msgstr "Cambiar o PIN"
 
-#: src/view/pivcardwidget.cpp:156
+#: src/view/pivcardwidget.cpp:149
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -8973,27 +8985,27 @@ msgid ""
 "private key operations using the stored keys."
 msgstr ""
 
-#: src/view/pivcardwidget.cpp:162
+#: src/view/pivcardwidget.cpp:155
 #, fuzzy, kde-format
 #| msgid "Change PIN"
 msgctxt "@action:button"
 msgid "Change PUK"
 msgstr "Cambiar o PIN"
 
-#: src/view/pivcardwidget.cpp:163
+#: src/view/pivcardwidget.cpp:156
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Change the PIN Unblocking Key that enables a reset of the PIN."
 msgstr ""
 
-#: src/view/pivcardwidget.cpp:168
+#: src/view/pivcardwidget.cpp:161
 #, fuzzy, kde-format
 #| msgid "Change Admin PIN"
 msgctxt "@action:button"
 msgid "Change Admin Key"
 msgstr "Cambiar o PIN de administrador"
 
-#: src/view/pivcardwidget.cpp:169
+#: src/view/pivcardwidget.cpp:162
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -9003,7 +9015,7 @@ msgid ""
 "Application."
 msgstr ""
 
-#: src/view/pivcardwidget.cpp:191 src/view/pivcardwidget.cpp:247
+#: src/view/pivcardwidget.cpp:185 src/view/pivcardwidget.cpp:248
 #, fuzzy, kde-format
 #| msgctxt "@title:window"
 #| msgid "Generating Keys"
@@ -9011,14 +9023,30 @@ msgctxt "@action:button"
 msgid "Generate"
 msgstr "Xerando as chaves"
 
-#: src/view/pivcardwidget.cpp:195
+#: src/view/pivcardwidget.cpp:190
+#, fuzzy, kde-format
+#| msgctxt "@action"
+#| msgid "Create"
+msgctxt "@action:button"
+msgid "Create CSR"
+msgstr "Crear"
+
+#: src/view/pivcardwidget.cpp:191
+#, fuzzy, kde-format
+#| msgid "Create a new key pair or certificate signing request"
+msgctxt "@info:tooltip"
+msgid "Create a certificate signing request for this key"
+msgstr ""
+"Crear unha nova solicitude de parella de chaves ou de certificado de sinatura"
+
+#: src/view/pivcardwidget.cpp:196
 #, fuzzy, kde-format
 #| msgid "With certificate:"
 msgctxt "@action:button"
 msgid "Write Certificate"
 msgstr "Co certificado:"
 
-#: src/view/pivcardwidget.cpp:196
+#: src/view/pivcardwidget.cpp:197
 #, fuzzy, kde-format
 #| msgctxt "@info"
 #| msgid "Moving the key to the card failed: %1"
@@ -9026,21 +9054,21 @@ msgctxt "@info:tooltip"
 msgid "Write the certificate corresponding to this key to the card"
 msgstr "O movemento da chave á tarxeta fallou: %1"
 
-#: src/view/pivcardwidget.cpp:200
+#: src/view/pivcardwidget.cpp:201
 #, fuzzy, kde-format
 #| msgid "Import Certificates"
 msgctxt "@action:button"
 msgid "Import Certificate"
 msgstr "Importar certificados"
 
-#: src/view/pivcardwidget.cpp:201
+#: src/view/pivcardwidget.cpp:202
 #, fuzzy, kde-format
 #| msgid "With certificate:"
 msgctxt "@info:tooltip"
 msgid "Import the certificate stored on the card"
 msgstr "Co certificado:"
 
-#: src/view/pivcardwidget.cpp:206
+#: src/view/pivcardwidget.cpp:207
 #, fuzzy, kde-format
 #| msgctxt "@title:window"
 #| msgid "Print Secret Key"
@@ -9048,27 +9076,27 @@ msgctxt "@action:button"
 msgid "Write Key"
 msgstr "Imprimir a chave secreta"
 
-#: src/view/pivcardwidget.cpp:207
+#: src/view/pivcardwidget.cpp:208
 #, fuzzy, kde-format
 #| msgid "With certificate:"
 msgctxt "@info:tooltip"
 msgid "Write the key pair of a certificate to the card"
 msgstr "Co certificado:"
 
-#: src/view/pivcardwidget.cpp:223
+#: src/view/pivcardwidget.cpp:224
 #, kde-format
 msgctxt "%1 version number"
 msgid "PIV v%1 card"
 msgstr ""
 
-#: src/view/pivcardwidget.cpp:243
+#: src/view/pivcardwidget.cpp:244
 #, fuzzy, kde-format
 #| msgid "Slot empty"
 msgctxt "@info"
 msgid "<em>slot empty</em>"
 msgstr "Rañura baleira"
 
-#: src/view/pivcardwidget.cpp:249
+#: src/view/pivcardwidget.cpp:250
 #, fuzzy, kde-format
 #| msgctxt "@title:window"
 #| msgid "Generating Keys"
@@ -9076,28 +9104,28 @@ msgctxt "@info:tooltip %1 display name of a key"
 msgid "Generate %1"
 msgstr "Xerando as chaves"
 
-#: src/view/pivcardwidget.cpp:263
+#: src/view/pivcardwidget.cpp:267
 #, fuzzy, kde-format
 #| msgid "(no matching certificates found)"
 msgctxt "@info"
 msgid "<em>no matching certificate</em>"
 msgstr "(non se atoparon certificados coincidentes)"
 
-#: src/view/pivcardwidget.cpp:271
+#: src/view/pivcardwidget.cpp:275
 #, fuzzy, kde-format
 #| msgid "unknown"
 msgctxt "@info unknown key algorithm"
 msgid "unknown"
 msgstr "descoñecido"
 
-#: src/view/pivcardwidget.cpp:274
+#: src/view/pivcardwidget.cpp:278
 #, fuzzy, kde-format
 #| msgid "Places"
 msgctxt "@action:button"
 msgid "Replace"
 msgstr "Lugares"
 
-#: src/view/pivcardwidget.cpp:276
+#: src/view/pivcardwidget.cpp:280
 #, kde-format
 msgctxt "@info:tooltip %1 display name of a key"
 msgid "Replace %1 with new key"
@@ -9350,6 +9378,21 @@ msgid "To import from a public keyserver use \"Lookup on Server\" instead."
 msgstr ""
 "Para importar dun servidor de chaves público use «Buscar no servidor» no seu "
 "lugar."
+
+#, fuzzy
+#~| msgid "Authentication:"
+#~ msgid "PIV authentication:"
+#~ msgstr "Autenticación:"
+
+#, fuzzy
+#~| msgid "Authentication:"
+#~ msgid "Card authentication:"
+#~ msgstr "Autenticación:"
+
+#, fuzzy
+#~| msgid "Bad signature"
+#~ msgid "Digital signature:"
+#~ msgstr "Sinatura incorrecta"
 
 #~ msgid "Add email address to DN (only needed for broken CAs)"
 #~ msgstr ""
