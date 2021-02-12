@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdenlive\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2021-02-11 02:33+0100\n"
+"POT-Creation-Date: 2021-02-12 02:51+0100\n"
 "PO-Revision-Date: 2020-01-11 11:21+0100\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Galician <proxecto@trasno.gal>\n"
@@ -834,10 +834,9 @@ msgstr "Fundir o vídeo desde negro"
 #: src/timeline2/view/dialogs/speeddialog.cpp:69
 #: src/timeline2/view/qml/Track.qml:363 src/ui/clipdurationdialog_ui.ui:14
 #: src/ui/clipdurationdialog_ui.ui:40 src/ui/clipproperties_ui.ui:58
-#: src/ui/colorclip_ui.ui:37 src/ui/editsub_ui.ui:113
-#: src/ui/qtextclip_ui.ui:223 src/ui/titlewidget_ui.ui:582
-#: src/utils/freesound.cpp:165 src/utils/freesound.cpp:208
-#: src/utils/freesound.cpp:209
+#: src/ui/colorclip_ui.ui:37 src/ui/editsub_ui.ui:81 src/ui/qtextclip_ui.ui:223
+#: src/ui/titlewidget_ui.ui:582 src/utils/freesound.cpp:165
+#: src/utils/freesound.cpp:208 src/utils/freesound.cpp:209
 #, kde-format
 msgid "Duration"
 msgstr "Duración"
@@ -859,7 +858,7 @@ msgstr "Iniciar"
 #. i18n: ectx: property (text), widget (QLabel, duration_label)
 #. i18n: ectx: property (text), widget (QLabel, label_4)
 #: data/effects/fade_from_black.xml:16 data/effects/fade_to_black.xml:16
-#: src/dialogs/renderwidget.cpp:502 src/ui/editsub_ui.ui:120
+#: src/dialogs/renderwidget.cpp:502 src/ui/editsub_ui.ui:88
 #: src/ui/wipeval_ui.ui:167
 #, kde-format
 msgid "End"
@@ -1083,7 +1082,7 @@ msgstr "Encher a canle alfa coa gradación indicada"
 #: data/effects/frei0r_alphagrad.xml:9
 #: src/assets/view/widgets/keyframeedit.cpp:61
 #: src/assets/view/widgets/keyframeimport.cpp:294
-#: src/ui/clipdurationdialog_ui.ui:20 src/ui/editsub_ui.ui:159
+#: src/ui/clipdurationdialog_ui.ui:20 src/ui/editsub_ui.ui:127
 #: src/ui/keyframedialog_ui.ui:20 src/ui/markerdialog_ui.ui:20
 #, kde-format
 msgid "Position"
@@ -7205,12 +7204,13 @@ msgstr "Editar o fragmento"
 msgid "Create Folder"
 msgstr "Crear un cartafol"
 
-#: src/bin/bin.cpp:2981 src/monitor/recmanager.cpp:59
+#: src/bin/bin.cpp:2981 src/dialogs/textbasededit.cpp:109
+#: src/monitor/recmanager.cpp:59
 #, kde-format
 msgid "Show log"
 msgstr "Mostrar o rexistro"
 
-#: src/bin/bin.cpp:2984
+#: src/bin/bin.cpp:2984 src/dialogs/textbasededit.cpp:111
 #, kde-format
 msgid "Detailed log"
 msgstr "Historial detallado"
@@ -8099,14 +8099,14 @@ msgstr ""
 
 #: src/dialogs/kdenlivesettingsdialog.cpp:1763
 #: src/dialogs/kdenlivesettingsdialog.cpp:1827 src/dialogs/speechdialog.cpp:109
-#: src/dialogs/textbasededit.cpp:203
+#: src/dialogs/textbasededit.cpp:211
 #, kde-format
 msgid "Cannot find python3, please install it on your system."
 msgstr ""
 
 #: src/dialogs/kdenlivesettingsdialog.cpp:1771
 #: src/dialogs/kdenlivesettingsdialog.cpp:1835 src/dialogs/speechdialog.cpp:142
-#: src/dialogs/textbasededit.cpp:218
+#: src/dialogs/textbasededit.cpp:226
 #, kde-format
 msgid "The speech script was not found, check your install."
 msgstr ""
@@ -8659,13 +8659,13 @@ msgstr "Engadir ao proxecto actual"
 msgid "Process"
 msgstr "Procesar o fragmento"
 
-#: src/dialogs/speechdialog.cpp:49 src/dialogs/textbasededit.cpp:46
+#: src/dialogs/speechdialog.cpp:49 src/dialogs/textbasededit.cpp:47
 #, fuzzy, kde-format
 #| msgid "Select Transition"
 msgid "Configure speech recognition"
 msgstr "Seleccionar a transición"
 
-#: src/dialogs/speechdialog.cpp:60 src/dialogs/textbasededit.cpp:66
+#: src/dialogs/speechdialog.cpp:60 src/dialogs/textbasededit.cpp:67
 #, fuzzy, kde-format
 #| msgid "Select Transition"
 msgid "Please install speech recognition models"
@@ -8683,12 +8683,12 @@ msgstr "Exportar como grupo de sons"
 msgid "Audio export failed"
 msgstr "A división de son fallou"
 
-#: src/dialogs/speechdialog.cpp:174 src/dialogs/textbasededit.cpp:224
+#: src/dialogs/speechdialog.cpp:174 src/dialogs/textbasededit.cpp:232
 #, kde-format
 msgid "Starting speech recognition"
 msgstr ""
 
-#: src/dialogs/speechdialog.cpp:194 src/dialogs/textbasededit.cpp:299
+#: src/dialogs/speechdialog.cpp:194 src/dialogs/textbasededit.cpp:308
 #, fuzzy, kde-format
 #| msgid "Select Transition"
 msgid "Speech recognition aborted."
@@ -8744,30 +8744,36 @@ msgstr "Actualizar o perfil"
 msgid "Delete subtitle"
 msgstr "Eliminar o subfragmento"
 
-#: src/dialogs/textbasededit.cpp:211
+#: src/dialogs/textbasededit.cpp:219
 #, kde-format
 msgid "Please install a language model."
 msgstr ""
 
-#: src/dialogs/textbasededit.cpp:270
+#: src/dialogs/textbasededit.cpp:278
 #, fuzzy, kde-format
 #| msgid "Select a clip before copying"
 msgid "Select a clip for speech recognition."
 msgstr "Seleccione un fragmento antes de copiar"
 
-#: src/dialogs/textbasededit.cpp:275
+#: src/dialogs/textbasededit.cpp:283
 #, fuzzy, kde-format
 #| msgid "Select Transition"
 msgid "Starting speech recognition on %1."
 msgstr "Seleccionar a transición"
 
-#: src/dialogs/textbasededit.cpp:303
+#: src/dialogs/textbasededit.cpp:315
+#, fuzzy, kde-format
+#| msgid "No profile selected"
+msgid "No speech detected."
+msgstr "Non seleccionou ningún perfil."
+
+#: src/dialogs/textbasededit.cpp:322
 #, fuzzy, kde-format
 #| msgid "Select Transition"
 msgid "Speech recognition finished."
 msgstr "Seleccionar a transición"
 
-#: src/dialogs/textbasededit.cpp:369
+#: src/dialogs/textbasededit.cpp:359
 #, kde-format
 msgid "%1: no speech"
 msgstr ""
@@ -16454,13 +16460,13 @@ msgstr "Eliminar o punto actual"
 #. i18n: ectx: property (text), widget (QToolButton, rec_options)
 #. i18n: ectx: property (text), widget (QToolButton, button_more)
 #. i18n: ectx: property (text), widget (QToolButton, toolButton)
+#. i18n: ectx: property (text), widget (QToolButton, buttonIn)
+#. i18n: ectx: property (text), widget (QToolButton, buttonLock)
+#. i18n: ectx: property (text), widget (QToolButton, buttonOut)
 #. i18n: ectx: property (text), widget (QToolButton, buttonPrev)
 #. i18n: ectx: property (text), widget (QToolButton, buttonNext)
 #. i18n: ectx: property (text), widget (QToolButton, buttonCut)
 #. i18n: ectx: property (text), widget (QToolButton, buttonApply)
-#. i18n: ectx: property (text), widget (QToolButton, buttonIn)
-#. i18n: ectx: property (text), widget (QToolButton, buttonLock)
-#. i18n: ectx: property (text), widget (QToolButton, buttonOut)
 #. i18n: ectx: property (text), widget (QToolButton, rescale_keep)
 #. i18n: ectx: property (text), widget (QToolButton, hide_log)
 #. i18n: ectx: property (text), widget (QToolButton, config_button)
@@ -16572,10 +16578,10 @@ msgstr "Eliminar o punto actual"
 #: src/ui/configspeech_ui.ui:54 src/ui/cutjobdialog_ui.ui:30
 #: src/ui/dvdwizardmenu_ui.ui:280 src/ui/dvdwizardmenu_ui.ui:287
 #: src/ui/dvdwizardvob_ui.ui:29 src/ui/dvdwizardvob_ui.ui:49
-#: src/ui/dvdwizardvob_ui.ui:100 src/ui/editsub_ui.ui:19
-#: src/ui/editsub_ui.ui:29 src/ui/editsub_ui.ui:39 src/ui/editsub_ui.ui:46
-#: src/ui/editsub_ui.ui:53 src/ui/editsub_ui.ui:75 src/ui/editsub_ui.ui:103
-#: src/ui/editsub_ui.ui:130 src/ui/editsub_ui.ui:143 src/ui/effectlist_ui.ui:83
+#: src/ui/dvdwizardvob_ui.ui:100 src/ui/editsub_ui.ui:43
+#: src/ui/editsub_ui.ui:71 src/ui/editsub_ui.ui:98 src/ui/editsub_ui.ui:111
+#: src/ui/editsub_ui.ui:139 src/ui/editsub_ui.ui:149 src/ui/editsub_ui.ui:159
+#: src/ui/editsub_ui.ui:166 src/ui/editsub_ui.ui:173 src/ui/effectlist_ui.ui:83
 #: src/ui/effectlist_ui.ui:102 src/ui/effectlist_ui.ui:118
 #: src/ui/effectlist_ui.ui:134 src/ui/effectlist_ui.ui:150
 #: src/ui/freesound_ui.ui:39 src/ui/geometrywidget_ui.ui:70
