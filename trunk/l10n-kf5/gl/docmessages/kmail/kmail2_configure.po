@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail_configure\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2021-03-28 16:23+0000\n"
+"POT-Creation-Date: 2021-03-29 00:28+0000\n"
 "PO-Revision-Date: 2018-04-30 00:35+0100\n"
 "Last-Translator: Adrian Chaves <adrian@chaves.io>\n"
 "Language-Team: Galician <kde-i18n-doc@kde.org>\n"
@@ -139,7 +139,7 @@ msgstr "Configurar &kmail;"
 #: configure.docbook:3341 configure.docbook:3443 configure.docbook:3462
 #: configure.docbook:3580 configure.docbook:3599 configure.docbook:3627
 #: configure.docbook:3702 configure.docbook:3721 configure.docbook:3800
-#: configure.docbook:3864 configure.docbook:3884
+#: configure.docbook:3832 configure.docbook:3871 configure.docbook:3891
 #, no-c-format
 msgid "&nbsp;"
 msgstr ""
@@ -6461,21 +6461,31 @@ msgstr ""
 #, no-c-format
 msgid ""
 "This dialog allows you to control DomainKeys Identified Mail (DKIM) "
-"processing. DKIM is a cryptographic protocol that can assure you that a "
+"processing. DKIM is a cryptographic protocol that can assure you a "
 "particular message originated from the internet domain it claims to be from. "
 "If the sender has set up DKIM properly and DKIM is enabled here, you will "
-"see a message \"DKIM valid\" and the name of the entity that signed the "
-"message in the status bar at the bottom of the message preview window."
+"see a message \"DKIM valid\", and sometimes the name of the entity that "
+"signed the message, in the status bar at the bottom of the message preview "
+"window."
+msgstr ""
+
+#. Tag: para
+#: configure.docbook:3826
+#, no-c-format
+msgid ""
+"If you enable this option, be sure to change the default value (\"Nothing\") "
+"in the spin box labeled \"Save Record Key\" to some other value. The DKIM "
+"Checker does not work correctly if that variable is set to \"Nothing\"."
 msgstr ""
 
 #. Tag: guilabel
-#: configure.docbook:3830
+#: configure.docbook:3837
 #, no-c-format
 msgid "Expire Trash Folder"
 msgstr ""
 
 #. Tag: para
-#: configure.docbook:3832
+#: configure.docbook:3839
 #, no-c-format
 msgid ""
 "Use this configuration dialog to set expiry criteria for your trash "
@@ -6484,14 +6494,14 @@ msgid ""
 msgstr ""
 
 #. Tag: guilabel
-#: configure.docbook:3841
+#: configure.docbook:3848
 #, fuzzy, no-c-format
 #| msgid "Folders"
 msgid "Folder Settings"
 msgstr "Cartafoles"
 
 #. Tag: para
-#: configure.docbook:3843
+#: configure.docbook:3850
 #, no-c-format
 msgid ""
 "Use this configuration dialog to set custom folder properties for several "
@@ -6502,13 +6512,13 @@ msgid ""
 msgstr ""
 
 #. Tag: guilabel
-#: configure.docbook:3854
+#: configure.docbook:3861
 #, no-c-format
 msgid "Gravatar"
 msgstr ""
 
 #. Tag: para
-#: configure.docbook:3856
+#: configure.docbook:3863
 #, no-c-format
 msgid ""
 "Use this configuration dialog to enable / disable Gravatar (Globally "
@@ -6516,37 +6526,37 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: configure.docbook:3868
+#: configure.docbook:3875
 #, no-c-format
 msgid "Tools"
 msgstr ""
 
 #. Tag: screeninfo
-#: configure.docbook:3871
+#: configure.docbook:3878
 #, no-c-format
 msgid "<screeninfo>Plugins Picture No. Five</screeninfo>"
 msgstr ""
 
 #. Tag: phrase
-#: configure.docbook:3877
+#: configure.docbook:3884
 #, no-c-format
 msgid "<phrase>Plugins Picture No. Five</phrase>"
 msgstr ""
 
 #. Tag: para
-#: configure.docbook:3880
+#: configure.docbook:3887
 #, no-c-format
 msgid "Tools &amp; Webengine"
 msgstr ""
 
 #. Tag: guilabel
-#: configure.docbook:3889
+#: configure.docbook:3896
 #, no-c-format
 msgid "Antispam"
 msgstr ""
 
 #. Tag: para
-#: configure.docbook:3891
+#: configure.docbook:3898
 #, no-c-format
 msgid ""
 "Select this option to add the <link linkend=\"the-anti-spam-wizard\">Anti-"
@@ -6557,13 +6567,13 @@ msgid ""
 msgstr ""
 
 #. Tag: guilabel
-#: configure.docbook:3902
+#: configure.docbook:3909
 #, no-c-format
 msgid "Antivirus"
 msgstr ""
 
 #. Tag: para
-#: configure.docbook:3904
+#: configure.docbook:3911
 #, no-c-format
 msgid ""
 "Select this option to add the <link linkend=\"the-anti-virus-wizard\">Anti-"
@@ -6574,13 +6584,13 @@ msgid ""
 msgstr ""
 
 #. Tag: guilabel
-#: configure.docbook:3915
+#: configure.docbook:3922
 #, no-c-format
 msgid "Expert Plugin"
 msgstr ""
 
 #. Tag: para
-#: configure.docbook:3917
+#: configure.docbook:3924
 #, no-c-format
 msgid ""
 "Select this option to add the <menuchoice><guimenu>Message</guimenu> "
@@ -6589,29 +6599,30 @@ msgid ""
 msgstr ""
 
 #. Tag: guilabel
-#: configure.docbook:3926
+#: configure.docbook:3933
 #, no-c-format
 msgid "Log Activities"
 msgstr ""
 
 #. Tag: para
-#: configure.docbook:3928
+#: configure.docbook:3935
 #, no-c-format
 msgid ""
-"Select this option to enable <link linkend=\"filter-logging\">mail filter "
-"logging</link>. This plugin is disabled by default. This &kmail; feature "
-"appears to be a built-in function; my testing shows that mail filter logging "
-"will work both with and without this \"plugin\"."
+"Select this option to enable the Activity Log function, which is disabled by "
+"default. This plugin adds a new entry <guilabel>Log Activities</guilabel> to "
+"the <guilabel>Tools</guilabel> menu. Primarily for use by program developers "
+"-- the default log function does not provide much information (just a time "
+"stamp and \"Ready\", for most \"events\")."
 msgstr ""
 
 #. Tag: guilabel
-#: configure.docbook:3938
+#: configure.docbook:3946
 #, no-c-format
 msgid "Adblock"
 msgstr ""
 
 #. Tag: para
-#: configure.docbook:3940
+#: configure.docbook:3948
 #, no-c-format
 msgid ""
 "Select this option to add the <ulink url=\"https://adblockplus.org\">Adblock "
@@ -6621,13 +6632,13 @@ msgid ""
 msgstr ""
 
 #. Tag: guilabel
-#: configure.docbook:3950
+#: configure.docbook:3958
 #, no-c-format
 msgid "Do Not Track"
 msgstr ""
 
 #. Tag: para
-#: configure.docbook:3952
+#: configure.docbook:3960
 #, no-c-format
 msgid ""
 "Select this option to force &kmail; to send a \"Do Not Track\" request to a "
@@ -6637,7 +6648,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: configure.docbook:3958
+#: configure.docbook:3966
 #, no-c-format
 msgid ""
 "Advertisers have their eyes everywhere. &HTML;-encoded messages often "
@@ -6649,7 +6660,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: configure.docbook:3965
+#: configure.docbook:3973
 #, no-c-format
 msgid ""
 "Sending a \"Do Not Track\" request may enhance your privacy slightly. But "
@@ -6658,13 +6669,13 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: configure.docbook:3979
+#: configure.docbook:3987
 #, no-c-format
 msgid "Options without a user interface representation"
 msgstr "Opcións sen representación da interface do usuario"
 
 #. Tag: para
-#: configure.docbook:3980
+#: configure.docbook:3988
 #, no-c-format
 msgid ""
 "Apart from the options presented in the configuration dialog, some options "
@@ -6681,7 +6692,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: configure.docbook:3989
+#: configure.docbook:3997
 #, fuzzy, no-c-format
 #| msgid ""
 #| "The &kmail; configuration file is called <filename>kmailrc</filename> and "
@@ -6704,7 +6715,7 @@ msgstr ""
 "kmailrc</command></userinput>."
 
 #. Tag: para
-#: configure.docbook:3998
+#: configure.docbook:4006
 #, fuzzy, no-c-format
 #| msgid ""
 #| "Whenever changing these options, make sure to quit &kmail; first before "
@@ -6721,13 +6732,13 @@ msgstr ""
 "editor."
 
 #. Tag: guilabel
-#: configure.docbook:4007
+#: configure.docbook:4015
 #, no-c-format
 msgid "SendMDNsWithEmptySender"
 msgstr ""
 
 #. Tag: para
-#: configure.docbook:4009
+#: configure.docbook:4017
 #, no-c-format
 msgid ""
 "Send Message Disposition Notifications with an empty sender string. Some "
@@ -6737,22 +6748,22 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: configure.docbook:4014 configure.docbook:4036 configure.docbook:4058
-#: configure.docbook:4075 configure.docbook:4093 configure.docbook:4111
-#: configure.docbook:4130 configure.docbook:4147 configure.docbook:4165
+#: configure.docbook:4022 configure.docbook:4044 configure.docbook:4066
+#: configure.docbook:4083 configure.docbook:4101 configure.docbook:4119
+#: configure.docbook:4138 configure.docbook:4155 configure.docbook:4173
 #, fuzzy, no-c-format
 #| msgid "Hidden Configuration Options"
 msgid "Configuration file:"
 msgstr "Opcións de Configuración Agochadas"
 
 #. Tag: programlisting
-#: configure.docbook:4015
+#: configure.docbook:4023
 #, no-c-format
 msgid "SendMDNsWithEmptySender=true"
 msgstr ""
 
 #. Tag: para
-#: configure.docbook:4017
+#: configure.docbook:4025
 #, no-c-format
 msgid ""
 "<prompt>&percnt;</prompt> <userinput><command>kwriteconfig</command> "
@@ -6761,7 +6772,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: configure.docbook:4022
+#: configure.docbook:4030
 #, no-c-format
 msgid ""
 "The default setting of <quote>false</quote> strictly speaking violates "
@@ -6771,13 +6782,13 @@ msgid ""
 msgstr ""
 
 #. Tag: guilabel
-#: configure.docbook:4028
+#: configure.docbook:4036
 #, no-c-format
 msgid "CloseDespiteSystemTray"
 msgstr "CloseDespiteSystemTray"
 
 #. Tag: para
-#: configure.docbook:4030
+#: configure.docbook:4038
 #, fuzzy, no-c-format
 #| msgid ""
 #| "This option allows you to configure the application to close fully, even "
@@ -6796,13 +6807,13 @@ msgstr ""
 "unha liña que diga (na sección [General]):"
 
 #. Tag: programlisting
-#: configure.docbook:4037
+#: configure.docbook:4045
 #, no-c-format
 msgid "CloseDespiteSystemTray=true"
 msgstr "CloseDespiteSystemTray=true"
 
 #. Tag: para
-#: configure.docbook:4039
+#: configure.docbook:4047
 #, no-c-format
 msgid ""
 "<prompt>&percnt;</prompt> <userinput><command>kwriteconfig</command> "
@@ -6811,14 +6822,14 @@ msgid ""
 msgstr ""
 
 #. Tag: guilabel
-#: configure.docbook:4047
+#: configure.docbook:4055
 #, fuzzy, no-c-format
 #| msgid "Disregard Umask"
 msgid "disregardUmask"
 msgstr "Ignorar o Umask"
 
 #. Tag: para
-#: configure.docbook:4049
+#: configure.docbook:4057
 #, fuzzy, no-c-format
 #| msgid ""
 #| "In versions prior to 1.9, &kmail; saved all attachments to disk with "
@@ -6842,14 +6853,14 @@ msgstr ""
 "usuario ao gravar ficheiros no disco."
 
 #. Tag: programlisting
-#: configure.docbook:4059
+#: configure.docbook:4067
 #, fuzzy, no-c-format
 #| msgid "Disregard Umask"
 msgid "disregardUmask=true"
 msgstr "Ignorar o Umask"
 
 #. Tag: para
-#: configure.docbook:4061
+#: configure.docbook:4069
 #, no-c-format
 msgid ""
 "<prompt>&percnt;</prompt> <userinput><command>kwriteconfig</command> "
@@ -6859,13 +6870,13 @@ msgstr ""
 
 # skip-rule: trasno-check
 #. Tag: guilabel
-#: configure.docbook:4067
+#: configure.docbook:4075
 #, no-c-format
 msgid "CheckOutOfOfficeOnStartup"
 msgstr "CheckOutOfOfficeOnStartup"
 
 #. Tag: para
-#: configure.docbook:4069
+#: configure.docbook:4077
 #, fuzzy, no-c-format
 #| msgid ""
 #| "With this option enabled, KMail will check on every startup if there is "
@@ -6885,13 +6896,13 @@ msgstr ""
 
 # skip-rule: trasno-check
 #. Tag: programlisting
-#: configure.docbook:4076
+#: configure.docbook:4084
 #, no-c-format
 msgid "CheckOutOfOfficeOnStartup=false"
 msgstr "CheckOutOfOfficeOnStartup=false"
 
 #. Tag: para
-#: configure.docbook:4078
+#: configure.docbook:4086
 #, no-c-format
 msgid ""
 "<prompt>&percnt;</prompt> <userinput><command>kwriteconfig</command> "
@@ -6900,14 +6911,14 @@ msgid ""
 msgstr ""
 
 #. Tag: guilabel
-#: configure.docbook:4086
+#: configure.docbook:4094
 #, fuzzy, no-c-format
 #| msgid "CheckOutOfOfficeOnStartup=false"
 msgid "AllowOutOfOfficeSettings"
 msgstr "CheckOutOfOfficeOnStartup=false"
 
 #. Tag: para
-#: configure.docbook:4088
+#: configure.docbook:4096
 #, no-c-format
 msgid ""
 "In case you don't want users to be able to upload their own out-of-office "
@@ -6916,14 +6927,14 @@ msgid ""
 msgstr ""
 
 #. Tag: programlisting
-#: configure.docbook:4094
+#: configure.docbook:4102
 #, fuzzy, no-c-format
 #| msgid "CheckOutOfOfficeOnStartup=false"
 msgid "AllowOutOfOfficeSettings=false"
 msgstr "CheckOutOfOfficeOnStartup=false"
 
 #. Tag: para
-#: configure.docbook:4096
+#: configure.docbook:4104
 #, no-c-format
 msgid ""
 "<prompt>&percnt;</prompt> <userinput><command>kwriteconfig</command> "
@@ -6932,14 +6943,14 @@ msgid ""
 msgstr ""
 
 #. Tag: guilabel
-#: configure.docbook:4104
+#: configure.docbook:4112
 #, fuzzy, no-c-format
 #| msgid "CheckOutOfOfficeOnStartup=false"
 msgid "AllowOutOfOfficeUploadButNoSettings"
 msgstr "CheckOutOfOfficeOnStartup=false"
 
 #. Tag: para
-#: configure.docbook:4106
+#: configure.docbook:4114
 #, no-c-format
 msgid ""
 "If you want to allow your users to upload their own out-of-office scripts "
@@ -6949,13 +6960,13 @@ msgid ""
 msgstr ""
 
 #. Tag: programlisting
-#: configure.docbook:4112
+#: configure.docbook:4120
 #, no-c-format
 msgid "AllowOutOfOfficeUploadButNoSettings=true"
 msgstr ""
 
 #. Tag: para
-#: configure.docbook:4114
+#: configure.docbook:4122
 #, no-c-format
 msgid ""
 "<prompt>&percnt;</prompt> <userinput><command>kwriteconfig</command> "
@@ -6965,13 +6976,13 @@ msgid ""
 msgstr ""
 
 #. Tag: guilabel
-#: configure.docbook:4122
+#: configure.docbook:4130
 #, no-c-format
 msgid "OutOfOfficeDomain"
 msgstr ""
 
 #. Tag: para
-#: configure.docbook:4124
+#: configure.docbook:4132
 #, no-c-format
 msgid ""
 "When editing vacation (out-of-office) scripts, the user may specify a domain "
@@ -6982,13 +6993,13 @@ msgid ""
 msgstr ""
 
 #. Tag: programlisting
-#: configure.docbook:4131
+#: configure.docbook:4139
 #, no-c-format
 msgid "OutOfOfficeDomain=myMailDomain.test"
 msgstr ""
 
 #. Tag: para
-#: configure.docbook:4133
+#: configure.docbook:4141
 #, no-c-format
 msgid ""
 "<prompt>&percnt;</prompt> <userinput><command>kwriteconfig</command> "
@@ -6997,13 +7008,13 @@ msgid ""
 msgstr ""
 
 #. Tag: guilabel
-#: configure.docbook:4141
+#: configure.docbook:4149
 #, no-c-format
 msgid "OutOfOfficeReactToSpam"
 msgstr ""
 
 #. Tag: para
-#: configure.docbook:4143
+#: configure.docbook:4151
 #, no-c-format
 msgid ""
 "By default, out-of-office replies are not sent to messages marked as SPAM. "
@@ -7011,13 +7022,13 @@ msgid ""
 msgstr ""
 
 #. Tag: programlisting
-#: configure.docbook:4148
+#: configure.docbook:4156
 #, no-c-format
 msgid "OutOfOfficeReactToSpam=true"
 msgstr ""
 
 #. Tag: para
-#: configure.docbook:4150
+#: configure.docbook:4158
 #, no-c-format
 msgid ""
 "<prompt>&percnt;</prompt> <userinput><command>kwriteconfig</command> "
@@ -7026,13 +7037,13 @@ msgid ""
 msgstr ""
 
 #. Tag: guilabel
-#: configure.docbook:4157
+#: configure.docbook:4165
 #, no-c-format
 msgid "ShowUserAgent"
 msgstr ""
 
 #. Tag: para
-#: configure.docbook:4159
+#: configure.docbook:4167
 #, fuzzy, no-c-format
 #| msgid ""
 #| "Starting in version 1.9, &kmail; can show the User-Agent or X-Mailer "
@@ -7050,13 +7061,13 @@ msgstr ""
 "(vexa o menú Ver->Cabeceiras)."
 
 #. Tag: programlisting
-#: configure.docbook:4166
+#: configure.docbook:4174
 #, no-c-format
 msgid "ShowUserAgent=true"
 msgstr ""
 
 #. Tag: para
-#: configure.docbook:4168
+#: configure.docbook:4176
 #, no-c-format
 msgid ""
 "<prompt>&percnt;</prompt> <userinput><command>kwriteconfig</command> "
