@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdenlive\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2021-05-23 00:16+0000\n"
+"POT-Creation-Date: 2021-05-24 00:16+0000\n"
 "PO-Revision-Date: 2020-01-11 11:21+0100\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Galician <proxecto@trasno.gal>\n"
@@ -7765,13 +7765,13 @@ msgstr "Xuntar"
 msgid "Add"
 msgstr "Engadir"
 
-#: src/bin/projectclip.cpp:1898
+#: src/bin/projectclip.cpp:1918
 #, fuzzy, kde-format
 #| msgid "Add new effect"
 msgid "Add stream effect"
 msgstr "Engadir un efecto novo"
 
-#: src/bin/projectclip.cpp:1921
+#: src/bin/projectclip.cpp:1941
 #, fuzzy, kde-format
 #| msgid "Remove Bin Effect"
 msgid "Remove stream effect"
@@ -7803,32 +7803,32 @@ msgstr "I"
 msgid "Unknown"
 msgstr "Descoñecido"
 
-#: src/bin/projectitemmodel.cpp:569
+#: src/bin/projectitemmodel.cpp:571
 #, kde-format
 msgid "Zone"
 msgstr "Zona"
 
-#: src/bin/projectitemmodel.cpp:739
+#: src/bin/projectitemmodel.cpp:741
 #, kde-format
 msgid "Add bin clip"
 msgstr "Engadir un fragmento de caixa"
 
-#: src/bin/projectitemmodel.cpp:799
+#: src/bin/projectitemmodel.cpp:801
 #, kde-format
 msgid "Add a sub clip"
 msgstr "Engadir un fragmento subordinado"
 
-#: src/bin/projectitemmodel.cpp:840
+#: src/bin/projectitemmodel.cpp:842
 #, kde-format
 msgid "Rename Folder"
 msgstr "Renomear o cartafol"
 
-#: src/bin/projectitemmodel.cpp:869 src/mainwindow.cpp:1400
+#: src/bin/projectitemmodel.cpp:871 src/mainwindow.cpp:1400
 #, kde-format
 msgid "Clean Project"
 msgstr "Limpar o proxecto"
 
-#: src/bin/projectitemmodel.cpp:992
+#: src/bin/projectitemmodel.cpp:994
 #, fuzzy, kde-format
 #| msgid "Loading project"
 msgid "Loading project clips..."
@@ -8405,6 +8405,7 @@ msgid "New dictionary installed."
 msgstr ""
 
 #: src/dialogs/markerdialog.cpp:50 src/jobs/scenesplitjob.cpp:92
+#: src/jobs/scenesplittask.cpp:69
 #, kde-format
 msgid "Category %1"
 msgstr "Categoría %1"
@@ -10168,7 +10169,7 @@ msgstr "Non se pode crear o filtro %1"
 msgid "Cannot load image %1."
 msgstr "Non se pode cargar a imaxe %1."
 
-#: src/jobs/proxytask.cpp:263 src/jobs/scenesplittask.cpp:111
+#: src/jobs/proxytask.cpp:263 src/jobs/scenesplittask.cpp:137
 #: src/jobs/transcodetask.cpp:160
 #, kde-format
 msgid ""
@@ -10200,24 +10201,18 @@ msgid "No data returned from clip analysis"
 msgstr "Non se obtiveron datos da análise do fragmento"
 
 #: src/jobs/scenesplitjob.cpp:142 src/jobs/scenesplitjob.cpp:162
-#: src/jobs/scenesplittask.cpp:165
+#: src/jobs/scenesplittask.cpp:191 src/jobs/scenesplittask.cpp:211
+#: src/jobs/scenesplittask.cpp:220
 #, kde-format
 msgid "Scene %1"
 msgstr "Escena %1"
 
-#: src/jobs/scenesplittask.cpp:53
-#, fuzzy, kde-format
-#| msgid "Scene split"
-msgid "Scene Split"
-msgstr "División de escena"
+#: src/jobs/scenesplittask.cpp:71
+#, kde-format
+msgid "Scene detection"
+msgstr "Detección de escenas"
 
-#: src/jobs/scenesplittask.cpp:53
-#, fuzzy, kde-format
-#| msgid "Saturation threshold"
-msgid "Enter detection threshold"
-msgstr "Limiar da saturación"
-
-#: src/jobs/scenesplittask.cpp:104
+#: src/jobs/scenesplittask.cpp:130
 #, fuzzy, kde-format
 #| msgid "Cannot process this clip type."
 msgid "Cannot analyse this clip type"
@@ -18951,41 +18946,36 @@ msgstr ""
 msgid "Scene Cut"
 msgstr "Recorte de escena"
 
-#. i18n: ectx: property (text), widget (QCheckBox, add_markers)
-#: src/ui/scenecutdialog_ui.ui:20
-#, kde-format
-msgid "Add clip markers"
-msgstr "Engadir marcadores de recorte"
-
-#. i18n: ectx: property (text), widget (QCheckBox, cut_scenes)
-#: src/ui/scenecutdialog_ui.ui:30
-#, kde-format
-msgid "Cut scenes"
-msgstr "Recortar escenas"
-
-#. i18n: ectx: property (text), widget (QCheckBox, zone_only)
-#: src/ui/scenecutdialog_ui.ui:50
-#, kde-format
-msgid "Analyze only selected zone"
-msgstr "Analizar só a zona seleccionada"
-
-#. i18n: ectx: property (text), widget (QCheckBox, store_data)
-#: src/ui/scenecutdialog_ui.ui:70
-#, kde-format
-msgid "Save result in clip metadata"
-msgstr "Gardar o resultado nos metadatos do fragmento."
-
 #. i18n: ectx: property (text), widget (QLabel, label)
-#: src/ui/scenecutdialog_ui.ui:77
+#: src/ui/scenecutdialog_ui.ui:20
 #, kde-format
 msgid "Minimum scene length"
 msgstr "Lonxitude mínima de escena"
 
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: src/ui/scenecutdialog_ui.ui:27
+#, fuzzy, kde-format
+#| msgid "Threshold"
+msgid "Change threshold"
+msgstr "Limiar"
+
+#. i18n: ectx: property (text), widget (QCheckBox, cut_scenes)
+#: src/ui/scenecutdialog_ui.ui:70
+#, kde-format
+msgid "Cut scenes"
+msgstr "Recortar escenas"
+
 #. i18n: ectx: property (suffix), widget (QSpinBox, minDuration)
-#: src/ui/scenecutdialog_ui.ui:84
+#: src/ui/scenecutdialog_ui.ui:90
 #, kde-format
 msgid " frames"
 msgstr "fotogramas"
+
+#. i18n: ectx: property (text), widget (QCheckBox, add_markers)
+#: src/ui/scenecutdialog_ui.ui:100
+#, kde-format
+msgid "Add clip markers"
+msgstr "Engadir marcadores de recorte"
 
 #. i18n: ectx: property (text), widget (QLabel, label_6)
 #: src/ui/selectivecolor_ui.ui:17
@@ -19814,6 +19804,22 @@ msgctxt "h as hours"
 msgid "%1h"
 msgstr "%1h"
 
+#, fuzzy
+#~| msgid "Scene split"
+#~ msgid "Scene Split"
+#~ msgstr "División de escena"
+
+#, fuzzy
+#~| msgid "Saturation threshold"
+#~ msgid "Enter detection threshold"
+#~ msgstr "Limiar da saturación"
+
+#~ msgid "Analyze only selected zone"
+#~ msgstr "Analizar só a zona seleccionada"
+
+#~ msgid "Save result in clip metadata"
+#~ msgstr "Gardar o resultado nos metadatos do fragmento."
+
 #~ msgid "Importing bin clips..."
 #~ msgstr "Importando fragmentos na caixa…"
 
@@ -20024,9 +20030,6 @@ msgstr "%1h"
 #~ msgid_plural "Stabilize clips"
 #~ msgstr[0] "Estabilizar o fragmento"
 #~ msgstr[1] "Estabilizar os fragmentos"
-
-#~ msgid "Scene detection"
-#~ msgstr "Detección de escenas"
 
 #~ msgid "Add chapters"
 #~ msgstr "Engadir capítulos"
