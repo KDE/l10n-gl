@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kleopatra\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2021-08-17 00:18+0000\n"
+"POT-Creation-Date: 2021-08-20 00:21+0000\n"
 "PO-Revision-Date: 2020-01-12 11:14+0100\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Galician <proxecto@trasno.gal>\n"
@@ -4162,7 +4162,7 @@ msgid ""
 msgstr "Verifique que se escolleu o certificado correcto para o remitente:"
 
 #: src/crypto/gui/signencryptemailconflictdialog.cpp:280
-#: src/crypto/gui/signencryptfileswizard.cpp:295 src/view/padwidget.cpp:477
+#: src/crypto/gui/signencryptfileswizard.cpp:360 src/view/padwidget.cpp:477
 #, fuzzy, kde-format
 #| msgctxt ""
 #| "VS-NfD-conforming is a German standard for restricted documents for which "
@@ -4177,7 +4177,7 @@ msgid "%1 communication possible."
 msgstr "Pódese usar unha comunicación que cumpra con VS-NfD."
 
 #: src/crypto/gui/signencryptemailconflictdialog.cpp:282
-#: src/crypto/gui/signencryptfileswizard.cpp:297 src/view/padwidget.cpp:479
+#: src/crypto/gui/signencryptfileswizard.cpp:362 src/view/padwidget.cpp:479
 #, fuzzy, kde-format
 #| msgctxt ""
 #| "VS-NfD-conforming is a German standard for restricted documents for which "
@@ -4233,35 +4233,81 @@ msgctxt "@title:window"
 msgid "Select Certificates for Message \"%1\""
 msgstr "Seleccionar os certificados para a mensaxe «%1»"
 
-#: src/crypto/gui/signencryptfileswizard.cpp:68
+#: src/crypto/gui/signencryptfileswizard.cpp:124
 #, kde-format
 msgctxt "@title"
 msgid "Sign / Encrypt Files"
 msgstr "Asinar e/ou cifrar ficheiros"
 
-#: src/crypto/gui/signencryptfileswizard.cpp:78
-#, kde-format
+#: src/crypto/gui/signencryptfileswizard.cpp:128
+#, fuzzy, kde-format
+#| msgid "Sign as:"
+msgctxt "@option:check on SignEncryptPage"
+msgid "&Sign as:"
+msgstr "Asinar como:"
+
+#: src/crypto/gui/signencryptfileswizard.cpp:130
+#, fuzzy, kde-format
+#| msgid "Encrypt for me:"
+msgctxt "@option:check on SignEncryptPage"
+msgid "Encrypt for &me:"
+msgstr "Cifrar para min:"
+
+#: src/crypto/gui/signencryptfileswizard.cpp:132
+#, fuzzy, kde-format
+#| msgid "Encrypt for others:"
+msgctxt "@option:check on SignEncryptPage"
+msgid "Encrypt for &others:"
+msgstr "Cifrar para outros:"
+
+#: src/crypto/gui/signencryptfileswizard.cpp:134
+#, fuzzy, kde-format
+#| msgid ""
+#| "Encrypt with password. Anyone you share the password with can read the "
+#| "data."
+msgctxt "@option:check on SignEncryptPage"
+msgid ""
+"Encrypt with &password. Anyone you share the password with can read the data."
+msgstr ""
+"Cifrar cun contrasinal. Calquera con quen comparta o contrasinal pode ler os "
+"datos."
+
+#: src/crypto/gui/signencryptfileswizard.cpp:142
+#, fuzzy, kde-format
+#| msgid "Output"
+msgctxt "@title:group"
 msgid "Output"
 msgstr "Saída"
 
-#: src/crypto/gui/signencryptfileswizard.cpp:81
+#: src/crypto/gui/signencryptfileswizard.cpp:145
 #, kde-format
 msgid "Please select an action."
 msgstr "Seleccione unha acción."
 
-#: src/crypto/gui/signencryptfileswizard.cpp:84
-#, kde-format
-msgid "Encrypt / Sign each file separately."
+#: src/crypto/gui/signencryptfileswizard.cpp:148
+#, fuzzy, kde-format
+#| msgid "&Output folder:"
+msgctxt "@label on SignEncryptPage"
+msgid "Output &files/folder:"
+msgstr "Cartaf&ol de saída:"
+
+#: src/crypto/gui/signencryptfileswizard.cpp:154
+#, fuzzy, kde-format
+#| msgid "Encrypt / Sign each file separately."
+msgctxt "@option:check on SignEncryptPage"
+msgid "Encrypt / Sign &each file separately."
 msgstr "Cifrar e/ou asinar cada ficheiro por separado."
 
-#: src/crypto/gui/signencryptfileswizard.cpp:86
-#, kde-format
-msgctxt "@info"
+#: src/crypto/gui/signencryptfileswizard.cpp:156
+#, fuzzy, kde-format
+#| msgctxt "@info"
+#| msgid "Keep each file separate instead of creating an archive for all."
+msgctxt "@info:tooltip"
 msgid "Keep each file separate instead of creating an archive for all."
 msgstr ""
 "Manter cada ficheiro por separado en vez de crear un arquivo para todo."
 
-#: src/crypto/gui/signencryptfileswizard.cpp:157
+#: src/crypto/gui/signencryptfileswizard.cpp:226
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -4280,13 +4326,13 @@ msgstr ""
 "futuras de Kleopatra permitan utilizar tamén as sinaturas desconectadas "
 "neste caso.</para>"
 
-#: src/crypto/gui/signencryptfileswizard.cpp:162
+#: src/crypto/gui/signencryptfileswizard.cpp:231
 #, kde-format
 msgctxt "@title:window"
 msgid "Unusual Signature Warning"
 msgstr "Advertencia de sinatura infrecuente"
 
-#: src/crypto/gui/signencryptfileswizard.cpp:183
+#: src/crypto/gui/signencryptfileswizard.cpp:252
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -4300,87 +4346,89 @@ msgstr ""
 "vez que se cifren.</para><para>Quere continuar ou cancelar para cambiar a "
 "selección de destinatarios?</para>"
 
-#: src/crypto/gui/signencryptfileswizard.cpp:186
+#: src/crypto/gui/signencryptfileswizard.cpp:255
 #, kde-format
 msgctxt "@title:window"
 msgid "Encrypt-To-Self Warning"
 msgstr "Advertencia de cifrado para si mesmo"
 
-#: src/crypto/gui/signencryptfileswizard.cpp:224
+#: src/crypto/gui/signencryptfileswizard.cpp:293
 #, kde-format
 msgid "The S/MIME signature."
 msgstr "A sinatura S/MIME."
 
-#: src/crypto/gui/signencryptfileswizard.cpp:225
+#: src/crypto/gui/signencryptfileswizard.cpp:294
 #, kde-format
 msgid "The signature."
 msgstr "A sinatura."
 
-#: src/crypto/gui/signencryptfileswizard.cpp:226
+#: src/crypto/gui/signencryptfileswizard.cpp:295
 #, kde-format
 msgid "The signed and encrypted file."
 msgstr "O ficheiro asinado e cifrado."
 
-#: src/crypto/gui/signencryptfileswizard.cpp:227
+#: src/crypto/gui/signencryptfileswizard.cpp:296
 #, kde-format
 msgid "The encrypted file."
 msgstr "O ficheiro cifrado."
 
-#: src/crypto/gui/signencryptfileswizard.cpp:228
+#: src/crypto/gui/signencryptfileswizard.cpp:297
 #, kde-format
 msgid "The S/MIME encrypted file."
 msgstr "O ficheiro cifrado con S/MIME."
 
-#: src/crypto/gui/signencryptfileswizard.cpp:229
+#: src/crypto/gui/signencryptfileswizard.cpp:298
 #, kde-format
 msgid "Output directory."
 msgstr "Directorio de saída."
 
-#: src/crypto/gui/signencryptfileswizard.cpp:300
+#: src/crypto/gui/signencryptfileswizard.cpp:365
 #, kde-format
 msgid "Next"
 msgstr "Seguinte"
 
-#: src/crypto/gui/signencryptfileswizard.cpp:359
+#: src/crypto/gui/signencryptfileswizard.cpp:430
 #, kde-format
 msgctxt "@title"
 msgid "Results"
 msgstr "Resultados"
 
-#: src/crypto/gui/signencryptfileswizard.cpp:361
+#: src/crypto/gui/signencryptfileswizard.cpp:432
 #, kde-format
 msgctxt "@title"
 msgid "Status and progress of the crypto operations is shown here."
 msgstr "Aquí aparecen o estado e a evolución das operacións de cifrado."
 
-#: src/crypto/gui/signencryptwidget.cpp:108
-#, kde-format
+#: src/crypto/gui/signencryptwidget.cpp:107
+#, fuzzy, kde-format
+#| msgid "Prove authenticity (sign)"
+msgctxt "@title:group"
 msgid "Prove authenticity (sign)"
 msgstr "Probar a autenticidade (asinar)"
 
-#: src/crypto/gui/signencryptwidget.cpp:109
+#: src/crypto/gui/signencryptwidget.cpp:108
 #, kde-format
 msgid "Sign as:"
 msgstr "Asinar como:"
 
-#: src/crypto/gui/signencryptwidget.cpp:128
-#: src/crypto/gui/signencryptwidget.cpp:458
-#, kde-format
-msgctxt "@action"
+#: src/crypto/gui/signencryptwidget.cpp:126
+#, fuzzy, kde-format
+#| msgid "Encrypt"
+msgctxt "@title:group"
 msgid "Encrypt"
 msgstr "Cifrar"
 
-#: src/crypto/gui/signencryptwidget.cpp:134
+#: src/crypto/gui/signencryptwidget.cpp:130
 #, kde-format
 msgid "Encrypt for me:"
 msgstr "Cifrar para min:"
 
-#: src/crypto/gui/signencryptwidget.cpp:140
+#: src/crypto/gui/signencryptwidget.cpp:137
 #, kde-format
 msgid "Encrypt for others:"
 msgstr "Cifrar para outros:"
 
-#: src/crypto/gui/signencryptwidget.cpp:169
+#: src/crypto/gui/signencryptwidget.cpp:170
 #, kde-format
 msgid ""
 "Encrypt with password. Anyone you share the password with can read the data."
@@ -4388,9 +4436,15 @@ msgstr ""
 "Cifrar cun contrasinal. Calquera con quen comparta o contrasinal pode ler os "
 "datos."
 
-#: src/crypto/gui/signencryptwidget.cpp:171
-#, kde-format
-msgctxt "Tooltip information for symetric encryption"
+#: src/crypto/gui/signencryptwidget.cpp:172
+#, fuzzy, kde-format
+#| msgctxt "Tooltip information for symetric encryption"
+#| msgid ""
+#| "Additionally to the keys of the recipients you can encrypt your data with "
+#| "a password. Anyone who has the password can read the data without any "
+#| "secret key. Using a password is <b>less secure</b> then public key "
+#| "cryptography. Even if you pick a very strong password."
+msgctxt "Tooltip information for symmetric encryption"
 msgid ""
 "Additionally to the keys of the recipients you can encrypt your data with a "
 "password. Anyone who has the password can read the data without any secret "
@@ -4402,26 +4456,32 @@ msgstr ""
 "chave secreta. Usar un contrasinal é <b>menos seguro</b> que a criptografía "
 "de chave pública. Incluso se escolle un contrasinal moi seguro."
 
-#: src/crypto/gui/signencryptwidget.cpp:456
+#: src/crypto/gui/signencryptwidget.cpp:467
 #, kde-format
 msgctxt "@action"
 msgid "Sign / Encrypt"
 msgstr "Asinar e/ou cifrar"
 
-#: src/crypto/gui/signencryptwidget.cpp:460
+#: src/crypto/gui/signencryptwidget.cpp:469
+#, kde-format
+msgctxt "@action"
+msgid "Encrypt"
+msgstr "Cifrar"
+
+#: src/crypto/gui/signencryptwidget.cpp:471
 #, kde-format
 msgctxt "@action"
 msgid "Sign"
 msgstr "Asinar"
 
-#: src/crypto/gui/signencryptwidget.cpp:616
+#: src/crypto/gui/signencryptwidget.cpp:621
 #, fuzzy, kde-format
 #| msgid "Could not bind to socket: %1"
 msgctxt "%1 is user input that could not be found"
 msgid "Could not find a key for '%1'"
 msgstr "Non se puido asociar co socket: %1"
 
-#: src/crypto/gui/signencryptwidget.cpp:617
+#: src/crypto/gui/signencryptwidget.cpp:622
 #, fuzzy, kde-format
 #| msgid "Failed to send recipient %1: %2"
 msgid "Failed to find recipient"
@@ -9833,9 +9893,6 @@ msgstr ""
 
 #~ msgid "Sign"
 #~ msgstr "Asinar"
-
-#~ msgid "Encrypt"
-#~ msgstr "Cifrar"
 
 #~ msgid "Authenticate"
 #~ msgstr "Autenticar"
