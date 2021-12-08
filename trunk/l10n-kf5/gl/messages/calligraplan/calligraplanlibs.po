@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kplatoui\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2021-12-07 00:44+0000\n"
+"POT-Creation-Date: 2021-12-08 00:45+0000\n"
 "PO-Revision-Date: 2020-03-07 07:54+0100\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Galician <proxecto@trasno.gal>\n"
@@ -219,7 +219,7 @@ msgstr "Erro de programación"
 
 # Este termo úsase para o concepto de «risco». Pode que tamén se empregue para conceptos que requiran o uso do feminino, en cuxo caso habería que solicitar que o termo se separe en máis traducións distintas, pero ata que se atope un caso deses, a tirar para adiante!
 #. i18n: ectx: property (text), item, widget (KComboBox, risk)
-#: kernel/kptnode.cpp:141 kernel/kptnode.cpp:1646 kernel/kpttask.cpp:4002
+#: kernel/kptnode.cpp:141 kernel/kptnode.cpp:1646 kernel/WorkPackage.cpp:132
 #: models/kptcalendarmodel.cpp:418 models/kptcalendarmodel.cpp:438
 #: models/kptnodeitemmodel.cpp:423 models/kptnodeitemmodel.cpp:439
 #: models/kptnodeitemmodel.cpp:449 models/kptnodeitemmodel.cpp:662
@@ -560,7 +560,7 @@ msgstr "Esperado"
 msgid "Info"
 msgstr "Info"
 
-#: kernel/kptschedule.cpp:1573 main/KoMainWindow.cpp:1780
+#: kernel/kptschedule.cpp:1573 main/KoMainWindow.cpp:1775
 #, kde-format
 msgid "Warning"
 msgstr "Advertencia"
@@ -712,21 +712,6 @@ msgid "Could not match work duration. Want: %1 got: %2"
 msgstr ""
 "Non se puido casar coa duración do traballo: Quérese: %1 pero tense: %2"
 
-#: kernel/kpttask.cpp:4005
-#, kde-format
-msgid "Send"
-msgstr "Enviado"
-
-#: kernel/kpttask.cpp:4008
-#, kde-format
-msgid "Receive"
-msgstr "Recibido"
-
-#: kernel/kpttask.cpp:4011
-#, kde-format
-msgid "Rejected"
-msgstr "Rexeitado"
-
 #: kernel/kptwbsdefinition.cpp:28
 #: ui/reportsgenerator/ReportsGeneratorView.cpp:189
 #, kde-format
@@ -797,6 +782,21 @@ msgstr "Organización das citas: a data de remate do nodo non é correcta."
 msgid "Resource %1 not available in interval: %2 to %3"
 msgstr "Non hai o recurso %1 no intervalo: %2 a %3"
 
+#: kernel/WorkPackage.cpp:135
+#, kde-format
+msgid "Send"
+msgstr "Enviado"
+
+#: kernel/WorkPackage.cpp:138
+#, kde-format
+msgid "Receive"
+msgstr "Recibido"
+
+#: kernel/WorkPackage.cpp:141
+#, kde-format
+msgid "Rejected"
+msgstr "Rexeitado"
+
 #: kundo2/kundo2group.cpp:360 kundo2/kundo2stack.cpp:1071
 #, kde-format
 msgctxt "Default text for undo action"
@@ -826,13 +826,13 @@ msgstr "Refacer %1"
 msgid "<empty>"
 msgstr "<baleiro>"
 
-#: kundo2/kundo2stack.cpp:1347 main/KoMainWindow.cpp:1596
+#: kundo2/kundo2stack.cpp:1347 main/KoMainWindow.cpp:1591
 #: main/KoUndoStackAction.cpp:34
 #, kde-format
 msgid "Redo"
 msgstr "Refacer"
 
-#: kundo2/kundo2stack.cpp:1366 main/KoMainWindow.cpp:1595
+#: kundo2/kundo2stack.cpp:1366 main/KoMainWindow.cpp:1590
 #: main/KoUndoStackAction.cpp:26
 #, kde-format
 msgid "Undo"
@@ -1194,7 +1194,7 @@ msgstr ""
 "Xa existe un ficheiro gardado automaticamente para este documento.\n"
 "Quere abrilo no seu lugar?"
 
-#: main/KoDocument.cpp:1295 main/KoDocument.cpp:1605 main/KoMainWindow.cpp:718
+#: main/KoDocument.cpp:1295 main/KoDocument.cpp:1605 main/KoMainWindow.cpp:711
 #, kde-format
 msgid "The file %1 does not exist."
 msgstr "O ficheiro %1 non existe."
@@ -1379,12 +1379,12 @@ msgstr ""
 "O documento <i>%1</i> contén varias versións. Vaia Ficheiro -> Versións para "
 "abrir unha versión antiga."
 
-#: main/KoDocument.cpp:2007 main/KoDocument.cpp:2490 main/KoMainWindow.cpp:1267
+#: main/KoDocument.cpp:2007 main/KoDocument.cpp:2491 main/KoMainWindow.cpp:1262
 #, kde-format
 msgid "Untitled"
 msgstr "Sen título"
 
-#: main/KoDocument.cpp:2010 main/KoMainWindow.cpp:1270
+#: main/KoDocument.cpp:2010 main/KoMainWindow.cpp:1265
 #, kde-format
 msgid ""
 "<p>The document <b>'%1'</b> has been modified.</p><p>Do you want to save it?"
@@ -1439,7 +1439,7 @@ msgstr "un gráfico"
 msgid "a drawing"
 msgstr "un debuxo"
 
-#: main/KoDocument.cpp:2494
+#: main/KoDocument.cpp:2495
 #, kde-format
 msgid ""
 "The document \"%1\" has been modified.\n"
@@ -1448,7 +1448,7 @@ msgstr ""
 "O documento «%1» modificouse.\n"
 "Quere gardar os cambios ou descartalos?"
 
-#: main/KoDocument.cpp:2496
+#: main/KoDocument.cpp:2497
 #, kde-format
 msgid "Close Document"
 msgstr "Pechar o documento"
@@ -1482,88 +1482,88 @@ msgstr "Falta o Filtro de Importación"
 msgid "Choose Filter"
 msgstr "Escolla o Filtro"
 
-#: main/KoMainWindow.cpp:158
+#: main/KoMainWindow.cpp:156
 #, kde-format
 msgid "%1 unsaved document (%2)"
 msgstr "%1 documento non gardado (%2)"
 
-#: main/KoMainWindow.cpp:272 ui/kptviewbase.cpp:753
+#: main/KoMainWindow.cpp:268 ui/kptviewbase.cpp:753
 #, kde-format
 msgid "Print to PDF..."
 msgstr "Imprimir nun PDF…"
 
-#: main/KoMainWindow.cpp:282
+#: main/KoMainWindow.cpp:278
 #, kde-format
 msgid "Reload"
 msgstr "Cargar de novo"
 
-#: main/KoMainWindow.cpp:286
+#: main/KoMainWindow.cpp:282
 #, kde-format
 msgid "Import..."
 msgstr "Importar…"
 
-#: main/KoMainWindow.cpp:290
+#: main/KoMainWindow.cpp:286
 #, kde-format
 msgid "E&xport..."
 msgstr "E&xportar…"
 
-#: main/KoMainWindow.cpp:296
+#: main/KoMainWindow.cpp:290
 #, kde-format
 msgid "En&crypt Document"
 msgstr "&Cifrar o documento"
 
-#: main/KoMainWindow.cpp:301
+#: main/KoMainWindow.cpp:295
 #, kde-format
 msgid "&Uncompress to Directory"
 msgstr "&Descomprimir nun directorio"
 
-#: main/KoMainWindow.cpp:307
+#: main/KoMainWindow.cpp:300
 #, kde-format
 msgid "&New View"
 msgstr "&Nova Vista"
 
-#: main/KoMainWindow.cpp:314 widgets/KoDocumentInfoDlg.cpp:88
+#: main/KoMainWindow.cpp:307 widgets/KoDocumentInfoDlg.cpp:88
 #, kde-format
 msgid "Document Information"
 msgstr "Información do documento"
 
-#: main/KoMainWindow.cpp:340
+#: main/KoMainWindow.cpp:333
 #, kde-format
 msgid "Full Screen Mode"
 msgstr "Modo a pantalla completa"
 
-#: main/KoMainWindow.cpp:345
+#: main/KoMainWindow.cpp:338
 #, kde-format
 msgid "Show Dockers"
 msgstr "Mostrar as docas"
 
-#: main/KoMainWindow.cpp:350
+#: main/KoMainWindow.cpp:343
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Show Docker Titlebars"
 msgstr "Mostrar as barras de título das docas"
 
-#: main/KoMainWindow.cpp:357
+#: main/KoMainWindow.cpp:350
 #, kde-format
 msgid "Dockers"
 msgstr "Docas"
 
-#: main/KoMainWindow.cpp:667
+#: main/KoMainWindow.cpp:660
 #, kde-format
 msgid "(write protected)"
 msgstr "(protexido contra a escritura)"
 
-#: main/KoMainWindow.cpp:672
+#: main/KoMainWindow.cpp:665
 #, kde-format
 msgid "Save as %1"
 msgstr "Guarda como %1"
 
-#: main/KoMainWindow.cpp:674
+#: main/KoMainWindow.cpp:667
 #, kde-format
 msgid "Save"
 msgstr "Gardar"
 
-#: main/KoMainWindow.cpp:712 main/KoMainWindow.cpp:729
+#: main/KoMainWindow.cpp:705 main/KoMainWindow.cpp:722
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -1575,12 +1575,13 @@ msgstr ""
 "cree un proxecto novo usando este modelo e gárdeo usando <interface>Ficheiro-"
 ">Crear un modelo de proxecto…</interface>."
 
-#: main/KoMainWindow.cpp:875 widgets/KoDocumentInfoDlg.cpp:394
+#: main/KoMainWindow.cpp:868 widgets/KoDocumentInfoDlg.cpp:393
+#: widgets/KoDocumentInfoDlg.cpp:436
 #, kde-format
 msgid "%1 (unknown file type)"
 msgstr "%1 (tipo de ficheiro descoñecido)"
 
-#: main/KoMainWindow.cpp:883
+#: main/KoMainWindow.cpp:876
 #, kde-format
 msgid ""
 "<qt>Saving as a %1 may result in some loss of formatting.<p>Do you still "
@@ -1589,12 +1590,12 @@ msgstr ""
 "<qt>Gardar como %1 pode causar algunhas perdas de formación.<p>Quere "
 "realmente gardar neste formato?</qt>"
 
-#: main/KoMainWindow.cpp:886
+#: main/KoMainWindow.cpp:879
 #, kde-format
 msgid "Confirm Save"
 msgstr "Confirmar a garda"
 
-#: main/KoMainWindow.cpp:895
+#: main/KoMainWindow.cpp:888
 #, kde-format
 msgid ""
 "<qt>Exporting as a %1 may result in some loss of formatting.<p>Do you still "
@@ -1603,53 +1604,53 @@ msgstr ""
 "<qt>A exportación como %1 pode causar algunhas perdas de formato.<p>Quere "
 "realmente exportar para este formato?</qt>"
 
-#: main/KoMainWindow.cpp:898
+#: main/KoMainWindow.cpp:891
 #, kde-format
 msgid "Confirm Export"
 msgstr "Confirmar a Exportación"
 
-#: main/KoMainWindow.cpp:899 ui/reports/reportview.cpp:381
+#: main/KoMainWindow.cpp:892 ui/reports/reportview.cpp:381
 #: ui/reports/reportview.cpp:401 ui/reports/reportview.cpp:423
 #, kde-format
 msgid "Export"
 msgstr "Exportar"
 
-#: main/KoMainWindow.cpp:1008
+#: main/KoMainWindow.cpp:1001
 #, kde-format
 msgid "untitled"
 msgstr "sen título"
 
-#: main/KoMainWindow.cpp:1339 main/WelcomeView.cpp:274
+#: main/KoMainWindow.cpp:1334 main/WelcomeView.cpp:274
 #, kde-format
 msgid "Open Document"
 msgstr "Abrir un documento"
 
-#: main/KoMainWindow.cpp:1348
+#: main/KoMainWindow.cpp:1343
 #, kde-format
 msgid "Import Document"
 msgstr "Importar un documento"
 
-#: main/KoMainWindow.cpp:1536
+#: main/KoMainWindow.cpp:1531
 #, kde-format
 msgid "Export as PDF"
 msgstr "Exportar a PDF"
 
-#: main/KoMainWindow.cpp:1573
+#: main/KoMainWindow.cpp:1568
 #, kde-format
 msgid "Cannot export to the specified file"
 msgstr "Non foi posíbel exportar o ficheiro indicado"
 
-#: main/KoMainWindow.cpp:1749
+#: main/KoMainWindow.cpp:1744
 #, kde-format
 msgid "Document"
 msgstr "Documento"
 
-#: main/KoMainWindow.cpp:1757
+#: main/KoMainWindow.cpp:1752
 #, kde-format
 msgid "Document - %1"
 msgstr "Documento - %1"
 
-#: main/KoMainWindow.cpp:1778
+#: main/KoMainWindow.cpp:1773
 #, kde-format
 msgid ""
 "You will lose all changes made since your last save\n"
@@ -1658,12 +1659,12 @@ msgstr ""
 "Vai perder todos os cambios que fixo desde a última vez que o gardou\n"
 "Quere continuar?"
 
-#: main/KoMainWindow.cpp:2133
+#: main/KoMainWindow.cpp:2128
 #, kde-format
 msgid "Show %1 Toolbar"
 msgstr "Mostrar a barra de ferramentas %1"
 
-#: main/KoMainWindow.cpp:2135
+#: main/KoMainWindow.cpp:2130
 #, kde-format
 msgid "Hide %1 Toolbar"
 msgstr "Agochar a barra de ferramentas %1"
@@ -5740,7 +5741,7 @@ msgstr "Pixels (px)"
 msgid "Unsupported unit"
 msgstr "Unidade incompatíbel"
 
-#: store/KoEncryptedStore.cpp:229
+#: store/KoEncryptedStore.cpp:231
 #, kde-format
 msgid ""
 "This document contains an unknown checksum. When you give a password it "
@@ -5749,7 +5750,7 @@ msgstr ""
 "O documento conten unha suma de comprobación descoñecida. Cando lle dea un "
 "contrasinal poida que non se verifique."
 
-#: store/KoEncryptedStore.cpp:255 store/KoEncryptedStore.cpp:272
+#: store/KoEncryptedStore.cpp:257 store/KoEncryptedStore.cpp:274
 #, kde-format
 msgid ""
 "This document contains an unknown encryption method. Some parts may be "
@@ -5758,7 +5759,7 @@ msgstr ""
 "O documento contén un modo de cifrado descoñecido. Poida que algunhas partes "
 "sexan ilexíbeis."
 
-#: store/KoEncryptedStore.cpp:287
+#: store/KoEncryptedStore.cpp:289
 #, kde-format
 msgid ""
 "This document contains incomplete encryption data. Some parts may be "
@@ -5767,7 +5768,7 @@ msgstr ""
 "Este documento contén información de cifrado incompleta. Algunhas parte "
 "poida que sexan ilexíbeis."
 
-#: store/KoEncryptedStore.cpp:301
+#: store/KoEncryptedStore.cpp:303
 #, kde-format
 msgid ""
 "QCA has currently no support for SHA1 or PBKDF2 using SHA1. The document can "
@@ -5776,7 +5777,7 @@ msgstr ""
 "QCA non é compatíbel actualmente con SHA1 ou PBKDF2 empregando SHA1. Este "
 "documento non se pode abrir."
 
-#: store/KoEncryptedStore.cpp:331
+#: store/KoEncryptedStore.cpp:333
 #, kde-format
 msgid ""
 "The manifest file seems to be corrupted. It cannot be modified and the "
@@ -5787,7 +5788,7 @@ msgstr ""
 "polo que o documento quedará ilexíbel. Intente gardar o documento de novo "
 "para evitar perdelos seus datos."
 
-#: store/KoEncryptedStore.cpp:429
+#: store/KoEncryptedStore.cpp:431
 #, kde-format
 msgid ""
 "The manifest file cannot be written. The document will remain unreadable. "
@@ -5797,17 +5798,17 @@ msgstr ""
 "ilexíbel. Intenta gardar o documento de novo para evitar perder o seu "
 "traballo. "
 
-#: store/KoEncryptedStore.cpp:551
+#: store/KoEncryptedStore.cpp:553
 #, kde-format
 msgid "Please enter the password to open this file."
 msgstr "Introduza o contrasinal para abrir este ficheiro."
 
-#: store/KoEncryptedStore.cpp:726
+#: store/KoEncryptedStore.cpp:730
 #, kde-format
 msgid "Please enter the password to encrypt the document with."
 msgstr "Introduza o contrasinal co que descifrar este documento."
 
-#: store/KoEncryptedStore.cpp:740
+#: store/KoEncryptedStore.cpp:748
 #, kde-format
 msgid "Do you want to save the password?"
 msgstr "Quere gardar o contrasinal?"
@@ -10078,7 +10079,7 @@ msgstr "Este documento non está cifrado"
 msgid "This document does not support encryption"
 msgstr "Este documento non permite cifrado"
 
-#: widgets/KoDocumentInfoDlg.cpp:357
+#: widgets/KoDocumentInfoDlg.cpp:356
 #, kde-format
 msgid ""
 "<qt>Decrypting the document will remove the password protection from it."
@@ -10087,17 +10088,17 @@ msgstr ""
 "<qt>Descifrar o documento fará que se elimine a protección por contrasinal "
 "que posuíra.<p>Quere manter o ficheiro encriptado?</qt>"
 
-#: widgets/KoDocumentInfoDlg.cpp:359
+#: widgets/KoDocumentInfoDlg.cpp:358
 #, kde-format
 msgid "Confirm Decrypt"
 msgstr "Confirmar o descifrado"
 
-#: widgets/KoDocumentInfoDlg.cpp:360
+#: widgets/KoDocumentInfoDlg.cpp:359
 #, kde-format
 msgid "Decrypt"
 msgstr "Descifrar"
 
-#: widgets/KoDocumentInfoDlg.cpp:371
+#: widgets/KoDocumentInfoDlg.cpp:370
 #, kde-format
 msgid ""
 "<qt>Your document could not be saved automatically.<p>To complete the "
@@ -10106,13 +10107,14 @@ msgstr ""
 "<qt>O seu documento non se puido gardar automaticamente.<p>Para completar o "
 "descifrado necesítase que garde o documento.</qt>"
 
-#: widgets/KoDocumentInfoDlg.cpp:373 widgets/KoDocumentInfoDlg.cpp:381
-#: widgets/KoDocumentInfoDlg.cpp:415 widgets/KoDocumentInfoDlg.cpp:423
+#: widgets/KoDocumentInfoDlg.cpp:372 widgets/KoDocumentInfoDlg.cpp:380
+#: widgets/KoDocumentInfoDlg.cpp:414 widgets/KoDocumentInfoDlg.cpp:422
+#: widgets/KoDocumentInfoDlg.cpp:459 widgets/KoDocumentInfoDlg.cpp:467
 #, kde-format
 msgid "Save Document"
 msgstr "Gardar o documento"
 
-#: widgets/KoDocumentInfoDlg.cpp:379
+#: widgets/KoDocumentInfoDlg.cpp:378
 #, kde-format
 msgid ""
 "<qt>The document has been changed since it was opened. To complete the "
@@ -10123,7 +10125,7 @@ msgstr ""
 "completar o descifrado fai falta que o documento se garde<p>Quere gardar o "
 "documento agora?<qt/>"
 
-#: widgets/KoDocumentInfoDlg.cpp:397
+#: widgets/KoDocumentInfoDlg.cpp:396
 #, kde-format
 msgid ""
 "<qt>The document is currently saved as %1. The document needs to be changed "
@@ -10134,17 +10136,17 @@ msgstr ""
 "formato <b>OASIS OpenDocument</b> para o poder cifrar.<p>Quere cambiar o "
 "ficheiro a OASIS OpenDocument?</qt>"
 
-#: widgets/KoDocumentInfoDlg.cpp:399
+#: widgets/KoDocumentInfoDlg.cpp:398 widgets/KoDocumentInfoDlg.cpp:442
 #, kde-format
 msgid "Change Filetype"
 msgstr "Cambiar o formato de ficheiro"
 
-#: widgets/KoDocumentInfoDlg.cpp:400
+#: widgets/KoDocumentInfoDlg.cpp:399 widgets/KoDocumentInfoDlg.cpp:443
 #, kde-format
 msgid "Change"
 msgstr "Cambiar"
 
-#: widgets/KoDocumentInfoDlg.cpp:413
+#: widgets/KoDocumentInfoDlg.cpp:412 widgets/KoDocumentInfoDlg.cpp:457
 #, kde-format
 msgid ""
 "<qt>Your document could not be saved automatically.<p>To complete the "
@@ -10153,7 +10155,7 @@ msgstr ""
 "<qt>Non se puido gardar o seu documento automaticamente.<p>Para completar o "
 "cifrado necesita gardar o documento.<qt/>"
 
-#: widgets/KoDocumentInfoDlg.cpp:421
+#: widgets/KoDocumentInfoDlg.cpp:420 widgets/KoDocumentInfoDlg.cpp:465
 #, kde-format
 msgid ""
 "<qt>The document has been changed since it was opened. To complete the "
@@ -10162,6 +10164,20 @@ msgid ""
 msgstr ""
 "<qt>O documento cambiou desde que se abriu. Para completar o cifrado "
 "necesítase que se garde o documento.<p>Quere gardar o documento agora?</qt>"
+
+#: widgets/KoDocumentInfoDlg.cpp:440
+#, fuzzy, kde-format
+#| msgid ""
+#| "<qt>The document is currently saved as %1. The document needs to be "
+#| "changed to <b>OASIS OpenDocument</b> to be encrypted.<p>Do you want to "
+#| "change the file to OASIS OpenDocument?</qt>"
+msgid ""
+"<qt>The document is currently saved as %1. The document needs to be changed "
+"to <b>%2</b> to be encrypted.<p>Do you want to change the file to %2?</qt>"
+msgstr ""
+"<qt>O documento gardouse como %1. É necesario que se cambie o documento a "
+"formato <b>OASIS OpenDocument</b> para o poder cifrar.<p>Quere cambiar o "
+"ficheiro a OASIS OpenDocument?</qt>"
 
 #: widgets/KoPageLayoutDialog.cpp:34
 #, kde-format
