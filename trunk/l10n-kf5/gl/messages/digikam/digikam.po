@@ -64,7 +64,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-02-22 00:42+0000\n"
+"POT-Creation-Date: 2022-02-23 00:43+0000\n"
 "PO-Revision-Date: 2020-01-12 12:23+0100\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Galician <proxecto@trasno.gal>\n"
@@ -448,13 +448,13 @@ msgstr ""
 "as imaxes. Isto tamén inclúe a caixa para marcar «%1»."
 
 #: core/app/filters/filtersidebarwidget.cpp:196
-#: core/utilities/searchwindow/searchgroup.cpp:707
+#: core/utilities/searchwindow/searchgroup_label.cpp:310
 #, kde-format
 msgid "OR"
 msgstr "OU"
 
 #: core/app/filters/filtersidebarwidget.cpp:199
-#: core/utilities/searchwindow/searchgroup.cpp:703
+#: core/utilities/searchwindow/searchgroup_label.cpp:306
 #, kde-format
 msgid "AND"
 msgstr "E"
@@ -1266,7 +1266,7 @@ msgid "White Balance:"
 msgstr "Balance de brancos:"
 
 #: core/app/items/utils/tooltipfiller.cpp:322
-#: core/utilities/searchwindow/searchgroup.cpp:147
+#: core/utilities/searchwindow/searchgroup.cpp:124
 #, kde-format
 msgid "Audio/Video Properties"
 msgstr "Propiedades de son e vídeo"
@@ -3120,13 +3120,13 @@ msgstr "Mostrar a pantalla completa"
 #: core/libs/album/treeview/albumselectiontreeview.cpp:295
 #: core/libs/album/widgets/albumselecttabs.cpp:200
 #: core/libs/database/utils/widgets/dbstatdlg.cpp:73
-#: core/libs/models/albummodel.cpp:54
+#: core/libs/models/albummodel.cpp:34
 #, kde-format
 msgid "Albums"
 msgstr "Álbums"
 
 #: core/app/views/sidebar/datefolderviewsidebarwidget.cpp:131
-#: core/libs/models/albummodel.cpp:388
+#: core/libs/models/albummodel_date.cpp:34
 #, kde-format
 msgid "Dates"
 msgstr "Datas"
@@ -3145,7 +3145,7 @@ msgstr "Mapa"
 
 #: core/app/views/sidebar/labelssidebarwidget.cpp:128
 #: core/libs/album/widgets/albumselecttabs.cpp:203
-#: core/utilities/searchwindow/searchfields.cpp:195
+#: core/utilities/searchwindow/searchfields_createfield.cpp:150
 #, kde-format
 msgid "Labels"
 msgstr "Etiquetas"
@@ -3213,13 +3213,13 @@ msgstr "Álbum sen etiquetas"
 #: core/libs/album/widgets/albumselecttabs.cpp:201
 #: core/libs/database/utils/widgets/dbstatdlg.cpp:78
 #: core/libs/metadataengine/dmetadata/dmetadatasettingscontainer.cpp:42
-#: core/libs/models/albummodel.cpp:131
+#: core/libs/models/albummodel_tag.cpp:34
 #: core/libs/properties/captions/itemdescedittab.cpp:329
 #: core/libs/tags/widgets/tagfolderview.cpp:113
 #: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:608
-#: core/utilities/searchwindow/searchfields.cpp:128
-#: core/utilities/searchwindow/searchfields.cpp:136
-#: core/utilities/searchwindow/searchfields.cpp:149
+#: core/utilities/searchwindow/searchfields_createfield.cpp:83
+#: core/utilities/searchwindow/searchfields_createfield.cpp:91
+#: core/utilities/searchwindow/searchfields_createfield.cpp:104
 #, kde-format
 msgid "Tags"
 msgstr "Etiquetas"
@@ -3845,7 +3845,7 @@ msgstr "Tipo de canle de son"
 
 #: core/app/views/tableview/tableview_column_audiovideo.cpp:80
 #: core/app/views/tableview/tableview_column_audiovideo.cpp:104
-#: core/utilities/searchwindow/searchfields.cpp:924
+#: core/utilities/searchwindow/searchfields_createfield.cpp:879
 #: core/utilities/setup/setuptooltip.cpp:328
 #, kde-format
 msgid "Audio Codec"
@@ -3853,7 +3853,7 @@ msgstr "Códec de son"
 
 #: core/app/views/tableview/tableview_column_audiovideo.cpp:81
 #: core/app/views/tableview/tableview_column_audiovideo.cpp:109
-#: core/utilities/searchwindow/searchfields.cpp:784
+#: core/utilities/searchwindow/searchfields_createfield.cpp:739
 #, kde-format
 msgid "Duration"
 msgstr "Duración"
@@ -4168,14 +4168,14 @@ msgstr "Propiedades do elemento"
 
 #: core/app/views/tableview/tableview_column_item.cpp:83
 #: core/app/views/tableview/tableview_column_item.cpp:104
-#: core/utilities/searchwindow/searchfields.cpp:246
+#: core/utilities/searchwindow/searchfields_createfield.cpp:201
 #, kde-format
 msgid "Width"
 msgstr "Anchura"
 
 #: core/app/views/tableview/tableview_column_item.cpp:84
 #: core/app/views/tableview/tableview_column_item.cpp:109
-#: core/utilities/searchwindow/searchfields.cpp:264
+#: core/utilities/searchwindow/searchfields_createfield.cpp:219
 #, kde-format
 msgid "Height"
 msgstr "Altura"
@@ -4912,7 +4912,7 @@ msgstr ""
 #: core/dplugins/bqm/colors/whitebalance/whitebalanceplugin.cpp:54
 #: core/dplugins/editor/colors/whitebalance/whitebalancetool.cpp:89
 #: core/dplugins/editor/colors/whitebalance/whitebalancetool.cpp:216
-#: core/utilities/searchwindow/searchfields.cpp:586
+#: core/utilities/searchwindow/searchfields_createfield.cpp:541
 #, kde-format
 msgid "White Balance"
 msgstr "Balance de brancos"
@@ -10513,8 +10513,8 @@ msgstr ""
 "enorme. Este proceso pode levar un tempo."
 
 #: core/dplugins/editor/transform/resize/resizetool.cpp:638
-#: core/utilities/searchwindow/searchfields.cpp:248
-#: core/utilities/searchwindow/searchfields.cpp:266
+#: core/utilities/searchwindow/searchfields_createfield.cpp:203
+#: core/utilities/searchwindow/searchfields_createfield.cpp:221
 #, kde-format
 msgctxt "Pixels"
 msgid "px"
@@ -16080,8 +16080,8 @@ msgstr "Cartafol de destino"
 
 #: core/dplugins/generic/tools/dngconverter/dngconverterlist.cpp:48
 #: core/utilities/advancedrename/parser/options/cameranameoption.cpp:44
-#: core/utilities/searchwindow/searchfields.cpp:372
-#: core/utilities/searchwindow/searchfields.cpp:403
+#: core/utilities/searchwindow/searchfields_createfield.cpp:327
+#: core/utilities/searchwindow/searchfields_createfield.cpp:358
 #, kde-format
 msgid "Camera"
 msgstr "Cámara"
@@ -19142,7 +19142,7 @@ msgstr ""
 "procesar ficheiros.</p>"
 
 #: core/dplugins/generic/tools/printcreator/printcreatorplugin.cpp:82
-#: core/utilities/searchwindow/searchfields.cpp:700
+#: core/utilities/searchwindow/searchfields_createfield.cpp:655
 #, kde-format
 msgid "Author"
 msgstr "Autor"
@@ -20831,7 +20831,7 @@ msgstr "Vista previa…"
 #: core/utilities/advancedrename/advancedrenamewidget.cpp:398
 #: core/utilities/advancedrename/common/tooltipcreator.cpp:107
 #: core/utilities/advancedrename/parser/modifiers/replacemodifierdialogwidget.ui:49
-#: core/utilities/searchwindow/searchgroup.cpp:620
+#: core/utilities/searchwindow/searchgroup_label.cpp:223
 #, kde-format
 msgid "Options"
 msgstr "Opcións"
@@ -24278,7 +24278,7 @@ msgid "This is the list of images to upload to an iNaturalist observation."
 msgstr "Esta é a lista de imaxes que enviar á conta en Flickr."
 
 #: core/dplugins/generic/webservices/inaturalist/inatwidget.cpp:74
-#: core/utilities/searchwindow/searchfields.cpp:212
+#: core/utilities/searchwindow/searchfields_createfield.cpp:167
 #, kde-format
 msgid "Date"
 msgstr "Data"
@@ -25485,10 +25485,10 @@ msgstr ""
 #: core/dplugins/generic/webservices/smugmug/smugwidget.cpp:114
 #: core/libs/dplugins/webservices/wssettingswidget.cpp:151
 #: core/libs/models/abstractalbummodel.cpp:448
-#: core/utilities/searchwindow/searchfields.cpp:81
-#: core/utilities/searchwindow/searchfields.cpp:89
-#: core/utilities/searchwindow/searchfields.cpp:97
-#: core/utilities/searchwindow/searchfields.cpp:105
+#: core/utilities/searchwindow/searchfields_createfield.cpp:36
+#: core/utilities/searchwindow/searchfields_createfield.cpp:44
+#: core/utilities/searchwindow/searchfields_createfield.cpp:52
+#: core/utilities/searchwindow/searchfields_createfield.cpp:60
 #, kde-format
 msgid "Album"
 msgstr "Álbum"
@@ -27093,9 +27093,9 @@ msgid "Reset curve to linear"
 msgstr "Reiniciar a curva a lineal"
 
 #: core/dplugins/rawimport/native/rawsettingsbox.cpp:294
-#: core/utilities/searchwindow/searchfields.cpp:506
-#: core/utilities/searchwindow/searchfields.cpp:527
-#: core/utilities/searchwindow/searchfields.cpp:539
+#: core/utilities/searchwindow/searchfields_createfield.cpp:461
+#: core/utilities/searchwindow/searchfields_createfield.cpp:482
+#: core/utilities/searchwindow/searchfields_createfield.cpp:494
 #, kde-format
 msgid "Exposure"
 msgstr "Exposición"
@@ -27221,7 +27221,7 @@ msgstr "A examinar os álbums..."
 
 #: core/libs/album/manager/albummanager.cpp:171
 #: core/libs/album/widgets/albumselecttabs.cpp:202
-#: core/libs/models/albummodel.cpp:280
+#: core/libs/models/albummodel_search.cpp:34
 #: core/utilities/searchwindow/editablesearchtreeview.cpp:86
 #, kde-format
 msgid "Searches"
@@ -37372,7 +37372,7 @@ msgstr "Título"
 
 #: core/libs/metadataengine/dmetadata/dmetadatasettingscontainer.cpp:52
 #: core/libs/widgets/metadata/labels/ratingwidget.cpp:556
-#: core/utilities/searchwindow/searchfields.cpp:203
+#: core/utilities/searchwindow/searchfields_createfield.cpp:158
 #, kde-format
 msgid "Rating"
 msgstr "Cualificación"
@@ -37423,7 +37423,7 @@ msgctxt "Focus point type description"
 msgid "Inactive"
 msgstr "Relativo"
 
-#: core/libs/models/albummodel.cpp:158
+#: core/libs/models/albummodel_tag.cpp:61
 #, fuzzy, kde-format
 #| msgctxt "device label etc... (<formatted byte size>)"
 #| msgid " (%1)"
@@ -44971,7 +44971,7 @@ msgstr "Información da imaxe"
 
 #: core/libs/widgets/metadata/exiv2/mdkeylistviewitem.cpp:64
 #: core/showfoto/setup/showfotosetuptooltip.cpp:148
-#: core/utilities/searchwindow/searchgroup.cpp:186
+#: core/utilities/searchwindow/searchgroup.cpp:163
 #: core/utilities/setup/setuptooltip.cpp:241
 #, kde-format
 msgid "Photograph Information"
@@ -50751,14 +50751,14 @@ msgid "Lens of the camera"
 msgstr "Lente da cámara"
 
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:72
-#: core/utilities/searchwindow/searchfields.cpp:448
+#: core/utilities/searchwindow/searchfields_createfield.cpp:403
 #, kde-format
 msgid "Aperture"
 msgstr "Abertura"
 
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:73
-#: core/utilities/searchwindow/searchfields.cpp:468
-#: core/utilities/searchwindow/searchfields.cpp:487
+#: core/utilities/searchwindow/searchfields_createfield.cpp:423
+#: core/utilities/searchwindow/searchfields_createfield.cpp:442
 #, kde-format
 msgid "Focal length"
 msgstr "Distancia focal"
@@ -50769,7 +50769,7 @@ msgid "Focal length (35mm equivalent)"
 msgstr "Distancia focal (equivalencia en 35mm)"
 
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:75
-#: core/utilities/searchwindow/searchfields.cpp:506
+#: core/utilities/searchwindow/searchfields_createfield.cpp:461
 #, kde-format
 msgid "Exposure time"
 msgstr "Tempo de exposición"
@@ -50785,7 +50785,7 @@ msgid "Exposure mode"
 msgstr "Modo de exposición"
 
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:78
-#: core/utilities/searchwindow/searchfields.cpp:550
+#: core/utilities/searchwindow/searchfields_createfield.cpp:505
 #, kde-format
 msgid "Sensitivity"
 msgstr "Sensibilidade"
@@ -50796,7 +50796,7 @@ msgid "Flash mode"
 msgstr "Modo do flash"
 
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:80
-#: core/utilities/searchwindow/searchfields.cpp:597
+#: core/utilities/searchwindow/searchfields_createfield.cpp:552
 #, kde-format
 msgid "White balance"
 msgstr "Balance de brancos"
@@ -50827,14 +50827,14 @@ msgid "Display Aspect Ratio"
 msgstr "Mostrar a proporción de aspecto"
 
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:87
-#: core/utilities/searchwindow/searchfields.cpp:887
+#: core/utilities/searchwindow/searchfields_createfield.cpp:842
 #: core/utilities/setup/setuptooltip.cpp:322
 #, kde-format
 msgid "Audio Bit Rate"
 msgstr "Taxa de bits de son"
 
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:88
-#: core/utilities/searchwindow/searchfields.cpp:905
+#: core/utilities/searchwindow/searchfields_createfield.cpp:860
 #: core/utilities/setup/setuptooltip.cpp:325
 #, kde-format
 msgid "Audio Channel Type"
@@ -50907,7 +50907,7 @@ msgid "Altitude in a human readable form"
 msgstr "Altitude en forma lexíbel por humanos"
 
 #: core/utilities/advancedrename/parser/options/database/keys/positionkeys.cpp:67
-#: core/utilities/searchwindow/searchfields.cpp:282
+#: core/utilities/searchwindow/searchfields_createfield.cpp:237
 #, kde-format
 msgid "Orientation"
 msgstr "Orientación"
@@ -57891,769 +57891,769 @@ msgstr "(Non se escolleu ningún valor)"
 msgid "No Rating assigned"
 msgstr "Non se asignou ningunha etiqueta"
 
-#: core/utilities/searchwindow/searchfields.cpp:81
-#, kde-format
-msgid "Search items located in"
-msgstr "Buscar elementos situados en"
-
-#: core/utilities/searchwindow/searchfields.cpp:89
-#, kde-format
-msgid "The album name contains"
-msgstr "O nome do álbum contén"
-
-#: core/utilities/searchwindow/searchfields.cpp:97
-#, kde-format
-msgid "The album caption contains"
-msgstr "A lenda do álbum contén"
-
-#: core/utilities/searchwindow/searchfields.cpp:105
-#, kde-format
-msgid "The album category is"
-msgstr "A categoría do álbum é"
-
-#: core/utilities/searchwindow/searchfields.cpp:128
-#, kde-format
-msgid "Return items with tag"
-msgstr "Devolver os elementos coa etiqueta"
-
-#: core/utilities/searchwindow/searchfields.cpp:136
-#, kde-format
-msgid "A tag of the item contains"
-msgstr "Unha etiqueta do elemento contén"
-
-#: core/utilities/searchwindow/searchfields.cpp:149
-#, kde-format
-msgid "item has no tags"
-msgstr "o elemento non ten etiquetas"
-
-#: core/utilities/searchwindow/searchfields.cpp:150
-#, kde-format
-msgid "Not Tagged"
-msgstr "Sen etiquetar"
-
-#: core/utilities/searchwindow/searchfields.cpp:158
-#, kde-format
-msgid "File Name"
-msgstr "Nome do ficheiro"
-
-#: core/utilities/searchwindow/searchfields.cpp:158
-#, kde-format
-msgid "Return items whose file name contains"
-msgstr "Devolver os elementos que estean nun ficheiro que conteña"
-
-#: core/utilities/searchwindow/searchfields.cpp:166
-#, kde-format
-msgid "Modification"
-msgstr "Modificación"
-
-#: core/utilities/searchwindow/searchfields.cpp:166
-#, kde-format
-msgid "Return items modified between"
-msgstr "Devolver os elementos modificadas entre"
-
-#: core/utilities/searchwindow/searchfields.cpp:167
-#, kde-format
-msgctxt "'Return items modified between...and..."
-msgid "and"
-msgstr "e"
-
-#: core/utilities/searchwindow/searchfields.cpp:175
-#, kde-format
-msgid "File Size"
-msgstr "Tamaño do ficheiro"
-
-#: core/utilities/searchwindow/searchfields.cpp:175
-#, kde-format
-msgid "Size of the file"
-msgstr "Tamaño que ten o ficheiro"
-
-#: core/utilities/searchwindow/searchfields.cpp:176
-#, kde-format
-msgctxt "Size of the file ...-..."
-msgid "-"
-msgstr "-"
-
-#: core/utilities/searchwindow/searchfields.cpp:187
-#, fuzzy, kde-format
-#| msgid "Month"
-msgid "Month/Day"
-msgstr "Mes"
-
-#: core/utilities/searchwindow/searchfields.cpp:187
-#, kde-format
-msgid "Return items from a month or a day of the month"
-msgstr ""
-
-#: core/utilities/searchwindow/searchfields.cpp:195
-#, kde-format
-msgid "Return items with labels"
-msgstr "Devolver as imaxes con etiquetas"
-
-#: core/utilities/searchwindow/searchfields.cpp:203
-#, kde-format
-msgid "Return items rated at least"
-msgstr "Devolver os elementos cualificados entre"
-
-#: core/utilities/searchwindow/searchfields.cpp:204
-#, kde-format
-msgctxt "Return items rated at least...at most..."
-msgid "at most"
-msgstr "como moito"
-
-#: core/utilities/searchwindow/searchfields.cpp:212
-#, kde-format
-msgid "Return items created between"
-msgstr "Devolver os elementos creados entre"
-
-#: core/utilities/searchwindow/searchfields.cpp:213
-#, kde-format
-msgctxt "'Return items created between...and..."
-msgid "and"
-msgstr "e"
-
-#: core/utilities/searchwindow/searchfields.cpp:221
-#, kde-format
-msgid "Digitization"
-msgstr "Dixitalización"
-
-#: core/utilities/searchwindow/searchfields.cpp:221
-#, kde-format
-msgid "Return items digitized between"
-msgstr "Devolver os elementos dixitalizados entre"
-
-#: core/utilities/searchwindow/searchfields.cpp:222
-#, kde-format
-msgctxt "'Return items digitized between...and..."
-msgid "and"
-msgstr "e"
-
-#: core/utilities/searchwindow/searchfields.cpp:232
-#, kde-format
-msgid "Exif Orientation"
-msgstr "Orientación EXIF"
-
-#: core/utilities/searchwindow/searchfields.cpp:232
-#, kde-format
-msgid "Find items with orientation flag"
-msgstr "Atopar os elementos con marca de orientación"
-
-#: core/utilities/searchwindow/searchfields.cpp:246
-#, kde-format
-msgid "Find items with a width between"
-msgstr "Atopar os elementos cunha anchura entre"
-
-#: core/utilities/searchwindow/searchfields.cpp:247
-#, kde-format
-msgctxt "Find items with a width between...and..."
-msgid "and"
-msgstr "e"
-
-#: core/utilities/searchwindow/searchfields.cpp:264
-#, kde-format
-msgid "Find items with a height between"
-msgstr "Atopar os elementos cunha altura entre"
-
-#: core/utilities/searchwindow/searchfields.cpp:265
-#, kde-format
-msgctxt "Find items with a height between...and..."
-msgid "and"
-msgstr "e"
-
-#: core/utilities/searchwindow/searchfields.cpp:283
-#, kde-format
-msgctxt "Find items with any orientation / landscape / portrait orientation..."
-msgid "Find items with"
-msgstr "Atopar os elementos con"
-
-#: core/utilities/searchwindow/searchfields.cpp:291
-#, kde-format
-msgid "File Format"
-msgstr "Formato de ficheiro"
-
-#: core/utilities/searchwindow/searchfields.cpp:291
-#, kde-format
-msgid "Return items with the file format"
-msgstr "Devolver os elementos co formato de ficheiro"
-
-#: core/utilities/searchwindow/searchfields.cpp:296
-#, fuzzy, kde-format
-#| msgid "%1 [Image]"
-msgctxt "@label: file format"
-msgid "%1 [Image]"
-msgstr "%1 [imaxe]"
-
-#: core/utilities/searchwindow/searchfields.cpp:301
-#, fuzzy, kde-format
-#| msgid "%1 [Video]"
-msgctxt "@label: file format"
-msgid "%1 [Video]"
-msgstr "%1 [vídeo]"
-
-#: core/utilities/searchwindow/searchfields.cpp:306
-#, fuzzy, kde-format
-#| msgid "%1 [Audio]"
-msgctxt "@label: file format"
-msgid "%1 [Audio]"
-msgstr "%1 [son]"
-
-#: core/utilities/searchwindow/searchfields.cpp:331
-#, kde-format
-msgid "Color Depth"
-msgstr "Profundidade de cor"
-
-#: core/utilities/searchwindow/searchfields.cpp:331
-#, kde-format
-msgctxt "Find items with any color depth / 8 bits per channel..."
-msgid "Find items with"
-msgstr "Atopar os elementos con"
-
-#: core/utilities/searchwindow/searchfields.cpp:341
-#, kde-format
-msgid "Color Model"
-msgstr "Modelo de cor"
-
-#: core/utilities/searchwindow/searchfields.cpp:341
-#, kde-format
-msgid "Find items with the color model"
-msgstr "Atopar os elementos co modelo de cor"
-
-#: core/utilities/searchwindow/searchfields.cpp:346
-#: core/utilities/searchwindow/searchfields.cpp:347
-#: core/utilities/searchwindow/searchfields.cpp:348
-#: core/utilities/searchwindow/searchfields.cpp:349
-#: core/utilities/searchwindow/searchfields.cpp:350
-#: core/utilities/searchwindow/searchfields.cpp:351
-#: core/utilities/searchwindow/searchfields.cpp:352
-#: core/utilities/searchwindow/searchfields.cpp:353
-#: core/utilities/searchwindow/searchfields.cpp:354
-#, fuzzy, kde-format
-#| msgid "%1 [Image]"
-msgctxt "@label: color model"
-msgid "%1 [Image]"
-msgstr "%1 [imaxe]"
-
-#: core/utilities/searchwindow/searchfields.cpp:358
-#: core/utilities/searchwindow/searchfields.cpp:359
-#: core/utilities/searchwindow/searchfields.cpp:360
-#: core/utilities/searchwindow/searchfields.cpp:361
-#, fuzzy, kde-format
-#| msgid "%1 [Video]"
-msgctxt "@label: color model"
-msgid "%1 [Video]"
-msgstr "%1 [vídeo]"
-
-#: core/utilities/searchwindow/searchfields.cpp:372
-#, kde-format
-msgid "The make of the camera"
-msgstr "O fabricante da cámara"
-
-#: core/utilities/searchwindow/searchfields.cpp:403
-#, kde-format
-msgid "The model of the camera"
-msgstr "O modelo da cámara"
-
-#: core/utilities/searchwindow/searchfields.cpp:434
-#, kde-format
-msgid "Lens"
-msgstr "Lente"
-
-#: core/utilities/searchwindow/searchfields.cpp:434
-#, kde-format
-msgid "The type of the lens"
-msgstr "O tipo das lentes"
-
-#: core/utilities/searchwindow/searchfields.cpp:448
-#, kde-format
-msgid "Lens aperture as f-number"
-msgstr "A abertura da lente como número f"
-
-#: core/utilities/searchwindow/searchfields.cpp:449
-#, kde-format
-msgctxt "Lens aperture as f-number ...-..."
-msgid "-"
-msgstr "-"
-
-#: core/utilities/searchwindow/searchfields.cpp:468
-#, kde-format
-msgid "Focal length of the lens"
-msgstr "A distancia focal da lente"
-
-#: core/utilities/searchwindow/searchfields.cpp:469
-#, kde-format
-msgctxt "Focal length of the lens ...-..."
-msgid "-"
-msgstr "-"
-
-#: core/utilities/searchwindow/searchfields.cpp:487
-#, kde-format
-msgid "35mm equivalent focal length"
-msgstr "Distancia focal equivalente a 35mm"
-
-#: core/utilities/searchwindow/searchfields.cpp:488
-#, kde-format
-msgctxt "35mm equivalent focal length ...-..."
-msgid "-"
-msgstr "-"
-
-#: core/utilities/searchwindow/searchfields.cpp:507
-#, kde-format
-msgctxt "Exposure time ...-..."
-msgid "-"
-msgstr "-"
-
-#: core/utilities/searchwindow/searchfields.cpp:527
-#, kde-format
-msgid "Automatic exposure program"
-msgstr "Programa de exposición automática"
-
-#: core/utilities/searchwindow/searchfields.cpp:539
-#, kde-format
-msgid "Automatic or manual exposure"
-msgstr "Exposición automática ou manual"
-
-#: core/utilities/searchwindow/searchfields.cpp:550
-#, kde-format
-msgid "ISO film speed (linear scale, ASA)"
-msgstr "Velocidade ISO do filme (escala lineal, ASA)"
-
-#: core/utilities/searchwindow/searchfields.cpp:551
-#, kde-format
-msgctxt "ISO film speed (linear scale, ASA) ...-..."
-msgid "-"
-msgstr "-"
-
-#: core/utilities/searchwindow/searchfields.cpp:574
-#, fuzzy, kde-format
-#| msgid "Flash"
-msgctxt "@label: flash is on or off"
-msgid "Flash"
-msgstr "Flash"
-
-#: core/utilities/searchwindow/searchfields.cpp:574
-#, fuzzy, kde-format
-#| msgid "Flash mode"
-msgctxt "@label: flash mode used"
-msgid "Flash mode"
-msgstr "Modo do flash"
-
-#: core/utilities/searchwindow/searchfields.cpp:586
-#, kde-format
-msgid "Automatic or manual white balance"
-msgstr "Balance de brancos automático ou manual"
-
-#: core/utilities/searchwindow/searchfields.cpp:597
-#, kde-format
-msgid "Color temperature used for white balance"
-msgstr "Temperatura de cor empregada para o balance de brancos"
-
-#: core/utilities/searchwindow/searchfields.cpp:598
-#, kde-format
-msgctxt "Color temperature used for white balance ...-..."
-msgid "-"
-msgstr "-"
-
-#: core/utilities/searchwindow/searchfields.cpp:610
-#, kde-format
-msgid "Metering Mode"
-msgstr "Modo de medición"
-
-#: core/utilities/searchwindow/searchfields.cpp:610
-#, kde-format
-msgid "Method to determine the exposure"
-msgstr "O método para determinar a exposición"
-
-#: core/utilities/searchwindow/searchfields.cpp:622
-#: core/utilities/searchwindow/searchfields.cpp:635
-#, kde-format
-msgid "Subject Distance"
-msgstr "Distancia do suxeito"
-
-#: core/utilities/searchwindow/searchfields.cpp:622
-#, kde-format
-msgid "Distance of the subject from the lens"
-msgstr "A distancia entre o suxeito e a lente"
-
-#: core/utilities/searchwindow/searchfields.cpp:623
-#, kde-format
-msgctxt "Distance of the subject from the lens ...-..."
-msgid "-"
-msgstr "-"
-
-#: core/utilities/searchwindow/searchfields.cpp:635
-#, kde-format
-msgid "Macro, close or distant view"
-msgstr "Macro, preto, ou vista afastada"
-
-#: core/utilities/searchwindow/searchfields.cpp:652
-#: core/utilities/searchwindow/searchfields.cpp:675
-#, kde-format
-msgid "GPS"
-msgstr "GPS"
-
-#: core/utilities/searchwindow/searchfields.cpp:652
-#, kde-format
-msgid "Altitude range"
-msgstr "Intervalo da altitude"
-
-#: core/utilities/searchwindow/searchfields.cpp:653
-#, kde-format
-msgctxt "Altitude range ...-..."
-msgid "-"
-msgstr "-"
-
-#: core/utilities/searchwindow/searchfields.cpp:675
-#, kde-format
-msgid "Item has no GPS info"
-msgstr "O elemento non ten información de GPS"
-
-#: core/utilities/searchwindow/searchfields.cpp:676
-#, kde-format
-msgid "Not Geo-located"
-msgstr "Sen situación xeográfica"
-
-#: core/utilities/searchwindow/searchfields.cpp:684
-#, fuzzy, kde-format
-#| msgid "Creator"
-msgctxt "@label: item creator"
-msgid "Creator"
-msgstr "Creador"
-
-#: core/utilities/searchwindow/searchfields.cpp:684
-#, kde-format
-msgid "Return items created by"
-msgstr "Devolver os elementos creados por"
-
-#: core/utilities/searchwindow/searchfields.cpp:692
-#, fuzzy, kde-format
-#| msgid "Caption"
-msgctxt "@label: item comment"
-msgid "Caption"
-msgstr "Lenda"
-
-#: core/utilities/searchwindow/searchfields.cpp:692
-#, kde-format
-msgid "Return items whose comment contains"
-msgstr "Devolver os elementos que teñan un comentario que conteña"
-
-#: core/utilities/searchwindow/searchfields.cpp:700
-#, kde-format
-msgid "Return items commented by"
-msgstr "Devolver os elementos comentados por"
-
-#: core/utilities/searchwindow/searchfields.cpp:708
-#, kde-format
-msgid "Headline"
-msgstr "Cabeceira"
-
-#: core/utilities/searchwindow/searchfields.cpp:708
-#, kde-format
-msgid "Return items with the IPTC headline"
-msgstr "Devolver os elementos coa cabeceira IPTC"
-
-#: core/utilities/searchwindow/searchfields.cpp:716
-#, fuzzy, kde-format
-#| msgid "Title"
-msgctxt "@label: item title"
-msgid "Title"
-msgstr "Título"
-
-#: core/utilities/searchwindow/searchfields.cpp:716
-#, kde-format
-msgid "Return items with the IPTC title"
-msgstr "Devolver os elementos co título IPTC"
-
-#: core/utilities/searchwindow/searchfields.cpp:724
-#, kde-format
-msgid "Find items that have associated all these words:"
-msgstr "Atopar os elementos que teñan asociados estas palabras:"
-
-#: core/utilities/searchwindow/searchfields.cpp:732
-#, fuzzy, kde-format
-#| msgid "Trash"
-msgid "Empty Text"
-msgstr "Lixo"
-
-#: core/utilities/searchwindow/searchfields.cpp:732
-#, fuzzy, kde-format
-#| msgid "Return items with tag"
-msgid "Return items without text in:"
-msgstr "Devolver os elementos coa etiqueta"
-
-#: core/utilities/searchwindow/searchfields.cpp:734
-#, fuzzy, kde-format
-#| msgid "Creator"
-msgctxt "@label: search items without creator property"
-msgid "Creator"
-msgstr "Creador"
-
-#: core/utilities/searchwindow/searchfields.cpp:735
-#, fuzzy, kde-format
-#| msgid "Caption"
-msgctxt "@label: search items without caption property"
-msgid "Caption"
-msgstr "Lenda"
-
-#: core/utilities/searchwindow/searchfields.cpp:736
-#, fuzzy, kde-format
-#| msgid "Author"
-msgctxt "@label: search items without author property"
-msgid "Author"
-msgstr "Autor"
-
-#: core/utilities/searchwindow/searchfields.cpp:737
-#, fuzzy, kde-format
-#| msgid "Headline"
-msgctxt "@label: search items without headline property"
-msgid "Headline"
-msgstr "Cabeceira"
-
-#: core/utilities/searchwindow/searchfields.cpp:738
-#, fuzzy, kde-format
-#| msgid "Title"
-msgctxt "@label: search items without title property"
-msgid "Title"
-msgstr "Título"
-
-#: core/utilities/searchwindow/searchfields.cpp:748
-#: core/utilities/searchwindow/searchfields.cpp:767
-#, kde-format
-msgid "Aspect Ratio"
-msgstr "Proporcións"
-
-#: core/utilities/searchwindow/searchfields.cpp:748
-#, kde-format
-msgid "Return items with the aspect ratio"
-msgstr "Devolver os elementos coas proporcións"
-
-#: core/utilities/searchwindow/searchfields.cpp:756
-#, kde-format
-msgid "Pixel Size"
-msgstr "Tamaño dos píxeles"
-
-#: core/utilities/searchwindow/searchfields.cpp:756
-#, kde-format
-msgid "Value of (Width * Height) between"
-msgstr "Valor de «anchura × altura» entre"
-
-#: core/utilities/searchwindow/searchfields.cpp:757
-#, kde-format
-msgctxt "Value of (Width * Height) between...and..."
-msgid "and"
-msgstr "e"
-
-#: core/utilities/searchwindow/searchfields.cpp:767
-#, kde-format
-msgid "Return video with the frame aspect ratio"
-msgstr "Devolver vídeos con fotogramas coas proporcións"
-
-#: core/utilities/searchwindow/searchfields.cpp:784
-#, kde-format
-msgid "Length of the video"
-msgstr "Duración do vídeo"
-
-#: core/utilities/searchwindow/searchfields.cpp:785
-#, kde-format
-msgctxt "Find video with a length between...and..."
-msgid "and"
-msgstr "e"
-
-#: core/utilities/searchwindow/searchfields.cpp:786
-#, kde-format
-msgctxt "Seconds"
-msgid "s"
-msgstr "s"
-
-#: core/utilities/searchwindow/searchfields.cpp:802
-#, kde-format
-msgid "Frame Rate"
-msgstr "Taxa de fotogramas"
-
-#: core/utilities/searchwindow/searchfields.cpp:802
-#, kde-format
-msgid "Return video with the frame rate"
-msgstr "Devolver vídeos coa taxa de fotogramas"
-
-#: core/utilities/searchwindow/searchfields.cpp:803
-#, kde-format
-msgctxt "Find video with frame rate between...and..."
-msgid "and"
-msgstr "e"
-
-#: core/utilities/searchwindow/searchfields.cpp:804
-#, kde-format
-msgctxt "Frames per Second"
-msgid "fps"
-msgstr "fps"
-
-#: core/utilities/searchwindow/searchfields.cpp:819
-#, kde-format
-msgid "Codec"
-msgstr "Códec"
-
-#: core/utilities/searchwindow/searchfields.cpp:819
-#, kde-format
-msgid "Return video codec"
-msgstr "Devolver o códec do vídeo"
-
-#: core/utilities/searchwindow/searchfields.cpp:887
-#, kde-format
-msgid "Return Audio Bits Rate"
-msgstr "Devolver a taxa de bits de son"
-
-#: core/utilities/searchwindow/searchfields.cpp:888
-#, kde-format
-msgctxt "Find files with audio bit rate between...and..."
-msgid "and"
-msgstr "e"
-
-#: core/utilities/searchwindow/searchfields.cpp:889
-#, kde-format
-msgctxt "Bits per Second"
-msgid "bps"
-msgstr "bps"
-
-#: core/utilities/searchwindow/searchfields.cpp:905
-#, kde-format
-msgid "Return Audio Channel Type"
-msgstr "Devolver o tipo de canle de son"
-
-#: core/utilities/searchwindow/searchfields.cpp:907
-#, fuzzy, kde-format
-#| msgid "Mono"
-msgctxt "@label: audio channel type"
-msgid "Mono"
-msgstr "Mono"
-
-#: core/utilities/searchwindow/searchfields.cpp:908
-#, fuzzy, kde-format
-#| msgid "Stereo"
-msgctxt "@label: audio channel type"
-msgid "Stereo"
-msgstr "Estéreo"
-
-#: core/utilities/searchwindow/searchfields.cpp:909
-#, fuzzy, kde-format
-#| msgid "5.1 Surround Sound"
-msgctxt "@label: audio channel type"
-msgid "5.1 Surround Sound"
-msgstr "Son envolvente 5.1"
-
-#: core/utilities/searchwindow/searchfields.cpp:910
-#, fuzzy, kde-format
-#| msgid "7.1 Surround Sound"
-msgctxt "@label: audio channel type"
-msgid "7.1 Surround Sound"
-msgstr "Son envolvente 7.1"
-
-#: core/utilities/searchwindow/searchfields.cpp:911
-#, fuzzy, kde-format
-#| msgid "16 Channels Sequence"
-msgctxt "@label: audio channel type"
-msgid "16 Channels Sequence"
-msgstr "Secuencia de 16 canles"
-
-#: core/utilities/searchwindow/searchfields.cpp:912
-#, fuzzy, kde-format
-#| msgid "Other Channel Type"
-msgctxt "@label: audio channel type"
-msgid "Other Channel Type"
-msgstr "Outro tipo de canle"
-
-#: core/utilities/searchwindow/searchfields.cpp:924
-#, kde-format
-msgid "Return Audio Codec"
-msgstr "Devolver o códec de son"
-
-#: core/utilities/searchwindow/searchfields.cpp:1082
+#: core/utilities/searchwindow/searchfields.cpp:83
 #, kde-format
 msgid "Reset contents"
 msgstr "Restabelecer o contido"
 
-#: core/utilities/searchwindow/searchfields.cpp:2165
+#: core/utilities/searchwindow/searchfields_album.cpp:50
+#, kde-format
+msgid "Any Album"
+msgstr "Calquera álbum"
+
+#: core/utilities/searchwindow/searchfields_album.cpp:62
+#, kde-format
+msgctxt "@label:listbox"
+msgid "In All"
+msgstr "En todas"
+
+#: core/utilities/searchwindow/searchfields_album.cpp:63
+#, kde-format
+msgctxt "@label:listbox"
+msgid "In One of"
+msgstr "Nunha de"
+
+#: core/utilities/searchwindow/searchfields_album.cpp:64
+#, kde-format
+msgctxt "@label:listbox"
+msgid "In Tree"
+msgstr ""
+
+#: core/utilities/searchwindow/searchfields_album.cpp:68
+#, kde-format
+msgid "Any Tag"
+msgstr "Calquera etiqueta"
+
+#: core/utilities/searchwindow/searchfields_choice.cpp:40
 #, fuzzy, kde-format
 #| msgid "Any"
 msgctxt "@option: default kind of search options combined"
 msgid "Any"
 msgstr "Calquera"
 
-#: core/utilities/searchwindow/searchfields.cpp:2236
+#: core/utilities/searchwindow/searchfields_choice.cpp:111
 #, kde-format
 msgid "Any of: %1"
 msgstr "Calquera de: %1"
 
-#: core/utilities/searchwindow/searchfields.cpp:2395
-#, kde-format
-msgid "Any Album"
-msgstr "Calquera álbum"
-
-#: core/utilities/searchwindow/searchfields.cpp:2407
-#, kde-format
-msgctxt "@label:listbox"
-msgid "In All"
-msgstr "En todas"
-
-#: core/utilities/searchwindow/searchfields.cpp:2408
-#, kde-format
-msgctxt "@label:listbox"
-msgid "In One of"
-msgstr "Nunha de"
-
-#: core/utilities/searchwindow/searchfields.cpp:2409
-#, kde-format
-msgctxt "@label:listbox"
-msgid "In Tree"
-msgstr ""
-
-#: core/utilities/searchwindow/searchfields.cpp:2413
-#, kde-format
-msgid "Any Tag"
-msgstr "Calquera etiqueta"
-
-#: core/utilities/searchwindow/searchfields.cpp:2881
+#: core/utilities/searchwindow/searchfields_colordepth.cpp:38
 #, kde-format
 msgid "any color depth"
 msgstr "calquera profundidade de cor"
 
-#: core/utilities/searchwindow/searchfields.cpp:2882
+#: core/utilities/searchwindow/searchfields_colordepth.cpp:39
 #, kde-format
 msgid "8 bits per channel"
 msgstr "8 bits por canle"
 
-#: core/utilities/searchwindow/searchfields.cpp:2883
+#: core/utilities/searchwindow/searchfields_colordepth.cpp:40
 #, kde-format
 msgid "16 bits per channel"
 msgstr "16 bits por canle"
 
-#: core/utilities/searchwindow/searchfields.cpp:2917
+#: core/utilities/searchwindow/searchfields_createfield.cpp:36
 #, kde-format
-msgid "Any Orientation"
-msgstr "Calquera orientación"
+msgid "Search items located in"
+msgstr "Buscar elementos situados en"
 
-#: core/utilities/searchwindow/searchfields.cpp:2918
+#: core/utilities/searchwindow/searchfields_createfield.cpp:44
 #, kde-format
-msgid "Landscape Orientation"
-msgstr "Orientación apaisada"
+msgid "The album name contains"
+msgstr "O nome do álbum contén"
 
-#: core/utilities/searchwindow/searchfields.cpp:2919
+#: core/utilities/searchwindow/searchfields_createfield.cpp:52
 #, kde-format
-msgid "Portrait orientation"
-msgstr "Orientación vertical"
+msgid "The album caption contains"
+msgstr "A lenda do álbum contén"
 
-#: core/utilities/searchwindow/searchfields.cpp:3097
+#: core/utilities/searchwindow/searchfields_createfield.cpp:60
+#, kde-format
+msgid "The album category is"
+msgstr "A categoría do álbum é"
+
+#: core/utilities/searchwindow/searchfields_createfield.cpp:83
+#, kde-format
+msgid "Return items with tag"
+msgstr "Devolver os elementos coa etiqueta"
+
+#: core/utilities/searchwindow/searchfields_createfield.cpp:91
+#, kde-format
+msgid "A tag of the item contains"
+msgstr "Unha etiqueta do elemento contén"
+
+#: core/utilities/searchwindow/searchfields_createfield.cpp:104
+#, kde-format
+msgid "item has no tags"
+msgstr "o elemento non ten etiquetas"
+
+#: core/utilities/searchwindow/searchfields_createfield.cpp:105
+#, kde-format
+msgid "Not Tagged"
+msgstr "Sen etiquetar"
+
+#: core/utilities/searchwindow/searchfields_createfield.cpp:113
+#, kde-format
+msgid "File Name"
+msgstr "Nome do ficheiro"
+
+#: core/utilities/searchwindow/searchfields_createfield.cpp:113
+#, kde-format
+msgid "Return items whose file name contains"
+msgstr "Devolver os elementos que estean nun ficheiro que conteña"
+
+#: core/utilities/searchwindow/searchfields_createfield.cpp:121
+#, kde-format
+msgid "Modification"
+msgstr "Modificación"
+
+#: core/utilities/searchwindow/searchfields_createfield.cpp:121
+#, kde-format
+msgid "Return items modified between"
+msgstr "Devolver os elementos modificadas entre"
+
+#: core/utilities/searchwindow/searchfields_createfield.cpp:122
+#, kde-format
+msgctxt "'Return items modified between...and..."
+msgid "and"
+msgstr "e"
+
+#: core/utilities/searchwindow/searchfields_createfield.cpp:130
+#, kde-format
+msgid "File Size"
+msgstr "Tamaño do ficheiro"
+
+#: core/utilities/searchwindow/searchfields_createfield.cpp:130
+#, kde-format
+msgid "Size of the file"
+msgstr "Tamaño que ten o ficheiro"
+
+#: core/utilities/searchwindow/searchfields_createfield.cpp:131
+#, kde-format
+msgctxt "Size of the file ...-..."
+msgid "-"
+msgstr "-"
+
+#: core/utilities/searchwindow/searchfields_createfield.cpp:142
+#, fuzzy, kde-format
+#| msgid "Month"
+msgid "Month/Day"
+msgstr "Mes"
+
+#: core/utilities/searchwindow/searchfields_createfield.cpp:142
+#, kde-format
+msgid "Return items from a month or a day of the month"
+msgstr ""
+
+#: core/utilities/searchwindow/searchfields_createfield.cpp:150
+#, kde-format
+msgid "Return items with labels"
+msgstr "Devolver as imaxes con etiquetas"
+
+#: core/utilities/searchwindow/searchfields_createfield.cpp:158
+#, kde-format
+msgid "Return items rated at least"
+msgstr "Devolver os elementos cualificados entre"
+
+#: core/utilities/searchwindow/searchfields_createfield.cpp:159
+#, kde-format
+msgctxt "Return items rated at least...at most..."
+msgid "at most"
+msgstr "como moito"
+
+#: core/utilities/searchwindow/searchfields_createfield.cpp:167
+#, kde-format
+msgid "Return items created between"
+msgstr "Devolver os elementos creados entre"
+
+#: core/utilities/searchwindow/searchfields_createfield.cpp:168
+#, kde-format
+msgctxt "'Return items created between...and..."
+msgid "and"
+msgstr "e"
+
+#: core/utilities/searchwindow/searchfields_createfield.cpp:176
+#, kde-format
+msgid "Digitization"
+msgstr "Dixitalización"
+
+#: core/utilities/searchwindow/searchfields_createfield.cpp:176
+#, kde-format
+msgid "Return items digitized between"
+msgstr "Devolver os elementos dixitalizados entre"
+
+#: core/utilities/searchwindow/searchfields_createfield.cpp:177
+#, kde-format
+msgctxt "'Return items digitized between...and..."
+msgid "and"
+msgstr "e"
+
+#: core/utilities/searchwindow/searchfields_createfield.cpp:187
+#, kde-format
+msgid "Exif Orientation"
+msgstr "Orientación EXIF"
+
+#: core/utilities/searchwindow/searchfields_createfield.cpp:187
+#, kde-format
+msgid "Find items with orientation flag"
+msgstr "Atopar os elementos con marca de orientación"
+
+#: core/utilities/searchwindow/searchfields_createfield.cpp:201
+#, kde-format
+msgid "Find items with a width between"
+msgstr "Atopar os elementos cunha anchura entre"
+
+#: core/utilities/searchwindow/searchfields_createfield.cpp:202
+#, kde-format
+msgctxt "Find items with a width between...and..."
+msgid "and"
+msgstr "e"
+
+#: core/utilities/searchwindow/searchfields_createfield.cpp:219
+#, kde-format
+msgid "Find items with a height between"
+msgstr "Atopar os elementos cunha altura entre"
+
+#: core/utilities/searchwindow/searchfields_createfield.cpp:220
+#, kde-format
+msgctxt "Find items with a height between...and..."
+msgid "and"
+msgstr "e"
+
+#: core/utilities/searchwindow/searchfields_createfield.cpp:238
+#, kde-format
+msgctxt "Find items with any orientation / landscape / portrait orientation..."
+msgid "Find items with"
+msgstr "Atopar os elementos con"
+
+#: core/utilities/searchwindow/searchfields_createfield.cpp:246
+#, kde-format
+msgid "File Format"
+msgstr "Formato de ficheiro"
+
+#: core/utilities/searchwindow/searchfields_createfield.cpp:246
+#, kde-format
+msgid "Return items with the file format"
+msgstr "Devolver os elementos co formato de ficheiro"
+
+#: core/utilities/searchwindow/searchfields_createfield.cpp:251
+#, fuzzy, kde-format
+#| msgid "%1 [Image]"
+msgctxt "@label: file format"
+msgid "%1 [Image]"
+msgstr "%1 [imaxe]"
+
+#: core/utilities/searchwindow/searchfields_createfield.cpp:256
+#, fuzzy, kde-format
+#| msgid "%1 [Video]"
+msgctxt "@label: file format"
+msgid "%1 [Video]"
+msgstr "%1 [vídeo]"
+
+#: core/utilities/searchwindow/searchfields_createfield.cpp:261
+#, fuzzy, kde-format
+#| msgid "%1 [Audio]"
+msgctxt "@label: file format"
+msgid "%1 [Audio]"
+msgstr "%1 [son]"
+
+#: core/utilities/searchwindow/searchfields_createfield.cpp:286
+#, kde-format
+msgid "Color Depth"
+msgstr "Profundidade de cor"
+
+#: core/utilities/searchwindow/searchfields_createfield.cpp:286
+#, kde-format
+msgctxt "Find items with any color depth / 8 bits per channel..."
+msgid "Find items with"
+msgstr "Atopar os elementos con"
+
+#: core/utilities/searchwindow/searchfields_createfield.cpp:296
+#, kde-format
+msgid "Color Model"
+msgstr "Modelo de cor"
+
+#: core/utilities/searchwindow/searchfields_createfield.cpp:296
+#, kde-format
+msgid "Find items with the color model"
+msgstr "Atopar os elementos co modelo de cor"
+
+#: core/utilities/searchwindow/searchfields_createfield.cpp:301
+#: core/utilities/searchwindow/searchfields_createfield.cpp:302
+#: core/utilities/searchwindow/searchfields_createfield.cpp:303
+#: core/utilities/searchwindow/searchfields_createfield.cpp:304
+#: core/utilities/searchwindow/searchfields_createfield.cpp:305
+#: core/utilities/searchwindow/searchfields_createfield.cpp:306
+#: core/utilities/searchwindow/searchfields_createfield.cpp:307
+#: core/utilities/searchwindow/searchfields_createfield.cpp:308
+#: core/utilities/searchwindow/searchfields_createfield.cpp:309
+#, fuzzy, kde-format
+#| msgid "%1 [Image]"
+msgctxt "@label: color model"
+msgid "%1 [Image]"
+msgstr "%1 [imaxe]"
+
+#: core/utilities/searchwindow/searchfields_createfield.cpp:313
+#: core/utilities/searchwindow/searchfields_createfield.cpp:314
+#: core/utilities/searchwindow/searchfields_createfield.cpp:315
+#: core/utilities/searchwindow/searchfields_createfield.cpp:316
+#, fuzzy, kde-format
+#| msgid "%1 [Video]"
+msgctxt "@label: color model"
+msgid "%1 [Video]"
+msgstr "%1 [vídeo]"
+
+#: core/utilities/searchwindow/searchfields_createfield.cpp:327
+#, kde-format
+msgid "The make of the camera"
+msgstr "O fabricante da cámara"
+
+#: core/utilities/searchwindow/searchfields_createfield.cpp:358
+#, kde-format
+msgid "The model of the camera"
+msgstr "O modelo da cámara"
+
+#: core/utilities/searchwindow/searchfields_createfield.cpp:389
+#, kde-format
+msgid "Lens"
+msgstr "Lente"
+
+#: core/utilities/searchwindow/searchfields_createfield.cpp:389
+#, kde-format
+msgid "The type of the lens"
+msgstr "O tipo das lentes"
+
+#: core/utilities/searchwindow/searchfields_createfield.cpp:403
+#, kde-format
+msgid "Lens aperture as f-number"
+msgstr "A abertura da lente como número f"
+
+#: core/utilities/searchwindow/searchfields_createfield.cpp:404
+#, kde-format
+msgctxt "Lens aperture as f-number ...-..."
+msgid "-"
+msgstr "-"
+
+#: core/utilities/searchwindow/searchfields_createfield.cpp:423
+#, kde-format
+msgid "Focal length of the lens"
+msgstr "A distancia focal da lente"
+
+#: core/utilities/searchwindow/searchfields_createfield.cpp:424
+#, kde-format
+msgctxt "Focal length of the lens ...-..."
+msgid "-"
+msgstr "-"
+
+#: core/utilities/searchwindow/searchfields_createfield.cpp:442
+#, kde-format
+msgid "35mm equivalent focal length"
+msgstr "Distancia focal equivalente a 35mm"
+
+#: core/utilities/searchwindow/searchfields_createfield.cpp:443
+#, kde-format
+msgctxt "35mm equivalent focal length ...-..."
+msgid "-"
+msgstr "-"
+
+#: core/utilities/searchwindow/searchfields_createfield.cpp:462
+#, kde-format
+msgctxt "Exposure time ...-..."
+msgid "-"
+msgstr "-"
+
+#: core/utilities/searchwindow/searchfields_createfield.cpp:482
+#, kde-format
+msgid "Automatic exposure program"
+msgstr "Programa de exposición automática"
+
+#: core/utilities/searchwindow/searchfields_createfield.cpp:494
+#, kde-format
+msgid "Automatic or manual exposure"
+msgstr "Exposición automática ou manual"
+
+#: core/utilities/searchwindow/searchfields_createfield.cpp:505
+#, kde-format
+msgid "ISO film speed (linear scale, ASA)"
+msgstr "Velocidade ISO do filme (escala lineal, ASA)"
+
+#: core/utilities/searchwindow/searchfields_createfield.cpp:506
+#, kde-format
+msgctxt "ISO film speed (linear scale, ASA) ...-..."
+msgid "-"
+msgstr "-"
+
+#: core/utilities/searchwindow/searchfields_createfield.cpp:529
+#, fuzzy, kde-format
+#| msgid "Flash"
+msgctxt "@label: flash is on or off"
+msgid "Flash"
+msgstr "Flash"
+
+#: core/utilities/searchwindow/searchfields_createfield.cpp:529
+#, fuzzy, kde-format
+#| msgid "Flash mode"
+msgctxt "@label: flash mode used"
+msgid "Flash mode"
+msgstr "Modo do flash"
+
+#: core/utilities/searchwindow/searchfields_createfield.cpp:541
+#, kde-format
+msgid "Automatic or manual white balance"
+msgstr "Balance de brancos automático ou manual"
+
+#: core/utilities/searchwindow/searchfields_createfield.cpp:552
+#, kde-format
+msgid "Color temperature used for white balance"
+msgstr "Temperatura de cor empregada para o balance de brancos"
+
+#: core/utilities/searchwindow/searchfields_createfield.cpp:553
+#, kde-format
+msgctxt "Color temperature used for white balance ...-..."
+msgid "-"
+msgstr "-"
+
+#: core/utilities/searchwindow/searchfields_createfield.cpp:565
+#, kde-format
+msgid "Metering Mode"
+msgstr "Modo de medición"
+
+#: core/utilities/searchwindow/searchfields_createfield.cpp:565
+#, kde-format
+msgid "Method to determine the exposure"
+msgstr "O método para determinar a exposición"
+
+#: core/utilities/searchwindow/searchfields_createfield.cpp:577
+#: core/utilities/searchwindow/searchfields_createfield.cpp:590
+#, kde-format
+msgid "Subject Distance"
+msgstr "Distancia do suxeito"
+
+#: core/utilities/searchwindow/searchfields_createfield.cpp:577
+#, kde-format
+msgid "Distance of the subject from the lens"
+msgstr "A distancia entre o suxeito e a lente"
+
+#: core/utilities/searchwindow/searchfields_createfield.cpp:578
+#, kde-format
+msgctxt "Distance of the subject from the lens ...-..."
+msgid "-"
+msgstr "-"
+
+#: core/utilities/searchwindow/searchfields_createfield.cpp:590
+#, kde-format
+msgid "Macro, close or distant view"
+msgstr "Macro, preto, ou vista afastada"
+
+#: core/utilities/searchwindow/searchfields_createfield.cpp:607
+#: core/utilities/searchwindow/searchfields_createfield.cpp:630
+#, kde-format
+msgid "GPS"
+msgstr "GPS"
+
+#: core/utilities/searchwindow/searchfields_createfield.cpp:607
+#, kde-format
+msgid "Altitude range"
+msgstr "Intervalo da altitude"
+
+#: core/utilities/searchwindow/searchfields_createfield.cpp:608
+#, kde-format
+msgctxt "Altitude range ...-..."
+msgid "-"
+msgstr "-"
+
+#: core/utilities/searchwindow/searchfields_createfield.cpp:630
+#, kde-format
+msgid "Item has no GPS info"
+msgstr "O elemento non ten información de GPS"
+
+#: core/utilities/searchwindow/searchfields_createfield.cpp:631
+#, kde-format
+msgid "Not Geo-located"
+msgstr "Sen situación xeográfica"
+
+#: core/utilities/searchwindow/searchfields_createfield.cpp:639
+#, fuzzy, kde-format
+#| msgid "Creator"
+msgctxt "@label: item creator"
+msgid "Creator"
+msgstr "Creador"
+
+#: core/utilities/searchwindow/searchfields_createfield.cpp:639
+#, kde-format
+msgid "Return items created by"
+msgstr "Devolver os elementos creados por"
+
+#: core/utilities/searchwindow/searchfields_createfield.cpp:647
+#, fuzzy, kde-format
+#| msgid "Caption"
+msgctxt "@label: item comment"
+msgid "Caption"
+msgstr "Lenda"
+
+#: core/utilities/searchwindow/searchfields_createfield.cpp:647
+#, kde-format
+msgid "Return items whose comment contains"
+msgstr "Devolver os elementos que teñan un comentario que conteña"
+
+#: core/utilities/searchwindow/searchfields_createfield.cpp:655
+#, kde-format
+msgid "Return items commented by"
+msgstr "Devolver os elementos comentados por"
+
+#: core/utilities/searchwindow/searchfields_createfield.cpp:663
+#, kde-format
+msgid "Headline"
+msgstr "Cabeceira"
+
+#: core/utilities/searchwindow/searchfields_createfield.cpp:663
+#, kde-format
+msgid "Return items with the IPTC headline"
+msgstr "Devolver os elementos coa cabeceira IPTC"
+
+#: core/utilities/searchwindow/searchfields_createfield.cpp:671
+#, fuzzy, kde-format
+#| msgid "Title"
+msgctxt "@label: item title"
+msgid "Title"
+msgstr "Título"
+
+#: core/utilities/searchwindow/searchfields_createfield.cpp:671
+#, kde-format
+msgid "Return items with the IPTC title"
+msgstr "Devolver os elementos co título IPTC"
+
+#: core/utilities/searchwindow/searchfields_createfield.cpp:679
+#, kde-format
+msgid "Find items that have associated all these words:"
+msgstr "Atopar os elementos que teñan asociados estas palabras:"
+
+#: core/utilities/searchwindow/searchfields_createfield.cpp:687
+#, fuzzy, kde-format
+#| msgid "Trash"
+msgid "Empty Text"
+msgstr "Lixo"
+
+#: core/utilities/searchwindow/searchfields_createfield.cpp:687
+#, fuzzy, kde-format
+#| msgid "Return items with tag"
+msgid "Return items without text in:"
+msgstr "Devolver os elementos coa etiqueta"
+
+#: core/utilities/searchwindow/searchfields_createfield.cpp:689
+#, fuzzy, kde-format
+#| msgid "Creator"
+msgctxt "@label: search items without creator property"
+msgid "Creator"
+msgstr "Creador"
+
+#: core/utilities/searchwindow/searchfields_createfield.cpp:690
+#, fuzzy, kde-format
+#| msgid "Caption"
+msgctxt "@label: search items without caption property"
+msgid "Caption"
+msgstr "Lenda"
+
+#: core/utilities/searchwindow/searchfields_createfield.cpp:691
+#, fuzzy, kde-format
+#| msgid "Author"
+msgctxt "@label: search items without author property"
+msgid "Author"
+msgstr "Autor"
+
+#: core/utilities/searchwindow/searchfields_createfield.cpp:692
+#, fuzzy, kde-format
+#| msgid "Headline"
+msgctxt "@label: search items without headline property"
+msgid "Headline"
+msgstr "Cabeceira"
+
+#: core/utilities/searchwindow/searchfields_createfield.cpp:693
+#, fuzzy, kde-format
+#| msgid "Title"
+msgctxt "@label: search items without title property"
+msgid "Title"
+msgstr "Título"
+
+#: core/utilities/searchwindow/searchfields_createfield.cpp:703
+#: core/utilities/searchwindow/searchfields_createfield.cpp:722
+#, kde-format
+msgid "Aspect Ratio"
+msgstr "Proporcións"
+
+#: core/utilities/searchwindow/searchfields_createfield.cpp:703
+#, kde-format
+msgid "Return items with the aspect ratio"
+msgstr "Devolver os elementos coas proporcións"
+
+#: core/utilities/searchwindow/searchfields_createfield.cpp:711
+#, kde-format
+msgid "Pixel Size"
+msgstr "Tamaño dos píxeles"
+
+#: core/utilities/searchwindow/searchfields_createfield.cpp:711
+#, kde-format
+msgid "Value of (Width * Height) between"
+msgstr "Valor de «anchura × altura» entre"
+
+#: core/utilities/searchwindow/searchfields_createfield.cpp:712
+#, kde-format
+msgctxt "Value of (Width * Height) between...and..."
+msgid "and"
+msgstr "e"
+
+#: core/utilities/searchwindow/searchfields_createfield.cpp:722
+#, kde-format
+msgid "Return video with the frame aspect ratio"
+msgstr "Devolver vídeos con fotogramas coas proporcións"
+
+#: core/utilities/searchwindow/searchfields_createfield.cpp:739
+#, kde-format
+msgid "Length of the video"
+msgstr "Duración do vídeo"
+
+#: core/utilities/searchwindow/searchfields_createfield.cpp:740
+#, kde-format
+msgctxt "Find video with a length between...and..."
+msgid "and"
+msgstr "e"
+
+#: core/utilities/searchwindow/searchfields_createfield.cpp:741
+#, kde-format
+msgctxt "Seconds"
+msgid "s"
+msgstr "s"
+
+#: core/utilities/searchwindow/searchfields_createfield.cpp:757
+#, kde-format
+msgid "Frame Rate"
+msgstr "Taxa de fotogramas"
+
+#: core/utilities/searchwindow/searchfields_createfield.cpp:757
+#, kde-format
+msgid "Return video with the frame rate"
+msgstr "Devolver vídeos coa taxa de fotogramas"
+
+#: core/utilities/searchwindow/searchfields_createfield.cpp:758
+#, kde-format
+msgctxt "Find video with frame rate between...and..."
+msgid "and"
+msgstr "e"
+
+#: core/utilities/searchwindow/searchfields_createfield.cpp:759
+#, kde-format
+msgctxt "Frames per Second"
+msgid "fps"
+msgstr "fps"
+
+#: core/utilities/searchwindow/searchfields_createfield.cpp:774
+#, kde-format
+msgid "Codec"
+msgstr "Códec"
+
+#: core/utilities/searchwindow/searchfields_createfield.cpp:774
+#, kde-format
+msgid "Return video codec"
+msgstr "Devolver o códec do vídeo"
+
+#: core/utilities/searchwindow/searchfields_createfield.cpp:842
+#, kde-format
+msgid "Return Audio Bits Rate"
+msgstr "Devolver a taxa de bits de son"
+
+#: core/utilities/searchwindow/searchfields_createfield.cpp:843
+#, kde-format
+msgctxt "Find files with audio bit rate between...and..."
+msgid "and"
+msgstr "e"
+
+#: core/utilities/searchwindow/searchfields_createfield.cpp:844
+#, kde-format
+msgctxt "Bits per Second"
+msgid "bps"
+msgstr "bps"
+
+#: core/utilities/searchwindow/searchfields_createfield.cpp:860
+#, kde-format
+msgid "Return Audio Channel Type"
+msgstr "Devolver o tipo de canle de son"
+
+#: core/utilities/searchwindow/searchfields_createfield.cpp:862
+#, fuzzy, kde-format
+#| msgid "Mono"
+msgctxt "@label: audio channel type"
+msgid "Mono"
+msgstr "Mono"
+
+#: core/utilities/searchwindow/searchfields_createfield.cpp:863
+#, fuzzy, kde-format
+#| msgid "Stereo"
+msgctxt "@label: audio channel type"
+msgid "Stereo"
+msgstr "Estéreo"
+
+#: core/utilities/searchwindow/searchfields_createfield.cpp:864
+#, fuzzy, kde-format
+#| msgid "5.1 Surround Sound"
+msgctxt "@label: audio channel type"
+msgid "5.1 Surround Sound"
+msgstr "Son envolvente 5.1"
+
+#: core/utilities/searchwindow/searchfields_createfield.cpp:865
+#, fuzzy, kde-format
+#| msgid "7.1 Surround Sound"
+msgctxt "@label: audio channel type"
+msgid "7.1 Surround Sound"
+msgstr "Son envolvente 7.1"
+
+#: core/utilities/searchwindow/searchfields_createfield.cpp:866
+#, fuzzy, kde-format
+#| msgid "16 Channels Sequence"
+msgctxt "@label: audio channel type"
+msgid "16 Channels Sequence"
+msgstr "Secuencia de 16 canles"
+
+#: core/utilities/searchwindow/searchfields_createfield.cpp:867
+#, fuzzy, kde-format
+#| msgid "Other Channel Type"
+msgctxt "@label: audio channel type"
+msgid "Other Channel Type"
+msgstr "Outro tipo de canle"
+
+#: core/utilities/searchwindow/searchfields_createfield.cpp:879
+#, kde-format
+msgid "Return Audio Codec"
+msgstr "Devolver o códec de son"
+
+#: core/utilities/searchwindow/searchfields_monthday.cpp:43
 #, kde-format
 msgid "Day:"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields.cpp:3101
+#: core/utilities/searchwindow/searchfields_monthday.cpp:47
 #, fuzzy, kde-format
 #| msgid "By Month"
 msgid "Every Month"
 msgstr "Por mes"
 
-#: core/utilities/searchwindow/searchfields.cpp:3108
+#: core/utilities/searchwindow/searchfields_monthday.cpp:54
 #, kde-format
 msgid "Every Day"
 msgstr ""
+
+#: core/utilities/searchwindow/searchfields_pageorientation.cpp:38
+#, kde-format
+msgid "Any Orientation"
+msgstr "Calquera orientación"
+
+#: core/utilities/searchwindow/searchfields_pageorientation.cpp:39
+#, kde-format
+msgid "Landscape Orientation"
+msgstr "Orientación apaisada"
+
+#: core/utilities/searchwindow/searchfields_pageorientation.cpp:40
+#, kde-format
+msgid "Portrait orientation"
+msgstr "Orientación vertical"
 
 #: core/utilities/searchwindow/searchfolderview.cpp:67
 #, kde-format
@@ -58667,47 +58667,47 @@ msgctxt "Edit selected search"
 msgid "Edit..."
 msgstr "Editar…"
 
-#: core/utilities/searchwindow/searchgroup.cpp:98
+#: core/utilities/searchwindow/searchgroup.cpp:75
 #, kde-format
 msgid "File, Album, Tags"
 msgstr "Ficheiro, Álbum, Etiquetas"
 
-#: core/utilities/searchwindow/searchgroup.cpp:118
+#: core/utilities/searchwindow/searchgroup.cpp:95
 #, kde-format
 msgid "Picture Properties"
 msgstr "Propiedades da imaxe"
 
-#: core/utilities/searchwindow/searchgroup.cpp:167
+#: core/utilities/searchwindow/searchgroup.cpp:144
 #, kde-format
 msgid "Caption, Comment, Title"
 msgstr "Lenda, Comentario, Título"
 
-#: core/utilities/searchwindow/searchgroup.cpp:216
+#: core/utilities/searchwindow/searchgroup.cpp:193
 #, kde-format
 msgid "Geographic position"
 msgstr "Posición xeográfica"
 
-#: core/utilities/searchwindow/searchgroup.cpp:475
+#: core/utilities/searchwindow/searchgroup_label.cpp:78
 #, kde-format
 msgid "Find Items"
 msgstr "Atopar elementos"
 
-#: core/utilities/searchwindow/searchgroup.cpp:481
+#: core/utilities/searchwindow/searchgroup_label.cpp:84
 #, kde-format
 msgid "Meet All of the following conditions"
 msgstr "Satisfacer todas as condicións seguintes"
 
-#: core/utilities/searchwindow/searchgroup.cpp:485
+#: core/utilities/searchwindow/searchgroup_label.cpp:88
 #, kde-format
 msgid "Meet Any of the following conditions"
 msgstr "Satisfacer calquera das condicións seguintes"
 
-#: core/utilities/searchwindow/searchgroup.cpp:489
+#: core/utilities/searchwindow/searchgroup_label.cpp:92
 #, kde-format
 msgid "None of these conditions are met"
 msgstr "Non se satisfai ningunha destas condicións"
 
-#: core/utilities/searchwindow/searchgroup.cpp:493
+#: core/utilities/searchwindow/searchgroup_label.cpp:96
 #, kde-format
 msgid "At least one of these conditions is not met"
 msgstr "Non se satisfai polo menos unha desta condicións"
@@ -58715,7 +58715,7 @@ msgstr "Non se satisfai polo menos unha desta condicións"
 #. i18n("Find Pictures meeting all of these conditions"));
 #. simpleLabel->setPixmap(QIcon::fromTheme(QLatin1String("edit-find")).pixmap(128));
 #.
-#: core/utilities/searchwindow/searchgroup.cpp:526
+#: core/utilities/searchwindow/searchgroup_label.cpp:129
 #, kde-format
 msgid ""
 "<qt><p>Search your collection<br/>for Items meeting the following "
@@ -58724,12 +58724,12 @@ msgstr ""
 "<qt><p>Buscar na colección<br/>elementos que satisfagan as condicións "
 "seguintes</p></qt>"
 
-#: core/utilities/searchwindow/searchgroup.cpp:564
+#: core/utilities/searchwindow/searchgroup_label.cpp:167
 #, kde-format
 msgid "Remove Group"
 msgstr "Retirar o grupo"
 
-#: core/utilities/searchwindow/searchgroup.cpp:608
+#: core/utilities/searchwindow/searchgroup_label.cpp:211
 #, fuzzy, kde-format
 #| msgid "Hide Options <<"
 msgid "Hide Options"
