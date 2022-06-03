@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdenlive\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-06-01 00:48+0000\n"
+"POT-Creation-Date: 2022-06-03 00:44+0000\n"
 "PO-Revision-Date: 2020-01-11 11:21+0100\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Galician <proxecto@trasno.gal>\n"
@@ -3676,7 +3676,7 @@ msgstr "Centrado vertical"
 
 #: src/assets/view/widgets/keyframeimport.cpp:214
 #: src/assets/view/widgets/keyframeimport.cpp:224
-#: src/transitions/view/mixstackview.cpp:47
+#: src/dialogs/subtitleedit.cpp:149 src/transitions/view/mixstackview.cpp:47
 #, fuzzy, kde-format
 #| msgid "Counter"
 msgid "Center"
@@ -4052,9 +4052,9 @@ msgstr "Pila de efectos"
 
 #: src/bin/abstractprojectitem.cpp:121 src/bin/bin.cpp:3953
 #: src/mltcontroller/clipcontroller.cpp:569
-#: src/onlineresources/resourcewidget.cpp:261
-#: src/onlineresources/resourcewidget.cpp:543
-#: src/onlineresources/resourcewidget.cpp:557
+#: src/onlineresources/resourcewidget.cpp:262
+#: src/onlineresources/resourcewidget.cpp:553
+#: src/onlineresources/resourcewidget.cpp:567
 #, fuzzy, kde-format
 #| msgid "Rename"
 msgid "Unnamed"
@@ -4333,7 +4333,7 @@ msgstr "Silenciar o fragmento de vídeo"
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: src/bin/bin.cpp:2114 src/effects/effectlist/model/effecttreemodel.cpp:64
 #: src/layoutmanagement.cpp:32 src/lib/audio/audioStreamInfo.cpp:25
-#: src/monitor/recmanager.cpp:47 src/onlineresources/resourcewidget.cpp:533
+#: src/monitor/recmanager.cpp:47 src/onlineresources/resourcewidget.cpp:543
 #: src/timeline2/view/dialogs/tracksconfigdialog.cpp:25
 #: src/timeline2/view/dialogs/tracksconfigdialog.cpp:106
 #: src/timeline2/view/dialogs/tracksconfigdialog.cpp:139
@@ -4829,7 +4829,7 @@ msgstr[1] "Engadir fragmentos"
 #: src/bin/generators/generators.cpp:56
 #: src/mltcontroller/clippropertiescontroller.cpp:326
 #: src/transitions/view/mixstackview.cpp:31 src/ui/clipdurationdialog_ui.ui:40
-#: src/ui/colorclip_ui.ui:37 src/ui/editsub_ui.ui:81
+#: src/ui/colorclip_ui.ui:37 src/ui/editsub_ui.ui:153
 #: src/ui/spacerdialog_ui.ui:43 src/ui/titlewidget_ui.ui:626
 #, kde-format
 msgid "Duration:"
@@ -4934,21 +4934,21 @@ msgstr "Editar a guía"
 msgid "Edit Marker"
 msgstr "Editar o marcador"
 
-#: src/bin/model/subtitlemodel.cpp:290 src/bin/model/subtitlemodel.cpp:506
+#: src/bin/model/subtitlemodel.cpp:304 src/bin/model/subtitlemodel.cpp:520
 #: src/timeline2/view/timelinecontroller.cpp:4817
 #, fuzzy, kde-format
 #| msgid "Add guide"
 msgid "Edit subtitle"
 msgstr "Engadir guía"
 
-#: src/bin/model/subtitlemodel.cpp:540
+#: src/bin/model/subtitlemodel.cpp:554
 #: src/timeline2/model/timelinefunctions.cpp:185
 #: src/timeline2/view/timelinecontroller.cpp:1724
 #, kde-format
 msgid "Cut clip"
 msgstr "Recortar o fragmento"
 
-#: src/bin/model/subtitlemodel.cpp:670
+#: src/bin/model/subtitlemodel.cpp:684
 #: src/timeline2/model/timelinemodel.cpp:3389
 #: src/timeline2/view/timelinecontroller.cpp:4837
 #, fuzzy, kde-format
@@ -4957,14 +4957,14 @@ msgstr "Recortar o fragmento"
 msgid "Resize subtitle"
 msgstr "Eliminar o subfragmento"
 
-#: src/bin/model/subtitlemodel.cpp:866
+#: src/bin/model/subtitlemodel.cpp:880
 #: src/timeline2/model/timelinemodel.cpp:1206
 #, fuzzy, kde-format
 #| msgid "Move item"
 msgid "Move subtitle"
 msgstr "Mover o elemento"
 
-#: src/bin/model/subtitlemodel.cpp:985 src/dialogs/renderwidget.cpp:760
+#: src/bin/model/subtitlemodel.cpp:999 src/dialogs/renderwidget.cpp:760
 #: src/effects/effectstack/view/collapsibleeffectview.cpp:492
 #: src/effects/effectstack/view/effectstackview.cpp:511
 #: src/project/cliptranscode.cpp:153 src/project/dialogs/archivewidget.cpp:813
@@ -5144,7 +5144,7 @@ msgstr ""
 
 #. i18n: ectx: property (text), widget (QPushButton, button_import)
 #: src/capture/managecapturesdialog.cpp:27 src/layoutmanagement.cpp:429
-#: src/ui/resourcewidget_ui.ui:282
+#: src/ui/resourcewidget_ui.ui:230
 #, kde-format
 msgid "Import"
 msgstr "Importar"
@@ -5510,7 +5510,7 @@ msgstr "Fragmento de título de modelo"
 #: src/dialogs/clipcreationdialog.cpp:455
 #: src/effects/effectlist/view/effectlistwidget.cpp:142
 #: src/effects/effectstack/view/collapsibleeffectview.cpp:286
-#: src/mainwindow.cpp:3668 src/onlineresources/resourcewidget.cpp:539
+#: src/mainwindow.cpp:3668 src/onlineresources/resourcewidget.cpp:549
 #, kde-format
 msgid "All Files"
 msgstr "Todos os ficheiros"
@@ -6413,44 +6413,98 @@ msgstr ""
 msgid "Made by KDE"
 msgstr ""
 
-#: src/dialogs/subtitleedit.cpp:122
+#: src/dialogs/subtitleedit.cpp:125
 #, fuzzy, kde-format
 #| msgid "Go to guide..."
 msgid "Go to next subtitle"
 msgstr "Ir á guía…"
 
-#: src/dialogs/subtitleedit.cpp:123
+#: src/dialogs/subtitleedit.cpp:126
 #, fuzzy, kde-format
 #| msgid "Go to Previous Keyframe"
 msgid "Go to previous subtitle"
 msgstr "Ir ao fotograma clave anterior"
 
-#: src/dialogs/subtitleedit.cpp:124
+#: src/dialogs/subtitleedit.cpp:127
 #: src/timeline2/view/timelinecontroller.cpp:4870
 #, fuzzy, kde-format
 #| msgid "Add guide"
 msgid "Add subtitle"
 msgstr "Engadir guía"
 
-#: src/dialogs/subtitleedit.cpp:125
+#: src/dialogs/subtitleedit.cpp:128
 #, fuzzy, kde-format
 #| msgid "No guide found at current position"
 msgid "Split subtitle at cursor position"
 msgstr "Non se atopou ningunha guía na posición actual"
 
-#: src/dialogs/subtitleedit.cpp:126
+#: src/dialogs/subtitleedit.cpp:129
 #, fuzzy, kde-format
 #| msgid "Update Profile"
 msgid "Update subtitle text"
 msgstr "Actualizar o perfil"
 
-#: src/dialogs/subtitleedit.cpp:127
+#: src/dialogs/subtitleedit.cpp:130
+#, fuzzy, kde-format
+#| msgid "Show/Hide options"
+msgid "Show style options"
+msgstr "Mostrar/Agochar as opcións"
+
+#: src/dialogs/subtitleedit.cpp:131
 #: src/timeline2/view/timelinecontroller.cpp:4961
 #, fuzzy, kde-format
 #| msgid "Delete subclip"
 #| msgid_plural "Delete subclips"
 msgid "Delete subtitle"
 msgstr "Eliminar o subfragmento"
+
+#: src/dialogs/subtitleedit.cpp:145
+#, fuzzy, kde-format
+#| msgid "Rotate from center"
+msgid "Bottom Center"
+msgstr "Rotar desde o centro"
+
+#: src/dialogs/subtitleedit.cpp:146
+#, fuzzy, kde-format
+#| msgid "Bottom first"
+msgid "Bottom Left"
+msgstr "Inferior primeiro"
+
+#: src/dialogs/subtitleedit.cpp:147
+#, fuzzy, kde-format
+#| msgid "Bottom first"
+msgid "Bottom Right"
+msgstr "Inferior primeiro"
+
+#: src/dialogs/subtitleedit.cpp:148
+#, fuzzy, kde-format
+#| msgid "Counter"
+msgid "Center Left"
+msgstr "Contador"
+
+#: src/dialogs/subtitleedit.cpp:150
+#, fuzzy, kde-format
+#| msgid "Left,Center,Right"
+msgid "Center Right"
+msgstr "Esquerda,Centro,Dereita"
+
+#: src/dialogs/subtitleedit.cpp:151
+#, fuzzy, kde-format
+#| msgid "Crop left"
+msgid "Top Left"
+msgstr "Recortar pola esquerda"
+
+#: src/dialogs/subtitleedit.cpp:152
+#, fuzzy, kde-format
+#| msgid "Crop left"
+msgid "Top Center"
+msgstr "Recortar pola esquerda"
+
+#: src/dialogs/subtitleedit.cpp:153
+#, fuzzy, kde-format
+#| msgid "Crop right"
+msgid "Top Right"
+msgstr "Recortar pola dereita"
 
 #: src/dialogs/textbasededit.cpp:42
 #, fuzzy, kde-format
@@ -7581,7 +7635,7 @@ msgstr "Copiar o efecto"
 #: src/effects/effectstack/model/effectstackmodel.cpp:321
 #: src/effects/effectstack/model/effectstackmodel.cpp:423
 #: src/effects/effectstack/model/effectstackmodel.cpp:477
-#: src/effects/effectstack/model/effectstackmodel.cpp:1027
+#: src/effects/effectstack/model/effectstackmodel.cpp:1031
 #, kde-format
 msgid "Effect %1 cannot be added twice."
 msgstr ""
@@ -10310,7 +10364,7 @@ msgid "Audio streams"
 msgstr "Transmisións de son"
 
 #: src/mltcontroller/clippropertiescontroller.cpp:727
-#: src/monitor/monitor.cpp:1692
+#: src/monitor/monitor.cpp:1695
 #, kde-format
 msgid "Merge all streams"
 msgstr ""
@@ -10789,7 +10843,7 @@ msgstr "Gardar a imaxe no proxecto"
 msgid "Export image using source resolution"
 msgstr "Exportar a imaxe usando a resolución de orixe"
 
-#: src/monitor/monitor.cpp:1677 src/monitor/monitor.cpp:1791
+#: src/monitor/monitor.cpp:1680 src/monitor/monitor.cpp:1794
 #, fuzzy, kde-format
 #| msgid "Audio streams"
 msgid "%1 audio stream"
@@ -10797,17 +10851,12 @@ msgid_plural "%1 audio streams"
 msgstr[0] "Transmisións de son"
 msgstr[1] "Transmisións de son"
 
-#: src/monitor/monitor.cpp:1825
-#, kde-format
-msgid "It maybe takes a while until the preview is loaded"
-msgstr ""
-
-#: src/monitor/monitor.cpp:2124
+#: src/monitor/monitor.cpp:2129
 #, kde-format
 msgid "Cannot initialize Movit's GLSL manager, please disable Movit"
 msgstr "Non se pode inicializar o xestor de GLSL de Movit, desactive Movit."
 
-#: src/monitor/monitor.cpp:2166 src/monitor/monitor.cpp:2218
+#: src/monitor/monitor.cpp:2171 src/monitor/monitor.cpp:2223
 #, kde-format
 msgid ""
 "The alphagrad filter is required for that feature, please install frei0r and "
@@ -10816,17 +10865,17 @@ msgstr ""
 "Esa funcionalidade require o filtro «alphagrad». Instale «frei0r» e reinicie "
 "Kdenlive."
 
-#: src/monitor/monitor.cpp:2186
+#: src/monitor/monitor.cpp:2191
 #, kde-format
 msgid "Clip has no effects"
 msgstr "O fragmento non ten efectos."
 
-#: src/monitor/monitor.cpp:2188
+#: src/monitor/monitor.cpp:2193
 #, kde-format
 msgid "Select a clip in project bin to compare effect"
 msgstr "Seleccione un fragmento na caixa do proxecto para comparar o efecto."
 
-#: src/monitor/monitor.cpp:2225
+#: src/monitor/monitor.cpp:2230
 #, kde-format
 msgid ""
 "The cairoblend transition is required for that feature, please install "
@@ -10835,12 +10884,12 @@ msgstr ""
 "Esa funcionalidade require a transición «cairoblend». Instale «frei0r» e "
 "reinicie Kdenlive."
 
-#: src/monitor/monitor.cpp:2271
+#: src/monitor/monitor.cpp:2276
 #, kde-format
 msgid "Enable edit mode in monitor to edit effect"
 msgstr "Activar o modo de edición no monitor para editar o efecto"
 
-#: src/monitor/monitor.cpp:2642
+#: src/monitor/monitor.cpp:2647
 #, fuzzy, kde-format
 #| msgid ""
 #| "The cairoblend transition is required for that feature, please install "
@@ -11015,7 +11064,7 @@ msgid "Go to Zone End"
 msgstr "Ir ao final da zona"
 
 #. i18n: ectx: property (text), widget (QPushButton, button_preview)
-#: src/monitor/recmanager.cpp:35 src/ui/resourcewidget_ui.ui:238
+#: src/monitor/recmanager.cpp:35 src/ui/resourcewidget_ui.ui:247
 #, kde-format
 msgid "Preview"
 msgstr "Previsualización"
@@ -11034,7 +11083,7 @@ msgstr "Gravar"
 #. i18n: ectx: attribute (title), widget (QWidget, video_tab)
 #. i18n: ectx: attribute (title), widget (QWidget, tab_video)
 #. i18n: ectx: property (text), widget (QLabel, label)
-#: src/monitor/recmanager.cpp:46 src/onlineresources/resourcewidget.cpp:535
+#: src/monitor/recmanager.cpp:46 src/onlineresources/resourcewidget.cpp:545
 #: src/timeline2/view/dialogs/tracksconfigdialog.cpp:24
 #: src/timeline2/view/dialogs/tracksconfigdialog.cpp:137
 #: src/ui/clipproperties_ui.ui:86 src/ui/configtimeline_ui.ui:120
@@ -11258,237 +11307,242 @@ msgctxt "@title:window"
 msgid "Error Loading Data"
 msgstr "Erro ao cargar os datos"
 
-#: src/onlineresources/resourcewidget.cpp:84
+#: src/onlineresources/resourcewidget.cpp:85
 #, kde-format
 msgid ""
 "Login is required to download this item.\n"
 "You will be redirected to the login page now."
 msgstr ""
 
-#: src/onlineresources/resourcewidget.cpp:187
+#: src/onlineresources/resourcewidget.cpp:188
 #, kde-format
 msgid "Media provided by %1"
 msgstr ""
 
-#: src/onlineresources/resourcewidget.cpp:191
+#: src/onlineresources/resourcewidget.cpp:192
 #, fuzzy, kde-format
 #| msgid "Search scale"
 msgid "Search failed! %1"
 msgstr "Escala da busca"
 
-#: src/onlineresources/resourcewidget.cpp:224
+#: src/onlineresources/resourcewidget.cpp:225
 #, fuzzy, kde-format
 #| msgid "Search..."
 msgctxt "@info:status"
 msgid "Search pending…"
 msgstr "Buscar…"
 
-#: src/onlineresources/resourcewidget.cpp:247
+#: src/onlineresources/resourcewidget.cpp:248
 #, fuzzy, kde-format
 #| msgid "No image found"
 msgctxt "@info"
 msgid "No items found."
 msgstr "Non se atoparon imaxes"
 
-#: src/onlineresources/resourcewidget.cpp:258
+#: src/onlineresources/resourcewidget.cpp:259
 #, kde-format
 msgctxt "@info:progress"
 msgid "Parsing item %1 of %2…"
 msgstr ""
 
-#: src/onlineresources/resourcewidget.cpp:261
+#: src/onlineresources/resourcewidget.cpp:262
 #, fuzzy, kde-format
 #| msgid "Creating proxy %1"
 msgctxt "Created by author name"
 msgid "Created by %1"
 msgstr "Creando o proxy %1"
 
-#: src/onlineresources/resourcewidget.cpp:330
+#: src/onlineresources/resourcewidget.cpp:331
 #, kde-format
 msgctxt "the url link pointing to a web page"
 msgid "link"
 msgstr "ligazón"
 
-#: src/onlineresources/resourcewidget.cpp:336
+#: src/onlineresources/resourcewidget.cpp:337
 #, kde-format
 msgid "Created by <a href=\"%1\">"
 msgstr ""
 
-#: src/onlineresources/resourcewidget.cpp:340
+#: src/onlineresources/resourcewidget.cpp:341
 #: src/project/dialogs/projectsettings.cpp:220
 #, kde-format
 msgid "Author"
 msgstr "Autor"
 
-#: src/onlineresources/resourcewidget.cpp:344
+#: src/onlineresources/resourcewidget.cpp:345
 #, fuzzy, kde-format
 #| msgid "Creating proxy %1"
 msgid "Created by %1"
 msgstr "Creando o proxy %1"
 
-#: src/onlineresources/resourcewidget.cpp:350
+#: src/onlineresources/resourcewidget.cpp:351
 #, kde-format
 msgid "Size: %1 x %2"
 msgstr ""
 
-#: src/onlineresources/resourcewidget.cpp:353
+#: src/onlineresources/resourcewidget.cpp:354
 #, fuzzy, kde-format
 #| msgid "Duration: "
 msgid "Duration: %1 sec"
 msgstr "Duración: "
 
-#: src/onlineresources/resourcewidget.cpp:381
+#: src/onlineresources/resourcewidget.cpp:382
 #, fuzzy, kde-format
 #| msgid "Scaling"
 msgctxt "Creative Commons License"
 msgid "CC Sampling+"
 msgstr "Ampliación"
 
-#: src/onlineresources/resourcewidget.cpp:383
+#: src/onlineresources/resourcewidget.cpp:384
 #, fuzzy, kde-format
 #| msgid "Delete Composition"
 msgctxt "Creative Commons License"
 msgid "Creative Commons Attribution"
 msgstr "Eliminar a composición"
 
-#: src/onlineresources/resourcewidget.cpp:384
+#: src/onlineresources/resourcewidget.cpp:385
 #, kde-format
 msgctxt "Creative Commons License (short)"
 msgid "CC BY"
 msgstr ""
 
-#: src/onlineresources/resourcewidget.cpp:386
+#: src/onlineresources/resourcewidget.cpp:387
 #, kde-format
 msgctxt "Creative Commons License"
 msgid "Creative Commons Attribution-NoDerivs"
 msgstr ""
 
-#: src/onlineresources/resourcewidget.cpp:387
+#: src/onlineresources/resourcewidget.cpp:388
 #, kde-format
 msgctxt "Creative Commons License (short)"
 msgid "CC BY-ND"
 msgstr ""
 
-#: src/onlineresources/resourcewidget.cpp:389
+#: src/onlineresources/resourcewidget.cpp:390
 #, kde-format
 msgctxt "Creative Commons License"
 msgid "Creative Commons Attribution-NonCommercial-ShareAlike"
 msgstr ""
 
-#: src/onlineresources/resourcewidget.cpp:390
+#: src/onlineresources/resourcewidget.cpp:391
 #, kde-format
 msgctxt "Creative Commons License (short)"
 msgid "CC BY-NC-SA"
 msgstr ""
 
-#: src/onlineresources/resourcewidget.cpp:392
+#: src/onlineresources/resourcewidget.cpp:393
 #, kde-format
 msgctxt "Creative Commons License"
 msgid "Creative Commons Attribution-ShareAlike"
 msgstr ""
 
-#: src/onlineresources/resourcewidget.cpp:393
+#: src/onlineresources/resourcewidget.cpp:394
 #, kde-format
 msgctxt "Creative Commons License (short)"
 msgid "CC BY-SA"
 msgstr ""
 
-#: src/onlineresources/resourcewidget.cpp:395
+#: src/onlineresources/resourcewidget.cpp:396
 #, kde-format
 msgctxt "Creative Commons License"
 msgid "Creative Commons Attribution-NonCommercial"
 msgstr ""
 
-#: src/onlineresources/resourcewidget.cpp:396
+#: src/onlineresources/resourcewidget.cpp:397
 #, kde-format
 msgctxt "Creative Commons License (short)"
 msgid "CC BY-NC"
 msgstr ""
 
-#: src/onlineresources/resourcewidget.cpp:398
+#: src/onlineresources/resourcewidget.cpp:399
 #, kde-format
 msgctxt "Creative Commons License"
 msgid "Creative Commons Attribution-NonCommercial-NoDerivs"
 msgstr ""
 
-#: src/onlineresources/resourcewidget.cpp:399
+#: src/onlineresources/resourcewidget.cpp:400
 #, kde-format
 msgctxt "Creative Commons License (short)"
 msgid "CC BY-NC-ND"
 msgstr ""
 
-#: src/onlineresources/resourcewidget.cpp:401
+#: src/onlineresources/resourcewidget.cpp:402
 #, fuzzy, kde-format
 #| msgid "Create Countdown Clip"
 msgctxt "Creative Commons License"
 msgid "Creative Commons 0"
 msgstr "Crear un fragmento de conta atrás"
 
-#: src/onlineresources/resourcewidget.cpp:402
+#: src/onlineresources/resourcewidget.cpp:403
 #, kde-format
 msgctxt "Creative Commons License (short)"
 msgid "CC 0"
 msgstr ""
 
-#: src/onlineresources/resourcewidget.cpp:404
+#: src/onlineresources/resourcewidget.cpp:405
 #, kde-format
 msgctxt "License"
 msgid "Public Domain"
 msgstr ""
 
-#: src/onlineresources/resourcewidget.cpp:406
+#: src/onlineresources/resourcewidget.cpp:407
 #, fuzzy, kde-format
 #| msgid "Unknown clip"
 msgctxt "Short for: Unknown Creative Commons License"
 msgid "Unknown CC License"
 msgstr "Fragmento descoñecido"
 
-#: src/onlineresources/resourcewidget.cpp:407
+#: src/onlineresources/resourcewidget.cpp:408
 #, kde-format
 msgid "Unknown Creative Commons License"
 msgstr ""
 
-#: src/onlineresources/resourcewidget.cpp:427
+#: src/onlineresources/resourcewidget.cpp:428
 #, fuzzy, kde-format
 #| msgid "License"
 msgid "Pexels License"
 msgstr "Licenza"
 
-#: src/onlineresources/resourcewidget.cpp:429
+#: src/onlineresources/resourcewidget.cpp:430
 #, fuzzy, kde-format
 #| msgid "License"
 msgid "Pixabay License"
 msgstr "Licenza"
 
-#: src/onlineresources/resourcewidget.cpp:432
+#: src/onlineresources/resourcewidget.cpp:433
 #, fuzzy, kde-format
 #| msgid "Unknown clip"
 msgid "Unknown License"
 msgstr "Fragmento descoñecido"
 
-#: src/onlineresources/resourcewidget.cpp:468
+#: src/onlineresources/resourcewidget.cpp:470
+#, kde-format
+msgid "It maybe takes a while until the preview is loaded"
+msgstr ""
+
+#: src/onlineresources/resourcewidget.cpp:478
 #, fuzzy, kde-format
 #| msgid "Online Resources"
 msgid "Online Resources Preview"
 msgstr "Recursos en Internet"
 
-#: src/onlineresources/resourcewidget.cpp:490
+#: src/onlineresources/resourcewidget.cpp:500
 #, kde-format
 msgctxt "@title:window"
 msgid "Choose File Version"
 msgstr ""
 
-#: src/onlineresources/resourcewidget.cpp:490
+#: src/onlineresources/resourcewidget.cpp:500
 #, kde-format
 msgid "Please choose the version you want to download"
 msgstr ""
 
-#: src/onlineresources/resourcewidget.cpp:537
+#: src/onlineresources/resourcewidget.cpp:547
 #, kde-format
 msgid "Images"
 msgstr "Imaxes"
 
-#: src/onlineresources/resourcewidget.cpp:552
+#: src/onlineresources/resourcewidget.cpp:562
 #, kde-format
 msgid ""
 "Be aware that the usage of the resource is maybe restricted by license terms "
@@ -11496,12 +11550,12 @@ msgid ""
 "Do you want to add license attribution to your Project Notes?"
 msgstr ""
 
-#: src/onlineresources/resourcewidget.cpp:554
+#: src/onlineresources/resourcewidget.cpp:564
 #, kde-format
 msgid "Remember this decision"
 msgstr ""
 
-#: src/onlineresources/resourcewidget.cpp:556
+#: src/onlineresources/resourcewidget.cpp:566
 #, kde-format
 msgctxt "item name, item url, author name, license name, license url"
 msgid ""
@@ -11509,34 +11563,34 @@ msgid ""
 "this license, visit %5"
 msgstr ""
 
-#: src/onlineresources/resourcewidget.cpp:596
+#: src/onlineresources/resourcewidget.cpp:606
 #, kde-format
 msgid "%1 Try again."
 msgstr ""
 
-#: src/onlineresources/resourcewidget.cpp:596
-#: src/onlineresources/resourcewidget.cpp:598
+#: src/onlineresources/resourcewidget.cpp:606
+#: src/onlineresources/resourcewidget.cpp:608
 #, kde-format
 msgid "Error Loading Data"
 msgstr "Erro ao cargar os datos"
 
-#: src/onlineresources/resourcewidget.cpp:607
+#: src/onlineresources/resourcewidget.cpp:617
 #, kde-format
 msgid "Resource saved to %1"
 msgstr "O recurso gardouse en %1"
 
-#: src/onlineresources/resourcewidget.cpp:607
+#: src/onlineresources/resourcewidget.cpp:617
 #, kde-format
 msgid "Data Imported"
 msgstr "Importáronse os datos"
 
-#: src/onlineresources/resourcewidget.cpp:635
+#: src/onlineresources/resourcewidget.cpp:645
 #, fuzzy, kde-format
 #| msgid "Try importing again to obtain a new freesound connection"
 msgid "Try importing again to obtain a new connection"
 msgstr "Probe a importar de novo para obter unha nova conexión con Freesound."
 
-#: src/onlineresources/resourcewidget.cpp:636
+#: src/onlineresources/resourcewidget.cpp:646
 #, fuzzy, kde-format
 #| msgid "Error Getting Access Token from Freesound."
 msgid "Error Getting Access Token from %1."
@@ -15632,12 +15686,13 @@ msgstr "Eliminar o punto actual"
 #. i18n: ectx: property (text), widget (QToolButton, analysis_delete)
 #. i18n: ectx: property (text), widget (QToolButton, analysis_save)
 #. i18n: ectx: property (text), widget (QToolButton, analysis_load)
-#. i18n: ectx: property (text), widget (QToolButton, buttonIn)
-#. i18n: ectx: property (text), widget (QToolButton, buttonLock)
-#. i18n: ectx: property (text), widget (QToolButton, buttonOut)
 #. i18n: ectx: property (text), widget (QToolButton, buttonPrev)
 #. i18n: ectx: property (text), widget (QToolButton, buttonCut)
 #. i18n: ectx: property (text), widget (QToolButton, buttonApply)
+#. i18n: ectx: property (text), widget (QToolButton, buttonStyle)
+#. i18n: ectx: property (text), widget (QToolButton, buttonIn)
+#. i18n: ectx: property (text), widget (QToolButton, buttonOut)
+#. i18n: ectx: property (text), widget (QToolButton, buttonLock)
 #. i18n: ectx: property (text), widget (QToolButton, button_more)
 #: src/ui/bezierspline_ui.ui:65 src/ui/bezierspline_ui.ui:86
 #: src/ui/bezierspline_ui.ui:109 src/ui/bezierspline_ui.ui:122
@@ -15654,52 +15709,52 @@ msgstr "Eliminar o punto actual"
 #: src/ui/configjogshuttle_ui.ui:78 src/ui/configsdl_ui.ui:30
 #: src/ui/configspeech_ui.ui:33 src/ui/configspeech_ui.ui:76
 #: src/ui/cutjobdialog_ui.ui:80 src/ui/editrenderpreset_ui.ui:160
-#: src/ui/editsub_ui.ui:43 src/ui/editsub_ui.ui:71 src/ui/editsub_ui.ui:98
-#: src/ui/editsub_ui.ui:111 src/ui/editsub_ui.ui:139 src/ui/editsub_ui.ui:149
-#: src/ui/editsub_ui.ui:159 src/ui/editsub_ui.ui:166 src/ui/editsub_ui.ui:173
-#: src/ui/effectlist_ui.ui:83 src/ui/effectlist_ui.ui:102
-#: src/ui/effectlist_ui.ui:118 src/ui/effectlist_ui.ui:134
-#: src/ui/effectlist_ui.ui:150 src/ui/geometrywidget_ui.ui:70
-#: src/ui/geometrywidget_ui.ui:83 src/ui/geometrywidget_ui.ui:93
-#: src/ui/gradientedit_ui.ui:126 src/ui/gradientedit_ui.ui:143
-#: src/ui/keyframeeditor_ui.ui:91 src/ui/keyframeeditor_ui.ui:101
-#: src/ui/keyframewidget_ui.ui:46 src/ui/keyframewidget_ui.ui:59
-#: src/ui/keyframewidget_ui.ui:72 src/ui/keyframewidget_ui.ui:85
-#: src/ui/keyframewidget_ui.ui:124 src/ui/listdependencyparamwidget_ui.ui:42
-#: src/ui/managecache_ui.ui:61 src/ui/managecache_ui.ui:112
-#: src/ui/managecache_ui.ui:143 src/ui/managecache_ui.ui:198
-#: src/ui/managecache_ui.ui:229 src/ui/manageencodingprofile_ui.ui:44
-#: src/ui/manageencodingprofile_ui.ui:51 src/ui/manageencodingprofile_ui.ui:58
-#: src/ui/manageencodingprofile_ui.ui:68 src/ui/monitoreditwidget_ui.ui:53
-#: src/ui/monitoreditwidget_ui.ui:66 src/ui/monitoreditwidget_ui.ui:76
-#: src/ui/projectsettings_ui.ui:191 src/ui/projectsettings_ui.ui:201
-#: src/ui/projectsettings_ui.ui:369 src/ui/projectsettings_ui.ui:511
-#: src/ui/projectsettings_ui.ui:525 src/ui/projectsettings_ui.ui:586
-#: src/ui/projectsettings_ui.ui:593 src/ui/qtextclip_ui.ui:65
-#: src/ui/recmonitor_ui.ui:72 src/ui/renderwidget_ui.ui:530
-#: src/ui/renderwidget_ui.ui:911 src/ui/resourcewidget_ui.ui:249
-#: src/ui/resourcewidget_ui.ui:293 src/ui/selectivecolor_ui.ui:29
-#: src/ui/selectivecolor_ui.ui:36 src/ui/speechdialog_ui.ui:95
-#: src/ui/textbasededit_ui.ui:58 src/ui/textbasededit_ui.ui:87
-#: src/ui/textbasededit_ui.ui:104 src/ui/textbasededit_ui.ui:175
-#: src/ui/textbasededit_ui.ui:195 src/ui/textbasededit_ui.ui:205
-#: src/ui/textbasededit_ui.ui:215 src/ui/textbasededit_ui.ui:225
-#: src/ui/timeremap_ui.ui:96 src/ui/timeremap_ui.ui:150
-#: src/ui/timeremap_ui.ui:181 src/ui/timeremap_ui.ui:191
-#: src/ui/timeremap_ui.ui:201 src/ui/timeremap_ui.ui:378
-#: src/ui/titlewidget_ui.ui:826 src/ui/titlewidget_ui.ui:836
-#: src/ui/titlewidget_ui.ui:1041 src/ui/titlewidget_ui.ui:1096
-#: src/ui/titlewidget_ui.ui:1146 src/ui/titlewidget_ui.ui:1169
-#: src/ui/titlewidget_ui.ui:1202 src/ui/titlewidget_ui.ui:1292
-#: src/ui/titlewidget_ui.ui:1590 src/ui/titlewidget_ui.ui:1607
-#: src/ui/titlewidget_ui.ui:1621 src/ui/titlewidget_ui.ui:1688
-#: src/ui/titlewidget_ui.ui:1702 src/ui/titlewidget_ui.ui:1716
-#: src/ui/titlewidget_ui.ui:1730 src/ui/titlewidget_ui.ui:1744
-#: src/ui/titlewidget_ui.ui:1758 src/ui/tracksconfigdialog_ui.ui:51
-#: src/ui/tracksconfigdialog_ui.ui:58 src/ui/tracksconfigdialog_ui.ui:65
-#: src/ui/tracksconfigdialog_ui.ui:72 src/ui/tracksconfigdialog_ui.ui:79
-#: src/ui/unicodewidget_ui.ui:197 src/ui/unicodewidget_ui.ui:222
-#: src/ui/urllistparamwidget_ui.ui:119
+#: src/ui/editsub_ui.ui:19 src/ui/editsub_ui.ui:29 src/ui/editsub_ui.ui:39
+#: src/ui/editsub_ui.ui:46 src/ui/editsub_ui.ui:53 src/ui/editsub_ui.ui:60
+#: src/ui/editsub_ui.ui:126 src/ui/editsub_ui.ui:143 src/ui/editsub_ui.ui:160
+#: src/ui/editsub_ui.ui:339 src/ui/effectlist_ui.ui:83
+#: src/ui/effectlist_ui.ui:102 src/ui/effectlist_ui.ui:118
+#: src/ui/effectlist_ui.ui:134 src/ui/effectlist_ui.ui:150
+#: src/ui/geometrywidget_ui.ui:70 src/ui/geometrywidget_ui.ui:83
+#: src/ui/geometrywidget_ui.ui:93 src/ui/gradientedit_ui.ui:126
+#: src/ui/gradientedit_ui.ui:143 src/ui/keyframeeditor_ui.ui:91
+#: src/ui/keyframeeditor_ui.ui:101 src/ui/keyframewidget_ui.ui:46
+#: src/ui/keyframewidget_ui.ui:59 src/ui/keyframewidget_ui.ui:72
+#: src/ui/keyframewidget_ui.ui:85 src/ui/keyframewidget_ui.ui:124
+#: src/ui/listdependencyparamwidget_ui.ui:42 src/ui/managecache_ui.ui:61
+#: src/ui/managecache_ui.ui:112 src/ui/managecache_ui.ui:143
+#: src/ui/managecache_ui.ui:198 src/ui/managecache_ui.ui:229
+#: src/ui/manageencodingprofile_ui.ui:44 src/ui/manageencodingprofile_ui.ui:51
+#: src/ui/manageencodingprofile_ui.ui:58 src/ui/manageencodingprofile_ui.ui:68
+#: src/ui/monitoreditwidget_ui.ui:53 src/ui/monitoreditwidget_ui.ui:66
+#: src/ui/monitoreditwidget_ui.ui:76 src/ui/projectsettings_ui.ui:191
+#: src/ui/projectsettings_ui.ui:201 src/ui/projectsettings_ui.ui:369
+#: src/ui/projectsettings_ui.ui:511 src/ui/projectsettings_ui.ui:525
+#: src/ui/projectsettings_ui.ui:586 src/ui/projectsettings_ui.ui:593
+#: src/ui/qtextclip_ui.ui:65 src/ui/recmonitor_ui.ui:72
+#: src/ui/renderwidget_ui.ui:530 src/ui/renderwidget_ui.ui:911
+#: src/ui/resourcewidget_ui.ui:210 src/ui/resourcewidget_ui.ui:277
+#: src/ui/selectivecolor_ui.ui:29 src/ui/selectivecolor_ui.ui:36
+#: src/ui/speechdialog_ui.ui:95 src/ui/textbasededit_ui.ui:58
+#: src/ui/textbasededit_ui.ui:87 src/ui/textbasededit_ui.ui:104
+#: src/ui/textbasededit_ui.ui:175 src/ui/textbasededit_ui.ui:195
+#: src/ui/textbasededit_ui.ui:205 src/ui/textbasededit_ui.ui:215
+#: src/ui/textbasededit_ui.ui:225 src/ui/timeremap_ui.ui:96
+#: src/ui/timeremap_ui.ui:150 src/ui/timeremap_ui.ui:181
+#: src/ui/timeremap_ui.ui:191 src/ui/timeremap_ui.ui:201
+#: src/ui/timeremap_ui.ui:378 src/ui/titlewidget_ui.ui:826
+#: src/ui/titlewidget_ui.ui:836 src/ui/titlewidget_ui.ui:1041
+#: src/ui/titlewidget_ui.ui:1096 src/ui/titlewidget_ui.ui:1146
+#: src/ui/titlewidget_ui.ui:1169 src/ui/titlewidget_ui.ui:1202
+#: src/ui/titlewidget_ui.ui:1292 src/ui/titlewidget_ui.ui:1590
+#: src/ui/titlewidget_ui.ui:1607 src/ui/titlewidget_ui.ui:1621
+#: src/ui/titlewidget_ui.ui:1688 src/ui/titlewidget_ui.ui:1702
+#: src/ui/titlewidget_ui.ui:1716 src/ui/titlewidget_ui.ui:1730
+#: src/ui/titlewidget_ui.ui:1744 src/ui/titlewidget_ui.ui:1758
+#: src/ui/tracksconfigdialog_ui.ui:51 src/ui/tracksconfigdialog_ui.ui:58
+#: src/ui/tracksconfigdialog_ui.ui:65 src/ui/tracksconfigdialog_ui.ui:72
+#: src/ui/tracksconfigdialog_ui.ui:79 src/ui/unicodewidget_ui.ui:197
+#: src/ui/unicodewidget_ui.ui:222 src/ui/urllistparamwidget_ui.ui:119
 #, kde-format
 msgid "..."
 msgstr "…"
@@ -15760,7 +15815,7 @@ msgstr "Etiqueta de texto"
 
 #. i18n: ectx: property (text), widget (QLabel, position_label)
 #. i18n: ectx: property (text), widget (QLabel, clip_filesize_2)
-#: src/ui/clipdurationdialog_ui.ui:20 src/ui/editsub_ui.ui:127
+#: src/ui/clipdurationdialog_ui.ui:20 src/ui/editsub_ui.ui:119
 #: src/ui/keyframedialog_ui.ui:20
 #, fuzzy, kde-format
 #| msgid " Position:"
@@ -17392,10 +17447,65 @@ msgid ""
 msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, duration_label)
-#: src/ui/editsub_ui.ui:88
+#: src/ui/editsub_ui.ui:136
 #, kde-format
 msgid "End:"
 msgstr ""
+
+#. i18n: ectx: property (text), widget (QCheckBox, checkFont)
+#: src/ui/editsub_ui.ui:180
+#, fuzzy, kde-format
+#| msgid "Create Folder"
+msgid "Custom Font"
+msgstr "Crear un cartafol"
+
+#. i18n: ectx: property (text), widget (QCheckBox, checkFontSize)
+#: src/ui/editsub_ui.ui:194
+#, fuzzy, kde-format
+#| msgid "Font Size"
+msgid "Custom Font Size"
+msgstr "Tamaño do tipo de letra"
+
+#. i18n: ectx: property (suffix), widget (QSpinBox, fontSize)
+#: src/ui/editsub_ui.ui:204
+#, kde-format
+msgid "pt"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QCheckBox, checkFontColor)
+#: src/ui/editsub_ui.ui:217
+#, fuzzy, kde-format
+#| msgid "Create Folder"
+msgid "Custom Font Color"
+msgstr "Crear un cartafol"
+
+#. i18n: ectx: property (text), widget (QCheckBox, checkOutlineColor)
+#: src/ui/editsub_ui.ui:224
+#, fuzzy, kde-format
+#| msgid "Outline Color"
+msgid "Custom Outline Color"
+msgstr "Cor da silueta"
+
+#. i18n: ectx: property (text), widget (QCheckBox, checkOutlineSize)
+#: src/ui/editsub_ui.ui:231
+#, fuzzy, kde-format
+#| msgid "Quality"
+msgid "Custom Outline Size"
+msgstr "Calidade"
+
+#. i18n: ectx: property (suffix), widget (QSpinBox, outlineSize)
+#: src/ui/editsub_ui.ui:241
+#, fuzzy, kde-format
+#| msgid "x"
+msgid "px"
+msgstr "x"
+
+#. i18n: ectx: property (text), widget (QCheckBox, checkPosition)
+#: src/ui/editsub_ui.ui:251
+#, fuzzy, kde-format
+#| msgid "Compositions"
+msgid "Custom Position"
+msgstr "Composicións"
 
 #. i18n: ectx: property (placeholderText), widget (QPlainTextEdit, generatedContent)
 #: src/ui/exportguidesdialog_ui.ui:23
@@ -18527,25 +18637,25 @@ msgid "Delete Script"
 msgstr "Eliminar o script"
 
 #. i18n: ectx: property (placeholderText), widget (KLineEdit, search_text)
-#: src/ui/resourcewidget_ui.ui:36
+#: src/ui/resourcewidget_ui.ui:49
 #, kde-format
 msgid "Search..."
 msgstr "Buscar…"
 
 #. i18n: ectx: property (prefix), widget (QSpinBox, page_number)
-#: src/ui/resourcewidget_ui.ui:104
+#: src/ui/resourcewidget_ui.ui:117
 #, kde-format
 msgid "Page "
 msgstr ""
 
 #. i18n: ectx: property (text), widget (KUrlLabel, provider_info)
-#: src/ui/resourcewidget_ui.ui:174
+#: src/ui/resourcewidget_ui.ui:187
 #, kde-format
 msgid "Photos provided by Example Provider"
 msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, label_3)
-#: src/ui/resourcewidget_ui.ui:331
+#: src/ui/resourcewidget_ui.ui:315
 #, fuzzy, kde-format
 #| msgid "Service"
 msgid "Service:"
@@ -23958,9 +24068,6 @@ msgstr "%1h"
 #~ msgid "No matching profile found"
 #~ msgstr "Non coincide ningún perfil"
 
-#~ msgid "Show/Hide options"
-#~ msgstr "Mostrar/Agochar as opcións"
-
 #~ msgid "Sync timeline cursor"
 #~ msgstr "Sincronizar o cursor da liña de tempo"
 
@@ -24010,11 +24117,6 @@ msgstr "%1h"
 
 #~ msgid "\\u2212Y"
 #~ msgstr "\\u2212Y"
-
-#, fuzzy
-#~| msgid "Create Folder"
-#~ msgid "C&ustom Folder"
-#~ msgstr "Crear un cartafol"
 
 #~ msgid ""
 #~ "You have changed the project folder. Do you want to copy the cached data "
