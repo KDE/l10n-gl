@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kleopatra\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-07-07 00:45+0000\n"
+"POT-Creation-Date: 2022-07-08 00:47+0000\n"
 "PO-Revision-Date: 2020-01-12 11:14+0100\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Galician <proxecto@trasno.gal>\n"
@@ -3037,7 +3037,7 @@ msgstr "Mostrar os detalles técnicos"
 
 #. i18n: ectx: attribute (title), widget (QWidget, tab_tags)
 #: src/conf/appearanceconfigwidget.ui:175
-#: src/dialogs/certificatedetailswidget.cpp:561
+#: src/dialogs/certificatedetailswidget.cpp:596
 #: src/dialogs/certifywidget.cpp:337
 #, kde-format
 msgid "Tags"
@@ -3852,9 +3852,10 @@ msgstr ""
 "descifrarse ou verificarse."
 
 #: src/crypto/autodecryptverifyfilescontroller.cpp:376
-#, kde-kuit-format
-msgid "Select the file to verify with \"%1\""
-msgstr "Seleccione o ficheiro para verificar con «%1»"
+#, fuzzy, kde-kuit-format
+#| msgid "Failed to move <filename>%1</filename> to <filename>%2</filename>."
+msgid "Select the file to verify with the signature <filename>%1</filename>"
+msgstr "Non se puido mover <filename>%1</filename> a <filename>%2</filename>."
 
 #: src/crypto/createchecksumscontroller.cpp:62
 #, kde-format
@@ -4554,7 +4555,7 @@ msgid "..."
 msgstr "…"
 
 #: src/crypto/gui/decryptverifyfilesdialog.cpp:49
-#: src/crypto/gui/decryptverifyfileswizard.cpp:198
+#: src/crypto/gui/decryptverifyfileswizard.cpp:210
 #, kde-format
 msgid "&Output folder:"
 msgstr "Cartaf&ol de saída:"
@@ -4618,12 +4619,12 @@ msgstr "Non se puido crear o cartafol de saída."
 msgid "Invalid output folder."
 msgstr "Cartafol de saída incorrecto."
 
-#: src/crypto/gui/decryptverifyfileswizard.cpp:187
+#: src/crypto/gui/decryptverifyfileswizard.cpp:199
 #, kde-format
 msgid "<b>Choose operations to be performed</b>"
 msgstr "<b>Escoller as operacións a realizar</b>"
 
-#: src/crypto/gui/decryptverifyfileswizard.cpp:188
+#: src/crypto/gui/decryptverifyfileswizard.cpp:200
 #, kde-format
 msgid ""
 "Here you can check and, if needed, override the operations Kleopatra "
@@ -4632,12 +4633,12 @@ msgstr ""
 "Aquí pode comprobar e, de ser preciso, omitir as operacións que Kleopatra "
 "detectou para a entrada dada."
 
-#: src/crypto/gui/decryptverifyfileswizard.cpp:191
+#: src/crypto/gui/decryptverifyfileswizard.cpp:203
 #, kde-format
 msgid "&Decrypt/Verify"
 msgstr "&Descifrar ou verificar"
 
-#: src/crypto/gui/decryptverifyfileswizard.cpp:197
+#: src/crypto/gui/decryptverifyfileswizard.cpp:209
 #, kde-format
 msgid "Create all output files in a single folder"
 msgstr "Crear todos os ficheiros de saída nun único cartafol"
@@ -5698,7 +5699,7 @@ msgid "%1 (%2)"
 msgstr "%1 (%2)"
 
 #: src/dialogs/certificatedetailsinputwidget.cpp:71
-#: src/dialogs/certificatedetailswidget.cpp:349
+#: src/dialogs/certificatedetailswidget.cpp:380
 #: src/newcertificatewizard/enterdetailspage.cpp:315
 #, kde-format
 msgctxt "interpunctation for labels"
@@ -5772,50 +5773,33 @@ msgstr ""
 "<interface>%1</interface> é incorrecto.<nl/>Regra do administrador local: "
 "<icode>%2</icode>"
 
-#: src/dialogs/certificatedetailswidget.cpp:321
+#: src/dialogs/certificatedetailswidget.cpp:331
 #, fuzzy, kde-format
 #| msgid "User-IDs"
 msgid "User IDs:"
 msgstr "Identificadores de usuario"
 
-#: src/dialogs/certificatedetailswidget.cpp:327
+#: src/dialogs/certificatedetailswidget.cpp:336
 #, fuzzy, kde-format
 #| msgid "User-IDs"
 msgid "User IDs"
 msgstr "Identificadores de usuario"
 
-#: src/dialogs/certificatedetailswidget.cpp:359
-#, fuzzy, kde-format
-#| msgid "Trust Level"
-msgid "Trust level:"
-msgstr "Nivel de confianza"
-
-#: src/dialogs/certificatedetailswidget.cpp:366
-#, kde-format
-msgid "Related addresses:"
-msgstr "Enderezos relacionados:"
-
-#: src/dialogs/certificatedetailswidget.cpp:371
-#, fuzzy, kde-format
-#| msgid "Related addresses:"
-msgid "Related addresses"
-msgstr "Enderezos relacionados:"
-
-#: src/dialogs/certificatedetailswidget.cpp:380
+#: src/dialogs/certificatedetailswidget.cpp:351
 #, fuzzy, kde-format
 #| msgid "Add User-ID..."
 msgctxt "@action:button"
 msgid "Add User ID"
 msgstr "Engadir un identificador de usuario…"
 
-#: src/dialogs/certificatedetailswidget.cpp:383
+#: src/dialogs/certificatedetailswidget.cpp:354
 #, fuzzy, kde-format
 #| msgid "Signed user IDs:"
 msgctxt "@action:button"
 msgid "Certify User ID"
 msgstr "Identificadores de usuario asinados:"
 
-#: src/dialogs/certificatedetailswidget.cpp:386
+#: src/dialogs/certificatedetailswidget.cpp:357
 #, fuzzy, kde-format
 #| msgctxt "@title:window"
 #| msgid "Certifications"
@@ -5823,128 +5807,145 @@ msgctxt "@action:button"
 msgid "Show Certifications"
 msgstr "Certificacións"
 
-#: src/dialogs/certificatedetailswidget.cpp:401
+#: src/dialogs/certificatedetailswidget.cpp:391
+#, fuzzy, kde-format
+#| msgid "Trust Level"
+msgid "Trust level:"
+msgstr "Nivel de confianza"
+
+#: src/dialogs/certificatedetailswidget.cpp:396
 #, kde-format
 msgid "Valid from:"
 msgstr "Válido desde:"
 
-#: src/dialogs/certificatedetailswidget.cpp:406
+#: src/dialogs/certificatedetailswidget.cpp:401
 #, kde-format
 msgid "Expires:"
 msgstr "Caduca:"
 
-#: src/dialogs/certificatedetailswidget.cpp:409
+#: src/dialogs/certificatedetailswidget.cpp:404
 #, fuzzy, kde-format
 #| msgid "Change Expiry Date..."
 msgctxt "@info:tooltip"
 msgid "Change the expiration date"
 msgstr "Cambiar a data de caducidade…"
 
-#: src/dialogs/certificatedetailswidget.cpp:410
+#: src/dialogs/certificatedetailswidget.cpp:405
 #, fuzzy, kde-format
 #| msgid "Change Expiry Date..."
 msgctxt "@action:button"
 msgid "Change expiration"
 msgstr "Cambiar a data de caducidade…"
 
-#: src/dialogs/certificatedetailswidget.cpp:416
+#: src/dialogs/certificatedetailswidget.cpp:411
 #, kde-format
 msgid "Fingerprint:"
 msgstr "Pegada dixital:"
 
-#: src/dialogs/certificatedetailswidget.cpp:420
+#: src/dialogs/certificatedetailswidget.cpp:415
 #, fuzzy, kde-format
 #| msgid "Could not write to clipboard"
 msgctxt "@info:tooltip"
 msgid "Copy the fingerprint to the clipboard"
 msgstr "Non se puido escribir no portapapeis"
 
-#: src/dialogs/certificatedetailswidget.cpp:421
+#: src/dialogs/certificatedetailswidget.cpp:416
 #, fuzzy, kde-format
 #| msgid "Fingerprint:"
 msgctxt "@action:button"
 msgid "Copy fingerprint"
 msgstr "Pegada dixital:"
 
-#: src/dialogs/certificatedetailswidget.cpp:428
+#: src/dialogs/certificatedetailswidget.cpp:423
 #, kde-format
 msgid "Issuer:"
 msgstr "Expendedor:"
 
-#: src/dialogs/certificatedetailswidget.cpp:431
+#: src/dialogs/certificatedetailswidget.cpp:426
 #, fuzzy, kde-format
 #| msgid "Could not create certificate: %1"
 msgctxt "@info:tooltip"
 msgid "Show the issuer certificate"
 msgstr "Non foi posíbel crear o certificado: %1"
 
-#: src/dialogs/certificatedetailswidget.cpp:432
+#: src/dialogs/certificatedetailswidget.cpp:427
 #, fuzzy, kde-format
 #| msgid "Show certificate validity"
 msgctxt "@action:button"
 msgid "Show certificate"
 msgstr "Mostrar a validez dos certificados"
 
-#: src/dialogs/certificatedetailswidget.cpp:438
+#: src/dialogs/certificatedetailswidget.cpp:433
 #, kde-format
 msgid "Compliance:"
 msgstr "Cumprimento:"
 
-#: src/dialogs/certificatedetailswidget.cpp:443
+#: src/dialogs/certificatedetailswidget.cpp:438
 #, fuzzy, kde-format
 #| msgid "Trusted issuer?"
 msgid "Trusted introducer for:"
 msgstr "O emisor é de confianza?"
 
-#: src/dialogs/certificatedetailswidget.cpp:445
+#: src/dialogs/certificatedetailswidget.cpp:440
 #, fuzzy, kde-format
 #| msgid "Show certificate details"
 msgid "See certifications for details."
 msgstr "Mostrar os detalles do certificado"
 
+#: src/dialogs/certificatedetailswidget.cpp:446
+#, kde-format
+msgid "Related addresses:"
+msgstr "Enderezos relacionados:"
+
 #: src/dialogs/certificatedetailswidget.cpp:451
+#, fuzzy, kde-format
+#| msgid "Related addresses:"
+msgid "Related addresses"
+msgstr "Enderezos relacionados:"
+
+#: src/dialogs/certificatedetailswidget.cpp:460
 #, fuzzy, kde-format
 #| msgid "&More details..."
 msgctxt "@action:button"
 msgid "More Details..."
 msgstr "&Máis detalles…"
 
-#: src/dialogs/certificatedetailswidget.cpp:454
+#: src/dialogs/certificatedetailswidget.cpp:463
 #, fuzzy, kde-format
 #| msgid "Trust chain &details..."
 msgctxt "@action:button"
 msgid "Trust Chain Details"
 msgstr "&Detalles da cadea de confianza…"
 
-#: src/dialogs/certificatedetailswidget.cpp:457
+#: src/dialogs/certificatedetailswidget.cpp:466
 #, fuzzy, kde-format
 #| msgid "&Update"
 msgctxt "@action:button"
 msgid "Update"
 msgstr "Act&ualizar"
 
-#: src/dialogs/certificatedetailswidget.cpp:463
+#: src/dialogs/certificatedetailswidget.cpp:472
 #, fuzzy, kde-format
 #| msgid "Export"
 msgctxt "@action:button"
 msgid "Export"
 msgstr "Exportar"
 
-#: src/dialogs/certificatedetailswidget.cpp:466
+#: src/dialogs/certificatedetailswidget.cpp:475
 #, fuzzy, kde-format
 #| msgid "Change &passphrase"
 msgctxt "@action:button"
 msgid "Change Passphrase"
 msgstr "Cambiar a frase de &paso"
 
-#: src/dialogs/certificatedetailswidget.cpp:469
+#: src/dialogs/certificatedetailswidget.cpp:478
 #, fuzzy, kde-format
 #| msgid "Generate revocation certificate"
 msgctxt "@action:button"
 msgid "Generate Revocation Certificate"
 msgstr "Xerar un certificado de revogación"
 
-#: src/dialogs/certificatedetailswidget.cpp:471
+#: src/dialogs/certificatedetailswidget.cpp:480
 #, fuzzy, kde-format
 #| msgid ""
 #| "A revocation certificate is a file that serves as a \"kill switch\" to "
@@ -5962,37 +5963,37 @@ msgstr ""
 "máis. Unha vez publicado o certificado de revogación, non pode\n"
 "dar volta atrás."
 
-#: src/dialogs/certificatedetailswidget.cpp:546
-#: src/dialogs/certificatedetailswidget.cpp:547
+#: src/dialogs/certificatedetailswidget.cpp:583
+#: src/dialogs/certificatedetailswidget.cpp:584
 #, kde-format
 msgctxt "Expires"
 msgid "never"
 msgstr "nunca"
 
-#: src/dialogs/certificatedetailswidget.cpp:561
+#: src/dialogs/certificatedetailswidget.cpp:596
 #, kde-format
 msgid "Email"
 msgstr "Correo electrónico"
 
-#: src/dialogs/certificatedetailswidget.cpp:561
+#: src/dialogs/certificatedetailswidget.cpp:596
 #: src/newcertificatewizard/enterdetailspage.cpp:61
 #, kde-format
 msgid "Name"
 msgstr "Nome"
 
-#: src/dialogs/certificatedetailswidget.cpp:561
+#: src/dialogs/certificatedetailswidget.cpp:596
 #, kde-format
 msgid "Trust Level"
 msgstr "Nivel de confianza"
 
-#: src/dialogs/certificatedetailswidget.cpp:579
+#: src/dialogs/certificatedetailswidget.cpp:614
 #, fuzzy, kde-format
 #| msgid "new email"
 msgctxt "text for screen readers for an empty email address"
 msgid "no email"
 msgstr "correo novo"
 
-#: src/dialogs/certificatedetailswidget.cpp:658
+#: src/dialogs/certificatedetailswidget.cpp:699
 #, fuzzy, kde-kuit-format
 #| msgctxt "@info"
 #| msgid ""
@@ -6006,33 +6007,33 @@ msgstr ""
 "<para>Produciuse un erro ao intentar engadir o identificador de usuario:"
 "<message>%1</message></para>"
 
-#: src/dialogs/certificatedetailswidget.cpp:661
+#: src/dialogs/certificatedetailswidget.cpp:702
 #, fuzzy, kde-format
 #| msgid "Revoke this User ID"
 msgctxt "@action:button"
 msgid "Revoke User ID"
 msgstr "Revogar este identificador de usuario"
 
-#: src/dialogs/certificatedetailswidget.cpp:664
+#: src/dialogs/certificatedetailswidget.cpp:705
 #, kde-format
 msgctxt "@title:window"
 msgid "Confirm Revocation"
 msgstr ""
 
-#: src/dialogs/certificatedetailswidget.cpp:824
+#: src/dialogs/certificatedetailswidget.cpp:865
 #: src/dialogs/weboftrustwidget.cpp:100 src/view/keylistcontroller.cpp:437
 #, kde-format
 msgid "Certify..."
 msgstr "Certificar…"
 
-#: src/dialogs/certificatedetailswidget.cpp:837
+#: src/dialogs/certificatedetailswidget.cpp:878
 #, fuzzy, kde-format
 #| msgid "Revoke this User ID"
 msgctxt "@action:inmenu"
 msgid "Revoke User ID"
 msgstr "Revogar este identificador de usuario"
 
-#: src/dialogs/certificatedetailswidget.cpp:845
+#: src/dialogs/certificatedetailswidget.cpp:886
 #: src/dialogs/weboftrustwidget.cpp:115 src/dialogs/weboftrustwidget.cpp:142
 #: src/view/keylistcontroller.cpp:441
 #, fuzzy, kde-format
@@ -6040,94 +6041,100 @@ msgstr "Revogar este identificador de usuario"
 msgid "Revoke Certification..."
 msgstr "Revogar este certificado…"
 
-#: src/dialogs/certificatedetailswidget.cpp:860
+#: src/dialogs/certificatedetailswidget.cpp:901
 #, fuzzy, kde-format
 #| msgid "Publish on Server..."
 msgctxt "@action:inmenu"
 msgid "Publish at Mail Provider ..."
 msgstr "Publicar nun servidor…"
 
-#: src/dialogs/certificatedetailswidget.cpp:916
+#: src/dialogs/certificatedetailswidget.cpp:957
 #, kde-format
 msgid "never"
 msgstr "nunca"
 
-#: src/dialogs/certificatedetailswidget.cpp:918
+#: src/dialogs/certificatedetailswidget.cpp:959
 #, kde-format
 msgid "Signing"
 msgstr "Sinatura"
 
-#: src/dialogs/certificatedetailswidget.cpp:919
-#: src/dialogs/certificatedetailswidget.cpp:923
+#: src/dialogs/certificatedetailswidget.cpp:960
+#: src/dialogs/certificatedetailswidget.cpp:964
 #, kde-format
 msgid "First message"
 msgstr "Primeira mensaxe"
 
-#: src/dialogs/certificatedetailswidget.cpp:920
-#: src/dialogs/certificatedetailswidget.cpp:924
+#: src/dialogs/certificatedetailswidget.cpp:961
+#: src/dialogs/certificatedetailswidget.cpp:965
 #, kde-format
 msgid "Last message"
 msgstr "Última mensaxe"
 
-#: src/dialogs/certificatedetailswidget.cpp:921
-#: src/dialogs/certificatedetailswidget.cpp:925
+#: src/dialogs/certificatedetailswidget.cpp:962
+#: src/dialogs/certificatedetailswidget.cpp:966
 #, kde-format
 msgid "Message count"
 msgstr "Número de mensaxes"
 
-#: src/dialogs/certificatedetailswidget.cpp:922
+#: src/dialogs/certificatedetailswidget.cpp:963
 #: src/smartcard/openpgpcard.cpp:95
 #, kde-format
 msgid "Encryption"
 msgstr "Cifrado"
 
-#: src/dialogs/certificatedetailswidget.cpp:957
+#: src/dialogs/certificatedetailswidget.cpp:998
 #, kde-format
 msgid "Updating..."
 msgstr "Actualizando…"
 
-#: src/dialogs/certificatedetailswidget.cpp:1014
+#: src/dialogs/certificatedetailswidget.cpp:1046
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Update the key from external sources."
 msgstr ""
 
-#: src/dialogs/certificatedetailswidget.cpp:1030
+#: src/dialogs/certificatedetailswidget.cpp:1062
 #, kde-format
 msgid "Common Name"
 msgstr "Nome común"
 
-#: src/dialogs/certificatedetailswidget.cpp:1031
+#: src/dialogs/certificatedetailswidget.cpp:1063
 #, kde-format
 msgid "Organization"
 msgstr "Organización"
 
-#: src/dialogs/certificatedetailswidget.cpp:1032
+#: src/dialogs/certificatedetailswidget.cpp:1064
 #, kde-format
 msgid "Street"
 msgstr "Rúa"
 
-#: src/dialogs/certificatedetailswidget.cpp:1033
+#: src/dialogs/certificatedetailswidget.cpp:1065
 #, kde-format
 msgid "City"
 msgstr "Cidade"
 
-#: src/dialogs/certificatedetailswidget.cpp:1034
+#: src/dialogs/certificatedetailswidget.cpp:1066
 #, kde-format
 msgid "State"
 msgstr "Estado"
 
-#: src/dialogs/certificatedetailswidget.cpp:1035
+#: src/dialogs/certificatedetailswidget.cpp:1067
 #, kde-format
 msgid "Country"
 msgstr "País"
 
-#: src/dialogs/certificatedetailswidget.cpp:1064
+#: src/dialogs/certificatedetailswidget.cpp:1095
 #, fuzzy, kde-format
 #| msgid "Please enter a name or email address..."
 msgctxt "@info:tooltip"
 msgid "Update the CRLs and do a full validation check of the certificate."
 msgstr "Insira o nome ou enderezo de correo…"
+
+#: src/dialogs/certificatedetailswidget.cpp:1104
+#, fuzzy, kde-format
+#| msgid "This certificate has been disabled locally."
+msgid "The issuer certificate could not be found locally."
+msgstr "Este certificado desactivouse localmente."
 
 #: src/dialogs/certificateselectiondialog.cpp:134
 #, kde-format
@@ -11815,6 +11822,9 @@ msgstr ""
 "Para importar dun servidor de chaves público use «Buscar no servidor» no seu "
 "lugar."
 
+#~ msgid "Select the file to verify with \"%1\""
+#~ msgstr "Seleccione o ficheiro para verificar con «%1»"
+
 #~ msgctxt "@title:window"
 #~ msgid "Certificate Details"
 #~ msgstr "Detalles do certificado"
@@ -12809,9 +12819,6 @@ msgstr ""
 
 #~ msgid "Authenticate against Servers"
 #~ msgstr "Autenticar contra servidores"
-
-#~ msgid "This certificate has been disabled locally."
-#~ msgstr "Este certificado desactivouse localmente."
 
 #~ msgid "This certificate is currently valid."
 #~ msgstr "Este certificado é valido actualmente."
