@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kio_sftp\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-06-28 00:44+0000\n"
+"POT-Creation-Date: 2022-07-22 00:44+0000\n"
 "PO-Revision-Date: 2019-03-15 23:03+0100\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Galician <kde-i18n-doc@kde.org>\n"
@@ -48,7 +48,7 @@ msgstr "Non se puido estabelecer o rexistro dos datos do usuario."
 msgid "Could not set log callback."
 msgstr "Non se puido estabelecer a resposta do rexistro."
 
-#: kio_sftp.cpp:335 kio_sftp.cpp:337 kio_sftp.cpp:849
+#: kio_sftp.cpp:335 kio_sftp.cpp:337 kio_sftp.cpp:854
 #, kde-format
 msgid "SFTP Login"
 msgstr "Acceso por SFTP"
@@ -64,7 +64,7 @@ msgstr ""
 msgid "Please enter your password."
 msgstr "Insira o seu contrasinal."
 
-#: kio_sftp.cpp:370 kio_sftp.cpp:852
+#: kio_sftp.cpp:370 kio_sftp.cpp:857
 #, kde-format
 msgid "Site:"
 msgstr "Sitio:"
@@ -153,65 +153,90 @@ msgstr ""
 "Contacte co administrador do sistema.\n"
 "%2"
 
-#: kio_sftp.cpp:749
+#: kio_sftp.cpp:756
 #, kde-format
+msgctxt "@title:window"
+msgid "Host Identity Change"
+msgstr ""
+
+#: kio_sftp.cpp:757
+#, fuzzy, kde-kuit-format
+#| msgid ""
+#| "The host key for the server %1 has changed.\n"
+#| "This could either mean that DNS SPOOFING is happening or the IP address "
+#| "for the host and its host key have changed at the same time.\n"
+#| "The fingerprint for the key sent by the remote host is:\n"
+#| " %2\n"
+#| "Please contact your system administrator.\n"
+#| "%3"
+msgctxt "@info"
 msgid ""
-"The host key for the server %1 has changed.\n"
-"This could either mean that DNS SPOOFING is happening or the IP address for "
-"the host and its host key have changed at the same time.\n"
-"The fingerprint for the %2 key sent by the remote host is:\n"
-"  SHA256:%3\n"
-"Please contact your system administrator.\n"
-"%4"
+"<para>The host key for the server <emphasis>%1</emphasis> has changed.</"
+"para><para>This could either mean that DNS spoofing is happening or the IP "
+"address for the host and its host key have changed at the same time.</"
+"para><para>The %2 key fingerprint sent by the remote host is:<bcode>%3</"
+"bcode>Are you sure you want to continue connecting?</para>"
 msgstr ""
 "Cambiouse a chave do servidor %1.\n"
 "Isto pode significar ou que se está producindo DNS SPOOFING ou que se "
 "cambiaron o enderezo IP do servidor e a súa chave á vez.\n"
-"A pegada dixital da chave %2 enviada polo servidor remoto é:\n"
-"  SHA256:%3\n"
+"A pegada dixital da chave enviada polo servidor remoto é:\n"
+" %2\n"
 "Contacte co administrador do sistema.\n"
-"%4"
+"%3"
 
-#: kio_sftp.cpp:763
+#: kio_sftp.cpp:767
 #, kde-format
-msgid "Warning: Cannot verify host's identity."
-msgstr "Aviso: Non se pode verificar a identidade do servidor."
+msgctxt "@title:window"
+msgid "Host Verification Failure"
+msgstr ""
 
-#: kio_sftp.cpp:765
-#, kde-format
+#: kio_sftp.cpp:768
+#, fuzzy, kde-kuit-format
+#| msgid ""
+#| "The authenticity of host %1 cannot be established.\n"
+#| "The %2 key fingerprint is: %3\n"
+#| "Are you sure you want to continue connecting?"
+msgctxt "@info"
 msgid ""
-"The authenticity of host %1 cannot be established.\n"
-"The %2 key fingerprint is: %3\n"
-"Are you sure you want to continue connecting?"
+"<para>The authenticity of host <emphasis>%1</emphasis> cannot be established."
+"</para><para>The %2 key fingerprint is:<bcode>%3</bcode>Are you sure you "
+"want to continue connecting?</para>"
 msgstr ""
 "Non se pode estabelecer a autenticidade do servidor %1.\n"
 "A pegada dixital da chave %2 é: %3\n"
 "Seguro que quere continuar a conectar?"
 
-#: kio_sftp.cpp:795 kio_sftp.cpp:813 kio_sftp.cpp:828 kio_sftp.cpp:841
-#: kio_sftp.cpp:893 kio_sftp.cpp:903
+#: kio_sftp.cpp:777
+#, kde-format
+msgctxt "@action:button"
+msgid "Connect Anyway"
+msgstr ""
+
+#: kio_sftp.cpp:800 kio_sftp.cpp:818 kio_sftp.cpp:833 kio_sftp.cpp:846
+#: kio_sftp.cpp:898 kio_sftp.cpp:908
 #, kde-format
 msgid "Authentication failed."
 msgstr "Fallou a autenticación."
 
-#: kio_sftp.cpp:801
+#: kio_sftp.cpp:806
 #, kde-format
 msgid ""
 "Authentication failed. The server didn't send any authentication methods"
 msgstr ""
 "Fallou a autenticación. O servidor non enviou ningún método de autenticación."
 
-#: kio_sftp.cpp:850
+#: kio_sftp.cpp:855
 #, kde-format
 msgid "Please enter your username and password."
 msgstr "Insira o seu nome de usuario e o contrasinal."
 
-#: kio_sftp.cpp:861
+#: kio_sftp.cpp:866
 #, kde-format
 msgid "Incorrect username or password"
 msgstr "O nome de usuario ou o contrasinal é incorrecto"
 
-#: kio_sftp.cpp:910
+#: kio_sftp.cpp:915
 #, kde-format
 msgid ""
 "Unable to request the SFTP subsystem. Make sure SFTP is enabled on the "
@@ -220,22 +245,22 @@ msgstr ""
 "Non se pode pedir o subsistema SFTP. Asegúrese de que SFTP está activado no "
 "servidor."
 
-#: kio_sftp.cpp:915
+#: kio_sftp.cpp:920
 #, kde-format
 msgid "Could not initialize the SFTP session."
 msgstr "Non se puido inicializar a sesión SFTP."
 
-#: kio_sftp.cpp:919
+#: kio_sftp.cpp:924
 #, kde-format
 msgid "Successfully connected to %1"
 msgstr "Conectou con %1"
 
-#: kio_sftp.cpp:971
+#: kio_sftp.cpp:976
 #, kde-format
 msgid "Invalid sftp context"
 msgstr "Contexto de SFTP incorrecto"
 
-#: kio_sftp.cpp:1539
+#: kio_sftp.cpp:1544
 #, kde-format
 msgid ""
 "Could not change permissions for\n"
@@ -243,6 +268,26 @@ msgid ""
 msgstr ""
 "Non se puideron cambiar os permisos de\n"
 "%1"
+
+#~ msgid ""
+#~ "The host key for the server %1 has changed.\n"
+#~ "This could either mean that DNS SPOOFING is happening or the IP address "
+#~ "for the host and its host key have changed at the same time.\n"
+#~ "The fingerprint for the %2 key sent by the remote host is:\n"
+#~ "  SHA256:%3\n"
+#~ "Please contact your system administrator.\n"
+#~ "%4"
+#~ msgstr ""
+#~ "Cambiouse a chave do servidor %1.\n"
+#~ "Isto pode significar ou que se está producindo DNS SPOOFING ou que se "
+#~ "cambiaron o enderezo IP do servidor e a súa chave á vez.\n"
+#~ "A pegada dixital da chave %2 enviada polo servidor remoto é:\n"
+#~ "  SHA256:%3\n"
+#~ "Contacte co administrador do sistema.\n"
+#~ "%4"
+
+#~ msgid "Warning: Cannot verify host's identity."
+#~ msgstr "Aviso: Non se pode verificar a identidade do servidor."
 
 #~ msgid ""
 #~ "The host key for this server was not found, but another type of key "
@@ -258,23 +303,6 @@ msgstr ""
 #~ "confundir o seu cliente e facerlle pensa que a chave non existe.\n"
 #~ "Contacte co administrador do sistema.\n"
 #~ "%1"
-
-#~ msgid ""
-#~ "The host key for the server %1 has changed.\n"
-#~ "This could either mean that DNS SPOOFING is happening or the IP address "
-#~ "for the host and its host key have changed at the same time.\n"
-#~ "The fingerprint for the key sent by the remote host is:\n"
-#~ " %2\n"
-#~ "Please contact your system administrator.\n"
-#~ "%3"
-#~ msgstr ""
-#~ "Cambiouse a chave do servidor %1.\n"
-#~ "Isto pode significar ou que se está producindo DNS SPOOFING ou que se "
-#~ "cambiaron o enderezo IP do servidor e a súa chave á vez.\n"
-#~ "A pegada dixital da chave enviada polo servidor remoto é:\n"
-#~ " %2\n"
-#~ "Contacte co administrador do sistema.\n"
-#~ "%3"
 
 #~ msgid ""
 #~ "The authenticity of host %1 cannot be established.\n"
