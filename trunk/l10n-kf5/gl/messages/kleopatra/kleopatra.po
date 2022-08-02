@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kleopatra\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-07-30 00:47+0000\n"
+"POT-Creation-Date: 2022-08-02 00:47+0000\n"
 "PO-Revision-Date: 2020-01-12 11:14+0100\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Galician <proxecto@trasno.gal>\n"
@@ -654,7 +654,6 @@ msgid "CRL cache cleared successfully."
 msgstr "Caché de CRL limpada satisfactoriamente."
 
 #: src/commands/command_p.h:105
-#: src/dialogs/newopenpgpcertificateresultdialog.cpp:140
 #, fuzzy, kde-format
 #| msgctxt "@title"
 #| msgid "Success"
@@ -2419,20 +2418,28 @@ msgctxt "@title"
 msgid "No Directory Servers Configured"
 msgstr "Non hai servidores de directorio configurados"
 
-#: src/commands/newopenpgpcertificatecommand.cpp:155
+#: src/commands/newcertificatesigningrequestcommand.cpp:104
+#: src/kleopatraapplication.cpp:479
+#, fuzzy, kde-format
+#| msgid "Create a new key pair or certificate signing request"
+msgid "You are not allowed to create S/MIME certificate signing requests."
+msgstr ""
+"Crear unha nova solicitude de parella de chaves ou de certificado de sinatura"
+
+#: src/commands/newopenpgpcertificatecommand.cpp:149
 #: src/newcertificatewizard/keycreationpage.cpp:99
 #, kde-format
 msgid "Could not start key pair creation: %1"
 msgstr "Non se puido iniciar a creación da parella de chaves: %1"
 
-#: src/commands/newopenpgpcertificatecommand.cpp:165
+#: src/commands/newopenpgpcertificatecommand.cpp:159
 #: src/newcertificatewizard/keycreationpage.cpp:52
 #, kde-format
 msgctxt "@title"
 msgid "Creating Key Pair..."
 msgstr "Creando a parella de chaves…"
 
-#: src/commands/newopenpgpcertificatecommand.cpp:166
+#: src/commands/newopenpgpcertificatecommand.cpp:160
 #: src/newcertificatewizard/keycreationpage.cpp:56
 #, kde-format
 msgid ""
@@ -2442,7 +2449,14 @@ msgstr ""
 "O proceso de crear unha chave require grandes cantidades de números "
 "aleatorios. Isto pode levar varios minutos…"
 
-#: src/commands/newopenpgpcertificatecommand.cpp:245
+#: src/commands/newopenpgpcertificatecommand.cpp:193
+#, kde-kuit-format
+msgid ""
+"<para>A new OpenPGP certificate was created successfully.</"
+"para><para>Fingerprint of the new certificate: %1</para>"
+msgstr ""
+
+#: src/commands/newopenpgpcertificatecommand.cpp:207
 #, fuzzy, kde-kuit-format
 #| msgctxt "@info"
 #| msgid ""
@@ -2455,7 +2469,7 @@ msgstr ""
 "<para>Produciuse un erro ao cargar as certificacións:<message>%1</message></"
 "para>"
 
-#: src/commands/newopenpgpcertificatecommand.cpp:251
+#: src/commands/newopenpgpcertificatecommand.cpp:213
 #, kde-kuit-format
 msgid ""
 "<para>A new OpenPGP certificate was created successfully, but it has not "
@@ -2463,7 +2477,7 @@ msgid ""
 "<nl/>%1</para>"
 msgstr ""
 
-#: src/commands/newopenpgpcertificatecommand.cpp:258
+#: src/commands/newopenpgpcertificatecommand.cpp:220
 #: src/crypto/newsignencryptemailcontroller.cpp:576
 #: src/crypto/newsignencryptemailcontroller.cpp:581
 #, kde-format
@@ -4741,7 +4755,6 @@ msgstr "Engadir destinatarios…"
 
 #: src/crypto/gui/resolverecipientspage.cpp:402
 #: src/crypto/gui/signencryptemailconflictdialog.cpp:368
-#: src/dialogs/choosecertificateprotocoldialog.cpp:62
 #: src/view/padwidget.cpp:171
 #, kde-format
 msgid "OpenPGP"
@@ -6196,12 +6209,12 @@ msgstr "Insira o nome ou enderezo de correo…"
 msgid "The issuer certificate could not be found locally."
 msgstr "Este certificado desactivouse localmente."
 
-#: src/dialogs/certificateselectiondialog.cpp:134
+#: src/dialogs/certificateselectiondialog.cpp:133
 #, kde-format
 msgid "Please select one or more of the following certificates:"
 msgstr "Seleccione un ou máis dos certificados seguintes:"
 
-#: src/dialogs/certificateselectiondialog.cpp:135
+#: src/dialogs/certificateselectiondialog.cpp:134
 #, kde-format
 msgid "Please select one of the following certificates:"
 msgstr "Seleccione un dos certificados seguintes:"
@@ -6219,7 +6232,7 @@ msgid "Refresh certificate list"
 msgstr "Anovar a lista de contactos"
 
 #: src/dialogs/certificateselectiondialog.cpp:168
-#: src/view/keylistcontroller.cpp:389 src/view/welcomewidget.cpp:127
+#: src/view/keylistcontroller.cpp:390 src/view/welcomewidget.cpp:127
 #, kde-format
 msgid "Import..."
 msgstr "Importar…"
@@ -6262,10 +6275,11 @@ msgid "New..."
 msgstr "Novo…"
 
 #: src/dialogs/certificateselectiondialog.cpp:175
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "OpenPGP Certificates"
 msgctxt "@info:tooltip"
-msgid "Create a new certificate"
-msgstr "Crear un certificado novo"
+msgid "Create a new OpenPGP certificate"
+msgstr "Certificados OpenPGP"
 
 #: src/dialogs/certificateselectiondialog.cpp:176
 #, fuzzy, kde-format
@@ -6487,57 +6501,6 @@ msgstr "Cambiouse a confianza na certificación"
 #| msgid "PIN set successfully."
 msgid "Owner trust set successfully."
 msgstr "O PIN configurouse correctamente."
-
-#: src/dialogs/choosecertificateprotocoldialog.cpp:46
-#, fuzzy, kde-format
-#| msgid "Please choose which type you want to create. "
-msgid "Choose which type of key pair you want to create."
-msgstr "Escolla que tipo que quere crear."
-
-#: src/dialogs/choosecertificateprotocoldialog.cpp:65
-#, kde-format
-msgid ""
-"OpenPGP key pairs are certified by confirming the fingerprint of the public "
-"key."
-msgstr ""
-"As parellas de chaves OpenPGP certifícanse confirmando a pegada da chave "
-"pública."
-
-#: src/dialogs/choosecertificateprotocoldialog.cpp:70
-#, fuzzy, kde-format
-#| msgid "Create a personal OpenPGP key pair"
-msgid "Create a Personal OpenPGP Key Pair"
-msgstr "Crear unha parella de chaves OpenPGP persoais"
-
-#: src/dialogs/choosecertificateprotocoldialog.cpp:80
-#, fuzzy, kde-format
-#| msgctxt "X.509/CMS encryption standard"
-#| msgid "X.509"
-msgid "X.509"
-msgstr "X.509"
-
-#: src/dialogs/choosecertificateprotocoldialog.cpp:83
-#, kde-format
-msgid ""
-"X.509 key pairs are certified by a certification authority (CA). The "
-"generated request needs to be sent to a CA to finalize creation."
-msgstr ""
-"As parellas de chaves X.509 certifícaas unha autoridade de certificación "
-"(CA). A solicitude xerada hai que enviala a unha CA para completar a "
-"creación."
-
-#: src/dialogs/choosecertificateprotocoldialog.cpp:88
-#, fuzzy, kde-format
-#| msgid "Create a personal X.509 key pair and certification request "
-msgid "Create a Personal X.509 Key Pair and Certification Request"
-msgstr ""
-"Crear unha parella de chaves X.509 e solicitude de certificación persoais"
-
-#: src/dialogs/choosecertificateprotocoldialog.cpp:113
-#, kde-format
-msgctxt "@title:window"
-msgid "Choose Type of Key Pair"
-msgstr ""
 
 #: src/dialogs/deletecertificatesdialog.cpp:92
 #, kde-format
@@ -7016,91 +6979,6 @@ msgstr "Insira o nome ou enderezo de correo…"
 msgid "Enter a name and/or an email address to use for the certificate."
 msgstr "Insira o nome ou enderezo de correo…"
 
-#: src/dialogs/newopenpgpcertificateresultdialog.cpp:85
-#: src/newcertificatewizard/resultpage.cpp:109
-#, fuzzy, kde-format
-#| msgid "Next Steps"
-msgctxt "@title:group"
-msgid "Next Steps"
-msgstr "Pasos seguintes"
-
-#: src/dialogs/newopenpgpcertificateresultdialog.cpp:89
-#, fuzzy, kde-format
-#| msgid "Make a Backup Of Your Key Pair..."
-msgctxt "@action:button"
-msgid "Make a Backup Of Your Key Pair..."
-msgstr "Facer unha copia de seguranza da parella de chaves…"
-
-#: src/dialogs/newopenpgpcertificateresultdialog.cpp:92
-#, fuzzy, kde-format
-#| msgid "Send Public Key By EMail..."
-msgctxt "@action:button"
-msgid "Send Public Key By EMail..."
-msgstr "Enviar a chave pública por correo electrónico…"
-
-#: src/dialogs/newopenpgpcertificateresultdialog.cpp:95
-#, fuzzy, kde-format
-#| msgid "Upload Public Key To Directory Service..."
-msgctxt "@action:button"
-msgid "Upload Public Key To Directory Service..."
-msgstr "Enviar a chave pública a un servizo de directorios…"
-
-#: src/dialogs/newopenpgpcertificateresultdialog.cpp:143
-#, kde-kuit-format
-msgid ""
-"<para>A new OpenPGP certificate was created successfully. Find some "
-"suggested next steps below.</para><para>Fingerprint of the new certificate: "
-"%1</para>"
-msgstr ""
-
-#: src/dialogs/newopenpgpcertificateresultdialog.cpp:197
-#: src/newcertificatewizard/resultpage.cpp:313
-#, kde-format
-msgid "My new public OpenPGP key"
-msgstr "A miña nova chave pública de OpenPGP"
-
-#: src/dialogs/newopenpgpcertificateresultdialog.cpp:197
-#: src/newcertificatewizard/resultpage.cpp:314
-#, kde-format
-msgid "Please find attached my new public OpenPGP key."
-msgstr "Atope anexa a miña nova chave pública de OpenPGP."
-
-#: src/dialogs/newopenpgpcertificateresultdialog.cpp:200
-#: src/newcertificatewizard/resultpage.cpp:318
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info"
-#| msgid ""
-#| "<para><application>Kleopatra</application> tried to send a mail via your "
-#| "default mail client.</para><para>Some mail clients are known not to "
-#| "support attachments when invoked this way.</para><para>If your mail "
-#| "client does not have an attachment, then drag the <application>Kleopatra</"
-#| "application> icon and drop it on the message compose window of your mail "
-#| "client.</para><para>If that does not work, either, save the request to a "
-#| "file, and then attach that.</para>"
-msgctxt "@info"
-msgid ""
-"<para><application>Kleopatra</application> tried to send a mail via your "
-"default mail client.</para><para>Some mail clients are known not to support "
-"attachments when invoked this way.</para><para>If your mail client does not "
-"have an attachment, then attach the file <filename>%1</filename> manually.</"
-"para>"
-msgstr ""
-"<para><application>Kleopatra</application> intentou enviar un correo por "
-"medio do xestor de correo predeterminado.</para><para>Sábese que algúns "
-"clientes de correo non admiten mensaxes anexas cando son invocadas deste "
-"xeito.</para><para> Se o xestor de correo non ten un anexo, arrastre a icona "
-"de <application>Kleopatra</application> e sóltea enriba da xanela de "
-"redacción de mensaxes do cliente de correo.</para><para>Se isto non "
-"funcionar, garde a petición nun ficheiro e despois anexe iso.</para>"
-
-#: src/dialogs/newopenpgpcertificateresultdialog.cpp:204
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Sending Mail"
-msgctxt "@title:window"
-msgid "Sending Mail"
-msgstr "Envío de correo"
-
 #: src/dialogs/ownertrustdialog.cpp:37
 #, kde-format
 msgid "(unknown certificate)"
@@ -7467,7 +7345,7 @@ msgid "Show all test results"
 msgstr "Mostrar todos os resultados das probas"
 
 #. i18n: ectx: property (title), widget (QGroupBox, detailsGB)
-#: src/dialogs/selftestdialog.ui:76 src/view/keylistcontroller.cpp:422
+#: src/dialogs/selftestdialog.ui:76 src/view/keylistcontroller.cpp:423
 #, kde-format
 msgid "Details"
 msgstr "Detalles"
@@ -7643,7 +7521,7 @@ msgctxt "@title:column"
 msgid "Storage"
 msgstr "Gardado:"
 
-#: src/dialogs/subkeyswidget.cpp:118 src/view/keylistcontroller.cpp:445
+#: src/dialogs/subkeyswidget.cpp:118 src/view/keylistcontroller.cpp:446
 #, kde-format
 msgid "Change Expiry Date..."
 msgstr "Cambiar a data de caducidade…"
@@ -7808,55 +7686,61 @@ msgid ""
 "key"
 msgstr ""
 
-#: src/dialogs/weboftrustwidget.cpp:100 src/view/keylistcontroller.cpp:437
+#: src/dialogs/weboftrustwidget.cpp:55
+#, fuzzy, kde-format
+#| msgid "User-IDs && Certifications"
+msgid "User IDs and certifications"
+msgstr "Identificadores de usuario e certificacións"
+
+#: src/dialogs/weboftrustwidget.cpp:101 src/view/keylistcontroller.cpp:438
 #, kde-format
 msgid "Certify..."
 msgstr "Certificar…"
 
-#: src/dialogs/weboftrustwidget.cpp:115 src/dialogs/weboftrustwidget.cpp:142
-#: src/view/keylistcontroller.cpp:441
+#: src/dialogs/weboftrustwidget.cpp:116 src/dialogs/weboftrustwidget.cpp:143
+#: src/view/keylistcontroller.cpp:442
 #, fuzzy, kde-format
 #| msgid "Revoke This Certificate..."
 msgid "Revoke Certification..."
 msgstr "Revogar este certificado…"
 
-#: src/dialogs/weboftrustwidget.cpp:134
+#: src/dialogs/weboftrustwidget.cpp:135
 #, fuzzy, kde-format
 #| msgid "Show certificate details"
 msgid "Show Certificate Details..."
 msgstr "Mostrar os detalles do certificado"
 
-#: src/dialogs/weboftrustwidget.cpp:159
+#: src/dialogs/weboftrustwidget.cpp:160
 #, fuzzy, kde-format
 #| msgid "Revocation certificate created"
 msgid "Revocation of self-certifications is currently not possible."
 msgstr "Creouse o certificado de revogación"
 
-#: src/dialogs/weboftrustwidget.cpp:161
+#: src/dialogs/weboftrustwidget.cpp:162
 #, kde-format
 msgid ""
 "You cannot revoke this certification because it wasn't made with one of your "
 "keys (or the required secret key is missing)."
 msgstr ""
 
-#: src/dialogs/weboftrustwidget.cpp:163
+#: src/dialogs/weboftrustwidget.cpp:164
 #, kde-format
 msgid ""
 "You cannot revoke this revocation certification. (But you can re-certify the "
 "corresponding user ID.)"
 msgstr ""
 
-#: src/dialogs/weboftrustwidget.cpp:165
+#: src/dialogs/weboftrustwidget.cpp:166
 #, kde-format
 msgid "You cannot revoke this expired certification."
 msgstr ""
 
-#: src/dialogs/weboftrustwidget.cpp:167
+#: src/dialogs/weboftrustwidget.cpp:168
 #, kde-format
 msgid "You cannot revoke this invalid certification."
 msgstr ""
 
-#: src/dialogs/weboftrustwidget.cpp:264
+#: src/dialogs/weboftrustwidget.cpp:265
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -7866,7 +7750,7 @@ msgstr ""
 "<para>Produciuse un erro ao cargar as certificacións:<message>%1</message></"
 "para>"
 
-#: src/dialogs/weboftrustwidget.cpp:267
+#: src/dialogs/weboftrustwidget.cpp:268
 #, kde-format
 msgctxt "@title"
 msgid "Certifications Loading Failed"
@@ -8482,44 +8366,44 @@ msgid "&File"
 msgstr "&Ficheiro"
 
 #. i18n: ectx: Menu (view)
-#: src/kleopatra.rc:27
+#: src/kleopatra.rc:28
 #, kde-format
 msgid "&View"
 msgstr "&Vista"
 
 #. i18n: ectx: Menu (certMenu)
 #. i18n: ectx: Menu (listview_popup)
-#: src/kleopatra.rc:43 src/kleopatra.rc:118
+#: src/kleopatra.rc:44 src/kleopatra.rc:119
 #, kde-format
 msgid "&Certificates"
 msgstr "&Certificados"
 
 #. i18n: ectx: Menu (tools)
-#: src/kleopatra.rc:59
+#: src/kleopatra.rc:60
 #, kde-format
 msgid "&Tools"
 msgstr "&Ferramentas"
 
 #. i18n: ectx: Menu (settings)
-#: src/kleopatra.rc:75
+#: src/kleopatra.rc:76
 #, kde-format
 msgid "&Settings"
 msgstr "&Configuración"
 
 #. i18n: ectx: Menu (window)
-#: src/kleopatra.rc:80
+#: src/kleopatra.rc:81
 #, kde-format
 msgid "&Window"
 msgstr "&Xanela"
 
 #. i18n: ectx: Menu (help)
-#: src/kleopatra.rc:91
+#: src/kleopatra.rc:92
 #, kde-format
 msgid "&Help"
 msgstr "&Axuda"
 
 #. i18n: ectx: ToolBar (mainToolBar)
-#: src/kleopatra.rc:103 src/kwatchgnupg/kwatchgnupgui.rc:13
+#: src/kleopatra.rc:104 src/kwatchgnupg/kwatchgnupgui.rc:13
 #, kde-format
 msgid "Main Toolbar"
 msgstr "Barra de ferramentas principal"
@@ -8638,47 +8522,47 @@ msgstr "Ficheiro(s) que procesar"
 msgid "String or Fingerprint for query and search"
 msgstr ""
 
-#: src/kleopatraapplication.cpp:373
+#: src/kleopatraapplication.cpp:374
 #, kde-format
 msgid "Failed to execute command"
 msgstr "Non se puido executar a orde"
 
-#: src/kleopatraapplication.cpp:416
+#: src/kleopatraapplication.cpp:417
 #, kde-format
 msgid "Ambiguous protocol: --openpgp and --cms"
 msgstr "Protocolo ambiguo: «--openpgp» e «--cms»."
 
-#: src/kleopatraapplication.cpp:450
+#: src/kleopatraapplication.cpp:451
 #, kde-format
 msgid "No search string specified for --search"
 msgstr "Non indicou in texto de busca para «--search»."
 
-#: src/kleopatraapplication.cpp:461
+#: src/kleopatraapplication.cpp:462
 #, kde-format
 msgid "No fingerprint argument specified for --query"
 msgstr "Non se indicou un argumento de pegada dixital para «--query»."
 
-#: src/kleopatraapplication.cpp:507
+#: src/kleopatraapplication.cpp:518
 #, kde-format
 msgid "Ambiguous commands \"%1\" and \"%2\""
 msgstr "As ordes «%1» e «%2» son ambiguas."
 
-#: src/kleopatraapplication.cpp:514
+#: src/kleopatraapplication.cpp:525
 #, kde-format
 msgid "No files specified for \"%1\" command"
 msgstr "Non se indicaron ficheiros para a orde «%1»."
 
-#: src/kleopatraapplication.cpp:528
+#: src/kleopatraapplication.cpp:539
 #, kde-format
 msgid "Cannot read \"%1\""
 msgstr "Non se pode ler «%1»"
 
-#: src/kleopatraapplication.cpp:795
+#: src/kleopatraapplication.cpp:806
 #, kde-format
 msgid "Opening an external link is administratively prohibited."
 msgstr ""
 
-#: src/kleopatraapplication.cpp:796
+#: src/kleopatraapplication.cpp:807
 #, kde-format
 msgid "Prohibited"
 msgstr ""
@@ -9031,13 +8915,13 @@ msgstr ""
 msgid "Ongoing Background Tasks"
 msgstr "Tarefas de fondo en execución"
 
-#: src/mainwindow.cpp:731 src/view/keylistcontroller.cpp:397
+#: src/mainwindow.cpp:731 src/view/keylistcontroller.cpp:398
 #, kde-format
 msgid "Sign/Encrypt..."
 msgstr "Asinar/Cifrar…"
 
 #: src/mainwindow.cpp:732 src/utils/clipboardmenu.cpp:47
-#: src/view/keylistcontroller.cpp:393
+#: src/view/keylistcontroller.cpp:394
 #, kde-format
 msgid "Decrypt/Verify..."
 msgstr "Descifrar ou verificar…"
@@ -9392,6 +9276,13 @@ msgstr ""
 msgid "Restart This Wizard (Keeps Your Parameters)"
 msgstr "Reiniciar este asistente (mantén os parámetros)"
 
+#: src/newcertificatewizard/resultpage.cpp:109
+#, fuzzy, kde-format
+#| msgid "Next Steps"
+msgctxt "@title:group"
+msgid "Next Steps"
+msgstr "Pasos seguintes"
+
 #: src/newcertificatewizard/resultpage.cpp:112
 #, kde-format
 msgid "Save Certificate Request To File..."
@@ -9514,6 +9405,43 @@ msgstr ""
 msgctxt "@title"
 msgid "Sending Mail"
 msgstr "Envío de correo"
+
+#: src/newcertificatewizard/resultpage.cpp:313
+#, kde-format
+msgid "My new public OpenPGP key"
+msgstr "A miña nova chave pública de OpenPGP"
+
+#: src/newcertificatewizard/resultpage.cpp:314
+#, kde-format
+msgid "Please find attached my new public OpenPGP key."
+msgstr "Atope anexa a miña nova chave pública de OpenPGP."
+
+#: src/newcertificatewizard/resultpage.cpp:318
+#, fuzzy, kde-kuit-format
+#| msgctxt "@info"
+#| msgid ""
+#| "<para><application>Kleopatra</application> tried to send a mail via your "
+#| "default mail client.</para><para>Some mail clients are known not to "
+#| "support attachments when invoked this way.</para><para>If your mail "
+#| "client does not have an attachment, then drag the <application>Kleopatra</"
+#| "application> icon and drop it on the message compose window of your mail "
+#| "client.</para><para>If that does not work, either, save the request to a "
+#| "file, and then attach that.</para>"
+msgctxt "@info"
+msgid ""
+"<para><application>Kleopatra</application> tried to send a mail via your "
+"default mail client.</para><para>Some mail clients are known not to support "
+"attachments when invoked this way.</para><para>If your mail client does not "
+"have an attachment, then attach the file <filename>%1</filename> manually.</"
+"para>"
+msgstr ""
+"<para><application>Kleopatra</application> intentou enviar un correo por "
+"medio do xestor de correo predeterminado.</para><para>Sábese que algúns "
+"clientes de correo non admiten mensaxes anexas cando son invocadas deste "
+"xeito.</para><para> Se o xestor de correo non ten un anexo, arrastre a icona "
+"de <application>Kleopatra</application> e sóltea enriba da xanela de "
+"redacción de mensaxes do cliente de correo.</para><para>Se isto non "
+"funcionar, garde a petición nun ficheiro e despois anexe iso.</para>"
 
 #: src/newcertificatewizard/resultpage.cpp:368
 #, kde-format
@@ -10844,40 +10772,47 @@ msgstr "(requirido)"
 msgid "Loading certificate cache..."
 msgstr "Estase a cargar a caché de certificados…"
 
-#: src/view/keylistcontroller.cpp:359 src/view/welcomewidget.cpp:123
-#, kde-format
-msgid "New Key Pair..."
+#: src/view/keylistcontroller.cpp:360
+#, fuzzy, kde-format
+#| msgid "New Key Pair..."
+msgid "New OpenPGP Key Pair..."
 msgstr "Nova parella de chaves…"
 
-#: src/view/keylistcontroller.cpp:363
+#: src/view/keylistcontroller.cpp:360
+#, fuzzy, kde-format
+#| msgid "OpenPGP Certificates"
+msgid "Create a new OpenPGP certificate"
+msgstr "Certificados OpenPGP"
+
+#: src/view/keylistcontroller.cpp:364
 #, kde-format
 msgid "Export..."
 msgstr "Exportar…"
 
-#: src/view/keylistcontroller.cpp:363
+#: src/view/keylistcontroller.cpp:364
 #, kde-format
 msgid "Export the selected certificate (public key) to a file"
 msgstr "Exportar o certificado seleccionado (chave pública) a un ficheiro"
 
-#: src/view/keylistcontroller.cpp:367
+#: src/view/keylistcontroller.cpp:368
 #, kde-format
 msgid "Publish on Server..."
 msgstr "Publicar nun servidor…"
 
-#: src/view/keylistcontroller.cpp:367
+#: src/view/keylistcontroller.cpp:368
 #, kde-format
 msgid "Publish the selected certificate (public key) on a public keyserver"
 msgstr ""
 "Publicar o certificado seleccionado (chave pública) nun servidor de chaves "
 "público"
 
-#: src/view/keylistcontroller.cpp:372
+#: src/view/keylistcontroller.cpp:373
 #, fuzzy, kde-format
 #| msgid "Publish on Server..."
 msgid "Publish at Mail Provider..."
 msgstr "Publicar nun servidor…"
 
-#: src/view/keylistcontroller.cpp:372
+#: src/view/keylistcontroller.cpp:373
 #, fuzzy, kde-format
 #| msgid "Publish the selected certificate (public key) on a public keyserver"
 msgid ""
@@ -10887,158 +10822,171 @@ msgstr ""
 "Publicar o certificado seleccionado (chave pública) nun servidor de chaves "
 "público"
 
-#: src/view/keylistcontroller.cpp:377
+#: src/view/keylistcontroller.cpp:378
 #, fuzzy, kde-format
 #| msgid "Export Secret Keys..."
 msgid "Backup Secret Keys..."
 msgstr "Exportar chaves secretas…"
 
-#: src/view/keylistcontroller.cpp:381
+#: src/view/keylistcontroller.cpp:382
 #, kde-format
 msgid "Print Secret Key..."
 msgstr "Imprimir a chave secreta…"
 
-#: src/view/keylistcontroller.cpp:385
+#: src/view/keylistcontroller.cpp:386
 #, kde-format
 msgid "Lookup on Server..."
 msgstr "Buscar no servidor…"
 
-#: src/view/keylistcontroller.cpp:385
+#: src/view/keylistcontroller.cpp:386
 #, kde-format
 msgid "Search for certificates online using a public keyserver"
 msgstr "Buscar certificados por Internet usando un servidor de chaves público."
 
-#: src/view/keylistcontroller.cpp:389
+#: src/view/keylistcontroller.cpp:390
 #, kde-format
 msgid "Import a certificate from a file"
 msgstr "Importar un certificado dun ficheiro"
 
-#: src/view/keylistcontroller.cpp:393
+#: src/view/keylistcontroller.cpp:394
 #, kde-format
 msgid "Decrypt and/or verify files"
 msgstr "Descifrar e/ou verificar ficheiros"
 
-#: src/view/keylistcontroller.cpp:397
+#: src/view/keylistcontroller.cpp:398
 #, kde-format
 msgid "Encrypt and/or sign files"
 msgstr "Cifrar e/ou asinar ficheiros"
 
-#: src/view/keylistcontroller.cpp:401
+#: src/view/keylistcontroller.cpp:402
 #, kde-format
 msgid "Sign/Encrypt Folder..."
 msgstr "Asinar e/ou cifrar o cartafol…"
 
-#: src/view/keylistcontroller.cpp:401
+#: src/view/keylistcontroller.cpp:402
 #, kde-format
 msgid "Encrypt and/or sign folders"
 msgstr "Cifrar e/ou asinar cartafoles"
 
-#: src/view/keylistcontroller.cpp:405
+#: src/view/keylistcontroller.cpp:406
 #, kde-format
 msgid "Create Checksum Files..."
 msgstr "Crear ficheiros de sumas de comprobación…"
 
-#: src/view/keylistcontroller.cpp:409
+#: src/view/keylistcontroller.cpp:410
 #, kde-format
 msgid "Verify Checksum Files..."
 msgstr "Comprobar os ficheiros de sumas de comprobación…"
 
-#: src/view/keylistcontroller.cpp:414
+#: src/view/keylistcontroller.cpp:415
 #, kde-format
 msgid "Redisplay"
 msgstr "Redebuxar"
 
-#: src/view/keylistcontroller.cpp:418
+#: src/view/keylistcontroller.cpp:419
 #, kde-format
 msgid "Stop Operation"
 msgstr "Parar a operación"
 
-#: src/view/keylistcontroller.cpp:428
+#: src/view/keylistcontroller.cpp:429
 #, fuzzy, kde-format
 #| msgid "Revoke This Certificate..."
 msgid "Revoke Certificate..."
 msgstr "Revogar este certificado…"
 
-#: src/view/keylistcontroller.cpp:428
+#: src/view/keylistcontroller.cpp:429
 #, fuzzy, kde-format
 #| msgid "Delete selected certificates"
 msgid "Revoke the selected OpenPGP certificate"
 msgstr "Eliminar os certificados seleccionados"
 
-#: src/view/keylistcontroller.cpp:433
+#: src/view/keylistcontroller.cpp:434
 #, kde-format
 msgid "Delete"
 msgstr "Eliminar"
 
-#: src/view/keylistcontroller.cpp:433
+#: src/view/keylistcontroller.cpp:434
 #, kde-format
 msgid "Delete selected certificates"
 msgstr "Eliminar os certificados seleccionados"
 
-#: src/view/keylistcontroller.cpp:437
+#: src/view/keylistcontroller.cpp:438
 #, kde-format
 msgid "Certify the validity of the selected certificate"
 msgstr "Certificar a validez do certificado seleccionado"
 
-#: src/view/keylistcontroller.cpp:441
+#: src/view/keylistcontroller.cpp:442
 #, fuzzy, kde-format
 #| msgid "Certify the validity of the selected certificate"
 msgid "Revoke the certification of the selected certificate"
 msgstr "Certificar a validez do certificado seleccionado"
 
-#: src/view/keylistcontroller.cpp:449
+#: src/view/keylistcontroller.cpp:450
 #, kde-format
 msgid "Change Certification Trust..."
 msgstr "Cambiar a confianza na certificación…"
 
-#: src/view/keylistcontroller.cpp:453
+#: src/view/keylistcontroller.cpp:454
 #, kde-format
 msgid "Change Passphrase..."
 msgstr "Cambiar a frase de paso…"
 
-#: src/view/keylistcontroller.cpp:457
+#: src/view/keylistcontroller.cpp:458
 #, fuzzy, kde-format
 #| msgid "Add User-ID..."
 msgid "Add User ID..."
 msgstr "Engadir un identificador de usuario…"
 
-#: src/view/keylistcontroller.cpp:462
+#: src/view/keylistcontroller.cpp:463
 #, kde-format
 msgid "Refresh OpenPGP Certificates"
 msgstr "Anovar os certificados OpenPGP"
 
-#: src/view/keylistcontroller.cpp:474
+#: src/view/keylistcontroller.cpp:473
+#, fuzzy, kde-format
+#| msgid "S/MIME Certificates"
+msgid "New S/MIME Certification Request..."
+msgstr "Certificados S/MIME"
+
+#: src/view/keylistcontroller.cpp:473
+#, fuzzy, kde-format
+#| msgid "Create a new key pair or certificate signing request"
+msgid "Create a new S/MIME certificate signing request (CSR)"
+msgstr ""
+"Crear unha nova solicitude de parella de chaves ou de certificado de sinatura"
+
+#: src/view/keylistcontroller.cpp:480
 #, kde-format
 msgid "Trust Root Certificate"
 msgstr "Confiar no certificado raíz"
 
-#: src/view/keylistcontroller.cpp:478
+#: src/view/keylistcontroller.cpp:484
 #, kde-format
 msgid "Distrust Root Certificate"
 msgstr "Desconfiar do certificado raíz"
 
-#: src/view/keylistcontroller.cpp:482
+#: src/view/keylistcontroller.cpp:488
 #, kde-format
 msgid "Technical Details"
 msgstr "Detalles técnicos"
 
-#: src/view/keylistcontroller.cpp:487
+#: src/view/keylistcontroller.cpp:493
 #, fuzzy, kde-format
 #| msgid "S/MIME Certificates"
 msgid "Refresh S/MIME Certificates"
 msgstr "Certificados S/MIME"
 
-#: src/view/keylistcontroller.cpp:491
+#: src/view/keylistcontroller.cpp:497
 #, kde-format
 msgid "Clear CRL Cache"
 msgstr "Limpar a caché de CRL"
 
-#: src/view/keylistcontroller.cpp:495
+#: src/view/keylistcontroller.cpp:501
 #, kde-format
 msgid "Dump CRL Cache"
 msgstr "Envorcar a caché de CRL"
 
-#: src/view/keylistcontroller.cpp:499
+#: src/view/keylistcontroller.cpp:505
 #, kde-format
 msgid "Import CRL From File..."
 msgstr "Importar a CRL dun ficheiro…"
@@ -12031,6 +11979,11 @@ msgctxt "%1 is link a wiki article"
 msgid "You can learn more about this on <a href=\"%1\">Wikipedia</a>."
 msgstr "Pode aprender máis sobre isto en <a href=\"%1\">Wikipedia</a>."
 
+#: src/view/welcomewidget.cpp:123
+#, kde-format
+msgid "New Key Pair..."
+msgstr "Nova parella de chaves…"
+
 #: src/view/welcomewidget.cpp:137
 #, kde-format
 msgid "Create a new OpenPGP key pair"
@@ -12056,6 +12009,72 @@ msgid "To import from a public keyserver use \"Lookup on Server\" instead."
 msgstr ""
 "Para importar dun servidor de chaves público use «Buscar no servidor» no seu "
 "lugar."
+
+#~ msgctxt "@info:tooltip"
+#~ msgid "Create a new certificate"
+#~ msgstr "Crear un certificado novo"
+
+#, fuzzy
+#~| msgid "Please choose which type you want to create. "
+#~ msgid "Choose which type of key pair you want to create."
+#~ msgstr "Escolla que tipo que quere crear."
+
+#~ msgid ""
+#~ "OpenPGP key pairs are certified by confirming the fingerprint of the "
+#~ "public key."
+#~ msgstr ""
+#~ "As parellas de chaves OpenPGP certifícanse confirmando a pegada da chave "
+#~ "pública."
+
+#, fuzzy
+#~| msgid "Create a personal OpenPGP key pair"
+#~ msgid "Create a Personal OpenPGP Key Pair"
+#~ msgstr "Crear unha parella de chaves OpenPGP persoais"
+
+#, fuzzy
+#~| msgctxt "X.509/CMS encryption standard"
+#~| msgid "X.509"
+#~ msgid "X.509"
+#~ msgstr "X.509"
+
+#~ msgid ""
+#~ "X.509 key pairs are certified by a certification authority (CA). The "
+#~ "generated request needs to be sent to a CA to finalize creation."
+#~ msgstr ""
+#~ "As parellas de chaves X.509 certifícaas unha autoridade de certificación "
+#~ "(CA). A solicitude xerada hai que enviala a unha CA para completar a "
+#~ "creación."
+
+#, fuzzy
+#~| msgid "Create a personal X.509 key pair and certification request "
+#~ msgid "Create a Personal X.509 Key Pair and Certification Request"
+#~ msgstr ""
+#~ "Crear unha parella de chaves X.509 e solicitude de certificación persoais"
+
+#, fuzzy
+#~| msgid "Make a Backup Of Your Key Pair..."
+#~ msgctxt "@action:button"
+#~ msgid "Make a Backup Of Your Key Pair..."
+#~ msgstr "Facer unha copia de seguranza da parella de chaves…"
+
+#, fuzzy
+#~| msgid "Send Public Key By EMail..."
+#~ msgctxt "@action:button"
+#~ msgid "Send Public Key By EMail..."
+#~ msgstr "Enviar a chave pública por correo electrónico…"
+
+#, fuzzy
+#~| msgid "Upload Public Key To Directory Service..."
+#~ msgctxt "@action:button"
+#~ msgid "Upload Public Key To Directory Service..."
+#~ msgstr "Enviar a chave pública a un servizo de directorios…"
+
+#, fuzzy
+#~| msgctxt "@title"
+#~| msgid "Sending Mail"
+#~ msgctxt "@title:window"
+#~ msgid "Sending Mail"
+#~ msgstr "Envío de correo"
 
 #~ msgctxt "stored..."
 #~ msgid "on SmartCard with serial no. %1"
@@ -12949,9 +12968,6 @@ msgstr ""
 #~ "<li>As fotos dan unha impresión falsa de seguranza.</li>\n"
 #~ "<li>As fotos incrementan o tamaño dos certificados.</li>\n"
 #~ "</ul>"
-
-#~ msgid "User-IDs && Certifications"
-#~ msgstr "Identificadores de usuario e certificacións"
 
 #~ msgid "Add..."
 #~ msgstr "Engadir…"
