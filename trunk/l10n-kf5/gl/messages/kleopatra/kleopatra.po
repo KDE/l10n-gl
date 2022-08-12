@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kleopatra\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-08-10 00:46+0000\n"
+"POT-Creation-Date: 2022-08-12 00:46+0000\n"
 "PO-Revision-Date: 2020-01-12 11:14+0100\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Galician <proxecto@trasno.gal>\n"
@@ -2763,37 +2763,95 @@ msgctxt "@info"
 msgid "X.509 certificates refreshed successfully."
 msgstr "Anováronse os certificados X.509."
 
-#: src/commands/revokecertificationcommand.cpp:133
-#, fuzzy, kde-format
+#: src/commands/revokecertificationcommand.cpp:78
+#, fuzzy, kde-kuit-format
+#| msgctxt "@info"
 #| msgid ""
-#| "<p>An error occurred while trying to change the expiry date for <b>%1</b>:"
-#| "</p><p>%2</p>"
+#| "<para>An error occurred while trying to add the user-id: <message>%1</"
+#| "message></para>"
+msgctxt "@info"
 msgid ""
-"<p>An error occurred while trying to revoke the certification of<br/><br/><b>"
-"%1</b>:</p><p>\t%2</p>"
+"<para>You are about to revoke the certification of user ID<nl/>%1<nl/>made "
+"with the key<nl/>%2.</para>"
 msgstr ""
-"<p>Produciuse un erro ao intentar cambiar a data de caducidade de <b>%1</b>:"
-"</p><p>%2</p>"
+"<para>Produciuse un erro ao intentar engadir o identificador de usuario:"
+"<message>%1</message></para>"
 
-#: src/commands/revokecertificationcommand.cpp:137
+#: src/commands/revokecertificationcommand.cpp:83
+#: src/commands/revokecertificationcommand.cpp:97
+#: src/dialogs/certificatedetailswidget.cpp:749
+#, kde-format
+msgctxt "@title:window"
+msgid "Confirm Revocation"
+msgstr ""
+
+#: src/commands/revokecertificationcommand.cpp:84
 #, fuzzy, kde-format
 #| msgid "Certification"
-msgid "Revocation Error"
+msgid "Revoke Certification"
 msgstr "Certificación"
 
-#: src/commands/revokecertificationcommand.cpp:139
-#, fuzzy, kde-format
-#| msgid "Certification successful."
-msgid "Revocation successful."
-msgstr "Certificación sen problemas."
+#: src/commands/revokecertificationcommand.cpp:89
+#, kde-format
+msgid "User ID '%1' certified with key %2"
+msgstr ""
 
-#: src/commands/revokecertificationcommand.cpp:140
+#: src/commands/revokecertificationcommand.cpp:91
 #, fuzzy, kde-format
-#| msgid "Certification canceled."
-msgid "Revocation Succeeded"
-msgstr "Cancelouse a operación."
+#| msgid "Please select one of the following certificates:"
+msgid "You are about to revoke the following certification:"
+msgid_plural "You are about to revoke the following %1 certifications:"
+msgstr[0] "Seleccione un dos certificados seguintes:"
+msgstr[1] "Seleccione un dos certificados seguintes:"
 
-#: src/commands/revokecertificationcommand.cpp:253
+#: src/commands/revokecertificationcommand.cpp:98
+#, fuzzy, kde-format
+#| msgid "Certification"
+msgid "Revoke Certifications"
+msgstr "Certificación"
+
+#: src/commands/revokecertificationcommand.cpp:202
+#, kde-kuit-format
+msgctxt "@info"
+msgid ""
+"<para>The certification has been revoked successfully.</para><para>Do you "
+"want to publish the revocation?</para>"
+msgid_plural ""
+"<para>%1 certifications have been revoked successfully.</para><para>Do you "
+"want to publish the revocations?</para>"
+msgstr[0] ""
+msgstr[1] ""
+
+#: src/commands/revokecertificationcommand.cpp:207
+#, fuzzy, kde-format
+#| msgid "Publish on Server..."
+msgctxt "@action:button"
+msgid "Publish Revocation"
+msgid_plural "Publish Revocations"
+msgstr[0] "Publicar nun servidor…"
+msgstr[1] "Publicar nun servidor…"
+
+#: src/commands/revokecertificationcommand.cpp:211
+#, kde-format
+msgctxt "@title:window"
+msgid "Confirm Publication"
+msgstr ""
+
+#: src/commands/revokecertificationcommand.cpp:234
+#, fuzzy, kde-kuit-format
+#| msgctxt "@info"
+#| msgid ""
+#| "<para>An error occurred while loading the certifications: <message>%1</"
+#| "message></para>"
+msgctxt "@info"
+msgid ""
+"<para>The revocation of the certification of user ID<nl/>%1<nl/>made with "
+"key<nl/>%2<nl/>failed:</para><para><message>%3</message></para>"
+msgstr ""
+"<para>Produciuse un erro ao cargar as certificacións:<message>%1</message></"
+"para>"
+
+#: src/commands/revokecertificationcommand.cpp:325
 #, fuzzy, kde-format
 #| msgid ""
 #| "This certificate was new to your keystore. The secret key is available."
@@ -2802,13 +2860,22 @@ msgstr ""
 "Este certificado resulta novo no seu almacén de chaves. Disponse da chave "
 "secreta."
 
-#: src/commands/revokecertificationcommand.cpp:254
+#: src/commands/revokecertificationcommand.cpp:328
 #, fuzzy, kde-format
 #| msgid "Certify the validity of the selected certificate"
 msgid "You cannot revoke any certifications of this user ID."
 msgid_plural "You cannot revoke any certifications of these user IDs."
 msgstr[0] "Certificar a validez do certificado seleccionado"
 msgstr[1] "Certificar a validez do certificado seleccionado"
+
+#: src/commands/revokecertificationcommand.cpp:333
+#, fuzzy, kde-format
+#| msgid ""
+#| "This certificate was new to your keystore. The secret key is available."
+msgid "You cannot revoke this certification."
+msgstr ""
+"Este certificado resulta novo no seu almacén de chaves. Disponse da chave "
+"secreta."
 
 #: src/commands/revokekeycommand.cpp:109
 #, kde-format
@@ -6149,12 +6216,6 @@ msgstr ""
 "<para>Produciuse un erro ao intentar engadir o identificador de usuario:"
 "<message>%1</message></para>"
 
-#: src/dialogs/certificatedetailswidget.cpp:749
-#, kde-format
-msgctxt "@title:window"
-msgid "Confirm Revocation"
-msgstr ""
-
 #: src/dialogs/certificatedetailswidget.cpp:935
 #, kde-format
 msgctxt "@action:inmenu"
@@ -6547,13 +6608,11 @@ msgid "Domain"
 msgstr ""
 
 #: src/dialogs/certifywidget.cpp:506
-#: src/dialogs/revokecertificationwidget.cpp:228
 #, kde-format
 msgid "Fingerprint: <b>%1</b>"
 msgstr "Pegada dixital: <b>%1</b>"
 
 #: src/dialogs/certifywidget.cpp:508
-#: src/dialogs/revokecertificationwidget.cpp:230
 #, kde-format
 msgid "<i>Only the fingerprint clearly identifies the key and its owner.</i>"
 msgstr ""
@@ -7215,37 +7274,6 @@ msgstr ""
 "certificado pode que teña que axustar vostede mesmo o nivel de confianza."
 "<br>Con este nivel de confianza, os certificados serán correctos cunha única "
 "certificación.</font>"
-
-#: src/dialogs/revokecertificationdialog.cpp:102
-#, fuzzy, kde-format
-#| msgid "Certification"
-msgid "Revoke Certification"
-msgstr "Certificación"
-
-#: src/dialogs/revokecertificationdialog.cpp:129
-#, fuzzy, kde-format
-#| msgid "Certification"
-msgctxt "@title:window arg is name, email of certificate holder"
-msgid "Revoke Certification: %1"
-msgstr "Certificación"
-
-#: src/dialogs/revokecertificationwidget.cpp:162
-#, fuzzy, kde-format
-#| msgid "Certification"
-msgid "Certification key:"
-msgstr "Certificación"
-
-#: src/dialogs/revokecertificationwidget.cpp:163
-#, fuzzy, kde-format
-#| msgid "This certificate has been revoked."
-msgid "The key whose certifications shall be revoke"
-msgstr "Este certificado foi revogado."
-
-#: src/dialogs/revokecertificationwidget.cpp:180
-#, fuzzy, kde-format
-#| msgid "Publish on Server..."
-msgid "Publish revocations on keyserver"
-msgstr "Publicar nun servidor…"
 
 #: src/dialogs/revokekeydialog.cpp:96
 #, fuzzy, kde-format
@@ -8807,26 +8835,26 @@ msgctxt "@title"
 msgid "Running as Administrator"
 msgstr ""
 
-#: src/main.cpp:230
+#: src/main.cpp:232
 #, kde-format
 msgid "GPG UI Server Error"
 msgstr "Erro do servidor de UI de GPG"
 
-#: src/main.cpp:231
+#: src/main.cpp:236
 #, kde-format
+msgctxt ""
+"This error message is only shown on Windows when the socket to communicate "
+"with Windows Explorer could not be created. This often times means that the "
+"whole installation is buggy. e.g. GnuPG is not installed at all."
 msgid ""
-"<qt>The Kleopatra GPG UI Server Module could not be initialized.<br/>The "
-"error given was: <b>%1</b><br/>You can use Kleopatra as a certificate "
-"manager, but cryptographic plugins that rely on a GPG UI Server being "
-"present might not work correctly, or at all.</qt>"
+"<qt>The Kleopatra Windows Explorer Module could not be initialized.<br/>The "
+"error given was: <b>%1</b><br/>This likely means that there is a problem "
+"with your installation. Try reinstalling or contact your Administrator for "
+"support.<br/>You can try to continue to use Kleopatra but there might be "
+"other problems.</qt>"
 msgstr ""
-"<qt>Non se puido inicializar o Módulo Servidor de UI de GPG de Kleopatra.<br/"
-">O erro fornecido foi: <b>%1</b><br/>Pode empregar Kleopatra como xestor de "
-"certificados, pero pode que non funcionen correctamente os complementos "
-"criptográficos que dependen da presenza dun servidor de UI de GPG, ou que "
-"non funcionen en absoluto.</qt>"
 
-#: src/main.cpp:257
+#: src/main.cpp:265
 #, kde-format
 msgid "Invalid arguments: %1"
 msgstr "Argumentos incorrectos: %1"
@@ -12149,6 +12177,60 @@ msgid "To import from a public keyserver use \"Lookup on Server\" instead."
 msgstr ""
 "Para importar dun servidor de chaves público use «Buscar no servidor» no seu "
 "lugar."
+
+#, fuzzy
+#~| msgid ""
+#~| "<p>An error occurred while trying to change the expiry date for <b>%1</"
+#~| "b>:</p><p>%2</p>"
+#~ msgid ""
+#~ "<p>An error occurred while trying to revoke the certification of<br/><br/"
+#~ "><b>%1</b>:</p><p>\t%2</p>"
+#~ msgstr ""
+#~ "<p>Produciuse un erro ao intentar cambiar a data de caducidade de <b>%1</"
+#~ "b>:</p><p>%2</p>"
+
+#, fuzzy
+#~| msgid "Certification"
+#~ msgid "Revocation Error"
+#~ msgstr "Certificación"
+
+#, fuzzy
+#~| msgid "Certification successful."
+#~ msgid "Revocation successful."
+#~ msgstr "Certificación sen problemas."
+
+#, fuzzy
+#~| msgid "Certification canceled."
+#~ msgid "Revocation Succeeded"
+#~ msgstr "Cancelouse a operación."
+
+#, fuzzy
+#~| msgid "Certification"
+#~ msgctxt "@title:window arg is name, email of certificate holder"
+#~ msgid "Revoke Certification: %1"
+#~ msgstr "Certificación"
+
+#, fuzzy
+#~| msgid "Certification"
+#~ msgid "Certification key:"
+#~ msgstr "Certificación"
+
+#, fuzzy
+#~| msgid "This certificate has been revoked."
+#~ msgid "The key whose certifications shall be revoke"
+#~ msgstr "Este certificado foi revogado."
+
+#~ msgid ""
+#~ "<qt>The Kleopatra GPG UI Server Module could not be initialized.<br/>The "
+#~ "error given was: <b>%1</b><br/>You can use Kleopatra as a certificate "
+#~ "manager, but cryptographic plugins that rely on a GPG UI Server being "
+#~ "present might not work correctly, or at all.</qt>"
+#~ msgstr ""
+#~ "<qt>Non se puido inicializar o Módulo Servidor de UI de GPG de Kleopatra."
+#~ "<br/>O erro fornecido foi: <b>%1</b><br/>Pode empregar Kleopatra como "
+#~ "xestor de certificados, pero pode que non funcionen correctamente os "
+#~ "complementos criptográficos que dependen da presenza dun servidor de UI "
+#~ "de GPG, ou que non funcionen en absoluto.</qt>"
 
 #~ msgid "Kleopatra Self-Test Results"
 #~ msgstr "Resultados das probas automáticas de Kleopatra"
