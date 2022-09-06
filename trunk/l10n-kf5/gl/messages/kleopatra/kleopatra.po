@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kleopatra\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-08-30 00:47+0000\n"
+"POT-Creation-Date: 2022-09-06 00:46+0000\n"
 "PO-Revision-Date: 2020-01-12 11:14+0100\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Galician <proxecto@trasno.gal>\n"
@@ -1626,8 +1626,8 @@ msgstr "O contido do portapapeis non parece ser un certificado."
 #: src/commands/importcertificatefromfilecommand.cpp:134
 #: src/commands/importcertificatescommand.cpp:493
 #: src/commands/importcertificatescommand.cpp:501
-#: src/commands/importcertificatescommand.cpp:834
-#: src/commands/importcertificatescommand.cpp:885
+#: src/commands/importcertificatescommand.cpp:836
+#: src/commands/importcertificatescommand.cpp:887
 #, kde-format
 msgid "Certificate Import Failed"
 msgstr "Fallou a importación do certificado"
@@ -1927,13 +1927,21 @@ msgstr ""
 "<qt><p>Produciuse un erro ao intentar importar o certificado %1:</p><p><b>"
 "%2</b></p></qt>"
 
-#: src/commands/importcertificatescommand.cpp:569
+#. i18n(" ") as initializer because initializing with empty string leads to
+#. (I18N_EMPTY_MESSAGE)
+#: src/commands/importcertificatescommand.cpp:570
+#, fuzzy, kde-format
+#| msgid ", "
+msgid " "
+msgstr ", "
+
+#: src/commands/importcertificatescommand.cpp:571
 #, kde-kuit-format
 msgctxt "@info"
 msgid "%1<item>%2</item>"
 msgstr ""
 
-#: src/commands/importcertificatescommand.cpp:573
+#: src/commands/importcertificatescommand.cpp:575
 #, fuzzy, kde-kuit-format
 #| msgctxt "@info"
 #| msgid ""
@@ -1952,13 +1960,13 @@ msgstr ""
 "identificadores de usuario: <list> <item>%2</item> </list> </para> É a súa "
 "chave? (estabelecer o nivel de confianza máximo)"
 
-#: src/commands/importcertificatescommand.cpp:585
+#: src/commands/importcertificatescommand.cpp:587
 #, kde-format
 msgctxt "@title:window"
 msgid "Secret key imported"
 msgstr "Importouse a chave secreta"
 
-#: src/commands/importcertificatescommand.cpp:797
+#: src/commands/importcertificatescommand.cpp:799
 #, fuzzy, kde-format
 #| msgid "Loading certificates... (this can take a while)"
 msgid "Fetching 1 signer key... (this can take a while)"
@@ -1966,8 +1974,8 @@ msgid_plural "Fetching %1 signer keys... (this can take a while)"
 msgstr[0] "Cargando os certificados… (pode levar un anaco)"
 msgstr[1] "Cargando os certificados… (pode levar un anaco)"
 
-#: src/commands/importcertificatescommand.cpp:832
-#: src/commands/importcertificatescommand.cpp:883
+#: src/commands/importcertificatescommand.cpp:834
+#: src/commands/importcertificatescommand.cpp:885
 #, kde-format
 msgid ""
 "The type of this certificate (%1) is not supported by this Kleopatra "
@@ -4073,7 +4081,7 @@ msgstr ""
 "unha mestura dos dous."
 
 #: src/crypto/createchecksumscontroller.cpp:293
-#: src/dialogs/updatenotification.cpp:74 src/mainwindow.cpp:771
+#: src/dialogs/updatenotification.cpp:74 src/mainwindow.cpp:777
 #, kde-format
 msgid "Cancel"
 msgstr "Cancelar"
@@ -8499,7 +8507,7 @@ msgstr "&Vista"
 
 #. i18n: ectx: Menu (certMenu)
 #. i18n: ectx: Menu (listview_popup)
-#: src/kleopatra.rc:44 src/kleopatra.rc:119
+#: src/kleopatra.rc:44 src/kleopatra.rc:120
 #, kde-format
 msgid "&Certificates"
 msgstr "&Certificados"
@@ -8529,7 +8537,7 @@ msgid "&Help"
 msgstr "&Axuda"
 
 #. i18n: ectx: ToolBar (mainToolBar)
-#: src/kleopatra.rc:104 src/kwatchgnupg/kwatchgnupgui.rc:13
+#: src/kleopatra.rc:105 src/kwatchgnupg/kwatchgnupgui.rc:13
 #, kde-format
 msgid "Main Toolbar"
 msgstr "Barra de ferramentas principal"
@@ -9022,12 +9030,24 @@ msgctxt ""
 msgid "BSI-VSA-10584-ENG_secops-20220207.pdf"
 msgstr ""
 
-#: src/mainwindow.cpp:620
+#: src/mainwindow.cpp:620 src/view/smartcardwidget.cpp:119
+#, kde-format
+msgid "Smartcard Management"
+msgstr "Xestión de tarxeta intelixente"
+
+#: src/mainwindow.cpp:622
+#, kde-format
+msgctxt ""
+"Only available in German and English. Leave to English for other languages."
+msgid "smartcard_howto_de.pdf"
+msgstr ""
+
+#: src/mainwindow.cpp:626
 #, kde-format
 msgid "GnuPG Manual"
 msgstr ""
 
-#: src/mainwindow.cpp:644
+#: src/mainwindow.cpp:650
 #, kde-format
 msgid ""
 "There are still some background operations ongoing. These will be terminated "
@@ -9036,28 +9056,28 @@ msgstr ""
 "Aínda se está a realizar algunhas operacións no fondo. Terminaranse ao "
 "pechar a xanela. Continuar?"
 
-#: src/mainwindow.cpp:647
+#: src/mainwindow.cpp:653
 #, kde-format
 msgid "Ongoing Background Tasks"
 msgstr "Tarefas de fondo en execución"
 
-#: src/mainwindow.cpp:755 src/view/keylistcontroller.cpp:398
+#: src/mainwindow.cpp:761 src/view/keylistcontroller.cpp:398
 #, kde-format
 msgid "Sign/Encrypt..."
 msgstr "Asinar/Cifrar…"
 
-#: src/mainwindow.cpp:756 src/utils/clipboardmenu.cpp:47
+#: src/mainwindow.cpp:762 src/utils/clipboardmenu.cpp:47
 #: src/view/keylistcontroller.cpp:394
 #, kde-format
 msgid "Decrypt/Verify..."
 msgstr "Descifrar ou verificar…"
 
-#: src/mainwindow.cpp:761
+#: src/mainwindow.cpp:767
 #, kde-format
 msgid "Import Certificates"
 msgstr "Importar certificados"
 
-#: src/mainwindow.cpp:762
+#: src/mainwindow.cpp:768
 #, kde-format
 msgid "Import CRLs"
 msgstr "Importar CRL"
@@ -10631,7 +10651,7 @@ msgstr ""
 "Non se puido pasar o socket a Qt: %1. Isto non debería ocorrer. Por favor, "
 "informe deste fallo."
 
-#: src/utils/accessibility.cpp:71
+#: src/utils/accessibility.cpp:94
 #, fuzzy, kde-format
 #| msgid "Selection"
 msgctxt ""
@@ -10640,7 +10660,7 @@ msgctxt ""
 msgid "invalid entry"
 msgstr "Selección"
 
-#: src/utils/accessibility.cpp:78
+#: src/utils/accessibility.cpp:101
 #, fuzzy, kde-format
 #| msgid "(required)"
 msgctxt ""
@@ -11954,11 +11974,6 @@ msgstr "Insira unha tarxeta intelixente compatíbel."
 #, kde-format
 msgid "Kleopatra currently supports the following card types:"
 msgstr "Kleopatra é compatíbel actualmente cos seguintes tipos de tarxetas:"
-
-#: src/view/smartcardwidget.cpp:119
-#, kde-format
-msgid "Smartcard Management"
-msgstr "Xestión de tarxeta intelixente"
 
 #: src/view/smartcardwidget.cpp:161
 #, fuzzy, kde-format
@@ -13981,6 +13996,3 @@ msgstr ""
 
 #~ msgid "CTRL+,"
 #~ msgstr "CTRL+,"
-
-#~ msgid ", "
-#~ msgstr ", "
