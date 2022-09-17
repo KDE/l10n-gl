@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kplatoui\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-09-15 00:45+0000\n"
+"POT-Creation-Date: 2022-09-17 00:46+0000\n"
 "PO-Revision-Date: 2020-03-07 07:54+0100\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Galician <proxecto@trasno.gal>\n"
@@ -203,7 +203,7 @@ msgstr "ms"
 msgid "Deleted"
 msgstr "Eliminada"
 
-#: kernel/kptglobal.cpp:20 kernel/kptnode.cpp:668 kernel/kptschedule.cpp:1906
+#: kernel/kptglobal.cpp:20 kernel/kptnode.cpp:668 kernel/kptschedule.cpp:1927
 #: models/kptschedulemodel.cpp:840
 #, kde-format
 msgid "Not scheduled"
@@ -563,7 +563,7 @@ msgstr "Comezar a planificar cara atrás"
 msgid "Finished scheduling backward: %1 ms"
 msgstr "Rematouse de planificar cara atrás: %1 ms"
 
-#: kernel/kptproject.cpp:3383
+#: kernel/kptproject.cpp:3392
 #, kde-format
 msgid "Plan"
 msgstr "Plano"
@@ -607,27 +607,27 @@ msgstr "Non se puido satisfacer o esforzo. Requirido: %1, necesario: %2."
 msgid "Resource %1 available from %2 to %3"
 msgstr "O recurso %1 está dispoñíbel desde %2 ata %3."
 
-#: kernel/kptschedule.cpp:143
+#: kernel/kptschedule.cpp:164
 #, kde-format
 msgid "Expected"
 msgstr "Esperado"
 
-#: kernel/kptschedule.cpp:1572
+#: kernel/kptschedule.cpp:1593
 #, kde-format
 msgid "Debug"
 msgstr ""
 
-#: kernel/kptschedule.cpp:1573
+#: kernel/kptschedule.cpp:1594
 #, kde-format
 msgid "Info"
 msgstr "Info"
 
-#: kernel/kptschedule.cpp:1574 main/KoMainWindow.cpp:1834
+#: kernel/kptschedule.cpp:1595 main/KoMainWindow.cpp:1834
 #, kde-format
 msgid "Warning"
 msgstr "Advertencia"
 
-#: kernel/kptschedule.cpp:1575 kernel/kptschedule.cpp:1910
+#: kernel/kptschedule.cpp:1596 kernel/kptschedule.cpp:1931
 #: models/kptnodeitemmodel.cpp:1699 models/kptnodeitemmodel.cpp:1732
 #: models/kptnodeitemmodel.cpp:1765 models/kptnodeitemmodel.cpp:1798
 #: models/kptnodeitemmodel.cpp:1831 models/kptnodeitemmodel.cpp:1864
@@ -636,12 +636,12 @@ msgstr "Advertencia"
 msgid "Error"
 msgstr "Erro"
 
-#: kernel/kptschedule.cpp:1900
+#: kernel/kptschedule.cpp:1921
 #, kde-format
 msgid "Baselined"
 msgstr "Pauta"
 
-#: kernel/kptschedule.cpp:1903
+#: kernel/kptschedule.cpp:1924
 #, kde-format
 msgid "Scheduling"
 msgstr "Programando"
@@ -2347,14 +2347,16 @@ msgstr "%1 (Calendario predeterminado)"
 
 #: models/kptcalendarmodel.cpp:306 models/kptcalendarmodel.cpp:315
 #: models/ResourceGroupModel.cpp:92 models/ResourceGroupModel.cpp:101
-#: models/ResourceModel.cpp:106 models/ResourceModel.cpp:115
+#: models/ResourceModel.cpp:83 models/ResourceModel.cpp:106
+#: models/ResourceModel.cpp:115
 #, kde-format
 msgid "Local"
 msgstr "Local"
 
 #: models/kptcalendarmodel.cpp:306 models/kptcalendarmodel.cpp:315
 #: models/ResourceGroupModel.cpp:92 models/ResourceGroupModel.cpp:101
-#: models/ResourceModel.cpp:106 models/ResourceModel.cpp:115
+#: models/ResourceModel.cpp:83 models/ResourceModel.cpp:106
+#: models/ResourceModel.cpp:115
 #, kde-format
 msgid "Shared"
 msgstr "Compartillado"
@@ -5517,21 +5519,26 @@ msgctxt "(qtundo-format)"
 msgid "Modify resource account"
 msgstr "Modificar a conta do recurso"
 
-#: models/ResourceModel.cpp:80 models/ResourceModel.cpp:111
-#, kde-kuit-format
+#: models/ResourceModel.cpp:79
+#, fuzzy, kde-kuit-format
+#| msgctxt "@info:tooltip"
+#| msgid "Name: %1<nl/>Planned: %2<nl/>Status: %3<nl/>Scheduling: %4"
 msgctxt "@info:tooltip"
-msgid ""
-"%1 is a <emphasis>Shared</emphasis> resource and can thus be shared with "
-"other projects"
-msgstr ""
-"%1 é un recurso <emphasis>compartido</emphasis> e polo tanto pode "
-"compartirse con outros proxectos."
+msgid "%1:<nl/>Type: %2<nl/>Allocation: %3<nl/>Origin: %4"
+msgstr "Nome: %1<nl/>Previsto: %2<nl/>Estado: %3<nl/>Programación: %4"
 
-#: models/ResourceModel.cpp:83
-#, kde-kuit-format
-msgctxt "@info:tooltip"
-msgid "%1:<nl/>This resource will be automatically allocated to new tasks"
-msgstr "%1:<nl/> Este recurso asignarase automaticamente a novas tarefas."
+#: models/ResourceModel.cpp:82
+#, fuzzy, kde-format
+#| msgctxt "@label:listbox"
+#| msgid "Manual"
+msgid "Manual"
+msgstr "Manual"
+
+#: models/ResourceModel.cpp:82
+#, fuzzy, kde-format
+#| msgid "Task completion"
+msgid "On task creation"
+msgstr "Progreso da tarefa"
 
 #: models/ResourceModel.cpp:109
 #, kde-kuit-format
@@ -5541,6 +5548,16 @@ msgid ""
 "project"
 msgstr ""
 "%1 é un recurso <emphasis>local</emphasis> e só pode usarse neste proxecto."
+
+#: models/ResourceModel.cpp:111
+#, kde-kuit-format
+msgctxt "@info:tooltip"
+msgid ""
+"%1 is a <emphasis>Shared</emphasis> resource and can thus be shared with "
+"other projects"
+msgstr ""
+"%1 é un recurso <emphasis>compartido</emphasis> e polo tanto pode "
+"compartirse con outros proxectos."
 
 #: models/ResourceModel.cpp:140
 #, fuzzy, kde-format
@@ -10525,6 +10542,10 @@ msgstr "Substitución"
 #, kde-format
 msgid "All supported formats"
 msgstr "Todos os formatos compatíbeis"
+
+#~ msgctxt "@info:tooltip"
+#~ msgid "%1:<nl/>This resource will be automatically allocated to new tasks"
+#~ msgstr "%1:<nl/> Este recurso asignarase automaticamente a novas tarefas."
 
 #~ msgid "File exists. Continue?"
 #~ msgstr "O ficheiro existe. Continuar?"
