@@ -64,7 +64,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-09-22 00:42+0000\n"
+"POT-Creation-Date: 2022-09-23 00:42+0000\n"
 "PO-Revision-Date: 2020-01-12 12:23+0100\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Galician <proxecto@trasno.gal>\n"
@@ -7385,6 +7385,37 @@ msgctxt "@info"
 msgid ""
 "<para>This Batch Queue Manager tool can apply metadata template over images."
 "</para>"
+msgstr ""
+"<p>Esta ferramenta de xestor da fila do lote pode aplicar un modelo de "
+"metadatos ás imaxes.</p>"
+
+#: core/dplugins/bqm/metadata/qualitysort/qualitysortplugin.cpp:46
+#, fuzzy, kde-format
+#| msgid "Image Quality Sorter"
+msgctxt "@title"
+msgid "Image Quality Sort"
+msgstr "Ordenación segundo a calidade da imaxe."
+
+#: core/dplugins/bqm/metadata/qualitysort/qualitysortplugin.cpp:61
+#, fuzzy, kde-format
+#| msgid ""
+#| "Enable this option to assign automatically Pick Labels based on image "
+#| "quality."
+msgctxt "@info"
+msgid "A tool to assign pick label metadata by image quality"
+msgstr ""
+"Active esta opción para asignar automaticamente as etiquetas de escolla "
+"baseándose na calidade da imaxe."
+
+#: core/dplugins/bqm/metadata/qualitysort/qualitysortplugin.cpp:66
+#, fuzzy, kde-kuit-format
+#| msgid ""
+#| "<p>This Batch Queue Manager tool can apply metadata template over images."
+#| "</p>"
+msgctxt "@info"
+msgid ""
+"<para>This Batch Queue Manager tool will assign a pick label metadata value "
+"by parsing image and estimate the quality.</para>"
 msgstr ""
 "<p>Esta ferramenta de xestor da fila do lote pode aplicar un modelo de "
 "metadatos ás imaxes.</p>"
@@ -24163,7 +24194,7 @@ msgstr "Burbullas"
 msgid "Slideshow"
 msgstr "Presentación"
 
-#: core/dplugins/generic/view/slideshow/common/slideshowloader.cpp:664
+#: core/dplugins/generic/view/slideshow/common/slideshowloader.cpp:665
 #, kde-format
 msgctxt ""
 "Reason for inhibiting the screensaver activation, when the presentation mode "
@@ -38096,11 +38127,13 @@ msgid "Detect the amount of blur in the images passed to it"
 msgstr "Detecta a cantidade de desenfoque das imaxes que se lle pasen."
 
 #: core/libs/imgqsort/imagequalitysettings.cpp:208
+#: core/libs/imgqsort/imagequalitysettings.cpp:218
+#: core/libs/imgqsort/imagequalitysettings.cpp:228
 #, fuzzy, kde-format
-#| msgid "Blur Weight:"
+#| msgid "Height:"
 msgctxt "@label"
-msgid "Blur Weight:"
-msgstr "Peso do desenfoque:"
+msgid "Weight:"
+msgstr "Altura:"
 
 #: core/libs/imgqsort/imagequalitysettings.cpp:213
 #, fuzzy, kde-format
@@ -38123,13 +38156,6 @@ msgctxt "@info:tooltip"
 msgid "Detect the amount of noise in the images passed to it"
 msgstr "Detecta a cantidade de ruído das imaxes que se lle pasen."
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:218
-#, fuzzy, kde-format
-#| msgid "Noise Weight:"
-msgctxt "@label"
-msgid "Noise Weight:"
-msgstr "Peso do ruído:"
-
 #: core/libs/imgqsort/imagequalitysettings.cpp:223
 #, fuzzy, kde-format
 #| msgid "Weight to assign to Noise Algorithm"
@@ -38150,13 +38176,6 @@ msgstr "Detectar a compresión"
 msgctxt "@info:tooltip"
 msgid "Detect the amount of compression in the images passed to it"
 msgstr "Detecta a cantidade de compresión das imaxes que se lle pasen."
-
-#: core/libs/imgqsort/imagequalitysettings.cpp:228
-#, fuzzy, kde-format
-#| msgid "Compression Weight:"
-msgctxt "@label"
-msgid "Compression Weight:"
-msgstr "Peso da compresión:"
 
 #: core/libs/imgqsort/imagequalitysettings.cpp:233
 #, fuzzy, kde-format
@@ -68575,18 +68594,18 @@ msgstr ""
 msgctxt "@label"
 msgid ""
 "These settings determines the quality of an image and convert it into a "
-"score, stored in database. This property can be evaluated by two ways: using "
-"four basic factors sabotaging the images (blur, noise, exposure, and "
-"compression), or using a deep learning neural network engine. The first one "
-"helps to determine whether images are distorted by the basic factors, "
-"however it demands some drawbacks as fine-tuning from the user’s side and it "
-"cannot work along the aesthetic image processing. The second one uses an IA "
-"approach based on %1 model to predict the score. As deep learning is an end-"
-"to-end solution, it doesn’t require hyper-parameter settings, and make this "
-"feature easier to use."
+"score, stored in database as Pick Label property. This information can be "
+"evaluated by two ways: using four basic factors sabotaging the images (blur, "
+"noise, exposure, and compression), or using a deep learning neural network "
+"engine. The first one helps to determine whether images are distorted by the "
+"basic factors, however it demands some drawbacks as fine-tuning from the "
+"user’s side and it cannot work along the aesthetic image processing. The "
+"second one uses an IA approach based on %1 model to predict the score. As "
+"deep learning is an end-to-end solution, it doesn’t require hyper-parameter "
+"settings, and make this feature easier to use."
 msgstr ""
 
-#: core/utilities/setup/setupimagequalitysorter.cpp:63
+#: core/utilities/setup/setupimagequalitysorter.cpp:64
 #, fuzzy, kde-format
 #| msgid "Sort images by:"
 msgctxt "@label"
@@ -69110,6 +69129,24 @@ msgctxt "@info"
 msgid "Do you want to reset all video settings to the default value?"
 msgstr "Reiniciar todos os parámetros aos valores predeterminados."
 
+#, fuzzy
+#~| msgid "Blur Weight:"
+#~ msgctxt "@label"
+#~ msgid "Blur Weight:"
+#~ msgstr "Peso do desenfoque:"
+
+#, fuzzy
+#~| msgid "Noise Weight:"
+#~ msgctxt "@label"
+#~ msgid "Noise Weight:"
+#~ msgstr "Peso do ruído:"
+
+#, fuzzy
+#~| msgid "Compression Weight:"
+#~ msgctxt "@label"
+#~ msgid "Compression Weight:"
+#~ msgstr "Peso da compresión:"
+
 #~ msgid "Check quality sorter setup panel for details: "
 #~ msgstr ""
 #~ "Revise o panel de configuración do clasificador por calidade para os "
@@ -69120,18 +69157,6 @@ msgstr "Reiniciar todos os parámetros aos valores predeterminados."
 #~ msgctxt "@option:check"
 #~ msgid "Enable Image Quality Sorting"
 #~ msgstr "Activar a clasificación segundo a calidade da imaxe (experimental)"
-
-#, fuzzy
-#~| msgid ""
-#~| "Enable this option to assign automatically Pick Labels based on image "
-#~| "quality."
-#~ msgctxt "@info:tooltip"
-#~ msgid ""
-#~ "Enable this option to assign automatically Pick Labels based on image "
-#~ "quality."
-#~ msgstr ""
-#~ "Active esta opción para asignar automaticamente as etiquetas de escolla "
-#~ "baseándose na calidade da imaxe."
 
 #~ msgid "Speed:"
 #~ msgstr "Velocidade:"
