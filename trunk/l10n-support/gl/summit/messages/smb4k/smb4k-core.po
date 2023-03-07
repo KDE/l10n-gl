@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-29 16:26+0100\n"
+"POT-Creation-Date: 2023-03-07 10:57+0100\n"
 "PO-Revision-Date: 2020-01-12 12:19+0100\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Galician <proxecto@trasno.gal>\n"
@@ -406,8 +406,17 @@ msgstr "Porto SMB:"
 
 #. i18n: ectx: whatsthis, entry (UseRemoteSmbPort), group (Network)
 #. i18n: ectx: whatsthis, entry (RemoteSmbPort), group (Network)
-#. +> trunk5 stable5
+#. +> trunk5
 #: smb4k.kcfg:169 smb4k.kcfg:173
+#, fuzzy, kde-format
+#| msgid "This is the port that is used for connecting to remote servers with the client programs net, smbclient and smbtree. The default value is 139 (NetBIOS). Under FreeBSD, this setting is also used for mounting."
+msgid "This is the port that is used for connecting to remote servers. The default value is 139 (NetBIOS). Under FreeBSD, this setting is also used for mounting."
+msgstr "Este é o porto empregado para ligar con servidor remotos cos programas cliente net, smbclient e smbtree. O valor por omisión é 139 (NetBIOS). En FreeBSD esta opción úsase tamén para montar."
+
+#. i18n: ectx: whatsthis, entry (UseRemoteSmbPort), group (Network)
+#. i18n: ectx: whatsthis, entry (RemoteSmbPort), group (Network)
+#. +> stable5
+#: smb4k.kcfg:157 smb4k.kcfg:161
 #, kde-format
 msgid "This is the port that is used for connecting to remote servers with the client programs net, smbclient and smbtree. The default value is 139 (NetBIOS). Under FreeBSD, this setting is also used for mounting."
 msgstr "Este é o porto empregado para ligar con servidor remotos cos programas cliente net, smbclient e smbtree. O valor por omisión é 139 (NetBIOS). En FreeBSD esta opción úsase tamén para montar."
@@ -1360,302 +1369,310 @@ msgstr "Ler os padróns de inclusión nun ficheiro (--include-from=FICHEIRO). Es
 msgid "The file from which the include patterns are read"
 msgstr "O ficheiro do que se len os padróns de inclusión"
 
-#. i18n: ectx: label, entry (CustomFilteringRules), group (Synchronization)
+#. i18n: ectx: label, entry (UseCustomFilteringRules), group (Synchronization)
 #. +> trunk5 stable5
 #: smb4k.kcfg:560
 #, kde-format
 msgid "Custom filter rules:"
 msgstr "Regras de filtrado personalizadas:"
 
-#. i18n: ectx: whatsthis, entry (CustomFilteringRules), group (Synchronization)
+#. i18n: ectx: whatsthis, entry (UseCustomFilteringRules), group (Synchronization)
 #. +> trunk5 stable5
 #: smb4k.kcfg:561
 #, kde-format
 msgid "Add custom file-filtering rules (-f, --filter=RULE). This option allows you to add rules to selectively exclude certain files from the list of files to be transferred. These rules will be added to the rsync command as they are. Thus, each rule has to start with the --filter=... argument."
 msgstr "Engadir regras personalizadas para filtrar os ficheiros (-f, --filter=REGRA). Esta opción permite engadir regras para excluír selectivamente determinados ficheiros da lista de ficheiros que se desexa transferir. Estas regras engádense á orde rsync tal e como están. Así, cada regra ten que comezar co argumento --filter=…"
 
+#. i18n: ectx: label, entry (CustomFilteringRules), group (Synchronization)
+#. +> trunk5
+#: smb4k.kcfg:565
+#, fuzzy, kde-format
+#| msgid "Custom filter rules:"
+msgid "Custom filter rules"
+msgstr "Regras de filtrado personalizadas:"
+
 #. i18n: ectx: label, entry (UseFFilterRule), group (Synchronization)
 #. +> trunk5 stable5
-#: smb4k.kcfg:565
+#: smb4k.kcfg:570
 #, kde-format
 msgid "Use --filter='dir-merge /.rsync-filter' filter rule"
 msgstr "Empregar a regra de filtrado --filter='dir-merge /.rsync-filter'"
 
 #. i18n: ectx: whatsthis, entry (UseFFilterRule), group (Synchronization)
 #. +> trunk5 stable5
-#: smb4k.kcfg:566
+#: smb4k.kcfg:571
 #, kde-format
 msgid "This filter rule tells rsync to look for per-directory .rsync-filter files that have been sprinkled through the hierarchy and use their rules to filter the files in the transfer. It has no effect, if you also choose to use the --filter='exclude .rsync-filter' rule."
 msgstr "Esta regra de filtrado indícalle a rsync que busque ficheiros .rsync-filter en cada directorio que se espallaron pola xerarquía e empregar as súas regras para filtrar os ficheiros na transferencia. Se non é efectiva, tamén se pode escoller empregar a regra filter='exclude .rsync-filter'."
 
 #. i18n: ectx: label, entry (UseFFFilterRule), group (Synchronization)
 #. +> trunk5 stable5
-#: smb4k.kcfg:570
+#: smb4k.kcfg:575
 #, kde-format
 msgid "Use --filter='exclude .rsync-filter' filter rule"
 msgstr "Empregar a regra de filtrado --filter='exclude .rsync-filter'"
 
 #. i18n: ectx: whatsthis, entry (UseFFFilterRule), group (Synchronization)
 #. +> trunk5 stable5
-#: smb4k.kcfg:571
+#: smb4k.kcfg:576
 #, kde-format
 msgid "This rule filters out the .rsync-filter files from the transfer. These files normally contain filter rules that can be activated by choosing the --filter='dir-merge /.rsync-filter' rule and deselecting this one."
 msgstr "Esta regra filtra os ficheiros .rsync-filter e déixaos fóra da transferencia. Estes ficheiros normalmente conteñen regras de filtrado que se poden activar escollendo a regra filter='dir-merge /.rsync-filter' e anulando a selección desta."
 
 #. i18n: ectx: label, entry (EfficientSparseFileHandling), group (Synchronization)
 #. +> trunk5 stable5
-#: smb4k.kcfg:575
+#: smb4k.kcfg:580
 #, kde-format
 msgid "Handle sparse files efficiently"
 msgstr "Manipular eficazmente os ficheiros dispersos"
 
 #. i18n: ectx: whatsthis, entry (EfficientSparseFileHandling), group (Synchronization)
 #. +> trunk5 stable5
-#: smb4k.kcfg:576
+#: smb4k.kcfg:581
 #, kde-format
 msgid "Handle sparse files efficiently (-S, --sparse) so that they take up less space on the destination. This option conflicts with --inplace. For further information read rsync's manual page."
 msgstr "Manipular eficazmente os ficheiros dispersos (-S, --sparse) para que ocupen menos espazo no destino. Esta opción entra en conflito con --inplace. Para máis información lea a páxina do manual de rsync."
 
 #. i18n: ectx: label, entry (CopyFilesWhole), group (Synchronization)
 #. +> trunk5 stable5
-#: smb4k.kcfg:580
+#: smb4k.kcfg:585
 #, kde-format
 msgid "Copy files whole (no rsync algorithm)"
 msgstr "Copiar os ficheiros completos (sen o algoritmo de rsync)"
 
 #. i18n: ectx: whatsthis, entry (CopyFilesWhole), group (Synchronization)
 #. +> trunk5 stable5
-#: smb4k.kcfg:581
+#: smb4k.kcfg:586
 #, kde-format
 msgid "Copy files whole (-W, --whole-file). With this option the incremental rsync algorithm is not used and the whole file is sent as-is instead."
 msgstr "Copiar os ficheiros completos (-W, --whole-file). Con esta opción non se emprega o algoritmo incremental de rsync e no seu contao envíase o ficheiro completo tal e como está."
 
 #. i18n: ectx: label, entry (OneFileSystem), group (Synchronization)
 #. +> trunk5 stable5
-#: smb4k.kcfg:585
+#: smb4k.kcfg:590
 #, kde-format
 msgid "Do not cross file system boundaries"
 msgstr "Non cruzar os límites do sistema de ficheiros"
 
 #. i18n: ectx: whatsthis, entry (OneFileSystem), group (Synchronization)
 #. +> trunk5 stable5
-#: smb4k.kcfg:586
+#: smb4k.kcfg:591
 #, kde-format
 msgid "Do not cross file system boundaries (-x, --one-file-system). This tells rsync to avoid crossing a filesystem boundary when recursing. For further information on this option, read the manual page."
 msgstr "Non cruzar os límites do sistema de ficheiros (-x, --one-file-system). Isto indícalle a rsync que evite cruzar o límite dun sistema de ficheiros ao baixar polos directorios. Para máis información sobre esta opción lea a páxina do manual."
 
 #. i18n: ectx: label, entry (UpdateExisting), group (Synchronization)
 #. +> trunk5 stable5
-#: smb4k.kcfg:590
+#: smb4k.kcfg:595
 #, kde-format
 msgid "Only update files that already exist"
 msgstr "Actualizar só os ficheiros que xa existan"
 
 #. i18n: ectx: whatsthis, entry (UpdateExisting), group (Synchronization)
 #. +> trunk5 stable5
-#: smb4k.kcfg:591
+#: smb4k.kcfg:596
 #, kde-format
 msgid "Skip creating new files on the receiving side (--existing). This tells rsync to skip creating files (including directories) that do not exist yet on the destination. If this option is combined with the --ignore-existing option, no files will be updated (which can be useful if all you want to do is to delete extraneous files)."
 msgstr "Omitir a creación de ficherios novos no lado que recibe (--existing). Isto indícalle a rsync que omita crear ficheiros (incluídos directorios) que non existan xa no destino. Se esta opción se combina coa opción --ignore-existing, non se actualiza ningún ficheiro (o que pode resultar útil se o único que se quere é eliminar os ficheiros superfluos."
 
 #. i18n: ectx: label, entry (IgnoreExisting), group (Synchronization)
 #. +> trunk5 stable5
-#: smb4k.kcfg:595
+#: smb4k.kcfg:600
 #, kde-format
 msgid "Ignore files that already exist"
 msgstr "Ignorar os ficheiros que xa existan"
 
 #. i18n: ectx: whatsthis, entry (IgnoreExisting), group (Synchronization)
 #. +> trunk5 stable5
-#: smb4k.kcfg:596
+#: smb4k.kcfg:601
 #, kde-format
 msgid "Skip updating files that already exist on the receiving side (--ignore-existing). Existing directories are not ignored."
 msgstr "Omitir actualizar os ficheiros que xa existan no lado que recibe (--ignore-existing). Non se ignoran os directorios existentes."
 
 #. i18n: ectx: label, entry (DelayUpdates), group (Synchronization)
 #. +> trunk5 stable5
-#: smb4k.kcfg:600
+#: smb4k.kcfg:605
 #, kde-format
 msgid "Delay updates until the end of transfer"
 msgstr "Demorar as actualizacións ata o final da transferencia"
 
 #. i18n: ectx: whatsthis, entry (DelayUpdates), group (Synchronization)
 #. +> trunk5 stable5
-#: smb4k.kcfg:601
+#: smb4k.kcfg:606
 #, kde-format
 msgid "Delay updates until the end of the transfer (--delay-updates). This option puts the temporary file from each updated file into a holding directory until the end of the transfer, at which time all the files are renamed and copied into place in rapid succession."
 msgstr "Demorar as actualizacións ata o final da transferencia (--delay-updates). Esta opción coloca o ficheiro temporal de cada ficheiro actualizado nun directorio ata o final da transferencia, momento no que se lles muda o nome a todos os ficheiros e se copian ao seu sitio en sucesión rápida."
 
 #. i18n: ectx: label, entry (MakeBackups), group (Synchronization)
 #. +> trunk5 stable5
-#: smb4k.kcfg:605
+#: smb4k.kcfg:610
 #, kde-format
 msgid "Make backups"
 msgstr "Facer copias de seguranza"
 
 #. i18n: ectx: whatsthis, entry (MakeBackups), group (Synchronization)
 #. +> trunk5 stable5
-#: smb4k.kcfg:606
+#: smb4k.kcfg:611
 #, kde-format
 msgid "Make backups (-b, --backup). With this option, preexisting destination files are renamed as each file is transferred or deleted. You can control where the backup file goes and what (if any) suffix gets appended using the --backup-dir=DIR and --suffix=SUFFIX options."
 msgstr "Facer copias de seguranza (-b, --backup). Con esta opción, múdaselle o nome aos ficheiros de destino xa existentes segundo se vai transferindo ou eliminando cada ficheiro. Pódese controlar a onde vai o ficheiro de seguranza e que sufixo (de existir) se lle engade coas opcións backup-dir=DIR e --suffix=SUFIXO."
 
 #. i18n: ectx: label, entry (UseBackupSuffix), group (Synchronization)
 #. +> trunk5 stable5
-#: smb4k.kcfg:610
+#: smb4k.kcfg:615
 #, kde-format
 msgid "Backup suffix:"
 msgstr "Sufixo das copias de seguranza:"
 
 #. i18n: ectx: whatsthis, entry (UseBackupSuffix), group (Synchronization)
 #. +> trunk5 stable5
-#: smb4k.kcfg:611
+#: smb4k.kcfg:616
 #, kde-format
 msgid "Use this suffix for backups (--suffix=SUFFIX)."
 msgstr "Empregar este sufixo para as copias de seguranza (--suffix=SUFIXO)."
 
 #. i18n: ectx: label, entry (BackupSuffix), group (Synchronization)
 #. +> trunk5 stable5
-#: smb4k.kcfg:615
+#: smb4k.kcfg:620
 #, kde-format
 msgid "Backup suffix"
 msgstr "Sufixo das copias de seguranza"
 
 #. i18n: ectx: label, entry (UseBackupDirectory), group (Synchronization)
 #. +> trunk5 stable5
-#: smb4k.kcfg:620
+#: smb4k.kcfg:625
 #, kde-format
 msgid "Backup directory:"
 msgstr "Directorio das copias de seguranza:"
 
 #. i18n: ectx: whatsthis, entry (UseBackupDirectory), group (Synchronization)
 #. +> trunk5 stable5
-#: smb4k.kcfg:621
+#: smb4k.kcfg:626
 #, kde-format
 msgid "Store backups in this directory (--backup-dir=DIR)."
 msgstr "Almacenar as copias de seguranza neste directorio (--backup-dir=DIR)."
 
 #. i18n: ectx: label, entry (BackupDirectory), group (Synchronization)
 #. +> trunk5 stable5
-#: smb4k.kcfg:625
+#: smb4k.kcfg:630
 #, kde-format
 msgid "Backup directory"
 msgstr "Directorio das copias de seguranza"
 
 #. i18n: ectx: label, entry (UseBlockSize), group (Synchronization)
 #. +> trunk5 stable5
-#: smb4k.kcfg:630
+#: smb4k.kcfg:635
 #, kde-format
 msgid "Force fixed checksum block size:"
 msgstr "Forzar o tamaño de bloque de suma de comprobación fixo:"
 
 #. i18n: ectx: whatsthis, entry (UseBlockSize), group (Synchronization)
 #. +> trunk5 stable5
-#: smb4k.kcfg:631
+#: smb4k.kcfg:636
 #, kde-format
 msgid "Force a fixed checksum block-size (-B, --block-size=SIZE). This forces the block size used in the rsync algorithm to a fixed value."
 msgstr "Forzar un tamaño de bloque de suma de comprobación fixo (-B, --block-size=TAMAÑO). Isto obriga a que o tamaño de bloque empregado no algoritmo de rsync teña un valor fixo."
 
 #. i18n: ectx: label, entry (BlockSize), group (Synchronization)
 #. +> trunk5 stable5
-#: smb4k.kcfg:635
+#: smb4k.kcfg:640
 #, kde-format
 msgid "The block size"
 msgstr "O tamaño do bloque"
 
 #. i18n: ectx: label, entry (UseChecksumSeed), group (Synchronization)
 #. +> trunk5 stable5
-#: smb4k.kcfg:641
+#: smb4k.kcfg:646
 #, kde-format
 msgid "Set block/file checksum seed:"
 msgstr "Definir a semente da suma de comprobación do bloque/ficheiro:"
 
 #. i18n: ectx: whatsthis, entry (UseChecksumSeed), group (Synchronization)
 #. +> trunk5 stable5
-#: smb4k.kcfg:642
+#: smb4k.kcfg:647
 #, kde-format
 msgid "Set block/file checksum seed (--checksum-seed=NUM). Set the MD4 checksum seed to this integer. This 4 byte checksum seed is included in each block and file MD4 checksum calculation. By default the checksum seed is generated by the server and defaults to the current time."
 msgstr "Definir a semente da suma de comprobación do bloque/ficheiro (--checksum-seed=NÚM). Configurar a semente da suma de comprobación MD4 como este enteiro. Esta semente de suma de comprobación de 4 bytes inclúese en cada bloque e ficheiro de cálculo da suma de comprobación MD4. De maneira predeterminada, a semente da suma de comprobación xéraa o servidor e é a hora actual."
 
 #. i18n: ectx: label, entry (ChecksumSeed), group (Synchronization)
 #. +> trunk5 stable5
-#: smb4k.kcfg:646
+#: smb4k.kcfg:651
 #, kde-format
 msgid "The value for the UseChecksumSeed config option"
 msgstr "O valor da opción de configuración UseChecksumSeed"
 
 #. i18n: ectx: label, entry (UseChecksum), group (Synchronization)
 #. +> trunk5 stable5
-#: smb4k.kcfg:652
+#: smb4k.kcfg:657
 #, kde-format
 msgid "Skip files based on checksum"
 msgstr "Omitir os ficheiros baseándose na suma de comprobación"
 
 #. i18n: ectx: whatsthis, entry (UseChecksum), group (Synchronization)
 #. +> trunk5 stable5
-#: smb4k.kcfg:653
+#: smb4k.kcfg:658
 #, kde-format
 msgid "Skip files based on a checksum and not based on modification time and size (-c, --checksum). For further information on how this feature works read rsync's manual page."
 msgstr "Omitir os ficheiros baseándose nunha suma de comprobación e non baseándose na hora de modificación e o tamaño (-c, --checksum). Para máis información sobre como funciona isto lea a páxina do manual de rsync."
 
 #. i18n: ectx: label, entry (UseBandwidthLimit), group (Synchronization)
 #. +> trunk5 stable5
-#: smb4k.kcfg:657
+#: smb4k.kcfg:662
 #, kde-format
 msgid "Set bandwidth limit:"
 msgstr "Definir o límite da largura de banda:"
 
 #. i18n: ectx: whatsthis, entry (UseBandwidthLimit), group (Synchronization)
 #. +> trunk5 stable5
-#: smb4k.kcfg:658
+#: smb4k.kcfg:663
 #, kde-format
 msgid "Set the maximum data transfer rate in kilobytes per second (--bwlimit=RATE)."
 msgstr "Definir a taxa máxima de transferencia de datos en quilobytes por segundo (--bwlimit=TAXA)."
 
 #. i18n: ectx: label, entry (BandwidthLimit), group (Synchronization)
 #. +> trunk5 stable5
-#: smb4k.kcfg:662
+#: smb4k.kcfg:667
 #, kde-format
 msgid "The value for the UseBandwidthLimit config option"
 msgstr "O valor da opción de configuración UseBandwidthLimit"
 
 #. i18n: ectx: label, entry (UseProfiles), group (Profiles)
 #. +> trunk5 stable5
-#: smb4k.kcfg:674
+#: smb4k.kcfg:679
 #, kde-format
 msgid "Use profiles"
 msgstr "Usar perfís."
 
 #. i18n: ectx: whatsthis, entry (UseProfiles), group (Profiles)
 #. +> trunk5 stable5
-#: smb4k.kcfg:675
+#: smb4k.kcfg:680
 #, kde-format
 msgid "Make Smb4K use profiles. This enables you to define different bookmarks and custom options for each profile. This is especially useful if you are using a laptop in different network neighborhoods, e. g. at home and at work."
 msgstr "Facer que Smb4K use perfís. Isto permítelle definir distintos marcadores e opcións personalizadas para cada perfil. Isto resulta especialmente útil se está a usar un portátil en veciñanzas de rede distintas, como por exemplo na casa e no traballo."
 
 #. i18n: ectx: label, entry (ProfilesList), group (Profiles)
 #. +> trunk5 stable5
-#: smb4k.kcfg:679
+#: smb4k.kcfg:684
 #, kde-format
 msgid "Profiles"
 msgstr "Perfís"
 
 #. i18n: ectx: whatsthis, entry (ProfilesList), group (Profiles)
 #. +> trunk5 stable5
-#: smb4k.kcfg:680
+#: smb4k.kcfg:685
 #, kde-format
 msgid "The list of profiles."
 msgstr "A lista de perfís."
 
 #. +> trunk5 stable5
-#: smb4k.kcfg:687
+#: smb4k.kcfg:692
 #, kde-format
 msgctxt "default profile name for use at home"
 msgid "Home"
 msgstr "Inicio"
 
 #. +> trunk5 stable5
-#: smb4k.kcfg:688
+#: smb4k.kcfg:693
 #, kde-format
 msgctxt "default profile name for use at work"
 msgid "Work"
@@ -1663,28 +1680,28 @@ msgstr "Traballo"
 
 #. i18n: ectx: label, entry (ActiveProfile), group (Profiles)
 #. +> trunk5 stable5
-#: smb4k.kcfg:689
+#: smb4k.kcfg:694
 #, kde-format
 msgid "Active profile"
 msgstr "Perfil activo"
 
 #. i18n: ectx: whatsthis, entry (ActiveProfile), group (Profiles)
 #. +> trunk5 stable5
-#: smb4k.kcfg:690
+#: smb4k.kcfg:695
 #, kde-format
 msgid "This is the currently active profile."
 msgstr "Este é o perfil que está activo actualmente."
 
 #. i18n: ectx: label, entry (UseMigrationAssistant), group (Profiles)
 #. +> trunk5 stable5
-#: smb4k.kcfg:694
+#: smb4k.kcfg:699
 #, kde-format
 msgid "Use profile migration assistant"
 msgstr "Usar o asistente de migración de perfís."
 
 #. i18n: ectx: whatsthis, entry (UseMigrationAssistant), group (Profiles)
 #. +> trunk5 stable5
-#: smb4k.kcfg:695
+#: smb4k.kcfg:700
 #, kde-format
 msgid "Use the profile migration assistant when profiles are removed or the use of profiles is enabled or disabled. The profile migration assistant allows you to migrate all settings that were saved for a certain profile to a different one."
 msgstr "Use o asistente de migración de perfís ao eliminar perfís ou ao activar ou desactivar o uso de perfís. O asistente de migración de perfís permítelle migrar a un perfil a configuración gardada para outro perfil."
@@ -1898,20 +1915,35 @@ msgstr "Este é o número de copias que quere imprimir."
 msgid "Print"
 msgstr "Imprimir"
 
-#. +> trunk5 stable5
+#. +> trunk5
 #: smb4kcustomoptionsmanager_p.cpp:46
-#, kde-format
-msgid "Custom Options"
-msgstr "Opcións personalizadas"
+#, fuzzy, kde-format
+#| msgid "Mounting"
+msgid "Custom Settings"
+msgstr "Montaxe"
 
-#. +> trunk5 stable5
+#. +> trunk5
 #: smb4kcustomoptionsmanager_p.cpp:69
+#, fuzzy, kde-format
+#| msgid "<p>Define custom options for host <b>%1</b> and all the shares it provides.</p>"
+msgid "<p>Define custom settings for host <b>%1</b> and all the shares it provides.</p>"
+msgstr "<p>Definir opcións personalizadas para o servidor <b>%1</b> e todas as comparticións que fornece.</p>"
+
+#. +> stable5
+#: smb4kcustomoptionsmanager_p.cpp:90
 #, kde-format
 msgid "<p>Define custom options for host <b>%1</b> and all the shares it provides.</p>"
 msgstr "<p>Definir opcións personalizadas para o servidor <b>%1</b> e todas as comparticións que fornece.</p>"
 
-#. +> trunk5 stable5
+#. +> trunk5
 #: smb4kcustomoptionsmanager_p.cpp:73
+#, fuzzy, kde-format
+#| msgid "<p>Define custom options for share <b>%1</b>.</p>"
+msgid "<p>Define custom settings for share <b>%1</b>.</p>"
+msgstr "<p>Definir opcións personalizadas para a compartición <b>%1</b>.</p>"
+
+#. +> stable5
+#: smb4kcustomoptionsmanager_p.cpp:95
 #, kde-format
 msgid "<p>Define custom options for share <b>%1</b>.</p>"
 msgstr "<p>Definir opcións personalizadas para a compartición <b>%1</b>.</p>"
@@ -1923,6 +1955,12 @@ msgstr "<p>Definir opcións personalizadas para a compartición <b>%1</b>.</p>"
 #, kde-format
 msgid "Common Options"
 msgstr "Opcións comúns"
+
+#. +> stable5
+#: smb4kcustomoptionsmanager_p.cpp:65
+#, kde-format
+msgid "Custom Options"
+msgstr "Opcións personalizadas"
 
 #. +> trunk5 stable5
 #: smb4kcustomoptionsmanager_p.cpp:171 smb4kcustomoptionsmanager_p.cpp:620
@@ -2088,7 +2126,7 @@ msgid "Clear List"
 msgstr "Limpar a lista"
 
 #. +> trunk5
-#: smb4kmounter.cpp:686
+#: smb4kmounter.cpp:756
 #, fuzzy, kde-format
 #| msgid ""
 #| "<qt>"
@@ -2124,7 +2162,7 @@ msgstr ""
 "</qt>"
 
 #. +> trunk5 stable5
-#: smb4kmounter.cpp:691
+#: smb4kmounter.cpp:761
 #, kde-format
 msgid "Foreign Share"
 msgstr "Compartición externa"
@@ -2679,126 +2717,126 @@ msgstr "unicode"
 
 #. i18n: ectx: label, entry (MountPrefix), group (Mounting)
 #. +> trunk5 stable5
-#: smb4kmountsettings_bsd.kcfg:235 smb4kmountsettings_linux.kcfg:294
+#: smb4kmountsettings_bsd.kcfg:235 smb4kmountsettings_linux.kcfg:298
 #, kde-format
 msgid "Mount prefix:"
 msgstr "Prefixo de montaxe:"
 
 #. i18n: ectx: whatsthis, entry (MountPrefix), group (Mounting)
 #. +> trunk5 stable5
-#: smb4kmountsettings_bsd.kcfg:236 smb4kmountsettings_linux.kcfg:295
+#: smb4kmountsettings_bsd.kcfg:236 smb4kmountsettings_linux.kcfg:299
 #, kde-format
 msgid "This is the prefix where Smb4K will create the mount points and mount the remote shares."
 msgstr "Este é o prefixe no que o Smb4K crea os puntos de montaxe e monta as comparticións remotas."
 
 #. i18n: ectx: label, entry (ForceLowerCaseSubdirs), group (Mounting)
 #. +> trunk5 stable5
-#: smb4kmountsettings_bsd.kcfg:240 smb4kmountsettings_linux.kcfg:299
+#: smb4kmountsettings_bsd.kcfg:240 smb4kmountsettings_linux.kcfg:303
 #, kde-format
 msgid "Force generated subdirectories to be lower case"
 msgstr "Obrigar a que os subdirectorios xerados estean en minúscula"
 
 #. i18n: ectx: whatsthis, entry (ForceLowerCaseSubdirs), group (Mounting)
 #. +> trunk5 stable5
-#: smb4kmountsettings_bsd.kcfg:241 smb4kmountsettings_linux.kcfg:300
+#: smb4kmountsettings_bsd.kcfg:241 smb4kmountsettings_linux.kcfg:304
 #, kde-format
 msgid "All names of the subdirectories created by Smb4K below the mount prefix will be lowercase."
 msgstr "Todos os nomes dos subdirectorios creados polo Smb4K por baixo do prefixo de montaxe están en minúscula."
 
 #. i18n: ectx: label, entry (UnmountSharesOnExit), group (Mounting)
 #. +> trunk5 stable5
-#: smb4kmountsettings_bsd.kcfg:245 smb4kmountsettings_linux.kcfg:304
+#: smb4kmountsettings_bsd.kcfg:245 smb4kmountsettings_linux.kcfg:308
 #, kde-format
 msgid "Unmount all personal shares on exit"
 msgstr "Desmontar todas as comparticións persoais ao saír"
 
 #. i18n: ectx: whatsthis, entry (UnmountSharesOnExit), group (Mounting)
 #. +> trunk5 stable5
-#: smb4kmountsettings_bsd.kcfg:246 smb4kmountsettings_linux.kcfg:305
+#: smb4kmountsettings_bsd.kcfg:246 smb4kmountsettings_linux.kcfg:309
 #, kde-format
 msgid "Unmount all shares that belong to you when the program exits. Shares that are owned by other users are ignored."
 msgstr "Desmontar todas as comparticións da súa propiedade ao saír do programa. As comparticións propiedade doutros usuarios ignóranse."
 
 #. i18n: ectx: label, entry (RemountShares), group (Mounting)
 #. +> trunk5 stable5
-#: smb4kmountsettings_bsd.kcfg:250 smb4kmountsettings_linux.kcfg:309
+#: smb4kmountsettings_bsd.kcfg:250 smb4kmountsettings_linux.kcfg:313
 #, kde-format
 msgid "Remount shares"
 msgstr "Montar de novo as comparticións"
 
 #. i18n: ectx: whatsthis, entry (RemountShares), group (Mounting)
 #. +> trunk5 stable5
-#: smb4kmountsettings_bsd.kcfg:251 smb4kmountsettings_linux.kcfg:310
+#: smb4kmountsettings_bsd.kcfg:251 smb4kmountsettings_linux.kcfg:314
 #, kde-format
 msgid "Remount all your shares that were mounted when you exited the program or changed a profile. If the remounting of a share fails, Smb4K will retry the next time it is started. Shares that were mounted by other users are ignored. Please note that this setting does not affect the automatic remounting of shares when your computer woke up from a sleep state."
 msgstr "Montar de novo todas as comparticións que se montaron ao saír do programa ou cambiar de perfil. Se volver a montar unha compartición falla, o Smb4K intentará de novo a seguinte vez que se inicie. Ignóranse as comparticións montadas por outros usuarios. Teña en conta que esta opción non afecta á montaxe automática de comparticións cando se esperta o computador dun estado de hibernación."
 
 #. i18n: ectx: label, entry (RemountAttempts), group (Mounting)
 #. +> trunk5 stable5
-#: smb4kmountsettings_bsd.kcfg:255 smb4kmountsettings_linux.kcfg:314
+#: smb4kmountsettings_bsd.kcfg:255 smb4kmountsettings_linux.kcfg:318
 #, kde-format
 msgid "Number of remount attempts:"
 msgstr "Número de intentos de montaxe:"
 
 #. i18n: ectx: whatsthis, entry (RemountAttempts), group (Mounting)
 #. +> trunk5 stable5
-#: smb4kmountsettings_bsd.kcfg:256 smb4kmountsettings_linux.kcfg:315
+#: smb4kmountsettings_bsd.kcfg:256 smb4kmountsettings_linux.kcfg:319
 #, kde-format
 msgid "Set the number of attempts that are made to remount shares before Smb4K gives up."
 msgstr "Determina o número de intentos de montaxe das comparticións. Se o último dos intentos falla, non haberá máis intentos."
 
 #. i18n: ectx: label, entry (RemountInterval), group (Mounting)
 #. +> trunk5 stable5
-#: smb4kmountsettings_bsd.kcfg:262 smb4kmountsettings_linux.kcfg:321
+#: smb4kmountsettings_bsd.kcfg:262 smb4kmountsettings_linux.kcfg:325
 #, kde-format
 msgid "Interval between remount attempts:"
 msgstr "Intervalo entre os intentos de montaxe:"
 
 #. i18n: ectx: whatsthis, entry (RemountInterval), group (Mounting)
 #. +> trunk5 stable5
-#: smb4kmountsettings_bsd.kcfg:263 smb4kmountsettings_linux.kcfg:322
+#: smb4kmountsettings_bsd.kcfg:263 smb4kmountsettings_linux.kcfg:326
 #, kde-format
 msgid "Set the time that elapses between attempts to remount shares."
 msgstr "Determina o tempo que transcorre entre cada intento de montaxe das comparticións."
 
 #. i18n: ectx: label, entry (UnmountForeignShares), group (Mounting)
 #. +> trunk5 stable5
-#: smb4kmountsettings_bsd.kcfg:269 smb4kmountsettings_linux.kcfg:328
+#: smb4kmountsettings_bsd.kcfg:269 smb4kmountsettings_linux.kcfg:332
 #, kde-format
 msgid "Allow the unmounting of shares that are owned by other users"
 msgstr "Permitir desmontar as comparticións propiedade doutros usuarios"
 
 #. i18n: ectx: whatsthis, entry (UnmountForeignShares), group (Mounting)
 #. +> trunk5 stable5
-#: smb4kmountsettings_bsd.kcfg:270 smb4kmountsettings_linux.kcfg:329
+#: smb4kmountsettings_bsd.kcfg:270 smb4kmountsettings_linux.kcfg:333
 #, kde-format
 msgid "Allow the unmounting of shares that were mounted by other users. Please think before you enable this option."
 msgstr "Permitir desmontar as comparticións que montasen outros usuarios. Pénseo ben antes de activar esta opción."
 
 #. i18n: ectx: label, entry (ForceUnmountInaccessible), group (Mounting)
 #. +> trunk5 stable5
-#: smb4kmountsettings_bsd.kcfg:274 smb4kmountsettings_linux.kcfg:333
+#: smb4kmountsettings_bsd.kcfg:274 smb4kmountsettings_linux.kcfg:337
 #, kde-format
 msgid "Force the unmounting of inaccessible shares"
 msgstr "Desmontar forzosamente comparticións inaccesíbeis."
 
 #. i18n: ectx: whatsthis, entry (ForceUnmountInaccessible), group (Mounting)
 #. +> trunk5 stable5
-#: smb4kmountsettings_bsd.kcfg:275 smb4kmountsettings_linux.kcfg:334
+#: smb4kmountsettings_bsd.kcfg:275 smb4kmountsettings_linux.kcfg:338
 #, kde-format
 msgid "Force the unmounting of inaccessible shares (Linux only). In case a share is inaccessible, a lazy unmount is performed. Before the actual unmount is performed, a warning dialog is shown asking to approve the unmount."
 msgstr "Desmontar forzosamente comparticións inaccesíbeis (só en Linux). Se non se pode acceder a unha compartición, realízase unha desmontaxe falsa e móstrase un diálogo de confirmación antes de realizar a desmontaxe de verdade."
 
 #. i18n: ectx: label, entry (DetectAllShares), group (Mounting)
 #. +> trunk5 stable5
-#: smb4kmountsettings_bsd.kcfg:279 smb4kmountsettings_linux.kcfg:338
+#: smb4kmountsettings_bsd.kcfg:279 smb4kmountsettings_linux.kcfg:342
 #, kde-format
 msgid "Detect all shares that are mounted on the system"
 msgstr "Detectar todas as comparticións que estean montadas no sistema."
 
 #. i18n: ectx: whatsthis, entry (DetectAllShares), group (Mounting)
 #. +> trunk5 stable5
-#: smb4kmountsettings_bsd.kcfg:280 smb4kmountsettings_linux.kcfg:339
+#: smb4kmountsettings_bsd.kcfg:280 smb4kmountsettings_linux.kcfg:343
 #, kde-format
 msgid "You will not only see the shares that were mounted and are owned by you, but also all other mounts using the SMBFS and CIFS file system that are present on the system."
 msgstr "Vense non só as comparticións montadas por vostede e da súa propiedade, senón todo o demais que se montaxe empregando o sistema de ficheiros SMBFS e CIFS que estean presentes no sistema."
@@ -2978,14 +3016,28 @@ msgid "Use inode numbers (unique persistent file identifiers) returned by the se
 msgstr "Empregar os números de inodo (identificadores de ficheiros persistentes únicos) devolvidos polo servidor no canto de xerar automaticamente números de inodo temporais por parte do cliente."
 
 #. i18n: ectx: label, entry (NoLocking), group (Mounting)
-#. +> trunk5 stable5
+#. +> trunk5
+#: smb4kmountsettings_linux.kcfg:186
+#, kde-format
+msgid "Do not send byte range lock requests"
+msgstr ""
+
+#. i18n: ectx: label, entry (NoLocking), group (Mounting)
+#. +> stable5
 #: smb4kmountsettings_linux.kcfg:186
 #, kde-format
 msgid "Do not use locking"
 msgstr "Non empregar o bloqueo"
 
 #. i18n: ectx: whatsthis, entry (NoLocking), group (Mounting)
-#. +> trunk5 stable5
+#. +> trunk5
+#: smb4kmountsettings_linux.kcfg:187
+#, kde-format
+msgid "Do not send byte range lock requests to the server. This is necessary for certain applications that break with CIFS style mandatory byte range locks (and most CIFS servers do not yet support requesting advisory byte range locks)."
+msgstr ""
+
+#. i18n: ectx: whatsthis, entry (NoLocking), group (Mounting)
+#. +> stable5
 #: smb4kmountsettings_linux.kcfg:187
 #, kde-format
 msgid "Do not use locking. Do not start lockd."
@@ -3191,16 +3243,17 @@ msgstr "Protocolo NTLMSSP"
 msgid "NTLMSSP protocol and packet signing"
 msgstr "Protocolo NTLMSSP e sinatura nos paquetes"
 
-#. i18n: ectx: label, entry (CustomCIFSOptions), group (Mounting)
+#. i18n: ectx: label, entry (UseCustomCifsOptions), group (Mounting)
 #. +> trunk5 stable5
 #: smb4kmountsettings_linux.kcfg:289
 #, kde-format
 msgid "Additional options:"
 msgstr "Opcións adicionais:"
 
+#. i18n: ectx: whatsthis, entry (UseCustomCifsOptions), group (Mounting)
 #. i18n: ectx: whatsthis, entry (CustomCIFSOptions), group (Mounting)
 #. +> trunk5 stable5
-#: smb4kmountsettings_linux.kcfg:290
+#: smb4kmountsettings_linux.kcfg:290 smb4kmountsettings_linux.kcfg:294
 #, kde-format
 msgid "Here you can enter advanced options for the CIFS file system in a comma-separated list (refer to the manual page of mount.cifs to learn more). The list will be added AS IS to the \"-o\" argument of mount.cifs. Please do not enter options that have already been defined in the configuration dialog."
 msgstr "Aquí pódense introducir opcións adicionais para o sistema de ficheiros CIFS nunha lista separada por comas (consulte a páxina do manual de mount.cifs para saber máis). A lista engádese COMO ESTIVER ao argumento \"-o\" de mount.cifs. Non introduza opcións que xa se definisen antes no diálogo de configuración."
@@ -3211,8 +3264,16 @@ msgstr "Aquí pódense introducir opcións adicionais para o sistema de ficheiro
 msgid "<p>The share <b>%1</b> has been mounted to <b>%2</b>.</p>"
 msgstr "<p>A compartición <b>%1</b> montouse en <b>%2</b>.</p>"
 
-#. +> trunk5 stable5
+#. +> trunk5
 #: smb4knotification.cpp:51
+#, fuzzy, kde-format
+#| msgid "Open"
+msgctxt "Open the contents of the share with the file manager"
+msgid "Open"
+msgstr "Abrir"
+
+#. +> stable5
+#: smb4knotification.cpp:60
 #, kde-format
 msgid "Open"
 msgstr "Abrir"
@@ -3518,79 +3579,79 @@ msgid "IPC"
 msgstr "IPC"
 
 #. +> trunk5 stable5
-#: smb4ksynchronizer_p.cpp:430 smb4ksynchronizer_p.cpp:510
+#: smb4ksynchronizer_p.cpp:432 smb4ksynchronizer_p.cpp:512
 #, kde-format
 msgid "Synchronizing"
 msgstr "Sincronizando"
 
 #. +> trunk5 stable5
-#: smb4ksynchronizer_p.cpp:430 smb4ksynchronizer_p.cpp:510
+#: smb4ksynchronizer_p.cpp:432 smb4ksynchronizer_p.cpp:512
 #, kde-format
 msgid "Source"
 msgstr "Orixe"
 
 #. +> trunk5 stable5
-#: smb4ksynchronizer_p.cpp:430 smb4ksynchronizer_p.cpp:510
+#: smb4ksynchronizer_p.cpp:432 smb4ksynchronizer_p.cpp:512
 #, kde-format
 msgid "Destination"
 msgstr "Destino"
 
 #. +> trunk5 stable5
-#: smb4ksynchronizer_p.cpp:548
+#: smb4ksynchronizer_p.cpp:550
 #, kde-format
 msgid "Synchronization"
 msgstr "Sincronización"
 
 #. +> trunk5 stable5
-#: smb4ksynchronizer_p.cpp:551
+#: smb4ksynchronizer_p.cpp:553
 #, kde-format
 msgid "Swap Paths"
 msgstr "Intercambiar as rutas"
 
 #. +> trunk5 stable5
-#: smb4ksynchronizer_p.cpp:552
+#: smb4ksynchronizer_p.cpp:554
 #, kde-format
 msgid "Swap source and destination"
 msgstr "Intercambiar a fonte e o destino"
 
 #. +> trunk5 stable5
-#: smb4ksynchronizer_p.cpp:553
+#: smb4ksynchronizer_p.cpp:555
 #, kde-format
 msgid "Synchronize"
 msgstr "Sincronizar"
 
 #. +> trunk5 stable5
-#: smb4ksynchronizer_p.cpp:554
+#: smb4ksynchronizer_p.cpp:556
 #, kde-format
 msgid "Synchronize the destination with the source"
 msgstr "Sincronizar o destino coa orixe"
 
 #. +> trunk5 stable5
-#: smb4ksynchronizer_p.cpp:568
+#: smb4ksynchronizer_p.cpp:570
 #, kde-format
 msgid "Please provide the source and destination directory for the synchronization."
 msgstr "Forneza as rutas de orixe e destino para a sincronización."
 
 #. +> trunk5 stable5
-#: smb4ksynchronizer_p.cpp:578
+#: smb4ksynchronizer_p.cpp:580
 #, kde-format
 msgid "Source:"
 msgstr "Fonte:"
 
 #. +> trunk5 stable5
-#: smb4ksynchronizer_p.cpp:586
+#: smb4ksynchronizer_p.cpp:588
 #, kde-format
 msgid "This is the source directory. The data that it contains is to be written to the destination directory."
 msgstr "Este é o directorio de orixe. Os datos que contén escribiranse no directorio de destino."
 
 #. +> trunk5 stable5
-#: smb4ksynchronizer_p.cpp:589
+#: smb4ksynchronizer_p.cpp:591
 #, kde-format
 msgid "Destination:"
 msgstr "Destino:"
 
 #. +> trunk5 stable5
-#: smb4ksynchronizer_p.cpp:597
+#: smb4ksynchronizer_p.cpp:599
 #, kde-format
 msgid "This is the destination directory. It will be updated with the data from the source directory."
 msgstr "Este é o directorio de destino. Actualizarase cos datos do directorio de orixe."
