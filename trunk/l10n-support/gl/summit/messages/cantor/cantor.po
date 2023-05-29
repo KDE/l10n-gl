@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mathematik\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-05-21 10:24+0200\n"
+"POT-Creation-Date: 2023-05-22 11:31+0200\n"
 "PO-Revision-Date: 2019-11-17 09:29+0100\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Galician <proxecto@trasno.gal>\n"
@@ -443,6 +443,7 @@ msgstr "Ruta da REPL nativa de Julia"
 msgid "Enable Variable Management"
 msgstr "Activar a xestión de variábeis"
 
+#. i18n: ectx: label, entry (integratePlots), group (SageBackend)
 #. i18n: ectx: label, entry (integratePlots), group (JuliaBackend)
 #. i18n: ectx: label, entry (integratePlots), group (PythonBackend)
 #. i18n: ectx: label, entry (integratePlots), group (RBackend)
@@ -451,7 +452,7 @@ msgstr "Activar a xestión de variábeis"
 #. +> trunk5 stable5
 #: backends/julia/juliabackend.kcfg:20 backends/maxima/maximabackend.kcfg:22
 #: backends/python/pythonbackend.kcfg:10 backends/R/rserver/rserver.kcfg:12
-#: backends/scilab/scilabbackend.kcfg:22
+#: backends/sage/sagebackend.kcfg:18 backends/scilab/scilabbackend.kcfg:22
 #, kde-format
 msgid "Integrate Plots into the Worksheet"
 msgstr "Intercalar as gráficas na folla de traballo"
@@ -537,7 +538,7 @@ msgstr "Xeral"
 #. i18n: ectx: property (text), widget (QLabel, label)
 #. +> trunk5 stable5
 #: backends/julia/settings.ui:27 backends/maxima/settings.ui:27
-#: backends/octave/settings.ui:165 backends/sage/settings.ui:63
+#: backends/octave/settings.ui:165 backends/sage/settings.ui:27
 #: backends/scilab/settings.ui:27
 #, kde-format
 msgid "Executable:"
@@ -554,9 +555,10 @@ msgstr "Integrar"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, kcfg_integratePlots)
 #. +> trunk5 stable5
-#: backends/julia/settings.ui:44 backends/maxima/settings.ui:74
+#: backends/julia/settings.ui:44 backends/maxima/settings.ui:67
 #: backends/octave/settings.ui:27 backends/python/settings.ui:64
-#: backends/R/settings.ui:33 backends/scilab/settings.ui:44
+#: backends/R/settings.ui:33 backends/sage/settings.ui:97
+#: backends/scilab/settings.ui:44
 #, fuzzy, kde-format
 #| msgid "If true, plots will be displayed inside the worksheet. If not they appear in a separate window."
 msgid "If enabled, plots will be shown inside of the worksheet. Otherwise, plots will be shown in an external window."
@@ -575,7 +577,7 @@ msgstr "Se escolle esta opción as gráficas hanse ver dentro da folla de trabal
 #. i18n: ectx: property (text), widget (QCheckBox, kcfg_plotBorder)
 #. +> trunk5 stable5
 #: backends/julia/settings.ui:47 backends/julia/settings.ui:64
-#: backends/maxima/settings.ui:47 backends/maxima/settings.ui:77
+#: backends/maxima/settings.ui:47 backends/maxima/settings.ui:70
 #: backends/octave/settings.ui:30 backends/octave/settings.ui:128
 #: backends/python/settings.ui:67 backends/python/settings.ui:77
 #: backends/qalculate/settings.ui:125 backends/qalculate/settings.ui:142
@@ -583,8 +585,8 @@ msgstr "Se escolle esta opción as gráficas hanse ver dentro da folla de trabal
 #: backends/qalculate/settings.ui:308 backends/qalculate/settings.ui:315
 #: backends/qalculate/settings.ui:322 backends/qalculate/settings.ui:339
 #: backends/R/settings.ui:36 backends/R/settings.ui:46
-#: backends/sage/settings.ui:37 backends/scilab/settings.ui:47
-#: commandentry.cpp:349
+#: backends/sage/settings.ui:54 backends/sage/settings.ui:100
+#: backends/scilab/settings.ui:47 commandentry.cpp:349
 #, kde-format
 msgid "Enabled"
 msgstr "Activado"
@@ -648,11 +650,11 @@ msgstr ""
 msgid "GR"
 msgstr ""
 
-#. i18n: ectx: property (text), item, widget (KComboBox, kcfg_plotExtenstionGraphicPackage)
 #. i18n: ectx: property (text), widget (QLabel, label_4)
+#. i18n: ectx: property (text), item, widget (KComboBox, kcfg_plotExtenstionGraphicPackage)
 #. +> trunk5 stable5
 #: backends/julia/settings.ui:120 backends/maxima/settings.ui:60
-#: backends/octave/settings.ui:148
+#: backends/octave/settings.ui:148 backends/sage/settings.ui:83
 #, fuzzy, kde-format
 #| msgid "Plot"
 msgid "Plots"
@@ -679,7 +681,7 @@ msgstr ""
 #: backends/julia/settings.ui:152 backends/lua/settings.ui:51
 #: backends/maxima/settings.ui:228 backends/octave/settings.ui:231
 #: backends/python/settings.ui:123 backends/qalculate/settings.ui:556
-#: backends/R/settings.ui:84 backends/sage/settings.ui:71
+#: backends/R/settings.ui:84 backends/sage/settings.ui:230
 #: backends/scilab/settings.ui:68
 #, kde-format
 msgid "Autorun"
@@ -693,7 +695,7 @@ msgstr ""
 #: backends/lua/settings.ui:57 backends/maxima/settings.ui:234
 #: backends/octave/settings.ui:237 backends/python/settings.ui:129
 #: backends/qalculate/settings.ui:562 backends/R/settings.ui:90
-#: backends/sage/settings.ui:77 backends/scilab/settings.ui:74
+#: backends/sage/settings.ui:236 backends/scilab/settings.ui:74
 #, fuzzy, kde-format
 #| msgid "Scripts to autorun"
 msgid "Commands to autorun"
@@ -704,7 +706,7 @@ msgstr "Scripts para executar automaticamente"
 #: backends/julia/settings.ui:172 backends/lua/settings.ui:71
 #: backends/maxima/settings.ui:248 backends/octave/settings.ui:251
 #: backends/python/settings.ui:143 backends/qalculate/settings.ui:575
-#: backends/R/settings.ui:104 backends/sage/settings.ui:91
+#: backends/R/settings.ui:104 backends/sage/settings.ui:250
 #: backends/scilab/settings.ui:88
 #, fuzzy, kde-format
 #| msgid "Documents to open."
@@ -732,7 +734,7 @@ msgstr "https://docs.kde.org/stable/en/kdeedu/kalgebra/"
 #: backends/kalgebra/kalgebrabackend.kcfg:9 backends/lua/luabackend.kcfg:14
 #: backends/maxima/maximabackend.kcfg:30 backends/python/pythonbackend.kcfg:18
 #: backends/qalculate/qalculatebackend.kcfg:130
-#: backends/R/rserver/rserver.kcfg:20 backends/sage/sagebackend.kcfg:18
+#: backends/R/rserver/rserver.kcfg:20 backends/sage/sagebackend.kcfg:37
 #: backends/scilab/scilabbackend.kcfg:26
 #, kde-format
 msgid "List of scripts to autorun at the beginning of session"
@@ -845,40 +847,42 @@ msgstr "<b>Maxima</b> é un sistema para a manipulación de expresións simbóli
 msgid "Path to the Maxima executable"
 msgstr "Ruta ao executábel de Maxima"
 
+#. i18n: ectx: label, entry (plotWidth), group (SageBackend)
 #. i18n: ectx: label, entry (plotWidth), group (MaximaBackend)
 #. +> trunk5 stable5
-#: backends/maxima/maximabackend.kcfg:41
+#: backends/maxima/maximabackend.kcfg:41 backends/sage/sagebackend.kcfg:29
 #, kde-format
 msgid "Default plot width"
 msgstr ""
 
+#. i18n: ectx: label, entry (plotHeight), group (SageBackend)
 #. i18n: ectx: label, entry (plotHeight), group (MaximaBackend)
 #. +> trunk5 stable5
-#: backends/maxima/maximabackend.kcfg:45
+#: backends/maxima/maximabackend.kcfg:45 backends/sage/sagebackend.kcfg:33
 #, kde-format
 msgid "Default plot height"
 msgstr ""
 
 #. +> trunk5 stable5
-#: backends/maxima/maximaexpression.cpp:114
+#: backends/maxima/maximaexpression.cpp:113
 #, kde-format
 msgid "Error: Too many */"
 msgstr "Erro: Demasiados */"
 
 #. +> trunk5 stable5
-#: backends/maxima/maximaexpression.cpp:127
+#: backends/maxima/maximaexpression.cpp:126
 #, kde-format
 msgid "Error: Too many /*"
 msgstr "Erro: Demasiados /*"
 
 #. +> trunk5 stable5
-#: backends/maxima/maximaexpression.cpp:133
+#: backends/maxima/maximaexpression.cpp:132
 #, kde-format
 msgid "Error: expected \" before ;"
 msgstr "Erro: agardábase \" antes do ;"
 
 #. +> trunk5 stable5
-#: backends/maxima/maximaexpression.cpp:432
+#: backends/maxima/maximaexpression.cpp:431
 #, kde-format
 msgid "Waiting for the plot result"
 msgstr "Agardando polo resultado da gráfica"
@@ -907,18 +911,11 @@ msgstr "Maxima quebrou; reiníciase…"
 msgid "Maxima crashed twice within a short time. Stopping to try starting"
 msgstr "Maxima quebrou dúas veces nun período de tempo curto. Detense para intentar iniciar"
 
-#. i18n: ectx: property (text), widget (QLabel, lPlotIntegration)
-#. +> trunk5 stable5
-#: backends/maxima/settings.ui:67 backends/octave/settings.ui:135
-#, fuzzy, kde-format
-#| msgid "Integrate"
-msgid "Integrated:"
-msgstr "Integrar"
-
-#. i18n: ectx: property (text), widget (QLabel, label_3)
 #. i18n: ectx: property (text), widget (QLabel, label_5)
+#. i18n: ectx: property (text), widget (QLabel, label_3)
 #. +> trunk5 stable5
-#: backends/maxima/settings.ui:84 backends/octave/settings.ui:118
+#: backends/maxima/settings.ui:77 backends/octave/settings.ui:118
+#: backends/sage/settings.ui:107
 #, fuzzy, kde-format
 #| msgctxt "@action"
 #| msgid "Font &Size"
@@ -927,7 +924,8 @@ msgstr "Tamaño da &letra"
 
 #. i18n: ectx: property (text), widget (QLabel, lPlotWidth)
 #. +> trunk5 stable5
-#: backends/maxima/settings.ui:112 backends/octave/settings.ui:58
+#: backends/maxima/settings.ui:105 backends/octave/settings.ui:58
+#: backends/sage/settings.ui:135
 #, fuzzy, kde-format
 #| msgid "Width"
 msgid "width:"
@@ -936,34 +934,47 @@ msgstr "Anchura"
 #. i18n: ectx: property (suffix), widget (QDoubleSpinBox, kcfg_plotWidth)
 #. i18n: ectx: property (suffix), widget (QDoubleSpinBox, kcfg_plotHeight)
 #. +> trunk5 stable5
-#: backends/maxima/settings.ui:119 backends/maxima/settings.ui:149
+#: backends/maxima/settings.ui:112 backends/maxima/settings.ui:142
 #: backends/octave/settings.ui:65 backends/octave/settings.ui:95
+#: backends/sage/settings.ui:142 backends/sage/settings.ui:172
 #, kde-format
 msgid "cm"
 msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, lPlotHeight)
 #. +> trunk5 stable5
-#: backends/maxima/settings.ui:142 backends/octave/settings.ui:88
+#: backends/maxima/settings.ui:135 backends/octave/settings.ui:88
+#: backends/sage/settings.ui:165
 #, fuzzy, kde-format
 #| msgid "Height"
 msgid "height:"
 msgstr "Altura"
 
-#. i18n: ectx: property (text), widget (QLabel, label_2)
 #. i18n: ectx: property (text), widget (QLabel, label_3)
+#. i18n: ectx: property (text), widget (QLabel, label_2)
 #. +> trunk5 stable5
-#: backends/maxima/settings.ui:172 backends/octave/settings.ui:155
+#: backends/maxima/settings.ui:165 backends/octave/settings.ui:155
+#: backends/sage/settings.ui:195
 #, kde-format
 msgid "Image Format:"
 msgstr ""
 
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_inlinePlotFormat)
 #. +> trunk5 stable5
-#: backends/maxima/settings.ui:180 backends/octave/settings.ui:196
+#: backends/maxima/settings.ui:173 backends/octave/settings.ui:196
+#: backends/sage/settings.ui:203
 #, kde-format
 msgid "PDF"
 msgstr ""
+
+#. i18n: ectx: property (text), widget (QLabel, lPlotIntegration)
+#. +> trunk5 stable5
+#: backends/maxima/settings.ui:220 backends/octave/settings.ui:135
+#: backends/sage/settings.ui:90
+#, fuzzy, kde-format
+#| msgid "Integrate"
+msgid "Integrated:"
+msgstr "Integrar"
 
 #. +> trunk5 stable5
 #: backends/octave/octavebackend.cpp:63
@@ -1015,8 +1026,8 @@ msgid "The integration of plots will be disabled."
 msgstr ""
 
 #. +> trunk5 stable5
-#: backends/octave/octavesession.cpp:399 backends/sage/sagesession.cpp:314
-#: backends/sage/sagesession.cpp:325 cantor.cpp:215 cantor.cpp:217
+#: backends/octave/octavesession.cpp:399 backends/sage/sagesession.cpp:341
+#: backends/sage/sagesession.cpp:352 cantor.cpp:215 cantor.cpp:217
 #: cantor.cpp:336 cantor.cpp:343 lib/session.cpp:383 main.cpp:66 main.cpp:130
 #: markdownentry.cpp:797 textentry.cpp:553 worksheet.cpp:1275
 #, kde-format
@@ -2529,13 +2540,13 @@ msgid "Enable LaTeX typesetting for Sage backend"
 msgstr "Activar a composición con LaTeX"
 
 #. +> trunk5 stable5
-#: backends/sage/sageexpression.cpp:229 backends/sage/sageexpression.cpp:234
+#: backends/sage/sageexpression.cpp:230 backends/sage/sageexpression.cpp:235
 #, kde-format
 msgid "Result of %1"
 msgstr "Resultado de %1"
 
 #. +> trunk5 stable5
-#: backends/sage/sageexpression.cpp:242
+#: backends/sage/sageexpression.cpp:243
 #, kde-format
 msgid ""
 "%1\n"
@@ -2553,7 +2564,7 @@ msgid "Python script file (*.py);;Sage script file (*.sage)"
 msgstr "Ficheiro de script de Python (*.py);;Ficheiro de script de Sage (*.sage)"
 
 #. +> trunk5
-#: backends/sage/sagesession.cpp:227
+#: backends/sage/sagesession.cpp:254
 #, fuzzy, kde-format
 #| msgid "Sage version %1.%2 is unsupported. Please update your installation to the supported versions to make it work with Cantor."
 msgid "Sage version %1.%2 is unsupported. Please update your installation to the versions 9.2 or higher."
@@ -2566,50 +2577,50 @@ msgid "Sage version %1.%2 is unsupported. Please update your installation to the
 msgstr "Non se permite a versión %1.%2 de Sage. Actualice a súa instalación a unha das versións compatíbeis para facer que funcione con Cantor."
 
 #. +> trunk5
-#: backends/sage/sagesession.cpp:229 backends/sage/sagesession.cpp:249
+#: backends/sage/sagesession.cpp:256 backends/sage/sagesession.cpp:276
 #, kde-format
 msgid "Unsupported Version"
 msgstr ""
 
 #. +> trunk5 stable5
-#: backends/sage/sagesession.cpp:248
+#: backends/sage/sagesession.cpp:275
 #, kde-format
 msgid "Failed to determine the version of Sage. Please check your installation and the output of 'sage -v'."
 msgstr "Non se puido determina a versión de Sage. Revise a instalación e a saída de «sage -v»."
 
 #. +> trunk5 stable5
-#: backends/sage/sagesession.cpp:310
+#: backends/sage/sagesession.cpp:337
 #, kde-format
 msgid "The Sage process crashed while evaluating this expression"
 msgstr "O proceso de Sage quebrou mentres avaliaba esta expresión"
 
 #. +> trunk5 stable5
-#: backends/sage/sagesession.cpp:314
+#: backends/sage/sagesession.cpp:341
 #, kde-format
 msgid "The Sage process crashed"
 msgstr "O proceso de Sage quebrou"
 
 #. +> trunk5 stable5
-#: backends/sage/sagesession.cpp:321
+#: backends/sage/sagesession.cpp:348
 #, kde-format
 msgid "The Sage process exited while evaluating this expression"
 msgstr "O proceso de Sage saíu mentres avaliaba esta expresión"
 
 #. +> trunk5 stable5
-#: backends/sage/sagesession.cpp:325
+#: backends/sage/sagesession.cpp:352
 #, kde-format
 msgid "The Sage process exited"
 msgstr "O proceso de Sage saíu"
 
 #. +> trunk5 stable5
-#: backends/sage/sagesession.cpp:335
+#: backends/sage/sagesession.cpp:362
 #, kde-format
 msgid "Failed to start Sage"
 msgstr "Non se puido iniciar Sage"
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #. +> trunk5 stable5
-#: backends/sage/settings.ui:27
+#: backends/sage/settings.ui:44
 #, fuzzy, kde-format
 #| msgid "Enable LaTeX Typesetting"
 msgid "LaTeX typesetting:"
@@ -2617,7 +2628,7 @@ msgstr "Activar a composición con LaTeX"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, kcfg_allowLatex)
 #. +> trunk5 stable5
-#: backends/sage/settings.ui:34
+#: backends/sage/settings.ui:51
 #, kde-format
 msgid "Sage LaTeX output not always correct, so latex typesetting can be disabled for better experience"
 msgstr ""
