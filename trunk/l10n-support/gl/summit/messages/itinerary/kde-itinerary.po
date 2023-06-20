@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-06-18 09:52+0200\n"
+"POT-Creation-Date: 2023-06-19 09:46+0200\n"
 "PO-Revision-Date: 2020-02-16 23:04+0100\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Galician <proxecto@trasno.gal>\n"
@@ -128,7 +128,7 @@ msgid "Add transfer after"
 msgstr ""
 
 #. +> trunk5 stable5
-#: app/ActionsCard.qml:55
+#: app/ActionsCard.qml:55 app/TicketPage.qml:159
 #, kde-format
 msgid "Edit"
 msgstr "Editar"
@@ -144,8 +144,8 @@ msgstr "Engadir un documento…"
 #: app/ActionsCard.qml:72 app/ActionsCard.qml:140 app/DocumentsCard.qml:87
 #: app/GenericPkPassPage.qml:25 app/GenericPkPassPage.qml:38
 #: app/HealthCertificatePage.qml:57 app/HealthCertificatePage.qml:72
-#: app/ProgramMembershipPage.qml:36 app/ProgramMembershipPage.qml:58
-#: app/TicketPage.qml:36 app/TicketPage.qml:58 app/TimelinePage.qml:101
+#: app/ProgramMembershipPage.qml:36 app/ProgramMembershipPage.qml:140
+#: app/TicketPage.qml:49 app/TicketPage.qml:166 app/TimelinePage.qml:101
 #, kde-format
 msgid "Delete"
 msgstr "Eliminar"
@@ -196,7 +196,8 @@ msgid "Do you really want to delete this event?"
 msgstr "Seguro que quere eliminar este evento?"
 
 #. +> trunk5 stable5
-#: app/ActionsCard.qml:154
+#: app/ActionsCard.qml:154 app/ProgramMembershipPage.qml:134
+#: app/TicketPage.qml:153
 #, fuzzy, kde-format
 #| msgid "Application"
 msgid "Actions"
@@ -382,7 +383,7 @@ msgstr "Saída"
 #, fuzzy, kde-format
 #| msgid "Departure Time:"
 msgctxt "Boat departure"
-msgid "Deparutre Time"
+msgid "Departure Time"
 msgstr "Hora de saída:"
 
 #. +> trunk5
@@ -420,7 +421,7 @@ msgstr "Billete de bus"
 #: app/BoatPage.qml:21 app/BusPage.qml:33 app/EventPage.qml:21
 #: app/FlightPage.qml:30 app/HealthCertificatePage.qml:42
 #: app/PkPassPage.qml:26 app/ProgramMembershipPage.qml:48
-#: app/TicketPage.qml:48 app/TrainPage.qml:24
+#: app/TicketPage.qml:61 app/TrainPage.qml:24
 #, fuzzy, kde-format
 #| msgid "In barcode scanning mode"
 msgid "Barcode Scan Mode"
@@ -832,7 +833,7 @@ msgid "Add Document..."
 msgstr "Engadir un documento…"
 
 #. +> trunk5
-#: app/EditorPage.qml:38
+#: app/EditorPage.qml:38 app/TicketEditor.qml:23
 #, kde-format
 msgid "Save"
 msgstr "Gardar"
@@ -2761,14 +2762,14 @@ msgid "Search..."
 msgstr ""
 
 #. +> trunk5 stable5
-#: app/passmanager.cpp:233
+#: app/passmanager.cpp:235
 #, kde-format
 msgctxt "no longer valid tickets"
 msgid "Expired"
 msgstr ""
 
 #. +> trunk5 stable5
-#: app/passmanager.cpp:235
+#: app/passmanager.cpp:237
 #, kde-format
 msgctxt "not yet expired tickets"
 msgid "Valid"
@@ -2826,14 +2827,14 @@ msgid "Program"
 msgstr ""
 
 #. +> trunk5 stable5
-#: app/ProgramMembershipCard.qml:27 app/TicketPage.qml:103
+#: app/ProgramMembershipCard.qml:27 app/TicketPage.qml:108
 #, kde-format
 msgid "Name"
 msgstr ""
 
 #. +> trunk5 stable5
-#: app/ProgramMembershipCard.qml:36 app/ProgramMembershipPage.qml:108
-#: app/TicketPage.qml:121
+#: app/ProgramMembershipCard.qml:36 app/ProgramMembershipPage.qml:100
+#: app/TicketPage.qml:126
 #, kde-format
 msgid "Number"
 msgstr ""
@@ -2852,19 +2853,19 @@ msgid "Program Membership"
 msgstr ""
 
 #. +> trunk5 stable5
-#: app/ProgramMembershipPage.qml:99
+#: app/ProgramMembershipPage.qml:91
 #, kde-format
 msgid "Member"
 msgstr ""
 
 #. +> trunk5 stable5
-#: app/ProgramMembershipPage.qml:116 app/TicketPage.qml:109
+#: app/ProgramMembershipPage.qml:108 app/TicketPage.qml:114
 #, kde-format
 msgid "Valid from"
 msgstr ""
 
 #. +> trunk5 stable5
-#: app/ProgramMembershipPage.qml:121 app/TicketPage.qml:115
+#: app/ProgramMembershipPage.qml:113 app/TicketPage.qml:120
 #, kde-format
 msgid "Valid until"
 msgstr ""
@@ -3370,29 +3371,49 @@ msgstr ""
 msgid "No locations found"
 msgstr ""
 
+#. +> trunk5
+#: app/TicketEditor.qml:17
+#, fuzzy, kde-format
+#| msgid "Event Ticket"
+msgid "Edit Ticket"
+msgstr "Billete do evento"
+
 #. +> trunk5 stable5
-#: app/TicketPage.qml:17 app/TicketPage.qml:99
+#: app/TicketEditor.qml:45 app/TicketPage.qml:17 app/TicketPage.qml:104
 #, fuzzy, kde-format
 #| msgid "Bus Ticket"
 msgid "Ticket"
 msgstr "Billete de bus"
 
+#. +> trunk5
+#: app/TicketEditor.qml:50
+#, fuzzy, kde-format
+#| msgid "Bus Ticket"
+msgid "Ticket name"
+msgstr "Billete de bus"
+
+#. +> trunk5
+#: app/TicketEditor.qml:53
+#, kde-format
+msgid "Ticket name must not be empty."
+msgstr ""
+
 #. +> trunk5 stable5
-#: app/TicketPage.qml:29
+#: app/TicketPage.qml:42
 #, fuzzy, kde-format
 #| msgid "Event Ticket"
 msgid "Delete Ticket"
 msgstr "Billete do evento"
 
 #. +> trunk5 stable5
-#: app/TicketPage.qml:30
+#: app/TicketPage.qml:43
 #, fuzzy, kde-format
 #| msgid "Do you really want to delete this event?"
 msgid "Do you really want to delete this ticket?"
 msgstr "Seguro que quere eliminar este evento?"
 
 #. +> trunk5 stable5
-#: app/TicketPage.qml:127
+#: app/TicketPage.qml:132
 #, fuzzy, kde-format
 #| msgid "Class:"
 msgid "Class"
@@ -4187,6 +4208,12 @@ msgstr "☂ %1 mm"
 #, kde-format
 msgid "🌬️ %1 m/s"
 msgstr "🌬️ %1 m/s"
+
+#, fuzzy, kde-format
+#~| msgid "Departure Time:"
+#~ msgctxt "Boat departure"
+#~ msgid "Deparutre Time"
+#~ msgstr "Hora de saída:"
 
 #, kde-format
 #~ msgid "Documents (%1)"
