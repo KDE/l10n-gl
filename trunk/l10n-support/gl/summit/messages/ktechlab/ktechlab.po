@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-04-11 14:40+0200\n"
+"POT-Creation-Date: 2023-06-29 08:19+0200\n"
 "PO-Revision-Date: 2023-06-05 15:07+0200\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Galician <proxecto@trasno.gal>\n"
@@ -30,7 +30,8 @@ msgid "Your emails"
 msgstr "adrian@chaves.io"
 
 #. +> trunk5
-#: microbe/main.cpp:46 src/flowcodeview.cpp:39 src/ktechlab.cpp:502
+#: microbe/main.cpp:46 src/electronics/components/piccomponent.cpp:90
+#: src/flowcodedocument.cpp:172 src/flowcodeview.cpp:39 src/ktechlab.cpp:502
 #: src/textview.cpp:66
 #, kde-format
 msgid "Microbe"
@@ -69,7 +70,6 @@ msgstr "George John"
 #. +> trunk5
 #: microbe/main.cpp:55
 #, kde-format
-#| msgid "Modified to add pic 16f877,16f627 and 16f628 by George John"
 msgid "Added pic 16f877,16f627 and 16f628"
 msgstr "Engadiu pic 16f877,16f627 e 16f628"
 
@@ -1342,11 +1342,11 @@ msgstr "Orientación"
 
 #. +> trunk5
 #: src/electronics/circuitdocument.cpp:47
-#: src/electronics/components/piccomponent.cpp:92 src/flowcodedocument.cpp:49
-#: src/flowcodedocument.cpp:170 src/flowcodedocument.cpp:191
-#: src/flowcodedocument.cpp:212 src/ktechlab.cpp:1170
+#: src/electronics/components/piccomponent.cpp:92 src/flowcodedocument.cpp:50
+#: src/flowcodedocument.cpp:173 src/flowcodedocument.cpp:197
+#: src/flowcodedocument.cpp:221 src/ktechlab.cpp:1170
 #: src/mechanics/mechanicsdocument.cpp:28 src/projectmanager.cpp:908
-#: src/textdocument.cpp:437 src/textdocument.cpp:472
+#: src/textdocument.cpp:440 src/textdocument.cpp:478
 #, kde-format
 msgid "All Files"
 msgstr "Todos os ficheiros"
@@ -2436,6 +2436,14 @@ msgstr "Programa"
 msgid "All Supported Files"
 msgstr "Todos os ficheiros compatíbeis"
 
+#. i18n("FlowCode"), "application-x-flowcode", 0, this, SLOT(slotFileNewFlowCode()), ac, "newfile_flowcode" ))->plug( p->menu() );
+#. +> trunk5
+#: src/electronics/components/piccomponent.cpp:87 src/ktechlab.cpp:484
+#: src/languages/flowcode.cpp:28
+#, kde-format
+msgid "FlowCode"
+msgstr "FlowCode"
+
 #. +> trunk5
 #: src/electronics/components/piccomponent.cpp:88
 #, kde-format
@@ -2443,20 +2451,27 @@ msgid "Symbol File"
 msgstr "Ficheiro de símbolos"
 
 #. +> trunk5
-#: src/electronics/components/piccomponent.cpp:89 src/flowcodedocument.cpp:191
-#: src/gui/newfiledlg.cpp:71 src/ktechlab.cpp:1171 src/textdocument.cpp:437
+#: src/electronics/components/piccomponent.cpp:89 src/flowcodedocument.cpp:196
+#: src/gui/newfiledlg.cpp:71 src/ktechlab.cpp:1171 src/textdocument.cpp:439
 #, kde-format
 msgid "Assembly Code"
 msgstr "Código ensamblador"
 
 #. +> trunk5
-#: src/electronics/components/piccomponent.cpp:156
+#: src/electronics/components/piccomponent.cpp:91
+#, fuzzy, kde-format
+#| msgid "Code"
+msgid "C Code"
+msgstr "Código"
+
+#. +> trunk5
+#: src/electronics/components/piccomponent.cpp:157
 #, kde-format
 msgid "The file \"%1\" does not exist."
 msgstr "O ficheiro «%1» non existe."
 
 #. +> trunk5
-#: src/electronics/components/piccomponent.cpp:164
+#: src/electronics/components/piccomponent.cpp:165
 #, kde-format
 msgid ""
 "\"%1\" is not a valid PIC program.\n"
@@ -2468,7 +2483,7 @@ msgstr ""
 "«.hex» permítese sempre que exista o ficheiro «.cod» correspondente."
 
 #. +> trunk5
-#: src/electronics/components/piccomponent.cpp:240
+#: src/electronics/components/piccomponent.cpp:241
 #, kde-format
 msgid ""
 "(No\n"
@@ -2821,7 +2836,7 @@ msgid "SFR"
 msgstr "SFR"
 
 #. +> trunk5
-#: src/electronics/gpsimprocessor.cpp:744 src/textdocument.cpp:100
+#: src/electronics/gpsimprocessor.cpp:744 src/textdocument.cpp:101
 #, kde-format
 msgid "Breakpoint"
 msgstr "Punto de parada"
@@ -2845,21 +2860,28 @@ msgid "Subcircuits"
 msgstr "Circuítos subordinados"
 
 #. +> trunk5
-#: src/flowcodedocument.cpp:168
+#: src/flowcodedocument.cpp:169
 #, kde-format
 msgid "Microbe Code Output"
 msgstr "Saída de código de Microbe"
 
 #. +> trunk5
-#: src/flowcodedocument.cpp:189 src/textdocument.cpp:431
+#: src/flowcodedocument.cpp:193 src/textdocument.cpp:432
 #, kde-format
 msgid "Assembly Code Output"
 msgstr "Saída de código ensamblador"
 
 #. +> trunk5
-#: src/flowcodedocument.cpp:210 src/textdocument.cpp:470
+#: src/flowcodedocument.cpp:217 src/textdocument.cpp:474
 #, kde-format
 msgid "Hex Code Output"
+msgstr "Saída de código hexadecimal"
+
+#. +> trunk5
+#: src/flowcodedocument.cpp:220 src/textdocument.cpp:477
+#, fuzzy, kde-format
+#| msgid "Hex Code Output"
+msgid "Hex Code"
 msgstr "Saída de código hexadecimal"
 
 #. i18n("Convert to..."), "fork", 0, 0, 0, ac, "program_convert" );
@@ -3792,28 +3814,24 @@ msgstr "Exportar como imaxe"
 #. +> trunk5
 #: src/gui/imageexportdlg.cpp:45
 #, kde-format
-#| msgid "Formatter"
 msgid "Format:"
 msgstr "Formato:"
 
 #. +> trunk5
 #: src/gui/imageexportdlg.cpp:51
 #, kde-format
-#| msgid "File Type:"
 msgid "File name:"
 msgstr "Nome do ficheiro:"
 
 #. +> trunk5
 #: src/gui/imageexportdlg.cpp:57
 #, kde-format
-#| msgid "Crop image"
 msgid "Crop image:"
 msgstr "Recortar a imaxe:"
 
 #. +> trunk5
 #: src/gui/imageexportdlg.cpp:64
 #, kde-format
-#| msgid "Image Export"
 msgid "Export"
 msgstr "Exportar"
 
@@ -4497,7 +4515,7 @@ msgstr "Escritura:"
 #. i18n: ectx: property (text), widget (QLabel, textLabel2)
 #. +> trunk5
 #: src/gui/picprogrammerconfigwidget.ui:154
-#, no-c-format, kde-format
+#, kde-format, no-c-format
 msgid ""
 "The following strings will be replaced when the command is run:\n"
 "<ul>\n"
@@ -4805,7 +4823,6 @@ msgstr "Xer&ación de código"
 #. +> trunk5
 #: src/gui/sdccoptionswidget.ui:131
 #, kde-format
-#| msgid "All functions in the source file will be compiled as reentrant, i.e. the parameters and local variables will be allocated on the stack. If this option is used all source files in the project should be compiled with this option. It automatically implies -int-long-reent and -float-reent."
 msgid "All functions in the source file will be compiled as reentrant, i.e. the parameters and local variables will be allocated on the stack. If this option is used all source files in the project should be compiled with this option. It automatically implies --int-long-reent and --float-reent."
 msgstr "Todas as funcións do ficheiro fonte compilaranse como re-entrantes, é dicir, os parámetros e as variábeis locais asignaranse á rima. Se se usa esta opción todos os ficheiros fonte do proxecto deberían compilarse con esta opción. Implica automaticamente --int-long-reent e --float-reent."
 
@@ -5523,13 +5540,6 @@ msgstr "&Novo"
 #, kde-format
 msgid "C source"
 msgstr "Fontes de C"
-
-#. i18n("FlowCode"), "application-x-flowcode", 0, this, SLOT(slotFileNewFlowCode()), ac, "newfile_flowcode" ))->plug( p->menu() );
-#. +> trunk5
-#: src/ktechlab.cpp:484 src/languages/flowcode.cpp:28
-#, kde-format
-msgid "FlowCode"
-msgstr "FlowCode"
 
 #. i18n("New Project..."), "window-new",			0, pm, SLOT(slotNewProject()),			ac, 	"project_new" );
 #. +> trunk5
@@ -6283,37 +6293,37 @@ msgid "Remove Project File?"
 msgstr "Retirar o ficheiro do proxecto?"
 
 #. +> trunk5
-#: src/textdocument.cpp:83
+#: src/textdocument.cpp:84
 #, kde-format
 msgid "Failed to create editor"
 msgstr "Non se puido crear o editor"
 
 #. +> trunk5
-#: src/textdocument.cpp:96
+#: src/textdocument.cpp:97
 #, kde-format
 msgid "Failed to create MarkInterface"
 msgstr "Non se puido crear MarkInterface"
 
 #. +> trunk5
-#: src/textdocument.cpp:606
+#: src/textdocument.cpp:613
 #, kde-format
 msgid "%1 - %2"
 msgstr "%1 - %2"
 
 #. +> trunk5
-#: src/textdocument.cpp:754
+#: src/textdocument.cpp:761
 #, kde-format
 msgid "Unknown code type."
 msgstr "Tipo de código descoñecido."
 
 #. +> trunk5
-#: src/textdocument.cpp:754 src/textdocument.cpp:758
+#: src/textdocument.cpp:761 src/textdocument.cpp:765
 #, kde-format
 msgid "Cannot debug"
 msgstr "Non se pode depurar"
 
 #. +> trunk5
-#: src/textdocument.cpp:758
+#: src/textdocument.cpp:765
 #, kde-format
 msgid "Cannot debug hex."
 msgstr "Non se pode depurar hexadecimal."
