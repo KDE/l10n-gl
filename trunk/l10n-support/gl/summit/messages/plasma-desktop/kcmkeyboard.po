@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmkeyboard\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-06-04 07:14+0200\n"
+"POT-Creation-Date: 2023-09-30 12:02+0200\n"
 "PO-Revision-Date: 2023-08-06 04:51+0200\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Galician <proxecto@trasno.gal>\n"
@@ -39,7 +39,6 @@ msgstr "mvillarino@kde-espana.es"
 #. +> trunk6 stable5
 #: bindings.cpp:24
 #, kde-format
-#| msgid "KDE Keyboard Layout Switcher"
 msgid "Keyboard Layout Switcher"
 msgstr "Selector da disposición do teclado"
 
@@ -49,8 +48,15 @@ msgstr "Selector da disposición do teclado"
 msgid "Switch to Next Keyboard Layout"
 msgstr "Cambiar para a seguinte disposición do teclado"
 
+#. +> trunk6
+#: bindings.cpp:30
+#, fuzzy, kde-format
+#| msgid "Switch to Next Keyboard Layout"
+msgid "Switch to Last-Used Keyboard Layout"
+msgstr "Cambiar para a seguinte disposición do teclado"
+
 #. +> trunk6 stable5
-#: bindings.cpp:49
+#: bindings.cpp:60
 #, kde-format
 msgid "Switch keyboard layout to %1"
 msgstr "Cambiar a disposición do teclado a %1"
@@ -93,7 +99,7 @@ msgstr "Etiqueta:"
 #. i18n: ectx: property (text), widget (QPushButton, prevbutton)
 #. i18n: ectx: property (text), widget (QPushButton, previewButton)
 #. +> trunk6 stable5
-#: kcm_add_layout_dialog.ui:76 kcm_keyboard.ui:315
+#: kcm_add_layout_dialog.ui:76 kcm_keyboard.ui:338
 #, kde-format
 msgid "Preview"
 msgstr "Vista previa"
@@ -234,92 +240,107 @@ msgstr "Atallo alternativo:"
 msgid "This is a shortcut for switching layouts. It does not support modifier-only shortcuts and also may not work in some situations (e.g. if popup is active or from screensaver)."
 msgstr "Este é un atallo para trocar disposicións, polo que non permite usar só teclas modificadoras e tamén pode que non funcione nalgunhas situacións (por ex. se unha xanela emerxente esta activa ou no protector da pantalla)."
 
+#. i18n: ectx: property (text), widget (QLabel, label_6)
+#. +> trunk6
+#: kcm_keyboard.ui:246
+#, fuzzy, kde-format
+#| msgid "Alternative shortcut:"
+msgid "Last used shortcut:"
+msgstr "Atallo alternativo:"
+
+#. i18n: ectx: property (whatsThis), widget (KKeySequenceWidget, toggleLastUsedLayoutKeySequence)
+#. +> trunk6
+#: kcm_keyboard.ui:259
+#, kde-format
+msgid "This shortcut allows for fast switching between two layouts, by always switching to the last-used one."
+msgstr ""
+
 #. i18n: ectx: property (title), widget (QGroupBox, kcfg_configureLayouts)
 #. +> trunk6 stable5
-#: kcm_keyboard.ui:261
+#: kcm_keyboard.ui:284
 #, kde-format
 msgid "Configure layouts"
 msgstr "Configurar as disposicións"
 
 #. i18n: ectx: property (text), widget (QPushButton, addLayoutBtn)
 #. +> trunk6 stable5
-#: kcm_keyboard.ui:275
+#: kcm_keyboard.ui:298
 #, kde-format
 msgid "Add"
 msgstr "Engadir"
 
 #. i18n: ectx: property (text), widget (QPushButton, removeLayoutBtn)
 #. +> trunk6 stable5
-#: kcm_keyboard.ui:285
+#: kcm_keyboard.ui:308
 #, kde-format
 msgid "Remove"
 msgstr "Retirar"
 
 #. i18n: ectx: property (text), widget (QPushButton, moveUpBtn)
 #. +> trunk6 stable5
-#: kcm_keyboard.ui:295
+#: kcm_keyboard.ui:318
 #, kde-format
 msgid "Move Up"
 msgstr "Subir"
 
 #. i18n: ectx: property (text), widget (QPushButton, moveDownBtn)
 #. +> trunk6 stable5
-#: kcm_keyboard.ui:305
+#: kcm_keyboard.ui:328
 #, kde-format
 msgid "Move Down"
 msgstr "Baixar"
 
 #. i18n: ectx: property (text), widget (QCheckBox, layoutLoopingCheckBox)
 #. +> trunk6 stable5
-#: kcm_keyboard.ui:350
+#: kcm_keyboard.ui:373
 #, kde-format
 msgid "Spare layouts"
 msgstr "Disposicións de reserva."
 
 #. i18n: ectx: property (text), widget (QLabel, label_5)
 #. +> trunk6 stable5
-#: kcm_keyboard.ui:382
+#: kcm_keyboard.ui:405
 #, kde-format
 msgid "Main layout count:"
 msgstr "Cantidade de disposicións principais:"
 
 #. i18n: ectx: attribute (title), widget (QWidget, tabAdvanced)
 #. +> trunk6 stable5
-#: kcm_keyboard.ui:412
+#: kcm_keyboard.ui:435
 #, kde-format
 msgid "Advanced"
 msgstr "Avanzado"
 
 #. i18n: ectx: property (text), widget (QCheckBox, kcfg_resetOldXkbOptions)
 #. +> trunk6 stable5
-#: kcm_keyboard.ui:418
+#: kcm_keyboard.ui:441
 #, kde-format
 msgid "&Configure keyboard options"
 msgstr "Configurar as &opcións do teclado."
 
 #. +> trunk6 stable5
-#: kcm_keyboard_widget.cpp:204
+#: kcm_keyboard_widget.cpp:209
 #, kde-format
 msgctxt "unknown keyboard model vendor"
 msgid "Unknown"
 msgstr "Descoñecido"
 
 #. +> trunk6 stable5
-#: kcm_keyboard_widget.cpp:206
+#: kcm_keyboard_widget.cpp:211
 #, kde-format
 msgctxt "vendor | keyboard model"
 msgid "%1 | %2"
 msgstr "%1 | %2"
 
 #. +> trunk6 stable5
-#: kcm_keyboard_widget.cpp:633
+#: kcm_keyboard_widget.cpp:655
 #, kde-format
 msgctxt "no shortcuts defined"
 msgid "None"
 msgstr "Ningún"
 
 #. +> trunk6 stable5
-#: kcm_keyboard_widget.cpp:647
+#: kcm_keyboard_widget.cpp:669
 #, kde-format
 msgid "%1 shortcut"
 msgid_plural "%1 shortcuts"
@@ -492,7 +513,6 @@ msgstr "&Atraso:"
 #. +> trunk6 stable5
 #: tastenbrett/main.cpp:52
 #, kde-format
-#| msgid "Keyboard Repeat"
 msgctxt "app display name"
 msgid "Keyboard Preview"
 msgstr "Vista previa do teclado"
@@ -500,8 +520,6 @@ msgstr "Vista previa do teclado"
 #. +> trunk6 stable5
 #: tastenbrett/main.cpp:54
 #, kde-format
-#| msgctxt "tooltip title"
-#| msgid "Keyboard Layout"
 msgctxt "app description"
 msgid "Keyboard layout visualization"
 msgstr "Visualización da disposición do teclado"
@@ -511,11 +529,7 @@ msgstr "Visualización da disposición do teclado"
 #, kde-format
 msgctxt "@label"
 msgid "The keyboard geometry failed to load. This often indicates that the selected model does not support a specific layout or layout variant. This problem will likely also present when you try to use this combination of model, layout and variant."
-msgstr ""
-"Non foi posíbel cargar a xeometría do teclado. Isto adoita indicar que o "
-"modelo seleccionado non é compatíbel cunha disposición ou cunha variante de "
-"disposición concretas. O problema ocorrerá tamén probabelmente ao intentar "
-"usar esta combinación de modelo, disposición e variante."
+msgstr "Non foi posíbel cargar a xeometría do teclado. Isto adoita indicar que o modelo seleccionado non é compatíbel cunha disposición ou cunha variante de disposición concretas. O problema ocorrerá tamén probabelmente ao intentar usar esta combinación de modelo, disposición e variante."
 
 #. +> stable5
 #: kcm_keyboard.cpp:32
@@ -536,8 +550,8 @@ msgid ""
 "<h1>Keyboard</h1>"
 " This control module can be used to configure keyboard parameters and layouts."
 msgstr ""
-"<h1>Teclado</h1> Este módulo de control pode usarse para configurar os "
-"parámetros do teclado e as disposicións."
+"<h1>Teclado</h1>"
+" Este módulo de control pode usarse para configurar os parámetros do teclado e as disposicións."
 
 #, kde-format
 #~ msgid "KDE Keyboard Layout Switcher"
