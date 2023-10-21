@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kleopatra\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-18 09:04+0200\n"
+"POT-Creation-Date: 2023-10-20 13:18+0200\n"
 "PO-Revision-Date: 2020-01-12 11:14+0100\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Galician <proxecto@trasno.gal>\n"
@@ -1394,6 +1394,26 @@ msgstr ""
 msgid "Encrypt Clipboard Error"
 msgstr "Cifrar o erro de portapapeis"
 
+#. +> trunk5
+#: src/commands/exportcertificatecommand.cpp:182
+#: src/commands/exportopenpgpcertstoservercommand.cpp:68
+#, kde-kuit-format
+msgctxt "@info"
+msgid ""
+"<para>You haven't certified all valid user IDs of this certificate with an exportable certification. People relying on your certifications may not be able to verify the certificate.</para>"
+"<para>Do you want to continue the export?</para>"
+msgstr ""
+
+#. +> trunk5
+#: src/commands/exportcertificatecommand.cpp:196
+#: src/commands/exportopenpgpcertstoservercommand.cpp:82
+#, kde-kuit-format
+msgctxt "@info"
+msgid ""
+"<para>You haven't certified all valid user IDs of the certificates listed below with exportable certifications. People relying on your certifications may not be able to verify the certificates.</para>"
+"<para>Do you want to continue the export?</para>"
+msgstr ""
+
 #. +> trunk6 trunk5 stable5
 #: src/commands/exportcertificatecommand.cpp:216
 #, fuzzy, kde-format
@@ -1408,6 +1428,28 @@ msgstr "certificado"
 #| msgid "Export Certificates"
 msgctxt "1 is protocol"
 msgid "Export %1 Certificates"
+msgstr "Exportar certificados"
+
+#. +> trunk5
+#: src/commands/exportcertificatecommand.cpp:187
+#: src/commands/exportopenpgpcertstoservercommand.cpp:73
+#: src/commands/exportopenpgpcertstoservercommand.cpp:111
+#: src/commands/exportopenpgpcertstoservercommand.cpp:129
+#, fuzzy, kde-format
+#| msgid "Export Certificates"
+msgctxt "@action:button"
+msgid "Export Certificate"
+msgid_plural "Export Certificates"
+msgstr[0] "Exportar certificados"
+msgstr[1] "Exportar certificados"
+
+#. +> trunk5
+#: src/commands/exportcertificatecommand.cpp:202
+#: src/commands/exportopenpgpcertstoservercommand.cpp:88
+#, fuzzy, kde-format
+#| msgid "Export Certificates"
+msgctxt "@action:button"
+msgid "Export Certificates"
 msgstr "Exportar certificados"
 
 #. +> trunk6 trunk5 stable5
@@ -1436,8 +1478,20 @@ msgctxt "@title:window"
 msgid "Export Error"
 msgstr "Erro de importación de CRL"
 
+#. +> trunk5
+#: src/commands/exportcertificatecommand.cpp:186
+#: src/commands/exportcertificatecommand.cpp:201
+#: src/commands/exportopenpgpcertstoservercommand.cpp:72
+#: src/commands/exportopenpgpcertstoservercommand.cpp:87
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "OpenPGP Certificate Export"
+msgctxt "@title:window"
+msgid "Confirm Certificate Export"
+msgstr "Exportación de certificados OpenPGP"
+
 #. +> trunk5 stable5
-#: src/commands/exportcertificatecommand.cpp:228
+#: src/commands/exportcertificatecommand.cpp:277
 #, fuzzy, kde-format
 #| msgid "Import CRL Error"
 msgid "Export Error"
@@ -1503,11 +1557,11 @@ msgid "Certificate Groups (*%1)"
 msgstr "Envorcado do certificado"
 
 #. +> trunk6 trunk5 stable5
-#: src/commands/exportgroupscommand.cpp:159
-#: src/commands/exportgroupscommand.cpp:184
-#: src/commands/exportgroupscommand.cpp:231
-#: src/commands/exportgroupscommand.cpp:238
-#: src/commands/exportgroupscommand.cpp:249
+#: src/commands/exportgroupscommand.cpp:165
+#: src/commands/exportgroupscommand.cpp:230
+#: src/commands/exportgroupscommand.cpp:277
+#: src/commands/exportgroupscommand.cpp:284
+#: src/commands/exportgroupscommand.cpp:295
 #: src/commands/exportsecretsubkeycommand.cpp:235
 #: src/commands/exportsecretsubkeycommand.cpp:242
 #: src/commands/exportsecretsubkeycommand.cpp:254
@@ -1519,42 +1573,104 @@ msgid "Export Failed"
 msgstr "Fallou a exportación do certificado"
 
 #. +> trunk6 trunk5 stable5
-#: src/commands/exportgroupscommand.cpp:159
+#: src/commands/exportgroupscommand.cpp:165
 #, fuzzy, kde-kuit-format
 #| msgid "Failed to overwrite <filename>%1</filename>."
 msgid "Cannot overwrite existing <filename>%1</filename>."
 msgstr "Non foi posíbel sobrescribir <filename>%1</filename>."
 
+#. +> trunk6
+#: src/commands/exportgroupscommand.cpp:202
+#, kde-kuit-format
+msgctxt "@info"
+msgid ""
+"<para>You haven't certified all OpenPGP certificates in this group.</para>"
+"<para>Do you want to continue the export?</para>"
+msgstr ""
+
+#. +> trunk6 trunk5
+#: src/commands/exportgroupscommand.cpp:204
+#: src/commands/exportgroupscommand.cpp:216
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "Configure"
+msgctxt "@title:window"
+msgid "Confirm Group Export"
+msgstr "Configurar"
+
+#. +> trunk6 trunk5
+#: src/commands/exportgroupscommand.cpp:205
+#, fuzzy, kde-format
+#| msgid "Import CRL Error"
+msgctxt "@action:button"
+msgid "Export Group"
+msgstr "Erro de importación de CRL"
+
+#. +> trunk6
+#: src/commands/exportgroupscommand.cpp:213
+#, kde-kuit-format
+msgctxt "@info"
+msgid ""
+"<para>You haven't certified all OpenPGP certificates in the groups listed below.</para>"
+"<para>Do you want to continue the export?</para>"
+msgstr ""
+
+#. +> trunk5
+#: src/commands/exportgroupscommand.cpp:198
+#, kde-kuit-format
+msgctxt "@info"
+msgid ""
+"<para>You haven't certified all OpenPGP certificates in this group with an exportable certification. People relying on your certifications may not be able to verify the certificates.</para>"
+"<para>Do you want to continue the export?</para>"
+msgstr ""
+
+#. +> trunk5
+#: src/commands/exportgroupscommand.cpp:212
+#, kde-kuit-format
+msgctxt "@info"
+msgid ""
+"<para>You haven't certified all OpenPGP certificates in the groups listed below with exportable certifications. People relying on your certifications may not be able to verify the certificates.</para>"
+"<para>Do you want to continue the export?</para>"
+msgstr ""
+
+#. +> trunk6 trunk5
+#: src/commands/exportgroupscommand.cpp:217
+#, fuzzy, kde-format
+#| msgid "Import CRL Error"
+msgctxt "@action:button"
+msgid "Export Groups"
+msgstr "Erro de importación de CRL"
+
 #. +> trunk6 trunk5 stable5
-#: src/commands/exportgroupscommand.cpp:184
+#: src/commands/exportgroupscommand.cpp:230
 #, fuzzy, kde-kuit-format
 #| msgid "Failed to delete <filename>%1</filename>."
 msgid "Writing groups to file <filename>%1</filename> failed."
 msgstr "Non foi posíbel eliminar <filename>%1</filename>."
 
 #. +> trunk6 trunk5 stable5
-#: src/commands/exportgroupscommand.cpp:213
+#: src/commands/exportgroupscommand.cpp:259
 #, fuzzy, kde-format
 #| msgid "Exporting certificates..."
 msgid "Exporting certificate groups..."
 msgstr "Estanse a exportar os certificados…"
 
 #. +> trunk6 trunk5 stable5
-#: src/commands/exportgroupscommand.cpp:231
+#: src/commands/exportgroupscommand.cpp:277
 #, fuzzy, kde-kuit-format
 #| msgid "Cannot open <filename>%1</filename> for reading."
 msgid "Cannot open file <filename>%1</filename> for writing."
 msgstr "Non é posíbel abrir <filename>%1</filename> para lectura."
 
 #. +> trunk6 trunk5 stable5
-#: src/commands/exportgroupscommand.cpp:238
+#: src/commands/exportgroupscommand.cpp:284
 #, fuzzy, kde-kuit-format
 #| msgid "Failed to delete <filename>%1</filename>."
 msgid "Writing certificates to file <filename>%1</filename> failed."
 msgstr "Non foi posíbel eliminar <filename>%1</filename>."
 
 #. +> trunk6 trunk5 stable5
-#: src/commands/exportgroupscommand.cpp:246
+#: src/commands/exportgroupscommand.cpp:292
 #, fuzzy, kde-kuit-format
 #| msgctxt "@info"
 #| msgid "<para>An error occurred while loading the certifications: <message>%1</message></para>"
@@ -3207,7 +3323,7 @@ msgstr "Non hai servidores de directorio configurados"
 
 #. +> trunk6 trunk5 stable5
 #: src/commands/newcertificatesigningrequestcommand.cpp:105
-#: src/kleopatraapplication.cpp:475
+#: src/kleopatraapplication.cpp:479
 #, fuzzy, kde-format
 #| msgid "Create a new key pair or certificate signing request"
 msgid "You are not allowed to create S/MIME certificate signing requests."
@@ -9960,55 +10076,55 @@ msgid "String or Fingerprint for query and search"
 msgstr ""
 
 #. +> trunk6 trunk5 stable5
-#: src/kleopatraapplication.cpp:371
+#: src/kleopatraapplication.cpp:375
 #, kde-format
 msgid "Failed to execute command"
 msgstr "Non foi posíbel executar a orde"
 
 #. +> trunk6 trunk5 stable5
-#: src/kleopatraapplication.cpp:413
+#: src/kleopatraapplication.cpp:417
 #, kde-format
 msgid "Ambiguous protocol: --openpgp and --cms"
 msgstr "Protocolo ambiguo: «--openpgp» e «--cms»."
 
 #. +> trunk6 trunk5 stable5
-#: src/kleopatraapplication.cpp:447
+#: src/kleopatraapplication.cpp:451
 #, kde-format
 msgid "No search string specified for --search"
 msgstr "Non indicou in texto de busca para «--search»."
 
 #. +> trunk6 trunk5 stable5
-#: src/kleopatraapplication.cpp:458
+#: src/kleopatraapplication.cpp:462
 #, kde-format
 msgid "No fingerprint argument specified for --query"
 msgstr "Non se indicou un argumento de pegada dixital para «--query»."
 
 #. +> trunk6 trunk5 stable5
-#: src/kleopatraapplication.cpp:519
+#: src/kleopatraapplication.cpp:523
 #, kde-format
 msgid "Ambiguous commands \"%1\" and \"%2\""
 msgstr "As ordes «%1» e «%2» son ambiguas."
 
 #. +> trunk6 trunk5 stable5
-#: src/kleopatraapplication.cpp:526
+#: src/kleopatraapplication.cpp:530
 #, kde-format
 msgid "No files specified for \"%1\" command"
 msgstr "Non se indicaron ficheiros para a orde «%1»."
 
 #. +> trunk6 trunk5 stable5
-#: src/kleopatraapplication.cpp:540
+#: src/kleopatraapplication.cpp:544
 #, kde-format
 msgid "Cannot read \"%1\""
 msgstr "Non é posíbel ler «%1»"
 
 #. +> trunk6 trunk5 stable5
-#: src/kleopatraapplication.cpp:819
+#: src/kleopatraapplication.cpp:823
 #, kde-format
 msgid "Opening an external link is administratively prohibited."
 msgstr ""
 
 #. +> trunk6 trunk5 stable5
-#: src/kleopatraapplication.cpp:819
+#: src/kleopatraapplication.cpp:823
 #, kde-format
 msgid "Prohibited"
 msgstr ""
