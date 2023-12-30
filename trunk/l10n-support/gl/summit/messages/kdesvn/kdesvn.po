@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-12-05 10:52+0100\n"
+"POT-Creation-Date: 2023-12-29 10:09+0100\n"
 "PO-Revision-Date: 2023-12-05 17:27+0100\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Proxecto Trasno (proxecto@trasno.gal)\n"
@@ -1832,7 +1832,7 @@ msgstr "Configurar un programa externo para resolver conflitos."
 #. i18n: ectx: property (whatsThis), widget (KLineEdit, kcfg_conflict_resolver)
 #. +> trunk5 stable5
 #: src/settings/diffmergesettings.ui:134
-#, no-c-format, kde-format
+#, kde-format, no-c-format
 msgid ""
 "<p>\n"
 "Enter how kdesvn should call the conflict resolver program. The form is\n"
@@ -1901,7 +1901,7 @@ msgstr "Configurar un programa externo para fusionar."
 #. i18n: ectx: property (whatsThis), widget (KLineEdit, kcfg_external_merge_program)
 #. +> trunk5 stable5
 #: src/settings/diffmergesettings.ui:166
-#, no-c-format, kde-format
+#, kde-format, no-c-format
 msgid ""
 "<p>\n"
 "Enter how kdesvn should call the external merge program. The form is\n"
@@ -1936,7 +1936,7 @@ msgstr ""
 #. i18n: ectx: property (whatsThis), widget (KLineEdit, kcfg_external_diff_display)
 #. +> trunk5 stable5
 #: src/settings/diffmergesettings.ui:191
-#, no-c-format, kde-format
+#, kde-format, no-c-format
 msgid ""
 "<p align=\"left\">\n"
 "Enter an external program in form\n"
@@ -2508,7 +2508,6 @@ msgstr "Amosar mensaxes de progreso na área de notificación de KDE"
 #. +> trunk5
 #: src/settings/kdesvn_part.kcfg:294
 #, kde-format
-#| msgid "This value holds for log dialog which kind of log is used, its internal only."
 msgid "This value holds for log dialog which kind of log is used, it is internal only."
 msgstr "Este valor contén o tipo de historial do diálogo do historial. Úsase só de maneira interna."
 
@@ -2653,7 +2652,15 @@ msgid "Start check for updates when open a working copy"
 msgstr "Comprobar se hai actualizacións ao abrir a copia de traballo."
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, kcfg_log_cache_on_open)
-#. +> trunk5 stable5
+#. +> trunk5
+#: src/settings/subversion_settings.ui:33
+#, fuzzy, kde-format
+#| msgid "Start refresh the log cache for repository when networking enabled"
+msgid "Start refreshing the log cache for repository when networking enabled"
+msgstr "Comezar a actualización da caché do historial do repositorio cando o uso da rede estea activado."
+
+#. i18n: ectx: property (toolTip), widget (QCheckBox, kcfg_log_cache_on_open)
+#. +> stable5
 #: src/settings/subversion_settings.ui:33
 #, kde-format
 msgid "Start refresh the log cache for repository when networking enabled"
@@ -2674,7 +2681,21 @@ msgid "When listing on working copies kdesvn may check for this property"
 msgstr "Ao xerar listas en copias de traballo, kdesvn pode comprobar esta propiedade."
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, kcfg_check_needslock)
-#. +> trunk5 stable5
+#. +> trunk5
+#: src/settings/subversion_settings.ui:46
+#, fuzzy, kde-format
+#| msgid ""
+#| "When listing on working copies kdesvn may check for <tt>svn:needs-lock</tt> property.<br>"
+#| "But due this listings/updating on folders containing lot of items may get slow. So you should only switch on if you have repositories containing lot of such entries."
+msgid ""
+"When listing on working copies kdesvn may check for <tt>svn:needs-lock</tt> property.<br>"
+"However, on folders containing lots of items this listing/updating may get slow. Therefore, you should only switch on if you have repositories containing many such entries."
+msgstr ""
+"Ao xerar listas en copias de traballo, kdesvn pode comprobar a propiedade <tt>svn:needs-lock</tt>.<br>"
+" Pero entón, aumentará o tempo necesario para xerar listas ou actualizar cartafoles que conteñan moitos elementos. Así que só debería activar esta opción se ten repositorios con moitas entradas afectadas."
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, kcfg_check_needslock)
+#. +> stable5
 #: src/settings/subversion_settings.ui:46
 #, kde-format
 msgid ""
@@ -2685,21 +2706,57 @@ msgstr ""
 " Pero entón, aumentará o tempo necesario para xerar listas ou actualizar cartafoles que conteñan moitos elementos. Así que só debería activar esta opción se ten repositorios con moitas entradas afectadas."
 
 #. i18n: ectx: property (text), widget (QCheckBox, kcfg_check_needslock)
-#. +> trunk5 stable5
+#. +> trunk5
+#: src/settings/subversion_settings.ui:49
+#, fuzzy, kde-format
+#| msgid "Check if items has \"svn:needs-lock\" property set"
+msgid "Check if items have \"svn:needs-lock\" property set"
+msgstr "Comprobar se os elementos teñen a propiedade «svn:needs-lock»."
+
+#. i18n: ectx: property (text), widget (QCheckBox, kcfg_check_needslock)
+#. +> stable5
 #: src/settings/subversion_settings.ui:49
 #, kde-format
 msgid "Check if items has \"svn:needs-lock\" property set"
 msgstr "Comprobar se os elementos teñen a propiedade «svn:needs-lock»."
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, kcfg_details_on_remote_listing)
-#. +> trunk5 stable5
+#. +> trunk5
+#: src/settings/subversion_settings.ui:56
+#, fuzzy, kde-format
+#| msgid "Whether getting details about items when making listing on repositories or not"
+msgid "Whether to retrieve details about items when making listing on repositories"
+msgstr "Se obter información sobre os elementos ao xerar listas nos repositorios ou non."
+
+#. i18n: ectx: property (toolTip), widget (QCheckBox, kcfg_details_on_remote_listing)
+#. +> stable5
 #: src/settings/subversion_settings.ui:56
 #, kde-format
 msgid "Whether getting details about items when making listing on repositories or not"
 msgstr "Se obter información sobre os elementos ao xerar listas nos repositorios ou non."
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, kcfg_details_on_remote_listing)
-#. +> trunk5 stable5
+#. +> trunk5
+#: src/settings/subversion_settings.ui:61
+#, fuzzy, kde-format
+#| msgid ""
+#| "<p align=\"left\">When checked, kdesvn get more detailed info about file items when making a listing to remote repositories. So you may see remote locks in overview.\n"
+#| "</p>"
+#| "\n"
+#| "<p align=\"left\"><i>Be careful: This may let listings REAL slow.</i></p>"
+msgid ""
+"<p align=\"left\">When checked, kdesvn fetches more detailed info about file items when making a listing to remote repositories so that you may see remote locks in overview.\n"
+"</p>"
+"\n"
+"<p align=\"left\"><i>Be careful: This may let listings become REAL slow.</i></p>"
+msgstr ""
+"<p align=\"left\">Marque esta opción para que kdesvn obteña máis información sobre elementos de ficheiros ao xerar listas nos repositorios remotos. Así que podería ver bloqueos remotos na vista xeral.\n"
+"</p>"
+"\n"
+"<p align=\"left\"><i>Teña coidado, isto podería facer que a xeración de listas sexa verdadeiramente lenta.</i></p>"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, kcfg_details_on_remote_listing)
+#. +> stable5
 #: src/settings/subversion_settings.ui:61
 #, kde-format
 msgid ""
@@ -2721,21 +2778,51 @@ msgid "Get file details while remote listing"
 msgstr "Obter información dos ficheiros ao xerar listas remotamente."
 
 #. i18n: ectx: property (text), widget (QCheckBox, kcfg_info_recursive)
-#. +> trunk5 stable5
+#. +> trunk5
+#: src/settings/subversion_settings.ui:74
+#, fuzzy, kde-format
+#| msgid "Get item information recursively"
+msgid "Get item info recursively"
+msgstr "Obter información dos elementos recursivamente"
+
+#. i18n: ectx: property (text), widget (QCheckBox, kcfg_info_recursive)
+#. +> stable5
 #: src/settings/subversion_settings.ui:74
 #, kde-format
 msgid "Gain item info recursive"
 msgstr "Obter información do elemento recursivamente."
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, kcfg_properties_on_remote_items)
-#. +> trunk5 stable5
+#. +> trunk5
+#: src/settings/subversion_settings.ui:84
+#, fuzzy, kde-format
+#| msgid "Should kdesvn retrieves properties on selected item in repositories"
+msgid "Should kdesvn retrieve properties on selected item in repositories"
+msgstr "Debería kdesvn obter propiedades do elemento seleccionado no repositorio."
+
+#. i18n: ectx: property (toolTip), widget (QCheckBox, kcfg_properties_on_remote_items)
+#. +> stable5
 #: src/settings/subversion_settings.ui:84
 #, kde-format
 msgid "Should kdesvn retrieves properties on selected item in repositories"
 msgstr "Debería kdesvn obter propiedades do elemento seleccionado no repositorio."
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, kcfg_properties_on_remote_items)
-#. +> trunk5 stable5
+#. +> trunk5
+#: src/settings/subversion_settings.ui:88
+#, fuzzy, kde-format
+#| msgid ""
+#| "When browsing kdesvn may try displaying properties below itemlist from a selected item. \n"
+#| "On networked repositories (e.g., not opened via file:// protocol) this may get real slow. So if you have slow network connections or when browsing hangs often you should deactivate it."
+msgid ""
+"When browsing, kdesvn may try displaying properties below itemlist from a selected item. \n"
+"On networked repositories (e.g., not opened via file:// protocol) this may get very slow. Thus, if you have slow network connections or when browsing hangs often you should deactivate it."
+msgstr ""
+"Ao navegar, kdesvn podería intentar amosar propiedades baixo a lista de elementos para o elemento seleccionado.\n"
+"Nos repositorios remotos (por exemplo, os non abertos mediante o protocolo «file://») isto podería ser verdadeiramente lento. Debería desactivar esta opción se non ten unha boa conexión de rede ou se o programa queda parado a miúdo mentres navega."
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, kcfg_properties_on_remote_items)
+#. +> stable5
 #: src/settings/subversion_settings.ui:88
 #, kde-format
 msgid ""
@@ -2753,7 +2840,15 @@ msgid "Always get properties on networked repositories"
 msgstr "Obter sempre as propiedades nos repositorios remotos."
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, kcfg_store_passwords)
-#. +> trunk5 stable5
+#. +> trunk5
+#: src/settings/subversion_settings.ui:101
+#, fuzzy, kde-format
+#| msgid "Should Subversion store passwords in default"
+msgid "Should Subversion store passwords by default"
+msgstr "Debería Subversion almacenar os contrasinais de maneira predeterminada?"
+
+#. i18n: ectx: property (toolTip), widget (QCheckBox, kcfg_store_passwords)
+#. +> stable5
 #: src/settings/subversion_settings.ui:101
 #, kde-format
 msgid "Should Subversion store passwords in default"
@@ -2826,7 +2921,15 @@ msgid "List items next commit will send or not"
 msgstr "Listar os elementos que formarán ou non parte da seguinte remisión"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, kcfg_commit_hide_new)
-#. +> trunk5 stable5
+#. +> trunk5
+#: src/settings/subversion_settings.ui:184
+#, fuzzy, kde-format
+#| msgid "Should unversioned items displayed in commit dialog or not."
+msgid "Should unversioned items be displayed in commit dialog or not."
+msgstr "Se os elementos alleos ao repositorio deberían amosarse no diálogo de remisión ou non."
+
+#. i18n: ectx: property (toolTip), widget (QCheckBox, kcfg_commit_hide_new)
+#. +> stable5
 #: src/settings/subversion_settings.ui:184
 #, kde-format
 msgid "Should unversioned items displayed in commit dialog or not."
@@ -2853,7 +2956,15 @@ msgstr ""
 "</body></html>"
 
 #. i18n: ectx: property (text), widget (QCheckBox, kcfg_update_add_as_modification)
-#. +> trunk5 stable5
+#. +> trunk5
+#: src/settings/subversion_settings.ui:200
+#, fuzzy, kde-format
+#| msgid "Update modifies instead of conflicts"
+msgid "Update modifies instead of creating conflicts"
+msgstr "Actualizar xera modificacións en vez de conflitos."
+
+#. i18n: ectx: property (text), widget (QCheckBox, kcfg_update_add_as_modification)
+#. +> stable5
 #: src/settings/subversion_settings.ui:200
 #, kde-format
 msgid "Update modifies instead of conflicts"
