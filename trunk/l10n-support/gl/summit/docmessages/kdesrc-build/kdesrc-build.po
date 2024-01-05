@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-12-29 10:11+0100\n"
+"POT-Creation-Date: 2024-01-05 09:58+0100\n"
 "PO-Revision-Date: 2018-04-30 00:23+0100\n"
 "Last-Translator: Adrian Chaves <adrian@chaves.io>\n"
 "Language-Team: Galician <kde-i18n-doc@kde.org>\n"
@@ -606,7 +606,7 @@ msgstr "De feito, a configuración predeterminada debería ser axeitada para com
 #: index.docbook:449
 #, fuzzy, no-c-format
 #| msgid "<link linkend=\"conf-kdedir\">kdedir</link>, which changes the destination directory that &kde; is installed to. This defaults to <filename class=\"directory\">~/kde</filename>, which is a single-user installation."
-msgid "<link linkend=\"conf-kdedir\">kdedir</link>, which changes the destination directory that your &kde; software is installed to. This defaults to <filename class=\"directory\">~/kde/usr</filename>, which is a single-user installation."
+msgid "<link linkend=\"conf-install-dir\">install-dir</link>, which changes the destination directory that your &kde; software is installed to. This defaults to <filename class=\"directory\">~/kde/usr</filename>, which is a single-user installation."
 msgstr "<link linkend=\"conf-kdedir\">kdedir</link>. Permite cambiar o directorio no que se instalará &kde;. O seu valor predeterminado é <filename class=\"directory\">~/kde</filename>, que consiste nunha instalación para un único usuario."
 
 #. Tag: para
@@ -1929,8 +1929,9 @@ msgstr "Pode forzarse a reconstrución completa usando o parámetro <option>--re
 #. Tag: para
 #. +> trunk5
 #: index.docbook:1221
-#, no-c-format
-msgid "You can specify various environment values to be used during the build, including <envar>KDEDIR</envar>, <envar>QTDIR</envar>, <envar>DO_NOT_COMPILE</envar>, and <envar>CXXFLAGS</envar>."
+#, fuzzy, no-c-format
+#| msgid "You can specify various environment values to be used during the build, including <envar>KDEDIR</envar>, <envar>QTDIR</envar>, <envar>DO_NOT_COMPILE</envar>, and <envar>CXXFLAGS</envar>."
+msgid "You can specify various environment values to be used during the build, including <envar>QTDIR</envar>, <envar>DO_NOT_COMPILE</envar>, and <envar>CXXFLAGS</envar>."
 msgstr "Poden indicarse o valor de varias variábeis para o ambiente a usar durante a construción, incluíndo <envar>KDEDIR</envar>, <envar>QTDIR</envar>, <envar>DO_NOT_COMPILE</envar> (non compilar), e <envar>CXXFLAGS</envar>."
 
 #. Tag: para
@@ -2367,7 +2368,7 @@ msgstr ""
 #. +> trunk5
 #: index.docbook:1496
 #, no-c-format
-msgid "<link linkend=\"conf-kdedir\">kdedir</link>, to set the directory to install &kde; to."
+msgid "<link linkend=\"conf-install-dir\">install-dir</link>, to set the directory to install &kde; to."
 msgstr ""
 
 #. Tag: para
@@ -2943,7 +2944,7 @@ msgstr ""
 #. +> trunk5
 #: index.docbook:1818
 #, no-c-format
-msgid "Set this option to set the environment variable PATH while building. You cannot override this setting in a module option. The default value is the $<envar>PATH</envar> that is set when the script starts. This environment variable should include the colon-separated paths of your development toolchain. The paths <filename class=\"directory\">$<envar>KDEDIR</envar>/bin</filename> and <filename class=\"directory\">$<envar>QTDIR</envar>/bin</filename> are automatically added. You may use the tilde (~) for any paths you add using this option."
+msgid "Set this option to set the environment variable PATH while building. You cannot override this setting in a module option. The default value is the $<envar>PATH</envar> that is set when the script starts. This environment variable should include the colon-separated paths of your development toolchain. The paths <filename class=\"directory\">install-dir/bin</filename> and <filename class=\"directory\">$<envar>QTDIR</envar>/bin</filename> are automatically added. You may use the tilde (~) for any paths you add using this option."
 msgstr ""
 
 #. Tag: entry
@@ -3575,7 +3576,7 @@ msgstr ""
 #. +> trunk5
 #: index.docbook:2286
 #, no-c-format
-msgid "kdedir"
+msgid "install-dir"
 msgstr ""
 
 #. Tag: filename
@@ -3610,7 +3611,7 @@ msgstr ""
 #. +> trunk5
 #: index.docbook:2307
 #, no-c-format
-msgid "Set this option to change the default name of the installed library directory inside $<envar>KDEDIR</envar> and $<envar>QTDIR</envar>. On many systems this is either \"lib\" or \"lib64\". Auto-detection is attempted to set the correct name by default, but if the guess is wrong then it can be changed with this setting."
+msgid "Set this option to change the default name of the installed library directory inside ${install-dir} and $<envar>QTDIR</envar>. On many systems this is either \"lib\" or \"lib64\". Auto-detection is attempted to set the correct name by default, but if the guess is wrong then it can be changed with this setting."
 msgstr ""
 
 #. Tag: entry
@@ -3624,7 +3625,7 @@ msgstr ""
 #. +> trunk5
 #: index.docbook:2320
 #, no-c-format
-msgid "Set this option to set the environment variable <envar>LD_LIBRARY_PATH</envar> while building. You cannot override this setting in a module option. The default value is blank, but the paths <filename class=\"directory\">$<envar>KDEDIR</envar>/$<envar>LIBNAME</envar></filename> and <filename class=\"directory\">$<envar>QTDIR</envar>/$<envar>LIBNAME</envar></filename> are automatically added. You may use the tilde (~) for any paths you add using this option."
+msgid "Set this option to set the environment variable <envar>LD_LIBRARY_PATH</envar> while building. You cannot override this setting in a module option. The default value is blank, but the paths <filename class=\"directory\">${install-dir}/$<envar>LIBNAME</envar></filename> and <filename class=\"directory\">$<envar>QTDIR</envar>/$<envar>LIBNAME</envar></filename> are automatically added. You may use the tilde (~) for any paths you add using this option."
 msgstr ""
 
 #. Tag: entry
@@ -3881,7 +3882,7 @@ msgstr ""
 #. +> trunk5
 #: index.docbook:2502
 #, no-c-format
-msgid "This option controls where to install the module (normally the <option><link linkend=\"conf-kdedir\">kdedir</link></option> setting is used). Using this option allows you to install a module to a different directory than where the KDE Platform libraries are installed, such as if you were using &kdesrc-build; only to build applications."
+msgid "This option controls where to install the module (normally the <option><link linkend=\"conf-install-dir\">install-dir</link></option> setting is used). Using this option allows you to install a module to a different directory than where the KDE Platform libraries are installed, such as if you were using &kdesrc-build; only to build applications."
 msgstr ""
 
 #. Tag: para
@@ -5513,7 +5514,7 @@ msgstr ""
 #. +> trunk5
 #: index.docbook:3546
 #, no-c-format
-msgid "This will not work to start a shell with the &kdesrc-build; environment in most cases however, since interactive shells typically reset at least part of the environment variables (such as <envar>PATH</envar> and <envar>KDEDIRS</envar>) in the startup sequence."
+msgid "This will not work to start a shell with the &kdesrc-build; environment in most cases however, since interactive shells typically reset at least part of the environment variables (such as <envar>PATH</envar> and ${install-dir}) in the startup sequence."
 msgstr ""
 
 #. Tag: para
@@ -5837,138 +5838,131 @@ msgstr ""
 #. +> trunk5
 #: index.docbook:3754
 #, no-c-format
-msgid "The setting for &kdedir; is automatically propagated to the <envar>KDEDIR</envar> environment variable while building. (<envar>KDEDIRS</envar> is not affected)."
-msgstr ""
-
-#. Tag: para
-#. +> trunk5
-#: index.docbook:3759
-#, no-c-format
 msgid "The setting for &qtdir; is automatically propagated to the <envar>QTDIR</envar> environment variable while building."
 msgstr ""
 
 #. Tag: title
 #. +> trunk5
-#: index.docbook:3769
+#: index.docbook:3764
 #, no-c-format
 msgid "Changing &kdesrc-build;'s build priority"
 msgstr ""
 
 #. Tag: para
 #. +> trunk5
-#: index.docbook:3770
+#: index.docbook:3765
 #, no-c-format
 msgid "Programs can run with different priority levels on Operating Systems, including &Linux; and &BSD;. This allows the system to allocate time for the different programs in accordance with how important they are."
 msgstr ""
 
 #. Tag: para
 #. +> trunk5
-#: index.docbook:3775
+#: index.docbook:3770
 #, no-c-format
 msgid "&kdesrc-build; will normally allocate itself a low priority so that the rest of the programs on your system are unaffected and can run normally. Using this technique, &kdesrc-build; will use extra CPU when it is available."
 msgstr ""
 
 #. Tag: para
 #. +> trunk5
-#: index.docbook:3780
+#: index.docbook:3775
 #, no-c-format
 msgid "&kdesrc-build; will still maintain a high enough priority level so that it runs before routine batch processes and before CPU donation programs such as <ulink url=\"http://setiathome.ssl.berkeley.edu/\">Seti@Home</ulink>."
 msgstr ""
 
 #. Tag: para
 #. +> trunk5
-#: index.docbook:3785
+#: index.docbook:3780
 #, no-c-format
 msgid "To alter &kdesrc-build; so that it uses a higher (or lower) priority level permanently, then you need to adjust the &niceness; setting in the <link linkend=\"configure-data\">configuration file</link>. The &niceness; setting controls how <quote>nice</quote> &kdesrc-build; is to other programs. In other words, having a higher &niceness; gives &kdesrc-build; a lower priority. So to give &kdesrc-build; a higher priority, reduce the &niceness; (and vice versa). The &niceness; can go from 0 (not nice at all, highest priority) to 20 (super nice, lowest priority)."
 msgstr ""
 
 #. Tag: para
 #. +> trunk5
-#: index.docbook:3794
+#: index.docbook:3789
 #, no-c-format
 msgid "You can also temporarily change the priority for &kdesrc-build; by using the &cmd-nice; <link linkend=\"cmdline\">command line option</link>. The value to the option is used exactly the same as for &niceness;."
 msgstr ""
 
 #. Tag: para
 #. +> trunk5
-#: index.docbook:3798
+#: index.docbook:3793
 #, no-c-format
 msgid "It is possible for some programs run by the super user to have a negative nice value, with a correspondingly even higher priority for such programs. Setting a negative (or even 0) &niceness; for &kdesrc-build; is not a great idea, as it will not help run time significantly, but will make your computer seem very sluggish should you still need to use it."
 msgstr ""
 
 #. Tag: para
 #. +> trunk5
-#: index.docbook:3806
+#: index.docbook:3801
 #, no-c-format
 msgid "To run &kdesrc-build; with a niceness of 15 (a lower priority than normal):"
 msgstr ""
 
 #. Tag: screen
 #. +> trunk5
-#: index.docbook:3809
+#: index.docbook:3804
 #, no-c-format
 msgid "<prompt>&percnt;</prompt> <userinput><command>kdesrc-build</command> <option>--nice=<replaceable>15</replaceable></option></userinput>"
 msgstr ""
 
 #. Tag: para
 #. +> trunk5
-#: index.docbook:3811
+#: index.docbook:3806
 #, no-c-format
 msgid "Or, you can edit the <link linkend=\"configure-data\">configuration file</link> to make the change permanent:"
 msgstr ""
 
 #. Tag: screen
 #. +> trunk5
-#: index.docbook:3813
+#: index.docbook:3808
 #, no-c-format
 msgid "&niceness; <replaceable>15</replaceable>"
 msgstr ""
 
 #. Tag: para
 #. +> trunk5
-#: index.docbook:3817
+#: index.docbook:3812
 #, no-c-format
 msgid "The <link linkend=\"conf-niceness\">niceness</link> option only affects the usage of the computer's processor(s). One other major affect on computer performance relates to how much data input or output (<acronym>I/O</acronym>) a program uses. In order to control how much <acronym>I/O</acronym> a program can use, modern &Linux; operating systems support a similar tool called <application>ionice</application>. &kdesrc-build; supports <application>ionice</application>, (but only to enable or disable it completely) using the <link linkend=\"conf-use-idle-io-priority\">use-idle-io-priority</link> option, since &kdesrc-build; version 1.12."
 msgstr ""
 
 #. Tag: title
 #. +> trunk5
-#: index.docbook:3833
+#: index.docbook:3828
 #, no-c-format
 msgid "Installation as the superuser"
 msgstr ""
 
 #. Tag: para
 #. +> trunk5
-#: index.docbook:3834
+#: index.docbook:3829
 #, no-c-format
 msgid "You may wish to have &kdesrc-build; run the installation with super user privileges. This may be for the unrecommended system-wide installation. This is also useful when using a recommended single user &kde; build, however. This is because some modules (especially kdebase) install programs that will briefly need elevated permissions when run. They are not able to achieve these permission levels unless they are installed with the elevated permissions."
 msgstr ""
 
 #. Tag: para
 #. +> trunk5
-#: index.docbook:3842
+#: index.docbook:3837
 #, no-c-format
 msgid "You could simply run &kdesrc-build; as the super user directly, but this is not recommended, since the program has not been audited for that kind of use. Although it should be safe to run the program in this fashion, it is better to avoid running as the super user when possible."
 msgstr ""
 
 #. Tag: para
 #. +> trunk5
-#: index.docbook:3847
+#: index.docbook:3842
 #, no-c-format
 msgid "To take care of this, &kdesrc-build; provides the &make-install-prefix; option. You can use this option to specify a command to use to perform the installation as another user. The recommended way to use this command is with the &sudo; program, which will run the install command as the super user."
 msgstr ""
 
 #. Tag: para
 #. +> trunk5
-#: index.docbook:3854
+#: index.docbook:3849
 #, no-c-format
 msgid "For example, to install all modules using &sudo;, you could do something like this:"
 msgstr ""
 
 #. Tag: screen
 #. +> trunk5
-#: index.docbook:3857
+#: index.docbook:3852
 #, no-c-format
 msgid ""
 "global\n"
@@ -5979,14 +5973,14 @@ msgstr ""
 
 #. Tag: para
 #. +> trunk5
-#: index.docbook:3859
+#: index.docbook:3854
 #, no-c-format
 msgid "To use &make-install-prefix; for only a single module, this would work:"
 msgstr ""
 
 #. Tag: screen
 #. +> trunk5
-#: index.docbook:3862
+#: index.docbook:3857
 #, no-c-format
 msgid ""
 "module <replaceable>some-module-name</replaceable>\n"
@@ -5996,77 +5990,77 @@ msgstr ""
 
 #. Tag: title
 #. +> trunk5
-#: index.docbook:3868
+#: index.docbook:3863
 #, no-c-format
 msgid "Showing the progress of a module build"
 msgstr ""
 
 #. Tag: para
 #. +> trunk5
-#: index.docbook:3869
+#: index.docbook:3864
 #, no-c-format
 msgid "This feature is always available, and is automatically enabled when possible. What this does is display an estimated build progress while building a module; that way you know about how much longer it will take to build a module."
 msgstr ""
 
 #. Tag: title
 #. +> trunk5
-#: index.docbook:3880
+#: index.docbook:3875
 #, no-c-format
 msgid "Advanced features"
 msgstr ""
 
 #. Tag: title
 #. +> trunk5
-#: index.docbook:3883
+#: index.docbook:3878
 #, no-c-format
 msgid "Partially building a module"
 msgstr ""
 
 #. Tag: para
 #. +> trunk5
-#: index.docbook:3884
+#: index.docbook:3879
 #, no-c-format
 msgid "It is possible to build only pieces from a single &kde; module. For example, you may want to compile only one program from a module. &kdesrc-build; has features to make this easy. There are several complementing ways to do this."
 msgstr ""
 
 #. Tag: title
 #. +> trunk5
-#: index.docbook:3891
+#: index.docbook:3886
 #, no-c-format
 msgid "Removing directories from a build"
 msgstr ""
 
 #. Tag: para
 #. +> trunk5
-#: index.docbook:3892
+#: index.docbook:3887
 #, no-c-format
 msgid "It is possible to download an entire repository but have the build system leave out a few directories when it does the build. This requires that the module uses &cmake; and that the module's build system allows the directory to remove to be optional."
 msgstr ""
 
 #. Tag: para
 #. +> trunk5
-#: index.docbook:3899
+#: index.docbook:3894
 #, no-c-format
 msgid "This is controlled with the &do-not-compile; option."
 msgstr ""
 
 #. Tag: para
 #. +> trunk5
-#: index.docbook:3901
+#: index.docbook:3896
 #, no-c-format
 msgid "This option requires at least that the build system for the module is reconfigured after changing it. This is done using the <userinput><command>kdesrc-build</command> <option>&cmd-reconfigure;</option> <option><replaceable>module</replaceable></option></userinput> command."
 msgstr ""
 
 #. Tag: para
 #. +> trunk5
-#: index.docbook:3910
+#: index.docbook:3905
 #, no-c-format
 msgid "To remove the <filename class=\"directory\">python</filename> directory from the kdebindings build process:"
 msgstr ""
 
 #. Tag: screen
 #. +> trunk5
-#: index.docbook:3913
+#: index.docbook:3908
 #, no-c-format
 msgid ""
 "module <replaceable>kdebindings</replaceable>\n"
@@ -6076,77 +6070,77 @@ msgstr ""
 
 #. Tag: para
 #. +> trunk5
-#: index.docbook:3917
+#: index.docbook:3912
 #, no-c-format
 msgid "This function depends on some standard conventions used in most &kde; modules. Therefore it may not work for all programs."
 msgstr ""
 
 #. Tag: title
 #. +> trunk5
-#: index.docbook:3925
+#: index.docbook:3920
 #, no-c-format
 msgid "Branching and tagging support for &kdesrc-build;"
 msgstr ""
 
 #. Tag: title
 #. +> trunk5
-#: index.docbook:3928
+#: index.docbook:3923
 #, no-c-format
 msgid "What are branches and tags?"
 msgstr ""
 
 #. Tag: para
 #. +> trunk5
-#: index.docbook:3930
+#: index.docbook:3925
 #, no-c-format
 msgid "&git; supports managing the history of the &kde; source code. &kde; uses this support to create branches for development, and to tag the repository every so often with a new version release."
 msgstr ""
 
 #. Tag: para
 #. +> trunk5
-#: index.docbook:3935
+#: index.docbook:3930
 #, no-c-format
 msgid "For example, the &kmail; developers may be working on a new feature in a different branch in order to avoid breaking the version being used by most developers. This branch has development ongoing inside it, even while the main branch (called master) may have development going on inside of it."
 msgstr ""
 
 #. Tag: para
 #. +> trunk5
-#: index.docbook:3941
+#: index.docbook:3936
 #, no-c-format
 msgid "A tag, on the other hand, is a specified point in the source code repository at a position in time. This is used by the &kde; administration team to mark off a version of code suitable for release and still allow the developers to work on the code."
 msgstr ""
 
 #. Tag: title
 #. +> trunk5
-#: index.docbook:3950
+#: index.docbook:3945
 #, no-c-format
 msgid "How to use branches and tags"
 msgstr ""
 
 #. Tag: para
 #. +> trunk5
-#: index.docbook:3952
+#: index.docbook:3947
 #, no-c-format
 msgid "Support for branches and tags is handled by a set of options, which range from a generic request for a version, to a specific &url; to download for advanced users."
 msgstr ""
 
 #. Tag: para
 #. +> trunk5
-#: index.docbook:3957
+#: index.docbook:3952
 #, no-c-format
 msgid "The easiest method is to use the &branch; and &tag; options. You simply use the option along with the name of the desired branch or tag for a module, and &kdesrc-build; will try to determine the appropriate location within the &kde; repository to download from. For most &kde; modules this works very well."
 msgstr ""
 
 #. Tag: para
 #. +> trunk5
-#: index.docbook:3964
+#: index.docbook:3959
 #, no-c-format
 msgid "To download kdelibs from &kde; 4.6 (which is simply known as the 4.6 branch):"
 msgstr ""
 
 #. Tag: screen
 #. +> trunk5
-#: index.docbook:3967
+#: index.docbook:3962
 #, no-c-format
 msgid ""
 "module kdelibs\n"
@@ -6157,14 +6151,14 @@ msgstr ""
 
 #. Tag: para
 #. +> trunk5
-#: index.docbook:3969
+#: index.docbook:3964
 #, no-c-format
 msgid "Or, to download kdemultimedia as it was released with &kde; 4.6.1:"
 msgstr ""
 
 #. Tag: screen
 #. +> trunk5
-#: index.docbook:3971
+#: index.docbook:3966
 #, no-c-format
 msgid ""
 "module kdemultimedia\n"
@@ -6175,56 +6169,56 @@ msgstr ""
 
 #. Tag: para
 #. +> trunk5
-#: index.docbook:3975
+#: index.docbook:3970
 #, no-c-format
 msgid "You can specify a global branch value. But if you do so, do not forget to specify a different branch for modules that should not use the global branch!"
 msgstr ""
 
 #. Tag: title
 #. +> trunk5
-#: index.docbook:3983
+#: index.docbook:3978
 #, no-c-format
 msgid "Stopping the build early"
 msgstr ""
 
 #. Tag: title
 #. +> trunk5
-#: index.docbook:3986
+#: index.docbook:3981
 #, no-c-format
 msgid "The build normally continues even if failures occur"
 msgstr ""
 
 #. Tag: para
 #. +> trunk5
-#: index.docbook:3988
+#: index.docbook:3983
 #, no-c-format
 msgid "&kdesrc-build; normally will update, build and install all modules in the specified list of modules to build, even if a module fails to build. This is usually a convenience to allow you to update software packages even if a simple mistake is made in one of the source repositories during development that causes the build to break."
 msgstr ""
 
 #. Tag: para
 #. +> trunk5
-#: index.docbook:3995
+#: index.docbook:3990
 #, no-c-format
 msgid "However you may wish for &kdesrc-build; to stop what it is doing once a module fails to build and install. This can help save you time that will be wasted trying to make progress when modules remaining in the build list will not be able to successfully build either, especially if you have not ever successfully built the modules in the list."
 msgstr ""
 
 #. Tag: title
 #. +> trunk5
-#: index.docbook:4006
+#: index.docbook:4001
 #, no-c-format
 msgid "Not stopping early with --no-stop-on-failure"
 msgstr ""
 
 #. Tag: para
 #. +> trunk5
-#: index.docbook:4008
+#: index.docbook:4003
 #, no-c-format
 msgid "The primary method to do this is to use the <link linkend=\"cmdline-stop-on-failure\">--no-stop-on-failure</link> command line option when you run &kdesrc-build;."
 msgstr ""
 
 #. Tag: para
 #. +> trunk5
-#: index.docbook:4014
+#: index.docbook:4009
 #, fuzzy, no-c-format
 #| msgid "The <link linkend=\"configure-data\">configuration file</link> syntax and options."
 msgid "This option can also be set in the <link linkend=\"conf-stop-on-failure\">configuration file</link> to make it the normal mode of operation."
@@ -6232,49 +6226,49 @@ msgstr "A sintaxe e as opcións do <link linkend=\"configure-data\">ficheiro de 
 
 #. Tag: para
 #. +> trunk5
-#: index.docbook:4019
+#: index.docbook:4014
 #, no-c-format
 msgid "It is also possible to tell &kdesrc-build; at runtime to stop building <emphasis>after</emphasis> completing the current module it is working on. This is as opposed to interrupting &kdesrc-build; using a command like <keycombo action=\"simul\">&Ctrl;<keycap>C</keycap></keycombo>, which interrupts &kdesrc-build; immediately, losing the progress of the current module."
 msgstr ""
 
 #. Tag: para
 #. +> trunk5
-#: index.docbook:4026
+#: index.docbook:4021
 #, no-c-format
 msgid "Interrupting &kdesrc-build; during a module install when the <link linkend=\"conf-use-clean-install\">use-clean-install</link> option is enabled will mean that the interrupted module will be unavailable until &kdesrc-build; is able to successfully build the module!"
 msgstr ""
 
 #. Tag: para
 #. +> trunk5
-#: index.docbook:4031
+#: index.docbook:4026
 #, no-c-format
 msgid "If you need to interrupt &kdesrc-build; without permitting a graceful shutdown in this situation, at least try to avoid doing this while &kdesrc-build; is installing a module."
 msgstr ""
 
 #. Tag: title
 #. +> trunk5
-#: index.docbook:4039
+#: index.docbook:4034
 #, no-c-format
 msgid "Stopping &kdesrc-build; gracefully when stop-on-failure is false"
 msgstr ""
 
 #. Tag: para
 #. +> trunk5
-#: index.docbook:4041
+#: index.docbook:4036
 #, no-c-format
 msgid "As mentioned above, it is possible to cause &kdesrc-build; to gracefully shutdown early once it has completed the module it is currently working on. To do this, you need to send the POSIX <literal>HUP</literal> signal to &kdesrc-build;"
 msgstr ""
 
 #. Tag: para
 #. +> trunk5
-#: index.docbook:4046
+#: index.docbook:4041
 #, no-c-format
 msgid "You can do this with a command such as <command>pkill</command> (on &Linux; systems) as follows:"
 msgstr ""
 
 #. Tag: programlisting
 #. +> trunk5
-#: index.docbook:4048
+#: index.docbook:4043
 #, fuzzy, no-c-format
 #| msgid "<prompt>&percnt;</prompt> <userinput><command>kdesrc-build</command></userinput>"
 msgid "<prompt>$ </prompt><userinput><command>pkill <option>-HUP</option> kdesrc-build</command></userinput>"
@@ -6282,112 +6276,112 @@ msgstr "<prompt>&percnt;</prompt> <userinput><command>kdesrc-build</command></us
 
 #. Tag: para
 #. +> trunk5
-#: index.docbook:4050
+#: index.docbook:4045
 #, no-c-format
 msgid "If done successfully, you will see a message in the &kdesrc-build; output similar to:"
 msgstr ""
 
 #. Tag: programlisting
 #. +> trunk5
-#: index.docbook:4053
+#: index.docbook:4048
 #, no-c-format
 msgid "[ build ] recv SIGHUP, will end after this module"
 msgstr ""
 
 #. Tag: para
 #. +> trunk5
-#: index.docbook:4056
+#: index.docbook:4051
 #, no-c-format
 msgid "&kdesrc-build; may show this message multiple times depending on the number of individual &kdesrc-build; processes that are active. This is normal and not an indication of an error."
 msgstr ""
 
 #. Tag: para
 #. +> trunk5
-#: index.docbook:4061
+#: index.docbook:4056
 #, no-c-format
 msgid "Once &kdesrc-build; has acknowledged the signal, it will stop processing after the current module is built and installed. If &kdesrc-build; is still updating source code when the request is received, &kdesrc-build; will stop after the module source code update is complete. Once both the update and build processes have stopped early, &kdesrc-build; will print its partial results and exit."
 msgstr ""
 
 #. Tag: title
 #. +> trunk5
-#: index.docbook:4075
+#: index.docbook:4070
 #, no-c-format
 msgid "How &kdesrc-build; tries to ensure a successful build"
 msgstr ""
 
 #. Tag: title
 #. +> trunk5
-#: index.docbook:4078
+#: index.docbook:4073
 #, no-c-format
 msgid "Automatic rebuilds"
 msgstr ""
 
 #. Tag: para
 #. +> trunk5
-#: index.docbook:4080
+#: index.docbook:4075
 #, no-c-format
 msgid "&kdesrc-build; used to include features to automatically attempt to rebuild the module after a failure (as sometimes this re-attempt would work, due to bugs in the build system at that time). Thanks to switching to &cmake; the build system no longer suffers from these bugs, and so &kdesrc-build; will not try to build a module more than once. There are situations where &kdesrc-build; will automatically take action though:"
 msgstr ""
 
 #. Tag: para
 #. +> trunk5
-#: index.docbook:4089
+#: index.docbook:4084
 #, no-c-format
 msgid "If you change <link linkend=\"conf-configure-flags\">configure-flags</link> or <link linkend=\"conf-cmake-options\">cmake-options</link> for a module, then &kdesrc-build; will detect that and automatically re-run configure or cmake for that module."
 msgstr ""
 
 #. Tag: para
 #. +> trunk5
-#: index.docbook:4094
+#: index.docbook:4089
 #, no-c-format
 msgid "If the buildsystem does not exist (even if &kdesrc-build; did not delete it) then &kdesrc-build; will automatically re-create it. This is useful to allow for performing a full <link linkend=\"cmdline-refresh-build\">--refresh-build</link> for a specific module without having that performed on other modules."
 msgstr ""
 
 #. Tag: title
 #. +> trunk5
-#: index.docbook:4105
+#: index.docbook:4100
 #, no-c-format
 msgid "Manually rebuilding a module"
 msgstr ""
 
 #. Tag: para
 #. +> trunk5
-#: index.docbook:4106
+#: index.docbook:4101
 #, no-c-format
 msgid "If you make a change to a module's option settings, or the module's source code changes in a way &kdesrc-build; does not recognize, you may need to manually rebuild the module."
 msgstr ""
 
 #. Tag: para
 #. +> trunk5
-#: index.docbook:4110
+#: index.docbook:4105
 #, no-c-format
 msgid "You can do this by simply running <userinput><command>kdesrc-build</command> <option>--refresh-build</option> <option><replaceable>module</replaceable></option></userinput>."
 msgstr ""
 
 #. Tag: para
 #. +> trunk5
-#: index.docbook:4114
+#: index.docbook:4109
 #, no-c-format
 msgid "If you would like to have &kdesrc-build; automatically rebuild the module during the next normal build update instead, you can create a special file. Every module has a build directory. If you create a file called <filename>.refresh-me</filename> in the build directory for a module, &kdesrc-build; will rebuild the module next time the build process occurs, even if it would normally perform the faster incremental build."
 msgstr ""
 
 #. Tag: para
 #. +> trunk5
-#: index.docbook:4122
+#: index.docbook:4117
 #, no-c-format
 msgid "By default, the build directory is <filename class=\"directory\">~/kde/build/<replaceable>module</replaceable>/</filename>. If you change the setting of the &build-dir; option, then use that instead of <filename class=\"directory\">~/kde/build</filename>."
 msgstr ""
 
 #. Tag: para
 #. +> trunk5
-#: index.docbook:4128
+#: index.docbook:4123
 #, no-c-format
 msgid "Rebuild using <filename>.refresh-me</filename> for module <replaceable>kdelibs</replaceable>:"
 msgstr ""
 
 #. Tag: screen
 #. +> trunk5
-#: index.docbook:4129
+#: index.docbook:4124
 #, no-c-format
 msgid ""
 "<prompt>&percnt;</prompt> <userinput><command>touch</command> <filename>~/kdesrc/build/<replaceable>kdelibs</replaceable>/.refresh-me</filename></userinput>\n"
@@ -6396,42 +6390,42 @@ msgstr ""
 
 #. Tag: title
 #. +> trunk5
-#: index.docbook:4136
+#: index.docbook:4131
 #, no-c-format
 msgid "Changing environment variable settings"
 msgstr ""
 
 #. Tag: para
 #. +> trunk5
-#: index.docbook:4137
+#: index.docbook:4132
 #, no-c-format
 msgid "Normally &kdesrc-build; uses the environment that is present when starting up when running programs to perform updates and builds. This is useful for when you are running &kdesrc-build; from the command line."
 msgstr ""
 
 #. Tag: para
 #. +> trunk5
-#: index.docbook:4141
+#: index.docbook:4136
 #, no-c-format
 msgid "However, you may want to change the setting for environment variables that &kdesrc-build; does not provide an option for directly. (For instance, to setup any required environment variables when running &kdesrc-build; on a timer such as &cron;) This is possible with the &set-env; option."
 msgstr ""
 
 #. Tag: para
 #. +> trunk5
-#: index.docbook:4146
+#: index.docbook:4141
 #, no-c-format
 msgid "Unlike most options, it can be set more than once, and it accepts two entries, separated by a space. The first one is the name of the environment variable to set, and the remainder of the line is the value."
 msgstr ""
 
 #. Tag: para
 #. +> trunk5
-#: index.docbook:4151
+#: index.docbook:4146
 #, no-c-format
 msgid "Set <userinput><envar>DISTRO</envar>=<replaceable>BSD</replaceable></userinput> for all modules:"
 msgstr ""
 
 #. Tag: screen
 #. +> trunk5
-#: index.docbook:4153
+#: index.docbook:4148
 #, no-c-format
 msgid ""
 "global\n"
@@ -6441,224 +6435,224 @@ msgstr ""
 
 #. Tag: title
 #. +> trunk5
-#: index.docbook:4159
+#: index.docbook:4154
 #, no-c-format
 msgid "Resuming builds"
 msgstr ""
 
 #. Tag: title
 #. +> trunk5
-#: index.docbook:4162
+#: index.docbook:4157
 #, no-c-format
 msgid "Resuming a failed or canceled build"
 msgstr ""
 
 #. Tag: para
 #. +> trunk5
-#: index.docbook:4164
+#: index.docbook:4159
 #, no-c-format
 msgid "You can tell &kdesrc-build; to start building from a different module than it normally would. This can be useful when a set of modules failed, or if you canceled a build run in the middle. You can control this using the &cmd-resume-from; option and the &cmd-resume-after; option."
 msgstr ""
 
 #. Tag: para
 #. +> trunk5
-#: index.docbook:4169
+#: index.docbook:4164
 #, no-c-format
 msgid "Older versions of &kdesrc-build; would skip the source update when resuming a build. This is no longer done by default, but you can always use the <option>--no-src</option> command line option to skip the source update."
 msgstr ""
 
 #. Tag: para
 #. +> trunk5
-#: index.docbook:4175
+#: index.docbook:4170
 #, no-c-format
 msgid "Resuming the build starting from kdebase:"
 msgstr ""
 
 #. Tag: screen
 #. +> trunk5
-#: index.docbook:4177
+#: index.docbook:4172
 #, no-c-format
 msgid "<prompt>&percnt;</prompt> <userinput><command>kdesrc-build</command> <option>--resume-from=<replaceable>kdebase</replaceable></option></userinput>"
 msgstr ""
 
 #. Tag: para
 #. +> trunk5
-#: index.docbook:4181
+#: index.docbook:4176
 #, no-c-format
 msgid "Resuming the build starting after kdebase (in case you manually fixed the issue and installed the module yourself):"
 msgstr ""
 
 #. Tag: screen
 #. +> trunk5
-#: index.docbook:4184
+#: index.docbook:4179
 #, no-c-format
 msgid "<prompt>&percnt;</prompt> <userinput><command>kdesrc-build</command> <option>--resume-after=<replaceable>kdebase</replaceable></option></userinput>"
 msgstr ""
 
 #. Tag: para
 #. +> trunk5
-#: index.docbook:4187
+#: index.docbook:4182
 #, no-c-format
 msgid "If the last &kdesrc-build; build ended with a build failure, you can also use the <link linkend=\"cmdline-resume\">--resume</link> command line option, which resumes the last build starting at the module that failed. The source and metadata updates are skipped as well (but if you need these, it's generally better to use <link linkend=\"cmdline-resume-from\">--resume-from</link> instead)."
 msgstr ""
 
 #. Tag: title
 #. +> trunk5
-#: index.docbook:4198
+#: index.docbook:4193
 #, no-c-format
 msgid "Ignoring modules in a build"
 msgstr ""
 
 #. Tag: para
 #. +> trunk5
-#: index.docbook:4200
+#: index.docbook:4195
 #, no-c-format
 msgid "Similar to the way you can <link linkend=\"resuming-failed\">resume the build from a module</link>, you can instead choose to update and build everything normally, but ignore a set of modules."
 msgstr ""
 
 #. Tag: para
 #. +> trunk5
-#: index.docbook:4204
+#: index.docbook:4199
 #, no-c-format
 msgid "You can do this using the &cmd-ignore-modules; option. This option tells &kdesrc-build; to ignore all the modules on the command line when performing the update and build."
 msgstr ""
 
 #. Tag: para
 #. +> trunk5
-#: index.docbook:4209
+#: index.docbook:4204
 #, no-c-format
 msgid "Ignoring extragear/multimedia and kdereview during a full run:"
 msgstr ""
 
 #. Tag: screen
 #. +> trunk5
-#: index.docbook:4210
+#: index.docbook:4205
 #, no-c-format
 msgid "<prompt>&percnt;</prompt> <userinput><command>kdesrc-build</command> <option>--ignore-modules</option> <replaceable>extragear/multimedia kdereview</replaceable></userinput>"
 msgstr ""
 
 #. Tag: title
 #. +> trunk5
-#: index.docbook:4217
+#: index.docbook:4212
 #, no-c-format
 msgid "Changing options from the command line"
 msgstr ""
 
 #. Tag: title
 #. +> trunk5
-#: index.docbook:4220
+#: index.docbook:4215
 #, no-c-format
 msgid "Changing global options"
 msgstr ""
 
 #. Tag: para
 #. +> trunk5
-#: index.docbook:4221
+#: index.docbook:4216
 #, no-c-format
 msgid "You can change the setting of options read from the <link linkend=\"configure-data\">configuration file</link> directly from the command line. This change will override the configuration file setting, but is only temporary. It only takes effect as long as it is still present on the command line."
 msgstr ""
 
 #. Tag: para
 #. +> trunk5
-#: index.docbook:4226
+#: index.docbook:4221
 #, no-c-format
 msgid "&kdesrc-build; allows you to change options named like <replaceable>option-name</replaceable> by passing an argument on the command line in the form <userinput><option>--<replaceable>option-name</replaceable>=value</option></userinput>. &kdesrc-build; will recognize whether it does not know what the option is, and search for the name in its list of option names. If it does not recognize the name, it will warn you, otherwise it will remember the value you set it to and override any setting from the configuration file."
 msgstr ""
 
 #. Tag: para
 #. +> trunk5
-#: index.docbook:4234
+#: index.docbook:4229
 #, no-c-format
 msgid "Setting the &source-dir; option to <filename>/dev/null</filename> for testing:"
 msgstr ""
 
 #. Tag: screen
 #. +> trunk5
-#: index.docbook:4237
+#: index.docbook:4232
 #, no-c-format
 msgid "<prompt>&percnt;</prompt> <userinput><command>kdesrc-build</command> <option>--pretend</option> <option>--<replaceable>source-dir</replaceable>=<replaceable>/dev/null</replaceable></option></userinput>"
 msgstr ""
 
 #. Tag: title
 #. +> trunk5
-#: index.docbook:4244
+#: index.docbook:4239
 #, no-c-format
 msgid "Changing module options"
 msgstr ""
 
 #. Tag: para
 #. +> trunk5
-#: index.docbook:4245
+#: index.docbook:4240
 #, no-c-format
 msgid "It is also possible to change options only for a specific module. The syntax is similar: --<replaceable>module</replaceable>,<replaceable>option-name</replaceable>=<replaceable>value</replaceable>."
 msgstr ""
 
 #. Tag: para
 #. +> trunk5
-#: index.docbook:4249
+#: index.docbook:4244
 #, no-c-format
 msgid "This change overrides any duplicate setting for the module found in the <link linkend=\"configure-data\">configuration file</link>, and applies only while the option is passed on the command line."
 msgstr ""
 
 #. Tag: para
 #. +> trunk5
-#: index.docbook:4253
+#: index.docbook:4248
 #, no-c-format
 msgid "Using a different build directory for the kdeedu module:"
 msgstr ""
 
 #. Tag: screen
 #. +> trunk5
-#: index.docbook:4255
+#: index.docbook:4250
 #, no-c-format
 msgid "<prompt>&percnt;</prompt> <userinput><command>kdesrc-build</command> <option>--<replaceable>kdeedu</replaceable>,<replaceable>build-dir</replaceable>=<replaceable>temp-build</replaceable></option></userinput>"
 msgstr ""
 
 #. Tag: title
 #. +> trunk5
-#: index.docbook:4266
+#: index.docbook:4261
 #, no-c-format
 msgid "Features for &kde; developers"
 msgstr ""
 
 #. Tag: title
 #. +> trunk5
-#: index.docbook:4269
+#: index.docbook:4264
 #, no-c-format
 msgid "&ssh; Agent checks"
 msgstr ""
 
 #. Tag: para
 #. +> trunk5
-#: index.docbook:4270
+#: index.docbook:4265
 #, no-c-format
 msgid "&kdesrc-build; can ensure that &kde; developers that use &ssh; to access the &kde; source repository do not accidentally forget to leave the &ssh; Agent tool enabled. This can cause &kdesrc-build; to hang indefinitely waiting for the developer to type in their &ssh; password, so by default &kdesrc-build; will check if the Agent is running before performing source updates."
 msgstr ""
 
 #. Tag: para
 #. +> trunk5
-#: index.docbook:4278
+#: index.docbook:4273
 #, no-c-format
 msgid "This is only done for &kde; developers using &ssh;."
 msgstr ""
 
 #. Tag: para
 #. +> trunk5
-#: index.docbook:4281
+#: index.docbook:4276
 #, no-c-format
 msgid "You may wish to disable the &ssh; Agent check, in case of situations where &kdesrc-build; is mis-detecting the presence of an agent. To disable the agent check, set the <option>disable-agent-check</option> option to <userinput>true</userinput>."
 msgstr ""
 
 #. Tag: para
 #. +> trunk5
-#: index.docbook:4287
+#: index.docbook:4282
 #, no-c-format
 msgid "Disabling the &ssh; agent check:"
 msgstr ""
 
 #. Tag: screen
 #. +> trunk5
-#: index.docbook:4288
+#: index.docbook:4283
 #, no-c-format
 msgid ""
 "global\n"
@@ -6668,84 +6662,84 @@ msgstr ""
 
 #. Tag: title
 #. +> trunk5
-#: index.docbook:4296
+#: index.docbook:4291
 #, no-c-format
 msgid "Other &kdesrc-build; features"
 msgstr ""
 
 #. Tag: title
 #. +> trunk5
-#: index.docbook:4299
+#: index.docbook:4294
 #, no-c-format
 msgid "Changing the amount of output from &kdesrc-build;"
 msgstr ""
 
 #. Tag: para
 #. +> trunk5
-#: index.docbook:4300
+#: index.docbook:4295
 #, no-c-format
 msgid "&kdesrc-build; has several options to control the amount of output the script generates. In any case, errors will always be output."
 msgstr ""
 
 #. Tag: para
 #. +> trunk5
-#: index.docbook:4304
+#: index.docbook:4299
 #, no-c-format
 msgid "The <option>--quiet</option> option (short form is <option>-q</option>) causes &kdesrc-build; to be mostly silent. Only important messages, warnings, or errors will be shown. When available, build progress information is still shown."
 msgstr ""
 
 #. Tag: para
 #. +> trunk5
-#: index.docbook:4309
+#: index.docbook:4304
 #, no-c-format
 msgid "The <option>--really-quiet</option> option (no short form) causes &kdesrc-build; to only display important warnings or errors while it is running."
 msgstr ""
 
 #. Tag: para
 #. +> trunk5
-#: index.docbook:4313
+#: index.docbook:4308
 #, no-c-format
 msgid "The <option>--verbose</option> option (short form is <option>-v</option>) causes &kdesrc-build; to be very detailed in its output."
 msgstr ""
 
 #. Tag: para
 #. +> trunk5
-#: index.docbook:4317
+#: index.docbook:4312
 #, no-c-format
 msgid "The <option>--debug</option> option is for debugging purposes only, it causes &kdesrc-build; to act as if <option>--verbose</option> was turned on, causes commands to also output to the terminal, and will display debugging information for many functions."
 msgstr ""
 
 #. Tag: title
 #. +> trunk5
-#: index.docbook:4326
+#: index.docbook:4321
 #, no-c-format
 msgid "Color output"
 msgstr ""
 
 #. Tag: para
 #. +> trunk5
-#: index.docbook:4327
+#: index.docbook:4322
 #, no-c-format
 msgid "When being run from &konsole; or a different terminal, &kdesrc-build; will normally display with colorized text."
 msgstr ""
 
 #. Tag: para
 #. +> trunk5
-#: index.docbook:4330
+#: index.docbook:4325
 #, no-c-format
 msgid "You can disable this by using the <option>--no-color</option> on the command line, or by setting the &colorful-output; option in the <link linkend=\"configure-data\">configuration file</link> to <userinput>false</userinput>."
 msgstr ""
 
 #. Tag: para
 #. +> trunk5
-#: index.docbook:4336
+#: index.docbook:4331
 #, no-c-format
 msgid "Disabling color output in the configuration file:"
 msgstr ""
 
 #. Tag: screen
 #. +> trunk5
-#: index.docbook:4337
+#: index.docbook:4332
 #, no-c-format
 msgid ""
 "global\n"
@@ -6755,84 +6749,84 @@ msgstr ""
 
 #. Tag: title
 #. +> trunk5
-#: index.docbook:4343
+#: index.docbook:4338
 #, no-c-format
 msgid "Removing unneeded directories after a build"
 msgstr ""
 
 #. Tag: para
 #. +> trunk5
-#: index.docbook:4344
+#: index.docbook:4339
 #, no-c-format
 msgid "Are you short on disk space but still want to run a bleeding-edge &kde; checkout? &kdesrc-build; can help reduce your disk usage when building &kde; from &git;."
 msgstr ""
 
 #. Tag: para
 #. +> trunk5
-#: index.docbook:4348
+#: index.docbook:4343
 #, no-c-format
 msgid "Be aware that building &kde; does take a lot of space. There are several major space-using pieces when using &kdesrc-build;:"
 msgstr ""
 
 #. Tag: para
 #. +> trunk5
-#: index.docbook:4352
+#: index.docbook:4347
 #, no-c-format
 msgid "The actual source checkout can take up a fair amount of space. The default modules take up about 1.6 gigabytes of on-disk space. You can reduce this amount by making sure that you are only building as many modules as you actually want. &kdesrc-build; will not delete source code from disk even if you delete the entry from the <link linkend=\"configure-data\">configuration file</link>, so make sure that you go and delete unused source checkouts from the source directory. Note that the source files are downloaded from the Internet, you <emphasis>should not</emphasis> delete them if you are actually using them, at least until you are done using &kdesrc-build;."
 msgstr ""
 
 #. Tag: para
 #. +> trunk5
-#: index.docbook:4362
+#: index.docbook:4357
 #, no-c-format
 msgid "Also, if you already have a &Qt; installed by your distribution (and the odds are good that you do), you probably do not need to install the qt module. That will shave about 200 megabytes off of the on-disk source size."
 msgstr ""
 
 #. Tag: para
 #. +> trunk5
-#: index.docbook:4369
+#: index.docbook:4364
 #, no-c-format
 msgid "&kdesrc-build; will create a separate build directory to build the source code in. Sometimes &kdesrc-build; will have to copy a source directory to create a fake build directory. When this happens, space-saving symlinks are used, so this should not be a hassle on disk space. The build directory will typically be much larger than the source directory for a module. For example, the build directory for kdebase is about 1050 megabytes, whereas kdebase's source is only around 550 megabytes."
 msgstr ""
 
 #. Tag: para
 #. +> trunk5
-#: index.docbook:4377
+#: index.docbook:4372
 #, no-c-format
 msgid "Luckily, the build directory is not required after a module has successfully been built and installed. &kdesrc-build; can automatically remove the build directory after installing a module, see the examples below for more information. Note that taking this step will make it impossible for &kdesrc-build; to perform the time-saving incremental builds."
 msgstr ""
 
 #. Tag: para
 #. +> trunk5
-#: index.docbook:4384
+#: index.docbook:4379
 #, no-c-format
 msgid "Finally, there is disk space required for the actual installation of &kde;, which does not run from the build directory. This typically takes less space than the build directory. It is harder to get exact figures however."
 msgstr ""
 
 #. Tag: para
 #. +> trunk5
-#: index.docbook:4391
+#: index.docbook:4386
 #, no-c-format
 msgid "How do you reduce the space requirements of &kde;? One way is to use the proper compiler flags, to optimize for space reduction instead of for speed. Another way, which can have a large effect, is to remove debugging information from your &kde; build."
 msgstr ""
 
 #. Tag: para
 #. +> trunk5
-#: index.docbook:4397
+#: index.docbook:4392
 #, no-c-format
 msgid "You should be very sure you know what you are doing before deciding to remove debugging information. Running bleeding-edge software means you are running software which is potentially much more likely to crash than a stable release. If you are running software without debugging information, it can be very hard to create a good bug report to get your bug resolved, and you will likely have to re-enable debugging information for the affected application and rebuild to help a developer fix the crash. So, remove debugging information at your own risk!"
 msgstr ""
 
 #. Tag: para
 #. +> trunk5
-#: index.docbook:4409
+#: index.docbook:4404
 #, no-c-format
 msgid "Removing the build directory after installation of a module. The source directory is still kept, and debugging is enabled:"
 msgstr ""
 
 #. Tag: screen
 #. +> trunk5
-#: index.docbook:4412
+#: index.docbook:4407
 #, no-c-format
 msgid ""
 "global\n"
@@ -6843,14 +6837,14 @@ msgstr ""
 
 #. Tag: para
 #. +> trunk5
-#: index.docbook:4414
+#: index.docbook:4409
 #, no-c-format
 msgid "Removing the build directory after installation, without debugging information, with size optimization."
 msgstr ""
 
 #. Tag: screen
 #. +> trunk5
-#: index.docbook:4417
+#: index.docbook:4412
 #, no-c-format
 msgid ""
 "global\n"
@@ -6862,105 +6856,105 @@ msgstr ""
 
 #. Tag: title
 #. +> trunk5
-#: index.docbook:4426
+#: index.docbook:4421
 #, no-c-format
 msgid "&cmake;, the &kde; build system"
 msgstr ""
 
 #. Tag: title
 #. +> trunk5
-#: index.docbook:4429
+#: index.docbook:4424
 #, no-c-format
 msgid "Introduction to &cmake;"
 msgstr ""
 
 #. Tag: para
 #. +> trunk5
-#: index.docbook:4431
+#: index.docbook:4426
 #, no-c-format
 msgid "In March 2006, the &cmake; program beat out several competitors and was selected to be the build system for &kde; 4, replacing the autotools-based system that &kde; had used from the beginning."
 msgstr ""
 
 #. Tag: para
 #. +> trunk5
-#: index.docbook:4435
+#: index.docbook:4430
 #, no-c-format
 msgid "A introduction to &cmake; page is available on the <ulink url=\"https://community.kde.org/Guidelines_HOWTOs/CMake\">&kde; Community Wiki</ulink>. Basically, instead of running <userinput><command>make</command> <option>-f</option> <filename>Makefile.cvs</filename></userinput>, then <command>configure</command>, then &make;, we simply run &cmake; and then &make;."
 msgstr ""
 
 #. Tag: para
 #. +> trunk5
-#: index.docbook:4442
+#: index.docbook:4437
 #, no-c-format
 msgid "&kdesrc-build; has support for &cmake;. A few features of &kdesrc-build; were really features of the underlying buildsystem, including <link linkend=\"conf-configure-flags\">configure-flags</link> and <link linkend=\"conf-do-not-compile\">do-not-compile</link>. When equivalent features are available, they are provided. For instance, the equivalent to the configure-flags option is <link linkend=\"conf-cmake-options\">cmake-options</link>, and the <link linkend=\"conf-do-not-compile\">do-not-compile</link> option is also supported for &cmake; as of &kdesrc-build; version 1.6.3."
 msgstr ""
 
 #. Tag: title
 #. +> trunk5
-#: index.docbook:4456
+#: index.docbook:4451
 #, no-c-format
 msgid "Credits And License"
 msgstr ""
 
 #. Tag: trans_comment
 #. +> trunk5
-#: index.docbook:4458
+#: index.docbook:4453
 #, no-c-format
 msgid "CREDIT_FOR_TRANSLATORS"
 msgstr ""
 
 #. Tag: chapter
 #. +> trunk5
-#: index.docbook:4458
+#: index.docbook:4453
 #, no-c-format
 msgid "&underFDL;"
 msgstr ""
 
 #. Tag: title
 #. +> trunk5
-#: index.docbook:4464
+#: index.docbook:4459
 #, no-c-format
 msgid "&kde; modules and source code organization"
 msgstr ""
 
 #. Tag: title
 #. +> trunk5
-#: index.docbook:4466
+#: index.docbook:4461
 #, no-c-format
 msgid "The <quote>Module</quote>"
 msgstr ""
 
 #. Tag: para
 #. +> trunk5
-#: index.docbook:4468
+#: index.docbook:4463
 #, no-c-format
 msgid "&kde; groups its software into <quote>modules</quote> of various size. This was initially a loose grouping of a few large modules, but with the introduction of the <ulink url=\"https://git-scm.com/\">Git</ulink>-based <ulink url=\"https://commits.kde.org/\">source code repositories</ulink>, these large modules were further split into many smaller modules."
 msgstr ""
 
 #. Tag: para
 #. +> trunk5
-#: index.docbook:4475
+#: index.docbook:4470
 #, no-c-format
 msgid "&kdesrc-build; uses this module concept as well. In essence, a <quote>module</quote> is a grouping of code that can be downloaded, built, tested, and installed."
 msgstr ""
 
 #. Tag: title
 #. +> trunk5
-#: index.docbook:4481
+#: index.docbook:4476
 #, no-c-format
 msgid "Individual modules"
 msgstr ""
 
 #. Tag: para
 #. +> trunk5
-#: index.docbook:4483
+#: index.docbook:4478
 #, no-c-format
 msgid "It is easy to set &kdesrc-build; to build a single module. The following listing is an example of what a declaration for a Git-based module would look like in <link linkend=\"kdesrc-buildrc\">the configuration file</link>."
 msgstr ""
 
 #. Tag: programlisting
 #. +> trunk5
-#: index.docbook:4488
+#: index.docbook:4483
 #, no-c-format
 msgid ""
 "module <replaceable>kdefoo</replaceable>\n"
@@ -6970,35 +6964,35 @@ msgstr ""
 
 #. Tag: para
 #. +> trunk5
-#: index.docbook:4490
+#: index.docbook:4485
 #, no-c-format
 msgid "This is a Git-based module since it doesn't use a <link linkend=\"conf-repository\">repository</link> option. Also, the <option>cmake-options</option> option is listed as an example only, it is not required."
 msgstr ""
 
 #. Tag: title
 #. +> trunk5
-#: index.docbook:4497
+#: index.docbook:4492
 #, no-c-format
 msgid "Groups of related modules"
 msgstr ""
 
 #. Tag: para
 #. +> trunk5
-#: index.docbook:4499
+#: index.docbook:4494
 #, no-c-format
 msgid "Now most &kde; source modules are Git-based &kde;, and are normally combined into groups of modules."
 msgstr ""
 
 #. Tag: para
 #. +> trunk5
-#: index.docbook:4502
+#: index.docbook:4497
 #, no-c-format
 msgid "&kdesrc-build; therefore supports groups of modules as well, using <link linkend=\"module-sets\">module sets</link>. An example:"
 msgstr ""
 
 #. Tag: programlisting
 #. +> trunk5
-#: index.docbook:4505
+#: index.docbook:4500
 #, no-c-format
 msgid ""
 "module-set <replaceable>base-modules</replaceable>\n"
@@ -7009,63 +7003,63 @@ msgstr ""
 
 #. Tag: para
 #. +> trunk5
-#: index.docbook:4507
+#: index.docbook:4502
 #, no-c-format
 msgid "You can leave the module set name (<replaceable>base-modules</replaceable> in this case) empty if you like. This <option>repository</option> setting tells &kdesrc-build; where to download the source from, but you can also use a <symbol>git://</symbol> URL."
 msgstr ""
 
 #. Tag: para
 #. +> trunk5
-#: index.docbook:4512
+#: index.docbook:4507
 #, no-c-format
 msgid "One special feature of the <quote><option>repository</option> <literal>kde-projects</literal></quote> is that &kdesrc-build; will automatically include any Git modules that are grouped under the modules you list (in the KDE Project database)."
 msgstr ""
 
 #. Tag: title
 #. +> trunk5
-#: index.docbook:4519
+#: index.docbook:4514
 #, no-c-format
 msgid "Module <quote>branch groups</quote>"
 msgstr ""
 
 #. Tag: para
 #. +> trunk5
-#: index.docbook:4521
+#: index.docbook:4516
 #, no-c-format
 msgid "Taking the concept of a <link linkend=\"module-groups\">group of modules</link> further, the &kde; developers eventually found that synchronizing the names of the Git branches across a large number of repositories was getting difficult, especially during the development push for the new &kde; Frameworks for &Qt; 5."
 msgstr ""
 
 #. Tag: para
 #. +> trunk5
-#: index.docbook:4528
+#: index.docbook:4523
 #, no-c-format
 msgid "So the concept of <quote>branch groups</quote> was developed, to allow users and developers to select one of only a few groups, and allow the script to automatically select the appropriate Git branch."
 msgstr ""
 
 #. Tag: para
 #. +> trunk5
-#: index.docbook:4533
+#: index.docbook:4528
 #, no-c-format
 msgid "&kdesrc-build; supports this feature as of version 1.16-pre2, via the <link linkend=\"conf-branch-group\">branch-group</link> option."
 msgstr ""
 
 #. Tag: title
 #. +> trunk5
-#: index.docbook:4538
+#: index.docbook:4533
 #, no-c-format
 msgid "Example of using branch-group"
 msgstr ""
 
 #. Tag: para
 #. +> trunk5
-#: index.docbook:4540
+#: index.docbook:4535
 #, no-c-format
 msgid "branch-group can be used in the configuration file as follows:"
 msgstr ""
 
 #. Tag: programlisting
 #. +> trunk5
-#: index.docbook:4543
+#: index.docbook:4538
 #, no-c-format
 msgid ""
 "global\n"
@@ -7091,63 +7085,63 @@ msgstr ""
 
 #. Tag: para
 #. +> trunk5
-#: index.docbook:4545
+#: index.docbook:4540
 #, no-c-format
 msgid "In this case the same <literal>branch-group</literal> gives different branch names for each Git module."
 msgstr ""
 
 #. Tag: para
 #. +> trunk5
-#: index.docbook:4550
+#: index.docbook:4545
 #, no-c-format
 msgid "This feature requires some data maintained by the &kde; developers in a Git repository named <literal>kde-build-metadata</literal>, however this module will be included automatically by &kdesrc-build; (though you may see it appear in the script output)."
 msgstr ""
 
 #. Tag: para
 #. +> trunk5
-#: index.docbook:4556
+#: index.docbook:4551
 #, no-c-format
 msgid "&kde; modules that do not have a set branch name for the branch group you choose will default to an appropriate branch name, as if you had not specified <literal>branch-group</literal> at all."
 msgstr ""
 
 #. Tag: title
 #. +> trunk5
-#: index.docbook:4567
+#: index.docbook:4562
 #, no-c-format
 msgid "Superseded profile setup procedures"
 msgstr ""
 
 #. Tag: title
 #. +> trunk5
-#: index.docbook:4570
+#: index.docbook:4565
 #, no-c-format
 msgid "Setting up a &kde; login profile"
 msgstr ""
 
 #. Tag: para
 #. +> trunk5
-#: index.docbook:4572
+#: index.docbook:4567
 #, no-c-format
 msgid "These instructions cover how to setup the profile required to ensure your computer can login to your newly-built &kde; &plasma; desktop. &kdesrc-build; will normally try to do this automatically (see <xref linkend=\"session-driver\"/>). This appendix section can be useful for those who cannot use &kdesrc-build;'s support for login profile setup. However the instructions may not always be up-to-date, it can also be useful to consult the <filename>kde-env-master.sh.in</filename> file included with the &kdesrc-build; source."
 msgstr ""
 
 #. Tag: title
 #. +> trunk5
-#: index.docbook:4582
+#: index.docbook:4577
 #, no-c-format
 msgid "Changing your startup profile settings"
 msgstr "Cambiar a configuración do perfil de inicio"
 
 #. Tag: para
 #. +> trunk5
-#: index.docbook:4584
+#: index.docbook:4579
 #, no-c-format
 msgid "The <filename>.bash_profile</filename> is the login settings file for the popular <application>bash</application> shell used by many &Linux; distributions. If you use a different shell, then you may need to adjust the samples given in this section for your particular shell."
 msgstr "O ficheiro <filename>.bash_profile</filename> contén a configuración de acceso para o intérprete de ordes <application>bash</application>, popular entre as distribucións de &Linux;. Se usa outro intérprete, pode que teña que axustar os exemplos fornecidos nesta sección para que funcionen no seu caso particular."
 
 #. Tag: para
 #. +> trunk5
-#: index.docbook:4589
+#: index.docbook:4584
 #, fuzzy, no-c-format
 #| msgid ""
 #| "Open or create the <filename>.bash_profile</filename> file in the home directory with your favorite editor, and add to the end of the file: If you are building the qt module (you are by default), add instead: <programlisting>\n"
@@ -7169,19 +7163,17 @@ msgstr "O ficheiro <filename>.bash_profile</filename> contén a configuración d
 msgid ""
 "Open or create the <filename>.bash_profile</filename> file in the home directory with your favorite editor, and add to the end of the file: If you are building the qt module (you are by default), add instead: <programlisting>\n"
 "QTDIR=(path to qtdir)   # Such as ~/kdesrc/build/qt by default.\n"
-"KDEDIR=(path to kdedir) # Such as ~/kde/usr by default.\n"
-"KDEDIRS=$KDEDIR\n"
-"PATH=$KDEDIR/bin:$QTDIR/bin:$PATH\n"
+"PATH=${install-dir}/bin:$QTDIR/bin:$PATH\n"
 "MANPATH=$QTDIR/doc/man:$MANPATH\n"
 "\n"
 "# Act appropriately if LD_LIBRARY_PATH is not already set.\n"
 "if [ -z $LD_LIBRARY_PATH ]; then\n"
-"  LD_LIBRARY_PATH=$KDEDIR/lib:$QTDIR/lib\n"
+"  LD_LIBRARY_PATH=${install-dir}:/lib:$QTDIR/lib\n"
 "else\n"
-"  LD_LIBRARY_PATH=$KDEDIR/lib:$QTDIR/lib:$LD_LIBRARY_PATH\n"
+"  LD_LIBRARY_PATH=${install-dir}:/lib:$QTDIR/lib:$LD_LIBRARY_PATH\n"
 "fi\n"
 "\n"
-"export QTDIR KDEDIRS PATH MANPATH LD_LIBRARY_PATH\n"
+"export QTDIR PATH MANPATH LD_LIBRARY_PATH\n"
 "</programlisting> or, if you are not building qt (and are using your system &Qt; instead), add this instead:"
 msgstr ""
 "Abra ou cree o ficheiro <filename>.bash_profile</filename> no seu directorio persoal. Se está a construír o módulo <literal>qt</literal> (comportamento predeterminado), engada ao final do ficheiro o seguinte:<programlisting>\n"
@@ -7203,7 +7195,7 @@ msgstr ""
 
 #. Tag: programlisting
 #. +> trunk5
-#: index.docbook:4600
+#: index.docbook:4595
 #, fuzzy, no-c-format
 #| msgid ""
 #| "KDEDIR=(path to kdedir)  # Such as ~/kde by default.\n"
@@ -7219,18 +7211,16 @@ msgstr ""
 #| "\n"
 #| "export KDEDIRS PATH LD_LIBRARY_PATH"
 msgid ""
-"KDEDIR=(path to kdedir)  # Such as ~/kde/usr by default.\n"
-"KDEDIRS=$KDEDIR\n"
-"PATH=$KDEDIR/bin:$QTDIR/bin:$PATH\n"
+"PATH=${install-dir}/bin:$QTDIR/bin:$PATH\n"
 "\n"
 "# Act appropriately if LD_LIBRARY_PATH is not already set.\n"
 "if [ -z $LD_LIBRARY_PATH ]; then\n"
-"  LD_LIBRARY_PATH=$KDEDIR/lib\n"
+"  LD_LIBRARY_PATH=${install-dir}/lib\n"
 "else\n"
-"  LD_LIBRARY_PATH=$KDEDIR/lib:$LD_LIBRARY_PATH\n"
+"  LD_LIBRARY_PATH=${install-dir}/lib:$LD_LIBRARY_PATH\n"
 "fi\n"
 "\n"
-"export KDEDIRS PATH LD_LIBRARY_PATH"
+"export PATH LD_LIBRARY_PATH"
 msgstr ""
 "KDEDIR=(ruta ao directorio de KDE) # Con configuración predeterminada: «~/kde».\n"
 "KDEDIRS=$KDEDIR\n"
@@ -7247,14 +7237,14 @@ msgstr ""
 
 #. Tag: para
 #. +> trunk5
-#: index.docbook:4603
+#: index.docbook:4598
 #, no-c-format
 msgid "If you are not using a dedicated user, set a different $<envar>KDEHOME</envar> for your new environment in your <filename>.bash_profile</filename>:"
 msgstr "Se non está a usar un usuario separado, defina un $<envar>KDEHOME</envar> distinto para o seu novo ambiente no seu ficheiro <filename>.bash_profile</filename>:"
 
 #. Tag: programlisting
 #. +> trunk5
-#: index.docbook:4607
+#: index.docbook:4602
 #, fuzzy, no-c-format
 #| msgid ""
 #| "export KDEHOME=\"${HOME}/.kde-svn\"\n"
@@ -7274,18 +7264,22 @@ msgstr ""
 
 #. Tag: para
 #. +> trunk5
-#: index.docbook:4611
+#: index.docbook:4606
 #, no-c-format
 msgid "If later your K Menu is empty or too crowded with applications from your distribution, you may have to set the <acronym>XDG</acronym> environment variables in your <filename>.bash_profile</filename>:"
 msgstr "Se logo resulta que o seu menú de aplicativos está baleiro ou ten elementos de máis —aplicativos do sistema—, pode que teña que definir as variábeis de contorno <acronym>XDG</acronym> no ficheiro <filename>.bash_profile</filename>:"
 
 #. Tag: programlisting
 #. +> trunk5
-#: index.docbook:4616
-#, no-c-format
+#: index.docbook:4611
+#, fuzzy, no-c-format
+#| msgid ""
+#| "XDG_CONFIG_DIRS=\"/etc/xdg\"\n"
+#| "XDG_DATA_DIRS=\"${KDEDIR}/share:/usr/share\"\n"
+#| "export XDG_CONFIG_DIRS XDG_DATA_DIRS"
 msgid ""
 "XDG_CONFIG_DIRS=\"/etc/xdg\"\n"
-"XDG_DATA_DIRS=\"${KDEDIR}/share:/usr/share\"\n"
+"XDG_DATA_DIRS=\"${install-dir}/share:/usr/share\"\n"
 "export XDG_CONFIG_DIRS XDG_DATA_DIRS"
 msgstr ""
 "XDG_CONFIG_DIRS=\"/etc/xdg\"\n"
@@ -7294,35 +7288,36 @@ msgstr ""
 
 #. Tag: title
 #. +> trunk5
-#: index.docbook:4623
+#: index.docbook:4618
 #, no-c-format
 msgid "Starting &kde;"
 msgstr "Iniciar &kde;"
 
 #. Tag: para
 #. +> trunk5
-#: index.docbook:4625
+#: index.docbook:4620
 #, no-c-format
 msgid "Now that you have adjusted your environment settings to use the correct &kde;, it is important to ensure that the correct <command>startkde</command> script is used as well."
 msgstr "Unha vez axustadas as variábeis do ambiente para usar a versión correcta do software de &kde;, é importante asegurarse de que tamén se executa o guión <command>startkde</command> que corresponde."
 
 #. Tag: para
 #. +> trunk5
-#: index.docbook:4631
+#: index.docbook:4626
 #, no-c-format
 msgid "Open the <filename>.xinitrc</filename> text file from the home directory, or create it if necessary. Add the line:"
 msgstr "Abra o ficheiro <filename>.xinitrc</filename> —no directorio persoal— ou créeo se non existía, e engádalle a seguinte liña:"
 
 #. Tag: programlisting
 #. +> trunk5
-#: index.docbook:4635
-#, no-c-format
-msgid "<command>exec</command> <option>${KDEDIR}/bin/startkde</option>"
+#: index.docbook:4630
+#, fuzzy, no-c-format
+#| msgid "<command>exec</command> <option>${KDEDIR}/bin/startkde</option>"
+msgid "<command>exec</command> <option>${install-dir}/bin/startkde</option>"
 msgstr "<command>exec</command> <option>${KDEDIR}/bin/startkde</option>"
 
 #. Tag: para
 #. +> trunk5
-#: index.docbook:4638
+#: index.docbook:4633
 #, fuzzy, no-c-format
 #| msgid "On some distributions, it may be necessary to perform the same steps with the <filename>.xsession</filename> file, also in the home directory. This is especially true when using graphical login managers such as &kdm;, <application>gdm</application>, or <application>xdm</application>."
 msgid "On some distributions, it may be necessary to perform the same steps with the <filename>.xsession</filename> file, also in the home directory. This is especially true when using graphical login managers such as sddm, <application>gdm</application>, or <application>xdm</application>."
@@ -7330,14 +7325,14 @@ msgstr "Nalgunhas distribucións pode que teña que facelo co ficheiro <filename
 
 #. Tag: para
 #. +> trunk5
-#: index.docbook:4644
+#: index.docbook:4639
 #, no-c-format
 msgid "Now start your fresh &kde;: in &BSD; and &Linux; systems with virtual terminal support, <keycombo action=\"simul\">&Ctrl;&Alt;<keycap>F1</keycap></keycombo> ... <keycombo action=\"simul\">&Ctrl;&Alt;<keycap>F12</keycap></keycombo> keystroke combinations are used to switch to Virtual Console 1 through 12. This allows you to run more than one desktop environment at the same time. The fist six are text terminals and the following six are graphical displays."
 msgstr "Agora xa pode iniciar o software de &kde; construído cos fontes. In sistemas &BSD; e &Linux;, nos que existen terminais virtuais, os atallos do <keycombo action=\"simul\">&Ctrl;&Alt;<keycap>F1</keycap></keycombo> ao <keycombo action=\"simul\">&Ctrl;&Alt;<keycap>F12</keycap></keycombo> úsanse para moverse entre as distintas consolas virtuais, da 1 á 12. Isto permite executar máis dun contorno de escritorio ao mesmo tempo. As seis primeiras son terminais de texto, e as seguintes seis son pantallas gráficas."
 
 #. Tag: para
 #. +> trunk5
-#: index.docbook:4651
+#: index.docbook:4646
 #, fuzzy, no-c-format
 #| msgid "If when you start your computer you are presented to the graphical display manager instead, you can use the new &kde; environment, even if it is not listed as an option. Most display managers, including &kdm;, have an option to use a <quote>Custom Session</quote> when you login. With this option, your session settings are loaded from the <filename>.xsession</filename> file in your home directory. If you have already modified this file as described above, this option should load you into your new &kde; installation."
 msgid "If when you start your computer you are presented to the graphical display manager instead, you can use the new &kde; environment, even if it is not listed as an option. Most display managers, including sddm, have an option to use a <quote>Custom Session</quote> when you login. With this option, your session settings are loaded from the <filename>.xsession</filename> file in your home directory. If you have already modified this file as described above, this option should load you into your new &kde; installation."
@@ -7345,21 +7340,21 @@ msgstr "Se ao iniciar o computador lle aparece o xestor de inicio gráfico, pode
 
 #. Tag: para
 #. +> trunk5
-#: index.docbook:4661
+#: index.docbook:4656
 #, no-c-format
 msgid "If it does not, there is something else you can try that should normally work: Press <keycombo action=\"simul\">&Ctrl;&Alt;<keycap>F2</keycap></keycombo>, and you will be presented to a text terminal. Log in using the dedicated user and type:"
 msgstr "Se non o fai, pode probar unha alternativa que adoita funcionar: prema <keycombo action=\"simul\">&Ctrl;&Alt;<keycap>F2</keycap></keycombo>, e apareceralle un terminal de texto. Identifíquese coas credenciais do usuario separado, e execute o seguinte:"
 
 #. Tag: screen
 #. +> trunk5
-#: index.docbook:4667 index.docbook:4678
+#: index.docbook:4662 index.docbook:4673
 #, no-c-format
 msgid "<command>startx</command> <option>--</option> <option>:1</option>"
 msgstr "<command>startx</command> <option>--</option> <option>:1</option>"
 
 #. Tag: para
 #. +> trunk5
-#: index.docbook:4670
+#: index.docbook:4665
 #, fuzzy, no-c-format
 #| msgid "You can run the &kde; from sources and the old &kde; at the same time! Log in using your regular user, start the stable &kde; desktop. Press <keycombo action=\"simul\">&Ctrl;&Alt;<keycap>F2</keycap></keycombo> (or <keycap>F1</keycap>, <keycap>F3</keycap>, etc..), and you will be presented with a text terminal. Log in using the dedicated &kde; &subversion; user and type:"
 msgid "You can run the &kde; from sources and the old &kde; at the same time! Log in using your regular user, start the stable &kde; desktop. Press <keycombo action=\"simul\">&Ctrl;&Alt;<keycap>F2</keycap></keycombo> (or <keycap>F1</keycap>, <keycap>F3</keycap>, etc..), and you will be presented with a text terminal. Log in using the dedicated &kde; &git; user and type:"
@@ -7367,7 +7362,7 @@ msgstr "Pode executar a versión do software de &kde; compilada dos fontes e a v
 
 #. Tag: para
 #. +> trunk5
-#: index.docbook:4680
+#: index.docbook:4675
 #, no-c-format
 msgid "You can go back to the &kde; desktop of your regular user by pressing the shortcut key for the already running desktop. This is normally <keycombo action=\"simul\">&Ctrl;&Alt;<keycap>F7</keycap></keycombo>, you may need to use <keycap>F6</keycap> or <keycap>F8</keycap> instead. To return to your &kdesrc-build;-compiled &kde;, you would use the same sequence, except with the next function key. For example, if you needed to enter <keycombo action=\"simul\">&Ctrl;&Alt;<keycap>F7</keycap></keycombo> to switch to your regular &kde;, you would need to enter <keycombo action=\"simul\">&Ctrl;&Alt;<keycap>F8</keycap></keycombo> to go back to your &kdesrc-build; &kde;."
 msgstr "Pode volver ao escritorio de &kde; do seu usuario habitual premendo a tecla de atallo do escritorio xa en execución. Adoita ser <keycombo action=\"simul\">&Ctrl;&Alt;<keycap>F7</keycap></keycombo>, aínda que pode que teña que usar <keycap>F6</keycap> ou <keycap>F8</keycap>. Para volver á versión do software de KDE compilada con &kdesrc-build; use a mesma secuencia de atallo, pero usando a seguinte tecla de función. Por exemplo, se ten que inserir <keycombo action=\"simul\">&Ctrl;&Alt;<keycap>F7</keycap></keycombo> para cambiar á versión habitual do softawre de KDE, insira <keycombo action=\"simul\">&Ctrl;&Alt;<keycap>F8</keycap></keycombo> para volver á versión de &kdesrc-build; do software de KDE."
