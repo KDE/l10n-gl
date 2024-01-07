@@ -16,94 +16,268 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #. Tag: title
-#: index.docbook:100
-#, no-c-format
-msgid "&kdesrc-build; Script Manual"
-msgstr "Manual do guión &kdesrc-build;"
-
-#. Tag: author
-#: index.docbook:103
-#, no-c-format
-msgid "&Michael.Pyne; &Michael.Pyne.mail;"
-msgstr ""
-
-#. Tag: author
-#: index.docbook:104
+#: environment.docbook:2
 #, fuzzy, no-c-format
-#| msgid "<firstname>Carlos</firstname><surname>Woelz</surname>"
-msgid ""
-"<personname><firstname>Carlos</firstname><surname>Woelz</surname></"
-"personname> <email>carloswoelz@imap-mail.com</email>"
-msgstr "<firstname>Carlos</firstname><surname>Woelz</surname>"
-
-#. Tag: trans_comment
-#: index.docbook:109
-#, no-c-format
-msgid "ROLES_OF_TRANSLATORS"
-msgstr ""
-"<othercredit role=\"translator\"><firstname>Adrián</"
-"firstname><surname>Chaves Fernández</"
-"surname><affiliation><address><email>adrian@chaves.io</email></address></"
-"affiliation><contrib>Tradución ao galego.</contrib></othercredit>"
-
-#. Tag: holder
-#: index.docbook:128
-#, no-c-format
-msgid "Michael Pyne"
-msgstr "Michael Pyne"
-
-#. Tag: holder
-#: index.docbook:133
-#, no-c-format
-msgid "Carlos Woelz"
-msgstr "Carlos Woelz"
-
-#. Tag: date
-#: index.docbook:138
-#, no-c-format
-msgid "2018-01-20"
-msgstr ""
-
-#. Tag: releaseinfo
-#: index.docbook:139
-#, fuzzy, no-c-format
-#| msgid "Setup &kdesrc-build;"
-msgid "&kdesrc-build; 17.12"
-msgstr "Configuración de &kdesrc-build;"
+#| msgid "Setting the Environment to Run Your Fresh &kde;"
+msgid "Setting the Environment to Run Your &kde; &plasma; Desktop"
+msgstr "Configurar o ambiente no que executar o seu novo &kde;"
 
 #. Tag: para
-#: index.docbook:142
+#: environment.docbook:4
+#, fuzzy, no-c-format
+#| msgid ""
+#| "Assuming you are using a dedicated user to build &kde;, and you already "
+#| "have an installed &kde; version, running your new &kde; may be a bit "
+#| "tricky, as the new &kde; has to take precedence over the old. Change the "
+#| "environment variables to make sure it does."
+msgid ""
+"Assuming you are using a dedicated user to build &kde; &plasma;, and you "
+"already have an installed &plasma; version, running your new &plasma; may be "
+"a bit tricky, as the new &plasma; has to take precedence over the old. You "
+"must change the environment variables of your login scripts to make sure the "
+"newly-built desktop is used."
+msgstr ""
+"Supoñendo que estea a empregar un usuario separado para construír &kde;, e "
+"que xa conta cunha versión da colección de software de &kde; instalada, "
+"executar a versión construída desde as fontes pode resultar algo difícil, "
+"dado que esta última versión debe ter prioridade sobre a do sistema. Para "
+"asegurarse de que así sexa, terá que modificar as variables do ambiente."
+
+#. Tag: title
+#: environment.docbook:12
+#, no-c-format
+msgid "Automatically installing a login driver"
+msgstr ""
+
+#. Tag: para
+#: environment.docbook:14
 #, no-c-format
 msgid ""
-"&kdesrc-build; is a script which builds and installs &kde; software directly "
-"from the &kde; project's source code repositories."
+"Starting from version 1.16, &kdesrc-build; will try to install an "
+"appropriate login driver, that will allow you to login to your &kdesrc-"
+"build;-built &kde; desktop from your login manager. This can be disabled by "
+"using the <option><link linkend=\"conf-install-session-driver\">install-"
+"session-driver</link></option> configuration file option."
 msgstr ""
-"&kdesrc-build; é un guión que constrúe e instala o software de &kde; "
-"directamente desde o código fonte dos repositorios do proxecto."
 
-#. Tag: keyword
-#: index.docbook:147
+#. Tag: para
+#: environment.docbook:21
 #, no-c-format
-msgid "<keyword>KDE</keyword>"
-msgstr "<keyword>KDE</keyword>"
+msgid ""
+"Session setup does not occur while &kdesrc-build; is running in pretend mode."
+msgstr ""
 
-#. Tag: keyword
-#: index.docbook:148
+#. Tag: para
+#: environment.docbook:24
 #, no-c-format
-msgid "kdesdk"
-msgstr "kdesdk"
+msgid ""
+"This driver works by setting up a custom <quote><literal>xsession</literal></"
+"quote> session type. This type of session should work by default with the "
+"sddm login manager (where it appears as a <quote>Custom</quote> session), "
+"but other login managers (such as <application>LightDM</application> and "
+"<application>gdm</application>) may require additional files installed to "
+"enable <literal>xsession</literal> support."
+msgstr ""
 
-#. Tag: keyword
-#: index.docbook:149
+#. Tag: title
+#: environment.docbook:32
 #, no-c-format
-msgid "<keyword>git</keyword>"
-msgstr "<keyword>git</keyword>"
+msgid "Adding xsession support for distributions"
+msgstr ""
 
-#. Tag: keyword
-#: index.docbook:150
+#. Tag: para
+#: environment.docbook:34
 #, no-c-format
-msgid "KDE development"
-msgstr "Desenvolvemento de KDE"
+msgid ""
+"The default login managers for some distributions may require additional "
+"packages to be installed in order to support <literal>xsession</literal> "
+"logins."
+msgstr ""
+
+#. Tag: para
+#: environment.docbook:38
+#, no-c-format
+msgid ""
+"The <ulink url=\"https://getfedora.org/\">Fedora</ulink> &Linux; "
+"distribution requires the <literal>xorg-x11-xinit-session</literal> package "
+"to be installed for custom <literal>xsession</literal> login support."
+msgstr ""
+
+#. Tag: para
+#: environment.docbook:43
+#, no-c-format
+msgid ""
+"<ulink url=\"https://www.debian.org/\">Debian</ulink> and Debian-derived "
+"&Linux; distributions should support custom <literal>xsession</literal> "
+"logins, but require the <option><userinput>allow-user-xsession</userinput></"
+"option> option to be set in <filename>/etc/X11/Xsession.options</filename>. "
+"See also the Debian <ulink url=\"https://www.debian.org/doc/manuals/debian-"
+"reference/ch07.en.html#_customizing_the_x_session_classic_method"
+"\">documentation on customizing the X session.</ulink>"
+msgstr ""
+
+#. Tag: para
+#: environment.docbook:51
+#, no-c-format
+msgid ""
+"For other distributions, go to <xref linkend=\"xsession-manual-setup\"/>."
+msgstr ""
+
+#. Tag: title
+#: environment.docbook:58
+#, no-c-format
+msgid "Manually adding support for xsession"
+msgstr ""
+
+#. Tag: para
+#: environment.docbook:60
+#, no-c-format
+msgid ""
+"If there were no distribution-specific directions for your distribution in "
+"<xref linkend=\"xsession-distribution-setup\"/>, you can manually add a "
+"<quote>Custom xsession login</quote> entry to your distribution's list of "
+"session types as follows:"
+msgstr ""
+
+#. Tag: title
+#: environment.docbook:66
+#, no-c-format
+msgid "Adding an .xsession login session type."
+msgstr ""
+
+#. Tag: para
+#: environment.docbook:68
+#, no-c-format
+msgid ""
+"This procedure will likely require administrative privileges to complete."
+msgstr ""
+
+#. Tag: para
+#: environment.docbook:73
+#, no-c-format
+msgid ""
+"Create the file <filename>/usr/share/xsessions/kdesrc-build.desktop</"
+"filename>."
+msgstr ""
+
+#. Tag: para
+#: environment.docbook:78
+#, no-c-format
+msgid "Ensure the file just created has the following text:"
+msgstr ""
+
+#. Tag: literallayout
+#: environment.docbook:79
+#, no-c-format
+msgid ""
+"<userinput>\n"
+"Type=XSession\n"
+"Exec=<co id=\"session-homedir\"/><replaceable>$HOME</replaceable>/.xsession\n"
+"Name=KDE Plasma Desktop (unstable; kdesrc-build)\n"
+"</userinput>"
+msgstr ""
+
+#. Tag: para
+#: environment.docbook:82
+#, no-c-format
+msgid ""
+"The <replaceable>$HOME</replaceable> entry must be replaced by the full path "
+"to your home directory (example, <filename class=\"directory\">/home/"
+"<replaceable>user</replaceable></filename>). The desktop entry specification "
+"does not allow for user-generic files."
+msgstr ""
+
+#. Tag: para
+#: environment.docbook:92
+#, no-c-format
+msgid ""
+"When the login manager is restarted, it should show a new session type, "
+"<quote>KDE Plasma Desktop (unstable; kdesrc-build)</quote> in its list of "
+"sessions, which should try to run the <filename>.xsession</filename> file "
+"installed by &kdesrc-build; if it is selected when you login."
+msgstr ""
+
+#. Tag: para
+#: environment.docbook:98
+#, no-c-format
+msgid ""
+"It may be easiest to restart the computer to restart the login manager, if "
+"the login manager does not track updates to the <filename class=\"directory"
+"\">/usr/share/xsessions</filename> directory."
+msgstr ""
+
+#. Tag: title
+#: environment.docbook:111
+#, fuzzy, no-c-format
+#| msgid "Setting the Configuration Data"
+msgid "Setting up the environment manually"
+msgstr "Definición dos datos de configuración"
+
+#. Tag: para
+#: environment.docbook:112
+#, no-c-format
+msgid ""
+"This documentation used to include instruction on which environment "
+"variables to set in order to load up the newly-built desktop. These "
+"instructions have been moved to an appendix (<xref linkend=\"old-profile-"
+"setup\"/>)."
+msgstr ""
+
+#. Tag: para
+#: environment.docbook:117
+#, no-c-format
+msgid ""
+"If you intend to setup your own login support you can consult that appendix "
+"or view the <filename>kde-env-master.sh.in</filename> file included with the "
+"&kdesrc-build; source."
+msgstr ""
+
+#~ msgid "&kdesrc-build; Script Manual"
+#~ msgstr "Manual do guión &kdesrc-build;"
+
+#, fuzzy
+#~| msgid "<firstname>Carlos</firstname><surname>Woelz</surname>"
+#~ msgid ""
+#~ "<personname><firstname>Carlos</firstname><surname>Woelz</surname></"
+#~ "personname> <email>carloswoelz@imap-mail.com</email>"
+#~ msgstr "<firstname>Carlos</firstname><surname>Woelz</surname>"
+
+#~ msgid "ROLES_OF_TRANSLATORS"
+#~ msgstr ""
+#~ "<othercredit role=\"translator\"><firstname>Adrián</"
+#~ "firstname><surname>Chaves Fernández</"
+#~ "surname><affiliation><address><email>adrian@chaves.io</email></address></"
+#~ "affiliation><contrib>Tradución ao galego.</contrib></othercredit>"
+
+#~ msgid "Michael Pyne"
+#~ msgstr "Michael Pyne"
+
+#~ msgid "Carlos Woelz"
+#~ msgstr "Carlos Woelz"
+
+#, fuzzy
+#~| msgid "Setup &kdesrc-build;"
+#~ msgid "&kdesrc-build; 17.12"
+#~ msgstr "Configuración de &kdesrc-build;"
+
+#~ msgid ""
+#~ "&kdesrc-build; is a script which builds and installs &kde; software "
+#~ "directly from the &kde; project's source code repositories."
+#~ msgstr ""
+#~ "&kdesrc-build; é un guión que constrúe e instala o software de &kde; "
+#~ "directamente desde o código fonte dos repositorios do proxecto."
+
+#~ msgid "<keyword>KDE</keyword>"
+#~ msgstr "<keyword>KDE</keyword>"
+
+#~ msgid "kdesdk"
+#~ msgstr "kdesdk"
+
+#~ msgid "<keyword>git</keyword>"
+#~ msgstr "<keyword>git</keyword>"
+
+#~ msgid "KDE development"
+#~ msgstr "Desenvolvemento de KDE"
 
 #~ msgid "Introduction"
 #~ msgstr "Introdución"
@@ -781,35 +955,6 @@ msgstr "Desenvolvemento de KDE"
 #~| msgid "Example output of building a single module"
 #~ msgid "Example output of a kdesrc-build specific module build"
 #~ msgstr "Saída de exemplo ao construír un único módulo."
-
-#, fuzzy
-#~| msgid "Setting the Environment to Run Your Fresh &kde;"
-#~ msgid "Setting the Environment to Run Your &kde; &plasma; Desktop"
-#~ msgstr "Configurar o ambiente no que executar o seu novo &kde;"
-
-#, fuzzy
-#~| msgid ""
-#~| "Assuming you are using a dedicated user to build &kde;, and you already "
-#~| "have an installed &kde; version, running your new &kde; may be a bit "
-#~| "tricky, as the new &kde; has to take precedence over the old. Change the "
-#~| "environment variables to make sure it does."
-#~ msgid ""
-#~ "Assuming you are using a dedicated user to build &kde; &plasma;, and you "
-#~ "already have an installed &plasma; version, running your new &plasma; may "
-#~ "be a bit tricky, as the new &plasma; has to take precedence over the old. "
-#~ "You must change the environment variables of your login scripts to make "
-#~ "sure the newly-built desktop is used."
-#~ msgstr ""
-#~ "Supoñendo que estea a empregar un usuario separado para construír &kde;, "
-#~ "e que xa conta cunha versión da colección de software de &kde; instalada, "
-#~ "executar a versión construída desde as fontes pode resultar algo difícil, "
-#~ "dado que esta última versión debe ter prioridade sobre a do sistema. Para "
-#~ "asegurarse de que así sexa, terá que modificar as variables do ambiente."
-
-#, fuzzy
-#~| msgid "Setting the Configuration Data"
-#~ msgid "Setting up the environment manually"
-#~ msgstr "Definición dos datos de configuración"
 
 #~ msgid "Module Organization and selection"
 #~ msgstr "Organización e escolla dos módulos"

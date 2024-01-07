@@ -16,94 +16,190 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #. Tag: title
-#: index.docbook:100
-#, no-c-format
-msgid "&kdesrc-build; Script Manual"
+#: kdesrc-build-logging.docbook:2
+#, fuzzy, no-c-format
+#| msgid "&kdesrc-build; Script Manual"
+msgid "&kdesrc-build;'s build logging"
 msgstr "Manual do guión &kdesrc-build;"
 
-#. Tag: author
-#: index.docbook:103
+#. Tag: title
+#: kdesrc-build-logging.docbook:5
 #, no-c-format
-msgid "&Michael.Pyne; &Michael.Pyne.mail;"
+msgid "Logging overview"
 msgstr ""
-
-#. Tag: author
-#: index.docbook:104
-#, fuzzy, no-c-format
-#| msgid "<firstname>Carlos</firstname><surname>Woelz</surname>"
-msgid ""
-"<personname><firstname>Carlos</firstname><surname>Woelz</surname></"
-"personname> <email>carloswoelz@imap-mail.com</email>"
-msgstr "<firstname>Carlos</firstname><surname>Woelz</surname>"
-
-#. Tag: trans_comment
-#: index.docbook:109
-#, no-c-format
-msgid "ROLES_OF_TRANSLATORS"
-msgstr ""
-"<othercredit role=\"translator\"><firstname>Adrián</"
-"firstname><surname>Chaves Fernández</"
-"surname><affiliation><address><email>adrian@chaves.io</email></address></"
-"affiliation><contrib>Tradución ao galego.</contrib></othercredit>"
-
-#. Tag: holder
-#: index.docbook:128
-#, no-c-format
-msgid "Michael Pyne"
-msgstr "Michael Pyne"
-
-#. Tag: holder
-#: index.docbook:133
-#, no-c-format
-msgid "Carlos Woelz"
-msgstr "Carlos Woelz"
-
-#. Tag: date
-#: index.docbook:138
-#, no-c-format
-msgid "2018-01-20"
-msgstr ""
-
-#. Tag: releaseinfo
-#: index.docbook:139
-#, fuzzy, no-c-format
-#| msgid "Setup &kdesrc-build;"
-msgid "&kdesrc-build; 17.12"
-msgstr "Configuración de &kdesrc-build;"
 
 #. Tag: para
-#: index.docbook:142
+#: kdesrc-build-logging.docbook:7
 #, no-c-format
 msgid ""
-"&kdesrc-build; is a script which builds and installs &kde; software directly "
-"from the &kde; project's source code repositories."
+"Logging is a &kdesrc-build; feature whereby the output from every command "
+"that &kdesrc-build; runs is saved to a file for examination later, if "
+"necessary. This is done because it is often necessary to have the output of "
+"these programs when there is a build failure, because there are so many "
+"reasons why a build can fail in the first place."
 msgstr ""
-"&kdesrc-build; é un guión que constrúe e instala o software de &kde; "
-"directamente desde o código fonte dos repositorios do proxecto."
 
-#. Tag: keyword
-#: index.docbook:147
+#. Tag: title
+#: kdesrc-build-logging.docbook:14
 #, no-c-format
-msgid "<keyword>KDE</keyword>"
-msgstr "<keyword>KDE</keyword>"
+msgid "Logging directory layout"
+msgstr ""
 
-#. Tag: keyword
-#: index.docbook:148
+#. Tag: para
+#: kdesrc-build-logging.docbook:16
 #, no-c-format
-msgid "kdesdk"
-msgstr "kdesdk"
+msgid ""
+"The logs are always stored under the log directory. The destination of the "
+"log directory is controlled by the <link linkend=\"conf-log-dir\">log-dir</"
+"link> option, which defaults to <filename class=\"directory\"><symbol>"
+"${source-dir}</symbol>/log</filename> (where <symbol>${source-dir}</symbol> "
+"is the value of the <link linkend=\"conf-source-dir\">source-dir</link> "
+"option. The in rest of this section, this value will be referred to as "
+"<symbol>${log-dir}</symbol>)."
+msgstr ""
 
-#. Tag: keyword
-#: index.docbook:149
+#. Tag: para
+#: kdesrc-build-logging.docbook:23
 #, no-c-format
-msgid "<keyword>git</keyword>"
-msgstr "<keyword>git</keyword>"
+msgid ""
+"Under <symbol>${log-dir}</symbol>, is a set of directories, one for every "
+"time that &kdesrc-build; was run. Each directory is named with the date, and "
+"the run number. For instance, the second time that &kdesrc-build; is run on "
+"May 26, 2004, it would create a directory called <filename>2004-05-26-02</"
+"filename>, where the 2004-05-26 is for the date, and the -02 is the run "
+"number."
+msgstr ""
 
-#. Tag: keyword
-#: index.docbook:150
+#. Tag: para
+#: kdesrc-build-logging.docbook:29
 #, no-c-format
-msgid "KDE development"
-msgstr "Desenvolvemento de KDE"
+msgid ""
+"For your convenience, &kdesrc-build; will also create a link to the logs for "
+"your latest run, called <filename class=\"directory\">latest</filename>. So "
+"the logs for the most recent &kdesrc-build; run should always be under "
+"<filename class=\"directory\"><symbol>${log-dir}</symbol>/latest</filename>."
+msgstr ""
+
+#. Tag: para
+#: kdesrc-build-logging.docbook:34
+#, no-c-format
+msgid ""
+"Now, each directory for a &kdesrc-build; run will itself contain a set of "
+"directories, one for every &kde; module that &kdesrc-build; tries to build. "
+"Also, a file called <filename>build-status</filename> will be contained in "
+"the directory, which will allow you to determine which modules built and "
+"which failed."
+msgstr ""
+
+#. Tag: para
+#: kdesrc-build-logging.docbook:39
+#, no-c-format
+msgid ""
+"If a module itself has a submodule (such as extragear/multimedia, playground/"
+"utils, or KDE/kdelibs), then there would actually be a matching layout in "
+"the log directory. For example, the logs for KDE/kdelibs after the last "
+"&kdesrc-build; run would be found in <filename class=\"directory\"><symbol>"
+"${log-dir}</symbol>/latest/KDE/kdelibs</filename>, and not under <filename "
+"class=\"directory\"><symbol>${log-dir}</symbol>/latest/kdelibs</filename>."
+msgstr ""
+
+#. Tag: para
+#: kdesrc-build-logging.docbook:47
+#, no-c-format
+msgid ""
+"In each module log directory, you will find a set of files for each "
+"operation that &kdesrc-build; performs. If &kdesrc-build; updates a module, "
+"you may see filenames such as <filename>git-checkout-update.log</filename> "
+"(for a module checkout or when updating a module that has already been "
+"checked out). If the <command>configure</command> command was run, then you "
+"would expect to see a <filename>configure.log</filename> in that directory."
+msgstr ""
+
+#. Tag: para
+#: kdesrc-build-logging.docbook:55
+#, no-c-format
+msgid ""
+"If an error occurred, you should be able to see an explanation of why in one "
+"of the files. To help you determine which file contains the error, &kdesrc-"
+"build; will create a link from the file containing the error (such as "
+"<filename>build-1.log</filename> to a file called <filename>error.log</"
+"filename>)."
+msgstr ""
+
+#. Tag: para
+#: kdesrc-build-logging.docbook:60
+#, no-c-format
+msgid ""
+"The upshot to all of this is that to see why a module failed to build after "
+"your last &kdesrc-build;, the file you should look at first is "
+"<filename><symbol>${log-dir}</symbol>/latest/<replaceable>module-name</"
+"replaceable>/error.log</filename>."
+msgstr ""
+
+#. Tag: para
+#: kdesrc-build-logging.docbook:65
+#, no-c-format
+msgid ""
+"If the file <filename>error.log</filename> is empty (especially after an "
+"installation), then perhaps there was no error. Some of the tools used by "
+"the &kde; build system will sometimes mistakenly report an error when there "
+"was none."
+msgstr ""
+
+#. Tag: para
+#: kdesrc-build-logging.docbook:70
+#, no-c-format
+msgid ""
+"Also, some commands will evade &kdesrc-build;'s output redirection and "
+"bypass the log file in certain circumstances (normally when performing the "
+"first &git; checkout), and the error output in that case is not in the log "
+"file but is instead at the &konsole; or terminal where you ran &kdesrc-"
+"build;."
+msgstr ""
+
+#, fuzzy
+#~| msgid "<firstname>Carlos</firstname><surname>Woelz</surname>"
+#~ msgid ""
+#~ "<personname><firstname>Carlos</firstname><surname>Woelz</surname></"
+#~ "personname> <email>carloswoelz@imap-mail.com</email>"
+#~ msgstr "<firstname>Carlos</firstname><surname>Woelz</surname>"
+
+#~ msgid "ROLES_OF_TRANSLATORS"
+#~ msgstr ""
+#~ "<othercredit role=\"translator\"><firstname>Adrián</"
+#~ "firstname><surname>Chaves Fernández</"
+#~ "surname><affiliation><address><email>adrian@chaves.io</email></address></"
+#~ "affiliation><contrib>Tradución ao galego.</contrib></othercredit>"
+
+#~ msgid "Michael Pyne"
+#~ msgstr "Michael Pyne"
+
+#~ msgid "Carlos Woelz"
+#~ msgstr "Carlos Woelz"
+
+#, fuzzy
+#~| msgid "Setup &kdesrc-build;"
+#~ msgid "&kdesrc-build; 17.12"
+#~ msgstr "Configuración de &kdesrc-build;"
+
+#~ msgid ""
+#~ "&kdesrc-build; is a script which builds and installs &kde; software "
+#~ "directly from the &kde; project's source code repositories."
+#~ msgstr ""
+#~ "&kdesrc-build; é un guión que constrúe e instala o software de &kde; "
+#~ "directamente desde o código fonte dos repositorios do proxecto."
+
+#~ msgid "<keyword>KDE</keyword>"
+#~ msgstr "<keyword>KDE</keyword>"
+
+#~ msgid "kdesdk"
+#~ msgstr "kdesdk"
+
+#~ msgid "<keyword>git</keyword>"
+#~ msgstr "<keyword>git</keyword>"
+
+#~ msgid "KDE development"
+#~ msgstr "Desenvolvemento de KDE"
 
 #~ msgid "Introduction"
 #~ msgstr "Introdución"

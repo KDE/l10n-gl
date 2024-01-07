@@ -16,94 +16,462 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #. Tag: title
-#: index.docbook:100
-#, no-c-format
-msgid "&kdesrc-build; Script Manual"
-msgstr "Manual do guión &kdesrc-build;"
-
-#. Tag: author
-#: index.docbook:103
-#, no-c-format
-msgid "&Michael.Pyne; &Michael.Pyne.mail;"
-msgstr ""
-
-#. Tag: author
-#: index.docbook:104
-#, fuzzy, no-c-format
-#| msgid "<firstname>Carlos</firstname><surname>Woelz</surname>"
-msgid ""
-"<personname><firstname>Carlos</firstname><surname>Woelz</surname></"
-"personname> <email>carloswoelz@imap-mail.com</email>"
-msgstr "<firstname>Carlos</firstname><surname>Woelz</surname>"
-
-#. Tag: trans_comment
-#: index.docbook:109
-#, no-c-format
-msgid "ROLES_OF_TRANSLATORS"
-msgstr ""
-"<othercredit role=\"translator\"><firstname>Adrián</"
-"firstname><surname>Chaves Fernández</"
-"surname><affiliation><address><email>adrian@chaves.io</email></address></"
-"affiliation><contrib>Tradución ao galego.</contrib></othercredit>"
-
-#. Tag: holder
-#: index.docbook:128
-#, no-c-format
-msgid "Michael Pyne"
-msgstr "Michael Pyne"
-
-#. Tag: holder
-#: index.docbook:133
-#, no-c-format
-msgid "Carlos Woelz"
-msgstr "Carlos Woelz"
-
-#. Tag: date
-#: index.docbook:138
-#, no-c-format
-msgid "2018-01-20"
-msgstr ""
-
-#. Tag: releaseinfo
-#: index.docbook:139
+#: kdesrc-buildrc.docbook:2
 #, fuzzy, no-c-format
 #| msgid "Setup &kdesrc-build;"
-msgid "&kdesrc-build; 17.12"
+msgid "Configuring &kdesrc-build;"
 msgstr "Configuración de &kdesrc-build;"
 
+#. Tag: title
+#: kdesrc-buildrc.docbook:5
+#, fuzzy, no-c-format
+#| msgid "Prepare the configuration file"
+msgid "Overview of &kdesrc-build; configuration"
+msgstr "Preparación do ficheiro de configuración"
+
 #. Tag: para
-#: index.docbook:142
+#: kdesrc-buildrc.docbook:7
+#, fuzzy, no-c-format
+#| msgid ""
+#| "To use &kdesrc-build;, you should have a file in your home directory "
+#| "called <filename>.kdesrc-buildrc</filename>, which sets the general "
+#| "options and sets the modules you would like to download and build."
+msgid ""
+"To use the script, you must have a file in your home directory called "
+"<filename>.kdesrc-buildrc</filename>, which describes the modules you would "
+"like to download and build, and any options or configuration parameters to "
+"use for these modules."
+msgstr ""
+"Para empregar &kdesrc-build; debería contar no seu directorio persoal cun "
+"ficheiro chamado <filename>.kdesrc-buildrc</filename>, que define as opcións "
+"xerais, así como os módulos que se descargarán e construirán."
+
+#. Tag: title
+#: kdesrc-buildrc.docbook:15
+#, fuzzy, no-c-format
+#| msgid "Prepare the configuration file"
+msgid "Layout of the configuration file"
+msgstr "Preparación do ficheiro de configuración"
+
+#. Tag: title
+#: kdesrc-buildrc.docbook:18
+#, fuzzy, no-c-format
+#| msgid "Prepare the configuration file"
+msgid "Global configuration"
+msgstr "Preparación do ficheiro de configuración"
+
+#. Tag: para
+#: kdesrc-buildrc.docbook:20
 #, no-c-format
 msgid ""
-"&kdesrc-build; is a script which builds and installs &kde; software directly "
-"from the &kde; project's source code repositories."
+"The configuration file starts with the global options, specified like the "
+"following:"
 msgstr ""
-"&kdesrc-build; é un guión que constrúe e instala o software de &kde; "
-"directamente desde o código fonte dos repositorios do proxecto."
 
-#. Tag: keyword
-#: index.docbook:147
+#. Tag: programlisting
+#: kdesrc-buildrc.docbook:25
 #, no-c-format
-msgid "<keyword>KDE</keyword>"
-msgstr "<keyword>KDE</keyword>"
+msgid ""
+"global\n"
+"<replaceable>option-name option-value</replaceable>\n"
+"<replaceable>[...]</replaceable>\n"
+"end global"
+msgstr ""
 
-#. Tag: keyword
-#: index.docbook:148
-#, no-c-format
-msgid "kdesdk"
-msgstr "kdesdk"
+#. Tag: title
+#: kdesrc-buildrc.docbook:29
+#, fuzzy, no-c-format
+#| msgid "Prepare the configuration file"
+msgid "Module configuration"
+msgstr "Preparación do ficheiro de configuración"
 
-#. Tag: keyword
-#: index.docbook:149
+#. Tag: para
+#: kdesrc-buildrc.docbook:31
 #, no-c-format
-msgid "<keyword>git</keyword>"
-msgstr "<keyword>git</keyword>"
+msgid ""
+"It is then followed by one or more module sections, specified in one of the "
+"following two forms:"
+msgstr ""
 
-#. Tag: keyword
-#: index.docbook:150
+#. Tag: programlisting
+#: kdesrc-buildrc.docbook:38
 #, no-c-format
-msgid "KDE development"
-msgstr "Desenvolvemento de KDE"
+msgid ""
+"module <replaceable>module-name</replaceable>\n"
+"<replaceable>option-name option-value</replaceable>\n"
+"<replaceable>[...]</replaceable>\n"
+"end module"
+msgstr ""
+
+#. Tag: programlisting
+#: kdesrc-buildrc.docbook:42
+#, no-c-format
+msgid ""
+"module-set <replaceable>module-set-name</replaceable>\n"
+"  repository <userinput>kde-projects</userinput> or "
+"<userinput><replaceable>git://host.org/path/to/repo.git</replaceable></"
+"userinput>\n"
+"  use-modules <replaceable>module-names</replaceable>\n"
+"\n"
+"# Other options may also be set\n"
+"<replaceable>option-name option-value</replaceable>\n"
+"<replaceable>[...]</replaceable>\n"
+"end module-set"
+msgstr ""
+
+#. Tag: para
+#: kdesrc-buildrc.docbook:46
+#, no-c-format
+msgid ""
+"Note that the second form, module sets, <emphasis>only works for Git-based "
+"modules</emphasis>."
+msgstr ""
+
+#. Tag: para
+#: kdesrc-buildrc.docbook:49
+#, no-c-format
+msgid ""
+"For Git modules, <replaceable>module-name</replaceable> must be a module "
+"from the &kde; &git; repository (for example, kdeartwork or kde-wallpapers)."
+msgstr ""
+
+#. Tag: para
+#: kdesrc-buildrc.docbook:55
+#, no-c-format
+msgid ""
+"For Git modules, the module name can be essentially whatever you'd like, as "
+"long as it does not duplicate any other module name in the configuration. "
+"Keep in mind the source and build directory layout will be based on the "
+"module name if you do not use the <link linkend=\"conf-dest-dir\">dest-dir</"
+"link> option."
+msgstr ""
+
+#. Tag: para
+#: kdesrc-buildrc.docbook:62
+#, no-c-format
+msgid ""
+"However, for Git <emphasis>module sets</emphasis> the <replaceable>module-"
+"names</replaceable> must correspond with actual git modules in the chosen "
+"<option>repository</option>. See <link linkend=\"conf-git-repository-base"
+"\">git-repository-base</link> or <link linkend=\"conf-use-modules\">use-"
+"modules</link> for more information."
+msgstr ""
+
+#. Tag: title
+#: kdesrc-buildrc.docbook:72
+#, no-c-format
+msgid "Processing of option values"
+msgstr ""
+
+#. Tag: para
+#: kdesrc-buildrc.docbook:74
+#, no-c-format
+msgid ""
+"In general, the entire line contents after the <replaceable>option-name</"
+"replaceable> is used as the <replaceable>option-value</replaceable>."
+msgstr ""
+
+#. Tag: para
+#: kdesrc-buildrc.docbook:78
+#, no-c-format
+msgid ""
+"One modification that &kdesrc-build; performs is that a sequence <userinput>"
+"${<replaceable>name-of-option</replaceable>}</userinput> is replaced with "
+"the value of that option from the global configuration. This allows you to "
+"reference the value of existing options, including options already set by "
+"&kdesrc-build;."
+msgstr ""
+
+#. Tag: para
+#: kdesrc-buildrc.docbook:84
+#, no-c-format
+msgid ""
+"To see an example of this in use, see <xref linkend=\"make-options-example\"/"
+">."
+msgstr ""
+
+#. Tag: title
+#: kdesrc-buildrc.docbook:91
+#, no-c-format
+msgid "<quote>options</quote> modules"
+msgstr ""
+
+#. Tag: para
+#: kdesrc-buildrc.docbook:93
+#, no-c-format
+msgid ""
+"There is a final type of configuration file entry, <literal>options</"
+"literal> groups, which may be given wherever a <literal>module</literal> or "
+"<literal>module-set</literal> may be used."
+msgstr ""
+
+#. Tag: programlisting
+#: kdesrc-buildrc.docbook:97
+#, no-c-format
+msgid ""
+"options <replaceable>module-name</replaceable>\n"
+"<replaceable>option-name option-value</replaceable>\n"
+"<replaceable>[...]</replaceable>\n"
+"end options"
+msgstr ""
+
+#. Tag: para
+#: kdesrc-buildrc.docbook:99
+#, no-c-format
+msgid ""
+"An <literal>options</literal> group may have options set for it just like a "
+"module declaration, and is associated with an existing module. Any options "
+"set these way will be used to <emphasis>override</emphasis> options set for "
+"the associated module."
+msgstr ""
+
+#. Tag: para
+#: kdesrc-buildrc.docbook:104
+#, no-c-format
+msgid ""
+"The associated module name <emphasis>must</emphasis> match the name given in "
+"the <literal>options</literal> declaration. Be careful of mis-typing the "
+"name."
+msgstr ""
+
+#. Tag: para
+#: kdesrc-buildrc.docbook:108
+#, no-c-format
+msgid ""
+"This is useful to allow for declaring an entire <literal>module-set</"
+"literal> worth of modules, all using the same options, and then using "
+"<literal>options</literal> groups to make individual changes."
+msgstr ""
+
+#. Tag: para
+#: kdesrc-buildrc.docbook:112
+#, no-c-format
+msgid ""
+"<literal>options</literal> groups can also apply to named module sets. This "
+"allows expert users to use a common configuration file (which includes "
+"<literal>module-set</literal> declarations) as a baseline, and then make "
+"changes to the options used by those module-sets in configuration files that "
+"use the <literal><link linkend=\"kdesrc-buildrc-including\">include</link></"
+"literal> command to reference the base configuration."
+msgstr ""
+
+#. Tag: title
+#: kdesrc-buildrc.docbook:121
+#, no-c-format
+msgid "Example of using options"
+msgstr ""
+
+#. Tag: para
+#: kdesrc-buildrc.docbook:123
+#, no-c-format
+msgid ""
+"In this example we choose to build all modules from the &kde; multimedia "
+"software grouping. However we want to use a different version of the &kmix; "
+"application (perhaps for testing a bug fix). It works as follows:"
+msgstr ""
+
+#. Tag: programlisting
+#: kdesrc-buildrc.docbook:127
+#, no-c-format
+msgid ""
+"module-set <replaceable>kde-multimedia-set</replaceable>\n"
+"  repository <userinput>kde-projects</userinput>\n"
+"  use-modules <replaceable>kde/kdemultimedia</replaceable>\n"
+"  branch <replaceable>master</replaceable>\n"
+"end module-set\n"
+"\n"
+"# kmix is a part of kde/kdemultimedia group, even though we never named\n"
+"# kmix earlier in this file, &kdesrc-build; will figure out the change.\n"
+"options <replaceable>kmix</replaceable>\n"
+"  branch <replaceable>KDE/4.12</replaceable>\n"
+"end options"
+msgstr ""
+
+#. Tag: para
+#: kdesrc-buildrc.docbook:129
+#, no-c-format
+msgid ""
+"Now when you run &kdesrc-build;, all of the &kde; multimedia programs will "
+"be built from the <quote>master</quote> branch of the source repository, but "
+"&kmix; will be built from the older <quote>KDE/4.12</quote> branch. By using "
+"<literal>options</literal> you didn't have to individually list all the "
+"<emphasis>other</emphasis> &kde; multimedia programs to give them the right "
+"branch option."
+msgstr ""
+
+#. Tag: para
+#: kdesrc-buildrc.docbook:139
+#, no-c-format
+msgid ""
+"Note that this feature is only available in &kdesrc-build; from version "
+"1.16, or using the development version of &kdesrc-build; after 2014-01-12."
+msgstr ""
+
+#. Tag: title
+#: kdesrc-buildrc.docbook:148
+#, fuzzy, no-c-format
+#| msgid "Prepare the configuration file"
+msgid "Including other configuration files"
+msgstr "Preparación do ficheiro de configuración"
+
+#. Tag: para
+#: kdesrc-buildrc.docbook:150
+#, no-c-format
+msgid ""
+"Within the configuration file, you may reference other files by using the "
+"<literal>include</literal> keyword with a file, which will act as if the "
+"file referenced had been inserted into the configuration file at that point."
+msgstr ""
+
+#. Tag: para
+#: kdesrc-buildrc.docbook:156
+#, no-c-format
+msgid "For example, you could have something like this:"
+msgstr ""
+
+#. Tag: programlisting
+#: kdesrc-buildrc.docbook:157
+#, no-c-format
+msgid ""
+"global\n"
+"    include <replaceable>~/common-kdesrc-build-options</replaceable>\n"
+"\n"
+"    # Insert specific options here.\n"
+"\n"
+"end global"
+msgstr ""
+
+#. Tag: para
+#: kdesrc-buildrc.docbook:160
+#, no-c-format
+msgid ""
+"If you don't specify the full path to the file to include, then the file "
+"will be searched for starting from the directory containing the source file. "
+"This works recursively as well."
+msgstr ""
+
+#. Tag: title
+#: kdesrc-buildrc.docbook:167
+#, fuzzy, no-c-format
+#| msgid "Prepare the configuration file"
+msgid "Commonly used configuration options"
+msgstr "Preparación do ficheiro de configuración"
+
+#. Tag: para
+#: kdesrc-buildrc.docbook:169
+#, no-c-format
+msgid ""
+"The following is a list of commonly-used options. Click on the option to "
+"find out more about it. To see the full list of options, see <xref linkend="
+"\"conf-options-table\"/>."
+msgstr ""
+
+#. Tag: para
+#: kdesrc-buildrc.docbook:176
+#, no-c-format
+msgid ""
+"<link linkend=\"conf-cmake-options\">cmake-options</link> to define what "
+"flags to configure a module with using &cmake;."
+msgstr ""
+
+#. Tag: para
+#: kdesrc-buildrc.docbook:177
+#, no-c-format
+msgid ""
+"<link linkend=\"conf-branch\">branch</link>, to checkout from a branch "
+"instead of <literal>master</literal>."
+msgstr ""
+
+#. Tag: para
+#: kdesrc-buildrc.docbook:178
+#, no-c-format
+msgid ""
+"<link linkend=\"conf-configure-flags\">configure-flags</link> to define what "
+"flags to configure &Qt; with."
+msgstr ""
+
+#. Tag: para
+#: kdesrc-buildrc.docbook:179
+#, no-c-format
+msgid ""
+"<link linkend=\"conf-install-dir\">install-dir</link>, to set the directory "
+"to install &kde; to."
+msgstr ""
+
+#. Tag: para
+#: kdesrc-buildrc.docbook:180
+#, no-c-format
+msgid ""
+"<link linkend=\"conf-make-options\">make-options</link>, to pass options to "
+"the &make; program (such as number of CPUs to use)."
+msgstr ""
+
+#. Tag: para
+#: kdesrc-buildrc.docbook:181
+#, no-c-format
+msgid "<link linkend=\"conf-qtdir\">qtdir</link>, to set the path to &Qt;."
+msgstr ""
+
+#. Tag: para
+#: kdesrc-buildrc.docbook:182
+#, no-c-format
+msgid ""
+"<link linkend=\"conf-source-dir\">source-dir</link>, to change where to "
+"download the source code to."
+msgstr ""
+
+#. Tag: chapter
+#: kdesrc-buildrc.docbook:186
+#, no-c-format
+msgid "&conf-options-table;"
+msgstr ""
+
+#~ msgid "&kdesrc-build; Script Manual"
+#~ msgstr "Manual do guión &kdesrc-build;"
+
+#, fuzzy
+#~| msgid "<firstname>Carlos</firstname><surname>Woelz</surname>"
+#~ msgid ""
+#~ "<personname><firstname>Carlos</firstname><surname>Woelz</surname></"
+#~ "personname> <email>carloswoelz@imap-mail.com</email>"
+#~ msgstr "<firstname>Carlos</firstname><surname>Woelz</surname>"
+
+#~ msgid "ROLES_OF_TRANSLATORS"
+#~ msgstr ""
+#~ "<othercredit role=\"translator\"><firstname>Adrián</"
+#~ "firstname><surname>Chaves Fernández</"
+#~ "surname><affiliation><address><email>adrian@chaves.io</email></address></"
+#~ "affiliation><contrib>Tradución ao galego.</contrib></othercredit>"
+
+#~ msgid "Michael Pyne"
+#~ msgstr "Michael Pyne"
+
+#~ msgid "Carlos Woelz"
+#~ msgstr "Carlos Woelz"
+
+#, fuzzy
+#~| msgid "Setup &kdesrc-build;"
+#~ msgid "&kdesrc-build; 17.12"
+#~ msgstr "Configuración de &kdesrc-build;"
+
+#~ msgid ""
+#~ "&kdesrc-build; is a script which builds and installs &kde; software "
+#~ "directly from the &kde; project's source code repositories."
+#~ msgstr ""
+#~ "&kdesrc-build; é un guión que constrúe e instala o software de &kde; "
+#~ "directamente desde o código fonte dos repositorios do proxecto."
+
+#~ msgid "<keyword>KDE</keyword>"
+#~ msgstr "<keyword>KDE</keyword>"
+
+#~ msgid "kdesdk"
+#~ msgstr "kdesdk"
+
+#~ msgid "<keyword>git</keyword>"
+#~ msgstr "<keyword>git</keyword>"
+
+#~ msgid "KDE development"
+#~ msgstr "Desenvolvemento de KDE"
 
 #~ msgid "Introduction"
 #~ msgstr "Introdución"
@@ -377,9 +745,6 @@ msgstr "Desenvolvemento de KDE"
 #~ "os «Paquetes necesarios da súa distribución», na que pode que atope as "
 #~ "instrucións precisas para a súa distribución."
 
-#~ msgid "Setup &kdesrc-build;"
-#~ msgstr "Configuración de &kdesrc-build;"
-
 #~ msgid "Install &kdesrc-build;"
 #~ msgstr "Instalación de &kdesrc-build;"
 
@@ -451,9 +816,6 @@ msgstr "Desenvolvemento de KDE"
 #~ "class=\"directory\"><replaceable>~/kdesrc-build</replaceable></filename></"
 #~ "option></command></userinput>"
 
-#~ msgid "Prepare the configuration file"
-#~ msgstr "Preparación do ficheiro de configuración"
-
 #, fuzzy
 #~| msgid ""
 #~| "You can use a program included with &kdesrc-build;, called "
@@ -470,11 +832,6 @@ msgstr "Desenvolvemento de KDE"
 #~ "<application>kdesrc-build-setup</application>, un programa incluído con "
 #~ "&kdesrc-build;. Despois poderá editar o ficheiro <filename>~/.kdesrc-"
 #~ "buildrc</filename> para aplicar os cambios que queira."
-
-#, fuzzy
-#~| msgid "Prepare the configuration file"
-#~ msgid "Manual setup of configuration file"
-#~ msgstr "Preparación do ficheiro de configuración"
 
 #~ msgid ""
 #~ "You can find more information about the syntax of the <link linkend="
@@ -1636,21 +1993,6 @@ msgstr "Desenvolvemento de KDE"
 #~ "apunta sempre á última entrada de rexistro do cartafol de rexistros."
 
 #, fuzzy
-#~| msgid ""
-#~| "To use &kdesrc-build;, you should have a file in your home directory "
-#~| "called <filename>.kdesrc-buildrc</filename>, which sets the general "
-#~| "options and sets the modules you would like to download and build."
-#~ msgid ""
-#~ "To use the script, you must have a file in your home directory called "
-#~ "<filename>.kdesrc-buildrc</filename>, which describes the modules you "
-#~ "would like to download and build, and any options or configuration "
-#~ "parameters to use for these modules."
-#~ msgstr ""
-#~ "Para empregar &kdesrc-build; debería contar no seu directorio persoal cun "
-#~ "ficheiro chamado <filename>.kdesrc-buildrc</filename>, que define as "
-#~ "opcións xerais, así como os módulos que se descargarán e construirán."
-
-#, fuzzy
 #~| msgid "1.15"
 #~ msgid "1.15"
 #~ msgstr "1.15"
@@ -1756,11 +2098,6 @@ msgstr "Desenvolvemento de KDE"
 #~ msgstr ""
 #~ "A sintaxe e as opcións do <link linkend=\"configure-data\">ficheiro de "
 #~ "configuración</link>."
-
-#, fuzzy
-#~| msgid "Prepare the configuration file"
-#~ msgid "Generate the &kdesrc-build; configuration file."
-#~ msgstr "Preparación do ficheiro de configuración"
 
 #, fuzzy
 #~| msgid "A brief introduction to &kdesrc-build;"
