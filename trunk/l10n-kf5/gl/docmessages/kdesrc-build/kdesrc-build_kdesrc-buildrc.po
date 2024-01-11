@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-06 00:49+0000\n"
+"POT-Creation-Date: 2024-01-11 01:43+0000\n"
 "PO-Revision-Date: 2018-04-30 00:23+0100\n"
 "Last-Translator: Adrian Chaves <adrian@chaves.io>\n"
 "Language-Team: Galician <kde-i18n-doc@kde.org>\n"
@@ -175,11 +175,11 @@ msgstr ""
 #: kdesrc-buildrc.docbook:78
 #, no-c-format
 msgid ""
-"One modification that &kdesrc-build; performs is that a sequence <userinput>"
-"${<replaceable>name-of-option</replaceable>}</userinput> is replaced with "
-"the value of that option from the global configuration. This allows you to "
-"reference the value of existing options, including options already set by "
-"&kdesrc-build;."
+"One modification that &kdesrc-build; performs is that a sequence "
+"\"<userinput>${<replaceable>name-of-option</replaceable>}</userinput>\" is "
+"replaced with the value of that option from the global configuration. This "
+"allows you to reference the value of existing options, including options "
+"already set by &kdesrc-build;."
 msgstr ""
 
 #. Tag: para
@@ -190,14 +190,47 @@ msgid ""
 ">."
 msgstr ""
 
+#. Tag: para
+#: kdesrc-buildrc.docbook:88
+#, no-c-format
+msgid ""
+"You can also introduce your own non-standard global variables for "
+"referencing them further in the config. To do this, your option name should "
+"be prepended with underscore symbol. Example:"
+msgstr ""
+
 #. Tag: title
 #: kdesrc-buildrc.docbook:91
+#, no-c-format
+msgid "Introducing your own global option for referencing later in config"
+msgstr ""
+
+#. Tag: programlisting
+#: kdesrc-buildrc.docbook:92
+#, no-c-format
+msgid ""
+"global\n"
+"  _ver 6  # ← your custom variable (starting with underscore)\n"
+"  _kde ~/kde${_ver}  # ← custom variable can contain another defined "
+"variable\n"
+"  source-dir ${_kde}/src  # ← note that nested variable (_kde → _ver) is "
+"also resolved\n"
+"end global\n"
+"\n"
+"options kdepim\n"
+"  log-dir /custom/path/logs${_ver} # ← you can use custom variable just like "
+"a standard\n"
+"end options"
+msgstr ""
+
+#. Tag: title
+#: kdesrc-buildrc.docbook:99
 #, no-c-format
 msgid "<quote>options</quote> modules"
 msgstr ""
 
 #. Tag: para
-#: kdesrc-buildrc.docbook:93
+#: kdesrc-buildrc.docbook:101
 #, no-c-format
 msgid ""
 "There is a final type of configuration file entry, <literal>options</"
@@ -206,7 +239,7 @@ msgid ""
 msgstr ""
 
 #. Tag: programlisting
-#: kdesrc-buildrc.docbook:97
+#: kdesrc-buildrc.docbook:105
 #, no-c-format
 msgid ""
 "options <replaceable>module-name</replaceable>\n"
@@ -216,7 +249,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: kdesrc-buildrc.docbook:99
+#: kdesrc-buildrc.docbook:107
 #, no-c-format
 msgid ""
 "An <literal>options</literal> group may have options set for it just like a "
@@ -226,7 +259,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: kdesrc-buildrc.docbook:104
+#: kdesrc-buildrc.docbook:112
 #, no-c-format
 msgid ""
 "The associated module name <emphasis>must</emphasis> match the name given in "
@@ -235,7 +268,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: kdesrc-buildrc.docbook:108
+#: kdesrc-buildrc.docbook:116
 #, no-c-format
 msgid ""
 "This is useful to allow for declaring an entire <literal>module-set</"
@@ -244,7 +277,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: kdesrc-buildrc.docbook:112
+#: kdesrc-buildrc.docbook:120
 #, no-c-format
 msgid ""
 "<literal>options</literal> groups can also apply to named module sets. This "
@@ -256,13 +289,13 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: kdesrc-buildrc.docbook:121
+#: kdesrc-buildrc.docbook:129
 #, no-c-format
 msgid "Example of using options"
 msgstr ""
 
 #. Tag: para
-#: kdesrc-buildrc.docbook:123
+#: kdesrc-buildrc.docbook:131
 #, no-c-format
 msgid ""
 "In this example we choose to build all modules from the &kde; multimedia "
@@ -271,7 +304,7 @@ msgid ""
 msgstr ""
 
 #. Tag: programlisting
-#: kdesrc-buildrc.docbook:127
+#: kdesrc-buildrc.docbook:135
 #, no-c-format
 msgid ""
 "module-set <replaceable>kde-multimedia-set</replaceable>\n"
@@ -288,7 +321,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: kdesrc-buildrc.docbook:129
+#: kdesrc-buildrc.docbook:137
 #, no-c-format
 msgid ""
 "Now when you run &kdesrc-build;, all of the &kde; multimedia programs will "
@@ -300,7 +333,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: kdesrc-buildrc.docbook:139
+#: kdesrc-buildrc.docbook:147
 #, no-c-format
 msgid ""
 "Note that this feature is only available in &kdesrc-build; from version "
@@ -308,14 +341,14 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: kdesrc-buildrc.docbook:148
+#: kdesrc-buildrc.docbook:156
 #, fuzzy, no-c-format
 #| msgid "Prepare the configuration file"
 msgid "Including other configuration files"
 msgstr "Preparación do ficheiro de configuración"
 
 #. Tag: para
-#: kdesrc-buildrc.docbook:150
+#: kdesrc-buildrc.docbook:158
 #, no-c-format
 msgid ""
 "Within the configuration file, you may reference other files by using the "
@@ -324,13 +357,13 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: kdesrc-buildrc.docbook:156
+#: kdesrc-buildrc.docbook:164
 #, no-c-format
 msgid "For example, you could have something like this:"
 msgstr ""
 
 #. Tag: programlisting
-#: kdesrc-buildrc.docbook:157
+#: kdesrc-buildrc.docbook:165
 #, no-c-format
 msgid ""
 "global\n"
@@ -342,7 +375,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: kdesrc-buildrc.docbook:160
+#: kdesrc-buildrc.docbook:168
 #, no-c-format
 msgid ""
 "If you don't specify the full path to the file to include, then the file "
@@ -351,14 +384,14 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: kdesrc-buildrc.docbook:167
+#: kdesrc-buildrc.docbook:175
 #, fuzzy, no-c-format
 #| msgid "Prepare the configuration file"
 msgid "Commonly used configuration options"
 msgstr "Preparación do ficheiro de configuración"
 
 #. Tag: para
-#: kdesrc-buildrc.docbook:169
+#: kdesrc-buildrc.docbook:177
 #, no-c-format
 msgid ""
 "The following is a list of commonly-used options. Click on the option to "
@@ -367,7 +400,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: kdesrc-buildrc.docbook:176
+#: kdesrc-buildrc.docbook:184
 #, no-c-format
 msgid ""
 "<link linkend=\"conf-cmake-options\">cmake-options</link> to define what "
@@ -375,7 +408,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: kdesrc-buildrc.docbook:177
+#: kdesrc-buildrc.docbook:185
 #, no-c-format
 msgid ""
 "<link linkend=\"conf-branch\">branch</link>, to checkout from a branch "
@@ -383,7 +416,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: kdesrc-buildrc.docbook:178
+#: kdesrc-buildrc.docbook:186
 #, no-c-format
 msgid ""
 "<link linkend=\"conf-configure-flags\">configure-flags</link> to define what "
@@ -391,7 +424,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: kdesrc-buildrc.docbook:179
+#: kdesrc-buildrc.docbook:187
 #, no-c-format
 msgid ""
 "<link linkend=\"conf-install-dir\">install-dir</link>, to set the directory "
@@ -399,7 +432,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: kdesrc-buildrc.docbook:180
+#: kdesrc-buildrc.docbook:188
 #, no-c-format
 msgid ""
 "<link linkend=\"conf-make-options\">make-options</link>, to pass options to "
@@ -407,13 +440,13 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: kdesrc-buildrc.docbook:181
+#: kdesrc-buildrc.docbook:189
 #, no-c-format
 msgid "<link linkend=\"conf-qtdir\">qtdir</link>, to set the path to &Qt;."
 msgstr ""
 
 #. Tag: para
-#: kdesrc-buildrc.docbook:182
+#: kdesrc-buildrc.docbook:190
 #, no-c-format
 msgid ""
 "<link linkend=\"conf-source-dir\">source-dir</link>, to change where to "
@@ -421,7 +454,7 @@ msgid ""
 msgstr ""
 
 #. Tag: chapter
-#: kdesrc-buildrc.docbook:186
+#: kdesrc-buildrc.docbook:194
 #, no-c-format
 msgid "&conf-options-table;"
 msgstr ""
