@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kleopatra\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-02-16 09:17+0100\n"
+"POT-Creation-Date: 2024-02-17 11:48+0100\n"
 "PO-Revision-Date: 2024-02-15 16:44+0100\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Proxecto Trasno (proxecto@trasno.gal)\n"
@@ -2030,8 +2030,8 @@ msgstr "Rematou o proceso"
 #: src/commands/importcertificatefromclipboardcommand.cpp:105
 #: src/commands/importcertificatefromclipboardcommand.cpp:109
 #: src/commands/importcertificatefromfilecommand.cpp:135
-#: src/commands/importcertificatescommand.cpp:882
-#: src/commands/importcertificatescommand.cpp:932
+#: src/commands/importcertificatescommand.cpp:891
+#: src/commands/importcertificatescommand.cpp:941
 #, kde-format
 msgid "Certificate Import Failed"
 msgstr "Fallou a importación do certificado"
@@ -2480,8 +2480,26 @@ msgctxt "@action:button"
 msgid "No, It's Not Mine"
 msgstr "Non é meu, non"
 
+#. +> trunk6
+#: src/commands/importcertificatescommand.cpp:791
+#, fuzzy, kde-kuit-format
+#| msgctxt "@info"
+#| msgid ""
+#| "<para>Do you really want to delete this group?</para>"
+#| "<para><emphasis>%1</emphasis></para>"
+#| "<para>Once deleted, it cannot be restored.</para>"
+msgctxt "@info"
+msgid ""
+"<para>The imported group</para>"
+"<para><emphasis>%1</emphasis></para>"
+"<para>contains certificates that cannot be used for encryption. This may lead to unexpected results.</para>"
+msgstr ""
+"<para>Seguro que quere eliminar o grupo?</para>"
+"<para><emphasis>%1</emphasis></para>"
+"<para>Unha vez eliminado non pode recuperarse.</para>"
+
 #. +> trunk6 stable6
-#: src/commands/importcertificatescommand.cpp:846
+#: src/commands/importcertificatescommand.cpp:855
 #, kde-format
 msgid "Fetching 1 signer key... (this can take a while)"
 msgid_plural "Fetching %1 signer keys... (this can take a while)"
@@ -2489,8 +2507,8 @@ msgstr[0] "Obtendo 1 chave de asinante… (pode levar un anaco)"
 msgstr[1] "Obtendo %1 chaves de asinante… (pode levar un anaco)"
 
 #. +> trunk6 stable6
-#: src/commands/importcertificatescommand.cpp:881
-#: src/commands/importcertificatescommand.cpp:931
+#: src/commands/importcertificatescommand.cpp:890
+#: src/commands/importcertificatescommand.cpp:940
 #, kde-format
 msgid "The type of this certificate (%1) is not supported by this Kleopatra installation."
 msgstr "Esta instalación de Kleopatra non é compatíbel con este tipo de certificado (%1)."
@@ -4295,7 +4313,7 @@ msgstr "Editar"
 
 #. +> trunk6 stable6
 #: src/conf/groupsconfigwidget.cpp:196
-#: src/dialogs/deletecertificatesdialog.cpp:125
+#: src/dialogs/deletecertificatesdialog.cpp:151
 #, kde-format
 msgctxt "@action:button"
 msgid "Delete"
@@ -7746,21 +7764,27 @@ msgid "Owner trust set successfully."
 msgstr "Definiuse a confianza na persoa dona."
 
 #. +> trunk6 stable6
-#: src/dialogs/deletecertificatesdialog.cpp:90
+#: src/dialogs/deletecertificatesdialog.cpp:110
 #, kde-format
 msgid "These are the certificates you have selected for deletion:"
 msgstr "Estes son os certificados que se seleccionaron para eliminar:"
 
 #. +> trunk6 stable6
-#: src/dialogs/deletecertificatesdialog.cpp:92
+#: src/dialogs/deletecertificatesdialog.cpp:112
 #, kde-format
 msgid "These certificates will be deleted even though you did <b>not</b> explicitly select them (<a href=\"whatsthis://\">Why?</a>):"
 msgstr ""
 "Eliminaranse estes certificados mesmo se vostede <b>non</b><nl/>"
 " os seleccionou explicitamente (<a href=\"whatsthis://\">Por que?</a>):"
 
+#. +> trunk6
+#: src/dialogs/deletecertificatesdialog.cpp:116
+#, kde-format
+msgid "These certificates are part of groups. Deleting them may cause receivers to be unable to decrypt messages:"
+msgstr ""
+
 #. +> trunk6 stable6
-#: src/dialogs/deletecertificatesdialog.cpp:113
+#: src/dialogs/deletecertificatesdialog.cpp:139
 #, kde-kuit-format
 msgctxt "@info:whatsthis"
 msgid ""
@@ -7774,7 +7798,7 @@ msgstr ""
 "<para>Isto pódese ver claramente no modo de vista xerárquico de <application>Kleopatra</application>: Neste modo, se se elimina un certificado que teña fillos, eses fillos tamén se eliminan. Imaxine os certificados de CA como cartafoles que conteñan outros certificados: Cando se elimina o cartafol, elimínase tamén o seu contido.</para>"
 
 #. +> trunk6 stable6
-#: src/dialogs/deletecertificatesdialog.cpp:190
+#: src/dialogs/deletecertificatesdialog.cpp:223
 #, kde-format
 msgid "The certificate to be deleted is your own. It contains private key material, which is needed to decrypt past communication encrypted to the certificate, and should therefore not be deleted."
 msgid_plural "All of the certificates to be deleted are your own. They contain private key material, which is needed to decrypt past communication encrypted to the certificate, and should therefore not be deleted."
@@ -7782,7 +7806,7 @@ msgstr[0] "O certificado a eliminar é o seu propio. Contén material de chaves 
 msgstr[1] "Todos os certificados a eliminar son os seus propios. Conteñen material de chaves privadas, que resulta necesario para descifrar comunicacións pasadas cifradas con eses certificados e non se deberían, polo tanto, eliminar."
 
 #. +> trunk6 stable6
-#: src/dialogs/deletecertificatesdialog.cpp:204
+#: src/dialogs/deletecertificatesdialog.cpp:237
 #, kde-format
 msgid "One of the certificates to be deleted is your own. It contains private key material, which is needed to decrypt past communication encrypted to the certificate, and should therefore not be deleted."
 msgid_plural "Some of the certificates to be deleted are your own. They contain private key material, which is needed to decrypt past communication encrypted to the certificate, and should therefore not be deleted."
@@ -7790,7 +7814,7 @@ msgstr[0] "Un dos certificados a eliminar é o seu propio. Contén material de c
 msgstr[1] "Algúns dos certificados a eliminar son os seus propios. Conteñen material de chaves privadas, que resulta necesario para descifrar comunicacións pasadas cifradas con eses certificados e non se deberían, polo tanto, eliminar."
 
 #. +> trunk6 stable6
-#: src/dialogs/deletecertificatesdialog.cpp:219
+#: src/dialogs/deletecertificatesdialog.cpp:252
 #, kde-format
 msgctxt "@title:window"
 msgid "Secret Key Deletion"
