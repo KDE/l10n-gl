@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-10-20 09:44+0200\n"
+"POT-Creation-Date: 2024-02-20 07:54+0100\n"
 "PO-Revision-Date: 2023-06-17 14:01+0200\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Galician <proxecto@trasno.gal>\n"
@@ -18,6 +18,18 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Lokalize 23.04.2\n"
+
+#. +> trunk5
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr ""
+
+#. +> trunk5
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr ""
 
 #. +> trunk5
 #: ../libdialogutil/imagefilter.cpp:91
@@ -44,39 +56,74 @@ msgid "All Files (*)"
 msgstr "Todos os ficheiros (*)"
 
 #. +> trunk5
-#: adddevicedialog.cpp:53
+#: adddevicedialog.cpp:58
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
-"If your scanner has not been automatically detected, you can specify it here. The <interface>Scanner device name</interface> should be a backend name (with optional parameters) that is understood by SANE, see <link url=\"man:/sane\">sane(7)</link> or <link url=\"man:/sane-dll\">sane-dll(5)</link> for more information on available backends. The <interface>Type</interface> and <interface>Description</interface> can be used to identify the scanner later.<nl/>"
+"If your scanner has not been automatically detected, you can specify it here. The <interface>Scanner device</interface> is the SANE backend device name. The <interface>Manufacturer</interface>, <interface>Type</interface> and <interface>Description</interface> can be used to identify the scanner later.<nl/>"
 "<nl/>"
-"For the information that needs to be entered here, try to locate the device using the <link url=\"man:/sane-find-scanner\">sane-find-scanner(1)</link> command. For a USB or networked HP scanner using <link url=\"http://hplip.sourceforge.net/\">HPLIP</link>, try using the <command>hp-probe</command> command to locate it, for example <icode>hp-probe&nbsp;-b&nbsp;usb</icode> or <icode>hp-probe&nbsp;-b&nbsp;net</icode>. If the scanner is found, then enter the device name displayed by these commands; note that if using HPLIP then <icode>hp:</icode> needs to be replaced by <icode>hpaio:</icode>.<nl/>"
-"<nl/>"
-"If these commands fail to locate your scanner, then it may not be supported by SANE. Check the SANE documentation for a <link url=\"http://www.sane-project.org/sane-supported-devices.html\">list of supported devices</link>."
+"More information on <link url=\"?1\">SANE backends</link>, <link url=\"?2\">locating devices</link>, <link url=\"?3\">HP scanners</link>, <link url=\"?4\">device not found</link>."
 msgstr ""
-"Se o escáner non se detectou automaticamente, pode indicalo aquí. O <interface>nome de dispositivo do escáner</interface> debería ser un nome de infraestrutura (opcionalmente con parámetros) compatíbel con SANE; consulte <link url=\"man:/sane\">sane(7)</link> ou <link url=\"man:/sane-dll\">sane-dll(5)</link> para informarse das infraestruturas compatíbeis. O <interface>tipo</interface> e a <interface>descrición</interface> teñen por obxectivo axudalo a identificar o escáner no futuro.<nl/>"
-" <nl/>"
-"Para a información que debe inserirse aquí, intente localizar o dispositivo mediante a orde <link url=\"man:/sane-find-scanner\">sane-find-scanner(1)</link>. Se está a usar mediante <link url=\"http://hplip.sourceforge.net/\">HPLIP</link> un escáner USB ou de rede de HP, probe a usar a orde <command>hp-probe</command> para localizalo; por exemplo: <icode>hp-probe&nbsp;-b&nbsp; usb</icode> ou <icode>hp-probe&nbsp;-b&nbsp;net</icode>. Se atopa o escáner, insira o nome de dispositivo que mostra a saída da orde que executase; se está a usar HPLIP, ten que substituír <icode>hp:</icode> por <icode>hpaio:</icode>.<nl/>"
-" <nl/>"
-" Se estas ordes non poden atopar o escáner, podería ser que o escáner non sexa compatíbel con SANE. Comprobe na documentación de SANE a <link url=\"http://www.sane-project.org/sane-supported-devices.html\">lista de dispositivos compatíbeis</link>."
 
 #. +> trunk5
 #: adddevicedialog.cpp:77
-#, kde-format
-msgid "Scanner device name:"
+#, fuzzy, kde-format
+#| msgid "Scanner device name:"
+msgid "Scanner device:"
 msgstr "Nome do dispositivo do escáner:"
 
 #. +> trunk5
-#: adddevicedialog.cpp:85
+#: adddevicedialog.cpp:80 scandevices.cpp:190
+#, kde-format
+msgctxt "Value used for manufacturer if none entered"
+msgid "User specified"
+msgstr ""
+
+#. +> trunk5
+#: adddevicedialog.cpp:82
+#, kde-format
+msgid "Manufacturer:"
+msgstr ""
+
+#. +> trunk5
+#: adddevicedialog.cpp:86
 #, kde-format
 msgid "Device type:"
 msgstr "Tipo de dispositivo:"
 
 #. +> trunk5
-#: adddevicedialog.cpp:92
+#: adddevicedialog.cpp:90
 #, kde-format
 msgid "Description:"
 msgstr "Descrición:"
+
+#. +> trunk5
+#: adddevicedialog.cpp:126
+#, kde-kuit-format
+msgctxt "@info"
+msgid "The <interface>Scanner device</interface> should be a backend name (with optional parameters) that is understood by SANE. See <link url=\"man:/sane\">sane(7)</link> or <link url=\"man:/sane-dll\">sane&#8209;dll(5)</link> for more information on available backends and the format of device names."
+msgstr ""
+
+#. +> trunk5
+#: adddevicedialog.cpp:134
+#, kde-kuit-format
+msgctxt "@info"
+msgid "To find the information that needs to be entered here, try to locate the device using the <link url=\"man:/sane-find-scanner\">sane&#8209;find&#8209;scanner(1)</link> command for SCSI, USB or parallel port scanners, or the <link url=\"man:/scanimage\">scanimage(1)</link> command with the <icode>&#8209;L</icode> option for network scanners. If the scanner is found, then enter the device name displayed by these commands."
+msgstr ""
+
+#. +> trunk5
+#: adddevicedialog.cpp:143
+#, kde-kuit-format
+msgctxt "@info"
+msgid "For a USB or networked HP scanner using <link url=\"http://hplip.sourceforge.net/\">HPLIP</link>, try using the <command>hp&#8209;probe</command> command to locate it, for example <icode>hp&#8209;probe&nbsp;&#8209;b&nbsp;usb</icode> or <icode>hp&#8209;probe&nbsp;&#8209;b&nbsp;net</icode>. Note that if the scanner is found by HPLIP, then the device name <icode>hp:</icode> that it displays needs to be replaced by <icode>hpaio:</icode> for SANE."
+msgstr ""
+
+#. +> trunk5
+#: adddevicedialog.cpp:152
+#, kde-kuit-format
+msgctxt "@info"
+msgid "If these commands fail to locate your scanner, then it may not be supported by SANE. Check the SANE documentation for a <link url=\"http://www.sane-project.org/sane-supported-devices.html\">list of supported devices</link>."
+msgstr ""
 
 #. +> trunk5
 #: autoselectbar.cpp:56
@@ -282,43 +329,38 @@ msgid "Custom:"
 msgstr "Personalizada:"
 
 #. +> trunk5
-#: kscancontrols.cpp:66
+#: kscancontrols.cpp:67
 #, kde-format
 msgid "(Unknown)"
 msgstr "(descoñecida)"
 
 #. +> trunk5
-#: kscancontrols.cpp:169
+#: kscancontrols.cpp:170
 #, kde-format
 msgid "Reset this setting to its standard value, %1"
 msgstr "Restabelecer o valor estándar desta opción, %1."
 
 #. +> trunk5
-#: kscancontrols.cpp:397
+#: kscancontrols.cpp:414
 #, kde-format
 msgid "*.pnm *.pbm *.pgm *.ppm|PNM Image Files"
 msgstr "*.pnm *.pbm *.pgm *.ppm|Ficheiros PNM de imaxe"
 
 #. +> trunk5
-#: kscandevice.cpp:288
+#: kscandevice.cpp:291
 #, kde-format
 msgid "No scanner selected"
 msgstr "Non seleccionou ningún escáner."
 
 #. +> trunk5
-#: kscandevice.cpp:1387
+#: kscandevice.cpp:1394
 #, kde-format
 msgid "Default startup configuration"
 msgstr "Configuración de inicio predeterminada"
 
 #. +> trunk5
-#: kscandevice.cpp:1487
+#: kscandevice.cpp:1494
 #, kde-kuit-format
-#| msgctxt "@info"
-#| msgid ""
-#| "The scanner<nl/>"
-#| "<emphasis strong=\"1\">%1</emphasis><nl/>"
-#| "requires authentication."
 msgctxt "@info"
 msgid ""
 "The scanner<nl/>"
@@ -330,85 +372,85 @@ msgstr ""
 "require autenticación."
 
 #. +> trunk5
-#: kscandevice.cpp:1488
+#: kscandevice.cpp:1495
 #, kde-format
 msgid "Scanner Authentication"
 msgstr "Autenticación do escáner"
 
 #. +> trunk5
-#: kscandevice.cpp:1532
+#: kscandevice.cpp:1539
 #, kde-format
 msgid "OK"
 msgstr "Aceptar"
 
 #. +> trunk5
-#: kscandevice.cpp:1533
+#: kscandevice.cpp:1540
 #, kde-format
 msgid "No device"
 msgstr "Non hai ningún dispositivo."
 
 #. +> trunk5
-#: kscandevice.cpp:1534
+#: kscandevice.cpp:1541
 #, kde-format
 msgid "Bad parameter"
 msgstr "Un dos parámetros é incorrecto."
 
 #. +> trunk5
-#: kscandevice.cpp:1535
+#: kscandevice.cpp:1542
 #, kde-format
 msgid "Cannot open device"
 msgstr "Non é posíbel abrir o dispositivo."
 
 #. +> trunk5
-#: kscandevice.cpp:1536
+#: kscandevice.cpp:1543
 #, kde-format
 msgid "sane_control_option() failed"
 msgstr "sane_control_option() fallou"
 
 #. +> trunk5
-#: kscandevice.cpp:1537
+#: kscandevice.cpp:1544
 #, kde-format
 msgid "Error while scanning"
 msgstr "Erro ao dixitalizar."
 
 #. +> trunk5
-#: kscandevice.cpp:1538
+#: kscandevice.cpp:1545
 #, kde-format
 msgid "Empty picture"
 msgstr "A imaxe está baleira."
 
 #. +> trunk5
-#: kscandevice.cpp:1539
+#: kscandevice.cpp:1546
 #, kde-format
 msgid "Out of memory"
 msgstr "Esgotouse a memoria."
 
 #. +> trunk5
-#: kscandevice.cpp:1540
+#: kscandevice.cpp:1547
 #, kde-format
 msgid "Needs reload"
 msgstr "Necesítase actualizar."
 
 #. +> trunk5
-#: kscandevice.cpp:1541
+#: kscandevice.cpp:1548
 #, kde-format
 msgid "Cancelled"
 msgstr "Cancelouse."
 
 #. +> trunk5
-#: kscandevice.cpp:1542
+#: kscandevice.cpp:1549
 #, kde-format
 msgid "Not active"
 msgstr "Non está activo."
 
 #. +> trunk5
-#: kscandevice.cpp:1543
+#: kscandevice.cpp:1550
 #, kde-format
 msgid "Not supported"
 msgstr "É incompatíbel."
 
 #. +> trunk5
-#: kscandevice.cpp:1544
+#: kscandevice.cpp:1551
 #, kde-format
 msgid "Unknown status %1"
 msgstr "Descoñécese o estado %1."
@@ -503,10 +545,47 @@ msgid "Black"
 msgstr "Negro"
 
 #. +> trunk5
-#: scandevices.cpp:182
+#: scandevices.cpp:208
 #, kde-format
 msgid "Unknown device '%1'"
 msgstr "Descoñécese o dispositivo «%1»."
+
+#. +> trunk5
+#: scanglobal.cpp:136
+#, kde-format
+msgid "SANE - Scanner Access Now Easy"
+msgstr ""
+
+#. +> trunk5
+#: scanglobal.cpp:137
+#, kde-format
+msgid "Scanner access and driver library"
+msgstr ""
+
+#. +> trunk5
+#: scanglobal.cpp:144
+#, kde-format
+msgid "LibTIFF"
+msgstr ""
+
+#. +> trunk5
+#: scanglobal.cpp:145
+#, fuzzy, kde-format
+#| msgid "Force image format:"
+msgid "TIFF image format library"
+msgstr "Forzar o formato da imaxe:"
+
+#. +> trunk5
+#: scanglobal.cpp:154
+#, kde-format
+msgid "libpaper"
+msgstr ""
+
+#. +> trunk5
+#: scanglobal.cpp:155
+#, kde-format
+msgid "Paper size configuration library"
+msgstr ""
 
 #. +> trunk5
 #: scanimage.cpp:76
@@ -541,156 +620,147 @@ msgstr "Non foi posíbel ler a imaxe TIFF"
 #. +> trunk5
 #: scanimage.cpp:229
 #, kde-format
-#| msgid "Not supported"
 msgid "TIFF not supported"
 msgstr "Non se permite TIFF"
 
 #. +> trunk5
-#: scanparams.cpp:134
+#: scanparams.cpp:141
 #, kde-kuit-format
-#| msgctxt "@info"
-#| msgid "<emphasis strong=\"1\">Scanner&nbsp;Settings</emphasis>"
 msgctxt "@info"
 msgid "<title>Scanner&nbsp;Settings</title>"
 msgstr "<title>Configuración&nbsp;do&nbsp;escáner</title>"
 
 #. +> trunk5
-#: scanparams.cpp:176
+#: scanparams.cpp:161
 #, kde-format
 msgid "Pre&view"
 msgstr "&Vista previa"
 
 #. +> trunk5
-#: scanparams.cpp:177
+#: scanparams.cpp:162
 #, kde-format
 msgid "Start a preview scan and show the preview image"
 msgstr "Iniciar unha dixitalización dunha vista previa e amosar a imaxe."
 
 #. +> trunk5
-#: scanparams.cpp:182
+#: scanparams.cpp:167
 #, kde-format
 msgid "Star&t Scan"
 msgstr "Comezar a dixi&talización"
 
 #. +> trunk5
-#: scanparams.cpp:183
+#: scanparams.cpp:168
 #, kde-format
 msgid "Start a scan and save the scanned image"
 msgstr "Iniciar unha dixitalización e gardar a imaxe resultante."
 
 #. +> trunk5
-#: scanparams.cpp:189
+#: scanparams.cpp:200
 #, kde-format
 msgid "Stop"
 msgstr "Deter"
 
 #. +> trunk5
-#: scanparams.cpp:193
+#: scanparams.cpp:204
 #, kde-format
 msgid "Scanning"
 msgstr "Dixitalizando"
 
 #. +> trunk5
-#: scanparams.cpp:232
+#: scanparams.cpp:247
 #, kde-format
 msgid "&Basic"
 msgstr "&Básico"
 
 #. +> trunk5
-#: scanparams.cpp:233
+#: scanparams.cpp:248
 #, kde-format
 msgid "Other"
 msgstr "Outro"
 
 #. +> trunk5
-#: scanparams.cpp:234
+#: scanparams.cpp:249
 #, kde-format
 msgid "Advanced"
 msgstr "Avanzado"
 
 #. +> trunk5
-#: scanparams.cpp:260
+#: scanparams.cpp:275
 #, kde-format
 msgid "SANE Debug (from PNM image)"
 msgstr "Depuración mediante SANE (dunha imaxe PNM)"
 
 #. +> trunk5
-#: scanparams.cpp:261
+#: scanparams.cpp:276
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Operate in the same way that a real scanner does (including scan area, image processing etc.), but reading from the specified image file. See <link url=\"man:sane-pnm(5)\">sane-pnm(5)</link> for more information."
 msgstr "Actuar do mesmo xeito que o fai un escáner de verdade (incluíndo a zona de dixitalización, o procesamento da imaxe, etc.), pero a partir do ficheiro de imaxe indicado. Consulte <link url=\"man:sane-pnm(5)\">sane-pnm(5)</link> para máis información."
 
 #. +> trunk5
-#: scanparams.cpp:263
+#: scanparams.cpp:278
 #, kde-format
 msgid "Virtual Scanner (any image format)"
 msgstr "Escáner virtual (calquera formato de imaxe)"
 
 #. +> trunk5
-#: scanparams.cpp:264
+#: scanparams.cpp:279
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Do not perform any scanning or processing, but simply read the specified image file. This is for testing the image saving, etc."
 msgstr "Non realizar ningunha dixitalización ou procesamento. Simplemente ler o ficheiro de imaxe indicado. Isto permite probar o proceso para gardar a imaxe, etc."
 
 #. +> trunk5
-#: scanparams.cpp:281
+#: scanparams.cpp:296
 #, kde-format
 msgid "Reading mode:"
 msgstr "Modo de lectura:"
 
 #. +> trunk5
-#: scanparams.cpp:411
+#: scanparams.cpp:414
 #, kde-format
 msgid "Default (from scan settings)"
 msgstr "Predeterminado (da configuración de escaneamento)"
 
 #. +> trunk5
-#: scanparams.cpp:412
+#: scanparams.cpp:415
 #, kde-format
 msgid "Black/white bitmap"
 msgstr "Mapa de bits en branco e negro"
 
 #. +> trunk5
-#: scanparams.cpp:413
+#: scanparams.cpp:416
 #, kde-format
 msgid "Grey scale"
 msgstr "Escala de grises"
 
 #. +> trunk5
-#: scanparams.cpp:414
+#: scanparams.cpp:417
 #, kde-format
 msgid "Low colour"
 msgstr "Pouca cor"
 
 #. +> trunk5
-#: scanparams.cpp:415
+#: scanparams.cpp:418
 #, kde-format
 msgid "High colour"
 msgstr "Moita cor"
 
 #. +> trunk5
-#: scanparams.cpp:425
+#: scanparams.cpp:428
 #, kde-format
-#| msgid "Virtual Scanner (any image format)"
 msgid "Force image format:"
 msgstr "Forzar o formato da imaxe:"
 
 #. +> trunk5
-#: scanparams.cpp:476
+#: scanparams.cpp:483
 #, kde-format
 msgid "Edit Gamma Table..."
 msgstr "Editar a táboa de gamma…"
 
 #. +> trunk5
-#: scanparams.cpp:548
+#: scanparams.cpp:555
 #, kde-kuit-format
-#| msgctxt "@info"
-#| msgid ""
-#| "<emphasis strong=\"1\">No scanner selected</emphasis><nl/>"
-#| "<nl/>"
-#| "Select a scanner device to perform scanning."
 msgctxt "@info"
 msgid ""
 "<title>No scanner selected</title>"
@@ -704,17 +774,8 @@ msgstr ""
 "Seleccione un para escanear."
 
 #. +> trunk5
-#: scanparams.cpp:568
+#: scanparams.cpp:575
 #, kde-kuit-format
-#| msgctxt "@info"
-#| msgid ""
-#| "<emphasis strong=\"1\">No scanner found, or unable to access it</emphasis><nl/>"
-#| "<nl/>"
-#| "There was a problem using the SANE (Scanner Access Now Easy) library to access the scanner device.  There may be a problem with your SANE installation, or it may not be configured to support your scanner.<nl/>"
-#| "<nl/>"
-#| "Check that SANE is correctly installed and configured on your system, and also that the scanner device name and settings are correct.<nl/>"
-#| "<nl/>"
-#| "See the SANE project home page (<link url=\"http://www.sane-project.org\">www.sane-project.org</link>) for more information on SANE installation and setup."
 msgctxt "@info"
 msgid ""
 "<title>No scanner found, or unable to access it</title>"
@@ -737,25 +798,25 @@ msgstr ""
 " Consulte o sitio web do proxecto SANE (<link url=\"http://www.sane-project.org\">www.sane-project.org</link>) para obter máis información sobre a instalación e configuración de SANE."
 
 #. +> trunk5
-#: scanparams.cpp:670
+#: scanparams.cpp:677
 #, kde-format
 msgid "1-bit depth scan cannot be done in color"
 msgstr "Non pode dixitalizarse con cor usando unha densidade de 1 bit."
 
 #. +> trunk5
-#: scanparams.cpp:673
+#: scanparams.cpp:680
 #, kde-format
 msgid "16-bit depth scans are not supported"
 msgstr "Non se admiten dixitalizacións cunha densidade de 16 bits."
 
 #. +> trunk5
-#: scanparams.cpp:683
+#: scanparams.cpp:690
 #, kde-format
 msgid "A file must be entered for testing or virtual scanning"
 msgstr "Debe inserir un ficheiro para probar ou dixitalizar virtualmente."
 
 #. +> trunk5
-#: scanparams.cpp:689
+#: scanparams.cpp:696
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -766,7 +827,7 @@ msgstr ""
 " ou non pode lerse."
 
 #. +> trunk5
-#: scanparams.cpp:699
+#: scanparams.cpp:706
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -777,15 +838,14 @@ msgstr ""
 " O tipo do ficheiro indicado é <icode>%1</icode>."
 
 #. +> trunk5
-#: scanparams.cpp:716
+#: scanparams.cpp:723
 #, kde-kuit-format
 msgid "Scan in progress"
 msgstr "A dixitalización está en progreso"
 
 #. +> trunk5
-#: scanparams.cpp:717
+#: scanparams.cpp:724
 #, kde-kuit-format
-#| msgid "Scan in progress"
 msgid ""
 "Scan in progress<nl/>"
 "<nl/>"
@@ -796,7 +856,7 @@ msgstr ""
 "%1"
 
 #. +> trunk5
-#: scanparams.cpp:737
+#: scanparams.cpp:744
 #, kde-format
 msgid "Cannot preview in Virtual Scanner mode"
 msgstr "Non é posíbel previsualizar no modo de escáner virtual."
@@ -821,72 +881,89 @@ msgstr ""
 "<br/>"
 "Teña en conta que esta non é unha busca por toda a rede, senón só nas máquinas configuradas para SANE.</div>"
 
+#. i18n: ectx: label, entry (StartupUseProxy), group (Startup)
+#. +> trunk5
+#: scansettings.kcfg:18
+#, kde-format
+msgid "Use the system proxy settings to access network scanners"
+msgstr ""
+
+#. i18n: ectx: tooltip, entry (StartupUseProxy), group (Startup)
+#. +> trunk5
+#: scansettings.kcfg:19
+#, kde-format
+msgid ""
+"<div>Check this if you want to use the standard system proxy settings to access network scanners.<br/>"
+"<br/>"
+"Note that some SANE backends (for example 'escl') may not work properly through a proxy.</div>"
+msgstr ""
+
 #. i18n: ectx: label, entry (StartupSkipAsk), group (Startup)
 #. +> trunk5
-#: scansettings.kcfg:22
+#: scansettings.kcfg:28
 #, kde-format
 msgid "Show the scanner selection dialog"
 msgstr "Amosar o diálogo de escolla de escáner."
 
 #. i18n: ectx: tooltip, entry (StartupSkipAsk), group (Startup)
 #. +> trunk5
-#: scansettings.kcfg:23
+#: scansettings.kcfg:29
 #, kde-format
 msgid "<div>Check this to show the scanner selection dialog on startup.</div>"
 msgstr "<div>Marque esta opción para amosar o diálogo de escolla de escáner no próximo inicio.</div>"
 
 #. i18n: ectx: label, entry (PreviewAutoselThreshold), group (Scanner Name)
 #. +> trunk5
-#: scansettings.kcfg:53
+#: scansettings.kcfg:61
 #, kde-format
 msgid "Threshold:"
 msgstr "Limiar:"
 
 #. i18n: ectx: tooltip, entry (PreviewAutoselThreshold), group (Scanner Name)
 #. +> trunk5
-#: scansettings.kcfg:54
+#: scansettings.kcfg:62
 #, kde-format
 msgid "<div>Threshold for auto-detection. All pixels lighter (on a black background) or darker (on a white background) than this are considered to be part of the image.</div>"
 msgstr "<div>Límite para a detección automática. Todos os píxeles máis claros (sobre un fondo negro) ou máis escuros (sobre un fondo branco) que isto considéranse parte da imaxe.</div>"
 
 #. i18n: ectx: label, entry (PreviewAutoselDustsize), group (Scanner Name)
 #. +> trunk5
-#: scansettings.kcfg:61
+#: scansettings.kcfg:69
 #, kde-format
 msgid "Dust size (pixels):"
 msgstr "Tamaño do po (píxeles):"
 
 #. i18n: ectx: tooltip, entry (PreviewAutoselDustsize), group (Scanner Name)
 #. +> trunk5
-#: scansettings.kcfg:62
+#: scansettings.kcfg:70
 #, kde-format
 msgid "<div>Set the dust size; dark or light areas smaller than this will be ignored</div>"
 msgstr "<div>Definir o tamaño do “po”. As zonas escuras ou claras de tamaño menor que este ignoraranse.</div>"
 
 #. i18n: ectx: label, entry (PreviewAutoselMargin), group (Scanner Name)
 #. +> trunk5
-#: scansettings.kcfg:69
+#: scansettings.kcfg:77
 #, kde-format
 msgid "Add/subtract margin (mm):"
 msgstr "Marxe para engadir ou retirar (mm):"
 
 #. i18n: ectx: tooltip, entry (PreviewAutoselMargin), group (Scanner Name)
 #. +> trunk5
-#: scansettings.kcfg:70
+#: scansettings.kcfg:78
 #, kde-format
 msgid "<div>Set a margin to be added to or subtracted from the detected area</div>"
 msgstr "<div>Define unha marxe para engadir ou retirar da zona detectada.</div>"
 
 #. i18n: ectx: label, entry (PreviewAutoselBackground), group (Scanner Name)
 #. +> trunk5
-#: scansettings.kcfg:77
+#: scansettings.kcfg:85
 #, kde-format
 msgid "Scanner background:"
 msgstr "Fondo do escáner:"
 
 #. i18n: ectx: tooltip, entry (PreviewAutoselBackground), group (Scanner Name)
 #. +> trunk5
-#: scansettings.kcfg:78
+#: scansettings.kcfg:86
 #, kde-format
 msgid "<div>Select whether a scan of the empty scanner glass results in a black or a white image</div>"
 msgstr "<div>Seleccionar se unha dixitalización co escáner baleiro ten por resultado unha imaxe negra ou branca.</div>"
@@ -928,10 +1005,25 @@ msgid "Set the orientation for a preset size of the scanned area"
 msgstr "Definir a orientación para un tamaño predefinido da zona dixitalizada."
 
 #. +> trunk5
-#: scansizeselector.cpp:266
+#: scansizeselector.cpp:262
 #, kde-format
 msgid "Selection"
 msgstr "Selección"
+
+#, kde-kuit-format
+#~ msgctxt "@info"
+#~ msgid ""
+#~ "If your scanner has not been automatically detected, you can specify it here. The <interface>Scanner device name</interface> should be a backend name (with optional parameters) that is understood by SANE, see <link url=\"man:/sane\">sane(7)</link> or <link url=\"man:/sane-dll\">sane-dll(5)</link> for more information on available backends. The <interface>Type</interface> and <interface>Description</interface> can be used to identify the scanner later.<nl/>"
+#~ "<nl/>"
+#~ "For the information that needs to be entered here, try to locate the device using the <link url=\"man:/sane-find-scanner\">sane-find-scanner(1)</link> command. For a USB or networked HP scanner using <link url=\"http://hplip.sourceforge.net/\">HPLIP</link>, try using the <command>hp-probe</command> command to locate it, for example <icode>hp-probe&nbsp;-b&nbsp;usb</icode> or <icode>hp-probe&nbsp;-b&nbsp;net</icode>. If the scanner is found, then enter the device name displayed by these commands; note that if using HPLIP then <icode>hp:</icode> needs to be replaced by <icode>hpaio:</icode>.<nl/>"
+#~ "<nl/>"
+#~ "If these commands fail to locate your scanner, then it may not be supported by SANE. Check the SANE documentation for a <link url=\"http://www.sane-project.org/sane-supported-devices.html\">list of supported devices</link>."
+#~ msgstr ""
+#~ "Se o escáner non se detectou automaticamente, pode indicalo aquí. O <interface>nome de dispositivo do escáner</interface> debería ser un nome de infraestrutura (opcionalmente con parámetros) compatíbel con SANE; consulte <link url=\"man:/sane\">sane(7)</link> ou <link url=\"man:/sane-dll\">sane-dll(5)</link> para informarse das infraestruturas compatíbeis. O <interface>tipo</interface> e a <interface>descrición</interface> teñen por obxectivo axudalo a identificar o escáner no futuro.<nl/>"
+#~ " <nl/>"
+#~ "Para a información que debe inserirse aquí, intente localizar o dispositivo mediante a orde <link url=\"man:/sane-find-scanner\">sane-find-scanner(1)</link>. Se está a usar mediante <link url=\"http://hplip.sourceforge.net/\">HPLIP</link> un escáner USB ou de rede de HP, probe a usar a orde <command>hp-probe</command> para localizalo; por exemplo: <icode>hp-probe&nbsp;-b&nbsp; usb</icode> ou <icode>hp-probe&nbsp;-b&nbsp;net</icode>. Se atopa o escáner, insira o nome de dispositivo que mostra a saída da orde que executase; se está a usar HPLIP, ten que substituír <icode>hp:</icode> por <icode>hpaio:</icode>.<nl/>"
+#~ " <nl/>"
+#~ " Se estas ordes non poden atopar o escáner, podería ser que o escáner non sexa compatíbel con SANE. Comprobe na documentación de SANE a <link url=\"http://www.sane-project.org/sane-supported-devices.html\">lista de dispositivos compatíbeis</link>."
 
 #, kde-kuit-format
 #~ msgctxt "@info"
