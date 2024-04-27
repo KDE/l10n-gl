@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-22 09:36+0200\n"
+"POT-Creation-Date: 2024-04-26 08:15+0200\n"
 "PO-Revision-Date: 2024-04-21 09:31+0200\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Proxecto Trasno (proxecto@trasno.gal)\n"
@@ -900,13 +900,6 @@ msgstr "A captura gardouse como <a href=\"%1\">%2</a>"
 msgid "Open Containing Folder"
 msgstr "Abrir o cartafol contedor"
 
-# skip-rule: trasno-bug-report_reverse
-#. +> trunk6 stable6
-#: src/Gui/ScreenshotFailedMessage.qml:11
-#, kde-format
-msgid "Could not take a screenshot. Please report this bug here: <a href=\"https://bugs.kde.org/enter_bug.cgi?product=Spectacle\">create a spectacle bug</a>"
-msgstr "Non foi posíbel facer unha captura de pantalla. Informe deste fallo aquí: <a href=\"https://bugs.kde.org/enter_bug.cgi?product=Spectacle\">crear un informe de fallo de Spectacle</a>"
-
 #. +> trunk6 stable6
 #: src/Gui/ScreenshotView.qml:185
 #, kde-format
@@ -1123,7 +1116,7 @@ msgstr "Para os formatos de imaxe con perda como JPEG"
 #. i18n: ectx: property (suffix), widget (QSpinBox, qualitySpinner)
 #. +> trunk6 stable6
 #: src/Gui/SettingsDialog/ImageSaveOptions.ui:62
-#, no-c-format, kde-format
+#, kde-format, no-c-format
 msgid "%"
 msgstr "%"
 
@@ -1886,6 +1879,67 @@ msgid "On Wayland, Spectacle requires KDE Plasma's KWin compositor, which does n
 msgstr "En Wayland, Spectacle necesita o compositor KWin de KDE Plasma, que non parece estar dispoñíbel. Use Spectacle en KDE Plasma, ou use unha ferramenta distinta de captura de pantalla."
 
 #. +> trunk6 stable6
+#: src/Platforms/ImagePlatformKWin.cpp:149
+#, kde-format
+msgctxt "@info"
+msgid "Bad width for KWin screenshot: %1"
+msgstr ""
+
+#. +> trunk6 stable6
+#: src/Platforms/ImagePlatformKWin.cpp:154
+#, kde-format
+msgctxt "@info"
+msgid "Bad height for KWin screenshot: %1"
+msgstr ""
+
+#. +> trunk6 stable6
+#: src/Platforms/ImagePlatformKWin.cpp:165
+#, fuzzy, kde-format
+#| msgid "After taking a screenshot:"
+msgctxt "@info"
+msgid "Bad format for KWin screenshot: %1"
+msgstr "Tras facer unha captura de pantalla:"
+
+#. +> trunk6 stable6
+#: src/Platforms/ImagePlatformKWin.cpp:183
+#, kde-format
+msgctxt "@info"
+msgid "Could not open file descriptor for reading KWin screenshot."
+msgstr ""
+
+#. +> trunk6 stable6
+#: src/Platforms/ImagePlatformKWin.cpp:255
+#, kde-format
+msgctxt "@info"
+msgid "pipe2() failed for KWin screenshot: %1"
+msgstr ""
+
+#. +> trunk6 stable6
+#: src/Platforms/ImagePlatformKWin.cpp:307
+#, kde-format
+msgctxt "@info"
+msgid ""
+"KWin screenshot request failed:\n"
+"%1"
+msgstr ""
+
+#. +> trunk6 stable6
+#: src/Platforms/ImagePlatformKWin.cpp:309
+#, kde-format
+msgctxt "@info"
+msgid ""
+"Potentially relevant information:\n"
+"%1"
+msgstr ""
+
+#. +> trunk6 stable6
+#: src/Platforms/ImagePlatformKWin.cpp:317
+#, kde-format
+msgctxt "@info"
+msgid "Unsupported KWin screenshot type metadata: %1"
+msgstr ""
+
+#. +> trunk6 stable6
 #: src/Platforms/VideoPlatformWayland.cpp:129
 #, kde-format
 msgctxt "@info:shell"
@@ -2037,7 +2091,15 @@ msgid "Launch Spectacle without capturing"
 msgstr "Iniciar Spectacle sen capturar"
 
 #. +> trunk6 stable6
-#: src/SpectacleCore.cpp:349
+#: src/SpectacleCore.cpp:190
+#, fuzzy, kde-format
+#| msgid "Launch Spectacle without taking a screenshot"
+msgctxt "@info"
+msgid "An error occurred while taking a screenshot."
+msgstr "Iniciar Spectacle sen facer unha captura de pantalla"
+
+#. +> trunk6 stable6
+#: src/SpectacleCore.cpp:387
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -2048,71 +2110,65 @@ msgstr ""
 "Prema para rematar a gravación."
 
 #. +> trunk6 stable6
-#: src/SpectacleCore.cpp:627
+#: src/SpectacleCore.cpp:665
 #, kde-format
 msgctxt "@info:shell"
 msgid "%1 is not a valid mode for --record"
 msgstr "%1 non é un modo válido para «--record»."
 
 #. +> trunk6 stable6
-#: src/SpectacleCore.cpp:831
-#, kde-format
-msgid "Screenshot capture canceled or failed"
-msgstr "A captura de pantalla cancelouse ou fallou."
-
-#. +> trunk6 stable6
-#: src/SpectacleCore.cpp:883
+#: src/SpectacleCore.cpp:901
 #, kde-format
 msgid "A screenshot was saved as '%1' to '%2' and the file path of the screenshot has been saved to your clipboard."
 msgstr "Gardouse unha captura de pantalla como «%1» en «%2» e a ruta de ficheiro da captura de pantalla gardouse no portapapeis."
 
 #. +> trunk6 stable6
-#: src/SpectacleCore.cpp:887
+#: src/SpectacleCore.cpp:905
 #, kde-format
 msgctxt "Placeholder is filename"
 msgid "A screenshot was saved as '%1' to your Pictures folder."
 msgstr "Gardouse a captura co nome «%1» no cartafol persoal de imaxes."
 
 #. +> trunk6 stable6
-#: src/SpectacleCore.cpp:890
+#: src/SpectacleCore.cpp:908
 #, kde-format
 msgid "A screenshot was saved as '%1' to '%2'."
 msgstr "Gardouse a captura co nome «%1» en «%2»."
 
 #. +> trunk6 stable6
-#: src/SpectacleCore.cpp:894
+#: src/SpectacleCore.cpp:912
 #, kde-format
 msgid "A screenshot was saved to your clipboard."
 msgstr "Gardouse unha captura no portapapeis."
 
 #. +> trunk6 stable6
-#: src/SpectacleCore.cpp:899
+#: src/SpectacleCore.cpp:917
 #, kde-format
 msgid "A recording was saved as '%1' to '%2' and the file path of the recording has been saved to your clipboard."
 msgstr "Gardouse unha gravación como «%1» en «%2» e a ruta de ficheiro da gravación gardouse no portapapeis."
 
 #. +> trunk6 stable6
-#: src/SpectacleCore.cpp:901
+#: src/SpectacleCore.cpp:919
 #, kde-format
 msgctxt "Placeholder is filename"
 msgid "A recording was saved as '%1' to your Videos folder."
 msgstr "Gardouse a gravación co nome «%1» no cartafol persoal de vídeos."
 
 #. +> trunk6 stable6
-#: src/SpectacleCore.cpp:903
+#: src/SpectacleCore.cpp:921
 #, kde-format
 msgid "A recording was saved as '%1' to '%2'."
 msgstr "Gardouse a gravación co nome «%1» en «%2»."
 
 #. +> trunk6 stable6
-#: src/SpectacleCore.cpp:914
+#: src/SpectacleCore.cpp:932
 #, kde-format
 msgctxt "Open the screenshot we just saved"
 msgid "Open"
 msgstr "Abrir"
 
 #. +> trunk6 stable6
-#: src/SpectacleCore.cpp:928
+#: src/SpectacleCore.cpp:946
 #, kde-format
 msgid "Annotate"
 msgstr "Anotar"
@@ -2130,6 +2186,15 @@ msgstr "WebM/VP9"
 msgctxt "@item:inlistbox Container/encoder"
 msgid "MP4/H.264"
 msgstr "MP4/H.264"
+
+# skip-rule: trasno-bug-report_reverse
+#, kde-format
+#~ msgid "Could not take a screenshot. Please report this bug here: <a href=\"https://bugs.kde.org/enter_bug.cgi?product=Spectacle\">create a spectacle bug</a>"
+#~ msgstr "Non foi posíbel facer unha captura de pantalla. Informe deste fallo aquí: <a href=\"https://bugs.kde.org/enter_bug.cgi?product=Spectacle\">crear un informe de fallo de Spectacle</a>"
+
+#, kde-format
+#~ msgid "Screenshot capture canceled or failed"
+#~ msgstr "A captura de pantalla cancelouse ou fallou."
 
 #, kde-format
 #~ msgid "Capture Modes"
