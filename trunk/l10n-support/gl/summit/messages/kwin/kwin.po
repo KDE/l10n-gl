@@ -21,7 +21,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kwin\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-29 07:45+0200\n"
+"POT-Creation-Date: 2024-05-01 09:14+0200\n"
 "PO-Revision-Date: 2024-03-02 08:58+0100\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Proxecto Trasno (proxecto@trasno.gal)\n"
@@ -94,19 +94,19 @@ msgid "KDE Wayland Compositor"
 msgstr "Compositor de Wayland de KDE"
 
 #. +> trunk6 stable6 stable5
-#: compositor.cpp:145
+#: compositor_wayland.cpp:279 compositor_x11.cpp:447
 #, kde-format
 msgid "Desktop effects were restarted due to a graphics reset"
 msgstr "Os efectos do escritorio reiniciáronse debido a un reinicio gráfico"
 
 #. +> trunk6 stable6 stable5
-#: compositor_x11.cpp:98
+#: compositor_x11.cpp:102
 #, kde-format
 msgid "Suspend Compositing"
 msgstr "Suspender a composición"
 
 #. +> trunk6 stable6 stable5
-#: compositor_x11.cpp:513
+#: compositor_x11.cpp:556
 #, kde-format
 msgid ""
 "<b>OpenGL compositing (the default) has crashed KWin in the past.</b><br>"
@@ -120,16 +120,26 @@ msgstr ""
 " quitar esta protección pero <b>saiba que isto pode causar unha quebra inmediata</b>.</p>"
 
 #. +> trunk6 stable6 stable5
-#: compositor_x11.cpp:520
+#: compositor_x11.cpp:563
 #, kde-format
 msgid "Required X extensions (XComposite and XDamage) are not available."
 msgstr "As extensións de X necesarias (XComposite e XDamage) non están dispoñíbeis."
 
 #. +> trunk6 stable6 stable5
-#: compositor_x11.cpp:523
+#: compositor_x11.cpp:566
 #, kde-format
 msgid "GLX/OpenGL is not available."
 msgstr "GLX e OpenGL non están dispoñíbeis."
+
+#. +> stable5
+#: composite.cpp:875
+#, kde-format
+msgid ""
+"Desktop effects have been suspended by another application.<br/>"
+"You can resume using the '%1' shortcut."
+msgstr ""
+"Outra aplicación suspendeu os efectos do escritorio.<br/>"
+"Pode continuar usando o atallo «%1»."
 
 #. +> trunk6 stable6 stable5
 #: debug_console.cpp:82
@@ -1709,7 +1719,7 @@ msgid "Starts the session without global shortcuts support."
 msgstr "Iniciar a sesión sen funcionalidade de atallos globais."
 
 #. +> trunk6 stable6 stable5
-#: main_wayland.cpp:402 main_x11.cpp:431
+#: main_wayland.cpp:402 main_x11.cpp:433
 #, kde-format
 msgid "Disable KActivities integration."
 msgstr "Desactivar a integración con KActivities."
@@ -1751,7 +1761,7 @@ msgid "kwin: another window manager is running (try using --replace)\n"
 msgstr "kwin: hai outro xestor de xanelas en execución (intente usando --replace)\n"
 
 #. +> trunk6 stable6 stable5
-#: main_x11.cpp:424
+#: main_x11.cpp:426
 #, kde-format
 msgid "Replace already-running ICCCM2.0-compliant window manager"
 msgstr "Substituír o xestor de xanelas compatíbel con ICCCM2.0 en execución"
@@ -2961,7 +2971,7 @@ msgstr "&Opacidade:"
 #. i18n: ectx: property (suffix), widget (QSpinBox, kcfg_Opacity)
 #. +> trunk6 stable6
 #: plugins/thumbnailaside/thumbnailaside_config.ui:87
-#, no-c-format, kde-format
+#, kde-format, no-c-format
 msgid " %"
 msgstr " %"
 
@@ -3319,37 +3329,37 @@ msgid "More"
 msgstr "Máis"
 
 #. +> trunk6 stable6
-#: plugins/zoom/zoom.cpp:70
+#: plugins/zoom/zoom.cpp:69
 #, kde-format
 msgid "Move Zoomed Area to Left"
 msgstr "Mover á esquerda a área ampliada"
 
 #. +> trunk6 stable6
-#: plugins/zoom/zoom.cpp:77
+#: plugins/zoom/zoom.cpp:76
 #, kde-format
 msgid "Move Zoomed Area to Right"
 msgstr "Mover á dereita a área ampliada"
 
 #. +> trunk6 stable6
-#: plugins/zoom/zoom.cpp:84
+#: plugins/zoom/zoom.cpp:83
 #, kde-format
 msgid "Move Zoomed Area Upwards"
 msgstr "Subir a área ampliada"
 
 #. +> trunk6 stable6
-#: plugins/zoom/zoom.cpp:91
+#: plugins/zoom/zoom.cpp:90
 #, kde-format
 msgid "Move Zoomed Area Downwards"
 msgstr "Baixar a área ampliada"
 
 #. +> trunk6 stable6
-#: plugins/zoom/zoom.cpp:99 plugins/zoom/zoom_config.cpp:98
+#: plugins/zoom/zoom.cpp:98 plugins/zoom/zoom_config.cpp:98
 #, kde-format
 msgid "Move Mouse to Focus"
 msgstr "Mover o rato ao foco"
 
 #. +> trunk6 stable6
-#: plugins/zoom/zoom.cpp:106 plugins/zoom/zoom_config.cpp:105
+#: plugins/zoom/zoom.cpp:105 plugins/zoom/zoom_config.cpp:105
 #, kde-format
 msgid "Move Mouse to Center"
 msgstr "Mover o rato ao centro"
@@ -4926,8 +4936,8 @@ msgstr "Matar a xanela"
 msgid "Activate Window (%1)"
 msgstr "Activar a xanela (%1)"
 
-#. +> trunk6 stable6 stable5
-#: useractions.cpp:1264
+#. +> stable6 stable5
+#: useractions.cpp:1261
 #, kde-format
 msgid ""
 "The window manager is configured to consider the screen with the mouse on it as active one.\n"
@@ -4991,14 +5001,14 @@ msgid "Switch to Desktop %1"
 msgstr "Ir ao escritorio %1"
 
 #. +> trunk6 stable6 stable5
-#: window.cpp:3122
+#: window.cpp:3103
 #, kde-format
 msgctxt "Application is not responding, appended to window title"
 msgid "(Not Responding)"
 msgstr "(non responde)"
 
 #. +> trunk6 stable6
-#: workspace.cpp:1662
+#: workspace.cpp:1661
 #, kde-format
 msgctxt "Introductory text shown in the support information."
 msgid ""
@@ -5038,16 +5048,6 @@ msgstr ""
 #, kde-format
 msgid "Xwayland has crashed"
 msgstr "Xwayland quebrou."
-
-#. +> stable5
-#: composite.cpp:875
-#, kde-format
-msgid ""
-"Desktop effects have been suspended by another application.<br/>"
-"You can resume using the '%1' shortcut."
-msgstr ""
-"Outra aplicación suspendeu os efectos do escritorio.<br/>"
-"Pode continuar usando o atallo «%1»."
 
 #. +> stable5
 #: plugins/nightcolor/nightcolormanager.cpp:63
