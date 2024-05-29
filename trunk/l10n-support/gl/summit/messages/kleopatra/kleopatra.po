@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kleopatra\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-24 09:56+0200\n"
+"POT-Creation-Date: 2024-05-29 08:39+0200\n"
 "PO-Revision-Date: 2024-05-25 09:34+0200\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Proxecto Trasno (proxecto@trasno.gal)\n"
@@ -2146,19 +2146,19 @@ msgid "Subprocess Diagnostics"
 msgstr "Diagnóstico do subproceso"
 
 #. +> trunk6 stable6
-#: src/commands/gnupgprocesscommand.cpp:266
+#: src/commands/gnupgprocesscommand.cpp:268
 #, kde-format
 msgid "Unable to start process %1. Please check your installation."
 msgstr "Non é posíbel iniciar o proceso %1. Comprobe a instalación."
 
 #. +> trunk6 stable6
-#: src/commands/gnupgprocesscommand.cpp:273
+#: src/commands/gnupgprocesscommand.cpp:275
 #, kde-format
 msgid "Starting %1..."
 msgstr "Iniciando %1…"
 
 #. +> trunk6 stable6
-#: src/commands/gnupgprocesscommand.cpp:296
+#: src/commands/gnupgprocesscommand.cpp:300
 #, kde-format
 msgid "Process finished"
 msgstr "Rematou o proceso"
@@ -3741,35 +3741,21 @@ msgid "You cannot revoke this certification."
 msgstr "Non pode revogar esta certificación."
 
 #. +> trunk6 stable6
-#: src/commands/revokekeycommand.cpp:104
+#: src/commands/revokekeycommand.cpp:122
 #, kde-format
 msgctxt "@info"
 msgid "This key has already been revoked."
 msgstr "Xa se revogou esta chave."
 
 #. +> trunk6 stable6
-#: src/commands/revokekeycommand.cpp:193
+#: src/commands/revokekeycommand.cpp:212
 #, kde-format
 msgctxt "@info:status"
 msgid "Revoking key..."
 msgstr "Revogando a chave…"
 
 #. +> trunk6 stable6
-#: src/commands/revokekeycommand.cpp:207
-#, kde-format
-msgctxt "@info"
-msgid "The key was revoked successfully."
-msgstr "Revogouse a chave."
-
-#. +> trunk6 stable6
-#: src/commands/revokekeycommand.cpp:207
-#, kde-format
-msgctxt "@title:window"
-msgid "Key Revoked"
-msgstr "Revogouse a chave"
-
-#. +> trunk6 stable6
-#: src/commands/revokekeycommand.cpp:215
+#: src/commands/revokekeycommand.cpp:242
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -3780,12 +3766,71 @@ msgstr ""
 "<para><message>%1</message></para>"
 
 #. +> trunk6 stable6
-#: src/commands/revokekeycommand.cpp:218
+#: src/commands/revokekeycommand.cpp:245
 #: src/commands/revokeuseridcommand.cpp:129
 #, kde-format
 msgctxt "@title:window"
 msgid "Revocation Failed"
 msgstr "A revogación fallou"
+
+#. +> stable6
+#: src/commands/revokekeycommand.cpp:207
+#, kde-format
+msgctxt "@title:window"
+msgid "Key Revoked"
+msgstr "Revogouse a chave"
+
+#. +> trunk6
+#: src/commands/revokekeycommand.cpp:278 src/commands/revokekeycommand.cpp:296
+#, fuzzy, kde-format
+#| msgctxt "@info"
+#| msgid "The key was revoked successfully."
+msgctxt "@info"
+msgid "The certificate was revoked successfully."
+msgstr "Revogouse a chave."
+
+#. +> stable6
+#: src/commands/revokekeycommand.cpp:207
+#, kde-format
+msgctxt "@info"
+msgid "The key was revoked successfully."
+msgstr "Revogouse a chave."
+
+#. +> trunk6
+#: src/commands/revokekeycommand.cpp:326
+#, kde-kuit-format
+msgctxt "@info"
+msgid ""
+"<para>The certificate was revoked successfully and uploaded to the internal directory.</para>"
+"<para>The revoked certificate was saved to <filename>%1</filename>.</para>"
+"<para>You should send this file to your communication partners with the instruction to import it.</para>"
+msgstr ""
+
+#. +> trunk6
+#: src/commands/revokekeycommand.cpp:333
+#, kde-kuit-format
+msgctxt "@info"
+msgid ""
+"<para>The certificate was revoked successfully and uploaded to %1.</para>"
+"<para>The revoked certificate was saved to <filename>%2</filename>.</para>"
+"<para>You should send this file to your communication partners with the instruction to import it.</para>"
+msgstr ""
+
+#. +> trunk6
+#: src/commands/revokekeycommand.cpp:342
+#, fuzzy, kde-kuit-format
+#| msgctxt "@info"
+#| msgid ""
+#| "<para>Successfully wrote request to <filename>%1</filename>.</para>"
+#| "<para>You should now send the request to the Certification Authority (CA).</para>"
+msgctxt "@info"
+msgid ""
+"<para>The certificate was revoked successfully.</para>"
+"<para>The revoked certificate was saved to <filename>%1</filename></para>"
+"<para>You should send this file to your communication partners with the instruction to import it.</para>"
+msgstr ""
+"<para>Escribiuse a solicitude en <filename>%1</filename>.</para>"
+"<para>Agora debería enviar a solicitude á Autoridade Certificadora (CA).</para>"
 
 #. +> trunk6 stable6
 #: src/commands/revokeuseridcommand.cpp:125
@@ -3935,7 +3980,6 @@ msgstr "<sennome>"
 #. +> trunk6
 #: src/conf/appearanceconfigwidget.cpp:300
 #, kde-format
-#| msgid "This parameter has been locked down by the system administrator."
 msgctxt "@info:tooltip"
 msgid "This parameter has been locked down by the system administrator."
 msgstr "O administrador do sistema bloqueou este parámetro."
@@ -4242,15 +4286,12 @@ msgstr "Marque esta opción para desactivar o cifrado da chave pública."
 #. +> trunk6
 #: src/conf/cryptooperationsconfigwidget.cpp:72
 #, kde-format
-#| msgid "Use symmetric encryption only."
 msgid "Use public-key encryption only."
 msgstr "Usar só cifrado de chave pública."
 
 #. +> trunk6
 #: src/conf/cryptooperationsconfigwidget.cpp:73
 #, kde-format
-#| msgctxt "@info"
-#| msgid "Set this option to disable public key encryption."
 msgctxt "@info"
 msgid "Set this option to disable password-based encryption."
 msgstr "Marque esta opción para desactivar o cifrado mediante contrasinal."
@@ -4274,7 +4315,15 @@ msgctxt "@title"
 msgid "OpenPGP Keyserver"
 msgstr "Servidor de chaves de OpenPGP"
 
-#. +> trunk6 stable6
+#. +> trunk6
+#: src/conf/dirservconfigpage.cpp:131
+#, fuzzy, kde-format
+#| msgid "Please note that only one OpenPGP keyserver can be configured."
+msgctxt "@label:textbox"
+msgid "Please note that only one OpenPGP keyserver can be configured."
+msgstr "Teña en conta que só se pode configurar un servidor de chaves de OpenPGP."
+
+#. +> stable6
 #: src/conf/dirservconfigpage.cpp:131
 #, kde-format
 msgid "Please note that only one OpenPGP keyserver can be configured."
@@ -5583,7 +5632,6 @@ msgstr "Insira o nome ou enderezo de correo…"
 #. +> trunk6
 #: src/crypto/gui/certificatelineedit.cpp:307
 #, kde-format
-#| msgid "Show certificate list"
 msgctxt "@info:tooltip"
 msgid "Show certificate list"
 msgstr "Amosar a lista de certificados."
@@ -5646,10 +5694,11 @@ msgstr "(escolla primeiro entre OpenPGP e S/MIME)"
 msgid "..."
 msgstr "…"
 
-#. +> trunk6 stable6
+#. +> trunk6
 #: src/crypto/gui/decryptverifyfilesdialog.cpp:55
-#: src/crypto/gui/decryptverifyfileswizard.cpp:220
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "&Output folder:"
+msgctxt "@label:textbox"
 msgid "&Output folder:"
 msgstr "Cartaf&ol de saída:"
 
@@ -5777,6 +5826,12 @@ msgstr "&Descifrar ou verificar"
 #, kde-format
 msgid "Create all output files in a single folder"
 msgstr "Crear todos os ficheiros de saída nun único cartafol"
+
+#. +> trunk6 stable6
+#: src/crypto/gui/decryptverifyfileswizard.cpp:220
+#, kde-format
+msgid "&Output folder:"
+msgstr "Cartaf&ol de saída:"
 
 #. +> trunk6 stable6
 #: src/crypto/gui/decryptverifyoperationwidget.cpp:70
@@ -6122,7 +6177,15 @@ msgctxt "@title:group"
 msgid "Output"
 msgstr "Saída"
 
-#. +> trunk6 stable6
+#. +> trunk6
+#: src/crypto/gui/signencryptfileswizard.cpp:164
+#, fuzzy, kde-format
+#| msgid "Please select an action."
+msgctxt "@label:textbox"
+msgid "Please select an action."
+msgstr "Seleccione unha acción."
+
+#. +> stable6
 #: src/crypto/gui/signencryptfileswizard.cpp:164
 #, kde-format
 msgid "Please select an action."
@@ -6606,7 +6669,6 @@ msgstr "Buscar"
 #. +> trunk6
 #: src/crypto/gui/unknownrecipientwidget.cpp:36
 #, kde-format
-#| msgid "Search on keyserver"
 msgctxt "@info:tooltip"
 msgid "Search on keyserver"
 msgstr "Buscar nun servidor de chaves."
@@ -6620,7 +6682,6 @@ msgstr "Buscar nun servidor de chaves"
 #. +> trunk6
 #: src/crypto/gui/unknownrecipientwidget.cpp:52
 #, kde-format
-#| msgid "The data was encrypted to this key / certificate."
 msgctxt "@info:tooltip"
 msgid "The data was encrypted to this key / certificate."
 msgstr "Os datos cifráronse para esta chave ou certificado."
@@ -6905,7 +6966,7 @@ msgid "Key Material"
 msgstr "Material clave"
 
 #. +> trunk6 stable6
-#: src/dialogs/addsubkeydialog.cpp:95 src/dialogs/gencardkeydialog.cpp:75
+#: src/dialogs/addsubkeydialog.cpp:95
 #, kde-format
 msgid "Algorithm:"
 msgstr "Algoritmo:"
@@ -7014,55 +7075,63 @@ msgstr ""
 "<center><strong>%1</strong></center>"
 
 #. +> trunk6 stable6
-#: src/dialogs/cardinfotab.cpp:58
+#: src/dialogs/cardinfotab.cpp:67
 #, kde-format
 msgid "Subkeys"
 msgstr "Subchaves"
 
 #. +> trunk6 stable6
-#: src/dialogs/cardinfotab.cpp:64
+#: src/dialogs/cardinfotab.cpp:73 src/dialogs/subkeyswidget.cpp:159
 #, kde-format
 msgctxt "@title:column"
 msgid "Keygrip"
 msgstr "Identificador de clave pública"
 
 #. +> trunk6 stable6
-#: src/dialogs/cardinfotab.cpp:65
+#: src/dialogs/cardinfotab.cpp:74 src/dialogs/certifywidget.cpp:481
+#: src/dialogs/subkeyswidget.cpp:152
+#, kde-format
+msgctxt "@title:column"
+msgid "Fingerprint"
+msgstr "Pegada"
+
+#. +> trunk6 stable6
+#: src/dialogs/cardinfotab.cpp:75
 #, kde-format
 msgctxt "@title:column"
 msgid "Token"
 msgstr "Código"
 
 #. +> trunk6 stable6
-#: src/dialogs/cardinfotab.cpp:66
+#: src/dialogs/cardinfotab.cpp:76
 #, kde-format
 msgctxt "@title:column"
 msgid "Type"
 msgstr "Tipo"
 
 #. +> trunk6 stable6
-#: src/dialogs/cardinfotab.cpp:67
+#: src/dialogs/cardinfotab.cpp:77
 #, kde-format
 msgctxt "@title:column"
 msgid "Serial Number"
 msgstr "Número de serie"
 
 #. +> trunk6 stable6
-#: src/dialogs/cardinfotab.cpp:68
+#: src/dialogs/cardinfotab.cpp:78
 #, kde-format
 msgctxt "@title:column"
 msgid "Owner"
 msgstr "Pertenza"
 
 #. +> trunk6 stable6
-#: src/dialogs/cardinfotab.cpp:73
+#: src/dialogs/cardinfotab.cpp:83
 #, kde-format
 msgctxt "@info"
 msgid "Smartcard information is only available for your own certificates."
 msgstr "A información de tarxeta intelixente só está dispoñíbel para os seus propios certificados."
 
 #. +> trunk6 stable6
-#: src/dialogs/cardinfotab.cpp:80
+#: src/dialogs/cardinfotab.cpp:90
 #: src/dialogs/certificateselectiondialog.cpp:162
 #, kde-format
 msgctxt "@action:button"
@@ -7070,29 +7139,29 @@ msgid "Reload"
 msgstr "Cargar de novo"
 
 #. +> trunk6 stable6
-#: src/dialogs/cardinfotab.cpp:131
+#: src/dialogs/cardinfotab.cpp:142
 #, kde-format
 msgctxt "Unknown <type> <version> (card)"
 msgid "Unknown %1 v%2"
 msgstr "%1 v%2 descoñecida"
 
 #. +> trunk6 stable6
-#: src/dialogs/cardinfotab.cpp:133
+#: src/dialogs/cardinfotab.cpp:144
 #, kde-format
 msgctxt "<Manufacturer> <type> <version>"
 msgid "%1 %2 v%3"
 msgstr "%2 v%3 de %1"
 
 #. +> trunk6 stable6
-#: src/dialogs/cardinfotab.cpp:140
+#: src/dialogs/cardinfotab.cpp:151
 #, kde-format
 msgctxt "unknown cardholder"
 msgid "unknown"
 msgstr "descoñecida"
 
 #. +> trunk6 stable6
-#: src/dialogs/cardinfotab.cpp:143 src/dialogs/cardinfotab.cpp:147
-#: src/dialogs/cardinfotab.cpp:149
+#: src/dialogs/cardinfotab.cpp:153 src/dialogs/cardinfotab.cpp:157
+#: src/dialogs/cardinfotab.cpp:159
 #, kde-format
 msgid "n/a"
 msgstr "N/A"
@@ -7346,7 +7415,6 @@ msgstr "Introdutora de confianza para:"
 #. +> trunk6
 #: src/dialogs/certificatedetailswidget.cpp:237
 #, kde-format
-#| msgid "See certifications for details."
 msgctxt "@info:tooltip"
 msgid "See certifications for details."
 msgstr "Consulte as certificacións para máis información."
@@ -7427,7 +7495,7 @@ msgstr "sen límite"
 
 #. +> trunk6 stable6
 #: src/dialogs/certificatedetailswidget.cpp:342
-#: src/dialogs/subkeyswidget.cpp:374
+#: src/dialogs/subkeyswidget.cpp:387
 #, kde-format
 msgctxt "not applicable"
 msgid "n/a"
@@ -7449,64 +7517,73 @@ msgstr "tarxeta intelixente"
 
 #. +> trunk6 stable6
 #: src/dialogs/certificatedetailswidget.cpp:350
-#: src/dialogs/subkeyswidget.cpp:382
+#: src/dialogs/subkeyswidget.cpp:395
 #, kde-format
 msgctxt "key is 'offline key', i.e. secret key is not stored on this computer"
 msgid "offline"
 msgstr "sen conexión"
 
+#. +> trunk6
+#: src/dialogs/certificatedetailswidget.cpp:353
+#, kde-format
+msgctxt "As in 'this key is stored on this computer and on smart card(s)'"
+msgid "On this computer and on a smart card"
+msgid_plural "On this computer and on %1 smart cards"
+msgstr[0] ""
+msgstr[1] ""
+
 #. +> trunk6 stable6
-#: src/dialogs/certificatedetailswidget.cpp:352
+#: src/dialogs/certificatedetailswidget.cpp:357
 #, kde-format
 msgctxt "As in 'this secret key is stored on this computer'"
 msgid "on this computer"
 msgstr "neste computador"
 
 #. +> trunk6 stable6
-#: src/dialogs/certificatedetailswidget.cpp:467
+#: src/dialogs/certificatedetailswidget.cpp:472
 #: src/dialogs/useridswidget.cpp:357
 #, kde-format
 msgid "Updating..."
 msgstr "Actualizando…"
 
 #. +> trunk6 stable6
-#: src/dialogs/certificatedetailswidget.cpp:539
+#: src/dialogs/certificatedetailswidget.cpp:544
 #, kde-format
 msgid "Common Name"
 msgstr "Nome común"
 
 #. +> trunk6 stable6
-#: src/dialogs/certificatedetailswidget.cpp:540
+#: src/dialogs/certificatedetailswidget.cpp:545
 #, kde-format
 msgid "Organization"
 msgstr "Organización"
 
 #. +> trunk6 stable6
-#: src/dialogs/certificatedetailswidget.cpp:541
+#: src/dialogs/certificatedetailswidget.cpp:546
 #, kde-format
 msgid "Street"
 msgstr "Rúa"
 
 #. +> trunk6 stable6
-#: src/dialogs/certificatedetailswidget.cpp:542
+#: src/dialogs/certificatedetailswidget.cpp:547
 #, kde-format
 msgid "City"
 msgstr "Cidade"
 
 #. +> trunk6 stable6
-#: src/dialogs/certificatedetailswidget.cpp:543
+#: src/dialogs/certificatedetailswidget.cpp:548
 #, kde-format
 msgid "State"
 msgstr "Estado"
 
 #. +> trunk6 stable6
-#: src/dialogs/certificatedetailswidget.cpp:544
+#: src/dialogs/certificatedetailswidget.cpp:549
 #, kde-format
 msgid "Country"
 msgstr "País"
 
 #. +> trunk6 stable6
-#: src/dialogs/certificatedetailswidget.cpp:591
+#: src/dialogs/certificatedetailswidget.cpp:596
 #, kde-format
 msgid "The issuer certificate could not be found locally."
 msgstr "Non foi posíbel atopar en local o certificado de entidade expedidora."
@@ -7533,7 +7610,6 @@ msgstr "Anovar a lista de contactos"
 #. +> trunk6
 #: src/dialogs/certificateselectiondialog.cpp:164
 #, kde-format
-#| msgid "Import..."
 msgctxt "@action:button"
 msgid "Import..."
 msgstr "Importar…"
@@ -7554,7 +7630,6 @@ msgstr "Importar o certificado"
 #. +> trunk6
 #: src/dialogs/certificateselectiondialog.cpp:167
 #, kde-format
-#| msgid "Lookup..."
 msgctxt "@action:button"
 msgid "Lookup..."
 msgstr "Consultar…"
@@ -7581,7 +7656,6 @@ msgstr "Consultar o certificado"
 #. +> trunk6
 #: src/dialogs/certificateselectiondialog.cpp:170
 #, kde-format
-#| msgid "New..."
 msgctxt "@action:button"
 msgid "New..."
 msgstr "Novo…"
@@ -7608,7 +7682,6 @@ msgstr "Crear un certificado"
 #. +> trunk6
 #: src/dialogs/certificateselectiondialog.cpp:173
 #, kde-format
-#| msgid "Groups..."
 msgctxt "@action:button"
 msgid "Groups..."
 msgstr "Grupos…"
@@ -7751,9 +7824,6 @@ msgstr "Publicar no directorio interno."
 #. +> trunk6
 #: src/dialogs/certifywidget.cpp:263
 #, kde-format
-#| msgctxt "@action:button"
-#| msgid "Publish Revocation"
-#| msgid_plural "Publish Revocations"
 msgctxt "@label:checkbox"
 msgid "Publish to %1"
 msgstr "Publicar en %1"
@@ -7761,8 +7831,6 @@ msgstr "Publicar en %1"
 #. +> trunk6
 #: src/dialogs/certifywidget.cpp:266
 #, kde-kuit-format
-#| msgctxt "@info:tooltip"
-#| msgid "Check this option, if you want to upload your certifications to a certificate directory after successful certification."
 msgctxt "@info:tooltip"
 msgid "Check this option if you want to upload your certifications to a certificate directory after successful certification."
 msgstr "Marce esta opción para enviar as certificacións a un directorio de certificados despois de certificalas."
@@ -7844,13 +7912,6 @@ msgid ""
 msgstr ""
 "Verifique as pegadas, marque os identificadores de persoa usuaria que queira certificar e seleccione o certificado co que certificalos.<br>"
 "<i>Nota: só as pegadas identifican claramente o certificado e a quen pertence.</i>"
-
-#. +> trunk6 stable6
-#: src/dialogs/certifywidget.cpp:481 src/dialogs/subkeyswidget.cpp:140
-#, kde-format
-msgctxt "@title:column"
-msgid "Fingerprint"
-msgstr "Pegada"
 
 #. +> trunk6 stable6
 #: src/dialogs/certifywidget.cpp:497 src/dialogs/certifywidget.cpp:498
@@ -8095,7 +8156,6 @@ msgstr "Engadir as chaves seleccionadas"
 #. +> trunk6
 #: src/dialogs/editgroupdialog.cpp:214
 #, kde-format
-#| msgid "Add the selected keys to the group"
 msgctxt "@info:tooltip"
 msgid "Add the selected keys to the group"
 msgstr "Engadir as chaves seleccionadas ao grupo."
@@ -8116,7 +8176,6 @@ msgstr "Retirar as chaves seleccionadas"
 #. +> trunk6
 #: src/dialogs/editgroupdialog.cpp:221
 #, kde-format
-#| msgid "Remove the selected keys from the group"
 msgctxt "@info:tooltip"
 msgid "Remove the selected keys from the group"
 msgstr "Retiras as chaves seleccionadas do grupo."
@@ -8219,13 +8278,29 @@ msgctxt "@title:window"
 msgid "Export"
 msgstr "Exportar"
 
-#. +> trunk6 stable6
+#. +> trunk6
+#: src/dialogs/gencardkeydialog.cpp:51
+#, fuzzy, kde-format
+#| msgid "Name:"
+msgctxt "@label:textbox"
+msgid "Name:"
+msgstr "Nome:"
+
+#. +> stable6
 #: src/dialogs/gencardkeydialog.cpp:51
 #, kde-format
 msgid "Name:"
 msgstr "Nome:"
 
-#. +> trunk6 stable6
+#. +> trunk6
+#: src/dialogs/gencardkeydialog.cpp:61
+#, fuzzy, kde-format
+#| msgid "EMail:"
+msgctxt "@label:textbox"
+msgid "EMail:"
+msgstr "Correo electrónico:"
+
+#. +> stable6
 #: src/dialogs/gencardkeydialog.cpp:61
 #, kde-format
 msgid "EMail:"
@@ -8237,6 +8312,14 @@ msgstr "Correo electrónico:"
 msgid "Invalid EMail"
 msgstr "Correo electrónico incorrecto"
 
+#. +> trunk6
+#: src/dialogs/gencardkeydialog.cpp:75
+#, fuzzy, kde-format
+#| msgid "Algorithm:"
+msgctxt "@label:textbox"
+msgid "Algorithm:"
+msgstr "Algoritmo:"
+
 #. +> trunk6 stable6
 #: src/dialogs/gencardkeydialog.cpp:82
 #, kde-format
@@ -8246,7 +8329,6 @@ msgstr "Facer unha salvagarda da chave de cifraxe"
 #. +> trunk6
 #: src/dialogs/gencardkeydialog.cpp:83
 #, kde-format
-#| msgid "Backup the encryption key in a file."
 msgctxt "@info:tooltip"
 msgid "Backup the encryption key in a file."
 msgstr "Facer unha salvagarda da chave de cifraxe nun ficheiro."
@@ -8442,56 +8524,130 @@ msgstr "Escriba un nome e un enderezo de correo electrónico para usar para o ce
 msgid "Enter a name and/or an email address to use for the certificate."
 msgstr "Escriba un nome e/ou un enderezo de correo electrónico para usar para o certificado."
 
-#. +> trunk6 stable6
+#. +> trunk6
+#: src/dialogs/revokekeydialog.cpp:101
+#, fuzzy, kde-format
+#| msgid "Revoke Certificate..."
+msgctxt "title:window"
+msgid "Revoke Certificate"
+msgstr "Revogar o certificado…"
+
+#. +> stable6
 #: src/dialogs/revokekeydialog.cpp:89
 #, kde-format
 msgctxt "title:window"
 msgid "Revoke Key"
 msgstr "Revogar a chave"
 
-#. +> trunk6 stable6
-#: src/dialogs/revokekeydialog.cpp:96
-#, kde-format
-msgctxt "@title:group"
-msgid "Reason for revocation"
-msgstr "Motivo da revogación"
-
-#. +> trunk6 stable6
-#: src/dialogs/revokekeydialog.cpp:98
-#, kde-format
+#. +> trunk6
+#: src/dialogs/revokekeydialog.cpp:109
+#, fuzzy, kde-format
+#| msgctxt "@option:radio"
+#| msgid "Key has been compromised"
 msgctxt "@option:radio"
-msgid "No reason specified"
-msgstr "Non se indica"
+msgid "Certificate has been compromised"
+msgstr "A chave estivo exposta"
 
-#. +> trunk6 stable6
+#. +> stable6
 #: src/dialogs/revokekeydialog.cpp:99
 #, kde-format
 msgctxt "@option:radio"
 msgid "Key has been compromised"
 msgstr "A chave estivo exposta"
 
-#. +> trunk6 stable6
+#. +> trunk6
+#: src/dialogs/revokekeydialog.cpp:110
+#, fuzzy, kde-format
+#| msgid "Certification Succeeded"
+msgctxt "@option:radio"
+msgid "Certificate is superseded"
+msgstr "Completouse a certificación"
+
+#. +> stable6
 #: src/dialogs/revokekeydialog.cpp:100
 #, kde-format
 msgctxt "@option:radio"
 msgid "Key is superseded"
 msgstr "A chave suplantouse"
 
-#. +> trunk6 stable6
+#. +> trunk6
+#: src/dialogs/revokekeydialog.cpp:111
+#, fuzzy, kde-format
+#| msgctxt "@option:radio"
+#| msgid "Key is no longer used"
+msgctxt "@option:radio"
+msgid "Certificate is no longer used"
+msgstr "A chave xa non se usa"
+
+#. +> stable6
 #: src/dialogs/revokekeydialog.cpp:101
 #, kde-format
 msgctxt "@option:radio"
 msgid "Key is no longer used"
 msgstr "A chave xa non se usa"
 
+#. +> trunk6
+#: src/dialogs/revokekeydialog.cpp:112
+#, kde-format
+msgctxt "@option:radio"
+msgid "For a different reason"
+msgstr ""
+
+#. +> stable6
+#: src/dialogs/revokekeydialog.cpp:98
+#, kde-format
+msgctxt "@option:radio"
+msgid "No reason specified"
+msgstr "Non se indica"
+
+#. +> trunk6
+#: src/dialogs/revokekeydialog.cpp:117
+#, fuzzy, kde-format
+#| msgctxt "@title:group"
+#| msgid "Reason for revocation"
+msgctxt "@title"
+msgid "Reason for Revocation (optional)"
+msgstr "Motivo da revogación"
+
+#. +> stable6
+#: src/dialogs/revokekeydialog.cpp:96
+#, kde-format
+msgctxt "@title:group"
+msgid "Reason for revocation"
+msgstr "Motivo da revogación"
+
+#. +> trunk6
+#: src/dialogs/revokekeydialog.cpp:127
+#, kde-format
+msgctxt "@option:check"
+msgid "Upload revoked certificate to internal directory"
+msgstr ""
+
+#. +> trunk6
+#: src/dialogs/revokekeydialog.cpp:129
+#, fuzzy, kde-format
+#| msgctxt "@info:tooltip"
+#| msgid "Imported Certificates from %1"
+msgctxt "@option:check"
+msgid "Upload revoked certificate to %1"
+msgstr "Certificados Importados de %1"
+
 #. +> trunk6 stable6
-#: src/dialogs/revokekeydialog.cpp:114
+#: src/dialogs/revokekeydialog.cpp:144
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Description (optional):"
 msgstr "Descrición (opcional):"
 
-#. +> trunk6 stable6
+#. +> trunk6
+#: src/dialogs/revokekeydialog.cpp:168
+#, fuzzy, kde-format
+#| msgid "Revoke Certificate..."
+msgctxt "@action:button"
+msgid "Revoke Certificate"
+msgstr "Revogar o certificado…"
+
+#. +> stable6
 #: src/dialogs/revokekeydialog.cpp:138
 #, kde-format
 msgctxt "@action:button"
@@ -8499,12 +8655,12 @@ msgid "Revoke Key"
 msgstr "Revogar a chave"
 
 #. +> trunk6 stable6
-#: src/dialogs/revokekeydialog.cpp:192
+#: src/dialogs/revokekeydialog.cpp:224
 #, kde-format
 msgid "Error: The description must not contain empty lines."
 msgstr "Erro: a descrición non pode conter liñas baleiras."
 
-#. +> trunk6 stable6
+#. +> stable6
 #: src/dialogs/revokekeydialog.cpp:271
 #, kde-kuit-format
 msgid ""
@@ -8513,6 +8669,24 @@ msgid ""
 msgstr ""
 "<para>Está a piques de revogar a seguinte chave:<nl/>"
 "%1</para>"
+
+#. +> trunk6
+#: src/dialogs/revokekeydialog.cpp:309
+#, kde-kuit-format
+msgctxt "@info"
+msgid ""
+"<para>You are about to revoke the following certificate:</para>"
+"<para>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;%1</para>"
+"<para><emphasis strong='true'>The revocation will take effect immediately and cannot be reverted.</emphasis></para>"
+"<para>Consequences: "
+"<list>"
+"<item>You can still decrypt everything encrypted for this certificate.</item>"
+"<item>You cannot sign anything with this certificate anymore.</item>"
+"<item>You cannot certify other certificates with it anymore.</item>"
+"<item>Other people can no longer encrypt with it after receiving the revocation.</item>"
+"</list>"
+"</para>"
+msgstr ""
 
 #. +> trunk6 stable6
 #: src/dialogs/selftestdialog.cpp:92
@@ -8698,56 +8872,56 @@ msgid "(optional) Set Initial PIN (SigG)"
 msgstr "(opcional) Definir o PIN inicial (SigG)"
 
 #. +> trunk6 stable6
-#: src/dialogs/subkeyswidget.cpp:136
+#: src/dialogs/subkeyswidget.cpp:148
 #, kde-format
 msgctxt "@label"
 msgid "Subkeys"
 msgstr "Subchaves"
 
 #. +> trunk6
-#: src/dialogs/subkeyswidget.cpp:139
+#: src/dialogs/subkeyswidget.cpp:151
 #, kde-format
 msgctxt "@title:column"
 msgid "Key ID"
 msgstr "Identificador de chave"
 
 #. +> trunk6 stable6
-#: src/dialogs/subkeyswidget.cpp:141
+#: src/dialogs/subkeyswidget.cpp:153
 #, kde-format
 msgctxt "@title:column"
 msgid "Valid From"
 msgstr "Válida desde"
 
 #. +> trunk6 stable6
-#: src/dialogs/subkeyswidget.cpp:142
+#: src/dialogs/subkeyswidget.cpp:154
 #, kde-format
 msgctxt "@title:column"
 msgid "Valid Until"
 msgstr "Válida ata"
 
 #. +> trunk6 stable6
-#: src/dialogs/subkeyswidget.cpp:143
+#: src/dialogs/subkeyswidget.cpp:155
 #, kde-format
 msgctxt "@title:column"
 msgid "Status"
 msgstr "Estado"
 
 #. +> trunk6 stable6
-#: src/dialogs/subkeyswidget.cpp:144
+#: src/dialogs/subkeyswidget.cpp:156
 #, kde-format
 msgctxt "@title:column"
 msgid "Algorithm"
 msgstr "Algoritmo"
 
 #. +> trunk6 stable6
-#: src/dialogs/subkeyswidget.cpp:145
+#: src/dialogs/subkeyswidget.cpp:157
 #, kde-format
 msgctxt "@title:column"
 msgid "Usage"
 msgstr "Uso"
 
 #. +> trunk6 stable6
-#: src/dialogs/subkeyswidget.cpp:146
+#: src/dialogs/subkeyswidget.cpp:158
 #, kde-format
 msgctxt "@title:column"
 msgid "Storage"
@@ -8761,100 +8935,100 @@ msgid "ID"
 msgstr "Identificador"
 
 #. +> trunk6 stable6
-#: src/dialogs/subkeyswidget.cpp:153
+#: src/dialogs/subkeyswidget.cpp:166
 #, kde-format
 msgctxt "@action:button"
 msgid "Add subkey"
 msgstr "Engadir unha subchave"
 
 #. +> trunk6 stable6
-#: src/dialogs/subkeyswidget.cpp:154
+#: src/dialogs/subkeyswidget.cpp:167
 #, kde-format
 msgctxt "@action:button"
 msgid "Change validity"
 msgstr "Cambiar a validez"
 
 #. +> trunk6 stable6
-#: src/dialogs/subkeyswidget.cpp:155
+#: src/dialogs/subkeyswidget.cpp:168
 #, kde-format
 msgctxt "@action:button"
 msgid "Export OpenSSH key"
 msgstr "Exportar a chave de OpenSSH"
 
 #. +> trunk6 stable6
-#: src/dialogs/subkeyswidget.cpp:156
+#: src/dialogs/subkeyswidget.cpp:169
 #, kde-format
 msgctxt "@action:button"
 msgid "Restore printed backup"
 msgstr "Restaurar a salvagarda impresa"
 
 #. +> trunk6 stable6
-#: src/dialogs/subkeyswidget.cpp:157
+#: src/dialogs/subkeyswidget.cpp:170
 #, kde-format
 msgctxt "@action:button"
 msgid "Transfer to smartcard"
 msgstr "Transferir a unha tarxeta intelixente"
 
 #. +> trunk6 stable6
-#: src/dialogs/subkeyswidget.cpp:158
+#: src/dialogs/subkeyswidget.cpp:171
 #, kde-format
 msgctxt "@action:button"
 msgid "Export secret subkey"
 msgstr "Exportar a subchave secreta"
 
 #. +> trunk6 stable6
-#: src/dialogs/subkeyswidget.cpp:166 src/dialogs/useridswidget.cpp:156
-#: src/dialogs/weboftrustwidget.cpp:131
+#: src/dialogs/subkeyswidget.cpp:179 src/dialogs/useridswidget.cpp:156
+#: src/dialogs/weboftrustwidget.cpp:137
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Show more options"
 msgstr "Amosar máis opcións"
 
 #. +> trunk6 stable6
-#: src/dialogs/subkeyswidget.cpp:262
+#: src/dialogs/subkeyswidget.cpp:275
 #, kde-format
 msgid "Change validity"
 msgstr "Cambiar a validez"
 
 #. +> trunk6 stable6
-#: src/dialogs/subkeyswidget.cpp:269
+#: src/dialogs/subkeyswidget.cpp:282
 #, kde-format
 msgid "Export OpenSSH key"
 msgstr "Exportar a chave de OpenSSH"
 
 #. +> trunk6 stable6
-#: src/dialogs/subkeyswidget.cpp:275
+#: src/dialogs/subkeyswidget.cpp:288
 #, kde-format
 msgid "Transfer to smartcard"
 msgstr "Transferir a unha tarxeta intelixente"
 
 #. +> trunk6 stable6
-#: src/dialogs/subkeyswidget.cpp:283
+#: src/dialogs/subkeyswidget.cpp:296
 #, kde-format
 msgid "Export secret subkey"
 msgstr "Exportar a subchave secreta"
 
 #. +> trunk6 stable6
-#: src/dialogs/subkeyswidget.cpp:377
+#: src/dialogs/subkeyswidget.cpp:390
 #, kde-format
 msgctxt "smart card <serial number>"
 msgid "smart card %1"
 msgstr "tarxeta intelixente %1"
 
 #. +> trunk6 stable6
-#: src/dialogs/subkeyswidget.cpp:379
+#: src/dialogs/subkeyswidget.cpp:392
 #, kde-format
 msgid "smart card"
 msgstr "tarxeta intelixente"
 
 #. +> trunk6 stable6
-#: src/dialogs/subkeyswidget.cpp:384
+#: src/dialogs/subkeyswidget.cpp:397
 #, kde-format
 msgid "on this computer"
 msgstr "neste computador"
 
 #. +> trunk6 stable6
-#: src/dialogs/subkeyswidget.cpp:386
+#: src/dialogs/subkeyswidget.cpp:399
 #, kde-format
 msgctxt "unknown storage location"
 msgid "unknown"
@@ -8916,7 +9090,6 @@ msgstr "Amosar esta notificación para actualizacións futuras."
 #. +> trunk6
 #: src/dialogs/updatenotification.cpp:207
 #, kde-format
-#| msgid "&Get update"
 msgctxt "@action:button"
 msgid "&Get update"
 msgstr "&Obter a actualización"
@@ -9108,63 +9281,71 @@ msgid "Revoke User ID"
 msgstr "Revogar o identificador de persoa usuaria"
 
 #. +> trunk6 stable6
-#: src/dialogs/weboftrustwidget.cpp:88
+#: src/dialogs/weboftrustwidget.cpp:94
 #, kde-format
 msgid "User IDs and certifications"
 msgstr "Identificadores de persoa usuaria e certificacións"
 
 #. +> trunk6 stable6
-#: src/dialogs/weboftrustwidget.cpp:97
+#: src/dialogs/weboftrustwidget.cpp:103
 #, kde-format
 msgctxt "@info"
 msgid "Certifications are not available before the certificate is imported."
 msgstr "As certificacións non están dispoñíbeis antes de importar o certificado."
 
 #. +> trunk6 stable6
-#: src/dialogs/weboftrustwidget.cpp:102
+#: src/dialogs/weboftrustwidget.cpp:108
 #, kde-format
 msgctxt "@action"
 msgid "Show Certificate Details"
 msgstr "Amosar os detalles do certificado"
 
 #. +> trunk6 stable6
-#: src/dialogs/weboftrustwidget.cpp:107
+#: src/dialogs/weboftrustwidget.cpp:113
 #, kde-format
 msgctxt "@action"
 msgid "Add Certification"
 msgstr "Engadir unha certificación"
 
 #. +> trunk6 stable6
-#: src/dialogs/weboftrustwidget.cpp:113
+#: src/dialogs/weboftrustwidget.cpp:119
 #, kde-format
 msgctxt "@action"
 msgid "Revoke Certification"
 msgstr "Revogar a certificación"
 
 #. +> trunk6 stable6
-#: src/dialogs/weboftrustwidget.cpp:119
+#: src/dialogs/weboftrustwidget.cpp:125
 #, kde-format
 msgctxt "@action:button"
 msgid "Fetch Missing Keys"
 msgstr "Obter as chaves que falten"
 
 #. +> trunk6 stable6
-#: src/dialogs/weboftrustwidget.cpp:120
+#: src/dialogs/weboftrustwidget.cpp:126
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Look up and import all keys that were used to certify the user IDs of this key"
 msgstr "Consultar e importar todas as chaves que se usaron para certificar os identificadores de persoa usuaria desta chave"
 
+#. +> trunk6
+#: src/dialogs/weboftrustwidget.cpp:146
+#, fuzzy, kde-format
+#| msgctxt "@action:button"
+#| msgid "Show Certifications"
+msgctxt "label:checkbox"
+msgid "Show only my own certifications"
+msgstr "Amosar as certificacións"
+
 #. +> trunk6 stable6
-#: src/dialogs/weboftrustwidget.cpp:264
+#: src/dialogs/weboftrustwidget.cpp:274
 #, kde-format
 msgid "You cannot revoke this certification because it wasn't made with one of your keys (or the required secret key is missing)."
 msgstr "Non pode revogar esta certificación porque non se fixo cunha das súas chaves (ou falta a chave secreta necesaria)."
 
 #. +> trunk6
-#: src/dialogs/weboftrustwidget.cpp:267
+#: src/dialogs/weboftrustwidget.cpp:277
 #, kde-format
-#| msgid "Revocation of self-certifications is currently not possible."
 msgctxt "@info:tooltip"
 msgid "Revocation of self-certifications is currently not possible."
 msgstr "Non é posíbel revogar as auto-certificacións actualmente."
@@ -9176,9 +9357,8 @@ msgid "Revocation of self-certifications is currently not possible."
 msgstr "Non é posíbel revogar as auto-certificacións actualmente."
 
 #. +> trunk6
-#: src/dialogs/weboftrustwidget.cpp:271
+#: src/dialogs/weboftrustwidget.cpp:281
 #, kde-format
-#| msgid "You cannot revoke this revocation certification. (But you can re-certify the corresponding user ID.)"
 msgctxt "@info:tooltip"
 msgid "You cannot revoke this revocation certification. (But you can re-certify the corresponding user ID.)"
 msgstr "Non pode revogar este certificado de revogación. Pero pode certificar de novo o identificador de persoa usuaria correspondente."
@@ -9190,9 +9370,8 @@ msgid "You cannot revoke this revocation certification. (But you can re-certify 
 msgstr "Non pode revogar este certificado de revogación. Pero pode certificar de novo o identificador de persoa usuaria correspondente."
 
 #. +> trunk6
-#: src/dialogs/weboftrustwidget.cpp:274
+#: src/dialogs/weboftrustwidget.cpp:284
 #, kde-format
-#| msgid "You cannot revoke this expired certification."
 msgctxt "@info:tooltip"
 msgid "You cannot revoke this expired certification."
 msgstr "Non pode revogar esta certificación caducada."
@@ -9204,9 +9383,8 @@ msgid "You cannot revoke this expired certification."
 msgstr "Non pode revogar esta certificación caducada."
 
 #. +> trunk6
-#: src/dialogs/weboftrustwidget.cpp:277
+#: src/dialogs/weboftrustwidget.cpp:287
 #, kde-format
-#| msgid "You cannot revoke this invalid certification."
 msgctxt "@info:tooltip"
 msgid "You cannot revoke this invalid certification."
 msgstr "Non pode revogar esta certificación non válida."
@@ -9218,9 +9396,8 @@ msgid "You cannot revoke this invalid certification."
 msgstr "Non pode revogar esta certificación non válida."
 
 #. +> trunk6
-#: src/dialogs/weboftrustwidget.cpp:280
+#: src/dialogs/weboftrustwidget.cpp:290
 #, kde-format
-#| msgid "You cannot revoke this certification because the required secret key is not available."
 msgctxt "@info:tooltip"
 msgid "You cannot revoke this certification because the required secret key is not available."
 msgstr "Non pode revogar esta certificación porque a chave secreta necesaria non está dispoñíbel."
@@ -9232,20 +9409,20 @@ msgid "You cannot revoke this certification because the required secret key is n
 msgstr "Non pode revogar esta certificación porque a chave secreta necesaria non está dispoñíbel."
 
 #. +> trunk6 stable6
-#: src/dialogs/weboftrustwidget.cpp:288
+#: src/dialogs/weboftrustwidget.cpp:298
 #, kde-format
 msgid "You cannot revoke any of the certifications of this user ID. Select any of the certifications for details."
 msgstr "Non pode revogar ningunha das certificacións deste identificador de persoa usuaria. Seleccione calquera das certificacións para máis información."
 
 #. +> trunk6 stable6
-#: src/dialogs/weboftrustwidget.cpp:423
+#: src/dialogs/weboftrustwidget.cpp:432
 #, kde-kuit-format
 msgctxt "@info"
 msgid "<para>An error occurred while loading the certifications: <message>%1</message></para>"
 msgstr "<para>Produciuse un erro ao cargar as certificacións:<message>%1</message></para>"
 
 #. +> trunk6 stable6
-#: src/dialogs/weboftrustwidget.cpp:426
+#: src/dialogs/weboftrustwidget.cpp:435
 #, kde-format
 msgctxt "@title"
 msgid "Certifications Loading Failed"
@@ -9339,7 +9516,6 @@ msgstr "Marque esta opción para desactivar o cifrado da chave pública."
 #. +> trunk6
 #: src/kcfg/fileoperationspreferences.kcfg:45
 #, kde-format
-#| msgid "Use symmetric encryption only."
 msgid "Use public key encryption only."
 msgstr "Usar só cifrado de chave pública."
 
@@ -9347,7 +9523,6 @@ msgstr "Usar só cifrado de chave pública."
 #. +> trunk6
 #: src/kcfg/fileoperationspreferences.kcfg:46
 #, kde-format
-#| msgid "Set this option to disable public key encryption."
 msgid "Set this option to disable password-based encryption."
 msgstr "Marque esta opción para desactivar o cifrado mediante contrasinal."
 
@@ -10768,7 +10943,6 @@ msgstr "Enderezo de correo electrónico:"
 #. +> trunk6
 #: src/newcertificatewizard/enterdetailspage.cpp:144
 #, kde-format
-#| msgid "Encrypts the secret key with an unrecoverable passphrase. You will be asked for the passphrase during key generation."
 msgctxt "@info:tooltip"
 msgid "Encrypts the secret key with an unrecoverable passphrase. You will be asked for the passphrase during key generation."
 msgstr "Cifra a chave secreta cunha frase de paso que irrecuperábel. Pediráselle a frase de paso durante a xeración da chave."
@@ -10867,7 +11041,6 @@ msgstr "Resultado"
 #. +> trunk6
 #: src/newcertificatewizard/resultpage.cpp:85
 #, kde-format
-#| msgid "Drag this icon to your mail application's composer to attach the request to a mail."
 msgctxt "@info:tooltip"
 msgid "Drag this icon to your mail application's composer to attach the request to a mail."
 msgstr "Arrastre esta icona ao editor da súa aplicación de correo electrónico para anexar a solicitude a unha mensaxe."
@@ -13117,8 +13290,17 @@ msgctxt "@info"
 msgid "Sorry, I cannot find the key with fingerprint %1."
 msgstr "Non é posíbel atopar a chave coa pegada %1."
 
-#. +> trunk6 stable6
+#. +> trunk6
 #: src/view/p15cardwidget.cpp:81 src/view/pgpcardwidget.cpp:172
+#: src/view/pivcardwidget.cpp:112
+#, fuzzy, kde-format
+#| msgid "Serial number:"
+msgctxt "@label:textbox"
+msgid "Serial number:"
+msgstr "Número de serie:"
+
+#. +> stable6
+#: src/view/p15cardwidget.cpp:81 src/view/pgpcardwidget.cpp:173
 #: src/view/pivcardwidget.cpp:112
 #, kde-format
 msgid "Serial number:"
@@ -13198,7 +13380,15 @@ msgctxt "@info %1 is a placeholder for the name of a compliance mode. E.g. NATO 
 msgid "<para>You cannot use <application>Kleopatra</application> for signing or encryption because the <application>GnuPG</application> system used by <application>Kleopatra</application> is not %1.</para>"
 msgstr "<para>Non pode usar <application>Kleopatra</application> para asinar ou cifrar porque o sistema <application>GnuPG</application> que usa <application>Kleopatra</application> non é %1.</para>"
 
-#. +> trunk6 stable6
+#. +> trunk6
+#: src/view/padwidget.cpp:150
+#, fuzzy, kde-format
+#| msgid "<h3>Protocol:</h3>"
+msgctxt "@label:textbox"
+msgid "<h3>Protocol:</h3>"
+msgstr "<h3>Protocolo:</h3>"
+
+#. +> stable6
 #: src/view/padwidget.cpp:150
 #, kde-format
 msgid "<h3>Protocol:</h3>"
@@ -13294,7 +13484,6 @@ msgstr "Dono da tarxeta:"
 #. +> trunk6
 #: src/view/pgpcardwidget.cpp:185 src/view/pgpcardwidget.cpp:203
 #, kde-format
-#| msgid "Change"
 msgctxt "@info:tooltip"
 msgid "Change"
 msgstr "Cambiar"
@@ -13456,8 +13645,16 @@ msgctxt "@title:window"
 msgid "Generating Keys"
 msgstr "Xerando as chaves"
 
-#. +> trunk6 stable6
+#. +> trunk6
 #: src/view/pgpcardwidget.cpp:340
+#, fuzzy, kde-format
+#| msgid "This may take several minutes..."
+msgctxt "@label:textbox"
+msgid "This may take several minutes..."
+msgstr "Isto podería levar varios minutos…"
+
+#. +> stable6
+#: src/view/pgpcardwidget.cpp:345
 #, kde-format
 msgid "This may take several minutes..."
 msgstr "Isto podería levar varios minutos…"
@@ -13763,7 +13960,6 @@ msgstr "Filtrar os certificados por texto"
 #. +> trunk6
 #: src/view/searchbar.cpp:139
 #, kde-format
-#| msgid "Show only certificates that match the entered search term."
 msgctxt "@info:tooltip"
 msgid "Show only certificates that match the entered search term."
 msgstr "Amosar só certificados que coinciden co termo de busca."
@@ -13783,7 +13979,6 @@ msgstr "Filtrar os certificados por categoría"
 #. +> trunk6
 #: src/view/searchbar.cpp:143
 #, kde-format
-#| msgid "Show only certificates that belong to the selected category."
 msgctxt "@info:tooltip"
 msgid "Show only certificates that belong to the selected category."
 msgstr "Amosar só certificados que pertencen á categoría seleccionada."
@@ -14203,11 +14398,6 @@ msgstr ""
 #, kde-format
 #~ msgid "User IDs:"
 #~ msgstr "Identificadores de persoas usuarias:"
-
-#, kde-format
-#~ msgctxt "@action:button"
-#~ msgid "Show Certifications"
-#~ msgstr "Amosar as certificacións"
 
 #, kde-format
 #~ msgctxt "@action:button"
