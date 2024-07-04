@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kleopatra\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-03 09:10+0200\n"
+"POT-Creation-Date: 2024-07-04 09:46+0200\n"
 "PO-Revision-Date: 2024-06-27 21:02+0200\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Proxecto Trasno (proxecto@trasno.gal)\n"
@@ -317,8 +317,8 @@ msgstr "Non se atopou ningunha rañura na tarxeta intelixente para a subchave %1
 #: src/commands/keytocardcommand.cpp:262
 #: src/commands/openpgpgeneratecardkeycommand.cpp:136
 #: src/commands/openpgpgeneratecardkeycommand.cpp:173
-#: src/view/pgpcardwidget.cpp:416 src/view/pgpcardwidget.cpp:482
-#: src/view/pgpcardwidget.cpp:529
+#: src/view/pgpcardwidget.cpp:379 src/view/pgpcardwidget.cpp:445
+#: src/view/pgpcardwidget.cpp:492
 #, kde-format
 msgid "Failed to find the OpenPGP card with the serial number: %1"
 msgstr "Non foi posíbel atopar a tarxeta OpenPGP co número de serie: %1"
@@ -396,7 +396,7 @@ msgstr "Non se atopou un certificado axeitado para escribir esta rañura de tarx
 
 #. +> trunk6 stable6
 #: src/commands/certificatetopivcardcommand.cpp:135
-#: src/view/pivcardwidget.cpp:285
+#: src/view/pivcardwidget.cpp:246
 #, kde-format
 msgctxt "X.509 certificate DN (validity, created: date)"
 msgid "%1 (%2, created: %3)"
@@ -839,7 +839,7 @@ msgstr "Cambiouse a frase de paso"
 #: src/commands/changepincommand.cpp:123
 #: src/commands/createcsrforcardkeycommand.cpp:141
 #: src/commands/createopenpgpkeyfromcardkeyscommand.cpp:106
-#: src/view/netkeywidget.cpp:210 src/view/netkeywidget.cpp:262
+#: src/view/netkeywidget.cpp:176 src/view/netkeywidget.cpp:228
 #, kde-format
 msgid "Failed to find the smartcard with the serial number: %1"
 msgstr "Non foi posíbel atopar a tarxeta intelixente co número de serie: %1"
@@ -2879,7 +2879,7 @@ msgstr "A chave non pode transferirse a unha tarxeta OpenPGP."
 #: src/commands/keytocardcommand.cpp:287 src/commands/keytocardcommand.cpp:406
 #: src/commands/openpgpgeneratecardkeycommand.cpp:184
 #: src/commands/pivgeneratecardkeycommand.cpp:135
-#: src/view/pgpcardwidget.cpp:425
+#: src/view/pgpcardwidget.cpp:388
 #, kde-format
 msgid "It will no longer be possible to decrypt past communication encrypted for the existing key."
 msgstr "Non volverá ser posíbel descifrar comunicacións pasadas cifradas para a chave existente."
@@ -4523,8 +4523,8 @@ msgid "New"
 msgstr "Novo"
 
 #. +> trunk6 stable6
-#: src/conf/groupsconfigwidget.cpp:196 src/view/pgpcardwidget.cpp:183
-#: src/view/pgpcardwidget.cpp:202
+#: src/conf/groupsconfigwidget.cpp:196 src/view/pgpcardwidget.cpp:155
+#: src/view/pgpcardwidget.cpp:174
 #, kde-format
 msgctxt "@action:button"
 msgid "Edit"
@@ -5661,7 +5661,15 @@ msgstr "Fallou o cifrado: %1"
 msgid "Encryption succeeded."
 msgstr "Completouse o cifrado."
 
-#. +> trunk6 stable6
+#. +> trunk6
+#: src/crypto/gui/certificatelineedit.cpp:290
+#, fuzzy, kde-format
+#| msgid "Please enter a name or email address..."
+msgctxt "@info:placeholder"
+msgid "Please enter a name or email address..."
+msgstr "Insira o nome ou enderezo de correo…"
+
+#. +> stable6
 #: src/crypto/gui/certificatelineedit.cpp:290
 #, kde-format
 msgid "Please enter a name or email address..."
@@ -8568,13 +8576,14 @@ msgid "Enter an email address to search for matching certificates."
 msgstr "Escriba un enderezo de correo electrónico para buscar certificados que coincidan."
 
 #. +> trunk6
-#: src/dialogs/lookupcertificatesdialog.cpp:416
+#: src/dialogs/lookupcertificatesdialog.cpp:415
+#: src/dialogs/lookupcertificatesdialog.cpp:418
 #, kde-format
 msgid "LDAP"
 msgstr "LDAP"
 
 #. +> trunk6
-#: src/dialogs/lookupcertificatesdialog.cpp:418
+#: src/dialogs/lookupcertificatesdialog.cpp:420
 #, kde-format
 msgid "Keyserver"
 msgstr "Servidor de chaves"
@@ -13480,102 +13489,88 @@ msgid "List of certificates"
 msgstr "Lista de certificados"
 
 #. +> trunk6 stable6
-#: src/view/netkeywidget.cpp:72
-#, kde-format
-msgctxt "@label"
-msgid "Serial number:"
-msgstr "Número de serie:"
-
-#. +> trunk6 stable6
-#: src/view/netkeywidget.cpp:96 src/view/pgpcardwidget.cpp:238
+#: src/view/netkeywidget.cpp:64 src/view/pgpcardwidget.cpp:209
 #, kde-format
 msgid "Actions:"
 msgstr "Accións:"
 
 #. +> trunk6 stable6
-#: src/view/netkeywidget.cpp:102 src/view/pivcardwidget.cpp:138
+#: src/view/netkeywidget.cpp:70 src/view/pivcardwidget.cpp:103
 #, kde-format
 msgctxt "@action:button"
 msgid "Create OpenPGP Key"
 msgstr "Create unha chave OpenPGP"
 
 #. +> trunk6 stable6
-#: src/view/netkeywidget.cpp:103 src/view/pivcardwidget.cpp:139
+#: src/view/netkeywidget.cpp:71 src/view/pivcardwidget.cpp:104
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Create an OpenPGP key for the keys stored on the card."
 msgstr "Crear unha nova chave OpenPGP para as chaves almacenadas na tarxeta."
 
 #. +> trunk6 stable6
-#: src/view/netkeywidget.cpp:110 src/view/openpgpkeycardwidget.cpp:59
-#: src/view/pivcardwidget.cpp:216
+#: src/view/netkeywidget.cpp:78 src/view/openpgpkeycardwidget.cpp:59
+#: src/view/pivcardwidget.cpp:181
 #, kde-format
 msgctxt "@action:button"
 msgid "Create CSR"
 msgstr "Crear CSR"
 
 #. +> trunk6 stable6
-#: src/view/netkeywidget.cpp:111
+#: src/view/netkeywidget.cpp:79
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Create a certificate signing request for a key stored on the card."
 msgstr "Crear unha solicitude de certificado de sinatura para unha chave almacenada na tarxeta."
 
 #. +> trunk6 stable6
-#: src/view/netkeywidget.cpp:120
+#: src/view/netkeywidget.cpp:88
 #, kde-format
 msgctxt "@action:button NKS is an identifier for a type of keys on a NetKey card"
 msgid "Change NKS PIN"
 msgstr "Cambiar o PIN de NKS"
 
 #. +> trunk6 stable6
-#: src/view/netkeywidget.cpp:122
+#: src/view/netkeywidget.cpp:90
 #, kde-format
 msgctxt "@action:button SigG is an identifier for a type of keys on a NetKey card"
 msgid "Change SigG PIN"
 msgstr "Cambiar o PIN de SigG"
 
 #. +> trunk6 stable6
-#: src/view/netkeywidget.cpp:168
-#, kde-format
-msgctxt "1 is a Version number"
-msgid "NetKey v%1 Card"
-msgstr "Tarxeta NetKey v%1"
-
-#. +> trunk6 stable6
-#: src/view/netkeywidget.cpp:181 src/view/nullpinwidget.cpp:43
+#: src/view/netkeywidget.cpp:147 src/view/nullpinwidget.cpp:43
 #, kde-format
 msgctxt "SigG is an identifier for a type of keys on a NetKey card"
 msgid "Set SigG PIN"
 msgstr "Definir o PIN de SigG"
 
 #. +> trunk6 stable6
-#: src/view/netkeywidget.cpp:183
+#: src/view/netkeywidget.cpp:149
 #, kde-format
 msgctxt "SigG is an identifier for a type of keys on a NetKey card"
 msgid "Change SigG PIN"
 msgstr "Cambiar o PIN de SigG"
 
 #. +> trunk6 stable6
-#: src/view/netkeywidget.cpp:188
+#: src/view/netkeywidget.cpp:154
 #, kde-format
 msgid "Error"
 msgstr "Erro"
 
 #. +> trunk6 stable6
-#: src/view/netkeywidget.cpp:248
+#: src/view/netkeywidget.cpp:214
 #, kde-format
 msgid "Select Key"
 msgstr "Seleccionar a chave"
 
 #. +> trunk6 stable6
-#: src/view/netkeywidget.cpp:249
+#: src/view/netkeywidget.cpp:215
 #, kde-format
 msgid "Please select the key you want to create a certificate signing request for:"
 msgstr "Seleccione a chave para a que quere crear unha solicitude de certificado de sinatura:"
 
 #. +> trunk6 stable6
-#: src/view/netkeywidget.cpp:267
+#: src/view/netkeywidget.cpp:233
 #, kde-format
 msgid "Sorry! No keys suitable for creating a certificate signing request found on the smartcard."
 msgstr "Na tarxeta intelixente non se atopou ningunha chave axeitada para crear unha solicitude de certificado de sinatura."
@@ -13647,7 +13642,7 @@ msgid "Generate Key"
 msgstr "Xerar a chave"
 
 #. +> trunk6 stable6
-#: src/view/openpgpkeycardwidget.cpp:60 src/view/pivcardwidget.cpp:217
+#: src/view/openpgpkeycardwidget.cpp:60 src/view/pivcardwidget.cpp:182
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Create a certificate signing request for this key"
@@ -13702,13 +13697,11 @@ msgctxt "@info"
 msgid "Sorry, I cannot find the key with fingerprint %1."
 msgstr "Non é posíbel atopar a chave coa pegada %1."
 
-#. +> trunk6
-#: src/view/p15cardwidget.cpp:77 src/view/pgpcardwidget.cpp:169
-#: src/view/pivcardwidget.cpp:112
+#. +> trunk6 stable6
+#: src/view/p15cardwidget.cpp:61
 #, kde-format
-msgctxt "@label:textbox"
-msgid "Serial number:"
-msgstr "Número de serie:"
+msgid "OpenPGP keys:"
+msgstr "Chaves OpenPGP:"
 
 #. +> stable6
 #: src/view/p15cardwidget.cpp:81 src/view/pgpcardwidget.cpp:173
@@ -13718,41 +13711,28 @@ msgid "Serial number:"
 msgstr "Número de serie:"
 
 #. +> trunk6 stable6
-#: src/view/p15cardwidget.cpp:95
-#, kde-format
-msgid "OpenPGP keys:"
-msgstr "Chaves OpenPGP:"
-
-#. +> trunk6 stable6
-#: src/view/p15cardwidget.cpp:121
+#: src/view/p15cardwidget.cpp:87
 #, kde-format
 msgid "Searching in directory service..."
 msgstr "Buscando no servizo de directorio…"
 
 #. +> trunk6 stable6
-#: src/view/p15cardwidget.cpp:136
+#: src/view/p15cardwidget.cpp:102
 #, kde-format
 msgid "Automatic import finished."
 msgstr "Rematouse a importación automática."
 
 #. +> trunk6 stable6
-#: src/view/p15cardwidget.cpp:141
+#: src/view/p15cardwidget.cpp:107
 #, kde-format
 msgid "Error multiple keys found on server."
 msgstr "Erro: atopáronse varias chaves no servidor."
 
 #. +> trunk6 stable6
-#: src/view/p15cardwidget.cpp:144
+#: src/view/p15cardwidget.cpp:110
 #, kde-format
 msgid "Key not found in directory service."
 msgstr "A chave non se atopou no servizo de directorio."
-
-#. +> trunk6 stable6
-#: src/view/p15cardwidget.cpp:153
-#, kde-format
-msgctxt "%1 is a smartcard manufacturer"
-msgid "%1 PKCS#15 card"
-msgstr "Tarxeta PKCS#15 de %1"
 
 #. +> trunk6 stable6
 #: src/view/padwidget.cpp:83
@@ -13810,7 +13790,15 @@ msgstr "<h3>Protocolo:</h3>"
 msgid "Recipients"
 msgstr "Destinatarios"
 
-#. +> trunk6 stable6
+#. +> trunk6
+#: src/view/padwidget.cpp:157
+#, fuzzy, kde-format
+#| msgid "Enter a message to encrypt or decrypt..."
+msgctxt "@info:placeholder"
+msgid "Enter a message to encrypt or decrypt..."
+msgstr "Escriba unha mensaxe para cifrar ou descifrar…"
+
+#. +> stable6
 #: src/view/padwidget.cpp:157
 #, kde-format
 msgid "Enter a message to encrypt or decrypt..."
@@ -13885,14 +13873,14 @@ msgid "Sign / Encrypt Notepad"
 msgstr "Asinar e/ou cifrar o caderno de notas"
 
 #. +> trunk6 stable6
-#: src/view/pgpcardwidget.cpp:176
+#: src/view/pgpcardwidget.cpp:148
 #, kde-format
 msgctxt "The owner of a smartcard. GnuPG refers to this as cardholder."
 msgid "Cardholder:"
 msgstr "Dono da tarxeta:"
 
 #. +> trunk6
-#: src/view/pgpcardwidget.cpp:184 src/view/pgpcardwidget.cpp:203
+#: src/view/pgpcardwidget.cpp:156 src/view/pgpcardwidget.cpp:175
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Change"
@@ -13905,40 +13893,34 @@ msgid "Change"
 msgstr "Cambiar"
 
 #. +> trunk6 stable6
-#: src/view/pgpcardwidget.cpp:193
+#: src/view/pgpcardwidget.cpp:165
 #, kde-format
 msgctxt "The URL under which a public key that corresponds to a smartcard can be downloaded"
 msgid "Pubkey URL:"
 msgstr "URL da chave pública:"
 
 #. +> trunk6
-#: src/view/pgpcardwidget.cpp:213
+#: src/view/pgpcardwidget.cpp:185
 #, kde-format
 msgctxt "@label The number of remaining attempts to enter a PIN or PUK, as in Remaining attempts: PIN: 2, PUK: 3, Admin PIN: 3"
 msgid "Remaining attempts:"
 msgstr "Intentos restantes:"
 
 #. +> trunk6
-#: src/view/pgpcardwidget.cpp:217
+#: src/view/pgpcardwidget.cpp:189
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Shows the number of remaining attempts for entering the correct PIN or PUK."
 msgstr "Amosa o número de intentos restantes para introducir o PIN ou PUK correctos."
 
 #. +> trunk6 stable6
-#: src/view/pgpcardwidget.cpp:229 src/view/pivcardwidget.cpp:123
+#: src/view/pgpcardwidget.cpp:200 src/view/pivcardwidget.cpp:88
 #, kde-format
 msgid "Keys:"
 msgstr "Chaves:"
 
-#. +> stable6
-#: src/view/pgpcardwidget.cpp:231
-#, kde-format
-msgid "Create a new primary key and generate subkeys on the card."
-msgstr "Crear unha nova chave principal e xerar subchaves nesta tarxeta."
-
 #. +> trunk6
-#: src/view/pgpcardwidget.cpp:243
+#: src/view/pgpcardwidget.cpp:214
 #, kde-format
 msgctxt "@action:button"
 msgid "Generate New Keys"
@@ -13951,7 +13933,7 @@ msgid "Generate New Keys"
 msgstr "Xerar novas chaves"
 
 #. +> trunk6
-#: src/view/pgpcardwidget.cpp:245
+#: src/view/pgpcardwidget.cpp:216
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -13961,14 +13943,8 @@ msgstr ""
 "<para>Xerar tres chaves novas na tarxeta intelixente e crear un novo certificado de OpenPGP con elas. Opcionalmente, xerar a chave de cifrado fóra da tarxeta e crear unha salvagarda para poder acceder aos datos cifrados coa chave aínda que perda ou dane a tarxeta.</para>"
 "<para><emphasis strong='true'>Sobrescribiranse as chaves actuais da tarxeta intelixente.</emphasis></para>"
 
-#. +> stable6
-#: src/view/pgpcardwidget.cpp:245
-#, kde-format
-msgid "Unblock the smartcard and set a new PIN."
-msgstr "Desbloquear a tarxeta intelixente e definir un novo PIN."
-
 #. +> trunk6 stable6
-#: src/view/pgpcardwidget.cpp:256 src/view/pivcardwidget.cpp:145
+#: src/view/pgpcardwidget.cpp:227 src/view/pivcardwidget.cpp:110
 #, kde-format
 msgctxt "@action:button"
 msgid "Change PIN"
@@ -13981,11 +13957,17 @@ msgid "Change PIN"
 msgstr "Cambiar o PIN"
 
 #. +> trunk6
-#: src/view/pgpcardwidget.cpp:258
+#: src/view/pgpcardwidget.cpp:229
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Change the PIN required for using the keys on the smart card. The PIN must contain at least six characters."
 msgstr "Cambiar o PIN necesario para usar as chaves da tarxeta intelixente. O PIN debe conter polo menos seis caracteres."
+
+#. +> stable6
+#: src/view/pgpcardwidget.cpp:231
+#, kde-format
+msgid "Create a new primary key and generate subkeys on the card."
+msgstr "Crear unha nova chave principal e xerar subchaves nesta tarxeta."
 
 #. +> stable6
 #: src/view/pgpcardwidget.cpp:237
@@ -13993,14 +13975,8 @@ msgstr "Cambiar o PIN necesario para usar as chaves da tarxeta intelixente. O PI
 msgid "Change the PIN required for using the keys on the smartcard."
 msgstr "Cambiar o PIN necesario para usar as chaves da tarxeta intelixente."
 
-#. +> stable6
-#: src/view/pgpcardwidget.cpp:261
-#, kde-format
-msgid "Change the PIN required to unblock the smartcard and set a new PIN."
-msgstr "Cambiar o PIN necesario para desbloquear a tarxeta intelixente e definir un novo PIN."
-
 #. +> trunk6
-#: src/view/pgpcardwidget.cpp:266
+#: src/view/pgpcardwidget.cpp:237
 #, kde-format
 msgctxt "@action:button"
 msgid "Unblock Card"
@@ -14013,11 +13989,63 @@ msgid "Unblock Card"
 msgstr "Desbloquear a tarxeta"
 
 #. +> trunk6
-#: src/view/pgpcardwidget.cpp:267
+#: src/view/pgpcardwidget.cpp:238
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Unblock the smart card with the PUK (if available) or the Admin PIN."
 msgstr "Desbloquear a tarxeta intelixente co PUK (se o ten) ou co PIN de administración."
+
+#. +> stable6
+#: src/view/pgpcardwidget.cpp:245
+#, kde-format
+msgid "Unblock the smartcard and set a new PIN."
+msgstr "Desbloquear a tarxeta intelixente e definir un novo PIN."
+
+#. +> trunk6
+#: src/view/pgpcardwidget.cpp:251
+#, kde-format
+msgctxt "@action:button"
+msgid "Change Admin PIN"
+msgstr "Cambiar o PIN de administrador"
+
+#. +> stable6
+#: src/view/pgpcardwidget.cpp:252
+#, kde-format
+msgid "Change Admin PIN"
+msgstr "Cambiar o PIN de administrador"
+
+#. +> trunk6
+#: src/view/pgpcardwidget.cpp:252
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Change the PIN required for administrative operations."
+msgstr "Cambiar o PIN necesario para operacións administrativas."
+
+#. +> stable6
+#: src/view/pgpcardwidget.cpp:253
+#, kde-format
+msgid "Change the PIN required for administrative operations."
+msgstr "Cambiar o PIN necesario para operacións administrativas."
+
+#. +> trunk6
+#: src/view/pgpcardwidget.cpp:259 src/view/pgpcardwidget.cpp:301
+#, kde-format
+msgctxt "@action:button"
+msgid "Set PUK"
+msgstr "Definir o PUK"
+
+#. +> trunk6
+#: src/view/pgpcardwidget.cpp:261
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Set or change the PUK that can be used to unblock the smart card. The PUK must contain at least eight characters."
+msgstr "Definir ou cambiar o PUK que se pode usar para desbloquear a tarxeta intelixente. O PUK debe conter polo menos oito caracteres."
+
+#. +> stable6
+#: src/view/pgpcardwidget.cpp:261
+#, kde-format
+msgid "Change the PIN required to unblock the smartcard and set a new PIN."
+msgstr "Cambiar o PIN necesario para desbloquear a tarxeta intelixente e definir un novo PIN."
 
 #. +> stable6
 #: src/view/pgpcardwidget.cpp:270
@@ -14031,89 +14059,35 @@ msgstr "Create unha chave OpenPGP"
 msgid "Create an OpenPGP key for the keys stored on the card."
 msgstr "Crear unha nova chave OpenPGP para as chaves almacenadas na tarxeta."
 
-#. +> trunk6
-#: src/view/pgpcardwidget.cpp:280
-#, kde-format
-msgctxt "@action:button"
-msgid "Change Admin PIN"
-msgstr "Cambiar o PIN de administrador"
-
-#. +> stable6
-#: src/view/pgpcardwidget.cpp:252
-#, kde-format
-msgid "Change Admin PIN"
-msgstr "Cambiar o PIN de administrador"
-
-#. +> trunk6
-#: src/view/pgpcardwidget.cpp:281
-#, kde-format
-msgctxt "@info:tooltip"
-msgid "Change the PIN required for administrative operations."
-msgstr "Cambiar o PIN necesario para operacións administrativas."
-
-#. +> stable6
-#: src/view/pgpcardwidget.cpp:253
-#, kde-format
-msgid "Change the PIN required for administrative operations."
-msgstr "Cambiar o PIN necesario para operacións administrativas."
-
-#. +> trunk6
-#: src/view/pgpcardwidget.cpp:288 src/view/pgpcardwidget.cpp:338
-#, kde-format
-msgctxt "@action:button"
-msgid "Set PUK"
-msgstr "Definir o PUK"
-
-#. +> trunk6
-#: src/view/pgpcardwidget.cpp:290
-#, kde-format
-msgctxt "@info:tooltip"
-msgid "Set or change the PUK that can be used to unblock the smart card. The PUK must contain at least eight characters."
-msgstr "Definir ou cambiar o PUK que se pode usar para desbloquear a tarxeta intelixente. O PUK debe conter polo menos oito caracteres."
-
 #. +> trunk6 stable6
-#: src/view/pgpcardwidget.cpp:313
-#, kde-format
-msgctxt "Placeholder is a version number"
-msgid "Unknown OpenPGP v%1 card"
-msgstr "Tarxeta OpenPGP v%1 descoñecida"
-
-#. +> trunk6 stable6
-#: src/view/pgpcardwidget.cpp:314
-#, kde-format
-msgctxt "First placeholder is manufacturer, second placeholder is a version number"
-msgid "%1 OpenPGP v%2 card"
-msgstr "Tarxeta %1 de OpenPGP v%2"
-
-#. +> trunk6 stable6
-#: src/view/pgpcardwidget.cpp:320 src/view/pgpcardwidget.cpp:322
+#: src/view/pgpcardwidget.cpp:283 src/view/pgpcardwidget.cpp:285
 #, kde-format
 msgid "not set"
 msgstr "non definido"
 
 #. +> trunk6
-#: src/view/pgpcardwidget.cpp:334
+#: src/view/pgpcardwidget.cpp:297
 #, kde-format
 msgctxt "label: value"
 msgid "%1: %2"
 msgstr "%1: %2"
 
 #. +> trunk6 stable6
-#: src/view/pgpcardwidget.cpp:338 src/view/pivcardwidget.cpp:155
+#: src/view/pgpcardwidget.cpp:301 src/view/pivcardwidget.cpp:120
 #, kde-format
 msgctxt "@action:button"
 msgid "Change PUK"
 msgstr "Cambiar o PUK"
 
 #. +> trunk6 stable6
-#: src/view/pgpcardwidget.cpp:374
+#: src/view/pgpcardwidget.cpp:337
 #, kde-format
 msgctxt "@title:window"
 msgid "Generating Keys"
 msgstr "Xerando as chaves"
 
 #. +> trunk6
-#: src/view/pgpcardwidget.cpp:375
+#: src/view/pgpcardwidget.cpp:338
 #, kde-format
 msgctxt "@label:textbox"
 msgid "This may take several minutes..."
@@ -14126,67 +14100,67 @@ msgid "This may take several minutes..."
 msgstr "Isto podería levar varios minutos…"
 
 #. +> trunk6 stable6
-#: src/view/pgpcardwidget.cpp:390
+#: src/view/pgpcardwidget.cpp:353
 #, kde-format
 msgctxt "@info"
 msgid "Failed to generate new key: %1"
 msgstr "Non foi posíbel xerar a nova chave: %1"
 
 #. +> trunk6 stable6
-#: src/view/pgpcardwidget.cpp:400
+#: src/view/pgpcardwidget.cpp:363
 #, kde-format
 msgid "Save backup of encryption key"
 msgstr "Gardar unha salvagarda da chave de cifraxe"
 
 #. +> trunk6 stable6
-#: src/view/pgpcardwidget.cpp:400
+#: src/view/pgpcardwidget.cpp:363
 #, kde-format
 msgid "Backup Key"
 msgstr "Facer unha salvagarda da chave"
 
 #. +> trunk6 stable6
-#: src/view/pgpcardwidget.cpp:402
+#: src/view/pgpcardwidget.cpp:365
 #, kde-format
 msgctxt "@info"
 msgid "Failed to move backup. The backup key is still stored under: %1"
 msgstr "Non foi posíbel mover a salvagarda. A salvagarda da chave continúa almacenada dentro de: %1"
 
 #. +> trunk6 stable6
-#: src/view/pgpcardwidget.cpp:408
+#: src/view/pgpcardwidget.cpp:371
 #, kde-format
 msgctxt "@info"
 msgid "Successfully generated a new key for this card."
 msgstr "Xerouse unha nova chave para esta tarxeta."
 
 #. +> trunk6 stable6
-#: src/view/pgpcardwidget.cpp:408 src/view/pgpcardwidget.cpp:499
-#: src/view/pgpcardwidget.cpp:546
+#: src/view/pgpcardwidget.cpp:371 src/view/pgpcardwidget.cpp:462
+#: src/view/pgpcardwidget.cpp:509
 #, kde-format
 msgctxt "@title"
 msgid "Success"
 msgstr "Éxito"
 
 #. +> trunk6 stable6
-#: src/view/pgpcardwidget.cpp:422
+#: src/view/pgpcardwidget.cpp:385
 #, kde-format
 msgid "The existing keys on this card will be <b>deleted</b> and replaced by new keys."
 msgstr "As chaves existentes nesta tarxeta <b>eliminaranse</b> e substituirase por novas chaves."
 
 #. +> trunk6 stable6
-#: src/view/pgpcardwidget.cpp:427
+#: src/view/pgpcardwidget.cpp:390
 #, kde-format
 msgid "Secret Key Deletion"
 msgstr "Eliminación de chave secreta"
 
 #. +> trunk6 stable6
-#: src/view/pgpcardwidget.cpp:441
+#: src/view/pgpcardwidget.cpp:404
 #, kde-format
 msgctxt "@info"
 msgid "You cannot generate keys on this smart card because it doesn't support any of the compliant algorithms."
 msgstr "Non pode xerar chaves nesta tarxeta intelixente porque non permite ningún dos algoritmos estándar."
 
 #. +> trunk6 stable6
-#: src/view/pgpcardwidget.cpp:458
+#: src/view/pgpcardwidget.cpp:421
 #, kde-format
 msgid "Change cardholder"
 msgstr "Cambiar o dono da tarxeta"
@@ -14198,206 +14172,207 @@ msgid "Change Reset Code"
 msgstr "Cambiar o código para restabelecer"
 
 #. +> trunk6 stable6
-#: src/view/pgpcardwidget.cpp:458
+#: src/view/pgpcardwidget.cpp:421
 #, kde-format
 msgid "New name:"
 msgstr "Novo nome:"
 
 #. +> trunk6 stable6
-#: src/view/pgpcardwidget.cpp:464
+#: src/view/pgpcardwidget.cpp:427
 #, kde-format
 msgctxt "@info"
 msgid "The \"<\" character may not be used."
 msgstr "O carácter «<» non pode usarse."
 
 #. +> trunk6 stable6
-#: src/view/pgpcardwidget.cpp:468
+#: src/view/pgpcardwidget.cpp:431
 #, kde-format
 msgctxt "@info"
 msgid "Double spaces are not allowed"
 msgstr "Os espazos dobres non se permiten"
 
 #. +> trunk6 stable6
-#: src/view/pgpcardwidget.cpp:472
+#: src/view/pgpcardwidget.cpp:435
 #, kde-format
 msgctxt "@info"
 msgid "The size of the name may not exceed 38 characters."
 msgstr "O tamaño do nome non pode superar os 38 caracteres."
 
 #. +> trunk6 stable6
-#: src/view/pgpcardwidget.cpp:495
+#: src/view/pgpcardwidget.cpp:458
 #, kde-format
 msgctxt "@info"
 msgid "Name change failed: %1"
 msgstr "O renomeamento fallou: %1"
 
 #. +> trunk6 stable6
-#: src/view/pgpcardwidget.cpp:499
+#: src/view/pgpcardwidget.cpp:462
 #, kde-format
 msgctxt "@info"
 msgid "Name successfully changed."
 msgstr "Cambiouse o nome."
 
 #. +> trunk6 stable6
-#: src/view/pgpcardwidget.cpp:510
+#: src/view/pgpcardwidget.cpp:473
 #, kde-format
 msgid "Change the URL where the pubkey can be found"
 msgstr "Cambiar o URL onde se pode atopar a chave pública"
 
 #. +> trunk6 stable6
-#: src/view/pgpcardwidget.cpp:511
+#: src/view/pgpcardwidget.cpp:474
 #, kde-format
 msgid "New pubkey URL:"
 msgstr "Novo URL da chave pública:"
 
 #. +> trunk6 stable6
-#: src/view/pgpcardwidget.cpp:522
+#: src/view/pgpcardwidget.cpp:485
 #, kde-format
 msgctxt "@info"
 msgid "The size of the URL may not exceed 254 characters."
 msgstr "O tamaño do URL non pode superar os 254 caracteres."
 
 #. +> trunk6 stable6
-#: src/view/pgpcardwidget.cpp:542
+#: src/view/pgpcardwidget.cpp:505
 #, kde-format
 msgctxt "@info"
 msgid "URL change failed: %1"
 msgstr "O cambio de URL fallou: %1"
 
 #. +> trunk6 stable6
-#: src/view/pgpcardwidget.cpp:546
+#: src/view/pgpcardwidget.cpp:509
 #, kde-format
 msgctxt "@info"
 msgid "URL successfully changed."
 msgstr "Cambiouse o URL."
 
 #. +> trunk6 stable6
-#: src/view/pivcardwidget.cpp:147
+#: src/view/pivcardwidget.cpp:112
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Change the PIV Card Application PIN that activates the PIV Card and enables private key operations using the stored keys."
 msgstr "Cambiar o PIN de aplicación de tarxeta PIV que activa a tarxeta PIV e activa as operacións de chaves privadas usando as chaves almacenadas."
 
 #. +> trunk6 stable6
-#: src/view/pivcardwidget.cpp:156
+#: src/view/pivcardwidget.cpp:121
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Change the PIN Unblocking Key that enables a reset of the PIN."
 msgstr "Cambiar a chave de desbloqueo de PIN que permite restabelecer o PIN."
 
 #. +> trunk6 stable6
-#: src/view/pivcardwidget.cpp:163
+#: src/view/pivcardwidget.cpp:128
 #, kde-format
 msgctxt "@action:button"
 msgid "Change Admin Key"
 msgstr "Cambiar a chave de administración"
 
 #. +> trunk6 stable6
-#: src/view/pivcardwidget.cpp:165
+#: src/view/pivcardwidget.cpp:130
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Change the PIV Card Application Administration Key that is used by the PIV Card Application to authenticate the PIV Card Application Administrator and by the administrator (resp. Kleopatra) to authenticate the PIV Card Application."
 msgstr "Cambiar a chave de administración de aplicación de tarxeta PIV que se usa na aplicación de tarxeta PIV para autenticar a administración da aplicación de tarxeta PIV e que a administración usa (resp. Kleopatra) para autenticar a aplicación de tarxeta PIV."
 
 #. +> trunk6 stable6
-#: src/view/pivcardwidget.cpp:188 src/view/pivcardwidget.cpp:274
+#: src/view/pivcardwidget.cpp:153 src/view/pivcardwidget.cpp:235
 #, kde-format
 msgctxt "@action:button"
 msgid "Generate"
 msgstr "Xerar"
 
 #. +> trunk6 stable6
-#: src/view/pivcardwidget.cpp:194
+#: src/view/pivcardwidget.cpp:159
 #, kde-format
 msgctxt "@action:button"
 msgid "Write Key"
 msgstr "Escribir a chave"
 
 #. +> trunk6 stable6
-#: src/view/pivcardwidget.cpp:195
+#: src/view/pivcardwidget.cpp:160
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Write the key pair of a certificate to the card"
 msgstr "Escribir a parella de chaves dun certificado na tarxeta"
 
 #. +> trunk6 stable6
-#: src/view/pivcardwidget.cpp:203
+#: src/view/pivcardwidget.cpp:168
 #, kde-format
 msgctxt "@action:button"
 msgid "Write Certificate"
 msgstr "Escribir o certificado"
 
 #. +> trunk6 stable6
-#: src/view/pivcardwidget.cpp:204
+#: src/view/pivcardwidget.cpp:169
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Write the certificate corresponding to this key to the card"
 msgstr "Escribir o certificado que corresponde á chave na tarxeta"
 
 #. +> trunk6 stable6
-#: src/view/pivcardwidget.cpp:209
+#: src/view/pivcardwidget.cpp:174
 #, kde-format
 msgctxt "@action:button"
 msgid "Import Certificate"
 msgstr "Importar o certificado"
 
 #. +> trunk6 stable6
-#: src/view/pivcardwidget.cpp:210
+#: src/view/pivcardwidget.cpp:175
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Import the certificate stored on the card"
 msgstr "Importar o certificado almacenado na tarxeta"
 
 #. +> trunk6 stable6
-#: src/view/pivcardwidget.cpp:234
-#, kde-format
-msgctxt "%1 version number"
-msgid "PIV v%1 card"
-msgstr "Tarxeta PIV v%1"
-
-#. +> trunk6 stable6
-#: src/view/pivcardwidget.cpp:270
+#: src/view/pivcardwidget.cpp:231
 #, kde-format
 msgctxt "@info"
 msgid "<em>slot empty</em>"
 msgstr "<em>rañura baleira</em>"
 
 #. +> trunk6 stable6
-#: src/view/pivcardwidget.cpp:275
+#: src/view/pivcardwidget.cpp:236
 #, kde-format
 msgctxt "@info:tooltip %1 display name of a key"
 msgid "Generate %1"
 msgstr "Xerar %1"
 
 #. +> trunk6 stable6
-#: src/view/pivcardwidget.cpp:292
+#: src/view/pivcardwidget.cpp:253
 #, kde-format
 msgctxt "@info"
 msgid "<em>no matching certificate</em>"
 msgstr "<em>ningún certificado coincide</em>"
 
 #. +> trunk6 stable6
-#: src/view/pivcardwidget.cpp:298
+#: src/view/pivcardwidget.cpp:259
 #, kde-format
 msgctxt "@info unknown key algorithm"
 msgid "unknown"
 msgstr "descoñecido"
 
 #. +> trunk6 stable6
-#: src/view/pivcardwidget.cpp:301
+#: src/view/pivcardwidget.cpp:262
 #, kde-format
 msgctxt "@action:button"
 msgid "Replace"
 msgstr "Substituír"
 
 #. +> trunk6 stable6
-#: src/view/pivcardwidget.cpp:302
+#: src/view/pivcardwidget.cpp:263
 #, kde-format
 msgctxt "@info:tooltip %1 display name of a key"
 msgid "Replace %1 with new key"
 msgstr "Substituír %1 por unha nova chave"
 
-#. +> trunk6 stable6
+#. +> trunk6
+#: src/view/searchbar.cpp:137
+#, fuzzy, kde-format
+#| msgid "Search..."
+msgctxt "@info:placeholder"
+msgid "Search..."
+msgstr "Buscar…"
+
+#. +> stable6
 #: src/view/searchbar.cpp:137
 #, kde-format
 msgid "Search..."
@@ -14459,61 +14434,69 @@ msgstr ""
 " <br/>"
 " A certificación requírese para asegurarse de que os certificados pertencen verdadeiramente á identidade á que reclaman pertencer."
 
-#. +> trunk6 stable6
+#. +> trunk6
+#: src/view/searchbar.cpp:197
+#, fuzzy, kde-format
+#| msgid "Search...<%1>"
+msgctxt "@info:placeholder"
+msgid "Search...<%1>"
+msgstr "Buscar…<%1>"
+
+#. +> stable6
 #: src/view/searchbar.cpp:197
 #, kde-format
 msgid "Search...<%1>"
 msgstr "Buscar…<%1>"
 
 #. +> trunk6 stable6
-#: src/view/smartcardswidget.cpp:55
+#: src/view/smartcardswidget.cpp:56
 #, kde-format
 msgctxt "OpenPGP refers to a smartcard protocol"
 msgid "OpenPGP v2.0 - v3.3"
 msgstr "OpenPGP v2.0-v3.3"
 
 #. +> trunk6 stable6
-#: src/view/smartcardswidget.cpp:56
+#: src/view/smartcardswidget.cpp:57
 #, kde-format
 msgctxt "Gnuk is a cryptographic token for GnuPG"
 msgid "Gnuk"
 msgstr "Gnuk"
 
 #. +> trunk6 stable6
-#: src/view/smartcardswidget.cpp:57
+#: src/view/smartcardswidget.cpp:58
 #, kde-format
 msgctxt "NetKey refers to a smartcard protocol"
 msgid "NetKey v3"
 msgstr "NetKey v3"
 
 #. +> trunk6 stable6
-#: src/view/smartcardswidget.cpp:58
+#: src/view/smartcardswidget.cpp:59
 #, kde-format
 msgctxt "PIV refers to a smartcard protocol"
 msgid "PIV (requires GnuPG 2.3 or later)"
 msgstr "PIV (require GnuPG 2.3 ou posterior)"
 
 #. +> trunk6 stable6
-#: src/view/smartcardswidget.cpp:59
+#: src/view/smartcardswidget.cpp:60
 #, kde-format
 msgctxt "CardOS is a smartcard operating system"
 msgid "CardOS 5 (various apps)"
 msgstr "CardOS 5 (varias aplicacións)"
 
 #. +> trunk6 stable6
-#: src/view/smartcardswidget.cpp:60
+#: src/view/smartcardswidget.cpp:61
 #, kde-format
 msgid "Please insert a compatible smartcard."
 msgstr "Insira unha tarxeta intelixente compatíbel."
 
 #. +> trunk6 stable6
-#: src/view/smartcardswidget.cpp:62
+#: src/view/smartcardswidget.cpp:63
 #, kde-format
 msgid "Kleopatra currently supports the following card types:"
 msgstr "Kleopatra é compatíbel actualmente cos seguintes tipos de tarxetas:"
 
 #. +> trunk6 stable6
-#: src/view/smartcardswidget.cpp:69
+#: src/view/smartcardswidget.cpp:70
 #, kde-format
 msgid "Reload"
 msgstr "Recargar"
@@ -14525,32 +14508,81 @@ msgid "Smartcard Management"
 msgstr "Xestión de tarxeta intelixente"
 
 #. +> trunk6 stable6
-#: src/view/smartcardswidget.cpp:171
+#: src/view/smartcardswidget.cpp:172
 #, kde-format
 msgctxt "@title:tab smartcard application - name of card holder - serial number of smartcard"
 msgid "%1 - %2 - %3"
 msgstr "%1 — %2 — %3"
 
 #. +> trunk6 stable6
-#: src/view/smartcardswidget.cpp:176
+#: src/view/smartcardswidget.cpp:177
 #, kde-format
 msgctxt "@title:tab smartcard application - serial number of smartcard"
 msgid "%1 - %2"
 msgstr "%1 — %2"
 
 #. +> trunk6
-#: src/view/smartcardswidget.cpp:235
+#: src/view/smartcardswidget.cpp:236
 #, kde-format
 msgctxt "@action"
 msgid "Reload"
 msgstr "Recargar"
 
 #. +> trunk6
-#: src/view/smartcardswidget.cpp:236
+#: src/view/smartcardswidget.cpp:237
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Reload smart cards"
 msgstr "Recargar as tarxetas intelixentes"
+
+#. +> trunk6 stable6
+#: src/view/smartcardwidget.cpp:30
+#, kde-format
+msgctxt "1 is a Version number"
+msgid "NetKey v%1 Card"
+msgstr "Tarxeta NetKey v%1"
+
+#. +> trunk6 stable6
+#: src/view/smartcardwidget.cpp:35
+#, kde-format
+msgctxt "Placeholder is a version number"
+msgid "Unknown OpenPGP v%1 card"
+msgstr "Tarxeta OpenPGP v%1 descoñecida"
+
+#. +> trunk6 stable6
+#: src/view/smartcardwidget.cpp:37
+#, kde-format
+msgctxt "First placeholder is manufacturer, second placeholder is a version number"
+msgid "%1 OpenPGP v%2 card"
+msgstr "Tarxeta %1 de OpenPGP v%2"
+
+#. +> trunk6 stable6
+#: src/view/smartcardwidget.cpp:42
+#, kde-format
+msgctxt "%1 is a smartcard manufacturer"
+msgid "%1 PKCS#15 card"
+msgstr "Tarxeta PKCS#15 de %1"
+
+#. +> trunk6 stable6
+#: src/view/smartcardwidget.cpp:44
+#, kde-format
+msgctxt "%1 version number"
+msgid "PIV v%1 card"
+msgstr "Tarxeta PIV v%1"
+
+#. +> trunk6
+#: src/view/smartcardwidget.cpp:76
+#, kde-format
+msgctxt "@label"
+msgid "Card type:"
+msgstr ""
+
+#. +> trunk6 stable6
+#: src/view/smartcardwidget.cpp:81
+#, kde-format
+msgctxt "@label"
+msgid "Serial number:"
+msgstr "Número de serie:"
 
 #. +> trunk6 stable6
 #: src/view/tabwidget.cpp:663
@@ -14726,6 +14758,11 @@ msgid ""
 msgstr ""
 "Importar o certificado dun ficheiro.<nl/>"
 "Para importar dun servidor de chaves público use <interface>Buscar no servidor</interface> no seu lugar."
+
+#, kde-format
+#~ msgctxt "@label:textbox"
+#~ msgid "Serial number:"
+#~ msgstr "Número de serie:"
 
 #, kde-format
 #~ msgid "Change PUK"
