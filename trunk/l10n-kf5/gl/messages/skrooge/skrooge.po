@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: skrooge\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-08-24 01:48+0000\n"
-"PO-Revision-Date: 2024-08-25 15:41+0200\n"
+"PO-Revision-Date: 2024-08-31 13:46+0200\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Proxecto Trasno (proxecto@trasno.gal)\n"
 "Language: gl\n"
@@ -1219,7 +1219,7 @@ msgid ""
 "Your document has been recovered here: %1\n"
 "Take care the recovery could be not perfect"
 msgstr ""
-"O documento recuperouse aguí: %1\n"
+"O documento recuperouse aquí: %1\n"
 "Coide porque a recuperación pode non ser perfecta"
 
 #: plugins/generic/skg_file/skgfileplugin.cpp:569
@@ -2272,7 +2272,7 @@ msgctxt ""
 "This is a regular expression to find the column in a csv file. You should "
 "keep the ^ and translate the word"
 msgid "^date"
-msgstr "^(dat[ae]|fecha)"
+msgstr "^(data|date|fecha)"
 
 #: plugins/import/skrooge_import_csv/skgimportplugincsv.cpp:40
 #, kde-format
@@ -2304,7 +2304,7 @@ msgctxt ""
 "This is a regular expression to find the column in a csv file. You should "
 "keep the ^ and | and translate the words"
 msgid "^payee|^tiers"
-msgstr "^(parte|payee|nive(l|is)|tiers)"
+msgstr "^(parte|payee|nivel|niveis|tiers)"
 
 #: plugins/import/skrooge_import_csv/skgimportplugincsv.cpp:44
 #, kde-format
@@ -2324,6 +2324,7 @@ msgid "^status|^pointage"
 msgstr "^(estado|status|pointage)"
 
 # skip-rule: PT-2011-dual_bookmark
+# well-spelled: marcad
 #: plugins/import/skrooge_import_csv/skgimportplugincsv.cpp:46
 #, kde-format
 msgctxt ""
@@ -2333,13 +2334,14 @@ msgid "^bookmarked"
 msgstr ""
 "^(marcad[ao]s?|(en|nos)[-_ ]marcadores|en[-_ ]los[-_ ]marcadores|bookmarked)"
 
+# well-spelled: categor, ií
 #: plugins/import/skrooge_import_csv/skgimportplugincsv.cpp:47
 #, kde-format
 msgctxt ""
 "This is a regular expression to find the column in a csv file. You should "
 "keep the ^ and translate the word"
 msgid "^cat\\w*gor\\w*"
-msgstr "^(categpr[ií]as?|cat\\w*gor\\w*)"
+msgstr "^(categor[ií]as?|cat\\w*gor\\w*)"
 
 #: plugins/import/skrooge_import_csv/skgimportplugincsv.cpp:48
 #, kde-format
@@ -2348,8 +2350,7 @@ msgctxt ""
 "keep the ^ and | and translate the words"
 msgid "^value|^amount|^valeur|^montant|^credit|^debit"
 msgstr ""
-"^(cantidade|crédito|débito|valor|cantidad|value|amount|valeur|montant|credit|"
-"debit)"
+"^(cantidade?|crédito|débito|valor|value|amount|valeur|montant|credit|debit)"
 
 #: plugins/import/skrooge_import_csv/skgimportplugincsv.cpp:49
 #, kde-format
@@ -2357,7 +2358,7 @@ msgctxt ""
 "This is a regular expression to find the column in a csv file. You should "
 "keep the ^ and translate the word"
 msgid "^quantity"
-msgstr "^(cantidade|cantidad|quantity)"
+msgstr "^(cantidade?|quantity)"
 
 #: plugins/import/skrooge_import_csv/skgimportplugincsv.cpp:50
 #, kde-format
@@ -2365,7 +2366,7 @@ msgctxt ""
 "This is a regular expression to find the column in a csv file. You should "
 "keep the ^ and translate the word"
 msgid "^unit"
-msgstr "^(unidade|unidad|unit)"
+msgstr "^(unidade?|unit)"
 
 #: plugins/import/skrooge_import_csv/skgimportplugincsv.cpp:51
 #, kde-format
@@ -2383,6 +2384,7 @@ msgctxt ""
 msgid "^-|^debit|^withdrawal"
 msgstr "^(débito|retirada|-|debit|withdrawal)"
 
+# well-spelled: entifica, ción, eo
 #: plugins/import/skrooge_import_csv/skgimportplugincsv.cpp:53
 #, kde-format
 msgctxt ""
@@ -2391,6 +2393,7 @@ msgctxt ""
 msgid "^idgroup"
 msgstr "^(id(entifica(ción|dor))?[-_ ]d[eo][-_ ]grupo|idgroup)"
 
+# well-spelled: entifica, ción
 #: plugins/import/skrooge_import_csv/skgimportplugincsv.cpp:54
 #, kde-format
 msgctxt ""
@@ -8017,7 +8020,7 @@ msgstr "Aliñáronse as categorías."
 #, kde-format
 msgctxt "Error message"
 msgid "Categories alignment failed"
-msgstr "Fallou o aliñamento das categtorías."
+msgstr "Fallou o aliñamento das categorías."
 
 #: plugins/skrooge/skrooge_operation/skgoperationplugin.cpp:1733
 #, kde-format
@@ -12307,31 +12310,30 @@ msgstr ""
 "prefixe as palabras con «+».<br/> Se quere retirar liñas (operador lóxico "
 "«non»), prefixe as palabras con «-».<br/> Se só quere buscar nunha das "
 "columnas, prefixe as palabras co nome da columna seguido de dous puntos: "
-"nomedacolumna:palabra.<br/> Se quere buscar unha palabra ou palabras que "
-"conteñan o carácter de dous puntos («:»), ten que indicar o nome da columna "
-"no que quere buscar a palabra seguido dun punto: nomedacolumna.:texto:con:"
-"dous:puntos.<br/> Se quere buscar un texto con espazos, use comiñas simples: "
-"'texto con espazos'.</p> <p>Tamén pode usar os operadores «&lt;» e «&gt;», "
-"«&lt;=», «&gt;=», «=» e «#» (para expresións regulares).</p> <p><span style="
-"\" font-weight:600; text-decoration: underline;\">Exemplos:</span><br/> "
-"+valor1 +valor2 → Amosar as liñas que conteñan valor1 ou valor2.<br/> "
-"+valor1 -valor2 → Amosar as liñas que conteñan valor1 pero non valor2.<br/> "
-"'abc def' → Amosar as liñas que conteñan «abc def».<br/> '-att:abc def' → "
-"Retirar as liñas que teñan un nome de columna que comece por «abc» e conteña "
-"«abc def».<br/> abc:def → Amosar as liñas que teñan un nome de columna que "
-"comece por «abc» e conteña «def».<br/> :abc:def → Amosar as liñas que "
-"conteñan «abc:def».<br/> Data&gt;2015-03-01 → Amosar as liñas nas que polo "
-"menos un atributo que comeza por «Data» é superior a 2015-03-01.<br/> Date."
-"&gt;2015-03-01 → Amosar as liñas nas que o atributo «Data» é superior a "
-"2015-03-01.<br/> Cantidade&lt;10 → Amosar as liñas nas que polo menos un "
-"atributo que comece por «Cantidade» sexa inferior a 10.<br/> Cantidade=10 → "
+"columna:palabra.<br/> Se quere buscar unha palabra ou palabras que conteñan "
+"o carácter de dous puntos («:»), ten que indicar o nome da columna no que "
+"quere buscar a palabra seguido dun punto: columna:valor:resto.<br/> Se quere "
+"buscar un texto con espazos, use comiñas simples: 'texto con espazos'.</p> "
+"<p>Tamén pode usar os operadores «&lt;» e «&gt;», «&lt;=», «&gt;=», «=» e "
+"«#» (para expresións regulares).</p> <p><span style=\" font-weight:600; text-"
+"decoration: underline;\">Exemplos:</span><br/> +valor1 +valor2 → Amosar as "
+"liñas que conteñan valor1 ou valor2.<br/> +valor1 -valor2 → Amosar as liñas "
+"que conteñan valor1 pero non valor2.<br/> 'abc def' → Amosar as liñas que "
+"conteñan «abc def».<br/> '-att:abc def' → Retirar as liñas que teñan un nome "
+"de columna que comece por «abc» e conteña «abc def».<br/> abc:def → Amosar "
+"as liñas que teñan un nome de columna que comece por «abc» e conteña «def»."
+"<br/> :abc:def → Amosar as liñas que conteñan «abc:def».<br/> Data&gt;2015-"
+"03-01 → Amosar as liñas nas que polo menos un atributo que comeza por «Data» "
+"é superior a 2015-03-01.<br/> Date.&gt;2015-03-01 → Amosar as liñas nas que "
+"o atributo «Data» é superior a 2015-03-01.<br/> Cantidade&lt;10 → Amosar as "
+"liñas nas que polo menos un atributo que comece por «Cantidade» sexa "
+"inferior a 10.<br/> Cantidade=10 → Amosar as liñas nas que polo menos un "
+"atributo que comece por «Cantidade» sexa igual a 10.<br/> Cantidade&lt;=10 → "
 "Amosar as liñas nas que polo menos un atributo que comece por «Cantidade» "
-"sexa igual a 10.<br/> Cantidade&lt;=10 → Amosar as liñas nas que polo menos "
-"un atributo que comece por «Cantidade» sexa inferior ou igual a 10.<br/> "
-"abc#^d.*f$ → Amosar as liñas cun nome de columna que comece por abc e cadre "
-"coa expresión regular ^d.*f$</p><span style=\"font-weight:600; text-"
-"decoration: underline;\">O seu filtro enténdese así:</span><br/>%1</body></"
-"html>"
+"sexa inferior ou igual a 10.<br/> abc#^d.*f$ → Amosar as liñas cun nome de "
+"columna que comece por abc e cadre coa expresión regular ^d.*f$</p><span "
+"style=\"font-weight:600; text-decoration: underline;\">O seu filtro "
+"enténdese así:</span><br/>%1</body></html>"
 
 #: skgbankgui/skgquerycreator.cpp:100
 #, kde-format
@@ -13928,7 +13930,7 @@ msgstr "non está baleira."
 msgctxt ""
 "Description of a condition. Do not translate key words (#V1S#, #V1#, …)"
 msgid "=regexpcapture(#ATT2#, '#V1S#', #V2#)"
-msgstr "=capturadeexpreg(#ATT2#, '#V1S#', #V2#)"
+msgstr "=capturaDeExpresiónRegular(#ATT2#, '#V1S#', #V2#)"
 
 #: skgbankmodeler/skgruleobject.cpp:352
 #, kde-format
@@ -14311,6 +14313,7 @@ msgstr ""
 "+)(\\s*)(cm|polgadas?)»)"
 
 # skip-rule: mecanografía-oo
+# well-spelled: Oo
 #: skgbankmodeler/skgruleobject.cpp:470
 #, kde-format
 msgctxt "Help for a condition"
@@ -14322,6 +14325,7 @@ msgstr ""
 "exemplo: «^[Oo]la$»)."
 
 # skip-rule: mecanografía-oo
+# well-spelled: Oo
 #: skgbankmodeler/skgruleobject.cpp:472
 #, kde-format
 msgctxt "Help for a condition"
@@ -16672,7 +16676,7 @@ msgstr[1] "%1 trimestres anteriores"
 msgctxt "A period"
 msgid "Previous semester"
 msgid_plural "%1 previous semesters"
-msgstr[0] "Semetre anterior"
+msgstr[0] "Semestre anterior"
 msgstr[1] "%1 semestres anteriores"
 
 #: skgbasegui/skgperiodedit.cpp:152
