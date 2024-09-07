@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdenlive\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-05 10:15+0200\n"
+"POT-Creation-Date: 2024-09-07 10:24+0200\n"
 "PO-Revision-Date: 2024-08-25 15:45+0200\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Proxecto Trasno (proxecto@trasno.gal)\n"
@@ -149,9 +149,12 @@ msgid "The thickness of the bar or segments."
 msgstr "O grosor da barra ou dos segmentos."
 
 #. i18n: ectx: property (text), widget (QLabel, label_4)
+#. i18n: ectx: property (text), widget (QTreeWidget, styleList)
+#. i18n: ectx: property (text), widget (QLabel, labelAngle)
 #. +> trunk6 stable6
 #: data/effects/audiolevelgraph.xml:33 data/effects/audiospectrum.xml:26
-#: data/effects/audiowaveform.xml:16 src/ui/gradientedit_ui.ui:100
+#: data/effects/audiowaveform.xml:16 src/ui/editsubstyle_ui.ui:461
+#: src/ui/gradientedit_ui.ui:100 src/ui/managesubtitles_ui.ui:434
 #, kde-format
 msgid "Angle"
 msgstr "Ángulo"
@@ -744,30 +747,38 @@ msgstr "Recortar os bordos dun fragmento"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_tabposition)
 #. +> trunk6 stable6
-#: data/effects/crop.xml:8 src/ui/configmisc_ui.ui:120
+#: data/effects/crop.xml:8 src/dialogs/managesubtitles.cpp:541
+#: src/dialogs/subtitlestyleedit.cpp:104 src/ui/configmisc_ui.ui:120
 #, kde-format
 msgid "Top"
 msgstr "Parte superior"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_tabposition)
+#. i18n: ectx: property (text), widget (QLabel, labelMarginL)
 #. +> trunk6 stable6
 #: data/effects/crop.xml:11 data/effects/dance.xml:26
-#: data/effects/dance.xml:35 src/ui/configmisc_ui.ui:130
+#: data/effects/dance.xml:35 src/dialogs/managesubtitles.cpp:529
+#: src/dialogs/subtitlestyleedit.cpp:106 src/ui/configmisc_ui.ui:130
+#: src/ui/editsub_ui.ui:427 src/ui/editsubstyle_ui.ui:413
 #, kde-format
 msgid "Left"
 msgstr "Esquerda"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_tabposition)
 #. +> trunk6 stable6
-#: data/effects/crop.xml:14 src/ui/configmisc_ui.ui:125
+#: data/effects/crop.xml:14 src/dialogs/managesubtitles.cpp:523
+#: src/dialogs/subtitlestyleedit.cpp:110 src/ui/configmisc_ui.ui:125
 #, kde-format
 msgid "Bottom"
 msgstr "Fondo"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_tabposition)
+#. i18n: ectx: property (text), widget (QLabel, labelMarginR)
 #. +> trunk6 stable6
 #: data/effects/crop.xml:17 data/effects/dance.xml:29
-#: src/ui/configmisc_ui.ui:135
+#: src/dialogs/managesubtitles.cpp:535 src/dialogs/subtitlestyleedit.cpp:108
+#: src/ui/configmisc_ui.ui:135 src/ui/editsub_ui.ui:458
+#: src/ui/editsubstyle_ui.ui:173
 #, kde-format
 msgid "Right"
 msgstr "Dereita"
@@ -987,10 +998,13 @@ msgstr "Superior,Medio,Inferior"
 msgid "Vertical Alignment"
 msgstr "Aliñamento vertical"
 
+#. i18n: ectx: property (text), widget (QTreeWidget, eventList)
+#. i18n: ectx: property (text), widget (QLabel, labelPrimaryColor)
 #. i18n: ectx: property (title), widget (QGroupBox, text_box)
 #. +> trunk6 stable6
 #: data/effects/dynamictext.xml:43 data/effects/gpstext.xml:8
-#: src/titler/graphicsscenerectmove.cpp:921 src/ui/templateclip_ui.ui:38
+#: src/titler/graphicsscenerectmove.cpp:921 src/ui/editsubstyle_ui.ui:255
+#: src/ui/managesubtitles_ui.ui:216 src/ui/templateclip_ui.ui:38
 #, kde-format
 msgid "Text"
 msgstr "Texto"
@@ -1003,7 +1017,7 @@ msgstr "código temporal,fotograma,data de creación,data de ficheiro (GMT),data
 
 #. +> trunk6 stable6
 #: data/effects/dynamictext.xml:45
-#, kde-format, no-c-format
+#, no-c-format, kde-format
 msgid "You can also enter strftime parameters to customize the output, like: #createdate %H:%M %D#"
 msgstr "Tamén pode inserir parámetros de strftime para personalizar a saída, como: #createdate %H:%M %D#"
 
@@ -1870,7 +1884,7 @@ msgstr "Delta-Y"
 
 #. +> trunk6 stable6
 #: data/effects/oldfilm.xml:11
-#, kde-format, no-c-format
+#, no-c-format, kde-format
 msgid "% of picture have a delta"
 msgstr "Porcentaxe da imaxe que ten unha delta"
 
@@ -2297,10 +2311,12 @@ msgid "Create an alpha channel (transparency) based on another resource"
 msgstr "Crear unha canle alfa (transparencia) baseada noutro recurso"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
+#. i18n: ectx: property (text), widget (QLabel, labelScrollSpeed)
 #. +> trunk6 stable6
 #: data/effects/speed.xml:4 data/effects/speed.xml:8 data/effects/wave.xml:17
 #: src/effects/effectstack/view/qml/BuiltStack.qml:34
 #: src/timeline2/view/qml/Track.qml:50 src/ui/clipspeed_ui.ui:36
+#: src/ui/editsub_ui.ui:575
 #, kde-format
 msgid "Speed"
 msgstr "Velocidade"
@@ -2415,8 +2431,10 @@ msgid "HH:MM:SS,HH:MM:SS.S,MM:SS,MM:SS.SS,MM:SS.SSS,SS,SS.S,SS.SS,SS.SSS"
 msgstr "HH:MM:SS,HH:MM:SS.S,MM:SS,MM:SS.SS,MM:SS.SSS,SS,SS.S,SS.SS,SS.SSS"
 
 #. i18n: ectx: property (text), widget (QLabel, label_3)
+#. i18n: ectx: property (text), widget (QTreeWidget, eventList)
 #. +> trunk6 stable6
-#: data/effects/timer.xml:50 src/ui/wipeval_ui.ui:27
+#: data/effects/timer.xml:50 src/ui/managesubtitles_ui.ui:201
+#: src/ui/wipeval_ui.ui:27
 #, kde-format
 msgid "Start"
 msgstr "Iniciar"
@@ -2460,8 +2478,10 @@ msgstr ""
 "Ao descender, o temporizador contará ata o tempo en vez de ata 00:00:00,000.\n"
 "Ao ascender, o temporizador contará desde o tempo.]]>"
 
+#. i18n: ectx: property (text), widget (QLabel, labelScrollDirection)
 #. +> trunk6 stable6
 #: data/effects/timer.xml:66 data/transitions/slide.xml:8
+#: src/ui/editsub_ui.ui:552
 #, kde-format
 msgid "Direction"
 msgstr "Dirección"
@@ -2873,8 +2893,9 @@ msgstr "Amplitude de onda"
 msgid "Horizontal"
 msgstr "Horizontal"
 
+#. i18n: ectx: property (text), widget (QLabel, labelMarginV)
 #. +> trunk6 stable6
-#: data/effects/wave.xml:23
+#: data/effects/wave.xml:23 src/ui/editsub_ui.ui:441
 #, kde-format
 msgid "Vertical"
 msgstr "Vertical"
@@ -2947,7 +2968,7 @@ msgstr "Xera imitacións de tarxetas de proba"
 
 #. +> trunk6 stable6
 #: data/generators/frei0r_test_pat_b.xml:7
-#, kde-format, no-c-format
+#, no-c-format, kde-format
 msgid "PAL color bars,PAL color bars with red,95% BBC color bars,75% EBU color bars,SMPTE color bars,Philips PM5544,FuBK,Simplified FuBK"
 msgstr "Barras de cores de PAL,Barras de cores de PAL con vermello,95% de barras de cores de BBC,75% de barras de cores de EBU,Barras de cores de SMPTE,Philips PM5544,FuBK,FuBK simplificado"
 
@@ -3478,7 +3499,7 @@ msgstr "Reverter"
 #: src/ui/cliptranscode_ui.ui:18 src/ui/colorclip_ui.ui:18
 #: src/ui/customcamcorderproxy_ui.ui:18 src/ui/customjobinterface_ui.ui:18
 #: src/ui/gradientedit_ui.ui:18 src/ui/import_subtitle_ui.ui:18
-#: src/ui/manageencodingprofile_ui.ui:18 src/ui/managesubtitles_ui.ui:18
+#: src/ui/manageencodingprofile_ui.ui:18 src/ui/managesubtitles_ui.ui:24
 #: src/ui/newtimeline_ui.ui:18 src/ui/qtextclip_ui.ui:18
 #: src/ui/speechdialog_ui.ui:18 src/ui/testproxy_ui.ui:18
 #: src/ui/transcodeseekable_ui.ui:18
@@ -3502,8 +3523,9 @@ msgid "Duration (seconds)"
 msgstr "Duración (segundos)"
 
 #. i18n: ectx: property (text), widget (QLabel, font_label)
+#. i18n: ectx: property (text), widget (QLabel, labelFont)
 #. +> trunk6 stable6
-#: plugins/sampleplugin/countdown_ui.ui:50
+#: plugins/sampleplugin/countdown_ui.ui:50 src/ui/editsubstyle_ui.ui:61
 #, kde-format
 msgid "Font"
 msgstr "Fonte"
@@ -3815,94 +3837,91 @@ msgstr "Tirar os efectos de %1"
 
 #. i18n: ectx: property (text), widget (QRadioButton, rbLinear)
 #. +> trunk6 stable6
-#: src/assets/keyframes/model/keyframemodel.cpp:48
-#: src/assets/keyframes/model/keyframemodel.cpp:64 src/ui/histogram_ui.ui:112
+#: src/assets/keyframes/model/keyframemodel.cpp:47 src/ui/histogram_ui.ui:112
 #, kde-format
 msgid "Linear"
 msgstr "Lineal"
 
 #. +> trunk6 stable6
-#: src/assets/keyframes/model/keyframemodel.cpp:49
-#: src/assets/keyframes/model/keyframemodel.cpp:64
+#: src/assets/keyframes/model/keyframemodel.cpp:48
 #, kde-format
 msgid "Discrete"
 msgstr "Discreta"
 
 #. +> trunk6 stable6
-#: src/assets/keyframes/model/keyframemodel.cpp:50
-#: src/assets/keyframes/model/keyframemodel.cpp:64
+#: src/assets/keyframes/model/keyframemodel.cpp:49
 #, kde-format
 msgid "Smooth"
 msgstr "Suave"
 
 #. +> trunk6 stable6
-#: src/assets/keyframes/model/keyframemodel.cpp:51
+#: src/assets/keyframes/model/keyframemodel.cpp:50
 #, kde-format
 msgid "Bounce In"
 msgstr "Entrada de rebote"
 
 #. +> trunk6 stable6
-#: src/assets/keyframes/model/keyframemodel.cpp:52
+#: src/assets/keyframes/model/keyframemodel.cpp:51
 #, kde-format
 msgid "Bounce Out"
 msgstr "Saída de rebote"
 
 #. +> trunk6 stable6
-#: src/assets/keyframes/model/keyframemodel.cpp:53
+#: src/assets/keyframes/model/keyframemodel.cpp:52
 #, kde-format
 msgid "Cubic In"
 msgstr "Entrada en cubo"
 
 #. +> trunk6 stable6
-#: src/assets/keyframes/model/keyframemodel.cpp:54
+#: src/assets/keyframes/model/keyframemodel.cpp:53
 #, kde-format
 msgid "Cubic Out"
 msgstr "Saída en cubo"
 
 #. +> trunk6 stable6
-#: src/assets/keyframes/model/keyframemodel.cpp:55
+#: src/assets/keyframes/model/keyframemodel.cpp:54
 #, kde-format
 msgid "Exponential In"
 msgstr "Entrada exponencial"
 
 #. +> trunk6 stable6
-#: src/assets/keyframes/model/keyframemodel.cpp:56
+#: src/assets/keyframes/model/keyframemodel.cpp:55
 #, kde-format
 msgid "Exponential Out"
 msgstr "Saída exponencial"
 
 #. +> trunk6 stable6
-#: src/assets/keyframes/model/keyframemodel.cpp:57
+#: src/assets/keyframes/model/keyframemodel.cpp:56
 #, kde-format
 msgid "Circular In"
 msgstr "Entrada circular"
 
 #. +> trunk6 stable6
-#: src/assets/keyframes/model/keyframemodel.cpp:58
+#: src/assets/keyframes/model/keyframemodel.cpp:57
 #, kde-format
 msgid "Circular Out"
 msgstr "Saída circular"
 
 #. +> trunk6 stable6
-#: src/assets/keyframes/model/keyframemodel.cpp:59
+#: src/assets/keyframes/model/keyframemodel.cpp:58
 #, kde-format
 msgid "Elastic In"
 msgstr "Entrada elástica"
 
 #. +> trunk6 stable6
-#: src/assets/keyframes/model/keyframemodel.cpp:60
+#: src/assets/keyframes/model/keyframemodel.cpp:59
 #, kde-format
 msgid "Elastic Out"
 msgstr "Saída elástica"
 
 #. +> trunk6 stable6
-#: src/assets/keyframes/model/keyframemodel.cpp:61
+#: src/assets/keyframes/model/keyframemodel.cpp:60
 #, kde-format
 msgid "Smooth (deprecated)"
 msgstr "Suavizar (obsoleto)"
 
 #. +> trunk6 stable6
-#: src/assets/keyframes/model/keyframemodel.cpp:147
+#: src/assets/keyframes/model/keyframemodel.cpp:143
 #: src/assets/keyframes/model/keyframemodellist.cpp:133
 #: src/assets/keyframes/model/keyframemodellist.cpp:210
 #: src/assets/view/widgets/keyframewidget.cpp:89
@@ -3912,7 +3931,7 @@ msgid "Add keyframe"
 msgstr "Engadir fotograma clave"
 
 #. +> trunk6 stable6
-#: src/assets/keyframes/model/keyframemodel.cpp:147
+#: src/assets/keyframes/model/keyframemodel.cpp:143
 #: src/assets/keyframes/model/keyframemodellist.cpp:133
 #: src/assets/keyframes/model/keyframemodellist.cpp:210
 #, kde-format
@@ -3920,7 +3939,7 @@ msgid "Change keyframe type"
 msgstr "Cambiar o tipo de fotograma clave"
 
 #. +> trunk6 stable6
-#: src/assets/keyframes/model/keyframemodel.cpp:240
+#: src/assets/keyframes/model/keyframemodel.cpp:236
 #: src/assets/keyframes/model/keyframemodellist.cpp:262
 #: src/assets/view/widgets/keyframewidget.cpp:91 src/dialogs/timeremap.cpp:1636
 #, kde-format
@@ -3928,14 +3947,14 @@ msgid "Delete keyframe"
 msgstr "Eliminar fotograma clave"
 
 #. +> trunk6 stable6
-#: src/assets/keyframes/model/keyframemodel.cpp:435
+#: src/assets/keyframes/model/keyframemodel.cpp:431
 #, kde-format
 msgctxt "@action"
 msgid "Move keyframes"
 msgstr "Mover os fotogramas clave"
 
 #. +> trunk6 stable6
-#: src/assets/keyframes/model/keyframemodel.cpp:456
+#: src/assets/keyframes/model/keyframemodel.cpp:452
 #: src/assets/keyframes/model/keyframemodellist.cpp:378
 #: src/assets/keyframes/model/keyframemodellist.cpp:464
 #: src/assets/keyframes/view/keyframeview.cpp:199
@@ -3945,33 +3964,33 @@ msgid "Move keyframe"
 msgstr "Mover o fotograma clave"
 
 #. +> trunk6 stable6
-#: src/assets/keyframes/model/keyframemodel.cpp:527
+#: src/assets/keyframes/model/keyframemodel.cpp:523
 #: src/assets/keyframes/model/keyframemodellist.cpp:562
 #, kde-format
 msgid "Update keyframe"
 msgstr "Actualizar o fotograma clave"
 
 #. +> trunk6 stable6
-#: src/assets/keyframes/model/keyframemodel.cpp:889
+#: src/assets/keyframes/model/keyframemodel.cpp:883
 #: src/assets/keyframes/model/keyframemodellist.cpp:322
 #, kde-format
 msgid "Delete all keyframes"
 msgstr "Eliminar todos os fotogramas clave"
 
 #. +> trunk6 stable6
-#: src/assets/keyframes/model/keyframemodel.cpp:1084
+#: src/assets/keyframes/model/keyframemodel.cpp:1078
 #, kde-format
 msgid "effect"
 msgstr "efecto"
 
 #. +> trunk6 stable6
-#: src/assets/keyframes/model/keyframemodel.cpp:1093
+#: src/assets/keyframes/model/keyframemodel.cpp:1087
 #, kde-format
 msgid "Reset %1"
 msgstr "Restabelecer %1"
 
 #. +> trunk6 stable6
-#: src/assets/keyframes/model/keyframemodel.cpp:1356
+#: src/assets/keyframes/model/keyframemodel.cpp:1350
 #, kde-format
 msgid "Reset effect"
 msgstr "Reiniciar efecto"
@@ -4088,7 +4107,7 @@ msgstr "Non foi posíbel cargar a predefinición %1."
 
 #. +> trunk6 stable6
 #: src/assets/view/assetparameterview.cpp:54
-#: src/effects/effectstack/view/collapsibleeffectview.cpp:130
+#: src/effects/effectstack/view/collapsibleeffectview.cpp:141
 #, kde-format
 msgid "Reset Effect"
 msgstr "Restaurar o efecto"
@@ -4120,7 +4139,13 @@ msgid "Deletes the currently selected preset."
 msgstr "Elimina a predefinición seleccionada."
 
 #. +> trunk6 stable6
-#: src/assets/view/assetparameterview.cpp:355
+#: src/assets/view/assetparameterview.cpp:78
+#, kde-format
+msgid "Save effect"
+msgstr "Gardar o efecto"
+
+#. +> trunk6 stable6
+#: src/assets/view/assetparameterview.cpp:357
 #: src/dialogs/customcamcorderdialog.cpp:131
 #: src/dialogs/kdenlivesettingsdialog.cpp:1456
 #, kde-format
@@ -4129,7 +4154,7 @@ msgid "Enter Preset Name"
 msgstr "Escriba o nome da predefinición"
 
 #. +> trunk6 stable6
-#: src/assets/view/assetparameterview.cpp:355
+#: src/assets/view/assetparameterview.cpp:357
 #: src/dialogs/customcamcorderdialog.cpp:133
 #: src/dialogs/kdenlivesettingsdialog.cpp:1456
 #, kde-format
@@ -4219,7 +4244,8 @@ msgstr "Central esquerda"
 #. +> trunk6 stable6
 #: src/assets/view/widgets/keyframeimport.cpp:229
 #: src/assets/view/widgets/keyframeimport.cpp:239
-#: src/dialogs/subtitleedit.cpp:146 src/transitions/view/mixstackview.cpp:47
+#: src/dialogs/managesubtitles.cpp:532 src/dialogs/subtitlestyleedit.cpp:107
+#: src/transitions/view/mixstackview.cpp:47
 #, kde-format
 msgid "Center"
 msgstr "Central"
@@ -4640,7 +4666,7 @@ msgstr ""
 "D:"
 
 #. +> trunk6 stable6
-#: src/audiomixer/mixermanager.cpp:220 src/timeline2/view/qml/timeline.qml:1011
+#: src/audiomixer/mixermanager.cpp:220 src/timeline2/view/qml/timeline.qml:998
 #, kde-format
 msgid "Master"
 msgstr "Mestre"
@@ -4836,10 +4862,13 @@ msgstr "Descendente"
 msgid "Sort By"
 msgstr "Ordenar por"
 
-#. i18n: ectx: property (text), widget (QTreeWidget, subtitlesList)
+#. i18n: ectx: property (text), widget (QTreeWidget, fileList)
+#. i18n: ectx: property (text), widget (QTreeWidget, styleList)
+#. i18n: ectx: property (text), widget (QLabel, labelName)
 #. +> trunk6 stable6
 #: src/bin/bin.cpp:1254 src/bin/projectitemmodel.cpp:315
-#: src/ui/managesubtitles_ui.ui:103
+#: src/ui/editsubstyle_ui.ui:49 src/ui/managesubtitles_ui.ui:66
+#: src/ui/managesubtitles_ui.ui:349
 #, kde-format
 msgid "Name"
 msgstr "Nome"
@@ -5014,7 +5043,7 @@ msgid "Unable to write to file %1"
 msgstr "Non é posíbel escribir no ficheiro %1"
 
 #. +> trunk6 stable6
-#: src/bin/bin.cpp:1845 src/bin/bin.cpp:2515 src/doc/kdenlivedoc.cpp:742
+#: src/bin/bin.cpp:1845 src/bin/bin.cpp:2515 src/doc/kdenlivedoc.cpp:743
 #, kde-format
 msgid ""
 "Your project file was modified by Kdenlive.\n"
@@ -5047,7 +5076,7 @@ msgstr ""
 
 #. +> trunk6 stable6
 #: src/bin/bin.cpp:1895 src/bin/bin.cpp:2108
-#: src/bin/model/subtitlemodel.cpp:381
+#: src/bin/model/subtitlemodel.cpp:434
 #, kde-format
 msgid "The selected file %1 is invalid."
 msgstr "O ficheiro seleccionado %1 non é válido."
@@ -5310,7 +5339,7 @@ msgstr "Lista de reprodución"
 #. +> trunk6 stable6
 #: src/bin/bin.cpp:2435 src/bin/clipcreator.cpp:238
 #: src/bin/clipcreator.cpp:240 src/kdenliveui.rc:42
-#: src/project/projectmanager.cpp:1547 src/project/projectmanager.cpp:1549
+#: src/project/projectmanager.cpp:1587 src/project/projectmanager.cpp:1589
 #: src/ui/managecache_ui.ui:192
 #, kde-format
 msgid "Sequences"
@@ -5328,9 +5357,11 @@ msgstr "Título"
 msgid "Title Template"
 msgstr "Modelo de título"
 
+#. i18n: ectx: property (text), widget (QLabel, labelColor)
 #. +> trunk6 stable6
 #: src/bin/bin.cpp:2447 src/layoutmanagement.cpp:36
 #: src/mltcontroller/clippropertiescontroller.cpp:351
+#: src/ui/editsubstyle_ui.ui:80
 #, kde-format
 msgid "Color"
 msgstr "Cor"
@@ -5350,7 +5381,7 @@ msgstr "Crear un cartafol caixa"
 
 #. +> trunk6 stable6
 #: src/bin/bin.cpp:2671 src/bin/bin.cpp:2684 src/bin/bin.cpp:3666
-#: src/timeline2/model/timelinemodel.cpp:2161
+#: src/timeline2/model/timelinemodel.cpp:2165
 #, kde-format
 msgid "Delete Clip"
 msgstr "Eliminar o fragmento"
@@ -5567,8 +5598,8 @@ msgid "No valid clip to insert"
 msgstr "Non hai ningún fragmento válido para inserir"
 
 #. +> trunk6 stable6
-#: src/bin/bin.cpp:3934 src/timeline2/view/timelinecontroller.cpp:1533
-#: src/timeline2/view/timelinecontroller.cpp:3415
+#: src/bin/bin.cpp:3934 src/timeline2/view/timelinecontroller.cpp:1535
+#: src/timeline2/view/timelinecontroller.cpp:3423
 #, kde-format
 msgid "Select a clip to apply an effect"
 msgstr "Seleccione un fragmento para aplicar un efecto"
@@ -5638,7 +5669,7 @@ msgid "Please set a default application to open audio files"
 msgstr "Defina a aplicación predeterminada para abrir ficheiros de son"
 
 #. +> trunk6 stable6
-#: src/bin/bin.cpp:4610 src/core.cpp:320 src/doc/kdenlivedoc.cpp:168
+#: src/bin/bin.cpp:4610 src/core.cpp:320 src/doc/kdenlivedoc.cpp:169
 #: src/jobs/cliploadtask.cpp:468 src/jobs/filtertask.cpp:93
 #: src/jobs/filtertask.cpp:130 src/layoutmanagement.cpp:465
 #: src/layoutmanagement.cpp:526 src/profiles/profilerepository.cpp:173
@@ -5847,7 +5878,7 @@ msgid "Project Bin"
 msgstr "Caixa do proxecto"
 
 #. +> trunk6 stable6
-#: src/bin/bin.cpp:6295 src/bin/bin.cpp:6298 src/mainwindow.cpp:4947
+#: src/bin/bin.cpp:6295 src/bin/bin.cpp:6298 src/mainwindow.cpp:4946
 #, kde-format
 msgid "Project Bin %1"
 msgstr "Caixa de proxecto %1"
@@ -5921,9 +5952,12 @@ msgstr "Crear un modelo de título"
 msgid "The following clips are already inserted in the project. Do you want to duplicate them?"
 msgstr "Os seguintes fragmentos xa están no proxecto. Quere duplicalos?"
 
-#. i18n: ectx: property (text), widget (QPushButton, button_duplicate)
+#. i18n: ectx: property (text), widget (QPushButton, buttonDuplicateFile)
+#. i18n: ectx: property (text), widget (QPushButton, buttonDuplicateLayer)
+#. i18n: ectx: property (text), widget (QPushButton, buttonDuplicateStyle)
 #. +> trunk6 stable6
-#: src/bin/clipcreator.cpp:396 src/ui/managesubtitles_ui.ui:35
+#: src/bin/clipcreator.cpp:396 src/ui/managesubtitles_ui.ui:146
+#: src/ui/managesubtitles_ui.ui:230 src/ui/managesubtitles_ui.ui:489
 #, kde-format
 msgid "Duplicate"
 msgstr "Duplicar"
@@ -5967,7 +6001,7 @@ msgstr[1] "Engadir fragmentos"
 #: src/bin/generators/generators.cpp:57
 #: src/mltcontroller/clippropertiescontroller.cpp:293
 #: src/transitions/view/mixstackview.cpp:88 src/ui/clipdurationdialog_ui.ui:84
-#: src/ui/colorclip_ui.ui:41 src/ui/editsub_ui.ui:224
+#: src/ui/colorclip_ui.ui:41 src/ui/editsub_ui.ui:341
 #: src/ui/qtextclip_ui.ui:198 src/ui/spacerdialog_ui.ui:37
 #: src/ui/titlewidget_ui.ui:630
 #, kde-format
@@ -5981,13 +6015,13 @@ msgid "MLT Playlist (*.mlt)"
 msgstr "Lista de reprodución de MLT (*.mlt)"
 
 #. +> trunk6 stable6
-#: src/bin/mediabrowser.cpp:53 src/dialogs/subtitleedit.cpp:152
+#: src/bin/mediabrowser.cpp:53 src/dialogs/subtitleedit.cpp:387
 #, kde-format
 msgid "Zoom In"
 msgstr "Achegar"
 
 #. +> trunk6 stable6
-#: src/bin/mediabrowser.cpp:54 src/dialogs/subtitleedit.cpp:154
+#: src/bin/mediabrowser.cpp:54 src/dialogs/subtitleedit.cpp:389
 #, kde-format
 msgid "Zoom Out"
 msgstr "Afastar"
@@ -6008,7 +6042,7 @@ msgstr "Importar un ficheiro con clic duplo"
 #. i18n: ectx: property (text), widget (QLabel, label_3)
 #. +> trunk6 stable6
 #: src/bin/mediabrowser.cpp:184
-#: src/effects/effectstack/view/collapsibleeffectview.cpp:558
+#: src/effects/effectstack/view/collapsibleeffectview.cpp:565
 #: src/ui/colorclip_ui.ui:24 src/ui/qtextclip_ui.ui:29
 #: src/ui/slideshowclip_ui.ui:47
 #, kde-format
@@ -6122,7 +6156,7 @@ msgstr "Eliminar todos os marcadores"
 #. +> trunk6 stable6
 #: src/bin/model/markerlistmodel.cpp:870 src/bin/model/markerlistmodel.cpp:908
 #: src/bin/model/markerlistmodel.cpp:933
-#: src/timeline2/view/timelinecontroller.cpp:1498
+#: src/timeline2/view/timelinecontroller.cpp:1500
 #, kde-format
 msgid "No guide found at current position"
 msgstr "Non se atopou ningunha guía na posición actual"
@@ -6165,50 +6199,54 @@ msgstr "Engadir marcadores"
 
 #. i18n: ectx: Menu (subtitles)
 #. +> trunk6 stable6
-#: src/bin/model/subtitlemodel.cpp:73 src/core.cpp:699 src/kdenliveui.rc:30
+#: src/bin/model/subtitlemodel.cpp:88 src/core.cpp:699 src/kdenliveui.rc:30
 #: src/mainwindow.cpp:304 src/project/dialogs/archivewidget.cpp:103
 #: src/project/dialogs/projectsettings.cpp:434
 #, kde-format
 msgid "Subtitles"
 msgstr "Subtítulos"
 
-#. +> trunk6 stable6
-#: src/bin/model/subtitlemodel.cpp:104
-#, kde-format
-msgid "Edit subtitle style"
+#. +> trunk6
+#: src/bin/model/subtitlemodel.cpp:110
+#, fuzzy, kde-format
+#| msgid "Edit subtitle style"
+msgid "Edit global subtitle style"
 msgstr "Editar o estilo dos subtítulos"
 
 #. +> trunk6 stable6
-#: src/bin/model/subtitlemodel.cpp:391 src/bin/model/subtitlemodel.cpp:611
-#: src/bin/model/subtitlemodel.cpp:1548
+#: src/bin/model/subtitlemodel.cpp:444 src/bin/model/subtitlemodel.cpp:659
+#: src/bin/model/subtitlemodel.cpp:1614 src/bin/model/subtitlemodel.cpp:2190
+#: src/bin/model/subtitlemodel.cpp:2257 src/bin/model/subtitlemodel.cpp:2290
+#: src/bin/model/subtitlemodel.cpp:2323 src/bin/model/subtitlemodel.cpp:2356
+#: src/bin/model/subtitlemodel.cpp:2389
 #, kde-format
 msgid "Edit subtitle"
 msgstr "Editar o subtítulo"
 
 #. +> trunk6 stable6
-#: src/bin/model/subtitlemodel.cpp:645 src/bin/model/subtitlemodel.cpp:1635
-#: src/timeline2/model/timelinefunctions.cpp:227
+#: src/bin/model/subtitlemodel.cpp:694 src/bin/model/subtitlemodel.cpp:1702
+#: src/timeline2/model/timelinefunctions.cpp:228
 #, kde-format
 msgid "Cut clip"
 msgstr "Recortar o fragmento"
 
 #. +> trunk6 stable6
-#: src/bin/model/subtitlemodel.cpp:807 src/bin/model/subtitlemodel.cpp:1567
-#: src/timeline2/model/timelinemodel.cpp:3924
+#: src/bin/model/subtitlemodel.cpp:856 src/bin/model/subtitlemodel.cpp:1633
+#: src/timeline2/model/timelinemodel.cpp:3928
 #, kde-format
 msgid "Resize subtitle"
 msgstr "Cambiar o tamaño do subtítulo"
 
 #. +> trunk6 stable6
-#: src/bin/model/subtitlemodel.cpp:1003
-#: src/timeline2/model/timelinemodel.cpp:1359
+#: src/bin/model/subtitlemodel.cpp:1054
+#: src/timeline2/model/timelinemodel.cpp:1361
 #, kde-format
 msgid "Move subtitle"
 msgstr "Mover o subtítulo"
 
 #. +> trunk6 stable6
-#: src/bin/model/subtitlemodel.cpp:1159
-#: src/effects/effectstack/view/collapsibleeffectview.cpp:584
+#: src/bin/model/subtitlemodel.cpp:1228
+#: src/effects/effectstack/view/collapsibleeffectview.cpp:591
 #: src/effects/effectstack/view/effectstackview.cpp:785
 #: src/project/cliptranscode.cpp:152 src/project/dialogs/archivewidget.cpp:868
 #: src/project/dialogs/archivewidget.cpp:878 src/render/renderrequest.cpp:367
@@ -6221,29 +6259,56 @@ msgstr ""
 "Quéreo substituír?"
 
 #. +> trunk6 stable6
-#: src/bin/model/subtitlemodel.cpp:1579
+#: src/bin/model/subtitlemodel.cpp:1645 src/titler/titlewidget.cpp:393
+#: src/titler/titlewidget.cpp:396
+#, kde-format
+msgid "Add Text"
+msgstr "Engadir texto"
+
+#. +> stable6
+#: src/bin/model/subtitlemodel.cpp:1600
 #, kde-format
 msgid "Add text"
 msgstr "Engadir texto"
 
 #. +> trunk6 stable6
-#: src/bin/model/subtitlemodel.cpp:1599 src/dialogs/subtitleedit.cpp:112
+#: src/bin/model/subtitlemodel.cpp:1670 src/dialogs/subtitleedit.cpp:274
 #, kde-format
 msgid "Add subtitle"
 msgstr "Engadir un subtítulo"
 
 #. +> trunk6 stable6
-#: src/bin/model/subtitlemodel.cpp:1654 src/dialogs/subtitleedit.cpp:122
+#: src/bin/model/subtitlemodel.cpp:1722 src/dialogs/subtitleedit.cpp:284
 #, kde-format
 msgid "Delete subtitle"
 msgstr "Eliminar o subtítulo"
 
+#. +> trunk6
+#: src/bin/model/subtitlemodel.cpp:1794
+#, fuzzy, kde-format
+#| msgid "Delete subtitle"
+msgid "Delete subtitle layer"
+msgstr "Eliminar o subtítulo"
+
+#. +> trunk6
+#: src/bin/model/subtitlemodel.cpp:1821
+#, fuzzy, kde-format
+#| msgid "Create title template"
+msgid "Create subtitle layer"
+msgstr "Crear un modelo de título"
+
 #. +> trunk6 stable6
-#: src/bin/model/subtitlemodel.cpp:1707 src/bin/model/subtitlemodel.cpp:1710
+#: src/bin/model/subtitlemodel.cpp:1927 src/bin/model/subtitlemodel.cpp:1930
 #, kde-format
 msgctxt "@item:inlistbox subtitle track name"
 msgid "Subtitle %1"
 msgstr "Subtítulo %1"
+
+#. +> trunk6
+#: src/bin/model/subtitlemodel.cpp:2226
+#, kde-format
+msgid "Assign a new style to a subtitle."
+msgstr ""
 
 #. +> trunk6 stable6
 #: src/bin/projectclip.cpp:268
@@ -6252,7 +6317,7 @@ msgid "Timeline sequence"
 msgstr "Secuencia da cronoloxía"
 
 #. +> trunk6 stable6
-#: src/bin/projectclip.cpp:577 src/timeline2/view/qml/Clip.qml:1154
+#: src/bin/projectclip.cpp:577 src/timeline2/view/qml/Clip.qml:1156
 #, kde-format
 msgctxt "@label The first letter of Proxy, used as abbreviation"
 msgid "P"
@@ -6287,7 +6352,7 @@ msgstr "Incorrecta"
 #. +> trunk6 stable6
 #: src/bin/projectclip.cpp:1446 src/dialogs/clipcreationdialog.cpp:130
 #: src/jobs/cuttask.cpp:173 src/jobs/speedtask.cpp:120
-#: src/timeline2/model/timelinefunctions.cpp:1481
+#: src/timeline2/model/timelinefunctions.cpp:1491
 #, kde-format
 msgid "File already exists"
 msgstr "O ficheiro xa existe"
@@ -6394,7 +6459,7 @@ msgid "Loading project clips…"
 msgstr "Cargando os fragmentos do proxecto…"
 
 #. +> trunk6 stable6
-#: src/bin/projectsubclip.cpp:43 src/doc/documentvalidator.cpp:2134
+#: src/bin/projectsubclip.cpp:43 src/doc/documentvalidator.cpp:2407
 #, kde-format
 msgid "Zone %1"
 msgstr "Zona %1"
@@ -6873,7 +6938,7 @@ msgid "Create Text clip"
 msgstr "Crear un fragmento de texto"
 
 #. +> trunk6 stable6
-#: src/dialogs/clipcreationdialog.cpp:340 src/doc/kdenlivedoc.cpp:1178
+#: src/dialogs/clipcreationdialog.cpp:340 src/doc/kdenlivedoc.cpp:1179
 #, kde-format
 msgid "Template title clip"
 msgstr "Fragmento de título de modelo"
@@ -7213,12 +7278,12 @@ msgstr "Exportar os datos das guías"
 
 #. +> trunk6 stable6
 #: src/dialogs/exportguidesdialog.cpp:81 src/dialogs/renderwidget.cpp:1704
-#: src/dialogs/renderwidget.cpp:1728 src/doc/kdenlivedoc.cpp:759
-#: src/doc/kdenlivedoc.cpp:767 src/doc/kdenlivedoc.cpp:1327
+#: src/dialogs/renderwidget.cpp:1728 src/doc/kdenlivedoc.cpp:760
+#: src/doc/kdenlivedoc.cpp:768 src/doc/kdenlivedoc.cpp:1319
 #: src/effects/effectlist/model/effecttreemodel.cpp:290
 #: src/effects/effectlist/model/effecttreemodel.cpp:303
 #: src/effects/effectsrepository.cpp:419
-#: src/effects/effectstack/view/collapsibleeffectview.cpp:660
+#: src/effects/effectstack/view/collapsibleeffectview.cpp:667
 #: src/effects/effectstack/view/effectstackview.cpp:820
 #: src/profiles/profilerepository.cpp:190
 #: src/project/dialogs/archivewidget.cpp:699
@@ -7226,10 +7291,11 @@ msgstr "Exportar os datos das guías"
 #: src/project/dialogs/archivewidget.cpp:886
 #: src/project/dialogs/archivewidget.cpp:898
 #: src/project/dialogs/archivewidget.cpp:904
-#: src/project/projectmanager.cpp:1847 src/render/renderrequest.cpp:310
+#: src/project/projectmanager.cpp:1887 src/render/renderrequest.cpp:310
 #: src/renderpresets/renderpresetrepository.cpp:377
 #: src/renderpresets/renderpresetrepository.cpp:433
-#: src/timeline2/view/timelinecontroller.cpp:5197
+#: src/timeline2/view/timelinecontroller.cpp:5242
+#: src/timeline2/view/timelinecontroller.cpp:5247
 #: src/titler/titlewidget.cpp:2276
 #, kde-format
 msgid "Cannot write to file %1"
@@ -7308,7 +7374,7 @@ msgstr ""
 
 #. +> trunk6 stable6
 #: src/dialogs/importsubtitle.cpp:45 src/dialogs/importsubtitle.cpp:78
-#: src/project/dialogs/guideslist.cpp:179 src/project/projectmanager.cpp:1737
+#: src/project/dialogs/guideslist.cpp:179 src/project/projectmanager.cpp:1777
 #: src/renderpresets/renderpresetrepository.cpp:310
 #, kde-format
 msgid "Cannot read file %1"
@@ -7333,7 +7399,7 @@ msgid "Import Subtitle"
 msgstr "Importar un subtítulo"
 
 #. +> trunk6 stable6
-#: src/dialogs/kdenlivesettingsdialog.cpp:112 src/mainwindow.cpp:4055
+#: src/dialogs/kdenlivesettingsdialog.cpp:112 src/mainwindow.cpp:4054
 #, kde-format
 msgid "Timeline"
 msgstr "Liña de tempo"
@@ -7362,9 +7428,11 @@ msgstr "Reprodución"
 msgid "Capture"
 msgstr "Captura"
 
+#. i18n: ectx: property (text), widget (QLabel, labelMisc)
 #. +> trunk6 stable6
 #: src/dialogs/kdenlivesettingsdialog.cpp:219
 #: src/effects/effectlist/model/effecttreemodel.cpp:61
+#: src/ui/editsubstyle_ui.ui:146
 #, kde-format
 msgid "Misc"
 msgstr "Miscelánea"
@@ -7372,7 +7440,7 @@ msgstr "Miscelánea"
 #. +> trunk6 stable6
 #: src/dialogs/kdenlivesettingsdialog.cpp:243
 #: src/dialogs/kdenlivesettingsdialog.cpp:822
-#: src/doc/documentvalidator.cpp:2246
+#: src/doc/documentvalidator.cpp:2519
 #: src/transitions/transitionsrepository.cpp:188
 #, kde-format
 msgid "auto"
@@ -7521,8 +7589,10 @@ msgstr "Servizo de ARTS"
 #. i18n: ectx: property (text), widget (QRadioButton, default_folder)
 #. +> trunk6 stable6
 #: src/dialogs/kdenlivesettingsdialog.cpp:737
-#: src/dialogs/kdenlivesettingsdialog.cpp:738 src/dialogs/renderwidget.cpp:217
-#: src/mainwindow.cpp:210 src/ui/configproject_ui.ui:48
+#: src/dialogs/kdenlivesettingsdialog.cpp:738
+#: src/dialogs/managesubtitles.cpp:550 src/dialogs/renderwidget.cpp:217
+#: src/dialogs/subtitlestyleedit.cpp:97 src/mainwindow.cpp:210
+#: src/ui/configproject_ui.ui:48
 #, kde-format
 msgid "Default"
 msgstr "Predeterminado"
@@ -7739,27 +7809,179 @@ msgid "New dictionary installed."
 msgstr "O novo dicionario instalouse."
 
 #. +> trunk6 stable6
-#: src/dialogs/managesubtitles.cpp:28
+#: src/dialogs/managesubtitles.cpp:52
 #, kde-format
 msgctxt "@title:window"
 msgid "Manage Subtitles"
 msgstr "Xestionar os subtítulos"
 
+#. +> trunk6
+#: src/dialogs/managesubtitles.cpp:73
+#, kde-format
+msgid "Layer"
+msgstr ""
+
+#. +> trunk6
+#: src/dialogs/managesubtitles.cpp:104
+#, fuzzy, kde-format
+#| msgid "Move Toolbar"
+msgid "Move Layer"
+msgstr "Mover a barra de ferramentas"
+
+#. +> trunk6
+#: src/dialogs/managesubtitles.cpp:104
+#, kde-format
+msgid "Select the subtitle file to move the layer to:"
+msgstr ""
+
+#. +> trunk6
+#: src/dialogs/managesubtitles.cpp:106
+#, fuzzy, kde-format
+#| msgid "Copy channel:"
+msgid "Copy Layer"
+msgstr "Copiar a canle:"
+
+#. +> trunk6
+#: src/dialogs/managesubtitles.cpp:106
+#, kde-format
+msgid "Select the subtitle file to copy the layer to:"
+msgstr ""
+
+#. +> trunk6
+#: src/dialogs/managesubtitles.cpp:136 src/dialogs/managesubtitles.cpp:225
+#, fuzzy, kde-format
+#| msgid "Move Toolbar"
+msgid "Move To..."
+msgstr "Mover a barra de ferramentas"
+
+#. +> trunk6
+#: src/dialogs/managesubtitles.cpp:139 src/dialogs/managesubtitles.cpp:228
+#, kde-format
+msgid "Copy To..."
+msgstr ""
+
+#. +> trunk6
+#: src/dialogs/managesubtitles.cpp:182 src/dialogs/managesubtitles.cpp:606
+#, kde-format
+msgid "Global"
+msgstr ""
+
+#. +> trunk6
+#: src/dialogs/managesubtitles.cpp:192
+#, fuzzy, kde-format
+#| msgid "Move item"
+msgid "Move Style"
+msgstr "Mover o elemento"
+
+#. +> trunk6
+#: src/dialogs/managesubtitles.cpp:192
+#, kde-format
+msgid "Select the subtitle file to move the style to:"
+msgstr ""
+
+#. +> trunk6
+#: src/dialogs/managesubtitles.cpp:194
+#, fuzzy, kde-format
+#| msgid "Font Style"
+msgid "Copy Style"
+msgstr "Estilo do tipo de letra"
+
+#. +> trunk6
+#: src/dialogs/managesubtitles.cpp:194
+#, kde-format
+msgid "Select the subtitle file to copy the style to:"
+msgstr ""
+
 #. +> trunk6 stable6
-#: src/dialogs/managesubtitles.cpp:44
+#: src/dialogs/managesubtitles.cpp:401
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Import Subtitle"
 msgstr "Importar un subtítulo"
 
 #. +> trunk6 stable6
-#: src/dialogs/managesubtitles.cpp:45
+#: src/dialogs/managesubtitles.cpp:402
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Export Subtitle"
 msgstr "Exportar o subtítulo"
 
+#. +> trunk6
+#: src/dialogs/managesubtitles.cpp:461
+#, kde-format
+msgid "Layer "
+msgstr ""
+
+#. +> trunk6
+#: src/dialogs/managesubtitles.cpp:461
+#, kde-format
+msgid "with "
+msgstr ""
+
+#. +> trunk6
+#: src/dialogs/managesubtitles.cpp:461 src/dialogs/managesubtitles.cpp:467
+#, kde-format
+msgid " event"
+msgstr ""
+
+#. +> trunk6
+#: src/dialogs/managesubtitles.cpp:467
+#, kde-format
+msgid " events"
+msgstr ""
+
 #. +> trunk6 stable6
+#: src/dialogs/managesubtitles.cpp:520 src/dialogs/subtitlestyleedit.cpp:109
+#, kde-format
+msgid "Bottom Left"
+msgstr "Inferior esquerda"
+
+#. +> trunk6 stable6
+#: src/dialogs/managesubtitles.cpp:526 src/dialogs/subtitlestyleedit.cpp:111
+#, kde-format
+msgid "Bottom Right"
+msgstr "Inferior dereita"
+
+#. +> trunk6 stable6
+#: src/dialogs/managesubtitles.cpp:538 src/dialogs/subtitlestyleedit.cpp:103
+#, kde-format
+msgid "Top Left"
+msgstr "Superior esquerda"
+
+#. +> trunk6 stable6
+#: src/dialogs/managesubtitles.cpp:544 src/dialogs/subtitlestyleedit.cpp:105
+#, kde-format
+msgid "Top Right"
+msgstr "Superior dereita"
+
+#. +> trunk6
+#: src/dialogs/managesubtitles.cpp:553
+#, fuzzy, kde-format
+#| msgid "Border "
+msgid "Box as Border"
+msgstr "Bordo "
+
+#. +> trunk6
+#: src/dialogs/managesubtitles.cpp:556 src/dialogs/subtitlestyleedit.cpp:99
+#, fuzzy, kde-format
+#| msgid "Shadow"
+msgid "Box as Shadow"
+msgstr "Sombra"
+
+#. +> trunk6
+#: src/dialogs/managesubtitles.cpp:706
+#, fuzzy, kde-format
+#| msgid ""
+#| "This will delete all subtitle entries in <b>%1</b>,<br/>"
+#| "as well as the subtitle file: %2 "
+msgid ""
+"This will delete all subtitle entries in <b>%1</b>,<br/>"
+"as well as the subtitle file: %2"
+msgstr ""
+"Isto eliminará as entradas de subtítulos de <b>%1</b>,<br/>"
+"así como o ficheiro de subtítulos: %2 "
+
+#. +> stable6
 #: src/dialogs/managesubtitles.cpp:109
 #, kde-format
 msgid ""
@@ -7768,6 +7990,38 @@ msgid ""
 msgstr ""
 "Isto eliminará as entradas de subtítulos de <b>%1</b>,<br/>"
 "así como o ficheiro de subtítulos: %2 "
+
+#. +> trunk6
+#: src/dialogs/managesubtitles.cpp:728
+#, fuzzy, kde-format
+#| msgid ""
+#| "This will delete the file:\n"
+#| "%1"
+msgid "This will delete all events in layer <b>%1</b>."
+msgstr ""
+"Isto eliminará o ficheiro:\n"
+"%1"
+
+#. +> trunk6
+#: src/dialogs/managesubtitles.cpp:746
+#, fuzzy, kde-format
+#| msgid "Cannot delete last track in timeline"
+msgid "Cannot delete default style."
+msgstr "Non é posíbel eliminar a última pista da liña de tempo"
+
+#. +> trunk6
+#: src/dialogs/managesubtitles.cpp:750
+#, kde-format
+msgid "This will delete the style <b>%1</b> and all its properties."
+msgstr ""
+
+#. +> trunk6
+#: src/dialogs/managesubtitles.cpp:755
+#, kde-format
+msgid ""
+"This will delete the style <b>%1</b> and all its properties.\n"
+"Subtitles using this style will be reset to style <b>Default</b>."
+msgstr ""
 
 #. +> trunk6 stable6
 #: src/dialogs/profilesdialog.cpp:110
@@ -8027,7 +8281,9 @@ msgid "BWDIF (best)"
 msgstr "BWDIF (mellor)"
 
 #. +> trunk6 stable6
-#: src/dialogs/renderwidget.cpp:236 src/project/dialogs/slideshowclip.cpp:65
+#: src/dialogs/renderwidget.cpp:236 src/dialogs/subtitleedit.cpp:1492
+#: src/dialogs/subtitleedit.cpp:1509 src/dialogs/subtitleedit.cpp:1523
+#: src/dialogs/subtitleedit.cpp:1563 src/project/dialogs/slideshowclip.cpp:65
 #: src/scopes/colorscopes/vectorscope.cpp:55
 #, kde-format
 msgid "None"
@@ -8114,8 +8370,10 @@ msgid "Beginning"
 msgstr "Comezo"
 
 #. i18n: ectx: property (text), widget (QLabel, label_4)
+#. i18n: ectx: property (text), widget (QTreeWidget, eventList)
 #. +> trunk6 stable6
-#: src/dialogs/renderwidget.cpp:521 src/ui/wipeval_ui.ui:172
+#: src/dialogs/renderwidget.cpp:521 src/ui/managesubtitles_ui.ui:206
+#: src/ui/wipeval_ui.ui:172
 #, kde-format
 msgid "End"
 msgstr "Final"
@@ -9052,138 +9310,388 @@ msgstr "Zulú"
 msgid "Made by KDE"
 msgstr "Feito por KDE"
 
-#. +> trunk6 stable6
-#: src/dialogs/subtitleedit.cpp:108
-#, kde-format
-msgid "Go to next subtitle"
-msgstr "Ir ao seguinte subtítulo"
-
-#. +> trunk6 stable6
-#: src/dialogs/subtitleedit.cpp:109
-#, kde-kuit-format
-msgctxt "@info:whatsthis"
-msgid "Moves the playhead in the timeline to the beginning of the subtitle to the right."
-msgstr "Move o punto de reprodución na cronoloxía ao principio do subtítulo da dereita."
-
-#. +> trunk6 stable6
-#: src/dialogs/subtitleedit.cpp:110
-#, kde-format
-msgid "Go to previous subtitle"
-msgstr "Ir ao subtítulo anterior"
-
-#. +> trunk6 stable6
-#: src/dialogs/subtitleedit.cpp:111
-#, kde-kuit-format
-msgctxt "@info:whatsthis"
-msgid "Moves the playhead in the timeline to the beginning of the subtitle to the left."
-msgstr "Move o punto de reprodución na cronoloxía ao principio do subtítulo da esquerda."
-
-#. +> trunk6 stable6
-#: src/dialogs/subtitleedit.cpp:113
-#, kde-kuit-format
-msgctxt "@info:whatsthis"
-msgid "Creates a new subtitle with the default length (set in <interface>Settings->Configure Kdenlive…->Misc</interface>) at the current playhead position/frame."
-msgstr "Crea un novo subtítulo coa lonxitude predeterminada (definida en <interface>Configuración->Configurar Kdenlive…->Varios</interface>) na posición ou fotograma do punto de reprodución actual."
-
-#. +> trunk6 stable6
-#: src/dialogs/subtitleedit.cpp:115
-#, kde-format
-msgid "Split subtitle at cursor position"
-msgstr "Dividir o subtítulo na posición do cursor"
-
-#. +> trunk6 stable6
-#: src/dialogs/subtitleedit.cpp:117
-#, kde-kuit-format
-msgctxt "@info:whatsthis"
-msgid "Cuts the subtitle text at the cursor position and creates a new subtitle to the right (like cutting a clip)."
-msgstr "Corta o texto do subtítulo na posición do cursor e crea un novo subtítulo á dereita (como cortar un fragmento)."
-
-#. +> trunk6 stable6
-#: src/dialogs/subtitleedit.cpp:118
-#, kde-format
-msgid "Update subtitle text"
-msgstr "Actualizar o texto do subtítulo"
-
-#. +> trunk6 stable6
-#: src/dialogs/subtitleedit.cpp:119
-#, kde-kuit-format
-msgctxt "@info:whatsthis"
-msgid "Updates the subtitle display in the timeline."
-msgstr "Actualiza a visualización do subtítulo na cronoloxía."
-
-#. +> trunk6 stable6
-#: src/dialogs/subtitleedit.cpp:120
-#, kde-format
-msgid "Show style options"
-msgstr "Amosar as opcións de estilo"
-
-#. +> trunk6 stable6
-#: src/dialogs/subtitleedit.cpp:121
-#, kde-kuit-format
-msgctxt "@info:whatsthis"
-msgid "Toggles a list to adjust font, size, color, outline style, shadow, position and background."
-msgstr "Conmuta unha lista para axustar a fonte, tamaño, cor, estilo do contorno, sombra, posición e fondo."
-
-#. +> trunk6 stable6
-#: src/dialogs/subtitleedit.cpp:123
-#, kde-kuit-format
-msgctxt "@info:whatsthis"
-msgid "Deletes the currently selected subtitle (doesn’t work on multiple subtitles)."
-msgstr "Elimina o subtítulo seleccionado (non funciona con varios subtítulos)."
-
-#. +> trunk6 stable6
+#. +> stable6
 #: src/dialogs/subtitleedit.cpp:142
 #, kde-format
 msgid "Bottom Center"
 msgstr "Interior central"
 
-#. +> trunk6 stable6
-#: src/dialogs/subtitleedit.cpp:143
-#, kde-format
-msgid "Bottom Left"
-msgstr "Inferior esquerda"
-
-#. +> trunk6 stable6
-#: src/dialogs/subtitleedit.cpp:144
-#, kde-format
-msgid "Bottom Right"
-msgstr "Inferior dereita"
-
-#. +> trunk6 stable6
+#. +> stable6
 #: src/dialogs/subtitleedit.cpp:145
 #, kde-format
 msgid "Center Left"
 msgstr "Central esquerda"
 
-#. +> trunk6 stable6
-#: src/dialogs/subtitleedit.cpp:147
-#, kde-format
-msgid "Center Right"
-msgstr "Central dereita"
-
-#. +> trunk6 stable6
-#: src/dialogs/subtitleedit.cpp:148
-#, kde-format
-msgid "Top Left"
-msgstr "Superior esquerda"
-
-#. +> trunk6 stable6
+#. +> stable6
 #: src/dialogs/subtitleedit.cpp:149
 #, kde-format
 msgid "Top Center"
 msgstr "Superior central"
 
 #. +> trunk6 stable6
-#: src/dialogs/subtitleedit.cpp:150
+#: src/dialogs/subtitleedit.cpp:242
 #, kde-format
-msgid "Top Right"
-msgstr "Superior dereita"
+msgid "Edit subtitle style"
+msgstr "Editar o estilo dos subtítulos"
+
+#. +> trunk6
+#: src/dialogs/subtitleedit.cpp:243
+#, kde-kuit-format
+msgctxt "@info:whatsthis"
+msgid "Opens a dialog to edit the current subtitle."
+msgstr ""
 
 #. +> trunk6 stable6
-#: src/dialogs/subtitleedit.cpp:489
+#: src/dialogs/subtitleedit.cpp:270
+#, kde-format
+msgid "Go to next subtitle"
+msgstr "Ir ao seguinte subtítulo"
+
+#. +> trunk6 stable6
+#: src/dialogs/subtitleedit.cpp:271
+#, kde-kuit-format
+msgctxt "@info:whatsthis"
+msgid "Moves the playhead in the timeline to the beginning of the subtitle to the right."
+msgstr "Move o punto de reprodución na cronoloxía ao principio do subtítulo da dereita."
+
+#. +> trunk6 stable6
+#: src/dialogs/subtitleedit.cpp:272
+#, kde-format
+msgid "Go to previous subtitle"
+msgstr "Ir ao subtítulo anterior"
+
+#. +> trunk6 stable6
+#: src/dialogs/subtitleedit.cpp:273
+#, kde-kuit-format
+msgctxt "@info:whatsthis"
+msgid "Moves the playhead in the timeline to the beginning of the subtitle to the left."
+msgstr "Move o punto de reprodución na cronoloxía ao principio do subtítulo da esquerda."
+
+#. +> trunk6 stable6
+#: src/dialogs/subtitleedit.cpp:275
+#, kde-kuit-format
+msgctxt "@info:whatsthis"
+msgid "Creates a new subtitle with the default length (set in <interface>Settings->Configure Kdenlive…->Misc</interface>) at the current playhead position/frame."
+msgstr "Crea un novo subtítulo coa lonxitude predeterminada (definida en <interface>Configuración->Configurar Kdenlive…->Varios</interface>) na posición ou fotograma do punto de reprodución actual."
+
+#. +> trunk6 stable6
+#: src/dialogs/subtitleedit.cpp:277
+#, kde-format
+msgid "Split subtitle at cursor position"
+msgstr "Dividir o subtítulo na posición do cursor"
+
+#. +> trunk6 stable6
+#: src/dialogs/subtitleedit.cpp:279
+#, kde-kuit-format
+msgctxt "@info:whatsthis"
+msgid "Cuts the subtitle text at the cursor position and creates a new subtitle to the right (like cutting a clip)."
+msgstr "Corta o texto do subtítulo na posición do cursor e crea un novo subtítulo á dereita (como cortar un fragmento)."
+
+#. +> trunk6 stable6
+#: src/dialogs/subtitleedit.cpp:280
+#, kde-format
+msgid "Update subtitle text"
+msgstr "Actualizar o texto do subtítulo"
+
+#. +> trunk6 stable6
+#: src/dialogs/subtitleedit.cpp:281
+#, kde-kuit-format
+msgctxt "@info:whatsthis"
+msgid "Updates the subtitle display in the timeline."
+msgstr "Actualiza a visualización do subtítulo na cronoloxía."
+
+#. +> trunk6
+#: src/dialogs/subtitleedit.cpp:282
+#, fuzzy, kde-format
+#| msgid "Show style options"
+msgid "Show more options"
+msgstr "Amosar as opcións de estilo"
+
+#. +> stable6
+#: src/dialogs/subtitleedit.cpp:120
+#, kde-format
+msgid "Show style options"
+msgstr "Amosar as opcións de estilo"
+
+#. +> trunk6
+#: src/dialogs/subtitleedit.cpp:283
+#, kde-kuit-format
+msgctxt "@info:whatsthis"
+msgid "Toggles a list to adjust more subtitle settings."
+msgstr ""
+
+#. +> trunk6 stable6
+#: src/dialogs/subtitleedit.cpp:285
+#, kde-kuit-format
+msgctxt "@info:whatsthis"
+msgid "Deletes the currently selected subtitle (doesn’t work on multiple subtitles)."
+msgstr "Elimina o subtítulo seleccionado (non funciona con varios subtítulos)."
+
+#. +> trunk6
+#: src/dialogs/subtitleedit.cpp:288
+#, fuzzy, kde-format
+#| msgid "Toggle Track Disabled"
+msgid "Toggle bold"
+msgstr "Conmutar desactivar a pista"
+
+#. +> trunk6
+#: src/dialogs/subtitleedit.cpp:289
+#, kde-kuit-format
+msgctxt "@info:whatsthis"
+msgid "Toggles the bold text style for either the selected text or the text following the cursor position."
+msgstr ""
+
+#. +> trunk6
+#: src/dialogs/subtitleedit.cpp:292
+#, fuzzy, kde-format
+#| msgid "Toggle selection"
+msgid "Toggle italic"
+msgstr "Cambiar a selección"
+
+#. +> trunk6
+#: src/dialogs/subtitleedit.cpp:294
+#, kde-kuit-format
+msgctxt "@info:whatsthis"
+msgid "Toggles the italic text style for either the selected text or the text following the cursor position."
+msgstr ""
+
+#. +> trunk6
+#: src/dialogs/subtitleedit.cpp:297
+#, fuzzy, kde-format
+#| msgid "Toggle selection"
+msgid "Toggle underline"
+msgstr "Cambiar a selección"
+
+#. +> trunk6
+#: src/dialogs/subtitleedit.cpp:299
+#, kde-kuit-format
+msgctxt "@info:whatsthis"
+msgid "Toggles the underline text style for either the selected text or the text following the cursor position."
+msgstr ""
+
+#. +> trunk6
+#: src/dialogs/subtitleedit.cpp:302
+#, fuzzy, kde-format
+#| msgid "Toggle selection"
+msgid "Toggle strikeout"
+msgstr "Cambiar a selección"
+
+#. +> trunk6
+#: src/dialogs/subtitleedit.cpp:304
+#, kde-kuit-format
+msgctxt "@info:whatsthis"
+msgid "Toggles the strikeout text style for either the selected text or the text following the cursor position."
+msgstr ""
+
+#. +> trunk6
+#: src/dialogs/subtitleedit.cpp:309
+#, fuzzy, kde-format
+#| msgid "Set Zone"
+msgid "Set font"
+msgstr "Definir a zona"
+
+#. +> trunk6
+#: src/dialogs/subtitleedit.cpp:312
+#, kde-kuit-format
+msgctxt "@info:whatsthis"
+msgid "Open a font dialog to select a font and set its properties for either the selected text or the text following the cursor position."
+msgstr ""
+
+#. +> trunk6
+#: src/dialogs/subtitleedit.cpp:315
+#, fuzzy, kde-format
+#| msgid "Reset value"
+msgid "Reset style"
+msgstr "Reiniciar o valor"
+
+#. +> trunk6
+#: src/dialogs/subtitleedit.cpp:316
+#, kde-kuit-format
+msgctxt "@info:whatsthis"
+msgid "Resets the style of either the selected text or the text following the cursor position."
+msgstr ""
+
+#. +> trunk6
+#: src/dialogs/subtitleedit.cpp:318
+#, fuzzy, kde-format
+#| msgid "Start Position"
+msgid "Set Position"
+msgstr "Posición inicial"
+
+#. +> trunk6
+#: src/dialogs/subtitleedit.cpp:322
+#, fuzzy, kde-format
+#| msgid "More options"
+msgid "More tags"
+msgstr "Máis opcións"
+
+#. +> trunk6
+#: src/dialogs/subtitleedit.cpp:323
+#, kde-kuit-format
+msgctxt "@info:whatsthis"
+msgid "Opens a menu to show more tags"
+msgstr ""
+
+#. +> stable6
+#: src/dialogs/subtitleedit.cpp:121
+#, kde-kuit-format
+msgctxt "@info:whatsthis"
+msgid "Toggles a list to adjust font, size, color, outline style, shadow, position and background."
+msgstr "Conmuta unha lista para axustar a fonte, tamaño, cor, estilo do contorno, sombra, posición e fondo."
+
+#. +> trunk6
+#: src/dialogs/subtitleedit.cpp:382
+#, fuzzy, kde-format
+#| msgid "Top Left"
+msgid "Right To Left"
+msgstr "Superior esquerda"
+
+#. +> trunk6
+#: src/dialogs/subtitleedit.cpp:383
+#, fuzzy, kde-format
+#| msgid "Left,Right"
+msgid "Left To Right"
+msgstr "Esquerda,Dereita"
+
+#. +> stable6
+#: src/dialogs/subtitleedit.cpp:147
+#, kde-format
+msgid "Center Right"
+msgstr "Central dereita"
+
+#. +> trunk6
+#: src/dialogs/subtitleedit.cpp:384
+#, fuzzy, kde-format
+#| msgid "Crop bottom"
+msgid "Top To Bottom"
+msgstr "Recortar por abaixo"
+
+#. +> trunk6
+#: src/dialogs/subtitleedit.cpp:385
+#, fuzzy, kde-format
+#| msgid "Bottom"
+msgid "Bottom To Top"
+msgstr "Fondo"
+
+#. +> trunk6
+#: src/dialogs/subtitleedit.cpp:391
+#, kde-format
+msgid "Clear All Tags"
+msgstr ""
+
+#. +> trunk6
+#: src/dialogs/subtitleedit.cpp:402
+#, fuzzy, kde-format
+#| msgid "Speech Editor"
+msgid "Simple Editor"
+msgstr "Editor de fala"
+
+#. +> trunk6
+#: src/dialogs/subtitleedit.cpp:574
+#, fuzzy, kde-format
+#| msgid "Manage Subtitles"
+msgid "Manage Styles.."
+msgstr "Xestionar os subtítulos"
+
+#. +> trunk6 stable6
+#: src/dialogs/subtitleedit.cpp:725 src/dialogs/subtitleedit.cpp:727
 #, kde-format
 msgid "Character: %1, total: <b>%2</b>"
 msgstr "Carácter: %1, total: <b>%2</b>"
+
+#. +> trunk6
+#: src/dialogs/subtitleedit.cpp:1621 src/dialogs/subtitleedit.cpp:1635
+#, fuzzy, kde-format
+#| msgid "Position X"
+msgid "Set Position X"
+msgstr "Posición X"
+
+#. i18n: ectx: property (text), widget (QLabel, label_rotateX)
+#. +> trunk6 stable6
+#: src/dialogs/subtitleedit.cpp:1621 src/dialogs/subtitleedit.cpp:1635
+#: src/ui/titlewidget_ui.ui:553
+#, kde-format
+msgid "X:"
+msgstr "X:"
+
+#. +> trunk6
+#: src/dialogs/subtitleedit.cpp:1623 src/dialogs/subtitleedit.cpp:1637
+#, fuzzy, kde-format
+#| msgid "Position Y"
+msgid "Set Position Y"
+msgstr "Posición Y"
+
+#. i18n: ectx: property (text), widget (QLabel, label_rotateY)
+#. +> trunk6 stable6
+#: src/dialogs/subtitleedit.cpp:1623 src/dialogs/subtitleedit.cpp:1637
+#: src/ui/titlewidget_ui.ui:576
+#, kde-format
+msgid "Y:"
+msgstr "Y:"
+
+#. +> trunk6
+#: src/dialogs/subtitlestyleedit.cpp:45
+#, fuzzy, kde-format
+#| msgid "Selection"
+msgid "Select font"
+msgstr "Selección"
+
+#. +> trunk6
+#: src/dialogs/subtitlestyleedit.cpp:46
+#, kde-kuit-format
+msgctxt "@info:whatsthis"
+msgid "Open a font dialog to select a font and set its properties."
+msgstr ""
+
+#. +> trunk6
+#: src/dialogs/subtitlestyleedit.cpp:98
+#, fuzzy, kde-format
+#| msgid "Outline:"
+msgid "Box as Outline"
+msgstr "Contorno:"
+
+#. i18n: ectx: property (text), widget (QPushButton, buttonPreview)
+#. +> trunk6
+#: src/dialogs/subtitlestyleedit.cpp:127 src/ui/editsubstyle_ui.ui:37
+#, fuzzy, kde-format
+#| msgid "Stop Preview Render"
+msgid "Show Preview >>>"
+msgstr "Deter a renderización da vista previa"
+
+#. +> trunk6
+#: src/dialogs/subtitlestyleedit.cpp:133
+#, fuzzy, kde-format
+#| msgid "Timeline Preview"
+msgid "<<< Hide Preview"
+msgstr "Vista previa da liña de tempo"
+
+#. +> trunk6 stable6
+#: src/dialogs/subtitlestyleedit.cpp:161 src/dialogs/subtitlestyleedit.cpp:166
+#: src/dialogs/subtitlestyleedit.cpp:171
+#: src/effects/effectlist/model/effecttreemodel.cpp:270
+#, kde-format
+msgid "Error"
+msgstr "Erro"
+
+#. +> trunk6
+#: src/dialogs/subtitlestyleedit.cpp:161
+#, fuzzy, kde-format
+#| msgid "File already exists"
+msgid "Style name already exists."
+msgstr "O ficheiro xa existe"
+
+#. +> trunk6
+#: src/dialogs/subtitlestyleedit.cpp:166
+#, fuzzy, kde-format
+#| msgid "The preset name can't be empty"
+msgid "Style name cannot be empty."
+msgstr "O nome de predefinición non pode quedar baleiro"
+
+#. +> trunk6
+#: src/dialogs/subtitlestyleedit.cpp:171
+#, kde-format
+msgid "Style name cannot contain ','."
+msgstr ""
 
 #. +> trunk6 stable6
 #: src/dialogs/textbasededit.cpp:54
@@ -9992,19 +10500,19 @@ msgid "Missing proxies can be recreated on opening."
 msgstr "Os mandatarios que faltan poden crearse de novo ao abrir."
 
 #. +> trunk6 stable6
-#: src/doc/documentvalidator.cpp:46
+#: src/doc/documentvalidator.cpp:47
 #, kde-format
 msgid "Validating project…"
 msgstr "Validando o proxecto…"
 
 #. +> trunk6 stable6
-#: src/doc/documentvalidator.cpp:88
+#: src/doc/documentvalidator.cpp:89
 #, kde-format
 msgid "The document was created in \"%1\" locale, which is not installed on your system. Please install that language pack. Until then, Kdenlive might not be able to correctly open the document."
 msgstr "O documento creouse coa configuración rexional «%1», que non está instalada no sistema. Instale ese paquete de idioma. Ata que non estea instalado, Kdenlive podería non abrir correctamente o documento."
 
 #. +> trunk6 stable6
-#: src/doc/documentvalidator.cpp:126
+#: src/doc/documentvalidator.cpp:127
 #, kde-format
 msgid ""
 "Version of the project file cannot be read.\n"
@@ -10014,19 +10522,19 @@ msgstr ""
 "Intentando abrilo aínda así."
 
 #. +> trunk6 stable6
-#: src/doc/documentvalidator.cpp:127
+#: src/doc/documentvalidator.cpp:128
 #, kde-format
 msgid "Incorrect project file"
 msgstr "Ficheiro de proxecto incorrecto"
 
 #. +> trunk6 stable6
-#: src/doc/documentvalidator.cpp:183
+#: src/doc/documentvalidator.cpp:188
 #, kde-format
 msgid "Upgrading project version…"
 msgstr "Anovando a versión do proxecto…"
 
 #. +> trunk6 stable6
-#: src/doc/documentvalidator.cpp:189
+#: src/doc/documentvalidator.cpp:194
 #, kde-format
 msgid ""
 "This project type is unsupported (version %1) and cannot be loaded.\n"
@@ -10036,49 +10544,65 @@ msgstr ""
 "Considere anovar a súa versión de Kdenlive."
 
 #. +> trunk6 stable6
-#: src/doc/documentvalidator.cpp:190 src/doc/documentvalidator.cpp:199
+#: src/doc/documentvalidator.cpp:195 src/doc/documentvalidator.cpp:204
 #, kde-format
 msgid "Unable to open project"
 msgstr "Non é posíbel abrir o proxecto"
 
 #. +> trunk6 stable6
-#: src/doc/documentvalidator.cpp:198
+#: src/doc/documentvalidator.cpp:203
 #, kde-format
 msgid "This project type is unsupported (version %1) and cannot be loaded."
 msgstr "Este tipo de proxecto non está admitido (version %1) e non pode cargarse."
 
 #. +> trunk6 stable6
-#: src/doc/documentvalidator.cpp:723
+#: src/doc/documentvalidator.cpp:728
 #, kde-format
 msgid "Some of your text clips were saved with size in points, which means different sizes on different displays. Do you want to convert them to pixel size, making them portable? It is recommended you do this on the computer they were first created on, or you could have to adjust their size."
 msgstr "Algúns dos seus fragmentos de texto gardáronse co tamaño en puntos, o que significa que terán distintos tamaños en distintos monitores. Quéreos converter a tamaño de pixel, facéndoos portátiles? É recomendábel que realice esa acción no computador no que se crearon por primeira vez, ou podería ter que axustar o seu tamaño."
 
 #. +> trunk6 stable6
-#: src/doc/documentvalidator.cpp:726
+#: src/doc/documentvalidator.cpp:731
 #, kde-format
 msgid "Update Text Clips"
 msgstr "Actualizar os fragmentos de texto"
 
 #. +> trunk6 stable6
-#: src/doc/documentvalidator.cpp:726 src/doc/documentvalidator.cpp:2237
+#: src/doc/documentvalidator.cpp:731 src/doc/documentvalidator.cpp:2510
 #, kde-format
 msgid "Convert"
 msgstr "Converter"
 
 #. +> trunk6 stable6
-#: src/doc/documentvalidator.cpp:1296
+#: src/doc/documentvalidator.cpp:1301
 #, kde-format
 msgid "Cannot recover this project file"
 msgstr "Non é posíbel recuperar este ficheiro de proxecto"
 
 #. +> trunk6 stable6
-#: src/doc/documentvalidator.cpp:1615
+#: src/doc/documentvalidator.cpp:1620
 #, kde-format
 msgid "extra audio"
 msgstr "son adicional"
 
+#. +> trunk6
+#: src/doc/documentvalidator.cpp:2206
+#, fuzzy, kde-format
+#| msgid "Output file already exists. Do you want to overwrite it?"
+msgid ""
+"The subtitle file:<br/>"
+"%1<br/>"
+"already exists. Do you want to overwrite it?"
+msgstr "O ficheiro de saída xa existe. Quéreo substituír?"
+
 #. +> trunk6 stable6
-#: src/doc/documentvalidator.cpp:2235
+#: src/doc/documentvalidator.cpp:2207 src/mainwindow.cpp:3581
+#, kde-format
+msgid "Overwrite"
+msgstr "Sobrescribir"
+
+#. +> trunk6 stable6
+#: src/doc/documentvalidator.cpp:2508
 #, kde-format
 msgid ""
 "The project file uses some GPU effects. GPU acceleration is not currently enabled.\n"
@@ -10090,38 +10614,38 @@ msgstr ""
 "A conversión podería ocasionar unha perda de datos."
 
 #. +> trunk6 stable6
-#: src/doc/documentvalidator.cpp:2237
+#: src/doc/documentvalidator.cpp:2510
 #, kde-format
 msgid "GPU Effects"
 msgstr "Efectos da GPU"
 
 #. +> trunk6 stable6
-#: src/doc/documentvalidator.cpp:2330
+#: src/doc/documentvalidator.cpp:2603
 #, kde-format
 msgid "The following filters/transitions were converted to non GPU versions:"
 msgstr "Os seguintes filtros e transicións convertéronse aos seus equivalentes que non fan uso da GPU:"
 
 #. +> trunk6 stable6
-#: src/doc/documentvalidator.cpp:2333
+#: src/doc/documentvalidator.cpp:2606
 #, kde-format
 msgid "The following filters/transitions were deleted from the project:"
 msgstr "Os seguintes filtros e transicións elimináronse do proxecto:"
 
 #. +> trunk6 stable6
-#: src/doc/kdenlivedoc.cpp:160
+#: src/doc/kdenlivedoc.cpp:161
 #, kde-format
 msgid "Invalid file path"
 msgstr "Ruta de ficheiro non válida"
 
 #. +> trunk6 stable6
-#: src/doc/kdenlivedoc.cpp:208 src/project/projectmanager.cpp:817
+#: src/doc/kdenlivedoc.cpp:209 src/project/projectmanager.cpp:817
 #: src/project/projectmanager.cpp:859
 #, kde-format
 msgid "Could not recover corrupted file."
 msgstr "Non foi posíbel recuperar o ficheiro corrompido."
 
 #. +> trunk6 stable6
-#: src/doc/kdenlivedoc.cpp:215
+#: src/doc/kdenlivedoc.cpp:216
 #, kde-format
 msgid ""
 "Cannot open file %1:\n"
@@ -10131,25 +10655,25 @@ msgstr ""
 "%2 (liña %3, columna %4)"
 
 #. +> trunk6 stable6
-#: src/doc/kdenlivedoc.cpp:228
+#: src/doc/kdenlivedoc.cpp:229
 #, kde-format
 msgid "File %1 is not a Kdenlive project file"
 msgstr "O ficheiro %1 non é un ficheiro de proxecto de Kdenlive."
 
 #. +> trunk6 stable6
-#: src/doc/kdenlivedoc.cpp:235
+#: src/doc/kdenlivedoc.cpp:236
 #, kde-format
 msgid "File %1 is not a valid Kdenlive project file."
 msgstr "O ficheiro %1 non é un ficheiro de proxecto de Kdenlive válido."
 
 #. +> trunk6 stable6
-#: src/doc/kdenlivedoc.cpp:248
+#: src/doc/kdenlivedoc.cpp:249
 #, kde-format
 msgid "GPU acceleration is turned off in Kdenlive settings, but is required for this project's Movit filters."
 msgstr "A aceleración por GPU está desactivada na configuración de Kdenlive, pero é necesaria para os filtros de Movit do proxecto."
 
 #. +> trunk6 stable6
-#: src/doc/kdenlivedoc.cpp:291
+#: src/doc/kdenlivedoc.cpp:292
 #, kde-format
 msgid ""
 "The project directory %1, could not be created.\n"
@@ -10161,25 +10685,25 @@ msgstr ""
 "Usaranse os cartafoles do sistema de maneira predeterminada."
 
 #. +> trunk6 stable6
-#: src/doc/kdenlivedoc.cpp:294
+#: src/doc/kdenlivedoc.cpp:295
 #, kde-format
 msgid "Document project folder is invalid, using system default folders"
 msgstr "O cartafol de documentos do proxecto é incorrecto, usaranse os cartafoles predeterminados do sistema."
 
 #. +> trunk6 stable6
-#: src/doc/kdenlivedoc.cpp:577 src/doc/kdenlivedoc.cpp:587
+#: src/doc/kdenlivedoc.cpp:578 src/doc/kdenlivedoc.cpp:588
 #, kde-format
 msgid "Cannot create autosave file %1"
 msgstr "Non é posíbel crear o ficheiro de garda automática %1"
 
 #. +> trunk6 stable6
-#: src/doc/kdenlivedoc.cpp:582 src/doc/kdenlivedoc.cpp:720
+#: src/doc/kdenlivedoc.cpp:583 src/doc/kdenlivedoc.cpp:721
 #, kde-format
 msgid "Cannot write to file %1, scene list is corrupted."
 msgstr "Non é posíbel escribir no ficheiro %1; a lista de escenas está corrompida."
 
 #. +> trunk6 stable6
-#: src/doc/kdenlivedoc.cpp:738
+#: src/doc/kdenlivedoc.cpp:739
 #, kde-format
 msgid ""
 "Your project file was upgraded to the latest Kdenlive document version.\n"
@@ -10189,47 +10713,47 @@ msgstr ""
 "Para estar seguro de que non perde datos, creouse unha salvagarda chamada %1."
 
 #. +> trunk6 stable6
-#: src/doc/kdenlivedoc.cpp:752
+#: src/doc/kdenlivedoc.cpp:753
 #, kde-format
 msgid "Your project file was upgraded to the latest Kdenlive document version, but it was not possible to create the backup copy %1."
 msgstr "O ficheiro do proxecto anovouse para usar a última versión de documento de Kdenlive, pero non foi posíbel crear a salvagarda %1."
 
 #. +> trunk6 stable6
-#: src/doc/kdenlivedoc.cpp:913 src/project/projectmanager.cpp:1421
-#: src/project/projectmanager.cpp:1457
+#: src/doc/kdenlivedoc.cpp:914 src/project/projectmanager.cpp:1461
+#: src/project/projectmanager.cpp:1497
 #, kde-format
 msgid "Error moving project folder: %1"
 msgstr "Produciuse un erro ao mover o cartafol do proxecto: %1"
 
 #. +> trunk6 stable6
-#: src/doc/kdenlivedoc.cpp:1103 src/doc/kdenlivedoc.cpp:2351
+#: src/doc/kdenlivedoc.cpp:1104 src/doc/kdenlivedoc.cpp:2362
 #: src/project/dialogs/archivewidget.cpp:245
-#: src/project/projectmanager.cpp:1678
+#: src/project/projectmanager.cpp:1718
 #, kde-format
 msgid "Untitled"
 msgstr "Sen título"
 
 #. +> trunk6 stable6
-#: src/doc/kdenlivedoc.cpp:1164
+#: src/doc/kdenlivedoc.cpp:1165
 #, kde-format
 msgctxt "@title:window"
 msgid "Enter Template Path"
 msgstr "Inserir a ruta ao modelo"
 
 #. +> trunk6 stable6
-#: src/doc/kdenlivedoc.cpp:1334
+#: src/doc/kdenlivedoc.cpp:1326
 #, kde-format
 msgid "The following effects were imported from the project:"
 msgstr "Importáronse os efectos seguintes do proxecto:"
 
 #. +> trunk6 stable6
-#: src/doc/kdenlivedoc.cpp:1367 src/doc/kdenlivedoc.cpp:1381
+#: src/doc/kdenlivedoc.cpp:1359 src/doc/kdenlivedoc.cpp:1373
 #, kde-format
 msgid "Project Folder"
 msgstr "Cartafol do proxecto"
 
 #. +> trunk6 stable6
-#: src/doc/kdenlivedoc.cpp:1425 src/doc/kdenlivedoc.cpp:1434
+#: src/doc/kdenlivedoc.cpp:1417 src/doc/kdenlivedoc.cpp:1434
 #, kde-format
 msgid ""
 "Cannot create backup copy:\n"
@@ -10239,7 +10763,7 @@ msgstr ""
 "%1"
 
 #. +> trunk6 stable6
-#: src/doc/kdenlivedoc.cpp:1579
+#: src/doc/kdenlivedoc.cpp:1589
 #, kde-format
 msgid "Add proxy clip"
 msgid_plural "Add proxy clips"
@@ -10247,7 +10771,7 @@ msgstr[0] "Engadir un fragmento proxy"
 msgstr[1] "Engadir fragmentos proxy"
 
 #. +> trunk6 stable6
-#: src/doc/kdenlivedoc.cpp:1581
+#: src/doc/kdenlivedoc.cpp:1591
 #, kde-format
 msgid "Remove proxy clip"
 msgid_plural "Remove proxy clips"
@@ -10255,26 +10779,26 @@ msgstr[0] "Retirar o fragmento proxy"
 msgstr[1] "Retirar os fragmentos proxy"
 
 #. +> trunk6 stable6
-#: src/doc/kdenlivedoc.cpp:1625 src/doc/kdenlivedoc.cpp:1683
+#: src/doc/kdenlivedoc.cpp:1635 src/doc/kdenlivedoc.cpp:1693
 #, kde-format
 msgid "Clip type does not support proxies"
 msgstr "O tipo do fragmento non é compatíbel con proxys."
 
 #. +> trunk6 stable6
-#: src/doc/kdenlivedoc.cpp:1821
+#: src/doc/kdenlivedoc.cpp:1832
 #, kde-format
 msgctxt "@label:textbox"
 msgid "The project uses a non standard framerate (%1), this will result in misplaced clips and frame offset."
 msgstr "Este proxecto usa unha taxa de fotogramas non estándar (%1). Isto provocará fragmentos descolocados e desprazamento de fotogramas."
 
 #. +> trunk6 stable6
-#: src/doc/kdenlivedoc.cpp:1916
+#: src/doc/kdenlivedoc.cpp:1927
 #, kde-format
 msgid "Warning: non standard fps, adjusting to closest integer. "
 msgstr "Advertencia: os fps non son estándar, axustáronse ao enteiro máis próximo. "
 
 #. +> trunk6 stable6
-#: src/doc/kdenlivedoc.cpp:1934
+#: src/doc/kdenlivedoc.cpp:1945
 #, kde-format
 msgid ""
 "Your default project profile is %1, but your clip's profile (%2) is %3.\n"
@@ -10284,50 +10808,50 @@ msgstr ""
 "Quere cambiar o perfil predeterminado para futuros proxectos?"
 
 #. +> trunk6 stable6
-#: src/doc/kdenlivedoc.cpp:1936
+#: src/doc/kdenlivedoc.cpp:1947
 #, kde-format
 msgid "Change default project profile"
 msgstr "Cambiar o perfil de proxecto predeterminado"
 
 #. +> trunk6 stable6
-#: src/doc/kdenlivedoc.cpp:1936
+#: src/doc/kdenlivedoc.cpp:1947
 #, kde-format
 msgid "Change default to %1"
 msgstr "Cambiar o predeterminado a %1"
 
 #. +> trunk6 stable6
-#: src/doc/kdenlivedoc.cpp:1937
+#: src/doc/kdenlivedoc.cpp:1948
 #, kde-format
 msgid "Keep current default %1"
 msgstr "Manter o predeterminado actual %1"
 
 #. +> trunk6 stable6
-#: src/doc/kdenlivedoc.cpp:1937
+#: src/doc/kdenlivedoc.cpp:1948
 #, kde-format
 msgid "Ask me later"
 msgstr "Preguntarme máis tarde"
 
 #. +> trunk6 stable6
-#: src/doc/kdenlivedoc.cpp:1957
+#: src/doc/kdenlivedoc.cpp:1968
 #, kde-format
 msgid "Switch"
 msgstr "Cambiar"
 
 #. i18n: ectx: property (text), widget (QPushButton, cancelButton)
 #. +> trunk6 stable6
-#: src/doc/kdenlivedoc.cpp:1959 src/ui/titlewidget_ui.ui:191
+#: src/doc/kdenlivedoc.cpp:1970 src/ui/titlewidget_ui.ui:191
 #, kde-format
 msgid "Cancel"
 msgstr "Cancelar"
 
 #. +> trunk6 stable6
-#: src/doc/kdenlivedoc.cpp:1961
+#: src/doc/kdenlivedoc.cpp:1972
 #, kde-format
 msgid "Switch to clip (%1) profile %2?"
 msgstr "Quere cambiar ao perfil de fragmento (%1) %2?"
 
 #. +> trunk6 stable6
-#: src/doc/kdenlivedoc.cpp:1966
+#: src/doc/kdenlivedoc.cpp:1977
 #, kde-format
 msgid ""
 "\n"
@@ -10337,7 +10861,7 @@ msgstr ""
 "Os FPS do perfil axustáronse do %1 orixinal."
 
 #. +> trunk6 stable6
-#: src/doc/kdenlivedoc.cpp:1970
+#: src/doc/kdenlivedoc.cpp:1981
 #, kde-format
 msgid ""
 "No profile found for your clip %1.\n"
@@ -10347,7 +10871,7 @@ msgstr ""
 "Quere crear un novo perfil (%2×%3, %4 fps) e cambiar a el?%5"
 
 #. +> trunk6 stable6
-#: src/doc/kdenlivedoc.cpp:2390
+#: src/doc/kdenlivedoc.cpp:2401
 #: src/scopes/colorscopes/colorplaneexport.cpp:231
 #: src/scopes/colorscopes/colorplaneexport.cpp:259
 #, kde-format
@@ -10355,7 +10879,7 @@ msgid "Red"
 msgstr "Vermello"
 
 #. +> trunk6 stable6
-#: src/doc/kdenlivedoc.cpp:2391
+#: src/doc/kdenlivedoc.cpp:2402
 #: src/scopes/colorscopes/colorplaneexport.cpp:232
 #: src/scopes/colorscopes/colorplaneexport.cpp:260
 #: src/scopes/colorscopes/vectorscope.cpp:49
@@ -10365,7 +10889,7 @@ msgid "Green"
 msgstr "Verde"
 
 #. +> trunk6 stable6
-#: src/doc/kdenlivedoc.cpp:2392
+#: src/doc/kdenlivedoc.cpp:2403
 #: src/scopes/colorscopes/colorplaneexport.cpp:233
 #: src/scopes/colorscopes/colorplaneexport.cpp:261
 #, kde-format
@@ -10373,20 +10897,20 @@ msgid "Blue"
 msgstr "Azul"
 
 #. +> trunk6 stable6
-#: src/doc/kdenlivedoc.cpp:2393 src/scopes/colorscopes/waveform.cpp:32
+#: src/doc/kdenlivedoc.cpp:2404 src/scopes/colorscopes/waveform.cpp:32
 #, kde-format
 msgid "Yellow"
 msgstr "Amarelo"
 
 #. +> trunk6 stable6
-#: src/doc/kdenlivedoc.cpp:2394
+#: src/doc/kdenlivedoc.cpp:2405
 #, kde-format
 msgid "Cyan"
 msgstr "Ciano"
 
 #. i18n: ectx: property (text), widget (QLabel, label_category)
 #. +> trunk6 stable6
-#: src/doc/kdenlivedoc.cpp:2699 src/ui/markerdialog_ui.ui:59
+#: src/doc/kdenlivedoc.cpp:2742 src/ui/markerdialog_ui.ui:59
 #: src/ui/multiplemarkerdialog_ui.ui:68
 #, kde-format
 msgid "Category"
@@ -10422,12 +10946,6 @@ msgstr "Modelos"
 #, kde-format
 msgid " - deprecated"
 msgstr " — obsoletos"
-
-#. +> trunk6 stable6
-#: src/effects/effectlist/model/effecttreemodel.cpp:270
-#, kde-format
-msgid "Error"
-msgstr "Erro"
 
 #. +> trunk6 stable6
 #: src/effects/effectlist/model/effecttreemodel.cpp:270
@@ -10515,7 +11033,7 @@ msgstr "O efecto %1 non pode engadirse dúas veces."
 #. +> trunk6 stable6
 #: src/effects/effectstack/model/effectstackmodel.cpp:590
 #: src/effects/effectstack/view/effectstackview.cpp:235
-#: src/timeline2/model/timelinemodel.cpp:5034
+#: src/timeline2/model/timelinemodel.cpp:5038
 #, kde-format
 msgid "Add effect %1"
 msgstr "Engadir o efecto %1"
@@ -10527,159 +11045,167 @@ msgid "Move effect %1"
 msgstr "Mover o efecto %1"
 
 #. +> trunk6 stable6
-#: src/effects/effectstack/view/collapsibleeffectview.cpp:51
+#: src/effects/effectstack/view/collapsibleeffectview.cpp:54
 #, kde-format
 msgid "Move effect up"
 msgstr "Subir o efecto"
 
 #. +> trunk6 stable6
-#: src/effects/effectstack/view/collapsibleeffectview.cpp:53
+#: src/effects/effectstack/view/collapsibleeffectview.cpp:56
 #, kde-kuit-format
 msgctxt "@info:whatsthis"
 msgid "Moves the effect above the one right above it. Effects are handled sequentially from top to bottom so sequence is important."
 msgstr "Move o efecto sobre o que ten enriba. Os efectos xestiónanse de maneira secuencial de arriba a abaixo así que a secuencia é importante."
 
 #. +> trunk6 stable6
-#: src/effects/effectstack/view/collapsibleeffectview.cpp:55
+#: src/effects/effectstack/view/collapsibleeffectview.cpp:58
 #, kde-format
 msgid "Move effect down"
 msgstr "Baixar o efecto"
 
 #. +> trunk6 stable6
-#: src/effects/effectstack/view/collapsibleeffectview.cpp:57
+#: src/effects/effectstack/view/collapsibleeffectview.cpp:60
 #, kde-kuit-format
 msgctxt "@info:whatsthis"
 msgid "Moves the effect below the one right below it. Effects are handled sequentially from top to bottom so sequence is important."
 msgstr "Move o efecto baixo do que ten debaixo. Os efectos xestiónanse de maneira secuencial de arriba a abaixo así que a secuencia é importante."
 
 #. +> trunk6 stable6
-#: src/effects/effectstack/view/collapsibleeffectview.cpp:59
+#: src/effects/effectstack/view/collapsibleeffectview.cpp:62
 #, kde-format
 msgid "Delete effect"
 msgstr "Eliminar efecto"
 
 #. +> trunk6 stable6
-#: src/effects/effectstack/view/collapsibleeffectview.cpp:60
+#: src/effects/effectstack/view/collapsibleeffectview.cpp:63
 #, kde-kuit-format
 msgctxt "@info:whatsthis"
 msgid "Deletes the effect from the effect stack."
 msgstr "Elimina o efecto da morea de efectos."
 
 #. +> trunk6 stable6
-#: src/effects/effectstack/view/collapsibleeffectview.cpp:73
+#: src/effects/effectstack/view/collapsibleeffectview.cpp:76
 #, kde-format
 msgid "Collapse Effect"
 msgstr "Colapsar o efecto"
 
 #. +> trunk6 stable6
-#: src/effects/effectstack/view/collapsibleeffectview.cpp:73
+#: src/effects/effectstack/view/collapsibleeffectview.cpp:76
 #, kde-format
 msgid "Expand Effect"
 msgstr "Expandir o efecto"
 
+#. +> trunk6
+#: src/effects/effectstack/view/collapsibleeffectview.cpp:82
+#, fuzzy, kde-format
+#| msgctxt "@info:tooltip"
+#| msgid "Online documentation"
+msgid "Open effect documentation in browser"
+msgstr "Documento en liña"
+
 #. +> trunk6 stable6
-#: src/effects/effectstack/view/collapsibleeffectview.cpp:98
+#: src/effects/effectstack/view/collapsibleeffectview.cpp:109
 #, kde-format
 msgid "Enable Keyframes"
 msgstr "Activar os fotogramas clave"
 
 #. +> trunk6 stable6
-#: src/effects/effectstack/view/collapsibleeffectview.cpp:100
+#: src/effects/effectstack/view/collapsibleeffectview.cpp:111
 #, kde-format
 msgid "Hide Keyframes"
 msgstr "Agochar os fotogramas clave"
 
 #. +> trunk6 stable6
-#: src/effects/effectstack/view/collapsibleeffectview.cpp:100
+#: src/effects/effectstack/view/collapsibleeffectview.cpp:111
 #, kde-format
 msgid "Show Keyframes"
 msgstr "Amosar os fotogramas clave"
 
 #. +> trunk6 stable6
-#: src/effects/effectstack/view/collapsibleeffectview.cpp:101
+#: src/effects/effectstack/view/collapsibleeffectview.cpp:112
 #, kde-kuit-format
 msgctxt "@info:whatsthis"
 msgid "Turns the display of the keyframe ruler on."
 msgstr "Activa a visualización da regra de fotogramas clave."
 
 #. +> trunk6 stable6
-#: src/effects/effectstack/view/collapsibleeffectview.cpp:110
+#: src/effects/effectstack/view/collapsibleeffectview.cpp:121
 #, kde-format
 msgid "Disable Effect"
 msgstr "Desactivar o efecto"
 
 #. +> trunk6 stable6
-#: src/effects/effectstack/view/collapsibleeffectview.cpp:110
+#: src/effects/effectstack/view/collapsibleeffectview.cpp:121
 #, kde-format
 msgid "Enable Effect"
 msgstr "Activar o efecto"
 
 #. +> trunk6 stable6
-#: src/effects/effectstack/view/collapsibleeffectview.cpp:111
+#: src/effects/effectstack/view/collapsibleeffectview.cpp:122
 #, kde-kuit-format
 msgctxt "@info:whatsthis"
 msgid "Disables the effect. Useful to compare before and after settings."
 msgstr "Desactiva o efecto. Útil para comparar a configuración anterior e a actual."
 
 #. +> trunk6 stable6
-#: src/effects/effectstack/view/collapsibleeffectview.cpp:112
+#: src/effects/effectstack/view/collapsibleeffectview.cpp:123
 #, kde-kuit-format
 msgctxt "@info:whatsthis"
 msgid "Enables the effect. Useful to compare before and after settings."
 msgstr "Activa o efecto. Útil para comparar a configuración anterior e a actual."
 
 #. +> trunk6 stable6
-#: src/effects/effectstack/view/collapsibleeffectview.cpp:159
+#: src/effects/effectstack/view/collapsibleeffectview.cpp:169
 #, kde-format
 msgid "Create Group"
 msgstr "Crear un grupo"
 
 #. +> trunk6 stable6
-#: src/effects/effectstack/view/collapsibleeffectview.cpp:166
+#: src/effects/effectstack/view/collapsibleeffectview.cpp:176
 #, kde-format
 msgid "In:"
 msgstr "Entrada:"
 
 #. +> trunk6 stable6
-#: src/effects/effectstack/view/collapsibleeffectview.cpp:172
+#: src/effects/effectstack/view/collapsibleeffectview.cpp:182
 #, kde-format
 msgid "Set zone in"
 msgstr "Definir a entrada da zona"
 
 #. +> trunk6 stable6
-#: src/effects/effectstack/view/collapsibleeffectview.cpp:173
+#: src/effects/effectstack/view/collapsibleeffectview.cpp:183
 #, kde-kuit-format
 msgctxt "@info:whatsthis"
 msgid "Sets the current frame/playhead position as start of the zone."
 msgstr "Define o fotograma actual ou a posición do punto de reprodución como inicio da zona."
 
 #. +> trunk6 stable6
-#: src/effects/effectstack/view/collapsibleeffectview.cpp:178
+#: src/effects/effectstack/view/collapsibleeffectview.cpp:188
 #, kde-format
 msgid "Out:"
 msgstr "Saída:"
 
 #. +> trunk6 stable6
-#: src/effects/effectstack/view/collapsibleeffectview.cpp:184
+#: src/effects/effectstack/view/collapsibleeffectview.cpp:194
 #, kde-format
 msgid "Set zone out"
 msgstr "Definir a saída da zona"
 
 #. +> trunk6 stable6
-#: src/effects/effectstack/view/collapsibleeffectview.cpp:185
+#: src/effects/effectstack/view/collapsibleeffectview.cpp:195
 #, kde-kuit-format
 msgctxt "@info:whatsthis"
 msgid "Sets the current frame/playhead position as end of the zone."
 msgstr "Define o fotograma actual ou a posición do punto de reprodución como fin da zona."
 
 #. +> trunk6 stable6
-#: src/effects/effectstack/view/collapsibleeffectview.cpp:207
+#: src/effects/effectstack/view/collapsibleeffectview.cpp:217
 #, kde-format
 msgid "Use effect zone"
 msgstr "Usar unha zona de efectos"
 
 #. +> trunk6 stable6
-#: src/effects/effectstack/view/collapsibleeffectview.cpp:208
+#: src/effects/effectstack/view/collapsibleeffectview.cpp:218
 #, kde-kuit-format
 msgctxt "@info:whatsthis"
 msgid "Toggles the display of the effect zone."
@@ -10688,65 +11214,59 @@ msgstr "Conmuta a visualización da zona de efectos."
 #. i18n: ectx: property (text), widget (QLabel, formatLabel)
 #. i18n: ectx: property (toolTip), widget (QToolButton, preset_button)
 #. +> trunk6 stable6
-#: src/effects/effectstack/view/collapsibleeffectview.cpp:268
+#: src/effects/effectstack/view/collapsibleeffectview.cpp:278
 #: src/ui/clipstabilize_ui.ui:54 src/ui/renderwidget_ui.ui:172
 #, kde-format
 msgid "Presets"
 msgstr "Predefinicións"
 
 #. +> trunk6 stable6
-#: src/effects/effectstack/view/collapsibleeffectview.cpp:269
+#: src/effects/effectstack/view/collapsibleeffectview.cpp:279
 #, kde-kuit-format
 msgctxt "@info:whatsthis"
 msgid "Opens a list of advanced options to manage presets for the effect."
 msgstr "Abre unha lista de opcións avanzadas para xestionar as predefinicións do efecto."
 
 #. +> trunk6 stable6
-#: src/effects/effectstack/view/collapsibleeffectview.cpp:273
-#, kde-format
-msgid "Save effect"
-msgstr "Gardar o efecto"
-
-#. +> trunk6 stable6
-#: src/effects/effectstack/view/collapsibleeffectview.cpp:328
+#: src/effects/effectstack/view/collapsibleeffectview.cpp:335
 #, kde-format
 msgid "%1 instances of this effect in the group"
 msgstr "Hai %1 instancias do efecto no grupo"
 
 #. +> trunk6 stable6
-#: src/effects/effectstack/view/collapsibleeffectview.cpp:494
+#: src/effects/effectstack/view/collapsibleeffectview.cpp:501
 #, kde-format
 msgctxt "@info:status"
 msgid "<b>Drag</b> effect to another timeline clip, track or project clip to copy it. <b>Alt Drag</b> to copy it to a single item in a group."
 msgstr "<b>Arrastre</b> o efecto a outro fragmento da cronoloxía, pista ou fragmento do proxecto para copialo. Use <b>Alt + arrastrar</b> para copialo a un elemento concreto dentro dun grupo."
 
 #. +> trunk6 stable6
-#: src/effects/effectstack/view/collapsibleeffectview.cpp:518
+#: src/effects/effectstack/view/collapsibleeffectview.cpp:525
 #, kde-format
 msgid "Disable %1"
 msgstr "Desactivar %1"
 
 #. +> trunk6 stable6
-#: src/effects/effectstack/view/collapsibleeffectview.cpp:518
+#: src/effects/effectstack/view/collapsibleeffectview.cpp:525
 #, kde-format
 msgid "Enable %1"
 msgstr "Activar %1"
 
 #. +> trunk6 stable6
-#: src/effects/effectstack/view/collapsibleeffectview.cpp:554
+#: src/effects/effectstack/view/collapsibleeffectview.cpp:561
 #, kde-format
 msgctxt "@title:window"
 msgid "Save Effect"
 msgstr "Gardar o efecto"
 
 #. +> trunk6 stable6
-#: src/effects/effectstack/view/collapsibleeffectview.cpp:559
+#: src/effects/effectstack/view/collapsibleeffectview.cpp:566
 #, kde-format
 msgid "Comments:"
 msgstr "Comentarios:"
 
 #. +> trunk6 stable6
-#: src/effects/effectstack/view/collapsibleeffectview.cpp:575
+#: src/effects/effectstack/view/collapsibleeffectview.cpp:582
 #, kde-format
 msgid "No name provided, effect not saved."
 msgstr "Non forneceu un nome, o efecto non se gardou."
@@ -10771,14 +11291,14 @@ msgstr "Voltear"
 
 #. +> trunk6 stable6
 #: src/effects/effectstack/view/effectstackview.cpp:702
-#: src/timeline2/view/timelinecontroller.cpp:3269
+#: src/timeline2/view/timelinecontroller.cpp:3277
 #, kde-format
 msgid "Enable Effect Stack"
 msgstr "Activar a morea de efectos"
 
 #. +> trunk6 stable6
 #: src/effects/effectstack/view/effectstackview.cpp:702
-#: src/timeline2/view/timelinecontroller.cpp:3269
+#: src/timeline2/view/timelinecontroller.cpp:3277
 #, kde-format
 msgid "Disable Effect Stack"
 msgstr "Desactivar a morea de efectos"
@@ -11242,14 +11762,14 @@ msgstr "Engadir marcadores por categoría"
 
 #. i18n: ectx: Menu (extract_audio)
 #. +> trunk6 stable6
-#: src/kdenliveui.rc:93 src/mainwindow.cpp:3950
+#: src/kdenliveui.rc:93 src/mainwindow.cpp:3949
 #, kde-format
 msgid "Extract Audio"
 msgstr "Extraer o son"
 
 #. i18n: ectx: Menu (clip_actions)
 #. +> trunk6 stable6
-#: src/kdenliveui.rc:96 src/mainwindow.cpp:3924
+#: src/kdenliveui.rc:96 src/mainwindow.cpp:3923
 #, kde-format
 msgid "Clip Jobs"
 msgstr "Tarefas de fragmentos"
@@ -11415,8 +11935,10 @@ msgstr "Rexistro"
 msgid "Editing"
 msgstr "Edición"
 
+#. i18n: ectx: property (text), widget (QLabel, labelEffects)
 #. +> trunk6 stable6
 #: src/layoutmanagement.cpp:35 src/mainwindow.cpp:494 src/mainwindow.cpp:578
+#: src/ui/editsub_ui.ui:434
 #, kde-format
 msgid "Effects"
 msgstr "Efectos"
@@ -12064,8 +12586,9 @@ msgstr "Navegación e reprodución"
 msgid "Bin Tags"
 msgstr "Etiquetas da caixa"
 
+#. i18n: ectx: property (text), widget (QTreeWidget, eventList)
 #. +> trunk6 stable6
-#: src/mainwindow.cpp:180
+#: src/mainwindow.cpp:180 src/ui/managesubtitles_ui.ui:211
 #, kde-format
 msgid "Style"
 msgstr "Estilo"
@@ -12354,7 +12877,7 @@ msgid "Delete them"
 msgstr "Eliminalos"
 
 #. +> trunk6 stable6
-#: src/mainwindow.cpp:1150 src/timeline2/view/timelinecontroller.cpp:2144
+#: src/mainwindow.cpp:1150 src/timeline2/view/timelinecontroller.cpp:2149
 #, kde-format
 msgid "Select a clip to compare effect"
 msgstr "Seleccione un fragmento para comparar o efecto"
@@ -12623,7 +13146,7 @@ msgid "Experimental GPU processing enabled - not for production"
 msgstr "Activouse o procesamento experimental con GPU — non usar para produción"
 
 #. +> trunk6 stable6
-#: src/mainwindow.cpp:1454 src/mainwindow.cpp:3568
+#: src/mainwindow.cpp:1454 src/mainwindow.cpp:3567
 #, kde-format
 msgid "Multicam"
 msgstr "Varias cámaras"
@@ -13162,7 +13685,7 @@ msgid "Edit Marker…"
 msgstr "Editar o marcador…"
 
 #. +> trunk6 stable6
-#: src/mainwindow.cpp:1818 src/timeline2/model/timelinefunctions.cpp:1198
+#: src/mainwindow.cpp:1818 src/timeline2/model/timelinefunctions.cpp:1208
 #, kde-format
 msgid "Restore Audio"
 msgstr "Restaurar o son"
@@ -13345,7 +13868,7 @@ msgid "Fit all Tracks in View"
 msgstr "Axustar a vista para ver todas as pistas"
 
 #. +> trunk6 stable6
-#: src/mainwindow.cpp:1965 src/timeline2/view/timelinecontroller.cpp:4953
+#: src/mainwindow.cpp:1965 src/timeline2/view/timelinecontroller.cpp:4969
 #, kde-format
 msgid "Master effects"
 msgstr "Efectos mestres"
@@ -13478,7 +14001,7 @@ msgid "Export Subtitle File…"
 msgstr "Exportar o ficheiro de subtítulo…"
 
 #. +> trunk6 stable6
-#: src/mainwindow.cpp:2039 src/timeline2/model/timelinemodel.cpp:2165
+#: src/mainwindow.cpp:2039 src/timeline2/model/timelinemodel.cpp:2169
 #, kde-format
 msgid "Delete Subtitle"
 msgstr "Eliminar o subtítulo"
@@ -13709,83 +14232,83 @@ msgid "An error occurred while deleting markers"
 msgstr "Produciuse un erro ao eliminar os marcadores"
 
 #. +> trunk6 stable6
-#: src/mainwindow.cpp:2902 src/timeline2/view/timelinecontroller.cpp:1310
-#: src/timeline2/view/timelinecontroller.cpp:1318
-#: src/timeline2/view/timelinecontroller.cpp:1339
-#: src/timeline2/view/timelinecontroller.cpp:1379
-#: src/timeline2/view/timelinecontroller.cpp:1405
+#: src/mainwindow.cpp:2902 src/timeline2/view/timelinecontroller.cpp:1312
+#: src/timeline2/view/timelinecontroller.cpp:1320
+#: src/timeline2/view/timelinecontroller.cpp:1341
+#: src/timeline2/view/timelinecontroller.cpp:1381
+#: src/timeline2/view/timelinecontroller.cpp:1407
 #, kde-format
 msgid "Cannot find clip to edit marker"
 msgstr "Non é posíbel atopar o fragmento ao que editar o marcador"
 
 #. +> trunk6 stable6
-#: src/mainwindow.cpp:2954
+#: src/mainwindow.cpp:2953
 #, kde-format
 msgid "Marker category does not exist"
 msgstr "A categoría de marcadores non existe."
 
 #. +> trunk6 stable6
-#: src/mainwindow.cpp:3139 src/timeline2/model/timelinefunctions.cpp:776
-#: src/timeline2/view/timelinecontroller.cpp:3129
+#: src/mainwindow.cpp:3138 src/timeline2/model/timelinefunctions.cpp:784
+#: src/timeline2/view/timelinecontroller.cpp:3137
 #, kde-format
 msgid "Overwrite zone"
 msgstr "Sobrescribir a zona"
 
 #. +> trunk6 stable6
-#: src/mainwindow.cpp:3141 src/mainwindow.cpp:3160
-#: src/timeline2/model/timelinefunctions.cpp:778
-#: src/timeline2/view/timelinecontroller.cpp:3131
+#: src/mainwindow.cpp:3140 src/mainwindow.cpp:3159
+#: src/timeline2/model/timelinefunctions.cpp:786
+#: src/timeline2/view/timelinecontroller.cpp:3139
 #, kde-format
 msgid "Could not insert zone"
 msgstr "Non foi posíbel inserir a zona"
 
 #. +> trunk6 stable6
-#: src/mainwindow.cpp:3151
+#: src/mainwindow.cpp:3150
 #, kde-format
 msgid "No clip selected in project bin"
 msgstr "Non seleccionou ningún fragmento na caixa do proxecto"
 
 #. +> trunk6 stable6
-#: src/mainwindow.cpp:3158 src/timeline2/model/timelinefunctions.cpp:776
-#: src/timeline2/view/timelinecontroller.cpp:3129
+#: src/mainwindow.cpp:3157 src/timeline2/model/timelinefunctions.cpp:784
+#: src/timeline2/view/timelinecontroller.cpp:3137
 #, kde-format
 msgid "Insert zone"
 msgstr "Inserir a zona"
 
 #. +> trunk6 stable6
-#: src/mainwindow.cpp:3325
+#: src/mainwindow.cpp:3324
 #, kde-format
 msgid "Cannot add effect to active item"
 msgstr "Non é posíbel engadir o efecto ao elemento activo"
 
 #. +> trunk6 stable6
-#: src/mainwindow.cpp:3387
+#: src/mainwindow.cpp:3386
 #, kde-format
 msgid "Zoom Level: %1/%2"
 msgstr "Nivel de ampliación: %1/%2"
 
 #. +> trunk6 stable6
-#: src/mainwindow.cpp:3536
+#: src/mainwindow.cpp:3535
 #, kde-kuit-format
 msgctxt "@info:whatsthis"
 msgid "<shortcut>Shift drag</shortcut> for rubber-band selection, <shortcut>Shift click</shortcut> for multiple selection, <shortcut>Meta drag</shortcut> to move a grouped clip to another track, <shortcut>Ctrl drag</shortcut> to pan"
 msgstr "<shortcut>Maiús arrastrar</shortcut> para selección de zona, <shortcut>Maiús clic</shortcut> para selección múltiple, <shortcut>Meta arrastrar</shortcut> para move un fragmento agrupado a outra pista, <shortcut>Ctrl arrastrar</shortcut> para mover a vista"
 
 #. +> trunk6 stable6
-#: src/mainwindow.cpp:3540
+#: src/mainwindow.cpp:3539
 #, kde-kuit-format
 msgctxt "@info:whatsthis"
 msgid "<shortcut>Shift drag</shortcut> for rubber-band selection, <shortcut>Shift click</shortcut> for multiple selection, <shortcut>Meta + Alt drag</shortcut> to move a grouped clip to another track, <shortcut>Ctrl drag</shortcut> to pan"
 msgstr "<shortcut>Maiús arrastrar</shortcut> para selección de zona, <shortcut>Maiús clic</shortcut> para selección múltiple, <shortcut>Meta + Alt arrastrar</shortcut> para move un fragmento agrupado a outra pista, <shortcut>Ctrl arrastrar</shortcut> para mover a vista"
 
 #. +> trunk6 stable6
-#: src/mainwindow.cpp:3543
+#: src/mainwindow.cpp:3542
 #, kde-format
 msgid "Select"
 msgstr "Seleccionar"
 
 #. +> trunk6 stable6
-#: src/mainwindow.cpp:3545
+#: src/mainwindow.cpp:3544
 #, kde-kuit-format
 msgctxt "@info:whatsthis"
 msgid "<shortcut>Shift</shortcut> to preview cut frame"
@@ -13793,225 +14316,219 @@ msgstr "<shortcut>Maiús</shortcut> para previsualizar o corte dun fotograma"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_1)
 #. +> trunk6 stable6
-#: src/mainwindow.cpp:3546 src/ui/configtools_ui.ui:21
+#: src/mainwindow.cpp:3545 src/ui/configtools_ui.ui:21
 #, kde-format
 msgid "Razor"
 msgstr "Coitela"
 
 #. +> trunk6 stable6
-#: src/mainwindow.cpp:3550
+#: src/mainwindow.cpp:3549
 #, kde-kuit-format
 msgctxt "@info:whatsthis"
 msgid "<shortcut>Ctrl</shortcut> to apply on current track only, <shortcut>Shift</shortcut> to also move guides. You can combine both modifiers."
 msgstr "<shortcut>Ctrl</shortcut> para aplicar só na pista actual, <shortcut>Maiús</shortcut> para mover tamén as guías. Pode combinar os dous modificadores."
 
 #. +> trunk6 stable6
-#: src/mainwindow.cpp:3551
+#: src/mainwindow.cpp:3550
 #, kde-format
 msgid "Spacer"
 msgstr "Espazador"
 
 #. +> trunk6 stable6
-#: src/mainwindow.cpp:3553
+#: src/mainwindow.cpp:3552
 #, kde-kuit-format
 msgctxt "@info:whatsthis"
 msgid "<shortcut>Click</shortcut> on an item to slip, <shortcut>Shift click</shortcut> for multiple selection"
 msgstr "<shortcut>Clic</shortcut> nun elemento para pasalo, <shortcut>Maiús clic</shortcut> para selección múltiple"
 
 #. +> trunk6 stable6
-#: src/mainwindow.cpp:3554
+#: src/mainwindow.cpp:3553
 #, kde-format
 msgctxt "Timeline Tool"
 msgid "Slip"
 msgstr "Pasar"
 
 #. +> trunk6 stable6
-#: src/mainwindow.cpp:3559
+#: src/mainwindow.cpp:3558
 #, kde-kuit-format
 msgctxt "@info:whatsthis"
 msgid "<shortcut>Shift drag</shortcut> for rubber-band selection, <shortcut>Shift click</shortcut> for multiple selection, <shortcut>Alt click</shortcut> to select an item in a group, <shortcut>Ctrl drag</shortcut> to pan"
 msgstr "<shortcut>Maiús arrastrar</shortcut> para selección de zona, <shortcut>Maiús clic</shortcut> para selección múltiple, <shortcut>Alt clic</shortcut> para seleccionar un elemento dentro dun grupo, <shortcut>Ctrl arrastrar</shortcut> para mover a vista"
 
 #. +> trunk6 stable6
-#: src/mainwindow.cpp:3561
+#: src/mainwindow.cpp:3560
 #, kde-format
 msgctxt "Timeline Tool"
 msgid "Ripple"
 msgstr "Onda"
 
 #. +> trunk6 stable6
-#: src/mainwindow.cpp:3567
+#: src/mainwindow.cpp:3566
 #, kde-kuit-format
 msgctxt "@info:whatsthis"
 msgid "<shortcut>Click</shortcut> on a track view in the project monitor to perform a lift of all tracks except active one"
 msgstr "<shortcut>Clic</shortcut> na vista de pista do monitor do proxecto para realizar unha elevación de todas as pistas salvo a activa"
 
 #. +> trunk6 stable6
-#: src/mainwindow.cpp:3579
+#: src/mainwindow.cpp:3578
 #, kde-format
 msgid "Insert"
 msgstr "Inserir"
 
 #. +> trunk6 stable6
-#: src/mainwindow.cpp:3582
-#, kde-format
-msgid "Overwrite"
-msgstr "Sobrescribir"
-
-#. +> trunk6 stable6
-#: src/mainwindow.cpp:3840 src/mainwindow.cpp:3842
+#: src/mainwindow.cpp:3839 src/mainwindow.cpp:3841
 #, kde-format
 msgid "Scopes"
 msgstr "Ámbitos"
 
 #. +> trunk6 stable6
-#: src/mainwindow.cpp:3847
+#: src/mainwindow.cpp:3846
 #, kde-format
 msgid "Project Bins"
 msgstr "Caixas do proxecto"
 
 #. +> trunk6 stable6
-#: src/mainwindow.cpp:3943
+#: src/mainwindow.cpp:3942
 #, kde-format
 msgid "Configure Clip Jobs…"
 msgstr "Configurar as tarefas de fragmentos…"
 
 #. +> trunk6 stable6
-#: src/mainwindow.cpp:3949
+#: src/mainwindow.cpp:3948
 #, kde-format
 msgid "Transcoders"
 msgstr "Transcodificadores"
 
 #. +> trunk6 stable6
-#: src/mainwindow.cpp:4009
+#: src/mainwindow.cpp:4008
 #, kde-format
 msgid "-merged"
 msgstr "-mesturada"
 
 #. +> trunk6 stable6
-#: src/mainwindow.cpp:4012
+#: src/mainwindow.cpp:4011
 #, kde-format
 msgid "-stream-%1"
 msgstr "-fluxo-%1"
 
 #. +> trunk6 stable6
-#: src/mainwindow.cpp:4054
+#: src/mainwindow.cpp:4053
 #, kde-format
 msgid "Interface"
 msgstr "Interface"
 
 #. +> trunk6 stable6
-#: src/mainwindow.cpp:4076
+#: src/mainwindow.cpp:4075
 #, kde-format
 msgid "Raise %1"
 msgstr "Subir %1"
 
 #. +> trunk6 stable6
-#: src/mainwindow.cpp:4143
+#: src/mainwindow.cpp:4142
 #, kde-format
 msgctxt "@title:window"
 msgid "Files to Transcode"
 msgstr "Ficheiros para converter"
 
 #. +> trunk6 stable6
-#: src/mainwindow.cpp:4272
+#: src/mainwindow.cpp:4271
 #, kde-format
 msgid "Project file could not be saved for archiving."
 msgstr "Non foi posíbel gardar o ficheiro de proxecto para arquivalo."
 
 #. +> trunk6 stable6
-#: src/mainwindow.cpp:4278
+#: src/mainwindow.cpp:4277
 #, kde-format
 msgid "Archiving project"
 msgstr "Arquivando o proxecto"
 
 #. +> trunk6 stable6
-#: src/mainwindow.cpp:4429
+#: src/mainwindow.cpp:4428
 #, kde-format
 msgid "Icon Size"
 msgstr "Tamaño das iconas"
 
 #. +> trunk6 stable6
-#: src/mainwindow.cpp:4433
+#: src/mainwindow.cpp:4432
 #, kde-format
 msgctxt "@item:inmenu Icon size"
 msgid "Default"
 msgstr "Predeterminado"
 
 #. +> trunk6 stable6
-#: src/mainwindow.cpp:4454 src/mainwindow.cpp:4482
+#: src/mainwindow.cpp:4453 src/mainwindow.cpp:4481
 #, kde-format
 msgid "Small (%1x%2)"
 msgstr "Pequeno (%1x%2)"
 
 #. +> trunk6 stable6
-#: src/mainwindow.cpp:4456 src/mainwindow.cpp:4484
+#: src/mainwindow.cpp:4455 src/mainwindow.cpp:4483
 #, kde-format
 msgid "Medium (%1x%2)"
 msgstr "Mediano (%1x%2)"
 
 #. +> trunk6 stable6
-#: src/mainwindow.cpp:4458 src/mainwindow.cpp:4486
+#: src/mainwindow.cpp:4457 src/mainwindow.cpp:4485
 #, kde-format
 msgid "Large (%1x%2)"
 msgstr "Grande (%1x%2)"
 
 #. +> trunk6 stable6
-#: src/mainwindow.cpp:4460 src/mainwindow.cpp:4488
+#: src/mainwindow.cpp:4459 src/mainwindow.cpp:4487
 #, kde-format
 msgid "Huge (%1x%2)"
 msgstr "Enorme (%1x%2)"
 
 #. +> trunk6 stable6
-#: src/mainwindow.cpp:4544
+#: src/mainwindow.cpp:4543
 #, kde-format
 msgid "This will hide the menu bar completely. You can show it again by typing Ctrl+M."
 msgstr "Isto fai agochar a barra de menú completamente. Pódea amosar de novo escribindo Ctrl+M."
 
 #. +> trunk6 stable6
-#: src/mainwindow.cpp:4544
+#: src/mainwindow.cpp:4543
 #, kde-format
 msgid "Hide menu bar"
 msgstr "Agochar a barra de menú"
 
 #. +> trunk6 stable6
-#: src/mainwindow.cpp:4560
+#: src/mainwindow.cpp:4559
 #, kde-format
 msgid "Kdenlive needs to be restarted to apply the icon theme change. Restart now?"
 msgstr "Hai que reiniciar Kdenlive para que o cambio do tema de iconas xurda efecto. Quere reinicialo agora?"
 
 #. +> trunk6 stable6
-#: src/mainwindow.cpp:4816 src/timeline2/view/timelinecontroller.cpp:5180
+#: src/mainwindow.cpp:4815 src/timeline2/view/timelinecontroller.cpp:5200
 #, kde-format
 msgid "No subtitles in current project"
 msgstr "Non hai subtítulos no proxecto actual"
 
 #. +> trunk6 stable6
-#: src/mainwindow.cpp:5103
+#: src/mainwindow.cpp:5102
 #, kde-format
 msgid "Go to download page"
 msgstr "Ir á páxina de descarga"
 
 #. +> trunk6 stable6
-#: src/mainwindow.cpp:5106
+#: src/mainwindow.cpp:5105
 #, kde-format
 msgid "Never check again"
 msgstr "Non volver comprobar nunca"
 
 #. +> trunk6 stable6
-#: src/mainwindow.cpp:5109
+#: src/mainwindow.cpp:5108
 #, kde-format
 msgid "Your Kdenlive version is older than 1 year, we strongly encourage you to upgrade"
 msgstr "A súa versión de Kdenlive ten máis dun ano, recomendámoslle encarecidamente anovala"
 
 #. +> trunk6 stable6
-#: src/mainwindow.cpp:5112
+#: src/mainwindow.cpp:5111
 #, kde-format
 msgid "Your Kdenlive version is older than 6 months, we encourage you to upgrade"
 msgstr "A súa versión de Kdenlive ten máis de 6 meses, recomendámoslle anovala"
 
 #. +> trunk6 stable6
-#: src/mainwindow.cpp:5155
+#: src/mainwindow.cpp:5154
 #, kde-format
 msgid "Checking cached data size"
 msgstr "Comprobando o tamaño dos datos da caché"
@@ -14664,7 +15181,7 @@ msgstr "Cambiar de tamaño libremente"
 #. i18n: ectx: property (text), item, widget (QComboBox, bgBox)
 #. +> trunk6 stable6
 #: src/monitor/monitor.cpp:442 src/scopes/colorscopes/vectorscope.cpp:50
-#: src/timeline2/view/timelinecontroller.cpp:259 src/ui/titlewidget_ui.ui:125
+#: src/timeline2/view/timelinecontroller.cpp:262 src/ui/titlewidget_ui.ui:125
 #, kde-format
 msgid "Black"
 msgstr "Negro"
@@ -14746,7 +15263,7 @@ msgstr "A súa resolución de pantalla é insuficiente para esta acción."
 
 #. +> trunk6 stable6
 #: src/monitor/monitor.cpp:892 src/monitor/monitor.cpp:923
-#: src/timeline2/view/timelinecontroller.cpp:1796
+#: src/timeline2/view/timelinecontroller.cpp:1798
 #, kde-format
 msgid "Set Zone"
 msgstr "Definir a zona"
@@ -14975,8 +15492,10 @@ msgid "Go to Zone End"
 msgstr "Ir ao final da zona"
 
 #. i18n: ectx: property (text), widget (QPushButton, button_preview)
+#. i18n: ectx: property (text), widget (QLabel, labelPreview)
 #. +> trunk6 stable6
-#: src/monitor/recmanager.cpp:34 src/ui/resourcewidget_ui.ui:251
+#: src/monitor/recmanager.cpp:34 src/ui/editsubstyle_ui.ui:438
+#: src/ui/resourcewidget_ui.ui:251
 #, kde-format
 msgid "Preview"
 msgstr "Previsualización"
@@ -16201,19 +16720,19 @@ msgid "Assign timestamps to current Bin Clip"
 msgstr "Asignar marcas de tempo ao fragmento actual da caixa"
 
 #. +> trunk6 stable6
-#: src/project/dialogs/noteswidget.cpp:126
+#: src/project/dialogs/noteswidget.cpp:137
 #, kde-format
 msgid "Cannot find project clip"
 msgstr "Non é posíbel atopar o fragmento do proxecto"
 
 #. +> trunk6 stable6
-#: src/project/dialogs/noteswidget.cpp:192
+#: src/project/dialogs/noteswidget.cpp:203
 #, kde-format
 msgid "Select some timecodes to reassign"
 msgstr "Seleccionar códigos de tempo para reasignar"
 
 #. +> trunk6 stable6
-#: src/project/dialogs/noteswidget.cpp:203
+#: src/project/dialogs/noteswidget.cpp:214
 #, kde-format
 msgid "Select some timecodes to create markers"
 msgstr "Seleccionar códigos de tempo para crear marcadores"
@@ -16837,7 +17356,7 @@ msgid "Save changes to document?"
 msgstr "Gardar os cambios no documento?"
 
 #. +> trunk6 stable6
-#: src/project/projectmanager.cpp:444 src/project/projectmanager.cpp:1677
+#: src/project/projectmanager.cpp:444 src/project/projectmanager.cpp:1717
 #, kde-format
 msgid ""
 "The project <b>\"%1\"</b> has been changed.\n"
@@ -16919,13 +17438,13 @@ msgstr ""
 "Quere abrir unha salvagarda?"
 
 #. +> trunk6 stable6
-#: src/project/projectmanager.cpp:847 src/project/projectmanager.cpp:1041
+#: src/project/projectmanager.cpp:847 src/project/projectmanager.cpp:1081
 #, kde-format
 msgid "Error opening file"
 msgstr "Produciuse un erro ao abrir o ficheiro"
 
 #. +> trunk6 stable6
-#: src/project/projectmanager.cpp:847 src/project/projectmanager.cpp:1042
+#: src/project/projectmanager.cpp:847 src/project/projectmanager.cpp:1082
 #, kde-format
 msgid "Open Backup"
 msgstr "Abrir unha salvagarda"
@@ -16949,19 +17468,19 @@ msgid "Your project was modified on opening, a backup will be created on next sa
 msgstr "Modificouse o proxecto ao abrilo, a seguinte vez que garde crearase unha salvagarda"
 
 #. +> trunk6 stable6
-#: src/project/projectmanager.cpp:911
+#: src/project/projectmanager.cpp:951
 #, kde-format
 msgid "Loading timeline…"
 msgstr "Cargando a cronoloxía…"
 
 #. +> trunk6 stable6
-#: src/project/projectmanager.cpp:929
+#: src/project/projectmanager.cpp:969
 #, kde-format
 msgid "Building sequences…"
 msgstr "Construíndo as secuencias…"
 
 #. +> trunk6 stable6
-#: src/project/projectmanager.cpp:1068
+#: src/project/projectmanager.cpp:1108
 #, kde-format
 msgid ""
 "Cannot open the project file. Error:\n"
@@ -16971,57 +17490,57 @@ msgstr ""
 "%1\n"
 
 #. +> trunk6 stable6
-#: src/project/projectmanager.cpp:1108
+#: src/project/projectmanager.cpp:1148
 #, kde-format
 msgid "This will delete all changes made since you last saved your project. Are you sure you want to continue?"
 msgstr "Isto eliminará todos os cambios feitos desde a última vez que gardou o proxecto. Seguro que quere continuar?"
 
 #. +> trunk6 stable6
-#: src/project/projectmanager.cpp:1109
+#: src/project/projectmanager.cpp:1149
 #, kde-format
 msgid "Revert to last saved version"
 msgstr "Recuperar a última versión gardada"
 
 #. +> trunk6 stable6
-#: src/project/projectmanager.cpp:1195
+#: src/project/projectmanager.cpp:1235
 #, kde-format
 msgid "Project was corrupted, cannot backup. Please close and reopen your project file to recover last backup"
 msgstr "O proxecto corrompeuse, non se pode salvagardar. Peche e reabra o ficheiro de proxecto para recuperar a última salvagarda"
 
 #. +> trunk6 stable6
-#: src/project/projectmanager.cpp:1399
+#: src/project/projectmanager.cpp:1439
 #, kde-format
 msgid "Error moving project folder, cannot access cache folder"
 msgstr "Produciuse un erro ao mover o cartafol do proxecto, non se pode acceder ao cartafol da caché"
 
 #. +> trunk6 stable6
-#: src/project/projectmanager.cpp:1435
+#: src/project/projectmanager.cpp:1475
 #, kde-format
 msgid "Moving project folder"
 msgstr "Movendo o cartafol do proxecto"
 
 #. +> trunk6 stable6
-#: src/project/projectmanager.cpp:1526 src/project/projectmanager.cpp:1584
-#: src/project/projectmanager.cpp:1588
+#: src/project/projectmanager.cpp:1566 src/project/projectmanager.cpp:1624
+#: src/project/projectmanager.cpp:1628
 #, kde-format
 msgid "Sequence 1"
 msgstr "Secuencia 1"
 
 #. +> trunk6 stable6
-#: src/project/projectmanager.cpp:1537
+#: src/project/projectmanager.cpp:1577
 #, kde-format
 msgid "Project file is corrupted - failed to load tracks. Try to find a backup file?"
 msgstr "O ficheiro de proxecto está corrompido (non foi posíbel cargar as pistas). Quere intentar atopar un ficheiro de salvagarda?"
 
 #. +> trunk6 stable6
-#: src/project/projectmanager.cpp:1683 src/project/projectmanager.cpp:1688
-#: src/project/projectmanager.cpp:1698 src/project/projectmanager.cpp:1712
+#: src/project/projectmanager.cpp:1723 src/project/projectmanager.cpp:1728
+#: src/project/projectmanager.cpp:1738 src/project/projectmanager.cpp:1752
 #, kde-format
 msgid "Project profile change aborted"
 msgstr "Interrompeuse o cambio de perfil de proxecto"
 
 #. +> trunk6 stable6
-#: src/project/projectmanager.cpp:1835
+#: src/project/projectmanager.cpp:1875
 #, kde-format
 msgid ""
 "Output file %1 already exists.\n"
@@ -17031,13 +17550,13 @@ msgstr ""
 "Quéreo substituír?"
 
 #. +> trunk6 stable6
-#: src/project/projectmanager.cpp:1857
+#: src/project/projectmanager.cpp:1897
 #, kde-format
 msgid "Project profile changed"
 msgstr "O perfil de proxecto cambiou"
 
 #. +> trunk6 stable6
-#: src/project/projectmanager.cpp:1918
+#: src/project/projectmanager.cpp:1958
 #, kde-format
 msgid ""
 "Cannot create a timeline from this clip:\n"
@@ -17047,19 +17566,19 @@ msgstr ""
 "%1"
 
 #. +> trunk6 stable6
-#: src/project/projectmanager.cpp:2000
+#: src/project/projectmanager.cpp:2040
 #, kde-format
 msgid "Importing a sequence clip, this is currently in experimental state"
 msgstr "Importando un fragmento de secuencia, actualmente isto está en estado experimental"
 
 #. +> trunk6 stable6
-#: src/project/projectmanager.cpp:2189
+#: src/project/projectmanager.cpp:2229
 #, kde-format
 msgid "Select a clip to create sequence"
 msgstr "Seleccionar un fragmento para crear unha secuencia"
 
 #. +> trunk6 stable6
-#: src/project/projectmanager.cpp:2227
+#: src/project/projectmanager.cpp:2267
 #, kde-format
 msgid "Create Sequence Clip"
 msgstr "Crear un fragmento de secuencia"
@@ -18502,230 +19021,230 @@ msgid "Insert Clips"
 msgstr "Inserir fragmentos"
 
 #. +> trunk6 stable6
-#: src/timeline2/model/timelinefunctions.cpp:281
+#: src/timeline2/model/timelinefunctions.cpp:284
 #, kde-format
 msgctxt "@info:status"
 msgid "Cannot cut overlapping subtitles"
 msgstr "Non é posíbel cortar subtítulos entrelazados."
 
 #. +> trunk6 stable6
-#: src/timeline2/model/timelinefunctions.cpp:351
-#: src/timeline2/model/timelinefunctions.cpp:370
+#: src/timeline2/model/timelinefunctions.cpp:355
+#: src/timeline2/model/timelinefunctions.cpp:375
 #, kde-format
 msgid "Failed to cut clip"
 msgstr "Non foi posíbel cortar o fragmento"
 
 #. +> trunk6 stable6
-#: src/timeline2/model/timelinefunctions.cpp:361
+#: src/timeline2/model/timelinefunctions.cpp:366
 #, kde-format
 msgid "All tracks are locked"
 msgstr "Todas as pistas están bloqueadas"
 
 #. +> trunk6 stable6
-#: src/timeline2/model/timelinefunctions.cpp:381
+#: src/timeline2/model/timelinefunctions.cpp:386
 #, kde-format
 msgid "No clips to cut"
 msgstr "Non hai un fragmento que cortar"
 
 #. +> trunk6 stable6
-#: src/timeline2/model/timelinefunctions.cpp:383
+#: src/timeline2/model/timelinefunctions.cpp:388
 #, kde-format
 msgid "Cut all clips"
 msgstr "Cortar todos os fragmentos"
 
 #. +> trunk6 stable6
-#: src/timeline2/model/timelinefunctions.cpp:670
-#: src/timeline2/view/timelinecontroller.cpp:1469
+#: src/timeline2/model/timelinefunctions.cpp:678
+#: src/timeline2/view/timelinecontroller.cpp:1471
 #, kde-format
 msgid "Insert space"
 msgstr "Inserir espazo"
 
 #. +> trunk6 stable6
-#: src/timeline2/model/timelinefunctions.cpp:672
-#: src/timeline2/view/timelinecontroller.cpp:1471
+#: src/timeline2/model/timelinefunctions.cpp:680
+#: src/timeline2/view/timelinecontroller.cpp:1473
 #, kde-format
 msgid "Remove space"
 msgstr "Retirar espazo"
 
 #. +> trunk6 stable6
-#: src/timeline2/model/timelinefunctions.cpp:741
-#: src/timeline2/view/timelinecontroller.cpp:2935
+#: src/timeline2/model/timelinefunctions.cpp:749
+#: src/timeline2/view/timelinecontroller.cpp:2943
 #, kde-format
 msgid "Lift zone"
 msgstr "Elevar a zona"
 
 #. +> trunk6 stable6
-#: src/timeline2/model/timelinefunctions.cpp:741
-#: src/timeline2/view/timelinecontroller.cpp:708
-#: src/timeline2/view/timelinecontroller.cpp:2935
+#: src/timeline2/model/timelinefunctions.cpp:749
+#: src/timeline2/view/timelinecontroller.cpp:710
+#: src/timeline2/view/timelinecontroller.cpp:2943
 #, kde-format
 msgid "Extract zone"
 msgstr "Extraer a zona"
 
 #. +> trunk6 stable6
-#: src/timeline2/model/timelinefunctions.cpp:811
+#: src/timeline2/model/timelinefunctions.cpp:820
 #, kde-format
 msgid "Please activate a track by clicking on a track's label"
 msgstr "Active unha pista facendo clic na súa etiqueta"
 
 #. +> trunk6 stable6
-#: src/timeline2/model/timelinefunctions.cpp:934
-#: src/timeline2/view/timelinecontroller.cpp:1208
-#: src/timeline2/view/timelinecontroller.cpp:1288
-#: src/timeline2/view/timelinecontroller.cpp:1298
-#: src/timeline2/view/timelinecontroller.cpp:1327
-#: src/timeline2/view/timelinecontroller.cpp:1367
-#: src/timeline2/view/timelinecontroller.cpp:1393
-#: src/timeline2/view/timelinecontroller.cpp:1418
-#: src/timeline2/view/timelinecontroller.cpp:2307
-#: src/timeline2/view/timelinecontroller.cpp:2953
-#: src/timeline2/view/timelinecontroller.cpp:3018
-#: src/timeline2/view/timelinecontroller.cpp:3232
-#: src/timeline2/view/timelinecontroller.cpp:3277
-#: src/timeline2/view/timelinecontroller.cpp:3326
-#: src/timeline2/view/timelinecontroller.cpp:3355
-#: src/timeline2/view/timelinecontroller.cpp:3660
-#: src/timeline2/view/timelinecontroller.cpp:3675
-#: src/timeline2/view/timelinecontroller.cpp:3700
-#: src/timeline2/view/timelinecontroller.cpp:3715
-#: src/timeline2/view/timelinecontroller.cpp:3780
-#: src/timeline2/view/timelinecontroller.cpp:3946
-#: src/timeline2/view/timelinecontroller.cpp:3970
+#: src/timeline2/model/timelinefunctions.cpp:944
+#: src/timeline2/view/timelinecontroller.cpp:1210
+#: src/timeline2/view/timelinecontroller.cpp:1290
+#: src/timeline2/view/timelinecontroller.cpp:1300
+#: src/timeline2/view/timelinecontroller.cpp:1329
+#: src/timeline2/view/timelinecontroller.cpp:1369
+#: src/timeline2/view/timelinecontroller.cpp:1395
+#: src/timeline2/view/timelinecontroller.cpp:1420
+#: src/timeline2/view/timelinecontroller.cpp:2312
+#: src/timeline2/view/timelinecontroller.cpp:2961
+#: src/timeline2/view/timelinecontroller.cpp:3026
+#: src/timeline2/view/timelinecontroller.cpp:3240
+#: src/timeline2/view/timelinecontroller.cpp:3285
+#: src/timeline2/view/timelinecontroller.cpp:3334
+#: src/timeline2/view/timelinecontroller.cpp:3363
+#: src/timeline2/view/timelinecontroller.cpp:3668
+#: src/timeline2/view/timelinecontroller.cpp:3683
+#: src/timeline2/view/timelinecontroller.cpp:3708
+#: src/timeline2/view/timelinecontroller.cpp:3723
+#: src/timeline2/view/timelinecontroller.cpp:3788
+#: src/timeline2/view/timelinecontroller.cpp:3954
+#: src/timeline2/view/timelinecontroller.cpp:3978
 #, kde-format
 msgid "No clip selected"
 msgstr "Non seleccionou ningún fragmento"
 
 #. +> trunk6 stable6
-#: src/timeline2/model/timelinefunctions.cpp:999
+#: src/timeline2/model/timelinefunctions.cpp:1009
 #, kde-format
 msgid "Cannot move selected group"
 msgstr "Non é posíbel mover o grupo seleccionado"
 
 #. +> trunk6 stable6
-#: src/timeline2/model/timelinefunctions.cpp:1100
-#: src/timeline2/model/timelinefunctions.cpp:1104
-#: src/timeline2/model/timelinefunctions.cpp:1111
-#: src/timeline2/view/timelinecontroller.cpp:4111
+#: src/timeline2/model/timelinefunctions.cpp:1110
+#: src/timeline2/model/timelinefunctions.cpp:1114
+#: src/timeline2/model/timelinefunctions.cpp:1121
+#: src/timeline2/view/timelinecontroller.cpp:4119
 #, kde-format
 msgid "Enable clip"
 msgstr "Activar o fragmento"
 
 #. +> trunk6 stable6
-#: src/timeline2/model/timelinefunctions.cpp:1100
-#: src/timeline2/model/timelinefunctions.cpp:1104
-#: src/timeline2/model/timelinefunctions.cpp:1111
-#: src/timeline2/view/timelinecontroller.cpp:4111
+#: src/timeline2/model/timelinefunctions.cpp:1110
+#: src/timeline2/model/timelinefunctions.cpp:1114
+#: src/timeline2/model/timelinefunctions.cpp:1121
+#: src/timeline2/view/timelinecontroller.cpp:4119
 #, kde-format
 msgid "Disable clip"
 msgstr "Desactivar o fragmento"
 
 #. +> trunk6 stable6
-#: src/timeline2/model/timelinefunctions.cpp:1153
+#: src/timeline2/model/timelinefunctions.cpp:1163
 #, kde-format
 msgid "One or more clips do not have audio, or are already audio"
 msgstr "Algúns fragmentos non teñen son ou xa son de son"
 
 #. +> trunk6 stable6
-#: src/timeline2/model/timelinefunctions.cpp:1170
+#: src/timeline2/model/timelinefunctions.cpp:1180
 #, kde-format
 msgid "No available audio track for restore operation"
 msgstr "Non hai pistas de son dispoñíbeis para a operación de restauración"
 
 #. +> trunk6 stable6
-#: src/timeline2/model/timelinefunctions.cpp:1178
-#: src/timeline2/model/timelinefunctions.cpp:1191
+#: src/timeline2/model/timelinefunctions.cpp:1188
+#: src/timeline2/model/timelinefunctions.cpp:1201
 #, kde-format
 msgid "Audio restore failed"
 msgstr "A restauración de son fallou"
 
 #. +> trunk6 stable6
-#: src/timeline2/model/timelinefunctions.cpp:1230
+#: src/timeline2/model/timelinefunctions.cpp:1240
 #, kde-format
 msgid "No available video track for restore operation"
 msgstr "Non hai pistas de vídeo dispoñíbeis para a operación de restauración"
 
 #. +> trunk6 stable6
-#: src/timeline2/model/timelinefunctions.cpp:1238
-#: src/timeline2/model/timelinefunctions.cpp:1251
+#: src/timeline2/model/timelinefunctions.cpp:1248
+#: src/timeline2/model/timelinefunctions.cpp:1261
 #, kde-format
 msgid "Video restore failed"
 msgstr "A restauración de vídeo fallou"
 
 #. +> trunk6 stable6
-#: src/timeline2/model/timelinefunctions.cpp:1257
+#: src/timeline2/model/timelinefunctions.cpp:1267
 #, kde-format
 msgid "Restore Video"
 msgstr "Restaurar o vídeo"
 
 #. +> trunk6 stable6
-#: src/timeline2/model/timelinefunctions.cpp:1304
+#: src/timeline2/model/timelinefunctions.cpp:1314
 #, kde-format
 msgid "Change Composition Track"
 msgstr "Cambiar a pista da composición"
 
 #. +> trunk6 stable6
-#: src/timeline2/model/timelinefunctions.cpp:1319
+#: src/timeline2/model/timelinefunctions.cpp:1329
 #, kde-format
 msgid "Cannot enable multitrack view on a single track"
 msgstr "Non é posíbel activar a vista de varias pistas nunha pista individual"
 
 #. +> trunk6 stable6
-#: src/timeline2/model/timelinefunctions.cpp:1473
+#: src/timeline2/model/timelinefunctions.cpp:1483
 #, kde-format
 msgid "Add Clip to Library"
 msgstr "Engadir o fragmento á biblioteca"
 
 #. +> trunk6 stable6
-#: src/timeline2/model/timelinefunctions.cpp:1473
+#: src/timeline2/model/timelinefunctions.cpp:1483
 #, kde-format
 msgid "Enter a name for the clip in Library"
 msgstr "Insira un nome para o fragmento na biblioteca"
 
 #. +> trunk6 stable6
-#: src/timeline2/model/timelinefunctions.cpp:1862
+#: src/timeline2/model/timelinefunctions.cpp:1872
 #, kde-format
 msgid "Paste clips"
 msgstr "Pegar os fragmentos"
 
 #. +> trunk6 stable6
-#: src/timeline2/model/timelinefunctions.cpp:1876
-#: src/timeline2/model/timelinefunctions.cpp:2050
-#: src/timeline2/model/timelinefunctions.cpp:2073
-#: src/timeline2/model/timelinefunctions.cpp:2112
-#: src/timeline2/model/timelinefunctions.cpp:2390
+#: src/timeline2/model/timelinefunctions.cpp:1886
+#: src/timeline2/model/timelinefunctions.cpp:2060
+#: src/timeline2/model/timelinefunctions.cpp:2083
+#: src/timeline2/model/timelinefunctions.cpp:2122
+#: src/timeline2/model/timelinefunctions.cpp:2400
 #, kde-format
 msgid "Not enough tracks to paste clipboard"
 msgstr "Non hai pistas dabondo para pegar o portapapeis"
 
 #. +> trunk6 stable6
-#: src/timeline2/model/timelinefunctions.cpp:1945
+#: src/timeline2/model/timelinefunctions.cpp:1955
 #, kde-format
 msgid "Another paste operation is in progress"
 msgstr "Hai outra operación de pegar en progreso"
 
 #. +> trunk6 stable6
-#: src/timeline2/model/timelinefunctions.cpp:1957
+#: src/timeline2/model/timelinefunctions.cpp:1967
 #, kde-format
 msgid "No valid data in clipboard"
 msgstr "Non hai datos válidos no portapapeis"
 
 #. +> trunk6 stable6
-#: src/timeline2/model/timelinefunctions.cpp:1996
+#: src/timeline2/model/timelinefunctions.cpp:2006
 #, kde-format
 msgid "Not enough tracks to paste clipboard (requires %1 audio, %2 video tracks)"
 msgstr "Non hai pistas dabondo para pegar o portapapeis (require %1 pistas de son e %2 de vídeo)"
 
 #. +> trunk6 stable6
-#: src/timeline2/model/timelinefunctions.cpp:2130
-#: src/timeline2/model/timelinefunctions.cpp:2148
-#: src/timeline2/model/timelinefunctions.cpp:2179
-#: src/timeline2/model/timelinefunctions.cpp:2184
+#: src/timeline2/model/timelinefunctions.cpp:2140
+#: src/timeline2/model/timelinefunctions.cpp:2158
+#: src/timeline2/model/timelinefunctions.cpp:2189
+#: src/timeline2/model/timelinefunctions.cpp:2194
 #, kde-format
 msgid "Pasted clips"
 msgstr "Fragmentos pegados"
 
 #. +> trunk6 stable6
-#: src/timeline2/model/timelinefunctions.cpp:2168
+#: src/timeline2/model/timelinefunctions.cpp:2178
 #, kde-format
 msgid ""
 "The source project has a different framerate (%1fps) than your current project.<br/>"
@@ -18736,59 +19255,59 @@ msgstr ""
 "Pode que os fragmentos e fotogramas clave se estragasen."
 
 #. +> trunk6 stable6
-#: src/timeline2/model/timelinefunctions.cpp:2170
+#: src/timeline2/model/timelinefunctions.cpp:2180
 #, kde-format
 msgid "Pasting Warning"
 msgstr "Advertencia de pegado"
 
 #. +> trunk6 stable6
-#: src/timeline2/model/timelinefunctions.cpp:2170
+#: src/timeline2/model/timelinefunctions.cpp:2180
 #, kde-format
 msgid "Paste"
 msgstr "Pegar"
 
 #. +> trunk6 stable6
-#: src/timeline2/model/timelinefunctions.cpp:2252
-#: src/timeline2/model/timelinefunctions.cpp:2260
-#: src/timeline2/model/timelinefunctions.cpp:2328
+#: src/timeline2/model/timelinefunctions.cpp:2262
+#: src/timeline2/model/timelinefunctions.cpp:2270
+#: src/timeline2/model/timelinefunctions.cpp:2338
 #, kde-format
 msgid "Could not add bin clip"
 msgstr "Non foi posíbel engadir o fragmento da caixa"
 
 #. +> trunk6 stable6
-#: src/timeline2/model/timelinefunctions.cpp:2382
+#: src/timeline2/model/timelinefunctions.cpp:2392
 #, kde-format
 msgid "All clips were not successfully copied"
 msgstr "Non se copiaron todos os fragmentos"
 
 #. +> trunk6 stable6
-#: src/timeline2/model/timelinefunctions.cpp:2432
-#: src/timeline2/model/timelinefunctions.cpp:2611
+#: src/timeline2/model/timelinefunctions.cpp:2442
+#: src/timeline2/model/timelinefunctions.cpp:2623
 #, kde-format
 msgid "Could not paste items in timeline"
 msgstr "Non foi posíbel pegar os elementos na cronoloxía"
 
 #. +> trunk6 stable6
-#: src/timeline2/model/timelinefunctions.cpp:2631
+#: src/timeline2/model/timelinefunctions.cpp:2643
 #, kde-format
 msgid "Paste timeline clips"
 msgstr "Pegar os fragmentos da cronoloxía"
 
 #. +> trunk6 stable6
-#: src/timeline2/model/timelinefunctions.cpp:2849
+#: src/timeline2/model/timelinefunctions.cpp:2861
 #, kde-format
 msgid "Remove space on track"
 msgstr "Retirar o espazo da pista"
 
 #. +> trunk6 stable6
-#: src/timeline2/model/timelinefunctions.cpp:2876
+#: src/timeline2/model/timelinefunctions.cpp:2888
 #, kde-format
 msgid "Delete clips on track"
 msgstr "Eliminar os fragmentos da pista"
 
 #. +> trunk6 stable6
 #: src/timeline2/model/timelineitemmodel.cpp:150
-#: src/timeline2/model/timelinemodel.cpp:4615
+#: src/timeline2/model/timelinemodel.cpp:4619
 #, kde-format
 msgctxt "@action"
 msgid "Insert Track"
@@ -18853,165 +19372,165 @@ msgid "Replace clip"
 msgstr "Substituír o fragmento"
 
 #. +> trunk6 stable6
-#: src/timeline2/model/timelinemodel.cpp:989
-#: src/timeline2/model/timelinemodel.cpp:1206
+#: src/timeline2/model/timelinemodel.cpp:990
+#: src/timeline2/model/timelinemodel.cpp:1207
 #, kde-format
 msgid "Select a clip to apply the mix"
 msgstr "Seleccione un fragmento para aplicar a mestura"
 
 #. +> trunk6 stable6
-#: src/timeline2/model/timelinemodel.cpp:1204
+#: src/timeline2/model/timelinemodel.cpp:1205
 #, kde-format
 msgid "start"
 msgstr "inicio"
 
 #. +> trunk6 stable6
-#: src/timeline2/model/timelinemodel.cpp:1204
+#: src/timeline2/model/timelinemodel.cpp:1205
 #, kde-format
 msgid "end"
 msgstr "fin"
 
 #. +> trunk6 stable6
-#: src/timeline2/model/timelinemodel.cpp:1204
+#: src/timeline2/model/timelinemodel.cpp:1205
 #, kde-format
 msgid "Not enough frames at clip %1 to apply the mix"
 msgstr "Non ha fotogramas de abondo no fragmento %1 para aplicar a mestura"
 
 #. +> trunk6 stable6
-#: src/timeline2/model/timelinemodel.cpp:1210
+#: src/timeline2/model/timelinemodel.cpp:1211
 #, kde-format
 msgid "Create mix"
 msgstr "Crear unha mestura"
 
 #. +> trunk6 stable6
-#: src/timeline2/model/timelinemodel.cpp:1285
-#: src/timeline2/model/timelinemodel.cpp:1320
+#: src/timeline2/model/timelinemodel.cpp:1286
+#: src/timeline2/model/timelinemodel.cpp:1321
 #, kde-format
 msgid "Move clip"
 msgstr "Mover fragmento"
 
 #. +> trunk6 stable6
-#: src/timeline2/model/timelinemodel.cpp:1838
-#: src/timeline2/model/timelinemodel.cpp:1928
-#: src/timeline2/model/timelinemodel.cpp:1951
-#: src/timeline2/model/timelinemodel.cpp:1974
+#: src/timeline2/model/timelinemodel.cpp:1842
+#: src/timeline2/model/timelinemodel.cpp:1932
+#: src/timeline2/model/timelinemodel.cpp:1955
+#: src/timeline2/model/timelinemodel.cpp:1978
 #, kde-format
 msgid "No available track for insert operation"
 msgstr "Non hai pistas dispoñíbeis para a operación de inserción"
 
 #. +> trunk6 stable6
-#: src/timeline2/model/timelinemodel.cpp:1843
+#: src/timeline2/model/timelinemodel.cpp:1847
 #, kde-format
 msgid "Insert Clip"
 msgstr "Inserir un fragmento"
 
 #. +> trunk6 stable6
-#: src/timeline2/model/timelinemodel.cpp:1896
+#: src/timeline2/model/timelinemodel.cpp:1900
 #, kde-format
 msgid "You cannot insert a sequence containing itself"
 msgstr "Non pode inserir unha secuencia que se contén a si mesma"
 
 #. +> trunk6 stable6
-#: src/timeline2/model/timelinemodel.cpp:1944
-#: src/timeline2/model/timelinemodel.cpp:1966
+#: src/timeline2/model/timelinemodel.cpp:1948
+#: src/timeline2/model/timelinemodel.cpp:1970
 #, kde-format
 msgid "Not enough audio tracks for all streams (%1)"
 msgstr "Non hai pistas de son dabondo para todos os fluxos (%1)"
 
 #. +> trunk6 stable6
-#: src/timeline2/model/timelinemodel.cpp:2050
+#: src/timeline2/model/timelinemodel.cpp:2054
 #, kde-format
 msgid "No available track for split operation"
 msgstr "Non hai pistas dispoñíbeis para a operación de división"
 
 #. +> trunk6 stable6
-#: src/timeline2/model/timelinemodel.cpp:2087
+#: src/timeline2/model/timelinemodel.cpp:2091
 #, kde-format
 msgid "Audio split failed: no viable track"
 msgstr "A división de son fallou: non hai ningunha pista viábel"
 
 #. +> trunk6 stable6
-#: src/timeline2/model/timelinemodel.cpp:2095
+#: src/timeline2/model/timelinemodel.cpp:2099
 #, kde-format
 msgid "Audio split failed: impossible to create audio clip"
 msgstr "A división de son fallou: non se pode crear o fragmento de son"
 
 #. +> trunk6 stable6
-#: src/timeline2/model/timelinemodel.cpp:2158
+#: src/timeline2/model/timelinemodel.cpp:2162
 #, kde-format
 msgid "Remove group"
 msgstr "Retirar o grupo"
 
 #. +> trunk6 stable6
-#: src/timeline2/model/timelinemodel.cpp:2163
+#: src/timeline2/model/timelinemodel.cpp:2167
 #, kde-format
 msgid "Delete Composition"
 msgstr "Eliminar a composición"
 
 #. +> trunk6 stable6
-#: src/timeline2/model/timelinemodel.cpp:2370
-#: src/timeline2/model/timelinemodel.cpp:2647
-#: src/timeline2/view/timelinecontroller.cpp:4344
+#: src/timeline2/model/timelinemodel.cpp:2372
+#: src/timeline2/model/timelinemodel.cpp:2649
+#: src/timeline2/view/timelinecontroller.cpp:4356
 #, kde-format
 msgid "Move group"
 msgstr "Mover grupo"
 
 #. +> trunk6 stable6
-#: src/timeline2/model/timelinemodel.cpp:3339
+#: src/timeline2/model/timelinemodel.cpp:3343
 #, kde-format
 msgid "Resize group"
 msgstr "Redimensionar o fragmento"
 
 #. +> trunk6 stable6
-#: src/timeline2/model/timelinemodel.cpp:3463
+#: src/timeline2/model/timelinemodel.cpp:3467
 #, kde-format
 msgid "Resize clip speed"
 msgstr "Axustar a velocidade do fragmento"
 
 #. +> trunk6 stable6
-#: src/timeline2/model/timelinemodel.cpp:3622
+#: src/timeline2/model/timelinemodel.cpp:3626
 #, kde-format
 msgid "Remove mix"
 msgstr "Retirar a mestura"
 
 #. +> trunk6 stable6
-#: src/timeline2/model/timelinemodel.cpp:3624
+#: src/timeline2/model/timelinemodel.cpp:3628
 #, kde-format
 msgid "Removing mix failed"
 msgstr "Non foi posíbel retirar a mestura"
 
 #. +> trunk6 stable6
-#: src/timeline2/model/timelinemodel.cpp:3920
+#: src/timeline2/model/timelinemodel.cpp:3924
 #, kde-format
 msgid "Resize clip"
 msgstr "Redimensionar o fragmento"
 
 #. +> trunk6 stable6
-#: src/timeline2/model/timelinemodel.cpp:3922
+#: src/timeline2/model/timelinemodel.cpp:3926
 #, kde-format
 msgid "Resize composition"
 msgstr "Cambiar de tamaño a composición"
 
 #. +> trunk6 stable6
-#: src/timeline2/model/timelinemodel.cpp:4241
+#: src/timeline2/model/timelinemodel.cpp:4245
 #, kde-format
 msgid "Ripple resize clip"
 msgstr "Cambiar o tamaño do fragmento por onda"
 
 #. +> trunk6 stable6
-#: src/timeline2/model/timelinemodel.cpp:4243
+#: src/timeline2/model/timelinemodel.cpp:4247
 #, kde-format
 msgid "Ripple resize composition"
 msgstr "Cambiar o tamaño da composición por onda"
 
 #. +> trunk6 stable6
-#: src/timeline2/model/timelinemodel.cpp:4245
+#: src/timeline2/model/timelinemodel.cpp:4249
 #, kde-format
 msgid "Ripple resize subtitle"
 msgstr "Cambiar o tamaño do subtítulo por onda"
 
 #. +> trunk6 stable6
-#: src/timeline2/model/timelinemodel.cpp:4388
+#: src/timeline2/model/timelinemodel.cpp:4392
 #, kde-format
 msgctxt "Undo/Redo menu text"
 msgid "Slip clip"
@@ -19020,159 +19539,159 @@ msgstr[0] "Pasar o fragmento"
 msgstr[1] "Pasar os fragmentos"
 
 #. +> trunk6 stable6
-#: src/timeline2/model/timelinemodel.cpp:4423
+#: src/timeline2/model/timelinemodel.cpp:4427
 #, kde-format
 msgid "Slip clip"
 msgstr "Pasar o fragmento"
 
 #. +> trunk6 stable6
-#: src/timeline2/model/timelinemodel.cpp:4458
+#: src/timeline2/model/timelinemodel.cpp:4462
 #, kde-format
 msgid "Group clips"
 msgstr "Agrupar fragmentos"
 
 #. +> trunk6 stable6
-#: src/timeline2/model/timelinemodel.cpp:4543
-#: src/timeline2/model/timelinemodel.cpp:4559
+#: src/timeline2/model/timelinemodel.cpp:4547
+#: src/timeline2/model/timelinemodel.cpp:4563
 #, kde-format
 msgid "Ungroup clips"
 msgstr "Desagrupar fragmentos"
 
 #. +> trunk6 stable6
-#: src/timeline2/model/timelinemodel.cpp:4724
-#: src/timeline2/view/timelinecontroller.cpp:943
+#: src/timeline2/model/timelinemodel.cpp:4728
+#: src/timeline2/view/timelinecontroller.cpp:945
 #, kde-format
 msgid "Delete Track"
 msgstr "Eliminar a pista"
 
 #. +> trunk6 stable6
-#: src/timeline2/model/timelinemodel.cpp:4734
+#: src/timeline2/model/timelinemodel.cpp:4738
 #, kde-format
 msgid "Cannot delete last track in timeline"
 msgstr "Non é posíbel eliminar a última pista da liña de tempo"
 
 #. +> trunk6 stable6
-#: src/timeline2/model/timelinemodel.cpp:4959
+#: src/timeline2/model/timelinemodel.cpp:4963
 #, kde-format
 msgid "Cannot add effect %1 to master track"
 msgstr "Non é posíbel engadir o efecto %1 á pista mestra"
 
 #. +> trunk6 stable6
-#: src/timeline2/model/timelinemodel.cpp:4966
+#: src/timeline2/model/timelinemodel.cpp:4970
 #, kde-format
 msgid "Cannot add effect %1 to selected track"
 msgstr "Non é posíbel engadir o efecto %1 á pista seleccionada"
 
 #. +> trunk6 stable6
-#: src/timeline2/model/timelinemodel.cpp:4987
+#: src/timeline2/model/timelinemodel.cpp:4991
 #, kde-format
 msgid "Cannot paste effect to master track"
 msgstr "Non é posíbel pegar o efecto na pista mestra"
 
 #. +> trunk6 stable6
-#: src/timeline2/model/timelinemodel.cpp:4993
+#: src/timeline2/model/timelinemodel.cpp:4997
 #, kde-format
 msgid "Cannot paste effect to selected track"
 msgstr "Non é posíbel pegar o efecto na pista seleccionada"
 
 #. +> trunk6 stable6
-#: src/timeline2/model/timelinemodel.cpp:5037
-#: src/timeline2/view/timelinecontroller.cpp:1521
+#: src/timeline2/model/timelinemodel.cpp:5041
+#: src/timeline2/view/timelinecontroller.cpp:1523
 #, kde-format
 msgid "Cannot add effect %1 to selected clip"
 msgstr "Non é posíbel engadir o efecto %1 ao fragmento seleccionado"
 
 #. +> trunk6 stable6
-#: src/timeline2/model/timelinemodel.cpp:5061
+#: src/timeline2/model/timelinemodel.cpp:5065
 #, kde-format
 msgid "Adjust Fade"
 msgstr "Axustar o fundido"
 
 #. +> trunk6 stable6
-#: src/timeline2/model/timelinemodel.cpp:5373
+#: src/timeline2/model/timelinemodel.cpp:5377
 #, kde-format
 msgid "Insert Composition"
 msgstr "Inserir a composición"
 
 #. +> trunk6 stable6
-#: src/timeline2/model/timelinemodel.cpp:5588
+#: src/timeline2/model/timelinemodel.cpp:5598
 #, kde-format
 msgid "Move composition"
 msgstr "Mover a composición"
 
 #. +> trunk6 stable6
-#: src/timeline2/model/timelinemodel.cpp:6256
+#: src/timeline2/model/timelinemodel.cpp:6266
 #, kde-format
 msgid "Enable time remap"
 msgstr "Activar o cambio de asociacións de tempo"
 
 #. +> trunk6 stable6
-#: src/timeline2/model/timelinemodel.cpp:6330
+#: src/timeline2/model/timelinemodel.cpp:6340
 #, kde-format
 msgid "Change speed failed"
 msgstr "Fallou cambiar a velocidade"
 
 #. +> trunk6 stable6
-#: src/timeline2/model/timelinemodel.cpp:6340
+#: src/timeline2/model/timelinemodel.cpp:6350
 #, kde-format
 msgid "Change clip speed"
 msgstr "Cambiar a velocidade do fragmento"
 
 #. +> trunk6 stable6
-#: src/timeline2/model/timelinemodel.cpp:6771
-#: src/timeline2/view/qml/timeline.qml:1210
+#: src/timeline2/model/timelinemodel.cpp:6781
+#: src/timeline2/view/qml/timeline.qml:1201
 #: src/timeline2/view/qml/TrackHead.qml:505
 #, kde-format
 msgid "Lock track"
 msgstr "Bloquear pista"
 
 #. +> trunk6 stable6
-#: src/timeline2/model/timelinemodel.cpp:6776
-#: src/timeline2/view/qml/timeline.qml:1210
+#: src/timeline2/model/timelinemodel.cpp:6786
+#: src/timeline2/view/qml/timeline.qml:1201
 #: src/timeline2/view/qml/TrackHead.qml:505
 #, kde-format
 msgid "Unlock track"
 msgstr "Desbloquear pista"
 
 #. +> trunk6 stable6
-#: src/timeline2/model/timelinemodel.cpp:6810
-#: src/timeline2/model/timelinemodel.cpp:6872
+#: src/timeline2/model/timelinemodel.cpp:6820
+#: src/timeline2/model/timelinemodel.cpp:6882
 #, kde-format
 msgid "Change composition"
 msgstr "Cambiar a composición"
 
 #. +> trunk6 stable6
-#: src/timeline2/model/timelinemodel.cpp:6824
+#: src/timeline2/model/timelinemodel.cpp:6834
 #, kde-format
 msgid "Cannot operate on grouped composition, please ungroup"
 msgstr "Non é posíbel operar sobre unha composición agrupada, dispérsea"
 
 #. +> trunk6 stable6
-#: src/timeline2/model/timelinemodel.cpp:7019
-#: src/timeline2/model/timelinemodel.cpp:7056
-#: src/timeline2/model/timelinemodel.cpp:7089
-#: src/timeline2/model/timelinemodel.cpp:7170
+#: src/timeline2/model/timelinemodel.cpp:7029
+#: src/timeline2/model/timelinemodel.cpp:7066
+#: src/timeline2/model/timelinemodel.cpp:7099
+#: src/timeline2/model/timelinemodel.cpp:7180
 #, kde-format
 msgid "Cannot resize mix to less than 1 frame"
 msgstr "Non é posíbel cambiar o tamaño da mestura a menos de 1 fotograma"
 
 #. +> trunk6 stable6
-#: src/timeline2/model/timelinemodel.cpp:7030
-#: src/timeline2/model/timelinemodel.cpp:7064
-#: src/timeline2/model/timelinemodel.cpp:7108
-#: src/timeline2/model/timelinemodel.cpp:7194
+#: src/timeline2/model/timelinemodel.cpp:7040
+#: src/timeline2/model/timelinemodel.cpp:7074
+#: src/timeline2/model/timelinemodel.cpp:7118
+#: src/timeline2/model/timelinemodel.cpp:7204
 #, kde-format
 msgid "Cannot resize mix"
 msgstr "Non é posíbel cambiar o tamaño da mestura"
 
 #. +> trunk6 stable6
-#: src/timeline2/model/timelinemodel.cpp:7208
+#: src/timeline2/model/timelinemodel.cpp:7218
 #, kde-format
 msgid "Resize mix"
 msgstr "Cambiar o tamaño da mestura"
 
 #. +> trunk6 stable6
-#: src/timeline2/model/timelinemodel.cpp:7328
+#: src/timeline2/model/timelinemodel.cpp:7338
 #, kde-format
 msgid "Error initializing timeline preview"
 msgstr "Produciuse un erro ao preparar a vista previa da liña de tempo"
@@ -19285,7 +19804,7 @@ msgstr "Parar"
 
 #. +> trunk6 stable6
 #: src/timeline2/view/qml/AudioLevels.qml:25
-#: src/timeline2/view/qml/timeline.qml:2145
+#: src/timeline2/view/qml/timeline.qml:2174
 #, kde-format
 msgid "Paused"
 msgstr "En pausa"
@@ -19297,111 +19816,111 @@ msgid "Mic level"
 msgstr "Nivel do micrófono"
 
 #. +> trunk6 stable6
-#: src/timeline2/view/qml/Clip.qml:231 src/timeline2/view/qml/Clip.qml:922
+#: src/timeline2/view/qml/Clip.qml:231 src/timeline2/view/qml/Clip.qml:924
 #, kde-format
 msgid "%1 (%2-%3), Position: %4, Duration: %5"
 msgstr "%1 (%2-%3), posición: %4, duración: %5"
 
 #. +> trunk6 stable6
 #: src/timeline2/view/qml/Clip.qml:343 src/timeline2/view/qml/Clip.qml:357
-#: src/timeline2/view/qml/SubTitle.qml:179
-#: src/timeline2/view/qml/SubTitle.qml:185
+#: src/timeline2/view/qml/SubTitle.qml:205
+#: src/timeline2/view/qml/SubTitle.qml:211
 #, kde-format
 msgid "Position: %1"
 msgstr "Posición: %1"
 
 #. +> trunk6 stable6
-#: src/timeline2/view/qml/Clip.qml:507
+#: src/timeline2/view/qml/Clip.qml:509
 #, kde-format
 msgid "Mix duration: %1, Cut at: %2"
 msgstr "Duración da mestura: %1, cortar en: %2"
 
 #. +> trunk6 stable6
-#: src/timeline2/view/qml/Clip.qml:570
+#: src/timeline2/view/qml/Clip.qml:572
 #, kde-format
 msgid "+%1, Mix duration: %2"
 msgstr "+%1, duración da mestura: %2"
 
 #. +> trunk6 stable6
-#: src/timeline2/view/qml/Clip.qml:572
+#: src/timeline2/view/qml/Clip.qml:574
 #, kde-format
 msgid "-%1, Mix duration: %2"
 msgstr "-%1, duración da mestura: %2"
 
 #. +> trunk6 stable6
-#: src/timeline2/view/qml/Clip.qml:575 src/timeline2/view/qml/Clip.qml:590
+#: src/timeline2/view/qml/Clip.qml:577 src/timeline2/view/qml/Clip.qml:592
 #, kde-format
 msgid "Mix duration: %1"
 msgstr "Duración da mestura: %1"
 
 #. +> trunk6 stable6
-#: src/timeline2/view/qml/Clip.qml:781
+#: src/timeline2/view/qml/Clip.qml:783
 #, kde-format
 msgid "In:%1, Position:%2"
 msgstr "Entrada: %1, posición: %2"
 
 #. +> trunk6 stable6
-#: src/timeline2/view/qml/Clip.qml:784 src/timeline2/view/qml/Clip.qml:912
+#: src/timeline2/view/qml/Clip.qml:786 src/timeline2/view/qml/Clip.qml:914
 #, kde-format
 msgid "<b>Ctrl drag</b> to change speed, <b>Double click</b> to mix with adjacent clip"
 msgstr "<b>Ctrl arrastrar</b> para cambiar a velocidade, <b>clic duplo</b> para mesturar o fragmento adxacente"
 
 #. +> trunk6 stable6
-#: src/timeline2/view/qml/Clip.qml:786
+#: src/timeline2/view/qml/Clip.qml:788
 #, kde-format
 msgid "<b>Drag</b> to change mix duration"
 msgstr "<b>Arrastrar</b> para cambiar a duración da mestura"
 
 #. +> trunk6 stable6
-#: src/timeline2/view/qml/Clip.qml:909
+#: src/timeline2/view/qml/Clip.qml:911
 #, kde-format
 msgid "Out:%1, Position:%2"
 msgstr "Saída: %1, posición: %2"
 
 #. +> trunk6 stable6
-#: src/timeline2/view/qml/Clip.qml:1060
+#: src/timeline2/view/qml/Clip.qml:1062
 #, kde-format
 msgid "Offset: -%1"
 msgstr "Desprazamento: -%1"
 
 #. +> trunk6 stable6
-#: src/timeline2/view/qml/Clip.qml:1060
+#: src/timeline2/view/qml/Clip.qml:1062
 #, kde-format
 msgid "Offset: %1"
 msgstr "Desprazamento: %1"
 
 #. +> trunk6 stable6
-#: src/timeline2/view/qml/Clip.qml:1061
+#: src/timeline2/view/qml/Clip.qml:1063
 #, kde-format
 msgid " <b>Click</b> to align clips"
 msgstr "<b>Prema</b> para aliñar os fragmentos"
 
 #. +> trunk6 stable6
-#: src/timeline2/view/qml/Clip.qml:1306 src/timeline2/view/qml/Clip.qml:1343
+#: src/timeline2/view/qml/Clip.qml:1308 src/timeline2/view/qml/Clip.qml:1345
 #, kde-format
 msgid "<b>Click</b> to add composition"
 msgstr "<b>Prema</b> para engadir unha composición"
 
 #. +> trunk6 stable6
-#: src/timeline2/view/qml/Clip.qml:1420 src/timeline2/view/qml/Clip.qml:1427
+#: src/timeline2/view/qml/Clip.qml:1422 src/timeline2/view/qml/Clip.qml:1429
 #, kde-format
 msgid "Fade out: %1"
 msgstr "Esvaer: %1"
 
 #. +> trunk6 stable6
-#: src/timeline2/view/qml/Clip.qml:1431 src/timeline2/view/qml/Clip.qml:1538
+#: src/timeline2/view/qml/Clip.qml:1433 src/timeline2/view/qml/Clip.qml:1540
 #, kde-format
 msgid "<b>Drag</b> to adjust fade, <b>Click</b> to add default duration fade"
 msgstr "<b>Arrastrar</b> para axustar o esvaemento, <b>premer</b> para engadir unha duración predeterminada do esvaemento"
 
 #. +> trunk6 stable6
-#: src/timeline2/view/qml/Clip.qml:1527 src/timeline2/view/qml/Clip.qml:1534
+#: src/timeline2/view/qml/Clip.qml:1529 src/timeline2/view/qml/Clip.qml:1536
 #, kde-format
 msgid "Fade in: %1"
 msgstr "Aparecer: %1"
 
 #. +> trunk6 stable6
-#: src/timeline2/view/qml/Clip.qml:1622
+#: src/timeline2/view/qml/Clip.qml:1624
 #, kde-format
 msgid "Slip Clip"
 msgstr "Pasar o fragmento"
@@ -19415,8 +19934,8 @@ msgstr "%1, posición: %2, duración: %3"
 #. +> trunk6 stable6
 #: src/timeline2/view/qml/Composition.qml:337
 #: src/timeline2/view/qml/Composition.qml:399
-#: src/timeline2/view/qml/SubTitle.qml:313
-#: src/timeline2/view/qml/SubTitle.qml:414
+#: src/timeline2/view/qml/SubTitle.qml:339
+#: src/timeline2/view/qml/SubTitle.qml:440
 #, kde-format
 msgid "<b>Drag</b> to resize"
 msgstr "<b>Arrastrar</b> para cambiar de tamaño"
@@ -19434,31 +19953,31 @@ msgid "<b>Shift drag</b> to change value of selected keyframes, <b>Ctrl click</b
 msgstr "<b>Maiús arrastrar</b> para cambiar o valos dos fotogramas clave seleccionados, <b>Ctrl clic</b> para seleccionar varios fotogramas clave."
 
 #. +> trunk6 stable6
-#: src/timeline2/view/qml/SubTitle.qml:102
+#: src/timeline2/view/qml/SubTitle.qml:110
 #, kde-format
 msgid "<b>Double click</b> to edit text"
 msgstr "<b>Clic duplo</b> para editar o texto"
 
 #. +> trunk6 stable6
-#: src/timeline2/view/qml/timeline.qml:1005
+#: src/timeline2/view/qml/timeline.qml:992
 #, kde-format
 msgid "Show master effects"
 msgstr "Amosar os efectos mestres"
 
 #. +> trunk6 stable6
-#: src/timeline2/view/qml/timeline.qml:1144
+#: src/timeline2/view/qml/timeline.qml:1135
 #, kde-format
 msgid "Click to see details"
 msgstr "Prema para ver os detalles"
 
 #. +> trunk6 stable6
-#: src/timeline2/view/qml/timeline.qml:1166
+#: src/timeline2/view/qml/timeline.qml:1157
 #, kde-format
 msgid "Speech recognition"
 msgstr "Recoñecemento de fala"
 
 #. +> trunk6 stable6
-#: src/timeline2/view/qml/timeline.qml:1186
+#: src/timeline2/view/qml/timeline.qml:1177
 #: src/timeline2/view/qml/TrackHead.qml:471
 #, kde-format
 msgid "Show"
@@ -19466,33 +19985,33 @@ msgstr "Amosar"
 
 #. i18n: ectx: property (text), widget (QCheckBox, kcfg_grab_hide_mouse)
 #. +> trunk6 stable6
-#: src/timeline2/view/qml/timeline.qml:1186
+#: src/timeline2/view/qml/timeline.qml:1177
 #: src/timeline2/view/qml/TrackHead.qml:471 src/ui/configcapture_ui.ui:405
 #, kde-format
 msgid "Hide"
 msgstr "Agochar"
 
 #. +> trunk6 stable6
-#: src/timeline2/view/qml/timeline.qml:1813
+#: src/timeline2/view/qml/timeline.qml:1842
 #, kde-format
 msgid "<b>Double click</b> to add a subtitle"
 msgstr "<b>Clic duplo</b> para engadir un subtítulo"
 
 #. +> trunk6 stable6
-#: src/timeline2/view/qml/timeline.qml:1980
+#: src/timeline2/view/qml/timeline.qml:2009
 #, kde-format
 msgid "Offset: %1, Position: %2"
 msgstr "Desprazamento: %1, posición: %2"
 
 #. +> trunk6 stable6
-#: src/timeline2/view/qml/timeline.qml:2134
-#: src/timeline2/view/qml/timeline.qml:2143
+#: src/timeline2/view/qml/timeline.qml:2163
+#: src/timeline2/view/qml/timeline.qml:2172
 #, kde-format
 msgid "Recording"
 msgstr "Gravación"
 
 #. +> trunk6 stable6
-#: src/timeline2/view/qml/timeline.qml:2237
+#: src/timeline2/view/qml/timeline.qml:2266
 #, kde-format
 msgid "Multicam In"
 msgstr "Entrada de varias cámaras"
@@ -19576,367 +20095,386 @@ msgid "Edit track name"
 msgstr "Editar o nome da pista"
 
 #. +> trunk6 stable6
-#: src/timeline2/view/timelinecontroller.cpp:256
+#: src/timeline2/view/timelinecontroller.cpp:259
 #, kde-format
 msgid "unknown"
 msgstr "descoñecido"
 
 #. +> trunk6 stable6
-#: src/timeline2/view/timelinecontroller.cpp:338
+#: src/timeline2/view/timelinecontroller.cpp:341
 #, kde-format
 msgid "Hide Track"
 msgstr "Agochar a pista"
 
 #. +> trunk6 stable6
-#: src/timeline2/view/timelinecontroller.cpp:338
+#: src/timeline2/view/timelinecontroller.cpp:341
 #, kde-format
 msgid "Enable Track"
 msgstr "Activar a pista"
 
 #. +> trunk6 stable6
-#: src/timeline2/view/timelinecontroller.cpp:402
+#: src/timeline2/view/timelinecontroller.cpp:404
 #, kde-format
 msgid "No item under timeline cursor in active track"
 msgstr "Non hai ningún elemento baixo o cursor da liña de tempo da pista activa"
 
 #. +> trunk6 stable6
-#: src/timeline2/view/timelinecontroller.cpp:592
+#: src/timeline2/view/timelinecontroller.cpp:594
 #, kde-format
 msgid "Could not add composition at selected position"
 msgstr "Non foi posíbel engadir a composición na posición seleccionada"
 
 #. +> trunk6 stable6
-#: src/timeline2/view/timelinecontroller.cpp:654
-#: src/timeline2/view/timelinecontroller.cpp:1089
-#: src/timeline2/view/timelinecontroller.cpp:1106
-#: src/timeline2/view/timelinecontroller.cpp:1137
-#: src/timeline2/view/timelinecontroller.cpp:1217
+#: src/timeline2/view/timelinecontroller.cpp:656
+#: src/timeline2/view/timelinecontroller.cpp:1091
+#: src/timeline2/view/timelinecontroller.cpp:1108
+#: src/timeline2/view/timelinecontroller.cpp:1139
+#: src/timeline2/view/timelinecontroller.cpp:1219
 #, kde-format
 msgid "Cannot perform operation while dragging in timeline"
 msgstr "Non é posíbel realizar a operación mentres se arrastra na cronoloxía"
 
 #. +> trunk6 stable6
-#: src/timeline2/view/timelinecontroller.cpp:920
-#: src/timeline2/view/timelinecontroller.cpp:5110
+#: src/timeline2/view/timelinecontroller.cpp:922
+#: src/timeline2/view/timelinecontroller.cpp:5130
 #, kde-format
 msgid "Could not insert track"
 msgstr "Non foi posíbel inserir a pista"
 
 #. +> trunk6 stable6
-#: src/timeline2/view/timelinecontroller.cpp:943
+#: src/timeline2/view/timelinecontroller.cpp:945
 #, kde-format
 msgid "Delete Tracks"
 msgstr "Eliminar as pistas"
 
 #. +> trunk6 stable6
-#: src/timeline2/view/timelinecontroller.cpp:956
+#: src/timeline2/view/timelinecontroller.cpp:958
 #, kde-format
 msgid "Select an audio track to display record controls"
 msgstr "Seleccione unha pista de son para amosar os controls de gravación"
 
 #. +> trunk6 stable6
-#: src/timeline2/view/timelinecontroller.cpp:1094
+#: src/timeline2/view/timelinecontroller.cpp:1096
 #, kde-format
 msgid "Select at least 2 items to group"
 msgstr "Seleccione polo menos 2 elementos para agrupar"
 
 #. +> trunk6 stable6
-#: src/timeline2/view/timelinecontroller.cpp:1506
+#: src/timeline2/view/timelinecontroller.cpp:1508
 #, kde-format
 msgid "guide"
 msgstr "guía"
 
 #. +> trunk6 stable6
-#: src/timeline2/view/timelinecontroller.cpp:1673
+#: src/timeline2/view/timelinecontroller.cpp:1675
 #, kde-format
 msgid "No active track"
 msgstr "Non hai ningunha pista activa"
 
 #. +> trunk6 stable6
-#: src/timeline2/view/timelinecontroller.cpp:1757
+#: src/timeline2/view/timelinecontroller.cpp:1759
 #, kde-format
 msgid "No item selected in timeline"
 msgstr "Non hai ningún elemento seleccionado na cronoloxía"
 
 #. +> trunk6 stable6
-#: src/timeline2/view/timelinecontroller.cpp:1892
+#: src/timeline2/view/timelinecontroller.cpp:1897
 #, kde-format
 msgid "No clip to cut"
 msgstr "Non hai ningún fragmento para cortar"
 
 #. +> trunk6 stable6
-#: src/timeline2/view/timelinecontroller.cpp:2226
+#: src/timeline2/view/timelinecontroller.cpp:2231
 #, kde-format
 msgid "In:%1, Out:%2 (%3%4)"
 msgstr "Entrada: %1, saída: %2 (%3%4)"
 
 #. +> trunk6 stable6
-#: src/timeline2/view/timelinecontroller.cpp:2314
+#: src/timeline2/view/timelinecontroller.cpp:2319
 #, kde-format
 msgid "Slip can only be performed on video, audio or animation clips"
 msgstr "Só se pode pasar en fragmentos de vídeo, son ou animación."
 
 #. +> trunk6 stable6
-#: src/timeline2/view/timelinecontroller.cpp:2712
+#: src/timeline2/view/timelinecontroller.cpp:2720
 #, kde-format
 msgid "No clips found to insert space"
 msgstr "Non se atoparon fragmentos para inserir espazo"
 
 #. +> trunk6 stable6
-#: src/timeline2/view/timelinecontroller.cpp:2729
+#: src/timeline2/view/timelinecontroller.cpp:2737
 #, kde-format
 msgid "Cannot remove space at given position"
 msgstr "Non é posíbel retirar espazo da posición indicada"
 
 #. +> trunk6 stable6
-#: src/timeline2/view/timelinecontroller.cpp:2743
+#: src/timeline2/view/timelinecontroller.cpp:2751
 #, kde-format
 msgid "Cannot remove all spaces"
 msgstr "Non se poden eliminar todos os espazos"
 
 #. +> trunk6 stable6
-#: src/timeline2/view/timelinecontroller.cpp:2757
+#: src/timeline2/view/timelinecontroller.cpp:2765
 #, kde-format
 msgid "Cannot remove all clips"
 msgstr "Non se poden eliminar todas as pistas"
 
 #. +> trunk6 stable6
-#: src/timeline2/view/timelinecontroller.cpp:2792
-#: src/timeline2/view/timelinecontroller.cpp:2797
-#: src/timeline2/view/timelinecontroller.cpp:2819
-#: src/timeline2/view/timelinecontroller.cpp:3786
-#: src/timeline2/view/timelinecontroller.cpp:3804
+#: src/timeline2/view/timelinecontroller.cpp:2800
+#: src/timeline2/view/timelinecontroller.cpp:2805
+#: src/timeline2/view/timelinecontroller.cpp:2827
+#: src/timeline2/view/timelinecontroller.cpp:3794
+#: src/timeline2/view/timelinecontroller.cpp:3812
 #, kde-format
 msgid "No item to edit"
 msgstr "Non hai ningún elemento para editar"
 
 #. +> trunk6 stable6
-#: src/timeline2/view/timelinecontroller.cpp:2909
-#: src/timeline2/view/timelinecontroller.cpp:5344
+#: src/timeline2/view/timelinecontroller.cpp:2917
+#: src/timeline2/view/timelinecontroller.cpp:5395
 #, kde-format
 msgid "Please activate a track for this operation by clicking on its label"
 msgstr "Active unha pista para esta operación facendo clic na súa etiqueta"
 
 #. +> trunk6 stable6
-#: src/timeline2/view/timelinecontroller.cpp:3174
+#: src/timeline2/view/timelinecontroller.cpp:3182
 #, kde-format
 msgid "Please select a target track by clicking on a track's target zone"
 msgstr "Seleccione unha pista de destino facendo clic na súa zona de destino"
 
 #. +> trunk6 stable6
-#: src/timeline2/view/timelinecontroller.cpp:3244
+#: src/timeline2/view/timelinecontroller.cpp:3252
 #, kde-format
 msgid "Select a favorite composition"
 msgstr "Seleccionar unha composición favorita"
 
 #. +> trunk6 stable6
-#: src/timeline2/view/timelinecontroller.cpp:3305
+#: src/timeline2/view/timelinecontroller.cpp:3313
 #, kde-format
 msgid "No clip found to perform AV split operation"
 msgstr "Non se atoparon fragmentos para realizar unha operación de división de son e vídeo"
 
 #. +> trunk6 stable6
-#: src/timeline2/view/timelinecontroller.cpp:3339
-#: src/timeline2/view/timelinecontroller.cpp:3402
+#: src/timeline2/view/timelinecontroller.cpp:3347
+#: src/timeline2/view/timelinecontroller.cpp:3410
 #, kde-format
 msgid "Cannot move clip to frame %1."
 msgstr "Non é posíbel mover o fragmento ao fotograma %1."
 
 #. +> trunk6 stable6
-#: src/timeline2/view/timelinecontroller.cpp:3360
+#: src/timeline2/view/timelinecontroller.cpp:3368
 #, kde-format
 msgid "Set audio reference before attempting to align"
 msgstr "Defina unha referencia de son antes de intentar aliñar"
 
 #. +> trunk6 stable6
-#: src/timeline2/view/timelinecontroller.cpp:3524
+#: src/timeline2/view/timelinecontroller.cpp:3532
 #, kde-format
 msgid "All streams already assigned, deselect another audio target first"
 msgstr "Todos os fluxos están asignados xa, anule primeiro a selección doutro destino de son"
 
 #. +> trunk6 stable6
-#: src/timeline2/view/timelinecontroller.cpp:3683
+#: src/timeline2/view/timelinecontroller.cpp:3691
 #, kde-format
 msgid "Delete effects"
 msgstr "Eliminar os efectos"
 
 #. +> trunk6 stable6
-#: src/timeline2/view/timelinecontroller.cpp:3721
-#: src/timeline2/view/timelinecontroller.cpp:3727
-#: src/timeline2/view/timelinecontroller.cpp:3733
+#: src/timeline2/view/timelinecontroller.cpp:3729
+#: src/timeline2/view/timelinecontroller.cpp:3735
+#: src/timeline2/view/timelinecontroller.cpp:3741
 #, kde-format
 msgid "No information in clipboard"
 msgstr "Non hai información no portapapeis"
 
 #. +> trunk6 stable6
-#: src/timeline2/view/timelinecontroller.cpp:3758
+#: src/timeline2/view/timelinecontroller.cpp:3766
 #, kde-format
 msgid "Paste effects"
 msgstr "Pegar os efectos"
 
 #. +> trunk6 stable6
-#: src/timeline2/view/timelinecontroller.cpp:3760
+#: src/timeline2/view/timelinecontroller.cpp:3768
 #, kde-format
 msgid "Cannot paste effect on selected clip"
 msgstr "Non é posíbel pegar o efecto no fragmento seleccionado"
 
 #. +> trunk6 stable6
-#: src/timeline2/view/timelinecontroller.cpp:3903
+#: src/timeline2/view/timelinecontroller.cpp:3911
 #, kde-format
 msgid "Edit item"
 msgstr "Editar o elemento"
 
 #. +> trunk6 stable6
-#: src/timeline2/view/timelinecontroller.cpp:3931
+#: src/timeline2/view/timelinecontroller.cpp:3939
 #, kde-format
 msgid "Open sequence"
 msgstr "Abrir a secuencia"
 
 #. +> trunk6 stable6
-#: src/timeline2/view/timelinecontroller.cpp:3953
+#: src/timeline2/view/timelinecontroller.cpp:3961
 #, kde-format
 msgid "Item is not a title clip"
 msgstr "O elemento non é un fragmento de título"
 
 #. +> trunk6 stable6
-#: src/timeline2/view/timelinecontroller.cpp:4052
+#: src/timeline2/view/timelinecontroller.cpp:4060
 #, kde-format
 msgid "%1 items selected (%2) |"
 msgstr "%1 elementos seleccionados (%2) |"
 
 #. +> trunk6 stable6
-#: src/timeline2/view/timelinecontroller.cpp:4106
+#: src/timeline2/view/timelinecontroller.cpp:4114
 #, kde-format
 msgid "Restore video"
 msgstr "Restaurar o vídeo"
 
 #. +> trunk6 stable6
-#: src/timeline2/view/timelinecontroller.cpp:4106
+#: src/timeline2/view/timelinecontroller.cpp:4114
 #, kde-format
 msgid "Restore audio"
 msgstr "Restaurar o son"
 
 #. +> trunk6 stable6
-#: src/timeline2/view/timelinecontroller.cpp:4323
+#: src/timeline2/view/timelinecontroller.cpp:4335
 #, kde-format
 msgid "Move item"
 msgstr "Mover o elemento"
 
 #. +> trunk6 stable6
-#: src/timeline2/view/timelinecontroller.cpp:4810
+#: src/timeline2/view/timelinecontroller.cpp:4826
 #, kde-format
 msgid "Impossible to capture on a locked track"
 msgstr "Non é posíbel capturar nunha pista bloqueada"
 
 #. +> trunk6 stable6
-#: src/timeline2/view/timelinecontroller.cpp:4821
+#: src/timeline2/view/timelinecontroller.cpp:4837
 #, kde-format
 msgid "Impossible to capture here: the capture could override clips. Please remove clips after the current position or choose a different track"
 msgstr "Aquí non se pode capturar, a captura podería sobrepoñer fragmentos. Retire os fragmentos a partir da posición actual ou escolla unha pista distinta"
 
 #. +> trunk6 stable6
-#: src/timeline2/view/timelinecontroller.cpp:4912
+#: src/timeline2/view/timelinecontroller.cpp:4928
 #, kde-format
 msgid "Record audio"
 msgstr "Gravar son"
 
 #. +> trunk6 stable6
-#: src/timeline2/view/timelinecontroller.cpp:5050
+#: src/timeline2/view/timelinecontroller.cpp:5070
 #, kde-format
 msgid "Expand clip"
 msgstr "Expandir o fragmento"
 
 #. +> trunk6 stable6
-#: src/timeline2/view/timelinecontroller.cpp:5053
+#: src/timeline2/view/timelinecontroller.cpp:5073
 #, kde-format
 msgid "Could not expand clip"
 msgstr "Non foi posíbel expandir o fragmento"
 
 #. +> trunk6 stable6
-#: src/timeline2/view/timelinecontroller.cpp:5108
+#: src/timeline2/view/timelinecontroller.cpp:5128
 #, kde-format
 msgid "Insert Track"
 msgid_plural "Insert Tracks"
 msgstr[0] "Inserir unha pista"
 msgstr[1] "Inserir pistas"
 
-#. +> trunk6 stable6
-#: src/timeline2/view/timelinecontroller.cpp:5183
-#, kde-format
-msgid "Export subtitle file"
-msgstr "Exportar o ficheiro de subtítulo"
-
-#. +> trunk6 stable6
-#: src/timeline2/view/timelinecontroller.cpp:5184
+#. +> stable6
+#: src/timeline2/view/timelinecontroller.cpp:5175
 #, kde-format
 msgid "Subtitle File (*.srt)"
 msgstr "Ficheiro de subtítulo (*.srt)"
 
 #. +> trunk6 stable6
-#: src/timeline2/view/timelinecontroller.cpp:5214
+#: src/timeline2/view/timelinecontroller.cpp:5207
+#, kde-format
+msgid "Export subtitle file"
+msgstr "Exportar o ficheiro de subtítulo"
+
+#. +> trunk6
+#: src/timeline2/view/timelinecontroller.cpp:5208
+#, kde-format
+msgid "Sub Station Alpha v4.00+ File (*.ass);;SubRip Subtitle File (*.srt)"
+msgstr ""
+
+#. +> trunk6
+#: src/timeline2/view/timelinecontroller.cpp:5222
+#, kde-format
+msgid "The current subtitle track contains multiple layers, meaning that if subtitles on different layers share the same start position, only the subtitle from the lowest layer will be retained. This may result in the loss of some subtitles in the exported file. Do you wish to continue?"
+msgstr ""
+
+#. +> trunk6
+#: src/timeline2/view/timelinecontroller.cpp:5227
+#, fuzzy, kde-format
+#| msgid "Pasting Warning"
+msgid "Warning"
+msgstr "Advertencia de pegado"
+
+#. +> trunk6 stable6
+#: src/timeline2/view/timelinecontroller.cpp:5265
 #, kde-format
 msgid "The avfilter.subtitles filter is required, but was not found. The subtitles feature will probably not work as expected."
 msgstr "O filtro avfilter.subtitles é necesario, pero non se atopou. A funcionalidade de subtítulos probabelmente non funcione como se espera."
 
 #. +> trunk6 stable6
-#: src/timeline2/view/timelinecontroller.cpp:5231
+#: src/timeline2/view/timelinecontroller.cpp:5282
 #, kde-format
 msgid "Show subtitle track"
 msgstr "Amosar a pista de subtítulos"
 
 #. +> trunk6 stable6
-#: src/timeline2/view/timelinecontroller.cpp:5231
+#: src/timeline2/view/timelinecontroller.cpp:5282
 #, kde-format
 msgid "Hide subtitle track"
 msgstr "Agochar a pista de subtítulos"
 
 #. +> trunk6 stable6
-#: src/timeline2/view/timelinecontroller.cpp:5254
+#: src/timeline2/view/timelinecontroller.cpp:5305
 #, kde-format
 msgid "Unlock subtitle track"
 msgstr "Desbloquear a pista de subtítulos"
 
 #. +> trunk6 stable6
-#: src/timeline2/view/timelinecontroller.cpp:5254
+#: src/timeline2/view/timelinecontroller.cpp:5305
 #, kde-format
 msgid "Lock subtitle track"
 msgstr "Bloquear a pista de subtítulos"
 
 #. +> trunk6 stable6
-#: src/timeline2/view/timelinecontroller.cpp:5418
-#: src/timeline2/view/timelinecontroller.cpp:5427
+#: src/timeline2/view/timelinecontroller.cpp:5469
+#: src/timeline2/view/timelinecontroller.cpp:5478
 #, kde-format
 msgctxt "@item:inlistbox name for subtitle track"
 msgid "Subtitles"
 msgstr "Subtítulos"
 
 #. +> trunk6 stable6
-#: src/timeline2/view/timelinecontroller.cpp:5429
+#: src/timeline2/view/timelinecontroller.cpp:5480
 #, kde-format
 msgctxt "@item:inlistbox"
 msgid "Manage Subtitles"
 msgstr "Xestionar os subtítulos"
 
 #. +> trunk6 stable6
-#: src/timeline2/view/timelinetabs.cpp:49
+#: src/timeline2/view/timelinetabs.cpp:50
 #, kde-format
 msgid "Add Timeline Sequence"
 msgstr "Engadir unha secuencia de cronoloxía"
 
 #. +> trunk6 stable6
-#: src/timeline2/view/timelinetabs.cpp:51
+#: src/timeline2/view/timelinetabs.cpp:52
 #, kde-format
 msgid "Add Timeline Sequence. This will create a new timeline for editing. Each timeline corresponds to a Sequence Clip in the Project Bin"
 msgstr "Engadir unha secuencia de cronoloxía. Isto creará unha nova cronoloxía para editar. Cada cronoloxía corresponde a un fragmento de secuencia da caixa do proxecto."
 
 #. +> trunk6 stable6
-#: src/timeline2/view/timelinetabs.cpp:234
+#: src/timeline2/view/timelinetabs.cpp:236
 #, kde-format
 msgid "Close %1"
 msgstr "Pechar %1"
 
 #. +> trunk6 stable6
-#: src/timeline2/view/timelinetabs.cpp:423
+#: src/timeline2/view/timelinetabs.cpp:425
 #, kde-format
 msgid "Rename Sequence"
 msgstr "Renomear a secuencia"
@@ -20031,7 +20569,7 @@ msgstr "Anchura do bordo"
 #. +> trunk6 stable6
 #: src/titler/titlewidget.cpp:170 src/ui/titlewidget_ui.ui:92
 #: src/widgets/geometrywidget.cpp:135 src/widgets/geometrywidget.cpp:144
-#, kde-format, no-c-format
+#, no-c-format, kde-format
 msgid "%"
 msgstr "%"
 
@@ -20220,12 +20758,6 @@ msgstr "Anular toda a selección"
 msgctxt "@info:whatsthis"
 msgid "When selected, a click on an asset in the timeline selects the asset (e.g. clip, composition)."
 msgstr "Cando se selecciona, un clic nun activo da cronoloxía selecciona o activo (p. ex. un fragmento, unha composición)."
-
-#. +> trunk6 stable6
-#: src/titler/titlewidget.cpp:393 src/titler/titlewidget.cpp:396
-#, kde-format
-msgid "Add Text"
-msgstr "Engadir texto"
 
 #. +> trunk6 stable6
 #: src/titler/titlewidget.cpp:399 src/titler/titlewidget.cpp:402
@@ -20635,7 +21167,7 @@ msgstr "Aliñar á dereita"
 #. i18n: ectx: property (text), widget (QLabel, label_position)
 #. +> trunk6 stable6
 #: src/transitions/view/mixstackview.cpp:89 src/ui/clipdurationdialog_ui.ui:47
-#: src/ui/editsub_ui.ui:217
+#: src/ui/editsub_ui.ui:276
 #, kde-format
 msgid "Position:"
 msgstr "Posición:"
@@ -20765,7 +21297,7 @@ msgstr "Arquivar só os fragmentos da cronoloxía"
 #. +> trunk6 stable6
 #: src/ui/archivewidget_ui.ui:143 src/ui/cliptranscode_ui.ui:40
 #: src/ui/speechdialog_ui.ui:239 src/ui/textbasededit_ui.ui:59
-#, kde-format, no-c-format
+#, no-c-format, kde-format
 msgid "%p%"
 msgstr "%p%"
 
@@ -20823,7 +21355,7 @@ msgstr "Eliminar o punto actual."
 #. i18n: ectx: property (text), widget (QToolButton, delete_metadata)
 #. i18n: ectx: property (text), widget (QToolButton, remove_gradient)
 #. i18n: ectx: property (text), widget (QToolButton, add_gradient)
-#. i18n: ectx: property (text), widget (QToolButton, button_menu)
+#. i18n: ectx: property (text), widget (QToolButton, buttonMenuFile)
 #. i18n: ectx: property (text), widget (QToolButton, info_button)
 #. i18n: ectx: property (text), widget (QToolButton, infoButton)
 #. i18n: ectx: property (text), widget (QToolButton, buttonReset)
@@ -20839,7 +21371,6 @@ msgstr "Eliminar o punto actual."
 #. i18n: ectx: property (text), widget (QToolButton, inOutButton)
 #. i18n: ectx: property (text), widget (QToolButton, enabledButton)
 #. i18n: ectx: property (text), widget (QToolButton, presetButton)
-#. i18n: ectx: property (text), widget (QToolButton, saveEffectButton)
 #. i18n: ectx: property (text), widget (QToolButton, buttonUp)
 #. i18n: ectx: property (text), widget (QToolButton, buttonDown)
 #. i18n: ectx: property (text), widget (QToolButton, buttonDel)
@@ -20875,16 +21406,22 @@ msgstr "Eliminar o punto actual."
 #. i18n: ectx: property (text), widget (QToolButton, delPreview)
 #. i18n: ectx: property (text), widget (QToolButton, help_cached)
 #. i18n: ectx: property (text), widget (QToolButton, linkResoultion)
+#. i18n: ectx: property (text), widget (QToolButton, buttonBold)
+#. i18n: ectx: property (text), widget (QToolButton, buttonUnderline)
+#. i18n: ectx: property (text), widget (QToolButton, buttonStrikeout)
+#. i18n: ectx: property (text), widget (QToolButton, buttonFont)
+#. i18n: ectx: property (text), widget (QToolButton, buttonResetStyle)
+#. i18n: ectx: property (text), widget (QToolButton, buttonEditStyle)
+#. i18n: ectx: property (text), widget (QToolButton, buttonIn)
+#. i18n: ectx: property (text), widget (QToolButton, subMenu)
+#. i18n: ectx: property (text), widget (QToolButton, buttonLock)
+#. i18n: ectx: property (text), widget (QToolButton, buttonOut)
 #. i18n: ectx: property (text), widget (QToolButton, buttonPrev)
 #. i18n: ectx: property (text), widget (QToolButton, buttonNext)
 #. i18n: ectx: property (text), widget (QToolButton, buttonAdd)
 #. i18n: ectx: property (text), widget (QToolButton, buttonCut)
 #. i18n: ectx: property (text), widget (QToolButton, buttonApply)
-#. i18n: ectx: property (text), widget (QToolButton, buttonStyle)
-#. i18n: ectx: property (text), widget (QToolButton, buttonLock)
-#. i18n: ectx: property (text), widget (QToolButton, buttonOut)
-#. i18n: ectx: property (text), widget (QToolButton, buttonIn)
-#. i18n: ectx: property (text), widget (QToolButton, subMenu)
+#. i18n: ectx: property (text), widget (QToolButton, buttonMoreOption)
 #. i18n: ectx: property (text), widget (QToolButton, buttonDelete)
 #. i18n: ectx: property (text), widget (QToolButton, button_more)
 #. +> trunk6 stable6
@@ -20903,10 +21440,12 @@ msgstr "Eliminar o punto actual."
 #: src/ui/configsdl_ui.ui:171 src/ui/customcamcorderproxy_ui.ui:97
 #: src/ui/customcamcorderproxy_ui.ui:111 src/ui/customcamcorderproxy_ui.ui:138
 #: src/ui/cutjobdialog_ui.ui:84 src/ui/editrenderpreset_ui.ui:470
-#: src/ui/editsub_ui.ui:21 src/ui/editsub_ui.ui:31 src/ui/editsub_ui.ui:41
-#: src/ui/editsub_ui.ui:52 src/ui/editsub_ui.ui:63 src/ui/editsub_ui.ui:74
-#: src/ui/editsub_ui.ui:149 src/ui/editsub_ui.ui:189 src/ui/editsub_ui.ui:200
-#: src/ui/editsub_ui.ui:231 src/ui/editsub_ui.ui:484
+#: src/ui/editsub_ui.ui:119 src/ui/editsub_ui.ui:129 src/ui/editsub_ui.ui:139
+#: src/ui/editsub_ui.ui:149 src/ui/editsub_ui.ui:159 src/ui/editsub_ui.ui:169
+#: src/ui/editsub_ui.ui:227 src/ui/editsub_ui.ui:260 src/ui/editsub_ui.ui:292
+#: src/ui/editsub_ui.ui:315 src/ui/editsub_ui.ui:331 src/ui/editsub_ui.ui:609
+#: src/ui/editsub_ui.ui:619 src/ui/editsub_ui.ui:629 src/ui/editsub_ui.ui:639
+#: src/ui/editsub_ui.ui:649 src/ui/editsub_ui.ui:659 src/ui/editsub_ui.ui:674
 #: src/ui/exportguidesdialog_ui.ui:78 src/ui/exportguidesdialog_ui.ui:98
 #: src/ui/gradientedit_ui.ui:130 src/ui/gradientedit_ui.ui:150
 #: src/ui/guideslist_ui.ui:23 src/ui/guideslist_ui.ui:40
@@ -20917,7 +21456,7 @@ msgstr "Eliminar o punto actual."
 #: src/ui/managecache_ui.ui:131 src/ui/managecache_ui.ui:277
 #: src/ui/managecache_ui.ui:328 src/ui/manageencodingprofile_ui.ui:48
 #: src/ui/manageencodingprofile_ui.ui:59 src/ui/manageencodingprofile_ui.ui:70
-#: src/ui/manageencodingprofile_ui.ui:84 src/ui/managesubtitles_ui.ui:70
+#: src/ui/manageencodingprofile_ui.ui:84 src/ui/managesubtitles_ui.ui:79
 #: src/ui/projectsettings_ui.ui:421 src/ui/projectsettings_ui.ui:501
 #: src/ui/projectsettings_ui.ui:508 src/ui/projectsettings_ui.ui:518
 #: src/ui/projectsettings_ui.ui:589 src/ui/projectsettings_ui.ui:596
@@ -21384,9 +21923,10 @@ msgstr "Proporcións de aspecto:"
 msgid "4/3"
 msgstr "4/3"
 
+#. i18n: ectx: property (text), widget (QPushButton, buttonEditStyle)
 #. i18n: ectx: property (text), widget (QPushButton, config_v4l)
 #. +> trunk6 stable6
-#: src/ui/configcapture_ui.ui:185
+#: src/ui/configcapture_ui.ui:185 src/ui/managesubtitles_ui.ui:323
 #, kde-format
 msgid "Edit"
 msgstr "Editar"
@@ -23032,36 +23572,52 @@ msgstr "Activando a edición manual para uso avanzado, só poderá editar a conf
 msgid "Enable manual editing"
 msgstr "Activar a edición manual"
 
+#. i18n: ectx: property (text), widget (QToolButton, button_save)
+#. i18n: ectx: property (prefix), widget (QSpinBox, subLayer)
+#. +> trunk6 stable6
+#: src/ui/editsub_ui.ui:101 src/ui/profiledialog_ui.ui:380
+#, kde-format
+msgid "S"
+msgstr "S"
+
+#. i18n: ectx: property (text), widget (QLabel, label_style)
+#. +> trunk6
+#: src/ui/editsub_ui.ui:207
+#, fuzzy, kde-format
+#| msgid "Style"
+msgid "Style:"
+msgstr "Estilo"
+
 #. i18n: ectx: property (text), widget (QLabel, label_end)
 #. +> trunk6 stable6
-#: src/ui/editsub_ui.ui:182
+#: src/ui/editsub_ui.ui:253
 #, kde-format
 msgid "End:"
 msgstr "Fin:"
 
 #. i18n: ectx: property (text), widget (QCheckBox, checkOpaque)
-#. +> trunk6 stable6
+#. +> stable6
 #: src/ui/editsub_ui.ui:289
 #, kde-format
 msgid "Opaque background"
 msgstr "Fondo opaco"
 
 #. i18n: ectx: property (text), widget (QCheckBox, checkOutlineColor)
-#. +> trunk6 stable6
+#. +> stable6
 #: src/ui/editsub_ui.ui:296
 #, kde-format
 msgid "Custom Outline Color"
 msgstr "Cor de contorno personalizada"
 
 #. i18n: ectx: property (suffix), widget (QSpinBox, fontSize)
-#. +> trunk6 stable6
+#. +> stable6
 #: src/ui/editsub_ui.ui:313
 #, kde-format
 msgid "pt"
 msgstr "puntos"
 
 #. i18n: ectx: property (text), widget (QCheckBox, checkFontSize)
-#. +> trunk6 stable6
+#. +> stable6
 #: src/ui/editsub_ui.ui:326
 #, kde-format
 msgid "Custom Font Size"
@@ -23069,60 +23625,226 @@ msgstr "Tamaño de fonte personalizado"
 
 #. i18n: ectx: property (suffix), widget (QSpinBox, shadowSize)
 #. i18n: ectx: property (suffix), widget (QSpinBox, outlineSize)
-#. +> trunk6 stable6
+#. +> stable6
 #: src/ui/editsub_ui.ui:353 src/ui/editsub_ui.ui:377
 #, kde-format
 msgid "px"
 msgstr "px"
 
 #. i18n: ectx: property (text), widget (QCheckBox, checkPosition)
-#. +> trunk6 stable6
+#. +> stable6
 #: src/ui/editsub_ui.ui:360
 #, kde-format
 msgid "Custom Position"
 msgstr "Posición personalizada"
 
 #. i18n: ectx: property (text), widget (QCheckBox, checkFontColor)
-#. +> trunk6 stable6
+#. +> stable6
 #: src/ui/editsub_ui.ui:367
 #, kde-format
 msgid "Custom Font Color"
 msgstr "Cor de letra personalizada"
 
 #. i18n: ectx: property (text), widget (QCheckBox, checkOutlineSize)
-#. +> trunk6 stable6
+#. +> stable6
 #: src/ui/editsub_ui.ui:387
 #, kde-format
 msgid "Custom Outline Size"
 msgstr "Tamaño personalizado do contorno"
 
-#. i18n: ectx: property (text), widget (QCheckBox, checkFont)
-#. +> trunk6 stable6
-#: src/ui/editsub_ui.ui:394
-#, kde-format
-msgid "Custom Font"
-msgstr "Fonte personalizada"
-
 #. i18n: ectx: property (text), widget (QCheckBox, checkShadowSize)
-#. +> trunk6 stable6
+#. +> stable6
 #: src/ui/editsub_ui.ui:432
 #, kde-format
 msgid "Custom Shadow"
 msgstr "Sombra personalizada"
 
+#. i18n: ectx: property (text), widget (QCheckBox, checkScroll)
+#. +> trunk6
+#: src/ui/editsub_ui.ui:451
+#, fuzzy, kde-format
+#| msgid "Scrolling:"
+msgid "Scroll"
+msgstr "Desprazamento:"
+
+#. i18n: ectx: property (text), widget (QLabel, labelScrollUpper)
+#. +> trunk6
+#: src/ui/editsub_ui.ui:465
+#, fuzzy, kde-format
+#| msgid "Updates per second"
+msgid "Upper Bound"
+msgstr "Actualizacións por segundo"
+
+#. i18n: ectx: property (text), widget (QLabel, labelMargin)
+#. +> trunk6
+#: src/ui/editsub_ui.ui:472
+#, kde-format
+msgid ""
+"<html><head/><body>"
+"<p>Margin</p>"
+"</body></html>"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QLabel, labelName)
+#. +> trunk6
+#: src/ui/editsub_ui.ui:492
+#, kde-format
+msgid ""
+"<html><head/><body>"
+"<p>Name</p>"
+"</body></html>"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QLabel, clip_filesize_3)
+#. i18n: ectx: property (text), widget (QCheckBox, checkComment)
+#. +> trunk6 stable6
+#: src/ui/editsub_ui.ui:582 src/ui/markerdialog_ui.ui:66
+#: src/ui/multiplemarkerdialog_ui.ui:34
+#, kde-format
+msgid "Comment"
+msgstr "Comentario"
+
+#. i18n: ectx: property (text), widget (QCheckBox, checkFont)
+#. +> stable6
+#: src/ui/editsub_ui.ui:394
+#, kde-format
+msgid "Custom Font"
+msgstr "Fonte personalizada"
+
+#. i18n: ectx: property (text), widget (QLabel, lavelScrollLower)
+#. +> trunk6
+#: src/ui/editsub_ui.ui:589
+#, fuzzy, kde-format
+#| msgid "Power Blue"
+msgid "Lower Bound"
+msgstr "Forza Azul"
+
+#. i18n: ectx: property (windowTitle), widget (QDialog, SubtitleStyleEdit_UI)
+#. +> trunk6
+#: src/ui/editsubstyle_ui.ui:24
+#, fuzzy, kde-format
+#| msgid "Subtitle file:"
+msgid "Subtitle Style Editor"
+msgstr "Ficheiro de subtítulo:"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, styleList)
 #. i18n: ectx: property (text), widget (QCheckBox, checkBold)
 #. +> trunk6 stable6
-#: src/ui/editsub_ui.ui:452
+#: src/ui/editsubstyle_ui.ui:93 src/ui/managesubtitles_ui.ui:364
 #, kde-format
 msgid "Bold"
 msgstr "Grosa"
 
+#. i18n: ectx: property (text), widget (QLabel, labelSecondaryColor)
+#. +> trunk6
+#: src/ui/editsubstyle_ui.ui:103
+#, kde-format
+msgid "Secondary"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QLabel, labelMargin)
+#. +> trunk6
+#: src/ui/editsubstyle_ui.ui:134
+#, kde-format
+msgid "Margin"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QLabel, labelMarginV)
+#. +> trunk6
+#: src/ui/editsubstyle_ui.ui:163
+#, fuzzy, kde-format
+#| msgid "Vertical"
+msgid "Veritical"
+msgstr "Vertical"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, styleList)
+#. i18n: ectx: property (text), widget (QLabel, labelAlignment)
+#. +> trunk6
+#: src/ui/editsubstyle_ui.ui:195 src/ui/managesubtitles_ui.ui:414
+#, fuzzy, kde-format
+#| msgid "Align left"
+msgid "Alignment"
+msgstr "Aliñar á esquerda"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, styleList)
+#. i18n: ectx: property (text), widget (QCheckBox, checkUnderline)
+#. +> trunk6
+#: src/ui/editsubstyle_ui.ui:211 src/ui/managesubtitles_ui.ui:374
+#, kde-format
+msgid "Underline"
+msgstr "Subliñado"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, styleList)
+#. i18n: ectx: property (text), widget (QLabel, labelShadow)
+#. i18n: ectx: property (text), widget (QLabel, labelBackColor)
+#. +> trunk6
+#: src/ui/editsubstyle_ui.ui:218 src/ui/editsubstyle_ui.ui:403
+#: src/ui/managesubtitles_ui.ui:409
+#, kde-format
+msgid "Shadow"
+msgstr "Sombra"
+
+#. i18n: ectx: property (text), widget (QLabel, labelBoarderStyle)
+#. +> trunk6
+#: src/ui/editsubstyle_ui.ui:265
+#, fuzzy, kde-format
+#| msgid "Border "
+msgid "BorderStyle"
+msgstr "Bordo "
+
+#. i18n: ectx: property (text), widget (QTreeWidget, styleList)
+#. i18n: ectx: property (text), widget (QLabel, labelOutlineColor)
+#. i18n: ectx: property (text), widget (QLabel, labelOutline)
+#. +> trunk6
+#: src/ui/editsubstyle_ui.ui:350 src/ui/editsubstyle_ui.ui:484
+#: src/ui/managesubtitles_ui.ui:404
+#, fuzzy, kde-format
+#| msgid "Outline:"
+msgid "Outline"
+msgstr "Contorno:"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, styleList)
+#. i18n: ectx: property (text), widget (QLabel, labelScaleX)
+#. +> trunk6
+#: src/ui/editsubstyle_ui.ui:370 src/ui/managesubtitles_ui.ui:419
+#, fuzzy, kde-format
+#| msgid "Scale X"
+msgid "ScaleX"
+msgstr "Cambiar de escala X"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, styleList)
+#. i18n: ectx: property (text), widget (QLabel, labelScaleY)
+#. +> trunk6
+#: src/ui/editsubstyle_ui.ui:380 src/ui/managesubtitles_ui.ui:424
+#, fuzzy, kde-format
+#| msgid "Scale Y"
+msgid "ScaleY"
+msgstr "Cambiar de escala Y"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, styleList)
+#. i18n: ectx: property (text), widget (QCheckBox, checkStrikeOut)
+#. +> trunk6
+#: src/ui/editsubstyle_ui.ui:454 src/ui/managesubtitles_ui.ui:379
+#, kde-format
+msgid "StrikeOut"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QTreeWidget, styleList)
 #. i18n: ectx: property (text), widget (QCheckBox, checkItalic)
 #. +> trunk6 stable6
-#: src/ui/editsub_ui.ui:459
+#: src/ui/editsubstyle_ui.ui:510 src/ui/managesubtitles_ui.ui:369
 #, kde-format
 msgid "Italic"
 msgstr "Cursiva"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, styleList)
+#. i18n: ectx: property (text), widget (QLabel, labelSpacing)
+#. +> trunk6
+#: src/ui/editsubstyle_ui.ui:530 src/ui/managesubtitles_ui.ui:429
+#, fuzzy, kde-format
+#| msgid "Space"
+msgid "Spacing"
+msgstr "Espazo"
 
 #. i18n: ectx: property (placeholderText), widget (QPlainTextEdit, generatedContent)
 #. +> trunk6 stable6
@@ -23336,8 +24058,9 @@ msgid "Subtitle file:"
 msgstr "Ficheiro de subtítulo:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
+#. i18n: ectx: property (text), widget (QTreeWidget, styleList)
 #. +> trunk6 stable6
-#: src/ui/import_subtitle_ui.ui:68
+#: src/ui/import_subtitle_ui.ui:68 src/ui/managesubtitles_ui.ui:459
 #, kde-format
 msgid "Encoding"
 msgstr "Codificación"
@@ -23618,32 +24341,174 @@ msgid "Editing profiles for:"
 msgstr "Editando os perfís de:"
 
 #. i18n: ectx: property (text), widget (QPushButton, button_new)
-#. +> trunk6 stable6
+#. +> stable6
 #: src/ui/managesubtitles_ui.ui:24
 #, kde-format
 msgid "Create New"
 msgstr "Crear un novo"
 
-#. i18n: ectx: property (text), widget (QPushButton, button_delete)
-#. +> trunk6 stable6
-#: src/ui/managesubtitles_ui.ui:46
-#, kde-format
-msgid "Delete"
-msgstr "Eliminar"
+#. i18n: ectx: attribute (title), widget (QWidget, tabFile)
+#. +> trunk6
+#: src/ui/managesubtitles_ui.ui:53
+#, fuzzy, kde-format
+#| msgid "File"
+msgid "Files"
+msgstr "Ficheiro"
 
-#. i18n: ectx: property (text), widget (QTreeWidget, subtitlesList)
+#. i18n: ectx: property (text), widget (QTreeWidget, fileList)
 #. +> trunk6 stable6
-#: src/ui/managesubtitles_ui.ui:108
+#: src/ui/managesubtitles_ui.ui:71
 #, kde-format
 msgid "Path"
 msgstr "Ruta"
 
-#. i18n: ectx: property (text), widget (QLabel, clip_filesize_3)
+#. i18n: ectx: property (text), widget (QPushButton, buttonNewFile)
+#. +> trunk6
+#: src/ui/managesubtitles_ui.ui:101
+#, fuzzy, kde-format
+#| msgid "Text File"
+msgid "New File"
+msgstr "Ficheiro de texto"
+
+#. i18n: ectx: property (text), widget (QPushButton, buttonDeleteFile)
+#. i18n: ectx: property (text), widget (QPushButton, buttonDeleteLayer)
+#. i18n: ectx: property (text), widget (QPushButton, buttonDeleteStyle)
 #. +> trunk6 stable6
-#: src/ui/markerdialog_ui.ui:66 src/ui/multiplemarkerdialog_ui.ui:34
+#: src/ui/managesubtitles_ui.ui:130 src/ui/managesubtitles_ui.ui:246
+#: src/ui/managesubtitles_ui.ui:505
 #, kde-format
-msgid "Comment"
-msgstr "Comentario"
+msgid "Delete"
+msgstr "Eliminar"
+
+#. i18n: ectx: attribute (title), widget (QWidget, tabLayer)
+#. +> trunk6
+#: src/ui/managesubtitles_ui.ui:157
+#, kde-format
+msgid "Layers and Content"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QPushButton, buttonNewLayer)
+#. +> trunk6
+#: src/ui/managesubtitles_ui.ui:262
+#, fuzzy, kde-format
+#| msgid "New tag"
+msgid "New Layer"
+msgstr "Nova etiqueta"
+
+#. i18n: ectx: attribute (title), widget (QWidget, tabStyle)
+#. +> trunk6
+#: src/ui/managesubtitles_ui.ui:286
+#, fuzzy, kde-format
+#| msgid "Style"
+msgid "Styles"
+msgstr "Estilo"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, styleList)
+#. +> trunk6
+#: src/ui/managesubtitles_ui.ui:354
+#, fuzzy, kde-format
+#| msgid "Font"
+msgid "FontName"
+msgstr "Fonte"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, styleList)
+#. +> trunk6
+#: src/ui/managesubtitles_ui.ui:359
+#, fuzzy, kde-format
+#| msgid "Font Size"
+msgid "FontSize"
+msgstr "Tamaño do tipo de letra"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, styleList)
+#. +> trunk6
+#: src/ui/managesubtitles_ui.ui:384
+#, fuzzy, kde-format
+#| msgid "Gray color"
+msgid "PrimaryColor"
+msgstr "Cor gris"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, styleList)
+#. +> trunk6
+#: src/ui/managesubtitles_ui.ui:389
+#, fuzzy, kde-format
+#| msgid "Source Color"
+msgid "SecondaryColor"
+msgstr "Cor de orixe"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, styleList)
+#. +> trunk6
+#: src/ui/managesubtitles_ui.ui:394
+#, fuzzy, kde-format
+#| msgid "Outline Color"
+msgid "OutlineColor"
+msgstr "Cor da silueta"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, styleList)
+#. +> trunk6
+#: src/ui/managesubtitles_ui.ui:399
+#, fuzzy, kde-format
+#| msgid "Black color"
+msgid "BackColor"
+msgstr "Cor negra"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, styleList)
+#. +> trunk6
+#: src/ui/managesubtitles_ui.ui:439
+#, fuzzy, kde-format
+#| msgid "Style"
+msgid "BoardStyle"
+msgstr "Estilo"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, styleList)
+#. +> trunk6
+#: src/ui/managesubtitles_ui.ui:444
+#, kde-format
+msgid "MarginL"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QTreeWidget, styleList)
+#. +> trunk6
+#: src/ui/managesubtitles_ui.ui:449
+#, kde-format
+msgid "MarginR"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QTreeWidget, styleList)
+#. +> trunk6
+#: src/ui/managesubtitles_ui.ui:454
+#, kde-format
+msgid "MarginV"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QPushButton, buttonNewStyle)
+#. +> trunk6
+#: src/ui/managesubtitles_ui.ui:473
+#, fuzzy, kde-format
+#| msgid "Style"
+msgid "New Style"
+msgstr "Estilo"
+
+#. i18n: ectx: attribute (title), widget (QWidget, tabInfo)
+#. +> trunk6
+#: src/ui/managesubtitles_ui.ui:529
+#, fuzzy, kde-format
+#| msgid "Edit Info"
+msgid "Info"
+msgstr "Editar a información"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, infoList)
+#. +> trunk6
+#: src/ui/managesubtitles_ui.ui:539
+#, kde-format
+msgid "Key"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QTreeWidget, infoList)
+#. +> trunk6
+#: src/ui/managesubtitles_ui.ui:544
+#, kde-format
+msgid "Value"
+msgstr "Valor"
 
 #. i18n: ectx: property (title), widget (KCollapsibleGroupBox, multimarker_box)
 #. +> trunk6 stable6
@@ -23683,7 +24548,7 @@ msgstr "Problemas do fragmento"
 #. i18n: ectx: property (format), widget (QProgressBar, progressBar)
 #. +> trunk6 stable6
 #: src/ui/missingclips_ui.ui:92
-#, kde-format, no-c-format
+#, no-c-format, kde-format
 msgid "%v / %m"
 msgstr "%v / %m"
 
@@ -23805,13 +24670,6 @@ msgstr ""
 #, kde-format
 msgid "Save profile"
 msgstr "Gardar o perfil"
-
-#. i18n: ectx: property (text), widget (QToolButton, button_save)
-#. +> trunk6 stable6
-#: src/ui/profiledialog_ui.ui:380
-#, kde-format
-msgid "S"
-msgstr "S"
 
 #. i18n: ectx: property (text), widget (QPushButton, button_default)
 #. +> trunk6 stable6
@@ -24255,7 +25113,7 @@ msgstr "Compromiso entre tamaño de ficheiro e calidade."
 #. i18n: ectx: property (text), widget (QLabel, qualityPercent)
 #. +> trunk6 stable6
 #: src/ui/renderwidget_ui.ui:693
-#, kde-format, no-c-format
+#, no-c-format, kde-format
 msgid "75%"
 msgstr "75%"
 
@@ -24916,20 +25774,6 @@ msgstr "A"
 msgid "Rotate"
 msgstr "Rotar"
 
-#. i18n: ectx: property (text), widget (QLabel, label_rotateX)
-#. +> trunk6 stable6
-#: src/ui/titlewidget_ui.ui:553
-#, kde-format
-msgid "X:"
-msgstr "X:"
-
-#. i18n: ectx: property (text), widget (QLabel, label_rotateY)
-#. +> trunk6 stable6
-#: src/ui/titlewidget_ui.ui:576
-#, kde-format
-msgid "Y:"
-msgstr "Y:"
-
 #. i18n: ectx: property (text), widget (QLabel, label_rotateZ)
 #. +> trunk6 stable6
 #: src/ui/titlewidget_ui.ui:602
@@ -25124,21 +25968,21 @@ msgstr "Redimensionar"
 #. i18n: ectx: property (text), widget (QToolButton, resize50)
 #. +> trunk6 stable6
 #: src/ui/titlewidget_ui.ui:1519
-#, kde-format, no-c-format
+#, no-c-format, kde-format
 msgid "50%"
 msgstr "50%"
 
 #. i18n: ectx: property (text), widget (QToolButton, resize100)
 #. +> trunk6 stable6
 #: src/ui/titlewidget_ui.ui:1526
-#, kde-format, no-c-format
+#, no-c-format, kde-format
 msgid "100%"
 msgstr "100%"
 
 #. i18n: ectx: property (text), widget (QToolButton, resize200)
 #. +> trunk6 stable6
 #: src/ui/titlewidget_ui.ui:1533
-#, kde-format, no-c-format
+#, no-c-format, kde-format
 msgid "200%"
 msgstr "200%"
 
@@ -25643,10 +26487,6 @@ msgstr "Parámetros"
 #~ msgstr "Redución de ruído e restauración de son"
 
 #, kde-format
-#~ msgid "Edit Info"
-#~ msgstr "Editar a información"
-
-#, kde-format
 #~ msgctxt "@title:window"
 #~ msgid "Open Replacement File"
 #~ msgstr "Abrir o ficheiro de substitución"
@@ -25903,10 +26743,6 @@ msgstr "Parámetros"
 #, kde-format
 #~ msgid "Delete current file"
 #~ msgstr "Eliminar este ficheiro"
-
-#, kde-format
-#~ msgid "Toggle selection"
-#~ msgstr "Cambiar a selección"
 
 #, kde-format
 #~ msgid ""
@@ -26399,10 +27235,6 @@ msgstr "Parámetros"
 #~ msgstr "Calcula a distancia entre a cor escollida e o píxel actual e usa ese valor como valor do novo píxel"
 
 #, kde-format
-#~ msgid "Source Color"
-#~ msgstr "Cor de orixe"
-
-#, kde-format
 #~ msgid "Colorize"
 #~ msgstr "Colorar"
 
@@ -26673,7 +27505,7 @@ msgstr "Parámetros"
 #~ msgid "Automatically detect and blur a face using OpenCV"
 #~ msgstr "Detectar e desenfocar automaticamente unha cara mediante OpenCV"
 
-#, kde-format, no-c-format
+#, no-c-format, kde-format
 #~ msgid "The search window scale factor. For example, 120 = 1.20 = increases by 20% on each pass."
 #~ msgstr "O factor de escala da xanela de buscas. Por exemplo, 120 = 1.20 = incrementa un 20% cada pasaxe."
 
@@ -27329,18 +28161,6 @@ msgstr "Parámetros"
 #~ msgstr "Escala, inclina e recorta unha imaxe"
 
 #, kde-format
-#~ msgid "Crop bottom"
-#~ msgstr "Recortar por abaixo"
-
-#, kde-format
-#~ msgid "Scale X"
-#~ msgstr "Cambiar de escala X"
-
-#, kde-format
-#~ msgid "Scale Y"
-#~ msgstr "Cambiar de escala Y"
-
-#, kde-format
 #~ msgid "Tilt X"
 #~ msgstr "Inclinar X"
 
@@ -27497,10 +28317,6 @@ msgstr "Parámetros"
 #~ msgstr "Forza Verde"
 
 #, kde-format
-#~ msgid "Power Blue"
-#~ msgstr "Forza Azul"
-
-#, kde-format
 #~ msgid "Power Alpha"
 #~ msgstr "Forza Alfa"
 
@@ -27535,14 +28351,6 @@ msgstr "Parámetros"
 #, kde-format
 #~ msgid "Balances colors along with 3 points"
 #~ msgstr "Equilibra as cores sobre 3 puntos"
-
-#, kde-format
-#~ msgid "Black color"
-#~ msgstr "Cor negra"
-
-#, kde-format
-#~ msgid "Gray color"
-#~ msgstr "Cor gris"
 
 #, kde-format
 #~ msgid "White color"
@@ -28085,7 +28893,7 @@ msgstr "Parámetros"
 #~ msgid "Alpha/Transform"
 #~ msgstr "Alfa e transformar"
 
-#, kde-format, no-c-format
+#, no-c-format, kde-format
 #~ msgid "%lumaNames"
 #~ msgstr "%lumaNames"
 
@@ -28963,14 +29771,6 @@ msgstr "Parámetros"
 #~ msgstr "Volver ao menú"
 
 #, kde-format
-#~ msgid "Shadow"
-#~ msgstr "Sombra"
-
-#, kde-format
-#~ msgid "Underline"
-#~ msgstr "Subliñado"
-
-#, kde-format
 #~ msgid "Temporary data folder"
 #~ msgstr "Cartafol de datos temporal"
 
@@ -29041,10 +29841,6 @@ msgstr "Parámetros"
 #, kde-format
 #~ msgid ">>"
 #~ msgstr ">>"
-
-#, kde-format
-#~ msgid "Value"
-#~ msgstr "Valor"
 
 #, kde-format
 #~ msgid "Reset the parameters to their default values"
