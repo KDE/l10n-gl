@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: desktop files\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-12-15 09:24+0100\n"
+"POT-Creation-Date: 2024-10-25 08:53+0200\n"
 "PO-Revision-Date: 2023-12-15 20:33+0100\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Proxecto Trasno (proxecto@trasno.gal)\n"
@@ -42,6 +42,11 @@ msgstr "Un complemento para aconsellar."
 #: plugins/generic/skg_properties/metadata.json
 #: plugins/generic/skg_selectall/metadata.json
 #: plugins/generic/skg_undoredo/metadata.json
+#: plugins/import/skrooge_import_backend/backends/org.kde.skrooge-import-backend-weboob.json
+#: plugins/import/skrooge_import_backend/backends/org.kde.skrooge-import-backend-weboob_coming.json
+#: plugins/import/skrooge_import_backend/backends/org.kde.skrooge-import-backend-woob-ofx.json
+#: plugins/import/skrooge_import_backend/backends/org.kde.skrooge-import-backend-woob.json
+#: plugins/import/skrooge_import_backend/backends/org.kde.skrooge-import-backend-woob_coming.json
 #: plugins/import/skrooge_import_iif/metadata.json
 #: plugins/import/skrooge_import_qif/metadata.json
 #: plugins/skrooge/skrooge_bank/metadata.json
@@ -56,6 +61,13 @@ msgstr "Un complemento para aconsellar."
 #: plugins/skrooge/skrooge_search/metadata.json
 #: plugins/skrooge/skrooge_tracker/metadata.json
 #: plugins/skrooge/skrooge_unit/metadata.json
+#: skgbankmodeler/sources/org.kde.skrooge-source-coinmarketcap.json
+#: skgbankmodeler/sources/org.kde.skrooge-source-cryptocompare.json
+#: skgbankmodeler/sources/org.kde.skrooge-source-exchangerates.json
+#: skgbankmodeler/sources/org.kde.skrooge-source-exchangerates_apilayer.json
+#: skgbankmodeler/sources/org.kde.skrooge-source-grandtrunk.json
+#: skgbankmodeler/sources/org.kde.skrooge-source-skrooge.json
+#: skgbankmodeler/sources/org.kde.skrooge-source-stooq.json
 msgctxt "Authors Name"
 msgid "Stephane MANKOWSKI,miraks"
 msgstr "Stephane MANKOWSKI, miraks"
@@ -116,8 +128,6 @@ msgstr "Complemento de ficheiros"
 
 #. +> trunk5
 #: plugins/generic/skg_file/metadata.json
-#| msgctxt "Description"
-#| msgid "A plugin for file operations"
 msgctxt "Description"
 msgid "A plugin for file transactions"
 msgstr "Un complemento para as transaccións con ficheiros."
@@ -225,8 +235,6 @@ msgstr "Complemento de desfacer e refacer"
 
 #. +> trunk5
 #: plugins/generic/skg_undoredo/metadata.json
-#| msgctxt "Description"
-#| msgid "A plugin for undo and redo operations"
 msgctxt "Description"
 msgid "A plugin for undo and redo transactions"
 msgstr "Un complemento para desfacer e refacer transaccións."
@@ -242,6 +250,122 @@ msgstr "Complemento de importación de AFB120 a Skrooge"
 msgctxt "Description"
 msgid "A Skrooge plugin to import AFB120 files"
 msgstr "Un complemento de Skrooge para importar ficheiros AFB120."
+
+#. +> trunk5
+#: plugins/import/skrooge_import_backend/backends/org.kde.skrooge-import-backend-aqbanking.json
+msgctxt "Name"
+msgid "AqBanking backend"
+msgstr ""
+
+#. +> trunk5
+#: plugins/import/skrooge_import_backend/backends/org.kde.skrooge-import-backend-aqbanking.json
+msgctxt "Description"
+msgid ""
+"An import backend for Skrooge using AqBanking.\n"
+" You must install AqBanking (aqbanking-cli) and setup all accounts manually before using this backend.\n"
+"\n"
+"At least AqBanking version 5.6.10 or later is required.\n"
+"\n"
+"This backend starts an AqBanking user-interactive session in the default terminal emulator.\n"
+"If you experience issues please switch to the \"xterm\" terminal emulator by setting the parameters to:\n"
+"aqbanking(--terminal-emulator '\"xterm -e\"') [Note: The single and double quotes are important!]\n"
+"\n"
+"For a list of all parameters please run \"skrooge-sabb.py bulkdownload --help\"."
+msgstr ""
+
+#. +> trunk5
+#: plugins/import/skrooge_import_backend/backends/org.kde.skrooge-import-backend-aqbanking.json
+msgctxt "Authors Name"
+msgid "Bernhard Scheirle"
+msgstr ""
+
+#. +> trunk5
+#: plugins/import/skrooge_import_backend/backends/org.kde.skrooge-import-backend-weboob.json
+msgctxt "Name"
+msgid "Weboob backend"
+msgstr ""
+
+#. +> trunk5
+#: plugins/import/skrooge_import_backend/backends/org.kde.skrooge-import-backend-weboob.json
+msgctxt "Description"
+msgid ""
+"An import backend for Skrooge using weboob.\n"
+" You must install weboob and configure correctly the boobank module before using this backend.\n"
+"\n"
+" Parameters:\n"
+" 1-The list of accounts to import separated by '|'. If you don't pass parameter then all accounts will be imported.\n"
+" Example: 123@ca|456@bp\n"
+" 2-The first date of imported transactions in format YYYY-MM-DD.\n"
+" Example: 2017-09-25\n"
+"Warning:If you want to specify this parameter, you have to specify the first one too but it could be blank.\n"
+" Example: ,2017-09-25"
+msgstr ""
+
+#. +> trunk5
+#: plugins/import/skrooge_import_backend/backends/org.kde.skrooge-import-backend-weboob_coming.json
+msgctxt "Name"
+msgid "Weboob coming backend"
+msgstr ""
+
+#. +> trunk5
+#: plugins/import/skrooge_import_backend/backends/org.kde.skrooge-import-backend-weboob_coming.json
+msgctxt "Description"
+msgid ""
+"An import backend for Skrooge using weboob for coming operation. This plugin can be used for card with deferred debit.\n"
+" You must install weboob and configure correctly the boobank module before using this backend.\n"
+"\n"
+" Parameter:\n"
+" The list of accounts to import separated by '|'. If you don't pass parameter then all accounts will be imported.\n"
+" Example: 123@ca|456@bp"
+msgstr ""
+
+#. +> trunk5
+#: plugins/import/skrooge_import_backend/backends/org.kde.skrooge-import-backend-woob-ofx.json
+msgctxt "Name"
+msgid "Woob backend (OFX)"
+msgstr ""
+
+#. +> trunk5
+#: plugins/import/skrooge_import_backend/backends/org.kde.skrooge-import-backend-woob-ofx.json
+#: plugins/import/skrooge_import_backend/backends/org.kde.skrooge-import-backend-woob.json
+msgctxt "Description"
+msgid ""
+"An import backend for Skrooge using woob.\n"
+" You must install woob and configure correctly the bank module before using this backend.\n"
+"\n"
+" Parameters:\n"
+" 1-The list of accounts to import separated by '|'. If you don't pass parameter then all accounts will be imported.\n"
+" Example: 123@ca|456@bp\n"
+" 2-The first date of imported transactions in format YYYY-MM-DD.\n"
+" Example: 2017-09-25\n"
+"Warning:If you want to specify this parameter, you have to specify the first one too but it could be blank.\n"
+" Example: ,2017-09-25\n"
+" 3-The woob additional options (example: --nss)"
+msgstr ""
+
+#. +> trunk5
+#: plugins/import/skrooge_import_backend/backends/org.kde.skrooge-import-backend-woob.json
+msgctxt "Name"
+msgid "Woob backend"
+msgstr ""
+
+#. +> trunk5
+#: plugins/import/skrooge_import_backend/backends/org.kde.skrooge-import-backend-woob_coming.json
+msgctxt "Name"
+msgid "Woob coming backend"
+msgstr ""
+
+#. +> trunk5
+#: plugins/import/skrooge_import_backend/backends/org.kde.skrooge-import-backend-woob_coming.json
+msgctxt "Description"
+msgid ""
+"An import backend for Skrooge using woob for coming operation. This plugin can be used for card with deferred debit.\n"
+" You must install woob and configure correctly the bank module before using this backend.\n"
+"\n"
+" Parameter:\n"
+" The list of accounts to import separated by '|'. If you don't pass parameter then all accounts will be imported.\n"
+" Example: 123@ca|456@bp"
+msgstr ""
 
 #. +> trunk5
 #: plugins/import/skrooge_import_backend/metadata.json
@@ -449,14 +573,13 @@ msgstr "Un complemento do Skrooge para importar ficheiros XML."
 
 #. +> trunk5
 #: plugins/krunner/skrooge_add_operation/metadata.json
+#: skgbankmodeler/sources/org.kde.skrooge-source-skrooge.json
 msgctxt "Name"
 msgid "Skrooge"
 msgstr "Skrooge"
 
 #. +> trunk5
 #: plugins/krunner/skrooge_add_operation/metadata.json
-#| msgctxt "Description"
-#| msgid "Add a new operation in skrooge"
 msgctxt "Description"
 msgid "Add a new transaction in skrooge"
 msgstr "Engadir unha nova transacción en Skrooge."
@@ -517,8 +640,6 @@ msgstr "Complemento de importación e exportación de Skrooge"
 
 #. +> trunk5
 #: plugins/skrooge/skrooge_importexport/metadata.json
-#| msgctxt "Description"
-#| msgid "A skrooge plugin for import and export operations"
 msgctxt "Description"
 msgid "A skrooge plugin for import and export transactions"
 msgstr "Un complemento de Skrooge para transaccións de importación e exportación."
@@ -531,8 +652,6 @@ msgstr "Complemento de operacións de Skrooge"
 
 #. +> trunk5
 #: plugins/skrooge/skrooge_operation/metadata.json
-#| msgctxt "Description"
-#| msgid "A skrooge plugin to manage operations"
 msgctxt "Description"
 msgid "A skrooge plugin to manage transactions"
 msgstr "Un complemento de Skrooge para xestionar transaccións."
@@ -569,8 +688,6 @@ msgstr "Complemento de planificación de Skrooge"
 
 #. +> trunk5
 #: plugins/skrooge/skrooge_scheduled/metadata.json
-#| msgctxt "Description"
-#| msgid "A skrooge plugin to manage scheduled operations"
 msgctxt "Description"
 msgid "A skrooge plugin to manage scheduled transactions"
 msgstr "Un complemento de Skrooge para xestionar transaccións planificadas."
@@ -583,8 +700,6 @@ msgstr "Complemento de busca de Skrooge"
 
 #. +> trunk5
 #: plugins/skrooge/skrooge_search/metadata.json
-#| msgctxt "Description"
-#| msgid "A skrooge plugin to search and treat operations"
 msgctxt "Description"
 msgid "A skrooge plugin to search and treat transactions"
 msgstr "Un complemento de Skrooge para buscar e tratar transaccións."
@@ -612,3 +727,123 @@ msgstr "Complemento de unidades de Skrooge"
 msgctxt "Description"
 msgid "A skrooge plugin for unit management"
 msgstr "Un complemento de Skrooge para a xestión de unidades."
+
+#. +> trunk5
+#: skgbankmodeler/sources/org.kde.skrooge-source-boursorama.json
+msgctxt "Name"
+msgid "Boursorama"
+msgstr ""
+
+#. +> trunk5
+#: skgbankmodeler/sources/org.kde.skrooge-source-boursorama.json
+msgctxt "Description"
+msgid ""
+"You can get the list of available quotes from <a href=\"https://boursorama.com/bourse/\">Boursorama</a>.<br/>"
+"Then, enter the symbol of the expected quotes."
+msgstr ""
+
+#. +> trunk5
+#: skgbankmodeler/sources/org.kde.skrooge-source-boursorama.json
+msgctxt "Authors Name"
+msgid "Ronan Dunklau"
+msgstr ""
+
+#. +> trunk5
+#: skgbankmodeler/sources/org.kde.skrooge-source-coinmarketcap.json
+msgctxt "Name"
+msgid "CoinMarketCap"
+msgstr ""
+
+#. +> trunk5
+#: skgbankmodeler/sources/org.kde.skrooge-source-coinmarketcap.json
+msgctxt "Description"
+msgid ""
+"You can get the list of available quotes from <a href=\"https://coinmarketcap.com\">CoinMarketCap</a>.<br/>"
+"<br/>"
+"Then, you must create an account to get an API key and set it in setting.<br/>"
+"Then, enter the expected quote in expected currency. Example: if you want BTC in USD, you must enter BTC-USD."
+msgstr ""
+
+#. +> trunk5
+#: skgbankmodeler/sources/org.kde.skrooge-source-cryptocompare.json
+msgctxt "Name"
+msgid "Cryptocompare"
+msgstr ""
+
+#. +> trunk5
+#: skgbankmodeler/sources/org.kde.skrooge-source-cryptocompare.json
+msgctxt "Description"
+msgid ""
+"You can get the list of available quotes from <a href=\"https://www.cryptocompare.com/\">CryptoCompare</a>.<br/>"
+"Then, you must create an account to get an API key and set it in setting.<br/>"
+"Then, enter the <expected quote>-<in the expected currency>. Example: if you want BTC in USD, you must enter BTC-USD."
+msgstr ""
+
+#. +> trunk5
+#: skgbankmodeler/sources/org.kde.skrooge-source-exchangerates.json
+msgctxt "Name"
+msgid "exchangeratesapi.io"
+msgstr ""
+
+#. +> trunk5
+#: skgbankmodeler/sources/org.kde.skrooge-source-exchangerates.json
+msgctxt "Description"
+msgid ""
+"[DEPRECATED: Prefer exchangerates_apilayer.com]. You can get the list of available quotes from <a href=\"https://exchangeratesapi.io/\">exchangeratesapi.io</a>.<br/>"
+"<br/>"
+"Then, you must create an account to get an API key and set it in setting.<br/>"
+"Then, enter the expected quote in expected currency. Example: if you want BTC in USD, you must enter BTC-USD."
+msgstr ""
+
+#. +> trunk5
+#: skgbankmodeler/sources/org.kde.skrooge-source-exchangerates_apilayer.json
+msgctxt "Name"
+msgid "exchangerates_apilayer.com"
+msgstr ""
+
+#. +> trunk5
+#: skgbankmodeler/sources/org.kde.skrooge-source-exchangerates_apilayer.json
+msgctxt "Description"
+msgid ""
+"You can get the list of available quotes from <a href=\"https://exchangeratesapi.io/\">exchangeratesapi.io</a>.<br/>"
+"<br/>"
+"Then, you must create an account on <a href=\"https://apilayer.com\">https://apilayer.com</a> to get an API key and set it in setting.<br/>"
+"Then, enter the expected quote in expected currency. Example: if you want BTC in USD, you must enter BTC-USD."
+msgstr ""
+
+#. +> trunk5
+#: skgbankmodeler/sources/org.kde.skrooge-source-grandtrunk.json
+msgctxt "Name"
+msgid "Grand Trunk"
+msgstr ""
+
+#. +> trunk5
+#: skgbankmodeler/sources/org.kde.skrooge-source-grandtrunk.json
+msgctxt "Description"
+msgid ""
+"You can get the list of supported currencies from <a href=\"https://currencies.apps.grandtrunk.net/currencies\">here</a>.<br/>"
+"Then, enter the expected currency."
+msgstr ""
+
+#. +> trunk5
+#: skgbankmodeler/sources/org.kde.skrooge-source-skrooge.json
+msgctxt "Description"
+msgid ""
+"You can find the list of available quotes <a href=\"https://skrooge.org/data\">here</a>.<br/>"
+"Don't put the csv extension.<br/>"
+"In some case (eg. inflation), you will have to remove already downloaded values to download them again."
+msgstr ""
+
+#. +> trunk5
+#: skgbankmodeler/sources/org.kde.skrooge-source-stooq.json
+msgctxt "Name"
+msgid "Stooq"
+msgstr ""
+
+#. +> trunk5
+#: skgbankmodeler/sources/org.kde.skrooge-source-stooq.json
+msgctxt "Description"
+msgid ""
+"You can get the list of available quotes from <a href=\"https://stooq.pl\">Stooq</a>.<br/>"
+"Then, enter the symbol of the expected quotes."
+msgstr ""
