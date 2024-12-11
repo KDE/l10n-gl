@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kleopatra\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-06 09:54+0100\n"
+"POT-Creation-Date: 2024-12-11 09:16+0100\n"
 "PO-Revision-Date: 2024-12-08 15:25+0100\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Proxecto Trasno (proxecto@trasno.gal)\n"
@@ -1163,7 +1163,7 @@ msgstr "Fallou «gpgconf --reload gpg-agent»: %1"
 #: src/commands/checksumcreatefilescommand.cpp:151
 #: src/commands/checksumverifyfilescommand.cpp:150
 #: src/commands/decryptverifyclipboardcommand.cpp:155
-#: src/commands/decryptverifyfilescommand.cpp:206
+#: src/commands/decryptverifyfilescommand.cpp:205
 #: src/commands/encryptclipboardcommand.cpp:150
 #: src/commands/encryptclipboardcommand.cpp:162
 #: src/commands/signclipboardcommand.cpp:150
@@ -1402,13 +1402,13 @@ msgid "Decrypt/Verify Failed"
 msgstr "Non foi posíbel descifrar ou verificar"
 
 #. +> trunk6 stable6
-#: src/commands/decryptverifyfilescommand.cpp:206
+#: src/commands/decryptverifyfilescommand.cpp:205
 #, kde-format
 msgid "Decrypt/Verify Files Error"
 msgstr "Erro de descifrar ou verificar ficheiros"
 
 #. +> trunk6 stable6
-#: src/commands/decryptverifyfilescommand.cpp:219
+#: src/commands/decryptverifyfilescommand.cpp:218
 #, kde-format
 msgid "Select One or More Files to Decrypt and/or Verify"
 msgstr "Seleccione un ou máis ficheiros para descifrar e/ou verificar"
@@ -5244,46 +5244,193 @@ msgstr "Non se atoparon entradas usábeis"
 
 #. +> trunk6 stable6
 #: src/crypto/decryptverifyfilescontroller.cpp:224
-#: src/crypto/gui/decryptverifyfilesdialog.cpp:91
+#: src/crypto/gui/decryptverifyfilesdialog.cpp:90
 #, kde-format
 msgctxt "@title:window"
 msgid "Decrypt/Verify Files"
 msgstr "Descifrar ou verificar ficheiros"
 
-#. +> trunk6 stable6
-#: src/crypto/decryptverifytask.cpp:140
+#. +> stable6
+#: src/crypto/decryptverifytask.cpp:139
 #, kde-format
 msgid "Unknown certificate"
 msgstr "O certificado é descoñecido"
 
-#. +> stable6
-#: src/crypto/decryptverifytask.cpp:293
+#. +> trunk6 stable6
+#: src/crypto/decryptverifytask.cpp:145
 #, kde-format
-msgid "certificate"
-msgstr "certificado"
+msgid "Recipient:"
+msgid_plural "Recipients:"
+msgstr[0] "Destinatario:"
+msgstr[1] "Destinatarios:"
+
+#. +> trunk6
+#: src/crypto/decryptverifytask.cpp:149
+#, fuzzy, kde-format
+#| msgid "One unknown recipient"
+#| msgid_plural "%1 unknown recipients"
+msgctxt "@info"
+msgid "One unknown recipient"
+msgstr "Un destinatario descoñecido"
 
 #. +> trunk6 stable6
-#: src/crypto/decryptverifytask.cpp:265
+#: src/crypto/decryptverifytask.cpp:159
+#, kde-format
+msgid "One unknown recipient"
+msgid_plural "%1 unknown recipients"
+msgstr[0] "Un destinatario descoñecido"
+msgstr[1] "%1 destinatarios descoñecidos"
+
+#. +> trunk6
+#: src/crypto/decryptverifytask.cpp:224
+#, fuzzy, kde-format
+#| msgctxt "@info"
+#| msgid "Writing certificates to file <filename>%1</filename> failed."
+msgctxt "@info"
+msgid "Decryption and verification of <filename>%1</filename> canceled."
+msgstr "Non foi posíbel escribir os certificados no ficheiro <filename>%1</filename>."
+
+#. +> trunk6
+#: src/crypto/decryptverifytask.cpp:226
+#, fuzzy, kde-kuit-format
+#| msgctxt "@info Failed to decrypt <file>: <reason>"
+#| msgid "Failed to decrypt <filename>%1</filename>: %2"
+msgctxt "@info Unable to decrypt and verify <file>:"
+msgid "Unable to decrypt and verify <filename>%1</filename>:"
+msgstr "Non foi posíbel descifrar <filename>%1</filename>: %2"
+
+#. +> trunk6
+#: src/crypto/decryptverifytask.cpp:228
+#, fuzzy, kde-kuit-format
+#| msgctxt "@info Failed to decrypt <file>: <reason>"
+#| msgid "Failed to decrypt <filename>%1</filename>: %2"
+msgctxt "@info Failed to decrypt and verify <file>:"
+msgid "Failed to decrypt and verify <filename>%1</filename>:"
+msgstr "Non foi posíbel descifrar <filename>%1</filename>: %2"
+
+#. +> stable6
+#: src/crypto/decryptverifytask.cpp:350
+#, kde-kuit-format
+msgctxt "@info Failed to decrypt and verify <file>: <reason>"
+msgid "Failed to decrypt and verify <filename>%1</filename>: <emphasis strong='true'>%2</emphasis>"
+msgstr "Non foi posíbel descifrar e verificar <filename>%1</filename>: <emphasis strong='true'>%2</emphasis>"
+
+#. +> trunk6 stable6
+#: src/crypto/decryptverifytask.cpp:231
+#, kde-kuit-format
+msgctxt "@info Successfully decrypted and verified <file> as <file>."
+msgid "Successfully decrypted and verified <filename>%1</filename> as <filename>%2</filename>."
+msgstr "Descifrouse e verificouse <filename>%1</filename> como <filename>%2</filename>."
+
+#. +> trunk6
+#: src/crypto/decryptverifytask.cpp:237
+#, fuzzy, kde-format
+#| msgctxt "@info"
+#| msgid "Writing key to file <filename>%1</filename> failed."
+msgctxt "@info"
+msgid "Verification of <filename>%1</filename> canceled."
+msgstr "Non foi posíbel escribir no ficheiro de chave <filename>%1</filename>."
+
+#. +> trunk6
+#: src/crypto/decryptverifytask.cpp:239
+#, fuzzy, kde-kuit-format
+#| msgctxt "@info"
+#| msgid "Failed to overwrite <filename>%1</filename>."
+msgctxt "@info Failed to verify <file>:"
+msgid "Failed to verify <filename>%1</filename>:"
+msgstr "Non foi posíbel sobrescribir <filename>%1</filename>."
+
+#. +> stable6
+#: src/crypto/decryptverifytask.cpp:363
+#, kde-kuit-format
+msgctxt "@info Failed to verify <file>: <reason>"
+msgid "Failed to verify <filename>%1</filename>: <emphasis strong='true'>%2</emphasis>"
+msgstr "Non foi posíbel verificar <filename>%1</filename>: <emphasis strong='true'>%2</emphasis>"
+
+#. +> trunk6 stable6
+#: src/crypto/decryptverifytask.cpp:242
+#, kde-kuit-format
+msgctxt "@info Verified <file> with signature in <file>."
+msgid "Verified <filename>%1</filename> with signature in <filename>%2</filename>."
+msgstr "Verificouse <filename>%1</filename> coa sinatura de <filename>%2</filename>."
+
+#. +> trunk6
+#: src/crypto/decryptverifytask.cpp:248
+#, fuzzy, kde-format
+#| msgctxt "@info"
+#| msgid "Writing key to file <filename>%1</filename> failed."
+msgctxt "@info"
+msgid "Decryption of <filename>%1</filename> canceled."
+msgstr "Non foi posíbel escribir no ficheiro de chave <filename>%1</filename>."
+
+#. +> trunk6
+#: src/crypto/decryptverifytask.cpp:250
+#, fuzzy, kde-kuit-format
+#| msgctxt "@info Failed to decrypt <file>: <reason>"
+#| msgid "Failed to decrypt <filename>%1</filename>: %2"
+msgctxt "@info Unable to decrypt <file>:"
+msgid "Unable to decrypt <filename>%1</filename>:"
+msgstr "Non foi posíbel descifrar <filename>%1</filename>: %2"
+
+#. +> trunk6
+#: src/crypto/decryptverifytask.cpp:252
+#, fuzzy, kde-kuit-format
+#| msgctxt "@info Failed to decrypt <file>: <reason>"
+#| msgid "Failed to decrypt <filename>%1</filename>: %2"
+msgctxt "@info Failed to decrypt <file>:"
+msgid "Failed to decrypt <filename>%1</filename>:"
+msgstr "Non foi posíbel descifrar <filename>%1</filename>: %2"
+
+#. +> stable6
+#: src/crypto/decryptverifytask.cpp:382
+#, kde-kuit-format
+msgctxt "@info Failed to decrypt <file>: <reason>"
+msgid "Failed to decrypt <filename>%1</filename>: %2"
+msgstr "Non foi posíbel descifrar <filename>%1</filename>: %2"
+
+#. +> trunk6 stable6
+#: src/crypto/decryptverifytask.cpp:255
+#, kde-kuit-format
+msgctxt "@info Successfully decrypted <file> as <file>."
+msgid "Successfully decrypted <filename>%1</filename> as <filename>%2</filename>."
+msgstr "Descifrouse <filename>%1</filename> como <filename>%2</filename>."
+
+#. +> stable6
+#: src/crypto/decryptverifytask.cpp:264
 #, kde-format
 msgid "Verification canceled."
 msgstr "Cancelouse a verificación."
 
+#. +> trunk6
+#: src/crypto/decryptverifytask.cpp:266
+#, fuzzy, kde-format
+#| msgid "The data was encrypted to this key / certificate."
+msgctxt "@info"
+msgid "The data was not encrypted for any secret key in your certificate list."
+msgstr "Os datos cifráronse para esta chave ou certificado."
+
 #. +> trunk6 stable6
-#: src/crypto/decryptverifytask.cpp:273
+#: src/crypto/decryptverifytask.cpp:270
+#, kde-format
+msgid "No integrity protection (MDC)."
+msgstr "Sen protección da integridade (MDC)."
+
+#. +> stable6
+#: src/crypto/decryptverifytask.cpp:272
 #, kde-format
 msgid "No signatures found."
 msgstr "Non se atoparon sinaturas."
 
-#. +> trunk6 stable6
-#: src/crypto/decryptverifytask.cpp:278
+#. +> stable6
+#: src/crypto/decryptverifytask.cpp:277
 #, kde-format
 msgid "Invalid signature."
 msgid_plural "%1 invalid signatures."
 msgstr[0] "A sinatura é incorrecta."
 msgstr[1] "%1 sinaturas son incorrectas."
 
-#. +> trunk6 stable6
-#: src/crypto/decryptverifytask.cpp:284
+#. +> stable6
+#: src/crypto/decryptverifytask.cpp:283
 #, kde-format
 msgid "The data could not be verified."
 msgid_plural "%1 signatures could not be verified."
@@ -5291,10 +5438,18 @@ msgstr[0] "Non foi posíbel verificar os datos."
 msgstr[1] "Non foi posíbel verificar %1 sinaturas."
 
 #. +> trunk6 stable6
-#: src/crypto/decryptverifytask.cpp:290
+#: src/crypto/decryptverifytask.cpp:286
 #, kde-format
-msgid "Valid signature by %1."
-msgstr "Sinatura correcta de %1."
+msgctxt "%1 is a placeholder for the name of a compliance mode. E.g. NATO RESTRICTED compliant or VS-NfD compliant"
+msgid "The decryption is %1."
+msgstr "O descifrado é %1."
+
+#. +> trunk6 stable6
+#: src/crypto/decryptverifytask.cpp:289
+#, kde-format
+msgctxt "%1 is a placeholder for the name of a compliance mode. E.g. NATO RESTRICTED compliant or VS-NfD compliant"
+msgid "The decryption <b>is not</b> %1."
+msgstr "O descifrado <b>non é</b> %1."
 
 #. +> stable6
 #: src/crypto/decryptverifytask.cpp:292
@@ -5307,45 +5462,40 @@ msgstr ""
 "<br/>"
 "Aviso: O enderezo do remitente do correo non está no %1 usado para asinar."
 
-#. +> trunk6
-#: src/crypto/decryptverifytask.cpp:294
+#. +> stable6
+#: src/crypto/decryptverifytask.cpp:293
 #, kde-format
-msgctxt "@info"
-msgid "Warning: The sender's mail address is not stored in the <a href=\"key:%1\">certificate</a> used for signing."
-msgstr "Aviso: O enderezo de correo do remitente non está almacenado no <a href=\"key:%1\">certificado</a> usado para asinar."
+msgid "certificate"
+msgstr "certificado"
 
 #. +> trunk6 stable6
-#: src/crypto/decryptverifytask.cpp:298
+#: src/crypto/decryptverifytask.cpp:299
 #, kde-format
-msgid "Valid signature."
-msgid_plural "%1 valid signatures."
-msgstr[0] "Sinatura válida."
-msgstr[1] "%1 sinaturas válidas."
+msgid "Embedded file name: '%1'"
+msgstr "Nome de ficheiro incrustado: «%1»"
 
 #. +> trunk6 stable6
-#: src/crypto/decryptverifytask.cpp:300
+#: src/crypto/decryptverifytask.cpp:305
 #, kde-format
-msgid ""
-"<br/>"
-"Warning: The sender's mail address is not stored in the certificates used for signing."
-msgstr ""
-"<br/>"
-"Aviso: O enderezo de correo do remitente non está almacenado nos certificados usados para asinar."
+msgid "<b>Note:</b> You cannot be sure who encrypted this message as it is not signed."
+msgstr "<b>Nota:</b> Non pode estar seguro de quen cifrou a mensaxe porque non está asinada."
 
 #. +> trunk6 stable6
-#: src/crypto/decryptverifytask.cpp:312
+#: src/crypto/decryptverifytask.cpp:311
 #, kde-format
-msgid "Decryption canceled."
-msgstr "Cancelouse a descifraxe."
+msgctxt "Integrity protection was missing because an old cipher was used."
+msgid "<b>Hint:</b> If this file was encrypted before the year 2003 it is likely that the file is legitimate.  This is because back then integrity protection was not widely used."
+msgstr "<b>Consello:</b> Se o ficheiro se cifrou antes do ano 2003 o máis probábel é que sexa ilexítimo. O motivo é que por aquel entón a protección da integridade apenas se usaba."
 
 #. +> trunk6 stable6
 #: src/crypto/decryptverifytask.cpp:316
 #, kde-format
-msgid "No integrity protection (MDC)."
-msgstr "Sen protección da integridade (MDC)."
+msgctxt "The user is offered to force decrypt a non integrity protected message. With the strong advice to re-encrypt it."
+msgid "If you are confident that the file was not manipulated you should re-encrypt it after you have forced the decryption."
+msgstr "Se está seguro de que o ficheiro non o manipularon, debería cifralo de novo tras forzar o descifrado."
 
-#. +> trunk6 stable6
-#: src/crypto/decryptverifytask.cpp:346
+#. +> stable6
+#: src/crypto/decryptverifytask.cpp:343
 #, kde-kuit-format
 msgctxt ""
 "@info Unable to decrypt and verify <file>: <reason><nl />"
@@ -5357,36 +5507,8 @@ msgstr ""
 "Non é posíbel descifrar e verificar <filename>%1</filename>: <emphasis strong='true'>%2</emphasis><nl />"
 "Os datos non se cifraron para ningunha das chaves secretas da súa lista de certificados."
 
-#. +> trunk6 stable6
-#: src/crypto/decryptverifytask.cpp:353
-#, kde-kuit-format
-msgctxt "@info Failed to decrypt and verify <file>: <reason>"
-msgid "Failed to decrypt and verify <filename>%1</filename>: <emphasis strong='true'>%2</emphasis>"
-msgstr "Non foi posíbel descifrar e verificar <filename>%1</filename>: <emphasis strong='true'>%2</emphasis>"
-
-#. +> trunk6 stable6
-#: src/crypto/decryptverifytask.cpp:358
-#, kde-kuit-format
-msgctxt "@info Successfully decrypted and verified <file> as <file>."
-msgid "Successfully decrypted and verified <filename>%1</filename> as <filename>%2</filename>."
-msgstr "Descifrouse e verificouse <filename>%1</filename> como <filename>%2</filename>."
-
-#. +> trunk6 stable6
-#: src/crypto/decryptverifytask.cpp:366
-#, kde-kuit-format
-msgctxt "@info Failed to verify <file>: <reason>"
-msgid "Failed to verify <filename>%1</filename>: <emphasis strong='true'>%2</emphasis>"
-msgstr "Non foi posíbel verificar <filename>%1</filename>: <emphasis strong='true'>%2</emphasis>"
-
-#. +> trunk6 stable6
-#: src/crypto/decryptverifytask.cpp:371
-#, kde-kuit-format
-msgctxt "@info Verified <file> with signature in <file>."
-msgid "Verified <filename>%1</filename> with signature in <filename>%2</filename>."
-msgstr "Verificouse <filename>%1</filename> coa sinatura de <filename>%2</filename>."
-
-#. +> trunk6 stable6
-#: src/crypto/decryptverifytask.cpp:378
+#. +> stable6
+#: src/crypto/decryptverifytask.cpp:375
 #, kde-kuit-format
 msgctxt ""
 "@info Unable to decrypt <file>: <reason><nl />"
@@ -5398,153 +5520,89 @@ msgstr ""
 "Non é posíbel descifrar <filename>%1</filename>: <emphasis strong='true'>%2</emphasis><nl />"
 "Os datos non se cifraron para ningunha das chaves secretas da súa lista de certificados."
 
-#. +> trunk6
-#: src/crypto/decryptverifytask.cpp:385
-#, kde-kuit-format
-msgctxt "@info Failed to decrypt <file>: <reason>"
-msgid "Failed to decrypt <filename>%1</filename>: <emphasis strong='true'>%2</emphasis>"
-msgstr "Non foi posíbel descifrar <filename>%1</filename>: <emphasis strong='true'>%2</emphasis>"
-
 #. +> stable6
-#: src/crypto/decryptverifytask.cpp:382
-#, kde-kuit-format
-msgctxt "@info Failed to decrypt <file>: <reason>"
-msgid "Failed to decrypt <filename>%1</filename>: %2"
-msgstr "Non foi posíbel descifrar <filename>%1</filename>: %2"
-
-#. +> trunk6 stable6
-#: src/crypto/decryptverifytask.cpp:390
-#, kde-kuit-format
-msgctxt "@info Successfully decrypted <file> as <file>."
-msgid "Successfully decrypted <filename>%1</filename> as <filename>%2</filename>."
-msgstr "Descifrouse <filename>%1</filename> como <filename>%2</filename>."
-
-#. +> trunk6 stable6
-#: src/crypto/decryptverifytask.cpp:416 src/crypto/decryptverifytask.cpp:466
-#: src/crypto/signencrypttask.cpp:302 src/crypto/signencrypttask.cpp:319
-#: src/crypto/signencrypttask.cpp:934
-#, kde-format
-msgid "Input error: %1"
-msgstr "Produciuse un erro na entrada: %1"
-
-#. +> trunk6 stable6
-#: src/crypto/decryptverifytask.cpp:427
-#, kde-format
-msgid "<p>The sender's address %1 is not stored in the certificate. Stored: %2</p>"
-msgstr "<p>O enderezo do remitente %1 non está almacenado no certificado. Almacenado: %2</p>"
-
-#. +> trunk6 stable6
-#: src/crypto/decryptverifytask.cpp:429
+#: src/crypto/decryptverifytask.cpp:426
 #, kde-format
 msgctxt "separator for a list of e-mail addresses"
 msgid ", "
 msgstr ", "
 
 #. +> trunk6 stable6
-#: src/crypto/decryptverifytask.cpp:440
-#, kde-format
-msgid "Recipient:"
-msgid_plural "Recipients:"
-msgstr[0] "Destinatario:"
-msgstr[1] "Destinatarios:"
-
-#. +> trunk6 stable6
-#: src/crypto/decryptverifytask.cpp:450
-#, kde-format
-msgid "One unknown recipient"
-msgid_plural "%1 unknown recipients"
-msgstr[0] "Un destinatario descoñecido"
-msgstr[1] "%1 destinatarios descoñecidos"
-
-#. +> trunk6 stable6
-#: src/crypto/decryptverifytask.cpp:480
-#, kde-format
-msgctxt "%1 is a placeholder for the name of a compliance mode. E.g. NATO RESTRICTED compliant or VS-NfD compliant"
-msgid "The decryption is %1."
-msgstr "O descifrado é %1."
-
-#. +> trunk6 stable6
-#: src/crypto/decryptverifytask.cpp:483
-#, kde-format
-msgctxt "%1 is a placeholder for the name of a compliance mode. E.g. NATO RESTRICTED compliant or VS-NfD compliant"
-msgid "The decryption <b>is not</b> %1."
-msgstr "O descifrado <b>non é</b> %1."
-
-#. +> trunk6 stable6
-#: src/crypto/decryptverifytask.cpp:494
-#, kde-format
-msgid "Embedded file name: '%1'"
-msgstr "Nome de ficheiro incrustado: «%1»"
-
-#. +> trunk6 stable6
-#: src/crypto/decryptverifytask.cpp:501
-#, kde-format
-msgid "<b>Note:</b> You cannot be sure who encrypted this message as it is not signed."
-msgstr "<b>Nota:</b> Non pode estar seguro de quen cifrou a mensaxe porque non está asinada."
-
-#. +> trunk6 stable6
-#: src/crypto/decryptverifytask.cpp:506
-#, kde-format
-msgctxt "Integrity protection was missing because an old cipher was used."
-msgid "<b>Hint:</b> If this file was encrypted before the year 2003 it is likely that the file is legitimate.  This is because back then integrity protection was not widely used."
-msgstr "<b>Consello:</b> Se o ficheiro se cifrou antes do ano 2003 o máis probábel é que sexa ilexítimo. O motivo é que por aquel entón a protección da integridade apenas se usaba."
-
-#. +> trunk6 stable6
-#: src/crypto/decryptverifytask.cpp:511
-#, kde-format
-msgctxt "The user is offered to force decrypt a non integrity protected message. With the strong advice to re-encrypt it."
-msgid "If you are confident that the file was not manipulated you should re-encrypt it after you have forced the decryption."
-msgstr "Se está seguro de que o ficheiro non o manipularon, debería cifralo de novo tras forzar o descifrado."
-
-#. +> trunk6 stable6
-#: src/crypto/decryptverifytask.cpp:806
+#: src/crypto/decryptverifytask.cpp:532
 #, kde-format
 msgctxt "@info"
 msgid "Failed to decrypt the notepad: %1"
 msgstr "Non foi posíbel descifrar o caderno: %1"
 
 #. +> trunk6 stable6
-#: src/crypto/decryptverifytask.cpp:809
+#: src/crypto/decryptverifytask.cpp:535
 #, kde-format
 msgctxt "@info"
 msgid "Failed to verify the notepad: %1"
 msgstr "Non foi posíbel verificar o caderno: %1"
 
 #. +> trunk6 stable6
-#: src/crypto/decryptverifytask.cpp:813
+#: src/crypto/decryptverifytask.cpp:539
 #, kde-format
 msgctxt "@info"
 msgid "Successfully decrypted and verified the notepad"
 msgstr "Descifrouse e verificouse o caderno."
 
 #. +> trunk6 stable6
-#: src/crypto/decryptverifytask.cpp:816
+#: src/crypto/decryptverifytask.cpp:542
 #, kde-format
 msgctxt "@info"
 msgid "Successfully decrypted the notepad"
 msgstr "Descifrouse o caderno."
 
 #. +> trunk6 stable6
-#: src/crypto/decryptverifytask.cpp:819
+#: src/crypto/decryptverifytask.cpp:545
 #, kde-format
 msgctxt "@info"
 msgid "Successfully verified the notepad"
 msgstr "Verificouse o caderno."
 
+#. +> trunk6
+#: src/crypto/decryptverifytask.cpp:578
+#, fuzzy, kde-format
+#| msgctxt "@info"
+#| msgid "Warning: The sender's mail address is not stored in the <a href=\"key:%1\">certificate</a> used for signing."
+msgctxt "@info"
+msgid ""
+"Warning: The sender's mail address is not stored in the <a href=\"key:%1\">certificate</a> used for signing. Stored:"
+"<ul>%2</ul>"
+msgstr "Aviso: O enderezo de correo do remitente non está almacenado no <a href=\"key:%1\">certificado</a> usado para asinar."
+
+#. +> stable6
+#: src/crypto/decryptverifytask.cpp:297
+#, kde-format
+msgid ""
+"<br/>"
+"Warning: The sender's mail address is not stored in the certificates used for signing."
+msgstr ""
+"<br/>"
+"Aviso: O enderezo de correo do remitente non está almacenado nos certificados usados para asinar."
+
+#. +> stable6
+#: src/crypto/decryptverifytask.cpp:424
+#, kde-format
+msgid "<p>The sender's address %1 is not stored in the certificate. Stored: %2</p>"
+msgstr "<p>O enderezo do remitente %1 non está almacenado no certificado. Almacenado: %2</p>"
+
 #. +> trunk6 stable6
-#: src/crypto/decryptverifytask.cpp:983 src/crypto/decryptverifytask.cpp:1191
-#: src/crypto/decryptverifytask.cpp:1271 src/crypto/decryptverifytask.cpp:1372
-#: src/crypto/decryptverifytask.cpp:1424 src/crypto/decryptverifytask.cpp:1592
-#: src/crypto/decryptverifytask.cpp:1669 src/crypto/decryptverifytask.cpp:1803
+#: src/crypto/decryptverifytask.cpp:718 src/crypto/decryptverifytask.cpp:926
+#: src/crypto/decryptverifytask.cpp:1006 src/crypto/decryptverifytask.cpp:1107
+#: src/crypto/decryptverifytask.cpp:1159 src/crypto/decryptverifytask.cpp:1327
+#: src/crypto/decryptverifytask.cpp:1404 src/crypto/decryptverifytask.cpp:1538
 #, kde-format
 msgid "Caught exception: %1"
 msgstr "Recolleuse unha excepción: %1"
 
 #. +> trunk6 stable6
-#: src/crypto/decryptverifytask.cpp:986 src/crypto/decryptverifytask.cpp:1193
-#: src/crypto/decryptverifytask.cpp:1274 src/crypto/decryptverifytask.cpp:1374
-#: src/crypto/decryptverifytask.cpp:1427 src/crypto/decryptverifytask.cpp:1594
-#: src/crypto/decryptverifytask.cpp:1671 src/crypto/decryptverifytask.cpp:1805
+#: src/crypto/decryptverifytask.cpp:721 src/crypto/decryptverifytask.cpp:928
+#: src/crypto/decryptverifytask.cpp:1009 src/crypto/decryptverifytask.cpp:1109
+#: src/crypto/decryptverifytask.cpp:1162 src/crypto/decryptverifytask.cpp:1329
+#: src/crypto/decryptverifytask.cpp:1406 src/crypto/decryptverifytask.cpp:1540
 #: src/uiserver/assuanserverconnection.cpp:1358
 #: src/uiserver/assuanserverconnection.cpp:1407
 #, kde-format
@@ -5552,53 +5610,73 @@ msgid "Caught unknown exception"
 msgstr "Recolleuse unha excepción descoñecida"
 
 #. +> trunk6 stable6
-#: src/crypto/decryptverifytask.cpp:1040
+#: src/crypto/decryptverifytask.cpp:775
 #, kde-format
 msgid "Could not determine whether this is an S/MIME or an OpenPGP signature/ciphertext - maybe it is neither ciphertext nor a signature?"
 msgstr "Non foi posíbel determinar se esta é unha sinatura ou cifrado de S/MIME ou de OpenPGP. Pode ser que non sexa nin un cifrado nin unha sinatura?"
 
 #. +> trunk6 stable6
-#: src/crypto/decryptverifytask.cpp:1048
+#: src/crypto/decryptverifytask.cpp:783
 #, kde-format
 msgid "Decrypting %1..."
 msgstr "Descifrando %1…"
 
+#. +> stable6
+#: src/crypto/decryptverifytask.cpp:309
+#, kde-format
+msgid "Decryption canceled."
+msgstr "Cancelouse a descifraxe."
+
 #. +> trunk6 stable6
-#: src/crypto/decryptverifytask.cpp:1327
+#: src/crypto/decryptverifytask.cpp:1062
 #, kde-format
 msgid "Could not determine whether this was S/MIME- or OpenPGP-encrypted - maybe it is not ciphertext at all?"
 msgstr "Non foi posíbel determinar se se cifrou con S/MIME ou con OpenPGP. É posíbel que non estea cifrado?"
 
 #. +> trunk6 stable6
-#: src/crypto/decryptverifytask.cpp:1335
+#: src/crypto/decryptverifytask.cpp:1070
 #, kde-format
 msgid "Decrypting: %1..."
 msgstr "Está a descifrar: %1…"
 
 #. +> trunk6 stable6
-#: src/crypto/decryptverifytask.cpp:1481 src/crypto/decryptverifytask.cpp:1733
+#: src/crypto/decryptverifytask.cpp:1216 src/crypto/decryptverifytask.cpp:1468
 #, kde-format
 msgid "Could not determine whether this is an S/MIME or an OpenPGP signature - maybe it is not a signature at all?"
 msgstr "Non foi posíbel determinar se se trata dunha sinatura de S/MIME ou de OpenPGP. Pode ser que non sexa unha sinatura?"
 
 #. +> trunk6 stable6
-#: src/crypto/decryptverifytask.cpp:1489
+#: src/crypto/decryptverifytask.cpp:1224
 #, kde-format
 msgid "Verifying %1..."
 msgstr "Verificando %1…"
 
 #. +> trunk6 stable6
-#: src/crypto/decryptverifytask.cpp:1751
+#: src/crypto/decryptverifytask.cpp:1486
 #, kde-kuit-format
 msgctxt "Verification of a detached signature in progress. The first file contains the data.The second file is the signature file."
 msgid "Verifying <filename>%1</filename> with <filename>%2</filename>..."
 msgstr "Verificando <filename>%1</filename> con <filename>%2</filename>…"
 
 #. +> trunk6 stable6
-#: src/crypto/decryptverifytask.cpp:1755
+#: src/crypto/decryptverifytask.cpp:1490
 #, kde-format
 msgid "Verifying signature %1..."
 msgstr "Verificando a sinatura %1…"
+
+#. +> stable6
+#: src/crypto/decryptverifytask.cpp:289
+#, kde-format
+msgid "Valid signature by %1."
+msgstr "Sinatura correcta de %1."
+
+#. +> stable6
+#: src/crypto/decryptverifytask.cpp:295
+#, kde-format
+msgid "Valid signature."
+msgid_plural "%1 valid signatures."
+msgstr[0] "Sinatura válida."
+msgstr[1] "%1 sinaturas válidas."
 
 # skip-rule: trasno-encrypt
 #. +> trunk6 stable6
@@ -5617,19 +5695,19 @@ msgid "User cancel"
 msgstr "Cancelación pola persoa usuaria"
 
 #. +> trunk6 stable6
-#: src/crypto/encryptemailtask.cpp:65
+#: src/crypto/encryptemailtask.cpp:64
 #, kde-format
 msgid "Encryption canceled."
 msgstr "Cancelouse o cifrado."
 
 #. +> trunk6 stable6
-#: src/crypto/encryptemailtask.cpp:69
+#: src/crypto/encryptemailtask.cpp:68
 #, kde-format
 msgid "Encryption failed: %1"
 msgstr "Fallou o cifrado: %1"
 
 #. +> trunk6 stable6
-#: src/crypto/encryptemailtask.cpp:72
+#: src/crypto/encryptemailtask.cpp:71
 #, kde-format
 msgid "Encryption succeeded."
 msgstr "Completouse o cifrado."
@@ -5718,50 +5796,27 @@ msgstr "(escolla primeiro entre OpenPGP e S/MIME)"
 msgid "..."
 msgstr "…"
 
+#. +> trunk6
+#: src/crypto/gui/decryptverifyfilesdialog.cpp:53
+#, fuzzy, kde-format
+#| msgid "No output folder."
+msgctxt "@info:tooltip"
+msgid "Choose output folder"
+msgstr "Ningún cartafol de saída."
+
 #. +> trunk6 stable6
-#: src/crypto/gui/decryptverifyfilesdialog.cpp:55
+#: src/crypto/gui/decryptverifyfilesdialog.cpp:54
 #, kde-format
 msgctxt "@label:textbox"
 msgid "&Output folder:"
 msgstr "Cartaf&ol de saída:"
 
 #. +> trunk6 stable6
-#: src/crypto/gui/decryptverifyfilesdialog.cpp:98
+#: src/crypto/gui/decryptverifyfilesdialog.cpp:97
 #, kde-format
 msgctxt "@title:window"
 msgid "Verify Files"
 msgstr "Verificar ficheiros"
-
-#. +> trunk6 stable6
-#: src/crypto/gui/decryptverifyfilesdialog.cpp:122
-#: src/crypto/gui/newresultpage.cpp:98 src/crypto/gui/resultpage.cpp:89
-#, kde-format
-msgid "%1: All operations completed."
-msgstr "%1: Completáronse todas as operacións."
-
-#. +> trunk6 stable6
-#: src/crypto/gui/decryptverifyfilesdialog.cpp:124
-#: src/crypto/gui/newresultpage.cpp:100 src/crypto/gui/resultpage.cpp:91
-#, kde-format
-msgid "All operations completed."
-msgstr "Completáronse todas as operacións."
-
-#. +> trunk6 stable6
-#: src/crypto/gui/decryptverifyfilesdialog.cpp:146
-#: src/crypto/gui/newresultpage.cpp:121
-#: src/crypto/gui/resultlistwidget.cpp:209 src/crypto/gui/resultpage.cpp:108
-#, kde-format
-msgctxt "number, operation description"
-msgid "Operation %1: %2"
-msgstr "Operación %1: %2"
-
-#. +> trunk6 stable6
-#: src/crypto/gui/decryptverifyfilesdialog.cpp:148
-#: src/crypto/gui/newresultpage.cpp:123 src/crypto/gui/resultpage.cpp:110
-#, kde-format
-msgctxt "tag( \"OpenPGP\" or \"CMS\"),  operation description"
-msgid "%1: %2"
-msgstr "%1: %2"
 
 #. +> trunk6 stable6
 #: src/crypto/gui/decryptverifyfileswizard.cpp:212
@@ -5824,6 +5879,33 @@ msgstr "O f&icheiro de entrada é un arquivo; descomprimilo con:"
 msgctxt "@title:window"
 msgid "Encrypt Text"
 msgstr "Cifrar o texto"
+
+#. +> trunk6 stable6
+#: src/crypto/gui/newresultpage.cpp:98 src/crypto/gui/resultpage.cpp:89
+#, kde-format
+msgid "%1: All operations completed."
+msgstr "%1: Completáronse todas as operacións."
+
+#. +> trunk6 stable6
+#: src/crypto/gui/newresultpage.cpp:100 src/crypto/gui/resultpage.cpp:91
+#, kde-format
+msgid "All operations completed."
+msgstr "Completáronse todas as operacións."
+
+#. +> trunk6 stable6
+#: src/crypto/gui/newresultpage.cpp:121
+#: src/crypto/gui/resultlistwidget.cpp:209 src/crypto/gui/resultpage.cpp:108
+#, kde-format
+msgctxt "number, operation description"
+msgid "Operation %1: %2"
+msgstr "Operación %1: %2"
+
+#. +> trunk6 stable6
+#: src/crypto/gui/newresultpage.cpp:123 src/crypto/gui/resultpage.cpp:110
+#, kde-format
+msgctxt "tag( \"OpenPGP\" or \"CMS\"),  operation description"
+msgid "%1: %2"
+msgstr "%1: %2"
 
 #. +> trunk6 stable6
 #: src/crypto/gui/newresultpage.cpp:131 src/crypto/gui/resultpage.cpp:118
@@ -5914,38 +5996,38 @@ msgstr ""
 "%1</qt>"
 
 #. +> trunk6 stable6
-#: src/crypto/gui/resultitemwidget.cpp:135
+#: src/crypto/gui/resultitemwidget.cpp:117
 #, kde-format
 msgctxt "@action:button"
 msgid "Force decryption"
 msgstr "Forzar o descifrado"
 
 #. +> trunk6 stable6
+#: src/crypto/gui/resultitemwidget.cpp:142
+#, kde-format
+msgid "Diagnostics"
+msgstr "Análise"
+
+#. +> trunk6 stable6
+#: src/crypto/gui/resultitemwidget.cpp:143
+#, kde-format
+msgctxt "The Audit Log is a detailed error log from the gnupg backend"
+msgid "Show Audit Log"
+msgstr "Amosar o rexistro de auditoría"
+
+#. +> stable6
 #: src/crypto/gui/resultitemwidget.cpp:178
 #, kde-format
 msgctxt "1 is optional keyid. No space is intended as it can be empty."
 msgid "Search%1"
 msgstr "Busca%1"
 
-#. +> trunk6 stable6
+#. +> stable6
 #: src/crypto/gui/resultitemwidget.cpp:179
 #, kde-format
 msgctxt "1 is optional keyid. No space is intended as it can be empty."
 msgid "Import%1"
 msgstr "Importación%1"
-
-#. +> trunk6 stable6
-#: src/crypto/gui/resultitemwidget.cpp:228
-#, kde-format
-msgid "Diagnostics"
-msgstr "Análise"
-
-#. +> trunk6 stable6
-#: src/crypto/gui/resultitemwidget.cpp:229
-#, kde-format
-msgctxt "The Audit Log is a detailed error log from the gnupg backend"
-msgid "Show Audit Log"
-msgstr "Amosar o rexistro de auditoría"
 
 #. +> trunk6 stable6
 #: src/crypto/gui/resultlistwidget.cpp:161
@@ -6716,19 +6798,19 @@ msgid "Call to NewSignEncryptEMailController::protocolAsString() is ambiguous."
 msgstr "A chamada a NewSignEncryptEMailController::protocolAsString() é ambigua."
 
 #. +> trunk6 stable6
-#: src/crypto/signemailtask.cpp:68
+#: src/crypto/signemailtask.cpp:67
 #, kde-format
 msgid "Signing canceled."
 msgstr "Cancelouse a sinatura."
 
 #. +> trunk6 stable6
-#: src/crypto/signemailtask.cpp:72
+#: src/crypto/signemailtask.cpp:71
 #, kde-format
 msgid "Signing failed: %1"
 msgstr "A sinatura fallou: %1"
 
 #. +> trunk6 stable6
-#: src/crypto/signemailtask.cpp:75
+#: src/crypto/signemailtask.cpp:74
 #, kde-format
 msgid "Signing succeeded."
 msgstr "Asinouse sen problemas."
@@ -6789,42 +6871,42 @@ msgid "Caught unknown exception in SignEncryptFilesController::Private::slotWiza
 msgstr "Recolleuse unha excepción descoñecida en SignEncryptFilesController::Private::slotWizardOperationPrepared"
 
 #. +> trunk6 stable6
-#: src/crypto/signencrypttask.cpp:150
+#: src/crypto/signencrypttask.cpp:145
 #, kde-format
 msgctxt "@info"
 msgid "Signing and encryption canceled."
 msgstr "Canceláronse a sinatura e o cifrado."
 
 #. +> trunk6 stable6
-#: src/crypto/signencrypttask.cpp:153
+#: src/crypto/signencrypttask.cpp:148
 #, kde-format
 msgctxt "@info"
 msgid "Signing canceled."
 msgstr "Cancelouse a sinatura."
 
 #. +> trunk6 stable6
-#: src/crypto/signencrypttask.cpp:156
+#: src/crypto/signencrypttask.cpp:151
 #, kde-format
 msgctxt "@info"
 msgid "Encryption canceled."
 msgstr "Cancelouse o cifrado."
 
 #. +> trunk6 stable6
-#: src/crypto/signencrypttask.cpp:162
+#: src/crypto/signencrypttask.cpp:157
 #, kde-kuit-format
 msgctxt "@info Failed to sign and encrypt <file>: <reason>"
 msgid "Failed to sign and encrypt <filename>%1</filename>: <emphasis strong='true'>%2</emphasis>"
 msgstr "Non foi posíbel asinar e cifrar <filename>%1</filename>: <emphasis strong='true'>%2</emphasis>"
 
 #. +> trunk6 stable6
-#: src/crypto/signencrypttask.cpp:168
+#: src/crypto/signencrypttask.cpp:163
 #, kde-kuit-format
 msgctxt "@info Failed to sign and encrypt <file> and <file>: <reason>"
 msgid "Failed to sign and encrypt <filename>%1</filename> and <filename>%2</filename>: <emphasis strong='true'>%3</emphasis>"
 msgstr "Non foi posíbel asinar e cifrar <filename>%1</filename> e <filename>%2</filename>: <emphasis strong='true'>%3</emphasis>"
 
 #. +> trunk6 stable6
-#: src/crypto/signencrypttask.cpp:174
+#: src/crypto/signencrypttask.cpp:169
 #, kde-kuit-format
 msgctxt "@info Failed to sign and encrypt <file> and <n> other(s): <reason>"
 msgid "Failed to sign and encrypt <filename>%2</filename> and %1 other: <emphasis strong='true'>%3</emphasis>"
@@ -6833,21 +6915,21 @@ msgstr[0] "Non foi posíbel asinar e cifrar <filename>%2</filename> e %1 outro: 
 msgstr[1] "Non foi posíbel asinar e cifrar <filename>%2</filename> e %1 outros: <emphasis strong='true'>%3</emphasis>"
 
 #. +> trunk6 stable6
-#: src/crypto/signencrypttask.cpp:184
+#: src/crypto/signencrypttask.cpp:179
 #, kde-kuit-format
 msgctxt "@info Failed to sign <file>: <reason>"
 msgid "Failed to sign <filename>%1</filename>: <emphasis strong='true'>%2</emphasis>"
 msgstr "Non foi posíbel asinar <filename>%1</filename>: <emphasis strong='true'>%2</emphasis>"
 
 #. +> trunk6 stable6
-#: src/crypto/signencrypttask.cpp:190
+#: src/crypto/signencrypttask.cpp:185
 #, kde-kuit-format
 msgctxt "@info Failed to sign <file> and <file>: <reason>"
 msgid "Failed to sign <filename>%1</filename> and <filename>%2</filename>: <emphasis strong='true'>%3</emphasis>"
 msgstr "Non foi posíbel asinar <filename>%1</filename> e <filename>%2</filename>: <emphasis strong='true'>%3</emphasis>"
 
 #. +> trunk6 stable6
-#: src/crypto/signencrypttask.cpp:196
+#: src/crypto/signencrypttask.cpp:191
 #, kde-kuit-format
 msgctxt "@info Failed to sign <file> and <n> other(s): <reason>"
 msgid "Failed to sign <filename>%2</filename> and %1 other: <emphasis strong='true'>%3</emphasis>"
@@ -6856,21 +6938,21 @@ msgstr[0] "Non foi posíbel asinar <filename>%2</filename> e %1 outro: <emphasis
 msgstr[1] "Non foi posíbel asinar <filename>%2</filename> e %1 outros: <emphasis strong='true'>%3</emphasis>"
 
 #. +> trunk6 stable6
-#: src/crypto/signencrypttask.cpp:206
+#: src/crypto/signencrypttask.cpp:201
 #, kde-kuit-format
 msgctxt "@info Failed to encrypt <file>: <reason>"
 msgid "Failed to encrypt <filename>%1</filename>: <emphasis strong='true'>%2</emphasis>"
 msgstr "Non foi posíbel cifrar <filename>%1</filename>: <emphasis strong='true'>%2</emphasis>"
 
 #. +> trunk6 stable6
-#: src/crypto/signencrypttask.cpp:212
+#: src/crypto/signencrypttask.cpp:207
 #, kde-kuit-format
 msgctxt "@info Failed to encrypt <file> and <file>: <reason>"
 msgid "Failed to encrypt <filename>%1</filename> and <filename>%2</filename>: <emphasis strong='true'>%3</emphasis>"
 msgstr "Non foi posíbel cifrar <filename>%1</filename> e <filename>%2</filename>: <emphasis strong='true'>%3</emphasis>"
 
 #. +> trunk6 stable6
-#: src/crypto/signencrypttask.cpp:218
+#: src/crypto/signencrypttask.cpp:213
 #, kde-kuit-format
 msgctxt "@info Failed to encrypt <file> and <n> other(s): <reason>"
 msgid "Failed to encrypt <filename>%2</filename> and %1 other: <emphasis strong='true'>%3</emphasis>"
@@ -6879,21 +6961,21 @@ msgstr[0] "Non foi posíbel cifrar <filename>%2</filename> e %1 outro: <emphasis
 msgstr[1] "Non foi posíbel cifrar <filename>%2</filename> e %1 outros: <emphasis strong='true'>%3</emphasis>"
 
 #. +> trunk6 stable6
-#: src/crypto/signencrypttask.cpp:228
+#: src/crypto/signencrypttask.cpp:223
 #, kde-kuit-format
 msgctxt "@info Successfully signed and encrypted <file> and saved it as <file>."
 msgid "Successfully signed and encrypted <filename>%1</filename> and saved it as <filename>%2</filename>."
 msgstr "Asinouse e cifrouse <filename>%1</filename> e gardouse como <filename>%2</filename>."
 
 #. +> trunk6 stable6
-#: src/crypto/signencrypttask.cpp:234
+#: src/crypto/signencrypttask.cpp:229
 #, kde-kuit-format
 msgctxt "@info Successfully signed and encrypted <file> and <file> and saved it as <file>."
 msgid "Successfully signed and encrypted <filename>%1</filename> and <filename>%2</filename> and saved it as <filename>%3</filename>."
 msgstr "Asináronse e cifráronse <filename>%1</filename> e <filename>%2</filename> e gardáronse como <filename>%3</filename>."
 
 #. +> trunk6 stable6
-#: src/crypto/signencrypttask.cpp:240
+#: src/crypto/signencrypttask.cpp:235
 #, kde-kuit-format
 msgctxt "@info Successfully signed and encrypted <file> and <n> other(s) as <file>."
 msgid "Successfully signed and encrypted <filename>%2</filename> and %1 other and saved it as <filename>%3</filename>."
@@ -6902,21 +6984,21 @@ msgstr[0] "Asináronse e cifráronse <filename>%2</filename> e %1 outro e gardá
 msgstr[1] "Asináronse e cifráronse <filename>%2</filename> e %1 outro e gardáronse como <filename>%3</filename>."
 
 #. +> trunk6 stable6
-#: src/crypto/signencrypttask.cpp:250
+#: src/crypto/signencrypttask.cpp:245
 #, kde-kuit-format
 msgctxt "@info Successfully signed <file> and saved the signature in <file>."
 msgid "Successfully signed <filename>%1</filename> and saved the signature in <filename>%2</filename>."
 msgstr "Asinouse <filename>%1</filename> e a sinatura gardouse en <filename>%2</filename>."
 
 #. +> trunk6 stable6
-#: src/crypto/signencrypttask.cpp:256
+#: src/crypto/signencrypttask.cpp:251
 #, kde-kuit-format
 msgctxt "@info Successfully signed <file> and <file> and saved the signature in <file>."
 msgid "Successfully signed <filename>%1</filename> and <filename>%2</filename> and saved the signature in <filename>%3</filename>."
 msgstr "Asináronse <filename>%1</filename> e <filename>%2</filename> e a sinatura gardouse en <filename>%3</filename>."
 
 #. +> trunk6 stable6
-#: src/crypto/signencrypttask.cpp:262
+#: src/crypto/signencrypttask.cpp:257
 #, kde-kuit-format
 msgctxt "@info Successfully signed <file> and <n> other(s) and saved the signature in <file>."
 msgid "Successfully signed <filename>%2</filename> and %1 other and saved the signature in <filename>%3</filename>."
@@ -6925,21 +7007,21 @@ msgstr[0] "Asináronse <filename>%2</filename> e %1 outro e a sinatura gardouse 
 msgstr[1] "Asináronse <filename>%2</filename> e %1 outros e a sinatura gardouse en <filename>%3</filename>."
 
 #. +> trunk6 stable6
-#: src/crypto/signencrypttask.cpp:271
+#: src/crypto/signencrypttask.cpp:266
 #, kde-kuit-format
 msgctxt "@info Successfully encrypted <file> and saved it as <file>."
 msgid "Successfully encrypted <filename>%1</filename> and saved it as <filename>%2</filename>."
 msgstr "Cifrouse <filename>%1</filename> e gardouse como <filename>%2</filename>."
 
 #. +> trunk6 stable6
-#: src/crypto/signencrypttask.cpp:277
+#: src/crypto/signencrypttask.cpp:272
 #, kde-kuit-format
 msgctxt "@info Successfully encrypted <file> and <file> and saved it as <file>."
 msgid "Successfully encrypted <filename>%1</filename> and <filename>%2</filename> and saved it as <filename>%3</filename>."
 msgstr "Cifráronse <filename>%1</filename> e <filename>%2</filename> e gardáronse como <filename>%3</filename>."
 
 #. +> trunk6 stable6
-#: src/crypto/signencrypttask.cpp:283
+#: src/crypto/signencrypttask.cpp:278
 #, kde-kuit-format
 msgctxt "@info Successfully encrypted <file> and <n> other(s) and saved it as <file>."
 msgid "Successfully encrypted <filename>%2</filename> and %1 other and saved it as <filename>%3</filename>."
@@ -6948,26 +7030,33 @@ msgstr[0] "Cifráronse <filename>%2</filename> e %1 outro e gardáronse como <fi
 msgstr[1] "Cifráronse <filename>%2</filename> e %1 outros e gardáronse como <filename>%3</filename>."
 
 #. +> trunk6 stable6
-#: src/crypto/signencrypttask.cpp:304 src/crypto/signencrypttask.cpp:321
+#: src/crypto/signencrypttask.cpp:297 src/crypto/signencrypttask.cpp:314
+#: src/crypto/signencrypttask.cpp:929
+#, kde-format
+msgid "Input error: %1"
+msgstr "Produciuse un erro na entrada: %1"
+
+#. +> trunk6 stable6
+#: src/crypto/signencrypttask.cpp:299 src/crypto/signencrypttask.cpp:316
 #, kde-format
 msgid "Output error: %1"
 msgstr "Produciuse un erro na saída: %1"
 
 #. +> trunk6 stable6
-#: src/crypto/signencrypttask.cpp:538
+#: src/crypto/signencrypttask.cpp:533
 #, kde-format
 msgid "Cannot determine protocol for task"
 msgstr "Non é posíbel determinar o protocolo para a tarefa"
 
 #. +> trunk6 stable6
-#: src/crypto/signencrypttask.cpp:589
+#: src/crypto/signencrypttask.cpp:584
 #, kde-format
 msgctxt "<name of first file>, ..."
 msgid "%1, ..."
 msgstr "%1…"
 
 #. +> trunk6 stable6
-#: src/crypto/signencrypttask.cpp:801 src/utils/archivedefinition.cpp:422
+#: src/crypto/signencrypttask.cpp:796 src/utils/archivedefinition.cpp:422
 #, kde-format
 msgid ""
 "Cannot find common base directory for these files:\n"
@@ -6977,63 +7066,63 @@ msgstr ""
 "%1"
 
 #. +> trunk6 stable6
-#: src/crypto/signencrypttask.cpp:818
+#: src/crypto/signencrypttask.cpp:813
 #, kde-format
 msgctxt "@info"
 msgid "Creating signed and encrypted archive ..."
 msgstr "Creando un arquivo asinado e cifrado…"
 
 #. +> trunk6 stable6
-#: src/crypto/signencrypttask.cpp:834
+#: src/crypto/signencrypttask.cpp:829
 #, kde-format
 msgctxt "@info"
 msgid "Creating encrypted archive ..."
 msgstr "Creando un arquivo cifrado…"
 
 #. +> trunk6 stable6
-#: src/crypto/signencrypttask.cpp:850
+#: src/crypto/signencrypttask.cpp:845
 #, kde-format
 msgctxt "@info"
 msgid "Creating signed archive ..."
 msgstr "Creando un arquivo asinado…"
 
 #. +> trunk6 stable6
-#: src/crypto/signencrypttask.cpp:977
+#: src/crypto/signencrypttask.cpp:972
 #, kde-format
 msgctxt "@info"
 msgid "Failed to sign the notepad: %1"
 msgstr "Non foi posíbel asinar o caderno: %1"
 
 #. +> trunk6 stable6
-#: src/crypto/signencrypttask.cpp:980
+#: src/crypto/signencrypttask.cpp:975
 #, kde-format
 msgctxt "@info"
 msgid "Failed to encrypt the notepad: %1"
 msgstr "Non foi posíbel cifrar o caderno: %1"
 
 #. +> trunk6 stable6
-#: src/crypto/signencrypttask.cpp:984
+#: src/crypto/signencrypttask.cpp:979
 #, kde-format
 msgctxt "@info"
 msgid "Successfully encrypted and signed the notepad"
 msgstr "Cifrouse e asinouse o caderno."
 
 #. +> trunk6 stable6
-#: src/crypto/signencrypttask.cpp:986
+#: src/crypto/signencrypttask.cpp:981
 #, kde-format
 msgctxt "@info"
 msgid "Successfully encrypted the notepad"
 msgstr "Cifrouse o caderno."
 
 #. +> trunk6 stable6
-#: src/crypto/signencrypttask.cpp:988
+#: src/crypto/signencrypttask.cpp:983
 #, kde-format
 msgctxt "@info"
 msgid "Successfully signed the notepad"
 msgstr "Asinouse o caderno."
 
 #. +> trunk6 stable6
-#: src/crypto/task.cpp:176
+#: src/crypto/task.cpp:172
 #, kde-format
 msgid "Unknown exception in Task::start()"
 msgstr "Excepción descoñecida en Task::start()"
@@ -10512,21 +10601,21 @@ msgid "Invalid arguments: %1"
 msgstr "Argumentos incorrectos: %1"
 
 #. +> trunk6 stable6
-#: src/mainwindow.cpp:117
+#: src/mainwindow.cpp:118
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "&Quit <application>%1</application>"
 msgstr "&Saír de <application>%1</application>"
 
 #. +> trunk6 stable6
-#: src/mainwindow.cpp:124
+#: src/mainwindow.cpp:125
 #, kde-format
 msgctxt "@action:button"
 msgid "Only &Close Window"
 msgstr "Só pe&char a xanela"
 
 #. +> trunk6 stable6
-#: src/mainwindow.cpp:224
+#: src/mainwindow.cpp:225
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -10537,252 +10626,252 @@ msgstr ""
 "Quizais sexa mellor pechar esta xanela sen saír de <application>%1</application>."
 
 #. +> trunk6 stable6
-#: src/mainwindow.cpp:227
+#: src/mainwindow.cpp:228
 #, kde-format
 msgctxt "@title:window"
 msgid "Really Quit?"
 msgstr "Seguro que quere saír?"
 
 #. +> trunk6 stable6
-#: src/mainwindow.cpp:314
+#: src/mainwindow.cpp:315
 #, kde-format
 msgid "Could not start the GnuPG Log Viewer (kwatchgnupg). Please check your installation."
 msgstr "Non foi posíbel iniciar o Visor de Rexistros de GnuPG (kwatchgnupg). Por favor, comprobe a instalación."
 
 #. +> trunk6 stable6
-#: src/mainwindow.cpp:316
+#: src/mainwindow.cpp:317
 #, kde-format
 msgid "Error Starting KWatchGnuPG"
 msgstr "Erro ao Iniciar KWatchGnuPG"
 
 #. +> trunk6 stable6
-#: src/mainwindow.cpp:582
+#: src/mainwindow.cpp:583
 #, kde-format
 msgid "GnuPG Log Viewer"
 msgstr "Visor de Rexistro de GnuPG"
 
 #. +> trunk6 stable6
-#: src/mainwindow.cpp:594
+#: src/mainwindow.cpp:595
 #, kde-format
 msgid "Show GnuPG Configuration"
 msgstr "Amosar a configuración de GnuPG"
 
 #. +> trunk6 stable6
-#: src/mainwindow.cpp:607
+#: src/mainwindow.cpp:608
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Restart Background Processes"
 msgstr "Reiniciar os procesos en segundo plano"
 
 #. +> trunk6 stable6
-#: src/mainwindow.cpp:608
+#: src/mainwindow.cpp:609
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Restart the background processes, e.g. after making changes to the configuration."
 msgstr "Reiniciar os procesos en segundo plano, p. ex. tras facer cambios na configuración."
 
 #. +> trunk6 stable6
-#: src/mainwindow.cpp:620
+#: src/mainwindow.cpp:621
 #, kde-format
 msgid "Check for updates"
 msgstr "Comprobar se hai actualizacións"
 
 #. +> trunk6 stable6
-#: src/mainwindow.cpp:633
+#: src/mainwindow.cpp:634
 #, kde-format
 msgctxt "@action show certificate overview"
 msgid "Certificates"
 msgstr "Certificados"
 
 #. +> trunk6 stable6
-#: src/mainwindow.cpp:634
+#: src/mainwindow.cpp:635
 #, kde-format
 msgid "Show certificate overview"
 msgstr "Amosar o resumo do certificado"
 
 #. +> trunk6 stable6
-#: src/mainwindow.cpp:644
+#: src/mainwindow.cpp:645
 #, kde-format
 msgctxt "@action show input / output area for encrypting/signing resp. decrypting/verifying text"
 msgid "Notepad"
 msgstr "Caderno de notas"
 
 #. +> trunk6 stable6
-#: src/mainwindow.cpp:645
+#: src/mainwindow.cpp:646
 #, kde-format
 msgid "Show pad for encrypting/decrypting and signing/verifying text"
 msgstr "Amosar o caderno para cifrar/descifrar e asinar/verificar texto"
 
 #. +> trunk6 stable6
-#: src/mainwindow.cpp:655
+#: src/mainwindow.cpp:656
 #, kde-format
 msgctxt "@action show smartcard management view"
 msgid "Smartcards"
 msgstr "Tarxetas intelixentes"
 
 #. +> trunk6 stable6
-#: src/mainwindow.cpp:656
+#: src/mainwindow.cpp:657
 #, kde-format
 msgid "Show smartcard management"
 msgstr "Amosar a xestión de tarxetas intelixentes"
 
 #. +> trunk6 stable6
-#: src/mainwindow.cpp:667
+#: src/mainwindow.cpp:668
 #, kde-format
 msgid "Perform Self-Test"
 msgstr "Realizar a proba automática"
 
 #. +> trunk6 stable6
-#: src/mainwindow.cpp:678
+#: src/mainwindow.cpp:679
 #, kde-format
 msgid "Configure Groups..."
 msgstr "Configurar os grupos…"
 
 #. +> trunk6 stable6
-#: src/mainwindow.cpp:690
+#: src/mainwindow.cpp:691
 #, kde-format
 msgctxt "@action:intoolbar"
 msgid "Groups"
 msgstr "Grupos"
 
 #. +> trunk6 stable6
-#: src/mainwindow.cpp:727
+#: src/mainwindow.cpp:728
 #, kde-format
 msgctxt "@action"
 msgid "Set Focus to Quick Search"
 msgstr "Enfocar a busca rápida"
 
 #. +> trunk6 stable6
-#: src/mainwindow.cpp:739
+#: src/mainwindow.cpp:740
 #, kde-format
 msgid "Gpg4win Compendium"
 msgstr "Compendio de Gpg4win (en inglés)"
 
 #. +> trunk6 stable6
-#: src/mainwindow.cpp:743
+#: src/mainwindow.cpp:744
 #, kde-format
 msgctxt "The Gpg4win compendium is only availableat this point (24.7.2017) in german and english.Please check with Gpg4win before translating this filename."
 msgid "gpg4win-compendium-en.pdf"
 msgstr "gpg4win-compendium-en.pdf"
 
 #. +> trunk6 stable6
-#: src/mainwindow.cpp:754
+#: src/mainwindow.cpp:755
 #, kde-format
 msgid "&Quick Guide Encrypt and Sign"
 msgstr "&Guía rápida para cifrar e asinar"
 
 #. +> trunk6 stable6
-#: src/mainwindow.cpp:755
+#: src/mainwindow.cpp:756
 #, kde-format
 msgctxt "Only available in German and English. Leave to English for other languages."
 msgid "encrypt_and_sign_gnupgvsd_en.pdf"
 msgstr "encrypt_and_sign_gnupgvsd_en.pdf"
 
 #. +> trunk6 stable6
-#: src/mainwindow.cpp:763
+#: src/mainwindow.cpp:764
 #, kde-format
 msgid "&Password-based Encryption"
 msgstr "Cifrado baseado en &contrasinal"
 
 #. +> trunk6 stable6
-#: src/mainwindow.cpp:764
+#: src/mainwindow.cpp:765
 #, kde-format
 msgctxt "Only available in German and English. Leave to English for other languages."
 msgid "symmetric_encryption_gnupgvsd_en.pdf"
 msgstr "symmetric_encryption_gnupgvsd_en.pdf"
 
 #. +> trunk6 stable6
-#: src/mainwindow.cpp:771
+#: src/mainwindow.cpp:772
 #, kde-format
 msgid "Certificate &Groups"
 msgstr "&Grupos de certificados"
 
 #. +> trunk6 stable6
-#: src/mainwindow.cpp:772
+#: src/mainwindow.cpp:773
 #, kde-format
 msgctxt "Only available in German and English. Leave to English for other languages."
 msgid "groupfeature_gnupgvsd_en.pdf"
 msgstr "groupfeature_gnupgvsd_en.pdf"
 
 #. +> trunk6 stable6
-#: src/mainwindow.cpp:781
+#: src/mainwindow.cpp:782
 #, kde-format
 msgid "&Mail Encryption in Outlook"
 msgstr "C&ifrado de correo en Outlook"
 
 #. +> trunk6 stable6
-#: src/mainwindow.cpp:782
+#: src/mainwindow.cpp:783
 #, kde-format
 msgctxt "Only available in German and English. Leave to English for other languages. Only shown on Windows."
 msgid "gpgol_outlook_addin_en.pdf"
 msgstr "gpgol_outlook_addin_en.pdf"
 
 #. +> trunk6 stable6
-#: src/mainwindow.cpp:792
+#: src/mainwindow.cpp:793
 #, kde-format
 msgid "&Certification Management"
 msgstr "Xestión de &certificados"
 
 #. +> trunk6 stable6
-#: src/mainwindow.cpp:793
+#: src/mainwindow.cpp:794
 #, kde-format
 msgctxt "Only available in German and English. Leave to English for other languages."
 msgid "certification_management_gnupgvsd_en.pdf"
 msgstr "certification_management_gnupgvsd_en.pdf"
 
 #. +> trunk6 stable6
-#: src/mainwindow.cpp:801
+#: src/mainwindow.cpp:802
 #, kde-format
 msgid "&Smartcard Setup"
 msgstr "Configuración de tar&xetas intelixentes"
 
 #. +> trunk6 stable6
-#: src/mainwindow.cpp:802
+#: src/mainwindow.cpp:803
 #, kde-format
 msgctxt "Only available in German and English. Leave to English for other languages."
 msgid "smartcard_setup_gnupgvsd_en.pdf"
 msgstr "smartcard_setup_gnupgvsd_en.pdf"
 
 #. +> trunk6 stable6
-#: src/mainwindow.cpp:809
+#: src/mainwindow.cpp:810
 #, kde-format
 msgid "GnuPG Command&line"
 msgstr "&Liña de ordes de GnuPG"
 
 #. +> trunk6 stable6
-#: src/mainwindow.cpp:819
+#: src/mainwindow.cpp:820
 #, kde-format
 msgid "Manual for VS-NfD Approval"
 msgstr "Manual da aprobación de VS-NfD"
 
 #. +> trunk6 stable6
-#: src/mainwindow.cpp:820
+#: src/mainwindow.cpp:821
 #, kde-format
 msgctxt "Only available in German and English. Keep the English file name for other languages."
 msgid "handbuch_zulassung_gnupgvsd_en.pdf"
 msgstr "handbuch_zulassung_gnupgvsd_en.pdf"
 
 #. +> trunk6 stable6
-#: src/mainwindow.cpp:828
+#: src/mainwindow.cpp:829
 #, kde-format
 msgid "SecOps for VS-NfD Approval"
 msgstr "SecOps da aprobación de VS-NfD"
 
 #. +> trunk6 stable6
-#: src/mainwindow.cpp:829
+#: src/mainwindow.cpp:830
 #, kde-format
 msgctxt "Only available in German and English. Keep the English file name for other languages."
 msgid "BSI-VSA-10867_ENG_secops.pdf"
 msgstr "BSI-VSA-10867_ENG_secops.pdf"
 
 #. +> trunk6 stable6
-#: src/mainwindow.cpp:856
+#: src/mainwindow.cpp:857
 #, kde-format
 msgid "There are still some background operations ongoing. These will be terminated when closing the window. Proceed?"
 msgstr "Aínda se está a realizar algunhas operacións no fondo. Terminaranse ao pechar a xanela. Continuar?"
 
 #. +> trunk6 stable6
-#: src/mainwindow.cpp:859
+#: src/mainwindow.cpp:860
 #, kde-format
 msgid "Ongoing Background Tasks"
 msgstr "Tarefas de fondo en execución"
@@ -14074,6 +14163,11 @@ msgstr ""
 "Importar o certificado dun ficheiro.<nl/>"
 "Para importar dun servidor de chaves público use <interface>Buscar no servidor</interface> no seu lugar."
 
+#, kde-kuit-format
+#~ msgctxt "@info Failed to decrypt <file>: <reason>"
+#~ msgid "Failed to decrypt <filename>%1</filename>: <emphasis strong='true'>%2</emphasis>"
+#~ msgstr "Non foi posíbel descifrar <filename>%1</filename>: <emphasis strong='true'>%2</emphasis>"
+
 #~ msgid "Current Maintainer"
 #~ msgstr "Mantemento actual."
 
@@ -15041,10 +15135,6 @@ msgstr ""
 #, kde-format
 #~ msgid "Search on keyserver"
 #~ msgstr "Buscar nun servidor de chaves"
-
-#, kde-format
-#~ msgid "The data was encrypted to this key / certificate."
-#~ msgstr "Os datos cifráronse para esta chave ou certificado."
 
 #, kde-format
 #~ msgid "&Next"
@@ -16126,10 +16216,6 @@ msgstr ""
 #~ msgctxt "@action:button"
 #~ msgid "Export Certificates"
 #~ msgstr "Exportar certificados"
-
-#, kde-format
-#~ msgid "No output folder."
-#~ msgstr "Ningún cartafol de saída."
 
 #, kde-format
 #~ msgid "Invalid output folder."
