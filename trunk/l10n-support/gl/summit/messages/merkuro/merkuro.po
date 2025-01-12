@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: merkuro\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-04 08:29+0100\n"
+"POT-Creation-Date: 2025-01-10 14:24+0100\n"
 "PO-Revision-Date: 2025-01-04 15:04+0100\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Proxecto Trasno (proxecto@trasno.gal)\n"
@@ -1931,8 +1931,6 @@ msgstr "Amosar os eventos"
 #. +> trunk6
 #: calendar/qml/Menus/CalendarItemMenu.qml:58
 #, kde-format
-#| msgctxt "@action:inmenu"
-#| msgid "Edit calendar…"
 msgctxt "@action:inmenu"
 msgid "Edit Calendar…"
 msgstr "Editar o calendario…"
@@ -1947,8 +1945,6 @@ msgstr "Editar o calendario…"
 #. +> trunk6
 #: calendar/qml/Menus/CalendarItemMenu.qml:64
 #, kde-format
-#| msgctxt "@action:inmenu"
-#| msgid "Update calendar"
 msgctxt "@action:inmenu"
 msgid "Update Calendar"
 msgstr "Actualizar o calendario"
@@ -1963,7 +1959,6 @@ msgstr "Actualizar o calendario"
 #. +> trunk6
 #: calendar/qml/Menus/CalendarItemMenu.qml:70
 #, kde-format
-#| msgid "Delete calendar"
 msgctxt "@action:inmenu"
 msgid "Delete Calendar"
 msgstr "Eliminar o calendario"
@@ -2030,7 +2025,7 @@ msgstr "Ir"
 #: calendar/qml/Menus/GlobalMenuBar.qml:157 calendar/qml/Menus/MenuBar.qml:134
 #: contacts/qml/GlobalMenuBar.qml:33 contacts/qml/MenuBar.qml:29
 #: mail/qml/app/GlobalMenuBar.qml:55 mail/qml/app/MenuBar.qml:26
-#: mail/qml/FolderView.qml:62
+#: mail/qml/FolderView.qml:43
 #, kde-format
 msgctxt "@action:menu"
 msgid "Create"
@@ -3758,14 +3753,14 @@ msgid "Quit"
 msgstr "Saír"
 
 #. +> trunk6 stable6
-#: mail/abstractmailmodel.cpp:20
+#: mail/abstractmailmodel.cpp:24
 #, kde-format
 msgctxt "displayed as subject when the subject of a mail is empty"
 msgid "No Subject"
 msgstr "Sen asunto"
 
 #. +> trunk6 stable6
-#: mail/abstractmailmodel.cpp:21
+#: mail/abstractmailmodel.cpp:25
 #, kde-format
 msgctxt "displayed when a mail has unknown sender, receiver or date"
 msgid "Unknown"
@@ -3784,16 +3779,74 @@ msgid "No key"
 msgstr "Sen chave"
 
 #. +> trunk6 stable6
-#: mail/mailapplication.cpp:24
+#: mail/mailapplication.cpp:26
 #, kde-format
 msgid "New Mail…"
 msgstr "Nova mensaxe de correo…"
 
 #. +> trunk6 stable6
-#: mail/mailapplication.cpp:31
+#: mail/mailapplication.cpp:33
 #, kde-format
 msgid "Check Mail"
 msgstr "Comprobar o correo"
+
+#. +> trunk6
+#: mail/mailapplication.cpp:39
+#, fuzzy, kde-format
+#| msgid "Mark Message as Read"
+msgctxt "@action"
+msgid "Mark as Read"
+msgstr "Marcar a mensaxe como lida"
+
+#. +> trunk6
+#: mail/mailapplication.cpp:44
+#, fuzzy, kde-format
+#| msgid "Mark Message as Unread"
+msgctxt "@action"
+msgid "Mark as Unread"
+msgstr "Marcar a mensaxe como non lida"
+
+#. +> trunk6
+#: mail/mailapplication.cpp:50
+#, fuzzy, kde-format
+#| msgid "Mark as Important"
+msgctxt "@action"
+msgid "Mark as Important"
+msgstr "Marcar como importante"
+
+#. +> trunk6
+#: mail/mailapplication.cpp:53 mail/qml/actions/DeleteMailAction.qml:20
+#: mail/qml/ConversationViewer.qml:31
+#, fuzzy, kde-format
+#| msgid "Move to Trash"
+msgctxt "@action"
+msgid "Move to Trash"
+msgstr "Botar no lixo"
+
+#. +> trunk6
+#: mail/mailapplication.cpp:56
+#, fuzzy, kde-format
+#| msgctxt "@action:button"
+#| msgid "Save as..."
+msgctxt "@action"
+msgid "Save as..."
+msgstr "Gardar como…"
+
+#. +> trunk6
+#: mail/mailapplication.cpp:59
+#, fuzzy, kde-format
+#| msgid "Move Message to..."
+msgctxt "@action"
+msgid "Move to..."
+msgstr "Mover a mensaxe a…"
+
+#. +> trunk6
+#: mail/mailapplication.cpp:62
+#, fuzzy, kde-format
+#| msgid "Copy Message to..."
+msgctxt "@action"
+msgid "Copy to..."
+msgstr "Copiar a mensaxe en…"
 
 #. +> trunk6 stable6
 #: mail/mailclient.cpp:48 mail/mailclient.cpp:74
@@ -3866,13 +3919,6 @@ msgid ""
 msgstr ""
 "Seguro que quere eliminar o cartafol %1, descartando o seu contido?<br />"
 "<b>Lembre</b> que as mensaxes descartadas non se gardan no cartafol do Lixo e que se eliminan permanentemente."
-
-#. +> trunk6
-#: mail/qml/actions/DeleteMailAction.qml:20
-#, kde-format
-msgctxt "@action"
-msgid "Move to trash"
-msgstr "Botar no lixo"
 
 #. +> trunk6
 #: mail/qml/actions/DeleteMailAction.qml:29
@@ -3956,100 +4002,139 @@ msgid "Choose file"
 msgstr "Escoller ficheiro"
 
 #. +> trunk6
-#: mail/qml/FolderView.qml:21
+#: mail/qml/FolderView.qml:24
 #, kde-format
 msgctxt "@title"
 msgid "Search: %1"
 msgstr "Buscar: %1"
 
-#. +> trunk6 stable6
-#: mail/qml/FolderView.qml:44
+#. +> stable6
+#: mail/qml/FolderView.qml:68
+#, kde-format
+msgid "Mark Message as Read"
+msgstr "Marcar a mensaxe como lida"
+
+#. +> stable6
+#: mail/qml/FolderView.qml:71
+#, kde-format
+msgid "Mark Message as Unread"
+msgstr "Marcar a mensaxe como non lida"
+
+#. +> stable6
+#: mail/qml/FolderView.qml:77
+#, kde-format
+msgid "Don't Mark as Important"
+msgstr "Non marcar como importante"
+
+#. +> stable6
+#: mail/qml/FolderView.qml:77
+#, kde-format
+msgid "Mark as Important"
+msgstr "Marcar como importante"
+
+#. +> trunk6
+#: mail/qml/FolderView.qml:81
+#, fuzzy, kde-format
+#| msgid "No mailbox selected"
+msgctxt "Number of selected emails"
+msgid "%1 selected"
+msgid_plural "%1 selected"
+msgstr[0] "Non se seleccionou ningunha caixa de correo"
+msgstr[1] "Non se seleccionou ningunha caixa de correo"
+
+#. +> stable6
+#: mail/qml/FolderView.qml:83
+#, kde-format
+msgid "Move to Trash"
+msgstr "Botar no lixo"
+
+#. +> stable6
+#: mail/qml/FolderView.qml:88
+#, kde-format
+msgid "Move Message to..."
+msgstr "Mover a mensaxe a…"
+
+#. +> stable6
+#: mail/qml/FolderView.qml:93
+#, kde-format
+msgid "Copy Message to..."
+msgstr "Copiar a mensaxe en…"
+
+#. +> stable6
+#: mail/qml/FolderView.qml:98
+#, kde-format
+msgid "Add Followup Reminder"
+msgstr "Engadir unha lembranza de seguimento"
+
+#. +> stable6
+#: mail/qml/FolderView.qml:103
+#, kde-format
+msgctxt "@action:button"
+msgid "Save as..."
+msgstr "Gardar como…"
+
+#. +> trunk6
+#: mail/qml/FolderView.qml:127
+#, fuzzy, kde-format
+#| msgid "Save Message - Merkuro-Mail"
+msgid "Save Message - Merkuro Mail"
+msgstr "Gardar a mensaxe — Correo de Merkuro"
+
+#. +> stable6
+#: mail/qml/FolderView.qml:28
 #, kde-format
 msgid "Save Message - Merkuro-Mail"
 msgstr "Gardar a mensaxe — Correo de Merkuro"
 
-#. +> trunk6 stable6
-#: mail/qml/FolderView.qml:45
+#. +> trunk6
+#: mail/qml/FolderView.qml:128
+#, fuzzy, kde-format
+#| msgid "email messages (*.mbox)"
+msgid "Email messages (*.mbox)"
+msgstr "mensaxes de correo electrónico (*.mbox)"
+
+#. +> stable6
+#: mail/qml/FolderView.qml:29
 #, kde-format
 msgid "email messages (*.mbox)"
 msgstr "mensaxes de correo electrónico (*.mbox)"
 
+#. +> trunk6
+#: mail/qml/FolderView.qml:145
+#, kde-format
+msgctxt "@title:dialog"
+msgid "Move Selection To:"
+msgstr ""
+
+#. +> trunk6
+#: mail/qml/FolderView.qml:162
+#, fuzzy, kde-format
+#| msgid "Completion:"
+msgctxt "@title:dialog"
+msgid "Copy Selection To:"
+msgstr "Completado:"
+
 #. +> trunk6 stable6
-#: mail/qml/FolderView.qml:83
+#: mail/qml/FolderView.qml:179
 #, kde-format
 msgctxt "@action:menu"
 msgid "Mark Message"
 msgstr "Marcar a mensaxe"
 
 #. +> trunk6 stable6
-#: mail/qml/FolderView.qml:85
-#, kde-format
-msgid "Mark Message as Read"
-msgstr "Marcar a mensaxe como lida"
-
-#. +> trunk6 stable6
-#: mail/qml/FolderView.qml:88
-#, kde-format
-msgid "Mark Message as Unread"
-msgstr "Marcar a mensaxe como non lida"
-
-#. +> trunk6 stable6
-#: mail/qml/FolderView.qml:94
-#, kde-format
-msgid "Don't Mark as Important"
-msgstr "Non marcar como importante"
-
-#. +> trunk6 stable6
-#: mail/qml/FolderView.qml:94
-#, kde-format
-msgid "Mark as Important"
-msgstr "Marcar como importante"
-
-#. +> trunk6 stable6
-#: mail/qml/FolderView.qml:100
-#, kde-format
-msgid "Move to Trash"
-msgstr "Botar no lixo"
-
-#. +> trunk6 stable6
-#: mail/qml/FolderView.qml:105
-#, kde-format
-msgid "Move Message to..."
-msgstr "Mover a mensaxe a…"
-
-#. +> trunk6 stable6
-#: mail/qml/FolderView.qml:110
-#, kde-format
-msgid "Copy Message to..."
-msgstr "Copiar a mensaxe en…"
-
-#. +> trunk6 stable6
-#: mail/qml/FolderView.qml:115
-#, kde-format
-msgid "Add Followup Reminder"
-msgstr "Engadir unha lembranza de seguimento"
-
-#. +> trunk6 stable6
-#: mail/qml/FolderView.qml:120
-#, kde-format
-msgctxt "@action:button"
-msgid "Save as..."
-msgstr "Gardar como…"
-
-#. +> trunk6 stable6
-#: mail/qml/FolderView.qml:130
+#: mail/qml/FolderView.qml:220
 #, kde-format
 msgid "No mailbox selected"
 msgstr "Non se seleccionou ningunha caixa de correo"
 
 #. +> trunk6 stable6
-#: mail/qml/FolderView.qml:131
+#: mail/qml/FolderView.qml:221
 #, kde-format
 msgid "Select a mailbox from the sidebar."
 msgstr "Seleccione unha caixa de correo na barra lateral."
 
 #. +> trunk6 stable6
-#: mail/qml/FolderView.qml:138
+#: mail/qml/FolderView.qml:228
 #, kde-format
 msgid "Mailbox is empty"
 msgstr "A caixa de correo está baleira."
@@ -4230,6 +4315,11 @@ msgstr "Engadir rapidamente unha nova etiqueta."
 #, kde-format
 msgid "Move to trash"
 msgstr "Botar no lixo"
+
+#, kde-format
+#~ msgctxt "@action"
+#~ msgid "Move to trash"
+#~ msgstr "Botar no lixo"
 
 #, kde-format
 #~ msgctxt "@label"
