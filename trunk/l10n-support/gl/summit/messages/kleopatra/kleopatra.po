@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kleopatra\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-24 09:45+0100\n"
+"POT-Creation-Date: 2025-01-29 09:42+0100\n"
 "PO-Revision-Date: 2025-01-25 12:08+0100\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Proxecto Trasno (proxecto@trasno.gal)\n"
@@ -608,8 +608,6 @@ msgstr "Certificar certificados"
 #. +> trunk6
 #: src/commands/certifygroupcommand.cpp:171
 #, kde-format
-#| msgctxt "@info:progress"
-#| msgid "Certifying certificates ..."
 msgctxt "@info:progress"
 msgid "Certifying certificates…"
 msgstr "Certificando os certificados…"
@@ -4716,21 +4714,21 @@ msgid "Cannot be configured with Kleopatra"
 msgstr "Non é posíbel configurar con Kleopatra"
 
 #. +> trunk6 stable6
-#: src/conf/smimevalidationconfigurationwidget.cpp:119
+#: src/conf/smimevalidationconfigurationwidget.cpp:133
 #, kde-format
 msgid "This option requires dirmngr >= 0.9.0"
 msgstr "Esta opción require dirmngr >= 0.9.0"
 
 #. i18n: ectx: property (text), widget (QLabel, systemHTTPProxy)
 #. +> trunk6 stable6
-#: src/conf/smimevalidationconfigurationwidget.cpp:260
-#: src/conf/smimevalidationconfigurationwidget.ui:208
+#: src/conf/smimevalidationconfigurationwidget.cpp:276
+#: src/conf/smimevalidationconfigurationwidget.ui:219
 #, kde-format
 msgid "no proxy"
 msgstr "sen mandatario"
 
 #. +> trunk6 stable6
-#: src/conf/smimevalidationconfigurationwidget.cpp:262
+#: src/conf/smimevalidationconfigurationwidget.cpp:278
 #, kde-format
 msgid "(Current system setting: %1)"
 msgstr "(Configuración actual do sistema: %1)"
@@ -4817,128 +4815,136 @@ msgstr "Sinatura do contestador de OCSP:"
 msgid "Ignore service URL of certificates"
 msgstr "Ignorar o URL do servizo dos certificados."
 
-#. i18n: ectx: property (whatsThis), widget (KleopatraClientCopy::Gui::CertificateRequester, OCSPResponderSignature)
+#. i18n: ectx: property (whatsThis), widget (QLabel, OCSPResponderSignature)
 #. +> trunk6 stable6
-#: src/conf/smimevalidationconfigurationwidget.ui:121
+#: src/conf/smimevalidationconfigurationwidget.ui:123
 #, kde-format
 msgid "Choose here the certificate with which the OCSP server signs its replies."
 msgstr "Escolla aquí o certificado co que asina as súas respostas o servidor de OCSP."
 
+#. i18n: ectx: property (text), widget (QPushButton, ocspSelectButton)
+#. +> trunk6
+#: src/conf/smimevalidationconfigurationwidget.ui:130
+#, fuzzy, kde-format
+#| msgid "Card Certificate"
+msgid "Change Certificate…"
+msgstr "Certificado da tarxeta"
+
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, doNotCheckCertPolicyCB)
 #. +> trunk6 stable6
-#: src/conf/smimevalidationconfigurationwidget.ui:131
+#: src/conf/smimevalidationconfigurationwidget.ui:142
 #, kde-format
 msgid "By default, GnuPG uses the file ~/.gnupg/policies.txt to check if a certificate policy is allowed. If this option is selected, policies are not checked."
 msgstr "De maneira predeterminada, GnuPG usa o ficheiro ~/.gnupg/policies.txt para comprobar se se permite unha política de certificados. Se se selecciona esta opción non se comproban as políticas."
 
 #. i18n: ectx: property (text), widget (QCheckBox, doNotCheckCertPolicyCB)
 #. +> trunk6 stable6
-#: src/conf/smimevalidationconfigurationwidget.ui:134
+#: src/conf/smimevalidationconfigurationwidget.ui:145
 #, kde-format
 msgid "Do not check certificate policies"
 msgstr "Non comprobar as políticas dos certificados."
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, neverConsultCB)
 #. +> trunk6 stable6
-#: src/conf/smimevalidationconfigurationwidget.ui:141
+#: src/conf/smimevalidationconfigurationwidget.ui:152
 #, kde-format
 msgid "If this option is checked, Certificate Revocation Lists are never used to validate S/MIME certificates."
 msgstr "Se se marca esta opción, nunca se usan as Listas de Revogación de Certificados para validar certificados S/MIME."
 
 #. i18n: ectx: property (text), widget (QCheckBox, neverConsultCB)
 #. +> trunk6 stable6
-#: src/conf/smimevalidationconfigurationwidget.ui:144
+#: src/conf/smimevalidationconfigurationwidget.ui:155
 #, kde-format
 msgid "Never consult a CRL"
 msgstr "Non consultar nunca unha CRL."
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, allowMarkTrustedCB)
 #. +> trunk6 stable6
-#: src/conf/smimevalidationconfigurationwidget.ui:151
+#: src/conf/smimevalidationconfigurationwidget.ui:162
 #, kde-format
 msgid "If this option is checked while a root CA certificate is being imported, you will be asked to confirm its fingerprint and to state whether or not you consider this root certificate to be trusted. A root certificate needs to be trusted before the certificates it certified become trusted, but lightly allowing trusted root certificates into your certificate store will undermine the security of the system."
 msgstr "Se se marca esta opción ao tempo que se está a importar un certificado raíz de CA, pediráselle que confirme a súa pegada dixital e que indique se considera ou non que este certificado raíz é de confianza. Hai que confiar nun certificado raíz antes de que se poida confiar nos certificados que aquel certifica, pero permitir certificados raíz de pouca confianza no almacén de certificados socavará a seguridade do sistema."
 
 #. i18n: ectx: property (text), widget (QCheckBox, allowMarkTrustedCB)
 #. +> trunk6 stable6
-#: src/conf/smimevalidationconfigurationwidget.ui:154
+#: src/conf/smimevalidationconfigurationwidget.ui:165
 #, kde-format
 msgid "Allow to mark root certificates as trusted"
 msgstr "Permitir marcar os certificados raíz como de confianza."
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, fetchMissingCB)
 #. +> trunk6 stable6
-#: src/conf/smimevalidationconfigurationwidget.ui:161
+#: src/conf/smimevalidationconfigurationwidget.ui:172
 #, kde-format
 msgid "If this option is checked, missing issuer certificates are fetched when necessary (this applies to both validation methods, CRLs and OCSP)."
 msgstr "Se marca esta opción, os certificados de expedidor que falten obtéñense cando sexa preciso (isto aplícase a ambos os dous métodos de validación, CRL e OCSP)."
 
 #. i18n: ectx: property (text), widget (QCheckBox, fetchMissingCB)
 #. +> trunk6 stable6
-#: src/conf/smimevalidationconfigurationwidget.ui:164
+#: src/conf/smimevalidationconfigurationwidget.ui:175
 #, kde-format
 msgid "Fetch missing issuer certificates"
 msgstr "Obter os certificados de expedidor que falten."
 
 #. i18n: ectx: attribute (title), widget (QWidget, tabHTTP)
 #. +> trunk6 stable6
-#: src/conf/smimevalidationconfigurationwidget.ui:172
+#: src/conf/smimevalidationconfigurationwidget.ui:183
 #, kde-format
 msgid "&HTTP Requests"
 msgstr "Solicitudes &HTTP"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, disableHTTPCB)
 #. +> trunk6 stable6
-#: src/conf/smimevalidationconfigurationwidget.ui:178
+#: src/conf/smimevalidationconfigurationwidget.ui:189
 #, kde-format
 msgid "Entirely disables the use of HTTP for S/MIME."
 msgstr "Desactiva por completo o uso de HTTP para S/MIME."
 
 #. i18n: ectx: property (text), widget (QCheckBox, disableHTTPCB)
 #. +> trunk6 stable6
-#: src/conf/smimevalidationconfigurationwidget.ui:181
+#: src/conf/smimevalidationconfigurationwidget.ui:192
 #, kde-format
 msgid "Do not perform any HTTP requests"
 msgstr "Non realizar ningunha solicitude HTTP."
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, ignoreHTTPDPCB)
 #. +> trunk6 stable6
-#: src/conf/smimevalidationconfigurationwidget.ui:188
+#: src/conf/smimevalidationconfigurationwidget.ui:199
 #, kde-format
 msgid "When looking for the location of a CRL, the to-be-tested certificate usually contains what are known as \"CRL Distribution Point\" (DP) entries, which are URLs describing the way to access the CRL. The first-found DP entry is used.  With this option, all entries using the HTTP scheme are ignored when looking for a suitable DP."
 msgstr "Ao buscar pola localización dunha CRL, o certificado que vai probarse normalmente contén o que se chaman entradas «Punto de distribución CRL» (DP), que son URL que describen como se accede á CRL. Úsase a primeira entrada DP que se atope. Con esta opción ignóranse todas as entradas que usen o esquema HTTP ao buscar un DP axeitado."
 
 #. i18n: ectx: property (text), widget (QCheckBox, ignoreHTTPDPCB)
 #. +> trunk6 stable6
-#: src/conf/smimevalidationconfigurationwidget.ui:191
+#: src/conf/smimevalidationconfigurationwidget.ui:202
 #, kde-format
 msgid "Ignore HTTP CRL distribution point of certificates"
 msgstr "Ignorar os puntos de distribución CRL HTTP dos certificados."
 
 #. i18n: ectx: property (whatsThis), widget (QRadioButton, honorHTTPProxyRB)
 #. +> trunk6 stable6
-#: src/conf/smimevalidationconfigurationwidget.ui:198
+#: src/conf/smimevalidationconfigurationwidget.ui:209
 #, kde-format
 msgid "If this option is selected, the value of the HTTP proxy shown on the right (which comes from the environment variable http_proxy) will be used for any HTTP request."
 msgstr "Se se selecciona esta opción, usarase o valor do mandatario HTTP que se amosa á dereita (que ven da variábel de contorno http_proxy) para todas as solicitudes HTTP."
 
 #. i18n: ectx: property (text), widget (QRadioButton, honorHTTPProxyRB)
 #. +> trunk6 stable6
-#: src/conf/smimevalidationconfigurationwidget.ui:201
+#: src/conf/smimevalidationconfigurationwidget.ui:212
 #, kde-format
 msgid "Use system HTTP proxy:"
 msgstr "Usar o mandatario HTTP do sistema:"
 
 #. i18n: ectx: property (text), widget (QRadioButton, useCustomHTTPProxyRB)
 #. +> trunk6 stable6
-#: src/conf/smimevalidationconfigurationwidget.ui:218
+#: src/conf/smimevalidationconfigurationwidget.ui:229
 #, kde-format
 msgid "Use this proxy for HTTP requests: "
 msgstr "Usar este mandatario para as solicitudes HTTP: "
 
 #. i18n: ectx: property (whatsThis), widget (QLineEdit, customHTTPProxy)
 #. +> trunk6 stable6
-#: src/conf/smimevalidationconfigurationwidget.ui:225
+#: src/conf/smimevalidationconfigurationwidget.ui:236
 #, kde-format
 msgid ""
 "<p>If no system proxy is set, or you need to use a different proxy for GpgSM, you can enter its location here.</p>"
@@ -4951,49 +4957,49 @@ msgstr ""
 
 #. i18n: ectx: attribute (title), widget (QWidget, tabLDAP)
 #. +> trunk6 stable6
-#: src/conf/smimevalidationconfigurationwidget.ui:246
+#: src/conf/smimevalidationconfigurationwidget.ui:257
 #, kde-format
 msgid "&LDAP Requests"
 msgstr "Solicitudes &LDAP"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, disableLDAPCB)
 #. +> trunk6 stable6
-#: src/conf/smimevalidationconfigurationwidget.ui:252
+#: src/conf/smimevalidationconfigurationwidget.ui:263
 #, kde-format
 msgid "Entirely disables the use of LDAP for S/MIME."
 msgstr "Desactiva por completo o uso de LDAP para S/MIME."
 
 #. i18n: ectx: property (text), widget (QCheckBox, disableLDAPCB)
 #. +> trunk6 stable6
-#: src/conf/smimevalidationconfigurationwidget.ui:255
+#: src/conf/smimevalidationconfigurationwidget.ui:266
 #, kde-format
 msgid "Do not perform any LDAP requests"
 msgstr "Non realizar ningunha solicitude LDAP."
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, ignoreLDAPDPCB)
 #. +> trunk6 stable6
-#: src/conf/smimevalidationconfigurationwidget.ui:262
+#: src/conf/smimevalidationconfigurationwidget.ui:273
 #, kde-format
 msgid "When looking for the location of a CRL, the to-be-tested certificate usually contains what are known as \"CRL Distribution Point\" (DP) entries, which are URLs describing the way to access the CRL. The first found DP entry is used.  With this option, all entries using the LDAP scheme are ignored when looking for a suitable DP."
 msgstr "Ao buscar pola localización dunha CRL, o certificado que vai probarse normalmente contén o que se chaman entradas «Punto de distribución CRL» (DP), que son URL que describen como se accede ás CRL. Úsase a primeira entrada DP que se atope. Con esta opción ignóranse todas as entradas que usen o esquema LDAP ao buscar un DP axeitado."
 
 #. i18n: ectx: property (text), widget (QCheckBox, ignoreLDAPDPCB)
 #. +> trunk6 stable6
-#: src/conf/smimevalidationconfigurationwidget.ui:265
+#: src/conf/smimevalidationconfigurationwidget.ui:276
 #, kde-format
 msgid "Ignore LDAP CRL distribution point of certificates"
 msgstr "Ignorar o punto de distribución CRL LDAP dos certificados."
 
 #. i18n: ectx: property (text), widget (QLabel, customLDAPLabel)
 #. +> trunk6 stable6
-#: src/conf/smimevalidationconfigurationwidget.ui:272
+#: src/conf/smimevalidationconfigurationwidget.ui:283
 #, kde-format
 msgid "Primary host for LDAP requests:"
 msgstr "Servidor primario para as solicitudes LDAP:"
 
 #. i18n: ectx: property (whatsThis), widget (QLineEdit, customLDAPProxy)
 #. +> trunk6 stable6
-#: src/conf/smimevalidationconfigurationwidget.ui:283
+#: src/conf/smimevalidationconfigurationwidget.ui:294
 #, kde-format
 msgid ""
 "Entering an LDAP server here will make all LDAP requests go to that server first. More precisely, this setting overrides any specified host and port part in a LDAP URL and will also be used if host and port have been omitted from the URL. Other LDAP servers will be used only if the connection to the \"proxy\" failed.\n"
@@ -7233,8 +7239,6 @@ msgstr "Asinouse o caderno."
 #. +> trunk6
 #: src/crypto/signencrypttask.cpp:994
 #, kde-format
-#| msgctxt "@info"
-#| msgid "Failed to verify the clipboard: %1"
 msgctxt "@info"
 msgid "Failed to sign the clipboard: %1"
 msgstr "Non foi posíbel asinar o portapapeis: %1"
@@ -7242,8 +7246,6 @@ msgstr "Non foi posíbel asinar o portapapeis: %1"
 #. +> trunk6
 #: src/crypto/signencrypttask.cpp:997
 #, kde-format
-#| msgctxt "@info"
-#| msgid "Failed to decrypt the clipboard: %1"
 msgctxt "@info"
 msgid "Failed to encrypt the clipboard: %1"
 msgstr "Non foi posíbel cifrar o portapapeis: %1"
@@ -7251,8 +7253,6 @@ msgstr "Non foi posíbel cifrar o portapapeis: %1"
 #. +> trunk6
 #: src/crypto/signencrypttask.cpp:1001
 #, kde-format
-#| msgctxt "@info"
-#| msgid "Successfully decrypted and verified the clipboard"
 msgctxt "@info"
 msgid "Successfully encrypted and signed the clipboard"
 msgstr "Cifrouse e asinouse o portapapeis."
@@ -7260,8 +7260,6 @@ msgstr "Cifrouse e asinouse o portapapeis."
 #. +> trunk6
 #: src/crypto/signencrypttask.cpp:1003
 #, kde-format
-#| msgctxt "@info"
-#| msgid "Successfully decrypted the clipboard"
 msgctxt "@info"
 msgid "Successfully encrypted the clipboard"
 msgstr "Cifrouse o portapapeis."
@@ -7269,8 +7267,6 @@ msgstr "Cifrouse o portapapeis."
 #. +> trunk6
 #: src/crypto/signencrypttask.cpp:1005
 #, kde-format
-#| msgctxt "@info"
-#| msgid "Successfully verified the clipboard"
 msgctxt "@info"
 msgid "Successfully signed the clipboard"
 msgstr "Asinouse o portapapeis."
@@ -9185,7 +9181,6 @@ msgstr "(opcional) Definir o PIN inicial (SigG)"
 #. +> trunk6
 #: src/dialogs/signencryptclipboarddialog.cpp:100
 #, kde-format
-#| msgid "Encrypt Clipboard Error"
 msgctxt "@title:dialog"
 msgid "Sign/Encrypt Clipboard"
 msgstr "Asinar ou cifrar o portapapeis"
@@ -9193,7 +9188,6 @@ msgstr "Asinar ou cifrar o portapapeis"
 #. +> trunk6
 #: src/dialogs/signencryptclipboarddialog.cpp:104
 #, kde-format
-#| msgid "Encrypt Clipboard Error"
 msgctxt "@title"
 msgid "Sign/Encrypt Clipboard"
 msgstr "Asinar ou cifrar o portapapeis"
@@ -9201,7 +9195,6 @@ msgstr "Asinar ou cifrar o portapapeis"
 #. +> trunk6
 #: src/dialogs/signencryptclipboarddialog.cpp:206
 #, kde-format
-#| msgid "The clipboard does not appear to contain signed or encrypted text."
 msgctxt "@info"
 msgid "The clipboard does not contain text."
 msgstr "O portapapeis non contén texto."
@@ -10765,24 +10758,6 @@ msgstr "Non foi posíbel enviar o destinatario %1: %2"
 #, kde-format
 msgid "Command (%1) failed: %2"
 msgstr "A orde (%1) fallou: %2"
-
-#. +> trunk6 stable6
-#: src/libkleopatraclient/gui/certificaterequester.cpp:95
-#, kde-format
-msgid "Change..."
-msgstr "Cambiar…"
-
-#. +> trunk6 stable6
-#: src/libkleopatraclient/gui/certificaterequester.cpp:249
-#, kde-format
-msgid "Kleopatra Error"
-msgstr "Erro de Kleopatra"
-
-#. +> trunk6 stable6
-#: src/libkleopatraclient/gui/certificaterequester.cpp:249
-#, kde-format
-msgid "There was an error while connecting to Kleopatra: %1"
-msgstr "Produciuse un erro ao conectar a Kleopatra: %1"
 
 #. +> trunk6 stable6
 #: src/main.cpp:132
@@ -12610,7 +12585,6 @@ msgstr "Cifrar…"
 #. +> trunk6
 #: src/utils/clipboardmenu.cpp:44
 #, kde-format
-#| msgid "Sign/Encrypt..."
 msgctxt "@action"
 msgid "Sign/Encrypt..."
 msgstr "Asinar/Cifrar…"
@@ -12618,8 +12592,6 @@ msgstr "Asinar/Cifrar…"
 #. +> trunk6
 #: src/utils/clipboardmenu.cpp:45
 #, kde-format
-#| msgctxt "@action"
-#| msgid "Sign"
 msgctxt "@action"
 msgid "Sign..."
 msgstr "Asinar…"
@@ -14485,6 +14457,24 @@ msgstr "Cifrar o erro de portapapeis"
 #, kde-format
 msgid "Sign Clipboard Error"
 msgstr "Erro do portapapeis de sinaturas"
+
+#. +> stable6
+#: src/libkleopatraclient/gui/certificaterequester.cpp:95
+#, kde-format
+msgid "Change..."
+msgstr "Cambiar…"
+
+#. +> stable6
+#: src/libkleopatraclient/gui/certificaterequester.cpp:249
+#, kde-format
+msgid "Kleopatra Error"
+msgstr "Erro de Kleopatra"
+
+#. +> stable6
+#: src/libkleopatraclient/gui/certificaterequester.cpp:249
+#, kde-format
+msgid "There was an error while connecting to Kleopatra: %1"
+msgstr "Produciuse un erro ao conectar a Kleopatra: %1"
 
 #, kde-format
 #~ msgctxt "@info"
