@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ruqola\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-02-08 09:35+0100\n"
+"POT-Creation-Date: 2025-02-13 10:48+0100\n"
 "PO-Revision-Date: 2025-01-26 21:02+0100\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Proxecto Trasno (proxecto@trasno.gal)\n"
@@ -5138,7 +5138,7 @@ msgstr "Contas"
 
 #. +> trunk6 stable6
 #: widgets/administratorsettingsdialog/administratorsettingswidget.cpp:108
-#: widgets/room/roomheaderwidget.cpp:67
+#: widgets/room/roomheaderwidget.cpp:68
 #, kde-format
 msgid "Encryption"
 msgstr "Cifraxe"
@@ -5752,29 +5752,44 @@ msgctxt "@option:check"
 msgid "Access unencrypted content in encrypted rooms"
 msgstr "Acceder a contido descifrado en salas cifradas."
 
-#. +> trunk6 stable6
+#. +> trunk6
 #: widgets/administratorsettingsdialog/encryption/encryptionsettingswidget.cpp:21
+#, fuzzy, kde-format
+#| msgid "Mentions"
+msgctxt "@option:check"
+msgid "Mentions"
+msgstr "Mencións"
+
+#. +> trunk6 stable6
+#: widgets/administratorsettingsdialog/encryption/encryptionsettingswidget.cpp:22
 #, kde-format
 msgctxt "@option:check"
 msgid "Enable OTR"
 msgstr "Activar a confidencialidade."
 
 #. +> trunk6 stable6
-#: widgets/administratorsettingsdialog/encryption/encryptionsettingswidget.cpp:25
+#: widgets/administratorsettingsdialog/encryption/encryptionsettingswidget.cpp:26
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Enable option to create encrypted groups and be able to change groups and direct messages to be encrypted."
 msgstr "Activar a opción para crear grupos cifrados e poder cambiar os grupos e mensaxes directas para que se cifren."
 
 #. +> trunk6 stable6
-#: widgets/administratorsettingsdialog/encryption/encryptionsettingswidget.cpp:45
+#: widgets/administratorsettingsdialog/encryption/encryptionsettingswidget.cpp:46
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Allow access to encrypted rooms to people without room encryption keys. They'll be able to see and send unencrypted messages."
 msgstr "Permitir acceder a salas cifradas a xente sen as chaves de cifraxe da sala. Poderán ver e enviar mensaxes non cifradas."
 
+#. +> trunk6
+#: widgets/administratorsettingsdialog/encryption/encryptionsettingswidget.cpp:51
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Notify people, and highlight user, channel, and team mentions in encrypted content."
+msgstr ""
+
 #. +> trunk6 stable6
-#: widgets/administratorsettingsdialog/encryption/encryptionsettingswidget.cpp:50
+#: widgets/administratorsettingsdialog/encryption/encryptionsettingswidget.cpp:56
 #, kde-format
 msgid "Enable option to use off-the-record (OTR) messages in direct messages between 2 users. OTR messages are not recorded on the server and exchanged directly and encrypted between the 2 users."
 msgstr "Activar a opción para usar mensaxes confidenciais en mensaxes directas entre 2 persoas. As mensaxes confidenciais non se gravan no servidor, intercámbianse e cífranse directamente entre 2 persoas."
@@ -9167,14 +9182,23 @@ msgstr "Só a xente con invitación pode unirse."
 msgid "Private Room:"
 msgstr "Sala privada:"
 
+#. +> trunk6
+#: widgets/dialogs/createnewchannelwidget.cpp:73
+#, fuzzy, kde-format
+#| msgctxt "@info:tooltip"
+#| msgid "Messages are end-to-end encrypted, search will not work and notifications may not show message content"
+msgctxt "@label:textbox"
+msgid "End-to-end encrypted channel. Search will not work with encrypted channel and notifications may not show the messages content."
+msgstr "As mensaxes están cifradas de extremo a extremo, a busca non funcionará e as notificacións poden non amosar o contido da mensaxe."
+
 #. +> trunk6 stable6
-#: widgets/dialogs/createnewchannelwidget.cpp:71
+#: widgets/dialogs/createnewchannelwidget.cpp:79
 #, kde-format
 msgid "Encrypted Room:"
 msgstr "Sala cifrada:"
 
 #. +> trunk6 stable6
-#: widgets/dialogs/createnewchannelwidget.cpp:75
+#: widgets/dialogs/createnewchannelwidget.cpp:86
 #, kde-format
 msgid "Federated:"
 msgstr "Federada:"
@@ -9993,6 +10017,37 @@ msgctxt "@action"
 msgid "Decode Encryption Key"
 msgstr "Descodificar a chave de cifraxe"
 
+#. +> trunk6
+#: widgets/encryption/e2edisabledialog.cpp:16
+#, fuzzy, kde-format
+#| msgid "Enabled E2E encryption"
+msgctxt "@title:window"
+msgid "Disable Encryption"
+msgstr "Activar a cifraxe de extremo a extremo"
+
+#. +> trunk6
+#: widgets/encryption/e2edisablewidget.cpp:23
+#, kde-format
+msgid ""
+"Disabling E2EE will compromise the privacy of this groupe privé. Access to any encrypted content will be lost for all groupe privé members.\n"
+"Encryption can be re-enabled later. Proceed with caution.\n"
+"If no one is able to access the encrypted content you can reset encryption keys instead."
+msgstr ""
+
+#. +> trunk6
+#: widgets/encryption/e2edisablewidget.cpp:36
+#, kde-format
+msgid "Alternatively, resetting encryption keys will keep encryption enabled but access to previously encrypted content may be lost."
+msgstr ""
+
+#. +> trunk6
+#: widgets/encryption/e2edisablewidget.cpp:41
+#, fuzzy, kde-format
+#| msgctxt "@action"
+#| msgid "Decode Encryption Key"
+msgid "Reset encryption keys"
+msgstr "Descodificar a chave de cifraxe"
+
 #. +> trunk6 stable6
 #: widgets/encryption/e2epassworddecodekeydialog.cpp:17
 #, kde-format
@@ -10357,14 +10412,20 @@ msgctxt "Message Style"
 msgid "Compact"
 msgstr "Compacto"
 
+#. +> trunk6
+#: widgets/misc/passwordconfirmwidget.cpp:22
+#, kde-format
+msgid "Your passwords do no match."
+msgstr ""
+
 #. +> trunk6 stable6
-#: widgets/misc/passwordconfirmwidget.cpp:26
+#: widgets/misc/passwordconfirmwidget.cpp:36
 #, kde-format
 msgid "New Password:"
 msgstr "Novo contrasinal:"
 
 #. +> trunk6 stable6
-#: widgets/misc/passwordconfirmwidget.cpp:35
+#: widgets/misc/passwordconfirmwidget.cpp:45
 #, kde-format
 msgid "Confirm Password:"
 msgstr "Confirmar o contrasinal:"
@@ -10458,21 +10519,29 @@ msgid "Check New Version"
 msgstr "Comprobar se hai unha nova versión"
 
 #. +> trunk6 stable6
-#: widgets/myaccount/myaccount2e2configurewidget.cpp:21
+#: widgets/myaccount/myaccount2e2configurewidget.cpp:22
 #, kde-format
 msgctxt "@action:button"
 msgid "Reset E2E Key"
 msgstr "Restabelecer a chave de extremo a extremo"
 
+#. +> trunk6
+#: widgets/myaccount/myaccount2e2configurewidget.cpp:23
+#, fuzzy, kde-format
+#| msgid "Modify…"
+msgctxt "@action:button"
+msgid "Modify"
+msgstr "Modificar…"
+
 #. +> trunk6 stable6
-#: widgets/myaccount/myaccount2e2configurewidget.cpp:29
+#: widgets/myaccount/myaccount2e2configurewidget.cpp:31
 #, kde-format
 msgctxt "@label:textbox"
 msgid "You can now create encrypted private groups and direct messages. You may also change existing private groups or DMs to encrypted. This is end to end encryption so the key to encode/decode your messages will not be saved on the server. For that reason you need to store your password somewhere safe. You will be required to enter it on other devices you wish to use e2e encryption on."
 msgstr "Agora pode crear grupos privados e mensaxes directas cifradas. Pode tamén cambiar os grupos privados a mensaxes directas existentes para que usen cifraxe a partir de agora. Trátase de cifraxe de extremo a extremo, así que as chaves coas que se codifiquen e descodifiquen as mensaxes non se gardarán no servidor. Por iso ten que almacenar o contrasinal nun lugar seguro. Terá que introducilo noutros dispositivos nos que queira usar a cifraxe de extremo a extremo."
 
 #. +> trunk6 stable6
-#: widgets/myaccount/myaccount2e2configurewidget.cpp:42
+#: widgets/myaccount/myaccount2e2configurewidget.cpp:49
 #, kde-format
 msgid "This option will remove your current E2E key and log you out. When you login again, Rocket.Chat will generate you a new key and restore your access to any encrypted room that has one or more members online. Due to the nature of the E2E encryption, Rocket.Chat will not be able to restore access to any encrypted room that has no member online."
 msgstr "Esta opción retirará a súa chave de extremo a extremo actual e pechar a súa sesión. Cando acceda de novo, Rocket.Chat xerará unha nova chave e restaurará o acceso da persoa a calquera sala cifrada na que haxa polo menos unha outra persoa en liña. Por mor da natureza da cifraxe de extremo a extremo, Rocket.Chat non pode restaurar o acceso a salas cifradas sen xente en liña."
@@ -11780,92 +11849,92 @@ msgid "(Show Less Info…)"
 msgstr "(amosar menos información…)"
 
 #. +> trunk6 stable6
-#: widgets/room/roomheaderwidget.cpp:47
+#: widgets/room/roomheaderwidget.cpp:48
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Favorite"
 msgstr "Favorita."
 
 #. +> trunk6 stable6
-#: widgets/room/roomheaderwidget.cpp:49
+#: widgets/room/roomheaderwidget.cpp:50
 #, kde-format
 msgid "Favorite"
 msgstr "Favorita."
 
 #. +> trunk6 stable6
-#: widgets/room/roomheaderwidget.cpp:65
+#: widgets/room/roomheaderwidget.cpp:66
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "E2E Enabled"
 msgstr "Cifraxe de extremo a extremo activada."
 
 #. +> trunk6 stable6
-#: widgets/room/roomheaderwidget.cpp:112
+#: widgets/room/roomheaderwidget.cpp:119
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Call"
 msgstr "Chamar"
 
 #. +> trunk6 stable6
-#: widgets/room/roomheaderwidget.cpp:114
+#: widgets/room/roomheaderwidget.cpp:121
 #, kde-format
 msgid "Call"
 msgstr "Chamar"
 
 #. +> trunk6 stable6
-#: widgets/room/roomheaderwidget.cpp:123
+#: widgets/room/roomheaderwidget.cpp:130
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Channel's Information"
 msgstr "Información da canle"
 
 #. +> trunk6 stable6
-#: widgets/room/roomheaderwidget.cpp:125 widgets/room/roomheaderwidget.cpp:232
+#: widgets/room/roomheaderwidget.cpp:132 widgets/room/roomheaderwidget.cpp:239
 #, kde-format
 msgid "Channel's Information"
 msgstr "Información da canle"
 
 #. +> trunk6 stable6
-#: widgets/room/roomheaderwidget.cpp:134
+#: widgets/room/roomheaderwidget.cpp:141
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Team Channels"
 msgstr "Canles do equipo"
 
 #. +> trunk6 stable6
-#: widgets/room/roomheaderwidget.cpp:136
+#: widgets/room/roomheaderwidget.cpp:143
 #, kde-format
 msgid "Team Channels"
 msgstr "Canles do equipo"
 
 #. +> trunk6 stable6
-#: widgets/room/roomheaderwidget.cpp:146
+#: widgets/room/roomheaderwidget.cpp:153
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Show List of Users"
 msgstr "Amosar a lista de xente"
 
 #. +> trunk6 stable6
-#: widgets/room/roomheaderwidget.cpp:148
+#: widgets/room/roomheaderwidget.cpp:155
 #, kde-format
 msgid "Show List of Users"
 msgstr "Amosar a lista de xente"
 
 #. +> trunk6 stable6
-#: widgets/room/roomheaderwidget.cpp:159
+#: widgets/room/roomheaderwidget.cpp:166
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Search Messages…"
 msgstr "Buscar nas mensaxes…"
 
 #. +> trunk6 stable6
-#: widgets/room/roomheaderwidget.cpp:161
+#: widgets/room/roomheaderwidget.cpp:168
 #, kde-format
 msgid "Search Messages…"
 msgstr "Buscar nas mensaxes…"
 
 #. +> trunk6 stable6
-#: widgets/room/roomheaderwidget.cpp:232
+#: widgets/room/roomheaderwidget.cpp:239
 #, kde-format
 msgid "Team's Information"
 msgstr "Información do equipo"
@@ -11913,14 +11982,30 @@ msgstr "Exportar as mensaxes"
 msgid "Your email has been queued for sending."
 msgstr "O seu enderezo de correo electrónico púxose en cola para enviar."
 
+#. +> trunk6
+#: widgets/room/roomwidget.cpp:512
+#, fuzzy, kde-format
+#| msgid "Direct Messages can not be archived"
+msgid "Encrypted content cannot be searched."
+msgstr "As mensaxes directas non poden arquivarse."
+
+#. +> trunk6
+#: widgets/room/roomwidget.cpp:512
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "Search Messages"
+msgctxt "@title:window"
+msgid "Search Message"
+msgstr "Buscar nas mensaxes"
+
 #. +> trunk6 stable6
-#: widgets/room/roomwidget.cpp:527
+#: widgets/room/roomwidget.cpp:531
 #, kde-format
 msgid "A workspace admin needs to install and configure a conference call apps."
 msgstr "Alguén da administración do espazo de traballo ten que instalar e configurar aplicacións de chamadas de conferencia."
 
 #. +> trunk6 stable6
-#: widgets/room/roomwidget.cpp:528
+#: widgets/room/roomwidget.cpp:532
 #, kde-format
 msgctxt "@title:window"
 msgid "Video Conference"
@@ -13273,6 +13358,12 @@ msgstr "Permitir activar ou desactivar o mercado de aplicacións."
 msgid "Improve list of user in room."
 msgstr ""
 
+#. +> trunk6
+#: widgets/whatsnew/whatsnewtranslations.cpp:166
+#, kde-format
+msgid "Search in encrypted room is not possible."
+msgstr ""
+
 #. +> trunk6 stable6
 #: widgets/whatsnew/whatsnewwidget.cpp:44
 #, kde-format
@@ -13843,10 +13934,6 @@ msgstr "Algunhas correccións de fallos:"
 #, kde-format
 #~ msgid "Debug Direct Reply"
 #~ msgstr "Depurar a resposta directa."
-
-#, kde-format
-#~ msgid "Enabled E2E encryption"
-#~ msgstr "Activar a cifraxe de extremo a extremo"
 
 #, kde-format
 #~ msgid "Enable encryption for Direct Rooms by default"
