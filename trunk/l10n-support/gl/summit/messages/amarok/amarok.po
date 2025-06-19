@@ -15,7 +15,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: amarok\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-03-16 09:45+0100\n"
+"POT-Creation-Date: 2025-06-10 08:54+0200\n"
 "PO-Revision-Date: 2025-01-12 14:22+0100\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Proxecto Trasno (proxecto@trasno.gal)\n"
@@ -302,7 +302,7 @@ msgstr "Deter despois da pista actual: activado"
 #. +> trunk6
 #: ActionClasses.cpp:437
 #: context/applets/currenttrack/package/contents/ui/main.qml:102
-#: EngineController.cpp:1318 mac/GrowlInterface.cpp:43 widgets/Osd.cpp:678
+#: EngineController.cpp:1244 mac/GrowlInterface.cpp:43 widgets/Osd.cpp:679
 #, kde-format
 msgid "No track playing"
 msgstr "Non se está a reproducir ningunha pista"
@@ -311,8 +311,8 @@ msgstr "Non se está a reproducir ningunha pista"
 #. +> trunk6
 #: ActionClasses.cpp:441
 #: core-impl/collections/audiocd/FormatSelectionDialog.ui:14 main.cpp:45
-#: main.cpp:54 MainWindow.cpp:154 MainWindow.cpp:1222 MainWindow.cpp:1228
-#: MainWindow.cpp:1241
+#: main.cpp:54 MainWindow.cpp:154 MainWindow.cpp:1212 MainWindow.cpp:1218
+#: MainWindow.cpp:1231
 #, kde-format
 msgid "Amarok"
 msgstr "Amarok"
@@ -1754,7 +1754,7 @@ msgstr "Nova pista de código de tempo"
 #: core-impl/collections/audiocd/AudioCdCollection.cpp:496
 #: core-impl/collections/audiocd/AudioCdCollection.cpp:497
 #: core-impl/collections/audiocd/AudioCdCollection.cpp:498
-#: core-impl/collections/audiocd/AudioCdCollection.cpp:499 MainWindow.cpp:1241
+#: core-impl/collections/audiocd/AudioCdCollection.cpp:499 MainWindow.cpp:1231
 #, kde-format
 msgid "Unknown"
 msgstr "Descoñecido"
@@ -3901,8 +3901,9 @@ msgstr "Usar notificacións do &sistema."
 
 #. +> trunk6
 #: configdialog/dialogs/PlaybackConfig.cpp:36
-#, kde-format
-msgid "Current Phonon backend does not support volume fading"
+#, fuzzy, kde-format
+#| msgid "Current Phonon backend does not support volume fading"
+msgid "Current audio backend does not support volume fading"
 msgstr "O seu motor de Phonon non permite esvaer o volume."
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, kcfg_ResumePlayback)
@@ -4900,13 +4901,13 @@ msgid "%1 is needed for searching Wikipedia."
 msgstr "Para buscar en Wikipedia necesita %1."
 
 #. +> trunk6
-#: context/applets/wikipedia/plugin/WikipediaEngine.cpp:754
+#: context/applets/wikipedia/plugin/WikipediaEngine.cpp:739
 #, kde-format
 msgid "Choose Language"
 msgstr "Escoller idioma"
 
 #. +> trunk6
-#: context/applets/wikipedia/plugin/WikipediaEngine.cpp:887
+#: context/applets/wikipedia/plugin/WikipediaEngine.cpp:872
 #, kde-format
 msgctxt "A message (link) shown for clicked non-Wikipedia links in Wikipedia applet. %1 is the url of the link"
 msgid "Click to open %1 in a web browser"
@@ -5237,7 +5238,7 @@ msgstr "Artista descoñecido"
 #. +> trunk6
 #: core-impl/collections/ipodcollection/IpodMeta.cpp:184
 #: core-impl/collections/mediadevicecollection/MediaDeviceMeta.cpp:92
-#: EngineController.cpp:1296
+#: EngineController.cpp:1222
 #, kde-format
 msgid "Unknown track"
 msgstr "Pista descoñecida"
@@ -8500,35 +8501,46 @@ msgid "Multiple ambiguous matches found for <b><font color='red'>%1</font></b>, 
 msgstr "Descartáronse varias coincidencias ambiguas atopadas para <b><font color='red'>%1</font></b>."
 
 #. +> trunk6
-#: dialogs/DiagnosticDialog.cpp:86
+#: dialogs/DiagnosticDialog.cpp:54
 #, kde-format
 msgid "Copy to Clipboard"
 msgstr "Copiar no portapapeis"
 
 #. +> trunk6
-#: dialogs/DiagnosticDialog.cpp:90
+#: dialogs/DiagnosticDialog.cpp:58
 #, kde-format
 msgctxt "%1 is the program name"
 msgid "%1 Diagnostics"
 msgstr "Diagnóstico de %1"
 
 #. +> trunk6
-#: dialogs/DiagnosticDialog.cpp:145
+#: dialogs/DiagnosticDialog.cpp:111
 #, kde-format
 msgctxt "Usage"
 msgid "Yes"
 msgstr "Si"
 
 #. +> trunk6
-#: dialogs/DiagnosticDialog.cpp:145
+#: dialogs/DiagnosticDialog.cpp:111
 #, kde-format
 msgctxt "Usage"
 msgid "No"
 msgstr "Non"
 
 #. +> trunk6
-#: dialogs/DiagnosticDialog.cpp:148
-#, kde-format
+#: dialogs/DiagnosticDialog.cpp:114
+#, fuzzy, kde-format
+#| msgid ""
+#| "%1 Diagnostics\n"
+#| "\n"
+#| "General Information:\n"
+#| "   %1 Version: %2\n"
+#| "   KDE Frameworks Version: %3\n"
+#| "   Qt Version: %4\n"
+#| "   Phonon Version: %5\n"
+#| "   Phonon Backend: %6 (%7, %8)\n"
+#| "   PulseAudio: %9\n"
+#| "\n"
 msgid ""
 "%1 Diagnostics\n"
 "\n"
@@ -8536,9 +8548,7 @@ msgid ""
 "   %1 Version: %2\n"
 "   KDE Frameworks Version: %3\n"
 "   Qt Version: %4\n"
-"   Phonon Version: %5\n"
-"   Phonon Backend: %6 (%7, %8)\n"
-"   PulseAudio: %9\n"
+"   GStreamer: %5\n"
 "\n"
 msgstr ""
 "Diagnóstico do %1\n"
@@ -8553,7 +8563,7 @@ msgstr ""
 "\n"
 
 #. +> trunk6
-#: dialogs/DiagnosticDialog.cpp:165
+#: dialogs/DiagnosticDialog.cpp:125
 #, kde-format
 msgid ""
 "Enabled Scripts:\n"
@@ -10154,34 +10164,34 @@ msgid "Rating"
 msgstr "Cualificación"
 
 #. +> trunk6
-#: EngineController.cpp:1082
+#: EngineController.cpp:1003
 #, kde-format
 msgid "Too many errors encountered in playlist. Playback stopped."
 msgstr "Atopáronse demasiados erros na lista de reprodución. Suspéndese a reprodución."
 
 #. +> trunk6
-#: EngineController.cpp:1286
+#: EngineController.cpp:1212
 #, kde-format
 msgctxt "track by artist on album"
 msgid "<b>%1</b> by <b>%2</b> on <b>%3</b>"
 msgstr "<b>%1</b> de <b>%2</b> en <b>%3</b>"
 
 #. +> trunk6
-#: EngineController.cpp:1288
+#: EngineController.cpp:1214
 #, kde-format
 msgctxt "track by artist"
 msgid "<b>%1</b> by <b>%2</b>"
 msgstr "<b>%1</b> de <b>%2</b>"
 
 #. +> trunk6
-#: EngineController.cpp:1291
+#: EngineController.cpp:1217
 #, kde-format
 msgctxt "track on album"
 msgid "<b>%1</b> on <b>%2</b>"
 msgstr "<b>%1</b> en <b>%2</b>"
 
 #. +> trunk6
-#: EngineController.cpp:1303
+#: EngineController.cpp:1229
 #, kde-format
 msgctxt "track from source"
 msgid "from <b>%1</b>"
@@ -10485,7 +10495,7 @@ msgid "Lyrics data could not be parsed"
 msgstr "Non foi posíbel procesar os datos da letra"
 
 #. +> trunk6
-#: mac/GrowlInterface.cpp:64 widgets/Osd.cpp:705
+#: mac/GrowlInterface.cpp:64 widgets/Osd.cpp:706
 #, kde-format
 msgid "No information available for this track"
 msgstr "Non se dispón de información sobre esta pista"
@@ -11583,7 +11593,7 @@ msgid "Lock Layout"
 msgstr "Bloquear o deseño"
 
 #. +> trunk6
-#: MainWindow.cpp:374 MainWindow.cpp:1315
+#: MainWindow.cpp:374 MainWindow.cpp:1305
 #, kde-format
 msgid "Reset Layout"
 msgstr "Restabelecer a disposición"
@@ -11917,7 +11927,7 @@ msgid "&Settings"
 msgstr "&Configuración"
 
 #. +> trunk6
-#: MainWindow.cpp:1185
+#: MainWindow.cpp:1175
 #, kde-format
 msgid ""
 "You have chosen to hide the menu bar.\n"
@@ -11929,25 +11939,25 @@ msgstr ""
 "Lembre que sempre pode usar o atallo «%1» para que volva a amosarse."
 
 #. +> trunk6
-#: MainWindow.cpp:1186
+#: MainWindow.cpp:1176
 #, kde-format
 msgid "Hide Menu"
 msgstr "Agochar menú"
 
 #. +> trunk6
-#: MainWindow.cpp:1228
+#: MainWindow.cpp:1218
 #, kde-format
 msgid "Paused  ::  %1"
 msgstr "En pausa  ::  %1"
 
 #. +> trunk6
-#: MainWindow.cpp:1241
+#: MainWindow.cpp:1231
 #, kde-format
 msgid "%1 - %2  ::  %3"
 msgstr "%1 — %2  ::  %3"
 
 #. +> trunk6
-#: MainWindow.cpp:1315
+#: MainWindow.cpp:1305
 #, kde-format
 msgid "Apply this layout change?"
 msgstr "Aplicar este cambio de disposición?"
@@ -12058,28 +12068,6 @@ msgstr "Valor"
 #, kde-format
 msgid "Reading OPML podcast from %1 failed with error:\n"
 msgstr "A lectura do podcast de OPML desde %1 fallou, co erro:\n"
-
-#. +> trunk6
-#: playback/EqualizerController.cpp:135
-#, kde-format
-msgctxt "label for equalizer band frequency"
-msgid ""
-"%1\n"
-"Hz"
-msgstr ""
-"%1\n"
-"Hz"
-
-#. +> trunk6
-#: playback/EqualizerController.cpp:137
-#, kde-format
-msgctxt "label for equalizer band frequency"
-msgid ""
-"%1\n"
-"kHz"
-msgstr ""
-"%1\n"
-"kHz"
 
 #. +> trunk6
 #: playlist/layouts/LayoutConfigAction.cpp:40
@@ -12405,8 +12393,8 @@ msgstr "Amosar as indicacións emerxentes."
 
 #. i18n: ectx: property (text), widget (QPushButton, previewButton)
 #. +> trunk6
-#: playlist/layouts/PlaylistLayoutEditDialog.ui:291 widgets/Osd.cpp:514
-#: widgets/Osd.cpp:516
+#: playlist/layouts/PlaylistLayoutEditDialog.ui:291 widgets/Osd.cpp:515
+#: widgets/Osd.cpp:517
 #, kde-format
 msgid "Preview"
 msgstr "Previsualizar"
@@ -17346,7 +17334,7 @@ msgid "Volume: 100% (muted)"
 msgstr "Volume: 100% (silenciado)"
 
 #. +> trunk6
-#: widgets/Osd.cpp:514
+#: widgets/Osd.cpp:515
 #, kde-format
 msgid ""
 "On-Screen-Display preview\n"
@@ -17356,13 +17344,13 @@ msgstr ""
 "Arrastre para recolocar"
 
 #. +> trunk6
-#: widgets/Osd.cpp:771
+#: widgets/Osd.cpp:772
 #, kde-format
 msgid "Stopped"
 msgstr "Detido"
 
 #. +> trunk6
-#: widgets/Osd.cpp:780
+#: widgets/Osd.cpp:781
 #, kde-format
 msgid "Paused"
 msgstr "Detido"
@@ -17512,6 +17500,24 @@ msgstr "Artista: %1"
 #, kde-format
 msgid "empty"
 msgstr "baleiro"
+
+#, kde-format
+#~ msgctxt "label for equalizer band frequency"
+#~ msgid ""
+#~ "%1\n"
+#~ "Hz"
+#~ msgstr ""
+#~ "%1\n"
+#~ "Hz"
+
+#, kde-format
+#~ msgctxt "label for equalizer band frequency"
+#~ msgid ""
+#~ "%1\n"
+#~ "kHz"
+#~ msgstr ""
+#~ "%1\n"
+#~ "kHz"
 
 #, kde-format
 #~ msgid "Display"
