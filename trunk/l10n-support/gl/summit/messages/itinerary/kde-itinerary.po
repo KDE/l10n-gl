@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-15 11:06+0200\n"
+"POT-Creation-Date: 2025-06-22 10:22+0200\n"
 "PO-Revision-Date: 2025-06-19 09:37+0200\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.gal>\n"
 "Language-Team: Proxecto Trasno (proxecto@trasno.gal)\n"
@@ -441,7 +441,7 @@ msgstr "Barco"
 #. +> trunk6 stable6
 #: app/BoatEditor.qml:59 app/EventEditor.qml:54 app/FlightEditor.qml:72
 #: app/HotelEditor.qml:51 app/ImportPage.qml:21 app/JourneyRequestPage.qml:226
-#: app/RestaurantEditor.qml:53
+#: app/RestaurantEditor.qml:53 app/StopoverDetailsPage.qml:126
 #, kde-format
 msgid "Trip"
 msgstr "Viaxe"
@@ -869,7 +869,7 @@ msgid "Drop-off"
 msgstr "Devolución"
 
 #. +> trunk6 stable6
-#: app/CarRentalPage.qml:80
+#: app/CarRentalPage.qml:80 app/StopoverDetailsPage.qml:134
 #, kde-format
 msgid "Vehicle"
 msgstr "Vehículo"
@@ -926,14 +926,14 @@ msgid "Departures"
 msgstr "Saídas"
 
 #. +> trunk6 stable6
-#: app/DepartureQueryPage.qml:113
+#: app/DepartureQueryPage.qml:109
 #, kde-format
 msgctxt "@action:button"
 msgid "Load earlier departures"
 msgstr "Cargar saídas previas"
 
 #. +> trunk6 stable6
-#: app/DepartureQueryPage.qml:136 app/JourneyQueryPage.qml:125
+#: app/DepartureQueryPage.qml:135 app/JourneyQueryPage.qml:125
 #: app/TransferPage.qml:321
 #, kde-format
 msgctxt "@action:button"
@@ -941,7 +941,7 @@ msgid "Load later connections"
 msgstr "Cargar conexións posteriores"
 
 #. +> trunk6 stable6
-#: app/DepartureQueryPage.qml:145 app/JourneyQueryPage.qml:132
+#: app/DepartureQueryPage.qml:144 app/JourneyQueryPage.qml:132
 #: app/TransferPage.qml:328
 #, kde-format
 msgid "Data providers:"
@@ -2272,7 +2272,7 @@ msgid "No importable events found in this calendar."
 msgstr "Non se atoparon eventos importábeis no calendario."
 
 #. +> trunk6 stable6
-#: app/importcontroller.cpp:628
+#: app/importcontroller.cpp:634
 #, kde-format
 msgid "Backup"
 msgstr "Salvagarda"
@@ -2425,7 +2425,7 @@ msgid "Floor up"
 msgstr "Unha planta arriba"
 
 #. +> trunk6 stable6
-#: app/JourneyPathPage.qml:176 app/JourneySectionPage.qml:355
+#: app/JourneyPathPage.qml:176 app/JourneySectionPage.qml:297
 #, kde-format
 msgctxt "@action:button"
 msgid "Show Map"
@@ -2627,7 +2627,7 @@ msgstr "Conducir %1 (%2)"
 
 #. +> trunk6 stable6
 #: app/JourneySectionDelegate.qml:182 app/JourneySectionDelegate.qml:329
-#: app/StopoverFormDelegate.qml:100
+#: app/StopoverDetailsPage.qml:98 app/StopoverFormDelegate.qml:100
 #, kde-format
 msgctxt "@info"
 msgid "Platform %1"
@@ -2635,7 +2635,7 @@ msgstr "Plataforma %1"
 
 #. +> trunk6 stable6
 #: app/JourneySectionDelegate.qml:255 app/JourneySectionPage.qml:136
-#: app/StopoverFormDelegate.qml:141 app/VehicleLayoutPage.qml:214
+#: app/StopoverFormDelegate.qml:143 app/VehicleLayoutPage.qml:175
 #, kde-format
 msgctxt "@action:button"
 msgid "Show More…"
@@ -2643,7 +2643,7 @@ msgstr "Amosar máis…"
 
 #. +> trunk6 stable6
 #: app/JourneySectionPage.qml:51 app/TimelineDelegateDepartureLayout.qml:94
-#: app/VehicleLayoutPage.qml:116
+#: app/VehicleLayoutPage.qml:77
 #, kde-format
 msgctxt "Direction of the transport mode"
 msgid "To %1"
@@ -3118,19 +3118,27 @@ msgid "Matrix Session Verification"
 msgstr "Verificación de sesión de Matrix"
 
 #. +> trunk6 stable6
-#: app/MapStopoverInfoSheetDrawer.qml:59
+#: app/MapStopoverInfoSheetDrawer.qml:65
 #, kde-format
 msgid "Platform:"
 msgstr "Plataforma:"
 
 #. +> trunk6 stable6
-#: app/MapStopoverInfoSheetDrawer.qml:70
+#: app/MapStopoverInfoSheetDrawer.qml:76
 #, kde-format
 msgid "Occupancy:"
 msgstr "Ocupación:"
 
+#. +> trunk6
+#: app/MapStopoverInfoSheetDrawer.qml:94
+#, fuzzy, kde-format
+#| msgctxt "train coach feature"
+#| msgid "Information point"
+msgid "Information:"
+msgstr "Punto de información"
+
 #. +> trunk6 stable6
-#: app/MapStopoverInfoSheetDrawer.qml:90
+#: app/MapStopoverInfoSheetDrawer.qml:106
 #, kde-format
 msgid "Show indoor map"
 msgstr "Amosar o mapa interior"
@@ -4400,12 +4408,50 @@ msgid "Car"
 msgstr "Coche"
 
 #. +> trunk6
-#: app/StopoverFormDelegate.qml:93
+#: app/StopoverDetailsPage.qml:16
+#, fuzzy, kde-format
+#| msgid "More information"
+msgctxt "train/bus arrival"
+msgid "Arrival Information"
+msgstr "Máis información"
+
+#. +> trunk6
+#: app/StopoverDetailsPage.qml:16
+#, fuzzy, kde-format
+#| msgid "Developer information"
+msgctxt "train/bus departure"
+msgid "Departure Information"
+msgstr "Información de desenvolvemento"
+
+#. +> trunk6
+#: app/StopoverDetailsPage.qml:91 app/StopoverFormDelegate.qml:93
 #, kde-format
-#| msgid "From: %1"
 msgctxt "departure stop"
 msgid "From %1"
 msgstr "De %1"
+
+#. +> trunk6
+#: app/StopoverDetailsPage.qml:122
+#, fuzzy, kde-format
+#| msgctxt "train coach feature"
+#| msgid "Information point"
+msgid "Information"
+msgstr "Punto de información"
+
+#. +> trunk6
+#: app/StopoverDetailsPage.qml:130
+#, fuzzy, kde-format
+#| msgid "Trip"
+msgid "Trip Map"
+msgstr "Viaxe"
+
+#. +> trunk6
+#: app/StopoverDetailsPage.qml:138
+#, fuzzy, kde-format
+#| msgctxt "@action:button"
+#| msgid "Show Map"
+msgid "Stop Map"
+msgstr "Amosar o mapa"
 
 #. +> trunk6 stable6
 #: app/TicketEditor.qml:18
@@ -5163,13 +5209,6 @@ msgstr "Dividir a viaxe"
 msgid "Vehicle Layout"
 msgstr "Disposición do vehículo"
 
-#. +> trunk6 stable6
-#: app/VehicleLayoutPage.qml:70
-#, kde-format
-msgctxt "train coach"
-msgid "Coach %1"
-msgstr "Coche %1"
-
 #. +> stable6
 #: app/VehicleLayoutPage.qml:75
 #, kde-format
@@ -5193,6 +5232,18 @@ msgstr "Primeira ou segunda clase"
 #, kde-format
 msgid "Unknown class"
 msgstr "Clase descoñecida"
+
+#. +> trunk6 stable6
+#: app/VehicleLayoutPage.qml:93
+#, kde-format
+msgid "Departure: %1"
+msgstr "Saída: %1"
+
+#. +> trunk6 stable6
+#: app/VehicleLayoutPage.qml:95
+#, kde-format
+msgid "Arrival: %1"
+msgstr "Chegada: %1"
 
 #. +> stable6
 #: app/VehicleLayoutPage.qml:101
@@ -5223,34 +5274,29 @@ msgid "Car transport car"
 msgstr "Coche portacoches"
 
 #. +> trunk6 stable6
-#: app/VehicleLayoutPage.qml:132
-#, kde-format
-msgid "Departure: %1"
-msgstr "Saída: %1"
-
-#. +> trunk6 stable6
-#: app/VehicleLayoutPage.qml:134
-#, kde-format
-msgid "Arrival: %1"
-msgstr "Chegada: %1"
-
-#. +> trunk6 stable6
-#: app/VehicleLayoutPage.qml:154
+#: app/VehicleLayoutPage.qml:115
 #, kde-format
 msgid "Platform: %1"
 msgstr "Plataforma: %1"
 
 #. +> trunk6 stable6
-#: app/VehicleLayoutPage.qml:163
+#: app/VehicleLayoutPage.qml:124
 #, kde-format
 msgid "Coach: %1 Seat: %2"
 msgstr "Coche: %1 Asento: %2"
 
 #. +> trunk6 stable6
-#: app/VehicleLayoutPage.qml:268
+#: app/VehicleLayoutPage.qml:229
 #, kde-format
 msgid "No vehicle layout information available."
 msgstr "Non hai información dispoñíbel da disposición do vehículo."
+
+#. +> trunk6 stable6
+#: app/VehicleSectionDialog.qml:27
+#, kde-format
+msgctxt "train coach"
+msgid "Coach %1"
+msgstr "Coche %1"
 
 #. +> trunk6 stable6
 #: app/WeatherForecastDelegate.qml:58 app/WeatherForecastPage.qml:104
@@ -6035,11 +6081,6 @@ msgstr "Non se atoparon localizacións."
 #~ msgctxt "train coach feature"
 #~ msgid "Wheelchair accessible toilet"
 #~ msgstr "Lavabo para cadeira de rodas"
-
-#, kde-format
-#~ msgctxt "train coach feature"
-#~ msgid "Information point"
-#~ msgstr "Punto de información"
 
 #, kde-format
 #~ msgctxt "train coach feature"
