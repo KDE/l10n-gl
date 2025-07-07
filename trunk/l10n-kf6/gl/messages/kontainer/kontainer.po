@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kontainer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-27 00:45+0000\n"
+"POT-Creation-Date: 2025-07-07 00:45+0000\n"
 "PO-Revision-Date: 2025-06-22 16:19+0200\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.gal>\n"
 "Language-Team: Proxecto Trasno (proxecto@trasno.gal)\n"
@@ -75,66 +75,81 @@ msgstr "Aplicacións exportadas"
 msgid "Available Apps"
 msgstr "Aplicacións dispoñíbeis"
 
-#: src/backend.cpp:105
+#: src/backend.cpp:110
 #, kde-format
 msgid "Error: Command timed out"
 msgstr "Erro: A orde superou o tempo límite"
 
-#: src/backend.cpp:306
+#: src/backend.cpp:344
 #, kde-format
 msgid "Error: No supported backend available"
 msgstr ""
 
-#: src/backend.cpp:312
+#: src/backend.cpp:350
 #, kde-format
 msgid "Error: Failed to start container creation process"
 msgstr ""
 
-#: src/backend.cpp:317
+#: src/backend.cpp:355
 #, fuzzy, kde-format
 #| msgid "Container “%1” created successfully!"
 msgid "Container created successfully"
 msgstr "O contedor «%1» creouse correctamente."
 
-#: src/backend.cpp:317
+#: src/backend.cpp:355
 #, fuzzy, kde-format
 #| msgid "Container creation failed (exit code: %1)"
 msgid "Container creation failed"
 msgstr "A creación do contedor fallou (código de saída: %1)."
 
-#: src/backend.cpp:323
+#: src/backend.cpp:361
 #, fuzzy, kde-format
 #| msgid "Error: %1"
 msgid "Error: "
 msgstr "Erro: %1"
 
-#: src/backend.cpp:356
+#: src/backend.cpp:396
+#, kde-format
+msgctxt "Error message when toolbox deletion fails"
+msgid "Failed to delete Toolbox %1. Error: %2"
+msgstr ""
+
+#: src/backend.cpp:399
+#, fuzzy, kde-format
+#| msgid "Container “%1” created successfully!"
+msgctxt ""
+"Inform the User that the Toolbox Deletion Completed since it returns no "
+"output on its own"
+msgid "Toolbox %1 deleted successfully."
+msgstr "O contedor «%1» creouse correctamente."
+
+#: src/backend.cpp:401
 #, fuzzy, kde-format
 #| msgid "Upgrade the selected container"
 msgid "Error: Failed to delete Container."
 msgstr "Anovar o contedor seleccionado"
 
-#: src/backend.cpp:364
+#: src/backend.cpp:409
 #, kde-format
 msgid "Unknown terminal:"
 msgstr "Terminal descoñecido:"
 
-#: src/backend.cpp:397 src/backend.cpp:407
+#: src/backend.cpp:442 src/backend.cpp:452
 #, kde-format
 msgid "Failed to start terminal"
 msgstr "Non foi posíbel iniciar o terminal"
 
-#: src/backend.cpp:397 src/backend.cpp:407
+#: src/backend.cpp:442 src/backend.cpp:452
 #, kde-format
 msgid "with args"
 msgstr "cos argumentos"
 
-#: src/backend.cpp:422
+#: src/backend.cpp:467
 #, kde-format
 msgid "Error: %1"
 msgstr "Erro: %1"
 
-#: src/backend.cpp:510
+#: src/backend.cpp:555
 #, fuzzy, kde-format
 #| msgid "Unknown error"
 msgctxt ""
@@ -142,6 +157,49 @@ msgctxt ""
 "manager intergration, we will return Unknown"
 msgid "Unknown"
 msgstr "Erro descoñecido"
+
+#: src/backend.cpp:911
+#, kde-format
+msgctxt "Error message when application is not found in container"
+msgid "Application %1 not found in container %2"
+msgstr ""
+
+#: src/backend.cpp:919
+#, kde-format
+msgctxt "Error message when desktop file is not found"
+msgid "Could not find desktop file for %1 in container %2"
+msgstr ""
+
+#: src/backend.cpp:966
+#, kde-format
+msgctxt "Error message when desktop file creation fails"
+msgid "Failed to create desktop file: %1"
+msgstr ""
+
+#: src/backend.cpp:975
+#, kde-format
+msgctxt "Success message after exporting application"
+msgid "Successfully exported %1 from %2"
+msgstr ""
+
+#: src/backend.cpp:1002
+#, fuzzy, kde-format
+#| msgid "Manage exported applications"
+msgctxt "Error message when no exported app is found"
+msgid "No exported application %1 found for container %2"
+msgstr "Xestionar as aplicacións exportadas"
+
+#: src/backend.cpp:1006
+#, kde-format
+msgctxt "Error message when desktop file removal fails"
+msgid "Failed to remove desktop file: %1"
+msgstr ""
+
+#: src/backend.cpp:1011
+#, kde-format
+msgctxt "Success message after unexporting application"
+msgid "Successfully unexported %1 from %2"
+msgstr ""
 
 #: src/createcontainerdialog.cpp:81
 #, kde-format
@@ -209,7 +267,7 @@ msgstr "Sistema de preparación:"
 msgid "Refresh Images"
 msgstr "Actualizar as imaxes"
 
-#: src/createcontainerdialog.cpp:164 src/mainwindow.cpp:510
+#: src/createcontainerdialog.cpp:164 src/mainwindow.cpp:558
 #, kde-format
 msgid "Cancel"
 msgstr "Cancelar"
@@ -221,7 +279,7 @@ msgstr "Crear"
 
 #: src/createcontainerdialog.cpp:249 src/createcontainerdialog.cpp:254
 #: src/createcontainerdialog.cpp:299 src/createcontainerdialog.cpp:342
-#: src/createcontainerdialog.cpp:363 src/mainwindow.cpp:134
+#: src/createcontainerdialog.cpp:363 src/mainwindow.cpp:209
 #, kde-format
 msgid "Error"
 msgstr "Erro"
@@ -321,189 +379,180 @@ msgstr ""
 "\n"
 "Saída de erro: %2\n"
 
-#: src/mainwindow.cpp:117
+#: src/mainwindow.cpp:141
+#, fuzzy, kde-format
+#| msgid "Assembling container..."
+msgid "Fetching containers..."
+msgstr "Ensamblando o contedor…"
+
+#: src/mainwindow.cpp:169
+#, kde-format
+msgid "No containers found"
+msgstr "Non se atoparon contedores"
+
+#: src/mainwindow.cpp:192
 #, kde-format
 msgid "Checking for available container backends..."
 msgstr ""
 
-#: src/mainwindow.cpp:134
+#: src/mainwindow.cpp:209
 #, kde-format
 msgid ""
 "No container backends found. Please install either distrobox or toolbox."
 msgstr ""
 
-#: src/mainwindow.cpp:182
+#: src/mainwindow.cpp:257
 #, kde-format
 msgid "Enter"
 msgstr "Inserir"
 
-#: src/mainwindow.cpp:183
+#: src/mainwindow.cpp:258
 #, kde-format
 msgid "Enter the selected container"
 msgstr "Inserir o contedor seleccionado"
 
-#: src/mainwindow.cpp:186
+#: src/mainwindow.cpp:261
 #, kde-format
 msgid "Delete"
 msgstr "Eliminar"
 
-#: src/mainwindow.cpp:187
+#: src/mainwindow.cpp:262
 #, kde-format
 msgid "Delete the selected container"
 msgstr "Eliminar o contedor seleccionado"
 
-#: src/mainwindow.cpp:190
+#: src/mainwindow.cpp:265
 #, kde-format
 msgid "Applications"
 msgstr "Aplicacións"
 
-#: src/mainwindow.cpp:191
+#: src/mainwindow.cpp:266
 #, kde-format
 msgid "Manage exported applications"
 msgstr "Xestionar as aplicacións exportadas"
 
-#: src/mainwindow.cpp:194
+#: src/mainwindow.cpp:269
 #, kde-format
 msgid "Upgrade"
 msgstr "Anovar"
 
-#: src/mainwindow.cpp:195
+#: src/mainwindow.cpp:270
 #, kde-format
 msgid "Upgrade the selected container"
 msgstr "Anovar o contedor seleccionado"
 
-#: src/mainwindow.cpp:202
+#: src/mainwindow.cpp:277
 #, kde-format
 msgid "Refresh"
 msgstr "Actualizar"
 
-#: src/mainwindow.cpp:203
+#: src/mainwindow.cpp:278
 #, kde-format
 msgid "Refresh container list"
 msgstr "Actualizar a lista de contedores"
 
-#: src/mainwindow.cpp:207
+#: src/mainwindow.cpp:282
 #, kde-format
 msgid "Install .deb"
 msgstr "Instalar un .deb"
 
-#: src/mainwindow.cpp:208
+#: src/mainwindow.cpp:283
 #, kde-format
 msgid "Install Debian/Ubuntu package"
 msgstr "Instalar un paquete de Debian ou de Ubuntu."
 
-#: src/mainwindow.cpp:211
+#: src/mainwindow.cpp:286
 #, kde-format
 msgid "Install .rpm"
 msgstr "Instalar un .rpm"
 
-#: src/mainwindow.cpp:212
+#: src/mainwindow.cpp:287
 #, kde-format
 msgid "Install Fedora/OpenSUSE package"
 msgstr "Instalar un paquete de Fedora ou OpenSUSE."
 
-#: src/mainwindow.cpp:215
+#: src/mainwindow.cpp:290
 #, kde-format
 msgid "Install .pkg"
 msgstr "Instalar un .pkg"
 
-#: src/mainwindow.cpp:216
+#: src/mainwindow.cpp:291
 #, kde-format
 msgid "Install Arch Linux package"
 msgstr "Instalar un paquete de Arch Linux"
 
-#: src/mainwindow.cpp:239
+#: src/mainwindow.cpp:314
 #, kde-format
 msgid "New Container"
 msgstr "Novo contedor"
 
-#: src/mainwindow.cpp:241
+#: src/mainwindow.cpp:316
 #, kde-format
 msgid "Create new container"
 msgstr "Crear un novo contedor"
 
-#: src/mainwindow.cpp:247
+#: src/mainwindow.cpp:322
 #, kde-format
 msgid "Upgrade all Containers"
 msgstr "Anovar todos os contedores"
 
-#: src/mainwindow.cpp:249
+#: src/mainwindow.cpp:324
 #, kde-format
 msgid "Upgrades all containers"
 msgstr "Anova todos os contedores."
 
-#: src/mainwindow.cpp:255
+#: src/mainwindow.cpp:330
 #, kde-format
 msgid "Assemble"
 msgstr "Ensamblar"
 
-#: src/mainwindow.cpp:257
+#: src/mainwindow.cpp:332
 #, kde-format
 msgid "Create container from INI file"
 msgstr "Crear un contedor a partir dun ficheiro INI."
 
-#: src/mainwindow.cpp:267
+#: src/mainwindow.cpp:342
 #, kde-format
 msgid "Terminal:"
 msgstr "Terminal:"
 
-#: src/mainwindow.cpp:305
+#: src/mainwindow.cpp:380
 #, kde-format
 msgid "No terminal emulator found - output will be shown in dialog"
 msgstr ""
 "Non se atopou ningún emulador de terminal, a saída amosarase nun diálogo."
 
-#: src/mainwindow.cpp:376
+#: src/mainwindow.cpp:451
 #, kde-format
 msgid "Assemble Result"
 msgstr "Resultado da ensamblaxe"
 
-#: src/mainwindow.cpp:422
-#, kde-format
-msgid "Container:"
-msgstr "Contedor:"
-
-#: src/mainwindow.cpp:422
-#, kde-format
-msgid "Distro:"
-msgstr "Distribución:"
-
-#: src/mainwindow.cpp:422
-#, kde-format
-msgid "Icon:"
-msgstr "Icona:"
-
-#: src/mainwindow.cpp:426 src/mainwindow.cpp:431
-#, kde-format
-msgid "No containers found"
-msgstr "Non se atoparon contedores"
-
-#: src/mainwindow.cpp:444
+#: src/mainwindow.cpp:492
 #, kde-format
 msgid "Confirm Deletion"
 msgstr "Confirmar a eliminación"
 
-#: src/mainwindow.cpp:445
+#: src/mainwindow.cpp:493
 #, kde-format
 msgid "Delete container <b>%1</b>?"
 msgstr "Quere eliminar o contedor <b>%1</b>?"
 
-#: src/mainwindow.cpp:446
+#: src/mainwindow.cpp:494
 #, kde-format
 msgid "This action cannot be undone."
 msgstr "Esta acción non se pode desfacer."
 
-#: src/mainwindow.cpp:453
+#: src/mainwindow.cpp:501
 #, kde-format
 msgid "Result"
 msgstr "Resultado"
 
-#: src/mainwindow.cpp:501 src/mainwindow.cpp:526
+#: src/mainwindow.cpp:549 src/mainwindow.cpp:574
 #, kde-format
 msgid "Function Not Supported"
 msgstr ""
 
-#: src/mainwindow.cpp:502
+#: src/mainwindow.cpp:550
 #, kde-format
 msgid ""
 "Toolbox backend doesn't support container assembly.\n"
@@ -511,22 +560,22 @@ msgid ""
 "Please switch to Distrobox backend to use this feature."
 msgstr ""
 
-#: src/mainwindow.cpp:507
+#: src/mainwindow.cpp:555
 #, kde-format
 msgid "Select Distrobox INI File"
 msgstr "Seleccione o ficheiro INI de Distrobox"
 
-#: src/mainwindow.cpp:507
+#: src/mainwindow.cpp:555
 #, kde-format
 msgid "INI Files (*.ini);;All Files (*)"
 msgstr "Ficheiros INI (*.ini);;Todos os ficheiros (*)"
 
-#: src/mainwindow.cpp:510
+#: src/mainwindow.cpp:558
 #, kde-format
 msgid "Assembling container..."
 msgstr "Ensamblando o contedor…"
 
-#: src/mainwindow.cpp:527
+#: src/mainwindow.cpp:575
 #, kde-format
 msgid ""
 "Toolbox backend doesn't support mass container upgrades.\n"
@@ -534,65 +583,74 @@ msgid ""
 "Please switch to Distrobox backend to use this feature."
 msgstr ""
 
-#: src/mainwindow.cpp:536
+#: src/mainwindow.cpp:584
 #, kde-format
 msgid "Upgrading all containers..."
 msgstr "Anovando todos os contedores…"
 
-#: src/mainwindow.cpp:560
+#: src/mainwindow.cpp:608
 #, kde-format
 msgid "Processing..."
 msgstr ""
 
-#: src/mainwindow.cpp:596
+#: src/mainwindow.cpp:644
 #, kde-format
 msgid "Select .deb Package"
 msgstr "Seleccionar un paquete .deb"
 
-#: src/mainwindow.cpp:596
+#: src/mainwindow.cpp:644
 #, kde-format
 msgid "Debian Packages (*.deb)"
 msgstr "Paquetes de Debian (*.deb)"
 
-#: src/mainwindow.cpp:602
+#: src/mainwindow.cpp:650
 #, kde-format
 msgid "Installing .deb package..."
 msgstr "Instalando o paquete .deb…"
 
-#: src/mainwindow.cpp:633
+#: src/mainwindow.cpp:681
 #, kde-format
 msgid "Select .rpm Package"
 msgstr "Seleccionar un paquete .rpm"
 
-#: src/mainwindow.cpp:633
+#: src/mainwindow.cpp:681
 #, kde-format
 msgid "RPM Packages (*.rpm)"
 msgstr "Paquetes RPM (*.rpm)"
 
-#: src/mainwindow.cpp:639
+#: src/mainwindow.cpp:687
 #, kde-format
 msgid "Installing .rpm package..."
 msgstr "Instalando o paquete .rpm…"
 
-#: src/mainwindow.cpp:670
+#: src/mainwindow.cpp:718
 #, kde-format
 msgid "Select Arch Package"
 msgstr "Seleccionar un paquete de Arch Linux"
 
-#: src/mainwindow.cpp:670
+#: src/mainwindow.cpp:718
 #, kde-format
 msgid "Arch Packages (*.pkg.tar.*)"
 msgstr "Paquetes de Arch Linux (*.pkg.tar.*)"
 
-#: src/mainwindow.cpp:676
+#: src/mainwindow.cpp:724
 #, kde-format
 msgid "Installing Arch package..."
 msgstr "Instalando o paquete de Arch Linux…"
 
-#: src/mainwindow.cpp:709
+#: src/mainwindow.cpp:757
 #, kde-format
 msgid "Upgrading container..."
 msgstr "Anovando o contedor…"
+
+#~ msgid "Container:"
+#~ msgstr "Contedor:"
+
+#~ msgid "Distro:"
+#~ msgstr "Distribución:"
+
+#~ msgid "Icon:"
+#~ msgstr "Icona:"
 
 #~ msgid "Search images…"
 #~ msgstr "Buscar nas imaxes…"
